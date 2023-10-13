@@ -98,7 +98,7 @@ class RedisAccessTokenCache implements \ShipStream\Ups\Authentication\AccessToke
         $accessTokenKey = "access_token:$clientId";
         $cachedAccessToken = $this->predis->get($accessTokenKey);
         if ($cachedAccessToken !== false) {
-            return unserialize($cachedAccessToken, ['allowed_classes' => [\ShipStream\Ups\Authentication\AccessTokenCache::class]]);
+            return unserialize($cachedAccessToken, ['allowed_classes' => [\ShipStream\Ups\Authentication\AccessToken::class]]);
         }
         return null;
     }
