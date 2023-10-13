@@ -1,0 +1,82 @@
+<?php
+
+namespace ShipStream\Ups\Api\Normalizer;
+
+use Jane\Component\JsonSchemaRuntime\Reference;
+use ShipStream\Ups\Api\Runtime\Normalizer\CheckArray;
+use ShipStream\Ups\Api\Runtime\Normalizer\ValidatorTrait;
+use Symfony\Component\Serializer\Exception\InvalidArgumentException;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+class OverSeasLegValueNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+{
+    use DenormalizerAwareTrait;
+    use NormalizerAwareTrait;
+    use CheckArray;
+    use ValidatorTrait;
+    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    {
+        return $type === 'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue';
+    }
+    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    {
+        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue';
+    }
+    /**
+     * @return mixed
+     */
+    public function denormalize($data, $class, $format = null, array $context = array())
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
+        }
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        }
+        $object = new \ShipStream\Ups\Api\Model\OverSeasLegValue();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (\array_key_exists('Cube', $data)) {
+            $object->setCube($this->denormalizer->denormalize($data['Cube'], 'ShipStream\\Ups\\Api\\Model\\ValueCube', 'json', $context));
+            unset($data['Cube']);
+        }
+        if (\array_key_exists('CWT', $data)) {
+            $object->setCWT($this->denormalizer->denormalize($data['CWT'], 'ShipStream\\Ups\\Api\\Model\\ValueCWT', 'json', $context));
+            unset($data['CWT']);
+        }
+        foreach ($data as $key => $value) {
+            if (preg_match('/.*/', (string) $key)) {
+                $object[$key] = $value;
+            }
+        }
+        return $object;
+    }
+    /**
+     * @return array|string|int|float|bool|\ArrayObject|null
+     */
+    public function normalize($object, $format = null, array $context = array())
+    {
+        $data = array();
+        if ($object->isInitialized('cube') && null !== $object->getCube()) {
+            $data['Cube'] = $this->normalizer->normalize($object->getCube(), 'json', $context);
+        }
+        if ($object->isInitialized('cWT') && null !== $object->getCWT()) {
+            $data['CWT'] = $this->normalizer->normalize($object->getCWT(), 'json', $context);
+        }
+        foreach ($object as $key => $value) {
+            if (preg_match('/.*/', (string) $key)) {
+                $data[$key] = $value;
+            }
+        }
+        return $data;
+    }
+    public function getSupportedTypes(?string $format = null) : array
+    {
+        return array('ShipStream\\Ups\\Api\\Model\\OverSeasLegValue' => false);
+    }
+}

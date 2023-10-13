@@ -1,0 +1,45 @@
+{
+    "name": "shipstream/ups-php-sdk",
+    "version": "1.0.0",
+    "description": "PHP SDK for UPS REST API",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Shipstream",
+            "email": "info@shipstream.io"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "jane-php/open-api-runtime": "^7.5",
+        "php-http/curl-client": "^2.3",
+        "symfony/polyfill-php81": "^1.28",
+        "symfony/serializer": "^5.4"
+    },
+    "require-dev": {
+        "jane-php/open-api-3": "^7.5",
+        "nyholm/psr7": "^1.8",
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "ShipStream\\Ups\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        },
+        "platform": {
+            "php": "7.4"
+        },
+        "sort-packages": true
+    }
+}

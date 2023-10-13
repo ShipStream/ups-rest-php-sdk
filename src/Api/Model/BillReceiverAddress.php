@@ -1,0 +1,43 @@
+<?php
+
+namespace ShipStream\Ups\Api\Model;
+
+class BillReceiverAddress extends \ArrayObject
+{
+    /**
+     * @var array
+     */
+    protected $initialized = array();
+    public function isInitialized($property) : bool
+    {
+        return array_key_exists($property, $this->initialized);
+    }
+    /**
+     * The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.
+     *
+     * @var string
+     */
+    protected $postalCode;
+    /**
+     * The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.
+     *
+     * @return string
+     */
+    public function getPostalCode() : string
+    {
+        return $this->postalCode;
+    }
+    /**
+     * The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.
+     *
+     * @param string $postalCode
+     *
+     * @return self
+     */
+    public function setPostalCode(string $postalCode) : self
+    {
+        $this->initialized['postalCode'] = true;
+        $this->postalCode = $postalCode;
+        return $this;
+    }
+}
