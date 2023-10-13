@@ -1,5 +1,5 @@
 /openapi export-ignore
-/tests
+/tests export-ignore
 /generate.sh export-ignore
 /openapi.json export-ignore
 /phpunit.xml.dist export-ignore
