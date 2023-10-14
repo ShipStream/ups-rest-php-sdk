@@ -157,9 +157,12 @@ class PackageNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setTrackingNumber($data['trackingNumber']);
             unset($data['trackingNumber']);
         }
-        if (\array_key_exists('weight', $data)) {
+        if (\array_key_exists('weight', $data) && $data['weight'] !== null) {
             $object->setWeight($this->denormalizer->denormalize($data['weight'], 'ShipStream\\Ups\\Api\\Model\\Weight', 'json', $context));
             unset($data['weight']);
+        }
+        elseif (\array_key_exists('weight', $data) && $data['weight'] === null) {
+            $object->setWeight(null);
         }
         foreach ($data as $key => $value_10) {
             if (preg_match('/.*/', (string) $key)) {

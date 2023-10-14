@@ -33,7 +33,7 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @var Warning[]
+     * @var Warning[]|null
      */
     protected $warnings;
     /**
@@ -105,20 +105,20 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @return Warning[]
+     * @return Warning[]|null
      */
-    public function getWarnings() : array
+    public function getWarnings() : ?array
     {
         return $this->warnings;
     }
     /**
      * 
      *
-     * @param Warning[] $warnings
+     * @param Warning[]|null $warnings
      *
      * @return self
      */
-    public function setWarnings(array $warnings) : self
+    public function setWarnings(?array $warnings) : self
     {
         $this->initialized['warnings'] = true;
         $this->warnings = $warnings;

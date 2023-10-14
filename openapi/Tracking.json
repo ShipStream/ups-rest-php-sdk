@@ -201,22 +201,26 @@
           "addressLine1": {
             "type": "string",
             "description": "addressLine1",
-            "example": "100 Main St"
+            "example": "100 Main St",
+            "nullable": true
           },
           "addressLine2": {
             "type": "string",
             "description": "addressLine2",
-            "example": "Warehouse"
+            "example": "Warehouse",
+            "nullable": true
           },
           "addressLine3": {
             "type": "string",
             "description": "addressLine3",
-            "example": "Building 1"
+            "example": "Building 1",
+            "nullable": true
           },
           "city": {
             "type": "string",
             "description": "city",
-            "example": "Wayne"
+            "example": "Wayne",
+            "nullable": true
           },
           "country": {
             "type": "string",
@@ -231,12 +235,14 @@
           "postalCode": {
             "type": "string",
             "description": "postalCode",
-            "example": "07470"
+            "example": "07470",
+            "nullable": true
           },
           "stateProvince": {
             "type": "string",
             "description": "stateProvince",
-            "example": "NJ"
+            "example": "NJ",
+            "nullable": true
           }
         }
       },
@@ -619,7 +625,8 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Warning"
-            }
+            },
+            "nullable": true
           }
         }
       },
@@ -717,7 +724,8 @@
           "weight": {
             "type": "string"
           }
-        }
+        },
+        "nullable": true
       }
     }
   }

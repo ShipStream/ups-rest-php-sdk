@@ -61,13 +61,16 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setUserRelation($values_1);
             unset($data['userRelation']);
         }
-        if (\array_key_exists('warnings', $data)) {
+        if (\array_key_exists('warnings', $data) && $data['warnings'] !== null) {
             $values_2 = array();
             foreach ($data['warnings'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\Warning', 'json', $context);
             }
             $object->setWarnings($values_2);
             unset($data['warnings']);
+        }
+        elseif (\array_key_exists('warnings', $data) && $data['warnings'] === null) {
+            $object->setWarnings(null);
         }
         foreach ($data as $key => $value_3) {
             if (preg_match('/.*/', (string) $key)) {

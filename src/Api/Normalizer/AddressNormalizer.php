@@ -41,21 +41,33 @@ class AddressNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('addressLine1', $data)) {
+        if (\array_key_exists('addressLine1', $data) && $data['addressLine1'] !== null) {
             $object->setAddressLine1($data['addressLine1']);
             unset($data['addressLine1']);
         }
-        if (\array_key_exists('addressLine2', $data)) {
+        elseif (\array_key_exists('addressLine1', $data) && $data['addressLine1'] === null) {
+            $object->setAddressLine1(null);
+        }
+        if (\array_key_exists('addressLine2', $data) && $data['addressLine2'] !== null) {
             $object->setAddressLine2($data['addressLine2']);
             unset($data['addressLine2']);
         }
-        if (\array_key_exists('addressLine3', $data)) {
+        elseif (\array_key_exists('addressLine2', $data) && $data['addressLine2'] === null) {
+            $object->setAddressLine2(null);
+        }
+        if (\array_key_exists('addressLine3', $data) && $data['addressLine3'] !== null) {
             $object->setAddressLine3($data['addressLine3']);
             unset($data['addressLine3']);
         }
-        if (\array_key_exists('city', $data)) {
+        elseif (\array_key_exists('addressLine3', $data) && $data['addressLine3'] === null) {
+            $object->setAddressLine3(null);
+        }
+        if (\array_key_exists('city', $data) && $data['city'] !== null) {
             $object->setCity($data['city']);
             unset($data['city']);
+        }
+        elseif (\array_key_exists('city', $data) && $data['city'] === null) {
+            $object->setCity(null);
         }
         if (\array_key_exists('country', $data)) {
             $object->setCountry($data['country']);
@@ -65,13 +77,19 @@ class AddressNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setCountryCode($data['countryCode']);
             unset($data['countryCode']);
         }
-        if (\array_key_exists('postalCode', $data)) {
+        if (\array_key_exists('postalCode', $data) && $data['postalCode'] !== null) {
             $object->setPostalCode($data['postalCode']);
             unset($data['postalCode']);
         }
-        if (\array_key_exists('stateProvince', $data)) {
+        elseif (\array_key_exists('postalCode', $data) && $data['postalCode'] === null) {
+            $object->setPostalCode(null);
+        }
+        if (\array_key_exists('stateProvince', $data) && $data['stateProvince'] !== null) {
             $object->setStateProvince($data['stateProvince']);
             unset($data['stateProvince']);
+        }
+        elseif (\array_key_exists('stateProvince', $data) && $data['stateProvince'] === null) {
+            $object->setStateProvince(null);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

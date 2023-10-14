@@ -129,7 +129,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @var Weight
+     * @var Weight|null
      */
     protected $weight;
     /**
@@ -553,20 +553,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return Weight
+     * @return Weight|null
      */
-    public function getWeight() : Weight
+    public function getWeight() : ?Weight
     {
         return $this->weight;
     }
     /**
      * 
      *
-     * @param Weight $weight
+     * @param Weight|null $weight
      *
      * @return self
      */
-    public function setWeight(Weight $weight) : self
+    public function setWeight(?Weight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

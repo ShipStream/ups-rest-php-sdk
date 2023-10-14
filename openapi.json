@@ -34169,21 +34169,25 @@
                     "addressLine1": {
                         "type": "string",
                         "description": "addressLine1",
+                        "nullable": true,
                         "example": "100 Main St"
                     },
                     "addressLine2": {
                         "type": "string",
                         "description": "addressLine2",
+                        "nullable": true,
                         "example": "Warehouse"
                     },
                     "addressLine3": {
                         "type": "string",
                         "description": "addressLine3",
+                        "nullable": true,
                         "example": "Building 1"
                     },
                     "city": {
                         "type": "string",
                         "description": "city",
+                        "nullable": true,
                         "example": "Wayne"
                     },
                     "country": {
@@ -34199,11 +34203,13 @@
                     "postalCode": {
                         "type": "string",
                         "description": "postalCode",
+                        "nullable": true,
                         "example": "07470"
                     },
                     "stateProvince": {
                         "type": "string",
                         "description": "stateProvince",
+                        "nullable": true,
                         "example": "NJ"
                     }
                 }
@@ -34589,7 +34595,8 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Warning"
-                        }
+                        },
+                        "nullable": true
                     }
                 }
             },
@@ -34687,7 +34694,8 @@
                     "weight": {
                         "type": "string"
                     }
-                }
+                },
+                "nullable": true
             }
         },
         "securitySchemes": {

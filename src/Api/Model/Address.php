@@ -15,25 +15,25 @@ class Address extends \ArrayObject
     /**
      * addressLine1
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine1;
     /**
      * addressLine2
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine2;
     /**
      * addressLine3
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine3;
     /**
      * city
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
@@ -51,32 +51,32 @@ class Address extends \ArrayObject
     /**
      * postalCode
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * stateProvince
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvince;
     /**
      * addressLine1
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine1() : string
+    public function getAddressLine1() : ?string
     {
         return $this->addressLine1;
     }
     /**
      * addressLine1
      *
-     * @param string $addressLine1
+     * @param string|null $addressLine1
      *
      * @return self
      */
-    public function setAddressLine1(string $addressLine1) : self
+    public function setAddressLine1(?string $addressLine1) : self
     {
         $this->initialized['addressLine1'] = true;
         $this->addressLine1 = $addressLine1;
@@ -85,20 +85,20 @@ class Address extends \ArrayObject
     /**
      * addressLine2
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine2() : string
+    public function getAddressLine2() : ?string
     {
         return $this->addressLine2;
     }
     /**
      * addressLine2
      *
-     * @param string $addressLine2
+     * @param string|null $addressLine2
      *
      * @return self
      */
-    public function setAddressLine2(string $addressLine2) : self
+    public function setAddressLine2(?string $addressLine2) : self
     {
         $this->initialized['addressLine2'] = true;
         $this->addressLine2 = $addressLine2;
@@ -107,20 +107,20 @@ class Address extends \ArrayObject
     /**
      * addressLine3
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine3() : string
+    public function getAddressLine3() : ?string
     {
         return $this->addressLine3;
     }
     /**
      * addressLine3
      *
-     * @param string $addressLine3
+     * @param string|null $addressLine3
      *
      * @return self
      */
-    public function setAddressLine3(string $addressLine3) : self
+    public function setAddressLine3(?string $addressLine3) : self
     {
         $this->initialized['addressLine3'] = true;
         $this->addressLine3 = $addressLine3;
@@ -129,20 +129,20 @@ class Address extends \ArrayObject
     /**
      * city
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * city
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -195,20 +195,20 @@ class Address extends \ArrayObject
     /**
      * postalCode
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * postalCode
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -217,20 +217,20 @@ class Address extends \ArrayObject
     /**
      * stateProvince
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvince() : string
+    public function getStateProvince() : ?string
     {
         return $this->stateProvince;
     }
     /**
      * stateProvince
      *
-     * @param string $stateProvince
+     * @param string|null $stateProvince
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(?string $stateProvince) : self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
