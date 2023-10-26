@@ -1,6 +1,5 @@
 {
     "name": "shipstream/ups-rest-php-sdk",
-    "version": "1.0.0",
     "description": "PHP SDK for UPS REST API",
     "license": "Apache-2.0",
     "authors": [
