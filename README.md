@@ -1,11 +1,11 @@
-# UPS PHP SDK
+# UPS REST PHP SDK
 
-A PHP SDK for UPS REST API.
+A PHP SDK for the UPS REST API, brought to you by [ShipStream](https://shipstream.io).
 
 ## Installation
 
 ```shell
-composer require shipstream/ups-php-sdk
+composer require shipstream/ups-rest-php-sdk
 ```
 
 ## Basic Usage
