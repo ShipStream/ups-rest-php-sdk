@@ -31,9 +31,9 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      */
     protected $packageBillType;
     /**
-     * 
+     * Container for all available service information.
      *
-     * @var TimeInTransitServiceSummary[]
+     * @var TimeInTransitServiceSummary
      */
     protected $serviceSummary;
     /**
@@ -115,22 +115,22 @@ class RatedShipmentTimeInTransit extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container for all available service information.
      *
-     * @return TimeInTransitServiceSummary[]
+     * @return TimeInTransitServiceSummary
      */
-    public function getServiceSummary() : array
+    public function getServiceSummary() : TimeInTransitServiceSummary
     {
         return $this->serviceSummary;
     }
     /**
-     * 
+     * Container for all available service information.
      *
-     * @param TimeInTransitServiceSummary[] $serviceSummary
+     * @param TimeInTransitServiceSummary $serviceSummary
      *
      * @return self
      */
-    public function setServiceSummary(array $serviceSummary) : self
+    public function setServiceSummary(TimeInTransitServiceSummary $serviceSummary) : self
     {
         $this->initialized['serviceSummary'] = true;
         $this->serviceSummary = $serviceSummary;

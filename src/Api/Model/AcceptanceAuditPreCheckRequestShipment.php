@@ -31,7 +31,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      */
     protected $shipToAddress;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
@@ -119,7 +119,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -128,7 +128,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *

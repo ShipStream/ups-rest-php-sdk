@@ -13,12 +13,10 @@ class FreightShipRequestShipment extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @var ShipmentShipFrom
-    */
+     * ShipFrom Container.
+     *
+     * @var ShipmentShipFrom
+     */
     protected $shipFrom;
     /**
     * Shipper�s six digit account number.
@@ -28,19 +26,19 @@ class FreightShipRequestShipment extends \ArrayObject
     */
     protected $shipperNumber;
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @var ShipmentShipTo
      */
     protected $shipTo;
     /**
-     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
+     * Payment Information Container.
      *
      * @var ShipmentPaymentInformation
      */
     protected $paymentInformation;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
@@ -96,7 +94,7 @@ class FreightShipRequestShipment extends \ArrayObject
      */
     protected $reference;
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @var ShipmentShipmentServiceOptions
      */
@@ -132,25 +130,21 @@ class FreightShipRequestShipment extends \ArrayObject
      */
     protected $densityEligibleIndicator;
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @return ShipmentShipFrom
-    */
+     * ShipFrom Container.
+     *
+     * @return ShipmentShipFrom
+     */
     public function getShipFrom() : ShipmentShipFrom
     {
         return $this->shipFrom;
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @param ShipmentShipFrom $shipFrom
-    *
-    * @return self
-    */
+     * ShipFrom Container.
+     *
+     * @param ShipmentShipFrom $shipFrom
+     *
+     * @return self
+     */
     public function setShipFrom(ShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
@@ -182,7 +176,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @return ShipmentShipTo
      */
@@ -191,7 +185,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this->shipTo;
     }
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @param ShipmentShipTo $shipTo
      *
@@ -204,7 +198,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
+     * Payment Information Container.
      *
      * @return ShipmentPaymentInformation
      */
@@ -213,7 +207,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this->paymentInformation;
     }
     /**
-     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
+     * Payment Information Container.
      *
      * @param ShipmentPaymentInformation $paymentInformation
      *
@@ -226,7 +220,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -235,7 +229,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *
@@ -428,7 +422,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @return ShipmentShipmentServiceOptions
      */
@@ -437,7 +431,7 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this->shipmentServiceOptions;
     }
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @param ShipmentShipmentServiceOptions $shipmentServiceOptions
      *

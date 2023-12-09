@@ -19,13 +19,13 @@ class FreightPickupRequestShipTo extends \ArrayObject
      */
     protected $attentionName;
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @var ShipToAddress
      */
     protected $address;
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @var ShipToPhone
      */
@@ -59,7 +59,7 @@ class FreightPickupRequestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @return ShipToAddress
      */
@@ -68,7 +68,7 @@ class FreightPickupRequestShipTo extends \ArrayObject
         return $this->address;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @param ShipToAddress $address
      *
@@ -81,7 +81,7 @@ class FreightPickupRequestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @return ShipToPhone
      */
@@ -90,7 +90,7 @@ class FreightPickupRequestShipTo extends \ArrayObject
         return $this->phone;
     }
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @param ShipToPhone $phone
      *

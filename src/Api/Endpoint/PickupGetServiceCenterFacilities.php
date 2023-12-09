@@ -6,7 +6,7 @@ class PickupGetServiceCenterFacilities extends \ShipStream\Ups\Api\Runtime\Clien
 {
     protected $version;
     /**
-     * Pickup Get Service Center Facilities
+     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
      *
      * @param string $version Version of API e.g v1
      * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 

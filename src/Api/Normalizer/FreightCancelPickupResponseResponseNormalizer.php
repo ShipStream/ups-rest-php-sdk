@@ -42,7 +42,7 @@ class FreightCancelPickupResponseResponseNormalizer implements DenormalizerInter
             return $object;
         }
         if (\array_key_exists('ResponseStatus', $data)) {
-            $object->setResponseStatus($data['ResponseStatus']);
+            $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], 'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus', 'json', $context));
             unset($data['ResponseStatus']);
         }
         if (\array_key_exists('Alert', $data)) {
@@ -66,8 +66,10 @@ class FreightCancelPickupResponseResponseNormalizer implements DenormalizerInter
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['ResponseStatus'] = $object->getResponseStatus();
-        $data['Alert'] = $this->normalizer->normalize($object->getAlert(), 'json', $context);
+        $data['ResponseStatus'] = $this->normalizer->normalize($object->getResponseStatus(), 'json', $context);
+        if ($object->isInitialized('alert') && null !== $object->getAlert()) {
+            $data['Alert'] = $this->normalizer->normalize($object->getAlert(), 'json', $context);
+        }
         if ($object->isInitialized('transactionReference') && null !== $object->getTransactionReference()) {
             $data['TransactionReference'] = $this->normalizer->normalize($object->getTransactionReference(), 'json', $context);
         }

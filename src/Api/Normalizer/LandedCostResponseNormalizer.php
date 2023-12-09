@@ -41,13 +41,9 @@ class LandedCostResponseNormalizer implements DenormalizerInterface, NormalizerI
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('QueryResponse', $data)) {
-            $object->setQueryResponse($this->denormalizer->denormalize($data['QueryResponse'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseQueryResponse', 'json', $context));
-            unset($data['QueryResponse']);
-        }
-        if (\array_key_exists('EstimateResponse', $data)) {
-            $object->setEstimateResponse($this->denormalizer->denormalize($data['EstimateResponse'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseEstimateResponse', 'json', $context));
-            unset($data['EstimateResponse']);
+        if (\array_key_exists('shipment', $data)) {
+            $object->setShipment($this->denormalizer->denormalize($data['shipment'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment', 'json', $context));
+            unset($data['shipment']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -62,12 +58,7 @@ class LandedCostResponseNormalizer implements DenormalizerInterface, NormalizerI
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        if ($object->isInitialized('queryResponse') && null !== $object->getQueryResponse()) {
-            $data['QueryResponse'] = $this->normalizer->normalize($object->getQueryResponse(), 'json', $context);
-        }
-        if ($object->isInitialized('estimateResponse') && null !== $object->getEstimateResponse()) {
-            $data['EstimateResponse'] = $this->normalizer->normalize($object->getEstimateResponse(), 'json', $context);
-        }
+        $data['shipment'] = $this->normalizer->normalize($object->getShipment(), 'json', $context);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

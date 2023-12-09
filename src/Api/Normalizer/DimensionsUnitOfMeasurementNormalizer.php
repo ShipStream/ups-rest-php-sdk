@@ -41,9 +41,9 @@ class DimensionsUnitOfMeasurementNormalizer implements DenormalizerInterface, No
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('UnitOfMeasurement', $data)) {
-            $object->setUnitOfMeasurement($data['UnitOfMeasurement']);
-            unset($data['UnitOfMeasurement']);
+        if (\array_key_exists('Code', $data)) {
+            $object->setCode($data['Code']);
+            unset($data['Code']);
         }
         if (\array_key_exists('Description', $data)) {
             $object->setDescription($data['Description']);
@@ -62,9 +62,7 @@ class DimensionsUnitOfMeasurementNormalizer implements DenormalizerInterface, No
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        if ($object->isInitialized('unitOfMeasurement') && null !== $object->getUnitOfMeasurement()) {
-            $data['UnitOfMeasurement'] = $object->getUnitOfMeasurement();
-        }
+        $data['Code'] = $object->getCode();
         if ($object->isInitialized('description') && null !== $object->getDescription()) {
             $data['Description'] = $object->getDescription();
         }

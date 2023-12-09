@@ -19,7 +19,7 @@ class FreightRateResponseDimensionalWeight extends \ArrayObject
      */
     protected $value;
     /**
-     * Container tag for package dimensional weight measurement units.
+     * UnitOfMeasurement Container.
      *
      * @var DimensionalWeightUnitOfMeasurement
      */
@@ -47,7 +47,7 @@ class FreightRateResponseDimensionalWeight extends \ArrayObject
         return $this;
     }
     /**
-     * Container tag for package dimensional weight measurement units.
+     * UnitOfMeasurement Container.
      *
      * @return DimensionalWeightUnitOfMeasurement
      */
@@ -56,7 +56,7 @@ class FreightRateResponseDimensionalWeight extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * Container tag for package dimensional weight measurement units.
+     * UnitOfMeasurement Container.
      *
      * @param DimensionalWeightUnitOfMeasurement $unitOfMeasurement
      *

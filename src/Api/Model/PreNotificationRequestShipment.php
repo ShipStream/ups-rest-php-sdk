@@ -13,7 +13,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Shipper�s six digit account number.
+     * Shipper's six digit account number.
      *
      * @var string
      */
@@ -43,15 +43,15 @@ class PreNotificationRequestShipment extends \ArrayObject
      */
     protected $pickupDate;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
     protected $service;
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR � Title 49 of the United States Code of Federal Regulations.  
-    IATA � International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
+    49CFR - Title 49 of the United States Code of Federal Regulations.  
+    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
     *
     * @var string
     */
@@ -63,7 +63,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      */
     protected $package;
     /**
-     * Shipper�s six digit account number.
+     * Shipper's six digit account number.
      *
      * @return string
      */
@@ -72,7 +72,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->shipperNumber;
     }
     /**
-     * Shipper�s six digit account number.
+     * Shipper's six digit account number.
      *
      * @param string $shipperNumber
      *
@@ -173,7 +173,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -182,7 +182,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *
@@ -195,9 +195,9 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR � Title 49 of the United States Code of Federal Regulations.  
-    IATA � International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
+    49CFR - Title 49 of the United States Code of Federal Regulations.  
+    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
     *
     * @return string
     */
@@ -206,9 +206,9 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->regulationSet;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR � Title 49 of the United States Code of Federal Regulations.  
-    IATA � International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
+    49CFR - Title 49 of the United States Code of Federal Regulations.  
+    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
     *
     * @param string $regulationSet
     *

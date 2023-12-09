@@ -5,7 +5,7 @@ namespace ShipStream\Ups\Api;
 class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
 {
     /**
-    * 
+    * The Address Validation Street Level API can be used to check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
     *
     * @param int $requestoption Identifies the type of request. Valid 
     values: 
@@ -46,7 +46,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AddressValidation($requestoption, $version, $requestBody, $queryParameters, $accept), $fetch);
     }
     /**
-    * Chemical Reference Data
+    * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
     *
     * @param string $version Version of the API. Valid values:
     v1
@@ -67,7 +67,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ChemicalReferenceData($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * Acceptance Audit Pre-check
+     * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
      *
      * @param string $version API version
      * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
@@ -86,126 +86,27 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AcceptanceAuditPreCheck($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
-     *
-     * @param string $version Version of the API e.g v1
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     *     @var string $PickupRequestConfirmationNumber Confirmation number of the pickup ground freight shipment to cancel. Length 35
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\FreightCancelPickupUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
-    public function freightCancelPickup(string $version = 'v1', array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
-    {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightCancelPickup($version, $headerParameters), $fetch);
-    }
-    /**
-     * 
-     *
-     * @param string $version Version of the API e.g v1
-     * @param \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\FreightPickupUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
-    public function freightPickup(string $version = 'v1', \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
-    {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightPickup($version, $requestBody, $headerParameters), $fetch);
-    }
-    /**
-    * 
-    *
-    * @param string $version When TForce Freight introduces new elements 
-    in the response that are not associated with new 
-    request elements, Version is used. This ensures 
-    backward compatibility.
-    Supported values: v1, v1601, v1607, v1701, 
-    v1707, v1801. Length 5
-    * @param string $requestoption Valid Values: 
-    ground,
-    air. Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
-    * @param array $headerParameters {
-    *     @var string $transId An identifier unique to the request. Length 32
-    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-    * }
-    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-    * @param array $accept Accept content header application/json|application/xml
-    * @throws \ShipStream\Ups\Api\Exception\FreightRateUnauthorizedException
-    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-    *
-    * @return \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper|\Psr\Http\Message\ResponseInterface
-    */
-    public function freightRate(string $version = 'v1', string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT, array $accept = array())
-    {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightRate($version, $requestoption, $requestBody, $headerParameters, $accept), $fetch);
-    }
-    /**
-    * 
-    *
-    * @param string $version When TForce Freight introduces new elements 
-    in the response that are not associated with new 
-    request elements, version is used. This ensures 
-    backward compatibility.
-    To get such elements you need to have the right 
-    version. The value of the version is explained in 
-    the Response element Description.
-    Example: Itemized Charges are returned only 
-    when the version element is present and greater 
-    than or equal to 'v1601'. 
-    Format: YYMM = Year and month of the release.
-    Example: v1601 = 2016 Januaryrelease. 
-    Supported values: v1, v1601, v1607. Length 5
-    * @param string $reqoption Valid Values: 
-    Ground,
-    Air . Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
-    * @param array $headerParameters {
-    *     @var string $transId An identifier unique to the request. Length 32
-    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-    * }
-    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-    * @throws \ShipStream\Ups\Api\Exception\FreightShipUnauthorizedException
-    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-    *
-    * @return \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
-    */
-    public function freightShip(string $version = 'v1', string $reqoption, \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
-    {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightShip($version, $reqoption, $requestBody, $headerParameters), $fetch);
-    }
-    /**
-     * 
+     * Landed Cost provides an all-inclusive cost estimate of international shipments.
      *
      * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\LANDEDCOSTRequestWrapper $requestBody 
+     * @param \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+     *     @var string $AccountNumber 
      * }
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \ShipStream\Ups\Api\Exception\LandedCostUnauthorizedException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
-     * @return \ShipStream\Ups\Api\Model\LANDEDCOSTResponseWrapper|\Psr\Http\Message\ResponseInterface
+     * @return \ShipStream\Ups\Api\Model\LandedCostResponse|\Psr\Http\Message\ResponseInterface
      */
-    public function landedCost(string $version = 'v1', \ShipStream\Ups\Api\Model\LANDEDCOSTRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    public function landedCost(string $version = 'v1', \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LandedCost($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * 
+    * Get Locator Response
     *
     * @param string $version Version of API
     * @param string $reqOption Indicates the type of request.
@@ -238,25 +139,28 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Locator($version, $reqOption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
     /**
-     * Validate Client
+     * The Authorize Client endpoint initiates the OAuth flow by redirecting the user to UPS to log in and authorize the client application. It accepts the parameters listed below to facilitate the user authorization flow. A successful response redirects back to the client with an authorization code that can be exchanged for an access token.
      *
      * @param array $queryParameters {
      *     @var string $client_id Client id for the requesting application.
      *     @var string $redirect_uri Callback URL for the requesting application.
+     *     @var string $response_type Valid Values: code
+     *     @var string $state Optional value supplied by the client, will be returned during the redirection back to the client. Can be utilized to maintain state between Auth-Code request and callback event.
+     *     @var string $scope Optional value supplied by the client, will be returned during the redirection back to the client.
      * }
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\ValidateClientBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\ValidateClientUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\AuthorizeClientBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\AuthorizeClientUnauthorizedException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
-     * @return \ShipStream\Ups\Api\Model\ValidateSuccessResponse|\Psr\Http\Message\ResponseInterface
+     * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function validateClient(array $queryParameters = array(), string $fetch = self::FETCH_OBJECT)
+    public function authorizeClient(array $queryParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ValidateClient($queryParameters), $fetch);
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AuthorizeClient($queryParameters), $fetch);
     }
     /**
-     * Generate Token
+     * The Generate Token endpoint exchanges the authorization code received from Authorize Client for an access token and a refresh token. The client uses the access token to make API requests on behalf of the user by including it in the Authorization header. The access token will expire after a certain period and can be refreshed by using the RefreshToken endpoint.
      *
      * @param null|\ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody $requestBody 
      * @param array $headerParameters {
@@ -276,7 +180,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\GenerateToken($requestBody, $headerParameters), $fetch);
     }
     /**
-     * Refresh Token
+     * The RefreshToken endpoint is used to refresh an expired access token in order to continue accessing the UPS API on behalf of a user. The endpoint generates a new access/refresh token pair by exchanging a valid refresh token. A successful response returns new access and refresh tokens for ongoing API access without reprompting the user.
      *
      * @param null|\ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody $requestBody 
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
@@ -352,7 +256,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Upload($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * Pickup Pending Status
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version version of API e.g v1
     * @param string $pickuptype Type of pickup. Valid values:
@@ -376,7 +280,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupPendingStatus($version, $pickuptype, $headerParameters), $fetch);
     }
     /**
-    * Pickup Rate
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version Version of the API. Valid values v1
     * @param string $pickuptype Type of pickup. Valid values:
@@ -399,7 +303,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupRate($version, $pickuptype, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * Pickup Cancel
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $cancelBy Valid Values: 01 = AccountNumber, 02 = PRN
     * @param string $version version of API e.g v1
@@ -421,7 +325,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCancel($cancelBy, $version, $headerParameters), $fetch);
     }
     /**
-    * Pickup Creation
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version Version of the API. Valid values: 
     v1
@@ -444,7 +348,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCreation($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * Pickup Get Political Division1 List
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version Version of API e.g. v1
     * @param string $countrycode Country or terrirtory for which the list will 
@@ -464,7 +368,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetPoliticalDivision1List($version, $countrycode, $headerParameters), $fetch);
     }
     /**
-     * Pickup Get Service Center Facilities
+     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
      *
      * @param string $version Version of API e.g v1
      * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
@@ -483,7 +387,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetServiceCenterFacilities($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
+     * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
      *
      * @param string $version Version of API, such as v1
      * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
@@ -502,7 +406,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PreNotification($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
+     * Get Quantum View Response
      *
      * @param string $version Version of API
      * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
@@ -629,7 +533,107 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LabelRecovery($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
+     * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight
+     *
+     * @param string $version Version of the API e.g v1
+     * @param array $headerParameters {
+     *     @var string $transId An identifier unique to the request. Length 32
+     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+     *     @var string $PickupRequestConfirmationNumber Confirmation number of the pickup ground freight shipment to cancel. Length 35
+     * }
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \ShipStream\Ups\Api\Exception\FreightCancelPickupUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+     *
+     * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper|\Psr\Http\Message\ResponseInterface
+     */
+    public function freightCancelPickup(string $version = 'v1', array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightCancelPickup($version, $headerParameters), $fetch);
+    }
+    /**
+     * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight
+     *
+     * @param string $version Version of the API e.g v1
+     * @param \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody 
+     * @param array $headerParameters {
+     *     @var string $transId An identifier unique to the request. Length 32
+     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+     * }
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \ShipStream\Ups\Api\Exception\FreightPickupUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+     *
+     * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
+     */
+    public function freightPickup(string $version = 'v1', \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightPickup($version, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+    * The Rating Ground Freight API may only be used by brokers or resellers of transportation services with a current and active UPGF Master Transportation Agreement.
+    *
+    * @param string $version When TForce Freight introduces new elements 
+    in the response that are not associated with new 
+    request elements, Version is used. This ensures 
+    backward compatibility.
+    Supported values: v1, v1601, v1607, v1701, 
+    v1707, v1801. Length 5
+    * @param string $requestoption Valid Values: 
+    ground,
+    air. Length 15
+    * @param \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @param array $accept Accept content header application/json|application/xml
+    * @throws \ShipStream\Ups\Api\Exception\FreightRateUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function freightRate(string $version = 'v1', string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT, array $accept = array())
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightRate($version, $requestoption, $requestBody, $headerParameters, $accept), $fetch);
+    }
+    /**
+    * Only users that plan to ship packages manifested, tendered, and delivered by TForce Freight can use the API.
+    *
+    * @param string $version When TForce Freight introduces new elements 
+    in the response that are not associated with new 
+    request elements, version is used. This ensures 
+    backward compatibility.
+    To get such elements you need to have the right 
+    version. The value of the version is explained in 
+    the Response element Description.
+    Example: Itemized Charges are returned only 
+    when the version element is present and greater 
+    than or equal to 'v1601'. 
+    Format: YYMM = Year and month of the release.
+    Example: v1601 = 2016 Januaryrelease. 
+    Supported values: v1, v1601, v1607. Length 5
+    * @param string $reqoption Valid Values: 
+    Ground,
+    Air . Length 15
+    * @param \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\FreightShipUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function freightShip(string $version = 'v1', string $reqoption, \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightShip($version, $reqoption, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+     * Get Time and Transit Response
      *
      * @param string $version API Version
      * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
@@ -649,9 +653,9 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\TimeInTransit($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
+     * gets single track API details
      *
-     * @param string $inquiryNumber Inquiry Number
+     * @param string $inquiryNumber Tracking Number
      * @param array $queryParameters {
      *     @var string $locale locale
      *     @var string $returnSignature returnSignature
@@ -672,6 +676,40 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     public function getSingleTrackResponseUsingGET(string $inquiryNumber, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\GetSingleTrackResponseUsingGET($inquiryNumber, $queryParameters, $headerParameters), $fetch);
+    }
+    /**
+    * The UPS Track Alert API provides best in-class package tracking visibility with near real time event updates for an improved customer experience and stream line logistic management.
+    Updates are pushed to the user as soon as available with no constant polling required, thereby improving operational efficiency.
+    
+    Key Business Values:
+    - **Enhanced Customer Experience**: Near Real-time tracking information increases transparency, leading to higher customer satisfaction and trust.
+    - **Operational Efficiency**: Eliminates the necessity for continuous polling, thus saving computational resources and improving system responsiveness.
+    - **Data-Driven Decision Making**: Access to timely data can help businesses optimize their supply chain and make informed logistics decisions.
+    - **Optimizing Cash Flow Through Near Real-Time Delivery Tracking**: Improve cash flow by knowing the deliveries occurred in near real time.
+    - **Mitigating Fraud and Theft through Near Real-Time Package Status Monitoring**: Reduce fraud and theft by knowing the status of the package.
+    <br /><a href="https://developer.ups.com/api/reference/trackalert/product-info" target="_blank">Product Info</a><br /><a href="https://developer.ups.com/api/reference/trackalert/error-codes" target="_blank">Errors</a>
+    *
+    * @param string $version API Version, e.g. v1
+    * @param string $type - 'Standard' - Represents a standard subscription type that provides near real time updates on tracking status.
+    
+    * @param null|\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request.
+    *     @var string $transactionSrc Identifies the client/source application that is calling.
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberNotFoundException
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberMethodNotAllowedException
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberInternalServerErrorException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\TrackSubsServiceResponse|\Psr\Http\Message\ResponseInterface
+    */
+    public function processSubscriptionTypeForTrackingNumber(string $version = 'v1', string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ProcessSubscriptionTypeForTrackingNumber($version, $type, $requestBody, $headerParameters), $fetch);
     }
     public static function create($httpClient = null, array $additionalPlugins = array(), array $additionalNormalizers = array())
     {

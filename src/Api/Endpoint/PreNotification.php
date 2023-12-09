@@ -6,7 +6,7 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
 {
     protected $version;
     /**
-     * 
+     * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
      *
      * @param string $version Version of API, such as v1
      * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 

@@ -45,10 +45,6 @@ class VoidRequestTransactionReferenceNormalizer implements DenormalizerInterface
             $object->setCustomerContext($data['CustomerContext']);
             unset($data['CustomerContext']);
         }
-        if (\array_key_exists('TransactionIdentifier', $data)) {
-            $object->setTransactionIdentifier($data['TransactionIdentifier']);
-            unset($data['TransactionIdentifier']);
-        }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $object[$key] = $value;
@@ -64,9 +60,6 @@ class VoidRequestTransactionReferenceNormalizer implements DenormalizerInterface
         $data = array();
         if ($object->isInitialized('customerContext') && null !== $object->getCustomerContext()) {
             $data['CustomerContext'] = $object->getCustomerContext();
-        }
-        if ($object->isInitialized('transactionIdentifier') && null !== $object->getTransactionIdentifier()) {
-            $data['TransactionIdentifier'] = $object->getTransactionIdentifier();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

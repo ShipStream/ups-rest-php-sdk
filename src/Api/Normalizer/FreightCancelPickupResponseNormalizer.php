@@ -46,7 +46,7 @@ class FreightCancelPickupResponseNormalizer implements DenormalizerInterface, No
             unset($data['Response']);
         }
         if (\array_key_exists('FreightCancelStatus', $data)) {
-            $object->setFreightCancelStatus($data['FreightCancelStatus']);
+            $object->setFreightCancelStatus($this->denormalizer->denormalize($data['FreightCancelStatus'], 'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus', 'json', $context));
             unset($data['FreightCancelStatus']);
         }
         foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ class FreightCancelPickupResponseNormalizer implements DenormalizerInterface, No
     {
         $data = array();
         $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
-        $data['FreightCancelStatus'] = $object->getFreightCancelStatus();
+        $data['FreightCancelStatus'] = $this->normalizer->normalize($object->getFreightCancelStatus(), 'json', $context);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

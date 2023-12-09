@@ -45,21 +45,17 @@ class ShipmentShipFromNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setName($data['Name']);
             unset($data['Name']);
         }
-        if (\array_key_exists('AttentionName', $data)) {
-            $object->setAttentionName($data['AttentionName']);
-            unset($data['AttentionName']);
-        }
-        if (\array_key_exists('CompanyDisplayableName', $data)) {
-            $object->setCompanyDisplayableName($data['CompanyDisplayableName']);
-            unset($data['CompanyDisplayableName']);
-        }
         if (\array_key_exists('TaxIdentificationNumber', $data)) {
             $object->setTaxIdentificationNumber($data['TaxIdentificationNumber']);
             unset($data['TaxIdentificationNumber']);
         }
-        if (\array_key_exists('TaxIDType', $data)) {
-            $object->setTaxIDType($this->denormalizer->denormalize($data['TaxIDType'], 'ShipStream\\Ups\\Api\\Model\\ShipFromTaxIDType', 'json', $context));
-            unset($data['TaxIDType']);
+        if (\array_key_exists('Address', $data)) {
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress', 'json', $context));
+            unset($data['Address']);
+        }
+        if (\array_key_exists('AttentionName', $data)) {
+            $object->setAttentionName($data['AttentionName']);
+            unset($data['AttentionName']);
         }
         if (\array_key_exists('Phone', $data)) {
             $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\ShipFromPhone', 'json', $context));
@@ -69,13 +65,9 @@ class ShipmentShipFromNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setFaxNumber($data['FaxNumber']);
             unset($data['FaxNumber']);
         }
-        if (\array_key_exists('Address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress', 'json', $context));
-            unset($data['Address']);
-        }
-        if (\array_key_exists('VendorInfo', $data)) {
-            $object->setVendorInfo($this->denormalizer->denormalize($data['VendorInfo'], 'ShipStream\\Ups\\Api\\Model\\ShipFromVendorInfo', 'json', $context));
-            unset($data['VendorInfo']);
+        if (\array_key_exists('EMailAddress', $data)) {
+            $object->setEMailAddress($data['EMailAddress']);
+            unset($data['EMailAddress']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -91,27 +83,21 @@ class ShipmentShipFromNormalizer implements DenormalizerInterface, NormalizerInt
     {
         $data = array();
         $data['Name'] = $object->getName();
-        if ($object->isInitialized('attentionName') && null !== $object->getAttentionName()) {
-            $data['AttentionName'] = $object->getAttentionName();
-        }
-        if ($object->isInitialized('companyDisplayableName') && null !== $object->getCompanyDisplayableName()) {
-            $data['CompanyDisplayableName'] = $object->getCompanyDisplayableName();
-        }
         if ($object->isInitialized('taxIdentificationNumber') && null !== $object->getTaxIdentificationNumber()) {
             $data['TaxIdentificationNumber'] = $object->getTaxIdentificationNumber();
         }
-        if ($object->isInitialized('taxIDType') && null !== $object->getTaxIDType()) {
-            $data['TaxIDType'] = $this->normalizer->normalize($object->getTaxIDType(), 'json', $context);
+        if ($object->isInitialized('address') && null !== $object->getAddress()) {
+            $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
         }
-        if ($object->isInitialized('phone') && null !== $object->getPhone()) {
-            $data['Phone'] = $this->normalizer->normalize($object->getPhone(), 'json', $context);
+        if ($object->isInitialized('attentionName') && null !== $object->getAttentionName()) {
+            $data['AttentionName'] = $object->getAttentionName();
         }
+        $data['Phone'] = $this->normalizer->normalize($object->getPhone(), 'json', $context);
         if ($object->isInitialized('faxNumber') && null !== $object->getFaxNumber()) {
             $data['FaxNumber'] = $object->getFaxNumber();
         }
-        $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
-        if ($object->isInitialized('vendorInfo') && null !== $object->getVendorInfo()) {
-            $data['VendorInfo'] = $this->normalizer->normalize($object->getVendorInfo(), 'json', $context);
+        if ($object->isInitialized('eMailAddress') && null !== $object->getEMailAddress()) {
+            $data['EMailAddress'] = $object->getEMailAddress();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

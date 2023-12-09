@@ -48,7 +48,7 @@ class OverSeasLegDimensions extends \ArrayObject
      */
     protected $width;
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.	Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
+     * UnitOfMeasurement Container.
      *
      * @var DimensionsUnitOfMeasurement
      */
@@ -164,7 +164,7 @@ class OverSeasLegDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.	Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
+     * UnitOfMeasurement Container.
      *
      * @return DimensionsUnitOfMeasurement
      */
@@ -173,7 +173,7 @@ class OverSeasLegDimensions extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.	Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
+     * UnitOfMeasurement Container.
      *
      * @param DimensionsUnitOfMeasurement $unitOfMeasurement
      *

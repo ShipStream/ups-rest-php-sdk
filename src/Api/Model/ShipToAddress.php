@@ -13,66 +13,65 @@ class ShipToAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address Line of the consignee.
+     * The consignee�s street address.
      *
-     * @var string[]
+     * @var string
      */
     protected $addressLine;
     /**
-     * Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label.
+     * The consignee�s city.
      *
      * @var string
      */
     protected $city;
     /**
-     * Consignee's state or province code. Required for US or Canada.
+     * The consignee�s state or province code.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * Consignee's postal code.
+     * The consignee�s town code.
+     *
+     * @var string
+     */
+    protected $town;
+    /**
+     * The consignee�s postal code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Consignee's country or territory code.
+     * The consignee�s country or territory code.
      *
      * @var string
      */
     protected $countryCode;
     /**
-    * This field is a flag to indicate if the receiver is a residential location. 
-    True if ResidentialAddressIndicator tag exists.  This is an empty tag, any value inside is ignored.
-    *
-    * @var string
-    */
-    protected $residentialAddressIndicator;
-    /**
-     * Address Line of the consignee.
+     * The consignee�s street address.
      *
-     * @return string[]
+     * @return string
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : string
     {
         return $this->addressLine;
     }
     /**
-     * Address Line of the consignee.
+     * The consignee�s street address.
      *
-     * @param string[] $addressLine
+     * @param string $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(string $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
         return $this;
     }
     /**
-     * Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label.
+     * The consignee�s city.
      *
      * @return string
      */
@@ -81,7 +80,7 @@ class ShipToAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label.
+     * The consignee�s city.
      *
      * @param string $city
      *
@@ -94,7 +93,7 @@ class ShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee's state or province code. Required for US or Canada.
+     * The consignee�s state or province code.
      *
      * @return string
      */
@@ -103,7 +102,7 @@ class ShipToAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * Consignee's state or province code. Required for US or Canada.
+     * The consignee�s state or province code.
      *
      * @param string $stateProvinceCode
      *
@@ -116,7 +115,29 @@ class ShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee's postal code.
+     * The consignee�s town code.
+     *
+     * @return string
+     */
+    public function getTown() : string
+    {
+        return $this->town;
+    }
+    /**
+     * The consignee�s town code.
+     *
+     * @param string $town
+     *
+     * @return self
+     */
+    public function setTown(string $town) : self
+    {
+        $this->initialized['town'] = true;
+        $this->town = $town;
+        return $this;
+    }
+    /**
+     * The consignee�s postal code.
      *
      * @return string
      */
@@ -125,7 +146,7 @@ class ShipToAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * Consignee's postal code.
+     * The consignee�s postal code.
      *
      * @param string $postalCode
      *
@@ -138,7 +159,7 @@ class ShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee's country or territory code.
+     * The consignee�s country or territory code.
      *
      * @return string
      */
@@ -147,7 +168,7 @@ class ShipToAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Consignee's country or territory code.
+     * The consignee�s country or territory code.
      *
      * @param string $countryCode
      *
@@ -157,30 +178,6 @@ class ShipToAddress extends \ArrayObject
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
-        return $this;
-    }
-    /**
-    * This field is a flag to indicate if the receiver is a residential location. 
-    True if ResidentialAddressIndicator tag exists.  This is an empty tag, any value inside is ignored.
-    *
-    * @return string
-    */
-    public function getResidentialAddressIndicator() : string
-    {
-        return $this->residentialAddressIndicator;
-    }
-    /**
-    * This field is a flag to indicate if the receiver is a residential location. 
-    True if ResidentialAddressIndicator tag exists.  This is an empty tag, any value inside is ignored.
-    *
-    * @param string $residentialAddressIndicator
-    *
-    * @return self
-    */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
-    {
-        $this->initialized['residentialAddressIndicator'] = true;
-        $this->residentialAddressIndicator = $residentialAddressIndicator;
         return $this;
     }
 }

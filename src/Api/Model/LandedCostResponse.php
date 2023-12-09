@@ -13,65 +13,31 @@ class LandedCostResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Container for the question, used to give a more accurate landed cost quote. It cannot co-exist with EstimateResponse. 
-    If EstimateRespnse is not present, this tag must be present. 
-    QueryResponse can be returned up to twice before the landed cost quote is given.
-    *
-    * @var LandedCostResponseQueryResponse
-    */
-    protected $queryResponse;
-    /**
-     * Container for landed Cost quote. It cannot co-exist with QueryResponse. If QueryRespnse is not present, this tag must be present.
+     * Every Landed Cost response must be based on a shipment.
      *
-     * @var LandedCostResponseEstimateResponse
+     * @var LandedCostResponseShipment
      */
-    protected $estimateResponse;
+    protected $shipment;
     /**
-    * Container for the question, used to give a more accurate landed cost quote. It cannot co-exist with EstimateResponse. 
-    If EstimateRespnse is not present, this tag must be present. 
-    QueryResponse can be returned up to twice before the landed cost quote is given.
-    *
-    * @return LandedCostResponseQueryResponse
-    */
-    public function getQueryResponse() : LandedCostResponseQueryResponse
-    {
-        return $this->queryResponse;
-    }
-    /**
-    * Container for the question, used to give a more accurate landed cost quote. It cannot co-exist with EstimateResponse. 
-    If EstimateRespnse is not present, this tag must be present. 
-    QueryResponse can be returned up to twice before the landed cost quote is given.
-    *
-    * @param LandedCostResponseQueryResponse $queryResponse
-    *
-    * @return self
-    */
-    public function setQueryResponse(LandedCostResponseQueryResponse $queryResponse) : self
-    {
-        $this->initialized['queryResponse'] = true;
-        $this->queryResponse = $queryResponse;
-        return $this;
-    }
-    /**
-     * Container for landed Cost quote. It cannot co-exist with QueryResponse. If QueryRespnse is not present, this tag must be present.
+     * Every Landed Cost response must be based on a shipment.
      *
-     * @return LandedCostResponseEstimateResponse
+     * @return LandedCostResponseShipment
      */
-    public function getEstimateResponse() : LandedCostResponseEstimateResponse
+    public function getShipment() : LandedCostResponseShipment
     {
-        return $this->estimateResponse;
+        return $this->shipment;
     }
     /**
-     * Container for landed Cost quote. It cannot co-exist with QueryResponse. If QueryRespnse is not present, this tag must be present.
+     * Every Landed Cost response must be based on a shipment.
      *
-     * @param LandedCostResponseEstimateResponse $estimateResponse
+     * @param LandedCostResponseShipment $shipment
      *
      * @return self
      */
-    public function setEstimateResponse(LandedCostResponseEstimateResponse $estimateResponse) : self
+    public function setShipment(LandedCostResponseShipment $shipment) : self
     {
-        $this->initialized['estimateResponse'] = true;
-        $this->estimateResponse = $estimateResponse;
+        $this->initialized['shipment'] = true;
+        $this->shipment = $shipment;
         return $this;
     }
 }

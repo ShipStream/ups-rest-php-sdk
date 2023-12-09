@@ -13,87 +13,64 @@ class ShipmentShipFrom extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The ship from location's name or company name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
-    *
-    * @var string
-    */
-    protected $name;
-    /**
-    * The ship from Attention name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
-    *
-    * @var string
-    */
-    protected $attentionName;
-    /**
-     * Not applicable for ShipFrom.
+     * The shipper�s name or company name.
      *
      * @var string
      */
-    protected $companyDisplayableName;
+    protected $name;
     /**
-    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
-    Applies to EEI Form only.
+    * Company�s Tax Identification Number at the pickup location.
+    Required if SED form (International forms) is requested
     *
     * @var string
     */
     protected $taxIdentificationNumber;
     /**
-     * Tax Identification Container.  Applies to EEI form only.
-     *
-     * @var ShipFromTaxIDType
-     */
-    protected $taxIDType;
-    /**
-    * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is:
-    area code, 7 digit phone number or 
-    area code, 7 digit phone number, 4 digit extension number.
-    
-    For other countries or territories, the layout is:
-    country or territory code, area code, 7 digit number. 
-    
-    If ShipFrom tag is in the XML and International forms is requested.
-    *
-    * @var ShipFromPhone
-    */
-    protected $phone;
-    /**
-     * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
-     *
-     * @var string
-     */
-    protected $faxNumber;
-    /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
      * @var ShipFromAddress
      */
     protected $address;
     /**
-     * Vendor Information Container
+     * Contact name at the ship from location.
      *
-     * @var ShipFromVendorInfo
+     * @var string
      */
-    protected $vendorInfo;
+    protected $attentionName;
     /**
-    * The ship from location's name or company name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
-    *
-    * @return string
-    */
+     * Phone Container
+     *
+     * @var ShipFromPhone
+     */
+    protected $phone;
+    /**
+     * The ship from location�s Fax Number.
+     *
+     * @var string
+     */
+    protected $faxNumber;
+    /**
+     * Shipper�s email address.
+     *
+     * @var string
+     */
+    protected $eMailAddress;
+    /**
+     * The shipper�s name or company name.
+     *
+     * @return string
+     */
     public function getName() : string
     {
         return $this->name;
     }
     /**
-    * The ship from location's name or company name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
-    *
-    * @param string $name
-    *
-    * @return self
-    */
+     * The shipper�s name or company name.
+     *
+     * @param string $name
+     *
+     * @return self
+     */
     public function setName(string $name) : self
     {
         $this->initialized['name'] = true;
@@ -101,54 +78,8 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-    * The ship from Attention name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
-    *
-    * @return string
-    */
-    public function getAttentionName() : string
-    {
-        return $this->attentionName;
-    }
-    /**
-    * The ship from Attention name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
-    *
-    * @param string $attentionName
-    *
-    * @return self
-    */
-    public function setAttentionName(string $attentionName) : self
-    {
-        $this->initialized['attentionName'] = true;
-        $this->attentionName = $attentionName;
-        return $this;
-    }
-    /**
-     * Not applicable for ShipFrom.
-     *
-     * @return string
-     */
-    public function getCompanyDisplayableName() : string
-    {
-        return $this->companyDisplayableName;
-    }
-    /**
-     * Not applicable for ShipFrom.
-     *
-     * @param string $companyDisplayableName
-     *
-     * @return self
-     */
-    public function setCompanyDisplayableName(string $companyDisplayableName) : self
-    {
-        $this->initialized['companyDisplayableName'] = true;
-        $this->companyDisplayableName = $companyDisplayableName;
-        return $this;
-    }
-    /**
-    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
-    Applies to EEI Form only.
+    * Company�s Tax Identification Number at the pickup location.
+    Required if SED form (International forms) is requested
     *
     * @return string
     */
@@ -157,8 +88,8 @@ class ShipmentShipFrom extends \ArrayObject
         return $this->taxIdentificationNumber;
     }
     /**
-    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
-    Applies to EEI Form only.
+    * Company�s Tax Identification Number at the pickup location.
+    Required if SED form (International forms) is requested
     *
     * @param string $taxIdentificationNumber
     *
@@ -171,87 +102,7 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Tax Identification Container.  Applies to EEI form only.
-     *
-     * @return ShipFromTaxIDType
-     */
-    public function getTaxIDType() : ShipFromTaxIDType
-    {
-        return $this->taxIDType;
-    }
-    /**
-     * Tax Identification Container.  Applies to EEI form only.
-     *
-     * @param ShipFromTaxIDType $taxIDType
-     *
-     * @return self
-     */
-    public function setTaxIDType(ShipFromTaxIDType $taxIDType) : self
-    {
-        $this->initialized['taxIDType'] = true;
-        $this->taxIDType = $taxIDType;
-        return $this;
-    }
-    /**
-    * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is:
-    area code, 7 digit phone number or 
-    area code, 7 digit phone number, 4 digit extension number.
-    
-    For other countries or territories, the layout is:
-    country or territory code, area code, 7 digit number. 
-    
-    If ShipFrom tag is in the XML and International forms is requested.
-    *
-    * @return ShipFromPhone
-    */
-    public function getPhone() : ShipFromPhone
-    {
-        return $this->phone;
-    }
-    /**
-    * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is:
-    area code, 7 digit phone number or 
-    area code, 7 digit phone number, 4 digit extension number.
-    
-    For other countries or territories, the layout is:
-    country or territory code, area code, 7 digit number. 
-    
-    If ShipFrom tag is in the XML and International forms is requested.
-    *
-    * @param ShipFromPhone $phone
-    *
-    * @return self
-    */
-    public function setPhone(ShipFromPhone $phone) : self
-    {
-        $this->initialized['phone'] = true;
-        $this->phone = $phone;
-        return $this;
-    }
-    /**
-     * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
-     *
-     * @return string
-     */
-    public function getFaxNumber() : string
-    {
-        return $this->faxNumber;
-    }
-    /**
-     * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
-     *
-     * @param string $faxNumber
-     *
-     * @return self
-     */
-    public function setFaxNumber(string $faxNumber) : self
-    {
-        $this->initialized['faxNumber'] = true;
-        $this->faxNumber = $faxNumber;
-        return $this;
-    }
-    /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
      * @return ShipFromAddress
      */
@@ -260,7 +111,7 @@ class ShipmentShipFrom extends \ArrayObject
         return $this->address;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
      * @param ShipFromAddress $address
      *
@@ -273,25 +124,91 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Vendor Information Container
+     * Contact name at the ship from location.
      *
-     * @return ShipFromVendorInfo
+     * @return string
      */
-    public function getVendorInfo() : ShipFromVendorInfo
+    public function getAttentionName() : string
     {
-        return $this->vendorInfo;
+        return $this->attentionName;
     }
     /**
-     * Vendor Information Container
+     * Contact name at the ship from location.
      *
-     * @param ShipFromVendorInfo $vendorInfo
+     * @param string $attentionName
      *
      * @return self
      */
-    public function setVendorInfo(ShipFromVendorInfo $vendorInfo) : self
+    public function setAttentionName(string $attentionName) : self
     {
-        $this->initialized['vendorInfo'] = true;
-        $this->vendorInfo = $vendorInfo;
+        $this->initialized['attentionName'] = true;
+        $this->attentionName = $attentionName;
+        return $this;
+    }
+    /**
+     * Phone Container
+     *
+     * @return ShipFromPhone
+     */
+    public function getPhone() : ShipFromPhone
+    {
+        return $this->phone;
+    }
+    /**
+     * Phone Container
+     *
+     * @param ShipFromPhone $phone
+     *
+     * @return self
+     */
+    public function setPhone(ShipFromPhone $phone) : self
+    {
+        $this->initialized['phone'] = true;
+        $this->phone = $phone;
+        return $this;
+    }
+    /**
+     * The ship from location�s Fax Number.
+     *
+     * @return string
+     */
+    public function getFaxNumber() : string
+    {
+        return $this->faxNumber;
+    }
+    /**
+     * The ship from location�s Fax Number.
+     *
+     * @param string $faxNumber
+     *
+     * @return self
+     */
+    public function setFaxNumber(string $faxNumber) : self
+    {
+        $this->initialized['faxNumber'] = true;
+        $this->faxNumber = $faxNumber;
+        return $this;
+    }
+    /**
+     * Shipper�s email address.
+     *
+     * @return string
+     */
+    public function getEMailAddress() : string
+    {
+        return $this->eMailAddress;
+    }
+    /**
+     * Shipper�s email address.
+     *
+     * @param string $eMailAddress
+     *
+     * @return self
+     */
+    public function setEMailAddress(string $eMailAddress) : self
+    {
+        $this->initialized['eMailAddress'] = true;
+        $this->eMailAddress = $eMailAddress;
         return $this;
     }
 }

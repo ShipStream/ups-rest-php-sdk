@@ -10,7 +10,6 @@ use ShipStream\Ups\Api\Authentication\BasicAuthAuthentication;
 use ShipStream\Ups\Authentication\AccessTokenCache;
 use ShipStream\Ups\Authentication\AuthenticationManager;
 use ShipStream\Ups\Authentication\Oauth2Authentication;
-use ShipStream\Ups\Normalizer\XAVResponseCandidateNormalizer;
 use ShipStream\Ups\Plugin\AddBaseUrlPlugin;
 
 class ClientFactory

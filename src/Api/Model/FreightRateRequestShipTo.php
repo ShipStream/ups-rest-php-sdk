@@ -13,25 +13,25 @@ class FreightRateRequestShipTo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Consignee�s company name.
+     * Consignee's company name.
      *
      * @var string
      */
     protected $name;
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @var ShipToAddress
      */
     protected $address;
     /**
-     * Contact name at the consignee�s location.
+     * Contact name at the consignee's location.
      *
      * @var string
      */
     protected $attentionName;
     /**
-     * Consignee�s company name.
+     * Consignee's company name.
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this->name;
     }
     /**
-     * Consignee�s company name.
+     * Consignee's company name.
      *
      * @param string $name
      *
@@ -53,7 +53,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @return ShipToAddress
      */
@@ -62,7 +62,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this->address;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @param ShipToAddress $address
      *
@@ -75,7 +75,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Contact name at the consignee�s location.
+     * Contact name at the consignee's location.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this->attentionName;
     }
     /**
-     * Contact name at the consignee�s location.
+     * Contact name at the consignee's location.
      *
      * @param string $attentionName
      *

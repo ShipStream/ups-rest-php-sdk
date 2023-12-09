@@ -39,7 +39,7 @@ class XAVResponse extends \ArrayObject
     /**
      * AddressClassification Container.
      *
-     * @var XAVResponseAddressClassification|null
+     * @var XAVResponseAddressClassification
      */
     protected $addressClassification;
     /**
@@ -139,20 +139,20 @@ class XAVResponse extends \ArrayObject
     /**
      * AddressClassification Container.
      *
-     * @return XAVResponseAddressClassification|null
+     * @return XAVResponseAddressClassification
      */
-    public function getAddressClassification() : ?XAVResponseAddressClassification
+    public function getAddressClassification() : XAVResponseAddressClassification
     {
         return $this->addressClassification;
     }
     /**
      * AddressClassification Container.
      *
-     * @param XAVResponseAddressClassification|null $addressClassification
+     * @param XAVResponseAddressClassification $addressClassification
      *
      * @return self
      */
-    public function setAddressClassification(?XAVResponseAddressClassification $addressClassification) : self
+    public function setAddressClassification(XAVResponseAddressClassification $addressClassification) : self
     {
         $this->initialized['addressClassification'] = true;
         $this->addressClassification = $addressClassification;

@@ -55,7 +55,7 @@ class ManifestShipTo extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @var ShipToAddress
      */
@@ -227,7 +227,7 @@ class ManifestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @return ShipToAddress
      */
@@ -236,7 +236,7 @@ class ManifestShipTo extends \ArrayObject
         return $this->address;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @param ShipToAddress $address
      *

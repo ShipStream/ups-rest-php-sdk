@@ -13,118 +13,143 @@ class LandedCostRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * A container which contains the service requested.
-     *
-     * @var LandedCostRequestRequest
-     */
-    protected $request;
-    /**
-     * Container for the billing and shipment data. Should be in the first round request of LandedCost. It cannot co-exist with EstimateRequest. If EstimateRequest is not present, this tag must be present.
-     *
-     * @var LandedCostRequestQueryRequest
-     */
-    protected $queryRequest;
-    /**
-    * Container for the answers to the questions from the previous transaction. 
-    Cannot be in the first round request of LandedCost. It cannot co-exist with QueryRequest. If QueryRequest is not present, this tag must be present.
-    *
-    * @var LandedCostRequestEstimateRequest
-    */
-    protected $estimateRequest;
-    /**
-     * Unique key to tag shipments in shipping history. It could be MyUPS registration Number or any unique identifier.
+     * Specifies the currency of transaction or purchase.
      *
      * @var string
      */
-    protected $shippingHistoryUserKey;
+    protected $currencyCode;
     /**
-     * A container which contains the service requested.
+     * Unique transaction ID for the request.
      *
-     * @return LandedCostRequestRequest
+     * @var string
      */
-    public function getRequest() : LandedCostRequestRequest
-    {
-        return $this->request;
-    }
+    protected $transID;
     /**
-     * A container which contains the service requested.
+     * This is the optional flag to indicate that partial landed cost  calculations are acceptable to be used by upstream systems. When set to �false�, the system will return an error when at least  one commodity in the shipment is invalid (all or none); no results  will be sent back for that request. When set to �true�, the system will return partial calculations  when applicable Valid values: true = Partial Landed Cost result will return false = All or No result will return - (default)
      *
-     * @param LandedCostRequestRequest $request
-     *
-     * @return self
+     * @var bool
      */
-    public function setRequest(LandedCostRequestRequest $request) : self
-    {
-        $this->initialized['request'] = true;
-        $this->request = $request;
-        return $this;
-    }
+    protected $allowPartialLandedCostResult;
     /**
-     * Container for the billing and shipment data. Should be in the first round request of LandedCost. It cannot co-exist with EstimateRequest. If EstimateRequest is not present, this tag must be present.
+     * Version number of the instance that processed this request. This must match the major number of the corresponding ICD version.
      *
-     * @return LandedCostRequestQueryRequest
+     * @var int
      */
-    public function getQueryRequest() : LandedCostRequestQueryRequest
-    {
-        return $this->queryRequest;
-    }
+    protected $alversion;
     /**
-     * Container for the billing and shipment data. Should be in the first round request of LandedCost. It cannot co-exist with EstimateRequest. If EstimateRequest is not present, this tag must be present.
+     * Every Landed Cost request must be based on a shipment.
      *
-     * @param LandedCostRequestQueryRequest $queryRequest
-     *
-     * @return self
+     * @var LandedCostRequestShipment
      */
-    public function setQueryRequest(LandedCostRequestQueryRequest $queryRequest) : self
-    {
-        $this->initialized['queryRequest'] = true;
-        $this->queryRequest = $queryRequest;
-        return $this;
-    }
+    protected $shipment;
     /**
-    * Container for the answers to the questions from the previous transaction. 
-    Cannot be in the first round request of LandedCost. It cannot co-exist with QueryRequest. If QueryRequest is not present, this tag must be present.
-    *
-    * @return LandedCostRequestEstimateRequest
-    */
-    public function getEstimateRequest() : LandedCostRequestEstimateRequest
-    {
-        return $this->estimateRequest;
-    }
-    /**
-    * Container for the answers to the questions from the previous transaction. 
-    Cannot be in the first round request of LandedCost. It cannot co-exist with QueryRequest. If QueryRequest is not present, this tag must be present.
-    *
-    * @param LandedCostRequestEstimateRequest $estimateRequest
-    *
-    * @return self
-    */
-    public function setEstimateRequest(LandedCostRequestEstimateRequest $estimateRequest) : self
-    {
-        $this->initialized['estimateRequest'] = true;
-        $this->estimateRequest = $estimateRequest;
-        return $this;
-    }
-    /**
-     * Unique key to tag shipments in shipping history. It could be MyUPS registration Number or any unique identifier.
+     * Specifies the currency of transaction or purchase.
      *
      * @return string
      */
-    public function getShippingHistoryUserKey() : string
+    public function getCurrencyCode() : string
     {
-        return $this->shippingHistoryUserKey;
+        return $this->currencyCode;
     }
     /**
-     * Unique key to tag shipments in shipping history. It could be MyUPS registration Number or any unique identifier.
+     * Specifies the currency of transaction or purchase.
      *
-     * @param string $shippingHistoryUserKey
+     * @param string $currencyCode
      *
      * @return self
      */
-    public function setShippingHistoryUserKey(string $shippingHistoryUserKey) : self
+    public function setCurrencyCode(string $currencyCode) : self
     {
-        $this->initialized['shippingHistoryUserKey'] = true;
-        $this->shippingHistoryUserKey = $shippingHistoryUserKey;
+        $this->initialized['currencyCode'] = true;
+        $this->currencyCode = $currencyCode;
+        return $this;
+    }
+    /**
+     * Unique transaction ID for the request.
+     *
+     * @return string
+     */
+    public function getTransID() : string
+    {
+        return $this->transID;
+    }
+    /**
+     * Unique transaction ID for the request.
+     *
+     * @param string $transID
+     *
+     * @return self
+     */
+    public function setTransID(string $transID) : self
+    {
+        $this->initialized['transID'] = true;
+        $this->transID = $transID;
+        return $this;
+    }
+    /**
+     * This is the optional flag to indicate that partial landed cost  calculations are acceptable to be used by upstream systems. When set to �false�, the system will return an error when at least  one commodity in the shipment is invalid (all or none); no results  will be sent back for that request. When set to �true�, the system will return partial calculations  when applicable Valid values: true = Partial Landed Cost result will return false = All or No result will return - (default)
+     *
+     * @return bool
+     */
+    public function getAllowPartialLandedCostResult() : bool
+    {
+        return $this->allowPartialLandedCostResult;
+    }
+    /**
+     * This is the optional flag to indicate that partial landed cost  calculations are acceptable to be used by upstream systems. When set to �false�, the system will return an error when at least  one commodity in the shipment is invalid (all or none); no results  will be sent back for that request. When set to �true�, the system will return partial calculations  when applicable Valid values: true = Partial Landed Cost result will return false = All or No result will return - (default)
+     *
+     * @param bool $allowPartialLandedCostResult
+     *
+     * @return self
+     */
+    public function setAllowPartialLandedCostResult(bool $allowPartialLandedCostResult) : self
+    {
+        $this->initialized['allowPartialLandedCostResult'] = true;
+        $this->allowPartialLandedCostResult = $allowPartialLandedCostResult;
+        return $this;
+    }
+    /**
+     * Version number of the instance that processed this request. This must match the major number of the corresponding ICD version.
+     *
+     * @return int
+     */
+    public function getAlversion() : int
+    {
+        return $this->alversion;
+    }
+    /**
+     * Version number of the instance that processed this request. This must match the major number of the corresponding ICD version.
+     *
+     * @param int $alversion
+     *
+     * @return self
+     */
+    public function setAlversion(int $alversion) : self
+    {
+        $this->initialized['alversion'] = true;
+        $this->alversion = $alversion;
+        return $this;
+    }
+    /**
+     * Every Landed Cost request must be based on a shipment.
+     *
+     * @return LandedCostRequestShipment
+     */
+    public function getShipment() : LandedCostRequestShipment
+    {
+        return $this->shipment;
+    }
+    /**
+     * Every Landed Cost request must be based on a shipment.
+     *
+     * @param LandedCostRequestShipment $shipment
+     *
+     * @return self
+     */
+    public function setShipment(LandedCostRequestShipment $shipment) : self
+    {
+        $this->initialized['shipment'] = true;
+        $this->shipment = $shipment;
         return $this;
     }
 }

@@ -13,63 +13,49 @@ class ShipmentShipTo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account.
+     * The Consignee�s name or company name.
      *
      * @var string
      */
     protected $name;
     /**
-    * Contact name at the consignee's location.  Required for: UPS Next Day Air Early service, and when ShipTo country or territory is different than ShipFrom country or territory. 
-    
-    Required if Invoice International form is requested.
-    *
-    * @var string
-    */
-    protected $attentionName;
-    /**
-     * Not applicable for ShipTo
-     *
-     * @var string
-     */
-    protected $companyDisplayableName;
-    /**
-     * Consignee's tax identification number.
+     * Company's Tax Identification Number of the Consignee
      *
      * @var string
      */
     protected $taxIdentificationNumber;
     /**
-     * Container for Phone Number
-     *
-     * @var ShipToPhone
-     */
-    protected $phone;
-    /**
-     * Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
-     *
-     * @var string
-     */
-    protected $faxNumber;
-    /**
-     * Consignee's email address.
-     *
-     * @var string
-     */
-    protected $eMailAddress;
-    /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @var ShipToAddress
      */
     protected $address;
     /**
-     * Location ID is a unique identifier referring to a specific shipping/receiving location.  Location ID must be alphanumeric characters. All letters must be capitalized.
+     * Contact name at the ship to location.
      *
      * @var string
      */
-    protected $locationID;
+    protected $attentionName;
     /**
-     * Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account.
+     * Phone Container.
+     *
+     * @var ShipToPhone
+     */
+    protected $phone;
+    /**
+     * Consignee�s fax number.
+     *
+     * @var string
+     */
+    protected $faxNumber;
+    /**
+     * Consignee�s email address.
+     *
+     * @var string
+     */
+    protected $eMailAddress;
+    /**
+     * The Consignee�s name or company name.
      *
      * @return string
      */
@@ -78,7 +64,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this->name;
     }
     /**
-     * Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account.
+     * The Consignee�s name or company name.
      *
      * @param string $name
      *
@@ -91,55 +77,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this;
     }
     /**
-    * Contact name at the consignee's location.  Required for: UPS Next Day Air Early service, and when ShipTo country or territory is different than ShipFrom country or territory. 
-    
-    Required if Invoice International form is requested.
-    *
-    * @return string
-    */
-    public function getAttentionName() : string
-    {
-        return $this->attentionName;
-    }
-    /**
-    * Contact name at the consignee's location.  Required for: UPS Next Day Air Early service, and when ShipTo country or territory is different than ShipFrom country or territory. 
-    
-    Required if Invoice International form is requested.
-    *
-    * @param string $attentionName
-    *
-    * @return self
-    */
-    public function setAttentionName(string $attentionName) : self
-    {
-        $this->initialized['attentionName'] = true;
-        $this->attentionName = $attentionName;
-        return $this;
-    }
-    /**
-     * Not applicable for ShipTo
-     *
-     * @return string
-     */
-    public function getCompanyDisplayableName() : string
-    {
-        return $this->companyDisplayableName;
-    }
-    /**
-     * Not applicable for ShipTo
-     *
-     * @param string $companyDisplayableName
-     *
-     * @return self
-     */
-    public function setCompanyDisplayableName(string $companyDisplayableName) : self
-    {
-        $this->initialized['companyDisplayableName'] = true;
-        $this->companyDisplayableName = $companyDisplayableName;
-        return $this;
-    }
-    /**
-     * Consignee's tax identification number.
+     * Company's Tax Identification Number of the Consignee
      *
      * @return string
      */
@@ -148,7 +86,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this->taxIdentificationNumber;
     }
     /**
-     * Consignee's tax identification number.
+     * Company's Tax Identification Number of the Consignee
      *
      * @param string $taxIdentificationNumber
      *
@@ -161,73 +99,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Phone Number
-     *
-     * @return ShipToPhone
-     */
-    public function getPhone() : ShipToPhone
-    {
-        return $this->phone;
-    }
-    /**
-     * Container for Phone Number
-     *
-     * @param ShipToPhone $phone
-     *
-     * @return self
-     */
-    public function setPhone(ShipToPhone $phone) : self
-    {
-        $this->initialized['phone'] = true;
-        $this->phone = $phone;
-        return $this;
-    }
-    /**
-     * Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
-     *
-     * @return string
-     */
-    public function getFaxNumber() : string
-    {
-        return $this->faxNumber;
-    }
-    /**
-     * Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
-     *
-     * @param string $faxNumber
-     *
-     * @return self
-     */
-    public function setFaxNumber(string $faxNumber) : self
-    {
-        $this->initialized['faxNumber'] = true;
-        $this->faxNumber = $faxNumber;
-        return $this;
-    }
-    /**
-     * Consignee's email address.
-     *
-     * @return string
-     */
-    public function getEMailAddress() : string
-    {
-        return $this->eMailAddress;
-    }
-    /**
-     * Consignee's email address.
-     *
-     * @param string $eMailAddress
-     *
-     * @return self
-     */
-    public function setEMailAddress(string $eMailAddress) : self
-    {
-        $this->initialized['eMailAddress'] = true;
-        $this->eMailAddress = $eMailAddress;
-        return $this;
-    }
-    /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @return ShipToAddress
      */
@@ -236,7 +108,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this->address;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @param ShipToAddress $address
      *
@@ -249,25 +121,91 @@ class ShipmentShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Location ID is a unique identifier referring to a specific shipping/receiving location.  Location ID must be alphanumeric characters. All letters must be capitalized.
+     * Contact name at the ship to location.
      *
      * @return string
      */
-    public function getLocationID() : string
+    public function getAttentionName() : string
     {
-        return $this->locationID;
+        return $this->attentionName;
     }
     /**
-     * Location ID is a unique identifier referring to a specific shipping/receiving location.  Location ID must be alphanumeric characters. All letters must be capitalized.
+     * Contact name at the ship to location.
      *
-     * @param string $locationID
+     * @param string $attentionName
      *
      * @return self
      */
-    public function setLocationID(string $locationID) : self
+    public function setAttentionName(string $attentionName) : self
     {
-        $this->initialized['locationID'] = true;
-        $this->locationID = $locationID;
+        $this->initialized['attentionName'] = true;
+        $this->attentionName = $attentionName;
+        return $this;
+    }
+    /**
+     * Phone Container.
+     *
+     * @return ShipToPhone
+     */
+    public function getPhone() : ShipToPhone
+    {
+        return $this->phone;
+    }
+    /**
+     * Phone Container.
+     *
+     * @param ShipToPhone $phone
+     *
+     * @return self
+     */
+    public function setPhone(ShipToPhone $phone) : self
+    {
+        $this->initialized['phone'] = true;
+        $this->phone = $phone;
+        return $this;
+    }
+    /**
+     * Consignee�s fax number.
+     *
+     * @return string
+     */
+    public function getFaxNumber() : string
+    {
+        return $this->faxNumber;
+    }
+    /**
+     * Consignee�s fax number.
+     *
+     * @param string $faxNumber
+     *
+     * @return self
+     */
+    public function setFaxNumber(string $faxNumber) : self
+    {
+        $this->initialized['faxNumber'] = true;
+        $this->faxNumber = $faxNumber;
+        return $this;
+    }
+    /**
+     * Consignee�s email address.
+     *
+     * @return string
+     */
+    public function getEMailAddress() : string
+    {
+        return $this->eMailAddress;
+    }
+    /**
+     * Consignee�s email address.
+     *
+     * @param string $eMailAddress
+     *
+     * @return self
+     */
+    public function setEMailAddress(string $eMailAddress) : self
+    {
+        $this->initialized['eMailAddress'] = true;
+        $this->eMailAddress = $eMailAddress;
         return $this;
     }
 }

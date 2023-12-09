@@ -7,7 +7,7 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     protected $version;
     protected $reqoption;
     /**
-    * 
+    * Only users that plan to ship packages manifested, tendered, and delivered by TForce Freight can use the API.
     *
     * @param string $version When TForce Freight introduces new elements 
     in the response that are not associated with new 

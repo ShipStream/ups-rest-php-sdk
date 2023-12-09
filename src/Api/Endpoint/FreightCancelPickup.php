@@ -6,7 +6,7 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
 {
     protected $version;
     /**
-     * 
+     * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight
      *
      * @param string $version Version of the API e.g v1
      * @param array $headerParameters {
@@ -54,14 +54,14 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
      * @throws \ShipStream\Ups\Api\Exception\FreightCancelPickupUnauthorizedException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
-     * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper
+     * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPResponseWrapper', 'json');
+            return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELResponseWrapper', 'json');
         }
         if (401 === $status) {
             throw new \ShipStream\Ups\Api\Exception\FreightCancelPickupUnauthorizedException($response);

@@ -13,9 +13,9 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Type of delivery confirmation.  Valid values: 
-    1 - Delivery Confirmation
-    2 - Delivery Confirmation Signature Required
+    * Type of delivery confirmation. Valid values: 
+    1 - Delivery Confirmation Signature Required
+    2 - Delivery Confirmation Adult Signature Required. Valid for forward shipments only.
     *
     * @var string
     */
@@ -27,9 +27,9 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
      */
     protected $dCISNumber;
     /**
-    * Type of delivery confirmation.  Valid values: 
-    1 - Delivery Confirmation
-    2 - Delivery Confirmation Signature Required
+    * Type of delivery confirmation. Valid values: 
+    1 - Delivery Confirmation Signature Required
+    2 - Delivery Confirmation Adult Signature Required. Valid for forward shipments only.
     *
     * @return string
     */
@@ -38,9 +38,9 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
         return $this->dCISType;
     }
     /**
-    * Type of delivery confirmation.  Valid values: 
-    1 - Delivery Confirmation
-    2 - Delivery Confirmation Signature Required
+    * Type of delivery confirmation. Valid values: 
+    1 - Delivery Confirmation Signature Required
+    2 - Delivery Confirmation Adult Signature Required. Valid for forward shipments only.
     *
     * @param string $dCISType
     *

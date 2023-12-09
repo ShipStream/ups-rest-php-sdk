@@ -197,14 +197,6 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
             $object->setMasterCartonIndicator($data['MasterCartonIndicator']);
             unset($data['MasterCartonIndicator']);
         }
-        if (\array_key_exists('BarCodeImageIndicator', $data)) {
-            $object->setBarCodeImageIndicator($data['BarCodeImageIndicator']);
-            unset($data['BarCodeImageIndicator']);
-        }
-        if (\array_key_exists('BarCodeAndLabelIndicator', $data)) {
-            $object->setBarCodeAndLabelIndicator($data['BarCodeAndLabelIndicator']);
-            unset($data['BarCodeAndLabelIndicator']);
-        }
         if (\array_key_exists('ShipmentDate', $data)) {
             $object->setShipmentDate($data['ShipmentDate']);
             unset($data['ShipmentDate']);
@@ -342,12 +334,6 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
         }
         if ($object->isInitialized('masterCartonIndicator') && null !== $object->getMasterCartonIndicator()) {
             $data['MasterCartonIndicator'] = $object->getMasterCartonIndicator();
-        }
-        if ($object->isInitialized('barCodeImageIndicator') && null !== $object->getBarCodeImageIndicator()) {
-            $data['BarCodeImageIndicator'] = $object->getBarCodeImageIndicator();
-        }
-        if ($object->isInitialized('barCodeAndLabelIndicator') && null !== $object->getBarCodeAndLabelIndicator()) {
-            $data['BarCodeAndLabelIndicator'] = $object->getBarCodeAndLabelIndicator();
         }
         if ($object->isInitialized('shipmentDate') && null !== $object->getShipmentDate()) {
             $data['ShipmentDate'] = $object->getShipmentDate();

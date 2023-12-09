@@ -13,207 +13,207 @@ class PackageChemicalRecord extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, �RQ� should be entered.  Any other value will be  interpreted as �Non Reportable� quantity.
+     * Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, "RQ" should be entered. Any other value will be interpreted as "Non Reportable" quantity.
      *
      * @var string
      */
-    protected $reportableQuantity;
+    protected $chemicalRecordReportableQuantity;
     /**
-     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is �LQ� or �FR�
+     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"
      *
      * @var string
      */
-    protected $classDivisionNumber;
+    protected $chemicalRecordClassDivisionNumber;
     /**
-     * Secondary hazardous characteristics of a package. (There can be more than one � separate each with a comma.)
+     * Secondary hazardous characteristics of a package. (There can be more than one, separate each with a comma.)
      *
      * @var string
      */
-    protected $subRiskClass;
+    protected $chemicalRecordSubRiskClass;
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity.  UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
      *
      * @var string
      */
-    protected $iDNumber;
+    protected $chemicalRecordIDNumber;
     /**
      * This is the packing group category associated to the specified commodity.  Must be shown in Roman Numerals.  Valid values are: I, II, III and blank.
      *
      * @var string
      */
-    protected $packagingGroupType;
+    protected $chemicalRecordPackagingGroupType;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.
      *
      * @var string
      */
-    protected $quantity;
+    protected $chemicalRecordQuantity;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.
      *
      * @var string
      */
-    protected $uOM;
+    protected $chemicalRecordUOM;
     /**
      * The packing instructions related to the chemical record.
      *
      * @var string
      */
-    protected $packagingInstructionCode;
+    protected $chemicalRecordPackagingInstructionCode;
     /**
     * 24 Hour Emergency Phone Number of the shipper. 
     
     Valid values for this field are (0) through (9) with trailing blanks. 
     
-    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number  
-    period �.�, dash �-�, plus sign �+� and conventional parentheses �(� and �)�, �EXT" or "OPT�  The following are restricted in the phone number  
-    period �.�, dash �-�, plus sign �+� and conventional parentheses �(� and �)�, �EXT" or "OPT�
+    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number. The following are restricted in the phone number 
+    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT" The following are restricted in the phone number 
+    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
     *
     * @var string
     */
-    protected $emergencyPhone;
+    protected $chemicalRecordEmergencyPhone;
     /**
      * The emergency information, contact name and/or contract number, required to be communicated when a call is placed to the EmergencyPhoneNumber.
      *
      * @var string
      */
-    protected $emergencyContact;
+    protected $chemicalRecordEmergencyContact;
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LQ or FR.
      *
      * @var string
      */
-    protected $properShippingName;
+    protected $chemicalRecordProperShippingName;
     /**
      * The technical name (when required) for the specified commodity.
      *
      * @var string
      */
-    protected $technicalName;
+    protected $chemicalRecordTechnicalName;
     /**
      * Additional remarks or special provision information.
      *
      * @var string
      */
-    protected $additionalDescription;
+    protected $chemicalRecordAdditionalDescription;
     /**
      * The type of package used to contain the regulated good. (Ex: Fiberboard Box).
      *
      * @var string
      */
-    protected $packagingType;
+    protected $chemicalRecordPackagingType;
     /**
      * Defines the type of label that is required on the package for the commodity.
      *
      * @var string
      */
-    protected $hazardLabelRequired;
+    protected $chemicalRecordHazardLabelRequired;
     /**
      * The number of pieces of the specific commodity. Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values are 1 to 999.
      *
      * @var string
      */
-    protected $packagingTypeQuantity;
+    protected $chemicalRecordPackagingTypeQuantity;
     /**
      * Indicates the type of commodity, Fully Regulated (FR), Limited Quantity (LQ), Lightly Regulated (LR)  Valid values are LR, FR and LQ.
      *
      * @var string
      */
-    protected $commodityRegulatedLevelCode;
+    protected $chemicalRecordCommodityRegulatedLevelCode;
     /**
      * Transport Category.   Valid values are 0 to 4.
      *
      * @var string
      */
-    protected $transportCategory;
+    protected $chemicalRecordTransportCategory;
     /**
      * Defines what is restricted to pass through a tunnel.
      *
      * @var string
      */
-    protected $tunnelRestrictionCode;
+    protected $chemicalRecordTunnelRestrictionCode;
     /**
      * When a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA,  Q-Value specifies exactly one of the following values: 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0  Valid values are : 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
      * @var string
      */
-    protected $qValue;
+    protected $chemicalRecordQValue;
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is overpack.
      *
      * @var string
      */
-    protected $overPackedIndicator;
+    protected $chemicalRecordOverPackedIndicator;
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates if multiple, different hazmat/chemicals are contained within one box in a package
      *
      * @var string
      */
-    protected $allPackedInOneIndicator;
+    protected $chemicalRecordAllPackedInOneIndicator;
     /**
-     * Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, �RQ� should be entered.  Any other value will be  interpreted as �Non Reportable� quantity.
+     * Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, "RQ" should be entered. Any other value will be interpreted as "Non Reportable" quantity.
      *
      * @return string
      */
-    public function getReportableQuantity() : string
+    public function getChemicalRecordReportableQuantity() : string
     {
-        return $this->reportableQuantity;
+        return $this->chemicalRecordReportableQuantity;
     }
     /**
-     * Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, �RQ� should be entered.  Any other value will be  interpreted as �Non Reportable� quantity.
+     * Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, "RQ" should be entered. Any other value will be interpreted as "Non Reportable" quantity.
      *
-     * @param string $reportableQuantity
+     * @param string $chemicalRecordReportableQuantity
      *
      * @return self
      */
-    public function setReportableQuantity(string $reportableQuantity) : self
+    public function setChemicalRecordReportableQuantity(string $chemicalRecordReportableQuantity) : self
     {
-        $this->initialized['reportableQuantity'] = true;
-        $this->reportableQuantity = $reportableQuantity;
+        $this->initialized['chemicalRecordReportableQuantity'] = true;
+        $this->chemicalRecordReportableQuantity = $chemicalRecordReportableQuantity;
         return $this;
     }
     /**
-     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is �LQ� or �FR�
+     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"
      *
      * @return string
      */
-    public function getClassDivisionNumber() : string
+    public function getChemicalRecordClassDivisionNumber() : string
     {
-        return $this->classDivisionNumber;
+        return $this->chemicalRecordClassDivisionNumber;
     }
     /**
-     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is �LQ� or �FR�
+     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"
      *
-     * @param string $classDivisionNumber
+     * @param string $chemicalRecordClassDivisionNumber
      *
      * @return self
      */
-    public function setClassDivisionNumber(string $classDivisionNumber) : self
+    public function setChemicalRecordClassDivisionNumber(string $chemicalRecordClassDivisionNumber) : self
     {
-        $this->initialized['classDivisionNumber'] = true;
-        $this->classDivisionNumber = $classDivisionNumber;
+        $this->initialized['chemicalRecordClassDivisionNumber'] = true;
+        $this->chemicalRecordClassDivisionNumber = $chemicalRecordClassDivisionNumber;
         return $this;
     }
     /**
-     * Secondary hazardous characteristics of a package. (There can be more than one � separate each with a comma.)
+     * Secondary hazardous characteristics of a package. (There can be more than one, separate each with a comma.)
      *
      * @return string
      */
-    public function getSubRiskClass() : string
+    public function getChemicalRecordSubRiskClass() : string
     {
-        return $this->subRiskClass;
+        return $this->chemicalRecordSubRiskClass;
     }
     /**
-     * Secondary hazardous characteristics of a package. (There can be more than one � separate each with a comma.)
+     * Secondary hazardous characteristics of a package. (There can be more than one, separate each with a comma.)
      *
-     * @param string $subRiskClass
+     * @param string $chemicalRecordSubRiskClass
      *
      * @return self
      */
-    public function setSubRiskClass(string $subRiskClass) : self
+    public function setChemicalRecordSubRiskClass(string $chemicalRecordSubRiskClass) : self
     {
-        $this->initialized['subRiskClass'] = true;
-        $this->subRiskClass = $subRiskClass;
+        $this->initialized['chemicalRecordSubRiskClass'] = true;
+        $this->chemicalRecordSubRiskClass = $chemicalRecordSubRiskClass;
         return $this;
     }
     /**
@@ -221,21 +221,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getIDNumber() : string
+    public function getChemicalRecordIDNumber() : string
     {
-        return $this->iDNumber;
+        return $this->chemicalRecordIDNumber;
     }
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity.  UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
      *
-     * @param string $iDNumber
+     * @param string $chemicalRecordIDNumber
      *
      * @return self
      */
-    public function setIDNumber(string $iDNumber) : self
+    public function setChemicalRecordIDNumber(string $chemicalRecordIDNumber) : self
     {
-        $this->initialized['iDNumber'] = true;
-        $this->iDNumber = $iDNumber;
+        $this->initialized['chemicalRecordIDNumber'] = true;
+        $this->chemicalRecordIDNumber = $chemicalRecordIDNumber;
         return $this;
     }
     /**
@@ -243,21 +243,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingGroupType() : string
+    public function getChemicalRecordPackagingGroupType() : string
     {
-        return $this->packagingGroupType;
+        return $this->chemicalRecordPackagingGroupType;
     }
     /**
      * This is the packing group category associated to the specified commodity.  Must be shown in Roman Numerals.  Valid values are: I, II, III and blank.
      *
-     * @param string $packagingGroupType
+     * @param string $chemicalRecordPackagingGroupType
      *
      * @return self
      */
-    public function setPackagingGroupType(string $packagingGroupType) : self
+    public function setChemicalRecordPackagingGroupType(string $chemicalRecordPackagingGroupType) : self
     {
-        $this->initialized['packagingGroupType'] = true;
-        $this->packagingGroupType = $packagingGroupType;
+        $this->initialized['chemicalRecordPackagingGroupType'] = true;
+        $this->chemicalRecordPackagingGroupType = $chemicalRecordPackagingGroupType;
         return $this;
     }
     /**
@@ -265,21 +265,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getChemicalRecordQuantity() : string
     {
-        return $this->quantity;
+        return $this->chemicalRecordQuantity;
     }
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.
      *
-     * @param string $quantity
+     * @param string $chemicalRecordQuantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setChemicalRecordQuantity(string $chemicalRecordQuantity) : self
     {
-        $this->initialized['quantity'] = true;
-        $this->quantity = $quantity;
+        $this->initialized['chemicalRecordQuantity'] = true;
+        $this->chemicalRecordQuantity = $chemicalRecordQuantity;
         return $this;
     }
     /**
@@ -287,21 +287,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getUOM() : string
+    public function getChemicalRecordUOM() : string
     {
-        return $this->uOM;
+        return $this->chemicalRecordUOM;
     }
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.
      *
-     * @param string $uOM
+     * @param string $chemicalRecordUOM
      *
      * @return self
      */
-    public function setUOM(string $uOM) : self
+    public function setChemicalRecordUOM(string $chemicalRecordUOM) : self
     {
-        $this->initialized['uOM'] = true;
-        $this->uOM = $uOM;
+        $this->initialized['chemicalRecordUOM'] = true;
+        $this->chemicalRecordUOM = $chemicalRecordUOM;
         return $this;
     }
     /**
@@ -309,21 +309,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingInstructionCode() : string
+    public function getChemicalRecordPackagingInstructionCode() : string
     {
-        return $this->packagingInstructionCode;
+        return $this->chemicalRecordPackagingInstructionCode;
     }
     /**
      * The packing instructions related to the chemical record.
      *
-     * @param string $packagingInstructionCode
+     * @param string $chemicalRecordPackagingInstructionCode
      *
      * @return self
      */
-    public function setPackagingInstructionCode(string $packagingInstructionCode) : self
+    public function setChemicalRecordPackagingInstructionCode(string $chemicalRecordPackagingInstructionCode) : self
     {
-        $this->initialized['packagingInstructionCode'] = true;
-        $this->packagingInstructionCode = $packagingInstructionCode;
+        $this->initialized['chemicalRecordPackagingInstructionCode'] = true;
+        $this->chemicalRecordPackagingInstructionCode = $chemicalRecordPackagingInstructionCode;
         return $this;
     }
     /**
@@ -331,33 +331,33 @@ class PackageChemicalRecord extends \ArrayObject
     
     Valid values for this field are (0) through (9) with trailing blanks. 
     
-    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number  
-    period �.�, dash �-�, plus sign �+� and conventional parentheses �(� and �)�, �EXT" or "OPT�  The following are restricted in the phone number  
-    period �.�, dash �-�, plus sign �+� and conventional parentheses �(� and �)�, �EXT" or "OPT�
+    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number. The following are restricted in the phone number 
+    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT" The following are restricted in the phone number 
+    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
     *
     * @return string
     */
-    public function getEmergencyPhone() : string
+    public function getChemicalRecordEmergencyPhone() : string
     {
-        return $this->emergencyPhone;
+        return $this->chemicalRecordEmergencyPhone;
     }
     /**
     * 24 Hour Emergency Phone Number of the shipper. 
     
     Valid values for this field are (0) through (9) with trailing blanks. 
     
-    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number  
-    period �.�, dash �-�, plus sign �+� and conventional parentheses �(� and �)�, �EXT" or "OPT�  The following are restricted in the phone number  
-    period �.�, dash �-�, plus sign �+� and conventional parentheses �(� and �)�, �EXT" or "OPT�
+    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number. The following are restricted in the phone number 
+    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT" The following are restricted in the phone number 
+    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
     *
-    * @param string $emergencyPhone
+    * @param string $chemicalRecordEmergencyPhone
     *
     * @return self
     */
-    public function setEmergencyPhone(string $emergencyPhone) : self
+    public function setChemicalRecordEmergencyPhone(string $chemicalRecordEmergencyPhone) : self
     {
-        $this->initialized['emergencyPhone'] = true;
-        $this->emergencyPhone = $emergencyPhone;
+        $this->initialized['chemicalRecordEmergencyPhone'] = true;
+        $this->chemicalRecordEmergencyPhone = $chemicalRecordEmergencyPhone;
         return $this;
     }
     /**
@@ -365,21 +365,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getEmergencyContact() : string
+    public function getChemicalRecordEmergencyContact() : string
     {
-        return $this->emergencyContact;
+        return $this->chemicalRecordEmergencyContact;
     }
     /**
      * The emergency information, contact name and/or contract number, required to be communicated when a call is placed to the EmergencyPhoneNumber.
      *
-     * @param string $emergencyContact
+     * @param string $chemicalRecordEmergencyContact
      *
      * @return self
      */
-    public function setEmergencyContact(string $emergencyContact) : self
+    public function setChemicalRecordEmergencyContact(string $chemicalRecordEmergencyContact) : self
     {
-        $this->initialized['emergencyContact'] = true;
-        $this->emergencyContact = $emergencyContact;
+        $this->initialized['chemicalRecordEmergencyContact'] = true;
+        $this->chemicalRecordEmergencyContact = $chemicalRecordEmergencyContact;
         return $this;
     }
     /**
@@ -387,21 +387,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getProperShippingName() : string
+    public function getChemicalRecordProperShippingName() : string
     {
-        return $this->properShippingName;
+        return $this->chemicalRecordProperShippingName;
     }
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LQ or FR.
      *
-     * @param string $properShippingName
+     * @param string $chemicalRecordProperShippingName
      *
      * @return self
      */
-    public function setProperShippingName(string $properShippingName) : self
+    public function setChemicalRecordProperShippingName(string $chemicalRecordProperShippingName) : self
     {
-        $this->initialized['properShippingName'] = true;
-        $this->properShippingName = $properShippingName;
+        $this->initialized['chemicalRecordProperShippingName'] = true;
+        $this->chemicalRecordProperShippingName = $chemicalRecordProperShippingName;
         return $this;
     }
     /**
@@ -409,21 +409,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getTechnicalName() : string
+    public function getChemicalRecordTechnicalName() : string
     {
-        return $this->technicalName;
+        return $this->chemicalRecordTechnicalName;
     }
     /**
      * The technical name (when required) for the specified commodity.
      *
-     * @param string $technicalName
+     * @param string $chemicalRecordTechnicalName
      *
      * @return self
      */
-    public function setTechnicalName(string $technicalName) : self
+    public function setChemicalRecordTechnicalName(string $chemicalRecordTechnicalName) : self
     {
-        $this->initialized['technicalName'] = true;
-        $this->technicalName = $technicalName;
+        $this->initialized['chemicalRecordTechnicalName'] = true;
+        $this->chemicalRecordTechnicalName = $chemicalRecordTechnicalName;
         return $this;
     }
     /**
@@ -431,21 +431,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getAdditionalDescription() : string
+    public function getChemicalRecordAdditionalDescription() : string
     {
-        return $this->additionalDescription;
+        return $this->chemicalRecordAdditionalDescription;
     }
     /**
      * Additional remarks or special provision information.
      *
-     * @param string $additionalDescription
+     * @param string $chemicalRecordAdditionalDescription
      *
      * @return self
      */
-    public function setAdditionalDescription(string $additionalDescription) : self
+    public function setChemicalRecordAdditionalDescription(string $chemicalRecordAdditionalDescription) : self
     {
-        $this->initialized['additionalDescription'] = true;
-        $this->additionalDescription = $additionalDescription;
+        $this->initialized['chemicalRecordAdditionalDescription'] = true;
+        $this->chemicalRecordAdditionalDescription = $chemicalRecordAdditionalDescription;
         return $this;
     }
     /**
@@ -453,21 +453,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingType() : string
+    public function getChemicalRecordPackagingType() : string
     {
-        return $this->packagingType;
+        return $this->chemicalRecordPackagingType;
     }
     /**
      * The type of package used to contain the regulated good. (Ex: Fiberboard Box).
      *
-     * @param string $packagingType
+     * @param string $chemicalRecordPackagingType
      *
      * @return self
      */
-    public function setPackagingType(string $packagingType) : self
+    public function setChemicalRecordPackagingType(string $chemicalRecordPackagingType) : self
     {
-        $this->initialized['packagingType'] = true;
-        $this->packagingType = $packagingType;
+        $this->initialized['chemicalRecordPackagingType'] = true;
+        $this->chemicalRecordPackagingType = $chemicalRecordPackagingType;
         return $this;
     }
     /**
@@ -475,21 +475,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getHazardLabelRequired() : string
+    public function getChemicalRecordHazardLabelRequired() : string
     {
-        return $this->hazardLabelRequired;
+        return $this->chemicalRecordHazardLabelRequired;
     }
     /**
      * Defines the type of label that is required on the package for the commodity.
      *
-     * @param string $hazardLabelRequired
+     * @param string $chemicalRecordHazardLabelRequired
      *
      * @return self
      */
-    public function setHazardLabelRequired(string $hazardLabelRequired) : self
+    public function setChemicalRecordHazardLabelRequired(string $chemicalRecordHazardLabelRequired) : self
     {
-        $this->initialized['hazardLabelRequired'] = true;
-        $this->hazardLabelRequired = $hazardLabelRequired;
+        $this->initialized['chemicalRecordHazardLabelRequired'] = true;
+        $this->chemicalRecordHazardLabelRequired = $chemicalRecordHazardLabelRequired;
         return $this;
     }
     /**
@@ -497,21 +497,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingTypeQuantity() : string
+    public function getChemicalRecordPackagingTypeQuantity() : string
     {
-        return $this->packagingTypeQuantity;
+        return $this->chemicalRecordPackagingTypeQuantity;
     }
     /**
      * The number of pieces of the specific commodity. Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values are 1 to 999.
      *
-     * @param string $packagingTypeQuantity
+     * @param string $chemicalRecordPackagingTypeQuantity
      *
      * @return self
      */
-    public function setPackagingTypeQuantity(string $packagingTypeQuantity) : self
+    public function setChemicalRecordPackagingTypeQuantity(string $chemicalRecordPackagingTypeQuantity) : self
     {
-        $this->initialized['packagingTypeQuantity'] = true;
-        $this->packagingTypeQuantity = $packagingTypeQuantity;
+        $this->initialized['chemicalRecordPackagingTypeQuantity'] = true;
+        $this->chemicalRecordPackagingTypeQuantity = $chemicalRecordPackagingTypeQuantity;
         return $this;
     }
     /**
@@ -519,21 +519,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityRegulatedLevelCode() : string
+    public function getChemicalRecordCommodityRegulatedLevelCode() : string
     {
-        return $this->commodityRegulatedLevelCode;
+        return $this->chemicalRecordCommodityRegulatedLevelCode;
     }
     /**
      * Indicates the type of commodity, Fully Regulated (FR), Limited Quantity (LQ), Lightly Regulated (LR)  Valid values are LR, FR and LQ.
      *
-     * @param string $commodityRegulatedLevelCode
+     * @param string $chemicalRecordCommodityRegulatedLevelCode
      *
      * @return self
      */
-    public function setCommodityRegulatedLevelCode(string $commodityRegulatedLevelCode) : self
+    public function setChemicalRecordCommodityRegulatedLevelCode(string $chemicalRecordCommodityRegulatedLevelCode) : self
     {
-        $this->initialized['commodityRegulatedLevelCode'] = true;
-        $this->commodityRegulatedLevelCode = $commodityRegulatedLevelCode;
+        $this->initialized['chemicalRecordCommodityRegulatedLevelCode'] = true;
+        $this->chemicalRecordCommodityRegulatedLevelCode = $chemicalRecordCommodityRegulatedLevelCode;
         return $this;
     }
     /**
@@ -541,21 +541,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getTransportCategory() : string
+    public function getChemicalRecordTransportCategory() : string
     {
-        return $this->transportCategory;
+        return $this->chemicalRecordTransportCategory;
     }
     /**
      * Transport Category.   Valid values are 0 to 4.
      *
-     * @param string $transportCategory
+     * @param string $chemicalRecordTransportCategory
      *
      * @return self
      */
-    public function setTransportCategory(string $transportCategory) : self
+    public function setChemicalRecordTransportCategory(string $chemicalRecordTransportCategory) : self
     {
-        $this->initialized['transportCategory'] = true;
-        $this->transportCategory = $transportCategory;
+        $this->initialized['chemicalRecordTransportCategory'] = true;
+        $this->chemicalRecordTransportCategory = $chemicalRecordTransportCategory;
         return $this;
     }
     /**
@@ -563,21 +563,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getTunnelRestrictionCode() : string
+    public function getChemicalRecordTunnelRestrictionCode() : string
     {
-        return $this->tunnelRestrictionCode;
+        return $this->chemicalRecordTunnelRestrictionCode;
     }
     /**
      * Defines what is restricted to pass through a tunnel.
      *
-     * @param string $tunnelRestrictionCode
+     * @param string $chemicalRecordTunnelRestrictionCode
      *
      * @return self
      */
-    public function setTunnelRestrictionCode(string $tunnelRestrictionCode) : self
+    public function setChemicalRecordTunnelRestrictionCode(string $chemicalRecordTunnelRestrictionCode) : self
     {
-        $this->initialized['tunnelRestrictionCode'] = true;
-        $this->tunnelRestrictionCode = $tunnelRestrictionCode;
+        $this->initialized['chemicalRecordTunnelRestrictionCode'] = true;
+        $this->chemicalRecordTunnelRestrictionCode = $chemicalRecordTunnelRestrictionCode;
         return $this;
     }
     /**
@@ -585,21 +585,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getQValue() : string
+    public function getChemicalRecordQValue() : string
     {
-        return $this->qValue;
+        return $this->chemicalRecordQValue;
     }
     /**
      * When a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA,  Q-Value specifies exactly one of the following values: 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0  Valid values are : 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @param string $qValue
+     * @param string $chemicalRecordQValue
      *
      * @return self
      */
-    public function setQValue(string $qValue) : self
+    public function setChemicalRecordQValue(string $chemicalRecordQValue) : self
     {
-        $this->initialized['qValue'] = true;
-        $this->qValue = $qValue;
+        $this->initialized['chemicalRecordQValue'] = true;
+        $this->chemicalRecordQValue = $chemicalRecordQValue;
         return $this;
     }
     /**
@@ -607,21 +607,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getOverPackedIndicator() : string
+    public function getChemicalRecordOverPackedIndicator() : string
     {
-        return $this->overPackedIndicator;
+        return $this->chemicalRecordOverPackedIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is overpack.
      *
-     * @param string $overPackedIndicator
+     * @param string $chemicalRecordOverPackedIndicator
      *
      * @return self
      */
-    public function setOverPackedIndicator(string $overPackedIndicator) : self
+    public function setChemicalRecordOverPackedIndicator(string $chemicalRecordOverPackedIndicator) : self
     {
-        $this->initialized['overPackedIndicator'] = true;
-        $this->overPackedIndicator = $overPackedIndicator;
+        $this->initialized['chemicalRecordOverPackedIndicator'] = true;
+        $this->chemicalRecordOverPackedIndicator = $chemicalRecordOverPackedIndicator;
         return $this;
     }
     /**
@@ -629,21 +629,21 @@ class PackageChemicalRecord extends \ArrayObject
      *
      * @return string
      */
-    public function getAllPackedInOneIndicator() : string
+    public function getChemicalRecordAllPackedInOneIndicator() : string
     {
-        return $this->allPackedInOneIndicator;
+        return $this->chemicalRecordAllPackedInOneIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates if multiple, different hazmat/chemicals are contained within one box in a package
      *
-     * @param string $allPackedInOneIndicator
+     * @param string $chemicalRecordAllPackedInOneIndicator
      *
      * @return self
      */
-    public function setAllPackedInOneIndicator(string $allPackedInOneIndicator) : self
+    public function setChemicalRecordAllPackedInOneIndicator(string $chemicalRecordAllPackedInOneIndicator) : self
     {
-        $this->initialized['allPackedInOneIndicator'] = true;
-        $this->allPackedInOneIndicator = $allPackedInOneIndicator;
+        $this->initialized['chemicalRecordAllPackedInOneIndicator'] = true;
+        $this->chemicalRecordAllPackedInOneIndicator = $chemicalRecordAllPackedInOneIndicator;
         return $this;
     }
 }

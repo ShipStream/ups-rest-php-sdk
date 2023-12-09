@@ -19,19 +19,19 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
      */
     protected $quantity;
     /**
-     * Handling Unit Type for Density based rating.
+     * Handling Unit Type for Density based Rating.
      *
      * @var HandlingUnitsType
      */
     protected $type;
     /**
-     * Dimension of the HandlingUnit container for density based pricing.
+     * Dimension of the handling unit for density based pricing.
      *
      * @var HandlingUnitsDimensions
      */
     protected $dimensions;
     /**
-     * Container to hold Adjusted Height information.
+     * Adjusted Height Container.
      *
      * @var HandlingUnitsAdjustedHeight
      */
@@ -59,7 +59,7 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
         return $this;
     }
     /**
-     * Handling Unit Type for Density based rating.
+     * Handling Unit Type for Density based Rating.
      *
      * @return HandlingUnitsType
      */
@@ -68,7 +68,7 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
         return $this->type;
     }
     /**
-     * Handling Unit Type for Density based rating.
+     * Handling Unit Type for Density based Rating.
      *
      * @param HandlingUnitsType $type
      *
@@ -81,7 +81,7 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
         return $this;
     }
     /**
-     * Dimension of the HandlingUnit container for density based pricing.
+     * Dimension of the handling unit for density based pricing.
      *
      * @return HandlingUnitsDimensions
      */
@@ -90,7 +90,7 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
         return $this->dimensions;
     }
     /**
-     * Dimension of the HandlingUnit container for density based pricing.
+     * Dimension of the handling unit for density based pricing.
      *
      * @param HandlingUnitsDimensions $dimensions
      *
@@ -103,7 +103,7 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
         return $this;
     }
     /**
-     * Container to hold Adjusted Height information.
+     * Adjusted Height Container.
      *
      * @return HandlingUnitsAdjustedHeight
      */
@@ -112,7 +112,7 @@ class FreightRateResponseHandlingUnits extends \ArrayObject
         return $this->adjustedHeight;
     }
     /**
-     * Container to hold Adjusted Height information.
+     * Adjusted Height Container.
      *
      * @param HandlingUnitsAdjustedHeight $adjustedHeight
      *

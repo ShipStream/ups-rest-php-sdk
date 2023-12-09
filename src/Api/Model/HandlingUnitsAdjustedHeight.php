@@ -13,7 +13,7 @@ class HandlingUnitsAdjustedHeight extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Adjusted Height value for the handling unit.  Height Adjustment is done only when Handling unit type is SKD = Skid or PLT = Pallet.
+     * Adjusted Height value for the handling unit.
      *
      * @var string
      */
@@ -25,7 +25,7 @@ class HandlingUnitsAdjustedHeight extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-     * Adjusted Height value for the handling unit.  Height Adjustment is done only when Handling unit type is SKD = Skid or PLT = Pallet.
+     * Adjusted Height value for the handling unit.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class HandlingUnitsAdjustedHeight extends \ArrayObject
         return $this->value;
     }
     /**
-     * Adjusted Height value for the handling unit.  Height Adjustment is done only when Handling unit type is SKD = Skid or PLT = Pallet.
+     * Adjusted Height value for the handling unit.
      *
      * @param string $value
      *

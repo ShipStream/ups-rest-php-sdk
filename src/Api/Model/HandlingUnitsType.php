@@ -13,51 +13,33 @@ class HandlingUnitsType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code associated with Handling Unit Type.  Valid values:
-    SKD = Skid
-    CBY = Carboy 
-    PLT = Pallet
-    TOT = Totes 
-    LOO = Loose
-    OTH = Other
-    *
-    * @var string
-    */
+     * Code representing the form type
+     *
+     * @var string
+     */
     protected $code;
     /**
-     * A description of the code for the Handling Unit type.
+     * Description of the form type code.
      *
      * @var string
      */
     protected $description;
     /**
-    * The code associated with Handling Unit Type.  Valid values:
-    SKD = Skid
-    CBY = Carboy 
-    PLT = Pallet
-    TOT = Totes 
-    LOO = Loose
-    OTH = Other
-    *
-    * @return string
-    */
+     * Code representing the form type
+     *
+     * @return string
+     */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-    * The code associated with Handling Unit Type.  Valid values:
-    SKD = Skid
-    CBY = Carboy 
-    PLT = Pallet
-    TOT = Totes 
-    LOO = Loose
-    OTH = Other
-    *
-    * @param string $code
-    *
-    * @return self
-    */
+     * Code representing the form type
+     *
+     * @param string $code
+     *
+     * @return self
+     */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -65,7 +47,7 @@ class HandlingUnitsType extends \ArrayObject
         return $this;
     }
     /**
-     * A description of the code for the Handling Unit type.
+     * Description of the form type code.
      *
      * @return string
      */
@@ -74,7 +56,7 @@ class HandlingUnitsType extends \ArrayObject
         return $this->description;
     }
     /**
-     * A description of the code for the Handling Unit type.
+     * Description of the form type code.
      *
      * @param string $description
      *

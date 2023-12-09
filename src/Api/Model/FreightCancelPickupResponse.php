@@ -21,7 +21,7 @@ class FreightCancelPickupResponse extends \ArrayObject
     /**
      * Container which stores the response status
      *
-     * @var string
+     * @var FreightCancelStatus
      */
     protected $freightCancelStatus;
     /**
@@ -49,20 +49,20 @@ class FreightCancelPickupResponse extends \ArrayObject
     /**
      * Container which stores the response status
      *
-     * @return string
+     * @return FreightCancelStatus
      */
-    public function getFreightCancelStatus() : string
+    public function getFreightCancelStatus() : FreightCancelStatus
     {
         return $this->freightCancelStatus;
     }
     /**
      * Container which stores the response status
      *
-     * @param string $freightCancelStatus
+     * @param FreightCancelStatus $freightCancelStatus
      *
      * @return self
      */
-    public function setFreightCancelStatus(string $freightCancelStatus) : self
+    public function setFreightCancelStatus(FreightCancelStatus $freightCancelStatus) : self
     {
         $this->initialized['freightCancelStatus'] = true;
         $this->freightCancelStatus = $freightCancelStatus;

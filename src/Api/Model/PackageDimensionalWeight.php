@@ -13,7 +13,7 @@ class PackageDimensionalWeight extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container tag for package dimensional weight measurement units.
+     * UnitOfMeasurement Container.
      *
      * @var DimensionalWeightUnitOfMeasurement
      */
@@ -25,7 +25,7 @@ class PackageDimensionalWeight extends \ArrayObject
      */
     protected $weight;
     /**
-     * Container tag for package dimensional weight measurement units.
+     * UnitOfMeasurement Container.
      *
      * @return DimensionalWeightUnitOfMeasurement
      */
@@ -34,7 +34,7 @@ class PackageDimensionalWeight extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * Container tag for package dimensional weight measurement units.
+     * UnitOfMeasurement Container.
      *
      * @param DimensionalWeightUnitOfMeasurement $unitOfMeasurement
      *

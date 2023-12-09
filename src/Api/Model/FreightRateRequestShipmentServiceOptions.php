@@ -13,13 +13,13 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Shipment Service Pickup Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
+     * PickupOptions Container.
      *
      * @var ShipmentServiceOptionsPickupOptions
      */
     protected $pickupOptions;
     /**
-     * Shipment Service Delivery Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
+     * DeliveryOptions Container.
      *
      * @var ShipmentServiceOptionsDeliveryOptions
      */
@@ -32,7 +32,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     */
     protected $overSeasLeg;
     /**
-     * COD container  Indicates COD is requested. Shipment COD is only available for EU origin countries or territories and for shippers account type Daily Pickup and Drop Shipping. Not available to shipment with return service.
+     * COD Container.
      *
      * @var ShipmentServiceOptionsCOD
      */
@@ -76,9 +76,9 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     protected $extremeLengthIndicator;
     /**
     * Dimensional length of the article(s), in 'feet'.
-    Numeric value greater than �0� (Zero) should be given in LinearFeet.
+    Numeric value greater than '0' (Zero) should be given in LinearFeet.
     If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
-    If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
+    If linear feet '0' (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
     Ignored if ExtremeLengthIndicator is not present.
     *
     * @var string
@@ -91,7 +91,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
      */
     protected $adjustedHeight;
     /**
-     * Shipment Service Pickup Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
+     * PickupOptions Container.
      *
      * @return ShipmentServiceOptionsPickupOptions
      */
@@ -100,7 +100,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
         return $this->pickupOptions;
     }
     /**
-     * Shipment Service Pickup Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
+     * PickupOptions Container.
      *
      * @param ShipmentServiceOptionsPickupOptions $pickupOptions
      *
@@ -113,7 +113,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Shipment Service Delivery Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
+     * DeliveryOptions Container.
      *
      * @return ShipmentServiceOptionsDeliveryOptions
      */
@@ -122,7 +122,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
         return $this->deliveryOptions;
     }
     /**
-     * Shipment Service Delivery Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
+     * DeliveryOptions Container.
      *
      * @param ShipmentServiceOptionsDeliveryOptions $deliveryOptions
      *
@@ -159,7 +159,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * COD container  Indicates COD is requested. Shipment COD is only available for EU origin countries or territories and for shippers account type Daily Pickup and Drop Shipping. Not available to shipment with return service.
+     * COD Container.
      *
      * @return ShipmentServiceOptionsCOD
      */
@@ -168,7 +168,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
         return $this->cOD;
     }
     /**
-     * COD container  Indicates COD is requested. Shipment COD is only available for EU origin countries or territories and for shippers account type Daily Pickup and Drop Shipping. Not available to shipment with return service.
+     * COD Container.
      *
      * @param ShipmentServiceOptionsCOD $cOD
      *
@@ -316,9 +316,9 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     }
     /**
     * Dimensional length of the article(s), in 'feet'.
-    Numeric value greater than �0� (Zero) should be given in LinearFeet.
+    Numeric value greater than '0' (Zero) should be given in LinearFeet.
     If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
-    If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
+    If linear feet '0' (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
     Ignored if ExtremeLengthIndicator is not present.
     *
     * @return string
@@ -329,9 +329,9 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     }
     /**
     * Dimensional length of the article(s), in 'feet'.
-    Numeric value greater than �0� (Zero) should be given in LinearFeet.
+    Numeric value greater than '0' (Zero) should be given in LinearFeet.
     If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
-    If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
+    If linear feet '0' (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
     Ignored if ExtremeLengthIndicator is not present.
     *
     * @param string $linearFeet

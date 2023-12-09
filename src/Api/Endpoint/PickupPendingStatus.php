@@ -7,7 +7,7 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     protected $version;
     protected $pickuptype;
     /**
-    * Pickup Pending Status
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version version of API e.g v1
     * @param string $pickuptype Type of pickup. Valid values:

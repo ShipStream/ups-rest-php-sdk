@@ -6,7 +6,7 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
 {
     protected $version;
     /**
-    * Chemical Reference Data
+    * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
     *
     * @param string $version Version of the API. Valid values:
     v1

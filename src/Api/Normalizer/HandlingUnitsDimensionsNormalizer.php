@@ -42,7 +42,7 @@ class HandlingUnitsDimensionsNormalizer implements DenormalizerInterface, Normal
             return $object;
         }
         if (\array_key_exists('UnitOfMeasurement', $data)) {
-            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsUnitOfMeasurement', 'json', $context));
+            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement', 'json', $context));
             unset($data['UnitOfMeasurement']);
         }
         if (\array_key_exists('Length', $data)) {

@@ -13,7 +13,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @var ResponseResponseStatus
      */
@@ -37,7 +37,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
      */
     protected $transactionReference;
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @return ResponseResponseStatus
      */
@@ -46,7 +46,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
         return $this->responseStatus;
     }
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @param ResponseResponseStatus $responseStatus
      *

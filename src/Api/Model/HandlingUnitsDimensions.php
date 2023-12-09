@@ -13,53 +13,53 @@ class HandlingUnitsDimensions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * UnitOfMeasurement container.
+     * UnitOfMeasurement Container.
      *
-     * @var HandlingUnitsUnitOfMeasurement
+     * @var DimensionsUnitOfMeasurement
      */
     protected $unitOfMeasurement;
     /**
-     * The length of the line item used to determine dimensional weight.
+     * The length of the line item used to determine density rate rating.
      *
      * @var string
      */
     protected $length;
     /**
-     * The width of the line item used to determine dimensional weight.
+     * The width of the line item used to determine the density based rating.
      *
      * @var string
      */
     protected $width;
     /**
-     * The height of the line item used to determine dimensional weight.
+     * The height of the line item used to determine density based rating.
      *
      * @var string
      */
     protected $height;
     /**
-     * UnitOfMeasurement container.
+     * UnitOfMeasurement Container.
      *
-     * @return HandlingUnitsUnitOfMeasurement
+     * @return DimensionsUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : HandlingUnitsUnitOfMeasurement
+    public function getUnitOfMeasurement() : DimensionsUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
-     * UnitOfMeasurement container.
+     * UnitOfMeasurement Container.
      *
-     * @param HandlingUnitsUnitOfMeasurement $unitOfMeasurement
+     * @param DimensionsUnitOfMeasurement $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(HandlingUnitsUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
         return $this;
     }
     /**
-     * The length of the line item used to determine dimensional weight.
+     * The length of the line item used to determine density rate rating.
      *
      * @return string
      */
@@ -68,7 +68,7 @@ class HandlingUnitsDimensions extends \ArrayObject
         return $this->length;
     }
     /**
-     * The length of the line item used to determine dimensional weight.
+     * The length of the line item used to determine density rate rating.
      *
      * @param string $length
      *
@@ -81,7 +81,7 @@ class HandlingUnitsDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The width of the line item used to determine dimensional weight.
+     * The width of the line item used to determine the density based rating.
      *
      * @return string
      */
@@ -90,7 +90,7 @@ class HandlingUnitsDimensions extends \ArrayObject
         return $this->width;
     }
     /**
-     * The width of the line item used to determine dimensional weight.
+     * The width of the line item used to determine the density based rating.
      *
      * @param string $width
      *
@@ -103,7 +103,7 @@ class HandlingUnitsDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The height of the line item used to determine dimensional weight.
+     * The height of the line item used to determine density based rating.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ class HandlingUnitsDimensions extends \ArrayObject
         return $this->height;
     }
     /**
-     * The height of the line item used to determine dimensional weight.
+     * The height of the line item used to determine density based rating.
      *
      * @param string $height
      *

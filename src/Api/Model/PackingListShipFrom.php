@@ -25,7 +25,7 @@ class PackingListShipFrom extends \ArrayObject
      */
     protected $attentionName;
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
      * @var ShipFromAddress
      */
@@ -93,7 +93,7 @@ class PackingListShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
      * @return ShipFromAddress
      */
@@ -102,7 +102,7 @@ class PackingListShipFrom extends \ArrayObject
         return $this->address;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
      * @param ShipFromAddress $address
      *

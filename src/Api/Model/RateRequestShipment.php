@@ -25,18 +25,16 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $shipper;
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @var ShipmentShipTo
      */
     protected $shipTo;
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @var ShipmentShipFrom
-    */
+     * ShipFrom Container.
+     *
+     * @var ShipmentShipFrom
+     */
     protected $shipFrom;
     /**
      * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
@@ -75,7 +73,7 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $goodsNotInFreeCirculationIndicator;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
@@ -105,7 +103,7 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $package;
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @var ShipmentShipmentServiceOptions
      */
@@ -203,7 +201,7 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @return ShipmentShipTo
      */
@@ -212,7 +210,7 @@ class RateRequestShipment extends \ArrayObject
         return $this->shipTo;
     }
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @param ShipmentShipTo $shipTo
      *
@@ -225,25 +223,21 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @return ShipmentShipFrom
-    */
+     * ShipFrom Container.
+     *
+     * @return ShipmentShipFrom
+     */
     public function getShipFrom() : ShipmentShipFrom
     {
         return $this->shipFrom;
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @param ShipmentShipFrom $shipFrom
-    *
-    * @return self
-    */
+     * ShipFrom Container.
+     *
+     * @param ShipmentShipFrom $shipFrom
+     *
+     * @return self
+     */
     public function setShipFrom(ShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
@@ -383,7 +377,7 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -392,7 +386,7 @@ class RateRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *
@@ -493,7 +487,7 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @return ShipmentShipmentServiceOptions
      */
@@ -502,7 +496,7 @@ class RateRequestShipment extends \ArrayObject
         return $this->shipmentServiceOptions;
     }
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @param ShipmentShipmentServiceOptions $shipmentServiceOptions
      *

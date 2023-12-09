@@ -48,7 +48,7 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $shipper;
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @var ShipmentShipTo
      */
@@ -60,15 +60,13 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $alternateDeliveryAddress;
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @var ShipmentShipFrom
-    */
+     * ShipFrom Container.
+     *
+     * @var ShipmentShipFrom
+     */
     protected $shipFrom;
     /**
-     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
+     * Payment Information Container.
      *
      * @var ShipmentPaymentInformation
      */
@@ -122,7 +120,7 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $referenceNumber;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
@@ -255,7 +253,7 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $taxInformationIndicator;
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @var ShipmentShipmentServiceOptions
      */
@@ -288,18 +286,6 @@ class ShipmentRequestShipment extends \ArrayObject
     * @var string
     */
     protected $masterCartonIndicator;
-    /**
-     * Bar Code Image Indicator. Presence of this indicator means only bar code image will be created and returned to client. Shipping Label wont be returned when bar code image is returned.
-     *
-     * @var string
-     */
-    protected $barCodeImageIndicator;
-    /**
-     * Bar Code And Label Indicator. Presence of this indicator means both bar code image and shipping label will be returned.
-     *
-     * @var string
-     */
-    protected $barCodeAndLabelIndicator;
     /**
      * User can send up to 7 days in the future with current date as day zero. Format: YYYYMMDD
      *
@@ -423,7 +409,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @return ShipmentShipTo
      */
@@ -432,7 +418,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->shipTo;
     }
     /**
-     * Ship To Container.
+     * ShipTo Container.
      *
      * @param ShipmentShipTo $shipTo
      *
@@ -467,25 +453,21 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @return ShipmentShipFrom
-    */
+     * ShipFrom Container.
+     *
+     * @return ShipmentShipFrom
+     */
     public function getShipFrom() : ShipmentShipFrom
     {
         return $this->shipFrom;
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @param ShipmentShipFrom $shipFrom
-    *
-    * @return self
-    */
+     * ShipFrom Container.
+     *
+     * @param ShipmentShipFrom $shipFrom
+     *
+     * @return self
+     */
     public function setShipFrom(ShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
@@ -493,7 +475,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
+     * Payment Information Container.
      *
      * @return ShipmentPaymentInformation
      */
@@ -502,7 +484,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->paymentInformation;
     }
     /**
-     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
+     * Payment Information Container.
      *
      * @param ShipmentPaymentInformation $paymentInformation
      *
@@ -691,7 +673,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -700,7 +682,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *
@@ -1117,7 +1099,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @return ShipmentShipmentServiceOptions
      */
@@ -1126,7 +1108,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->shipmentServiceOptions;
     }
     /**
-     * Container for Shipment Service Options.
+     * ShipmentServiceOptions Container.
      *
      * @param ShipmentShipmentServiceOptions $shipmentServiceOptions
      *
@@ -1232,50 +1214,6 @@ class ShipmentRequestShipment extends \ArrayObject
     {
         $this->initialized['masterCartonIndicator'] = true;
         $this->masterCartonIndicator = $masterCartonIndicator;
-        return $this;
-    }
-    /**
-     * Bar Code Image Indicator. Presence of this indicator means only bar code image will be created and returned to client. Shipping Label wont be returned when bar code image is returned.
-     *
-     * @return string
-     */
-    public function getBarCodeImageIndicator() : string
-    {
-        return $this->barCodeImageIndicator;
-    }
-    /**
-     * Bar Code Image Indicator. Presence of this indicator means only bar code image will be created and returned to client. Shipping Label wont be returned when bar code image is returned.
-     *
-     * @param string $barCodeImageIndicator
-     *
-     * @return self
-     */
-    public function setBarCodeImageIndicator(string $barCodeImageIndicator) : self
-    {
-        $this->initialized['barCodeImageIndicator'] = true;
-        $this->barCodeImageIndicator = $barCodeImageIndicator;
-        return $this;
-    }
-    /**
-     * Bar Code And Label Indicator. Presence of this indicator means both bar code image and shipping label will be returned.
-     *
-     * @return string
-     */
-    public function getBarCodeAndLabelIndicator() : string
-    {
-        return $this->barCodeAndLabelIndicator;
-    }
-    /**
-     * Bar Code And Label Indicator. Presence of this indicator means both bar code image and shipping label will be returned.
-     *
-     * @param string $barCodeAndLabelIndicator
-     *
-     * @return self
-     */
-    public function setBarCodeAndLabelIndicator(string $barCodeAndLabelIndicator) : self
-    {
-        $this->initialized['barCodeAndLabelIndicator'] = true;
-        $this->barCodeAndLabelIndicator = $barCodeAndLabelIndicator;
         return $this;
     }
     /**

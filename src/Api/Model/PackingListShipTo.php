@@ -25,7 +25,7 @@ class PackingListShipTo extends \ArrayObject
      */
     protected $attentionName;
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @var ShipToAddress
      */
@@ -93,7 +93,7 @@ class PackingListShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @return ShipToAddress
      */
@@ -102,7 +102,7 @@ class PackingListShipTo extends \ArrayObject
         return $this->address;
     }
     /**
-     * Address Container.
+     * Consignee�s Address Container.
      *
      * @param ShipToAddress $address
      *

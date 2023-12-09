@@ -7,7 +7,7 @@ class PickupGetPoliticalDivision1List extends \ShipStream\Ups\Api\Runtime\Client
     protected $version;
     protected $countrycode;
     /**
-    * Pickup Get Political Division1 List
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version Version of API e.g. v1
     * @param string $countrycode Country or terrirtory for which the list will 

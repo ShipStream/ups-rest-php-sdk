@@ -7,7 +7,7 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     protected $version;
     protected $reqOption;
     /**
-    * 
+    * Get Locator Response
     *
     * @param string $version Version of API
     * @param string $reqOption Indicates the type of request.
