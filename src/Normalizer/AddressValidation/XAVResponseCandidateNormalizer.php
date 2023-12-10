@@ -1,8 +1,9 @@
 <?php
 
-namespace ShipStream\Ups\Normalizer;
+namespace ShipStream\Ups\Normalizer\AddressValidation;
 
 use ShipStream\Ups\Api\Normalizer\XAVResponseCandidateNormalizer as BaseNormalizer;
+use function array_is_list;
 use function is_array;
 
 /**

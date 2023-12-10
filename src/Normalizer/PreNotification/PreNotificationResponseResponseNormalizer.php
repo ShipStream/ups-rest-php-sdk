@@ -1,11 +1,12 @@
 <?php
 
-namespace ShipStream\Ups\Normalizer;
+namespace ShipStream\Ups\Normalizer\PreNotification;
 
-use ShipStream\Ups\Api\Normalizer\ShipmentResponseResponseNormalizer as BaseNormalizer;
+use ShipStream\Ups\Api\Normalizer\PreNotificationResponseResponseNormalizer as BaseNormalizer;
+use function array_is_list;
 use function is_array;
 
-class ShipmentResponseResponseNormalizer extends BaseNormalizer
+class PreNotificationResponseResponseNormalizer extends BaseNormalizer
 {
     /**
      * @inheritDoc
@@ -17,7 +18,6 @@ class ShipmentResponseResponseNormalizer extends BaseNormalizer
         }
 
         // Force Alert to always be an array even when the API returns a single value
-        // @see https://github.com/UPS-API/api-documentation/issues/3
         if (isset($data['Alert']) && ! array_is_list($data['Alert'])) {
             $data['Alert'] = [$data['Alert']];
         }

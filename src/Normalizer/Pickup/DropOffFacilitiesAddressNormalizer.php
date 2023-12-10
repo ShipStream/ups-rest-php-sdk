@@ -1,11 +1,11 @@
 <?php
 
-namespace ShipStream\Ups\Normalizer;
+namespace ShipStream\Ups\Normalizer\Pickup;
 
-use ShipStream\Ups\Api\Normalizer\CandidateAddressKeyFormatNormalizer as BaseNormalizer;
+use ShipStream\Ups\Api\Normalizer\DropOffFacilitiesAddressNormalizer as BaseNormalizer;
 use function is_array;
 
-class CandidateAddressKeyFormatNormalizer extends BaseNormalizer
+class DropOffFacilitiesAddressNormalizer extends BaseNormalizer
 {
     /**
      * @inheritDoc
@@ -17,7 +17,6 @@ class CandidateAddressKeyFormatNormalizer extends BaseNormalizer
         }
 
         // Force AddressLine to always be an array even when the API returns a single value
-        // @see https://github.com/UPS-API/api-documentation/issues/3
         if (isset($data['AddressLine']) && ! is_array($data['AddressLine'])) {
             $data['AddressLine'] = [$data['AddressLine']];
         }

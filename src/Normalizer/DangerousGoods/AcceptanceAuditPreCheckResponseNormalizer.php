@@ -1,11 +1,12 @@
 <?php
 
-namespace ShipStream\Ups\Normalizer;
+namespace ShipStream\Ups\Normalizer\DangerousGoods;
 
-use ShipStream\Ups\Api\Normalizer\ShipmentResponseShipmentResultsNormalizer as BaseNormalizer;
+use ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseNormalizer as BaseNormalizer;
+use function array_is_list;
 use function is_array;
 
-class ShipmentResponseShipmentResultsNormalizer extends BaseNormalizer
+class AcceptanceAuditPreCheckResponseNormalizer extends BaseNormalizer
 {
     /**
      * @inheritDoc
@@ -17,7 +18,6 @@ class ShipmentResponseShipmentResultsNormalizer extends BaseNormalizer
         }
 
         // Force PackageResults to always be an array even when the API returns a single value
-        // @see https://github.com/UPS-API/api-documentation/issues/3
         if (isset($data['PackageResults']) && ! array_is_list($data['PackageResults'])) {
             $data['PackageResults'] = [$data['PackageResults']];
         }
