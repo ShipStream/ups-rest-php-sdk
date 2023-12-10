@@ -15,7 +15,7 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
     /**
      * 
      *
-     * @var Response
+     * @var ErrorResponse
      */
     protected $response;
     /**
@@ -27,20 +27,20 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
     /**
      * 
      *
-     * @return Response
+     * @return ErrorResponse
      */
-    public function getResponse() : Response
+    public function getResponse() : ErrorResponse
     {
         return $this->response;
     }
     /**
      * 
      *
-     * @param Response $response
+     * @param ErrorResponse $response
      *
      * @return self
      */
-    public function setResponse(Response $response) : self
+    public function setResponse(ErrorResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;

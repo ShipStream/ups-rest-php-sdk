@@ -5,22 +5,22 @@ namespace ShipStream\Ups\Api\Exception;
 class ProcessSubscriptionTypeForTrackingNumberMethodNotAllowedException extends MethodNotAllowedException
 {
     /**
-     * @var \ShipStream\Ups\Api\Model\Response
+     * @var \ShipStream\Ups\Api\Model\ErrorResponse
      */
-    private $response;
+    private $errorResponse;
     /**
      * @var \Psr\Http\Message\ResponseInterface
      */
     private $response;
-    public function __construct(\ShipStream\Ups\Api\Model\Response $response, \Psr\Http\Message\ResponseInterface $response)
+    public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
         parent::__construct('Method Not Allowed');
-        $this->response = $response;
+        $this->errorResponse = $errorResponse;
         $this->response = $response;
     }
-    public function getResponse() : \ShipStream\Ups\Api\Model\Response
+    public function getErrorResponse() : \ShipStream\Ups\Api\Model\ErrorResponse
     {
-        return $this->response;
+        return $this->errorResponse;
     }
     public function getResponse() : \Psr\Http\Message\ResponseInterface
     {

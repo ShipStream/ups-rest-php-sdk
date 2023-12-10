@@ -42,7 +42,7 @@ class TrackSubsServiceErrorResponseNormalizer implements DenormalizerInterface, 
             return $object;
         }
         if (\array_key_exists('response', $data)) {
-            $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\Response', 'json', $context));
+            $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json', $context));
             unset($data['response']);
         }
         if (\array_key_exists('invalidTrackingNumbers', $data)) {

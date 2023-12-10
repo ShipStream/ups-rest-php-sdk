@@ -87,13 +87,13 @@ class ProcessSubscriptionTypeForTrackingNumber extends \ShipStream\Ups\Api\Runti
             throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\Response', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (404 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberNotFoundException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\Response', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberNotFoundException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (405 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberMethodNotAllowedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\Response', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberMethodNotAllowedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (500 === $status) {
             throw new \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberInternalServerErrorException($response);

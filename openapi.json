@@ -6577,7 +6577,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Response"
+                                    "$ref": "#/components/schemas/ErrorResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -6595,7 +6595,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Response"
+                                    "$ref": "#/components/schemas/ErrorResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -6613,7 +6613,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Response"
+                                    "$ref": "#/components/schemas/ErrorResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -34505,7 +34505,7 @@
                 "type": "object",
                 "properties": {
                     "response": {
-                        "$ref": "#/components/schemas/Response"
+                        "$ref": "#/components/schemas/ErrorResponse"
                     },
                     "invalidTrackingNumbers": {
                         "$ref": "#/components/schemas/TrackSubsServiceResponse/properties/invalidTrackingNumbers"
