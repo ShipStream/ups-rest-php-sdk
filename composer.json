@@ -15,7 +15,7 @@
         "jane-php/open-api-runtime": "^7.5",
         "php-http/curl-client": "^2.3",
         "symfony/polyfill-php81": "^1.28",
-        "symfony/serializer": "^v7.0.1"
+        "symfony/serializer": "^6.0"
     },
     "require-dev": {
         "jane-php/open-api-3": "^7.5",
