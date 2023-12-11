@@ -13,39 +13,90 @@ class CommodityDimensions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The length of the line item used to determine density rate rating.
+     * UnitOfMeasurement Container.
      *
-     * @var string
+     * @var DimensionsUnitOfMeasurement
      */
+    protected $unitOfMeasurement;
+    /**
+    * The length of the line item used to determine dimensional weight.
+    Valid characters: 0-9 and "." (Decimal point). 
+    Maximum of 2 digits after the decimal. 
+    Maximum field length: 16 characters. The decimal ".", does not count as a character.
+    Examples:
+    ##############.##
+    ###############.#
+    ################
+    *
+    * @var string
+    */
     protected $length;
     /**
-     * The width of the line item used to determine the density based rating.
-     *
-     * @var string
-     */
+    * The width of the line item used to determine dimensional weight. 
+    Format: See Length Description.
+    *
+    * @var string
+    */
     protected $width;
     /**
-     * The height of the line item used to determine density based rating.
-     *
-     * @var string
-     */
+    * The height of the line item used to determine dimensional weight.
+    Format: See Length Description.
+    *
+    * @var string
+    */
     protected $height;
     /**
-     * The length of the line item used to determine density rate rating.
+     * UnitOfMeasurement Container.
      *
-     * @return string
+     * @return DimensionsUnitOfMeasurement
      */
+    public function getUnitOfMeasurement() : DimensionsUnitOfMeasurement
+    {
+        return $this->unitOfMeasurement;
+    }
+    /**
+     * UnitOfMeasurement Container.
+     *
+     * @param DimensionsUnitOfMeasurement $unitOfMeasurement
+     *
+     * @return self
+     */
+    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement) : self
+    {
+        $this->initialized['unitOfMeasurement'] = true;
+        $this->unitOfMeasurement = $unitOfMeasurement;
+        return $this;
+    }
+    /**
+    * The length of the line item used to determine dimensional weight.
+    Valid characters: 0-9 and "." (Decimal point). 
+    Maximum of 2 digits after the decimal. 
+    Maximum field length: 16 characters. The decimal ".", does not count as a character.
+    Examples:
+    ##############.##
+    ###############.#
+    ################
+    *
+    * @return string
+    */
     public function getLength() : string
     {
         return $this->length;
     }
     /**
-     * The length of the line item used to determine density rate rating.
-     *
-     * @param string $length
-     *
-     * @return self
-     */
+    * The length of the line item used to determine dimensional weight.
+    Valid characters: 0-9 and "." (Decimal point). 
+    Maximum of 2 digits after the decimal. 
+    Maximum field length: 16 characters. The decimal ".", does not count as a character.
+    Examples:
+    ##############.##
+    ###############.#
+    ################
+    *
+    * @param string $length
+    *
+    * @return self
+    */
     public function setLength(string $length) : self
     {
         $this->initialized['length'] = true;
@@ -53,21 +104,23 @@ class CommodityDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The width of the line item used to determine the density based rating.
-     *
-     * @return string
-     */
+    * The width of the line item used to determine dimensional weight. 
+    Format: See Length Description.
+    *
+    * @return string
+    */
     public function getWidth() : string
     {
         return $this->width;
     }
     /**
-     * The width of the line item used to determine the density based rating.
-     *
-     * @param string $width
-     *
-     * @return self
-     */
+    * The width of the line item used to determine dimensional weight. 
+    Format: See Length Description.
+    *
+    * @param string $width
+    *
+    * @return self
+    */
     public function setWidth(string $width) : self
     {
         $this->initialized['width'] = true;
@@ -75,21 +128,23 @@ class CommodityDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The height of the line item used to determine density based rating.
-     *
-     * @return string
-     */
+    * The height of the line item used to determine dimensional weight.
+    Format: See Length Description.
+    *
+    * @return string
+    */
     public function getHeight() : string
     {
         return $this->height;
     }
     /**
-     * The height of the line item used to determine density based rating.
-     *
-     * @param string $height
-     *
-     * @return self
-     */
+    * The height of the line item used to determine dimensional weight.
+    Format: See Length Description.
+    *
+    * @param string $height
+    *
+    * @return self
+    */
     public function setHeight(string $height) : self
     {
         $this->initialized['height'] = true;

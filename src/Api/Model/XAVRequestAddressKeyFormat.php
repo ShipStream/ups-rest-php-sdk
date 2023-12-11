@@ -30,7 +30,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     Applicable to US and PR only. 
     Not returned if user selects the RegionalRequestIndicator.
     *
-    * @var string[]
+    * @var mixed[]
     */
     protected $addressLine;
     /**
@@ -130,7 +130,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     Applicable to US and PR only. 
     Not returned if user selects the RegionalRequestIndicator.
     *
-    * @return string[]
+    * @return mixed[]
     */
     public function getAddressLine() : array
     {
@@ -142,7 +142,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     Applicable to US and PR only. 
     Not returned if user selects the RegionalRequestIndicator.
     *
-    * @param string[] $addressLine
+    * @param mixed[] $addressLine
     *
     * @return self
     */

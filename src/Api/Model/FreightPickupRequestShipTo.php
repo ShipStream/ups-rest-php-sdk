@@ -21,11 +21,11 @@ class FreightPickupRequestShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @var ShipToAddress
+     * @var FreightPickupShipToAddress
      */
     protected $address;
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @var ShipToPhone
      */
@@ -61,27 +61,27 @@ class FreightPickupRequestShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipToAddress
+     * @return FreightPickupShipToAddress
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : FreightPickupShipToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipToAddress $address
+     * @param FreightPickupShipToAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(FreightPickupShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
         return $this;
     }
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @return ShipToPhone
      */
@@ -90,7 +90,7 @@ class FreightPickupRequestShipTo extends \ArrayObject
         return $this->phone;
     }
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @param ShipToPhone $phone
      *

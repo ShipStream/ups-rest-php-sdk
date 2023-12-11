@@ -42,11 +42,11 @@ class FreightRateRequestShipmentServiceOptionsNormalizer implements Denormalizer
             return $object;
         }
         if (\array_key_exists('PickupOptions', $data)) {
-            $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPickupOptions', 'json', $context));
+            $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions', 'json', $context));
             unset($data['PickupOptions']);
         }
         if (\array_key_exists('DeliveryOptions', $data)) {
-            $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryOptions', 'json', $context));
+            $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions', 'json', $context));
             unset($data['DeliveryOptions']);
         }
         if (\array_key_exists('OverSeasLeg', $data)) {
@@ -54,7 +54,7 @@ class FreightRateRequestShipmentServiceOptionsNormalizer implements Denormalizer
             unset($data['OverSeasLeg']);
         }
         if (\array_key_exists('COD', $data)) {
-            $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD', 'json', $context));
+            $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD', 'json', $context));
             unset($data['COD']);
         }
         if (\array_key_exists('DangerousGoods', $data)) {

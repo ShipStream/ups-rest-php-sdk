@@ -13,7 +13,7 @@ class PalletInformationDimensions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.	Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
+     * UnitOfMeasurement Container.
      *
      * @var DimensionsUnitOfMeasurement
      */
@@ -37,7 +37,7 @@ class PalletInformationDimensions extends \ArrayObject
      */
     protected $height;
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.	Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
+     * UnitOfMeasurement Container.
      *
      * @return DimensionsUnitOfMeasurement
      */
@@ -46,7 +46,7 @@ class PalletInformationDimensions extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.	Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
+     * UnitOfMeasurement Container.
      *
      * @param DimensionsUnitOfMeasurement $unitOfMeasurement
      *

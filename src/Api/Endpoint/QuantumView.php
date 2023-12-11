@@ -6,7 +6,7 @@ class QuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
 {
     protected $version;
     /**
-     * 
+     * Get Quantum View Response
      *
      * @param string $version Version of API
      * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 

@@ -13,45 +13,33 @@ class DimensionalWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code representing the unit of measure associated with the shipment's dimensional weight.
-    Valid values:
-    LBS - Pounds (default)
-    KGS - Kilograms
-    Defaults Unit of Measurement used in the shipper's country or territory.
-    *
-    * @var string
-    */
+     * Code associated with the Unit of Measurement for the Adjusted weight.
+     *
+     * @var string
+     */
     protected $code;
     /**
-     * A text description of the code representing the unit of measure associated with the package weight.
+     * Description for the code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @var string
      */
     protected $description;
     /**
-    * The code representing the unit of measure associated with the shipment's dimensional weight.
-    Valid values:
-    LBS - Pounds (default)
-    KGS - Kilograms
-    Defaults Unit of Measurement used in the shipper's country or territory.
-    *
-    * @return string
-    */
+     * Code associated with the Unit of Measurement for the Adjusted weight.
+     *
+     * @return string
+     */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-    * The code representing the unit of measure associated with the shipment's dimensional weight.
-    Valid values:
-    LBS - Pounds (default)
-    KGS - Kilograms
-    Defaults Unit of Measurement used in the shipper's country or territory.
-    *
-    * @param string $code
-    *
-    * @return self
-    */
+     * Code associated with the Unit of Measurement for the Adjusted weight.
+     *
+     * @param string $code
+     *
+     * @return self
+     */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -59,7 +47,7 @@ class DimensionalWeightUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * A text description of the code representing the unit of measure associated with the package weight.
+     * Description for the code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @return string
      */
@@ -68,7 +56,7 @@ class DimensionalWeightUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * A text description of the code representing the unit of measure associated with the package weight.
+     * Description for the code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @param string $description
      *

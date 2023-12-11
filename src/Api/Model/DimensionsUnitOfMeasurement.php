@@ -13,41 +13,41 @@ class DimensionsUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Package dimensions measurement code. Valid codes: IN = Inches CM = Centimeters 00 = Metric Units Of Measurement 01 = English Units of Measurement	The unit of measurement must be valid for the Shipper country or territory. 
+     * The code associated with the unit of measure for the billable weight of a shipment.
      *
      * @var string
      */
-    protected $unitOfMeasurement;
+    protected $code;
     /**
-     * Description of the package dimensions measurement units.
+     * The description for the billable weight associated with the shipment.
      *
      * @var string
      */
     protected $description;
     /**
-     * Package dimensions measurement code. Valid codes: IN = Inches CM = Centimeters 00 = Metric Units Of Measurement 01 = English Units of Measurement	The unit of measurement must be valid for the Shipper country or territory. 
+     * The code associated with the unit of measure for the billable weight of a shipment.
      *
      * @return string
      */
-    public function getUnitOfMeasurement() : string
+    public function getCode() : string
     {
-        return $this->unitOfMeasurement;
+        return $this->code;
     }
     /**
-     * Package dimensions measurement code. Valid codes: IN = Inches CM = Centimeters 00 = Metric Units Of Measurement 01 = English Units of Measurement	The unit of measurement must be valid for the Shipper country or territory. 
+     * The code associated with the unit of measure for the billable weight of a shipment.
      *
-     * @param string $unitOfMeasurement
+     * @param string $code
      *
      * @return self
      */
-    public function setUnitOfMeasurement(string $unitOfMeasurement) : self
+    public function setCode(string $code) : self
     {
-        $this->initialized['unitOfMeasurement'] = true;
-        $this->unitOfMeasurement = $unitOfMeasurement;
+        $this->initialized['code'] = true;
+        $this->code = $code;
         return $this;
     }
     /**
-     * Description of the package dimensions measurement units.
+     * The description for the billable weight associated with the shipment.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class DimensionsUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the package dimensions measurement units.
+     * The description for the billable weight associated with the shipment.
      *
      * @param string $description
      *

@@ -41,6 +41,10 @@ class CommodityDimensionsNormalizer implements DenormalizerInterface, Normalizer
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
+        if (\array_key_exists('UnitOfMeasurement', $data)) {
+            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement', 'json', $context));
+            unset($data['UnitOfMeasurement']);
+        }
         if (\array_key_exists('Length', $data)) {
             $object->setLength($data['Length']);
             unset($data['Length']);
@@ -66,6 +70,7 @@ class CommodityDimensionsNormalizer implements DenormalizerInterface, Normalizer
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
+        $data['UnitOfMeasurement'] = $this->normalizer->normalize($object->getUnitOfMeasurement(), 'json', $context);
         $data['Length'] = $object->getLength();
         $data['Width'] = $object->getWidth();
         $data['Height'] = $object->getHeight();

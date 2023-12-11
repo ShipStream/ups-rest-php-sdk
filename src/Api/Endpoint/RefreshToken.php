@@ -5,7 +5,7 @@ namespace ShipStream\Ups\Api\Endpoint;
 class RefreshToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
     /**
-     * Refresh Token
+     * The RefreshToken endpoint is used to refresh an expired access token in order to continue accessing the UPS API on behalf of a user. The endpoint generates a new access/refresh token pair by exchanging a valid refresh token. A successful response returns new access and refresh tokens for ongoing API access without reprompting the user.
      *
      * @param null|\ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody $requestBody 
      */

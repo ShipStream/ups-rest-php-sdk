@@ -6,7 +6,7 @@ class PickupCreation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imp
 {
     protected $version;
     /**
-    * Pickup Creation
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version Version of the API. Valid values: 
     v1

@@ -50,7 +50,7 @@ class FreightRateResponseCommodityNormalizer implements DenormalizerInterface, N
             unset($data['Description']);
         }
         if (\array_key_exists('Weight', $data)) {
-            $object->setWeight($data['Weight']);
+            $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
             unset($data['Weight']);
         }
         if (\array_key_exists('AdjustedWeight', $data)) {
@@ -74,7 +74,7 @@ class FreightRateResponseCommodityNormalizer implements DenormalizerInterface, N
             $data['CommodityID'] = $object->getCommodityID();
         }
         $data['Description'] = $object->getDescription();
-        $data['Weight'] = $object->getWeight();
+        $data['Weight'] = $this->normalizer->normalize($object->getWeight(), 'json', $context);
         if ($object->isInitialized('adjustedWeight') && null !== $object->getAdjustedWeight()) {
             $data['AdjustedWeight'] = $this->normalizer->normalize($object->getAdjustedWeight(), 'json', $context);
         }

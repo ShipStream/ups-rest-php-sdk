@@ -8,7 +8,7 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     protected $requestoption;
     protected $accept;
     /**
-    * 
+    * The Rating Ground Freight API may only be used by brokers or resellers of transportation services with a current and active UPGF Master Transportation Agreement.
     *
     * @param string $version When TForce Freight introduces new elements 
     in the response that are not associated with new 

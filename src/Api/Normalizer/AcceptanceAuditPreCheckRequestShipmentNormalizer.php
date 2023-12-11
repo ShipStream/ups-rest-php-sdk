@@ -46,11 +46,11 @@ class AcceptanceAuditPreCheckRequestShipmentNormalizer implements DenormalizerIn
             unset($data['ShipperNumber']);
         }
         if (\array_key_exists('ShipFromAddress', $data)) {
-            $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFromAddress', 'json', $context));
+            $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress', 'json', $context));
             unset($data['ShipFromAddress']);
         }
         if (\array_key_exists('ShipToAddress', $data)) {
-            $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipToAddress', 'json', $context));
+            $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipToAddress', 'json', $context));
             unset($data['ShipToAddress']);
         }
         if (\array_key_exists('Service', $data)) {
@@ -64,7 +64,7 @@ class AcceptanceAuditPreCheckRequestShipmentNormalizer implements DenormalizerIn
         if (\array_key_exists('Package', $data)) {
             $values = array();
             foreach ($data['Package'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentPackage', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentPackage', 'json', $context);
             }
             $object->setPackage($values);
             unset($data['Package']);

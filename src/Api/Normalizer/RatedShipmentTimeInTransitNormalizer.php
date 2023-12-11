@@ -54,11 +54,7 @@ class RatedShipmentTimeInTransitNormalizer implements DenormalizerInterface, Nor
             unset($data['PackageBillType']);
         }
         if (\array_key_exists('ServiceSummary', $data)) {
-            $values = array();
-            foreach ($data['ServiceSummary'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary', 'json', $context);
-            }
-            $object->setServiceSummary($values);
+            $object->setServiceSummary($this->denormalizer->denormalize($data['ServiceSummary'], 'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary', 'json', $context));
             unset($data['ServiceSummary']);
         }
         if (\array_key_exists('AutoDutyCode', $data)) {
@@ -69,9 +65,9 @@ class RatedShipmentTimeInTransitNormalizer implements DenormalizerInterface, Nor
             $object->setDisclaimer($data['Disclaimer']);
             unset($data['Disclaimer']);
         }
-        foreach ($data as $key => $value_1) {
+        foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value_1;
+                $object[$key] = $value;
             }
         }
         return $object;
@@ -89,20 +85,16 @@ class RatedShipmentTimeInTransitNormalizer implements DenormalizerInterface, Nor
         if ($object->isInitialized('packageBillType') && null !== $object->getPackageBillType()) {
             $data['PackageBillType'] = $object->getPackageBillType();
         }
-        $values = array();
-        foreach ($object->getServiceSummary() as $value) {
-            $values[] = $this->normalizer->normalize($value, 'json', $context);
-        }
-        $data['ServiceSummary'] = $values;
+        $data['ServiceSummary'] = $this->normalizer->normalize($object->getServiceSummary(), 'json', $context);
         if ($object->isInitialized('autoDutyCode') && null !== $object->getAutoDutyCode()) {
             $data['AutoDutyCode'] = $object->getAutoDutyCode();
         }
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
             $data['Disclaimer'] = $object->getDisclaimer();
         }
-        foreach ($object as $key => $value_1) {
+        foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value_1;
+                $data[$key] = $value;
             }
         }
         return $data;

@@ -6,7 +6,7 @@ class TimeInTransit extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
 {
     protected $version;
     /**
-     * 
+     * Get Time and Transit Response
      *
      * @param string $version API Version
      * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 

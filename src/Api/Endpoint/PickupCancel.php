@@ -7,7 +7,7 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     protected $CancelBy;
     protected $version;
     /**
-    * Pickup Cancel
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $cancelBy Valid Values: 01 = AccountNumber, 02 = PRN
     * @param string $version version of API e.g v1

@@ -19,13 +19,13 @@ class FreightDensityInfoHandlingUnits extends \ArrayObject
      */
     protected $quantity;
     /**
-     * Handling Unit Type for Density based rating.
+     * Handling Unit Type for Density based Rating.
      *
      * @var HandlingUnitsType
      */
     protected $type;
     /**
-     * Dimension of the HandlingUnit container for density based pricing.
+     * Dimension of the handling unit for density based pricing.
      *
      * @var HandlingUnitsDimensions
      */
@@ -53,7 +53,7 @@ class FreightDensityInfoHandlingUnits extends \ArrayObject
         return $this;
     }
     /**
-     * Handling Unit Type for Density based rating.
+     * Handling Unit Type for Density based Rating.
      *
      * @return HandlingUnitsType
      */
@@ -62,7 +62,7 @@ class FreightDensityInfoHandlingUnits extends \ArrayObject
         return $this->type;
     }
     /**
-     * Handling Unit Type for Density based rating.
+     * Handling Unit Type for Density based Rating.
      *
      * @param HandlingUnitsType $type
      *
@@ -75,7 +75,7 @@ class FreightDensityInfoHandlingUnits extends \ArrayObject
         return $this;
     }
     /**
-     * Dimension of the HandlingUnit container for density based pricing.
+     * Dimension of the handling unit for density based pricing.
      *
      * @return HandlingUnitsDimensions
      */
@@ -84,7 +84,7 @@ class FreightDensityInfoHandlingUnits extends \ArrayObject
         return $this->dimensions;
     }
     /**
-     * Dimension of the HandlingUnit container for density based pricing.
+     * Dimension of the handling unit for density based pricing.
      *
      * @param HandlingUnitsDimensions $dimensions
      *

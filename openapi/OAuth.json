@@ -2,19 +2,25 @@
   "openapi": "3.0.3",
   "info": {
     "title": "OAuth",
-    "description": "Manage and authenticate using OAuth access tokens",
-    "version": "1.0.1"
+    "version": ""
   },
   "servers": [
     {
-      "url": "https://wwwcie.ups.com/"
+      "url": "https://wwwcie.ups.com/api/",
+      "description": "Customer Integration Environment for Client Credentials"
+
+    },
+    {
+      "url": "https://onlinetools.ups.com/api/",
+      "description": "Production for Client Credentials"
     }
   ],
   "paths": {
-    "/security/v1/oauth/validate-client": {
+    "/security/v1/oauth/authorize": {
       "get": {
-        "description": "Validate Client",
-        "operationId": "ValidateClient",
+        "summary": "Authorize Client",
+        "description": "The Authorize Client endpoint initiates the OAuth flow by redirecting the user to UPS to log in and authorize the client application. It accepts the parameters listed below to facilitate the user authorization flow. A successful response redirects back to the client with an authorization code that can be exchanged for an access token.",
+        "operationId": "AuthorizeClient",
         "parameters": [
           {
             "in": "query",
@@ -33,15 +39,55 @@
             },
             "description": "Callback URL for the requesting application.",
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "response_type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Valid Values: code",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional value supplied by the client, will be returned during the redirection back to the client. Can be utilized to maintain state between Auth-Code request and callback event.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional value supplied by the client, will be returned during the redirection back to the client.",
+            "required": false
           }
         ],
         "responses": {
-          "200": {
+          "302": {
             "description": "successful operation",
-            "content": {
-              "application/json": {
+            "headers": {
+              "location": {
+                "description": "The UPS login redirection URI. Will be in the following format: https://www.ups.com/lasso/signin?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code&scope={scope}&state={state}&type=ups_com_api",
                 "schema": {
-                  "$ref": "#/components/schemas/validateSuccessResponse"
+                  "type": "string"
+                }
+              },
+              "appname": {
+                "description": "App name of the application requesting the Auth-Code.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "displayname": {
+                "description": "Display name of the application requesting the Auth-Code.",
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -76,7 +122,7 @@
             "basicAuth": []
           }
         ],
-        "description": "Generate Token",
+        "description": "The Generate Token endpoint exchanges the authorization code received from Authorize Client for an access token and a refresh token. The client uses the access token to make API requests on behalf of the user by including it in the Authorization header. The access token will expire after a certain period and can be refreshed by using the RefreshToken endpoint.",
         "operationId": "GenerateToken",
         "parameters": [
           {
@@ -175,8 +221,9 @@
             "basicAuth": []
           }
         ],
+        "summary": "Refresh Token",
         "operationId": "RefreshToken",
-        "description": "Refresh Token",
+        "description": "The RefreshToken endpoint is used to refresh an expired access token in order to continue accessing the UPS API on behalf of a user. The endpoint generates a new access/refresh token pair by exchanging a valid refresh token. A successful response returns new access and refresh tokens for ongoing API access without reprompting the user.",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -248,27 +295,11 @@
     "securitySchemes": {
       "basicAuth": {
         "type": "http",
-        "scheme": "basic"
+        "scheme": "basic",
+        "description": "Find your Client ID and Secret on your app info page. <br/> 1. Select \\\"Try It\\\" <br/> 2. In the Security section enter your Client ID as the Username and your Secret as the Password.<br/> 3. Enter any additional information in the Body and Parameters sections.<br/> 4. Select \\\"Send\\\" to execute your API request"
       }
     },
     "schemas": {
-      "validateSuccessResponse": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "description": "Status of request.",
-            "type": "string"
-          },
-          "type": {
-            "description": "Type of requested validation.",
-            "type": "string"
-          },
-          "LassoRedirectURL": {
-            "description": "Redirect URL for UPS Login.",
-            "type": "string"
-          }
-        }
-      },
       "generateTokenSuccessResponse": {
         "type": "object",
         "properties": {

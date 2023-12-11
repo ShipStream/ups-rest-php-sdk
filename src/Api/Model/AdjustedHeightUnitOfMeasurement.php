@@ -13,19 +13,19 @@ class AdjustedHeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code for UnitOfMeasurement for the line item dimension. Valid value is IN
+     * Code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @var string
      */
     protected $code;
     /**
-     * Description for UnitOfMeasurement for the line item dimension.
+     * Description for the code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @var string
      */
     protected $description;
     /**
-     * Code for UnitOfMeasurement for the line item dimension. Valid value is IN
+     * Code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class AdjustedHeightUnitOfMeasurement extends \ArrayObject
         return $this->code;
     }
     /**
-     * Code for UnitOfMeasurement for the line item dimension. Valid value is IN
+     * Code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @param string $code
      *
@@ -47,7 +47,7 @@ class AdjustedHeightUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * Description for UnitOfMeasurement for the line item dimension.
+     * Description for the code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class AdjustedHeightUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description for UnitOfMeasurement for the line item dimension.
+     * Description for the code associated with the Unit of Measurement for the Adjusted weight.
      *
      * @param string $description
      *

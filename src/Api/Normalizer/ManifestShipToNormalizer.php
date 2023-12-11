@@ -70,7 +70,7 @@ class ManifestShipToNormalizer implements DenormalizerInterface, NormalizerInter
             unset($data['EMailAddress']);
         }
         if (\array_key_exists('Address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipToAddress', 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ManifestShipToAddress', 'json', $context));
             unset($data['Address']);
         }
         if (\array_key_exists('LocationID', $data)) {

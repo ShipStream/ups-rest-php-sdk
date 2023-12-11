@@ -41,6 +41,10 @@ class PackageChemicalRecordNormalizer implements DenormalizerInterface, Normaliz
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
+        if (\array_key_exists('ChemicalRecordIdentifier', $data)) {
+            $object->setChemicalRecordIdentifier($data['ChemicalRecordIdentifier']);
+            unset($data['ChemicalRecordIdentifier']);
+        }
         if (\array_key_exists('ReportableQuantity', $data)) {
             $object->setReportableQuantity($data['ReportableQuantity']);
             unset($data['ReportableQuantity']);
@@ -72,14 +76,6 @@ class PackageChemicalRecordNormalizer implements DenormalizerInterface, Normaliz
         if (\array_key_exists('PackagingInstructionCode', $data)) {
             $object->setPackagingInstructionCode($data['PackagingInstructionCode']);
             unset($data['PackagingInstructionCode']);
-        }
-        if (\array_key_exists('EmergencyPhone', $data)) {
-            $object->setEmergencyPhone($data['EmergencyPhone']);
-            unset($data['EmergencyPhone']);
-        }
-        if (\array_key_exists('EmergencyContact', $data)) {
-            $object->setEmergencyContact($data['EmergencyContact']);
-            unset($data['EmergencyContact']);
         }
         if (\array_key_exists('ProperShippingName', $data)) {
             $object->setProperShippingName($data['ProperShippingName']);
@@ -117,14 +113,6 @@ class PackageChemicalRecordNormalizer implements DenormalizerInterface, Normaliz
             $object->setTunnelRestrictionCode($data['TunnelRestrictionCode']);
             unset($data['TunnelRestrictionCode']);
         }
-        if (\array_key_exists('QValue', $data)) {
-            $object->setQValue($data['QValue']);
-            unset($data['QValue']);
-        }
-        if (\array_key_exists('OverPackedIndicator', $data)) {
-            $object->setOverPackedIndicator($data['OverPackedIndicator']);
-            unset($data['OverPackedIndicator']);
-        }
         if (\array_key_exists('AllPackedInOneIndicator', $data)) {
             $object->setAllPackedInOneIndicator($data['AllPackedInOneIndicator']);
             unset($data['AllPackedInOneIndicator']);
@@ -142,6 +130,7 @@ class PackageChemicalRecordNormalizer implements DenormalizerInterface, Normaliz
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
+        $data['ChemicalRecordIdentifier'] = $object->getChemicalRecordIdentifier();
         if ($object->isInitialized('reportableQuantity') && null !== $object->getReportableQuantity()) {
             $data['ReportableQuantity'] = $object->getReportableQuantity();
         }
@@ -165,12 +154,6 @@ class PackageChemicalRecordNormalizer implements DenormalizerInterface, Normaliz
         }
         if ($object->isInitialized('packagingInstructionCode') && null !== $object->getPackagingInstructionCode()) {
             $data['PackagingInstructionCode'] = $object->getPackagingInstructionCode();
-        }
-        if ($object->isInitialized('emergencyPhone') && null !== $object->getEmergencyPhone()) {
-            $data['EmergencyPhone'] = $object->getEmergencyPhone();
-        }
-        if ($object->isInitialized('emergencyContact') && null !== $object->getEmergencyContact()) {
-            $data['EmergencyContact'] = $object->getEmergencyContact();
         }
         if ($object->isInitialized('properShippingName') && null !== $object->getProperShippingName()) {
             $data['ProperShippingName'] = $object->getProperShippingName();
@@ -196,12 +179,6 @@ class PackageChemicalRecordNormalizer implements DenormalizerInterface, Normaliz
         }
         if ($object->isInitialized('tunnelRestrictionCode') && null !== $object->getTunnelRestrictionCode()) {
             $data['TunnelRestrictionCode'] = $object->getTunnelRestrictionCode();
-        }
-        if ($object->isInitialized('qValue') && null !== $object->getQValue()) {
-            $data['QValue'] = $object->getQValue();
-        }
-        if ($object->isInitialized('overPackedIndicator') && null !== $object->getOverPackedIndicator()) {
-            $data['OverPackedIndicator'] = $object->getOverPackedIndicator();
         }
         if ($object->isInitialized('allPackedInOneIndicator') && null !== $object->getAllPackedInOneIndicator()) {
             $data['AllPackedInOneIndicator'] = $object->getAllPackedInOneIndicator();

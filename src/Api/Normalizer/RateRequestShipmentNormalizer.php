@@ -46,19 +46,19 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
             unset($data['OriginRecordTransactionTimestamp']);
         }
         if (\array_key_exists('Shipper', $data)) {
-            $object->setShipper($this->denormalizer->denormalize($data['Shipper'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipper', 'json', $context));
+            $object->setShipper($this->denormalizer->denormalize($data['Shipper'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipper', 'json', $context));
             unset($data['Shipper']);
         }
         if (\array_key_exists('ShipTo', $data)) {
-            $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipTo', 'json', $context));
+            $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipTo', 'json', $context));
             unset($data['ShipTo']);
         }
         if (\array_key_exists('ShipFrom', $data)) {
-            $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFrom', 'json', $context));
+            $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipFrom', 'json', $context));
             unset($data['ShipFrom']);
         }
         if (\array_key_exists('AlternateDeliveryAddress', $data)) {
-            $object->setAlternateDeliveryAddress($this->denormalizer->denormalize($data['AlternateDeliveryAddress'], 'ShipStream\\Ups\\Api\\Model\\ShipmentAlternateDeliveryAddress', 'json', $context));
+            $object->setAlternateDeliveryAddress($this->denormalizer->denormalize($data['AlternateDeliveryAddress'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentAlternateDeliveryAddress', 'json', $context));
             unset($data['AlternateDeliveryAddress']);
         }
         if (\array_key_exists('ShipmentIndicationType', $data)) {
@@ -74,7 +74,7 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
             unset($data['PaymentDetails']);
         }
         if (\array_key_exists('FRSPaymentInformation', $data)) {
-            $object->setFRSPaymentInformation($this->denormalizer->denormalize($data['FRSPaymentInformation'], 'ShipStream\\Ups\\Api\\Model\\ShipmentFRSPaymentInformation', 'json', $context));
+            $object->setFRSPaymentInformation($this->denormalizer->denormalize($data['FRSPaymentInformation'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentFRSPaymentInformation', 'json', $context));
             unset($data['FRSPaymentInformation']);
         }
         if (\array_key_exists('FreightShipmentInformation', $data)) {
@@ -104,13 +104,13 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
         if (\array_key_exists('Package', $data)) {
             $values_1 = array();
             foreach ($data['Package'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentPackage', 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\RateShipmentPackage', 'json', $context);
             }
             $object->setPackage($values_1);
             unset($data['Package']);
         }
         if (\array_key_exists('ShipmentServiceOptions', $data)) {
-            $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentServiceOptions', 'json', $context));
+            $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipmentServiceOptions', 'json', $context));
             unset($data['ShipmentServiceOptions']);
         }
         if (\array_key_exists('ShipmentRatingOptions', $data)) {

@@ -55,9 +55,9 @@ class ManifestShipTo extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-     * Address Container.
+     * Information that specifies a physical location.
      *
-     * @var ShipToAddress
+     * @var ManifestShipToAddress
      */
     protected $address;
     /**
@@ -227,22 +227,22 @@ class ManifestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Address Container.
+     * Information that specifies a physical location.
      *
-     * @return ShipToAddress
+     * @return ManifestShipToAddress
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : ManifestShipToAddress
     {
         return $this->address;
     }
     /**
-     * Address Container.
+     * Information that specifies a physical location.
      *
-     * @param ShipToAddress $address
+     * @param ManifestShipToAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(ManifestShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

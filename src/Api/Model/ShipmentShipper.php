@@ -78,7 +78,7 @@ class ShipmentShipper extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-    * Address tag Container. The package should be returned to this address if the package is undeliverable.
+    * Address tag Container.
     
     This address appears on the upper left hand corner of the label.
     
@@ -299,7 +299,7 @@ class ShipmentShipper extends \ArrayObject
         return $this;
     }
     /**
-    * Address tag Container. The package should be returned to this address if the package is undeliverable.
+    * Address tag Container.
     
     This address appears on the upper left hand corner of the label.
     
@@ -313,7 +313,7 @@ class ShipmentShipper extends \ArrayObject
         return $this->address;
     }
     /**
-    * Address tag Container. The package should be returned to this address if the package is undeliverable.
+    * Address tag Container.
     
     This address appears on the upper left hand corner of the label.
     

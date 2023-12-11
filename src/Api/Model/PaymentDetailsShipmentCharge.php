@@ -19,9 +19,9 @@ class PaymentDetailsShipmentCharge extends \ArrayObject
      */
     protected $type;
     /**
-     * Container for the BillShipper billing option. The three payment methods that are available for the Bill Shipper billing option are alternate payment method, account number or credit card.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
+     * Container for the BillShipper billing option.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
      *
-     * @var ShipmentChargeBillShipper
+     * @var RateShipmentChargeBillShipper
      */
     protected $billShipper;
     /**
@@ -33,7 +33,7 @@ class PaymentDetailsShipmentCharge extends \ArrayObject
     /**
      * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
      *
-     * @var ShipmentChargeBillThirdParty
+     * @var RateShipmentChargeBillThirdParty
      */
     protected $billThirdParty;
     /**
@@ -65,22 +65,22 @@ class PaymentDetailsShipmentCharge extends \ArrayObject
         return $this;
     }
     /**
-     * Container for the BillShipper billing option. The three payment methods that are available for the Bill Shipper billing option are alternate payment method, account number or credit card.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
+     * Container for the BillShipper billing option.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
      *
-     * @return ShipmentChargeBillShipper
+     * @return RateShipmentChargeBillShipper
      */
-    public function getBillShipper() : ShipmentChargeBillShipper
+    public function getBillShipper() : RateShipmentChargeBillShipper
     {
         return $this->billShipper;
     }
     /**
-     * Container for the BillShipper billing option. The three payment methods that are available for the Bill Shipper billing option are alternate payment method, account number or credit card.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
+     * Container for the BillShipper billing option.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
      *
-     * @param ShipmentChargeBillShipper $billShipper
+     * @param RateShipmentChargeBillShipper $billShipper
      *
      * @return self
      */
-    public function setBillShipper(ShipmentChargeBillShipper $billShipper) : self
+    public function setBillShipper(RateShipmentChargeBillShipper $billShipper) : self
     {
         $this->initialized['billShipper'] = true;
         $this->billShipper = $billShipper;
@@ -111,20 +111,20 @@ class PaymentDetailsShipmentCharge extends \ArrayObject
     /**
      * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
      *
-     * @return ShipmentChargeBillThirdParty
+     * @return RateShipmentChargeBillThirdParty
      */
-    public function getBillThirdParty() : ShipmentChargeBillThirdParty
+    public function getBillThirdParty() : RateShipmentChargeBillThirdParty
     {
         return $this->billThirdParty;
     }
     /**
      * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
      *
-     * @param ShipmentChargeBillThirdParty $billThirdParty
+     * @param RateShipmentChargeBillThirdParty $billThirdParty
      *
      * @return self
      */
-    public function setBillThirdParty(ShipmentChargeBillThirdParty $billThirdParty) : self
+    public function setBillThirdParty(RateShipmentChargeBillThirdParty $billThirdParty) : self
     {
         $this->initialized['billThirdParty'] = true;
         $this->billThirdParty = $billThirdParty;

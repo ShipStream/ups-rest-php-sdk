@@ -54,7 +54,7 @@ class ManifestPackageNormalizer implements DenormalizerInterface, NormalizerInte
             unset($data['Description']);
         }
         if (\array_key_exists('Dimensions', $data)) {
-            $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\PackageDimensions', 'json', $context));
+            $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions', 'json', $context));
             unset($data['Dimensions']);
         }
         if (\array_key_exists('DimensionalWeight', $data)) {
@@ -62,7 +62,7 @@ class ManifestPackageNormalizer implements DenormalizerInterface, NormalizerInte
             unset($data['DimensionalWeight']);
         }
         if (\array_key_exists('PackageWeight', $data)) {
-            $object->setPackageWeight($this->denormalizer->denormalize($data['PackageWeight'], 'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight', 'json', $context));
+            $object->setPackageWeight($this->denormalizer->denormalize($data['PackageWeight'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight', 'json', $context));
             unset($data['PackageWeight']);
         }
         if (\array_key_exists('LargePackage', $data)) {
@@ -74,11 +74,11 @@ class ManifestPackageNormalizer implements DenormalizerInterface, NormalizerInte
             unset($data['TrackingNumber']);
         }
         if (\array_key_exists('ReferenceNumber', $data)) {
-            $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\PackageReferenceNumber', 'json', $context));
+            $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context));
             unset($data['ReferenceNumber']);
         }
         if (\array_key_exists('PackageServiceOptions', $data)) {
-            $object->setPackageServiceOptions($this->denormalizer->denormalize($data['PackageServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions', 'json', $context));
+            $object->setPackageServiceOptions($this->denormalizer->denormalize($data['PackageServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions', 'json', $context));
             unset($data['PackageServiceOptions']);
         }
         if (\array_key_exists('UPSPremiumCareIndicator', $data)) {

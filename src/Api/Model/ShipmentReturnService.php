@@ -14,7 +14,6 @@ class ShipmentReturnService extends \ArrayObject
     }
     /**
     * Return Service types: 
-    2 = UPS Print and Mail (PNM)
     3 = UPS Return Service 1-Attempt (RS1)
     5 = UPS Return Service 3-Attempt (RS3)
     8 = UPS Electronic Return Label (ERL)
@@ -42,7 +41,6 @@ class ShipmentReturnService extends \ArrayObject
     protected $description;
     /**
     * Return Service types: 
-    2 = UPS Print and Mail (PNM)
     3 = UPS Return Service 1-Attempt (RS1)
     5 = UPS Return Service 3-Attempt (RS3)
     8 = UPS Electronic Return Label (ERL)
@@ -67,7 +65,6 @@ class ShipmentReturnService extends \ArrayObject
     }
     /**
     * Return Service types: 
-    2 = UPS Print and Mail (PNM)
     3 = UPS Return Service 1-Attempt (RS1)
     5 = UPS Return Service 3-Attempt (RS3)
     8 = UPS Electronic Return Label (ERL)

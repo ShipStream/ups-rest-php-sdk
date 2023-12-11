@@ -33,7 +33,7 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Dimensions Container.
      *
-     * @var CommodityDimensions
+     * @var FreightShipCommodityDimensions
      */
     protected $dimensions;
     /**
@@ -148,20 +148,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Dimensions Container.
      *
-     * @return CommodityDimensions
+     * @return FreightShipCommodityDimensions
      */
-    public function getDimensions() : CommodityDimensions
+    public function getDimensions() : FreightShipCommodityDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimensions Container.
      *
-     * @param CommodityDimensions $dimensions
+     * @param FreightShipCommodityDimensions $dimensions
      *
      * @return self
      */
-    public function setDimensions(CommodityDimensions $dimensions) : self
+    public function setDimensions(FreightShipCommodityDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;

@@ -122,7 +122,7 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $referenceNumber;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
@@ -288,18 +288,6 @@ class ShipmentRequestShipment extends \ArrayObject
     * @var string
     */
     protected $masterCartonIndicator;
-    /**
-     * Bar Code Image Indicator. Presence of this indicator means only bar code image will be created and returned to client. Shipping Label wont be returned when bar code image is returned.
-     *
-     * @var string
-     */
-    protected $barCodeImageIndicator;
-    /**
-     * Bar Code And Label Indicator. Presence of this indicator means both bar code image and shipping label will be returned.
-     *
-     * @var string
-     */
-    protected $barCodeAndLabelIndicator;
     /**
      * User can send up to 7 days in the future with current date as day zero. Format: YYYYMMDD
      *
@@ -691,7 +679,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -700,7 +688,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *
@@ -1232,50 +1220,6 @@ class ShipmentRequestShipment extends \ArrayObject
     {
         $this->initialized['masterCartonIndicator'] = true;
         $this->masterCartonIndicator = $masterCartonIndicator;
-        return $this;
-    }
-    /**
-     * Bar Code Image Indicator. Presence of this indicator means only bar code image will be created and returned to client. Shipping Label wont be returned when bar code image is returned.
-     *
-     * @return string
-     */
-    public function getBarCodeImageIndicator() : string
-    {
-        return $this->barCodeImageIndicator;
-    }
-    /**
-     * Bar Code Image Indicator. Presence of this indicator means only bar code image will be created and returned to client. Shipping Label wont be returned when bar code image is returned.
-     *
-     * @param string $barCodeImageIndicator
-     *
-     * @return self
-     */
-    public function setBarCodeImageIndicator(string $barCodeImageIndicator) : self
-    {
-        $this->initialized['barCodeImageIndicator'] = true;
-        $this->barCodeImageIndicator = $barCodeImageIndicator;
-        return $this;
-    }
-    /**
-     * Bar Code And Label Indicator. Presence of this indicator means both bar code image and shipping label will be returned.
-     *
-     * @return string
-     */
-    public function getBarCodeAndLabelIndicator() : string
-    {
-        return $this->barCodeAndLabelIndicator;
-    }
-    /**
-     * Bar Code And Label Indicator. Presence of this indicator means both bar code image and shipping label will be returned.
-     *
-     * @param string $barCodeAndLabelIndicator
-     *
-     * @return self
-     */
-    public function setBarCodeAndLabelIndicator(string $barCodeAndLabelIndicator) : self
-    {
-        $this->initialized['barCodeAndLabelIndicator'] = true;
-        $this->barCodeAndLabelIndicator = $barCodeAndLabelIndicator;
         return $this;
     }
     /**

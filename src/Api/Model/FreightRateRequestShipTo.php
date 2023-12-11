@@ -13,7 +13,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Consignee�s company name.
+     * Consignee's company name.
      *
      * @var string
      */
@@ -21,17 +21,17 @@ class FreightRateRequestShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @var ShipToAddress
+     * @var FreightRateShipToAddress
      */
     protected $address;
     /**
-     * Contact name at the consignee�s location.
+     * Contact name at the consignee's location.
      *
      * @var string
      */
     protected $attentionName;
     /**
-     * Consignee�s company name.
+     * Consignee's company name.
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this->name;
     }
     /**
-     * Consignee�s company name.
+     * Consignee's company name.
      *
      * @param string $name
      *
@@ -55,27 +55,27 @@ class FreightRateRequestShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipToAddress
+     * @return FreightRateShipToAddress
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : FreightRateShipToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipToAddress $address
+     * @param FreightRateShipToAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(FreightRateShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
         return $this;
     }
     /**
-     * Contact name at the consignee�s location.
+     * Contact name at the consignee's location.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class FreightRateRequestShipTo extends \ArrayObject
         return $this->attentionName;
     }
     /**
-     * Contact name at the consignee�s location.
+     * Contact name at the consignee's location.
      *
      * @param string $attentionName
      *

@@ -66,7 +66,7 @@ class HandlingUnitCommodityNormalizer implements DenormalizerInterface, Normaliz
             unset($data['FreightClass']);
         }
         if (\array_key_exists('Dimensions', $data)) {
-            $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions', 'json', $context));
+            $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipCommodityDimensions', 'json', $context));
             unset($data['Dimensions']);
         }
         if (\array_key_exists('Weight', $data)) {

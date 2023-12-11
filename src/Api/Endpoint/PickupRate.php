@@ -7,7 +7,7 @@ class PickupRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impleme
     protected $version;
     protected $pickuptype;
     /**
-    * Pickup Rate
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
     * @param string $version Version of the API. Valid values v1
     * @param string $pickuptype Type of pickup. Valid values:

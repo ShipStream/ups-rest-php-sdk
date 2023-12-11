@@ -25,9 +25,9 @@ class PackingListShipFrom extends \ArrayObject
      */
     protected $attentionName;
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
-     * @var ShipFromAddress
+     * @var FreightShipShipFromAddress
      */
     protected $address;
     /**
@@ -93,22 +93,22 @@ class PackingListShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
-     * @return ShipFromAddress
+     * @return FreightShipShipFromAddress
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress() : FreightShipShipFromAddress
     {
         return $this->address;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Shipper�s Address Container.
      *
-     * @param ShipFromAddress $address
+     * @param FreightShipShipFromAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(FreightShipShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

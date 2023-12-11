@@ -84,11 +84,13 @@ class PackageResultsShippingLabelNormalizer implements DenormalizerInterface, No
         $data = array();
         $data['ImageFormat'] = $this->normalizer->normalize($object->getImageFormat(), 'json', $context);
         $data['GraphicImage'] = $object->getGraphicImage();
-        $values = array();
-        foreach ($object->getGraphicImagePart() as $value) {
-            $values[] = $value;
+        if ($object->isInitialized('graphicImagePart') && null !== $object->getGraphicImagePart()) {
+            $values = array();
+            foreach ($object->getGraphicImagePart() as $value) {
+                $values[] = $value;
+            }
+            $data['GraphicImagePart'] = $values;
         }
-        $data['GraphicImagePart'] = $values;
         if ($object->isInitialized('internationalSignatureGraphicImage') && null !== $object->getInternationalSignatureGraphicImage()) {
             $data['InternationalSignatureGraphicImage'] = $object->getInternationalSignatureGraphicImage();
         }

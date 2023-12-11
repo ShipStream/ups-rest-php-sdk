@@ -25,23 +25,16 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      */
     protected $name;
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Address Container.
      *
      * @var ShipFromAddress
      */
     protected $address;
     /**
-    * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is:
-    area code, 7 digit phone number or 
-    area code, 7 digit phone number, 4 digit extension number.
-    
-    For other countries or territories, the layout is:
-    country or territory code, area code, 7 digit number. 
-    
-    If ShipFrom tag is in the XML and International forms is requested.
-    *
-    * @var ShipFromPhone
-    */
+     * Phone Container
+     *
+     * @var ShipFromPhone
+     */
     protected $phone;
     /**
      * Ship from email address.
@@ -94,7 +87,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Address Container.
      *
      * @return ShipFromAddress
      */
@@ -103,7 +96,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
         return $this->address;
     }
     /**
-     * Ship from Address Container.  The package will be originating from or being shipped from this address. The shipment will be rated from this origin address to the destination ship to address.
+     * Address Container.
      *
      * @param ShipFromAddress $address
      *
@@ -116,35 +109,21 @@ class FreightPickupRequestShipFrom extends \ArrayObject
         return $this;
     }
     /**
-    * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is:
-    area code, 7 digit phone number or 
-    area code, 7 digit phone number, 4 digit extension number.
-    
-    For other countries or territories, the layout is:
-    country or territory code, area code, 7 digit number. 
-    
-    If ShipFrom tag is in the XML and International forms is requested.
-    *
-    * @return ShipFromPhone
-    */
+     * Phone Container
+     *
+     * @return ShipFromPhone
+     */
     public function getPhone() : ShipFromPhone
     {
         return $this->phone;
     }
     /**
-    * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is:
-    area code, 7 digit phone number or 
-    area code, 7 digit phone number, 4 digit extension number.
-    
-    For other countries or territories, the layout is:
-    country or territory code, area code, 7 digit number. 
-    
-    If ShipFrom tag is in the XML and International forms is requested.
-    *
-    * @param ShipFromPhone $phone
-    *
-    * @return self
-    */
+     * Phone Container
+     *
+     * @param ShipFromPhone $phone
+     *
+     * @return self
+     */
     public function setPhone(ShipFromPhone $phone) : self
     {
         $this->initialized['phone'] = true;

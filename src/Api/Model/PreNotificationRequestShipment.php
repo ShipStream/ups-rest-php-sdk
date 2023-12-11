@@ -13,7 +13,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Shipper�s six digit account number.
+     * Shipper's six digit account number.
      *
      * @var string
      */
@@ -27,13 +27,13 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * Ship To address container.
      *
-     * @var ShipmentShipToAddress
+     * @var PreNotificationShipmentShipToAddress
      */
     protected $shipToAddress;
     /**
      * Ship From address container.
      *
-     * @var ShipmentShipFromAddress
+     * @var PreNotificationShipmentShipFromAddress
      */
     protected $shipFromAddress;
     /**
@@ -43,15 +43,15 @@ class PreNotificationRequestShipment extends \ArrayObject
      */
     protected $pickupDate;
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @var ShipmentService
      */
     protected $service;
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR � Title 49 of the United States Code of Federal Regulations.  
-    IATA � International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
+    49CFR - Title 49 of the United States Code of Federal Regulations.  
+    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
     *
     * @var string
     */
@@ -59,11 +59,11 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentPackage[]
+     * @var PreNotificationShipmentPackage[]
      */
     protected $package;
     /**
-     * Shipper�s six digit account number.
+     * Shipper's six digit account number.
      *
      * @return string
      */
@@ -72,7 +72,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->shipperNumber;
     }
     /**
-     * Shipper�s six digit account number.
+     * Shipper's six digit account number.
      *
      * @param string $shipperNumber
      *
@@ -109,20 +109,20 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * Ship To address container.
      *
-     * @return ShipmentShipToAddress
+     * @return PreNotificationShipmentShipToAddress
      */
-    public function getShipToAddress() : ShipmentShipToAddress
+    public function getShipToAddress() : PreNotificationShipmentShipToAddress
     {
         return $this->shipToAddress;
     }
     /**
      * Ship To address container.
      *
-     * @param ShipmentShipToAddress $shipToAddress
+     * @param PreNotificationShipmentShipToAddress $shipToAddress
      *
      * @return self
      */
-    public function setShipToAddress(ShipmentShipToAddress $shipToAddress) : self
+    public function setShipToAddress(PreNotificationShipmentShipToAddress $shipToAddress) : self
     {
         $this->initialized['shipToAddress'] = true;
         $this->shipToAddress = $shipToAddress;
@@ -131,20 +131,20 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * Ship From address container.
      *
-     * @return ShipmentShipFromAddress
+     * @return PreNotificationShipmentShipFromAddress
      */
-    public function getShipFromAddress() : ShipmentShipFromAddress
+    public function getShipFromAddress() : PreNotificationShipmentShipFromAddress
     {
         return $this->shipFromAddress;
     }
     /**
      * Ship From address container.
      *
-     * @param ShipmentShipFromAddress $shipFromAddress
+     * @param PreNotificationShipmentShipFromAddress $shipFromAddress
      *
      * @return self
      */
-    public function setShipFromAddress(ShipmentShipFromAddress $shipFromAddress) : self
+    public function setShipFromAddress(PreNotificationShipmentShipFromAddress $shipFromAddress) : self
     {
         $this->initialized['shipFromAddress'] = true;
         $this->shipFromAddress = $shipFromAddress;
@@ -173,7 +173,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @return ShipmentService
      */
@@ -182,7 +182,7 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->service;
     }
     /**
-     * UPS service type.
+     * Service Container.
      *
      * @param ShipmentService $service
      *
@@ -195,9 +195,9 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR � Title 49 of the United States Code of Federal Regulations.  
-    IATA � International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
+    49CFR - Title 49 of the United States Code of Federal Regulations.  
+    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
     *
     * @return string
     */
@@ -206,9 +206,9 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->regulationSet;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR � Title 49 of the United States Code of Federal Regulations.  
-    IATA � International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
+    49CFR - Title 49 of the United States Code of Federal Regulations.  
+    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
     *
     * @param string $regulationSet
     *
@@ -223,7 +223,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentPackage[]
+     * @return PreNotificationShipmentPackage[]
      */
     public function getPackage() : array
     {
@@ -232,7 +232,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentPackage[] $package
+     * @param PreNotificationShipmentPackage[] $package
      *
      * @return self
      */

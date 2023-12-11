@@ -46,7 +46,7 @@ class CODRemitToNormalizer implements DenormalizerInterface, NormalizerInterface
             unset($data['Name']);
         }
         if (\array_key_exists('Address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\RemitToAddress', 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FreightShipRemitToAddress', 'json', $context));
             unset($data['Address']);
         }
         if (\array_key_exists('AttentionName', $data)) {

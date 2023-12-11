@@ -13,15 +13,15 @@ class FreightRateResponseResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @var ResponseResponseStatus
      */
     protected $responseStatus;
     /**
-     * Alert Container. There can be zero to many alert containers with code and description.
+     * 
      *
-     * @var ResponseAlert
+     * @var ResponseAlert[]
      */
     protected $alert;
     /**
@@ -31,7 +31,7 @@ class FreightRateResponseResponse extends \ArrayObject
      */
     protected $transactionReference;
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @return ResponseResponseStatus
      */
@@ -40,7 +40,7 @@ class FreightRateResponseResponse extends \ArrayObject
         return $this->responseStatus;
     }
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @param ResponseResponseStatus $responseStatus
      *
@@ -53,22 +53,22 @@ class FreightRateResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * Alert Container. There can be zero to many alert containers with code and description.
+     * 
      *
-     * @return ResponseAlert
+     * @return ResponseAlert[]
      */
-    public function getAlert() : ResponseAlert
+    public function getAlert() : array
     {
         return $this->alert;
     }
     /**
-     * Alert Container. There can be zero to many alert containers with code and description.
+     * 
      *
-     * @param ResponseAlert $alert
+     * @param ResponseAlert[] $alert
      *
      * @return self
      */
-    public function setAlert(ResponseAlert $alert) : self
+    public function setAlert(array $alert) : self
     {
         $this->initialized['alert'] = true;
         $this->alert = $alert;

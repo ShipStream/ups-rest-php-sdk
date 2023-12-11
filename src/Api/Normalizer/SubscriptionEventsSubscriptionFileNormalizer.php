@@ -49,9 +49,49 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
             $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType', 'json', $context));
             unset($data['StatusType']);
         }
-        foreach ($data as $key => $value) {
+        if (\array_key_exists('Manifest', $data)) {
+            $values = array();
+            foreach ($data['Manifest'] as $value) {
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest', 'json', $context);
+            }
+            $object->setManifest($values);
+            unset($data['Manifest']);
+        }
+        if (\array_key_exists('Origin', $data)) {
+            $values_1 = array();
+            foreach ($data['Origin'] as $value_1) {
+                $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin', 'json', $context);
+            }
+            $object->setOrigin($values_1);
+            unset($data['Origin']);
+        }
+        if (\array_key_exists('Exception', $data)) {
+            $values_2 = array();
+            foreach ($data['Exception'] as $value_2) {
+                $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException', 'json', $context);
+            }
+            $object->setException($values_2);
+            unset($data['Exception']);
+        }
+        if (\array_key_exists('Delivery', $data)) {
+            $values_3 = array();
+            foreach ($data['Delivery'] as $value_3) {
+                $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery', 'json', $context);
+            }
+            $object->setDelivery($values_3);
+            unset($data['Delivery']);
+        }
+        if (\array_key_exists('Generic', $data)) {
+            $values_4 = array();
+            foreach ($data['Generic'] as $value_4) {
+                $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric', 'json', $context);
+            }
+            $object->setGeneric($values_4);
+            unset($data['Generic']);
+        }
+        foreach ($data as $key => $value_5) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_5;
             }
         }
         return $object;
@@ -64,9 +104,44 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
         $data = array();
         $data['FileName'] = $object->getFileName();
         $data['StatusType'] = $this->normalizer->normalize($object->getStatusType(), 'json', $context);
-        foreach ($object as $key => $value) {
+        if ($object->isInitialized('manifest') && null !== $object->getManifest()) {
+            $values = array();
+            foreach ($object->getManifest() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['Manifest'] = $values;
+        }
+        if ($object->isInitialized('origin') && null !== $object->getOrigin()) {
+            $values_1 = array();
+            foreach ($object->getOrigin() as $value_1) {
+                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+            }
+            $data['Origin'] = $values_1;
+        }
+        if ($object->isInitialized('exception') && null !== $object->getException()) {
+            $values_2 = array();
+            foreach ($object->getException() as $value_2) {
+                $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
+            }
+            $data['Exception'] = $values_2;
+        }
+        if ($object->isInitialized('delivery') && null !== $object->getDelivery()) {
+            $values_3 = array();
+            foreach ($object->getDelivery() as $value_3) {
+                $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+            }
+            $data['Delivery'] = $values_3;
+        }
+        if ($object->isInitialized('generic') && null !== $object->getGeneric()) {
+            $values_4 = array();
+            foreach ($object->getGeneric() as $value_4) {
+                $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
+            }
+            $data['Generic'] = $values_4;
+        }
+        foreach ($object as $key => $value_5) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_5;
             }
         }
         return $data;

@@ -13,19 +13,37 @@ class Errors extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Error code
+     * Error Code
      *
      * @var string
      */
     protected $code;
     /**
-     * Error message
+     * Description of the error
+     *
+     * @var string
+     */
+    protected $description;
+    /**
+     * Consumer tailored error message
      *
      * @var string
      */
     protected $message;
     /**
-     * Error code
+     * The value that caused the error.
+     *
+     * @var string
+     */
+    protected $value;
+    /**
+     * The path to the field causing the error as returned from the backend services
+     *
+     * @var string
+     */
+    protected $field;
+    /**
+     * Error Code
      *
      * @return string
      */
@@ -34,7 +52,7 @@ class Errors extends \ArrayObject
         return $this->code;
     }
     /**
-     * Error code
+     * Error Code
      *
      * @param string $code
      *
@@ -47,7 +65,29 @@ class Errors extends \ArrayObject
         return $this;
     }
     /**
-     * Error message
+     * Description of the error
+     *
+     * @return string
+     */
+    public function getDescription() : string
+    {
+        return $this->description;
+    }
+    /**
+     * Description of the error
+     *
+     * @param string $description
+     *
+     * @return self
+     */
+    public function setDescription(string $description) : self
+    {
+        $this->initialized['description'] = true;
+        $this->description = $description;
+        return $this;
+    }
+    /**
+     * Consumer tailored error message
      *
      * @return string
      */
@@ -56,7 +96,7 @@ class Errors extends \ArrayObject
         return $this->message;
     }
     /**
-     * Error message
+     * Consumer tailored error message
      *
      * @param string $message
      *
@@ -66,6 +106,50 @@ class Errors extends \ArrayObject
     {
         $this->initialized['message'] = true;
         $this->message = $message;
+        return $this;
+    }
+    /**
+     * The value that caused the error.
+     *
+     * @return string
+     */
+    public function getValue() : string
+    {
+        return $this->value;
+    }
+    /**
+     * The value that caused the error.
+     *
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setValue(string $value) : self
+    {
+        $this->initialized['value'] = true;
+        $this->value = $value;
+        return $this;
+    }
+    /**
+     * The path to the field causing the error as returned from the backend services
+     *
+     * @return string
+     */
+    public function getField() : string
+    {
+        return $this->field;
+    }
+    /**
+     * The path to the field causing the error as returned from the backend services
+     *
+     * @param string $field
+     *
+     * @return self
+     */
+    public function setField(string $field) : self
+    {
+        $this->initialized['field'] = true;
+        $this->field = $field;
         return $this;
     }
 }

@@ -13,37 +13,37 @@ class ShipFromAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Ship from street address including name and number (when applicable). 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.
+     * The Ship to street address.
      *
      * @var string[]
      */
     protected $addressLine;
     /**
-     * The Ship from city. 30 characters are accepted, but for return Shipment only 15 characters will be printed on the label.
+     * The Ship to city.
      *
      * @var string
      */
     protected $city;
     /**
-     * Origin locations state or province code.
+     * The Ship to location�s state or province code.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * The ship from locations postal code. 9 characters are accepted.
+     * The ship to location�s postal code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Origin locations country or territory code.
+     * The ship to location�s country code.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * The Ship from street address including name and number (when applicable). 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.
+     * The Ship to street address.
      *
      * @return string[]
      */
@@ -52,7 +52,7 @@ class ShipFromAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * The Ship from street address including name and number (when applicable). 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.
+     * The Ship to street address.
      *
      * @param string[] $addressLine
      *
@@ -65,7 +65,7 @@ class ShipFromAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship from city. 30 characters are accepted, but for return Shipment only 15 characters will be printed on the label.
+     * The Ship to city.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class ShipFromAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * The Ship from city. 30 characters are accepted, but for return Shipment only 15 characters will be printed on the label.
+     * The Ship to city.
      *
      * @param string $city
      *
@@ -87,7 +87,7 @@ class ShipFromAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Origin locations state or province code.
+     * The Ship to location�s state or province code.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class ShipFromAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * Origin locations state or province code.
+     * The Ship to location�s state or province code.
      *
      * @param string $stateProvinceCode
      *
@@ -109,7 +109,7 @@ class ShipFromAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The ship from locations postal code. 9 characters are accepted.
+     * The ship to location�s postal code.
      *
      * @return string
      */
@@ -118,7 +118,7 @@ class ShipFromAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * The ship from locations postal code. 9 characters are accepted.
+     * The ship to location�s postal code.
      *
      * @param string $postalCode
      *
@@ -131,7 +131,7 @@ class ShipFromAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Origin locations country or territory code.
+     * The ship to location�s country code.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class ShipFromAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Origin locations country or territory code.
+     * The ship to location�s country code.
      *
      * @param string $countryCode
      *

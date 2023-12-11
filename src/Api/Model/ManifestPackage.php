@@ -25,10 +25,11 @@ class ManifestPackage extends \ArrayObject
      */
     protected $description;
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.  Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM. Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate
-     *
-     * @var PackageDimensions
-     */
+    * Container tag for package dimension information. 
+    Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
+    *
+    * @var ManifestPackageDimensions
+    */
     protected $dimensions;
     /**
      * Container tag for package dimensional weight.
@@ -37,9 +38,9 @@ class ManifestPackage extends \ArrayObject
      */
     protected $dimensionalWeight;
     /**
-     * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
+     * Container tag for package weight. Required when the package type is not UPS Letter.
      *
-     * @var PackagePackageWeight
+     * @var ManifestPackagePackageWeight
      */
     protected $packageWeight;
     /**
@@ -55,17 +56,15 @@ class ManifestPackage extends \ArrayObject
      */
     protected $trackingNumber;
     /**
-    * Package reference number information container.  For Mail Innovation shipments, up to 3 reference numbers are supported. If 5 reference numbers are specified (CostCenter, PackageID, and 3 ReferenceNumbers) the 3 desigated by the ReferenceNumber container will not be visible on 4x6 label supported by the API. These additional reference numbers are only be visible on the 4x8 label..
-    
-    For non-Mail Innovation shipments only the first 2 reference numbers will be visible on labels.
-    *
-    * @var PackageReferenceNumber
-    */
+     * Container tag for information about the package-level reference number.
+     *
+     * @var ManifestPackageReferenceNumber
+     */
     protected $referenceNumber;
     /**
-     * Package Service Options container.
+     * Defines service options used for the package(s).
      *
-     * @var PackagePackageServiceOptions
+     * @var ManifestPackagePackageServiceOptions
      */
     protected $packageServiceOptions;
     /**
@@ -119,22 +118,24 @@ class ManifestPackage extends \ArrayObject
         return $this;
     }
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.  Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM. Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate
-     *
-     * @return PackageDimensions
-     */
-    public function getDimensions() : PackageDimensions
+    * Container tag for package dimension information. 
+    Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
+    *
+    * @return ManifestPackageDimensions
+    */
+    public function getDimensions() : ManifestPackageDimensions
     {
         return $this->dimensions;
     }
     /**
-     * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.  Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM. Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate
-     *
-     * @param PackageDimensions $dimensions
-     *
-     * @return self
-     */
-    public function setDimensions(PackageDimensions $dimensions) : self
+    * Container tag for package dimension information. 
+    Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
+    *
+    * @param ManifestPackageDimensions $dimensions
+    *
+    * @return self
+    */
+    public function setDimensions(ManifestPackageDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -163,22 +164,22 @@ class ManifestPackage extends \ArrayObject
         return $this;
     }
     /**
-     * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
+     * Container tag for package weight. Required when the package type is not UPS Letter.
      *
-     * @return PackagePackageWeight
+     * @return ManifestPackagePackageWeight
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight() : ManifestPackagePackageWeight
     {
         return $this->packageWeight;
     }
     /**
-     * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
+     * Container tag for package weight. Required when the package type is not UPS Letter.
      *
-     * @param PackagePackageWeight $packageWeight
+     * @param ManifestPackagePackageWeight $packageWeight
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(ManifestPackagePackageWeight $packageWeight) : self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -229,48 +230,44 @@ class ManifestPackage extends \ArrayObject
         return $this;
     }
     /**
-    * Package reference number information container.  For Mail Innovation shipments, up to 3 reference numbers are supported. If 5 reference numbers are specified (CostCenter, PackageID, and 3 ReferenceNumbers) the 3 desigated by the ReferenceNumber container will not be visible on 4x6 label supported by the API. These additional reference numbers are only be visible on the 4x8 label..
-    
-    For non-Mail Innovation shipments only the first 2 reference numbers will be visible on labels.
-    *
-    * @return PackageReferenceNumber
-    */
-    public function getReferenceNumber() : PackageReferenceNumber
+     * Container tag for information about the package-level reference number.
+     *
+     * @return ManifestPackageReferenceNumber
+     */
+    public function getReferenceNumber() : ManifestPackageReferenceNumber
     {
         return $this->referenceNumber;
     }
     /**
-    * Package reference number information container.  For Mail Innovation shipments, up to 3 reference numbers are supported. If 5 reference numbers are specified (CostCenter, PackageID, and 3 ReferenceNumbers) the 3 desigated by the ReferenceNumber container will not be visible on 4x6 label supported by the API. These additional reference numbers are only be visible on the 4x8 label..
-    
-    For non-Mail Innovation shipments only the first 2 reference numbers will be visible on labels.
-    *
-    * @param PackageReferenceNumber $referenceNumber
-    *
-    * @return self
-    */
-    public function setReferenceNumber(PackageReferenceNumber $referenceNumber) : self
+     * Container tag for information about the package-level reference number.
+     *
+     * @param ManifestPackageReferenceNumber $referenceNumber
+     *
+     * @return self
+     */
+    public function setReferenceNumber(ManifestPackageReferenceNumber $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
         return $this;
     }
     /**
-     * Package Service Options container.
+     * Defines service options used for the package(s).
      *
-     * @return PackagePackageServiceOptions
+     * @return ManifestPackagePackageServiceOptions
      */
-    public function getPackageServiceOptions() : PackagePackageServiceOptions
+    public function getPackageServiceOptions() : ManifestPackagePackageServiceOptions
     {
         return $this->packageServiceOptions;
     }
     /**
-     * Package Service Options container.
+     * Defines service options used for the package(s).
      *
-     * @param PackagePackageServiceOptions $packageServiceOptions
+     * @param ManifestPackagePackageServiceOptions $packageServiceOptions
      *
      * @return self
      */
-    public function setPackageServiceOptions(PackagePackageServiceOptions $packageServiceOptions) : self
+    public function setPackageServiceOptions(ManifestPackagePackageServiceOptions $packageServiceOptions) : self
     {
         $this->initialized['packageServiceOptions'] = true;
         $this->packageServiceOptions = $packageServiceOptions;

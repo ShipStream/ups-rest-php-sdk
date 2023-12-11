@@ -19,13 +19,10 @@ class PickupNotificationsEMailNotification extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-    * Type of event for POM Notification. Add up to four events.
-    01 = PICKUP_REQUEST_CONFIRM
-    02 = DRIVER_EN_ROUTE
-    03 = PICKUP_SECURED
-    04 = PICKUP_EXCEPTION
+    * Type of event for Pickup Notifications for LTL. Allows up to four events.
+    For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @var string
+    * @var string[]
     */
     protected $eventType;
     /**
@@ -51,30 +48,24 @@ class PickupNotificationsEMailNotification extends \ArrayObject
         return $this;
     }
     /**
-    * Type of event for POM Notification. Add up to four events.
-    01 = PICKUP_REQUEST_CONFIRM
-    02 = DRIVER_EN_ROUTE
-    03 = PICKUP_SECURED
-    04 = PICKUP_EXCEPTION
+    * Type of event for Pickup Notifications for LTL. Allows up to four events.
+    For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @return string
+    * @return string[]
     */
-    public function getEventType() : string
+    public function getEventType() : array
     {
         return $this->eventType;
     }
     /**
-    * Type of event for POM Notification. Add up to four events.
-    01 = PICKUP_REQUEST_CONFIRM
-    02 = DRIVER_EN_ROUTE
-    03 = PICKUP_SECURED
-    04 = PICKUP_EXCEPTION
+    * Type of event for Pickup Notifications for LTL. Allows up to four events.
+    For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @param string $eventType
+    * @param string[] $eventType
     *
     * @return self
     */
-    public function setEventType(string $eventType) : self
+    public function setEventType(array $eventType) : self
     {
         $this->initialized['eventType'] = true;
         $this->eventType = $eventType;

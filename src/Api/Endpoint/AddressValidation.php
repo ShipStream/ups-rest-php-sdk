@@ -8,7 +8,7 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     protected $version;
     protected $accept;
     /**
-    * 
+    * The Address Validation Street Level API can be used to check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
     *
     * @param int $requestoption Identifies the type of request. Valid 
     values: 

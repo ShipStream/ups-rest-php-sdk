@@ -13,7 +13,7 @@ class PushToImageRepositoryResponseResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @var ResponseResponseStatus
      */
@@ -31,7 +31,7 @@ class PushToImageRepositoryResponseResponse extends \ArrayObject
      */
     protected $transactionReference;
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @return ResponseResponseStatus
      */
@@ -40,7 +40,7 @@ class PushToImageRepositoryResponseResponse extends \ArrayObject
         return $this->responseStatus;
     }
     /**
-     * Response status container.
+     * Response Status Container.
      *
      * @param ResponseResponseStatus $responseStatus
      *

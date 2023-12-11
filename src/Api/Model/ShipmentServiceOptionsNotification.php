@@ -13,12 +13,14 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Notification Code.  Valid values:
-    3 - Receiver Return Notification
-    6 - QV Email Notification
+    * The type of notification requested. Valid values:
+    5 - QV In-transit Notification
+    6 - QV Ship Notification
     7 - QV Exception Notification
-    8 - QV Delivery Notification 
-    For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
+    8 - QV Delivery Notification
+    2 - Return Notification or Label Creation Notification
+    012 - Alternate Delivery Location Notification
+    013 - UAP Shipper Notification
     *
     * @var string
     */
@@ -48,12 +50,14 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      */
     protected $locale;
     /**
-    * Notification Code.  Valid values:
-    3 - Receiver Return Notification
-    6 - QV Email Notification
+    * The type of notification requested. Valid values:
+    5 - QV In-transit Notification
+    6 - QV Ship Notification
     7 - QV Exception Notification
-    8 - QV Delivery Notification 
-    For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
+    8 - QV Delivery Notification
+    2 - Return Notification or Label Creation Notification
+    012 - Alternate Delivery Location Notification
+    013 - UAP Shipper Notification
     *
     * @return string
     */
@@ -62,12 +66,14 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
         return $this->notificationCode;
     }
     /**
-    * Notification Code.  Valid values:
-    3 - Receiver Return Notification
-    6 - QV Email Notification
+    * The type of notification requested. Valid values:
+    5 - QV In-transit Notification
+    6 - QV Ship Notification
     7 - QV Exception Notification
-    8 - QV Delivery Notification 
-    For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
+    8 - QV Delivery Notification
+    2 - Return Notification or Label Creation Notification
+    012 - Alternate Delivery Location Notification
+    013 - UAP Shipper Notification
     *
     * @param string $notificationCode
     *

@@ -3,7 +3,7 @@
   "info": {
     "title": "UPS REST API definitions",
     "termsOfService": "https://www.ups.com/upsdeveloperkit/assets/html/serviceAgreement.html",
-    "version": "1.0.1"
+    "version": ""
   },
   "paths": {},
   "components": {}

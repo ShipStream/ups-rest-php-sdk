@@ -50,7 +50,7 @@ class PackingListShipFromNormalizer implements DenormalizerInterface, Normalizer
             unset($data['AttentionName']);
         }
         if (\array_key_exists('Address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress', 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipFromAddress', 'json', $context));
             unset($data['Address']);
         }
         if (\array_key_exists('PhoneNumber', $data)) {

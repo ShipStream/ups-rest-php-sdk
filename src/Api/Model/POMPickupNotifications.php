@@ -19,13 +19,13 @@ class POMPickupNotifications extends \ArrayObject
      */
     protected $companyName;
     /**
-     * Container for email notifications
+     * 
      *
-     * @var PickupNotificationsEMailNotification
+     * @var PickupNotificationsEMailNotification[]
      */
     protected $eMailNotification;
     /**
-     * Alternate email address to receive failure notifications
+     * Alternate email address to receive notifications regarding a failed email.
      *
      * @var string
      */
@@ -53,29 +53,29 @@ class POMPickupNotifications extends \ArrayObject
         return $this;
     }
     /**
-     * Container for email notifications
+     * 
      *
-     * @return PickupNotificationsEMailNotification
+     * @return PickupNotificationsEMailNotification[]
      */
-    public function getEMailNotification() : PickupNotificationsEMailNotification
+    public function getEMailNotification() : array
     {
         return $this->eMailNotification;
     }
     /**
-     * Container for email notifications
+     * 
      *
-     * @param PickupNotificationsEMailNotification $eMailNotification
+     * @param PickupNotificationsEMailNotification[] $eMailNotification
      *
      * @return self
      */
-    public function setEMailNotification(PickupNotificationsEMailNotification $eMailNotification) : self
+    public function setEMailNotification(array $eMailNotification) : self
     {
         $this->initialized['eMailNotification'] = true;
         $this->eMailNotification = $eMailNotification;
         return $this;
     }
     /**
-     * Alternate email address to receive failure notifications
+     * Alternate email address to receive notifications regarding a failed email.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class POMPickupNotifications extends \ArrayObject
         return $this->failedEMail;
     }
     /**
-     * Alternate email address to receive failure notifications
+     * Alternate email address to receive notifications regarding a failed email.
      *
      * @param string $failedEMail
      *

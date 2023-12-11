@@ -41,21 +41,25 @@ class LandedCostRequestNormalizer implements DenormalizerInterface, NormalizerIn
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('Request', $data)) {
-            $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestRequest', 'json', $context));
-            unset($data['Request']);
+        if (\array_key_exists('currencyCode', $data)) {
+            $object->setCurrencyCode($data['currencyCode']);
+            unset($data['currencyCode']);
         }
-        if (\array_key_exists('QueryRequest', $data)) {
-            $object->setQueryRequest($this->denormalizer->denormalize($data['QueryRequest'], 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestQueryRequest', 'json', $context));
-            unset($data['QueryRequest']);
+        if (\array_key_exists('transID', $data)) {
+            $object->setTransID($data['transID']);
+            unset($data['transID']);
         }
-        if (\array_key_exists('EstimateRequest', $data)) {
-            $object->setEstimateRequest($this->denormalizer->denormalize($data['EstimateRequest'], 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestEstimateRequest', 'json', $context));
-            unset($data['EstimateRequest']);
+        if (\array_key_exists('allowPartialLandedCostResult', $data)) {
+            $object->setAllowPartialLandedCostResult($data['allowPartialLandedCostResult']);
+            unset($data['allowPartialLandedCostResult']);
         }
-        if (\array_key_exists('ShippingHistoryUserKey', $data)) {
-            $object->setShippingHistoryUserKey($data['ShippingHistoryUserKey']);
-            unset($data['ShippingHistoryUserKey']);
+        if (\array_key_exists('alversion', $data)) {
+            $object->setAlversion($data['alversion']);
+            unset($data['alversion']);
+        }
+        if (\array_key_exists('shipment', $data)) {
+            $object->setShipment($this->denormalizer->denormalize($data['shipment'], 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment', 'json', $context));
+            unset($data['shipment']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -70,16 +74,13 @@ class LandedCostRequestNormalizer implements DenormalizerInterface, NormalizerIn
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
-        if ($object->isInitialized('queryRequest') && null !== $object->getQueryRequest()) {
-            $data['QueryRequest'] = $this->normalizer->normalize($object->getQueryRequest(), 'json', $context);
+        $data['currencyCode'] = $object->getCurrencyCode();
+        $data['transID'] = $object->getTransID();
+        if ($object->isInitialized('allowPartialLandedCostResult') && null !== $object->getAllowPartialLandedCostResult()) {
+            $data['allowPartialLandedCostResult'] = $object->getAllowPartialLandedCostResult();
         }
-        if ($object->isInitialized('estimateRequest') && null !== $object->getEstimateRequest()) {
-            $data['EstimateRequest'] = $this->normalizer->normalize($object->getEstimateRequest(), 'json', $context);
-        }
-        if ($object->isInitialized('shippingHistoryUserKey') && null !== $object->getShippingHistoryUserKey()) {
-            $data['ShippingHistoryUserKey'] = $object->getShippingHistoryUserKey();
-        }
+        $data['alversion'] = $object->getAlversion();
+        $data['shipment'] = $this->normalizer->normalize($object->getShipment(), 'json', $context);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

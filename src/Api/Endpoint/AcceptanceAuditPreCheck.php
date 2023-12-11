@@ -6,7 +6,7 @@ class AcceptanceAuditPreCheck extends \ShipStream\Ups\Api\Runtime\Client\BaseEnd
 {
     protected $version;
     /**
-     * Acceptance Audit Pre-check
+     * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
      *
      * @param string $version API version
      * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 

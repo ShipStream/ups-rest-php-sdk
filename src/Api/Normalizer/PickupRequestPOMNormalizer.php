@@ -50,7 +50,7 @@ class PickupRequestPOMNormalizer implements DenormalizerInterface, NormalizerInt
             unset($data['POMNumberType']);
         }
         if (\array_key_exists('PickupNotifications', $data)) {
-            $object->setPickupNotifications($this->denormalizer->denormalize($data['PickupNotifications'], 'ShipStream\\Ups\\Api\\Model\\POMPickupNotifications', 'json', $context));
+            $object->setPickupNotifications($this->denormalizer->denormalize($data['PickupNotifications'], 'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications', 'json', $context));
             unset($data['PickupNotifications']);
         }
         foreach ($data as $key => $value) {

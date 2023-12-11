@@ -46,7 +46,7 @@ class PaymentDetailsShipmentChargeNormalizer implements DenormalizerInterface, N
             unset($data['Type']);
         }
         if (\array_key_exists('BillShipper', $data)) {
-            $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper', 'json', $context));
+            $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillShipper', 'json', $context));
             unset($data['BillShipper']);
         }
         if (\array_key_exists('BillReceiver', $data)) {
@@ -54,7 +54,7 @@ class PaymentDetailsShipmentChargeNormalizer implements DenormalizerInterface, N
             unset($data['BillReceiver']);
         }
         if (\array_key_exists('BillThirdParty', $data)) {
-            $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty', 'json', $context));
+            $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], 'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillThirdParty', 'json', $context));
             unset($data['BillThirdParty']);
         }
         if (\array_key_exists('ConsigneeBilledIndicator', $data)) {

@@ -42,7 +42,7 @@ class FreightRateRequestPaymentInformationNormalizer implements DenormalizerInte
             return $object;
         }
         if (\array_key_exists('Payer', $data)) {
-            $object->setPayer($this->denormalizer->denormalize($data['Payer'], 'ShipStream\\Ups\\Api\\Model\\PaymentInformationPayer', 'json', $context));
+            $object->setPayer($this->denormalizer->denormalize($data['Payer'], 'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer', 'json', $context));
             unset($data['Payer']);
         }
         if (\array_key_exists('ShipmentBillingOption', $data)) {

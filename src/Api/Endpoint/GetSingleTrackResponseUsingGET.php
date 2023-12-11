@@ -6,9 +6,9 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
 {
     protected $inquiryNumber;
     /**
-     * 
+     * gets single track API details
      *
-     * @param string $inquiryNumber Inquiry Number
+     * @param string $inquiryNumber Tracking Number
      * @param array $queryParameters {
      *     @var string $locale locale
      *     @var string $returnSignature returnSignature

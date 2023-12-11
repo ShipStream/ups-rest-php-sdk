@@ -78,19 +78,25 @@ class ShipFromAddressNormalizer implements DenormalizerInterface, NormalizerInte
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $values = array();
-        foreach ($object->getAddressLine() as $value) {
-            $values[] = $value;
+        if ($object->isInitialized('addressLine') && null !== $object->getAddressLine()) {
+            $values = array();
+            foreach ($object->getAddressLine() as $value) {
+                $values[] = $value;
+            }
+            $data['AddressLine'] = $values;
         }
-        $data['AddressLine'] = $values;
-        $data['City'] = $object->getCity();
+        if ($object->isInitialized('city') && null !== $object->getCity()) {
+            $data['City'] = $object->getCity();
+        }
         if ($object->isInitialized('stateProvinceCode') && null !== $object->getStateProvinceCode()) {
             $data['StateProvinceCode'] = $object->getStateProvinceCode();
         }
         if ($object->isInitialized('postalCode') && null !== $object->getPostalCode()) {
             $data['PostalCode'] = $object->getPostalCode();
         }
-        $data['CountryCode'] = $object->getCountryCode();
+        if ($object->isInitialized('countryCode') && null !== $object->getCountryCode()) {
+            $data['CountryCode'] = $object->getCountryCode();
+        }
         foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value_1;

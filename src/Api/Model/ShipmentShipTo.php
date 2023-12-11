@@ -39,7 +39,7 @@ class ShipmentShipTo extends \ArrayObject
      */
     protected $taxIdentificationNumber;
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @var ShipToPhone
      */
@@ -161,7 +161,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @return ShipToPhone
      */
@@ -170,7 +170,7 @@ class ShipmentShipTo extends \ArrayObject
         return $this->phone;
     }
     /**
-     * Container for Phone Number
+     * Phone Container.
      *
      * @param ShipToPhone $phone
      *

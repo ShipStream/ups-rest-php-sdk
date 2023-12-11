@@ -13,19 +13,19 @@ class ShipFromPhone extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Ship from phone Number.
+     * Requester�s phone number.
      *
      * @var string
      */
     protected $number;
     /**
-     * The Ship from phone extension.
+     * Requester�s phone extension.
      *
      * @var string
      */
     protected $extension;
     /**
-     * The Ship from phone Number.
+     * Requester�s phone number.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class ShipFromPhone extends \ArrayObject
         return $this->number;
     }
     /**
-     * The Ship from phone Number.
+     * Requester�s phone number.
      *
      * @param string $number
      *
@@ -47,7 +47,7 @@ class ShipFromPhone extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship from phone extension.
+     * Requester�s phone extension.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ShipFromPhone extends \ArrayObject
         return $this->extension;
     }
     /**
-     * The Ship from phone extension.
+     * Requester�s phone extension.
      *
      * @param string $extension
      *

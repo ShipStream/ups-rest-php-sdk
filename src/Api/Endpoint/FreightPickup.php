@@ -6,7 +6,7 @@ class FreightPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
 {
     protected $version;
     /**
-     * 
+     * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight
      *
      * @param string $version Version of the API e.g v1
      * @param \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody 
