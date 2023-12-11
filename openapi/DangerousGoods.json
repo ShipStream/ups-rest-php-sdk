@@ -781,10 +781,10 @@
             "maxLength": 6
           },
           "ShipFromAddress": {
-            "$ref": "#/components/schemas/Shipment_ShipFromAddress"
+            "$ref": "#/components/schemas/AcceptanceAuditPreCheckShipment_ShipFromAddress"
           },
           "ShipToAddress": {
-            "$ref": "#/components/schemas/Shipment_ShipToAddress"
+            "$ref": "#/components/schemas/AcceptanceAuditPreCheckShipment_ShipToAddress"
           },
           "Service": {
             "$ref": "#/components/schemas/Shipment_Service"
@@ -800,7 +800,7 @@
             "type": "array",
             "maximum": 1000,
             "items": {
-              "$ref": "#/components/schemas/Shipment_Package"
+              "$ref": "#/components/schemas/AcceptanceAuditPreCheckShipment_Package"
             }
           }
         },
@@ -809,7 +809,7 @@
         },
         "description": "Contains shipment information."
       },
-      "Shipment_ShipFromAddress": {
+      "AcceptanceAuditPreCheckShipment_ShipFromAddress": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -857,7 +857,7 @@
         ],
         "description": "Ship From address container."
       },
-      "Shipment_ShipToAddress": {
+      "AcceptanceAuditPreCheckShipment_ShipToAddress": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -932,7 +932,7 @@
         },
         "description": "UPS service type."
       },
-      "Shipment_Package": {
+      "AcceptanceAuditPreCheckShipment_Package": {
         "type": "object",
         "maximum": 1,
         "required": [

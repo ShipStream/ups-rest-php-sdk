@@ -42,7 +42,7 @@ class FreightShipRequestShipmentNormalizer implements DenormalizerInterface, Nor
             return $object;
         }
         if (\array_key_exists('ShipFrom', $data)) {
-            $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFrom', 'json', $context));
+            $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom', 'json', $context));
             unset($data['ShipFrom']);
         }
         if (\array_key_exists('ShipperNumber', $data)) {
@@ -50,11 +50,11 @@ class FreightShipRequestShipmentNormalizer implements DenormalizerInterface, Nor
             unset($data['ShipperNumber']);
         }
         if (\array_key_exists('ShipTo', $data)) {
-            $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipTo', 'json', $context));
+            $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo', 'json', $context));
             unset($data['ShipTo']);
         }
         if (\array_key_exists('PaymentInformation', $data)) {
-            $object->setPaymentInformation($this->denormalizer->denormalize($data['PaymentInformation'], 'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentInformation', 'json', $context));
+            $object->setPaymentInformation($this->denormalizer->denormalize($data['PaymentInformation'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation', 'json', $context));
             unset($data['PaymentInformation']);
         }
         if (\array_key_exists('Service', $data)) {
@@ -102,7 +102,7 @@ class FreightShipRequestShipmentNormalizer implements DenormalizerInterface, Nor
             unset($data['Reference']);
         }
         if (\array_key_exists('ShipmentServiceOptions', $data)) {
-            $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentServiceOptions', 'json', $context));
+            $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions', 'json', $context));
             unset($data['ShipmentServiceOptions']);
         }
         if (\array_key_exists('PickupRequest', $data)) {

@@ -45,17 +45,17 @@ class ShipmentShipToNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setName($data['Name']);
             unset($data['Name']);
         }
-        if (\array_key_exists('TaxIdentificationNumber', $data)) {
-            $object->setTaxIdentificationNumber($data['TaxIdentificationNumber']);
-            unset($data['TaxIdentificationNumber']);
-        }
-        if (\array_key_exists('Address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipToAddress', 'json', $context));
-            unset($data['Address']);
-        }
         if (\array_key_exists('AttentionName', $data)) {
             $object->setAttentionName($data['AttentionName']);
             unset($data['AttentionName']);
+        }
+        if (\array_key_exists('CompanyDisplayableName', $data)) {
+            $object->setCompanyDisplayableName($data['CompanyDisplayableName']);
+            unset($data['CompanyDisplayableName']);
+        }
+        if (\array_key_exists('TaxIdentificationNumber', $data)) {
+            $object->setTaxIdentificationNumber($data['TaxIdentificationNumber']);
+            unset($data['TaxIdentificationNumber']);
         }
         if (\array_key_exists('Phone', $data)) {
             $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\ShipToPhone', 'json', $context));
@@ -68,6 +68,14 @@ class ShipmentShipToNormalizer implements DenormalizerInterface, NormalizerInter
         if (\array_key_exists('EMailAddress', $data)) {
             $object->setEMailAddress($data['EMailAddress']);
             unset($data['EMailAddress']);
+        }
+        if (\array_key_exists('Address', $data)) {
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipToAddress', 'json', $context));
+            unset($data['Address']);
+        }
+        if (\array_key_exists('LocationID', $data)) {
+            $object->setLocationID($data['LocationID']);
+            unset($data['LocationID']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -83,14 +91,14 @@ class ShipmentShipToNormalizer implements DenormalizerInterface, NormalizerInter
     {
         $data = array();
         $data['Name'] = $object->getName();
-        if ($object->isInitialized('taxIdentificationNumber') && null !== $object->getTaxIdentificationNumber()) {
-            $data['TaxIdentificationNumber'] = $object->getTaxIdentificationNumber();
-        }
-        if ($object->isInitialized('address') && null !== $object->getAddress()) {
-            $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
-        }
         if ($object->isInitialized('attentionName') && null !== $object->getAttentionName()) {
             $data['AttentionName'] = $object->getAttentionName();
+        }
+        if ($object->isInitialized('companyDisplayableName') && null !== $object->getCompanyDisplayableName()) {
+            $data['CompanyDisplayableName'] = $object->getCompanyDisplayableName();
+        }
+        if ($object->isInitialized('taxIdentificationNumber') && null !== $object->getTaxIdentificationNumber()) {
+            $data['TaxIdentificationNumber'] = $object->getTaxIdentificationNumber();
         }
         if ($object->isInitialized('phone') && null !== $object->getPhone()) {
             $data['Phone'] = $this->normalizer->normalize($object->getPhone(), 'json', $context);
@@ -100,6 +108,10 @@ class ShipmentShipToNormalizer implements DenormalizerInterface, NormalizerInter
         }
         if ($object->isInitialized('eMailAddress') && null !== $object->getEMailAddress()) {
             $data['EMailAddress'] = $object->getEMailAddress();
+        }
+        $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
+        if ($object->isInitialized('locationID') && null !== $object->getLocationID()) {
+            $data['LocationID'] = $object->getLocationID();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

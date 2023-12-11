@@ -304,10 +304,10 @@
             "maxLength": 18
           },
           "ShipToAddress": {
-            "$ref": "#/components/schemas/Shipment_ShipToAddress"
+            "$ref": "#/components/schemas/PreNotificationShipment_ShipToAddress"
           },
           "ShipFromAddress": {
-            "$ref": "#/components/schemas/Shipment_ShipFromAddress"
+            "$ref": "#/components/schemas/PreNotificationShipment_ShipFromAddress"
           },
           "PickupDate": {
             "description": "Date of the On Call Air Pickup. Format is YYYYMMDD",
@@ -330,7 +330,7 @@
             "type": "array",
             "maximum": 1000,
             "items": {
-              "$ref": "#/components/schemas/Shipment_Package"
+              "$ref": "#/components/schemas/PreNotificationShipment_Package"
             }
           }
         },
@@ -339,7 +339,7 @@
         },
         "description": "Shipment Container"
       },
-      "Shipment_ShipToAddress": {
+      "PreNotificationShipment_ShipToAddress": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -391,7 +391,7 @@
         },
         "description": "Ship To address container."
       },
-      "Shipment_ShipFromAddress": {
+      "PreNotificationShipment_ShipFromAddress": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -484,7 +484,7 @@
         "minLength": 3,
         "maxLength": 5
       },
-      "Shipment_Package": {
+      "PreNotificationShipment_Package": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -526,7 +526,7 @@
             "type": "array",
             "maximum": 3,
             "items": {
-              "$ref": "#/components/schemas/Package_ChemicalRecord"
+              "$ref": "#/components/schemas/PreNotificationPackage_ChemicalRecord"
             }
           }
         },
@@ -586,7 +586,7 @@
         },
         "description": "Container to hold UnitOfMeasurement information for package weight."
       },
-      "Package_ChemicalRecord": {
+      "PreNotificationPackage_ChemicalRecord": {
         "type": "object",
         "maximum": 1,
         "properties": {

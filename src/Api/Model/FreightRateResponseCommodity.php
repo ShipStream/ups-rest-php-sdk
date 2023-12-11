@@ -25,9 +25,9 @@ class FreightRateResponseCommodity extends \ArrayObject
      */
     protected $description;
     /**
-     * Weight of the package.
+     * Commodity Weight Container.
      *
-     * @var string
+     * @var CommodityWeight
      */
     protected $weight;
     /**
@@ -81,22 +81,22 @@ class FreightRateResponseCommodity extends \ArrayObject
         return $this;
     }
     /**
-     * Weight of the package.
+     * Commodity Weight Container.
      *
-     * @return string
+     * @return CommodityWeight
      */
-    public function getWeight() : string
+    public function getWeight() : CommodityWeight
     {
         return $this->weight;
     }
     /**
-     * Weight of the package.
+     * Commodity Weight Container.
      *
-     * @param string $weight
+     * @param CommodityWeight $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(CommodityWeight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

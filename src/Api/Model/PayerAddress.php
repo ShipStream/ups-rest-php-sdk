@@ -13,65 +13,65 @@ class PayerAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The consignee�s street address.
+     * Payer's street address.
      *
-     * @var string
+     * @var string[]
      */
     protected $addressLine;
     /**
-     * The consignee�s city.
+     * Payer's city.
      *
      * @var string
      */
     protected $city;
     /**
-     * The consignee�s state or province code.
+     * Payer's state or province code.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * The consignee�s town code.
+     * Payer's town code.
      *
      * @var string
      */
     protected $town;
     /**
-     * The consignee�s postal code.
+     * Payer's postal code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * The consignee�s country or territory code.
+     * Payer's country or territory code..
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * The consignee�s street address.
+     * Payer's street address.
      *
-     * @return string
+     * @return string[]
      */
-    public function getAddressLine() : string
+    public function getAddressLine() : array
     {
         return $this->addressLine;
     }
     /**
-     * The consignee�s street address.
+     * Payer's street address.
      *
-     * @param string $addressLine
+     * @param string[] $addressLine
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
         return $this;
     }
     /**
-     * The consignee�s city.
+     * Payer's city.
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class PayerAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * The consignee�s city.
+     * Payer's city.
      *
      * @param string $city
      *
@@ -93,7 +93,7 @@ class PayerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The consignee�s state or province code.
+     * Payer's state or province code.
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class PayerAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * The consignee�s state or province code.
+     * Payer's state or province code.
      *
      * @param string $stateProvinceCode
      *
@@ -115,7 +115,7 @@ class PayerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The consignee�s town code.
+     * Payer's town code.
      *
      * @return string
      */
@@ -124,7 +124,7 @@ class PayerAddress extends \ArrayObject
         return $this->town;
     }
     /**
-     * The consignee�s town code.
+     * Payer's town code.
      *
      * @param string $town
      *
@@ -137,7 +137,7 @@ class PayerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The consignee�s postal code.
+     * Payer's postal code.
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class PayerAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * The consignee�s postal code.
+     * Payer's postal code.
      *
      * @param string $postalCode
      *
@@ -159,7 +159,7 @@ class PayerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The consignee�s country or territory code.
+     * Payer's country or territory code..
      *
      * @return string
      */
@@ -168,7 +168,7 @@ class PayerAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * The consignee�s country or territory code.
+     * Payer's country or territory code..
      *
      * @param string $countryCode
      *

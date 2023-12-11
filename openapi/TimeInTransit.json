@@ -334,7 +334,7 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/errors"
+              "$ref": "#/components/schemas/errorResponseWrapper"
             }
           }
         }
@@ -811,7 +811,18 @@
           }
         }
       },
-      "errors": {
+      "errorResponseWrapper": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/error"
+            }
+          }
+        }
+      },
+      "error": {
         "type": "object",
         "properties": {
           "code": {

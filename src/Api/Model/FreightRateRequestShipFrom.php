@@ -19,9 +19,9 @@ class FreightRateRequestShipFrom extends \ArrayObject
      */
     protected $name;
     /**
-     * Shipper�s Address Container.
+     * Address Container.
      *
-     * @var ShipFromAddress
+     * @var FreightRateShipFromAddress
      */
     protected $address;
     /**
@@ -53,22 +53,22 @@ class FreightRateRequestShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper�s Address Container.
+     * Address Container.
      *
-     * @return ShipFromAddress
+     * @return FreightRateShipFromAddress
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress() : FreightRateShipFromAddress
     {
         return $this->address;
     }
     /**
-     * Shipper�s Address Container.
+     * Address Container.
      *
-     * @param ShipFromAddress $address
+     * @param FreightRateShipFromAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(FreightRateShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

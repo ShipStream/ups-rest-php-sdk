@@ -41,17 +41,21 @@ class ShipmentPaymentInformationNormalizer implements DenormalizerInterface, Nor
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('Payer', $data)) {
-            $object->setPayer($this->denormalizer->denormalize($data['Payer'], 'ShipStream\\Ups\\Api\\Model\\PaymentInformationPayer', 'json', $context));
-            unset($data['Payer']);
+        if (\array_key_exists('ShipmentCharge', $data)) {
+            $values = array();
+            foreach ($data['ShipmentCharge'] as $value) {
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge', 'json', $context);
+            }
+            $object->setShipmentCharge($values);
+            unset($data['ShipmentCharge']);
         }
-        if (\array_key_exists('ShipmentBillingOption', $data)) {
-            $object->setShipmentBillingOption($this->denormalizer->denormalize($data['ShipmentBillingOption'], 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption', 'json', $context));
-            unset($data['ShipmentBillingOption']);
+        if (\array_key_exists('SplitDutyVATIndicator', $data)) {
+            $object->setSplitDutyVATIndicator($data['SplitDutyVATIndicator']);
+            unset($data['SplitDutyVATIndicator']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -62,11 +66,17 @@ class ShipmentPaymentInformationNormalizer implements DenormalizerInterface, Nor
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['Payer'] = $this->normalizer->normalize($object->getPayer(), 'json', $context);
-        $data['ShipmentBillingOption'] = $this->normalizer->normalize($object->getShipmentBillingOption(), 'json', $context);
-        foreach ($object as $key => $value) {
+        $values = array();
+        foreach ($object->getShipmentCharge() as $value) {
+            $values[] = $this->normalizer->normalize($value, 'json', $context);
+        }
+        $data['ShipmentCharge'] = $values;
+        if ($object->isInitialized('splitDutyVATIndicator') && null !== $object->getSplitDutyVATIndicator()) {
+            $data['SplitDutyVATIndicator'] = $object->getSplitDutyVATIndicator();
+        }
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

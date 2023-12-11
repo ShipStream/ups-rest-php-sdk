@@ -41,21 +41,13 @@ class ShipmentServiceOptionsCODNormalizer implements DenormalizerInterface, Norm
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('CODValue', $data)) {
-            $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], 'ShipStream\\Ups\\Api\\Model\\CODCODValue', 'json', $context));
-            unset($data['CODValue']);
+        if (\array_key_exists('CODFundsCode', $data)) {
+            $object->setCODFundsCode($data['CODFundsCode']);
+            unset($data['CODFundsCode']);
         }
-        if (\array_key_exists('CODPaymentMethod', $data)) {
-            $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod', 'json', $context));
-            unset($data['CODPaymentMethod']);
-        }
-        if (\array_key_exists('CODBillingOption', $data)) {
-            $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption', 'json', $context));
-            unset($data['CODBillingOption']);
-        }
-        if (\array_key_exists('RemitTo', $data)) {
-            $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], 'ShipStream\\Ups\\Api\\Model\\CODRemitTo', 'json', $context));
-            unset($data['RemitTo']);
+        if (\array_key_exists('CODAmount', $data)) {
+            $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\CODCODAmount', 'json', $context));
+            unset($data['CODAmount']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -70,10 +62,8 @@ class ShipmentServiceOptionsCODNormalizer implements DenormalizerInterface, Norm
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['CODValue'] = $this->normalizer->normalize($object->getCODValue(), 'json', $context);
-        $data['CODPaymentMethod'] = $this->normalizer->normalize($object->getCODPaymentMethod(), 'json', $context);
-        $data['CODBillingOption'] = $this->normalizer->normalize($object->getCODBillingOption(), 'json', $context);
-        $data['RemitTo'] = $this->normalizer->normalize($object->getRemitTo(), 'json', $context);
+        $data['CODFundsCode'] = $object->getCODFundsCode();
+        $data['CODAmount'] = $this->normalizer->normalize($object->getCODAmount(), 'json', $context);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

@@ -416,7 +416,7 @@
             "maxLength": 35
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipFrom_Address"
+            "$ref": "#/components/schemas/FreightRateShipFrom_Address"
           },
           "AttentionName": {
             "description": "Contact name at the ship from location.",
@@ -434,7 +434,7 @@
         ],
         "description": "ShipFrom Container."
       },
-      "ShipFrom_Address": {
+      "FreightRateShipFrom_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -511,7 +511,7 @@
             "maxLength": 35
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipTo_Address"
+            "$ref": "#/components/schemas/FreightRateShipTo_Address"
           },
           "AttentionName": {
             "description": "Contact name at the consignee's location.",
@@ -529,7 +529,7 @@
         ],
         "description": "ShipTo Container."
       },
-      "ShipTo_Address": {
+      "FreightRateShipTo_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -602,7 +602,7 @@
         ],
         "properties": {
           "Payer": {
-            "$ref": "#/components/schemas/PaymentInformation_Payer"
+            "$ref": "#/components/schemas/FreightRatePaymentInformation_Payer"
           },
           "ShipmentBillingOption": {
             "$ref": "#/components/schemas/PaymentInformation_ShipmentBillingOption"
@@ -614,7 +614,7 @@
         "description": "Payment Information Container.",
         "maximum": 1
       },
-      "PaymentInformation_Payer": {
+      "FreightRatePaymentInformation_Payer": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1195,16 +1195,16 @@
         "type": "object",
         "properties": {
           "PickupOptions": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_PickupOptions"
+            "$ref": "#/components/schemas/FreightShipmentServiceOptions_PickupOptions"
           },
           "DeliveryOptions": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_DeliveryOptions"
+            "$ref": "#/components/schemas/FreightShipmentServiceOptions_DeliveryOptions"
           },
           "OverSeasLeg": {
             "$ref": "#/components/schemas/ShipmentServiceOptions_OverSeasLeg"
           },
           "COD": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_COD"
+            "$ref": "#/components/schemas/FreightShipmentServiceOptions_COD"
           },
           "DangerousGoods": {
             "$ref": "#/components/schemas/ShipmentServiceOptions_DangerousGoods"
@@ -1245,7 +1245,7 @@
         "maximum": 1,
         "description": "ShipmentServiceOptions Container."
       },
-      "ShipmentServiceOptions_PickupOptions": {
+      "FreightShipmentServiceOptions_PickupOptions": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1285,7 +1285,7 @@
         },
         "description": "PickupOptions Container."
       },
-      "ShipmentServiceOptions_DeliveryOptions": {
+      "FreightShipmentServiceOptions_DeliveryOptions": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1469,7 +1469,7 @@
         },
         "description": "Dimensions Value CWT Container."
       },
-      "ShipmentServiceOptions_COD": {
+      "FreightShipmentServiceOptions_COD": {
         "type": "object",
         "required": [
           "CODBillingOption",
@@ -1488,7 +1488,7 @@
             "$ref": "#/components/schemas/COD_CODBillingOption"
           },
           "RemitTo": {
-            "$ref": "#/components/schemas/COD_RemitTo"
+            "$ref": "#/components/schemas/FreightRateCOD_RemitTo"
           }
         },
         "xml": {
@@ -1579,7 +1579,7 @@
         },
         "description": "CODBillingOption Container."
       },
-      "COD_RemitTo": {
+      "FreightRateCOD_RemitTo": {
         "type": "object",
         "maximum": 1,
         "required": [

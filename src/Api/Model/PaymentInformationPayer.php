@@ -21,7 +21,7 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Address Container.
      *
-     * @var PayerAddress
+     * @var FreightShipPayerAddress
      */
     protected $address;
     /**
@@ -80,20 +80,20 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return PayerAddress
+     * @return FreightShipPayerAddress
      */
-    public function getAddress() : PayerAddress
+    public function getAddress() : FreightShipPayerAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param PayerAddress $address
+     * @param FreightShipPayerAddress $address
      *
      * @return self
      */
-    public function setAddress(PayerAddress $address) : self
+    public function setAddress(FreightShipPayerAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

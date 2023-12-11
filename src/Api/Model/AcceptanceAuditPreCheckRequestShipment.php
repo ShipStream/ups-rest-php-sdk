@@ -21,13 +21,13 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Ship From address container.
      *
-     * @var ShipmentShipFromAddress
+     * @var AcceptanceAuditPreCheckShipmentShipFromAddress
      */
     protected $shipFromAddress;
     /**
      * Ship To address container.
      *
-     * @var ShipmentShipToAddress
+     * @var AcceptanceAuditPreCheckShipmentShipToAddress
      */
     protected $shipToAddress;
     /**
@@ -49,7 +49,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentPackage[]
+     * @var AcceptanceAuditPreCheckShipmentPackage[]
      */
     protected $package;
     /**
@@ -77,20 +77,20 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Ship From address container.
      *
-     * @return ShipmentShipFromAddress
+     * @return AcceptanceAuditPreCheckShipmentShipFromAddress
      */
-    public function getShipFromAddress() : ShipmentShipFromAddress
+    public function getShipFromAddress() : AcceptanceAuditPreCheckShipmentShipFromAddress
     {
         return $this->shipFromAddress;
     }
     /**
      * Ship From address container.
      *
-     * @param ShipmentShipFromAddress $shipFromAddress
+     * @param AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress
      *
      * @return self
      */
-    public function setShipFromAddress(ShipmentShipFromAddress $shipFromAddress) : self
+    public function setShipFromAddress(AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress) : self
     {
         $this->initialized['shipFromAddress'] = true;
         $this->shipFromAddress = $shipFromAddress;
@@ -99,20 +99,20 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Ship To address container.
      *
-     * @return ShipmentShipToAddress
+     * @return AcceptanceAuditPreCheckShipmentShipToAddress
      */
-    public function getShipToAddress() : ShipmentShipToAddress
+    public function getShipToAddress() : AcceptanceAuditPreCheckShipmentShipToAddress
     {
         return $this->shipToAddress;
     }
     /**
      * Ship To address container.
      *
-     * @param ShipmentShipToAddress $shipToAddress
+     * @param AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress
      *
      * @return self
      */
-    public function setShipToAddress(ShipmentShipToAddress $shipToAddress) : self
+    public function setShipToAddress(AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress) : self
     {
         $this->initialized['shipToAddress'] = true;
         $this->shipToAddress = $shipToAddress;
@@ -173,7 +173,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentPackage[]
+     * @return AcceptanceAuditPreCheckShipmentPackage[]
      */
     public function getPackage() : array
     {
@@ -182,7 +182,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentPackage[] $package
+     * @param AcceptanceAuditPreCheckShipmentPackage[] $package
      *
      * @return self
      */

@@ -27,13 +27,13 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * Ship To address container.
      *
-     * @var ShipmentShipToAddress
+     * @var PreNotificationShipmentShipToAddress
      */
     protected $shipToAddress;
     /**
      * Ship From address container.
      *
-     * @var ShipmentShipFromAddress
+     * @var PreNotificationShipmentShipFromAddress
      */
     protected $shipFromAddress;
     /**
@@ -59,7 +59,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentPackage[]
+     * @var PreNotificationShipmentPackage[]
      */
     protected $package;
     /**
@@ -109,20 +109,20 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * Ship To address container.
      *
-     * @return ShipmentShipToAddress
+     * @return PreNotificationShipmentShipToAddress
      */
-    public function getShipToAddress() : ShipmentShipToAddress
+    public function getShipToAddress() : PreNotificationShipmentShipToAddress
     {
         return $this->shipToAddress;
     }
     /**
      * Ship To address container.
      *
-     * @param ShipmentShipToAddress $shipToAddress
+     * @param PreNotificationShipmentShipToAddress $shipToAddress
      *
      * @return self
      */
-    public function setShipToAddress(ShipmentShipToAddress $shipToAddress) : self
+    public function setShipToAddress(PreNotificationShipmentShipToAddress $shipToAddress) : self
     {
         $this->initialized['shipToAddress'] = true;
         $this->shipToAddress = $shipToAddress;
@@ -131,20 +131,20 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * Ship From address container.
      *
-     * @return ShipmentShipFromAddress
+     * @return PreNotificationShipmentShipFromAddress
      */
-    public function getShipFromAddress() : ShipmentShipFromAddress
+    public function getShipFromAddress() : PreNotificationShipmentShipFromAddress
     {
         return $this->shipFromAddress;
     }
     /**
      * Ship From address container.
      *
-     * @param ShipmentShipFromAddress $shipFromAddress
+     * @param PreNotificationShipmentShipFromAddress $shipFromAddress
      *
      * @return self
      */
-    public function setShipFromAddress(ShipmentShipFromAddress $shipFromAddress) : self
+    public function setShipFromAddress(PreNotificationShipmentShipFromAddress $shipFromAddress) : self
     {
         $this->initialized['shipFromAddress'] = true;
         $this->shipFromAddress = $shipFromAddress;
@@ -223,7 +223,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentPackage[]
+     * @return PreNotificationShipmentPackage[]
      */
     public function getPackage() : array
     {
@@ -232,7 +232,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentPackage[] $package
+     * @param PreNotificationShipmentPackage[] $package
      *
      * @return self
      */

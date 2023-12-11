@@ -45,9 +45,21 @@ class ErrorsNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setCode($data['code']);
             unset($data['code']);
         }
+        if (\array_key_exists('description', $data)) {
+            $object->setDescription($data['description']);
+            unset($data['description']);
+        }
         if (\array_key_exists('message', $data)) {
             $object->setMessage($data['message']);
             unset($data['message']);
+        }
+        if (\array_key_exists('value', $data)) {
+            $object->setValue($data['value']);
+            unset($data['value']);
+        }
+        if (\array_key_exists('field', $data)) {
+            $object->setField($data['field']);
+            unset($data['field']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -65,8 +77,17 @@ class ErrorsNormalizer implements DenormalizerInterface, NormalizerInterface, De
         if ($object->isInitialized('code') && null !== $object->getCode()) {
             $data['code'] = $object->getCode();
         }
+        if ($object->isInitialized('description') && null !== $object->getDescription()) {
+            $data['description'] = $object->getDescription();
+        }
         if ($object->isInitialized('message') && null !== $object->getMessage()) {
             $data['message'] = $object->getMessage();
+        }
+        if ($object->isInitialized('value') && null !== $object->getValue()) {
+            $data['value'] = $object->getValue();
+        }
+        if ($object->isInitialized('field') && null !== $object->getField()) {
+            $data['field'] = $object->getField();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

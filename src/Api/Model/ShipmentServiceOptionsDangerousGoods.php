@@ -25,6 +25,12 @@ class ShipmentServiceOptionsDangerousGoods extends \ArrayObject
      */
     protected $phone;
     /**
+     * TransportationMode Container.
+     *
+     * @var DangerousGoodsTransportationMode
+     */
+    protected $transportationMode;
+    /**
      * The contact name for question re: Dangerous Goods.
      *
      * @return string
@@ -66,6 +72,28 @@ class ShipmentServiceOptionsDangerousGoods extends \ArrayObject
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
+        return $this;
+    }
+    /**
+     * TransportationMode Container.
+     *
+     * @return DangerousGoodsTransportationMode
+     */
+    public function getTransportationMode() : DangerousGoodsTransportationMode
+    {
+        return $this->transportationMode;
+    }
+    /**
+     * TransportationMode Container.
+     *
+     * @param DangerousGoodsTransportationMode $transportationMode
+     *
+     * @return self
+     */
+    public function setTransportationMode(DangerousGoodsTransportationMode $transportationMode) : self
+    {
+        $this->initialized['transportationMode'] = true;
+        $this->transportationMode = $transportationMode;
         return $this;
     }
 }

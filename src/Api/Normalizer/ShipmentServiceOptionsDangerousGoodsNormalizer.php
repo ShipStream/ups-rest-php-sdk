@@ -49,6 +49,10 @@ class ShipmentServiceOptionsDangerousGoodsNormalizer implements DenormalizerInte
             $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\DangerousGoodsPhone', 'json', $context));
             unset($data['Phone']);
         }
+        if (\array_key_exists('TransportationMode', $data)) {
+            $object->setTransportationMode($this->denormalizer->denormalize($data['TransportationMode'], 'ShipStream\\Ups\\Api\\Model\\DangerousGoodsTransportationMode', 'json', $context));
+            unset($data['TransportationMode']);
+        }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $object[$key] = $value;
@@ -64,6 +68,9 @@ class ShipmentServiceOptionsDangerousGoodsNormalizer implements DenormalizerInte
         $data = array();
         $data['Name'] = $object->getName();
         $data['Phone'] = $this->normalizer->normalize($object->getPhone(), 'json', $context);
+        if ($object->isInitialized('transportationMode') && null !== $object->getTransportationMode()) {
+            $data['TransportationMode'] = $this->normalizer->normalize($object->getTransportationMode(), 'json', $context);
+        }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

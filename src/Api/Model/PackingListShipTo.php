@@ -27,7 +27,7 @@ class PackingListShipTo extends \ArrayObject
     /**
      * Consignee�s Address Container.
      *
-     * @var ShipToAddress
+     * @var FreightShipShipToAddress
      */
     protected $address;
     /**
@@ -95,20 +95,20 @@ class PackingListShipTo extends \ArrayObject
     /**
      * Consignee�s Address Container.
      *
-     * @return ShipToAddress
+     * @return FreightShipShipToAddress
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : FreightShipShipToAddress
     {
         return $this->address;
     }
     /**
      * Consignee�s Address Container.
      *
-     * @param ShipToAddress $address
+     * @param FreightShipShipToAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(FreightShipShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

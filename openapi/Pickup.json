@@ -3469,13 +3469,6 @@
         "minLength": 6,
         "maxLength": 6
       },
-      "Distance_UnitOfMeasurement": {
-        "description": "Unit Of Measure.\nExample: MI or KM",
-        "maximum": 1,
-        "type": "string",
-        "minLength": 2,
-        "maxLength": 2
-      },
       "ServiceCenterLocation_PickupFacilities": {
         "type": "object",
         "maximum": 1,

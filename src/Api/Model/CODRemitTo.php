@@ -21,7 +21,7 @@ class CODRemitTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @var RemitToAddress
+     * @var FreightShipRemitToAddress
      */
     protected $address;
     /**
@@ -73,20 +73,20 @@ class CODRemitTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return RemitToAddress
+     * @return FreightShipRemitToAddress
      */
-    public function getAddress() : RemitToAddress
+    public function getAddress() : FreightShipRemitToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param RemitToAddress $address
+     * @param FreightShipRemitToAddress $address
      *
      * @return self
      */
-    public function setAddress(RemitToAddress $address) : self
+    public function setAddress(FreightShipRemitToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

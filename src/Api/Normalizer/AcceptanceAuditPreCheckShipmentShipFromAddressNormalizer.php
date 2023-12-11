@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-class ShipmentShipToAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+class AcceptanceAuditPreCheckShipmentShipFromAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
     use DenormalizerAwareTrait;
     use NormalizerAwareTrait;
@@ -20,11 +20,11 @@ class ShipmentShipToAddressNormalizer implements DenormalizerInterface, Normaliz
     use ValidatorTrait;
     public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
     {
-        return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentShipToAddress';
+        return $type === 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress';
     }
     public function supportsNormalization($data, $format = null, array $context = array()) : bool
     {
-        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentShipToAddress';
+        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress';
     }
     /**
      * @return mixed
@@ -37,16 +37,12 @@ class ShipmentShipToAddressNormalizer implements DenormalizerInterface, Normaliz
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \ShipStream\Ups\Api\Model\ShipmentShipToAddress();
+        $object = new \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipFromAddress();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('AddressLine', $data)) {
-            $values = array();
-            foreach ($data['AddressLine'] as $value) {
-                $values[] = $value;
-            }
-            $object->setAddressLine($values);
+            $object->setAddressLine($data['AddressLine']);
             unset($data['AddressLine']);
         }
         if (\array_key_exists('City', $data)) {
@@ -65,9 +61,9 @@ class ShipmentShipToAddressNormalizer implements DenormalizerInterface, Normaliz
             $object->setCountryCode($data['CountryCode']);
             unset($data['CountryCode']);
         }
-        foreach ($data as $key => $value_1) {
+        foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value_1;
+                $object[$key] = $value;
             }
         }
         return $object;
@@ -78,11 +74,9 @@ class ShipmentShipToAddressNormalizer implements DenormalizerInterface, Normaliz
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $values = array();
-        foreach ($object->getAddressLine() as $value) {
-            $values[] = $value;
+        if ($object->isInitialized('addressLine') && null !== $object->getAddressLine()) {
+            $data['AddressLine'] = $object->getAddressLine();
         }
-        $data['AddressLine'] = $values;
         if ($object->isInitialized('city') && null !== $object->getCity()) {
             $data['City'] = $object->getCity();
         }
@@ -93,15 +87,15 @@ class ShipmentShipToAddressNormalizer implements DenormalizerInterface, Normaliz
             $data['PostalCode'] = $object->getPostalCode();
         }
         $data['CountryCode'] = $object->getCountryCode();
-        foreach ($object as $key => $value_1) {
+        foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value_1;
+                $data[$key] = $value;
             }
         }
         return $data;
     }
     public function getSupportedTypes(?string $format = null) : array
     {
-        return array('ShipStream\\Ups\\Api\\Model\\ShipmentShipToAddress' => false);
+        return array('ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress' => false);
     }
 }

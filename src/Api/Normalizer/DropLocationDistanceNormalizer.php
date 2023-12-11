@@ -46,7 +46,7 @@ class DropLocationDistanceNormalizer implements DenormalizerInterface, Normalize
             unset($data['Value']);
         }
         if (\array_key_exists('UnitOfMeasurement', $data)) {
-            $object->setUnitOfMeasurement($data['UnitOfMeasurement']);
+            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DistanceUnitOfMeasurement', 'json', $context));
             unset($data['UnitOfMeasurement']);
         }
         foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ class DropLocationDistanceNormalizer implements DenormalizerInterface, Normalize
     {
         $data = array();
         $data['Value'] = $object->getValue();
-        $data['UnitOfMeasurement'] = $object->getUnitOfMeasurement();
+        $data['UnitOfMeasurement'] = $this->normalizer->normalize($object->getUnitOfMeasurement(), 'json', $context);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

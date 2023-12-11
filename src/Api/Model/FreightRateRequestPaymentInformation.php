@@ -15,7 +15,7 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
     /**
      * Payer Container.
      *
-     * @var PaymentInformationPayer
+     * @var FreightRatePaymentInformationPayer
      */
     protected $payer;
     /**
@@ -27,20 +27,20 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
     /**
      * Payer Container.
      *
-     * @return PaymentInformationPayer
+     * @return FreightRatePaymentInformationPayer
      */
-    public function getPayer() : PaymentInformationPayer
+    public function getPayer() : FreightRatePaymentInformationPayer
     {
         return $this->payer;
     }
     /**
      * Payer Container.
      *
-     * @param PaymentInformationPayer $payer
+     * @param FreightRatePaymentInformationPayer $payer
      *
      * @return self
      */
-    public function setPayer(PaymentInformationPayer $payer) : self
+    public function setPayer(FreightRatePaymentInformationPayer $payer) : self
     {
         $this->initialized['payer'] = true;
         $this->payer = $payer;

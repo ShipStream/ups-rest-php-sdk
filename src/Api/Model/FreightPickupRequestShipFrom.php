@@ -25,7 +25,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      */
     protected $name;
     /**
-     * Shipper�s Address Container.
+     * Address Container.
      *
      * @var ShipFromAddress
      */
@@ -87,7 +87,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper�s Address Container.
+     * Address Container.
      *
      * @return ShipFromAddress
      */
@@ -96,7 +96,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
         return $this->address;
     }
     /**
-     * Shipper�s Address Container.
+     * Address Container.
      *
      * @param ShipFromAddress $address
      *

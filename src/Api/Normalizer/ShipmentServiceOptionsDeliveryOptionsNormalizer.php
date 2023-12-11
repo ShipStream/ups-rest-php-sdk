@@ -41,33 +41,13 @@ class ShipmentServiceOptionsDeliveryOptionsNormalizer implements DenormalizerInt
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('CallBeforeDeliveryIndicator', $data)) {
-            $object->setCallBeforeDeliveryIndicator($data['CallBeforeDeliveryIndicator']);
-            unset($data['CallBeforeDeliveryIndicator']);
+        if (\array_key_exists('LiftGateAtDeliveryIndicator', $data)) {
+            $object->setLiftGateAtDeliveryIndicator($data['LiftGateAtDeliveryIndicator']);
+            unset($data['LiftGateAtDeliveryIndicator']);
         }
-        if (\array_key_exists('HolidayDeliveryIndicator', $data)) {
-            $object->setHolidayDeliveryIndicator($data['HolidayDeliveryIndicator']);
-            unset($data['HolidayDeliveryIndicator']);
-        }
-        if (\array_key_exists('InsideDeliveryIndicator', $data)) {
-            $object->setInsideDeliveryIndicator($data['InsideDeliveryIndicator']);
-            unset($data['InsideDeliveryIndicator']);
-        }
-        if (\array_key_exists('ResidentialDeliveryIndicator', $data)) {
-            $object->setResidentialDeliveryIndicator($data['ResidentialDeliveryIndicator']);
-            unset($data['ResidentialDeliveryIndicator']);
-        }
-        if (\array_key_exists('WeekendDeliveryIndicator', $data)) {
-            $object->setWeekendDeliveryIndicator($data['WeekendDeliveryIndicator']);
-            unset($data['WeekendDeliveryIndicator']);
-        }
-        if (\array_key_exists('LiftGateRequiredIndicator', $data)) {
-            $object->setLiftGateRequiredIndicator($data['LiftGateRequiredIndicator']);
-            unset($data['LiftGateRequiredIndicator']);
-        }
-        if (\array_key_exists('LimitedAccessDeliveryIndicator', $data)) {
-            $object->setLimitedAccessDeliveryIndicator($data['LimitedAccessDeliveryIndicator']);
-            unset($data['LimitedAccessDeliveryIndicator']);
+        if (\array_key_exists('DropOffAtUPSFacilityIndicator', $data)) {
+            $object->setDropOffAtUPSFacilityIndicator($data['DropOffAtUPSFacilityIndicator']);
+            unset($data['DropOffAtUPSFacilityIndicator']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -82,26 +62,11 @@ class ShipmentServiceOptionsDeliveryOptionsNormalizer implements DenormalizerInt
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        if ($object->isInitialized('callBeforeDeliveryIndicator') && null !== $object->getCallBeforeDeliveryIndicator()) {
-            $data['CallBeforeDeliveryIndicator'] = $object->getCallBeforeDeliveryIndicator();
+        if ($object->isInitialized('liftGateAtDeliveryIndicator') && null !== $object->getLiftGateAtDeliveryIndicator()) {
+            $data['LiftGateAtDeliveryIndicator'] = $object->getLiftGateAtDeliveryIndicator();
         }
-        if ($object->isInitialized('holidayDeliveryIndicator') && null !== $object->getHolidayDeliveryIndicator()) {
-            $data['HolidayDeliveryIndicator'] = $object->getHolidayDeliveryIndicator();
-        }
-        if ($object->isInitialized('insideDeliveryIndicator') && null !== $object->getInsideDeliveryIndicator()) {
-            $data['InsideDeliveryIndicator'] = $object->getInsideDeliveryIndicator();
-        }
-        if ($object->isInitialized('residentialDeliveryIndicator') && null !== $object->getResidentialDeliveryIndicator()) {
-            $data['ResidentialDeliveryIndicator'] = $object->getResidentialDeliveryIndicator();
-        }
-        if ($object->isInitialized('weekendDeliveryIndicator') && null !== $object->getWeekendDeliveryIndicator()) {
-            $data['WeekendDeliveryIndicator'] = $object->getWeekendDeliveryIndicator();
-        }
-        if ($object->isInitialized('liftGateRequiredIndicator') && null !== $object->getLiftGateRequiredIndicator()) {
-            $data['LiftGateRequiredIndicator'] = $object->getLiftGateRequiredIndicator();
-        }
-        if ($object->isInitialized('limitedAccessDeliveryIndicator') && null !== $object->getLimitedAccessDeliveryIndicator()) {
-            $data['LimitedAccessDeliveryIndicator'] = $object->getLimitedAccessDeliveryIndicator();
+        if ($object->isInitialized('dropOffAtUPSFacilityIndicator') && null !== $object->getDropOffAtUPSFacilityIndicator()) {
+            $data['DropOffAtUPSFacilityIndicator'] = $object->getDropOffAtUPSFacilityIndicator();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

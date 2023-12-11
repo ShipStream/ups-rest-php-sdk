@@ -28,7 +28,7 @@ class PickupRequestPOM extends \ArrayObject
     /**
      * Container for pre-pickup notifications events
      *
-     * @var POMPickupNotifications
+     * @var FreightShipPOMPickupNotifications
      */
     protected $pickupNotifications;
     /**
@@ -80,20 +80,20 @@ class PickupRequestPOM extends \ArrayObject
     /**
      * Container for pre-pickup notifications events
      *
-     * @return POMPickupNotifications
+     * @return FreightShipPOMPickupNotifications
      */
-    public function getPickupNotifications() : POMPickupNotifications
+    public function getPickupNotifications() : FreightShipPOMPickupNotifications
     {
         return $this->pickupNotifications;
     }
     /**
      * Container for pre-pickup notifications events
      *
-     * @param POMPickupNotifications $pickupNotifications
+     * @param FreightShipPOMPickupNotifications $pickupNotifications
      *
      * @return self
      */
-    public function setPickupNotifications(POMPickupNotifications $pickupNotifications) : self
+    public function setPickupNotifications(FreightShipPOMPickupNotifications $pickupNotifications) : self
     {
         $this->initialized['pickupNotifications'] = true;
         $this->pickupNotifications = $pickupNotifications;

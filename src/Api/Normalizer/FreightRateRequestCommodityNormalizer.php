@@ -50,7 +50,7 @@ class FreightRateRequestCommodityNormalizer implements DenormalizerInterface, No
             unset($data['Description']);
         }
         if (\array_key_exists('Weight', $data)) {
-            $object->setWeight($data['Weight']);
+            $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
             unset($data['Weight']);
         }
         if (\array_key_exists('AdjustedWeight', $data)) {
@@ -74,7 +74,7 @@ class FreightRateRequestCommodityNormalizer implements DenormalizerInterface, No
             unset($data['DangerousGoodsIndicator']);
         }
         if (\array_key_exists('CommodityValue', $data)) {
-            $object->setCommodityValue($data['CommodityValue']);
+            $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue', 'json', $context));
             unset($data['CommodityValue']);
         }
         if (\array_key_exists('FreightClass', $data)) {
@@ -106,7 +106,7 @@ class FreightRateRequestCommodityNormalizer implements DenormalizerInterface, No
             $data['CommodityID'] = $object->getCommodityID();
         }
         $data['Description'] = $object->getDescription();
-        $data['Weight'] = $object->getWeight();
+        $data['Weight'] = $this->normalizer->normalize($object->getWeight(), 'json', $context);
         if ($object->isInitialized('adjustedWeight') && null !== $object->getAdjustedWeight()) {
             $data['AdjustedWeight'] = $this->normalizer->normalize($object->getAdjustedWeight(), 'json', $context);
         }
@@ -119,7 +119,7 @@ class FreightRateRequestCommodityNormalizer implements DenormalizerInterface, No
             $data['DangerousGoodsIndicator'] = $object->getDangerousGoodsIndicator();
         }
         if ($object->isInitialized('commodityValue') && null !== $object->getCommodityValue()) {
-            $data['CommodityValue'] = $object->getCommodityValue();
+            $data['CommodityValue'] = $this->normalizer->normalize($object->getCommodityValue(), 'json', $context);
         }
         if ($object->isInitialized('freightClass') && null !== $object->getFreightClass()) {
             $data['FreightClass'] = $object->getFreightClass();

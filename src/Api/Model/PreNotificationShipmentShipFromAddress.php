@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Model;
 
-class ShipmentShipFromAddress extends \ArrayObject
+class PreNotificationShipmentShipFromAddress extends \ArrayObject
 {
     /**
      * @var array

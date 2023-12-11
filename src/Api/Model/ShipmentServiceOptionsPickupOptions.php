@@ -13,171 +13,59 @@ class ShipmentServiceOptionsPickupOptions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The presence of the tag HolidayPickupIndicator indicates that the shipment requires a holiday pickup.
+     * The presence of the tag LiftGatePickupRequiredIndicator indicates that the shipment requires a lift gate for pickup.
      *
      * @var string
      */
-    protected $holidayPickupIndicator;
+    protected $liftGateAtPickupIndicator;
     /**
-     * The presence of the tag InsidePickupIndicator indicates that the shipment requires an inside pickup.
+     * The presence of the tag HoldForPickupIndicator indicates that the user opted to hold the shipment at UPS location for pickup.
      *
      * @var string
      */
-    protected $insidePickupIndicator;
+    protected $holdForPickupIndicator;
     /**
-     * The presence of the tag ResidentialPickupIndicator indicates that the shipment requires a residential pickup.
-     *
-     * @var string
-     */
-    protected $residentialPickupIndicator;
-    /**
-     * The presence of the tag WeekendPickupIndicator indicates that the shipment requires a weekend pickup.
-     *
-     * @var string
-     */
-    protected $weekendPickupIndicator;
-    /**
-     * The presence of the tag LiftGateRequiredIndicator indicates that the shipment requires a lift gate.
-     *
-     * @var string
-     */
-    protected $liftGateRequiredIndicator;
-    /**
-     * The presence of the tag LimitedAccessPickupIndicator indicates that there is limited access for pickups.
-     *
-     * @var string
-     */
-    protected $limitedAccessPickupIndicator;
-    /**
-     * The presence of the tag HolidayPickupIndicator indicates that the shipment requires a holiday pickup.
+     * The presence of the tag LiftGatePickupRequiredIndicator indicates that the shipment requires a lift gate for pickup.
      *
      * @return string
      */
-    public function getHolidayPickupIndicator() : string
+    public function getLiftGateAtPickupIndicator() : string
     {
-        return $this->holidayPickupIndicator;
+        return $this->liftGateAtPickupIndicator;
     }
     /**
-     * The presence of the tag HolidayPickupIndicator indicates that the shipment requires a holiday pickup.
+     * The presence of the tag LiftGatePickupRequiredIndicator indicates that the shipment requires a lift gate for pickup.
      *
-     * @param string $holidayPickupIndicator
+     * @param string $liftGateAtPickupIndicator
      *
      * @return self
      */
-    public function setHolidayPickupIndicator(string $holidayPickupIndicator) : self
+    public function setLiftGateAtPickupIndicator(string $liftGateAtPickupIndicator) : self
     {
-        $this->initialized['holidayPickupIndicator'] = true;
-        $this->holidayPickupIndicator = $holidayPickupIndicator;
+        $this->initialized['liftGateAtPickupIndicator'] = true;
+        $this->liftGateAtPickupIndicator = $liftGateAtPickupIndicator;
         return $this;
     }
     /**
-     * The presence of the tag InsidePickupIndicator indicates that the shipment requires an inside pickup.
+     * The presence of the tag HoldForPickupIndicator indicates that the user opted to hold the shipment at UPS location for pickup.
      *
      * @return string
      */
-    public function getInsidePickupIndicator() : string
+    public function getHoldForPickupIndicator() : string
     {
-        return $this->insidePickupIndicator;
+        return $this->holdForPickupIndicator;
     }
     /**
-     * The presence of the tag InsidePickupIndicator indicates that the shipment requires an inside pickup.
+     * The presence of the tag HoldForPickupIndicator indicates that the user opted to hold the shipment at UPS location for pickup.
      *
-     * @param string $insidePickupIndicator
+     * @param string $holdForPickupIndicator
      *
      * @return self
      */
-    public function setInsidePickupIndicator(string $insidePickupIndicator) : self
+    public function setHoldForPickupIndicator(string $holdForPickupIndicator) : self
     {
-        $this->initialized['insidePickupIndicator'] = true;
-        $this->insidePickupIndicator = $insidePickupIndicator;
-        return $this;
-    }
-    /**
-     * The presence of the tag ResidentialPickupIndicator indicates that the shipment requires a residential pickup.
-     *
-     * @return string
-     */
-    public function getResidentialPickupIndicator() : string
-    {
-        return $this->residentialPickupIndicator;
-    }
-    /**
-     * The presence of the tag ResidentialPickupIndicator indicates that the shipment requires a residential pickup.
-     *
-     * @param string $residentialPickupIndicator
-     *
-     * @return self
-     */
-    public function setResidentialPickupIndicator(string $residentialPickupIndicator) : self
-    {
-        $this->initialized['residentialPickupIndicator'] = true;
-        $this->residentialPickupIndicator = $residentialPickupIndicator;
-        return $this;
-    }
-    /**
-     * The presence of the tag WeekendPickupIndicator indicates that the shipment requires a weekend pickup.
-     *
-     * @return string
-     */
-    public function getWeekendPickupIndicator() : string
-    {
-        return $this->weekendPickupIndicator;
-    }
-    /**
-     * The presence of the tag WeekendPickupIndicator indicates that the shipment requires a weekend pickup.
-     *
-     * @param string $weekendPickupIndicator
-     *
-     * @return self
-     */
-    public function setWeekendPickupIndicator(string $weekendPickupIndicator) : self
-    {
-        $this->initialized['weekendPickupIndicator'] = true;
-        $this->weekendPickupIndicator = $weekendPickupIndicator;
-        return $this;
-    }
-    /**
-     * The presence of the tag LiftGateRequiredIndicator indicates that the shipment requires a lift gate.
-     *
-     * @return string
-     */
-    public function getLiftGateRequiredIndicator() : string
-    {
-        return $this->liftGateRequiredIndicator;
-    }
-    /**
-     * The presence of the tag LiftGateRequiredIndicator indicates that the shipment requires a lift gate.
-     *
-     * @param string $liftGateRequiredIndicator
-     *
-     * @return self
-     */
-    public function setLiftGateRequiredIndicator(string $liftGateRequiredIndicator) : self
-    {
-        $this->initialized['liftGateRequiredIndicator'] = true;
-        $this->liftGateRequiredIndicator = $liftGateRequiredIndicator;
-        return $this;
-    }
-    /**
-     * The presence of the tag LimitedAccessPickupIndicator indicates that there is limited access for pickups.
-     *
-     * @return string
-     */
-    public function getLimitedAccessPickupIndicator() : string
-    {
-        return $this->limitedAccessPickupIndicator;
-    }
-    /**
-     * The presence of the tag LimitedAccessPickupIndicator indicates that there is limited access for pickups.
-     *
-     * @param string $limitedAccessPickupIndicator
-     *
-     * @return self
-     */
-    public function setLimitedAccessPickupIndicator(string $limitedAccessPickupIndicator) : self
-    {
-        $this->initialized['limitedAccessPickupIndicator'] = true;
-        $this->limitedAccessPickupIndicator = $limitedAccessPickupIndicator;
+        $this->initialized['holdForPickupIndicator'] = true;
+        $this->holdForPickupIndicator = $holdForPickupIndicator;
         return $this;
     }
 }

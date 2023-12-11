@@ -19,9 +19,9 @@ class FreightPickupRequestShipTo extends \ArrayObject
      */
     protected $attentionName;
     /**
-     * Consignee�s Address Container.
+     * Address Container.
      *
-     * @var ShipToAddress
+     * @var FreightPickupShipToAddress
      */
     protected $address;
     /**
@@ -59,22 +59,22 @@ class FreightPickupRequestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee�s Address Container.
+     * Address Container.
      *
-     * @return ShipToAddress
+     * @return FreightPickupShipToAddress
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : FreightPickupShipToAddress
     {
         return $this->address;
     }
     /**
-     * Consignee�s Address Container.
+     * Address Container.
      *
-     * @param ShipToAddress $address
+     * @param FreightPickupShipToAddress $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(FreightPickupShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

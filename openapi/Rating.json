@@ -1181,16 +1181,16 @@
             "type": "string"
           },
           "Shipper": {
-            "$ref": "#/components/schemas/Shipment_Shipper"
+            "$ref": "#/components/schemas/RateShipment_Shipper"
           },
           "ShipTo": {
-            "$ref": "#/components/schemas/Shipment_ShipTo"
+            "$ref": "#/components/schemas/RateShipment_ShipTo"
           },
           "ShipFrom": {
-            "$ref": "#/components/schemas/Shipment_ShipFrom"
+            "$ref": "#/components/schemas/RateShipment_ShipFrom"
           },
           "AlternateDeliveryAddress": {
-            "$ref": "#/components/schemas/Shipment_AlternateDeliveryAddress"
+            "$ref": "#/components/schemas/RateShipment_AlternateDeliveryAddress"
           },
           "ShipmentIndicationType": {
             "type": "array",
@@ -1202,7 +1202,7 @@
             "$ref": "#/components/schemas/Shipment_PaymentDetails"
           },
           "FRSPaymentInformation": {
-            "$ref": "#/components/schemas/Shipment_FRSPaymentInformation"
+            "$ref": "#/components/schemas/RateShipment_FRSPaymentInformation"
           },
           "FreightShipmentInformation": {
             "$ref": "#/components/schemas/Shipment_FreightShipmentInformation"
@@ -1230,11 +1230,11 @@
             "type": "array",
             "maximum": 200,
             "items": {
-              "$ref": "#/components/schemas/Shipment_Package"
+              "$ref": "#/components/schemas/RateShipment_Package"
             }
           },
           "ShipmentServiceOptions": {
-            "$ref": "#/components/schemas/Shipment_ShipmentServiceOptions"
+            "$ref": "#/components/schemas/RateShipment_ShipmentServiceOptions"
           },
           "ShipmentRatingOptions": {
             "$ref": "#/components/schemas/Shipment_ShipmentRatingOptions"
@@ -1279,7 +1279,7 @@
         ],
         "description": "Container for Shipment Information.  N/A"
       },
-      "Shipment_Shipper": {
+      "RateShipment_Shipper": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1368,7 +1368,7 @@
         },
         "description": "Address Container.  If the ShipFrom container is not present then this address will be used as the ShipFrom. If this address is used as the ShipFrom, the shipment will be rated from this origin address."
       },
-      "Shipment_ShipTo": {
+      "RateShipment_ShipTo": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1455,7 +1455,7 @@
         },
         "description": "Address Container.  N/A"
       },
-      "Shipment_ShipFrom": {
+      "RateShipment_ShipFrom": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1537,7 +1537,7 @@
         },
         "description": "Address container for Ship From.  Address Container"
       },
-      "Shipment_AlternateDeliveryAddress": {
+      "RateShipment_AlternateDeliveryAddress": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1546,7 +1546,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/AlternateDeliveryAddress_Address"
+            "$ref": "#/components/schemas/RateAlternateDeliveryAddress_Address"
           }
         },
         "xml": {
@@ -1564,7 +1564,7 @@
         "minLength": 1,
         "maxLength": 35
       },
-      "AlternateDeliveryAddress_Address": {
+      "RateAlternateDeliveryAddress_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1693,13 +1693,13 @@
             "maxLength": 2
           },
           "BillShipper": {
-            "$ref": "#/components/schemas/ShipmentCharge_BillShipper"
+            "$ref": "#/components/schemas/RateShipmentCharge_BillShipper"
           },
           "BillReceiver": {
             "$ref": "#/components/schemas/ShipmentCharge_BillReceiver"
           },
           "BillThirdParty": {
-            "$ref": "#/components/schemas/ShipmentCharge_BillThirdParty"
+            "$ref": "#/components/schemas/RateShipmentCharge_BillThirdParty"
           },
           "ConsigneeBilledIndicator": {
             "description": "Consignee Billing payment option indicator. The presence indicates consignee billing option is selected. The absence indicates one of the other payment options is selected.  Empty Tag. This element or its sibling element, BillShipper, BillReceiver or BillThirdParty, must be present but no more than one can be present. This billing option is valid for a shipment charge type of Transportation only. Only applies to US/PR and PR/US shipment origins and destination.",
@@ -1712,7 +1712,7 @@
         },
         "description": "Shipment charge container.  If Duty and Tax charges are applicable to a shipment and a payer is not specified, the default payer of Duty and Tax charges is Bill to Receiver. There will be no default payer of Duty and Tax charges for DDU and DDP service."
       },
-      "ShipmentCharge_BillShipper": {
+      "RateShipmentCharge_BillShipper": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1772,7 +1772,7 @@
         },
         "description": "Container for additional information for the bill receiver's UPS accounts address."
       },
-      "ShipmentCharge_BillThirdParty": {
+      "RateShipmentCharge_BillThirdParty": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1788,7 +1788,7 @@
             "maxLength": 6
           },
           "Address": {
-            "$ref": "#/components/schemas/BillThirdParty_Address"
+            "$ref": "#/components/schemas/RateBillThirdParty_Address"
           }
         },
         "xml": {
@@ -1796,7 +1796,7 @@
         },
         "description": "Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present."
       },
-      "BillThirdParty_Address": {
+      "RateBillThirdParty_Address": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1847,7 +1847,7 @@
         ],
         "description": "Container for additional information for the third party UPS accounts address."
       },
-      "Shipment_FRSPaymentInformation": {
+      "RateShipment_FRSPaymentInformation": {
         "type": "object",
         "required": [
           "Type"
@@ -2234,7 +2234,7 @@
         "maximum": 1,
         "type": "string"
       },
-      "Shipment_Package": {
+      "RateShipment_Package": {
         "type": "object",
         "properties": {
           "PackagingType": {
@@ -2258,7 +2258,7 @@
             "type": "string"
           },
           "PackageServiceOptions": {
-            "$ref": "#/components/schemas/Package_PackageServiceOptions"
+            "$ref": "#/components/schemas/RatePackage_PackageServiceOptions"
           },
           "AdditionalHandlingIndicator": {
             "description": "A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it\"s a non-corrugated package.  Empty Tag.",
@@ -2269,7 +2269,7 @@
             "$ref": "#/components/schemas/Package_SimpleRate"
           },
           "UPSPremier": {
-            "$ref": "#/components/schemas/Package_UPSPremier"
+            "$ref": "#/components/schemas/RatePackage_UPSPremier"
           },
           "OversizeIndicator": {
             "description": "Presence/Absence Indicator. Any value inside is ignored. It indicates if packge is oversized.  Applicable for UPS Worldwide Economy DDU service",
@@ -2505,11 +2505,11 @@
         },
         "description": "NMFC Commodity container.  For GFP Only."
       },
-      "Package_PackageServiceOptions": {
+      "RatePackage_PackageServiceOptions": {
         "type": "object",
         "properties": {
           "DeliveryConfirmation": {
-            "$ref": "#/components/schemas/PackageServiceOptions_DeliveryConfirmation"
+            "$ref": "#/components/schemas/RatePackageServiceOptions_DeliveryConfirmation"
           },
           "AccessPointCOD": {
             "$ref": "#/components/schemas/PackageServiceOptions_AccessPointCOD"
@@ -2518,7 +2518,7 @@
             "$ref": "#/components/schemas/PackageServiceOptions_COD"
           },
           "DeclaredValue": {
-            "$ref": "#/components/schemas/PackageServiceOptions_DeclaredValue"
+            "$ref": "#/components/schemas/RatePackageServiceOptions_DeclaredValue"
           },
           "ShipperDeclaredValue": {
             "$ref": "#/components/schemas/PackageServiceOptions_ShipperDeclaredValue"
@@ -2544,10 +2544,10 @@
             "type": "string"
           },
           "HazMat": {
-            "$ref": "#/components/schemas/PackageServiceOptions_HazMat"
+            "$ref": "#/components/schemas/RatePackageServiceOptions_HazMat"
           },
           "DryIce": {
-            "$ref": "#/components/schemas/PackageServiceOptions_DryIce"
+            "$ref": "#/components/schemas/RatePackageServiceOptions_DryIce"
           }
         },
         "xml": {
@@ -2556,7 +2556,7 @@
         "maximum": 1,
         "description": "PackageServiceOptions container.  N/A"
       },
-      "PackageServiceOptions_DeliveryConfirmation": {
+      "RatePackageServiceOptions_DeliveryConfirmation": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -2656,7 +2656,7 @@
         },
         "description": "CODAmount Container.  UPS does not support all international currency codes. Refer to the appendix for a list of valid codes."
       },
-      "PackageServiceOptions_DeclaredValue": {
+      "RatePackageServiceOptions_DeclaredValue": {
         "type": "object",
         "required": [
           "CurrencyCode",
@@ -2795,7 +2795,7 @@
         },
         "description": "Container to hold Time In Transit Flexible Parcel Indicator information.  Valid for UPS World Wide Express Freight shipments."
       },
-      "PackageServiceOptions_HazMat": {
+      "RatePackageServiceOptions_HazMat": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -3006,7 +3006,7 @@
         ],
         "description": "Container to hold HazMat Chemical Records."
       },
-      "PackageServiceOptions_DryIce": {
+      "RatePackageServiceOptions_DryIce": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -3119,7 +3119,7 @@
         },
         "description": "SimpleRate Container"
       },
-      "Package_UPSPremier": {
+      "RatePackage_UPSPremier": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -3139,7 +3139,7 @@
         },
         "description": "UPS Premier  N/A"
       },
-      "Shipment_ShipmentServiceOptions": {
+      "RateShipment_ShipmentServiceOptions": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -3182,7 +3182,7 @@
             "$ref": "#/components/schemas/ShipmentServiceOptions_COD"
           },
           "DeliveryConfirmation": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_DeliveryConfirmation"
+            "$ref": "#/components/schemas/RateShipmentServiceOptions_DeliveryConfirmation"
           },
           "ReturnOfDocumentIndicator": {
             "description": "Return of Documents Indicator - If the flag is present, the shipper has requested the ReturnOfDocument accessorial be added to the shipment  Valid for Poland to Poland shipment.",
@@ -3206,7 +3206,7 @@
             "$ref": "#/components/schemas/ShipmentServiceOptions_DeliveryOptions"
           },
           "RestrictedArticles": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_RestrictedArticles"
+            "$ref": "#/components/schemas/RateShipmentServiceOptions_RestrictedArticles"
           },
           "ShipperExportDeclarationIndicator": {
             "description": "The empty tag in request indicates that customer would be using UPS prepared SED form.  Valid for UPS World Wide Express Freight shipments.",
@@ -3304,7 +3304,7 @@
         },
         "description": "If present, indicates C.O.D. is requested for the shipment.  Shipment level C.O.D. is only available for EU origin countries or territories.C.O.D. shipments are only available for Shippers with Daily Pickup and Drop Shipping accounts."
       },
-      "ShipmentServiceOptions_DeliveryConfirmation": {
+      "RateShipmentServiceOptions_DeliveryConfirmation": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -3361,7 +3361,7 @@
         },
         "description": "Shipment Service Delivery Options Container.  Valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments."
       },
-      "ShipmentServiceOptions_RestrictedArticles": {
+      "RateShipmentServiceOptions_RestrictedArticles": {
         "type": "object",
         "maximum": 1,
         "properties": {

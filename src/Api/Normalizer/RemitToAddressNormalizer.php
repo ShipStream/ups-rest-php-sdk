@@ -42,7 +42,11 @@ class RemitToAddressNormalizer implements DenormalizerInterface, NormalizerInter
             return $object;
         }
         if (\array_key_exists('AddressLine', $data)) {
-            $object->setAddressLine($data['AddressLine']);
+            $values = array();
+            foreach ($data['AddressLine'] as $value) {
+                $values[] = $value;
+            }
+            $object->setAddressLine($values);
             unset($data['AddressLine']);
         }
         if (\array_key_exists('City', $data)) {
@@ -65,9 +69,9 @@ class RemitToAddressNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setCountryCode($data['CountryCode']);
             unset($data['CountryCode']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -78,7 +82,11 @@ class RemitToAddressNormalizer implements DenormalizerInterface, NormalizerInter
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['AddressLine'] = $object->getAddressLine();
+        $values = array();
+        foreach ($object->getAddressLine() as $value) {
+            $values[] = $value;
+        }
+        $data['AddressLine'] = $values;
         $data['City'] = $object->getCity();
         if ($object->isInitialized('stateProvinceCode') && null !== $object->getStateProvinceCode()) {
             $data['StateProvinceCode'] = $object->getStateProvinceCode();
@@ -90,9 +98,9 @@ class RemitToAddressNormalizer implements DenormalizerInterface, NormalizerInter
             $data['PostalCode'] = $object->getPostalCode();
         }
         $data['CountryCode'] = $object->getCountryCode();
-        foreach ($object as $key => $value) {
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

@@ -50,11 +50,11 @@ class PreNotificationRequestShipmentNormalizer implements DenormalizerInterface,
             unset($data['ShipmentIdentificationNumber']);
         }
         if (\array_key_exists('ShipToAddress', $data)) {
-            $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipToAddress', 'json', $context));
+            $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress', 'json', $context));
             unset($data['ShipToAddress']);
         }
         if (\array_key_exists('ShipFromAddress', $data)) {
-            $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFromAddress', 'json', $context));
+            $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress', 'json', $context));
             unset($data['ShipFromAddress']);
         }
         if (\array_key_exists('PickupDate', $data)) {
@@ -72,7 +72,7 @@ class PreNotificationRequestShipmentNormalizer implements DenormalizerInterface,
         if (\array_key_exists('Package', $data)) {
             $values = array();
             foreach ($data['Package'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentPackage', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage', 'json', $context);
             }
             $object->setPackage($values);
             unset($data['Package']);

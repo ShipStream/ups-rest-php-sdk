@@ -19,27 +19,27 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $originRecordTransactionTimestamp;
     /**
-     * Container for the Shipper's information.
+     * Shipper container. Information associated with the UPS account number.
      *
-     * @var ShipmentShipper
+     * @var RateShipmentShipper
      */
     protected $shipper;
     /**
-     * ShipTo Container.
+     * Ship To Container  N/A
      *
-     * @var ShipmentShipTo
+     * @var RateShipmentShipTo
      */
     protected $shipTo;
     /**
-     * ShipFrom Container.
+     * Ship From Container.  N/A
      *
-     * @var ShipmentShipFrom
+     * @var RateShipmentShipFrom
      */
     protected $shipFrom;
     /**
-     * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
+     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
      *
-     * @var ShipmentAlternateDeliveryAddress
+     * @var RateShipmentAlternateDeliveryAddress
      */
     protected $alternateDeliveryAddress;
     /**
@@ -55,9 +55,9 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $paymentDetails;
     /**
-     * Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.
+     * UPS Ground Freight Pricing (GFP) Payment Information container.  Required only for GFP and when the FRSIndicator is present.
      *
-     * @var ShipmentFRSPaymentInformation
+     * @var RateShipmentFRSPaymentInformation
      */
     protected $fRSPaymentInformation;
     /**
@@ -99,13 +99,13 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentPackage[]
+     * @var RateShipmentPackage[]
      */
     protected $package;
     /**
-     * ShipmentServiceOptions Container.
+     * Shipment level Accessorials are included in this container.  N/A
      *
-     * @var ShipmentShipmentServiceOptions
+     * @var RateShipmentShipmentServiceOptions
      */
     protected $shipmentServiceOptions;
     /**
@@ -179,88 +179,88 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Container for the Shipper's information.
+     * Shipper container. Information associated with the UPS account number.
      *
-     * @return ShipmentShipper
+     * @return RateShipmentShipper
      */
-    public function getShipper() : ShipmentShipper
+    public function getShipper() : RateShipmentShipper
     {
         return $this->shipper;
     }
     /**
-     * Container for the Shipper's information.
+     * Shipper container. Information associated with the UPS account number.
      *
-     * @param ShipmentShipper $shipper
+     * @param RateShipmentShipper $shipper
      *
      * @return self
      */
-    public function setShipper(ShipmentShipper $shipper) : self
+    public function setShipper(RateShipmentShipper $shipper) : self
     {
         $this->initialized['shipper'] = true;
         $this->shipper = $shipper;
         return $this;
     }
     /**
-     * ShipTo Container.
+     * Ship To Container  N/A
      *
-     * @return ShipmentShipTo
+     * @return RateShipmentShipTo
      */
-    public function getShipTo() : ShipmentShipTo
+    public function getShipTo() : RateShipmentShipTo
     {
         return $this->shipTo;
     }
     /**
-     * ShipTo Container.
+     * Ship To Container  N/A
      *
-     * @param ShipmentShipTo $shipTo
+     * @param RateShipmentShipTo $shipTo
      *
      * @return self
      */
-    public function setShipTo(ShipmentShipTo $shipTo) : self
+    public function setShipTo(RateShipmentShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
         return $this;
     }
     /**
-     * ShipFrom Container.
+     * Ship From Container.  N/A
      *
-     * @return ShipmentShipFrom
+     * @return RateShipmentShipFrom
      */
-    public function getShipFrom() : ShipmentShipFrom
+    public function getShipFrom() : RateShipmentShipFrom
     {
         return $this->shipFrom;
     }
     /**
-     * ShipFrom Container.
+     * Ship From Container.  N/A
      *
-     * @param ShipmentShipFrom $shipFrom
+     * @param RateShipmentShipFrom $shipFrom
      *
      * @return self
      */
-    public function setShipFrom(ShipmentShipFrom $shipFrom) : self
+    public function setShipFrom(RateShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
         return $this;
     }
     /**
-     * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
+     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
      *
-     * @return ShipmentAlternateDeliveryAddress
+     * @return RateShipmentAlternateDeliveryAddress
      */
-    public function getAlternateDeliveryAddress() : ShipmentAlternateDeliveryAddress
+    public function getAlternateDeliveryAddress() : RateShipmentAlternateDeliveryAddress
     {
         return $this->alternateDeliveryAddress;
     }
     /**
-     * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
+     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
      *
-     * @param ShipmentAlternateDeliveryAddress $alternateDeliveryAddress
+     * @param RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress
      *
      * @return self
      */
-    public function setAlternateDeliveryAddress(ShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
+    public function setAlternateDeliveryAddress(RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
     {
         $this->initialized['alternateDeliveryAddress'] = true;
         $this->alternateDeliveryAddress = $alternateDeliveryAddress;
@@ -311,22 +311,22 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.
+     * UPS Ground Freight Pricing (GFP) Payment Information container.  Required only for GFP and when the FRSIndicator is present.
      *
-     * @return ShipmentFRSPaymentInformation
+     * @return RateShipmentFRSPaymentInformation
      */
-    public function getFRSPaymentInformation() : ShipmentFRSPaymentInformation
+    public function getFRSPaymentInformation() : RateShipmentFRSPaymentInformation
     {
         return $this->fRSPaymentInformation;
     }
     /**
-     * Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.
+     * UPS Ground Freight Pricing (GFP) Payment Information container.  Required only for GFP and when the FRSIndicator is present.
      *
-     * @param ShipmentFRSPaymentInformation $fRSPaymentInformation
+     * @param RateShipmentFRSPaymentInformation $fRSPaymentInformation
      *
      * @return self
      */
-    public function setFRSPaymentInformation(ShipmentFRSPaymentInformation $fRSPaymentInformation) : self
+    public function setFRSPaymentInformation(RateShipmentFRSPaymentInformation $fRSPaymentInformation) : self
     {
         $this->initialized['fRSPaymentInformation'] = true;
         $this->fRSPaymentInformation = $fRSPaymentInformation;
@@ -467,7 +467,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentPackage[]
+     * @return RateShipmentPackage[]
      */
     public function getPackage() : array
     {
@@ -476,7 +476,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentPackage[] $package
+     * @param RateShipmentPackage[] $package
      *
      * @return self
      */
@@ -487,22 +487,22 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * ShipmentServiceOptions Container.
+     * Shipment level Accessorials are included in this container.  N/A
      *
-     * @return ShipmentShipmentServiceOptions
+     * @return RateShipmentShipmentServiceOptions
      */
-    public function getShipmentServiceOptions() : ShipmentShipmentServiceOptions
+    public function getShipmentServiceOptions() : RateShipmentShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
-     * ShipmentServiceOptions Container.
+     * Shipment level Accessorials are included in this container.  N/A
      *
-     * @param ShipmentShipmentServiceOptions $shipmentServiceOptions
+     * @param RateShipmentShipmentServiceOptions $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(ShipmentShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(RateShipmentShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;

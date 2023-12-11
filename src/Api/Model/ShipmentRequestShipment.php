@@ -48,7 +48,7 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $shipper;
     /**
-     * ShipTo Container.
+     * Ship To Container.
      *
      * @var ShipmentShipTo
      */
@@ -60,13 +60,15 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $alternateDeliveryAddress;
     /**
-     * ShipFrom Container.
-     *
-     * @var ShipmentShipFrom
-     */
+    * Ship From Container.  Required for return shipment. 
+    
+    Required if pickup location is different from the shipper's address.
+    *
+    * @var ShipmentShipFrom
+    */
     protected $shipFrom;
     /**
-     * Payment Information Container.
+     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
      *
      * @var ShipmentPaymentInformation
      */
@@ -253,7 +255,7 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $taxInformationIndicator;
     /**
-     * ShipmentServiceOptions Container.
+     * Container for Shipment Service Options.
      *
      * @var ShipmentShipmentServiceOptions
      */
@@ -409,7 +411,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * ShipTo Container.
+     * Ship To Container.
      *
      * @return ShipmentShipTo
      */
@@ -418,7 +420,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->shipTo;
     }
     /**
-     * ShipTo Container.
+     * Ship To Container.
      *
      * @param ShipmentShipTo $shipTo
      *
@@ -453,21 +455,25 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * ShipFrom Container.
-     *
-     * @return ShipmentShipFrom
-     */
+    * Ship From Container.  Required for return shipment. 
+    
+    Required if pickup location is different from the shipper's address.
+    *
+    * @return ShipmentShipFrom
+    */
     public function getShipFrom() : ShipmentShipFrom
     {
         return $this->shipFrom;
     }
     /**
-     * ShipFrom Container.
-     *
-     * @param ShipmentShipFrom $shipFrom
-     *
-     * @return self
-     */
+    * Ship From Container.  Required for return shipment. 
+    
+    Required if pickup location is different from the shipper's address.
+    *
+    * @param ShipmentShipFrom $shipFrom
+    *
+    * @return self
+    */
     public function setShipFrom(ShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
@@ -475,7 +481,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Payment Information Container.
+     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
      *
      * @return ShipmentPaymentInformation
      */
@@ -484,7 +490,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->paymentInformation;
     }
     /**
-     * Payment Information Container.
+     * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
      *
      * @param ShipmentPaymentInformation $paymentInformation
      *
@@ -1099,7 +1105,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * ShipmentServiceOptions Container.
+     * Container for Shipment Service Options.
      *
      * @return ShipmentShipmentServiceOptions
      */
@@ -1108,7 +1114,7 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->shipmentServiceOptions;
     }
     /**
-     * ShipmentServiceOptions Container.
+     * Container for Shipment Service Options.
      *
      * @param ShipmentShipmentServiceOptions $shipmentServiceOptions
      *

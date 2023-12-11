@@ -15,13 +15,13 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     /**
      * PickupOptions Container.
      *
-     * @var ShipmentServiceOptionsPickupOptions
+     * @var FreightShipmentServiceOptionsPickupOptions
      */
     protected $pickupOptions;
     /**
      * DeliveryOptions Container.
      *
-     * @var ShipmentServiceOptionsDeliveryOptions
+     * @var FreightShipmentServiceOptionsDeliveryOptions
      */
     protected $deliveryOptions;
     /**
@@ -34,7 +34,7 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     /**
      * COD Container.
      *
-     * @var ShipmentServiceOptionsCOD
+     * @var FreightShipmentServiceOptionsCOD
      */
     protected $cOD;
     /**
@@ -93,20 +93,20 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     /**
      * PickupOptions Container.
      *
-     * @return ShipmentServiceOptionsPickupOptions
+     * @return FreightShipmentServiceOptionsPickupOptions
      */
-    public function getPickupOptions() : ShipmentServiceOptionsPickupOptions
+    public function getPickupOptions() : FreightShipmentServiceOptionsPickupOptions
     {
         return $this->pickupOptions;
     }
     /**
      * PickupOptions Container.
      *
-     * @param ShipmentServiceOptionsPickupOptions $pickupOptions
+     * @param FreightShipmentServiceOptionsPickupOptions $pickupOptions
      *
      * @return self
      */
-    public function setPickupOptions(ShipmentServiceOptionsPickupOptions $pickupOptions) : self
+    public function setPickupOptions(FreightShipmentServiceOptionsPickupOptions $pickupOptions) : self
     {
         $this->initialized['pickupOptions'] = true;
         $this->pickupOptions = $pickupOptions;
@@ -115,20 +115,20 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     /**
      * DeliveryOptions Container.
      *
-     * @return ShipmentServiceOptionsDeliveryOptions
+     * @return FreightShipmentServiceOptionsDeliveryOptions
      */
-    public function getDeliveryOptions() : ShipmentServiceOptionsDeliveryOptions
+    public function getDeliveryOptions() : FreightShipmentServiceOptionsDeliveryOptions
     {
         return $this->deliveryOptions;
     }
     /**
      * DeliveryOptions Container.
      *
-     * @param ShipmentServiceOptionsDeliveryOptions $deliveryOptions
+     * @param FreightShipmentServiceOptionsDeliveryOptions $deliveryOptions
      *
      * @return self
      */
-    public function setDeliveryOptions(ShipmentServiceOptionsDeliveryOptions $deliveryOptions) : self
+    public function setDeliveryOptions(FreightShipmentServiceOptionsDeliveryOptions $deliveryOptions) : self
     {
         $this->initialized['deliveryOptions'] = true;
         $this->deliveryOptions = $deliveryOptions;
@@ -161,20 +161,20 @@ class FreightRateRequestShipmentServiceOptions extends \ArrayObject
     /**
      * COD Container.
      *
-     * @return ShipmentServiceOptionsCOD
+     * @return FreightShipmentServiceOptionsCOD
      */
-    public function getCOD() : ShipmentServiceOptionsCOD
+    public function getCOD() : FreightShipmentServiceOptionsCOD
     {
         return $this->cOD;
     }
     /**
      * COD Container.
      *
-     * @param ShipmentServiceOptionsCOD $cOD
+     * @param FreightShipmentServiceOptionsCOD $cOD
      *
      * @return self
      */
-    public function setCOD(ShipmentServiceOptionsCOD $cOD) : self
+    public function setCOD(FreightShipmentServiceOptionsCOD $cOD) : self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;

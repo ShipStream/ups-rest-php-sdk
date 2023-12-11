@@ -46,7 +46,7 @@ class FreightPickupRequestShipToNormalizer implements DenormalizerInterface, Nor
             unset($data['AttentionName']);
         }
         if (\array_key_exists('Address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipToAddress', 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FreightPickupShipToAddress', 'json', $context));
             unset($data['Address']);
         }
         if (\array_key_exists('Phone', $data)) {

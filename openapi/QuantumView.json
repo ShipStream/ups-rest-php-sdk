@@ -989,7 +989,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/Shipper_Address"
+            "$ref": "#/components/schemas/ManifestShipper_Address"
           }
         },
         "xml": {
@@ -1046,7 +1046,7 @@
         "minLength": 1,
         "maxLength": 50
       },
-      "Shipper_Address": {
+      "ManifestShipper_Address": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1178,7 +1178,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipTo_Address"
+            "$ref": "#/components/schemas/ManifestShipTo_Address"
           },
           "LocationID": {
             "description": "Location name that the package is shipped to.",
@@ -1243,7 +1243,7 @@
         "minLength": 1,
         "maxLength": 50
       },
-      "ShipTo_Address": {
+      "ManifestShipTo_Address": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1427,13 +1427,13 @@
             "type": "string"
           },
           "Dimensions": {
-            "$ref": "#/components/schemas/Package_Dimensions"
+            "$ref": "#/components/schemas/ManifestPackage_Dimensions"
           },
           "DimensionalWeight": {
             "$ref": "#/components/schemas/Package_DimensionalWeight"
           },
           "PackageWeight": {
-            "$ref": "#/components/schemas/Package_PackageWeight"
+            "$ref": "#/components/schemas/ManifestPackage_PackageWeight"
           },
           "LargePackage": {
             "description": "Values for LargePackage are:1 - Oversize 1,\ufffd 2 - Oversize 2,\ufffd 4 - Large package",
@@ -1444,10 +1444,10 @@
             "type": "string"
           },
           "ReferenceNumber": {
-            "$ref": "#/components/schemas/Package_ReferenceNumber"
+            "$ref": "#/components/schemas/ManifestPackage_ReferenceNumber"
           },
           "PackageServiceOptions": {
-            "$ref": "#/components/schemas/Package_PackageServiceOptions"
+            "$ref": "#/components/schemas/ManifestPackage_PackageServiceOptions"
           },
           "UPSPremiumCareIndicator": {
             "description": "Presence of the tag indicates UPSPremiumCare applies to this package",
@@ -1499,7 +1499,7 @@
         "minLength": 1,
         "maxLength": 120
       },
-      "Package_Dimensions": {
+      "ManifestPackage_Dimensions": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1610,7 +1610,7 @@
         "minLength": 6,
         "maxLength": 6
       },
-      "Package_PackageWeight": {
+      "ManifestPackage_PackageWeight": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1648,7 +1648,7 @@
         "minLength": 1,
         "maxLength": 35
       },
-      "Package_ReferenceNumber": {
+      "ManifestPackage_ReferenceNumber": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1673,11 +1673,11 @@
         ],
         "description": "Container tag for information about the package-level reference number."
       },
-      "Package_PackageServiceOptions": {
+      "ManifestPackage_PackageServiceOptions": {
         "type": "object",
         "properties": {
           "COD": {
-            "$ref": "#/components/schemas/PackageServiceOptions_COD"
+            "$ref": "#/components/schemas/ManifestPackageServiceOptions_COD"
           },
           "InsuredValue": {
             "$ref": "#/components/schemas/PackageServiceOptions_InsuredValue"
@@ -1708,7 +1708,7 @@
         ],
         "description": "Defines service options used for the package(s)."
       },
-      "PackageServiceOptions_COD": {
+      "ManifestPackageServiceOptions_COD": {
         "type": "object",
         "maximum": 1,
         "properties": {

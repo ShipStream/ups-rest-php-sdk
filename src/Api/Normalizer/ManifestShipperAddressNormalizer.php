@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-class ShipmentShipFromAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+class ManifestShipperAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
     use DenormalizerAwareTrait;
     use NormalizerAwareTrait;
@@ -20,11 +20,11 @@ class ShipmentShipFromAddressNormalizer implements DenormalizerInterface, Normal
     use ValidatorTrait;
     public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
     {
-        return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFromAddress';
+        return $type === 'ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress';
     }
     public function supportsNormalization($data, $format = null, array $context = array()) : bool
     {
-        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFromAddress';
+        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress';
     }
     /**
      * @return mixed
@@ -37,17 +37,21 @@ class ShipmentShipFromAddressNormalizer implements DenormalizerInterface, Normal
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \ShipStream\Ups\Api\Model\ShipmentShipFromAddress();
+        $object = new \ShipStream\Ups\Api\Model\ManifestShipperAddress();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('AddressLine', $data)) {
-            $values = array();
-            foreach ($data['AddressLine'] as $value) {
-                $values[] = $value;
-            }
-            $object->setAddressLine($values);
-            unset($data['AddressLine']);
+        if (\array_key_exists('AddressLine1', $data)) {
+            $object->setAddressLine1($data['AddressLine1']);
+            unset($data['AddressLine1']);
+        }
+        if (\array_key_exists('AddressLine2', $data)) {
+            $object->setAddressLine2($data['AddressLine2']);
+            unset($data['AddressLine2']);
+        }
+        if (\array_key_exists('AddressLine3', $data)) {
+            $object->setAddressLine3($data['AddressLine3']);
+            unset($data['AddressLine3']);
         }
         if (\array_key_exists('City', $data)) {
             $object->setCity($data['City']);
@@ -65,9 +69,13 @@ class ShipmentShipFromAddressNormalizer implements DenormalizerInterface, Normal
             $object->setCountryCode($data['CountryCode']);
             unset($data['CountryCode']);
         }
-        foreach ($data as $key => $value_1) {
+        if (\array_key_exists('ResidentialAddressIndicator', $data)) {
+            $object->setResidentialAddressIndicator($data['ResidentialAddressIndicator']);
+            unset($data['ResidentialAddressIndicator']);
+        }
+        foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value_1;
+                $object[$key] = $value;
             }
         }
         return $object;
@@ -78,11 +86,15 @@ class ShipmentShipFromAddressNormalizer implements DenormalizerInterface, Normal
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $values = array();
-        foreach ($object->getAddressLine() as $value) {
-            $values[] = $value;
+        if ($object->isInitialized('addressLine1') && null !== $object->getAddressLine1()) {
+            $data['AddressLine1'] = $object->getAddressLine1();
         }
-        $data['AddressLine'] = $values;
+        if ($object->isInitialized('addressLine2') && null !== $object->getAddressLine2()) {
+            $data['AddressLine2'] = $object->getAddressLine2();
+        }
+        if ($object->isInitialized('addressLine3') && null !== $object->getAddressLine3()) {
+            $data['AddressLine3'] = $object->getAddressLine3();
+        }
         if ($object->isInitialized('city') && null !== $object->getCity()) {
             $data['City'] = $object->getCity();
         }
@@ -92,16 +104,19 @@ class ShipmentShipFromAddressNormalizer implements DenormalizerInterface, Normal
         if ($object->isInitialized('postalCode') && null !== $object->getPostalCode()) {
             $data['PostalCode'] = $object->getPostalCode();
         }
-        $data['CountryCode'] = $object->getCountryCode();
-        foreach ($object as $key => $value_1) {
+        if ($object->isInitialized('countryCode') && null !== $object->getCountryCode()) {
+            $data['CountryCode'] = $object->getCountryCode();
+        }
+        $data['ResidentialAddressIndicator'] = $object->getResidentialAddressIndicator();
+        foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value_1;
+                $data[$key] = $value;
             }
         }
         return $data;
     }
     public function getSupportedTypes(?string $format = null) : array
     {
-        return array('ShipStream\\Ups\\Api\\Model\\ShipmentShipFromAddress' => false);
+        return array('ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress' => false);
     }
 }

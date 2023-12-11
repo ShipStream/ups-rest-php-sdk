@@ -13,30 +13,38 @@ class ShipmentShipFrom extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The shipper�s name or company name.
+    * The ship from location's name or company name. 
+    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
+    *
+    * @var string
+    */
+    protected $name;
+    /**
+    * The ship from Attention name. 
+    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
+    *
+    * @var string
+    */
+    protected $attentionName;
+    /**
+     * Not applicable for ShipFrom.
      *
      * @var string
      */
-    protected $name;
+    protected $companyDisplayableName;
     /**
-    * Company�s Tax Identification Number at the pickup location.
-    Required if SED form (International forms) is requested
+    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
+    Applies to EEI Form only.
     *
     * @var string
     */
     protected $taxIdentificationNumber;
     /**
-     * Shipper�s Address Container.
+     * Tax Identification Container.  Applies to EEI form only.
      *
-     * @var ShipFromAddress
+     * @var ShipFromTaxIDType
      */
-    protected $address;
-    /**
-     * Contact name at the ship from location.
-     *
-     * @var string
-     */
-    protected $attentionName;
+    protected $taxIDType;
     /**
      * Phone Container
      *
@@ -44,33 +52,41 @@ class ShipmentShipFrom extends \ArrayObject
      */
     protected $phone;
     /**
-     * The ship from location�s Fax Number.
+     * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
      * @var string
      */
     protected $faxNumber;
     /**
-     * Shipper�s email address.
+     * Address Container.
      *
-     * @var string
+     * @var ShipFromAddress
      */
-    protected $eMailAddress;
+    protected $address;
     /**
-     * The shipper�s name or company name.
+     * Vendor Information Container
      *
-     * @return string
+     * @var ShipFromVendorInfo
      */
+    protected $vendorInfo;
+    /**
+    * The ship from location's name or company name. 
+    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
+    *
+    * @return string
+    */
     public function getName() : string
     {
         return $this->name;
     }
     /**
-     * The shipper�s name or company name.
-     *
-     * @param string $name
-     *
-     * @return self
-     */
+    * The ship from location's name or company name. 
+    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
+    *
+    * @param string $name
+    *
+    * @return self
+    */
     public function setName(string $name) : self
     {
         $this->initialized['name'] = true;
@@ -78,8 +94,54 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-    * Company�s Tax Identification Number at the pickup location.
-    Required if SED form (International forms) is requested
+    * The ship from Attention name. 
+    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
+    *
+    * @return string
+    */
+    public function getAttentionName() : string
+    {
+        return $this->attentionName;
+    }
+    /**
+    * The ship from Attention name. 
+    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
+    *
+    * @param string $attentionName
+    *
+    * @return self
+    */
+    public function setAttentionName(string $attentionName) : self
+    {
+        $this->initialized['attentionName'] = true;
+        $this->attentionName = $attentionName;
+        return $this;
+    }
+    /**
+     * Not applicable for ShipFrom.
+     *
+     * @return string
+     */
+    public function getCompanyDisplayableName() : string
+    {
+        return $this->companyDisplayableName;
+    }
+    /**
+     * Not applicable for ShipFrom.
+     *
+     * @param string $companyDisplayableName
+     *
+     * @return self
+     */
+    public function setCompanyDisplayableName(string $companyDisplayableName) : self
+    {
+        $this->initialized['companyDisplayableName'] = true;
+        $this->companyDisplayableName = $companyDisplayableName;
+        return $this;
+    }
+    /**
+    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
+    Applies to EEI Form only.
     *
     * @return string
     */
@@ -88,8 +150,8 @@ class ShipmentShipFrom extends \ArrayObject
         return $this->taxIdentificationNumber;
     }
     /**
-    * Company�s Tax Identification Number at the pickup location.
-    Required if SED form (International forms) is requested
+    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
+    Applies to EEI Form only.
     *
     * @param string $taxIdentificationNumber
     *
@@ -102,47 +164,25 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper�s Address Container.
+     * Tax Identification Container.  Applies to EEI form only.
      *
-     * @return ShipFromAddress
+     * @return ShipFromTaxIDType
      */
-    public function getAddress() : ShipFromAddress
+    public function getTaxIDType() : ShipFromTaxIDType
     {
-        return $this->address;
+        return $this->taxIDType;
     }
     /**
-     * Shipper�s Address Container.
+     * Tax Identification Container.  Applies to EEI form only.
      *
-     * @param ShipFromAddress $address
+     * @param ShipFromTaxIDType $taxIDType
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setTaxIDType(ShipFromTaxIDType $taxIDType) : self
     {
-        $this->initialized['address'] = true;
-        $this->address = $address;
-        return $this;
-    }
-    /**
-     * Contact name at the ship from location.
-     *
-     * @return string
-     */
-    public function getAttentionName() : string
-    {
-        return $this->attentionName;
-    }
-    /**
-     * Contact name at the ship from location.
-     *
-     * @param string $attentionName
-     *
-     * @return self
-     */
-    public function setAttentionName(string $attentionName) : self
-    {
-        $this->initialized['attentionName'] = true;
-        $this->attentionName = $attentionName;
+        $this->initialized['taxIDType'] = true;
+        $this->taxIDType = $taxIDType;
         return $this;
     }
     /**
@@ -168,7 +208,7 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * The ship from location�s Fax Number.
+     * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
      * @return string
      */
@@ -177,7 +217,7 @@ class ShipmentShipFrom extends \ArrayObject
         return $this->faxNumber;
     }
     /**
-     * The ship from location�s Fax Number.
+     * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
      * @param string $faxNumber
      *
@@ -190,25 +230,47 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper�s email address.
+     * Address Container.
      *
-     * @return string
+     * @return ShipFromAddress
      */
-    public function getEMailAddress() : string
+    public function getAddress() : ShipFromAddress
     {
-        return $this->eMailAddress;
+        return $this->address;
     }
     /**
-     * Shipper�s email address.
+     * Address Container.
      *
-     * @param string $eMailAddress
+     * @param ShipFromAddress $address
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setAddress(ShipFromAddress $address) : self
     {
-        $this->initialized['eMailAddress'] = true;
-        $this->eMailAddress = $eMailAddress;
+        $this->initialized['address'] = true;
+        $this->address = $address;
+        return $this;
+    }
+    /**
+     * Vendor Information Container
+     *
+     * @return ShipFromVendorInfo
+     */
+    public function getVendorInfo() : ShipFromVendorInfo
+    {
+        return $this->vendorInfo;
+    }
+    /**
+     * Vendor Information Container
+     *
+     * @param ShipFromVendorInfo $vendorInfo
+     *
+     * @return self
+     */
+    public function setVendorInfo(ShipFromVendorInfo $vendorInfo) : self
+    {
+        $this->initialized['vendorInfo'] = true;
+        $this->vendorInfo = $vendorInfo;
         return $this;
     }
 }

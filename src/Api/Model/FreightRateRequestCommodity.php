@@ -25,9 +25,9 @@ class FreightRateRequestCommodity extends \ArrayObject
      */
     protected $description;
     /**
-     * Weight of the package.
+     * Commodity Weight Container.
      *
-     * @var string
+     * @var CommodityWeight
      */
     protected $weight;
     /**
@@ -62,9 +62,9 @@ class FreightRateRequestCommodity extends \ArrayObject
     */
     protected $dangerousGoodsIndicator;
     /**
-     * Unit price of the commodity.
+     * CommodityValue Container.
      *
-     * @var string
+     * @var CommodityCommodityValue
      */
     protected $commodityValue;
     /**
@@ -132,22 +132,22 @@ class FreightRateRequestCommodity extends \ArrayObject
         return $this;
     }
     /**
-     * Weight of the package.
+     * Commodity Weight Container.
      *
-     * @return string
+     * @return CommodityWeight
      */
-    public function getWeight() : string
+    public function getWeight() : CommodityWeight
     {
         return $this->weight;
     }
     /**
-     * Weight of the package.
+     * Commodity Weight Container.
      *
-     * @param string $weight
+     * @param CommodityWeight $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(CommodityWeight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -266,22 +266,22 @@ class FreightRateRequestCommodity extends \ArrayObject
         return $this;
     }
     /**
-     * Unit price of the commodity.
+     * CommodityValue Container.
      *
-     * @return string
+     * @return CommodityCommodityValue
      */
-    public function getCommodityValue() : string
+    public function getCommodityValue() : CommodityCommodityValue
     {
         return $this->commodityValue;
     }
     /**
-     * Unit price of the commodity.
+     * CommodityValue Container.
      *
-     * @param string $commodityValue
+     * @param CommodityCommodityValue $commodityValue
      *
      * @return self
      */
-    public function setCommodityValue(string $commodityValue) : self
+    public function setCommodityValue(CommodityCommodityValue $commodityValue) : self
     {
         $this->initialized['commodityValue'] = true;
         $this->commodityValue = $commodityValue;

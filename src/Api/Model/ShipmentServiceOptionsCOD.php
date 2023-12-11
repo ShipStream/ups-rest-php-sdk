@@ -13,115 +13,59 @@ class ShipmentServiceOptionsCOD extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * CODValue Container.
+     * For valid values refer to: Rating and Shipping COD Supported Countries or Territories in the Appendix.
      *
-     * @var CODCODValue
+     * @var string
      */
-    protected $cODValue;
+    protected $cODFundsCode;
     /**
-     * CODPaymentMethod Container.
+     * COD Amount container.
      *
-     * @var CODCODPaymentMethod
+     * @var CODCODAmount
      */
-    protected $cODPaymentMethod;
+    protected $cODAmount;
     /**
-     * CODBillingOption Container.
+     * For valid values refer to: Rating and Shipping COD Supported Countries or Territories in the Appendix.
      *
-     * @var CODCODBillingOption
+     * @return string
      */
-    protected $cODBillingOption;
-    /**
-     * RemitTo Container.
-     *
-     * @var CODRemitTo
-     */
-    protected $remitTo;
-    /**
-     * CODValue Container.
-     *
-     * @return CODCODValue
-     */
-    public function getCODValue() : CODCODValue
+    public function getCODFundsCode() : string
     {
-        return $this->cODValue;
+        return $this->cODFundsCode;
     }
     /**
-     * CODValue Container.
+     * For valid values refer to: Rating and Shipping COD Supported Countries or Territories in the Appendix.
      *
-     * @param CODCODValue $cODValue
+     * @param string $cODFundsCode
      *
      * @return self
      */
-    public function setCODValue(CODCODValue $cODValue) : self
+    public function setCODFundsCode(string $cODFundsCode) : self
     {
-        $this->initialized['cODValue'] = true;
-        $this->cODValue = $cODValue;
+        $this->initialized['cODFundsCode'] = true;
+        $this->cODFundsCode = $cODFundsCode;
         return $this;
     }
     /**
-     * CODPaymentMethod Container.
+     * COD Amount container.
      *
-     * @return CODCODPaymentMethod
+     * @return CODCODAmount
      */
-    public function getCODPaymentMethod() : CODCODPaymentMethod
+    public function getCODAmount() : CODCODAmount
     {
-        return $this->cODPaymentMethod;
+        return $this->cODAmount;
     }
     /**
-     * CODPaymentMethod Container.
+     * COD Amount container.
      *
-     * @param CODCODPaymentMethod $cODPaymentMethod
+     * @param CODCODAmount $cODAmount
      *
      * @return self
      */
-    public function setCODPaymentMethod(CODCODPaymentMethod $cODPaymentMethod) : self
+    public function setCODAmount(CODCODAmount $cODAmount) : self
     {
-        $this->initialized['cODPaymentMethod'] = true;
-        $this->cODPaymentMethod = $cODPaymentMethod;
-        return $this;
-    }
-    /**
-     * CODBillingOption Container.
-     *
-     * @return CODCODBillingOption
-     */
-    public function getCODBillingOption() : CODCODBillingOption
-    {
-        return $this->cODBillingOption;
-    }
-    /**
-     * CODBillingOption Container.
-     *
-     * @param CODCODBillingOption $cODBillingOption
-     *
-     * @return self
-     */
-    public function setCODBillingOption(CODCODBillingOption $cODBillingOption) : self
-    {
-        $this->initialized['cODBillingOption'] = true;
-        $this->cODBillingOption = $cODBillingOption;
-        return $this;
-    }
-    /**
-     * RemitTo Container.
-     *
-     * @return CODRemitTo
-     */
-    public function getRemitTo() : CODRemitTo
-    {
-        return $this->remitTo;
-    }
-    /**
-     * RemitTo Container.
-     *
-     * @param CODRemitTo $remitTo
-     *
-     * @return self
-     */
-    public function setRemitTo(CODRemitTo $remitTo) : self
-    {
-        $this->initialized['remitTo'] = true;
-        $this->remitTo = $remitTo;
+        $this->initialized['cODAmount'] = true;
+        $this->cODAmount = $cODAmount;
         return $this;
     }
 }

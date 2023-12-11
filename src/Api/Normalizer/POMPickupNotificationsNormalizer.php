@@ -46,16 +46,20 @@ class POMPickupNotificationsNormalizer implements DenormalizerInterface, Normali
             unset($data['CompanyName']);
         }
         if (\array_key_exists('EMailNotification', $data)) {
-            $object->setEMailNotification($this->denormalizer->denormalize($data['EMailNotification'], 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification', 'json', $context));
+            $values = array();
+            foreach ($data['EMailNotification'] as $value) {
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification', 'json', $context);
+            }
+            $object->setEMailNotification($values);
             unset($data['EMailNotification']);
         }
         if (\array_key_exists('FailedEMail', $data)) {
             $object->setFailedEMail($data['FailedEMail']);
             unset($data['FailedEMail']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -69,11 +73,19 @@ class POMPickupNotificationsNormalizer implements DenormalizerInterface, Normali
         if ($object->isInitialized('companyName') && null !== $object->getCompanyName()) {
             $data['CompanyName'] = $object->getCompanyName();
         }
-        $data['EMailNotification'] = $this->normalizer->normalize($object->getEMailNotification(), 'json', $context);
-        $data['FailedEMail'] = $object->getFailedEMail();
-        foreach ($object as $key => $value) {
+        if ($object->isInitialized('eMailNotification') && null !== $object->getEMailNotification()) {
+            $values = array();
+            foreach ($object->getEMailNotification() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['EMailNotification'] = $values;
+        }
+        if ($object->isInitialized('failedEMail') && null !== $object->getFailedEMail()) {
+            $data['FailedEMail'] = $object->getFailedEMail();
+        }
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

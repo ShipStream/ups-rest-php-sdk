@@ -566,7 +566,7 @@
             "maxLength": 25
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipTo_Address"
+            "$ref": "#/components/schemas/FreightPickupShipTo_Address"
           },
           "Phone": {
             "$ref": "#/components/schemas/ShipTo_Phone"
@@ -584,7 +584,7 @@
         },
         "description": "ShipTo Container.  Must be populated if request is a Pickup Notifications for LTL request and BOLID does not exist in the request."
       },
-      "ShipTo_Address": {
+      "FreightPickupShipTo_Address": {
         "type": "object",
         "maximum": 1,
         "properties": {

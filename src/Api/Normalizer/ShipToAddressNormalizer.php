@@ -42,7 +42,11 @@ class ShipToAddressNormalizer implements DenormalizerInterface, NormalizerInterf
             return $object;
         }
         if (\array_key_exists('AddressLine', $data)) {
-            $object->setAddressLine($data['AddressLine']);
+            $values = array();
+            foreach ($data['AddressLine'] as $value) {
+                $values[] = $value;
+            }
+            $object->setAddressLine($values);
             unset($data['AddressLine']);
         }
         if (\array_key_exists('City', $data)) {
@@ -53,10 +57,6 @@ class ShipToAddressNormalizer implements DenormalizerInterface, NormalizerInterf
             $object->setStateProvinceCode($data['StateProvinceCode']);
             unset($data['StateProvinceCode']);
         }
-        if (\array_key_exists('Town', $data)) {
-            $object->setTown($data['Town']);
-            unset($data['Town']);
-        }
         if (\array_key_exists('PostalCode', $data)) {
             $object->setPostalCode($data['PostalCode']);
             unset($data['PostalCode']);
@@ -65,9 +65,13 @@ class ShipToAddressNormalizer implements DenormalizerInterface, NormalizerInterf
             $object->setCountryCode($data['CountryCode']);
             unset($data['CountryCode']);
         }
-        foreach ($data as $key => $value) {
+        if (\array_key_exists('ResidentialAddressIndicator', $data)) {
+            $object->setResidentialAddressIndicator($data['ResidentialAddressIndicator']);
+            unset($data['ResidentialAddressIndicator']);
+        }
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -78,21 +82,25 @@ class ShipToAddressNormalizer implements DenormalizerInterface, NormalizerInterf
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['AddressLine'] = $object->getAddressLine();
+        $values = array();
+        foreach ($object->getAddressLine() as $value) {
+            $values[] = $value;
+        }
+        $data['AddressLine'] = $values;
         $data['City'] = $object->getCity();
         if ($object->isInitialized('stateProvinceCode') && null !== $object->getStateProvinceCode()) {
             $data['StateProvinceCode'] = $object->getStateProvinceCode();
-        }
-        if ($object->isInitialized('town') && null !== $object->getTown()) {
-            $data['Town'] = $object->getTown();
         }
         if ($object->isInitialized('postalCode') && null !== $object->getPostalCode()) {
             $data['PostalCode'] = $object->getPostalCode();
         }
         $data['CountryCode'] = $object->getCountryCode();
-        foreach ($object as $key => $value) {
+        if ($object->isInitialized('residentialAddressIndicator') && null !== $object->getResidentialAddressIndicator()) {
+            $data['ResidentialAddressIndicator'] = $object->getResidentialAddressIndicator();
+        }
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

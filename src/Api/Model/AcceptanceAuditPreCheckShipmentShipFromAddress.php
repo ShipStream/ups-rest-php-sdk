@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Model;
 
-class ShipmentShipToAddress extends \ArrayObject
+class AcceptanceAuditPreCheckShipmentShipFromAddress extends \ArrayObject
 {
     /**
      * @var array
@@ -13,59 +13,59 @@ class ShipmentShipToAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Ship To street address including name and number (when applicable).
+     * The Ship From street address including name and number (when applicable).
      *
-     * @var string[]
+     * @var string
      */
     protected $addressLine;
     /**
-     * The Ship To city.
+     * The Ship From city.
      *
      * @var string
      */
     protected $city;
     /**
-     * The Ship To location's state or province code.
+     * The Ship From locations state or province code.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * The Ship To location's postal code. 9 characters are accepted.
+     * The Ship From locations postal code. 9 characters are accepted.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * The Ship To location's country or territory code.
+     * The Ship From locations country or territory code.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * The Ship To street address including name and number (when applicable).
+     * The Ship From street address including name and number (when applicable).
      *
-     * @return string[]
+     * @return string
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : string
     {
         return $this->addressLine;
     }
     /**
-     * The Ship To street address including name and number (when applicable).
+     * The Ship From street address including name and number (when applicable).
      *
-     * @param string[] $addressLine
+     * @param string $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(string $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
         return $this;
     }
     /**
-     * The Ship To city.
+     * The Ship From city.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * The Ship To city.
+     * The Ship From city.
      *
      * @param string $city
      *
@@ -87,7 +87,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship To location's state or province code.
+     * The Ship From locations state or province code.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * The Ship To location's state or province code.
+     * The Ship From locations state or province code.
      *
      * @param string $stateProvinceCode
      *
@@ -109,7 +109,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship To location's postal code. 9 characters are accepted.
+     * The Ship From locations postal code. 9 characters are accepted.
      *
      * @return string
      */
@@ -118,7 +118,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * The Ship To location's postal code. 9 characters are accepted.
+     * The Ship From locations postal code. 9 characters are accepted.
      *
      * @param string $postalCode
      *
@@ -131,7 +131,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship To location's country or territory code.
+     * The Ship From locations country or territory code.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class ShipmentShipToAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * The Ship To location's country or territory code.
+     * The Ship From locations country or territory code.
      *
      * @param string $countryCode
      *

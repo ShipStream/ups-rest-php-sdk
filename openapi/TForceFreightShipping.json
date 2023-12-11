@@ -353,17 +353,17 @@
         ],
         "properties": {
           "ShipFrom": {
-            "$ref": "#/components/schemas/Shipment_ShipFrom"
+            "$ref": "#/components/schemas/FreightShipShipment_ShipFrom"
           },
           "ShipperNumber": {
             "description": "Shipper\ufffds six digit account number.\nSize must be six alphanumeric characters. Must be associated with the User Id specified in the Access Request XML.",
             "type": "string"
           },
           "ShipTo": {
-            "$ref": "#/components/schemas/Shipment_ShipTo"
+            "$ref": "#/components/schemas/FreightShipShipment_ShipTo"
           },
           "PaymentInformation": {
-            "$ref": "#/components/schemas/Shipment_PaymentInformation"
+            "$ref": "#/components/schemas/FreightShipShipment_PaymentInformation"
           },
           "Service": {
             "$ref": "#/components/schemas/Shipment_Service"
@@ -402,7 +402,7 @@
             }
           },
           "ShipmentServiceOptions": {
-            "$ref": "#/components/schemas/Shipment_ShipmentServiceOptions"
+            "$ref": "#/components/schemas/FreightShipShipment_ShipmentServiceOptions"
           },
           "PickupRequest": {
             "$ref": "#/components/schemas/Shipment_PickupRequest"
@@ -428,7 +428,7 @@
         "maximum": 1,
         "description": "Shipment Container."
       },
-      "Shipment_ShipFrom": {
+      "FreightShipShipment_ShipFrom": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -445,7 +445,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipFrom_Address"
+            "$ref": "#/components/schemas/FreightShipShipFrom_Address"
           },
           "AttentionName": {
             "description": "Contact name at the ship from location.",
@@ -482,7 +482,7 @@
         "minLength": 1,
         "maxLength": 15
       },
-      "ShipFrom_Address": {
+      "FreightShipShipFrom_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -626,7 +626,7 @@
         "minLength": 10,
         "maxLength": 10
       },
-      "Shipment_ShipTo": {
+      "FreightShipShipment_ShipTo": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -642,7 +642,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipTo_Address"
+            "$ref": "#/components/schemas/FreightShipShipTo_Address"
           },
           "AttentionName": {
             "description": "Contact name at the ship to location.",
@@ -679,7 +679,7 @@
         "minLength": 15,
         "maxLength": 15
       },
-      "ShipTo_Address": {
+      "FreightShipShipTo_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -760,7 +760,7 @@
         "minLength": 50,
         "maxLength": 50
       },
-      "Shipment_PaymentInformation": {
+      "FreightShipShipment_PaymentInformation": {
         "type": "object",
         "required": [
           "Payer",
@@ -793,7 +793,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/Payer_Address"
+            "$ref": "#/components/schemas/FreightShipPayer_Address"
           },
           "ShipperNumber": {
             "description": "Payer\ufffds account number.\nUser\ufffds 6 digit UPS account number or 9 digit SCS account number.",
@@ -827,7 +827,7 @@
         "minLength": 35,
         "maxLength": 35
       },
-      "Payer_Address": {
+      "FreightShipPayer_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1214,7 +1214,7 @@
             "type": "string"
           },
           "Dimensions": {
-            "$ref": "#/components/schemas/Commodity_Dimensions"
+            "$ref": "#/components/schemas/FreightShipCommodity_Dimensions"
           },
           "NumberOfPieces": {
             "description": "Number of Pieces.",
@@ -1265,13 +1265,6 @@
         "minLength": 150,
         "maxLength": 150
       },
-      "Commodity_Weight": {
-        "description": "Weight of the package.",
-        "maximum": 1,
-        "type": "string",
-        "minLength": 7,
-        "maxLength": 7
-      },
       "Weight_UnitOfMeasurement": {
         "type": "object",
         "maximum": 1,
@@ -1314,7 +1307,7 @@
         "minLength": 16,
         "maxLength": 16
       },
-      "Commodity_Dimensions": {
+      "FreightShipCommodity_Dimensions": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -1429,13 +1422,6 @@
         "description": "Hazmat Indicator.",
         "maximum": 1,
         "type": "string"
-      },
-      "Commodity_CommodityValue": {
-        "description": "Unit price of the commodity.",
-        "maximum": 1,
-        "type": "string",
-        "minLength": 7,
-        "maxLength": 7
       },
       "CommodityValue_CurrencyCode": {
         "description": "Commodity value currency code type.\nRequired when value of commodity is entered. \nValid values: USD \ufffd United States Dollar",
@@ -1592,7 +1578,7 @@
         "maximum": 1,
         "description": "Reference Weight Container.\nStrongly recommended for ground services.Ignored for air services."
       },
-      "Shipment_ShipmentServiceOptions": {
+      "FreightShipShipment_ShipmentServiceOptions": {
         "type": "object",
         "properties": {
           "EMailInformation": {
@@ -1602,19 +1588,19 @@
             }
           },
           "PickupOptions": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_PickupOptions"
+            "$ref": "#/components/schemas/FreightShipmentServiceOptions_PickupOptions"
           },
           "DeliveryOptions": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_DeliveryOptions"
+            "$ref": "#/components/schemas/FreightShipmentServiceOptions_DeliveryOptions"
           },
           "OverSeasLeg": {
             "$ref": "#/components/schemas/ShipmentServiceOptions_OverSeasLeg"
           },
           "COD": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_COD"
+            "$ref": "#/components/schemas/FreightShipmentServiceOptions_COD"
           },
           "DangerousGoods": {
-            "$ref": "#/components/schemas/ShipmentServiceOptions_DangerousGoods"
+            "$ref": "#/components/schemas/FreightShipShipmentServiceOptions_DangerousGoods"
           },
           "SortingAndSegregating": {
             "$ref": "#/components/schemas/ShipmentServiceOptions_SortingAndSegregating"
@@ -1761,7 +1747,7 @@
         "type": "string",
         "maxLength": 256
       },
-      "ShipmentServiceOptions_PickupOptions": {
+      "FreightShipmentServiceOptions_PickupOptions": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -1825,7 +1811,7 @@
         "maximum": 1,
         "type": "string"
       },
-      "ShipmentServiceOptions_DeliveryOptions": {
+      "FreightShipmentServiceOptions_DeliveryOptions": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -2048,7 +2034,7 @@
         "minLength": 16,
         "maxLength": 16
       },
-      "ShipmentServiceOptions_COD": {
+      "FreightShipmentServiceOptions_COD": {
         "type": "object",
         "required": [
           "CODBillingOption",
@@ -2195,7 +2181,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/RemitTo_Address"
+            "$ref": "#/components/schemas/FreightShipRemitTo_Address"
           },
           "AttentionName": {
             "description": "Payee contact name for the COD charges.",
@@ -2225,7 +2211,7 @@
         "minLength": 35,
         "maxLength": 35
       },
-      "RemitTo_Address": {
+      "FreightShipRemitTo_Address": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -2306,7 +2292,7 @@
         "minLength": 50,
         "maxLength": 50
       },
-      "ShipmentServiceOptions_DangerousGoods": {
+      "FreightShipShipmentServiceOptions_DangerousGoods": {
         "type": "object",
         "maximum": 1,
         "required": [
@@ -2692,7 +2678,7 @@
             "type": "string"
           },
           "PickupNotifications": {
-            "$ref": "#/components/schemas/POM_PickupNotifications"
+            "$ref": "#/components/schemas/FreightShipPOM_PickupNotifications"
           }
         },
         "xml": {
@@ -2714,7 +2700,7 @@
         "minLength": 2,
         "maxLength": 2
       },
-      "POM_PickupNotifications": {
+      "FreightShipPOM_PickupNotifications": {
         "type": "object",
         "maximum": 1,
         "properties": {
@@ -2723,7 +2709,7 @@
             "type": "string"
           },
           "EMailNotification": {
-            "$ref": "#/components/schemas/PickupNotifications_EMailNotification"
+            "$ref": "#/components/schemas/FreightShipPickupNotifications_EMailNotification"
           },
           "FailedEMail": {
             "description": "Alternate email address to receive failure notifications",
@@ -2746,7 +2732,7 @@
         "minLength": 1,
         "maxLength": 35
       },
-      "PickupNotifications_EMailNotification": {
+      "FreightShipPickupNotifications_EMailNotification": {
         "type": "object",
         "maximum": 4,
         "required": [
@@ -3010,7 +2996,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipFrom_Address"
+            "$ref": "#/components/schemas/FreightShipShipFrom_Address"
           },
           "PhoneNumber": {
             "description": "The shipper\ufffds phone number.  \ufffd",
@@ -3060,7 +3046,7 @@
             "type": "string"
           },
           "Address": {
-            "$ref": "#/components/schemas/ShipTo_Address"
+            "$ref": "#/components/schemas/FreightShipShipTo_Address"
           },
           "PhoneNumber": {
             "description": "The consignee\ufffds phone number.",
@@ -3192,7 +3178,7 @@
             "type": "string"
           },
           "Dimensions": {
-            "$ref": "#/components/schemas/Commodity_Dimensions"
+            "$ref": "#/components/schemas/FreightShipCommodity_Dimensions"
           },
           "Weight": {
             "description": "Weight of the package.",

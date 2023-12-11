@@ -46,12 +46,16 @@ class PickupNotificationsEMailNotificationNormalizer implements DenormalizerInte
             unset($data['EMailAddress']);
         }
         if (\array_key_exists('EventType', $data)) {
-            $object->setEventType($data['EventType']);
+            $values = array();
+            foreach ($data['EventType'] as $value) {
+                $values[] = $value;
+            }
+            $object->setEventType($values);
             unset($data['EventType']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -62,11 +66,19 @@ class PickupNotificationsEMailNotificationNormalizer implements DenormalizerInte
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['EMailAddress'] = $object->getEMailAddress();
-        $data['EventType'] = $object->getEventType();
-        foreach ($object as $key => $value) {
+        if ($object->isInitialized('eMailAddress') && null !== $object->getEMailAddress()) {
+            $data['EMailAddress'] = $object->getEMailAddress();
+        }
+        if ($object->isInitialized('eventType') && null !== $object->getEventType()) {
+            $values = array();
+            foreach ($object->getEventType() as $value) {
+                $values[] = $value;
+            }
+            $data['EventType'] = $values;
+        }
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

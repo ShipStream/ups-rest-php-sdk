@@ -41,29 +41,13 @@ class ShipmentServiceOptionsPickupOptionsNormalizer implements DenormalizerInter
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('HolidayPickupIndicator', $data)) {
-            $object->setHolidayPickupIndicator($data['HolidayPickupIndicator']);
-            unset($data['HolidayPickupIndicator']);
+        if (\array_key_exists('LiftGateAtPickupIndicator', $data)) {
+            $object->setLiftGateAtPickupIndicator($data['LiftGateAtPickupIndicator']);
+            unset($data['LiftGateAtPickupIndicator']);
         }
-        if (\array_key_exists('InsidePickupIndicator', $data)) {
-            $object->setInsidePickupIndicator($data['InsidePickupIndicator']);
-            unset($data['InsidePickupIndicator']);
-        }
-        if (\array_key_exists('ResidentialPickupIndicator', $data)) {
-            $object->setResidentialPickupIndicator($data['ResidentialPickupIndicator']);
-            unset($data['ResidentialPickupIndicator']);
-        }
-        if (\array_key_exists('WeekendPickupIndicator', $data)) {
-            $object->setWeekendPickupIndicator($data['WeekendPickupIndicator']);
-            unset($data['WeekendPickupIndicator']);
-        }
-        if (\array_key_exists('LiftGateRequiredIndicator', $data)) {
-            $object->setLiftGateRequiredIndicator($data['LiftGateRequiredIndicator']);
-            unset($data['LiftGateRequiredIndicator']);
-        }
-        if (\array_key_exists('LimitedAccessPickupIndicator', $data)) {
-            $object->setLimitedAccessPickupIndicator($data['LimitedAccessPickupIndicator']);
-            unset($data['LimitedAccessPickupIndicator']);
+        if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
+            unset($data['HoldForPickupIndicator']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -78,23 +62,11 @@ class ShipmentServiceOptionsPickupOptionsNormalizer implements DenormalizerInter
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        if ($object->isInitialized('holidayPickupIndicator') && null !== $object->getHolidayPickupIndicator()) {
-            $data['HolidayPickupIndicator'] = $object->getHolidayPickupIndicator();
+        if ($object->isInitialized('liftGateAtPickupIndicator') && null !== $object->getLiftGateAtPickupIndicator()) {
+            $data['LiftGateAtPickupIndicator'] = $object->getLiftGateAtPickupIndicator();
         }
-        if ($object->isInitialized('insidePickupIndicator') && null !== $object->getInsidePickupIndicator()) {
-            $data['InsidePickupIndicator'] = $object->getInsidePickupIndicator();
-        }
-        if ($object->isInitialized('residentialPickupIndicator') && null !== $object->getResidentialPickupIndicator()) {
-            $data['ResidentialPickupIndicator'] = $object->getResidentialPickupIndicator();
-        }
-        if ($object->isInitialized('weekendPickupIndicator') && null !== $object->getWeekendPickupIndicator()) {
-            $data['WeekendPickupIndicator'] = $object->getWeekendPickupIndicator();
-        }
-        if ($object->isInitialized('liftGateRequiredIndicator') && null !== $object->getLiftGateRequiredIndicator()) {
-            $data['LiftGateRequiredIndicator'] = $object->getLiftGateRequiredIndicator();
-        }
-        if ($object->isInitialized('limitedAccessPickupIndicator') && null !== $object->getLimitedAccessPickupIndicator()) {
-            $data['LimitedAccessPickupIndicator'] = $object->getLimitedAccessPickupIndicator();
+        if ($object->isInitialized('holdForPickupIndicator') && null !== $object->getHoldForPickupIndicator()) {
+            $data['HoldForPickupIndicator'] = $object->getHoldForPickupIndicator();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
