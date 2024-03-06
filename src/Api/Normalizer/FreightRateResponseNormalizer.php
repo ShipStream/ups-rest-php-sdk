@@ -18,18 +18,18 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponse';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponse';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
             unset($data['Response']);
         }
         if (\array_key_exists('Rate', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['Rate'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate', 'json', $context);
             }
@@ -58,7 +58,7 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
             unset($data['FreightDensityRate']);
         }
         if (\array_key_exists('Commodity', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Commodity'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity', 'json', $context);
             }
@@ -90,7 +90,7 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
             unset($data['MinimumChargeAppliedIndicator']);
         }
         if (\array_key_exists('AlternateRatesResponse', $data)) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['AlternateRatesResponse'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse', 'json', $context);
             }
@@ -119,12 +119,12 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
         if ($object->isInitialized('rate') && null !== $object->getRate()) {
-            $values = array();
+            $values = [];
             foreach ($object->getRate() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -133,7 +133,7 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
         if ($object->isInitialized('freightDensityRate') && null !== $object->getFreightDensityRate()) {
             $data['FreightDensityRate'] = $this->normalizer->normalize($object->getFreightDensityRate(), 'json', $context);
         }
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getCommodity() as $value_1) {
             $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
         }
@@ -157,7 +157,7 @@ class FreightRateResponseNormalizer implements DenormalizerInterface, Normalizer
             $data['MinimumChargeAppliedIndicator'] = $object->getMinimumChargeAppliedIndicator();
         }
         if ($object->isInitialized('alternateRatesResponse') && null !== $object->getAlternateRatesResponse()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getAlternateRatesResponse() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }

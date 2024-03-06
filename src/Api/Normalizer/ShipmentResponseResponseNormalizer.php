@@ -18,18 +18,18 @@ class ShipmentResponseResponseNormalizer implements DenormalizerInterface, Norma
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseResponse';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseResponse';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class ShipmentResponseResponseNormalizer implements DenormalizerInterface, Norma
             unset($data['ResponseStatus']);
         }
         if (\array_key_exists('Alert', $data) && $data['Alert'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Alert'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context);
             }
@@ -70,12 +70,12 @@ class ShipmentResponseResponseNormalizer implements DenormalizerInterface, Norma
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['ResponseStatus'] = $this->normalizer->normalize($object->getResponseStatus(), 'json', $context);
         if ($object->isInitialized('alert') && null !== $object->getAlert()) {
-            $values = array();
+            $values = [];
             foreach ($object->getAlert() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

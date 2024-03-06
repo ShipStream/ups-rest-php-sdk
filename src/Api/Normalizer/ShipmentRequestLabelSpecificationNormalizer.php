@@ -18,18 +18,18 @@ class ShipmentRequestLabelSpecificationNormalizer implements DenormalizerInterfa
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -54,7 +54,7 @@ class ShipmentRequestLabelSpecificationNormalizer implements DenormalizerInterfa
             unset($data['LabelStockSize']);
         }
         if (\array_key_exists('Instruction', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['Instruction'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction', 'json', $context);
             }
@@ -75,16 +75,16 @@ class ShipmentRequestLabelSpecificationNormalizer implements DenormalizerInterfa
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['LabelImageFormat'] = $this->normalizer->normalize($object->getLabelImageFormat(), 'json', $context);
         if ($object->isInitialized('hTTPUserAgent') && null !== $object->getHTTPUserAgent()) {
             $data['HTTPUserAgent'] = $object->getHTTPUserAgent();
         }
         $data['LabelStockSize'] = $this->normalizer->normalize($object->getLabelStockSize(), 'json', $context);
         if ($object->isInitialized('instruction') && null !== $object->getInstruction()) {
-            $values = array();
+            $values = [];
             foreach ($object->getInstruction() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

@@ -18,18 +18,18 @@ class LandedCostResponseShipmentNormalizer implements DenormalizerInterface, Nor
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -75,7 +75,7 @@ class LandedCostResponseShipmentNormalizer implements DenormalizerInterface, Nor
             unset($data['id']);
         }
         if (\array_key_exists('brokerageFeeItems', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['brokerageFeeItems'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems', 'json', $context);
             }
@@ -111,7 +111,7 @@ class LandedCostResponseShipmentNormalizer implements DenormalizerInterface, Nor
             unset($data['grandTotal']);
         }
         if (\array_key_exists('shipmentItems', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['shipmentItems'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems', 'json', $context);
             }
@@ -144,13 +144,13 @@ class LandedCostResponseShipmentNormalizer implements DenormalizerInterface, Nor
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['currencyCode'] = $object->getCurrencyCode();
         $data['importCountryCode'] = $object->getImportCountryCode();
         $data['id'] = $object->getId();
-        $values = array();
+        $values = [];
         foreach ($object->getBrokerageFeeItems() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);
         }
@@ -162,7 +162,7 @@ class LandedCostResponseShipmentNormalizer implements DenormalizerInterface, Nor
         $data['totalVAT'] = $object->getTotalVAT();
         $data['totalDutyAndTax'] = $object->getTotalDutyAndTax();
         $data['grandTotal'] = $object->getGrandTotal();
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getShipmentItems() as $value_1) {
             $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
         }

@@ -18,18 +18,18 @@ class LandedCostRequestShipmentNormalizer implements DenormalizerInterface, Norm
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -81,7 +81,7 @@ class LandedCostRequestShipmentNormalizer implements DenormalizerInterface, Norm
             unset($data['shipmentType']);
         }
         if (\array_key_exists('shipmentItems', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['shipmentItems'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems', 'json', $context);
             }
@@ -98,9 +98,9 @@ class LandedCostRequestShipmentNormalizer implements DenormalizerInterface, Norm
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['id'] = $object->getId();
         $data['importCountryCode'] = $object->getImportCountryCode();
         if ($object->isInitialized('importProvince') && null !== $object->getImportProvince()) {
@@ -122,7 +122,7 @@ class LandedCostRequestShipmentNormalizer implements DenormalizerInterface, Norm
         if ($object->isInitialized('shipmentType') && null !== $object->getShipmentType()) {
             $data['shipmentType'] = $object->getShipmentType();
         }
-        $values = array();
+        $values = [];
         foreach ($object->getShipmentItems() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);
         }

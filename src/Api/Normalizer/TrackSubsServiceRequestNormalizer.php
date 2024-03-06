@@ -18,18 +18,18 @@ class TrackSubsServiceRequestNormalizer implements DenormalizerInterface, Normal
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceRequest';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceRequest';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class TrackSubsServiceRequestNormalizer implements DenormalizerInterface, Normal
             unset($data['countryCode']);
         }
         if (\array_key_exists('trackingNumberList', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['trackingNumberList'] as $value) {
                 $values[] = $value;
             }
@@ -58,7 +58,7 @@ class TrackSubsServiceRequestNormalizer implements DenormalizerInterface, Normal
             unset($data['trackingNumberList']);
         }
         if (\array_key_exists('scanPreference', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['scanPreference'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -79,18 +79,18 @@ class TrackSubsServiceRequestNormalizer implements DenormalizerInterface, Normal
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['locale'] = $object->getLocale();
         $data['countryCode'] = $object->getCountryCode();
-        $values = array();
+        $values = [];
         foreach ($object->getTrackingNumberList() as $value) {
             $values[] = $value;
         }
         $data['trackingNumberList'] = $values;
         if ($object->isInitialized('scanPreference') && null !== $object->getScanPreference()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getScanPreference() as $value_1) {
                 $values_1[] = $value_1;
             }

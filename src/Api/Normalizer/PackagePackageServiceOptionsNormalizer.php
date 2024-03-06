@@ -18,18 +18,18 @@ class PackagePackageServiceOptionsNormalizer implements DenormalizerInterface, N
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -66,7 +66,7 @@ class PackagePackageServiceOptionsNormalizer implements DenormalizerInterface, N
             unset($data['Notification']);
         }
         if (\array_key_exists('HazMat', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['HazMat'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsHazMat', 'json', $context);
             }
@@ -107,9 +107,9 @@ class PackagePackageServiceOptionsNormalizer implements DenormalizerInterface, N
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('deliveryConfirmation') && null !== $object->getDeliveryConfirmation()) {
             $data['DeliveryConfirmation'] = $this->normalizer->normalize($object->getDeliveryConfirmation(), 'json', $context);
         }
@@ -129,7 +129,7 @@ class PackagePackageServiceOptionsNormalizer implements DenormalizerInterface, N
             $data['Notification'] = $this->normalizer->normalize($object->getNotification(), 'json', $context);
         }
         if ($object->isInitialized('hazMat') && null !== $object->getHazMat()) {
-            $values = array();
+            $values = [];
             foreach ($object->getHazMat() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

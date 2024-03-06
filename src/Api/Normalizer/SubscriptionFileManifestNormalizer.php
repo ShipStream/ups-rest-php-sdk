@@ -18,18 +18,18 @@ class SubscriptionFileManifestNormalizer implements DenormalizerInterface, Norma
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class SubscriptionFileManifestNormalizer implements DenormalizerInterface, Norma
             unset($data['ShipTo']);
         }
         if (\array_key_exists('ReferenceNumber', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['ReferenceNumber'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ManifestReferenceNumber', 'json', $context);
             }
@@ -78,7 +78,7 @@ class SubscriptionFileManifestNormalizer implements DenormalizerInterface, Norma
             unset($data['DocumentsOnly']);
         }
         if (\array_key_exists('Package', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Package'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ManifestPackage', 'json', $context);
             }
@@ -259,13 +259,13 @@ class SubscriptionFileManifestNormalizer implements DenormalizerInterface, Norma
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['Shipper'] = $this->normalizer->normalize($object->getShipper(), 'json', $context);
         $data['ShipTo'] = $this->normalizer->normalize($object->getShipTo(), 'json', $context);
         if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
-            $values = array();
+            $values = [];
             foreach ($object->getReferenceNumber() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -287,7 +287,7 @@ class SubscriptionFileManifestNormalizer implements DenormalizerInterface, Norma
             $data['DocumentsOnly'] = $object->getDocumentsOnly();
         }
         if ($object->isInitialized('package') && null !== $object->getPackage()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getPackage() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }

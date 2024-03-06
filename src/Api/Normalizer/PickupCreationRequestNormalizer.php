@@ -18,18 +18,18 @@ class PickupCreationRequestNormalizer implements DenormalizerInterface, Normaliz
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequest';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequest';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -74,7 +74,7 @@ class PickupCreationRequestNormalizer implements DenormalizerInterface, Normaliz
             unset($data['AlternateAddressIndicator']);
         }
         if (\array_key_exists('PickupPiece', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['PickupPiece'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupPiece', 'json', $context);
             }
@@ -90,7 +90,7 @@ class PickupCreationRequestNormalizer implements DenormalizerInterface, Normaliz
             unset($data['OverweightIndicator']);
         }
         if (\array_key_exists('TrackingData', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['TrackingData'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingData', 'json', $context);
             }
@@ -139,9 +139,9 @@ class PickupCreationRequestNormalizer implements DenormalizerInterface, Normaliz
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
         $data['RatePickupIndicator'] = $object->getRatePickupIndicator();
         if ($object->isInitialized('taxInformationIndicator') && null !== $object->getTaxInformationIndicator()) {
@@ -156,7 +156,7 @@ class PickupCreationRequestNormalizer implements DenormalizerInterface, Normaliz
         $data['PickupDateInfo'] = $this->normalizer->normalize($object->getPickupDateInfo(), 'json', $context);
         $data['PickupAddress'] = $this->normalizer->normalize($object->getPickupAddress(), 'json', $context);
         $data['AlternateAddressIndicator'] = $object->getAlternateAddressIndicator();
-        $values = array();
+        $values = [];
         foreach ($object->getPickupPiece() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);
         }
@@ -168,7 +168,7 @@ class PickupCreationRequestNormalizer implements DenormalizerInterface, Normaliz
             $data['OverweightIndicator'] = $object->getOverweightIndicator();
         }
         if ($object->isInitialized('trackingData') && null !== $object->getTrackingData()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getTrackingData() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }

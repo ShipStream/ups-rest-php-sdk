@@ -18,18 +18,18 @@ class ValidationListNormalizer implements DenormalizerInterface, NormalizerInter
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ValidationList';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ValidationList';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class ValidationListNormalizer implements DenormalizerInterface, NormalizerInter
             return $object;
         }
         if (\array_key_exists('invalidFieldList', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['invalidFieldList'] as $value) {
                 $values[] = $value;
             }
@@ -50,7 +50,7 @@ class ValidationListNormalizer implements DenormalizerInterface, NormalizerInter
             unset($data['invalidFieldList']);
         }
         if (\array_key_exists('invalidFieldListCodes', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['invalidFieldListCodes'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -75,18 +75,18 @@ class ValidationListNormalizer implements DenormalizerInterface, NormalizerInter
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('invalidFieldList') && null !== $object->getInvalidFieldList()) {
-            $values = array();
+            $values = [];
             foreach ($object->getInvalidFieldList() as $value) {
                 $values[] = $value;
             }
             $data['invalidFieldList'] = $values;
         }
         if ($object->isInitialized('invalidFieldListCodes') && null !== $object->getInvalidFieldListCodes()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getInvalidFieldListCodes() as $value_1) {
                 $values_1[] = $value_1;
             }

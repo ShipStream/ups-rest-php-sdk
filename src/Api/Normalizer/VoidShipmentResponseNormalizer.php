@@ -18,18 +18,18 @@ class VoidShipmentResponseNormalizer implements DenormalizerInterface, Normalize
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponse';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponse';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class VoidShipmentResponseNormalizer implements DenormalizerInterface, Normalize
             unset($data['SummaryResult']);
         }
         if (\array_key_exists('PackageLevelResult', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['PackageLevelResult'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult', 'json', $context);
             }
@@ -67,13 +67,13 @@ class VoidShipmentResponseNormalizer implements DenormalizerInterface, Normalize
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
         $data['SummaryResult'] = $this->normalizer->normalize($object->getSummaryResult(), 'json', $context);
         if ($object->isInitialized('packageLevelResult') && null !== $object->getPackageLevelResult()) {
-            $values = array();
+            $values = [];
             foreach ($object->getPackageLevelResult() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

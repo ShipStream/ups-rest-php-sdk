@@ -18,18 +18,18 @@ class TimeInTransitResponseNormalizer implements DenormalizerInterface, Normaliz
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\TimeInTransitResponse';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\TimeInTransitResponse';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class TimeInTransitResponseNormalizer implements DenormalizerInterface, Normaliz
             unset($data['validationList']);
         }
         if (\array_key_exists('destinationPickList', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['destinationPickList'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress', 'json', $context);
             }
@@ -54,7 +54,7 @@ class TimeInTransitResponseNormalizer implements DenormalizerInterface, Normaliz
             unset($data['destinationPickList']);
         }
         if (\array_key_exists('originPickList', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['originPickList'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress', 'json', $context);
             }
@@ -75,21 +75,21 @@ class TimeInTransitResponseNormalizer implements DenormalizerInterface, Normaliz
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('validationList') && null !== $object->getValidationList()) {
             $data['validationList'] = $this->normalizer->normalize($object->getValidationList(), 'json', $context);
         }
         if ($object->isInitialized('destinationPickList') && null !== $object->getDestinationPickList()) {
-            $values = array();
+            $values = [];
             foreach ($object->getDestinationPickList() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
             $data['destinationPickList'] = $values;
         }
         if ($object->isInitialized('originPickList') && null !== $object->getOriginPickList()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getOriginPickList() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }

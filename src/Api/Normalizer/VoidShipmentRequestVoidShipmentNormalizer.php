@@ -18,18 +18,18 @@ class VoidShipmentRequestVoidShipmentNormalizer implements DenormalizerInterface
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class VoidShipmentRequestVoidShipmentNormalizer implements DenormalizerInterface
             unset($data['ShipmentIdentificationNumber']);
         }
         if (\array_key_exists('TrackingNumber', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['TrackingNumber'] as $value) {
                 $values[] = $value;
             }
@@ -67,15 +67,15 @@ class VoidShipmentRequestVoidShipmentNormalizer implements DenormalizerInterface
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('shippingHistoryUserKey') && null !== $object->getShippingHistoryUserKey()) {
             $data['ShippingHistoryUserKey'] = $object->getShippingHistoryUserKey();
         }
         $data['ShipmentIdentificationNumber'] = $object->getShipmentIdentificationNumber();
         if ($object->isInitialized('trackingNumber') && null !== $object->getTrackingNumber()) {
-            $values = array();
+            $values = [];
             foreach ($object->getTrackingNumber() as $value) {
                 $values[] = $value;
             }

@@ -18,18 +18,18 @@ class LocatorRequestNormalizer implements DenormalizerInterface, NormalizerInter
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\LocatorRequest';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LocatorRequest';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -58,7 +58,7 @@ class LocatorRequestNormalizer implements DenormalizerInterface, NormalizerInter
             unset($data['UnitOfMeasurement']);
         }
         if (\array_key_exists('LocationID', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['LocationID'] as $value) {
                 $values[] = $value;
             }
@@ -99,9 +99,9 @@ class LocatorRequestNormalizer implements DenormalizerInterface, NormalizerInter
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
         $data['OriginAddress'] = $this->normalizer->normalize($object->getOriginAddress(), 'json', $context);
         $data['Translate'] = $this->normalizer->normalize($object->getTranslate(), 'json', $context);
@@ -109,7 +109,7 @@ class LocatorRequestNormalizer implements DenormalizerInterface, NormalizerInter
             $data['UnitOfMeasurement'] = $this->normalizer->normalize($object->getUnitOfMeasurement(), 'json', $context);
         }
         if ($object->isInitialized('locationID') && null !== $object->getLocationID()) {
-            $values = array();
+            $values = [];
             foreach ($object->getLocationID() as $value) {
                 $values[] = $value;
             }

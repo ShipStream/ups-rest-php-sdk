@@ -18,18 +18,18 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
             unset($data['StatusType']);
         }
         if (\array_key_exists('Manifest', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['Manifest'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest', 'json', $context);
             }
@@ -58,7 +58,7 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
             unset($data['Manifest']);
         }
         if (\array_key_exists('Origin', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Origin'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin', 'json', $context);
             }
@@ -66,7 +66,7 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
             unset($data['Origin']);
         }
         if (\array_key_exists('Exception', $data)) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['Exception'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException', 'json', $context);
             }
@@ -74,7 +74,7 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
             unset($data['Exception']);
         }
         if (\array_key_exists('Delivery', $data)) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['Delivery'] as $value_3) {
                 $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery', 'json', $context);
             }
@@ -82,7 +82,7 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
             unset($data['Delivery']);
         }
         if (\array_key_exists('Generic', $data)) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($data['Generic'] as $value_4) {
                 $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric', 'json', $context);
             }
@@ -99,41 +99,41 @@ class SubscriptionEventsSubscriptionFileNormalizer implements DenormalizerInterf
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['FileName'] = $object->getFileName();
         $data['StatusType'] = $this->normalizer->normalize($object->getStatusType(), 'json', $context);
         if ($object->isInitialized('manifest') && null !== $object->getManifest()) {
-            $values = array();
+            $values = [];
             foreach ($object->getManifest() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
             $data['Manifest'] = $values;
         }
         if ($object->isInitialized('origin') && null !== $object->getOrigin()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getOrigin() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }
             $data['Origin'] = $values_1;
         }
         if ($object->isInitialized('exception') && null !== $object->getException()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getException() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }
             $data['Exception'] = $values_2;
         }
         if ($object->isInitialized('delivery') && null !== $object->getDelivery()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getDelivery() as $value_3) {
                 $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
             }
             $data['Delivery'] = $values_3;
         }
         if ($object->isInitialized('generic') && null !== $object->getGeneric()) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($object->getGeneric() as $value_4) {
                 $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
             }

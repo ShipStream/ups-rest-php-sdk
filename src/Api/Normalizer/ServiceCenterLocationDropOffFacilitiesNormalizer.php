@@ -18,18 +18,18 @@ class ServiceCenterLocationDropOffFacilitiesNormalizer implements DenormalizerIn
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -78,7 +78,7 @@ class ServiceCenterLocationDropOffFacilitiesNormalizer implements DenormalizerIn
             unset($data['OriginOrDestination']);
         }
         if (\array_key_exists('LocalizedInstruction', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['LocalizedInstruction'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction', 'json', $context);
             }
@@ -99,9 +99,9 @@ class ServiceCenterLocationDropOffFacilitiesNormalizer implements DenormalizerIn
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['Name'] = $object->getName();
         $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
         $data['SLIC'] = $object->getSLIC();
@@ -114,7 +114,7 @@ class ServiceCenterLocationDropOffFacilitiesNormalizer implements DenormalizerIn
         }
         $data['OriginOrDestination'] = $object->getOriginOrDestination();
         if ($object->isInitialized('localizedInstruction') && null !== $object->getLocalizedInstruction()) {
-            $values = array();
+            $values = [];
             foreach ($object->getLocalizedInstruction() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

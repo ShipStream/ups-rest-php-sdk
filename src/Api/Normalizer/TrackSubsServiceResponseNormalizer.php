@@ -18,18 +18,18 @@ class TrackSubsServiceResponseNormalizer implements DenormalizerInterface, Norma
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceResponse';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceResponse';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class TrackSubsServiceResponseNormalizer implements DenormalizerInterface, Norma
             return $object;
         }
         if (\array_key_exists('validTrackingNumbers', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['validTrackingNumbers'] as $value) {
                 $values[] = $value;
             }
@@ -50,7 +50,7 @@ class TrackSubsServiceResponseNormalizer implements DenormalizerInterface, Norma
             unset($data['validTrackingNumbers']);
         }
         if (\array_key_exists('invalidTrackingNumbers', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['invalidTrackingNumbers'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -67,18 +67,18 @@ class TrackSubsServiceResponseNormalizer implements DenormalizerInterface, Norma
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('validTrackingNumbers') && null !== $object->getValidTrackingNumbers()) {
-            $values = array();
+            $values = [];
             foreach ($object->getValidTrackingNumbers() as $value) {
                 $values[] = $value;
             }
             $data['validTrackingNumbers'] = $values;
         }
         if ($object->isInitialized('invalidTrackingNumbers') && null !== $object->getInvalidTrackingNumbers()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getInvalidTrackingNumbers() as $value_1) {
                 $values_1[] = $value_1;
             }

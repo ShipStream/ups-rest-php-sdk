@@ -18,18 +18,18 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
             return $object;
         }
         if (\array_key_exists('GeocodeCandidate', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['GeocodeCandidate'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate', 'json', $context);
             }
@@ -50,9 +50,9 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
             unset($data['GeocodeCandidate']);
         }
         if (\array_key_exists('Disclaimer', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Disclaimer'] as $value_1) {
-                $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+                $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($value_1 as $key => $value_2) {
                     $values_2[$key] = $value_2;
                 }
@@ -66,7 +66,7 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
             unset($data['DropLocation']);
         }
         if (\array_key_exists('AvailableLocationAttributes', $data)) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['AvailableLocationAttributes'] as $value_3) {
                 $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes', 'json', $context);
             }
@@ -87,20 +87,20 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('geocodeCandidate') && null !== $object->getGeocodeCandidate()) {
-            $values = array();
+            $values = [];
             foreach ($object->getGeocodeCandidate() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
             $data['GeocodeCandidate'] = $values;
         }
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getDisclaimer() as $value_1) {
-                $values_2 = array();
+                $values_2 = [];
                 foreach ($value_1 as $key => $value_2) {
                     $values_2[$key] = $value_2;
                 }
@@ -112,7 +112,7 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
             $data['DropLocation'] = $this->normalizer->normalize($object->getDropLocation(), 'json', $context);
         }
         if ($object->isInitialized('availableLocationAttributes') && null !== $object->getAvailableLocationAttributes()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getAvailableLocationAttributes() as $value_3) {
                 $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
             }

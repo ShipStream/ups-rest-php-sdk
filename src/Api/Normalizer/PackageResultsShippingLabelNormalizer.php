@@ -18,18 +18,18 @@ class PackageResultsShippingLabelNormalizer implements DenormalizerInterface, No
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingLabel';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingLabel';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class PackageResultsShippingLabelNormalizer implements DenormalizerInterface, No
             unset($data['GraphicImage']);
         }
         if (\array_key_exists('GraphicImagePart', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['GraphicImagePart'] as $value) {
                 $values[] = $value;
             }
@@ -79,13 +79,13 @@ class PackageResultsShippingLabelNormalizer implements DenormalizerInterface, No
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['ImageFormat'] = $this->normalizer->normalize($object->getImageFormat(), 'json', $context);
         $data['GraphicImage'] = $object->getGraphicImage();
         if ($object->isInitialized('graphicImagePart') && null !== $object->getGraphicImagePart()) {
-            $values = array();
+            $values = [];
             foreach ($object->getGraphicImagePart() as $value) {
                 $values[] = $value;
             }

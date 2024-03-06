@@ -18,18 +18,18 @@ class PickupNotificationsEMailNotificationNormalizer implements DenormalizerInte
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class PickupNotificationsEMailNotificationNormalizer implements DenormalizerInte
             unset($data['EMailAddress']);
         }
         if (\array_key_exists('EventType', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['EventType'] as $value) {
                 $values[] = $value;
             }
@@ -63,14 +63,14 @@ class PickupNotificationsEMailNotificationNormalizer implements DenormalizerInte
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('eMailAddress') && null !== $object->getEMailAddress()) {
             $data['EMailAddress'] = $object->getEMailAddress();
         }
         if ($object->isInitialized('eventType') && null !== $object->getEventType()) {
-            $values = array();
+            $values = [];
             foreach ($object->getEventType() as $value) {
                 $values[] = $value;
             }

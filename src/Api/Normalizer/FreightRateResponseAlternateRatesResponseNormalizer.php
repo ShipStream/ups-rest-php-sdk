@@ -18,18 +18,18 @@ class FreightRateResponseAlternateRatesResponseNormalizer implements Denormalize
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class FreightRateResponseAlternateRatesResponseNormalizer implements Denormalize
             unset($data['AlternateRateType']);
         }
         if (\array_key_exists('Rate', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['Rate'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseRate', 'json', $context);
             }
@@ -75,11 +75,11 @@ class FreightRateResponseAlternateRatesResponseNormalizer implements Denormalize
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['AlternateRateType'] = $this->normalizer->normalize($object->getAlternateRateType(), 'json', $context);
-        $values = array();
+        $values = [];
         foreach ($object->getRate() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);
         }

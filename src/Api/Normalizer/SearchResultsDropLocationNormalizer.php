@@ -18,18 +18,18 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -62,7 +62,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['AddressKeyFormat']);
         }
         if (\array_key_exists('PhoneNumber', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['PhoneNumber'] as $value) {
                 $values[] = $value;
             }
@@ -78,7 +78,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['EMailAddress']);
         }
         if (\array_key_exists('LocationAttribute', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['LocationAttribute'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute', 'json', $context);
             }
@@ -90,7 +90,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['Distance']);
         }
         if (\array_key_exists('SpecialInstructions', $data)) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['SpecialInstructions'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions', 'json', $context);
             }
@@ -98,7 +98,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['SpecialInstructions']);
         }
         if (\array_key_exists('LatestGroundDropOffTime', $data)) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['LatestGroundDropOffTime'] as $value_3) {
                 $values_3[] = $value_3;
             }
@@ -106,7 +106,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['LatestGroundDropOffTime']);
         }
         if (\array_key_exists('LatestAirDropOffTime', $data)) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($data['LatestAirDropOffTime'] as $value_4) {
                 $values_4[] = $value_4;
             }
@@ -146,7 +146,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['AdditionalComments']);
         }
         if (\array_key_exists('Disclaimer', $data)) {
-            $values_5 = array();
+            $values_5 = [];
             foreach ($data['Disclaimer'] as $value_5) {
                 $values_5[] = $value_5;
             }
@@ -170,7 +170,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['OperatingHours']);
         }
         if (\array_key_exists('LocalizedInstruction', $data)) {
-            $values_6 = array();
+            $values_6 = [];
             foreach ($data['LocalizedInstruction'] as $value_6) {
                 $values_6[] = $this->denormalizer->denormalize($value_6, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction', 'json', $context);
             }
@@ -178,7 +178,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             unset($data['LocalizedInstruction']);
         }
         if (\array_key_exists('PromotionInformation', $data)) {
-            $values_7 = array();
+            $values_7 = [];
             foreach ($data['PromotionInformation'] as $value_7) {
                 $values_7[] = $this->denormalizer->denormalize($value_7, 'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation', 'json', $context);
             }
@@ -231,15 +231,15 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['LocationID'] = $object->getLocationID();
         $data['OriginOrDestination'] = $object->getOriginOrDestination();
         $data['IVR'] = $this->normalizer->normalize($object->getIVR(), 'json', $context);
         $data['Geocode'] = $this->normalizer->normalize($object->getGeocode(), 'json', $context);
         $data['AddressKeyFormat'] = $this->normalizer->normalize($object->getAddressKeyFormat(), 'json', $context);
-        $values = array();
+        $values = [];
         foreach ($object->getPhoneNumber() as $value) {
             $values[] = $value;
         }
@@ -250,28 +250,28 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
         if ($object->isInitialized('eMailAddress') && null !== $object->getEMailAddress()) {
             $data['EMailAddress'] = $object->getEMailAddress();
         }
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getLocationAttribute() as $value_1) {
             $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
         }
         $data['LocationAttribute'] = $values_1;
         $data['Distance'] = $this->normalizer->normalize($object->getDistance(), 'json', $context);
         if ($object->isInitialized('specialInstructions') && null !== $object->getSpecialInstructions()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getSpecialInstructions() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }
             $data['SpecialInstructions'] = $values_2;
         }
         if ($object->isInitialized('latestGroundDropOffTime') && null !== $object->getLatestGroundDropOffTime()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getLatestGroundDropOffTime() as $value_3) {
                 $values_3[] = $value_3;
             }
             $data['LatestGroundDropOffTime'] = $values_3;
         }
         if ($object->isInitialized('latestAirDropOffTime') && null !== $object->getLatestAirDropOffTime()) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($object->getLatestAirDropOffTime() as $value_4) {
                 $values_4[] = $value_4;
             }
@@ -302,7 +302,7 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             $data['AdditionalComments'] = $this->normalizer->normalize($object->getAdditionalComments(), 'json', $context);
         }
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
-            $values_5 = array();
+            $values_5 = [];
             foreach ($object->getDisclaimer() as $value_5) {
                 $values_5[] = $value_5;
             }
@@ -319,14 +319,14 @@ class SearchResultsDropLocationNormalizer implements DenormalizerInterface, Norm
             $data['OperatingHours'] = $this->normalizer->normalize($object->getOperatingHours(), 'json', $context);
         }
         if ($object->isInitialized('localizedInstruction') && null !== $object->getLocalizedInstruction()) {
-            $values_6 = array();
+            $values_6 = [];
             foreach ($object->getLocalizedInstruction() as $value_6) {
                 $values_6[] = $this->normalizer->normalize($value_6, 'json', $context);
             }
             $data['LocalizedInstruction'] = $values_6;
         }
         if ($object->isInitialized('promotionInformation') && null !== $object->getPromotionInformation()) {
-            $values_7 = array();
+            $values_7 = [];
             foreach ($object->getPromotionInformation() as $value_7) {
                 $values_7[] = $this->normalizer->normalize($value_7, 'json', $context);
             }

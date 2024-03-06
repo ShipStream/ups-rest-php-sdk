@@ -18,18 +18,18 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\RateRequestShipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RateRequestShipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -62,7 +62,7 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
             unset($data['AlternateDeliveryAddress']);
         }
         if (\array_key_exists('ShipmentIndicationType', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['ShipmentIndicationType'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentIndicationType', 'json', $context);
             }
@@ -102,7 +102,7 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
             unset($data['DocumentsOnlyIndicator']);
         }
         if (\array_key_exists('Package', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Package'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\RateShipmentPackage', 'json', $context);
             }
@@ -155,9 +155,9 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('originRecordTransactionTimestamp') && null !== $object->getOriginRecordTransactionTimestamp()) {
             $data['OriginRecordTransactionTimestamp'] = $object->getOriginRecordTransactionTimestamp();
         }
@@ -170,7 +170,7 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
             $data['AlternateDeliveryAddress'] = $this->normalizer->normalize($object->getAlternateDeliveryAddress(), 'json', $context);
         }
         if ($object->isInitialized('shipmentIndicationType') && null !== $object->getShipmentIndicationType()) {
-            $values = array();
+            $values = [];
             foreach ($object->getShipmentIndicationType() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -200,7 +200,7 @@ class RateRequestShipmentNormalizer implements DenormalizerInterface, Normalizer
         if ($object->isInitialized('documentsOnlyIndicator') && null !== $object->getDocumentsOnlyIndicator()) {
             $data['DocumentsOnlyIndicator'] = $object->getDocumentsOnlyIndicator();
         }
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getPackage() as $value_1) {
             $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
         }

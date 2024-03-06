@@ -18,18 +18,18 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             return $object;
         }
         if (\array_key_exists('Disclaimer', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['Disclaimer'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentDisclaimer', 'json', $context);
             }
@@ -58,7 +58,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             unset($data['RateChart']);
         }
         if (\array_key_exists('RatedShipmentAlert', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['RatedShipmentAlert'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedShipmentAlert', 'json', $context);
             }
@@ -86,7 +86,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             unset($data['BaseServiceCharge']);
         }
         if (\array_key_exists('ItemizedCharges', $data)) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['ItemizedCharges'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentItemizedCharges', 'json', $context);
             }
@@ -102,7 +102,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             unset($data['ServiceOptionsCharges']);
         }
         if (\array_key_exists('TaxCharges', $data)) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['TaxCharges'] as $value_3) {
                 $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTaxCharges', 'json', $context);
             }
@@ -122,7 +122,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             unset($data['NegotiatedRateCharges']);
         }
         if (\array_key_exists('RatedPackage', $data)) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($data['RatedPackage'] as $value_4) {
                 $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedPackage', 'json', $context);
             }
@@ -151,11 +151,11 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
-            $values = array();
+            $values = [];
             foreach ($object->getDisclaimer() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -166,7 +166,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             $data['RateChart'] = $object->getRateChart();
         }
         if ($object->isInitialized('ratedShipmentAlert') && null !== $object->getRatedShipmentAlert()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getRatedShipmentAlert() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }
@@ -184,7 +184,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             $data['BaseServiceCharge'] = $this->normalizer->normalize($object->getBaseServiceCharge(), 'json', $context);
         }
         if ($object->isInitialized('itemizedCharges') && null !== $object->getItemizedCharges()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getItemizedCharges() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }
@@ -195,7 +195,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
         }
         $data['ServiceOptionsCharges'] = $this->normalizer->normalize($object->getServiceOptionsCharges(), 'json', $context);
         if ($object->isInitialized('taxCharges') && null !== $object->getTaxCharges()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getTaxCharges() as $value_3) {
                 $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
             }
@@ -208,7 +208,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
         if ($object->isInitialized('negotiatedRateCharges') && null !== $object->getNegotiatedRateCharges()) {
             $data['NegotiatedRateCharges'] = $this->normalizer->normalize($object->getNegotiatedRateCharges(), 'json', $context);
         }
-        $values_4 = array();
+        $values_4 = [];
         foreach ($object->getRatedPackage() as $value_4) {
             $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
         }

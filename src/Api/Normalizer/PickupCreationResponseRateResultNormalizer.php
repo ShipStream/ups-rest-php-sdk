@@ -18,18 +18,18 @@ class PickupCreationResponseRateResultNormalizer implements DenormalizerInterfac
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateResult';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateResult';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -54,7 +54,7 @@ class PickupCreationResponseRateResultNormalizer implements DenormalizerInterfac
             unset($data['CurrencyCode']);
         }
         if (\array_key_exists('ChargeDetail', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['ChargeDetail'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail', 'json', $context);
             }
@@ -62,7 +62,7 @@ class PickupCreationResponseRateResultNormalizer implements DenormalizerInterfac
             unset($data['ChargeDetail']);
         }
         if (\array_key_exists('TaxCharges', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['TaxCharges'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges', 'json', $context);
             }
@@ -99,9 +99,9 @@ class PickupCreationResponseRateResultNormalizer implements DenormalizerInterfac
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
             $data['Disclaimer'] = $this->normalizer->normalize($object->getDisclaimer(), 'json', $context);
         }
@@ -112,14 +112,14 @@ class PickupCreationResponseRateResultNormalizer implements DenormalizerInterfac
             $data['CurrencyCode'] = $object->getCurrencyCode();
         }
         if ($object->isInitialized('chargeDetail') && null !== $object->getChargeDetail()) {
-            $values = array();
+            $values = [];
             foreach ($object->getChargeDetail() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
             $data['ChargeDetail'] = $values;
         }
         if ($object->isInitialized('taxCharges') && null !== $object->getTaxCharges()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getTaxCharges() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }

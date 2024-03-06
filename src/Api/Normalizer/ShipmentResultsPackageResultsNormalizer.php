@@ -18,18 +18,18 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -77,7 +77,7 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
             unset($data['CN22Number']);
         }
         if (\array_key_exists('Accessorial', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['Accessorial'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageResultsAccessorial', 'json', $context);
             }
@@ -96,7 +96,7 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
             $object->setForm(null);
         }
         if (\array_key_exists('ItemizedCharges', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['ItemizedCharges'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\PackageResultsItemizedCharges', 'json', $context);
             }
@@ -117,9 +117,9 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['TrackingNumber'] = $object->getTrackingNumber();
         if ($object->isInitialized('rateModifier') && null !== $object->getRateModifier()) {
             $data['RateModifier'] = $this->normalizer->normalize($object->getRateModifier(), 'json', $context);
@@ -143,7 +143,7 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
             $data['CN22Number'] = $object->getCN22Number();
         }
         if ($object->isInitialized('accessorial') && null !== $object->getAccessorial()) {
-            $values = array();
+            $values = [];
             foreach ($object->getAccessorial() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -156,7 +156,7 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
             $data['Form'] = $this->normalizer->normalize($object->getForm(), 'json', $context);
         }
         if ($object->isInitialized('itemizedCharges') && null !== $object->getItemizedCharges()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getItemizedCharges() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }

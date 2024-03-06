@@ -18,18 +18,18 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\Shipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\Shipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
             unset($data['inquiryNumber']);
         }
         if (\array_key_exists('package', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['package'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Package', 'json', $context);
             }
@@ -54,7 +54,7 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
             unset($data['package']);
         }
         if (\array_key_exists('userRelation', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['userRelation'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -62,7 +62,7 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
             unset($data['userRelation']);
         }
         if (\array_key_exists('warnings', $data) && $data['warnings'] !== null) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['warnings'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\Warning', 'json', $context);
             }
@@ -82,28 +82,28 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('inquiryNumber') && null !== $object->getInquiryNumber()) {
             $data['inquiryNumber'] = $object->getInquiryNumber();
         }
         if ($object->isInitialized('package') && null !== $object->getPackage()) {
-            $values = array();
+            $values = [];
             foreach ($object->getPackage() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
             $data['package'] = $values;
         }
         if ($object->isInitialized('userRelation') && null !== $object->getUserRelation()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getUserRelation() as $value_1) {
                 $values_1[] = $value_1;
             }
             $data['userRelation'] = $values_1;
         }
         if ($object->isInitialized('warnings') && null !== $object->getWarnings()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getWarnings() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }

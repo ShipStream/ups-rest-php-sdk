@@ -18,18 +18,18 @@ class ShipmentDeliveryTimeInformationNormalizer implements DenormalizerInterface
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentDeliveryTimeInformation';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentDeliveryTimeInformation';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -50,7 +50,7 @@ class ShipmentDeliveryTimeInformationNormalizer implements DenormalizerInterface
             unset($data['Pickup']);
         }
         if (\array_key_exists('ReturnContractServices', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['ReturnContractServices'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices', 'json', $context);
             }
@@ -67,15 +67,15 @@ class ShipmentDeliveryTimeInformationNormalizer implements DenormalizerInterface
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['PackageBillType'] = $object->getPackageBillType();
         if ($object->isInitialized('pickup') && null !== $object->getPickup()) {
             $data['Pickup'] = $this->normalizer->normalize($object->getPickup(), 'json', $context);
         }
         if ($object->isInitialized('returnContractServices') && null !== $object->getReturnContractServices()) {
-            $values = array();
+            $values = [];
             foreach ($object->getReturnContractServices() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

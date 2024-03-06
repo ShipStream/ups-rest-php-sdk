@@ -2,7 +2,6 @@
 
 namespace ShipStream\Ups\Api\Normalizer;
 
-use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
 use ShipStream\Ups\Api\Runtime\Normalizer\CheckArray;
 use ShipStream\Ups\Api\Runtime\Normalizer\ValidatorTrait;
@@ -112,7 +111,7 @@ class GenerateTokenSuccessResponseNormalizer implements DenormalizerInterface, N
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize(mixed $object, ?string $format = null, array $context = []): ArrayObject|array|string|int|float|bool|null
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
         $data = [];
         if ($object->isInitialized('refreshTokenExpiresIn') && null !== $object->getRefreshTokenExpiresIn()) {

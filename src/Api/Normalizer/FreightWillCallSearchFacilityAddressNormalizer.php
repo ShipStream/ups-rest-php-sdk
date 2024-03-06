@@ -18,18 +18,18 @@ class FreightWillCallSearchFacilityAddressNormalizer implements DenormalizerInte
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +46,7 @@ class FreightWillCallSearchFacilityAddressNormalizer implements DenormalizerInte
             unset($data['SLIC']);
         }
         if (\array_key_exists('AddressLine', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['AddressLine'] as $value) {
                 $values[] = $value;
             }
@@ -83,14 +83,14 @@ class FreightWillCallSearchFacilityAddressNormalizer implements DenormalizerInte
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('sLIC') && null !== $object->getSLIC()) {
             $data['SLIC'] = $object->getSLIC();
         }
         if ($object->isInitialized('addressLine') && null !== $object->getAddressLine()) {
-            $values = array();
+            $values = [];
             foreach ($object->getAddressLine() as $value) {
                 $values[] = $value;
             }

@@ -18,18 +18,18 @@ class DeliveryLocationAddressArtifactFormatNormalizer implements DenormalizerInt
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -70,7 +70,7 @@ class DeliveryLocationAddressArtifactFormatNormalizer implements DenormalizerInt
             unset($data['BuildingName']);
         }
         if (\array_key_exists('AddressExtendedInformation', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['AddressExtendedInformation'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AddressArtifactFormatAddressExtendedInformation', 'json', $context);
             }
@@ -115,9 +115,9 @@ class DeliveryLocationAddressArtifactFormatNormalizer implements DenormalizerInt
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('consigneeName') && null !== $object->getConsigneeName()) {
             $data['ConsigneeName'] = $object->getConsigneeName();
         }
@@ -140,7 +140,7 @@ class DeliveryLocationAddressArtifactFormatNormalizer implements DenormalizerInt
             $data['BuildingName'] = $object->getBuildingName();
         }
         if ($object->isInitialized('addressExtendedInformation') && null !== $object->getAddressExtendedInformation()) {
-            $values = array();
+            $values = [];
             foreach ($object->getAddressExtendedInformation() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

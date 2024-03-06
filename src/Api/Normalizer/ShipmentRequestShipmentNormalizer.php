@@ -18,18 +18,18 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -102,7 +102,7 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
             unset($data['MovementReferenceNumber']);
         }
         if (\array_key_exists('ReferenceNumber', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['ReferenceNumber'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentReferenceNumber', 'json', $context);
             }
@@ -154,7 +154,7 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
             unset($data['IrregularIndicator']);
         }
         if (\array_key_exists('ShipmentIndicationType', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['ShipmentIndicationType'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentIndicationType', 'json', $context);
             }
@@ -202,7 +202,7 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
             unset($data['ShipmentDate']);
         }
         if (\array_key_exists('Package', $data)) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['Package'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\ShipmentPackage', 'json', $context);
             }
@@ -219,9 +219,9 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('description') && null !== $object->getDescription()) {
             $data['Description'] = $object->getDescription();
         }
@@ -264,7 +264,7 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
             $data['MovementReferenceNumber'] = $object->getMovementReferenceNumber();
         }
         if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
-            $values = array();
+            $values = [];
             foreach ($object->getReferenceNumber() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -302,7 +302,7 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
             $data['IrregularIndicator'] = $object->getIrregularIndicator();
         }
         if ($object->isInitialized('shipmentIndicationType') && null !== $object->getShipmentIndicationType()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getShipmentIndicationType() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }
@@ -338,7 +338,7 @@ class ShipmentRequestShipmentNormalizer implements DenormalizerInterface, Normal
         if ($object->isInitialized('shipmentDate') && null !== $object->getShipmentDate()) {
             $data['ShipmentDate'] = $object->getShipmentDate();
         }
-        $values_2 = array();
+        $values_2 = [];
         foreach ($object->getPackage() as $value_2) {
             $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
         }

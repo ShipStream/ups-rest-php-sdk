@@ -18,18 +18,18 @@ class SubscriptionFileGenericNormalizer implements DenormalizerInterface, Normal
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -54,7 +54,7 @@ class SubscriptionFileGenericNormalizer implements DenormalizerInterface, Normal
             unset($data['ShipperNumber']);
         }
         if (\array_key_exists('ShipmentReferenceNumber', $data)) {
-            $values = array();
+            $values = [];
             foreach ($data['ShipmentReferenceNumber'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\GenericShipmentReferenceNumber', 'json', $context);
             }
@@ -62,7 +62,7 @@ class SubscriptionFileGenericNormalizer implements DenormalizerInterface, Normal
             unset($data['ShipmentReferenceNumber']);
         }
         if (\array_key_exists('PackageReferenceNumber', $data)) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['PackageReferenceNumber'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\GenericPackageReferenceNumber', 'json', $context);
             }
@@ -103,23 +103,23 @@ class SubscriptionFileGenericNormalizer implements DenormalizerInterface, Normal
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         $data['ActivityType'] = $object->getActivityType();
         $data['TrackingNumber'] = $object->getTrackingNumber();
         if ($object->isInitialized('shipperNumber') && null !== $object->getShipperNumber()) {
             $data['ShipperNumber'] = $object->getShipperNumber();
         }
         if ($object->isInitialized('shipmentReferenceNumber') && null !== $object->getShipmentReferenceNumber()) {
-            $values = array();
+            $values = [];
             foreach ($object->getShipmentReferenceNumber() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
             $data['ShipmentReferenceNumber'] = $values;
         }
         if ($object->isInitialized('packageReferenceNumber') && null !== $object->getPackageReferenceNumber()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getPackageReferenceNumber() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }

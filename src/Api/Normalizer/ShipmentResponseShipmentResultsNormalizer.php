@@ -18,18 +18,18 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
     {
         return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseShipmentResults';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []) : bool
     {
         return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseShipmentResults';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             return $object;
         }
         if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Disclaimer'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDisclaimer', 'json', $context);
             }
@@ -113,7 +113,7 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             $object->setBarCodeImage(null);
         }
         if (\array_key_exists('PackageResults', $data) && $data['PackageResults'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['PackageResults'] as $value_1) {
                 $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults', 'json', $context);
             }
@@ -124,7 +124,7 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             $object->setPackageResults(null);
         }
         if (\array_key_exists('ControlLogReceipt', $data) && $data['ControlLogReceipt'] !== null) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['ControlLogReceipt'] as $value_2) {
                 $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsControlLogReceipt', 'json', $context);
             }
@@ -184,7 +184,7 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             $object->setLocalLanguageReceiptURL(null);
         }
         if (\array_key_exists('DGPaperImage', $data) && $data['DGPaperImage'] !== null) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['DGPaperImage'] as $value_3) {
                 $values_3[] = $value_3;
             }
@@ -218,11 +218,11 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, ?string $format = null, array $context = []): \ArrayObject|array|string|int|float|bool|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
-            $values = array();
+            $values = [];
             foreach ($object->getDisclaimer() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }
@@ -254,14 +254,14 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             $data['BarCodeImage'] = $object->getBarCodeImage();
         }
         if ($object->isInitialized('packageResults') && null !== $object->getPackageResults()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getPackageResults() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }
             $data['PackageResults'] = $values_1;
         }
         if ($object->isInitialized('controlLogReceipt') && null !== $object->getControlLogReceipt()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getControlLogReceipt() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }
@@ -289,7 +289,7 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             $data['LocalLanguageReceiptURL'] = $object->getLocalLanguageReceiptURL();
         }
         if ($object->isInitialized('dGPaperImage') && null !== $object->getDGPaperImage()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getDGPaperImage() as $value_3) {
                 $values_3[] = $value_3;
             }
