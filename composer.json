@@ -14,7 +14,8 @@
         "ext-json": "*",
         "jane-php/open-api-runtime": "^7.5",
         "php-http/curl-client": "^2.3",
-        "symfony/polyfill-php81": "^1.28"
+        "symfony/polyfill-php81": "^1.28",
+        "symfony/serializer": "^7.0"
     },
     "require-dev": {
         "jane-php/open-api-3": "^7.5",
