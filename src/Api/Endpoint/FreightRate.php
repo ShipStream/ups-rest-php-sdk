@@ -26,7 +26,7 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     * }
     * @param array $accept Accept content header application/json|application/xml
     */
-    public function __construct(string $version = 'v1', string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = array(), array $accept = array())
+    public function __construct(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = array(), array $accept = array())
     {
         $this->version = $version;
         $this->requestoption = $requestoption;

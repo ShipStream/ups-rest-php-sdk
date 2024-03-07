@@ -30,7 +30,7 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version = 'v1', string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
     {
         $this->version = $version;
         $this->reqOption = $reqOption;

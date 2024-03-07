@@ -37,7 +37,7 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     * }
     * @param array $accept Accept content header application/json|application/xml
     */
-    public function __construct(int $requestoption, string $version = 'v1', \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array(), array $accept = array())
+    public function __construct(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array(), array $accept = array())
     {
         $this->requestoption = $requestoption;
         $this->version = $version;

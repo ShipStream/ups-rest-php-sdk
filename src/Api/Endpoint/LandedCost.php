@@ -16,7 +16,7 @@ class LandedCost extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impleme
      *     @var string $AccountNumber 
      * }
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

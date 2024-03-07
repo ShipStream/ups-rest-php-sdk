@@ -20,7 +20,7 @@ class Rate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \S
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version = 'v1', string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $version, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
     {
         $this->version = $version;
         $this->requestoption = $requestoption;

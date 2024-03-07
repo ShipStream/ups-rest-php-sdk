@@ -27,7 +27,7 @@ class ProcessSubscriptionTypeForTrackingNumber extends \ShipStream\Ups\Api\Runti
     *     @var string $transactionSrc Identifies the client/source application that is calling.
     * }
     */
-    public function __construct(string $version = 'v1', string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = array())
+    public function __construct(string $version, string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = array())
     {
         $this->version = $version;
         $this->type = $type;

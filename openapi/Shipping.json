@@ -63,8 +63,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Indicates Ship API to display the new release features in \nRate API response based on Ship release. See the New \nsection for the latest Ship release. Supported values: v1, v1601, v1607, v1701, v1707, v1801, v1807, v2108, v2205 . Length 5",
             "required": true
@@ -2237,8 +2236,7 @@
             "in": "path",
             "name": "version",
             "schema": {
-              "type": "string",
-              "default": "v1"
+              "type": "string"
             },
             "description": "API Version",
             "required": true
@@ -2318,8 +2316,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "When UPS introduces new elements in the \nresponse that are not associated with new \nrequest elements, Subversion is used. This \nensures backward compatibility. \nv1  original features of the application. No \nsupport for CODTurn-inPage, HighValueReport \nor InternationalForms features returned in the \nresponse\nv1701  includes support for CODTurn-inPage \nfeatures returned in the response.\nV1903\n Length 5",
             "required": true

@@ -11,7 +11,7 @@ class QuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
      * @param string $version Version of API
      * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody)
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody)
     {
         $this->version = $version;
         $this->body = $requestBody;

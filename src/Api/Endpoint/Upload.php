@@ -16,7 +16,7 @@ class Upload extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
      *     @var string $ShipperNumber Shipper Number
      * }
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

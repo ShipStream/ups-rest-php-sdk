@@ -15,7 +15,7 @@ class TimeInTransit extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
      *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
      * }
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

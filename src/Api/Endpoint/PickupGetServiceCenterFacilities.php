@@ -15,7 +15,7 @@ class PickupGetServiceCenterFacilities extends \ShipStream\Ups\Api\Runtime\Clien
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

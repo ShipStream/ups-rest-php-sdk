@@ -21,7 +21,7 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     shipper.Length 6 or 10
     * }
     */
-    public function __construct(string $version = 'v1', string $pickuptype, array $headerParameters = array())
+    public function __construct(string $version, string $pickuptype, array $headerParameters = array())
     {
         $this->version = $version;
         $this->pickuptype = $pickuptype;
