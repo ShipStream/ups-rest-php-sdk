@@ -54,8 +54,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "When TForce Freight introduces new elements \nin the response that are not associated with new \nrequest elements, version is used. This ensures \nbackward compatibility.\nTo get such elements you need to have the right \nversion. The value of the version is explained in \nthe Response element Description.\nExample: Itemized Charges are returned only \nwhen the version element is present and greater \nthan or equal to 'v1601'. \nFormat: YYMM = Year and month of the release.\nExample: v1601 = 2016 Januaryrelease. \nSupported values: v1, v1601, v1607. Length 5",
             "required": true

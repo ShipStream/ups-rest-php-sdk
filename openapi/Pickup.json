@@ -53,8 +53,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Version of the API. Valid values v1",
             "required": true
@@ -159,8 +158,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "version of API e.g v1",
             "required": true
@@ -295,8 +293,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Version of the API. Valid values: \nv1\nv1607\nv1707.\nLength 5",
             "required": true
@@ -422,8 +419,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Version of API e.g. v1",
             "required": true
@@ -485,8 +481,7 @@
             "in": "path",
             "name": "version",
             "schema": {
-              "type": "string",
-              "default": "v1"
+              "type": "string"
             },
             "description": "Version of API e.g v1",
             "required": true

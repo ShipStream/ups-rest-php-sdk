@@ -33,8 +33,7 @@
             "in": "path",
             "name": "version",
             "schema": {
-              "type": "string",
-              "default": "v1"
+              "type": "string"
             },
             "description": "API Version",
             "required": true

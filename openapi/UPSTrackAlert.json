@@ -39,8 +39,7 @@
             "description": "API Version, e.g. v1",
             "required": true,
             "schema": {
-              "type": "string",
-              "default": "v1"
+              "type": "string"
             }
           },
           {

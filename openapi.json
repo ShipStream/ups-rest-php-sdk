@@ -49,8 +49,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -176,8 +175,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -257,8 +255,7 @@
                         "description": "API version",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -399,8 +396,7 @@
                         "description": "Version of API",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -587,8 +583,7 @@
                         "description": "Version of API",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -1102,8 +1097,7 @@
                         "description": "Version of API",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -1198,8 +1192,7 @@
                         "description": "Version of API",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -1306,8 +1299,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -1373,8 +1365,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -1554,8 +1545,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1686,8 +1676,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -1754,8 +1743,7 @@
                         "description": "Version of API e.g v1",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1844,8 +1832,7 @@
                         "description": "Version of API, such as v1",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1972,8 +1959,7 @@
                         "description": "Version of API",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -2070,8 +2056,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -3085,8 +3070,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -5484,8 +5468,7 @@
                         "description": "API Version",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -5570,8 +5553,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -5675,8 +5657,7 @@
                         "description": "Version of the API e.g v1",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     }
                 ],
@@ -5879,8 +5860,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -6076,8 +6056,7 @@
                         "required": true,
                         "schema": {
                             "minimum": 1,
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -6247,8 +6226,7 @@
                         "description": "API Version",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {
@@ -6476,8 +6454,7 @@
                         "description": "API Version, e.g. v1",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "default": "v1"
+                            "type": "string"
                         }
                     },
                     {

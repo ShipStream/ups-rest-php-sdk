@@ -61,8 +61,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release. Supported values: v1, v1601, v1607, v1701, v1707, v2108, v2205. Length 5",
             "required": true

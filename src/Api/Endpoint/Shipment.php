@@ -22,7 +22,7 @@ class Shipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implement
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

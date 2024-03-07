@@ -15,7 +15,7 @@ class FreightPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

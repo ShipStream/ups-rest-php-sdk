@@ -65,8 +65,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Identifies the version of the API. Valid \nvalues: \nv1",
             "required": true

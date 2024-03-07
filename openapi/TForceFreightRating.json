@@ -54,8 +54,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "When TForce Freight introduces new elements \nin the response that are not associated with new \nrequest elements, Version is used. This ensures \nbackward compatibility.\nSupported values: v1, v1601, v1607, v1701, \nv1707, v1801. Length 5",
             "required": true

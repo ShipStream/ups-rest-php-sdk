@@ -16,7 +16,7 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
      *     @var string $ShipperNumber Shipper Number
      * }
      */
-    public function __construct(string $version = 'v1', \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
         $this->body = $requestBody;

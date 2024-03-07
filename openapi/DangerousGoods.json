@@ -54,8 +54,7 @@
             "name": "version",
             "schema": {
               "type": "string",
-              "minimum": 1,
-              "default": "v1"
+              "minimum": 1
             },
             "description": "Version of the API. Valid values:\nv1\nv1801. Length 5",
             "required": true
@@ -130,8 +129,7 @@
             "in": "path",
             "name": "version",
             "schema": {
-              "type": "string",
-              "default": "v1"
+              "type": "string"
             },
             "description": "API version",
             "required": true
