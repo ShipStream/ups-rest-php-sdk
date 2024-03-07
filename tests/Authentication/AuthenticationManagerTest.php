@@ -75,8 +75,8 @@ final class AuthenticationManagerTest extends TestCase
         self::assertEquals($expectedResponse->refresh_token, $actualResponse->getRefreshToken());
         self::assertEquals($expectedResponse->expires_in, $actualResponse->getExpiresIn());
         self::assertEquals($expectedResponse->refresh_token_expires_in, $actualResponse->getRefreshTokenExpiresIn());
-        self::assertEquals($expectedResponse->issued_at / 1000, $actualResponse->getIssuedAt());
-        self::assertEquals($expectedResponse->refresh_token_issued_at / 1000, $actualResponse->getRefreshTokenIssuedAt());
+        self::assertEquals((int)($expectedResponse->issued_at / 1000), $actualResponse->getIssuedAt());
+        self::assertEquals((int)($expectedResponse->refresh_token_issued_at / 1000), $actualResponse->getRefreshTokenIssuedAt());
     }
 
     public function testItRequestsANewAccessTokenWhenSkippingCache()
@@ -115,7 +115,7 @@ final class AuthenticationManagerTest extends TestCase
         self::assertEquals($expectedTokenResponse->client_id, $actualTokenResponse->getClientId());
         self::assertEquals($expectedTokenResponse->access_token, $actualTokenResponse->getAccessToken());
         self::assertEquals($expectedTokenResponse->expires_in, $actualTokenResponse->getExpiresIn());
-        self::assertEquals($expectedTokenResponse->issued_at / 1000, $actualTokenResponse->getIssuedAt());
+        self::assertEquals((int)($expectedTokenResponse->issued_at / 1000), $actualTokenResponse->getIssuedAt());
     }
 
     public function testItRefreshesTheAccessTokenWhenItExpires()
@@ -155,7 +155,7 @@ final class AuthenticationManagerTest extends TestCase
         self::assertEquals($expectedTokenResponse->client_id, $actualTokenResponse->getClientId());
         self::assertEquals($expectedTokenResponse->access_token, $actualTokenResponse->getAccessToken());
         self::assertEquals($expectedTokenResponse->expires_in, $actualTokenResponse->getExpiresIn());
-        self::assertEquals($expectedTokenResponse->issued_at / 1000, $actualTokenResponse->getIssuedAt());
+        self::assertEquals((int)($expectedTokenResponse->issued_at / 1000), $actualTokenResponse->getIssuedAt());
         self::assertFalse($actualTokenResponse->hasAccessTokenExpired());
     }
 }

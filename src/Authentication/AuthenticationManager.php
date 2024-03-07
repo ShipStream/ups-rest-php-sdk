@@ -138,12 +138,12 @@ class AuthenticationManager
         $accessToken = (new AccessToken())
             ->setClientId($response->getClientId())
             ->setAccessToken($response->getAccessToken())
-            ->setIssuedAt($response->getIssuedAt() / 1000) // Convert timestamp to seconds
+            ->setIssuedAt((int)($response->getIssuedAt() / 1000)) // Convert timestamp to seconds
             ->setExpiresIn((int)$response->getExpiresIn());
 
         if ($response->getRefreshToken()) {
             $accessToken->setRefreshToken($response->getRefreshToken())
-                ->setRefreshTokenIssuedAt($response->getRefreshTokenIssuedAt() / 1000)
+                ->setRefreshTokenIssuedAt((int)($response->getRefreshTokenIssuedAt() / 1000))
                 ->setRefreshTokenExpiresIn((int)$response->getRefreshTokenExpiresIn());
         }
         return $accessToken;
@@ -185,10 +185,10 @@ class AuthenticationManager
         return (new AccessToken())
             ->setClientId($response->getClientId())
             ->setAccessToken($response->getAccessToken())
-            ->setIssuedAt($response->getIssuedAt() / 1000) // Convert timestamp to seconds
+            ->setIssuedAt((int)($response->getIssuedAt() / 1000)) // Convert timestamp to seconds
             ->setExpiresIn((int)$response->getExpiresIn())
             ->setRefreshToken($response->getRefreshToken())
-            ->setRefreshTokenIssuedAt($response->getRefreshTokenIssuedAt() / 1000)
+            ->setRefreshTokenIssuedAt((int)($response->getRefreshTokenIssuedAt() / 1000))
             ->setRefreshTokenExpiresIn((int)$response->getRefreshTokenExpiresIn());
     }
 }
