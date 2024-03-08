@@ -18,8 +18,6 @@ use ShipStream\Ups\Exception\AuthenticationException;
 
 class AuthenticationManager
 {
-    protected const GRANT_TYPE_AUTHORIZATION_CODE = 'authorization_code';
-    protected const GRANT_TYPE_CLIENT_CREDENTIALS = 'client_credentials';
     protected const GRANT_TYPE_REFRESH_TOKEN = 'refresh_token';
 
     protected Config $config;
@@ -97,11 +95,13 @@ class AuthenticationManager
      */
     protected function generateToken(?string $code = null): AccessToken
     {
+        if ($code === null && $this->config->getGrantType() === Config::GRANT_TYPE_AUTHORIZATION_CODE) {
+            throw new AuthenticationException('Unauthenticated');
+        }
+
         $body = new SecurityV1OauthTokenPostBody();
-        if ($code === null) {
-            $body->setGrantType(self::GRANT_TYPE_CLIENT_CREDENTIALS);
-        } else {
-            $body->setGrantType(self::GRANT_TYPE_AUTHORIZATION_CODE);
+        $body->setGrantType($this->config->getGrantType());
+        if ($body->getGrantType() === Config::GRANT_TYPE_AUTHORIZATION_CODE) {
             $body->setCode($code);
             $body->setRedirectUri($this->config->getRedirectUri());
         }

@@ -20,6 +20,24 @@ class Client extends ApiClient
 {
     protected AuthenticationManager $authManager;
 
+    protected Config $config;
+
+    /**
+     * Set Config instance on the client. For internal use only.
+     */
+    public function setConfig(Config $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
+     * Retrieve the Config object that was used to instantiate this client instance.
+     */
+    public function getConfig(): Config
+    {
+        return $this->config;
+    }
+
     /**
      * Set Authentication Manager instance on the client. For internal use only.
      */

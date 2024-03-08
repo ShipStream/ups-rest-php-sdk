@@ -11,6 +11,7 @@ use ShipStream\Ups\Authentication\AuthenticationManager;
 use ShipStream\Ups\Authentication\InMemoryAccessTokenCache;
 use ShipStream\Ups\Client;
 use ShipStream\Ups\Config;
+use ShipStream\Ups\Exception\AuthenticationException;
 
 /** @covers \ShipStream\Ups\Authentication\AuthenticationManager */
 final class AuthenticationManagerTest extends TestCase
@@ -38,6 +39,28 @@ final class AuthenticationManagerTest extends TestCase
         $actualAccessToken = $authManager->getAccessTokenFromCache();
 
         self::assertSame($expectedAccessToken, $actualAccessToken);
+    }
+
+    public function testItDoesNotUseClientCredentialsWithAuthorizationCodeGrantType()
+    {
+        $config = new Config([
+            'use_testing_environment' => true,
+            'grant_type' => Config::GRANT_TYPE_AUTHORIZATION_CODE,
+            'client_id' => 'dummy_client_id',
+            'client_secret' => 'dummy_client_secret'
+        ]);
+
+        $clientStub = $this->createStub(ClientInterface::class);
+        $clientStub->method('sendRequest')
+            ->willReturn(new Response(200, ['Content-Type' => 'application/json'], null));
+
+        $authManager = new AuthenticationManager($config);
+        $authManager->setClient(Client::create($clientStub));
+
+        self::expectException(AuthenticationException::class);
+        self::expectExceptionMessage('Unauthenticated');
+
+        $authManager->requestAccessToken();
     }
 
     public function testItExchangesAuthCodeWithAnAccessToken()
