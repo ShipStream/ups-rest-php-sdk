@@ -6,9 +6,11 @@ use Http\Client\Common\PluginClient;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use ShipStream\Ups\Api\Client as ApiClient;
+use ShipStream\Ups\Endpoint\AuthorizeClient;
 use ShipStream\Ups\Authentication\AccessToken;
 use ShipStream\Ups\Authentication\AuthenticationManager;
 use ShipStream\Ups\Exception\AuthenticationException;
+use ShipStream\Ups\Model\AuthorizeClientResponse;
 use ShipStream\Ups\Normalizer\CustomJaneObjectNormalizer;
 use Symfony\Component\Serializer\Encoder\JsonDecode;
 use Symfony\Component\Serializer\Encoder\JsonEncode;
@@ -66,6 +68,16 @@ class Client extends ApiClient
     public function getAccessToken(bool $skipCache = false): AccessToken
     {
         return $this->authManager->requestAccessToken($skipCache);
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @return \Psr\Http\Message\ResponseInterface|AuthorizeClientResponse
+     */
+    public function authorizeClient(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new AuthorizeClient($queryParameters), $fetch);
     }
 
     public static function create($httpClient = null, array $additionalPlugins = [], array $additionalNormalizers = []): Client
