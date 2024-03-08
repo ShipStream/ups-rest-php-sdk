@@ -17,6 +17,9 @@ $config = new \ShipStream\Ups\Config([
     // Whether to send the requests to the UPS Customer Integration Environment instead of the production environment.
     // Optional, defaults to false.
     'use_testing_environment' => true,
+    // The grant type to use for obtaining an access token. Available options: 'client_credentials', 'authorization_code'.
+    // Optional, defaults to 'client_credentials'.
+    'grant_type' => \ShipStream\Ups\Config::GRANT_TYPE_CLIENT_CREDENTIALS,
     // Your Client ID obtained from UPS Developer portal.
     'client_id' => 'your_client_id',
     // Your Client Secret obtained from UPS Developer portal.
@@ -69,7 +72,29 @@ Using Client Credentials flow works out of the box and requires no additional st
 
 ### Authorization Code
 
-TODO
+To start using the Authorization Code flow set `grant_type` config to `Config::GRANT_TYPE_AUTHORIZATION_CODE`, then call the `authorizeClient` endpoint 
+and redirect the user to the returned login URL:
+
+```php
+$response = $client->authorizeClient([
+    'client_id' => $client->getConfig()->getClientId(),
+    'redirect_uri' => $client->getConfig()->getRedirectUri(),
+    'response_type' => 'code'
+]);
+
+// Redirect the user to the login page
+header('Location: ' . $response->getLocation());
+```
+
+The user will be redirected back to your app after login with the authorization code that will be used to generate an access token:
+
+```php
+$client->exchangeAuthorizationCode($_GET['code']);
+```
+
+The access token refresh will be handled internally so long that the refresh token is still valid. 
+You can check if the client is authenticated at any time by calling `$client->getAccessToken()` which attempts to retrieve 
+the access token from the cache and refresh it if it has already expired, otherwise it throws an `AuthenticationException`.
 
 ### Caching Access Tokens
 
