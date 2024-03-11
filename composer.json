@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^7.4",
         "ext-curl": "*",
         "ext-json": "*",
         "jane-php/open-api-runtime": "^7.5",
@@ -37,6 +37,9 @@
     "config": {
         "allow-plugins": {
             "php-http/discovery": true
+        },
+        "platform": {
+            "php": "7.4"
         },
         "sort-packages": true
     }
