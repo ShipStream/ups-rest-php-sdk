@@ -10,7 +10,12 @@ final class Config
     public const BASE_URL_TESTING = 'https://wwwcie.ups.com/';
     public const BASE_PATH = '/api';
 
+    public const GRANT_TYPE_AUTHORIZATION_CODE = 'authorization_code';
+    public const GRANT_TYPE_CLIENT_CREDENTIALS = 'client_credentials';
+
     private bool $useTestingEnvironment;
+
+    private string $grantType;
 
     private string $clientId;
 
@@ -25,6 +30,10 @@ final class Config
      */
     public function __construct(array $config)
     {
+        $this->grantType = $config['grant_type'] ?? self::GRANT_TYPE_CLIENT_CREDENTIALS;
+        if ( ! in_array($this->grantType, [self::GRANT_TYPE_AUTHORIZATION_CODE, self::GRANT_TYPE_CLIENT_CREDENTIALS])) {
+            throw new InvalidArgumentException("Invalid grant_type: $this->grantType");
+        }
         if (empty($config['client_id'])) {
             throw new InvalidArgumentException('Missing required parameter: client_id');
         }
@@ -46,6 +55,11 @@ final class Config
     public function getUseTestingEnvironment(): bool
     {
         return $this->useTestingEnvironment;
+    }
+
+    public function getGrantType(): string
+    {
+        return $this->grantType;
     }
 
     public function getClientId(): string

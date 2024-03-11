@@ -43,6 +43,7 @@ class ClientFactory
 
         $apiClient = Client::create($httpClient, $plugins);
         $apiClient->setAuthManager($authManager);
+        $apiClient->setConfig($config);
         $authManager->setClient($apiClient);
         return $apiClient;
     }

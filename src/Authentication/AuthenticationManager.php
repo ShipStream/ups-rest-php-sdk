@@ -18,8 +18,6 @@ use ShipStream\Ups\Exception\AuthenticationException;
 
 class AuthenticationManager
 {
-    protected const GRANT_TYPE_AUTHORIZATION_CODE = 'authorization_code';
-    protected const GRANT_TYPE_CLIENT_CREDENTIALS = 'client_credentials';
     protected const GRANT_TYPE_REFRESH_TOKEN = 'refresh_token';
 
     protected Config $config;
@@ -97,11 +95,13 @@ class AuthenticationManager
      */
     protected function generateToken(?string $code = null): AccessToken
     {
+        if ($code === null && $this->config->getGrantType() === Config::GRANT_TYPE_AUTHORIZATION_CODE) {
+            throw new AuthenticationException('Unauthenticated');
+        }
+
         $body = new SecurityV1OauthTokenPostBody();
-        if ($code === null) {
-            $body->setGrantType(self::GRANT_TYPE_CLIENT_CREDENTIALS);
-        } else {
-            $body->setGrantType(self::GRANT_TYPE_AUTHORIZATION_CODE);
+        $body->setGrantType($this->config->getGrantType());
+        if ($body->getGrantType() === Config::GRANT_TYPE_AUTHORIZATION_CODE) {
             $body->setCode($code);
             $body->setRedirectUri($this->config->getRedirectUri());
         }
@@ -138,12 +138,12 @@ class AuthenticationManager
         $accessToken = (new AccessToken())
             ->setClientId($response->getClientId())
             ->setAccessToken($response->getAccessToken())
-            ->setIssuedAt($response->getIssuedAt() / 1000) // Convert timestamp to seconds
+            ->setIssuedAt((int)($response->getIssuedAt() / 1000)) // Convert timestamp to seconds
             ->setExpiresIn((int)$response->getExpiresIn());
 
         if ($response->getRefreshToken()) {
             $accessToken->setRefreshToken($response->getRefreshToken())
-                ->setRefreshTokenIssuedAt($response->getRefreshTokenIssuedAt() / 1000)
+                ->setRefreshTokenIssuedAt((int)($response->getRefreshTokenIssuedAt() / 1000))
                 ->setRefreshTokenExpiresIn((int)$response->getRefreshTokenExpiresIn());
         }
         return $accessToken;
@@ -185,10 +185,10 @@ class AuthenticationManager
         return (new AccessToken())
             ->setClientId($response->getClientId())
             ->setAccessToken($response->getAccessToken())
-            ->setIssuedAt($response->getIssuedAt() / 1000) // Convert timestamp to seconds
+            ->setIssuedAt((int)($response->getIssuedAt() / 1000)) // Convert timestamp to seconds
             ->setExpiresIn((int)$response->getExpiresIn())
             ->setRefreshToken($response->getRefreshToken())
-            ->setRefreshTokenIssuedAt($response->getRefreshTokenIssuedAt() / 1000)
+            ->setRefreshTokenIssuedAt((int)($response->getRefreshTokenIssuedAt() / 1000))
             ->setRefreshTokenExpiresIn((int)$response->getRefreshTokenExpiresIn());
     }
 }
