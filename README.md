@@ -5,7 +5,7 @@ A PHP SDK for the UPS REST API, brought to you by [ShipStream](https://shipstrea
 ## Installation
 
 ```shell
-composer require shipstream/ups-rest-php-sdk
+composer require shipstream/ups-rest-php-sdk:"^1.0"
 ```
 
 ## Basic Usage
