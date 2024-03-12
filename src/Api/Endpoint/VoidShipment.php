@@ -28,7 +28,7 @@ class VoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $shipmentidentificationnumber, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $version, string $shipmentidentificationnumber, array $queryParameters = [], array $headerParameters = [])
     {
         $this->version = $version;
         $this->shipmentidentificationnumber = $shipmentidentificationnumber;
@@ -42,33 +42,33 @@ class VoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}', '{shipmentidentificationnumber}'), array($this->version, $this->shipmentidentificationnumber), '/shipments/{version}/void/cancel/{shipmentidentificationnumber}');
+        return str_replace(['{version}', '{shipmentidentificationnumber}'], [$this->version, $this->shipmentidentificationnumber], '/shipments/{version}/void/cancel/{shipmentidentificationnumber}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('trackingnumber'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('trackingnumber', array('string'));
+        $optionsResolver->setDefined(['trackingnumber']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('trackingnumber', ['string']);
         return $optionsResolver;
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -97,6 +97,6 @@ class VoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

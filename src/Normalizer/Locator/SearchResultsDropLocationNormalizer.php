@@ -11,10 +11,10 @@ class SearchResultsDropLocationNormalizer extends BaseNormalizer
     /**
      * @inheritDoc
      */
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if ($data === null || is_array($data) === false) {
-            return parent::denormalize($data, $class, $format, $context);
+            return parent::denormalize($data, $type, $format, $context);
         }
 
         // Force attributes to always be an array even when the API returns a single value
@@ -42,6 +42,6 @@ class SearchResultsDropLocationNormalizer extends BaseNormalizer
         if (isset($data['PromotionInformation']) && ! array_is_list($data['PromotionInformation'])) {
             $data['PromotionInformation'] = [$data['PromotionInformation']];
         }
-        return parent::denormalize($data, $class, $format, $context);
+        return parent::denormalize($data, $type, $format, $context);
     }
 }

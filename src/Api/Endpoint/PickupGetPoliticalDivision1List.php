@@ -17,7 +17,7 @@ class PickupGetPoliticalDivision1List extends \ShipStream\Ups\Api\Runtime\Client
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $countrycode, array $headerParameters = array())
+    public function __construct(string $version, string $countrycode, array $headerParameters = [])
     {
         $this->version = $version;
         $this->countrycode = $countrycode;
@@ -30,24 +30,24 @@ class PickupGetPoliticalDivision1List extends \ShipStream\Ups\Api\Runtime\Client
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}', '{countrycode}'), array($this->version, $this->countrycode), '/pickup/{version}/countries/{countrycode}');
+        return str_replace(['{version}', '{countrycode}'], [$this->version, $this->countrycode], '/pickup/{version}/countries/{countrycode}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array('transId'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired(['transId']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -72,6 +72,6 @@ class PickupGetPoliticalDivision1List extends \ShipStream\Ups\Api\Runtime\Client
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

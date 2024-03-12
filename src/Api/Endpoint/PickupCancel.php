@@ -19,7 +19,7 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     Required if CancelBy = prn.Length 26
     * }
     */
-    public function __construct(string $cancelBy, string $version = 'v1', array $headerParameters = array())
+    public function __construct(string $cancelBy, string $version = 'v1', array $headerParameters = [])
     {
         $this->CancelBy = $cancelBy;
         $this->version = $version;
@@ -32,25 +32,25 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     }
     public function getUri() : string
     {
-        return str_replace(array('{CancelBy}', '{version}'), array($this->CancelBy, $this->version), '/shipments/{version}/pickup/{CancelBy}');
+        return str_replace(['{CancelBy}', '{version}'], [$this->CancelBy, $this->version], '/shipments/{version}/pickup/{CancelBy}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc', 'Prn'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
-        $optionsResolver->addAllowedTypes('Prn', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc', 'Prn']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
+        $optionsResolver->addAllowedTypes('Prn', ['string']);
         return $optionsResolver;
     }
     /**
@@ -75,6 +75,6 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

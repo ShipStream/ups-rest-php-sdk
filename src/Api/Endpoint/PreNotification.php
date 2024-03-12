@@ -15,7 +15,7 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;
@@ -28,27 +28,27 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}'), array($this->version), '/dangerousgoods/{version}/prenotification');
+        return str_replace(['{version}'], [$this->version], '/dangerousgoods/{version}/prenotification');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -73,6 +73,6 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

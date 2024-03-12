@@ -21,7 +21,7 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     shipper.Length 6 or 10
     * }
     */
-    public function __construct(string $version, string $pickuptype, array $headerParameters = array())
+    public function __construct(string $version, string $pickuptype, array $headerParameters = [])
     {
         $this->version = $version;
         $this->pickuptype = $pickuptype;
@@ -34,25 +34,25 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}', '{pickuptype}'), array($this->version, $this->pickuptype), '/shipments/{version}/pickup/{pickuptype}');
+        return str_replace(['{version}', '{pickuptype}'], [$this->version, $this->pickuptype], '/shipments/{version}/pickup/{pickuptype}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc', 'AccountNumber'));
-        $optionsResolver->setRequired(array('AccountNumber'));
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
-        $optionsResolver->addAllowedTypes('AccountNumber', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc', 'AccountNumber']);
+        $optionsResolver->setRequired(['AccountNumber']);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
+        $optionsResolver->addAllowedTypes('AccountNumber', ['string']);
         return $optionsResolver;
     }
     /**
@@ -77,6 +77,6 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

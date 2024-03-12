@@ -26,7 +26,7 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     * }
     * @param array $accept Accept content header application/json|application/xml
     */
-    public function __construct(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = array(), array $accept = array())
+    public function __construct(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = [], array $accept = [])
     {
         $this->version = $version;
         $this->requestoption = $requestoption;
@@ -41,33 +41,33 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}', '{requestoption}'), array($this->version, $this->requestoption), '/freight/{version}/rating/{requestoption}');
+        return str_replace(['{version}', '{requestoption}'], [$this->version, $this->requestoption], '/freight/{version}/rating/{requestoption}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
         if ($this->body instanceof \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper) {
-            return array(array('Content-Type' => array('application/xml')), $this->body);
+            return [['Content-Type' => ['application/xml']], $this->body];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
         if (empty($this->accept)) {
-            return array('Accept' => array('application/json', 'application/xml'));
+            return ['Accept' => ['application/json', 'application/xml']];
         }
         return $this->accept;
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array('transId'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired(['transId']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -92,6 +92,6 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

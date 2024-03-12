@@ -11,10 +11,10 @@ class RateResponseRatedShipmentNormalizer extends BaseNormalizer
     /**
      * @inheritDoc
      */
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if ($data === null || is_array($data) === false) {
-            return parent::denormalize($data, $class, $format, $context);
+            return parent::denormalize($data, $type, $format, $context);
         }
 
         // Force fields to always be an array even when the API returns a single value
@@ -36,6 +36,6 @@ class RateResponseRatedShipmentNormalizer extends BaseNormalizer
         if (isset($data['HandlingUnits']) && ! array_is_list($data['HandlingUnits'])) {
             $data['HandlingUnits'] = [$data['HandlingUnits']];
         }
-        return parent::denormalize($data, $class, $format, $context);
+        return parent::denormalize($data, $type, $format, $context);
     }
 }

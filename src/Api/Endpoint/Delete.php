@@ -16,7 +16,7 @@ class Delete extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
      *     @var string $DocumentId DocumentId representing uploaded document to Forms History.  Only one DocumentID will be accepted for delete request.
      * }
      */
-    public function __construct(string $version = 'v1', array $headerParameters = array())
+    public function __construct(string $version = 'v1', array $headerParameters = [])
     {
         $this->version = $version;
         $this->headerParameters = $headerParameters;
@@ -28,26 +28,26 @@ class Delete extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}'), array($this->version), '/paperlessdocuments/{version}/DocumentId/ShipperNumber');
+        return str_replace(['{version}'], [$this->version], '/paperlessdocuments/{version}/DocumentId/ShipperNumber');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc', 'ShipperNumber', 'DocumentId'));
-        $optionsResolver->setRequired(array('ShipperNumber', 'DocumentId'));
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
-        $optionsResolver->addAllowedTypes('ShipperNumber', array('string'));
-        $optionsResolver->addAllowedTypes('DocumentId', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc', 'ShipperNumber', 'DocumentId']);
+        $optionsResolver->setRequired(['ShipperNumber', 'DocumentId']);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
+        $optionsResolver->addAllowedTypes('ShipperNumber', ['string']);
+        $optionsResolver->addAllowedTypes('DocumentId', ['string']);
         return $optionsResolver;
     }
     /**
@@ -72,6 +72,6 @@ class Delete extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

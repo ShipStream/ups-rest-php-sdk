@@ -17,7 +17,7 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;
@@ -30,27 +30,27 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}'), array($this->version), '/dangerousgoods/{version}/chemicalreferencedata');
+        return str_replace(['{version}'], [$this->version], '/dangerousgoods/{version}/chemicalreferencedata');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array('transId'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired(['transId']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -75,6 +75,6 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

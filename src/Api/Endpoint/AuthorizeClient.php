@@ -15,7 +15,7 @@ class AuthorizeClient extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
      *     @var string $scope Optional value supplied by the client, will be returned during the redirection back to the client.
      * }
      */
-    public function __construct(array $queryParameters = array())
+    public function __construct(array $queryParameters = [])
     {
         $this->queryParameters = $queryParameters;
     }
@@ -30,23 +30,23 @@ class AuthorizeClient extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('client_id', 'redirect_uri', 'response_type', 'state', 'scope'));
-        $optionsResolver->setRequired(array('client_id', 'redirect_uri', 'response_type'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('client_id', array('string'));
-        $optionsResolver->addAllowedTypes('redirect_uri', array('string'));
-        $optionsResolver->addAllowedTypes('response_type', array('string'));
-        $optionsResolver->addAllowedTypes('state', array('string'));
-        $optionsResolver->addAllowedTypes('scope', array('string'));
+        $optionsResolver->setDefined(['client_id', 'redirect_uri', 'response_type', 'state', 'scope']);
+        $optionsResolver->setRequired(['client_id', 'redirect_uri', 'response_type']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('client_id', ['string']);
+        $optionsResolver->addAllowedTypes('redirect_uri', ['string']);
+        $optionsResolver->addAllowedTypes('response_type', ['string']);
+        $optionsResolver->addAllowedTypes('state', ['string']);
+        $optionsResolver->addAllowedTypes('scope', ['string']);
         return $optionsResolver;
     }
     /**
@@ -75,6 +75,6 @@ class AuthorizeClient extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     }
     public function getAuthenticationScopes() : array
     {
-        return array();
+        return [];
     }
 }
