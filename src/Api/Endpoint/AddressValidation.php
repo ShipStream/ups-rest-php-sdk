@@ -37,7 +37,7 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     * }
     * @param array $accept Accept content header application/json|application/xml
     */
-    public function __construct(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array(), array $accept = array())
+    public function __construct(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], array $accept = [])
     {
         $this->requestoption = $requestoption;
         $this->version = $version;
@@ -52,30 +52,30 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     }
     public function getUri() : string
     {
-        return str_replace(array('{requestoption}', '{version}'), array($this->requestoption, $this->version), '/addressvalidation/{version}/{requestoption}');
+        return str_replace(['{requestoption}', '{version}'], [$this->requestoption, $this->version], '/addressvalidation/{version}/{requestoption}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\XAVRequestWrapper) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
         if (empty($this->accept)) {
-            return array('Accept' => array('application/json', 'application/xml'));
+            return ['Accept' => ['application/json', 'application/xml']];
         }
         return $this->accept;
     }
     protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('regionalrequestindicator', 'maximumcandidatelistsize'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('regionalrequestindicator', array('string'));
-        $optionsResolver->addAllowedTypes('maximumcandidatelistsize', array('int'));
+        $optionsResolver->setDefined(['regionalrequestindicator', 'maximumcandidatelistsize']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('regionalrequestindicator', ['string']);
+        $optionsResolver->addAllowedTypes('maximumcandidatelistsize', ['int']);
         return $optionsResolver;
     }
     /**
@@ -108,6 +108,6 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

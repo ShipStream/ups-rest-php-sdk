@@ -8,6 +8,8 @@ A PHP SDK for the UPS REST API, brought to you by [ShipStream](https://shipstrea
 composer require shipstream/ups-rest-php-sdk
 ```
 
+**Note:** The latest version is compatible only with PHP 8.x. For PHP 7.4 support, please append the `^1.0` version constraint to the above command.
+
 ## Basic Usage
 
 Create a UPS Client instance using a configuration object:

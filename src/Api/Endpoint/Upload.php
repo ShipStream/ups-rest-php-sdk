@@ -16,7 +16,7 @@ class Upload extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
      *     @var string $ShipperNumber Shipper Number
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;
@@ -29,28 +29,28 @@ class Upload extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}'), array($this->version), '/paperlessdocuments/{version}/upload');
+        return str_replace(['{version}'], [$this->version], '/paperlessdocuments/{version}/upload');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc', 'ShipperNumber'));
-        $optionsResolver->setRequired(array('ShipperNumber'));
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
-        $optionsResolver->addAllowedTypes('ShipperNumber', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc', 'ShipperNumber']);
+        $optionsResolver->setRequired(['ShipperNumber']);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
+        $optionsResolver->addAllowedTypes('ShipperNumber', ['string']);
         return $optionsResolver;
     }
     /**
@@ -75,6 +75,6 @@ class Upload extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements 
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

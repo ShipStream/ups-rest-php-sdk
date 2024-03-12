@@ -15,7 +15,7 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
      *     @var string $PickupRequestConfirmationNumber Confirmation number of the pickup ground freight shipment to cancel. Length 35
      * }
      */
-    public function __construct(string $version = 'v1', array $headerParameters = array())
+    public function __construct(string $version = 'v1', array $headerParameters = [])
     {
         $this->version = $version;
         $this->headerParameters = $headerParameters;
@@ -27,25 +27,25 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}'), array($this->version), '/freight/{version}/pickups');
+        return str_replace(['{version}'], [$this->version], '/freight/{version}/pickups');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc', 'PickupRequestConfirmationNumber'));
-        $optionsResolver->setRequired(array('transId', 'PickupRequestConfirmationNumber'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
-        $optionsResolver->addAllowedTypes('PickupRequestConfirmationNumber', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc', 'PickupRequestConfirmationNumber']);
+        $optionsResolver->setRequired(['transId', 'PickupRequestConfirmationNumber']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
+        $optionsResolver->addAllowedTypes('PickupRequestConfirmationNumber', ['string']);
         return $optionsResolver;
     }
     /**
@@ -70,6 +70,6 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

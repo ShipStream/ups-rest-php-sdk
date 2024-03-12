@@ -12,7 +12,7 @@ class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
      *     @var string $x-merchant-id Client merchant ID
      * }
      */
-    public function __construct(?\ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody $requestBody = null, array $headerParameters = array())
+    public function __construct(?\ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody $requestBody = null, array $headerParameters = [])
     {
         $this->body = $requestBody;
         $this->headerParameters = $headerParameters;
@@ -29,21 +29,21 @@ class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody) {
-            return array(array('Content-Type' => array('application/x-www-form-urlencoded')), http_build_query($serializer->normalize($this->body, 'json')));
+            return [['Content-Type' => ['application/x-www-form-urlencoded']], http_build_query($serializer->normalize($this->body, 'json'))];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('x-merchant-id'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('x-merchant-id', array('string'));
+        $optionsResolver->setDefined(['x-merchant-id']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('x-merchant-id', ['string']);
         return $optionsResolver;
     }
     /**
@@ -80,6 +80,6 @@ class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     }
     public function getAuthenticationScopes() : array
     {
-        return array('basicAuth');
+        return ['basicAuth'];
     }
 }

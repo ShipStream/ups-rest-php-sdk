@@ -30,7 +30,7 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [])
     {
         $this->version = $version;
         $this->reqOption = $reqOption;
@@ -45,36 +45,36 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}', '{reqOption}'), array($this->version, $this->reqOption), '/locations/{version}/search/availabilities/{reqOption}');
+        return str_replace(['{version}', '{reqOption}'], [$this->version, $this->reqOption], '/locations/{version}/search/availabilities/{reqOption}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\LOCATORRequestWrapper) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('Locale'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('Locale' => 'en_US'));
-        $optionsResolver->addAllowedTypes('Locale', array('string'));
+        $optionsResolver->setDefined(['Locale']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['Locale' => 'en_US']);
+        $optionsResolver->addAllowedTypes('Locale', ['string']);
         return $optionsResolver;
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('transactionSrc' => 'testing'));
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['transactionSrc' => 'testing']);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -99,6 +99,6 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }

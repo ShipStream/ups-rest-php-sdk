@@ -12,77 +12,149 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-class ChemicalReferenceDataResponseNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
-{
-    use DenormalizerAwareTrait;
-    use NormalizerAwareTrait;
-    use CheckArray;
-    use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+use Symfony\Component\HttpKernel\Kernel;
+if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR_VERSION === 6 and Kernel::MINOR_VERSION === 4)) {
+    class ChemicalReferenceDataResponseNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
     {
-        return $type === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse';
-    }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
-    {
-        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse';
-    }
-    /**
-     * @return mixed
-     */
-    public function denormalize($data, $class, $format = null, array $context = array())
-    {
-        if (isset($data['$ref'])) {
-            return new Reference($data['$ref'], $context['document-origin']);
+        use DenormalizerAwareTrait;
+        use NormalizerAwareTrait;
+        use CheckArray;
+        use ValidatorTrait;
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        {
+            return $type === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse';
         }
-        if (isset($data['$recursiveRef'])) {
-            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        {
+            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse';
         }
-        $object = new \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse();
-        if (null === $data || false === \is_array($data)) {
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        {
+            if (isset($data['$ref'])) {
+                return new Reference($data['$ref'], $context['document-origin']);
+            }
+            if (isset($data['$recursiveRef'])) {
+                return new Reference($data['$recursiveRef'], $context['document-origin']);
+            }
+            $object = new \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse();
+            if (null === $data || false === \is_array($data)) {
+                return $object;
+            }
+            if (\array_key_exists('Response', $data)) {
+                $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse', 'json', $context));
+                unset($data['Response']);
+            }
+            if (\array_key_exists('ChemicalData', $data)) {
+                $values = [];
+                foreach ($data['ChemicalData'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData', 'json', $context);
+                }
+                $object->setChemicalData($values);
+                unset($data['ChemicalData']);
+            }
+            foreach ($data as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $object[$key] = $value_1;
+                }
+            }
             return $object;
         }
-        if (\array_key_exists('Response', $data)) {
-            $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse', 'json', $context));
-            unset($data['Response']);
-        }
-        if (\array_key_exists('ChemicalData', $data)) {
-            $values = array();
-            foreach ($data['ChemicalData'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData', 'json', $context);
+        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        {
+            $data = [];
+            $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
+            if ($object->isInitialized('chemicalData') && null !== $object->getChemicalData()) {
+                $values = [];
+                foreach ($object->getChemicalData() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['ChemicalData'] = $values;
             }
-            $object->setChemicalData($values);
-            unset($data['ChemicalData']);
-        }
-        foreach ($data as $key => $value_1) {
-            if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value_1;
+            foreach ($object as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $data[$key] = $value_1;
+                }
             }
+            return $data;
         }
-        return $object;
+        public function getSupportedTypes(?string $format = null) : array
+        {
+            return ['ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => false];
+        }
     }
-    /**
-     * @return array|string|int|float|bool|\ArrayObject|null
-     */
-    public function normalize($object, $format = null, array $context = array())
+} else {
+    class ChemicalReferenceDataResponseNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
     {
-        $data = array();
-        $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
-        if ($object->isInitialized('chemicalData') && null !== $object->getChemicalData()) {
-            $values = array();
-            foreach ($object->getChemicalData() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
-            }
-            $data['ChemicalData'] = $values;
+        use DenormalizerAwareTrait;
+        use NormalizerAwareTrait;
+        use CheckArray;
+        use ValidatorTrait;
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        {
+            return $type === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse';
         }
-        foreach ($object as $key => $value_1) {
-            if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value_1;
-            }
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        {
+            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse';
         }
-        return $data;
-    }
-    public function getSupportedTypes(?string $format = null) : array
-    {
-        return array('ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => false);
+        /**
+         * @return mixed
+         */
+        public function denormalize($data, $type, $format = null, array $context = [])
+        {
+            if (isset($data['$ref'])) {
+                return new Reference($data['$ref'], $context['document-origin']);
+            }
+            if (isset($data['$recursiveRef'])) {
+                return new Reference($data['$recursiveRef'], $context['document-origin']);
+            }
+            $object = new \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse();
+            if (null === $data || false === \is_array($data)) {
+                return $object;
+            }
+            if (\array_key_exists('Response', $data)) {
+                $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse', 'json', $context));
+                unset($data['Response']);
+            }
+            if (\array_key_exists('ChemicalData', $data)) {
+                $values = [];
+                foreach ($data['ChemicalData'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData', 'json', $context);
+                }
+                $object->setChemicalData($values);
+                unset($data['ChemicalData']);
+            }
+            foreach ($data as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $object[$key] = $value_1;
+                }
+            }
+            return $object;
+        }
+        /**
+         * @return array|string|int|float|bool|\ArrayObject|null
+         */
+        public function normalize($object, $format = null, array $context = [])
+        {
+            $data = [];
+            $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
+            if ($object->isInitialized('chemicalData') && null !== $object->getChemicalData()) {
+                $values = [];
+                foreach ($object->getChemicalData() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['ChemicalData'] = $values;
+            }
+            foreach ($object as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $data[$key] = $value_1;
+                }
+            }
+            return $data;
+        }
+        public function getSupportedTypes(?string $format = null) : array
+        {
+            return ['ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => false];
+        }
     }
 }

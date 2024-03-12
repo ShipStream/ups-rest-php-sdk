@@ -18,7 +18,7 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
      *     @var string $transactionSrc transactionSrc
      * }
      */
-    public function __construct(string $inquiryNumber, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $inquiryNumber, array $queryParameters = [], array $headerParameters = [])
     {
         $this->inquiryNumber = $inquiryNumber;
         $this->queryParameters = $queryParameters;
@@ -31,34 +31,34 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
     }
     public function getUri() : string
     {
-        return str_replace(array('{inquiryNumber}'), array($this->inquiryNumber), '/track/v1/details/{inquiryNumber}');
+        return str_replace(['{inquiryNumber}'], [$this->inquiryNumber], '/track/v1/details/{inquiryNumber}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
-        return array(array(), null);
+        return [[], null];
     }
     public function getExtraHeaders() : array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
     protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('locale', 'returnSignature'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('locale' => 'en_US', 'returnSignature' => 'false'));
-        $optionsResolver->addAllowedTypes('locale', array('string'));
-        $optionsResolver->addAllowedTypes('returnSignature', array('string'));
+        $optionsResolver->setDefined(['locale', 'returnSignature']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['locale' => 'en_US', 'returnSignature' => 'false']);
+        $optionsResolver->addAllowedTypes('locale', ['string']);
+        $optionsResolver->addAllowedTypes('returnSignature', ['string']);
         return $optionsResolver;
     }
     protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('transId', 'transactionSrc'));
-        $optionsResolver->setRequired(array('transId'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('transId', array('string'));
-        $optionsResolver->addAllowedTypes('transactionSrc', array('string'));
+        $optionsResolver->setDefined(['transId', 'transactionSrc']);
+        $optionsResolver->setRequired(['transId']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('transId', ['string']);
+        $optionsResolver->addAllowedTypes('transactionSrc', ['string']);
         return $optionsResolver;
     }
     /**
@@ -98,6 +98,6 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
     }
     public function getAuthenticationScopes() : array
     {
-        return array('oauth2');
+        return ['oauth2'];
     }
 }
