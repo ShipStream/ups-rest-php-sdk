@@ -1,10 +1,10 @@
 {
-    "name": "shipstream/ups-rest-php-sdk",
-    "description": "PHP SDK for UPS REST API",
+    "name": "onnit/ups-rest-php-sdk",
+    "description": "This is a test",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "Shipstream",
+            "name": "Hector Testing",
             "email": "info@shipstream.io"
         }
     ],
