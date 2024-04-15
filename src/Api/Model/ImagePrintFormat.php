@@ -18,13 +18,13 @@ class ImagePrintFormat extends \ArrayObject
     01 � Laser
     02 - Thermal
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Description of the print format of the image contained in Documents Image.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -33,9 +33,9 @@ class ImagePrintFormat extends \ArrayObject
     01 � Laser
     02 - Thermal
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -45,11 +45,11 @@ class ImagePrintFormat extends \ArrayObject
     01 � Laser
     02 - Thermal
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -58,20 +58,20 @@ class ImagePrintFormat extends \ArrayObject
     /**
      * Description of the print format of the image contained in Documents Image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the print format of the image contained in Documents Image.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

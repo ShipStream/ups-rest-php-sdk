@@ -16,7 +16,7 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
     * The weight of the package. 
     One decimal digit is allowed. Example: 10.9
     *
-    * @var string
+    * @var string|null
     */
     protected $weight;
     /**
@@ -24,16 +24,16 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
     LBS = Pounds
     KGS = Kilograms
     *
-    * @var string
+    * @var string|null
     */
     protected $unitOfMeasurement;
     /**
     * The weight of the package. 
     One decimal digit is allowed. Example: 10.9
     *
-    * @return string
+    * @return string|null
     */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
@@ -41,11 +41,11 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
     * The weight of the package. 
     One decimal digit is allowed. Example: 10.9
     *
-    * @param string $weight
+    * @param string|null $weight
     *
     * @return self
     */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -56,9 +56,9 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
     LBS = Pounds
     KGS = Kilograms
     *
-    * @return string
+    * @return string|null
     */
-    public function getUnitOfMeasurement() : string
+    public function getUnitOfMeasurement() : ?string
     {
         return $this->unitOfMeasurement;
     }
@@ -67,11 +67,11 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
     LBS = Pounds
     KGS = Kilograms
     *
-    * @param string $unitOfMeasurement
+    * @param string|null $unitOfMeasurement
     *
     * @return self
     */
-    public function setUnitOfMeasurement(string $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?string $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

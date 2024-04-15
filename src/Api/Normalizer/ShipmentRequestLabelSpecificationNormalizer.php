@@ -40,19 +40,28 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelImageFormat', $data)) {
+            if (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] !== null) {
                 $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelImageFormat', 'json', $context));
                 unset($data['LabelImageFormat']);
             }
-            if (\array_key_exists('HTTPUserAgent', $data)) {
+            elseif (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] === null) {
+                $object->setLabelImageFormat(null);
+            }
+            if (\array_key_exists('HTTPUserAgent', $data) && $data['HTTPUserAgent'] !== null) {
                 $object->setHTTPUserAgent($data['HTTPUserAgent']);
                 unset($data['HTTPUserAgent']);
             }
-            if (\array_key_exists('LabelStockSize', $data)) {
+            elseif (\array_key_exists('HTTPUserAgent', $data) && $data['HTTPUserAgent'] === null) {
+                $object->setHTTPUserAgent(null);
+            }
+            if (\array_key_exists('LabelStockSize', $data) && $data['LabelStockSize'] !== null) {
                 $object->setLabelStockSize($this->denormalizer->denormalize($data['LabelStockSize'], 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelStockSize', 'json', $context));
                 unset($data['LabelStockSize']);
             }
-            if (\array_key_exists('Instruction', $data)) {
+            elseif (\array_key_exists('LabelStockSize', $data) && $data['LabelStockSize'] === null) {
+                $object->setLabelStockSize(null);
+            }
+            if (\array_key_exists('Instruction', $data) && $data['Instruction'] !== null) {
                 $values = [];
                 foreach ($data['Instruction'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction', 'json', $context);
@@ -60,9 +69,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInstruction($values);
                 unset($data['Instruction']);
             }
-            if (\array_key_exists('CharacterSet', $data)) {
+            elseif (\array_key_exists('Instruction', $data) && $data['Instruction'] === null) {
+                $object->setInstruction(null);
+            }
+            if (\array_key_exists('CharacterSet', $data) && $data['CharacterSet'] !== null) {
                 $object->setCharacterSet($data['CharacterSet']);
                 unset($data['CharacterSet']);
+            }
+            elseif (\array_key_exists('CharacterSet', $data) && $data['CharacterSet'] === null) {
+                $object->setCharacterSet(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -131,19 +146,28 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelImageFormat', $data)) {
+            if (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] !== null) {
                 $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelImageFormat', 'json', $context));
                 unset($data['LabelImageFormat']);
             }
-            if (\array_key_exists('HTTPUserAgent', $data)) {
+            elseif (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] === null) {
+                $object->setLabelImageFormat(null);
+            }
+            if (\array_key_exists('HTTPUserAgent', $data) && $data['HTTPUserAgent'] !== null) {
                 $object->setHTTPUserAgent($data['HTTPUserAgent']);
                 unset($data['HTTPUserAgent']);
             }
-            if (\array_key_exists('LabelStockSize', $data)) {
+            elseif (\array_key_exists('HTTPUserAgent', $data) && $data['HTTPUserAgent'] === null) {
+                $object->setHTTPUserAgent(null);
+            }
+            if (\array_key_exists('LabelStockSize', $data) && $data['LabelStockSize'] !== null) {
                 $object->setLabelStockSize($this->denormalizer->denormalize($data['LabelStockSize'], 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelStockSize', 'json', $context));
                 unset($data['LabelStockSize']);
             }
-            if (\array_key_exists('Instruction', $data)) {
+            elseif (\array_key_exists('LabelStockSize', $data) && $data['LabelStockSize'] === null) {
+                $object->setLabelStockSize(null);
+            }
+            if (\array_key_exists('Instruction', $data) && $data['Instruction'] !== null) {
                 $values = [];
                 foreach ($data['Instruction'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction', 'json', $context);
@@ -151,9 +175,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInstruction($values);
                 unset($data['Instruction']);
             }
-            if (\array_key_exists('CharacterSet', $data)) {
+            elseif (\array_key_exists('Instruction', $data) && $data['Instruction'] === null) {
+                $object->setInstruction(null);
+            }
+            if (\array_key_exists('CharacterSet', $data) && $data['CharacterSet'] !== null) {
                 $object->setCharacterSet($data['CharacterSet']);
                 unset($data['CharacterSet']);
+            }
+            elseif (\array_key_exists('CharacterSet', $data) && $data['CharacterSet'] === null) {
+                $object->setCharacterSet(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

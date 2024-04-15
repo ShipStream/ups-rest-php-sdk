@@ -17,7 +17,7 @@ class ServiceSearchServiceOptionCode extends \ArrayObject
     01-Saturday pickup.
     Only valid for air service.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
@@ -25,9 +25,9 @@ class ServiceSearchServiceOptionCode extends \ArrayObject
     01-Saturday pickup.
     Only valid for air service.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -36,11 +36,11 @@ class ServiceSearchServiceOptionCode extends \ArrayObject
     01-Saturday pickup.
     Only valid for air service.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

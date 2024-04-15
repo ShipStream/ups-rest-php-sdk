@@ -16,22 +16,22 @@ class FreightRateRequestPickupRequest extends \ArrayObject
     * Date of the Pickup.
     Format: YYYYMMDD
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupDate;
     /**
      * Additional Pickup comments or instructions.
      *
-     * @var string
+     * @var string|null
      */
     protected $additionalComments;
     /**
     * Date of the Pickup.
     Format: YYYYMMDD
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupDate() : string
+    public function getPickupDate() : ?string
     {
         return $this->pickupDate;
     }
@@ -39,11 +39,11 @@ class FreightRateRequestPickupRequest extends \ArrayObject
     * Date of the Pickup.
     Format: YYYYMMDD
     *
-    * @param string $pickupDate
+    * @param string|null $pickupDate
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(?string $pickupDate) : self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -52,20 +52,20 @@ class FreightRateRequestPickupRequest extends \ArrayObject
     /**
      * Additional Pickup comments or instructions.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAdditionalComments() : string
+    public function getAdditionalComments() : ?string
     {
         return $this->additionalComments;
     }
     /**
      * Additional Pickup comments or instructions.
      *
-     * @param string $additionalComments
+     * @param string|null $additionalComments
      *
      * @return self
      */
-    public function setAdditionalComments(string $additionalComments) : self
+    public function setAdditionalComments(?string $additionalComments) : self
     {
         $this->initialized['additionalComments'] = true;
         $this->additionalComments = $additionalComments;

@@ -15,33 +15,33 @@ class ShipmentResultsControlLogReceipt extends \ArrayObject
     /**
      * Container for the High Value report format required if parent exist.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @var ControlLogReceiptImageFormat
+     * @var ControlLogReceiptImageFormat|null
      */
     protected $imageFormat;
     /**
     * Base 64 encoded html, EPL2, ZPL or SPL image.
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var string
+    * @var string|null
     */
     protected $graphicImage;
     /**
      * Container for the High Value report format required if parent exist.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @return ControlLogReceiptImageFormat
+     * @return ControlLogReceiptImageFormat|null
      */
-    public function getImageFormat() : ControlLogReceiptImageFormat
+    public function getImageFormat() : ?ControlLogReceiptImageFormat
     {
         return $this->imageFormat;
     }
     /**
      * Container for the High Value report format required if parent exist.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @param ControlLogReceiptImageFormat $imageFormat
+     * @param ControlLogReceiptImageFormat|null $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ControlLogReceiptImageFormat $imageFormat) : self
+    public function setImageFormat(?ControlLogReceiptImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
@@ -51,9 +51,9 @@ class ShipmentResultsControlLogReceipt extends \ArrayObject
     * Base 64 encoded html, EPL2, ZPL or SPL image.
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return string
+    * @return string|null
     */
-    public function getGraphicImage() : string
+    public function getGraphicImage() : ?string
     {
         return $this->graphicImage;
     }
@@ -61,11 +61,11 @@ class ShipmentResultsControlLogReceipt extends \ArrayObject
     * Base 64 encoded html, EPL2, ZPL or SPL image.
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param string $graphicImage
+    * @param string|null $graphicImage
     *
     * @return self
     */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(?string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;

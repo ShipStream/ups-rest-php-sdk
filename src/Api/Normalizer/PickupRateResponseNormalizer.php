@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('RateResult', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('RateResult', $data) && $data['RateResult'] !== null) {
                 $object->setRateResult($this->denormalizer->denormalize($data['RateResult'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult', 'json', $context));
                 unset($data['RateResult']);
             }
-            if (\array_key_exists('WeekendServiceTerritoryIndicator', $data)) {
+            elseif (\array_key_exists('RateResult', $data) && $data['RateResult'] === null) {
+                $object->setRateResult(null);
+            }
+            if (\array_key_exists('WeekendServiceTerritoryIndicator', $data) && $data['WeekendServiceTerritoryIndicator'] !== null) {
                 $object->setWeekendServiceTerritoryIndicator($data['WeekendServiceTerritoryIndicator']);
                 unset($data['WeekendServiceTerritoryIndicator']);
             }
-            if (\array_key_exists('WeekendServiceTerritory', $data)) {
+            elseif (\array_key_exists('WeekendServiceTerritoryIndicator', $data) && $data['WeekendServiceTerritoryIndicator'] === null) {
+                $object->setWeekendServiceTerritoryIndicator(null);
+            }
+            if (\array_key_exists('WeekendServiceTerritory', $data) && $data['WeekendServiceTerritory'] !== null) {
                 $object->setWeekendServiceTerritory($this->denormalizer->denormalize($data['WeekendServiceTerritory'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory', 'json', $context));
                 unset($data['WeekendServiceTerritory']);
+            }
+            elseif (\array_key_exists('WeekendServiceTerritory', $data) && $data['WeekendServiceTerritory'] === null) {
+                $object->setWeekendServiceTerritory(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -116,21 +128,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('RateResult', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('RateResult', $data) && $data['RateResult'] !== null) {
                 $object->setRateResult($this->denormalizer->denormalize($data['RateResult'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult', 'json', $context));
                 unset($data['RateResult']);
             }
-            if (\array_key_exists('WeekendServiceTerritoryIndicator', $data)) {
+            elseif (\array_key_exists('RateResult', $data) && $data['RateResult'] === null) {
+                $object->setRateResult(null);
+            }
+            if (\array_key_exists('WeekendServiceTerritoryIndicator', $data) && $data['WeekendServiceTerritoryIndicator'] !== null) {
                 $object->setWeekendServiceTerritoryIndicator($data['WeekendServiceTerritoryIndicator']);
                 unset($data['WeekendServiceTerritoryIndicator']);
             }
-            if (\array_key_exists('WeekendServiceTerritory', $data)) {
+            elseif (\array_key_exists('WeekendServiceTerritoryIndicator', $data) && $data['WeekendServiceTerritoryIndicator'] === null) {
+                $object->setWeekendServiceTerritoryIndicator(null);
+            }
+            if (\array_key_exists('WeekendServiceTerritory', $data) && $data['WeekendServiceTerritory'] !== null) {
                 $object->setWeekendServiceTerritory($this->denormalizer->denormalize($data['WeekendServiceTerritory'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory', 'json', $context));
                 unset($data['WeekendServiceTerritory']);
+            }
+            elseif (\array_key_exists('WeekendServiceTerritory', $data) && $data['WeekendServiceTerritory'] === null) {
+                $object->setWeekendServiceTerritory(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

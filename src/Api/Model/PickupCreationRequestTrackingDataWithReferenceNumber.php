@@ -15,32 +15,32 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
     /**
      * Tracking number for shipment packages.
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
      * The reference number associated with the tracking number.
      *
-     * @var string
+     * @var string|null
      */
     protected $referenceNumber;
     /**
      * Tracking number for shipment packages.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * Tracking number for shipment packages.
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -49,20 +49,20 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
     /**
      * The reference number associated with the tracking number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getReferenceNumber() : string
+    public function getReferenceNumber() : ?string
     {
         return $this->referenceNumber;
     }
     /**
      * The reference number associated with the tracking number.
      *
-     * @param string $referenceNumber
+     * @param string|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(string $referenceNumber) : self
+    public function setReferenceNumber(?string $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;

@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('image', $data)) {
+            if (\array_key_exists('image', $data) && $data['image'] !== null) {
                 $object->setImage($data['image']);
                 unset($data['image']);
+            }
+            elseif (\array_key_exists('image', $data) && $data['image'] === null) {
+                $object->setImage(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -99,9 +102,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('image', $data)) {
+            if (\array_key_exists('image', $data) && $data['image'] !== null) {
                 $object->setImage($data['image']);
                 unset($data['image']);
+            }
+            elseif (\array_key_exists('image', $data) && $data['image'] === null) {
+                $object->setImage(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

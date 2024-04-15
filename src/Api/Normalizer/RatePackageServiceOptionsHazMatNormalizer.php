@@ -40,29 +40,44 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageIdentifier', $data)) {
+            if (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] !== null) {
                 $object->setPackageIdentifier($data['PackageIdentifier']);
                 unset($data['PackageIdentifier']);
             }
-            if (\array_key_exists('QValue', $data)) {
+            elseif (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] === null) {
+                $object->setPackageIdentifier(null);
+            }
+            if (\array_key_exists('QValue', $data) && $data['QValue'] !== null) {
                 $object->setQValue($data['QValue']);
                 unset($data['QValue']);
             }
-            if (\array_key_exists('OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('QValue', $data) && $data['QValue'] === null) {
+                $object->setQValue(null);
+            }
+            if (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] !== null) {
                 $object->setOverPackedIndicator($data['OverPackedIndicator']);
                 unset($data['OverPackedIndicator']);
             }
-            if (\array_key_exists('AllPackedInOneIndicator', $data)) {
+            elseif (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] === null) {
+                $object->setOverPackedIndicator(null);
+            }
+            if (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] !== null) {
                 $object->setAllPackedInOneIndicator($data['AllPackedInOneIndicator']);
                 unset($data['AllPackedInOneIndicator']);
             }
-            if (\array_key_exists('HazMatChemicalRecord', $data)) {
+            elseif (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] === null) {
+                $object->setAllPackedInOneIndicator(null);
+            }
+            if (\array_key_exists('HazMatChemicalRecord', $data) && $data['HazMatChemicalRecord'] !== null) {
                 $values = [];
                 foreach ($data['HazMatChemicalRecord'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\HazMatHazMatChemicalRecord', 'json', $context);
                 }
                 $object->setHazMatChemicalRecord($values);
                 unset($data['HazMatChemicalRecord']);
+            }
+            elseif (\array_key_exists('HazMatChemicalRecord', $data) && $data['HazMatChemicalRecord'] === null) {
+                $object->setHazMatChemicalRecord(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -133,29 +148,44 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageIdentifier', $data)) {
+            if (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] !== null) {
                 $object->setPackageIdentifier($data['PackageIdentifier']);
                 unset($data['PackageIdentifier']);
             }
-            if (\array_key_exists('QValue', $data)) {
+            elseif (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] === null) {
+                $object->setPackageIdentifier(null);
+            }
+            if (\array_key_exists('QValue', $data) && $data['QValue'] !== null) {
                 $object->setQValue($data['QValue']);
                 unset($data['QValue']);
             }
-            if (\array_key_exists('OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('QValue', $data) && $data['QValue'] === null) {
+                $object->setQValue(null);
+            }
+            if (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] !== null) {
                 $object->setOverPackedIndicator($data['OverPackedIndicator']);
                 unset($data['OverPackedIndicator']);
             }
-            if (\array_key_exists('AllPackedInOneIndicator', $data)) {
+            elseif (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] === null) {
+                $object->setOverPackedIndicator(null);
+            }
+            if (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] !== null) {
                 $object->setAllPackedInOneIndicator($data['AllPackedInOneIndicator']);
                 unset($data['AllPackedInOneIndicator']);
             }
-            if (\array_key_exists('HazMatChemicalRecord', $data)) {
+            elseif (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] === null) {
+                $object->setAllPackedInOneIndicator(null);
+            }
+            if (\array_key_exists('HazMatChemicalRecord', $data) && $data['HazMatChemicalRecord'] !== null) {
                 $values = [];
                 foreach ($data['HazMatChemicalRecord'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\HazMatHazMatChemicalRecord', 'json', $context);
                 }
                 $object->setHazMatChemicalRecord($values);
                 unset($data['HazMatChemicalRecord']);
+            }
+            elseif (\array_key_exists('HazMatChemicalRecord', $data) && $data['HazMatChemicalRecord'] === null) {
+                $object->setHazMatChemicalRecord(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -20,13 +20,13 @@ class LabelRecovery extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     features returned in the response.
     V1903
     Length 5
-    * @param \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

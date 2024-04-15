@@ -15,26 +15,26 @@ class PAPERLESSDOCUMENTDeleteRequestWrapper extends \ArrayObject
     /**
      * Paperless Document API Request container for deleting user created forms.  N/A
      *
-     * @var DeleteRequest
+     * @var DeleteRequest|null
      */
     protected $deleteRequest;
     /**
      * Paperless Document API Request container for deleting user created forms.  N/A
      *
-     * @return DeleteRequest
+     * @return DeleteRequest|null
      */
-    public function getDeleteRequest() : DeleteRequest
+    public function getDeleteRequest() : ?DeleteRequest
     {
         return $this->deleteRequest;
     }
     /**
      * Paperless Document API Request container for deleting user created forms.  N/A
      *
-     * @param DeleteRequest $deleteRequest
+     * @param DeleteRequest|null $deleteRequest
      *
      * @return self
      */
-    public function setDeleteRequest(DeleteRequest $deleteRequest) : self
+    public function setDeleteRequest(?DeleteRequest $deleteRequest) : self
     {
         $this->initialized['deleteRequest'] = true;
         $this->deleteRequest = $deleteRequest;

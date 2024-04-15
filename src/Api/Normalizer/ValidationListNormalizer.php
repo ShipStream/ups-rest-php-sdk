@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('invalidFieldList', $data)) {
+            if (\array_key_exists('invalidFieldList', $data) && $data['invalidFieldList'] !== null) {
                 $values = [];
                 foreach ($data['invalidFieldList'] as $value) {
                     $values[] = $value;
@@ -48,7 +48,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInvalidFieldList($values);
                 unset($data['invalidFieldList']);
             }
-            if (\array_key_exists('invalidFieldListCodes', $data)) {
+            elseif (\array_key_exists('invalidFieldList', $data) && $data['invalidFieldList'] === null) {
+                $object->setInvalidFieldList(null);
+            }
+            if (\array_key_exists('invalidFieldListCodes', $data) && $data['invalidFieldListCodes'] !== null) {
                 $values_1 = [];
                 foreach ($data['invalidFieldListCodes'] as $value_1) {
                     $values_1[] = $value_1;
@@ -56,13 +59,22 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInvalidFieldListCodes($values_1);
                 unset($data['invalidFieldListCodes']);
             }
-            if (\array_key_exists('destinationAmbiguous', $data)) {
+            elseif (\array_key_exists('invalidFieldListCodes', $data) && $data['invalidFieldListCodes'] === null) {
+                $object->setInvalidFieldListCodes(null);
+            }
+            if (\array_key_exists('destinationAmbiguous', $data) && $data['destinationAmbiguous'] !== null) {
                 $object->setDestinationAmbiguous($data['destinationAmbiguous']);
                 unset($data['destinationAmbiguous']);
             }
-            if (\array_key_exists('originAmbiguous', $data)) {
+            elseif (\array_key_exists('destinationAmbiguous', $data) && $data['destinationAmbiguous'] === null) {
+                $object->setDestinationAmbiguous(null);
+            }
+            if (\array_key_exists('originAmbiguous', $data) && $data['originAmbiguous'] !== null) {
                 $object->setOriginAmbiguous($data['originAmbiguous']);
                 unset($data['originAmbiguous']);
+            }
+            elseif (\array_key_exists('originAmbiguous', $data) && $data['originAmbiguous'] === null) {
+                $object->setOriginAmbiguous(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -136,7 +148,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('invalidFieldList', $data)) {
+            if (\array_key_exists('invalidFieldList', $data) && $data['invalidFieldList'] !== null) {
                 $values = [];
                 foreach ($data['invalidFieldList'] as $value) {
                     $values[] = $value;
@@ -144,7 +156,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInvalidFieldList($values);
                 unset($data['invalidFieldList']);
             }
-            if (\array_key_exists('invalidFieldListCodes', $data)) {
+            elseif (\array_key_exists('invalidFieldList', $data) && $data['invalidFieldList'] === null) {
+                $object->setInvalidFieldList(null);
+            }
+            if (\array_key_exists('invalidFieldListCodes', $data) && $data['invalidFieldListCodes'] !== null) {
                 $values_1 = [];
                 foreach ($data['invalidFieldListCodes'] as $value_1) {
                     $values_1[] = $value_1;
@@ -152,13 +167,22 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInvalidFieldListCodes($values_1);
                 unset($data['invalidFieldListCodes']);
             }
-            if (\array_key_exists('destinationAmbiguous', $data)) {
+            elseif (\array_key_exists('invalidFieldListCodes', $data) && $data['invalidFieldListCodes'] === null) {
+                $object->setInvalidFieldListCodes(null);
+            }
+            if (\array_key_exists('destinationAmbiguous', $data) && $data['destinationAmbiguous'] !== null) {
                 $object->setDestinationAmbiguous($data['destinationAmbiguous']);
                 unset($data['destinationAmbiguous']);
             }
-            if (\array_key_exists('originAmbiguous', $data)) {
+            elseif (\array_key_exists('destinationAmbiguous', $data) && $data['destinationAmbiguous'] === null) {
+                $object->setDestinationAmbiguous(null);
+            }
+            if (\array_key_exists('originAmbiguous', $data) && $data['originAmbiguous'] !== null) {
                 $object->setOriginAmbiguous($data['originAmbiguous']);
                 unset($data['originAmbiguous']);
+            }
+            elseif (\array_key_exists('originAmbiguous', $data) && $data['originAmbiguous'] === null) {
+                $object->setOriginAmbiguous(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

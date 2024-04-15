@@ -40,93 +40,159 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalRecord_ReportableQuantity', $data)) {
+            if (\array_key_exists('ChemicalRecord_ReportableQuantity', $data) && $data['ChemicalRecord_ReportableQuantity'] !== null) {
                 $object->setChemicalRecordReportableQuantity($data['ChemicalRecord_ReportableQuantity']);
                 unset($data['ChemicalRecord_ReportableQuantity']);
             }
-            if (\array_key_exists('ChemicalRecord_ClassDivisionNumber', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_ReportableQuantity', $data) && $data['ChemicalRecord_ReportableQuantity'] === null) {
+                $object->setChemicalRecordReportableQuantity(null);
+            }
+            if (\array_key_exists('ChemicalRecord_ClassDivisionNumber', $data) && $data['ChemicalRecord_ClassDivisionNumber'] !== null) {
                 $object->setChemicalRecordClassDivisionNumber($data['ChemicalRecord_ClassDivisionNumber']);
                 unset($data['ChemicalRecord_ClassDivisionNumber']);
             }
-            if (\array_key_exists('ChemicalRecord_SubRiskClass', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_ClassDivisionNumber', $data) && $data['ChemicalRecord_ClassDivisionNumber'] === null) {
+                $object->setChemicalRecordClassDivisionNumber(null);
+            }
+            if (\array_key_exists('ChemicalRecord_SubRiskClass', $data) && $data['ChemicalRecord_SubRiskClass'] !== null) {
                 $object->setChemicalRecordSubRiskClass($data['ChemicalRecord_SubRiskClass']);
                 unset($data['ChemicalRecord_SubRiskClass']);
             }
-            if (\array_key_exists('ChemicalRecord_IDNumber', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_SubRiskClass', $data) && $data['ChemicalRecord_SubRiskClass'] === null) {
+                $object->setChemicalRecordSubRiskClass(null);
+            }
+            if (\array_key_exists('ChemicalRecord_IDNumber', $data) && $data['ChemicalRecord_IDNumber'] !== null) {
                 $object->setChemicalRecordIDNumber($data['ChemicalRecord_IDNumber']);
                 unset($data['ChemicalRecord_IDNumber']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingGroupType', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_IDNumber', $data) && $data['ChemicalRecord_IDNumber'] === null) {
+                $object->setChemicalRecordIDNumber(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingGroupType', $data) && $data['ChemicalRecord_PackagingGroupType'] !== null) {
                 $object->setChemicalRecordPackagingGroupType($data['ChemicalRecord_PackagingGroupType']);
                 unset($data['ChemicalRecord_PackagingGroupType']);
             }
-            if (\array_key_exists('ChemicalRecord_Quantity', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingGroupType', $data) && $data['ChemicalRecord_PackagingGroupType'] === null) {
+                $object->setChemicalRecordPackagingGroupType(null);
+            }
+            if (\array_key_exists('ChemicalRecord_Quantity', $data) && $data['ChemicalRecord_Quantity'] !== null) {
                 $object->setChemicalRecordQuantity($data['ChemicalRecord_Quantity']);
                 unset($data['ChemicalRecord_Quantity']);
             }
-            if (\array_key_exists('ChemicalRecord_UOM', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_Quantity', $data) && $data['ChemicalRecord_Quantity'] === null) {
+                $object->setChemicalRecordQuantity(null);
+            }
+            if (\array_key_exists('ChemicalRecord_UOM', $data) && $data['ChemicalRecord_UOM'] !== null) {
                 $object->setChemicalRecordUOM($data['ChemicalRecord_UOM']);
                 unset($data['ChemicalRecord_UOM']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingInstructionCode', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_UOM', $data) && $data['ChemicalRecord_UOM'] === null) {
+                $object->setChemicalRecordUOM(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingInstructionCode', $data) && $data['ChemicalRecord_PackagingInstructionCode'] !== null) {
                 $object->setChemicalRecordPackagingInstructionCode($data['ChemicalRecord_PackagingInstructionCode']);
                 unset($data['ChemicalRecord_PackagingInstructionCode']);
             }
-            if (\array_key_exists('ChemicalRecord_EmergencyPhone', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingInstructionCode', $data) && $data['ChemicalRecord_PackagingInstructionCode'] === null) {
+                $object->setChemicalRecordPackagingInstructionCode(null);
+            }
+            if (\array_key_exists('ChemicalRecord_EmergencyPhone', $data) && $data['ChemicalRecord_EmergencyPhone'] !== null) {
                 $object->setChemicalRecordEmergencyPhone($data['ChemicalRecord_EmergencyPhone']);
                 unset($data['ChemicalRecord_EmergencyPhone']);
             }
-            if (\array_key_exists('ChemicalRecord_EmergencyContact', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_EmergencyPhone', $data) && $data['ChemicalRecord_EmergencyPhone'] === null) {
+                $object->setChemicalRecordEmergencyPhone(null);
+            }
+            if (\array_key_exists('ChemicalRecord_EmergencyContact', $data) && $data['ChemicalRecord_EmergencyContact'] !== null) {
                 $object->setChemicalRecordEmergencyContact($data['ChemicalRecord_EmergencyContact']);
                 unset($data['ChemicalRecord_EmergencyContact']);
             }
-            if (\array_key_exists('ChemicalRecord_ProperShippingName', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_EmergencyContact', $data) && $data['ChemicalRecord_EmergencyContact'] === null) {
+                $object->setChemicalRecordEmergencyContact(null);
+            }
+            if (\array_key_exists('ChemicalRecord_ProperShippingName', $data) && $data['ChemicalRecord_ProperShippingName'] !== null) {
                 $object->setChemicalRecordProperShippingName($data['ChemicalRecord_ProperShippingName']);
                 unset($data['ChemicalRecord_ProperShippingName']);
             }
-            if (\array_key_exists('ChemicalRecord_TechnicalName', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_ProperShippingName', $data) && $data['ChemicalRecord_ProperShippingName'] === null) {
+                $object->setChemicalRecordProperShippingName(null);
+            }
+            if (\array_key_exists('ChemicalRecord_TechnicalName', $data) && $data['ChemicalRecord_TechnicalName'] !== null) {
                 $object->setChemicalRecordTechnicalName($data['ChemicalRecord_TechnicalName']);
                 unset($data['ChemicalRecord_TechnicalName']);
             }
-            if (\array_key_exists('ChemicalRecord_AdditionalDescription', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_TechnicalName', $data) && $data['ChemicalRecord_TechnicalName'] === null) {
+                $object->setChemicalRecordTechnicalName(null);
+            }
+            if (\array_key_exists('ChemicalRecord_AdditionalDescription', $data) && $data['ChemicalRecord_AdditionalDescription'] !== null) {
                 $object->setChemicalRecordAdditionalDescription($data['ChemicalRecord_AdditionalDescription']);
                 unset($data['ChemicalRecord_AdditionalDescription']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingType', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_AdditionalDescription', $data) && $data['ChemicalRecord_AdditionalDescription'] === null) {
+                $object->setChemicalRecordAdditionalDescription(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingType', $data) && $data['ChemicalRecord_PackagingType'] !== null) {
                 $object->setChemicalRecordPackagingType($data['ChemicalRecord_PackagingType']);
                 unset($data['ChemicalRecord_PackagingType']);
             }
-            if (\array_key_exists('ChemicalRecord_HazardLabelRequired', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingType', $data) && $data['ChemicalRecord_PackagingType'] === null) {
+                $object->setChemicalRecordPackagingType(null);
+            }
+            if (\array_key_exists('ChemicalRecord_HazardLabelRequired', $data) && $data['ChemicalRecord_HazardLabelRequired'] !== null) {
                 $object->setChemicalRecordHazardLabelRequired($data['ChemicalRecord_HazardLabelRequired']);
                 unset($data['ChemicalRecord_HazardLabelRequired']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingTypeQuantity', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_HazardLabelRequired', $data) && $data['ChemicalRecord_HazardLabelRequired'] === null) {
+                $object->setChemicalRecordHazardLabelRequired(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingTypeQuantity', $data) && $data['ChemicalRecord_PackagingTypeQuantity'] !== null) {
                 $object->setChemicalRecordPackagingTypeQuantity($data['ChemicalRecord_PackagingTypeQuantity']);
                 unset($data['ChemicalRecord_PackagingTypeQuantity']);
             }
-            if (\array_key_exists('ChemicalRecord_CommodityRegulatedLevelCode', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingTypeQuantity', $data) && $data['ChemicalRecord_PackagingTypeQuantity'] === null) {
+                $object->setChemicalRecordPackagingTypeQuantity(null);
+            }
+            if (\array_key_exists('ChemicalRecord_CommodityRegulatedLevelCode', $data) && $data['ChemicalRecord_CommodityRegulatedLevelCode'] !== null) {
                 $object->setChemicalRecordCommodityRegulatedLevelCode($data['ChemicalRecord_CommodityRegulatedLevelCode']);
                 unset($data['ChemicalRecord_CommodityRegulatedLevelCode']);
             }
-            if (\array_key_exists('ChemicalRecord_TransportCategory', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_CommodityRegulatedLevelCode', $data) && $data['ChemicalRecord_CommodityRegulatedLevelCode'] === null) {
+                $object->setChemicalRecordCommodityRegulatedLevelCode(null);
+            }
+            if (\array_key_exists('ChemicalRecord_TransportCategory', $data) && $data['ChemicalRecord_TransportCategory'] !== null) {
                 $object->setChemicalRecordTransportCategory($data['ChemicalRecord_TransportCategory']);
                 unset($data['ChemicalRecord_TransportCategory']);
             }
-            if (\array_key_exists('ChemicalRecord_TunnelRestrictionCode', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_TransportCategory', $data) && $data['ChemicalRecord_TransportCategory'] === null) {
+                $object->setChemicalRecordTransportCategory(null);
+            }
+            if (\array_key_exists('ChemicalRecord_TunnelRestrictionCode', $data) && $data['ChemicalRecord_TunnelRestrictionCode'] !== null) {
                 $object->setChemicalRecordTunnelRestrictionCode($data['ChemicalRecord_TunnelRestrictionCode']);
                 unset($data['ChemicalRecord_TunnelRestrictionCode']);
             }
-            if (\array_key_exists('ChemicalRecord_QValue', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_TunnelRestrictionCode', $data) && $data['ChemicalRecord_TunnelRestrictionCode'] === null) {
+                $object->setChemicalRecordTunnelRestrictionCode(null);
+            }
+            if (\array_key_exists('ChemicalRecord_QValue', $data) && $data['ChemicalRecord_QValue'] !== null) {
                 $object->setChemicalRecordQValue($data['ChemicalRecord_QValue']);
                 unset($data['ChemicalRecord_QValue']);
             }
-            if (\array_key_exists('ChemicalRecord_OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_QValue', $data) && $data['ChemicalRecord_QValue'] === null) {
+                $object->setChemicalRecordQValue(null);
+            }
+            if (\array_key_exists('ChemicalRecord_OverPackedIndicator', $data) && $data['ChemicalRecord_OverPackedIndicator'] !== null) {
                 $object->setChemicalRecordOverPackedIndicator($data['ChemicalRecord_OverPackedIndicator']);
                 unset($data['ChemicalRecord_OverPackedIndicator']);
             }
-            if (\array_key_exists('ChemicalRecord_AllPackedInOneIndicator', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_OverPackedIndicator', $data) && $data['ChemicalRecord_OverPackedIndicator'] === null) {
+                $object->setChemicalRecordOverPackedIndicator(null);
+            }
+            if (\array_key_exists('ChemicalRecord_AllPackedInOneIndicator', $data) && $data['ChemicalRecord_AllPackedInOneIndicator'] !== null) {
                 $object->setChemicalRecordAllPackedInOneIndicator($data['ChemicalRecord_AllPackedInOneIndicator']);
                 unset($data['ChemicalRecord_AllPackedInOneIndicator']);
+            }
+            elseif (\array_key_exists('ChemicalRecord_AllPackedInOneIndicator', $data) && $data['ChemicalRecord_AllPackedInOneIndicator'] === null) {
+                $object->setChemicalRecordAllPackedInOneIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -246,93 +312,159 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalRecord_ReportableQuantity', $data)) {
+            if (\array_key_exists('ChemicalRecord_ReportableQuantity', $data) && $data['ChemicalRecord_ReportableQuantity'] !== null) {
                 $object->setChemicalRecordReportableQuantity($data['ChemicalRecord_ReportableQuantity']);
                 unset($data['ChemicalRecord_ReportableQuantity']);
             }
-            if (\array_key_exists('ChemicalRecord_ClassDivisionNumber', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_ReportableQuantity', $data) && $data['ChemicalRecord_ReportableQuantity'] === null) {
+                $object->setChemicalRecordReportableQuantity(null);
+            }
+            if (\array_key_exists('ChemicalRecord_ClassDivisionNumber', $data) && $data['ChemicalRecord_ClassDivisionNumber'] !== null) {
                 $object->setChemicalRecordClassDivisionNumber($data['ChemicalRecord_ClassDivisionNumber']);
                 unset($data['ChemicalRecord_ClassDivisionNumber']);
             }
-            if (\array_key_exists('ChemicalRecord_SubRiskClass', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_ClassDivisionNumber', $data) && $data['ChemicalRecord_ClassDivisionNumber'] === null) {
+                $object->setChemicalRecordClassDivisionNumber(null);
+            }
+            if (\array_key_exists('ChemicalRecord_SubRiskClass', $data) && $data['ChemicalRecord_SubRiskClass'] !== null) {
                 $object->setChemicalRecordSubRiskClass($data['ChemicalRecord_SubRiskClass']);
                 unset($data['ChemicalRecord_SubRiskClass']);
             }
-            if (\array_key_exists('ChemicalRecord_IDNumber', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_SubRiskClass', $data) && $data['ChemicalRecord_SubRiskClass'] === null) {
+                $object->setChemicalRecordSubRiskClass(null);
+            }
+            if (\array_key_exists('ChemicalRecord_IDNumber', $data) && $data['ChemicalRecord_IDNumber'] !== null) {
                 $object->setChemicalRecordIDNumber($data['ChemicalRecord_IDNumber']);
                 unset($data['ChemicalRecord_IDNumber']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingGroupType', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_IDNumber', $data) && $data['ChemicalRecord_IDNumber'] === null) {
+                $object->setChemicalRecordIDNumber(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingGroupType', $data) && $data['ChemicalRecord_PackagingGroupType'] !== null) {
                 $object->setChemicalRecordPackagingGroupType($data['ChemicalRecord_PackagingGroupType']);
                 unset($data['ChemicalRecord_PackagingGroupType']);
             }
-            if (\array_key_exists('ChemicalRecord_Quantity', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingGroupType', $data) && $data['ChemicalRecord_PackagingGroupType'] === null) {
+                $object->setChemicalRecordPackagingGroupType(null);
+            }
+            if (\array_key_exists('ChemicalRecord_Quantity', $data) && $data['ChemicalRecord_Quantity'] !== null) {
                 $object->setChemicalRecordQuantity($data['ChemicalRecord_Quantity']);
                 unset($data['ChemicalRecord_Quantity']);
             }
-            if (\array_key_exists('ChemicalRecord_UOM', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_Quantity', $data) && $data['ChemicalRecord_Quantity'] === null) {
+                $object->setChemicalRecordQuantity(null);
+            }
+            if (\array_key_exists('ChemicalRecord_UOM', $data) && $data['ChemicalRecord_UOM'] !== null) {
                 $object->setChemicalRecordUOM($data['ChemicalRecord_UOM']);
                 unset($data['ChemicalRecord_UOM']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingInstructionCode', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_UOM', $data) && $data['ChemicalRecord_UOM'] === null) {
+                $object->setChemicalRecordUOM(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingInstructionCode', $data) && $data['ChemicalRecord_PackagingInstructionCode'] !== null) {
                 $object->setChemicalRecordPackagingInstructionCode($data['ChemicalRecord_PackagingInstructionCode']);
                 unset($data['ChemicalRecord_PackagingInstructionCode']);
             }
-            if (\array_key_exists('ChemicalRecord_EmergencyPhone', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingInstructionCode', $data) && $data['ChemicalRecord_PackagingInstructionCode'] === null) {
+                $object->setChemicalRecordPackagingInstructionCode(null);
+            }
+            if (\array_key_exists('ChemicalRecord_EmergencyPhone', $data) && $data['ChemicalRecord_EmergencyPhone'] !== null) {
                 $object->setChemicalRecordEmergencyPhone($data['ChemicalRecord_EmergencyPhone']);
                 unset($data['ChemicalRecord_EmergencyPhone']);
             }
-            if (\array_key_exists('ChemicalRecord_EmergencyContact', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_EmergencyPhone', $data) && $data['ChemicalRecord_EmergencyPhone'] === null) {
+                $object->setChemicalRecordEmergencyPhone(null);
+            }
+            if (\array_key_exists('ChemicalRecord_EmergencyContact', $data) && $data['ChemicalRecord_EmergencyContact'] !== null) {
                 $object->setChemicalRecordEmergencyContact($data['ChemicalRecord_EmergencyContact']);
                 unset($data['ChemicalRecord_EmergencyContact']);
             }
-            if (\array_key_exists('ChemicalRecord_ProperShippingName', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_EmergencyContact', $data) && $data['ChemicalRecord_EmergencyContact'] === null) {
+                $object->setChemicalRecordEmergencyContact(null);
+            }
+            if (\array_key_exists('ChemicalRecord_ProperShippingName', $data) && $data['ChemicalRecord_ProperShippingName'] !== null) {
                 $object->setChemicalRecordProperShippingName($data['ChemicalRecord_ProperShippingName']);
                 unset($data['ChemicalRecord_ProperShippingName']);
             }
-            if (\array_key_exists('ChemicalRecord_TechnicalName', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_ProperShippingName', $data) && $data['ChemicalRecord_ProperShippingName'] === null) {
+                $object->setChemicalRecordProperShippingName(null);
+            }
+            if (\array_key_exists('ChemicalRecord_TechnicalName', $data) && $data['ChemicalRecord_TechnicalName'] !== null) {
                 $object->setChemicalRecordTechnicalName($data['ChemicalRecord_TechnicalName']);
                 unset($data['ChemicalRecord_TechnicalName']);
             }
-            if (\array_key_exists('ChemicalRecord_AdditionalDescription', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_TechnicalName', $data) && $data['ChemicalRecord_TechnicalName'] === null) {
+                $object->setChemicalRecordTechnicalName(null);
+            }
+            if (\array_key_exists('ChemicalRecord_AdditionalDescription', $data) && $data['ChemicalRecord_AdditionalDescription'] !== null) {
                 $object->setChemicalRecordAdditionalDescription($data['ChemicalRecord_AdditionalDescription']);
                 unset($data['ChemicalRecord_AdditionalDescription']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingType', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_AdditionalDescription', $data) && $data['ChemicalRecord_AdditionalDescription'] === null) {
+                $object->setChemicalRecordAdditionalDescription(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingType', $data) && $data['ChemicalRecord_PackagingType'] !== null) {
                 $object->setChemicalRecordPackagingType($data['ChemicalRecord_PackagingType']);
                 unset($data['ChemicalRecord_PackagingType']);
             }
-            if (\array_key_exists('ChemicalRecord_HazardLabelRequired', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingType', $data) && $data['ChemicalRecord_PackagingType'] === null) {
+                $object->setChemicalRecordPackagingType(null);
+            }
+            if (\array_key_exists('ChemicalRecord_HazardLabelRequired', $data) && $data['ChemicalRecord_HazardLabelRequired'] !== null) {
                 $object->setChemicalRecordHazardLabelRequired($data['ChemicalRecord_HazardLabelRequired']);
                 unset($data['ChemicalRecord_HazardLabelRequired']);
             }
-            if (\array_key_exists('ChemicalRecord_PackagingTypeQuantity', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_HazardLabelRequired', $data) && $data['ChemicalRecord_HazardLabelRequired'] === null) {
+                $object->setChemicalRecordHazardLabelRequired(null);
+            }
+            if (\array_key_exists('ChemicalRecord_PackagingTypeQuantity', $data) && $data['ChemicalRecord_PackagingTypeQuantity'] !== null) {
                 $object->setChemicalRecordPackagingTypeQuantity($data['ChemicalRecord_PackagingTypeQuantity']);
                 unset($data['ChemicalRecord_PackagingTypeQuantity']);
             }
-            if (\array_key_exists('ChemicalRecord_CommodityRegulatedLevelCode', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_PackagingTypeQuantity', $data) && $data['ChemicalRecord_PackagingTypeQuantity'] === null) {
+                $object->setChemicalRecordPackagingTypeQuantity(null);
+            }
+            if (\array_key_exists('ChemicalRecord_CommodityRegulatedLevelCode', $data) && $data['ChemicalRecord_CommodityRegulatedLevelCode'] !== null) {
                 $object->setChemicalRecordCommodityRegulatedLevelCode($data['ChemicalRecord_CommodityRegulatedLevelCode']);
                 unset($data['ChemicalRecord_CommodityRegulatedLevelCode']);
             }
-            if (\array_key_exists('ChemicalRecord_TransportCategory', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_CommodityRegulatedLevelCode', $data) && $data['ChemicalRecord_CommodityRegulatedLevelCode'] === null) {
+                $object->setChemicalRecordCommodityRegulatedLevelCode(null);
+            }
+            if (\array_key_exists('ChemicalRecord_TransportCategory', $data) && $data['ChemicalRecord_TransportCategory'] !== null) {
                 $object->setChemicalRecordTransportCategory($data['ChemicalRecord_TransportCategory']);
                 unset($data['ChemicalRecord_TransportCategory']);
             }
-            if (\array_key_exists('ChemicalRecord_TunnelRestrictionCode', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_TransportCategory', $data) && $data['ChemicalRecord_TransportCategory'] === null) {
+                $object->setChemicalRecordTransportCategory(null);
+            }
+            if (\array_key_exists('ChemicalRecord_TunnelRestrictionCode', $data) && $data['ChemicalRecord_TunnelRestrictionCode'] !== null) {
                 $object->setChemicalRecordTunnelRestrictionCode($data['ChemicalRecord_TunnelRestrictionCode']);
                 unset($data['ChemicalRecord_TunnelRestrictionCode']);
             }
-            if (\array_key_exists('ChemicalRecord_QValue', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_TunnelRestrictionCode', $data) && $data['ChemicalRecord_TunnelRestrictionCode'] === null) {
+                $object->setChemicalRecordTunnelRestrictionCode(null);
+            }
+            if (\array_key_exists('ChemicalRecord_QValue', $data) && $data['ChemicalRecord_QValue'] !== null) {
                 $object->setChemicalRecordQValue($data['ChemicalRecord_QValue']);
                 unset($data['ChemicalRecord_QValue']);
             }
-            if (\array_key_exists('ChemicalRecord_OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_QValue', $data) && $data['ChemicalRecord_QValue'] === null) {
+                $object->setChemicalRecordQValue(null);
+            }
+            if (\array_key_exists('ChemicalRecord_OverPackedIndicator', $data) && $data['ChemicalRecord_OverPackedIndicator'] !== null) {
                 $object->setChemicalRecordOverPackedIndicator($data['ChemicalRecord_OverPackedIndicator']);
                 unset($data['ChemicalRecord_OverPackedIndicator']);
             }
-            if (\array_key_exists('ChemicalRecord_AllPackedInOneIndicator', $data)) {
+            elseif (\array_key_exists('ChemicalRecord_OverPackedIndicator', $data) && $data['ChemicalRecord_OverPackedIndicator'] === null) {
+                $object->setChemicalRecordOverPackedIndicator(null);
+            }
+            if (\array_key_exists('ChemicalRecord_AllPackedInOneIndicator', $data) && $data['ChemicalRecord_AllPackedInOneIndicator'] !== null) {
                 $object->setChemicalRecordAllPackedInOneIndicator($data['ChemicalRecord_AllPackedInOneIndicator']);
                 unset($data['ChemicalRecord_AllPackedInOneIndicator']);
+            }
+            elseif (\array_key_exists('ChemicalRecord_AllPackedInOneIndicator', $data) && $data['ChemicalRecord_AllPackedInOneIndicator'] === null) {
+                $object->setChemicalRecordAllPackedInOneIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

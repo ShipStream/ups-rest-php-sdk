@@ -15,44 +15,44 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * PackingList ShipFrom Container.
      *
-     * @var PackingListShipFrom
+     * @var PackingListShipFrom|null
      */
     protected $shipFrom;
     /**
      * PackingList ShipTo Container.
      *
-     * @var PackingListShipTo
+     * @var PackingListShipTo|null
      */
     protected $shipTo;
     /**
      * 
      *
-     * @var PackingListReference[]
+     * @var list<PackingListReference>|null
      */
     protected $reference;
     /**
      * HandlingUnit Container.
      *
-     * @var PackingListHandlingUnit
+     * @var PackingListHandlingUnit|null
      */
     protected $handlingUnit;
     /**
      * PackingList ShipFrom Container.
      *
-     * @return PackingListShipFrom
+     * @return PackingListShipFrom|null
      */
-    public function getShipFrom() : PackingListShipFrom
+    public function getShipFrom() : ?PackingListShipFrom
     {
         return $this->shipFrom;
     }
     /**
      * PackingList ShipFrom Container.
      *
-     * @param PackingListShipFrom $shipFrom
+     * @param PackingListShipFrom|null $shipFrom
      *
      * @return self
      */
-    public function setShipFrom(PackingListShipFrom $shipFrom) : self
+    public function setShipFrom(?PackingListShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -61,20 +61,20 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * PackingList ShipTo Container.
      *
-     * @return PackingListShipTo
+     * @return PackingListShipTo|null
      */
-    public function getShipTo() : PackingListShipTo
+    public function getShipTo() : ?PackingListShipTo
     {
         return $this->shipTo;
     }
     /**
      * PackingList ShipTo Container.
      *
-     * @param PackingListShipTo $shipTo
+     * @param PackingListShipTo|null $shipTo
      *
      * @return self
      */
-    public function setShipTo(PackingListShipTo $shipTo) : self
+    public function setShipTo(?PackingListShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -83,20 +83,20 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * 
      *
-     * @return PackingListReference[]
+     * @return list<PackingListReference>|null
      */
-    public function getReference() : array
+    public function getReference() : ?array
     {
         return $this->reference;
     }
     /**
      * 
      *
-     * @param PackingListReference[] $reference
+     * @param list<PackingListReference>|null $reference
      *
      * @return self
      */
-    public function setReference(array $reference) : self
+    public function setReference(?array $reference) : self
     {
         $this->initialized['reference'] = true;
         $this->reference = $reference;
@@ -105,20 +105,20 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * HandlingUnit Container.
      *
-     * @return PackingListHandlingUnit
+     * @return PackingListHandlingUnit|null
      */
-    public function getHandlingUnit() : PackingListHandlingUnit
+    public function getHandlingUnit() : ?PackingListHandlingUnit
     {
         return $this->handlingUnit;
     }
     /**
      * HandlingUnit Container.
      *
-     * @param PackingListHandlingUnit $handlingUnit
+     * @param PackingListHandlingUnit|null $handlingUnit
      *
      * @return self
      */
-    public function setHandlingUnit(PackingListHandlingUnit $handlingUnit) : self
+    public function setHandlingUnit(?PackingListHandlingUnit $handlingUnit) : self
     {
         $this->initialized['handlingUnit'] = true;
         $this->handlingUnit = $handlingUnit;

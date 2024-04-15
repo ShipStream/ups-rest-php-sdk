@@ -22,13 +22,13 @@ class DeliveryBillToAccount extends \ArrayObject
     04 Freight Collect
     99 International Bill Option
     *
-    * @var string
+    * @var string|null
     */
     protected $option;
     /**
      * The UPS Account number to which the shipping charges were billed.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
@@ -41,9 +41,9 @@ class DeliveryBillToAccount extends \ArrayObject
     04 Freight Collect
     99 International Bill Option
     *
-    * @return string
+    * @return string|null
     */
-    public function getOption() : string
+    public function getOption() : ?string
     {
         return $this->option;
     }
@@ -57,11 +57,11 @@ class DeliveryBillToAccount extends \ArrayObject
     04 Freight Collect
     99 International Bill Option
     *
-    * @param string $option
+    * @param string|null $option
     *
     * @return self
     */
-    public function setOption(string $option) : self
+    public function setOption(?string $option) : self
     {
         $this->initialized['option'] = true;
         $this->option = $option;
@@ -70,20 +70,20 @@ class DeliveryBillToAccount extends \ArrayObject
     /**
      * The UPS Account number to which the shipping charges were billed.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * The UPS Account number to which the shipping charges were billed.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;

@@ -15,32 +15,32 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
     /**
      * UPS Access Point location name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address container for Alternate Delivery Address.
      *
-     * @var RateAlternateDeliveryAddressAddress
+     * @var RateAlternateDeliveryAddressAddress|null
      */
     protected $address;
     /**
      * UPS Access Point location name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * UPS Access Point location name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -49,20 +49,20 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
     /**
      * Address container for Alternate Delivery Address.
      *
-     * @return RateAlternateDeliveryAddressAddress
+     * @return RateAlternateDeliveryAddressAddress|null
      */
-    public function getAddress() : RateAlternateDeliveryAddressAddress
+    public function getAddress() : ?RateAlternateDeliveryAddressAddress
     {
         return $this->address;
     }
     /**
      * Address container for Alternate Delivery Address.
      *
-     * @param RateAlternateDeliveryAddressAddress $address
+     * @param RateAlternateDeliveryAddressAddress|null $address
      *
      * @return self
      */
-    public function setAddress(RateAlternateDeliveryAddressAddress $address) : self
+    public function setAddress(?RateAlternateDeliveryAddressAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

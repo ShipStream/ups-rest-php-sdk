@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Commodity', $data)) {
+            if (\array_key_exists('Commodity', $data) && $data['Commodity'] !== null) {
                 $values = [];
                 foreach ($data['Commodity'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitCommodity', 'json', $context);
@@ -48,25 +48,43 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCommodity($values);
                 unset($data['Commodity']);
             }
-            if (\array_key_exists('SpecialInstructions', $data)) {
+            elseif (\array_key_exists('Commodity', $data) && $data['Commodity'] === null) {
+                $object->setCommodity(null);
+            }
+            if (\array_key_exists('SpecialInstructions', $data) && $data['SpecialInstructions'] !== null) {
                 $object->setSpecialInstructions($data['SpecialInstructions']);
                 unset($data['SpecialInstructions']);
             }
-            if (\array_key_exists('TotalNumberOfPieces', $data)) {
+            elseif (\array_key_exists('SpecialInstructions', $data) && $data['SpecialInstructions'] === null) {
+                $object->setSpecialInstructions(null);
+            }
+            if (\array_key_exists('TotalNumberOfPieces', $data) && $data['TotalNumberOfPieces'] !== null) {
                 $object->setTotalNumberOfPieces($data['TotalNumberOfPieces']);
                 unset($data['TotalNumberOfPieces']);
             }
-            if (\array_key_exists('TotalWeight', $data)) {
+            elseif (\array_key_exists('TotalNumberOfPieces', $data) && $data['TotalNumberOfPieces'] === null) {
+                $object->setTotalNumberOfPieces(null);
+            }
+            if (\array_key_exists('TotalWeight', $data) && $data['TotalWeight'] !== null) {
                 $object->setTotalWeight($data['TotalWeight']);
                 unset($data['TotalWeight']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('TotalWeight', $data) && $data['TotalWeight'] === null) {
+                $object->setTotalWeight(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
             }
-            if (\array_key_exists('CurrencyCode', $data)) {
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
+            }
+            if (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] !== null) {
                 $object->setCurrencyCode($data['CurrencyCode']);
                 unset($data['CurrencyCode']);
+            }
+            elseif (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] === null) {
+                $object->setCurrencyCode(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -142,7 +160,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Commodity', $data)) {
+            if (\array_key_exists('Commodity', $data) && $data['Commodity'] !== null) {
                 $values = [];
                 foreach ($data['Commodity'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitCommodity', 'json', $context);
@@ -150,25 +168,43 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCommodity($values);
                 unset($data['Commodity']);
             }
-            if (\array_key_exists('SpecialInstructions', $data)) {
+            elseif (\array_key_exists('Commodity', $data) && $data['Commodity'] === null) {
+                $object->setCommodity(null);
+            }
+            if (\array_key_exists('SpecialInstructions', $data) && $data['SpecialInstructions'] !== null) {
                 $object->setSpecialInstructions($data['SpecialInstructions']);
                 unset($data['SpecialInstructions']);
             }
-            if (\array_key_exists('TotalNumberOfPieces', $data)) {
+            elseif (\array_key_exists('SpecialInstructions', $data) && $data['SpecialInstructions'] === null) {
+                $object->setSpecialInstructions(null);
+            }
+            if (\array_key_exists('TotalNumberOfPieces', $data) && $data['TotalNumberOfPieces'] !== null) {
                 $object->setTotalNumberOfPieces($data['TotalNumberOfPieces']);
                 unset($data['TotalNumberOfPieces']);
             }
-            if (\array_key_exists('TotalWeight', $data)) {
+            elseif (\array_key_exists('TotalNumberOfPieces', $data) && $data['TotalNumberOfPieces'] === null) {
+                $object->setTotalNumberOfPieces(null);
+            }
+            if (\array_key_exists('TotalWeight', $data) && $data['TotalWeight'] !== null) {
                 $object->setTotalWeight($data['TotalWeight']);
                 unset($data['TotalWeight']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('TotalWeight', $data) && $data['TotalWeight'] === null) {
+                $object->setTotalWeight(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
             }
-            if (\array_key_exists('CurrencyCode', $data)) {
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
+            }
+            if (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] !== null) {
                 $object->setCurrencyCode($data['CurrencyCode']);
                 unset($data['CurrencyCode']);
+            }
+            elseif (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] === null) {
+                $object->setCurrencyCode(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('inquiryNumbers', $data)) {
+            if (\array_key_exists('inquiryNumbers', $data) && $data['inquiryNumbers'] !== null) {
                 $values = [];
                 foreach ($data['inquiryNumbers'] as $value) {
                     $values[] = $value;
                 }
                 $object->setInquiryNumbers($values);
                 unset($data['inquiryNumbers']);
+            }
+            elseif (\array_key_exists('inquiryNumbers', $data) && $data['inquiryNumbers'] === null) {
+                $object->setInquiryNumbers(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,13 +110,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('inquiryNumbers', $data)) {
+            if (\array_key_exists('inquiryNumbers', $data) && $data['inquiryNumbers'] !== null) {
                 $values = [];
                 foreach ($data['inquiryNumbers'] as $value) {
                     $values[] = $value;
                 }
                 $object->setInquiryNumbers($values);
                 unset($data['inquiryNumbers']);
+            }
+            elseif (\array_key_exists('inquiryNumbers', $data) && $data['inquiryNumbers'] === null) {
+                $object->setInquiryNumbers(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

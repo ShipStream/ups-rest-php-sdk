@@ -17,7 +17,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     01 = A4 Size
     02 = Letter Size
     *
-    * @var string
+    * @var string|null
     */
     protected $pageSize;
     /**
@@ -25,7 +25,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     01 = PNG
     02 = PDF
     *
-    * @var string
+    * @var string|null
     */
     protected $printType;
     /**
@@ -33,9 +33,9 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     01 = A4 Size
     02 = Letter Size
     *
-    * @return string
+    * @return string|null
     */
-    public function getPageSize() : string
+    public function getPageSize() : ?string
     {
         return $this->pageSize;
     }
@@ -44,11 +44,11 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     01 = A4 Size
     02 = Letter Size
     *
-    * @param string $pageSize
+    * @param string|null $pageSize
     *
     * @return self
     */
-    public function setPageSize(string $pageSize) : self
+    public function setPageSize(?string $pageSize) : self
     {
         $this->initialized['pageSize'] = true;
         $this->pageSize = $pageSize;
@@ -59,9 +59,9 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     01 = PNG
     02 = PDF
     *
-    * @return string
+    * @return string|null
     */
-    public function getPrintType() : string
+    public function getPrintType() : ?string
     {
         return $this->printType;
     }
@@ -70,11 +70,11 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     01 = PNG
     02 = PDF
     *
-    * @param string $printType
+    * @param string|null $printType
     *
     * @return self
     */
-    public function setPrintType(string $printType) : self
+    public function setPrintType(?string $printType) : self
     {
         $this->initialized['printType'] = true;
         $this->printType = $printType;

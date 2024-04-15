@@ -15,38 +15,38 @@ class ShipFromVendorInfo extends \ArrayObject
     /**
      * Code that identifies the type of Vendor Collect ID Number                                                                   Valid Values                                                                   0356 = IOSS                                                 0357 = VOEC                                                 0358 = HMRC                                                    Vendor Collect ID Number type code will be printed on commercial invoice if present.
      *
-     * @var string
+     * @var string|null
      */
     protected $vendorCollectIDTypeCode;
     /**
      * Shipper's VAT Tax collection registration number to be entered by Shipper at time of shipment creation.   Presence of this number as part of the shipment information implies the shipper has collected/paid the required VAT tax (outside of UPS/UPS systems).  Vendor Colect ID Number will be printed on commercial invoice if present.                                   Sample Values:   IMDEU1234567 (IOSS #),  VOEC1234567 (VOEC #),  GB1234567 (HMRC #)     Required if the shipment is subject to Vendor Collect ID collection
      *
-     * @var string
+     * @var string|null
      */
     protected $vendorCollectIDNumber;
     /**
      * Consignee Type. 01 = Business  02 = Consumer NA = Not Applicable
      *
-     * @var string
+     * @var string|null
      */
     protected $consigneeType;
     /**
      * Code that identifies the type of Vendor Collect ID Number                                                                   Valid Values                                                                   0356 = IOSS                                                 0357 = VOEC                                                 0358 = HMRC                                                    Vendor Collect ID Number type code will be printed on commercial invoice if present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getVendorCollectIDTypeCode() : string
+    public function getVendorCollectIDTypeCode() : ?string
     {
         return $this->vendorCollectIDTypeCode;
     }
     /**
      * Code that identifies the type of Vendor Collect ID Number                                                                   Valid Values                                                                   0356 = IOSS                                                 0357 = VOEC                                                 0358 = HMRC                                                    Vendor Collect ID Number type code will be printed on commercial invoice if present.
      *
-     * @param string $vendorCollectIDTypeCode
+     * @param string|null $vendorCollectIDTypeCode
      *
      * @return self
      */
-    public function setVendorCollectIDTypeCode(string $vendorCollectIDTypeCode) : self
+    public function setVendorCollectIDTypeCode(?string $vendorCollectIDTypeCode) : self
     {
         $this->initialized['vendorCollectIDTypeCode'] = true;
         $this->vendorCollectIDTypeCode = $vendorCollectIDTypeCode;
@@ -55,20 +55,20 @@ class ShipFromVendorInfo extends \ArrayObject
     /**
      * Shipper's VAT Tax collection registration number to be entered by Shipper at time of shipment creation.   Presence of this number as part of the shipment information implies the shipper has collected/paid the required VAT tax (outside of UPS/UPS systems).  Vendor Colect ID Number will be printed on commercial invoice if present.                                   Sample Values:   IMDEU1234567 (IOSS #),  VOEC1234567 (VOEC #),  GB1234567 (HMRC #)     Required if the shipment is subject to Vendor Collect ID collection
      *
-     * @return string
+     * @return string|null
      */
-    public function getVendorCollectIDNumber() : string
+    public function getVendorCollectIDNumber() : ?string
     {
         return $this->vendorCollectIDNumber;
     }
     /**
      * Shipper's VAT Tax collection registration number to be entered by Shipper at time of shipment creation.   Presence of this number as part of the shipment information implies the shipper has collected/paid the required VAT tax (outside of UPS/UPS systems).  Vendor Colect ID Number will be printed on commercial invoice if present.                                   Sample Values:   IMDEU1234567 (IOSS #),  VOEC1234567 (VOEC #),  GB1234567 (HMRC #)     Required if the shipment is subject to Vendor Collect ID collection
      *
-     * @param string $vendorCollectIDNumber
+     * @param string|null $vendorCollectIDNumber
      *
      * @return self
      */
-    public function setVendorCollectIDNumber(string $vendorCollectIDNumber) : self
+    public function setVendorCollectIDNumber(?string $vendorCollectIDNumber) : self
     {
         $this->initialized['vendorCollectIDNumber'] = true;
         $this->vendorCollectIDNumber = $vendorCollectIDNumber;
@@ -77,20 +77,20 @@ class ShipFromVendorInfo extends \ArrayObject
     /**
      * Consignee Type. 01 = Business  02 = Consumer NA = Not Applicable
      *
-     * @return string
+     * @return string|null
      */
-    public function getConsigneeType() : string
+    public function getConsigneeType() : ?string
     {
         return $this->consigneeType;
     }
     /**
      * Consignee Type. 01 = Business  02 = Consumer NA = Not Applicable
      *
-     * @param string $consigneeType
+     * @param string|null $consigneeType
      *
      * @return self
      */
-    public function setConsigneeType(string $consigneeType) : self
+    public function setConsigneeType(?string $consigneeType) : self
     {
         $this->initialized['consigneeType'] = true;
         $this->consigneeType = $consigneeType;

@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('BusinessClassification', $data)) {
+            if (\array_key_exists('BusinessClassification', $data) && $data['BusinessClassification'] !== null) {
                 $values = [];
                 foreach ($data['BusinessClassification'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\BusinessClassificationListBusinessClassification', 'json', $context);
                 }
                 $object->setBusinessClassification($values);
                 unset($data['BusinessClassification']);
+            }
+            elseif (\array_key_exists('BusinessClassification', $data) && $data['BusinessClassification'] === null) {
+                $object->setBusinessClassification(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('BusinessClassification', $data)) {
+            if (\array_key_exists('BusinessClassification', $data) && $data['BusinessClassification'] !== null) {
                 $values = [];
                 foreach ($data['BusinessClassification'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\BusinessClassificationListBusinessClassification', 'json', $context);
                 }
                 $object->setBusinessClassification($values);
                 unset($data['BusinessClassification']);
+            }
+            elseif (\array_key_exists('BusinessClassification', $data) && $data['BusinessClassification'] === null) {
+                $object->setBusinessClassification(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,25 +15,25 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * Identifies the package containing Dangerous Goods.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageIdentifier;
     /**
      * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
      *
-     * @var PackagePackageWeight
+     * @var PackagePackageWeight|null
      */
     protected $packageWeight;
     /**
      * This is required when a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA.   Valid values: 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @var string
+     * @var string|null
      */
     protected $qValue;
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is over pack.
      *
-     * @var string
+     * @var string|null
      */
     protected $overPackedIndicator;
     /**
@@ -41,7 +41,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     Only required when the CommodityRegulatedLevelCode is FR or LQ.  Valid entries include: GND, CAO, and PAX.
     *
-    * @var string
+    * @var string|null
     */
     protected $transportationMode;
     /**
@@ -54,7 +54,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     Required when (TDG regulation set and CommodityRegulatedLevelCode = FR)
     *
-    * @var string
+    * @var string|null
     */
     protected $emergencyPhone;
     /**
@@ -62,32 +62,32 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     The information is required if there is a value in the EmergencyPhone field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.
     *
-    * @var string
+    * @var string|null
     */
     protected $emergencyContact;
     /**
      * 
      *
-     * @var PackageChemicalRecord[]
+     * @var list<PackageChemicalRecord>|null
      */
     protected $chemicalRecord;
     /**
      * Identifies the package containing Dangerous Goods.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier() : ?string
     {
         return $this->packageIdentifier;
     }
     /**
      * Identifies the package containing Dangerous Goods.
      *
-     * @param string $packageIdentifier
+     * @param string|null $packageIdentifier
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(?string $packageIdentifier) : self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -96,20 +96,20 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
      *
-     * @return PackagePackageWeight
+     * @return PackagePackageWeight|null
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight() : ?PackagePackageWeight
     {
         return $this->packageWeight;
     }
     /**
      * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
      *
-     * @param PackagePackageWeight $packageWeight
+     * @param PackagePackageWeight|null $packageWeight
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(?PackagePackageWeight $packageWeight) : self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -118,20 +118,20 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * This is required when a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA.   Valid values: 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @return string
+     * @return string|null
      */
-    public function getQValue() : string
+    public function getQValue() : ?string
     {
         return $this->qValue;
     }
     /**
      * This is required when a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA.   Valid values: 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @param string $qValue
+     * @param string|null $qValue
      *
      * @return self
      */
-    public function setQValue(string $qValue) : self
+    public function setQValue(?string $qValue) : self
     {
         $this->initialized['qValue'] = true;
         $this->qValue = $qValue;
@@ -140,20 +140,20 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is over pack.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOverPackedIndicator() : string
+    public function getOverPackedIndicator() : ?string
     {
         return $this->overPackedIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is over pack.
      *
-     * @param string $overPackedIndicator
+     * @param string|null $overPackedIndicator
      *
      * @return self
      */
-    public function setOverPackedIndicator(string $overPackedIndicator) : self
+    public function setOverPackedIndicator(?string $overPackedIndicator) : self
     {
         $this->initialized['overPackedIndicator'] = true;
         $this->overPackedIndicator = $overPackedIndicator;
@@ -164,9 +164,9 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     Only required when the CommodityRegulatedLevelCode is FR or LQ.  Valid entries include: GND, CAO, and PAX.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTransportationMode() : string
+    public function getTransportationMode() : ?string
     {
         return $this->transportationMode;
     }
@@ -175,11 +175,11 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     Only required when the CommodityRegulatedLevelCode is FR or LQ.  Valid entries include: GND, CAO, and PAX.
     *
-    * @param string $transportationMode
+    * @param string|null $transportationMode
     *
     * @return self
     */
-    public function setTransportationMode(string $transportationMode) : self
+    public function setTransportationMode(?string $transportationMode) : self
     {
         $this->initialized['transportationMode'] = true;
         $this->transportationMode = $transportationMode;
@@ -195,9 +195,9 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     Required when (TDG regulation set and CommodityRegulatedLevelCode = FR)
     *
-    * @return string
+    * @return string|null
     */
-    public function getEmergencyPhone() : string
+    public function getEmergencyPhone() : ?string
     {
         return $this->emergencyPhone;
     }
@@ -211,11 +211,11 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     Required when (TDG regulation set and CommodityRegulatedLevelCode = FR)
     *
-    * @param string $emergencyPhone
+    * @param string|null $emergencyPhone
     *
     * @return self
     */
-    public function setEmergencyPhone(string $emergencyPhone) : self
+    public function setEmergencyPhone(?string $emergencyPhone) : self
     {
         $this->initialized['emergencyPhone'] = true;
         $this->emergencyPhone = $emergencyPhone;
@@ -226,9 +226,9 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     The information is required if there is a value in the EmergencyPhone field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.
     *
-    * @return string
+    * @return string|null
     */
-    public function getEmergencyContact() : string
+    public function getEmergencyContact() : ?string
     {
         return $this->emergencyContact;
     }
@@ -237,11 +237,11 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     
     The information is required if there is a value in the EmergencyPhone field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.
     *
-    * @param string $emergencyContact
+    * @param string|null $emergencyContact
     *
     * @return self
     */
-    public function setEmergencyContact(string $emergencyContact) : self
+    public function setEmergencyContact(?string $emergencyContact) : self
     {
         $this->initialized['emergencyContact'] = true;
         $this->emergencyContact = $emergencyContact;
@@ -250,20 +250,20 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @return PackageChemicalRecord[]
+     * @return list<PackageChemicalRecord>|null
      */
-    public function getChemicalRecord() : array
+    public function getChemicalRecord() : ?array
     {
         return $this->chemicalRecord;
     }
     /**
      * 
      *
-     * @param PackageChemicalRecord[] $chemicalRecord
+     * @param list<PackageChemicalRecord>|null $chemicalRecord
      *
      * @return self
      */
-    public function setChemicalRecord(array $chemicalRecord) : self
+    public function setChemicalRecord(?array $chemicalRecord) : self
     {
         $this->initialized['chemicalRecord'] = true;
         $this->chemicalRecord = $chemicalRecord;

@@ -15,44 +15,44 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
     /**
      * Gross Charges container. It indicates the shipment level gross Ground Freight Pricing transportation charges.
      *
-     * @var TransportationChargesGrossCharge
+     * @var TransportationChargesGrossCharge|null
      */
     protected $grossCharge;
     /**
      * Discount Amount container. It indicates the shipment level Ground Freight Pricing discount amount for transportation charges
      *
-     * @var TransportationChargesDiscountAmount
+     * @var TransportationChargesDiscountAmount|null
      */
     protected $discountAmount;
     /**
      * It indicates the shipment level discount percentage for transportation charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $discountPercentage;
     /**
      * Net Charges container. It indicates the shipment level net Ground Freight Pricing transportation charges.
      *
-     * @var TransportationChargesNetCharge
+     * @var TransportationChargesNetCharge|null
      */
     protected $netCharge;
     /**
      * Gross Charges container. It indicates the shipment level gross Ground Freight Pricing transportation charges.
      *
-     * @return TransportationChargesGrossCharge
+     * @return TransportationChargesGrossCharge|null
      */
-    public function getGrossCharge() : TransportationChargesGrossCharge
+    public function getGrossCharge() : ?TransportationChargesGrossCharge
     {
         return $this->grossCharge;
     }
     /**
      * Gross Charges container. It indicates the shipment level gross Ground Freight Pricing transportation charges.
      *
-     * @param TransportationChargesGrossCharge $grossCharge
+     * @param TransportationChargesGrossCharge|null $grossCharge
      *
      * @return self
      */
-    public function setGrossCharge(TransportationChargesGrossCharge $grossCharge) : self
+    public function setGrossCharge(?TransportationChargesGrossCharge $grossCharge) : self
     {
         $this->initialized['grossCharge'] = true;
         $this->grossCharge = $grossCharge;
@@ -61,20 +61,20 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
     /**
      * Discount Amount container. It indicates the shipment level Ground Freight Pricing discount amount for transportation charges
      *
-     * @return TransportationChargesDiscountAmount
+     * @return TransportationChargesDiscountAmount|null
      */
-    public function getDiscountAmount() : TransportationChargesDiscountAmount
+    public function getDiscountAmount() : ?TransportationChargesDiscountAmount
     {
         return $this->discountAmount;
     }
     /**
      * Discount Amount container. It indicates the shipment level Ground Freight Pricing discount amount for transportation charges
      *
-     * @param TransportationChargesDiscountAmount $discountAmount
+     * @param TransportationChargesDiscountAmount|null $discountAmount
      *
      * @return self
      */
-    public function setDiscountAmount(TransportationChargesDiscountAmount $discountAmount) : self
+    public function setDiscountAmount(?TransportationChargesDiscountAmount $discountAmount) : self
     {
         $this->initialized['discountAmount'] = true;
         $this->discountAmount = $discountAmount;
@@ -83,20 +83,20 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
     /**
      * It indicates the shipment level discount percentage for transportation charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDiscountPercentage() : string
+    public function getDiscountPercentage() : ?string
     {
         return $this->discountPercentage;
     }
     /**
      * It indicates the shipment level discount percentage for transportation charges.
      *
-     * @param string $discountPercentage
+     * @param string|null $discountPercentage
      *
      * @return self
      */
-    public function setDiscountPercentage(string $discountPercentage) : self
+    public function setDiscountPercentage(?string $discountPercentage) : self
     {
         $this->initialized['discountPercentage'] = true;
         $this->discountPercentage = $discountPercentage;
@@ -105,20 +105,20 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
     /**
      * Net Charges container. It indicates the shipment level net Ground Freight Pricing transportation charges.
      *
-     * @return TransportationChargesNetCharge
+     * @return TransportationChargesNetCharge|null
      */
-    public function getNetCharge() : TransportationChargesNetCharge
+    public function getNetCharge() : ?TransportationChargesNetCharge
     {
         return $this->netCharge;
     }
     /**
      * Net Charges container. It indicates the shipment level net Ground Freight Pricing transportation charges.
      *
-     * @param TransportationChargesNetCharge $netCharge
+     * @param TransportationChargesNetCharge|null $netCharge
      *
      * @return self
      */
-    public function setNetCharge(TransportationChargesNetCharge $netCharge) : self
+    public function setNetCharge(?TransportationChargesNetCharge $netCharge) : self
     {
         $this->initialized['netCharge'] = true;
         $this->netCharge = $netCharge;

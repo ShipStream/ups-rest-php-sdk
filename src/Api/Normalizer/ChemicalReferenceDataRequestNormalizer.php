@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('IDNumber', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('IDNumber', $data) && $data['IDNumber'] !== null) {
                 $object->setIDNumber($data['IDNumber']);
                 unset($data['IDNumber']);
             }
-            if (\array_key_exists('ProperShippingName', $data)) {
+            elseif (\array_key_exists('IDNumber', $data) && $data['IDNumber'] === null) {
+                $object->setIDNumber(null);
+            }
+            if (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] !== null) {
                 $object->setProperShippingName($data['ProperShippingName']);
                 unset($data['ProperShippingName']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] === null) {
+                $object->setProperShippingName(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
+            }
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -116,21 +128,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('IDNumber', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('IDNumber', $data) && $data['IDNumber'] !== null) {
                 $object->setIDNumber($data['IDNumber']);
                 unset($data['IDNumber']);
             }
-            if (\array_key_exists('ProperShippingName', $data)) {
+            elseif (\array_key_exists('IDNumber', $data) && $data['IDNumber'] === null) {
+                $object->setIDNumber(null);
+            }
+            if (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] !== null) {
                 $object->setProperShippingName($data['ProperShippingName']);
                 unset($data['ProperShippingName']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] === null) {
+                $object->setProperShippingName(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
+            }
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

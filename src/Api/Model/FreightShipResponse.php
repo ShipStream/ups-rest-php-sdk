@@ -15,32 +15,32 @@ class FreightShipResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var FreightShipResponseResponse
+     * @var FreightShipResponseResponse|null
      */
     protected $response;
     /**
      * ShipmentResults Container.
      *
-     * @var FreightShipResponseShipmentResults
+     * @var FreightShipResponseShipmentResults|null
      */
     protected $shipmentResults;
     /**
      * Response Container.
      *
-     * @return FreightShipResponseResponse
+     * @return FreightShipResponseResponse|null
      */
-    public function getResponse() : FreightShipResponseResponse
+    public function getResponse() : ?FreightShipResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param FreightShipResponseResponse $response
+     * @param FreightShipResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(FreightShipResponseResponse $response) : self
+    public function setResponse(?FreightShipResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class FreightShipResponse extends \ArrayObject
     /**
      * ShipmentResults Container.
      *
-     * @return FreightShipResponseShipmentResults
+     * @return FreightShipResponseShipmentResults|null
      */
-    public function getShipmentResults() : FreightShipResponseShipmentResults
+    public function getShipmentResults() : ?FreightShipResponseShipmentResults
     {
         return $this->shipmentResults;
     }
     /**
      * ShipmentResults Container.
      *
-     * @param FreightShipResponseShipmentResults $shipmentResults
+     * @param FreightShipResponseShipmentResults|null $shipmentResults
      *
      * @return self
      */
-    public function setShipmentResults(FreightShipResponseShipmentResults $shipmentResults) : self
+    public function setShipmentResults(?FreightShipResponseShipmentResults $shipmentResults) : self
     {
         $this->initialized['shipmentResults'] = true;
         $this->shipmentResults = $shipmentResults;

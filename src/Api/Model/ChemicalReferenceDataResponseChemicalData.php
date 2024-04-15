@@ -15,38 +15,38 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
     /**
      * Container to hold Chemical details.
      *
-     * @var ChemicalDataChemicalDetail
+     * @var ChemicalDataChemicalDetail|null
      */
     protected $chemicalDetail;
     /**
      * Container to hold Proper Shipping Name Detail information.  It will be returned if applies for a given chemical record.
      *
-     * @var ChemicalDataProperShippingNameDetail
+     * @var ChemicalDataProperShippingNameDetail|null
      */
     protected $properShippingNameDetail;
     /**
      * 
      *
-     * @var ChemicalDataPackageQuantityLimitDetail[]
+     * @var list<ChemicalDataPackageQuantityLimitDetail>|null
      */
     protected $packageQuantityLimitDetail;
     /**
      * Container to hold Chemical details.
      *
-     * @return ChemicalDataChemicalDetail
+     * @return ChemicalDataChemicalDetail|null
      */
-    public function getChemicalDetail() : ChemicalDataChemicalDetail
+    public function getChemicalDetail() : ?ChemicalDataChemicalDetail
     {
         return $this->chemicalDetail;
     }
     /**
      * Container to hold Chemical details.
      *
-     * @param ChemicalDataChemicalDetail $chemicalDetail
+     * @param ChemicalDataChemicalDetail|null $chemicalDetail
      *
      * @return self
      */
-    public function setChemicalDetail(ChemicalDataChemicalDetail $chemicalDetail) : self
+    public function setChemicalDetail(?ChemicalDataChemicalDetail $chemicalDetail) : self
     {
         $this->initialized['chemicalDetail'] = true;
         $this->chemicalDetail = $chemicalDetail;
@@ -55,20 +55,20 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
     /**
      * Container to hold Proper Shipping Name Detail information.  It will be returned if applies for a given chemical record.
      *
-     * @return ChemicalDataProperShippingNameDetail
+     * @return ChemicalDataProperShippingNameDetail|null
      */
-    public function getProperShippingNameDetail() : ChemicalDataProperShippingNameDetail
+    public function getProperShippingNameDetail() : ?ChemicalDataProperShippingNameDetail
     {
         return $this->properShippingNameDetail;
     }
     /**
      * Container to hold Proper Shipping Name Detail information.  It will be returned if applies for a given chemical record.
      *
-     * @param ChemicalDataProperShippingNameDetail $properShippingNameDetail
+     * @param ChemicalDataProperShippingNameDetail|null $properShippingNameDetail
      *
      * @return self
      */
-    public function setProperShippingNameDetail(ChemicalDataProperShippingNameDetail $properShippingNameDetail) : self
+    public function setProperShippingNameDetail(?ChemicalDataProperShippingNameDetail $properShippingNameDetail) : self
     {
         $this->initialized['properShippingNameDetail'] = true;
         $this->properShippingNameDetail = $properShippingNameDetail;
@@ -77,20 +77,20 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
     /**
      * 
      *
-     * @return ChemicalDataPackageQuantityLimitDetail[]
+     * @return list<ChemicalDataPackageQuantityLimitDetail>|null
      */
-    public function getPackageQuantityLimitDetail() : array
+    public function getPackageQuantityLimitDetail() : ?array
     {
         return $this->packageQuantityLimitDetail;
     }
     /**
      * 
      *
-     * @param ChemicalDataPackageQuantityLimitDetail[] $packageQuantityLimitDetail
+     * @param list<ChemicalDataPackageQuantityLimitDetail>|null $packageQuantityLimitDetail
      *
      * @return self
      */
-    public function setPackageQuantityLimitDetail(array $packageQuantityLimitDetail) : self
+    public function setPackageQuantityLimitDetail(?array $packageQuantityLimitDetail) : self
     {
         $this->initialized['packageQuantityLimitDetail'] = true;
         $this->packageQuantityLimitDetail = $packageQuantityLimitDetail;

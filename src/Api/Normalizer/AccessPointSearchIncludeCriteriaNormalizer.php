@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('MerchantAccountNumberList', $data)) {
+            if (\array_key_exists('MerchantAccountNumberList', $data) && $data['MerchantAccountNumberList'] !== null) {
                 $object->setMerchantAccountNumberList($this->denormalizer->denormalize($data['MerchantAccountNumberList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList', 'json', $context));
                 unset($data['MerchantAccountNumberList']);
             }
-            if (\array_key_exists('SearchFilter', $data)) {
+            elseif (\array_key_exists('MerchantAccountNumberList', $data) && $data['MerchantAccountNumberList'] === null) {
+                $object->setMerchantAccountNumberList(null);
+            }
+            if (\array_key_exists('SearchFilter', $data) && $data['SearchFilter'] !== null) {
                 $object->setSearchFilter($this->denormalizer->denormalize($data['SearchFilter'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter', 'json', $context));
                 unset($data['SearchFilter']);
             }
-            if (\array_key_exists('ServiceOfferingList', $data)) {
+            elseif (\array_key_exists('SearchFilter', $data) && $data['SearchFilter'] === null) {
+                $object->setSearchFilter(null);
+            }
+            if (\array_key_exists('ServiceOfferingList', $data) && $data['ServiceOfferingList'] !== null) {
                 $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList', 'json', $context));
                 unset($data['ServiceOfferingList']);
+            }
+            elseif (\array_key_exists('ServiceOfferingList', $data) && $data['ServiceOfferingList'] === null) {
+                $object->setServiceOfferingList(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('MerchantAccountNumberList', $data)) {
+            if (\array_key_exists('MerchantAccountNumberList', $data) && $data['MerchantAccountNumberList'] !== null) {
                 $object->setMerchantAccountNumberList($this->denormalizer->denormalize($data['MerchantAccountNumberList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList', 'json', $context));
                 unset($data['MerchantAccountNumberList']);
             }
-            if (\array_key_exists('SearchFilter', $data)) {
+            elseif (\array_key_exists('MerchantAccountNumberList', $data) && $data['MerchantAccountNumberList'] === null) {
+                $object->setMerchantAccountNumberList(null);
+            }
+            if (\array_key_exists('SearchFilter', $data) && $data['SearchFilter'] !== null) {
                 $object->setSearchFilter($this->denormalizer->denormalize($data['SearchFilter'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter', 'json', $context));
                 unset($data['SearchFilter']);
             }
-            if (\array_key_exists('ServiceOfferingList', $data)) {
+            elseif (\array_key_exists('SearchFilter', $data) && $data['SearchFilter'] === null) {
+                $object->setSearchFilter(null);
+            }
+            if (\array_key_exists('ServiceOfferingList', $data) && $data['ServiceOfferingList'] !== null) {
                 $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList', 'json', $context));
                 unset($data['ServiceOfferingList']);
+            }
+            elseif (\array_key_exists('ServiceOfferingList', $data) && $data['ServiceOfferingList'] === null) {
+                $object->setServiceOfferingList(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

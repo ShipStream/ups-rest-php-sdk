@@ -15,32 +15,32 @@ class FreightRateRequestHandlingUnitWeight extends \ArrayObject
     /**
      * Handling unit weight value for the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Unit of Measurement container for the handling unit weight.
      *
-     * @var HandlingUnitWeightUnitOfMeasurement
+     * @var HandlingUnitWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Handling unit weight value for the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Handling unit weight value for the shipment.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -49,20 +49,20 @@ class FreightRateRequestHandlingUnitWeight extends \ArrayObject
     /**
      * Unit of Measurement container for the handling unit weight.
      *
-     * @return HandlingUnitWeightUnitOfMeasurement
+     * @return HandlingUnitWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : HandlingUnitWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?HandlingUnitWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Unit of Measurement container for the handling unit weight.
      *
-     * @param HandlingUnitWeightUnitOfMeasurement $unitOfMeasurement
+     * @param HandlingUnitWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(HandlingUnitWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?HandlingUnitWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

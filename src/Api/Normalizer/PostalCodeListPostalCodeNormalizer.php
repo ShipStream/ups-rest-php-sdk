@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PrimaryPostalCode', $data)) {
+            if (\array_key_exists('PrimaryPostalCode', $data) && $data['PrimaryPostalCode'] !== null) {
                 $object->setPrimaryPostalCode($data['PrimaryPostalCode']);
                 unset($data['PrimaryPostalCode']);
             }
-            if (\array_key_exists('SecondaryPostalCode', $data)) {
+            elseif (\array_key_exists('PrimaryPostalCode', $data) && $data['PrimaryPostalCode'] === null) {
+                $object->setPrimaryPostalCode(null);
+            }
+            if (\array_key_exists('SecondaryPostalCode', $data) && $data['SecondaryPostalCode'] !== null) {
                 $object->setSecondaryPostalCode($data['SecondaryPostalCode']);
                 unset($data['SecondaryPostalCode']);
+            }
+            elseif (\array_key_exists('SecondaryPostalCode', $data) && $data['SecondaryPostalCode'] === null) {
+                $object->setSecondaryPostalCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PrimaryPostalCode', $data)) {
+            if (\array_key_exists('PrimaryPostalCode', $data) && $data['PrimaryPostalCode'] !== null) {
                 $object->setPrimaryPostalCode($data['PrimaryPostalCode']);
                 unset($data['PrimaryPostalCode']);
             }
-            if (\array_key_exists('SecondaryPostalCode', $data)) {
+            elseif (\array_key_exists('PrimaryPostalCode', $data) && $data['PrimaryPostalCode'] === null) {
+                $object->setPrimaryPostalCode(null);
+            }
+            if (\array_key_exists('SecondaryPostalCode', $data) && $data['SecondaryPostalCode'] !== null) {
                 $object->setSecondaryPostalCode($data['SecondaryPostalCode']);
                 unset($data['SecondaryPostalCode']);
+            }
+            elseif (\array_key_exists('SecondaryPostalCode', $data) && $data['SecondaryPostalCode'] === null) {
+                $object->setSecondaryPostalCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

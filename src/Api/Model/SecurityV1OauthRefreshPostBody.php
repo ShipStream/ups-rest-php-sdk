@@ -15,32 +15,32 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
     /**
      * Valid values: refresh_token
      *
-     * @var string
+     * @var string|null
      */
     protected $grantType = 'refresh_token';
     /**
      * Refresh token from GenerateToken operation
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshToken;
     /**
      * Valid values: refresh_token
      *
-     * @return string
+     * @return string|null
      */
-    public function getGrantType() : string
+    public function getGrantType() : ?string
     {
         return $this->grantType;
     }
     /**
      * Valid values: refresh_token
      *
-     * @param string $grantType
+     * @param string|null $grantType
      *
      * @return self
      */
-    public function setGrantType(string $grantType) : self
+    public function setGrantType(?string $grantType) : self
     {
         $this->initialized['grantType'] = true;
         $this->grantType = $grantType;
@@ -49,20 +49,20 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
     /**
      * Refresh token from GenerateToken operation
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshToken() : string
+    public function getRefreshToken() : ?string
     {
         return $this->refreshToken;
     }
     /**
      * Refresh token from GenerateToken operation
      *
-     * @param string $refreshToken
+     * @param string|null $refreshToken
      *
      * @return self
      */
-    public function setRefreshToken(string $refreshToken) : self
+    public function setRefreshToken(?string $refreshToken) : self
     {
         $this->initialized['refreshToken'] = true;
         $this->refreshToken = $refreshToken;

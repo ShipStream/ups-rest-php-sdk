@@ -15,25 +15,25 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Shipper's six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * Ship From address container.
      *
-     * @var AcceptanceAuditPreCheckShipmentShipFromAddress
+     * @var AcceptanceAuditPreCheckShipmentShipFromAddress|null
      */
     protected $shipFromAddress;
     /**
      * Ship To address container.
      *
-     * @var AcceptanceAuditPreCheckShipmentShipToAddress
+     * @var AcceptanceAuditPreCheckShipmentShipToAddress|null
      */
     protected $shipToAddress;
     /**
      * Service Container.
      *
-     * @var ShipmentService
+     * @var ShipmentService|null
      */
     protected $service;
     /**
@@ -43,32 +43,32 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada   
     IATA= Worldwide Air movement.
     *
-    * @var string
+    * @var string|null
     */
     protected $regulationSet;
     /**
      * 
      *
-     * @var AcceptanceAuditPreCheckShipmentPackage[]
+     * @var list<AcceptanceAuditPreCheckShipmentPackage>|null
      */
     protected $package;
     /**
      * Shipper's six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Shipper's six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -77,20 +77,20 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Ship From address container.
      *
-     * @return AcceptanceAuditPreCheckShipmentShipFromAddress
+     * @return AcceptanceAuditPreCheckShipmentShipFromAddress|null
      */
-    public function getShipFromAddress() : AcceptanceAuditPreCheckShipmentShipFromAddress
+    public function getShipFromAddress() : ?AcceptanceAuditPreCheckShipmentShipFromAddress
     {
         return $this->shipFromAddress;
     }
     /**
      * Ship From address container.
      *
-     * @param AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress
+     * @param AcceptanceAuditPreCheckShipmentShipFromAddress|null $shipFromAddress
      *
      * @return self
      */
-    public function setShipFromAddress(AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress) : self
+    public function setShipFromAddress(?AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress) : self
     {
         $this->initialized['shipFromAddress'] = true;
         $this->shipFromAddress = $shipFromAddress;
@@ -99,20 +99,20 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Ship To address container.
      *
-     * @return AcceptanceAuditPreCheckShipmentShipToAddress
+     * @return AcceptanceAuditPreCheckShipmentShipToAddress|null
      */
-    public function getShipToAddress() : AcceptanceAuditPreCheckShipmentShipToAddress
+    public function getShipToAddress() : ?AcceptanceAuditPreCheckShipmentShipToAddress
     {
         return $this->shipToAddress;
     }
     /**
      * Ship To address container.
      *
-     * @param AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress
+     * @param AcceptanceAuditPreCheckShipmentShipToAddress|null $shipToAddress
      *
      * @return self
      */
-    public function setShipToAddress(AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress) : self
+    public function setShipToAddress(?AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress) : self
     {
         $this->initialized['shipToAddress'] = true;
         $this->shipToAddress = $shipToAddress;
@@ -121,20 +121,20 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * Service Container.
      *
-     * @return ShipmentService
+     * @return ShipmentService|null
      */
-    public function getService() : ShipmentService
+    public function getService() : ?ShipmentService
     {
         return $this->service;
     }
     /**
      * Service Container.
      *
-     * @param ShipmentService $service
+     * @param ShipmentService|null $service
      *
      * @return self
      */
-    public function setService(ShipmentService $service) : self
+    public function setService(?ShipmentService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -147,9 +147,9 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada   
     IATA= Worldwide Air movement.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet() : ?string
     {
         return $this->regulationSet;
     }
@@ -160,11 +160,11 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada   
     IATA= Worldwide Air movement.
     *
-    * @param string $regulationSet
+    * @param string|null $regulationSet
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(?string $regulationSet) : self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -173,20 +173,20 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return AcceptanceAuditPreCheckShipmentPackage[]
+     * @return list<AcceptanceAuditPreCheckShipmentPackage>|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param AcceptanceAuditPreCheckShipmentPackage[] $package
+     * @param list<AcceptanceAuditPreCheckShipmentPackage>|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;

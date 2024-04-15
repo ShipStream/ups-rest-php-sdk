@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Payer', $data)) {
+            if (\array_key_exists('Payer', $data) && $data['Payer'] !== null) {
                 $object->setPayer($this->denormalizer->denormalize($data['Payer'], 'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer', 'json', $context));
                 unset($data['Payer']);
             }
-            if (\array_key_exists('ShipmentBillingOption', $data)) {
+            elseif (\array_key_exists('Payer', $data) && $data['Payer'] === null) {
+                $object->setPayer(null);
+            }
+            if (\array_key_exists('ShipmentBillingOption', $data) && $data['ShipmentBillingOption'] !== null) {
                 $object->setShipmentBillingOption($this->denormalizer->denormalize($data['ShipmentBillingOption'], 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption', 'json', $context));
                 unset($data['ShipmentBillingOption']);
+            }
+            elseif (\array_key_exists('ShipmentBillingOption', $data) && $data['ShipmentBillingOption'] === null) {
+                $object->setShipmentBillingOption(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Payer', $data)) {
+            if (\array_key_exists('Payer', $data) && $data['Payer'] !== null) {
                 $object->setPayer($this->denormalizer->denormalize($data['Payer'], 'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer', 'json', $context));
                 unset($data['Payer']);
             }
-            if (\array_key_exists('ShipmentBillingOption', $data)) {
+            elseif (\array_key_exists('Payer', $data) && $data['Payer'] === null) {
+                $object->setPayer(null);
+            }
+            if (\array_key_exists('ShipmentBillingOption', $data) && $data['ShipmentBillingOption'] !== null) {
                 $object->setShipmentBillingOption($this->denormalizer->denormalize($data['ShipmentBillingOption'], 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption', 'json', $context));
                 unset($data['ShipmentBillingOption']);
+            }
+            elseif (\array_key_exists('ShipmentBillingOption', $data) && $data['ShipmentBillingOption'] === null) {
+                $object->setShipmentBillingOption(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

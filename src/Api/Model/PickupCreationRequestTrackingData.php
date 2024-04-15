@@ -15,26 +15,26 @@ class PickupCreationRequestTrackingData extends \ArrayObject
     /**
      * Tracking number for return shipment or forward shipment packages.  Tracking number(s) that have been previously used to pay for on-call pickup cannot be used again.
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
      * Tracking number for return shipment or forward shipment packages.  Tracking number(s) that have been previously used to pay for on-call pickup cannot be used again.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * Tracking number for return shipment or forward shipment packages.  Tracking number(s) that have been previously used to pay for on-call pickup cannot be used again.
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;

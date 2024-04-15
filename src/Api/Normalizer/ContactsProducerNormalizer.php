@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Option', $data)) {
+            if (\array_key_exists('Option', $data) && $data['Option'] !== null) {
                 $object->setOption($data['Option']);
                 unset($data['Option']);
             }
-            if (\array_key_exists('CompanyName', $data)) {
+            elseif (\array_key_exists('Option', $data) && $data['Option'] === null) {
+                $object->setOption(null);
+            }
+            if (\array_key_exists('CompanyName', $data) && $data['CompanyName'] !== null) {
                 $object->setCompanyName($data['CompanyName']);
                 unset($data['CompanyName']);
             }
-            if (\array_key_exists('TaxIdentificationNumber', $data)) {
+            elseif (\array_key_exists('CompanyName', $data) && $data['CompanyName'] === null) {
+                $object->setCompanyName(null);
+            }
+            if (\array_key_exists('TaxIdentificationNumber', $data) && $data['TaxIdentificationNumber'] !== null) {
                 $object->setTaxIdentificationNumber($data['TaxIdentificationNumber']);
                 unset($data['TaxIdentificationNumber']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('TaxIdentificationNumber', $data) && $data['TaxIdentificationNumber'] === null) {
+                $object->setTaxIdentificationNumber(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ProducerAddress', 'json', $context));
                 unset($data['Address']);
             }
-            if (\array_key_exists('AttentionName', $data)) {
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('AttentionName', $data) && $data['AttentionName'] !== null) {
                 $object->setAttentionName($data['AttentionName']);
                 unset($data['AttentionName']);
             }
-            if (\array_key_exists('Phone', $data)) {
+            elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('Phone', $data) && $data['Phone'] !== null) {
                 $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\ProducerPhone', 'json', $context));
                 unset($data['Phone']);
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            elseif (\array_key_exists('Phone', $data) && $data['Phone'] === null) {
+                $object->setPhone(null);
+            }
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $object->setEMailAddress($data['EMailAddress']);
                 unset($data['EMailAddress']);
+            }
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -141,33 +162,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Option', $data)) {
+            if (\array_key_exists('Option', $data) && $data['Option'] !== null) {
                 $object->setOption($data['Option']);
                 unset($data['Option']);
             }
-            if (\array_key_exists('CompanyName', $data)) {
+            elseif (\array_key_exists('Option', $data) && $data['Option'] === null) {
+                $object->setOption(null);
+            }
+            if (\array_key_exists('CompanyName', $data) && $data['CompanyName'] !== null) {
                 $object->setCompanyName($data['CompanyName']);
                 unset($data['CompanyName']);
             }
-            if (\array_key_exists('TaxIdentificationNumber', $data)) {
+            elseif (\array_key_exists('CompanyName', $data) && $data['CompanyName'] === null) {
+                $object->setCompanyName(null);
+            }
+            if (\array_key_exists('TaxIdentificationNumber', $data) && $data['TaxIdentificationNumber'] !== null) {
                 $object->setTaxIdentificationNumber($data['TaxIdentificationNumber']);
                 unset($data['TaxIdentificationNumber']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('TaxIdentificationNumber', $data) && $data['TaxIdentificationNumber'] === null) {
+                $object->setTaxIdentificationNumber(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ProducerAddress', 'json', $context));
                 unset($data['Address']);
             }
-            if (\array_key_exists('AttentionName', $data)) {
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('AttentionName', $data) && $data['AttentionName'] !== null) {
                 $object->setAttentionName($data['AttentionName']);
                 unset($data['AttentionName']);
             }
-            if (\array_key_exists('Phone', $data)) {
+            elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('Phone', $data) && $data['Phone'] !== null) {
                 $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\ProducerPhone', 'json', $context));
                 unset($data['Phone']);
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            elseif (\array_key_exists('Phone', $data) && $data['Phone'] === null) {
+                $object->setPhone(null);
+            }
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $object->setEMailAddress($data['EMailAddress']);
                 unset($data['EMailAddress']);
+            }
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

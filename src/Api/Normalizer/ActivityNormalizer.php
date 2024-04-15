@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('date', $data)) {
+            if (\array_key_exists('date', $data) && $data['date'] !== null) {
                 $object->setDate($data['date']);
                 unset($data['date']);
             }
-            if (\array_key_exists('location', $data)) {
+            elseif (\array_key_exists('date', $data) && $data['date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('location', $data) && $data['location'] !== null) {
                 $object->setLocation($this->denormalizer->denormalize($data['location'], 'ShipStream\\Ups\\Api\\Model\\Location', 'json', $context));
                 unset($data['location']);
             }
-            if (\array_key_exists('status', $data)) {
+            elseif (\array_key_exists('location', $data) && $data['location'] === null) {
+                $object->setLocation(null);
+            }
+            if (\array_key_exists('status', $data) && $data['status'] !== null) {
                 $object->setStatus($this->denormalizer->denormalize($data['status'], 'ShipStream\\Ups\\Api\\Model\\Status', 'json', $context));
                 unset($data['status']);
             }
-            if (\array_key_exists('time', $data)) {
+            elseif (\array_key_exists('status', $data) && $data['status'] === null) {
+                $object->setStatus(null);
+            }
+            if (\array_key_exists('time', $data) && $data['time'] !== null) {
                 $object->setTime($data['time']);
                 unset($data['time']);
+            }
+            elseif (\array_key_exists('time', $data) && $data['time'] === null) {
+                $object->setTime(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('date', $data)) {
+            if (\array_key_exists('date', $data) && $data['date'] !== null) {
                 $object->setDate($data['date']);
                 unset($data['date']);
             }
-            if (\array_key_exists('location', $data)) {
+            elseif (\array_key_exists('date', $data) && $data['date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('location', $data) && $data['location'] !== null) {
                 $object->setLocation($this->denormalizer->denormalize($data['location'], 'ShipStream\\Ups\\Api\\Model\\Location', 'json', $context));
                 unset($data['location']);
             }
-            if (\array_key_exists('status', $data)) {
+            elseif (\array_key_exists('location', $data) && $data['location'] === null) {
+                $object->setLocation(null);
+            }
+            if (\array_key_exists('status', $data) && $data['status'] !== null) {
                 $object->setStatus($this->denormalizer->denormalize($data['status'], 'ShipStream\\Ups\\Api\\Model\\Status', 'json', $context));
                 unset($data['status']);
             }
-            if (\array_key_exists('time', $data)) {
+            elseif (\array_key_exists('status', $data) && $data['status'] === null) {
+                $object->setStatus(null);
+            }
+            if (\array_key_exists('time', $data) && $data['time'] !== null) {
                 $object->setTime($data['time']);
                 unset($data['time']);
+            }
+            elseif (\array_key_exists('time', $data) && $data['time'] === null) {
+                $object->setTime(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

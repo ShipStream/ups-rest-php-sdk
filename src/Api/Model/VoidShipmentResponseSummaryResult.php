@@ -15,26 +15,26 @@ class VoidShipmentResponseSummaryResult extends \ArrayObject
     /**
      * Container for the status of the Summary Result
      *
-     * @var SummaryResultStatus
+     * @var SummaryResultStatus|null
      */
     protected $status;
     /**
      * Container for the status of the Summary Result
      *
-     * @return SummaryResultStatus
+     * @return SummaryResultStatus|null
      */
-    public function getStatus() : SummaryResultStatus
+    public function getStatus() : ?SummaryResultStatus
     {
         return $this->status;
     }
     /**
      * Container for the status of the Summary Result
      *
-     * @param SummaryResultStatus $status
+     * @param SummaryResultStatus|null $status
      *
      * @return self
      */
-    public function setStatus(SummaryResultStatus $status) : self
+    public function setStatus(?SummaryResultStatus $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

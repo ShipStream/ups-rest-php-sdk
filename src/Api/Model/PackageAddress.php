@@ -15,44 +15,44 @@ class PackageAddress extends \ArrayObject
     /**
      * 
      *
-     * @var Address
+     * @var Address|null
      */
     protected $address;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * name
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * type
      *
-     * @var string
+     * @var string|null
      */
     protected $type;
     /**
      * 
      *
-     * @return Address
+     * @return Address|null
      */
-    public function getAddress() : Address
+    public function getAddress() : ?Address
     {
         return $this->address;
     }
     /**
      * 
      *
-     * @param Address $address
+     * @param Address|null $address
      *
      * @return self
      */
-    public function setAddress(Address $address) : self
+    public function setAddress(?Address $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -61,20 +61,20 @@ class PackageAddress extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * 
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -83,20 +83,20 @@ class PackageAddress extends \ArrayObject
     /**
      * name
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * name
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -105,20 +105,20 @@ class PackageAddress extends \ArrayObject
     /**
      * type
      *
-     * @return string
+     * @return string|null
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
     /**
      * type
      *
-     * @param string $type
+     * @param string|null $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

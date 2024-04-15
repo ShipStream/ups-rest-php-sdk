@@ -15,26 +15,26 @@ class PICKUPServCenterResponseWrapper extends \ArrayObject
     /**
      * Returns service center location information for Origin UPS Facilities and Destination Facilities
      *
-     * @var PickupGetServiceCenterFacilitiesResponse
+     * @var PickupGetServiceCenterFacilitiesResponse|null
      */
     protected $pickupGetServiceCenterFacilitiesResponse;
     /**
      * Returns service center location information for Origin UPS Facilities and Destination Facilities
      *
-     * @return PickupGetServiceCenterFacilitiesResponse
+     * @return PickupGetServiceCenterFacilitiesResponse|null
      */
-    public function getPickupGetServiceCenterFacilitiesResponse() : PickupGetServiceCenterFacilitiesResponse
+    public function getPickupGetServiceCenterFacilitiesResponse() : ?PickupGetServiceCenterFacilitiesResponse
     {
         return $this->pickupGetServiceCenterFacilitiesResponse;
     }
     /**
      * Returns service center location information for Origin UPS Facilities and Destination Facilities
      *
-     * @param PickupGetServiceCenterFacilitiesResponse $pickupGetServiceCenterFacilitiesResponse
+     * @param PickupGetServiceCenterFacilitiesResponse|null $pickupGetServiceCenterFacilitiesResponse
      *
      * @return self
      */
-    public function setPickupGetServiceCenterFacilitiesResponse(PickupGetServiceCenterFacilitiesResponse $pickupGetServiceCenterFacilitiesResponse) : self
+    public function setPickupGetServiceCenterFacilitiesResponse(?PickupGetServiceCenterFacilitiesResponse $pickupGetServiceCenterFacilitiesResponse) : self
     {
         $this->initialized['pickupGetServiceCenterFacilitiesResponse'] = true;
         $this->pickupGetServiceCenterFacilitiesResponse = $pickupGetServiceCenterFacilitiesResponse;

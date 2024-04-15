@@ -19,13 +19,13 @@ class FreightRateRequestAlternateRateOptions extends \ArrayObject
     2 = GFP only
     3 = GFP and LTL
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Description of the alternate rate type requested above.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -35,9 +35,9 @@ class FreightRateRequestAlternateRateOptions extends \ArrayObject
     2 = GFP only
     3 = GFP and LTL
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -48,11 +48,11 @@ class FreightRateRequestAlternateRateOptions extends \ArrayObject
     2 = GFP only
     3 = GFP and LTL
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -61,20 +61,20 @@ class FreightRateRequestAlternateRateOptions extends \ArrayObject
     /**
      * Description of the alternate rate type requested above.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the alternate rate type requested above.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Title', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Title', $data) && $data['Title'] !== null) {
                 $object->setTitle($data['Title']);
                 unset($data['Title']);
             }
-            if (\array_key_exists('Place', $data)) {
+            elseif (\array_key_exists('Title', $data) && $data['Title'] === null) {
+                $object->setTitle(null);
+            }
+            if (\array_key_exists('Place', $data) && $data['Place'] !== null) {
                 $object->setPlace($data['Place']);
                 unset($data['Place']);
             }
-            if (\array_key_exists('Date', $data)) {
+            elseif (\array_key_exists('Place', $data) && $data['Place'] === null) {
+                $object->setPlace(null);
+            }
+            if (\array_key_exists('Date', $data) && $data['Date'] !== null) {
                 $object->setDate($data['Date']);
                 unset($data['Date']);
             }
-            if (\array_key_exists('ShipperDeclaration', $data)) {
+            elseif (\array_key_exists('Date', $data) && $data['Date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('ShipperDeclaration', $data) && $data['ShipperDeclaration'] !== null) {
                 $object->setShipperDeclaration($data['ShipperDeclaration']);
                 unset($data['ShipperDeclaration']);
             }
-            if (\array_key_exists('UploadOnlyIndicator', $data)) {
+            elseif (\array_key_exists('ShipperDeclaration', $data) && $data['ShipperDeclaration'] === null) {
+                $object->setShipperDeclaration(null);
+            }
+            if (\array_key_exists('UploadOnlyIndicator', $data) && $data['UploadOnlyIndicator'] !== null) {
                 $object->setUploadOnlyIndicator($data['UploadOnlyIndicator']);
                 unset($data['UploadOnlyIndicator']);
+            }
+            elseif (\array_key_exists('UploadOnlyIndicator', $data) && $data['UploadOnlyIndicator'] === null) {
+                $object->setUploadOnlyIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -134,29 +152,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Title', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Title', $data) && $data['Title'] !== null) {
                 $object->setTitle($data['Title']);
                 unset($data['Title']);
             }
-            if (\array_key_exists('Place', $data)) {
+            elseif (\array_key_exists('Title', $data) && $data['Title'] === null) {
+                $object->setTitle(null);
+            }
+            if (\array_key_exists('Place', $data) && $data['Place'] !== null) {
                 $object->setPlace($data['Place']);
                 unset($data['Place']);
             }
-            if (\array_key_exists('Date', $data)) {
+            elseif (\array_key_exists('Place', $data) && $data['Place'] === null) {
+                $object->setPlace(null);
+            }
+            if (\array_key_exists('Date', $data) && $data['Date'] !== null) {
                 $object->setDate($data['Date']);
                 unset($data['Date']);
             }
-            if (\array_key_exists('ShipperDeclaration', $data)) {
+            elseif (\array_key_exists('Date', $data) && $data['Date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('ShipperDeclaration', $data) && $data['ShipperDeclaration'] !== null) {
                 $object->setShipperDeclaration($data['ShipperDeclaration']);
                 unset($data['ShipperDeclaration']);
             }
-            if (\array_key_exists('UploadOnlyIndicator', $data)) {
+            elseif (\array_key_exists('ShipperDeclaration', $data) && $data['ShipperDeclaration'] === null) {
+                $object->setShipperDeclaration(null);
+            }
+            if (\array_key_exists('UploadOnlyIndicator', $data) && $data['UploadOnlyIndicator'] !== null) {
                 $object->setUploadOnlyIndicator($data['UploadOnlyIndicator']);
                 unset($data['UploadOnlyIndicator']);
+            }
+            elseif (\array_key_exists('UploadOnlyIndicator', $data) && $data['UploadOnlyIndicator'] === null) {
+                $object->setUploadOnlyIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

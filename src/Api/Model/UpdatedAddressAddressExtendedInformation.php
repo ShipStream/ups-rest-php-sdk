@@ -15,38 +15,38 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
     /**
      * Allows for secondary address information such as a suite or apartment.
      *
-     * @var string
+     * @var string|null
      */
     protected $type;
     /**
      * The low number associated with an extended address.
      *
-     * @var string
+     * @var string|null
      */
     protected $low;
     /**
      * The high number associated with an extended address.
      *
-     * @var string
+     * @var string|null
      */
     protected $high;
     /**
      * Allows for secondary address information such as a suite or apartment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
     /**
      * Allows for secondary address information such as a suite or apartment.
      *
-     * @param string $type
+     * @param string|null $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -55,20 +55,20 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
     /**
      * The low number associated with an extended address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLow() : string
+    public function getLow() : ?string
     {
         return $this->low;
     }
     /**
      * The low number associated with an extended address.
      *
-     * @param string $low
+     * @param string|null $low
      *
      * @return self
      */
-    public function setLow(string $low) : self
+    public function setLow(?string $low) : self
     {
         $this->initialized['low'] = true;
         $this->low = $low;
@@ -77,20 +77,20 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
     /**
      * The high number associated with an extended address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHigh() : string
+    public function getHigh() : ?string
     {
         return $this->high;
     }
     /**
      * The high number associated with an extended address.
      *
-     * @param string $high
+     * @param string|null $high
      *
      * @return self
      */
-    public function setHigh(string $high) : self
+    public function setHigh(?string $high) : self
     {
         $this->initialized['high'] = true;
         $this->high = $high;

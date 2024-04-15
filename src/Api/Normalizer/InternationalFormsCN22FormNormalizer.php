@@ -40,37 +40,58 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelSize', $data)) {
+            if (\array_key_exists('LabelSize', $data) && $data['LabelSize'] !== null) {
                 $object->setLabelSize($data['LabelSize']);
                 unset($data['LabelSize']);
             }
-            if (\array_key_exists('PrintsPerPage', $data)) {
+            elseif (\array_key_exists('LabelSize', $data) && $data['LabelSize'] === null) {
+                $object->setLabelSize(null);
+            }
+            if (\array_key_exists('PrintsPerPage', $data) && $data['PrintsPerPage'] !== null) {
                 $object->setPrintsPerPage($data['PrintsPerPage']);
                 unset($data['PrintsPerPage']);
             }
-            if (\array_key_exists('LabelPrintType', $data)) {
+            elseif (\array_key_exists('PrintsPerPage', $data) && $data['PrintsPerPage'] === null) {
+                $object->setPrintsPerPage(null);
+            }
+            if (\array_key_exists('LabelPrintType', $data) && $data['LabelPrintType'] !== null) {
                 $object->setLabelPrintType($data['LabelPrintType']);
                 unset($data['LabelPrintType']);
             }
-            if (\array_key_exists('CN22Type', $data)) {
+            elseif (\array_key_exists('LabelPrintType', $data) && $data['LabelPrintType'] === null) {
+                $object->setLabelPrintType(null);
+            }
+            if (\array_key_exists('CN22Type', $data) && $data['CN22Type'] !== null) {
                 $object->setCN22Type($data['CN22Type']);
                 unset($data['CN22Type']);
             }
-            if (\array_key_exists('CN22OtherDescription', $data)) {
+            elseif (\array_key_exists('CN22Type', $data) && $data['CN22Type'] === null) {
+                $object->setCN22Type(null);
+            }
+            if (\array_key_exists('CN22OtherDescription', $data) && $data['CN22OtherDescription'] !== null) {
                 $object->setCN22OtherDescription($data['CN22OtherDescription']);
                 unset($data['CN22OtherDescription']);
             }
-            if (\array_key_exists('FoldHereText', $data)) {
+            elseif (\array_key_exists('CN22OtherDescription', $data) && $data['CN22OtherDescription'] === null) {
+                $object->setCN22OtherDescription(null);
+            }
+            if (\array_key_exists('FoldHereText', $data) && $data['FoldHereText'] !== null) {
                 $object->setFoldHereText($data['FoldHereText']);
                 unset($data['FoldHereText']);
             }
-            if (\array_key_exists('CN22Content', $data)) {
+            elseif (\array_key_exists('FoldHereText', $data) && $data['FoldHereText'] === null) {
+                $object->setFoldHereText(null);
+            }
+            if (\array_key_exists('CN22Content', $data) && $data['CN22Content'] !== null) {
                 $values = [];
                 foreach ($data['CN22Content'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content', 'json', $context);
                 }
                 $object->setCN22Content($values);
                 unset($data['CN22Content']);
+            }
+            elseif (\array_key_exists('CN22Content', $data) && $data['CN22Content'] === null) {
+                $object->setCN22Content(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -139,37 +160,58 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelSize', $data)) {
+            if (\array_key_exists('LabelSize', $data) && $data['LabelSize'] !== null) {
                 $object->setLabelSize($data['LabelSize']);
                 unset($data['LabelSize']);
             }
-            if (\array_key_exists('PrintsPerPage', $data)) {
+            elseif (\array_key_exists('LabelSize', $data) && $data['LabelSize'] === null) {
+                $object->setLabelSize(null);
+            }
+            if (\array_key_exists('PrintsPerPage', $data) && $data['PrintsPerPage'] !== null) {
                 $object->setPrintsPerPage($data['PrintsPerPage']);
                 unset($data['PrintsPerPage']);
             }
-            if (\array_key_exists('LabelPrintType', $data)) {
+            elseif (\array_key_exists('PrintsPerPage', $data) && $data['PrintsPerPage'] === null) {
+                $object->setPrintsPerPage(null);
+            }
+            if (\array_key_exists('LabelPrintType', $data) && $data['LabelPrintType'] !== null) {
                 $object->setLabelPrintType($data['LabelPrintType']);
                 unset($data['LabelPrintType']);
             }
-            if (\array_key_exists('CN22Type', $data)) {
+            elseif (\array_key_exists('LabelPrintType', $data) && $data['LabelPrintType'] === null) {
+                $object->setLabelPrintType(null);
+            }
+            if (\array_key_exists('CN22Type', $data) && $data['CN22Type'] !== null) {
                 $object->setCN22Type($data['CN22Type']);
                 unset($data['CN22Type']);
             }
-            if (\array_key_exists('CN22OtherDescription', $data)) {
+            elseif (\array_key_exists('CN22Type', $data) && $data['CN22Type'] === null) {
+                $object->setCN22Type(null);
+            }
+            if (\array_key_exists('CN22OtherDescription', $data) && $data['CN22OtherDescription'] !== null) {
                 $object->setCN22OtherDescription($data['CN22OtherDescription']);
                 unset($data['CN22OtherDescription']);
             }
-            if (\array_key_exists('FoldHereText', $data)) {
+            elseif (\array_key_exists('CN22OtherDescription', $data) && $data['CN22OtherDescription'] === null) {
+                $object->setCN22OtherDescription(null);
+            }
+            if (\array_key_exists('FoldHereText', $data) && $data['FoldHereText'] !== null) {
                 $object->setFoldHereText($data['FoldHereText']);
                 unset($data['FoldHereText']);
             }
-            if (\array_key_exists('CN22Content', $data)) {
+            elseif (\array_key_exists('FoldHereText', $data) && $data['FoldHereText'] === null) {
+                $object->setFoldHereText(null);
+            }
+            if (\array_key_exists('CN22Content', $data) && $data['CN22Content'] !== null) {
                 $values = [];
                 foreach ($data['CN22Content'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content', 'json', $context);
                 }
                 $object->setCN22Content($values);
                 unset($data['CN22Content']);
+            }
+            elseif (\array_key_exists('CN22Content', $data) && $data['CN22Content'] === null) {
+                $object->setCN22Content(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

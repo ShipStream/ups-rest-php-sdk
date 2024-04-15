@@ -15,49 +15,49 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Merchandise description of package.  Required for shipment with return service.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Description of articles & special marks. Applicable for Air Freight only
      *
-     * @var string
+     * @var string|null
      */
     protected $palletDescription;
     /**
      * Number of Pieces. Applicable for Air Freight only
      *
-     * @var string
+     * @var string|null
      */
     protected $numOfPieces;
     /**
      * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including "." and can hold up to 2 decimal place. (e.g. 999999999.99)
      *
-     * @var string
+     * @var string|null
      */
     protected $unitPrice;
     /**
      * Packaging container.  Container for Packaging Type.
      *
-     * @var PackagePackaging
+     * @var PackagePackaging|null
      */
     protected $packaging;
     /**
      * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.  Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM. Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate
      *
-     * @var PackageDimensions
+     * @var PackageDimensions|null
      */
     protected $dimensions;
     /**
      * Dimensional weight of shipment. Please visit ups.com for rules on calculating. There is one implied decimal place (e.g. 115 = 11.5).  If dimensions are provided, dimensional weight is ignored. For US/PR/CA shipments, dimensional weight is ignored
      *
-     * @var PackageDimWeight
+     * @var PackageDimWeight|null
      */
     protected $dimWeight;
     /**
      * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
      *
-     * @var PackagePackageWeight
+     * @var PackagePackageWeight|null
      */
     protected $packageWeight;
     /**
@@ -65,68 +65,68 @@ class ShipmentPackage extends \ArrayObject
     
     This is an empty tag, any value inside is ignored.
     *
-    * @var string
+    * @var string|null
     */
     protected $largePackageIndicator;
     /**
      * 
      *
-     * @var PackageReferenceNumber[]
+     * @var list<PackageReferenceNumber>|null
      */
     protected $referenceNumber;
     /**
      * Additional Handling Required. The presence indicates additional handling is required, the absence indicates no additional handling is required. Additional Handling indicator indicates it's a non-corrugated package.
      *
-     * @var string
+     * @var string|null
      */
     protected $additionalHandlingIndicator;
     /**
      * SimpleRate Container
      *
-     * @var PackageSimpleRate
+     * @var PackageSimpleRate|null
      */
     protected $simpleRate;
     /**
      * UPS Premier Container.
      *
-     * @var PackageUPSPremier
+     * @var PackageUPSPremier|null
      */
     protected $uPSPremier;
     /**
      * Package Service Options container.
      *
-     * @var PackagePackageServiceOptions
+     * @var PackagePackageServiceOptions|null
      */
     protected $packageServiceOptions;
     /**
      * Container to hold the Commodity information.  It is required if the Ground Freight Pricing Shipment indicator is present in the request.
      *
-     * @var PackageCommodity
+     * @var PackageCommodity|null
      */
     protected $commodity;
     /**
      * Required when number of hazmat containers in a package is greater than 1. It indicates whether all the hazmat materials are kept in a single box or multiple boxes.  Required when number of hazmat container in a package is greater than 1.
      *
-     * @var PackageHazMatPackageInformation
+     * @var PackageHazMatPackageInformation|null
      */
     protected $hazMatPackageInformation;
     /**
      * Merchandise description of package.  Required for shipment with return service.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Merchandise description of package.  Required for shipment with return service.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -135,20 +135,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Description of articles & special marks. Applicable for Air Freight only
      *
-     * @return string
+     * @return string|null
      */
-    public function getPalletDescription() : string
+    public function getPalletDescription() : ?string
     {
         return $this->palletDescription;
     }
     /**
      * Description of articles & special marks. Applicable for Air Freight only
      *
-     * @param string $palletDescription
+     * @param string|null $palletDescription
      *
      * @return self
      */
-    public function setPalletDescription(string $palletDescription) : self
+    public function setPalletDescription(?string $palletDescription) : self
     {
         $this->initialized['palletDescription'] = true;
         $this->palletDescription = $palletDescription;
@@ -157,20 +157,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Number of Pieces. Applicable for Air Freight only
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumOfPieces() : string
+    public function getNumOfPieces() : ?string
     {
         return $this->numOfPieces;
     }
     /**
      * Number of Pieces. Applicable for Air Freight only
      *
-     * @param string $numOfPieces
+     * @param string|null $numOfPieces
      *
      * @return self
      */
-    public function setNumOfPieces(string $numOfPieces) : self
+    public function setNumOfPieces(?string $numOfPieces) : self
     {
         $this->initialized['numOfPieces'] = true;
         $this->numOfPieces = $numOfPieces;
@@ -179,20 +179,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including "." and can hold up to 2 decimal place. (e.g. 999999999.99)
      *
-     * @return string
+     * @return string|null
      */
-    public function getUnitPrice() : string
+    public function getUnitPrice() : ?string
     {
         return $this->unitPrice;
     }
     /**
      * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including "." and can hold up to 2 decimal place. (e.g. 999999999.99)
      *
-     * @param string $unitPrice
+     * @param string|null $unitPrice
      *
      * @return self
      */
-    public function setUnitPrice(string $unitPrice) : self
+    public function setUnitPrice(?string $unitPrice) : self
     {
         $this->initialized['unitPrice'] = true;
         $this->unitPrice = $unitPrice;
@@ -201,20 +201,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Packaging container.  Container for Packaging Type.
      *
-     * @return PackagePackaging
+     * @return PackagePackaging|null
      */
-    public function getPackaging() : PackagePackaging
+    public function getPackaging() : ?PackagePackaging
     {
         return $this->packaging;
     }
     /**
      * Packaging container.  Container for Packaging Type.
      *
-     * @param PackagePackaging $packaging
+     * @param PackagePackaging|null $packaging
      *
      * @return self
      */
-    public function setPackaging(PackagePackaging $packaging) : self
+    public function setPackaging(?PackagePackaging $packaging) : self
     {
         $this->initialized['packaging'] = true;
         $this->packaging = $packaging;
@@ -223,20 +223,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.  Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM. Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate
      *
-     * @return PackageDimensions
+     * @return PackageDimensions|null
      */
-    public function getDimensions() : PackageDimensions
+    public function getDimensions() : ?PackageDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing.  Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM. Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate
      *
-     * @param PackageDimensions $dimensions
+     * @param PackageDimensions|null $dimensions
      *
      * @return self
      */
-    public function setDimensions(PackageDimensions $dimensions) : self
+    public function setDimensions(?PackageDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -245,20 +245,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Dimensional weight of shipment. Please visit ups.com for rules on calculating. There is one implied decimal place (e.g. 115 = 11.5).  If dimensions are provided, dimensional weight is ignored. For US/PR/CA shipments, dimensional weight is ignored
      *
-     * @return PackageDimWeight
+     * @return PackageDimWeight|null
      */
-    public function getDimWeight() : PackageDimWeight
+    public function getDimWeight() : ?PackageDimWeight
     {
         return $this->dimWeight;
     }
     /**
      * Dimensional weight of shipment. Please visit ups.com for rules on calculating. There is one implied decimal place (e.g. 115 = 11.5).  If dimensions are provided, dimensional weight is ignored. For US/PR/CA shipments, dimensional weight is ignored
      *
-     * @param PackageDimWeight $dimWeight
+     * @param PackageDimWeight|null $dimWeight
      *
      * @return self
      */
-    public function setDimWeight(PackageDimWeight $dimWeight) : self
+    public function setDimWeight(?PackageDimWeight $dimWeight) : self
     {
         $this->initialized['dimWeight'] = true;
         $this->dimWeight = $dimWeight;
@@ -267,20 +267,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
      *
-     * @return PackagePackageWeight
+     * @return PackagePackageWeight|null
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight() : ?PackagePackageWeight
     {
         return $this->packageWeight;
     }
     /**
      * Container to hold package weight information.  Package weight is a required for Ground Freight Pricing shipments and Heavy Goods service. Package Weight will be ignored for Simple Rate.
      *
-     * @param PackagePackageWeight $packageWeight
+     * @param PackagePackageWeight|null $packageWeight
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(?PackagePackageWeight $packageWeight) : self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -291,9 +291,9 @@ class ShipmentPackage extends \ArrayObject
     
     This is an empty tag, any value inside is ignored.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLargePackageIndicator() : string
+    public function getLargePackageIndicator() : ?string
     {
         return $this->largePackageIndicator;
     }
@@ -302,11 +302,11 @@ class ShipmentPackage extends \ArrayObject
     
     This is an empty tag, any value inside is ignored.
     *
-    * @param string $largePackageIndicator
+    * @param string|null $largePackageIndicator
     *
     * @return self
     */
-    public function setLargePackageIndicator(string $largePackageIndicator) : self
+    public function setLargePackageIndicator(?string $largePackageIndicator) : self
     {
         $this->initialized['largePackageIndicator'] = true;
         $this->largePackageIndicator = $largePackageIndicator;
@@ -315,20 +315,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @return PackageReferenceNumber[]
+     * @return list<PackageReferenceNumber>|null
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber() : ?array
     {
         return $this->referenceNumber;
     }
     /**
      * 
      *
-     * @param PackageReferenceNumber[] $referenceNumber
+     * @param list<PackageReferenceNumber>|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(?array $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -337,20 +337,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Additional Handling Required. The presence indicates additional handling is required, the absence indicates no additional handling is required. Additional Handling indicator indicates it's a non-corrugated package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAdditionalHandlingIndicator() : string
+    public function getAdditionalHandlingIndicator() : ?string
     {
         return $this->additionalHandlingIndicator;
     }
     /**
      * Additional Handling Required. The presence indicates additional handling is required, the absence indicates no additional handling is required. Additional Handling indicator indicates it's a non-corrugated package.
      *
-     * @param string $additionalHandlingIndicator
+     * @param string|null $additionalHandlingIndicator
      *
      * @return self
      */
-    public function setAdditionalHandlingIndicator(string $additionalHandlingIndicator) : self
+    public function setAdditionalHandlingIndicator(?string $additionalHandlingIndicator) : self
     {
         $this->initialized['additionalHandlingIndicator'] = true;
         $this->additionalHandlingIndicator = $additionalHandlingIndicator;
@@ -359,20 +359,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * SimpleRate Container
      *
-     * @return PackageSimpleRate
+     * @return PackageSimpleRate|null
      */
-    public function getSimpleRate() : PackageSimpleRate
+    public function getSimpleRate() : ?PackageSimpleRate
     {
         return $this->simpleRate;
     }
     /**
      * SimpleRate Container
      *
-     * @param PackageSimpleRate $simpleRate
+     * @param PackageSimpleRate|null $simpleRate
      *
      * @return self
      */
-    public function setSimpleRate(PackageSimpleRate $simpleRate) : self
+    public function setSimpleRate(?PackageSimpleRate $simpleRate) : self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -381,20 +381,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * UPS Premier Container.
      *
-     * @return PackageUPSPremier
+     * @return PackageUPSPremier|null
      */
-    public function getUPSPremier() : PackageUPSPremier
+    public function getUPSPremier() : ?PackageUPSPremier
     {
         return $this->uPSPremier;
     }
     /**
      * UPS Premier Container.
      *
-     * @param PackageUPSPremier $uPSPremier
+     * @param PackageUPSPremier|null $uPSPremier
      *
      * @return self
      */
-    public function setUPSPremier(PackageUPSPremier $uPSPremier) : self
+    public function setUPSPremier(?PackageUPSPremier $uPSPremier) : self
     {
         $this->initialized['uPSPremier'] = true;
         $this->uPSPremier = $uPSPremier;
@@ -403,20 +403,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Package Service Options container.
      *
-     * @return PackagePackageServiceOptions
+     * @return PackagePackageServiceOptions|null
      */
-    public function getPackageServiceOptions() : PackagePackageServiceOptions
+    public function getPackageServiceOptions() : ?PackagePackageServiceOptions
     {
         return $this->packageServiceOptions;
     }
     /**
      * Package Service Options container.
      *
-     * @param PackagePackageServiceOptions $packageServiceOptions
+     * @param PackagePackageServiceOptions|null $packageServiceOptions
      *
      * @return self
      */
-    public function setPackageServiceOptions(PackagePackageServiceOptions $packageServiceOptions) : self
+    public function setPackageServiceOptions(?PackagePackageServiceOptions $packageServiceOptions) : self
     {
         $this->initialized['packageServiceOptions'] = true;
         $this->packageServiceOptions = $packageServiceOptions;
@@ -425,20 +425,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Container to hold the Commodity information.  It is required if the Ground Freight Pricing Shipment indicator is present in the request.
      *
-     * @return PackageCommodity
+     * @return PackageCommodity|null
      */
-    public function getCommodity() : PackageCommodity
+    public function getCommodity() : ?PackageCommodity
     {
         return $this->commodity;
     }
     /**
      * Container to hold the Commodity information.  It is required if the Ground Freight Pricing Shipment indicator is present in the request.
      *
-     * @param PackageCommodity $commodity
+     * @param PackageCommodity|null $commodity
      *
      * @return self
      */
-    public function setCommodity(PackageCommodity $commodity) : self
+    public function setCommodity(?PackageCommodity $commodity) : self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -447,20 +447,20 @@ class ShipmentPackage extends \ArrayObject
     /**
      * Required when number of hazmat containers in a package is greater than 1. It indicates whether all the hazmat materials are kept in a single box or multiple boxes.  Required when number of hazmat container in a package is greater than 1.
      *
-     * @return PackageHazMatPackageInformation
+     * @return PackageHazMatPackageInformation|null
      */
-    public function getHazMatPackageInformation() : PackageHazMatPackageInformation
+    public function getHazMatPackageInformation() : ?PackageHazMatPackageInformation
     {
         return $this->hazMatPackageInformation;
     }
     /**
      * Required when number of hazmat containers in a package is greater than 1. It indicates whether all the hazmat materials are kept in a single box or multiple boxes.  Required when number of hazmat container in a package is greater than 1.
      *
-     * @param PackageHazMatPackageInformation $hazMatPackageInformation
+     * @param PackageHazMatPackageInformation|null $hazMatPackageInformation
      *
      * @return self
      */
-    public function setHazMatPackageInformation(PackageHazMatPackageInformation $hazMatPackageInformation) : self
+    public function setHazMatPackageInformation(?PackageHazMatPackageInformation $hazMatPackageInformation) : self
     {
         $this->initialized['hazMatPackageInformation'] = true;
         $this->hazMatPackageInformation = $hazMatPackageInformation;

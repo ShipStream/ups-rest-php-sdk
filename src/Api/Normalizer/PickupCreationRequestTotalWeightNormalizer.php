@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Weight', $data)) {
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($data['Weight']);
                 unset($data['Weight']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($data['UnitOfMeasurement']);
                 unset($data['UnitOfMeasurement']);
+            }
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Weight', $data)) {
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($data['Weight']);
                 unset($data['Weight']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($data['UnitOfMeasurement']);
                 unset($data['UnitOfMeasurement']);
+            }
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

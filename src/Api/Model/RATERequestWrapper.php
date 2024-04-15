@@ -15,26 +15,26 @@ class RATERequestWrapper extends \ArrayObject
     /**
      * Rate Request container.  N/A
      *
-     * @var RateRequest
+     * @var RateRequest|null
      */
     protected $rateRequest;
     /**
      * Rate Request container.  N/A
      *
-     * @return RateRequest
+     * @return RateRequest|null
      */
-    public function getRateRequest() : RateRequest
+    public function getRateRequest() : ?RateRequest
     {
         return $this->rateRequest;
     }
     /**
      * Rate Request container.  N/A
      *
-     * @param RateRequest $rateRequest
+     * @param RateRequest|null $rateRequest
      *
      * @return self
      */
-    public function setRateRequest(RateRequest $rateRequest) : self
+    public function setRateRequest(?RateRequest $rateRequest) : self
     {
         $this->initialized['rateRequest'] = true;
         $this->rateRequest = $rateRequest;

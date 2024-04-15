@@ -15,32 +15,32 @@ class UploadResponse extends \ArrayObject
     /**
      * Response container.
      *
-     * @var UploadResponseResponse
+     * @var UploadResponseResponse|null
      */
     protected $response;
     /**
      * The container for DocumentID(s).  N/A
      *
-     * @var UploadResponseFormsHistoryDocumentID
+     * @var UploadResponseFormsHistoryDocumentID|null
      */
     protected $formsHistoryDocumentID;
     /**
      * Response container.
      *
-     * @return UploadResponseResponse
+     * @return UploadResponseResponse|null
      */
-    public function getResponse() : UploadResponseResponse
+    public function getResponse() : ?UploadResponseResponse
     {
         return $this->response;
     }
     /**
      * Response container.
      *
-     * @param UploadResponseResponse $response
+     * @param UploadResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(UploadResponseResponse $response) : self
+    public function setResponse(?UploadResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class UploadResponse extends \ArrayObject
     /**
      * The container for DocumentID(s).  N/A
      *
-     * @return UploadResponseFormsHistoryDocumentID
+     * @return UploadResponseFormsHistoryDocumentID|null
      */
-    public function getFormsHistoryDocumentID() : UploadResponseFormsHistoryDocumentID
+    public function getFormsHistoryDocumentID() : ?UploadResponseFormsHistoryDocumentID
     {
         return $this->formsHistoryDocumentID;
     }
     /**
      * The container for DocumentID(s).  N/A
      *
-     * @param UploadResponseFormsHistoryDocumentID $formsHistoryDocumentID
+     * @param UploadResponseFormsHistoryDocumentID|null $formsHistoryDocumentID
      *
      * @return self
      */
-    public function setFormsHistoryDocumentID(UploadResponseFormsHistoryDocumentID $formsHistoryDocumentID) : self
+    public function setFormsHistoryDocumentID(?UploadResponseFormsHistoryDocumentID $formsHistoryDocumentID) : self
     {
         $this->initialized['formsHistoryDocumentID'] = true;
         $this->formsHistoryDocumentID = $formsHistoryDocumentID;

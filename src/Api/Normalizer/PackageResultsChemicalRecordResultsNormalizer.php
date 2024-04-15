@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalRecordIdentifier', $data)) {
+            if (\array_key_exists('ChemicalRecordIdentifier', $data) && $data['ChemicalRecordIdentifier'] !== null) {
                 $object->setChemicalRecordIdentifier($data['ChemicalRecordIdentifier']);
                 unset($data['ChemicalRecordIdentifier']);
             }
-            if (\array_key_exists('ADRPoints', $data)) {
+            elseif (\array_key_exists('ChemicalRecordIdentifier', $data) && $data['ChemicalRecordIdentifier'] === null) {
+                $object->setChemicalRecordIdentifier(null);
+            }
+            if (\array_key_exists('ADRPoints', $data) && $data['ADRPoints'] !== null) {
                 $object->setADRPoints($data['ADRPoints']);
                 unset($data['ADRPoints']);
             }
-            if (\array_key_exists('TransportCategory', $data)) {
+            elseif (\array_key_exists('ADRPoints', $data) && $data['ADRPoints'] === null) {
+                $object->setADRPoints(null);
+            }
+            if (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] !== null) {
                 $object->setTransportCategory($data['TransportCategory']);
                 unset($data['TransportCategory']);
             }
-            if (\array_key_exists('TunnelRestrictionCode', $data)) {
+            elseif (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] === null) {
+                $object->setTransportCategory(null);
+            }
+            if (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] !== null) {
                 $object->setTunnelRestrictionCode($data['TunnelRestrictionCode']);
                 unset($data['TunnelRestrictionCode']);
             }
-            if (\array_key_exists('ADRUnits', $data)) {
+            elseif (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] === null) {
+                $object->setTunnelRestrictionCode(null);
+            }
+            if (\array_key_exists('ADRUnits', $data) && $data['ADRUnits'] !== null) {
                 $object->setADRUnits($data['ADRUnits']);
                 unset($data['ADRUnits']);
+            }
+            elseif (\array_key_exists('ADRUnits', $data) && $data['ADRUnits'] === null) {
+                $object->setADRUnits(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -125,25 +140,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalRecordIdentifier', $data)) {
+            if (\array_key_exists('ChemicalRecordIdentifier', $data) && $data['ChemicalRecordIdentifier'] !== null) {
                 $object->setChemicalRecordIdentifier($data['ChemicalRecordIdentifier']);
                 unset($data['ChemicalRecordIdentifier']);
             }
-            if (\array_key_exists('ADRPoints', $data)) {
+            elseif (\array_key_exists('ChemicalRecordIdentifier', $data) && $data['ChemicalRecordIdentifier'] === null) {
+                $object->setChemicalRecordIdentifier(null);
+            }
+            if (\array_key_exists('ADRPoints', $data) && $data['ADRPoints'] !== null) {
                 $object->setADRPoints($data['ADRPoints']);
                 unset($data['ADRPoints']);
             }
-            if (\array_key_exists('TransportCategory', $data)) {
+            elseif (\array_key_exists('ADRPoints', $data) && $data['ADRPoints'] === null) {
+                $object->setADRPoints(null);
+            }
+            if (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] !== null) {
                 $object->setTransportCategory($data['TransportCategory']);
                 unset($data['TransportCategory']);
             }
-            if (\array_key_exists('TunnelRestrictionCode', $data)) {
+            elseif (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] === null) {
+                $object->setTransportCategory(null);
+            }
+            if (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] !== null) {
                 $object->setTunnelRestrictionCode($data['TunnelRestrictionCode']);
                 unset($data['TunnelRestrictionCode']);
             }
-            if (\array_key_exists('ADRUnits', $data)) {
+            elseif (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] === null) {
+                $object->setTunnelRestrictionCode(null);
+            }
+            if (\array_key_exists('ADRUnits', $data) && $data['ADRUnits'] !== null) {
                 $object->setADRUnits($data['ADRUnits']);
                 unset($data['ADRUnits']);
+            }
+            elseif (\array_key_exists('ADRUnits', $data) && $data['ADRUnits'] === null) {
+                $object->setADRUnits(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

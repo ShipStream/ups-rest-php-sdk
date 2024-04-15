@@ -15,19 +15,19 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     /**
      * Day of the week. Mon-Sun
      *
-     * @var string
+     * @var string|null
      */
     protected $day;
     /**
      * Earliest time that a customer can pick up a package.
      *
-     * @var string
+     * @var string|null
      */
     protected $earliestDropOfforPickup;
     /**
      * Latest time that a customer can pick up a package.
      *
-     * @var string
+     * @var string|null
      */
     protected $latestDropOfforPickup;
     /**
@@ -36,7 +36,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @var string
+    * @var string|null
     */
     protected $openHours;
     /**
@@ -45,38 +45,38 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @var string
+    * @var string|null
     */
     protected $closeHours;
     /**
      * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
      *
-     * @var string
+     * @var string|null
      */
     protected $prepTime;
     /**
      * Latest time a package, requiring preparation can be dropped off (Close time - Prep time).
      *
-     * @var string
+     * @var string|null
      */
     protected $lastDrop;
     /**
      * Day of the week. Mon-Sun
      *
-     * @return string
+     * @return string|null
      */
-    public function getDay() : string
+    public function getDay() : ?string
     {
         return $this->day;
     }
     /**
      * Day of the week. Mon-Sun
      *
-     * @param string $day
+     * @param string|null $day
      *
      * @return self
      */
-    public function setDay(string $day) : self
+    public function setDay(?string $day) : self
     {
         $this->initialized['day'] = true;
         $this->day = $day;
@@ -85,20 +85,20 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     /**
      * Earliest time that a customer can pick up a package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEarliestDropOfforPickup() : string
+    public function getEarliestDropOfforPickup() : ?string
     {
         return $this->earliestDropOfforPickup;
     }
     /**
      * Earliest time that a customer can pick up a package.
      *
-     * @param string $earliestDropOfforPickup
+     * @param string|null $earliestDropOfforPickup
      *
      * @return self
      */
-    public function setEarliestDropOfforPickup(string $earliestDropOfforPickup) : self
+    public function setEarliestDropOfforPickup(?string $earliestDropOfforPickup) : self
     {
         $this->initialized['earliestDropOfforPickup'] = true;
         $this->earliestDropOfforPickup = $earliestDropOfforPickup;
@@ -107,20 +107,20 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     /**
      * Latest time that a customer can pick up a package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLatestDropOfforPickup() : string
+    public function getLatestDropOfforPickup() : ?string
     {
         return $this->latestDropOfforPickup;
     }
     /**
      * Latest time that a customer can pick up a package.
      *
-     * @param string $latestDropOfforPickup
+     * @param string|null $latestDropOfforPickup
      *
      * @return self
      */
-    public function setLatestDropOfforPickup(string $latestDropOfforPickup) : self
+    public function setLatestDropOfforPickup(?string $latestDropOfforPickup) : self
     {
         $this->initialized['latestDropOfforPickup'] = true;
         $this->latestDropOfforPickup = $latestDropOfforPickup;
@@ -132,9 +132,9 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @return string
+    * @return string|null
     */
-    public function getOpenHours() : string
+    public function getOpenHours() : ?string
     {
         return $this->openHours;
     }
@@ -144,11 +144,11 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @param string $openHours
+    * @param string|null $openHours
     *
     * @return self
     */
-    public function setOpenHours(string $openHours) : self
+    public function setOpenHours(?string $openHours) : self
     {
         $this->initialized['openHours'] = true;
         $this->openHours = $openHours;
@@ -160,9 +160,9 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @return string
+    * @return string|null
     */
-    public function getCloseHours() : string
+    public function getCloseHours() : ?string
     {
         return $this->closeHours;
     }
@@ -172,11 +172,11 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @param string $closeHours
+    * @param string|null $closeHours
     *
     * @return self
     */
-    public function setCloseHours(string $closeHours) : self
+    public function setCloseHours(?string $closeHours) : self
     {
         $this->initialized['closeHours'] = true;
         $this->closeHours = $closeHours;
@@ -185,20 +185,20 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     /**
      * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPrepTime() : string
+    public function getPrepTime() : ?string
     {
         return $this->prepTime;
     }
     /**
      * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
      *
-     * @param string $prepTime
+     * @param string|null $prepTime
      *
      * @return self
      */
-    public function setPrepTime(string $prepTime) : self
+    public function setPrepTime(?string $prepTime) : self
     {
         $this->initialized['prepTime'] = true;
         $this->prepTime = $prepTime;
@@ -207,20 +207,20 @@ class FacilityTimeDayOfWeek extends \ArrayObject
     /**
      * Latest time a package, requiring preparation can be dropped off (Close time - Prep time).
      *
-     * @return string
+     * @return string|null
      */
-    public function getLastDrop() : string
+    public function getLastDrop() : ?string
     {
         return $this->lastDrop;
     }
     /**
      * Latest time a package, requiring preparation can be dropped off (Close time - Prep time).
      *
-     * @param string $lastDrop
+     * @param string|null $lastDrop
      *
      * @return self
      */
-    public function setLastDrop(string $lastDrop) : self
+    public function setLastDrop(?string $lastDrop) : self
     {
         $this->initialized['lastDrop'] = true;
         $this->lastDrop = $lastDrop;

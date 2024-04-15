@@ -43,49 +43,79 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('id', $data)) {
+            if (\array_key_exists('id', $data) && $data['id'] !== null) {
                 $object->setId($data['id']);
                 unset($data['id']);
             }
-            if (\array_key_exists('importCountryCode', $data)) {
+            elseif (\array_key_exists('id', $data) && $data['id'] === null) {
+                $object->setId(null);
+            }
+            if (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] !== null) {
                 $object->setImportCountryCode($data['importCountryCode']);
                 unset($data['importCountryCode']);
             }
-            if (\array_key_exists('importProvince', $data)) {
+            elseif (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] === null) {
+                $object->setImportCountryCode(null);
+            }
+            if (\array_key_exists('importProvince', $data) && $data['importProvince'] !== null) {
                 $object->setImportProvince($data['importProvince']);
                 unset($data['importProvince']);
             }
-            if (\array_key_exists('shipDate', $data)) {
+            elseif (\array_key_exists('importProvince', $data) && $data['importProvince'] === null) {
+                $object->setImportProvince(null);
+            }
+            if (\array_key_exists('shipDate', $data) && $data['shipDate'] !== null) {
                 $object->setShipDate($data['shipDate']);
                 unset($data['shipDate']);
             }
-            if (\array_key_exists('incoterms', $data)) {
+            elseif (\array_key_exists('shipDate', $data) && $data['shipDate'] === null) {
+                $object->setShipDate(null);
+            }
+            if (\array_key_exists('incoterms', $data) && $data['incoterms'] !== null) {
                 $object->setIncoterms($data['incoterms']);
                 unset($data['incoterms']);
             }
-            if (\array_key_exists('exportCountryCode', $data)) {
+            elseif (\array_key_exists('incoterms', $data) && $data['incoterms'] === null) {
+                $object->setIncoterms(null);
+            }
+            if (\array_key_exists('exportCountryCode', $data) && $data['exportCountryCode'] !== null) {
                 $object->setExportCountryCode($data['exportCountryCode']);
                 unset($data['exportCountryCode']);
             }
-            if (\array_key_exists('transModes', $data)) {
+            elseif (\array_key_exists('exportCountryCode', $data) && $data['exportCountryCode'] === null) {
+                $object->setExportCountryCode(null);
+            }
+            if (\array_key_exists('transModes', $data) && $data['transModes'] !== null) {
                 $object->setTransModes($data['transModes']);
                 unset($data['transModes']);
             }
-            if (\array_key_exists('transportCost', $data)) {
+            elseif (\array_key_exists('transModes', $data) && $data['transModes'] === null) {
+                $object->setTransModes(null);
+            }
+            if (\array_key_exists('transportCost', $data) && $data['transportCost'] !== null) {
                 $object->setTransportCost($data['transportCost']);
                 unset($data['transportCost']);
             }
-            if (\array_key_exists('shipmentType', $data)) {
+            elseif (\array_key_exists('transportCost', $data) && $data['transportCost'] === null) {
+                $object->setTransportCost(null);
+            }
+            if (\array_key_exists('shipmentType', $data) && $data['shipmentType'] !== null) {
                 $object->setShipmentType($data['shipmentType']);
                 unset($data['shipmentType']);
             }
-            if (\array_key_exists('shipmentItems', $data)) {
+            elseif (\array_key_exists('shipmentType', $data) && $data['shipmentType'] === null) {
+                $object->setShipmentType(null);
+            }
+            if (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] !== null) {
                 $values = [];
                 foreach ($data['shipmentItems'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems', 'json', $context);
                 }
                 $object->setShipmentItems($values);
                 unset($data['shipmentItems']);
+            }
+            elseif (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] === null) {
+                $object->setShipmentItems(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -168,49 +198,79 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('id', $data)) {
+            if (\array_key_exists('id', $data) && $data['id'] !== null) {
                 $object->setId($data['id']);
                 unset($data['id']);
             }
-            if (\array_key_exists('importCountryCode', $data)) {
+            elseif (\array_key_exists('id', $data) && $data['id'] === null) {
+                $object->setId(null);
+            }
+            if (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] !== null) {
                 $object->setImportCountryCode($data['importCountryCode']);
                 unset($data['importCountryCode']);
             }
-            if (\array_key_exists('importProvince', $data)) {
+            elseif (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] === null) {
+                $object->setImportCountryCode(null);
+            }
+            if (\array_key_exists('importProvince', $data) && $data['importProvince'] !== null) {
                 $object->setImportProvince($data['importProvince']);
                 unset($data['importProvince']);
             }
-            if (\array_key_exists('shipDate', $data)) {
+            elseif (\array_key_exists('importProvince', $data) && $data['importProvince'] === null) {
+                $object->setImportProvince(null);
+            }
+            if (\array_key_exists('shipDate', $data) && $data['shipDate'] !== null) {
                 $object->setShipDate($data['shipDate']);
                 unset($data['shipDate']);
             }
-            if (\array_key_exists('incoterms', $data)) {
+            elseif (\array_key_exists('shipDate', $data) && $data['shipDate'] === null) {
+                $object->setShipDate(null);
+            }
+            if (\array_key_exists('incoterms', $data) && $data['incoterms'] !== null) {
                 $object->setIncoterms($data['incoterms']);
                 unset($data['incoterms']);
             }
-            if (\array_key_exists('exportCountryCode', $data)) {
+            elseif (\array_key_exists('incoterms', $data) && $data['incoterms'] === null) {
+                $object->setIncoterms(null);
+            }
+            if (\array_key_exists('exportCountryCode', $data) && $data['exportCountryCode'] !== null) {
                 $object->setExportCountryCode($data['exportCountryCode']);
                 unset($data['exportCountryCode']);
             }
-            if (\array_key_exists('transModes', $data)) {
+            elseif (\array_key_exists('exportCountryCode', $data) && $data['exportCountryCode'] === null) {
+                $object->setExportCountryCode(null);
+            }
+            if (\array_key_exists('transModes', $data) && $data['transModes'] !== null) {
                 $object->setTransModes($data['transModes']);
                 unset($data['transModes']);
             }
-            if (\array_key_exists('transportCost', $data)) {
+            elseif (\array_key_exists('transModes', $data) && $data['transModes'] === null) {
+                $object->setTransModes(null);
+            }
+            if (\array_key_exists('transportCost', $data) && $data['transportCost'] !== null) {
                 $object->setTransportCost($data['transportCost']);
                 unset($data['transportCost']);
             }
-            if (\array_key_exists('shipmentType', $data)) {
+            elseif (\array_key_exists('transportCost', $data) && $data['transportCost'] === null) {
+                $object->setTransportCost(null);
+            }
+            if (\array_key_exists('shipmentType', $data) && $data['shipmentType'] !== null) {
                 $object->setShipmentType($data['shipmentType']);
                 unset($data['shipmentType']);
             }
-            if (\array_key_exists('shipmentItems', $data)) {
+            elseif (\array_key_exists('shipmentType', $data) && $data['shipmentType'] === null) {
+                $object->setShipmentType(null);
+            }
+            if (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] !== null) {
                 $values = [];
                 foreach ($data['shipmentItems'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems', 'json', $context);
                 }
                 $object->setShipmentItems($values);
                 unset($data['shipmentItems']);
+            }
+            elseif (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] === null) {
+                $object->setShipmentItems(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

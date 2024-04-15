@@ -15,7 +15,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     /**
      * The Public Access Point ID to use for UPS Access Point Search. Once this parameter is present , address or geocode search is ignored. It cannot be combined with AccountNumber search parameter.
      *
-     * @var string
+     * @var string|null
      */
     protected $publicAccessPointID;
     /**
@@ -23,56 +23,56 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     01-Active-available
     07-Active-unavailable.
     *
-    * @var string
+    * @var string|null
     */
     protected $accessPointStatus;
     /**
      * The account number to use for UPS Access Point Search in the country or territory. Used to locate a private network for the account. Once this parameter is present any access point address or geocode search is ignored. It cannot be combined with PublicAccessPointID search parameter.
      *
-     * @var string
+     * @var string|null
      */
     protected $accountNumber;
     /**
      * This contains elements to refine (include) UPS Access point address or geocode Search.
      *
-     * @var AccessPointSearchIncludeCriteria
+     * @var AccessPointSearchIncludeCriteria|null
      */
     protected $includeCriteria;
     /**
      * This contains elements to exclude from UPS Access Point address or geocode search.
      *
-     * @var AccessPointSearchExcludeFromResult
+     * @var AccessPointSearchExcludeFromResult|null
      */
     protected $excludeFromResult;
     /**
      * Presence of this tag represents that "AccessPointSearchByAddress" service is requested. The value of this tag is ignored.
      *
-     * @var string
+     * @var string|null
      */
     protected $exactMatchIndicator;
     /**
      * Presence of this tag represents that "AccessPointAvailability" service is requested. The value of this tag is ignored.
      *
-     * @var string
+     * @var string|null
      */
     protected $existIndicator;
     /**
      * The Public Access Point ID to use for UPS Access Point Search. Once this parameter is present , address or geocode search is ignored. It cannot be combined with AccountNumber search parameter.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPublicAccessPointID() : string
+    public function getPublicAccessPointID() : ?string
     {
         return $this->publicAccessPointID;
     }
     /**
      * The Public Access Point ID to use for UPS Access Point Search. Once this parameter is present , address or geocode search is ignored. It cannot be combined with AccountNumber search parameter.
      *
-     * @param string $publicAccessPointID
+     * @param string|null $publicAccessPointID
      *
      * @return self
      */
-    public function setPublicAccessPointID(string $publicAccessPointID) : self
+    public function setPublicAccessPointID(?string $publicAccessPointID) : self
     {
         $this->initialized['publicAccessPointID'] = true;
         $this->publicAccessPointID = $publicAccessPointID;
@@ -83,9 +83,9 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     01-Active-available
     07-Active-unavailable.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAccessPointStatus() : string
+    public function getAccessPointStatus() : ?string
     {
         return $this->accessPointStatus;
     }
@@ -94,11 +94,11 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     01-Active-available
     07-Active-unavailable.
     *
-    * @param string $accessPointStatus
+    * @param string|null $accessPointStatus
     *
     * @return self
     */
-    public function setAccessPointStatus(string $accessPointStatus) : self
+    public function setAccessPointStatus(?string $accessPointStatus) : self
     {
         $this->initialized['accessPointStatus'] = true;
         $this->accessPointStatus = $accessPointStatus;
@@ -107,20 +107,20 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     /**
      * The account number to use for UPS Access Point Search in the country or territory. Used to locate a private network for the account. Once this parameter is present any access point address or geocode search is ignored. It cannot be combined with PublicAccessPointID search parameter.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
     /**
      * The account number to use for UPS Access Point Search in the country or territory. Used to locate a private network for the account. Once this parameter is present any access point address or geocode search is ignored. It cannot be combined with PublicAccessPointID search parameter.
      *
-     * @param string $accountNumber
+     * @param string|null $accountNumber
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -129,20 +129,20 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     /**
      * This contains elements to refine (include) UPS Access point address or geocode Search.
      *
-     * @return AccessPointSearchIncludeCriteria
+     * @return AccessPointSearchIncludeCriteria|null
      */
-    public function getIncludeCriteria() : AccessPointSearchIncludeCriteria
+    public function getIncludeCriteria() : ?AccessPointSearchIncludeCriteria
     {
         return $this->includeCriteria;
     }
     /**
      * This contains elements to refine (include) UPS Access point address or geocode Search.
      *
-     * @param AccessPointSearchIncludeCriteria $includeCriteria
+     * @param AccessPointSearchIncludeCriteria|null $includeCriteria
      *
      * @return self
      */
-    public function setIncludeCriteria(AccessPointSearchIncludeCriteria $includeCriteria) : self
+    public function setIncludeCriteria(?AccessPointSearchIncludeCriteria $includeCriteria) : self
     {
         $this->initialized['includeCriteria'] = true;
         $this->includeCriteria = $includeCriteria;
@@ -151,20 +151,20 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     /**
      * This contains elements to exclude from UPS Access Point address or geocode search.
      *
-     * @return AccessPointSearchExcludeFromResult
+     * @return AccessPointSearchExcludeFromResult|null
      */
-    public function getExcludeFromResult() : AccessPointSearchExcludeFromResult
+    public function getExcludeFromResult() : ?AccessPointSearchExcludeFromResult
     {
         return $this->excludeFromResult;
     }
     /**
      * This contains elements to exclude from UPS Access Point address or geocode search.
      *
-     * @param AccessPointSearchExcludeFromResult $excludeFromResult
+     * @param AccessPointSearchExcludeFromResult|null $excludeFromResult
      *
      * @return self
      */
-    public function setExcludeFromResult(AccessPointSearchExcludeFromResult $excludeFromResult) : self
+    public function setExcludeFromResult(?AccessPointSearchExcludeFromResult $excludeFromResult) : self
     {
         $this->initialized['excludeFromResult'] = true;
         $this->excludeFromResult = $excludeFromResult;
@@ -173,20 +173,20 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     /**
      * Presence of this tag represents that "AccessPointSearchByAddress" service is requested. The value of this tag is ignored.
      *
-     * @return string
+     * @return string|null
      */
-    public function getExactMatchIndicator() : string
+    public function getExactMatchIndicator() : ?string
     {
         return $this->exactMatchIndicator;
     }
     /**
      * Presence of this tag represents that "AccessPointSearchByAddress" service is requested. The value of this tag is ignored.
      *
-     * @param string $exactMatchIndicator
+     * @param string|null $exactMatchIndicator
      *
      * @return self
      */
-    public function setExactMatchIndicator(string $exactMatchIndicator) : self
+    public function setExactMatchIndicator(?string $exactMatchIndicator) : self
     {
         $this->initialized['exactMatchIndicator'] = true;
         $this->exactMatchIndicator = $exactMatchIndicator;
@@ -195,20 +195,20 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     /**
      * Presence of this tag represents that "AccessPointAvailability" service is requested. The value of this tag is ignored.
      *
-     * @return string
+     * @return string|null
      */
-    public function getExistIndicator() : string
+    public function getExistIndicator() : ?string
     {
         return $this->existIndicator;
     }
     /**
      * Presence of this tag represents that "AccessPointAvailability" service is requested. The value of this tag is ignored.
      *
-     * @param string $existIndicator
+     * @param string|null $existIndicator
      *
      * @return self
      */
-    public function setExistIndicator(string $existIndicator) : self
+    public function setExistIndicator(?string $existIndicator) : self
     {
         $this->initialized['existIndicator'] = true;
         $this->existIndicator = $existIndicator;

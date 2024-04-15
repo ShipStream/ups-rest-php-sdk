@@ -20,14 +20,14 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     Maximum of 2 digits after the decimal. 
     Maximum field length: 7 characters. The decimal ".", does not count as a character.
     *
-    * @var string
+    * @var string|null
     */
     protected $percentage;
     /**
     * HandlingCharge Amount Container.
     Either Percentage or Amount needs to be present, not both.
     *
-    * @var HandlingChargeAmount
+    * @var HandlingChargeAmount|null
     */
     protected $amount;
     /**
@@ -38,9 +38,9 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     Maximum of 2 digits after the decimal. 
     Maximum field length: 7 characters. The decimal ".", does not count as a character.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPercentage() : string
+    public function getPercentage() : ?string
     {
         return $this->percentage;
     }
@@ -52,11 +52,11 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     Maximum of 2 digits after the decimal. 
     Maximum field length: 7 characters. The decimal ".", does not count as a character.
     *
-    * @param string $percentage
+    * @param string|null $percentage
     *
     * @return self
     */
-    public function setPercentage(string $percentage) : self
+    public function setPercentage(?string $percentage) : self
     {
         $this->initialized['percentage'] = true;
         $this->percentage = $percentage;
@@ -66,9 +66,9 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     * HandlingCharge Amount Container.
     Either Percentage or Amount needs to be present, not both.
     *
-    * @return HandlingChargeAmount
+    * @return HandlingChargeAmount|null
     */
-    public function getAmount() : HandlingChargeAmount
+    public function getAmount() : ?HandlingChargeAmount
     {
         return $this->amount;
     }
@@ -76,11 +76,11 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     * HandlingCharge Amount Container.
     Either Percentage or Amount needs to be present, not both.
     *
-    * @param HandlingChargeAmount $amount
+    * @param HandlingChargeAmount|null $amount
     *
     * @return self
     */
-    public function setAmount(HandlingChargeAmount $amount) : self
+    public function setAmount(?HandlingChargeAmount $amount) : self
     {
         $this->initialized['amount'] = true;
         $this->amount = $amount;

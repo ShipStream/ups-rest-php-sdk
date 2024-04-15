@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AllPackedInOneIndicator', $data)) {
+            if (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] !== null) {
                 $object->setAllPackedInOneIndicator($data['AllPackedInOneIndicator']);
                 unset($data['AllPackedInOneIndicator']);
             }
-            if (\array_key_exists('OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] === null) {
+                $object->setAllPackedInOneIndicator(null);
+            }
+            if (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] !== null) {
                 $object->setOverPackedIndicator($data['OverPackedIndicator']);
                 unset($data['OverPackedIndicator']);
             }
-            if (\array_key_exists('QValue', $data)) {
+            elseif (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] === null) {
+                $object->setOverPackedIndicator(null);
+            }
+            if (\array_key_exists('QValue', $data) && $data['QValue'] !== null) {
                 $object->setQValue($data['QValue']);
                 unset($data['QValue']);
             }
-            if (\array_key_exists('OuterPackagingType', $data)) {
+            elseif (\array_key_exists('QValue', $data) && $data['QValue'] === null) {
+                $object->setQValue(null);
+            }
+            if (\array_key_exists('OuterPackagingType', $data) && $data['OuterPackagingType'] !== null) {
                 $object->setOuterPackagingType($data['OuterPackagingType']);
                 unset($data['OuterPackagingType']);
+            }
+            elseif (\array_key_exists('OuterPackagingType', $data) && $data['OuterPackagingType'] === null) {
+                $object->setOuterPackagingType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AllPackedInOneIndicator', $data)) {
+            if (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] !== null) {
                 $object->setAllPackedInOneIndicator($data['AllPackedInOneIndicator']);
                 unset($data['AllPackedInOneIndicator']);
             }
-            if (\array_key_exists('OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('AllPackedInOneIndicator', $data) && $data['AllPackedInOneIndicator'] === null) {
+                $object->setAllPackedInOneIndicator(null);
+            }
+            if (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] !== null) {
                 $object->setOverPackedIndicator($data['OverPackedIndicator']);
                 unset($data['OverPackedIndicator']);
             }
-            if (\array_key_exists('QValue', $data)) {
+            elseif (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] === null) {
+                $object->setOverPackedIndicator(null);
+            }
+            if (\array_key_exists('QValue', $data) && $data['QValue'] !== null) {
                 $object->setQValue($data['QValue']);
                 unset($data['QValue']);
             }
-            if (\array_key_exists('OuterPackagingType', $data)) {
+            elseif (\array_key_exists('QValue', $data) && $data['QValue'] === null) {
+                $object->setQValue(null);
+            }
+            if (\array_key_exists('OuterPackagingType', $data) && $data['OuterPackagingType'] !== null) {
                 $object->setOuterPackagingType($data['OuterPackagingType']);
                 unset($data['OuterPackagingType']);
+            }
+            elseif (\array_key_exists('OuterPackagingType', $data) && $data['OuterPackagingType'] === null) {
+                $object->setOuterPackagingType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

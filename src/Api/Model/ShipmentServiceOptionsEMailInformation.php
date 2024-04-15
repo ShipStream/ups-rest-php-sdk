@@ -15,32 +15,32 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
     /**
      * 
      *
-     * @var EMailInformationEMailType[]
+     * @var list<EMailInformationEMailType>|null
      */
     protected $eMailType;
     /**
      * Email Container.
      *
-     * @var EMailInformationEMail
+     * @var EMailInformationEMail|null
      */
     protected $eMail;
     /**
      * 
      *
-     * @return EMailInformationEMailType[]
+     * @return list<EMailInformationEMailType>|null
      */
-    public function getEMailType() : array
+    public function getEMailType() : ?array
     {
         return $this->eMailType;
     }
     /**
      * 
      *
-     * @param EMailInformationEMailType[] $eMailType
+     * @param list<EMailInformationEMailType>|null $eMailType
      *
      * @return self
      */
-    public function setEMailType(array $eMailType) : self
+    public function setEMailType(?array $eMailType) : self
     {
         $this->initialized['eMailType'] = true;
         $this->eMailType = $eMailType;
@@ -49,20 +49,20 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
     /**
      * Email Container.
      *
-     * @return EMailInformationEMail
+     * @return EMailInformationEMail|null
      */
-    public function getEMail() : EMailInformationEMail
+    public function getEMail() : ?EMailInformationEMail
     {
         return $this->eMail;
     }
     /**
      * Email Container.
      *
-     * @param EMailInformationEMail $eMail
+     * @param EMailInformationEMail|null $eMail
      *
      * @return self
      */
-    public function setEMail(EMailInformationEMail $eMail) : self
+    public function setEMail(?EMailInformationEMail $eMail) : self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;

@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SearchOption', $data)) {
+            if (\array_key_exists('SearchOption', $data) && $data['SearchOption'] !== null) {
                 $values = [];
                 foreach ($data['SearchOption'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption', 'json', $context);
@@ -48,33 +48,57 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setSearchOption($values);
                 unset($data['SearchOption']);
             }
-            if (\array_key_exists('MaximumListSize', $data)) {
+            elseif (\array_key_exists('SearchOption', $data) && $data['SearchOption'] === null) {
+                $object->setSearchOption(null);
+            }
+            if (\array_key_exists('MaximumListSize', $data) && $data['MaximumListSize'] !== null) {
                 $object->setMaximumListSize($data['MaximumListSize']);
                 unset($data['MaximumListSize']);
             }
-            if (\array_key_exists('SearchRadius', $data)) {
+            elseif (\array_key_exists('MaximumListSize', $data) && $data['MaximumListSize'] === null) {
+                $object->setMaximumListSize(null);
+            }
+            if (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] !== null) {
                 $object->setSearchRadius($data['SearchRadius']);
                 unset($data['SearchRadius']);
             }
-            if (\array_key_exists('ServiceSearch', $data)) {
+            elseif (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] === null) {
+                $object->setSearchRadius(null);
+            }
+            if (\array_key_exists('ServiceSearch', $data) && $data['ServiceSearch'] !== null) {
                 $object->setServiceSearch($this->denormalizer->denormalize($data['ServiceSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch', 'json', $context));
                 unset($data['ServiceSearch']);
             }
-            if (\array_key_exists('FreightWillCallSearch', $data)) {
+            elseif (\array_key_exists('ServiceSearch', $data) && $data['ServiceSearch'] === null) {
+                $object->setServiceSearch(null);
+            }
+            if (\array_key_exists('FreightWillCallSearch', $data) && $data['FreightWillCallSearch'] !== null) {
                 $object->setFreightWillCallSearch($this->denormalizer->denormalize($data['FreightWillCallSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch', 'json', $context));
                 unset($data['FreightWillCallSearch']);
             }
-            if (\array_key_exists('AccessPointSearch', $data)) {
+            elseif (\array_key_exists('FreightWillCallSearch', $data) && $data['FreightWillCallSearch'] === null) {
+                $object->setFreightWillCallSearch(null);
+            }
+            if (\array_key_exists('AccessPointSearch', $data) && $data['AccessPointSearch'] !== null) {
                 $object->setAccessPointSearch($this->denormalizer->denormalize($data['AccessPointSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch', 'json', $context));
                 unset($data['AccessPointSearch']);
             }
-            if (\array_key_exists('OpenTimeCriteria', $data)) {
+            elseif (\array_key_exists('AccessPointSearch', $data) && $data['AccessPointSearch'] === null) {
+                $object->setAccessPointSearch(null);
+            }
+            if (\array_key_exists('OpenTimeCriteria', $data) && $data['OpenTimeCriteria'] !== null) {
                 $object->setOpenTimeCriteria($this->denormalizer->denormalize($data['OpenTimeCriteria'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria', 'json', $context));
                 unset($data['OpenTimeCriteria']);
             }
-            if (\array_key_exists('BrexitFilter', $data)) {
+            elseif (\array_key_exists('OpenTimeCriteria', $data) && $data['OpenTimeCriteria'] === null) {
+                $object->setOpenTimeCriteria(null);
+            }
+            if (\array_key_exists('BrexitFilter', $data) && $data['BrexitFilter'] !== null) {
                 $object->setBrexitFilter($data['BrexitFilter']);
                 unset($data['BrexitFilter']);
+            }
+            elseif (\array_key_exists('BrexitFilter', $data) && $data['BrexitFilter'] === null) {
+                $object->setBrexitFilter(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -156,7 +180,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SearchOption', $data)) {
+            if (\array_key_exists('SearchOption', $data) && $data['SearchOption'] !== null) {
                 $values = [];
                 foreach ($data['SearchOption'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption', 'json', $context);
@@ -164,33 +188,57 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setSearchOption($values);
                 unset($data['SearchOption']);
             }
-            if (\array_key_exists('MaximumListSize', $data)) {
+            elseif (\array_key_exists('SearchOption', $data) && $data['SearchOption'] === null) {
+                $object->setSearchOption(null);
+            }
+            if (\array_key_exists('MaximumListSize', $data) && $data['MaximumListSize'] !== null) {
                 $object->setMaximumListSize($data['MaximumListSize']);
                 unset($data['MaximumListSize']);
             }
-            if (\array_key_exists('SearchRadius', $data)) {
+            elseif (\array_key_exists('MaximumListSize', $data) && $data['MaximumListSize'] === null) {
+                $object->setMaximumListSize(null);
+            }
+            if (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] !== null) {
                 $object->setSearchRadius($data['SearchRadius']);
                 unset($data['SearchRadius']);
             }
-            if (\array_key_exists('ServiceSearch', $data)) {
+            elseif (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] === null) {
+                $object->setSearchRadius(null);
+            }
+            if (\array_key_exists('ServiceSearch', $data) && $data['ServiceSearch'] !== null) {
                 $object->setServiceSearch($this->denormalizer->denormalize($data['ServiceSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch', 'json', $context));
                 unset($data['ServiceSearch']);
             }
-            if (\array_key_exists('FreightWillCallSearch', $data)) {
+            elseif (\array_key_exists('ServiceSearch', $data) && $data['ServiceSearch'] === null) {
+                $object->setServiceSearch(null);
+            }
+            if (\array_key_exists('FreightWillCallSearch', $data) && $data['FreightWillCallSearch'] !== null) {
                 $object->setFreightWillCallSearch($this->denormalizer->denormalize($data['FreightWillCallSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch', 'json', $context));
                 unset($data['FreightWillCallSearch']);
             }
-            if (\array_key_exists('AccessPointSearch', $data)) {
+            elseif (\array_key_exists('FreightWillCallSearch', $data) && $data['FreightWillCallSearch'] === null) {
+                $object->setFreightWillCallSearch(null);
+            }
+            if (\array_key_exists('AccessPointSearch', $data) && $data['AccessPointSearch'] !== null) {
                 $object->setAccessPointSearch($this->denormalizer->denormalize($data['AccessPointSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch', 'json', $context));
                 unset($data['AccessPointSearch']);
             }
-            if (\array_key_exists('OpenTimeCriteria', $data)) {
+            elseif (\array_key_exists('AccessPointSearch', $data) && $data['AccessPointSearch'] === null) {
+                $object->setAccessPointSearch(null);
+            }
+            if (\array_key_exists('OpenTimeCriteria', $data) && $data['OpenTimeCriteria'] !== null) {
                 $object->setOpenTimeCriteria($this->denormalizer->denormalize($data['OpenTimeCriteria'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria', 'json', $context));
                 unset($data['OpenTimeCriteria']);
             }
-            if (\array_key_exists('BrexitFilter', $data)) {
+            elseif (\array_key_exists('OpenTimeCriteria', $data) && $data['OpenTimeCriteria'] === null) {
+                $object->setOpenTimeCriteria(null);
+            }
+            if (\array_key_exists('BrexitFilter', $data) && $data['BrexitFilter'] !== null) {
                 $object->setBrexitFilter($data['BrexitFilter']);
                 unset($data['BrexitFilter']);
+            }
+            elseif (\array_key_exists('BrexitFilter', $data) && $data['BrexitFilter'] === null) {
+                $object->setBrexitFilter(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

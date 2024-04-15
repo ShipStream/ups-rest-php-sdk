@@ -15,26 +15,26 @@ class PAPERLESSDOCUMENTUploadRequestWrapper extends \ArrayObject
     /**
      * Paperless Document API Request container for uploading User Created Forms.  N/A
      *
-     * @var UploadRequest
+     * @var UploadRequest|null
      */
     protected $uploadRequest;
     /**
      * Paperless Document API Request container for uploading User Created Forms.  N/A
      *
-     * @return UploadRequest
+     * @return UploadRequest|null
      */
-    public function getUploadRequest() : UploadRequest
+    public function getUploadRequest() : ?UploadRequest
     {
         return $this->uploadRequest;
     }
     /**
      * Paperless Document API Request container for uploading User Created Forms.  N/A
      *
-     * @param UploadRequest $uploadRequest
+     * @param UploadRequest|null $uploadRequest
      *
      * @return self
      */
-    public function setUploadRequest(UploadRequest $uploadRequest) : self
+    public function setUploadRequest(?UploadRequest $uploadRequest) : self
     {
         $this->initialized['uploadRequest'] = true;
         $this->uploadRequest = $uploadRequest;

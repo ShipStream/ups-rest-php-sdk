@@ -21,7 +21,7 @@ class PreAlertNotificationTextMessage extends \ArrayObject
     
     For other countries or territories, the layout is country or territory code, area code, 7 digit number.
     *
-    * @var string
+    * @var string|null
     */
     protected $phoneNumber;
     /**
@@ -33,9 +33,9 @@ class PreAlertNotificationTextMessage extends \ArrayObject
     
     For other countries or territories, the layout is country or territory code, area code, 7 digit number.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber() : ?string
     {
         return $this->phoneNumber;
     }
@@ -48,11 +48,11 @@ class PreAlertNotificationTextMessage extends \ArrayObject
     
     For other countries or territories, the layout is country or territory code, area code, 7 digit number.
     *
-    * @param string $phoneNumber
+    * @param string|null $phoneNumber
     *
     * @return self
     */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(?string $phoneNumber) : self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;

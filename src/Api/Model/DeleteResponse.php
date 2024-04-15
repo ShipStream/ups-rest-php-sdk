@@ -15,26 +15,26 @@ class DeleteResponse extends \ArrayObject
     /**
      * Response container.
      *
-     * @var DeleteResponseResponse
+     * @var DeleteResponseResponse|null
      */
     protected $response;
     /**
      * Response container.
      *
-     * @return DeleteResponseResponse
+     * @return DeleteResponseResponse|null
      */
-    public function getResponse() : DeleteResponseResponse
+    public function getResponse() : ?DeleteResponseResponse
     {
         return $this->response;
     }
     /**
      * Response container.
      *
-     * @param DeleteResponseResponse $response
+     * @param DeleteResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(DeleteResponseResponse $response) : self
+    public function setResponse(?DeleteResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;

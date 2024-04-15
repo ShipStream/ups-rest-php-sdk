@@ -15,39 +15,39 @@ class PickupPendingStatusRequest extends \ArrayObject
     /**
      * Common element for all services.
      *
-     * @var PickupPendingStatusRequestRequest
+     * @var PickupPendingStatusRequestRequest|null
      */
     protected $request;
     /**
     * Specify the type of pending pickup.
     01 = On-Call Pickup
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupType;
     /**
      * The specific account number belongs to the shipper
      *
-     * @var string
+     * @var string|null
      */
     protected $accountNumber;
     /**
      * Common element for all services.
      *
-     * @return PickupPendingStatusRequestRequest
+     * @return PickupPendingStatusRequestRequest|null
      */
-    public function getRequest() : PickupPendingStatusRequestRequest
+    public function getRequest() : ?PickupPendingStatusRequestRequest
     {
         return $this->request;
     }
     /**
      * Common element for all services.
      *
-     * @param PickupPendingStatusRequestRequest $request
+     * @param PickupPendingStatusRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(PickupPendingStatusRequestRequest $request) : self
+    public function setRequest(?PickupPendingStatusRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -57,9 +57,9 @@ class PickupPendingStatusRequest extends \ArrayObject
     * Specify the type of pending pickup.
     01 = On-Call Pickup
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupType() : string
+    public function getPickupType() : ?string
     {
         return $this->pickupType;
     }
@@ -67,11 +67,11 @@ class PickupPendingStatusRequest extends \ArrayObject
     * Specify the type of pending pickup.
     01 = On-Call Pickup
     *
-    * @param string $pickupType
+    * @param string|null $pickupType
     *
     * @return self
     */
-    public function setPickupType(string $pickupType) : self
+    public function setPickupType(?string $pickupType) : self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -80,20 +80,20 @@ class PickupPendingStatusRequest extends \ArrayObject
     /**
      * The specific account number belongs to the shipper
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
     /**
      * The specific account number belongs to the shipper
      *
-     * @param string $accountNumber
+     * @param string|null $accountNumber
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;

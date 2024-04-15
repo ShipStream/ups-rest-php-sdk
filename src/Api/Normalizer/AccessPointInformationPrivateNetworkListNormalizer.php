@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PrivateNetwork', $data)) {
+            if (\array_key_exists('PrivateNetwork', $data) && $data['PrivateNetwork'] !== null) {
                 $values = [];
                 foreach ($data['PrivateNetwork'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PrivateNetworkListPrivateNetwork', 'json', $context);
                 }
                 $object->setPrivateNetwork($values);
                 unset($data['PrivateNetwork']);
+            }
+            elseif (\array_key_exists('PrivateNetwork', $data) && $data['PrivateNetwork'] === null) {
+                $object->setPrivateNetwork(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PrivateNetwork', $data)) {
+            if (\array_key_exists('PrivateNetwork', $data) && $data['PrivateNetwork'] !== null) {
                 $values = [];
                 foreach ($data['PrivateNetwork'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PrivateNetworkListPrivateNetwork', 'json', $context);
                 }
                 $object->setPrivateNetwork($values);
                 unset($data['PrivateNetwork']);
+            }
+            elseif (\array_key_exists('PrivateNetwork', $data) && $data['PrivateNetwork'] === null) {
+                $object->setPrivateNetwork(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

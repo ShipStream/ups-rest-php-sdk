@@ -15,44 +15,44 @@ class UploadRequestUserCreatedForm extends \ArrayObject
     /**
      * The name of the file.  N/A
      *
-     * @var string
+     * @var string|null
      */
     protected $userCreatedFormFileName;
     /**
      * The user created form file.  The maximum allowable size of each file is restricted to 10 MB.                                                                                                                                                                                                         Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
      *
-     * @var string
+     * @var string|null
      */
     protected $userCreatedFormFile;
     /**
      * The UserCreatedForm file format.  The allowed file formats are bmp, doc, gif, jpg, pdf, png, rtf, tif, txt and xls. The only exceptions for having file format of length 4 character are docx and xlsx. All other file formats needs to be of length 3.
      *
-     * @var string
+     * @var string|null
      */
     protected $userCreatedFormFileFormat;
     /**
      * The type of documents in UserCreatedForm file.  The allowed document types are 001 - Authorization Form, 002 - Commercial Invoice, 003 - Certificate of Origin, 004 - Export Accompanying Document, 005 - Export License, 006 - Import Permit, 007 - One Time NAFTA, 008 - Other Document, 009 - Power of Attorney, 010 - Packing List, 011 - SED Document, 012 - Shipper's Letter of Instruction, 013 - Declaration. The total number of documents allowed per file or per shipment is 13. Each document type needs to be three digits.
      *
-     * @var string
+     * @var string|null
      */
     protected $userCreatedFormDocumentType;
     /**
      * The name of the file.  N/A
      *
-     * @return string
+     * @return string|null
      */
-    public function getUserCreatedFormFileName() : string
+    public function getUserCreatedFormFileName() : ?string
     {
         return $this->userCreatedFormFileName;
     }
     /**
      * The name of the file.  N/A
      *
-     * @param string $userCreatedFormFileName
+     * @param string|null $userCreatedFormFileName
      *
      * @return self
      */
-    public function setUserCreatedFormFileName(string $userCreatedFormFileName) : self
+    public function setUserCreatedFormFileName(?string $userCreatedFormFileName) : self
     {
         $this->initialized['userCreatedFormFileName'] = true;
         $this->userCreatedFormFileName = $userCreatedFormFileName;
@@ -61,20 +61,20 @@ class UploadRequestUserCreatedForm extends \ArrayObject
     /**
      * The user created form file.  The maximum allowable size of each file is restricted to 10 MB.                                                                                                                                                                                                         Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
      *
-     * @return string
+     * @return string|null
      */
-    public function getUserCreatedFormFile() : string
+    public function getUserCreatedFormFile() : ?string
     {
         return $this->userCreatedFormFile;
     }
     /**
      * The user created form file.  The maximum allowable size of each file is restricted to 10 MB.                                                                                                                                                                                                         Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
      *
-     * @param string $userCreatedFormFile
+     * @param string|null $userCreatedFormFile
      *
      * @return self
      */
-    public function setUserCreatedFormFile(string $userCreatedFormFile) : self
+    public function setUserCreatedFormFile(?string $userCreatedFormFile) : self
     {
         $this->initialized['userCreatedFormFile'] = true;
         $this->userCreatedFormFile = $userCreatedFormFile;
@@ -83,20 +83,20 @@ class UploadRequestUserCreatedForm extends \ArrayObject
     /**
      * The UserCreatedForm file format.  The allowed file formats are bmp, doc, gif, jpg, pdf, png, rtf, tif, txt and xls. The only exceptions for having file format of length 4 character are docx and xlsx. All other file formats needs to be of length 3.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUserCreatedFormFileFormat() : string
+    public function getUserCreatedFormFileFormat() : ?string
     {
         return $this->userCreatedFormFileFormat;
     }
     /**
      * The UserCreatedForm file format.  The allowed file formats are bmp, doc, gif, jpg, pdf, png, rtf, tif, txt and xls. The only exceptions for having file format of length 4 character are docx and xlsx. All other file formats needs to be of length 3.
      *
-     * @param string $userCreatedFormFileFormat
+     * @param string|null $userCreatedFormFileFormat
      *
      * @return self
      */
-    public function setUserCreatedFormFileFormat(string $userCreatedFormFileFormat) : self
+    public function setUserCreatedFormFileFormat(?string $userCreatedFormFileFormat) : self
     {
         $this->initialized['userCreatedFormFileFormat'] = true;
         $this->userCreatedFormFileFormat = $userCreatedFormFileFormat;
@@ -105,20 +105,20 @@ class UploadRequestUserCreatedForm extends \ArrayObject
     /**
      * The type of documents in UserCreatedForm file.  The allowed document types are 001 - Authorization Form, 002 - Commercial Invoice, 003 - Certificate of Origin, 004 - Export Accompanying Document, 005 - Export License, 006 - Import Permit, 007 - One Time NAFTA, 008 - Other Document, 009 - Power of Attorney, 010 - Packing List, 011 - SED Document, 012 - Shipper's Letter of Instruction, 013 - Declaration. The total number of documents allowed per file or per shipment is 13. Each document type needs to be three digits.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUserCreatedFormDocumentType() : string
+    public function getUserCreatedFormDocumentType() : ?string
     {
         return $this->userCreatedFormDocumentType;
     }
     /**
      * The type of documents in UserCreatedForm file.  The allowed document types are 001 - Authorization Form, 002 - Commercial Invoice, 003 - Certificate of Origin, 004 - Export Accompanying Document, 005 - Export License, 006 - Import Permit, 007 - One Time NAFTA, 008 - Other Document, 009 - Power of Attorney, 010 - Packing List, 011 - SED Document, 012 - Shipper's Letter of Instruction, 013 - Declaration. The total number of documents allowed per file or per shipment is 13. Each document type needs to be three digits.
      *
-     * @param string $userCreatedFormDocumentType
+     * @param string|null $userCreatedFormDocumentType
      *
      * @return self
      */
-    public function setUserCreatedFormDocumentType(string $userCreatedFormDocumentType) : self
+    public function setUserCreatedFormDocumentType(?string $userCreatedFormDocumentType) : self
     {
         $this->initialized['userCreatedFormDocumentType'] = true;
         $this->userCreatedFormDocumentType = $userCreatedFormDocumentType;

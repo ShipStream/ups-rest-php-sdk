@@ -40,15 +40,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FileName', $data)) {
+            if (\array_key_exists('FileName', $data) && $data['FileName'] !== null) {
                 $object->setFileName($data['FileName']);
                 unset($data['FileName']);
             }
-            if (\array_key_exists('StatusType', $data)) {
+            elseif (\array_key_exists('FileName', $data) && $data['FileName'] === null) {
+                $object->setFileName(null);
+            }
+            if (\array_key_exists('StatusType', $data) && $data['StatusType'] !== null) {
                 $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType', 'json', $context));
                 unset($data['StatusType']);
             }
-            if (\array_key_exists('Manifest', $data)) {
+            elseif (\array_key_exists('StatusType', $data) && $data['StatusType'] === null) {
+                $object->setStatusType(null);
+            }
+            if (\array_key_exists('Manifest', $data) && $data['Manifest'] !== null) {
                 $values = [];
                 foreach ($data['Manifest'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest', 'json', $context);
@@ -56,7 +62,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setManifest($values);
                 unset($data['Manifest']);
             }
-            if (\array_key_exists('Origin', $data)) {
+            elseif (\array_key_exists('Manifest', $data) && $data['Manifest'] === null) {
+                $object->setManifest(null);
+            }
+            if (\array_key_exists('Origin', $data) && $data['Origin'] !== null) {
                 $values_1 = [];
                 foreach ($data['Origin'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin', 'json', $context);
@@ -64,7 +73,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOrigin($values_1);
                 unset($data['Origin']);
             }
-            if (\array_key_exists('Exception', $data)) {
+            elseif (\array_key_exists('Origin', $data) && $data['Origin'] === null) {
+                $object->setOrigin(null);
+            }
+            if (\array_key_exists('Exception', $data) && $data['Exception'] !== null) {
                 $values_2 = [];
                 foreach ($data['Exception'] as $value_2) {
                     $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException', 'json', $context);
@@ -72,7 +84,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setException($values_2);
                 unset($data['Exception']);
             }
-            if (\array_key_exists('Delivery', $data)) {
+            elseif (\array_key_exists('Exception', $data) && $data['Exception'] === null) {
+                $object->setException(null);
+            }
+            if (\array_key_exists('Delivery', $data) && $data['Delivery'] !== null) {
                 $values_3 = [];
                 foreach ($data['Delivery'] as $value_3) {
                     $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery', 'json', $context);
@@ -80,13 +95,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDelivery($values_3);
                 unset($data['Delivery']);
             }
-            if (\array_key_exists('Generic', $data)) {
+            elseif (\array_key_exists('Delivery', $data) && $data['Delivery'] === null) {
+                $object->setDelivery(null);
+            }
+            if (\array_key_exists('Generic', $data) && $data['Generic'] !== null) {
                 $values_4 = [];
                 foreach ($data['Generic'] as $value_4) {
                     $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric', 'json', $context);
                 }
                 $object->setGeneric($values_4);
                 unset($data['Generic']);
+            }
+            elseif (\array_key_exists('Generic', $data) && $data['Generic'] === null) {
+                $object->setGeneric(null);
             }
             foreach ($data as $key => $value_5) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -177,15 +198,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FileName', $data)) {
+            if (\array_key_exists('FileName', $data) && $data['FileName'] !== null) {
                 $object->setFileName($data['FileName']);
                 unset($data['FileName']);
             }
-            if (\array_key_exists('StatusType', $data)) {
+            elseif (\array_key_exists('FileName', $data) && $data['FileName'] === null) {
+                $object->setFileName(null);
+            }
+            if (\array_key_exists('StatusType', $data) && $data['StatusType'] !== null) {
                 $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType', 'json', $context));
                 unset($data['StatusType']);
             }
-            if (\array_key_exists('Manifest', $data)) {
+            elseif (\array_key_exists('StatusType', $data) && $data['StatusType'] === null) {
+                $object->setStatusType(null);
+            }
+            if (\array_key_exists('Manifest', $data) && $data['Manifest'] !== null) {
                 $values = [];
                 foreach ($data['Manifest'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest', 'json', $context);
@@ -193,7 +220,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setManifest($values);
                 unset($data['Manifest']);
             }
-            if (\array_key_exists('Origin', $data)) {
+            elseif (\array_key_exists('Manifest', $data) && $data['Manifest'] === null) {
+                $object->setManifest(null);
+            }
+            if (\array_key_exists('Origin', $data) && $data['Origin'] !== null) {
                 $values_1 = [];
                 foreach ($data['Origin'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin', 'json', $context);
@@ -201,7 +231,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOrigin($values_1);
                 unset($data['Origin']);
             }
-            if (\array_key_exists('Exception', $data)) {
+            elseif (\array_key_exists('Origin', $data) && $data['Origin'] === null) {
+                $object->setOrigin(null);
+            }
+            if (\array_key_exists('Exception', $data) && $data['Exception'] !== null) {
                 $values_2 = [];
                 foreach ($data['Exception'] as $value_2) {
                     $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException', 'json', $context);
@@ -209,7 +242,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setException($values_2);
                 unset($data['Exception']);
             }
-            if (\array_key_exists('Delivery', $data)) {
+            elseif (\array_key_exists('Exception', $data) && $data['Exception'] === null) {
+                $object->setException(null);
+            }
+            if (\array_key_exists('Delivery', $data) && $data['Delivery'] !== null) {
                 $values_3 = [];
                 foreach ($data['Delivery'] as $value_3) {
                     $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery', 'json', $context);
@@ -217,13 +253,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDelivery($values_3);
                 unset($data['Delivery']);
             }
-            if (\array_key_exists('Generic', $data)) {
+            elseif (\array_key_exists('Delivery', $data) && $data['Delivery'] === null) {
+                $object->setDelivery(null);
+            }
+            if (\array_key_exists('Generic', $data) && $data['Generic'] !== null) {
                 $values_4 = [];
                 foreach ($data['Generic'] as $value_4) {
                     $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric', 'json', $context);
                 }
                 $object->setGeneric($values_4);
                 unset($data['Generic']);
+            }
+            elseif (\array_key_exists('Generic', $data) && $data['Generic'] === null) {
+                $object->setGeneric(null);
             }
             foreach ($data as $key => $value_5) {
                 if (preg_match('/.*/', (string) $key)) {

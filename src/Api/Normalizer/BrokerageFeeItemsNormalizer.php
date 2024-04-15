@@ -43,13 +43,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('chargeName', $data)) {
+            if (\array_key_exists('chargeName', $data) && $data['chargeName'] !== null) {
                 $object->setChargeName($data['chargeName']);
                 unset($data['chargeName']);
             }
-            if (\array_key_exists('chargeAmount', $data)) {
+            elseif (\array_key_exists('chargeName', $data) && $data['chargeName'] === null) {
+                $object->setChargeName(null);
+            }
+            if (\array_key_exists('chargeAmount', $data) && $data['chargeAmount'] !== null) {
                 $object->setChargeAmount($data['chargeAmount']);
                 unset($data['chargeAmount']);
+            }
+            elseif (\array_key_exists('chargeAmount', $data) && $data['chargeAmount'] === null) {
+                $object->setChargeAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,13 +118,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('chargeName', $data)) {
+            if (\array_key_exists('chargeName', $data) && $data['chargeName'] !== null) {
                 $object->setChargeName($data['chargeName']);
                 unset($data['chargeName']);
             }
-            if (\array_key_exists('chargeAmount', $data)) {
+            elseif (\array_key_exists('chargeName', $data) && $data['chargeName'] === null) {
+                $object->setChargeName(null);
+            }
+            if (\array_key_exists('chargeAmount', $data) && $data['chargeAmount'] !== null) {
                 $object->setChargeAmount($data['chargeAmount']);
                 unset($data['chargeAmount']);
+            }
+            elseif (\array_key_exists('chargeAmount', $data) && $data['chargeAmount'] === null) {
+                $object->setChargeAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

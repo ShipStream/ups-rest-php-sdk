@@ -19,13 +19,13 @@ class Services extends \ArrayObject
     
      Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
     *
-    * @var string
+    * @var string|null
     */
     protected $serviceLevel;
     /**
      * Service name, examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Frieght
      *
-     * @var string
+     * @var string|null
      */
     protected $serviceLevelDescription;
     /**
@@ -33,7 +33,7 @@ class Services extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @var string
+    * @var string|null
     */
     protected $shipDate;
     /**
@@ -41,7 +41,7 @@ class Services extends \ArrayObject
     
     Valid format: YYYY-MM-DD
     *
-    * @var string
+    * @var string|null
     */
     protected $deliveryDate;
     /**
@@ -51,7 +51,7 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @var string
+    * @var string|null
     */
     protected $commitTime;
     /**
@@ -59,7 +59,7 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @var string
+    * @var string|null
     */
     protected $deliveryTime;
     /**
@@ -67,7 +67,7 @@ class Services extends \ArrayObject
     
     Valid values: "MON","TUE","WED","THU","FRI", "SAT"
     *
-    * @var string
+    * @var string|null
     */
     protected $deliveryDayOfWeek;
     /**
@@ -75,7 +75,7 @@ class Services extends \ArrayObject
     
     When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
     *
-    * @var string
+    * @var string|null
     */
     protected $nextDayPickupIndicator;
     /**
@@ -83,7 +83,7 @@ class Services extends \ArrayObject
     
     When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
     *
-    * @var string
+    * @var string|null
     */
     protected $saturdayPickupIndicator;
     /**
@@ -91,7 +91,7 @@ class Services extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @var string
+    * @var string|null
     */
     protected $saturdayDeliveryDate;
     /**
@@ -99,13 +99,13 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @var string
+    * @var string|null
     */
     protected $saturdayDeliveryTime;
     /**
      * Service remarks text. The contents of this field will represent text that the back end application/function needs to display to clarify the time in transit calculation.
      *
-     * @var string
+     * @var string|null
      */
     protected $serviceRemarksText;
     /**
@@ -115,7 +115,7 @@ class Services extends \ArrayObject
     
     If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of servies to remove guarantees for, "0" wil be returned.
     *
-    * @var string
+    * @var string|null
     */
     protected $guaranteeIndicator;
     /**
@@ -123,13 +123,13 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @var int
+    * @var int|null
     */
     protected $totalTransitDays;
     /**
      * Returns the number of UPS business days from origin location to destination location.
      *
-     * @var int
+     * @var int|null
      */
     protected $businessTransitDays;
     /**
@@ -137,7 +137,7 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @var int
+    * @var int|null
     */
     protected $restDaysCount;
     /**
@@ -145,7 +145,7 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @var int
+    * @var int|null
     */
     protected $holidayCount;
     /**
@@ -153,7 +153,7 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @var int
+    * @var int|null
     */
     protected $delayCount;
     /**
@@ -161,31 +161,31 @@ class Services extends \ArrayObject
     
     Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupDate;
     /**
      * Latest possible pickup time. This data is available only for international transactions. If the package was not actually picked by UPS before this time, the services will not meet the guarantee commitment.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupTime;
     /**
      * Latest time a customer can contact UPS CST needs to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
      *
-     * @var string
+     * @var string|null
      */
     protected $cstccutoffTime;
     /**
      * Returns the date proof of delivery informatino will be available.  This data is available only for international transactions.
      *
-     * @var string
+     * @var string|null
      */
     protected $poddate;
     /**
      * Returns the number of days proof of delivery information will be available.  This data is available only for international transactions.
      *
-     * @var int
+     * @var int|null
      */
     protected $poddays;
     /**
@@ -195,9 +195,9 @@ class Services extends \ArrayObject
     
      Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
     *
-    * @return string
+    * @return string|null
     */
-    public function getServiceLevel() : string
+    public function getServiceLevel() : ?string
     {
         return $this->serviceLevel;
     }
@@ -208,11 +208,11 @@ class Services extends \ArrayObject
     
      Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
     *
-    * @param string $serviceLevel
+    * @param string|null $serviceLevel
     *
     * @return self
     */
-    public function setServiceLevel(string $serviceLevel) : self
+    public function setServiceLevel(?string $serviceLevel) : self
     {
         $this->initialized['serviceLevel'] = true;
         $this->serviceLevel = $serviceLevel;
@@ -221,20 +221,20 @@ class Services extends \ArrayObject
     /**
      * Service name, examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Frieght
      *
-     * @return string
+     * @return string|null
      */
-    public function getServiceLevelDescription() : string
+    public function getServiceLevelDescription() : ?string
     {
         return $this->serviceLevelDescription;
     }
     /**
      * Service name, examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Frieght
      *
-     * @param string $serviceLevelDescription
+     * @param string|null $serviceLevelDescription
      *
      * @return self
      */
-    public function setServiceLevelDescription(string $serviceLevelDescription) : self
+    public function setServiceLevelDescription(?string $serviceLevelDescription) : self
     {
         $this->initialized['serviceLevelDescription'] = true;
         $this->serviceLevelDescription = $serviceLevelDescription;
@@ -245,9 +245,9 @@ class Services extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipDate() : string
+    public function getShipDate() : ?string
     {
         return $this->shipDate;
     }
@@ -256,11 +256,11 @@ class Services extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @param string $shipDate
+    * @param string|null $shipDate
     *
     * @return self
     */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(?string $shipDate) : self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -271,9 +271,9 @@ class Services extends \ArrayObject
     
     Valid format: YYYY-MM-DD
     *
-    * @return string
+    * @return string|null
     */
-    public function getDeliveryDate() : string
+    public function getDeliveryDate() : ?string
     {
         return $this->deliveryDate;
     }
@@ -282,11 +282,11 @@ class Services extends \ArrayObject
     
     Valid format: YYYY-MM-DD
     *
-    * @param string $deliveryDate
+    * @param string|null $deliveryDate
     *
     * @return self
     */
-    public function setDeliveryDate(string $deliveryDate) : self
+    public function setDeliveryDate(?string $deliveryDate) : self
     {
         $this->initialized['deliveryDate'] = true;
         $this->deliveryDate = $deliveryDate;
@@ -299,9 +299,9 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @return string
+    * @return string|null
     */
-    public function getCommitTime() : string
+    public function getCommitTime() : ?string
     {
         return $this->commitTime;
     }
@@ -312,11 +312,11 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @param string $commitTime
+    * @param string|null $commitTime
     *
     * @return self
     */
-    public function setCommitTime(string $commitTime) : self
+    public function setCommitTime(?string $commitTime) : self
     {
         $this->initialized['commitTime'] = true;
         $this->commitTime = $commitTime;
@@ -327,9 +327,9 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @return string
+    * @return string|null
     */
-    public function getDeliveryTime() : string
+    public function getDeliveryTime() : ?string
     {
         return $this->deliveryTime;
     }
@@ -338,11 +338,11 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @param string $deliveryTime
+    * @param string|null $deliveryTime
     *
     * @return self
     */
-    public function setDeliveryTime(string $deliveryTime) : self
+    public function setDeliveryTime(?string $deliveryTime) : self
     {
         $this->initialized['deliveryTime'] = true;
         $this->deliveryTime = $deliveryTime;
@@ -353,9 +353,9 @@ class Services extends \ArrayObject
     
     Valid values: "MON","TUE","WED","THU","FRI", "SAT"
     *
-    * @return string
+    * @return string|null
     */
-    public function getDeliveryDayOfWeek() : string
+    public function getDeliveryDayOfWeek() : ?string
     {
         return $this->deliveryDayOfWeek;
     }
@@ -364,11 +364,11 @@ class Services extends \ArrayObject
     
     Valid values: "MON","TUE","WED","THU","FRI", "SAT"
     *
-    * @param string $deliveryDayOfWeek
+    * @param string|null $deliveryDayOfWeek
     *
     * @return self
     */
-    public function setDeliveryDayOfWeek(string $deliveryDayOfWeek) : self
+    public function setDeliveryDayOfWeek(?string $deliveryDayOfWeek) : self
     {
         $this->initialized['deliveryDayOfWeek'] = true;
         $this->deliveryDayOfWeek = $deliveryDayOfWeek;
@@ -379,9 +379,9 @@ class Services extends \ArrayObject
     
     When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
     *
-    * @return string
+    * @return string|null
     */
-    public function getNextDayPickupIndicator() : string
+    public function getNextDayPickupIndicator() : ?string
     {
         return $this->nextDayPickupIndicator;
     }
@@ -390,11 +390,11 @@ class Services extends \ArrayObject
     
     When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
     *
-    * @param string $nextDayPickupIndicator
+    * @param string|null $nextDayPickupIndicator
     *
     * @return self
     */
-    public function setNextDayPickupIndicator(string $nextDayPickupIndicator) : self
+    public function setNextDayPickupIndicator(?string $nextDayPickupIndicator) : self
     {
         $this->initialized['nextDayPickupIndicator'] = true;
         $this->nextDayPickupIndicator = $nextDayPickupIndicator;
@@ -405,9 +405,9 @@ class Services extends \ArrayObject
     
     When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
     *
-    * @return string
+    * @return string|null
     */
-    public function getSaturdayPickupIndicator() : string
+    public function getSaturdayPickupIndicator() : ?string
     {
         return $this->saturdayPickupIndicator;
     }
@@ -416,11 +416,11 @@ class Services extends \ArrayObject
     
     When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
     *
-    * @param string $saturdayPickupIndicator
+    * @param string|null $saturdayPickupIndicator
     *
     * @return self
     */
-    public function setSaturdayPickupIndicator(string $saturdayPickupIndicator) : self
+    public function setSaturdayPickupIndicator(?string $saturdayPickupIndicator) : self
     {
         $this->initialized['saturdayPickupIndicator'] = true;
         $this->saturdayPickupIndicator = $saturdayPickupIndicator;
@@ -431,9 +431,9 @@ class Services extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @return string
+    * @return string|null
     */
-    public function getSaturdayDeliveryDate() : string
+    public function getSaturdayDeliveryDate() : ?string
     {
         return $this->saturdayDeliveryDate;
     }
@@ -442,11 +442,11 @@ class Services extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @param string $saturdayDeliveryDate
+    * @param string|null $saturdayDeliveryDate
     *
     * @return self
     */
-    public function setSaturdayDeliveryDate(string $saturdayDeliveryDate) : self
+    public function setSaturdayDeliveryDate(?string $saturdayDeliveryDate) : self
     {
         $this->initialized['saturdayDeliveryDate'] = true;
         $this->saturdayDeliveryDate = $saturdayDeliveryDate;
@@ -457,9 +457,9 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @return string
+    * @return string|null
     */
-    public function getSaturdayDeliveryTime() : string
+    public function getSaturdayDeliveryTime() : ?string
     {
         return $this->saturdayDeliveryTime;
     }
@@ -468,11 +468,11 @@ class Services extends \ArrayObject
     
     Valid format: HH:MM:SS
     *
-    * @param string $saturdayDeliveryTime
+    * @param string|null $saturdayDeliveryTime
     *
     * @return self
     */
-    public function setSaturdayDeliveryTime(string $saturdayDeliveryTime) : self
+    public function setSaturdayDeliveryTime(?string $saturdayDeliveryTime) : self
     {
         $this->initialized['saturdayDeliveryTime'] = true;
         $this->saturdayDeliveryTime = $saturdayDeliveryTime;
@@ -481,20 +481,20 @@ class Services extends \ArrayObject
     /**
      * Service remarks text. The contents of this field will represent text that the back end application/function needs to display to clarify the time in transit calculation.
      *
-     * @return string
+     * @return string|null
      */
-    public function getServiceRemarksText() : string
+    public function getServiceRemarksText() : ?string
     {
         return $this->serviceRemarksText;
     }
     /**
      * Service remarks text. The contents of this field will represent text that the back end application/function needs to display to clarify the time in transit calculation.
      *
-     * @param string $serviceRemarksText
+     * @param string|null $serviceRemarksText
      *
      * @return self
      */
-    public function setServiceRemarksText(string $serviceRemarksText) : self
+    public function setServiceRemarksText(?string $serviceRemarksText) : self
     {
         $this->initialized['serviceRemarksText'] = true;
         $this->serviceRemarksText = $serviceRemarksText;
@@ -507,9 +507,9 @@ class Services extends \ArrayObject
     
     If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of servies to remove guarantees for, "0" wil be returned.
     *
-    * @return string
+    * @return string|null
     */
-    public function getGuaranteeIndicator() : string
+    public function getGuaranteeIndicator() : ?string
     {
         return $this->guaranteeIndicator;
     }
@@ -520,11 +520,11 @@ class Services extends \ArrayObject
     
     If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of servies to remove guarantees for, "0" wil be returned.
     *
-    * @param string $guaranteeIndicator
+    * @param string|null $guaranteeIndicator
     *
     * @return self
     */
-    public function setGuaranteeIndicator(string $guaranteeIndicator) : self
+    public function setGuaranteeIndicator(?string $guaranteeIndicator) : self
     {
         $this->initialized['guaranteeIndicator'] = true;
         $this->guaranteeIndicator = $guaranteeIndicator;
@@ -535,9 +535,9 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @return int
+    * @return int|null
     */
-    public function getTotalTransitDays() : int
+    public function getTotalTransitDays() : ?int
     {
         return $this->totalTransitDays;
     }
@@ -546,11 +546,11 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @param int $totalTransitDays
+    * @param int|null $totalTransitDays
     *
     * @return self
     */
-    public function setTotalTransitDays(int $totalTransitDays) : self
+    public function setTotalTransitDays(?int $totalTransitDays) : self
     {
         $this->initialized['totalTransitDays'] = true;
         $this->totalTransitDays = $totalTransitDays;
@@ -559,20 +559,20 @@ class Services extends \ArrayObject
     /**
      * Returns the number of UPS business days from origin location to destination location.
      *
-     * @return int
+     * @return int|null
      */
-    public function getBusinessTransitDays() : int
+    public function getBusinessTransitDays() : ?int
     {
         return $this->businessTransitDays;
     }
     /**
      * Returns the number of UPS business days from origin location to destination location.
      *
-     * @param int $businessTransitDays
+     * @param int|null $businessTransitDays
      *
      * @return self
      */
-    public function setBusinessTransitDays(int $businessTransitDays) : self
+    public function setBusinessTransitDays(?int $businessTransitDays) : self
     {
         $this->initialized['businessTransitDays'] = true;
         $this->businessTransitDays = $businessTransitDays;
@@ -583,9 +583,9 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @return int
+    * @return int|null
     */
-    public function getRestDaysCount() : int
+    public function getRestDaysCount() : ?int
     {
         return $this->restDaysCount;
     }
@@ -594,11 +594,11 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @param int $restDaysCount
+    * @param int|null $restDaysCount
     *
     * @return self
     */
-    public function setRestDaysCount(int $restDaysCount) : self
+    public function setRestDaysCount(?int $restDaysCount) : self
     {
         $this->initialized['restDaysCount'] = true;
         $this->restDaysCount = $restDaysCount;
@@ -609,9 +609,9 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @return int
+    * @return int|null
     */
-    public function getHolidayCount() : int
+    public function getHolidayCount() : ?int
     {
         return $this->holidayCount;
     }
@@ -620,11 +620,11 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @param int $holidayCount
+    * @param int|null $holidayCount
     *
     * @return self
     */
-    public function setHolidayCount(int $holidayCount) : self
+    public function setHolidayCount(?int $holidayCount) : self
     {
         $this->initialized['holidayCount'] = true;
         $this->holidayCount = $holidayCount;
@@ -635,9 +635,9 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @return int
+    * @return int|null
     */
-    public function getDelayCount() : int
+    public function getDelayCount() : ?int
     {
         return $this->delayCount;
     }
@@ -646,11 +646,11 @@ class Services extends \ArrayObject
     
     Defaults to 0.
     *
-    * @param int $delayCount
+    * @param int|null $delayCount
     *
     * @return self
     */
-    public function setDelayCount(int $delayCount) : self
+    public function setDelayCount(?int $delayCount) : self
     {
         $this->initialized['delayCount'] = true;
         $this->delayCount = $delayCount;
@@ -661,9 +661,9 @@ class Services extends \ArrayObject
     
     Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupDate() : string
+    public function getPickupDate() : ?string
     {
         return $this->pickupDate;
     }
@@ -672,11 +672,11 @@ class Services extends \ArrayObject
     
     Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
     *
-    * @param string $pickupDate
+    * @param string|null $pickupDate
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(?string $pickupDate) : self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -685,20 +685,20 @@ class Services extends \ArrayObject
     /**
      * Latest possible pickup time. This data is available only for international transactions. If the package was not actually picked by UPS before this time, the services will not meet the guarantee commitment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupTime() : string
+    public function getPickupTime() : ?string
     {
         return $this->pickupTime;
     }
     /**
      * Latest possible pickup time. This data is available only for international transactions. If the package was not actually picked by UPS before this time, the services will not meet the guarantee commitment.
      *
-     * @param string $pickupTime
+     * @param string|null $pickupTime
      *
      * @return self
      */
-    public function setPickupTime(string $pickupTime) : self
+    public function setPickupTime(?string $pickupTime) : self
     {
         $this->initialized['pickupTime'] = true;
         $this->pickupTime = $pickupTime;
@@ -707,20 +707,20 @@ class Services extends \ArrayObject
     /**
      * Latest time a customer can contact UPS CST needs to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCstccutoffTime() : string
+    public function getCstccutoffTime() : ?string
     {
         return $this->cstccutoffTime;
     }
     /**
      * Latest time a customer can contact UPS CST needs to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
      *
-     * @param string $cstccutoffTime
+     * @param string|null $cstccutoffTime
      *
      * @return self
      */
-    public function setCstccutoffTime(string $cstccutoffTime) : self
+    public function setCstccutoffTime(?string $cstccutoffTime) : self
     {
         $this->initialized['cstccutoffTime'] = true;
         $this->cstccutoffTime = $cstccutoffTime;
@@ -729,20 +729,20 @@ class Services extends \ArrayObject
     /**
      * Returns the date proof of delivery informatino will be available.  This data is available only for international transactions.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoddate() : string
+    public function getPoddate() : ?string
     {
         return $this->poddate;
     }
     /**
      * Returns the date proof of delivery informatino will be available.  This data is available only for international transactions.
      *
-     * @param string $poddate
+     * @param string|null $poddate
      *
      * @return self
      */
-    public function setPoddate(string $poddate) : self
+    public function setPoddate(?string $poddate) : self
     {
         $this->initialized['poddate'] = true;
         $this->poddate = $poddate;
@@ -751,20 +751,20 @@ class Services extends \ArrayObject
     /**
      * Returns the number of days proof of delivery information will be available.  This data is available only for international transactions.
      *
-     * @return int
+     * @return int|null
      */
-    public function getPoddays() : int
+    public function getPoddays() : ?int
     {
         return $this->poddays;
     }
     /**
      * Returns the number of days proof of delivery information will be available.  This data is available only for international transactions.
      *
-     * @param int $poddays
+     * @param int|null $poddays
      *
      * @return self
      */
-    public function setPoddays(int $poddays) : self
+    public function setPoddays(?int $poddays) : self
     {
         $this->initialized['poddays'] = true;
         $this->poddays = $poddays;

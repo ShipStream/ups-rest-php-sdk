@@ -15,86 +15,86 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Name. (Also includes the building name)Return if available.
      *
-     * @var string
+     * @var string|null
      */
     protected $consigneeName;
     /**
      * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine;
     /**
      * Additional Address Line Information.
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine2;
     /**
      * Additional Address Line Information.
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine3;
     /**
      * Subdivision within a City. e.g., a Barrio.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision3;
     /**
      * City.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision2;
     /**
      * State/Province.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision1;
     /**
      * Postal Code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodePrimaryLow;
     /**
      * 4 Digit postal code extension. Valid for US only.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodeExtendedLow;
     /**
      * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
      *
-     * @var string
+     * @var string|null
      */
     protected $singleLineAddress;
     /**
      * Name. (Also includes the building name)Return if available.
      *
-     * @return string
+     * @return string|null
      */
-    public function getConsigneeName() : string
+    public function getConsigneeName() : ?string
     {
         return $this->consigneeName;
     }
     /**
      * Name. (Also includes the building name)Return if available.
      *
-     * @param string $consigneeName
+     * @param string|null $consigneeName
      *
      * @return self
      */
-    public function setConsigneeName(string $consigneeName) : self
+    public function setConsigneeName(?string $consigneeName) : self
     {
         $this->initialized['consigneeName'] = true;
         $this->consigneeName = $consigneeName;
@@ -103,20 +103,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine() : string
+    public function getAddressLine() : ?string
     {
         return $this->addressLine;
     }
     /**
      * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
      *
-     * @param string $addressLine
+     * @param string|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(?string $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -125,20 +125,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Additional Address Line Information.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine2() : string
+    public function getAddressLine2() : ?string
     {
         return $this->addressLine2;
     }
     /**
      * Additional Address Line Information.
      *
-     * @param string $addressLine2
+     * @param string|null $addressLine2
      *
      * @return self
      */
-    public function setAddressLine2(string $addressLine2) : self
+    public function setAddressLine2(?string $addressLine2) : self
     {
         $this->initialized['addressLine2'] = true;
         $this->addressLine2 = $addressLine2;
@@ -147,20 +147,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Additional Address Line Information.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine3() : string
+    public function getAddressLine3() : ?string
     {
         return $this->addressLine3;
     }
     /**
      * Additional Address Line Information.
      *
-     * @param string $addressLine3
+     * @param string|null $addressLine3
      *
      * @return self
      */
-    public function setAddressLine3(string $addressLine3) : self
+    public function setAddressLine3(?string $addressLine3) : self
     {
         $this->initialized['addressLine3'] = true;
         $this->addressLine3 = $addressLine3;
@@ -169,20 +169,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Subdivision within a City. e.g., a Barrio.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision3() : string
+    public function getPoliticalDivision3() : ?string
     {
         return $this->politicalDivision3;
     }
     /**
      * Subdivision within a City. e.g., a Barrio.
      *
-     * @param string $politicalDivision3
+     * @param string|null $politicalDivision3
      *
      * @return self
      */
-    public function setPoliticalDivision3(string $politicalDivision3) : self
+    public function setPoliticalDivision3(?string $politicalDivision3) : self
     {
         $this->initialized['politicalDivision3'] = true;
         $this->politicalDivision3 = $politicalDivision3;
@@ -191,20 +191,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * City.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2() : ?string
     {
         return $this->politicalDivision2;
     }
     /**
      * City.
      *
-     * @param string $politicalDivision2
+     * @param string|null $politicalDivision2
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(?string $politicalDivision2) : self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -213,20 +213,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * State/Province.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1() : ?string
     {
         return $this->politicalDivision1;
     }
     /**
      * State/Province.
      *
-     * @param string $politicalDivision1
+     * @param string|null $politicalDivision1
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(?string $politicalDivision1) : self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -235,20 +235,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Postal Code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow() : ?string
     {
         return $this->postcodePrimaryLow;
     }
     /**
      * Postal Code.
      *
-     * @param string $postcodePrimaryLow
+     * @param string|null $postcodePrimaryLow
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(?string $postcodePrimaryLow) : self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;
@@ -257,20 +257,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * 4 Digit postal code extension. Valid for US only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodeExtendedLow() : string
+    public function getPostcodeExtendedLow() : ?string
     {
         return $this->postcodeExtendedLow;
     }
     /**
      * 4 Digit postal code extension. Valid for US only.
      *
-     * @param string $postcodeExtendedLow
+     * @param string|null $postcodeExtendedLow
      *
      * @return self
      */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
+    public function setPostcodeExtendedLow(?string $postcodeExtendedLow) : self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;
@@ -279,20 +279,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -301,20 +301,20 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     /**
      * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSingleLineAddress() : string
+    public function getSingleLineAddress() : ?string
     {
         return $this->singleLineAddress;
     }
     /**
      * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
      *
-     * @param string $singleLineAddress
+     * @param string|null $singleLineAddress
      *
      * @return self
      */
-    public function setSingleLineAddress(string $singleLineAddress) : self
+    public function setSingleLineAddress(?string $singleLineAddress) : self
     {
         $this->initialized['singleLineAddress'] = true;
         $this->singleLineAddress = $singleLineAddress;

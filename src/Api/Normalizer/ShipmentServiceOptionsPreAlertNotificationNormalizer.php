@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailMessage', $data)) {
+            if (\array_key_exists('EMailMessage', $data) && $data['EMailMessage'] !== null) {
                 $object->setEMailMessage($this->denormalizer->denormalize($data['EMailMessage'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationEMailMessage', 'json', $context));
                 unset($data['EMailMessage']);
             }
-            if (\array_key_exists('VoiceMessage', $data)) {
+            elseif (\array_key_exists('EMailMessage', $data) && $data['EMailMessage'] === null) {
+                $object->setEMailMessage(null);
+            }
+            if (\array_key_exists('VoiceMessage', $data) && $data['VoiceMessage'] !== null) {
                 $object->setVoiceMessage($this->denormalizer->denormalize($data['VoiceMessage'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationVoiceMessage', 'json', $context));
                 unset($data['VoiceMessage']);
             }
-            if (\array_key_exists('TextMessage', $data)) {
+            elseif (\array_key_exists('VoiceMessage', $data) && $data['VoiceMessage'] === null) {
+                $object->setVoiceMessage(null);
+            }
+            if (\array_key_exists('TextMessage', $data) && $data['TextMessage'] !== null) {
                 $object->setTextMessage($this->denormalizer->denormalize($data['TextMessage'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationTextMessage', 'json', $context));
                 unset($data['TextMessage']);
             }
-            if (\array_key_exists('Locale', $data)) {
+            elseif (\array_key_exists('TextMessage', $data) && $data['TextMessage'] === null) {
+                $object->setTextMessage(null);
+            }
+            if (\array_key_exists('Locale', $data) && $data['Locale'] !== null) {
                 $object->setLocale($this->denormalizer->denormalize($data['Locale'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationLocale', 'json', $context));
                 unset($data['Locale']);
+            }
+            elseif (\array_key_exists('Locale', $data) && $data['Locale'] === null) {
+                $object->setLocale(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -118,21 +130,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailMessage', $data)) {
+            if (\array_key_exists('EMailMessage', $data) && $data['EMailMessage'] !== null) {
                 $object->setEMailMessage($this->denormalizer->denormalize($data['EMailMessage'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationEMailMessage', 'json', $context));
                 unset($data['EMailMessage']);
             }
-            if (\array_key_exists('VoiceMessage', $data)) {
+            elseif (\array_key_exists('EMailMessage', $data) && $data['EMailMessage'] === null) {
+                $object->setEMailMessage(null);
+            }
+            if (\array_key_exists('VoiceMessage', $data) && $data['VoiceMessage'] !== null) {
                 $object->setVoiceMessage($this->denormalizer->denormalize($data['VoiceMessage'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationVoiceMessage', 'json', $context));
                 unset($data['VoiceMessage']);
             }
-            if (\array_key_exists('TextMessage', $data)) {
+            elseif (\array_key_exists('VoiceMessage', $data) && $data['VoiceMessage'] === null) {
+                $object->setVoiceMessage(null);
+            }
+            if (\array_key_exists('TextMessage', $data) && $data['TextMessage'] !== null) {
                 $object->setTextMessage($this->denormalizer->denormalize($data['TextMessage'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationTextMessage', 'json', $context));
                 unset($data['TextMessage']);
             }
-            if (\array_key_exists('Locale', $data)) {
+            elseif (\array_key_exists('TextMessage', $data) && $data['TextMessage'] === null) {
+                $object->setTextMessage(null);
+            }
+            if (\array_key_exists('Locale', $data) && $data['Locale'] !== null) {
                 $object->setLocale($this->denormalizer->denormalize($data['Locale'], 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationLocale', 'json', $context));
                 unset($data['Locale']);
+            }
+            elseif (\array_key_exists('Locale', $data) && $data['Locale'] === null) {
+                $object->setLocale(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

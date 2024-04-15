@@ -15,50 +15,50 @@ class FreightPickupRequestShipFrom extends \ArrayObject
     /**
      * Contact name at the ship from location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * The ship from locations name or company name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address Container.
      *
-     * @var ShipFromAddress
+     * @var ShipFromAddress|null
      */
     protected $address;
     /**
      * Phone Container
      *
-     * @var ShipFromPhone
+     * @var ShipFromPhone|null
      */
     protected $phone;
     /**
      * Ship from email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Contact name at the ship from location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the ship from location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -67,20 +67,20 @@ class FreightPickupRequestShipFrom extends \ArrayObject
     /**
      * The ship from locations name or company name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * The ship from locations name or company name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -89,20 +89,20 @@ class FreightPickupRequestShipFrom extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipFromAddress
+     * @return ShipFromAddress|null
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress() : ?ShipFromAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipFromAddress $address
+     * @param ShipFromAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(?ShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -111,20 +111,20 @@ class FreightPickupRequestShipFrom extends \ArrayObject
     /**
      * Phone Container
      *
-     * @return ShipFromPhone
+     * @return ShipFromPhone|null
      */
-    public function getPhone() : ShipFromPhone
+    public function getPhone() : ?ShipFromPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container
      *
-     * @param ShipFromPhone $phone
+     * @param ShipFromPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ShipFromPhone $phone) : self
+    public function setPhone(?ShipFromPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -133,20 +133,20 @@ class FreightPickupRequestShipFrom extends \ArrayObject
     /**
      * Ship from email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Ship from email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

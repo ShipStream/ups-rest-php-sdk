@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FormsType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('GraphicImage', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] !== null) {
                 $object->setGraphicImage($data['GraphicImage']);
                 unset($data['GraphicImage']);
             }
-            if (\array_key_exists('Format', $data)) {
+            elseif (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] === null) {
+                $object->setGraphicImage(null);
+            }
+            if (\array_key_exists('Format', $data) && $data['Format'] !== null) {
                 $object->setFormat($this->denormalizer->denormalize($data['Format'], 'ShipStream\\Ups\\Api\\Model\\FormsFormat', 'json', $context));
                 unset($data['Format']);
+            }
+            elseif (\array_key_exists('Format', $data) && $data['Format'] === null) {
+                $object->setFormat(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FormsType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('GraphicImage', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] !== null) {
                 $object->setGraphicImage($data['GraphicImage']);
                 unset($data['GraphicImage']);
             }
-            if (\array_key_exists('Format', $data)) {
+            elseif (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] === null) {
+                $object->setGraphicImage(null);
+            }
+            if (\array_key_exists('Format', $data) && $data['Format'] !== null) {
                 $object->setFormat($this->denormalizer->denormalize($data['Format'], 'ShipStream\\Ups\\Api\\Model\\FormsFormat', 'json', $context));
                 unset($data['Format']);
+            }
+            elseif (\array_key_exists('Format', $data) && $data['Format'] === null) {
+                $object->setFormat(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,33 +15,33 @@ class DropOffFacilitiesLocalizedInstruction extends \ArrayObject
     /**
      * Locale. Example: en_US
      *
-     * @var string
+     * @var string|null
      */
     protected $locale;
     /**
     * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
     Last 50 feet instruction in the language asked in request or the English for that country.
     *
-    * @var string
+    * @var string|null
     */
     protected $last50ftInstruction;
     /**
      * Locale. Example: en_US
      *
-     * @return string
+     * @return string|null
      */
-    public function getLocale() : string
+    public function getLocale() : ?string
     {
         return $this->locale;
     }
     /**
      * Locale. Example: en_US
      *
-     * @param string $locale
+     * @param string|null $locale
      *
      * @return self
      */
-    public function setLocale(string $locale) : self
+    public function setLocale(?string $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -51,9 +51,9 @@ class DropOffFacilitiesLocalizedInstruction extends \ArrayObject
     * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
     Last 50 feet instruction in the language asked in request or the English for that country.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLast50ftInstruction() : string
+    public function getLast50ftInstruction() : ?string
     {
         return $this->last50ftInstruction;
     }
@@ -61,11 +61,11 @@ class DropOffFacilitiesLocalizedInstruction extends \ArrayObject
     * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
     Last 50 feet instruction in the language asked in request or the English for that country.
     *
-    * @param string $last50ftInstruction
+    * @param string|null $last50ftInstruction
     *
     * @return self
     */
-    public function setLast50ftInstruction(string $last50ftInstruction) : self
+    public function setLast50ftInstruction(?string $last50ftInstruction) : self
     {
         $this->initialized['last50ftInstruction'] = true;
         $this->last50ftInstruction = $last50ftInstruction;

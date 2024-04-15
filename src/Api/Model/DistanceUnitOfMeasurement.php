@@ -17,13 +17,13 @@ class DistanceUnitOfMeasurement extends \ArrayObject
     
     Valid values: MI-Miles or KM-Kilometers
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * May return the description of the unit of measure specified in the request.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -31,9 +31,9 @@ class DistanceUnitOfMeasurement extends \ArrayObject
     
     Valid values: MI-Miles or KM-Kilometers
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -42,11 +42,11 @@ class DistanceUnitOfMeasurement extends \ArrayObject
     
     Valid values: MI-Miles or KM-Kilometers
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -55,20 +55,20 @@ class DistanceUnitOfMeasurement extends \ArrayObject
     /**
      * May return the description of the unit of measure specified in the request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * May return the description of the unit of measure specified in the request.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

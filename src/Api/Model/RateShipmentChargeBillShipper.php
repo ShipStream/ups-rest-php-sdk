@@ -15,26 +15,26 @@ class RateShipmentChargeBillShipper extends \ArrayObject
     /**
      * UPS account number  Must be the same UPS account number as the one provided in Shipper/ShipperNumber.
      *
-     * @var string
+     * @var string|null
      */
     protected $accountNumber;
     /**
      * UPS account number  Must be the same UPS account number as the one provided in Shipper/ShipperNumber.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
     /**
      * UPS account number  Must be the same UPS account number as the one provided in Shipper/ShipperNumber.
      *
-     * @param string $accountNumber
+     * @param string|null $accountNumber
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;

@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CODAmount', $data)) {
+            if (\array_key_exists('CODAmount', $data) && $data['CODAmount'] !== null) {
                 $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\CODCODAmount', 'json', $context));
                 unset($data['CODAmount']);
+            }
+            elseif (\array_key_exists('CODAmount', $data) && $data['CODAmount'] === null) {
+                $object->setCODAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -99,9 +102,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CODAmount', $data)) {
+            if (\array_key_exists('CODAmount', $data) && $data['CODAmount'] !== null) {
                 $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\CODCODAmount', 'json', $context));
                 unset($data['CODAmount']);
+            }
+            elseif (\array_key_exists('CODAmount', $data) && $data['CODAmount'] === null) {
+                $object->setCODAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

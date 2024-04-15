@@ -15,62 +15,62 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * UPS Access Point city.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * UPS Access Point State or Province code.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a residential location. True if ResidentialAddressIndicator tag exists.  For future use.
      *
-     * @var string
+     * @var string|null
      */
     protected $residentialAddressIndicator;
     /**
      * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery
      *
-     * @var string
+     * @var string|null
      */
     protected $pOBoxIndicator;
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -79,20 +79,20 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * UPS Access Point city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * UPS Access Point city.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -101,20 +101,20 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * UPS Access Point State or Province code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * UPS Access Point State or Province code.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -123,20 +123,20 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -145,20 +145,20 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -167,20 +167,20 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a residential location. True if ResidentialAddressIndicator tag exists.  For future use.
      *
-     * @return string
+     * @return string|null
      */
-    public function getResidentialAddressIndicator() : string
+    public function getResidentialAddressIndicator() : ?string
     {
         return $this->residentialAddressIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a residential location. True if ResidentialAddressIndicator tag exists.  For future use.
      *
-     * @param string $residentialAddressIndicator
+     * @param string|null $residentialAddressIndicator
      *
      * @return self
      */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
+    public function setResidentialAddressIndicator(?string $residentialAddressIndicator) : self
     {
         $this->initialized['residentialAddressIndicator'] = true;
         $this->residentialAddressIndicator = $residentialAddressIndicator;
@@ -189,20 +189,20 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery
      *
-     * @return string
+     * @return string|null
      */
-    public function getPOBoxIndicator() : string
+    public function getPOBoxIndicator() : ?string
     {
         return $this->pOBoxIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery
      *
-     * @param string $pOBoxIndicator
+     * @param string|null $pOBoxIndicator
      *
      * @return self
      */
-    public function setPOBoxIndicator(string $pOBoxIndicator) : self
+    public function setPOBoxIndicator(?string $pOBoxIndicator) : self
     {
         $this->initialized['pOBoxIndicator'] = true;
         $this->pOBoxIndicator = $pOBoxIndicator;

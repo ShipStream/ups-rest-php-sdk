@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
             }
-            if (\array_key_exists('Length', $data)) {
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
+            }
+            if (\array_key_exists('Length', $data) && $data['Length'] !== null) {
                 $object->setLength($data['Length']);
                 unset($data['Length']);
             }
-            if (\array_key_exists('Width', $data)) {
+            elseif (\array_key_exists('Length', $data) && $data['Length'] === null) {
+                $object->setLength(null);
+            }
+            if (\array_key_exists('Width', $data) && $data['Width'] !== null) {
                 $object->setWidth($data['Width']);
                 unset($data['Width']);
             }
-            if (\array_key_exists('Height', $data)) {
+            elseif (\array_key_exists('Width', $data) && $data['Width'] === null) {
+                $object->setWidth(null);
+            }
+            if (\array_key_exists('Height', $data) && $data['Height'] !== null) {
                 $object->setHeight($data['Height']);
                 unset($data['Height']);
+            }
+            elseif (\array_key_exists('Height', $data) && $data['Height'] === null) {
+                $object->setHeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,21 +124,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
             }
-            if (\array_key_exists('Length', $data)) {
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
+            }
+            if (\array_key_exists('Length', $data) && $data['Length'] !== null) {
                 $object->setLength($data['Length']);
                 unset($data['Length']);
             }
-            if (\array_key_exists('Width', $data)) {
+            elseif (\array_key_exists('Length', $data) && $data['Length'] === null) {
+                $object->setLength(null);
+            }
+            if (\array_key_exists('Width', $data) && $data['Width'] !== null) {
                 $object->setWidth($data['Width']);
                 unset($data['Width']);
             }
-            if (\array_key_exists('Height', $data)) {
+            elseif (\array_key_exists('Width', $data) && $data['Width'] === null) {
+                $object->setWidth(null);
+            }
+            if (\array_key_exists('Height', $data) && $data['Height'] !== null) {
                 $object->setHeight($data['Height']);
                 unset($data['Height']);
+            }
+            elseif (\array_key_exists('Height', $data) && $data['Height'] === null) {
+                $object->setHeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

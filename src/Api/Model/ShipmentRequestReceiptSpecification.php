@@ -15,26 +15,26 @@ class ShipmentRequestReceiptSpecification extends \ArrayObject
     /**
      * ImageFormat Container.
      *
-     * @var ReceiptSpecificationImageFormat
+     * @var ReceiptSpecificationImageFormat|null
      */
     protected $imageFormat;
     /**
      * ImageFormat Container.
      *
-     * @return ReceiptSpecificationImageFormat
+     * @return ReceiptSpecificationImageFormat|null
      */
-    public function getImageFormat() : ReceiptSpecificationImageFormat
+    public function getImageFormat() : ?ReceiptSpecificationImageFormat
     {
         return $this->imageFormat;
     }
     /**
      * ImageFormat Container.
      *
-     * @param ReceiptSpecificationImageFormat $imageFormat
+     * @param ReceiptSpecificationImageFormat|null $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ReceiptSpecificationImageFormat $imageFormat) : self
+    public function setImageFormat(?ReceiptSpecificationImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;

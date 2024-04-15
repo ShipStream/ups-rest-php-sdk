@@ -15,26 +15,26 @@ class SearchOptionOptionCode extends \ArrayObject
     /**
      * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

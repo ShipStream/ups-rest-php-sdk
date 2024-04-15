@@ -15,7 +15,7 @@ class ShipmentDetailWeight extends \ArrayObject
     /**
      * Reference Weight UnitOfMeasurement Container.
      *
-     * @var WeightUnitOfMeasurement
+     * @var WeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
@@ -23,26 +23,26 @@ class ShipmentDetailWeight extends \ArrayObject
     Valid characters: 0-9 and "." (Decimal).
     Maximum of 2 digits after the decimal.
     *
-    * @var string
+    * @var string|null
     */
     protected $value;
     /**
      * Reference Weight UnitOfMeasurement Container.
      *
-     * @return WeightUnitOfMeasurement
+     * @return WeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : WeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?WeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Reference Weight UnitOfMeasurement Container.
      *
-     * @param WeightUnitOfMeasurement $unitOfMeasurement
+     * @param WeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(WeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?WeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -53,9 +53,9 @@ class ShipmentDetailWeight extends \ArrayObject
     Valid characters: 0-9 and "." (Decimal).
     Maximum of 2 digits after the decimal.
     *
-    * @return string
+    * @return string|null
     */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
@@ -64,11 +64,11 @@ class ShipmentDetailWeight extends \ArrayObject
     Valid characters: 0-9 and "." (Decimal).
     Maximum of 2 digits after the decimal.
     *
-    * @param string $value
+    * @param string|null $value
     *
     * @return self
     */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

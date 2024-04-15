@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('Low', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Low', $data) && $data['Low'] !== null) {
                 $object->setLow($data['Low']);
                 unset($data['Low']);
             }
-            if (\array_key_exists('High', $data)) {
+            elseif (\array_key_exists('Low', $data) && $data['Low'] === null) {
+                $object->setLow(null);
+            }
+            if (\array_key_exists('High', $data) && $data['High'] !== null) {
                 $object->setHigh($data['High']);
                 unset($data['High']);
+            }
+            elseif (\array_key_exists('High', $data) && $data['High'] === null) {
+                $object->setHigh(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('Low', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Low', $data) && $data['Low'] !== null) {
                 $object->setLow($data['Low']);
                 unset($data['Low']);
             }
-            if (\array_key_exists('High', $data)) {
+            elseif (\array_key_exists('Low', $data) && $data['Low'] === null) {
+                $object->setLow(null);
+            }
+            if (\array_key_exists('High', $data) && $data['High'] !== null) {
                 $object->setHigh($data['High']);
                 unset($data['High']);
+            }
+            elseif (\array_key_exists('High', $data) && $data['High'] === null) {
+                $object->setHigh(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,26 +15,26 @@ class XAVResponseWrapper extends \ArrayObject
     /**
      * XAV Response Container.
      *
-     * @var XAVResponse
+     * @var XAVResponse|null
      */
     protected $xAVResponse;
     /**
      * XAV Response Container.
      *
-     * @return XAVResponse
+     * @return XAVResponse|null
      */
-    public function getXAVResponse() : XAVResponse
+    public function getXAVResponse() : ?XAVResponse
     {
         return $this->xAVResponse;
     }
     /**
      * XAV Response Container.
      *
-     * @param XAVResponse $xAVResponse
+     * @param XAVResponse|null $xAVResponse
      *
      * @return self
      */
-    public function setXAVResponse(XAVResponse $xAVResponse) : self
+    public function setXAVResponse(?XAVResponse $xAVResponse) : self
     {
         $this->initialized['xAVResponse'] = true;
         $this->xAVResponse = $xAVResponse;

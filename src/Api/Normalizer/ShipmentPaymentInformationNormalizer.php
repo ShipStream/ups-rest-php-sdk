@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentCharge', $data)) {
+            if (\array_key_exists('ShipmentCharge', $data) && $data['ShipmentCharge'] !== null) {
                 $values = [];
                 foreach ($data['ShipmentCharge'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge', 'json', $context);
@@ -48,9 +48,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setShipmentCharge($values);
                 unset($data['ShipmentCharge']);
             }
-            if (\array_key_exists('SplitDutyVATIndicator', $data)) {
+            elseif (\array_key_exists('ShipmentCharge', $data) && $data['ShipmentCharge'] === null) {
+                $object->setShipmentCharge(null);
+            }
+            if (\array_key_exists('SplitDutyVATIndicator', $data) && $data['SplitDutyVATIndicator'] !== null) {
                 $object->setSplitDutyVATIndicator($data['SplitDutyVATIndicator']);
                 unset($data['SplitDutyVATIndicator']);
+            }
+            elseif (\array_key_exists('SplitDutyVATIndicator', $data) && $data['SplitDutyVATIndicator'] === null) {
+                $object->setSplitDutyVATIndicator(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,7 +118,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentCharge', $data)) {
+            if (\array_key_exists('ShipmentCharge', $data) && $data['ShipmentCharge'] !== null) {
                 $values = [];
                 foreach ($data['ShipmentCharge'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge', 'json', $context);
@@ -120,9 +126,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setShipmentCharge($values);
                 unset($data['ShipmentCharge']);
             }
-            if (\array_key_exists('SplitDutyVATIndicator', $data)) {
+            elseif (\array_key_exists('ShipmentCharge', $data) && $data['ShipmentCharge'] === null) {
+                $object->setShipmentCharge(null);
+            }
+            if (\array_key_exists('SplitDutyVATIndicator', $data) && $data['SplitDutyVATIndicator'] !== null) {
                 $object->setSplitDutyVATIndicator($data['SplitDutyVATIndicator']);
                 unset($data['SplitDutyVATIndicator']);
+            }
+            elseif (\array_key_exists('SplitDutyVATIndicator', $data) && $data['SplitDutyVATIndicator'] === null) {
+                $object->setSplitDutyVATIndicator(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

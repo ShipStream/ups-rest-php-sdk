@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('BeginDate', $data)) {
+            if (\array_key_exists('BeginDate', $data) && $data['BeginDate'] !== null) {
                 $object->setBeginDate($data['BeginDate']);
                 unset($data['BeginDate']);
             }
-            if (\array_key_exists('EndDate', $data)) {
+            elseif (\array_key_exists('BeginDate', $data) && $data['BeginDate'] === null) {
+                $object->setBeginDate(null);
+            }
+            if (\array_key_exists('EndDate', $data) && $data['EndDate'] !== null) {
                 $object->setEndDate($data['EndDate']);
                 unset($data['EndDate']);
+            }
+            elseif (\array_key_exists('EndDate', $data) && $data['EndDate'] === null) {
+                $object->setEndDate(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('BeginDate', $data)) {
+            if (\array_key_exists('BeginDate', $data) && $data['BeginDate'] !== null) {
                 $object->setBeginDate($data['BeginDate']);
                 unset($data['BeginDate']);
             }
-            if (\array_key_exists('EndDate', $data)) {
+            elseif (\array_key_exists('BeginDate', $data) && $data['BeginDate'] === null) {
+                $object->setBeginDate(null);
+            }
+            if (\array_key_exists('EndDate', $data) && $data['EndDate'] !== null) {
                 $object->setEndDate($data['EndDate']);
                 unset($data['EndDate']);
+            }
+            elseif (\array_key_exists('EndDate', $data) && $data['EndDate'] === null) {
+                $object->setEndDate(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

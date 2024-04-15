@@ -14,13 +14,13 @@ class PickupRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impleme
     oncall
     smart
     both. Length 6
-    * @param \ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $pickuptype, \ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $version, string $pickuptype, ?\ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->pickuptype = $pickuptype;

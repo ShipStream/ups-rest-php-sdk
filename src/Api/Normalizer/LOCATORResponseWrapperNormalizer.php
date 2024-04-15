@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LocatorResponse', $data)) {
+            if (\array_key_exists('LocatorResponse', $data) && $data['LocatorResponse'] !== null) {
                 $object->setLocatorResponse($this->denormalizer->denormalize($data['LocatorResponse'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponse', 'json', $context));
                 unset($data['LocatorResponse']);
+            }
+            elseif (\array_key_exists('LocatorResponse', $data) && $data['LocatorResponse'] === null) {
+                $object->setLocatorResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LocatorResponse', $data)) {
+            if (\array_key_exists('LocatorResponse', $data) && $data['LocatorResponse'] !== null) {
                 $object->setLocatorResponse($this->denormalizer->denormalize($data['LocatorResponse'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponse', 'json', $context));
                 unset($data['LocatorResponse']);
+            }
+            elseif (\array_key_exists('LocatorResponse', $data) && $data['LocatorResponse'] === null) {
+                $object->setLocatorResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

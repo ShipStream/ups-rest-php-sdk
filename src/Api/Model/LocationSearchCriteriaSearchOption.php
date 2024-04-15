@@ -16,13 +16,13 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     * OptionType is a container that indicates the type of search for locations. There are 5 types of search. They are search by: Location, Retail Location, Additional Services, Program Type, and a Service Level Option. 
     If search criteria by Location or Retail Location is not provided the default search of The UPS Store, UPS Center, UPS Drop Box, and Authorized Shipping Outlet location types will be performed.
     *
-    * @var SearchOptionOptionType
+    * @var SearchOptionOptionType|null
     */
     protected $optionType;
     /**
      * 
      *
-     * @var SearchOptionOptionCode[]
+     * @var list<SearchOptionOptionCode>|null
      */
     protected $optionCode;
     /**
@@ -30,16 +30,16 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     
     This is only applicable to option type Additional Services and Program Types. If this container is not present for Additional Services and Program Types, the default relation of And is used.
     *
-    * @var SearchOptionRelation
+    * @var SearchOptionRelation|null
     */
     protected $relation;
     /**
     * OptionType is a container that indicates the type of search for locations. There are 5 types of search. They are search by: Location, Retail Location, Additional Services, Program Type, and a Service Level Option. 
     If search criteria by Location or Retail Location is not provided the default search of The UPS Store, UPS Center, UPS Drop Box, and Authorized Shipping Outlet location types will be performed.
     *
-    * @return SearchOptionOptionType
+    * @return SearchOptionOptionType|null
     */
-    public function getOptionType() : SearchOptionOptionType
+    public function getOptionType() : ?SearchOptionOptionType
     {
         return $this->optionType;
     }
@@ -47,11 +47,11 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     * OptionType is a container that indicates the type of search for locations. There are 5 types of search. They are search by: Location, Retail Location, Additional Services, Program Type, and a Service Level Option. 
     If search criteria by Location or Retail Location is not provided the default search of The UPS Store, UPS Center, UPS Drop Box, and Authorized Shipping Outlet location types will be performed.
     *
-    * @param SearchOptionOptionType $optionType
+    * @param SearchOptionOptionType|null $optionType
     *
     * @return self
     */
-    public function setOptionType(SearchOptionOptionType $optionType) : self
+    public function setOptionType(?SearchOptionOptionType $optionType) : self
     {
         $this->initialized['optionType'] = true;
         $this->optionType = $optionType;
@@ -60,20 +60,20 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     /**
      * 
      *
-     * @return SearchOptionOptionCode[]
+     * @return list<SearchOptionOptionCode>|null
      */
-    public function getOptionCode() : array
+    public function getOptionCode() : ?array
     {
         return $this->optionCode;
     }
     /**
      * 
      *
-     * @param SearchOptionOptionCode[] $optionCode
+     * @param list<SearchOptionOptionCode>|null $optionCode
      *
      * @return self
      */
-    public function setOptionCode(array $optionCode) : self
+    public function setOptionCode(?array $optionCode) : self
     {
         $this->initialized['optionCode'] = true;
         $this->optionCode = $optionCode;
@@ -84,9 +84,9 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     
     This is only applicable to option type Additional Services and Program Types. If this container is not present for Additional Services and Program Types, the default relation of And is used.
     *
-    * @return SearchOptionRelation
+    * @return SearchOptionRelation|null
     */
-    public function getRelation() : SearchOptionRelation
+    public function getRelation() : ?SearchOptionRelation
     {
         return $this->relation;
     }
@@ -95,11 +95,11 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     
     This is only applicable to option type Additional Services and Program Types. If this container is not present for Additional Services and Program Types, the default relation of And is used.
     *
-    * @param SearchOptionRelation $relation
+    * @param SearchOptionRelation|null $relation
     *
     * @return self
     */
-    public function setRelation(SearchOptionRelation $relation) : self
+    public function setRelation(?SearchOptionRelation $relation) : self
     {
         $this->initialized['relation'] = true;
         $this->relation = $relation;

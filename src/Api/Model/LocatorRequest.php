@@ -15,50 +15,50 @@ class LocatorRequest extends \ArrayObject
     /**
      * N/A
      *
-     * @var LocatorRequestRequest
+     * @var LocatorRequestRequest|null
      */
     protected $request;
     /**
      * Container for origin address information.
      *
-     * @var LocatorRequestOriginAddress
+     * @var LocatorRequestOriginAddress|null
      */
     protected $originAddress;
     /**
      * Contains the locale information for the request.
      *
-     * @var LocatorRequestTranslate
+     * @var LocatorRequestTranslate|null
      */
     protected $translate;
     /**
      * Distance unit of measurement. This is required for location requests (request option 1).
      *
-     * @var LocatorRequestUnitOfMeasurement
+     * @var LocatorRequestUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Location ID is the identification number of the UPS affiliated location.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $locationID;
     /**
     * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations. 
     Only relevant when the user requests a Location search (request option 1).
     *
-    * @var LocatorRequestLocationSearchCriteria
+    * @var LocatorRequestLocationSearchCriteria|null
     */
     protected $locationSearchCriteria;
     /**
      * Container for Sort Criteria
      *
-     * @var LocatorRequestSortCriteria
+     * @var LocatorRequestSortCriteria|null
      */
     protected $sortCriteria;
     /**
      * Indicator to allow confidence level in search.
      *
-     * @var string
+     * @var string|null
      */
     protected $allowAllConfidenceLevels;
     /**
@@ -70,38 +70,38 @@ class LocatorRequest extends \ArrayObject
     05-Freight Will Call Search. 
     Either OptionType 03 or 04 is required.
     *
-    * @var string
+    * @var string|null
     */
     protected $searchOptionCode;
     /**
      * ServiceGeoUnit Container. Required to search for the freight facility information
      *
-     * @var LocatorRequestServiceGeoUnit
+     * @var LocatorRequestServiceGeoUnit|null
      */
     protected $serviceGeoUnit;
     /**
      * FreightIndicator. Required for Freight Location Search.
      *
-     * @var string
+     * @var string|null
      */
     protected $freightIndicator;
     /**
      * N/A
      *
-     * @return LocatorRequestRequest
+     * @return LocatorRequestRequest|null
      */
-    public function getRequest() : LocatorRequestRequest
+    public function getRequest() : ?LocatorRequestRequest
     {
         return $this->request;
     }
     /**
      * N/A
      *
-     * @param LocatorRequestRequest $request
+     * @param LocatorRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(LocatorRequestRequest $request) : self
+    public function setRequest(?LocatorRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -110,20 +110,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * Container for origin address information.
      *
-     * @return LocatorRequestOriginAddress
+     * @return LocatorRequestOriginAddress|null
      */
-    public function getOriginAddress() : LocatorRequestOriginAddress
+    public function getOriginAddress() : ?LocatorRequestOriginAddress
     {
         return $this->originAddress;
     }
     /**
      * Container for origin address information.
      *
-     * @param LocatorRequestOriginAddress $originAddress
+     * @param LocatorRequestOriginAddress|null $originAddress
      *
      * @return self
      */
-    public function setOriginAddress(LocatorRequestOriginAddress $originAddress) : self
+    public function setOriginAddress(?LocatorRequestOriginAddress $originAddress) : self
     {
         $this->initialized['originAddress'] = true;
         $this->originAddress = $originAddress;
@@ -132,20 +132,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * Contains the locale information for the request.
      *
-     * @return LocatorRequestTranslate
+     * @return LocatorRequestTranslate|null
      */
-    public function getTranslate() : LocatorRequestTranslate
+    public function getTranslate() : ?LocatorRequestTranslate
     {
         return $this->translate;
     }
     /**
      * Contains the locale information for the request.
      *
-     * @param LocatorRequestTranslate $translate
+     * @param LocatorRequestTranslate|null $translate
      *
      * @return self
      */
-    public function setTranslate(LocatorRequestTranslate $translate) : self
+    public function setTranslate(?LocatorRequestTranslate $translate) : self
     {
         $this->initialized['translate'] = true;
         $this->translate = $translate;
@@ -154,20 +154,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * Distance unit of measurement. This is required for location requests (request option 1).
      *
-     * @return LocatorRequestUnitOfMeasurement
+     * @return LocatorRequestUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : LocatorRequestUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?LocatorRequestUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Distance unit of measurement. This is required for location requests (request option 1).
      *
-     * @param LocatorRequestUnitOfMeasurement $unitOfMeasurement
+     * @param LocatorRequestUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(LocatorRequestUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?LocatorRequestUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -176,20 +176,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * Location ID is the identification number of the UPS affiliated location.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getLocationID() : array
+    public function getLocationID() : ?array
     {
         return $this->locationID;
     }
     /**
      * Location ID is the identification number of the UPS affiliated location.
      *
-     * @param string[] $locationID
+     * @param list<string>|null $locationID
      *
      * @return self
      */
-    public function setLocationID(array $locationID) : self
+    public function setLocationID(?array $locationID) : self
     {
         $this->initialized['locationID'] = true;
         $this->locationID = $locationID;
@@ -199,9 +199,9 @@ class LocatorRequest extends \ArrayObject
     * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations. 
     Only relevant when the user requests a Location search (request option 1).
     *
-    * @return LocatorRequestLocationSearchCriteria
+    * @return LocatorRequestLocationSearchCriteria|null
     */
-    public function getLocationSearchCriteria() : LocatorRequestLocationSearchCriteria
+    public function getLocationSearchCriteria() : ?LocatorRequestLocationSearchCriteria
     {
         return $this->locationSearchCriteria;
     }
@@ -209,11 +209,11 @@ class LocatorRequest extends \ArrayObject
     * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations. 
     Only relevant when the user requests a Location search (request option 1).
     *
-    * @param LocatorRequestLocationSearchCriteria $locationSearchCriteria
+    * @param LocatorRequestLocationSearchCriteria|null $locationSearchCriteria
     *
     * @return self
     */
-    public function setLocationSearchCriteria(LocatorRequestLocationSearchCriteria $locationSearchCriteria) : self
+    public function setLocationSearchCriteria(?LocatorRequestLocationSearchCriteria $locationSearchCriteria) : self
     {
         $this->initialized['locationSearchCriteria'] = true;
         $this->locationSearchCriteria = $locationSearchCriteria;
@@ -222,20 +222,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * Container for Sort Criteria
      *
-     * @return LocatorRequestSortCriteria
+     * @return LocatorRequestSortCriteria|null
      */
-    public function getSortCriteria() : LocatorRequestSortCriteria
+    public function getSortCriteria() : ?LocatorRequestSortCriteria
     {
         return $this->sortCriteria;
     }
     /**
      * Container for Sort Criteria
      *
-     * @param LocatorRequestSortCriteria $sortCriteria
+     * @param LocatorRequestSortCriteria|null $sortCriteria
      *
      * @return self
      */
-    public function setSortCriteria(LocatorRequestSortCriteria $sortCriteria) : self
+    public function setSortCriteria(?LocatorRequestSortCriteria $sortCriteria) : self
     {
         $this->initialized['sortCriteria'] = true;
         $this->sortCriteria = $sortCriteria;
@@ -244,20 +244,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * Indicator to allow confidence level in search.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAllowAllConfidenceLevels() : string
+    public function getAllowAllConfidenceLevels() : ?string
     {
         return $this->allowAllConfidenceLevels;
     }
     /**
      * Indicator to allow confidence level in search.
      *
-     * @param string $allowAllConfidenceLevels
+     * @param string|null $allowAllConfidenceLevels
      *
      * @return self
      */
-    public function setAllowAllConfidenceLevels(string $allowAllConfidenceLevels) : self
+    public function setAllowAllConfidenceLevels(?string $allowAllConfidenceLevels) : self
     {
         $this->initialized['allowAllConfidenceLevels'] = true;
         $this->allowAllConfidenceLevels = $allowAllConfidenceLevels;
@@ -272,9 +272,9 @@ class LocatorRequest extends \ArrayObject
     05-Freight Will Call Search. 
     Either OptionType 03 or 04 is required.
     *
-    * @return string
+    * @return string|null
     */
-    public function getSearchOptionCode() : string
+    public function getSearchOptionCode() : ?string
     {
         return $this->searchOptionCode;
     }
@@ -287,11 +287,11 @@ class LocatorRequest extends \ArrayObject
     05-Freight Will Call Search. 
     Either OptionType 03 or 04 is required.
     *
-    * @param string $searchOptionCode
+    * @param string|null $searchOptionCode
     *
     * @return self
     */
-    public function setSearchOptionCode(string $searchOptionCode) : self
+    public function setSearchOptionCode(?string $searchOptionCode) : self
     {
         $this->initialized['searchOptionCode'] = true;
         $this->searchOptionCode = $searchOptionCode;
@@ -300,20 +300,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * ServiceGeoUnit Container. Required to search for the freight facility information
      *
-     * @return LocatorRequestServiceGeoUnit
+     * @return LocatorRequestServiceGeoUnit|null
      */
-    public function getServiceGeoUnit() : LocatorRequestServiceGeoUnit
+    public function getServiceGeoUnit() : ?LocatorRequestServiceGeoUnit
     {
         return $this->serviceGeoUnit;
     }
     /**
      * ServiceGeoUnit Container. Required to search for the freight facility information
      *
-     * @param LocatorRequestServiceGeoUnit $serviceGeoUnit
+     * @param LocatorRequestServiceGeoUnit|null $serviceGeoUnit
      *
      * @return self
      */
-    public function setServiceGeoUnit(LocatorRequestServiceGeoUnit $serviceGeoUnit) : self
+    public function setServiceGeoUnit(?LocatorRequestServiceGeoUnit $serviceGeoUnit) : self
     {
         $this->initialized['serviceGeoUnit'] = true;
         $this->serviceGeoUnit = $serviceGeoUnit;
@@ -322,20 +322,20 @@ class LocatorRequest extends \ArrayObject
     /**
      * FreightIndicator. Required for Freight Location Search.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFreightIndicator() : string
+    public function getFreightIndicator() : ?string
     {
         return $this->freightIndicator;
     }
     /**
      * FreightIndicator. Required for Freight Location Search.
      *
-     * @param string $freightIndicator
+     * @param string|null $freightIndicator
      *
      * @return self
      */
-    public function setFreightIndicator(string $freightIndicator) : self
+    public function setFreightIndicator(?string $freightIndicator) : self
     {
         $this->initialized['freightIndicator'] = true;
         $this->freightIndicator = $freightIndicator;

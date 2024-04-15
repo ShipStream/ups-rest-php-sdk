@@ -15,32 +15,32 @@ class CN22ContentCN22ContentWeight extends \ArrayObject
     /**
      * Container for UOM.
      *
-     * @var CN22ContentWeightUnitOfMeasurement
+     * @var CN22ContentWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Total weight of the content. Pounds and Ounces are allowed up to 2 decimals.  Required if the CN22 form container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * Container for UOM.
      *
-     * @return CN22ContentWeightUnitOfMeasurement
+     * @return CN22ContentWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : CN22ContentWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?CN22ContentWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Container for UOM.
      *
-     * @param CN22ContentWeightUnitOfMeasurement $unitOfMeasurement
+     * @param CN22ContentWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(CN22ContentWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?CN22ContentWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class CN22ContentCN22ContentWeight extends \ArrayObject
     /**
      * Total weight of the content. Pounds and Ounces are allowed up to 2 decimals.  Required if the CN22 form container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * Total weight of the content. Pounds and Ounces are allowed up to 2 decimals.  Required if the CN22 form container is present.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

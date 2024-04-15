@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageBillType', $data)) {
+            if (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] !== null) {
                 $object->setPackageBillType($data['PackageBillType']);
                 unset($data['PackageBillType']);
             }
-            if (\array_key_exists('Pickup', $data)) {
+            elseif (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] === null) {
+                $object->setPackageBillType(null);
+            }
+            if (\array_key_exists('Pickup', $data) && $data['Pickup'] !== null) {
                 $object->setPickup($this->denormalizer->denormalize($data['Pickup'], 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationPickup', 'json', $context));
                 unset($data['Pickup']);
             }
-            if (\array_key_exists('ReturnContractServices', $data)) {
+            elseif (\array_key_exists('Pickup', $data) && $data['Pickup'] === null) {
+                $object->setPickup(null);
+            }
+            if (\array_key_exists('ReturnContractServices', $data) && $data['ReturnContractServices'] !== null) {
                 $values = [];
                 foreach ($data['ReturnContractServices'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices', 'json', $context);
                 }
                 $object->setReturnContractServices($values);
                 unset($data['ReturnContractServices']);
+            }
+            elseif (\array_key_exists('ReturnContractServices', $data) && $data['ReturnContractServices'] === null) {
+                $object->setReturnContractServices(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -119,21 +128,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageBillType', $data)) {
+            if (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] !== null) {
                 $object->setPackageBillType($data['PackageBillType']);
                 unset($data['PackageBillType']);
             }
-            if (\array_key_exists('Pickup', $data)) {
+            elseif (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] === null) {
+                $object->setPackageBillType(null);
+            }
+            if (\array_key_exists('Pickup', $data) && $data['Pickup'] !== null) {
                 $object->setPickup($this->denormalizer->denormalize($data['Pickup'], 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationPickup', 'json', $context));
                 unset($data['Pickup']);
             }
-            if (\array_key_exists('ReturnContractServices', $data)) {
+            elseif (\array_key_exists('Pickup', $data) && $data['Pickup'] === null) {
+                $object->setPickup(null);
+            }
+            if (\array_key_exists('ReturnContractServices', $data) && $data['ReturnContractServices'] !== null) {
                 $values = [];
                 foreach ($data['ReturnContractServices'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices', 'json', $context);
                 }
                 $object->setReturnContractServices($values);
                 unset($data['ReturnContractServices']);
+            }
+            elseif (\array_key_exists('ReturnContractServices', $data) && $data['ReturnContractServices'] === null) {
+                $object->setReturnContractServices(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

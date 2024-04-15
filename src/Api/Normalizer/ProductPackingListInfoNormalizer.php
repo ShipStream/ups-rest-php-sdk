@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageAssociated', $data)) {
+            if (\array_key_exists('PackageAssociated', $data) && $data['PackageAssociated'] !== null) {
                 $values = [];
                 foreach ($data['PackageAssociated'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackingListInfoPackageAssociated', 'json', $context);
                 }
                 $object->setPackageAssociated($values);
                 unset($data['PackageAssociated']);
+            }
+            elseif (\array_key_exists('PackageAssociated', $data) && $data['PackageAssociated'] === null) {
+                $object->setPackageAssociated(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageAssociated', $data)) {
+            if (\array_key_exists('PackageAssociated', $data) && $data['PackageAssociated'] !== null) {
                 $values = [];
                 foreach ($data['PackageAssociated'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackingListInfoPackageAssociated', 'json', $context);
                 }
                 $object->setPackageAssociated($values);
                 unset($data['PackageAssociated']);
+            }
+            elseif (\array_key_exists('PackageAssociated', $data) && $data['PackageAssociated'] === null) {
+                $object->setPackageAssociated(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

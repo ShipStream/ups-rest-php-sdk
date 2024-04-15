@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalReferenceDataResponse', $data)) {
+            if (\array_key_exists('ChemicalReferenceDataResponse', $data) && $data['ChemicalReferenceDataResponse'] !== null) {
                 $object->setChemicalReferenceDataResponse($this->denormalizer->denormalize($data['ChemicalReferenceDataResponse'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse', 'json', $context));
                 unset($data['ChemicalReferenceDataResponse']);
+            }
+            elseif (\array_key_exists('ChemicalReferenceDataResponse', $data) && $data['ChemicalReferenceDataResponse'] === null) {
+                $object->setChemicalReferenceDataResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalReferenceDataResponse', $data)) {
+            if (\array_key_exists('ChemicalReferenceDataResponse', $data) && $data['ChemicalReferenceDataResponse'] !== null) {
                 $object->setChemicalReferenceDataResponse($this->denormalizer->denormalize($data['ChemicalReferenceDataResponse'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse', 'json', $context));
                 unset($data['ChemicalReferenceDataResponse']);
+            }
+            elseif (\array_key_exists('ChemicalReferenceDataResponse', $data) && $data['ChemicalReferenceDataResponse'] === null) {
+                $object->setChemicalReferenceDataResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

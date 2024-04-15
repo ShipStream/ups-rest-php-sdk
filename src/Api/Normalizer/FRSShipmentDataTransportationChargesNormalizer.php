@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('GrossCharge', $data)) {
+            if (\array_key_exists('GrossCharge', $data) && $data['GrossCharge'] !== null) {
                 $object->setGrossCharge($this->denormalizer->denormalize($data['GrossCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge', 'json', $context));
                 unset($data['GrossCharge']);
             }
-            if (\array_key_exists('DiscountAmount', $data)) {
+            elseif (\array_key_exists('GrossCharge', $data) && $data['GrossCharge'] === null) {
+                $object->setGrossCharge(null);
+            }
+            if (\array_key_exists('DiscountAmount', $data) && $data['DiscountAmount'] !== null) {
                 $object->setDiscountAmount($this->denormalizer->denormalize($data['DiscountAmount'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount', 'json', $context));
                 unset($data['DiscountAmount']);
             }
-            if (\array_key_exists('DiscountPercentage', $data)) {
+            elseif (\array_key_exists('DiscountAmount', $data) && $data['DiscountAmount'] === null) {
+                $object->setDiscountAmount(null);
+            }
+            if (\array_key_exists('DiscountPercentage', $data) && $data['DiscountPercentage'] !== null) {
                 $object->setDiscountPercentage($data['DiscountPercentage']);
                 unset($data['DiscountPercentage']);
             }
-            if (\array_key_exists('NetCharge', $data)) {
+            elseif (\array_key_exists('DiscountPercentage', $data) && $data['DiscountPercentage'] === null) {
+                $object->setDiscountPercentage(null);
+            }
+            if (\array_key_exists('NetCharge', $data) && $data['NetCharge'] !== null) {
                 $object->setNetCharge($this->denormalizer->denormalize($data['NetCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge', 'json', $context));
                 unset($data['NetCharge']);
+            }
+            elseif (\array_key_exists('NetCharge', $data) && $data['NetCharge'] === null) {
+                $object->setNetCharge(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,21 +124,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('GrossCharge', $data)) {
+            if (\array_key_exists('GrossCharge', $data) && $data['GrossCharge'] !== null) {
                 $object->setGrossCharge($this->denormalizer->denormalize($data['GrossCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge', 'json', $context));
                 unset($data['GrossCharge']);
             }
-            if (\array_key_exists('DiscountAmount', $data)) {
+            elseif (\array_key_exists('GrossCharge', $data) && $data['GrossCharge'] === null) {
+                $object->setGrossCharge(null);
+            }
+            if (\array_key_exists('DiscountAmount', $data) && $data['DiscountAmount'] !== null) {
                 $object->setDiscountAmount($this->denormalizer->denormalize($data['DiscountAmount'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount', 'json', $context));
                 unset($data['DiscountAmount']);
             }
-            if (\array_key_exists('DiscountPercentage', $data)) {
+            elseif (\array_key_exists('DiscountAmount', $data) && $data['DiscountAmount'] === null) {
+                $object->setDiscountAmount(null);
+            }
+            if (\array_key_exists('DiscountPercentage', $data) && $data['DiscountPercentage'] !== null) {
                 $object->setDiscountPercentage($data['DiscountPercentage']);
                 unset($data['DiscountPercentage']);
             }
-            if (\array_key_exists('NetCharge', $data)) {
+            elseif (\array_key_exists('DiscountPercentage', $data) && $data['DiscountPercentage'] === null) {
+                $object->setDiscountPercentage(null);
+            }
+            if (\array_key_exists('NetCharge', $data) && $data['NetCharge'] !== null) {
                 $object->setNetCharge($this->denormalizer->denormalize($data['NetCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge', 'json', $context));
                 unset($data['NetCharge']);
+            }
+            elseif (\array_key_exists('NetCharge', $data) && $data['NetCharge'] === null) {
+                $object->setNetCharge(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

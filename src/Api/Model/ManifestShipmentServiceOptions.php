@@ -15,38 +15,38 @@ class ManifestShipmentServiceOptions extends \ArrayObject
     /**
      * A flag indicating if the shipment requires a Saturday pickup. True if tag exists, false otherwise.
      *
-     * @var string
+     * @var string|null
      */
     protected $saturdayPickup;
     /**
      * A flag indicating if the shipment requires a Saturday Delivery. True if tag exists, false otherwise.
      *
-     * @var string
+     * @var string|null
      */
     protected $saturdayDelivery;
     /**
      * Container for Call Tag service.
      *
-     * @var ShipmentServiceOptionsCallTagARS
+     * @var ShipmentServiceOptionsCallTagARS|null
      */
     protected $callTagARS;
     /**
      * A flag indicating if the shipment requires a Saturday pickup. True if tag exists, false otherwise.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSaturdayPickup() : string
+    public function getSaturdayPickup() : ?string
     {
         return $this->saturdayPickup;
     }
     /**
      * A flag indicating if the shipment requires a Saturday pickup. True if tag exists, false otherwise.
      *
-     * @param string $saturdayPickup
+     * @param string|null $saturdayPickup
      *
      * @return self
      */
-    public function setSaturdayPickup(string $saturdayPickup) : self
+    public function setSaturdayPickup(?string $saturdayPickup) : self
     {
         $this->initialized['saturdayPickup'] = true;
         $this->saturdayPickup = $saturdayPickup;
@@ -55,20 +55,20 @@ class ManifestShipmentServiceOptions extends \ArrayObject
     /**
      * A flag indicating if the shipment requires a Saturday Delivery. True if tag exists, false otherwise.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSaturdayDelivery() : string
+    public function getSaturdayDelivery() : ?string
     {
         return $this->saturdayDelivery;
     }
     /**
      * A flag indicating if the shipment requires a Saturday Delivery. True if tag exists, false otherwise.
      *
-     * @param string $saturdayDelivery
+     * @param string|null $saturdayDelivery
      *
      * @return self
      */
-    public function setSaturdayDelivery(string $saturdayDelivery) : self
+    public function setSaturdayDelivery(?string $saturdayDelivery) : self
     {
         $this->initialized['saturdayDelivery'] = true;
         $this->saturdayDelivery = $saturdayDelivery;
@@ -77,20 +77,20 @@ class ManifestShipmentServiceOptions extends \ArrayObject
     /**
      * Container for Call Tag service.
      *
-     * @return ShipmentServiceOptionsCallTagARS
+     * @return ShipmentServiceOptionsCallTagARS|null
      */
-    public function getCallTagARS() : ShipmentServiceOptionsCallTagARS
+    public function getCallTagARS() : ?ShipmentServiceOptionsCallTagARS
     {
         return $this->callTagARS;
     }
     /**
      * Container for Call Tag service.
      *
-     * @param ShipmentServiceOptionsCallTagARS $callTagARS
+     * @param ShipmentServiceOptionsCallTagARS|null $callTagARS
      *
      * @return self
      */
-    public function setCallTagARS(ShipmentServiceOptionsCallTagARS $callTagARS) : self
+    public function setCallTagARS(?ShipmentServiceOptionsCallTagARS $callTagARS) : self
     {
         $this->initialized['callTagARS'] = true;
         $this->callTagARS = $callTagARS;

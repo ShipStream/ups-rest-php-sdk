@@ -16,22 +16,22 @@ class SubscriptionFileStatusType extends \ArrayObject
     * Status types of subscription file. Valid values:
     R � Read, U - Unread
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Description of a subscription file.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
     * Status types of subscription file. Valid values:
     R � Read, U - Unread
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -39,11 +39,11 @@ class SubscriptionFileStatusType extends \ArrayObject
     * Status types of subscription file. Valid values:
     R � Read, U - Unread
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -52,20 +52,20 @@ class SubscriptionFileStatusType extends \ArrayObject
     /**
      * Description of a subscription file.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of a subscription file.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

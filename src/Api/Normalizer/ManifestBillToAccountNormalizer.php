@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Option', $data)) {
+            if (\array_key_exists('Option', $data) && $data['Option'] !== null) {
                 $object->setOption($data['Option']);
                 unset($data['Option']);
             }
-            if (\array_key_exists('Number', $data)) {
+            elseif (\array_key_exists('Option', $data) && $data['Option'] === null) {
+                $object->setOption(null);
+            }
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
+            }
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Option', $data)) {
+            if (\array_key_exists('Option', $data) && $data['Option'] !== null) {
                 $object->setOption($data['Option']);
                 unset($data['Option']);
             }
-            if (\array_key_exists('Number', $data)) {
+            elseif (\array_key_exists('Option', $data) && $data['Option'] === null) {
+                $object->setOption(null);
+            }
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
+            }
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

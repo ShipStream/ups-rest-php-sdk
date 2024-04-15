@@ -19,13 +19,13 @@ class ShipmentChargeBillReceiver extends \ArrayObject
     
     All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
     *
-    * @var string
+    * @var string|null
     */
     protected $accountNumber;
     /**
      * Container for additional information for the bill receiver's UPS accounts address.
      *
-     * @var BillReceiverAddress
+     * @var BillReceiverAddress|null
      */
     protected $address;
     /**
@@ -35,9 +35,9 @@ class ShipmentChargeBillReceiver extends \ArrayObject
     
     All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
@@ -48,11 +48,11 @@ class ShipmentChargeBillReceiver extends \ArrayObject
     
     All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
     *
-    * @param string $accountNumber
+    * @param string|null $accountNumber
     *
     * @return self
     */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -61,20 +61,20 @@ class ShipmentChargeBillReceiver extends \ArrayObject
     /**
      * Container for additional information for the bill receiver's UPS accounts address.
      *
-     * @return BillReceiverAddress
+     * @return BillReceiverAddress|null
      */
-    public function getAddress() : BillReceiverAddress
+    public function getAddress() : ?BillReceiverAddress
     {
         return $this->address;
     }
     /**
      * Container for additional information for the bill receiver's UPS accounts address.
      *
-     * @param BillReceiverAddress $address
+     * @param BillReceiverAddress|null $address
      *
      * @return self
      */
-    public function setAddress(BillReceiverAddress $address) : self
+    public function setAddress(?BillReceiverAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

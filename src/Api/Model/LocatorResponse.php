@@ -15,45 +15,45 @@ class LocatorResponse extends \ArrayObject
     /**
      * Container for Response.
      *
-     * @var LocatorResponseResponse
+     * @var LocatorResponseResponse|null
      */
     protected $response;
     /**
      * Geocode is the latitude and longitude of the origin address. The Geocode is provided in the first successful response. Required to be returned when the origin address or phone number is submitted in the request.Will not be returned when the  requestoption =64
      *
-     * @var LocatorResponseGeocode
+     * @var LocatorResponseGeocode|null
      */
     protected $geocode;
     /**
      * Container for search results.
      *
-     * @var LocatorResponseSearchResults
+     * @var LocatorResponseSearchResults|null
      */
     protected $searchResults;
     /**
     * Confidence level.
     Valid values: True or False
     *
-    * @var string
+    * @var string|null
     */
     protected $allowAllConfidenceLevels;
     /**
      * Container for Response.
      *
-     * @return LocatorResponseResponse
+     * @return LocatorResponseResponse|null
      */
-    public function getResponse() : LocatorResponseResponse
+    public function getResponse() : ?LocatorResponseResponse
     {
         return $this->response;
     }
     /**
      * Container for Response.
      *
-     * @param LocatorResponseResponse $response
+     * @param LocatorResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(LocatorResponseResponse $response) : self
+    public function setResponse(?LocatorResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -62,20 +62,20 @@ class LocatorResponse extends \ArrayObject
     /**
      * Geocode is the latitude and longitude of the origin address. The Geocode is provided in the first successful response. Required to be returned when the origin address or phone number is submitted in the request.Will not be returned when the  requestoption =64
      *
-     * @return LocatorResponseGeocode
+     * @return LocatorResponseGeocode|null
      */
-    public function getGeocode() : LocatorResponseGeocode
+    public function getGeocode() : ?LocatorResponseGeocode
     {
         return $this->geocode;
     }
     /**
      * Geocode is the latitude and longitude of the origin address. The Geocode is provided in the first successful response. Required to be returned when the origin address or phone number is submitted in the request.Will not be returned when the  requestoption =64
      *
-     * @param LocatorResponseGeocode $geocode
+     * @param LocatorResponseGeocode|null $geocode
      *
      * @return self
      */
-    public function setGeocode(LocatorResponseGeocode $geocode) : self
+    public function setGeocode(?LocatorResponseGeocode $geocode) : self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -84,20 +84,20 @@ class LocatorResponse extends \ArrayObject
     /**
      * Container for search results.
      *
-     * @return LocatorResponseSearchResults
+     * @return LocatorResponseSearchResults|null
      */
-    public function getSearchResults() : LocatorResponseSearchResults
+    public function getSearchResults() : ?LocatorResponseSearchResults
     {
         return $this->searchResults;
     }
     /**
      * Container for search results.
      *
-     * @param LocatorResponseSearchResults $searchResults
+     * @param LocatorResponseSearchResults|null $searchResults
      *
      * @return self
      */
-    public function setSearchResults(LocatorResponseSearchResults $searchResults) : self
+    public function setSearchResults(?LocatorResponseSearchResults $searchResults) : self
     {
         $this->initialized['searchResults'] = true;
         $this->searchResults = $searchResults;
@@ -107,9 +107,9 @@ class LocatorResponse extends \ArrayObject
     * Confidence level.
     Valid values: True or False
     *
-    * @return string
+    * @return string|null
     */
-    public function getAllowAllConfidenceLevels() : string
+    public function getAllowAllConfidenceLevels() : ?string
     {
         return $this->allowAllConfidenceLevels;
     }
@@ -117,11 +117,11 @@ class LocatorResponse extends \ArrayObject
     * Confidence level.
     Valid values: True or False
     *
-    * @param string $allowAllConfidenceLevels
+    * @param string|null $allowAllConfidenceLevels
     *
     * @return self
     */
-    public function setAllowAllConfidenceLevels(string $allowAllConfidenceLevels) : self
+    public function setAllowAllConfidenceLevels(?string $allowAllConfidenceLevels) : self
     {
         $this->initialized['allowAllConfidenceLevels'] = true;
         $this->allowAllConfidenceLevels = $allowAllConfidenceLevels;

@@ -15,32 +15,32 @@ class ReceiptSpecificationImageFormat extends \ArrayObject
     /**
      * Print code that determines the receipt format. Valid Codes are: EPL, SPL, ZPL and HTML.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the receipt format code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Print code that determines the receipt format. Valid Codes are: EPL, SPL, ZPL and HTML.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Print code that determines the receipt format. Valid Codes are: EPL, SPL, ZPL and HTML.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class ReceiptSpecificationImageFormat extends \ArrayObject
     /**
      * Description of the receipt format code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the receipt format code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

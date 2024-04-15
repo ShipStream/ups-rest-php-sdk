@@ -15,38 +15,38 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
     /**
      * Time taken through the abstraction layer in milliseconds
      *
-     * @var string
+     * @var string|null
      */
     protected $absLayerTime;
     /**
      * Request completed time
      *
-     * @var string
+     * @var string|null
      */
     protected $fulfillTime;
     /**
      * Request receipt time
      *
-     * @var string
+     * @var string|null
      */
     protected $receiptTime;
     /**
      * Time taken through the abstraction layer in milliseconds
      *
-     * @return string
+     * @return string|null
      */
-    public function getAbsLayerTime() : string
+    public function getAbsLayerTime() : ?string
     {
         return $this->absLayerTime;
     }
     /**
      * Time taken through the abstraction layer in milliseconds
      *
-     * @param string $absLayerTime
+     * @param string|null $absLayerTime
      *
      * @return self
      */
-    public function setAbsLayerTime(string $absLayerTime) : self
+    public function setAbsLayerTime(?string $absLayerTime) : self
     {
         $this->initialized['absLayerTime'] = true;
         $this->absLayerTime = $absLayerTime;
@@ -55,20 +55,20 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
     /**
      * Request completed time
      *
-     * @return string
+     * @return string|null
      */
-    public function getFulfillTime() : string
+    public function getFulfillTime() : ?string
     {
         return $this->fulfillTime;
     }
     /**
      * Request completed time
      *
-     * @param string $fulfillTime
+     * @param string|null $fulfillTime
      *
      * @return self
      */
-    public function setFulfillTime(string $fulfillTime) : self
+    public function setFulfillTime(?string $fulfillTime) : self
     {
         $this->initialized['fulfillTime'] = true;
         $this->fulfillTime = $fulfillTime;
@@ -77,20 +77,20 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
     /**
      * Request receipt time
      *
-     * @return string
+     * @return string|null
      */
-    public function getReceiptTime() : string
+    public function getReceiptTime() : ?string
     {
         return $this->receiptTime;
     }
     /**
      * Request receipt time
      *
-     * @param string $receiptTime
+     * @param string|null $receiptTime
      *
      * @return self
      */
-    public function setReceiptTime(string $receiptTime) : self
+    public function setReceiptTime(?string $receiptTime) : self
     {
         $this->initialized['receiptTime'] = true;
         $this->receiptTime = $receiptTime;

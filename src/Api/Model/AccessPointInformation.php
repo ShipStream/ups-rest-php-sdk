@@ -15,26 +15,26 @@ class AccessPointInformation extends \ArrayObject
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupByDate;
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupByDate() : string
+    public function getPickupByDate() : ?string
     {
         return $this->pickupByDate;
     }
     /**
      * 
      *
-     * @param string $pickupByDate
+     * @param string|null $pickupByDate
      *
      * @return self
      */
-    public function setPickupByDate(string $pickupByDate) : self
+    public function setPickupByDate(?string $pickupByDate) : self
     {
         $this->initialized['pickupByDate'] = true;
         $this->pickupByDate = $pickupByDate;

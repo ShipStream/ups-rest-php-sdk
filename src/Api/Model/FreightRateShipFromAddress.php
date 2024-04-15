@@ -15,62 +15,62 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The Ship from street address.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * The Ship from city.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * The Ship from location’s state or province code.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * The ship from location’s town code.
      *
-     * @var string
+     * @var string|null
      */
     protected $town;
     /**
      * The ship from location’s postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * The ship from location’s country or territory code..
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * The presence of the tag indicates that the ShipFrom address is residential
      *
-     * @var string
+     * @var string|null
      */
     protected $residentialAddressIndicator;
     /**
      * The Ship from street address.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * The Ship from street address.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -79,20 +79,20 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The Ship from city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * The Ship from city.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -101,20 +101,20 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The Ship from location’s state or province code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * The Ship from location’s state or province code.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -123,20 +123,20 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The ship from location’s town code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTown() : string
+    public function getTown() : ?string
     {
         return $this->town;
     }
     /**
      * The ship from location’s town code.
      *
-     * @param string $town
+     * @param string|null $town
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(?string $town) : self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -145,20 +145,20 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The ship from location’s postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * The ship from location’s postal code.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -167,20 +167,20 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The ship from location’s country or territory code..
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * The ship from location’s country or territory code..
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -189,20 +189,20 @@ class FreightRateShipFromAddress extends \ArrayObject
     /**
      * The presence of the tag indicates that the ShipFrom address is residential
      *
-     * @return string
+     * @return string|null
      */
-    public function getResidentialAddressIndicator() : string
+    public function getResidentialAddressIndicator() : ?string
     {
         return $this->residentialAddressIndicator;
     }
     /**
      * The presence of the tag indicates that the ShipFrom address is residential
      *
-     * @param string $residentialAddressIndicator
+     * @param string|null $residentialAddressIndicator
      *
      * @return self
      */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
+    public function setResidentialAddressIndicator(?string $residentialAddressIndicator) : self
     {
         $this->initialized['residentialAddressIndicator'] = true;
         $this->residentialAddressIndicator = $residentialAddressIndicator;

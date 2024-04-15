@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickUpTime', $data)) {
+            if (\array_key_exists('PickUpTime', $data) && $data['PickUpTime'] !== null) {
                 $object->setPickUpTime($data['PickUpTime']);
                 unset($data['PickUpTime']);
             }
-            if (\array_key_exists('NoPickUpIndicator', $data)) {
+            elseif (\array_key_exists('PickUpTime', $data) && $data['PickUpTime'] === null) {
+                $object->setPickUpTime(null);
+            }
+            if (\array_key_exists('NoPickUpIndicator', $data) && $data['NoPickUpIndicator'] !== null) {
                 $object->setNoPickUpIndicator($data['NoPickUpIndicator']);
                 unset($data['NoPickUpIndicator']);
+            }
+            elseif (\array_key_exists('NoPickUpIndicator', $data) && $data['NoPickUpIndicator'] === null) {
+                $object->setNoPickUpIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickUpTime', $data)) {
+            if (\array_key_exists('PickUpTime', $data) && $data['PickUpTime'] !== null) {
                 $object->setPickUpTime($data['PickUpTime']);
                 unset($data['PickUpTime']);
             }
-            if (\array_key_exists('NoPickUpIndicator', $data)) {
+            elseif (\array_key_exists('PickUpTime', $data) && $data['PickUpTime'] === null) {
+                $object->setPickUpTime(null);
+            }
+            if (\array_key_exists('NoPickUpIndicator', $data) && $data['NoPickUpIndicator'] !== null) {
                 $object->setNoPickUpIndicator($data['NoPickUpIndicator']);
                 unset($data['NoPickUpIndicator']);
+            }
+            elseif (\array_key_exists('NoPickUpIndicator', $data) && $data['NoPickUpIndicator'] === null) {
+                $object->setNoPickUpIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

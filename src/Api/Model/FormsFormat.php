@@ -15,32 +15,32 @@ class FormsFormat extends \ArrayObject
     /**
      * Code representing the format of the form. Currently only pdf is supported.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the format code of the form.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Code representing the format of the form. Currently only pdf is supported.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code representing the format of the form. Currently only pdf is supported.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class FormsFormat extends \ArrayObject
     /**
      * Description of the format code of the form.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the format code of the form.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

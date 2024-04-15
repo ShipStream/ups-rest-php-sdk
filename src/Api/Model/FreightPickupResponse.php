@@ -15,32 +15,32 @@ class FreightPickupResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var FreightPickupResponseResponse
+     * @var FreightPickupResponseResponse|null
      */
     protected $response;
     /**
      * Shipment pickup number.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupRequestConfirmationNumber;
     /**
      * Response Container.
      *
-     * @return FreightPickupResponseResponse
+     * @return FreightPickupResponseResponse|null
      */
-    public function getResponse() : FreightPickupResponseResponse
+    public function getResponse() : ?FreightPickupResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param FreightPickupResponseResponse $response
+     * @param FreightPickupResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(FreightPickupResponseResponse $response) : self
+    public function setResponse(?FreightPickupResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class FreightPickupResponse extends \ArrayObject
     /**
      * Shipment pickup number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber() : ?string
     {
         return $this->pickupRequestConfirmationNumber;
     }
     /**
      * Shipment pickup number.
      *
-     * @param string $pickupRequestConfirmationNumber
+     * @param string|null $pickupRequestConfirmationNumber
      *
      * @return self
      */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(?string $pickupRequestConfirmationNumber) : self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;

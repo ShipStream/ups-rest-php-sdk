@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelImageFormat', $data)) {
+            if (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] !== null) {
                 $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], 'ShipStream\\Ups\\Api\\Model\\MailInnovationsLabelImageLabelImageFormat', 'json', $context));
                 unset($data['LabelImageFormat']);
             }
-            if (\array_key_exists('GraphicImage', $data)) {
+            elseif (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] === null) {
+                $object->setLabelImageFormat(null);
+            }
+            if (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] !== null) {
                 $object->setGraphicImage($data['GraphicImage']);
                 unset($data['GraphicImage']);
             }
-            if (\array_key_exists('HTMLImage', $data)) {
+            elseif (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] === null) {
+                $object->setGraphicImage(null);
+            }
+            if (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] !== null) {
                 $object->setHTMLImage($data['HTMLImage']);
                 unset($data['HTMLImage']);
             }
-            if (\array_key_exists('PDF417', $data)) {
+            elseif (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] === null) {
+                $object->setHTMLImage(null);
+            }
+            if (\array_key_exists('PDF417', $data) && $data['PDF417'] !== null) {
                 $object->setPDF417($data['PDF417']);
                 unset($data['PDF417']);
             }
-            if (\array_key_exists('InternationalSignatureGraphicImage', $data)) {
+            elseif (\array_key_exists('PDF417', $data) && $data['PDF417'] === null) {
+                $object->setPDF417(null);
+            }
+            if (\array_key_exists('InternationalSignatureGraphicImage', $data) && $data['InternationalSignatureGraphicImage'] !== null) {
                 $object->setInternationalSignatureGraphicImage($data['InternationalSignatureGraphicImage']);
                 unset($data['InternationalSignatureGraphicImage']);
             }
-            if (\array_key_exists('URL', $data)) {
+            elseif (\array_key_exists('InternationalSignatureGraphicImage', $data) && $data['InternationalSignatureGraphicImage'] === null) {
+                $object->setInternationalSignatureGraphicImage(null);
+            }
+            if (\array_key_exists('URL', $data) && $data['URL'] !== null) {
                 $object->setURL($data['URL']);
                 unset($data['URL']);
+            }
+            elseif (\array_key_exists('URL', $data) && $data['URL'] === null) {
+                $object->setURL(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -130,29 +148,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelImageFormat', $data)) {
+            if (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] !== null) {
                 $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], 'ShipStream\\Ups\\Api\\Model\\MailInnovationsLabelImageLabelImageFormat', 'json', $context));
                 unset($data['LabelImageFormat']);
             }
-            if (\array_key_exists('GraphicImage', $data)) {
+            elseif (\array_key_exists('LabelImageFormat', $data) && $data['LabelImageFormat'] === null) {
+                $object->setLabelImageFormat(null);
+            }
+            if (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] !== null) {
                 $object->setGraphicImage($data['GraphicImage']);
                 unset($data['GraphicImage']);
             }
-            if (\array_key_exists('HTMLImage', $data)) {
+            elseif (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] === null) {
+                $object->setGraphicImage(null);
+            }
+            if (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] !== null) {
                 $object->setHTMLImage($data['HTMLImage']);
                 unset($data['HTMLImage']);
             }
-            if (\array_key_exists('PDF417', $data)) {
+            elseif (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] === null) {
+                $object->setHTMLImage(null);
+            }
+            if (\array_key_exists('PDF417', $data) && $data['PDF417'] !== null) {
                 $object->setPDF417($data['PDF417']);
                 unset($data['PDF417']);
             }
-            if (\array_key_exists('InternationalSignatureGraphicImage', $data)) {
+            elseif (\array_key_exists('PDF417', $data) && $data['PDF417'] === null) {
+                $object->setPDF417(null);
+            }
+            if (\array_key_exists('InternationalSignatureGraphicImage', $data) && $data['InternationalSignatureGraphicImage'] !== null) {
                 $object->setInternationalSignatureGraphicImage($data['InternationalSignatureGraphicImage']);
                 unset($data['InternationalSignatureGraphicImage']);
             }
-            if (\array_key_exists('URL', $data)) {
+            elseif (\array_key_exists('InternationalSignatureGraphicImage', $data) && $data['InternationalSignatureGraphicImage'] === null) {
+                $object->setInternationalSignatureGraphicImage(null);
+            }
+            if (\array_key_exists('URL', $data) && $data['URL'] !== null) {
                 $object->setURL($data['URL']);
                 unset($data['URL']);
+            }
+            elseif (\array_key_exists('URL', $data) && $data['URL'] === null) {
+                $object->setURL(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

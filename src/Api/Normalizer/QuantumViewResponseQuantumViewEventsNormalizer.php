@@ -40,17 +40,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SubscriberID', $data)) {
+            if (\array_key_exists('SubscriberID', $data) && $data['SubscriberID'] !== null) {
                 $object->setSubscriberID($data['SubscriberID']);
                 unset($data['SubscriberID']);
             }
-            if (\array_key_exists('SubscriptionEvents', $data)) {
+            elseif (\array_key_exists('SubscriberID', $data) && $data['SubscriberID'] === null) {
+                $object->setSubscriberID(null);
+            }
+            if (\array_key_exists('SubscriptionEvents', $data) && $data['SubscriptionEvents'] !== null) {
                 $values = [];
                 foreach ($data['SubscriptionEvents'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\QuantumViewEventsSubscriptionEvents', 'json', $context);
                 }
                 $object->setSubscriptionEvents($values);
                 unset($data['SubscriptionEvents']);
+            }
+            elseif (\array_key_exists('SubscriptionEvents', $data) && $data['SubscriptionEvents'] === null) {
+                $object->setSubscriptionEvents(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -110,17 +116,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SubscriberID', $data)) {
+            if (\array_key_exists('SubscriberID', $data) && $data['SubscriberID'] !== null) {
                 $object->setSubscriberID($data['SubscriberID']);
                 unset($data['SubscriberID']);
             }
-            if (\array_key_exists('SubscriptionEvents', $data)) {
+            elseif (\array_key_exists('SubscriberID', $data) && $data['SubscriberID'] === null) {
+                $object->setSubscriberID(null);
+            }
+            if (\array_key_exists('SubscriptionEvents', $data) && $data['SubscriptionEvents'] !== null) {
                 $values = [];
                 foreach ($data['SubscriptionEvents'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\QuantumViewEventsSubscriptionEvents', 'json', $context);
                 }
                 $object->setSubscriptionEvents($values);
                 unset($data['SubscriptionEvents']);
+            }
+            elseif (\array_key_exists('SubscriptionEvents', $data) && $data['SubscriptionEvents'] === null) {
+                $object->setSubscriptionEvents(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

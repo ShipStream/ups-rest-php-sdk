@@ -15,56 +15,56 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * 
      *
-     * @var HandlingUnitCommodity[]
+     * @var list<HandlingUnitCommodity>|null
      */
     protected $commodity;
     /**
      * Special instructions or special memo.
      *
-     * @var string
+     * @var string|null
      */
     protected $specialInstructions;
     /**
      * Total number of pieces.
      *
-     * @var string
+     * @var string|null
      */
     protected $totalNumberOfPieces;
     /**
      * Total weight of all the commodities.
      *
-     * @var string
+     * @var string|null
      */
     protected $totalWeight;
     /**
      * UnitOfMeasurement Container.
      *
-     * @var HandlingUnitUnitOfMeasurement
+     * @var HandlingUnitUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Currency code. This value applies to the unit price of all the commodities.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * 
      *
-     * @return HandlingUnitCommodity[]
+     * @return list<HandlingUnitCommodity>|null
      */
-    public function getCommodity() : array
+    public function getCommodity() : ?array
     {
         return $this->commodity;
     }
     /**
      * 
      *
-     * @param HandlingUnitCommodity[] $commodity
+     * @param list<HandlingUnitCommodity>|null $commodity
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(?array $commodity) : self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -73,20 +73,20 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * Special instructions or special memo.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSpecialInstructions() : string
+    public function getSpecialInstructions() : ?string
     {
         return $this->specialInstructions;
     }
     /**
      * Special instructions or special memo.
      *
-     * @param string $specialInstructions
+     * @param string|null $specialInstructions
      *
      * @return self
      */
-    public function setSpecialInstructions(string $specialInstructions) : self
+    public function setSpecialInstructions(?string $specialInstructions) : self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -95,20 +95,20 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * Total number of pieces.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTotalNumberOfPieces() : string
+    public function getTotalNumberOfPieces() : ?string
     {
         return $this->totalNumberOfPieces;
     }
     /**
      * Total number of pieces.
      *
-     * @param string $totalNumberOfPieces
+     * @param string|null $totalNumberOfPieces
      *
      * @return self
      */
-    public function setTotalNumberOfPieces(string $totalNumberOfPieces) : self
+    public function setTotalNumberOfPieces(?string $totalNumberOfPieces) : self
     {
         $this->initialized['totalNumberOfPieces'] = true;
         $this->totalNumberOfPieces = $totalNumberOfPieces;
@@ -117,20 +117,20 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * Total weight of all the commodities.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTotalWeight() : string
+    public function getTotalWeight() : ?string
     {
         return $this->totalWeight;
     }
     /**
      * Total weight of all the commodities.
      *
-     * @param string $totalWeight
+     * @param string|null $totalWeight
      *
      * @return self
      */
-    public function setTotalWeight(string $totalWeight) : self
+    public function setTotalWeight(?string $totalWeight) : self
     {
         $this->initialized['totalWeight'] = true;
         $this->totalWeight = $totalWeight;
@@ -139,20 +139,20 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * UnitOfMeasurement Container.
      *
-     * @return HandlingUnitUnitOfMeasurement
+     * @return HandlingUnitUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : HandlingUnitUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?HandlingUnitUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * UnitOfMeasurement Container.
      *
-     * @param HandlingUnitUnitOfMeasurement $unitOfMeasurement
+     * @param HandlingUnitUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(HandlingUnitUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?HandlingUnitUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -161,20 +161,20 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * Currency code. This value applies to the unit price of all the commodities.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * Currency code. This value applies to the unit price of all the commodities.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;

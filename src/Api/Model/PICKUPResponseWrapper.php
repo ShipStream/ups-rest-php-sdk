@@ -15,26 +15,26 @@ class PICKUPResponseWrapper extends \ArrayObject
     /**
      * The response of rating on-callpickup.
      *
-     * @var PickupRateResponse
+     * @var PickupRateResponse|null
      */
     protected $pickupRateResponse;
     /**
      * The response of rating on-callpickup.
      *
-     * @return PickupRateResponse
+     * @return PickupRateResponse|null
      */
-    public function getPickupRateResponse() : PickupRateResponse
+    public function getPickupRateResponse() : ?PickupRateResponse
     {
         return $this->pickupRateResponse;
     }
     /**
      * The response of rating on-callpickup.
      *
-     * @param PickupRateResponse $pickupRateResponse
+     * @param PickupRateResponse|null $pickupRateResponse
      *
      * @return self
      */
-    public function setPickupRateResponse(PickupRateResponse $pickupRateResponse) : self
+    public function setPickupRateResponse(?PickupRateResponse $pickupRateResponse) : self
     {
         $this->initialized['pickupRateResponse'] = true;
         $this->pickupRateResponse = $pickupRateResponse;

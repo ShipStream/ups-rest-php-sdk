@@ -15,26 +15,26 @@ class DANGEROUSGOODSUTILITYRequestWrapper extends \ArrayObject
     /**
      * Dangerous Goods Utility Request container for Chemical Reference Data.
      *
-     * @var ChemicalReferenceDataRequest
+     * @var ChemicalReferenceDataRequest|null
      */
     protected $chemicalReferenceDataRequest;
     /**
      * Dangerous Goods Utility Request container for Chemical Reference Data.
      *
-     * @return ChemicalReferenceDataRequest
+     * @return ChemicalReferenceDataRequest|null
      */
-    public function getChemicalReferenceDataRequest() : ChemicalReferenceDataRequest
+    public function getChemicalReferenceDataRequest() : ?ChemicalReferenceDataRequest
     {
         return $this->chemicalReferenceDataRequest;
     }
     /**
      * Dangerous Goods Utility Request container for Chemical Reference Data.
      *
-     * @param ChemicalReferenceDataRequest $chemicalReferenceDataRequest
+     * @param ChemicalReferenceDataRequest|null $chemicalReferenceDataRequest
      *
      * @return self
      */
-    public function setChemicalReferenceDataRequest(ChemicalReferenceDataRequest $chemicalReferenceDataRequest) : self
+    public function setChemicalReferenceDataRequest(?ChemicalReferenceDataRequest $chemicalReferenceDataRequest) : self
     {
         $this->initialized['chemicalReferenceDataRequest'] = true;
         $this->chemicalReferenceDataRequest = $chemicalReferenceDataRequest;

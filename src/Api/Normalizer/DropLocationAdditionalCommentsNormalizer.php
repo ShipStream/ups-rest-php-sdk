@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CommentType', $data)) {
+            if (\array_key_exists('CommentType', $data) && $data['CommentType'] !== null) {
                 $values = [];
                 foreach ($data['CommentType'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AdditionalCommentsCommentType', 'json', $context);
                 }
                 $object->setCommentType($values);
                 unset($data['CommentType']);
+            }
+            elseif (\array_key_exists('CommentType', $data) && $data['CommentType'] === null) {
+                $object->setCommentType(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CommentType', $data)) {
+            if (\array_key_exists('CommentType', $data) && $data['CommentType'] !== null) {
                 $values = [];
                 foreach ($data['CommentType'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AdditionalCommentsCommentType', 'json', $context);
                 }
                 $object->setCommentType($values);
                 unset($data['CommentType']);
+            }
+            elseif (\array_key_exists('CommentType', $data) && $data['CommentType'] === null) {
+                $object->setCommentType(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

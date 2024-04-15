@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('grant_type', $data)) {
+            if (\array_key_exists('grant_type', $data) && $data['grant_type'] !== null) {
                 $object->setGrantType($data['grant_type']);
                 unset($data['grant_type']);
             }
-            if (\array_key_exists('refresh_token', $data)) {
+            elseif (\array_key_exists('grant_type', $data) && $data['grant_type'] === null) {
+                $object->setGrantType(null);
+            }
+            if (\array_key_exists('refresh_token', $data) && $data['refresh_token'] !== null) {
                 $object->setRefreshToken($data['refresh_token']);
                 unset($data['refresh_token']);
+            }
+            elseif (\array_key_exists('refresh_token', $data) && $data['refresh_token'] === null) {
+                $object->setRefreshToken(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('grant_type', $data)) {
+            if (\array_key_exists('grant_type', $data) && $data['grant_type'] !== null) {
                 $object->setGrantType($data['grant_type']);
                 unset($data['grant_type']);
             }
-            if (\array_key_exists('refresh_token', $data)) {
+            elseif (\array_key_exists('grant_type', $data) && $data['grant_type'] === null) {
+                $object->setGrantType(null);
+            }
+            if (\array_key_exists('refresh_token', $data) && $data['refresh_token'] !== null) {
                 $object->setRefreshToken($data['refresh_token']);
                 unset($data['refresh_token']);
+            }
+            elseif (\array_key_exists('refresh_token', $data) && $data['refresh_token'] === null) {
+                $object->setRefreshToken(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

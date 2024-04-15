@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('Shipment', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('Shipment', $data) && $data['Shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['Shipment'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment', 'json', $context));
                 unset($data['Shipment']);
             }
-            if (\array_key_exists('LabelSpecification', $data)) {
+            elseif (\array_key_exists('Shipment', $data) && $data['Shipment'] === null) {
+                $object->setShipment(null);
+            }
+            if (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] !== null) {
                 $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification', 'json', $context));
                 unset($data['LabelSpecification']);
             }
-            if (\array_key_exists('ReceiptSpecification', $data)) {
+            elseif (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] === null) {
+                $object->setLabelSpecification(null);
+            }
+            if (\array_key_exists('ReceiptSpecification', $data) && $data['ReceiptSpecification'] !== null) {
                 $object->setReceiptSpecification($this->denormalizer->denormalize($data['ReceiptSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification', 'json', $context));
                 unset($data['ReceiptSpecification']);
+            }
+            elseif (\array_key_exists('ReceiptSpecification', $data) && $data['ReceiptSpecification'] === null) {
+                $object->setReceiptSpecification(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -116,21 +128,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('Shipment', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('Shipment', $data) && $data['Shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['Shipment'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment', 'json', $context));
                 unset($data['Shipment']);
             }
-            if (\array_key_exists('LabelSpecification', $data)) {
+            elseif (\array_key_exists('Shipment', $data) && $data['Shipment'] === null) {
+                $object->setShipment(null);
+            }
+            if (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] !== null) {
                 $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification', 'json', $context));
                 unset($data['LabelSpecification']);
             }
-            if (\array_key_exists('ReceiptSpecification', $data)) {
+            elseif (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] === null) {
+                $object->setLabelSpecification(null);
+            }
+            if (\array_key_exists('ReceiptSpecification', $data) && $data['ReceiptSpecification'] !== null) {
                 $object->setReceiptSpecification($this->denormalizer->denormalize($data['ReceiptSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification', 'json', $context));
                 unset($data['ReceiptSpecification']);
+            }
+            elseif (\array_key_exists('ReceiptSpecification', $data) && $data['ReceiptSpecification'] === null) {
+                $object->setReceiptSpecification(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

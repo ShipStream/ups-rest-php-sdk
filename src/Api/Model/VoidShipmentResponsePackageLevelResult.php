@@ -15,32 +15,32 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
     /**
      * The package's identification number
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
      * Contains the status code tags.
      *
-     * @var PackageLevelResultStatus
+     * @var PackageLevelResultStatus|null
      */
     protected $status;
     /**
      * The package's identification number
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * The package's identification number
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -49,20 +49,20 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
     /**
      * Contains the status code tags.
      *
-     * @return PackageLevelResultStatus
+     * @return PackageLevelResultStatus|null
      */
-    public function getStatus() : PackageLevelResultStatus
+    public function getStatus() : ?PackageLevelResultStatus
     {
         return $this->status;
     }
     /**
      * Contains the status code tags.
      *
-     * @param PackageLevelResultStatus $status
+     * @param PackageLevelResultStatus|null $status
      *
      * @return self
      */
-    public function setStatus(PackageLevelResultStatus $status) : self
+    public function setStatus(?PackageLevelResultStatus $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

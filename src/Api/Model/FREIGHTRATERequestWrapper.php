@@ -15,26 +15,26 @@ class FREIGHTRATERequestWrapper extends \ArrayObject
     /**
      * Freight Rate Request Container.
      *
-     * @var FreightRateRequest
+     * @var FreightRateRequest|null
      */
     protected $freightRateRequest;
     /**
      * Freight Rate Request Container.
      *
-     * @return FreightRateRequest
+     * @return FreightRateRequest|null
      */
-    public function getFreightRateRequest() : FreightRateRequest
+    public function getFreightRateRequest() : ?FreightRateRequest
     {
         return $this->freightRateRequest;
     }
     /**
      * Freight Rate Request Container.
      *
-     * @param FreightRateRequest $freightRateRequest
+     * @param FreightRateRequest|null $freightRateRequest
      *
      * @return self
      */
-    public function setFreightRateRequest(FreightRateRequest $freightRateRequest) : self
+    public function setFreightRateRequest(?FreightRateRequest $freightRateRequest) : self
     {
         $this->initialized['freightRateRequest'] = true;
         $this->freightRateRequest = $freightRateRequest;

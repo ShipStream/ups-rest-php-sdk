@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
             }
-            if (\array_key_exists('AdditionalComments', $data)) {
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] !== null) {
                 $object->setAdditionalComments($data['AdditionalComments']);
                 unset($data['AdditionalComments']);
+            }
+            elseif (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] === null) {
+                $object->setAdditionalComments(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
             }
-            if (\array_key_exists('AdditionalComments', $data)) {
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] !== null) {
                 $object->setAdditionalComments($data['AdditionalComments']);
                 unset($data['AdditionalComments']);
+            }
+            elseif (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] === null) {
+                $object->setAdditionalComments(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

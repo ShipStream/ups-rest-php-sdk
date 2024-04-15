@@ -15,25 +15,25 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * Name of the facility
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address of the facility
      *
-     * @var PickupFacilitiesAddress
+     * @var PickupFacilitiesAddress|null
      */
     protected $address;
     /**
      * SLIC code for the UPS Pickup facility
      *
-     * @var string
+     * @var string|null
      */
     protected $sLIC;
     /**
      * Freight or Package.
      *
-     * @var string
+     * @var string|null
      */
     protected $type;
     /**
@@ -43,25 +43,25 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     Asia/Hong_Kong
     Europe/London
     *
-    * @var string
+    * @var string|null
     */
     protected $timezone;
     /**
      * Phone Number of the Pickup Facility
      *
-     * @var string
+     * @var string|null
      */
     protected $phone;
     /**
      * Pickup Facilities Fax Number
      *
-     * @var string
+     * @var string|null
      */
     protected $fax;
     /**
      * Facility Time Container
      *
-     * @var PickupFacilitiesFacilityTime
+     * @var PickupFacilitiesFacilityTime|null
      */
     protected $facilityTime;
     /**
@@ -69,33 +69,33 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     Example: ATL (Atlanta)
     If Airport code is not present "---" will be returned.
     *
-    * @var string
+    * @var string|null
     */
     protected $airportCode;
     /**
     * Sort Code for destination/pickup facility. 
     Example: V1
     *
-    * @var string
+    * @var string|null
     */
     protected $sortCode;
     /**
      * Name of the facility
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Name of the facility
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -104,20 +104,20 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * Address of the facility
      *
-     * @return PickupFacilitiesAddress
+     * @return PickupFacilitiesAddress|null
      */
-    public function getAddress() : PickupFacilitiesAddress
+    public function getAddress() : ?PickupFacilitiesAddress
     {
         return $this->address;
     }
     /**
      * Address of the facility
      *
-     * @param PickupFacilitiesAddress $address
+     * @param PickupFacilitiesAddress|null $address
      *
      * @return self
      */
-    public function setAddress(PickupFacilitiesAddress $address) : self
+    public function setAddress(?PickupFacilitiesAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -126,20 +126,20 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * SLIC code for the UPS Pickup facility
      *
-     * @return string
+     * @return string|null
      */
-    public function getSLIC() : string
+    public function getSLIC() : ?string
     {
         return $this->sLIC;
     }
     /**
      * SLIC code for the UPS Pickup facility
      *
-     * @param string $sLIC
+     * @param string|null $sLIC
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(?string $sLIC) : self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -148,20 +148,20 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * Freight or Package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
     /**
      * Freight or Package.
      *
-     * @param string $type
+     * @param string|null $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -174,9 +174,9 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     Asia/Hong_Kong
     Europe/London
     *
-    * @return string
+    * @return string|null
     */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -187,11 +187,11 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     Asia/Hong_Kong
     Europe/London
     *
-    * @param string $timezone
+    * @param string|null $timezone
     *
     * @return self
     */
-    public function setTimezone(string $timezone) : self
+    public function setTimezone(?string $timezone) : self
     {
         $this->initialized['timezone'] = true;
         $this->timezone = $timezone;
@@ -200,20 +200,20 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * Phone Number of the Pickup Facility
      *
-     * @return string
+     * @return string|null
      */
-    public function getPhone() : string
+    public function getPhone() : ?string
     {
         return $this->phone;
     }
     /**
      * Phone Number of the Pickup Facility
      *
-     * @param string $phone
+     * @param string|null $phone
      *
      * @return self
      */
-    public function setPhone(string $phone) : self
+    public function setPhone(?string $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -222,20 +222,20 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * Pickup Facilities Fax Number
      *
-     * @return string
+     * @return string|null
      */
-    public function getFax() : string
+    public function getFax() : ?string
     {
         return $this->fax;
     }
     /**
      * Pickup Facilities Fax Number
      *
-     * @param string $fax
+     * @param string|null $fax
      *
      * @return self
      */
-    public function setFax(string $fax) : self
+    public function setFax(?string $fax) : self
     {
         $this->initialized['fax'] = true;
         $this->fax = $fax;
@@ -244,20 +244,20 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     /**
      * Facility Time Container
      *
-     * @return PickupFacilitiesFacilityTime
+     * @return PickupFacilitiesFacilityTime|null
      */
-    public function getFacilityTime() : PickupFacilitiesFacilityTime
+    public function getFacilityTime() : ?PickupFacilitiesFacilityTime
     {
         return $this->facilityTime;
     }
     /**
      * Facility Time Container
      *
-     * @param PickupFacilitiesFacilityTime $facilityTime
+     * @param PickupFacilitiesFacilityTime|null $facilityTime
      *
      * @return self
      */
-    public function setFacilityTime(PickupFacilitiesFacilityTime $facilityTime) : self
+    public function setFacilityTime(?PickupFacilitiesFacilityTime $facilityTime) : self
     {
         $this->initialized['facilityTime'] = true;
         $this->facilityTime = $facilityTime;
@@ -268,9 +268,9 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     Example: ATL (Atlanta)
     If Airport code is not present "---" will be returned.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAirportCode() : string
+    public function getAirportCode() : ?string
     {
         return $this->airportCode;
     }
@@ -279,11 +279,11 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     Example: ATL (Atlanta)
     If Airport code is not present "---" will be returned.
     *
-    * @param string $airportCode
+    * @param string|null $airportCode
     *
     * @return self
     */
-    public function setAirportCode(string $airportCode) : self
+    public function setAirportCode(?string $airportCode) : self
     {
         $this->initialized['airportCode'] = true;
         $this->airportCode = $airportCode;
@@ -293,9 +293,9 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     * Sort Code for destination/pickup facility. 
     Example: V1
     *
-    * @return string
+    * @return string|null
     */
-    public function getSortCode() : string
+    public function getSortCode() : ?string
     {
         return $this->sortCode;
     }
@@ -303,11 +303,11 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     * Sort Code for destination/pickup facility. 
     Example: V1
     *
-    * @param string $sortCode
+    * @param string|null $sortCode
     *
     * @return self
     */
-    public function setSortCode(string $sortCode) : self
+    public function setSortCode(?string $sortCode) : self
     {
         $this->initialized['sortCode'] = true;
         $this->sortCode = $sortCode;

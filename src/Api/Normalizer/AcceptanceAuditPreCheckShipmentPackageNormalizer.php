@@ -40,41 +40,65 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageIdentifier', $data)) {
+            if (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] !== null) {
                 $object->setPackageIdentifier($data['PackageIdentifier']);
                 unset($data['PackageIdentifier']);
             }
-            if (\array_key_exists('PackageWeight', $data)) {
+            elseif (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] === null) {
+                $object->setPackageIdentifier(null);
+            }
+            if (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] !== null) {
                 $object->setPackageWeight($this->denormalizer->denormalize($data['PackageWeight'], 'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight', 'json', $context));
                 unset($data['PackageWeight']);
             }
-            if (\array_key_exists('QValue', $data)) {
+            elseif (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] === null) {
+                $object->setPackageWeight(null);
+            }
+            if (\array_key_exists('QValue', $data) && $data['QValue'] !== null) {
                 $object->setQValue($data['QValue']);
                 unset($data['QValue']);
             }
-            if (\array_key_exists('OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('QValue', $data) && $data['QValue'] === null) {
+                $object->setQValue(null);
+            }
+            if (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] !== null) {
                 $object->setOverPackedIndicator($data['OverPackedIndicator']);
                 unset($data['OverPackedIndicator']);
             }
-            if (\array_key_exists('TransportationMode', $data)) {
+            elseif (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] === null) {
+                $object->setOverPackedIndicator(null);
+            }
+            if (\array_key_exists('TransportationMode', $data) && $data['TransportationMode'] !== null) {
                 $object->setTransportationMode($data['TransportationMode']);
                 unset($data['TransportationMode']);
             }
-            if (\array_key_exists('EmergencyPhone', $data)) {
+            elseif (\array_key_exists('TransportationMode', $data) && $data['TransportationMode'] === null) {
+                $object->setTransportationMode(null);
+            }
+            if (\array_key_exists('EmergencyPhone', $data) && $data['EmergencyPhone'] !== null) {
                 $object->setEmergencyPhone($data['EmergencyPhone']);
                 unset($data['EmergencyPhone']);
             }
-            if (\array_key_exists('EmergencyContact', $data)) {
+            elseif (\array_key_exists('EmergencyPhone', $data) && $data['EmergencyPhone'] === null) {
+                $object->setEmergencyPhone(null);
+            }
+            if (\array_key_exists('EmergencyContact', $data) && $data['EmergencyContact'] !== null) {
                 $object->setEmergencyContact($data['EmergencyContact']);
                 unset($data['EmergencyContact']);
             }
-            if (\array_key_exists('ChemicalRecord', $data)) {
+            elseif (\array_key_exists('EmergencyContact', $data) && $data['EmergencyContact'] === null) {
+                $object->setEmergencyContact(null);
+            }
+            if (\array_key_exists('ChemicalRecord', $data) && $data['ChemicalRecord'] !== null) {
                 $values = [];
                 foreach ($data['ChemicalRecord'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageChemicalRecord', 'json', $context);
                 }
                 $object->setChemicalRecord($values);
                 unset($data['ChemicalRecord']);
+            }
+            elseif (\array_key_exists('ChemicalRecord', $data) && $data['ChemicalRecord'] === null) {
+                $object->setChemicalRecord(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -150,41 +174,65 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageIdentifier', $data)) {
+            if (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] !== null) {
                 $object->setPackageIdentifier($data['PackageIdentifier']);
                 unset($data['PackageIdentifier']);
             }
-            if (\array_key_exists('PackageWeight', $data)) {
+            elseif (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] === null) {
+                $object->setPackageIdentifier(null);
+            }
+            if (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] !== null) {
                 $object->setPackageWeight($this->denormalizer->denormalize($data['PackageWeight'], 'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight', 'json', $context));
                 unset($data['PackageWeight']);
             }
-            if (\array_key_exists('QValue', $data)) {
+            elseif (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] === null) {
+                $object->setPackageWeight(null);
+            }
+            if (\array_key_exists('QValue', $data) && $data['QValue'] !== null) {
                 $object->setQValue($data['QValue']);
                 unset($data['QValue']);
             }
-            if (\array_key_exists('OverPackedIndicator', $data)) {
+            elseif (\array_key_exists('QValue', $data) && $data['QValue'] === null) {
+                $object->setQValue(null);
+            }
+            if (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] !== null) {
                 $object->setOverPackedIndicator($data['OverPackedIndicator']);
                 unset($data['OverPackedIndicator']);
             }
-            if (\array_key_exists('TransportationMode', $data)) {
+            elseif (\array_key_exists('OverPackedIndicator', $data) && $data['OverPackedIndicator'] === null) {
+                $object->setOverPackedIndicator(null);
+            }
+            if (\array_key_exists('TransportationMode', $data) && $data['TransportationMode'] !== null) {
                 $object->setTransportationMode($data['TransportationMode']);
                 unset($data['TransportationMode']);
             }
-            if (\array_key_exists('EmergencyPhone', $data)) {
+            elseif (\array_key_exists('TransportationMode', $data) && $data['TransportationMode'] === null) {
+                $object->setTransportationMode(null);
+            }
+            if (\array_key_exists('EmergencyPhone', $data) && $data['EmergencyPhone'] !== null) {
                 $object->setEmergencyPhone($data['EmergencyPhone']);
                 unset($data['EmergencyPhone']);
             }
-            if (\array_key_exists('EmergencyContact', $data)) {
+            elseif (\array_key_exists('EmergencyPhone', $data) && $data['EmergencyPhone'] === null) {
+                $object->setEmergencyPhone(null);
+            }
+            if (\array_key_exists('EmergencyContact', $data) && $data['EmergencyContact'] !== null) {
                 $object->setEmergencyContact($data['EmergencyContact']);
                 unset($data['EmergencyContact']);
             }
-            if (\array_key_exists('ChemicalRecord', $data)) {
+            elseif (\array_key_exists('EmergencyContact', $data) && $data['EmergencyContact'] === null) {
+                $object->setEmergencyContact(null);
+            }
+            if (\array_key_exists('ChemicalRecord', $data) && $data['ChemicalRecord'] !== null) {
                 $values = [];
                 foreach ($data['ChemicalRecord'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageChemicalRecord', 'json', $context);
                 }
                 $object->setChemicalRecord($values);
                 unset($data['ChemicalRecord']);
+            }
+            elseif (\array_key_exists('ChemicalRecord', $data) && $data['ChemicalRecord'] === null) {
+                $object->setChemicalRecord(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

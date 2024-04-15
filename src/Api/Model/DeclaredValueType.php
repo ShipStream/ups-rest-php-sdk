@@ -15,32 +15,32 @@ class DeclaredValueType extends \ArrayObject
     /**
      * Declared value type. Valid values: 01=EVS, 02=DVS.  Defaults to 01 i.e. EVS if declared value type is not provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Declared value Description.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Declared value type. Valid values: 01=EVS, 02=DVS.  Defaults to 01 i.e. EVS if declared value type is not provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Declared value type. Valid values: 01=EVS, 02=DVS.  Defaults to 01 i.e. EVS if declared value type is not provided.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class DeclaredValueType extends \ArrayObject
     /**
      * Declared value Description.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Declared value Description.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

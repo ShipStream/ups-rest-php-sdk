@@ -20,7 +20,7 @@ class ServiceSearchServiceCode extends \ArrayObject
     04-Standard
     05-International (Only avialable July 17)
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
@@ -31,9 +31,9 @@ class ServiceSearchServiceCode extends \ArrayObject
     04-Standard
     05-International (Only avialable July 17)
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -45,11 +45,11 @@ class ServiceSearchServiceCode extends \ArrayObject
     04-Standard
     05-International (Only avialable July 17)
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

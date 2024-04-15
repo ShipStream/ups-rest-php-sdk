@@ -15,26 +15,26 @@ class FREIGHTSHIPRequestWrapper extends \ArrayObject
     /**
      * 
      *
-     * @var FreightShipRequest
+     * @var FreightShipRequest|null
      */
     protected $freightShipRequest;
     /**
      * 
      *
-     * @return FreightShipRequest
+     * @return FreightShipRequest|null
      */
-    public function getFreightShipRequest() : FreightShipRequest
+    public function getFreightShipRequest() : ?FreightShipRequest
     {
         return $this->freightShipRequest;
     }
     /**
      * 
      *
-     * @param FreightShipRequest $freightShipRequest
+     * @param FreightShipRequest|null $freightShipRequest
      *
      * @return self
      */
-    public function setFreightShipRequest(FreightShipRequest $freightShipRequest) : self
+    public function setFreightShipRequest(?FreightShipRequest $freightShipRequest) : self
     {
         $this->initialized['freightShipRequest'] = true;
         $this->freightShipRequest = $freightShipRequest;

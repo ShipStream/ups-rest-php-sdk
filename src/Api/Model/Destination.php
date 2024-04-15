@@ -17,19 +17,19 @@ class Destination extends \ArrayObject
     If this endpoint is not continuously available, incoming events will be lost.
     
     *
-    * @var string
+    * @var string|null
     */
     protected $url;
     /**
      * It is an open-entry field that indicates type of credentials supported by the client.
      *
-     * @var string
+     * @var string|null
      */
     protected $credentialType;
     /**
      * It is an opaque string meant for client authentication. If for any reason this credential changes then any event notification will fail until a new subscription is made.
      *
-     * @var string
+     * @var string|null
      */
     protected $credential;
     /**
@@ -37,9 +37,9 @@ class Destination extends \ArrayObject
     If this endpoint is not continuously available, incoming events will be lost.
     
     *
-    * @return string
+    * @return string|null
     */
-    public function getUrl() : string
+    public function getUrl() : ?string
     {
         return $this->url;
     }
@@ -48,11 +48,11 @@ class Destination extends \ArrayObject
     If this endpoint is not continuously available, incoming events will be lost.
     
     *
-    * @param string $url
+    * @param string|null $url
     *
     * @return self
     */
-    public function setUrl(string $url) : self
+    public function setUrl(?string $url) : self
     {
         $this->initialized['url'] = true;
         $this->url = $url;
@@ -61,20 +61,20 @@ class Destination extends \ArrayObject
     /**
      * It is an open-entry field that indicates type of credentials supported by the client.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCredentialType() : string
+    public function getCredentialType() : ?string
     {
         return $this->credentialType;
     }
     /**
      * It is an open-entry field that indicates type of credentials supported by the client.
      *
-     * @param string $credentialType
+     * @param string|null $credentialType
      *
      * @return self
      */
-    public function setCredentialType(string $credentialType) : self
+    public function setCredentialType(?string $credentialType) : self
     {
         $this->initialized['credentialType'] = true;
         $this->credentialType = $credentialType;
@@ -83,20 +83,20 @@ class Destination extends \ArrayObject
     /**
      * It is an opaque string meant for client authentication. If for any reason this credential changes then any event notification will fail until a new subscription is made.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCredential() : string
+    public function getCredential() : ?string
     {
         return $this->credential;
     }
     /**
      * It is an opaque string meant for client authentication. If for any reason this credential changes then any event notification will fail until a new subscription is made.
      *
-     * @param string $credential
+     * @param string|null $credential
      *
      * @return self
      */
-    public function setCredential(string $credential) : self
+    public function setCredential(?string $credential) : self
     {
         $this->initialized['credential'] = true;
         $this->credential = $credential;

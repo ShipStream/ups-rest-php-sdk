@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('DestinationPostalCode', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('DestinationPostalCode', $data) && $data['DestinationPostalCode'] !== null) {
                 $object->setDestinationPostalCode($data['DestinationPostalCode']);
                 unset($data['DestinationPostalCode']);
             }
-            if (\array_key_exists('DestinationCountryCode', $data)) {
+            elseif (\array_key_exists('DestinationPostalCode', $data) && $data['DestinationPostalCode'] === null) {
+                $object->setDestinationPostalCode(null);
+            }
+            if (\array_key_exists('DestinationCountryCode', $data) && $data['DestinationCountryCode'] !== null) {
                 $object->setDestinationCountryCode($data['DestinationCountryCode']);
                 unset($data['DestinationCountryCode']);
             }
-            if (\array_key_exists('PickupDateRange', $data)) {
+            elseif (\array_key_exists('DestinationCountryCode', $data) && $data['DestinationCountryCode'] === null) {
+                $object->setDestinationCountryCode(null);
+            }
+            if (\array_key_exists('PickupDateRange', $data) && $data['PickupDateRange'] !== null) {
                 $object->setPickupDateRange($this->denormalizer->denormalize($data['PickupDateRange'], 'ShipStream\\Ups\\Api\\Model\\TrackingCandidatePickupDateRange', 'json', $context));
                 unset($data['PickupDateRange']);
+            }
+            elseif (\array_key_exists('PickupDateRange', $data) && $data['PickupDateRange'] === null) {
+                $object->setPickupDateRange(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -118,21 +130,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('DestinationPostalCode', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('DestinationPostalCode', $data) && $data['DestinationPostalCode'] !== null) {
                 $object->setDestinationPostalCode($data['DestinationPostalCode']);
                 unset($data['DestinationPostalCode']);
             }
-            if (\array_key_exists('DestinationCountryCode', $data)) {
+            elseif (\array_key_exists('DestinationPostalCode', $data) && $data['DestinationPostalCode'] === null) {
+                $object->setDestinationPostalCode(null);
+            }
+            if (\array_key_exists('DestinationCountryCode', $data) && $data['DestinationCountryCode'] !== null) {
                 $object->setDestinationCountryCode($data['DestinationCountryCode']);
                 unset($data['DestinationCountryCode']);
             }
-            if (\array_key_exists('PickupDateRange', $data)) {
+            elseif (\array_key_exists('DestinationCountryCode', $data) && $data['DestinationCountryCode'] === null) {
+                $object->setDestinationCountryCode(null);
+            }
+            if (\array_key_exists('PickupDateRange', $data) && $data['PickupDateRange'] !== null) {
                 $object->setPickupDateRange($this->denormalizer->denormalize($data['PickupDateRange'], 'ShipStream\\Ups\\Api\\Model\\TrackingCandidatePickupDateRange', 'json', $context));
                 unset($data['PickupDateRange']);
+            }
+            elseif (\array_key_exists('PickupDateRange', $data) && $data['PickupDateRange'] === null) {
+                $object->setPickupDateRange(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

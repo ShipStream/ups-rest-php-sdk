@@ -15,7 +15,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * Container to hold Disclaimer message applicable to taxes and charges. Available only when tax information is requested.
      *
-     * @var RateResultDisclaimer
+     * @var RateResultDisclaimer|null
      */
     protected $disclaimer;
     /**
@@ -23,74 +23,74 @@ class PickupCreationResponseRateResult extends \ArrayObject
     SD = Same-day Pickup
     FD = Future-day Pickup
     *
-    * @var string
+    * @var string|null
     */
     protected $rateType;
     /**
      * IATA currency codes for the pickup charge. Such as USD
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * 
      *
-     * @var RateResultChargeDetail[]
+     * @var list<RateResultChargeDetail>|null
      */
     protected $chargeDetail;
     /**
      * 
      *
-     * @var RateResultTaxCharges[]
+     * @var list<RateResultTaxCharges>|null
      */
     protected $taxCharges;
     /**
      * The sum of all taxes.
      *
-     * @var string
+     * @var string|null
      */
     protected $totalTax;
     /**
      * The grand total of each charge and applied tax.
      *
-     * @var string
+     * @var string|null
      */
     protected $grandTotalOfAllCharge;
     /**
      * The grand total of each incented charge and applied tax. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @var string
+     * @var string|null
      */
     protected $grandTotalOfAllIncentedCharge;
     /**
      * Total of charges before taxes. Only present when tax details requested in input.
      *
-     * @var string
+     * @var string|null
      */
     protected $preTaxTotalCharge;
     /**
      * Total of incented charges before taxes. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @var string
+     * @var string|null
      */
     protected $preTaxTotalIncentedCharge;
     /**
      * Container to hold Disclaimer message applicable to taxes and charges. Available only when tax information is requested.
      *
-     * @return RateResultDisclaimer
+     * @return RateResultDisclaimer|null
      */
-    public function getDisclaimer() : RateResultDisclaimer
+    public function getDisclaimer() : ?RateResultDisclaimer
     {
         return $this->disclaimer;
     }
     /**
      * Container to hold Disclaimer message applicable to taxes and charges. Available only when tax information is requested.
      *
-     * @param RateResultDisclaimer $disclaimer
+     * @param RateResultDisclaimer|null $disclaimer
      *
      * @return self
      */
-    public function setDisclaimer(RateResultDisclaimer $disclaimer) : self
+    public function setDisclaimer(?RateResultDisclaimer $disclaimer) : self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -101,9 +101,9 @@ class PickupCreationResponseRateResult extends \ArrayObject
     SD = Same-day Pickup
     FD = Future-day Pickup
     *
-    * @return string
+    * @return string|null
     */
-    public function getRateType() : string
+    public function getRateType() : ?string
     {
         return $this->rateType;
     }
@@ -112,11 +112,11 @@ class PickupCreationResponseRateResult extends \ArrayObject
     SD = Same-day Pickup
     FD = Future-day Pickup
     *
-    * @param string $rateType
+    * @param string|null $rateType
     *
     * @return self
     */
-    public function setRateType(string $rateType) : self
+    public function setRateType(?string $rateType) : self
     {
         $this->initialized['rateType'] = true;
         $this->rateType = $rateType;
@@ -125,20 +125,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * IATA currency codes for the pickup charge. Such as USD
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * IATA currency codes for the pickup charge. Such as USD
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -147,20 +147,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * 
      *
-     * @return RateResultChargeDetail[]
+     * @return list<RateResultChargeDetail>|null
      */
-    public function getChargeDetail() : array
+    public function getChargeDetail() : ?array
     {
         return $this->chargeDetail;
     }
     /**
      * 
      *
-     * @param RateResultChargeDetail[] $chargeDetail
+     * @param list<RateResultChargeDetail>|null $chargeDetail
      *
      * @return self
      */
-    public function setChargeDetail(array $chargeDetail) : self
+    public function setChargeDetail(?array $chargeDetail) : self
     {
         $this->initialized['chargeDetail'] = true;
         $this->chargeDetail = $chargeDetail;
@@ -169,20 +169,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * 
      *
-     * @return RateResultTaxCharges[]
+     * @return list<RateResultTaxCharges>|null
      */
-    public function getTaxCharges() : array
+    public function getTaxCharges() : ?array
     {
         return $this->taxCharges;
     }
     /**
      * 
      *
-     * @param RateResultTaxCharges[] $taxCharges
+     * @param list<RateResultTaxCharges>|null $taxCharges
      *
      * @return self
      */
-    public function setTaxCharges(array $taxCharges) : self
+    public function setTaxCharges(?array $taxCharges) : self
     {
         $this->initialized['taxCharges'] = true;
         $this->taxCharges = $taxCharges;
@@ -191,20 +191,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * The sum of all taxes.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTotalTax() : string
+    public function getTotalTax() : ?string
     {
         return $this->totalTax;
     }
     /**
      * The sum of all taxes.
      *
-     * @param string $totalTax
+     * @param string|null $totalTax
      *
      * @return self
      */
-    public function setTotalTax(string $totalTax) : self
+    public function setTotalTax(?string $totalTax) : self
     {
         $this->initialized['totalTax'] = true;
         $this->totalTax = $totalTax;
@@ -213,20 +213,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * The grand total of each charge and applied tax.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGrandTotalOfAllCharge() : string
+    public function getGrandTotalOfAllCharge() : ?string
     {
         return $this->grandTotalOfAllCharge;
     }
     /**
      * The grand total of each charge and applied tax.
      *
-     * @param string $grandTotalOfAllCharge
+     * @param string|null $grandTotalOfAllCharge
      *
      * @return self
      */
-    public function setGrandTotalOfAllCharge(string $grandTotalOfAllCharge) : self
+    public function setGrandTotalOfAllCharge(?string $grandTotalOfAllCharge) : self
     {
         $this->initialized['grandTotalOfAllCharge'] = true;
         $this->grandTotalOfAllCharge = $grandTotalOfAllCharge;
@@ -235,20 +235,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * The grand total of each incented charge and applied tax. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGrandTotalOfAllIncentedCharge() : string
+    public function getGrandTotalOfAllIncentedCharge() : ?string
     {
         return $this->grandTotalOfAllIncentedCharge;
     }
     /**
      * The grand total of each incented charge and applied tax. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @param string $grandTotalOfAllIncentedCharge
+     * @param string|null $grandTotalOfAllIncentedCharge
      *
      * @return self
      */
-    public function setGrandTotalOfAllIncentedCharge(string $grandTotalOfAllIncentedCharge) : self
+    public function setGrandTotalOfAllIncentedCharge(?string $grandTotalOfAllIncentedCharge) : self
     {
         $this->initialized['grandTotalOfAllIncentedCharge'] = true;
         $this->grandTotalOfAllIncentedCharge = $grandTotalOfAllIncentedCharge;
@@ -257,20 +257,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * Total of charges before taxes. Only present when tax details requested in input.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPreTaxTotalCharge() : string
+    public function getPreTaxTotalCharge() : ?string
     {
         return $this->preTaxTotalCharge;
     }
     /**
      * Total of charges before taxes. Only present when tax details requested in input.
      *
-     * @param string $preTaxTotalCharge
+     * @param string|null $preTaxTotalCharge
      *
      * @return self
      */
-    public function setPreTaxTotalCharge(string $preTaxTotalCharge) : self
+    public function setPreTaxTotalCharge(?string $preTaxTotalCharge) : self
     {
         $this->initialized['preTaxTotalCharge'] = true;
         $this->preTaxTotalCharge = $preTaxTotalCharge;
@@ -279,20 +279,20 @@ class PickupCreationResponseRateResult extends \ArrayObject
     /**
      * Total of incented charges before taxes. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPreTaxTotalIncentedCharge() : string
+    public function getPreTaxTotalIncentedCharge() : ?string
     {
         return $this->preTaxTotalIncentedCharge;
     }
     /**
      * Total of incented charges before taxes. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @param string $preTaxTotalIncentedCharge
+     * @param string|null $preTaxTotalIncentedCharge
      *
      * @return self
      */
-    public function setPreTaxTotalIncentedCharge(string $preTaxTotalIncentedCharge) : self
+    public function setPreTaxTotalIncentedCharge(?string $preTaxTotalIncentedCharge) : self
     {
         $this->initialized['preTaxTotalIncentedCharge'] = true;
         $this->preTaxTotalIncentedCharge = $preTaxTotalIncentedCharge;

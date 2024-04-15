@@ -15,7 +15,7 @@ class LocatorResponseResponse extends \ArrayObject
     /**
      * Transaction Reference Container.
      *
-     * @var ResponseTransactionReference
+     * @var ResponseTransactionReference|null
      */
     protected $transactionReference;
     /**
@@ -23,38 +23,38 @@ class LocatorResponseResponse extends \ArrayObject
     1-Success
     0-Failure
     *
-    * @var string
+    * @var string|null
     */
     protected $responseStatusCode;
     /**
      * Describes the Response Status Code.
      *
-     * @var string
+     * @var string|null
      */
     protected $responseStatusDescription;
     /**
      * If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.
      *
-     * @var ResponseError
+     * @var ResponseError|null
      */
     protected $error;
     /**
      * Transaction Reference Container.
      *
-     * @return ResponseTransactionReference
+     * @return ResponseTransactionReference|null
      */
-    public function getTransactionReference() : ResponseTransactionReference
+    public function getTransactionReference() : ?ResponseTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * Transaction Reference Container.
      *
-     * @param ResponseTransactionReference $transactionReference
+     * @param ResponseTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(ResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(?ResponseTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;
@@ -65,9 +65,9 @@ class LocatorResponseResponse extends \ArrayObject
     1-Success
     0-Failure
     *
-    * @return string
+    * @return string|null
     */
-    public function getResponseStatusCode() : string
+    public function getResponseStatusCode() : ?string
     {
         return $this->responseStatusCode;
     }
@@ -76,11 +76,11 @@ class LocatorResponseResponse extends \ArrayObject
     1-Success
     0-Failure
     *
-    * @param string $responseStatusCode
+    * @param string|null $responseStatusCode
     *
     * @return self
     */
-    public function setResponseStatusCode(string $responseStatusCode) : self
+    public function setResponseStatusCode(?string $responseStatusCode) : self
     {
         $this->initialized['responseStatusCode'] = true;
         $this->responseStatusCode = $responseStatusCode;
@@ -89,20 +89,20 @@ class LocatorResponseResponse extends \ArrayObject
     /**
      * Describes the Response Status Code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getResponseStatusDescription() : string
+    public function getResponseStatusDescription() : ?string
     {
         return $this->responseStatusDescription;
     }
     /**
      * Describes the Response Status Code.
      *
-     * @param string $responseStatusDescription
+     * @param string|null $responseStatusDescription
      *
      * @return self
      */
-    public function setResponseStatusDescription(string $responseStatusDescription) : self
+    public function setResponseStatusDescription(?string $responseStatusDescription) : self
     {
         $this->initialized['responseStatusDescription'] = true;
         $this->responseStatusDescription = $responseStatusDescription;
@@ -111,20 +111,20 @@ class LocatorResponseResponse extends \ArrayObject
     /**
      * If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.
      *
-     * @return ResponseError
+     * @return ResponseError|null
      */
-    public function getError() : ResponseError
+    public function getError() : ?ResponseError
     {
         return $this->error;
     }
     /**
      * If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.
      *
-     * @param ResponseError $error
+     * @param ResponseError|null $error
      *
      * @return self
      */
-    public function setError(ResponseError $error) : self
+    public function setError(?ResponseError $error) : self
     {
         $this->initialized['error'] = true;
         $this->error = $error;

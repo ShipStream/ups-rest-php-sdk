@@ -15,32 +15,32 @@ class PackageServiceOptionsShipperDeclaredValue extends \ArrayObject
     /**
      * The IATA currency code associated with the amount for the package.  UPS does not support all international currency codes. Refer to the appendix for a list of valid codes.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * The monetary value for the amount associated with the package.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * The IATA currency code associated with the amount for the package.  UPS does not support all international currency codes. Refer to the appendix for a list of valid codes.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * The IATA currency code associated with the amount for the package.  UPS does not support all international currency codes. Refer to the appendix for a list of valid codes.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -49,20 +49,20 @@ class PackageServiceOptionsShipperDeclaredValue extends \ArrayObject
     /**
      * The monetary value for the amount associated with the package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * The monetary value for the amount associated with the package.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

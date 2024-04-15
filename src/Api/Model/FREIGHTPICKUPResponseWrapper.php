@@ -15,26 +15,26 @@ class FREIGHTPICKUPResponseWrapper extends \ArrayObject
     /**
      * Freight Pickup Response Container.
      *
-     * @var FreightPickupResponse
+     * @var FreightPickupResponse|null
      */
     protected $freightPickupResponse;
     /**
      * Freight Pickup Response Container.
      *
-     * @return FreightPickupResponse
+     * @return FreightPickupResponse|null
      */
-    public function getFreightPickupResponse() : FreightPickupResponse
+    public function getFreightPickupResponse() : ?FreightPickupResponse
     {
         return $this->freightPickupResponse;
     }
     /**
      * Freight Pickup Response Container.
      *
-     * @param FreightPickupResponse $freightPickupResponse
+     * @param FreightPickupResponse|null $freightPickupResponse
      *
      * @return self
      */
-    public function setFreightPickupResponse(FreightPickupResponse $freightPickupResponse) : self
+    public function setFreightPickupResponse(?FreightPickupResponse $freightPickupResponse) : self
     {
         $this->initialized['freightPickupResponse'] = true;
         $this->freightPickupResponse = $freightPickupResponse;

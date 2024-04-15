@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('CancelBy', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('CancelBy', $data) && $data['CancelBy'] !== null) {
                 $object->setCancelBy($data['CancelBy']);
                 unset($data['CancelBy']);
             }
-            if (\array_key_exists('PRN', $data)) {
+            elseif (\array_key_exists('CancelBy', $data) && $data['CancelBy'] === null) {
+                $object->setCancelBy(null);
+            }
+            if (\array_key_exists('PRN', $data) && $data['PRN'] !== null) {
                 $object->setPRN($data['PRN']);
                 unset($data['PRN']);
+            }
+            elseif (\array_key_exists('PRN', $data) && $data['PRN'] === null) {
+                $object->setPRN(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('CancelBy', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('CancelBy', $data) && $data['CancelBy'] !== null) {
                 $object->setCancelBy($data['CancelBy']);
                 unset($data['CancelBy']);
             }
-            if (\array_key_exists('PRN', $data)) {
+            elseif (\array_key_exists('CancelBy', $data) && $data['CancelBy'] === null) {
+                $object->setCancelBy(null);
+            }
+            if (\array_key_exists('PRN', $data) && $data['PRN'] !== null) {
                 $object->setPRN($data['PRN']);
                 unset($data['PRN']);
+            }
+            elseif (\array_key_exists('PRN', $data) && $data['PRN'] === null) {
+                $object->setPRN(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('AccountCountryCode', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('AccountCountryCode', $data) && $data['AccountCountryCode'] !== null) {
                 $object->setAccountCountryCode($data['AccountCountryCode']);
                 unset($data['AccountCountryCode']);
+            }
+            elseif (\array_key_exists('AccountCountryCode', $data) && $data['AccountCountryCode'] === null) {
+                $object->setAccountCountryCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('AccountCountryCode', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('AccountCountryCode', $data) && $data['AccountCountryCode'] !== null) {
                 $object->setAccountCountryCode($data['AccountCountryCode']);
                 unset($data['AccountCountryCode']);
+            }
+            elseif (\array_key_exists('AccountCountryCode', $data) && $data['AccountCountryCode'] === null) {
+                $object->setAccountCountryCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

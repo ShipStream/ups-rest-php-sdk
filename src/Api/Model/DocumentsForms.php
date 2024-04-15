@@ -15,38 +15,38 @@ class DocumentsForms extends \ArrayObject
     /**
      * Forms Type Container.
      *
-     * @var FormsType
+     * @var FormsType|null
      */
     protected $type;
     /**
      * Base 64 encoded graphic image.
      *
-     * @var string
+     * @var string|null
      */
     protected $graphicImage;
     /**
      * Forms Format Container.
      *
-     * @var FormsFormat
+     * @var FormsFormat|null
      */
     protected $format;
     /**
      * Forms Type Container.
      *
-     * @return FormsType
+     * @return FormsType|null
      */
-    public function getType() : FormsType
+    public function getType() : ?FormsType
     {
         return $this->type;
     }
     /**
      * Forms Type Container.
      *
-     * @param FormsType $type
+     * @param FormsType|null $type
      *
      * @return self
      */
-    public function setType(FormsType $type) : self
+    public function setType(?FormsType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -55,20 +55,20 @@ class DocumentsForms extends \ArrayObject
     /**
      * Base 64 encoded graphic image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage() : ?string
     {
         return $this->graphicImage;
     }
     /**
      * Base 64 encoded graphic image.
      *
-     * @param string $graphicImage
+     * @param string|null $graphicImage
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(?string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;
@@ -77,20 +77,20 @@ class DocumentsForms extends \ArrayObject
     /**
      * Forms Format Container.
      *
-     * @return FormsFormat
+     * @return FormsFormat|null
      */
-    public function getFormat() : FormsFormat
+    public function getFormat() : ?FormsFormat
     {
         return $this->format;
     }
     /**
      * Forms Format Container.
      *
-     * @param FormsFormat $format
+     * @param FormsFormat|null $format
      *
      * @return self
      */
-    public function setFormat(FormsFormat $format) : self
+    public function setFormat(?FormsFormat $format) : self
     {
         $this->initialized['format'] = true;
         $this->format = $format;

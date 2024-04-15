@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SaturdayPickup', $data)) {
+            if (\array_key_exists('SaturdayPickup', $data) && $data['SaturdayPickup'] !== null) {
                 $object->setSaturdayPickup($data['SaturdayPickup']);
                 unset($data['SaturdayPickup']);
             }
-            if (\array_key_exists('SaturdayDelivery', $data)) {
+            elseif (\array_key_exists('SaturdayPickup', $data) && $data['SaturdayPickup'] === null) {
+                $object->setSaturdayPickup(null);
+            }
+            if (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] !== null) {
                 $object->setSaturdayDelivery($data['SaturdayDelivery']);
                 unset($data['SaturdayDelivery']);
             }
-            if (\array_key_exists('CallTagARS', $data)) {
+            elseif (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] === null) {
+                $object->setSaturdayDelivery(null);
+            }
+            if (\array_key_exists('CallTagARS', $data) && $data['CallTagARS'] !== null) {
                 $object->setCallTagARS($this->denormalizer->denormalize($data['CallTagARS'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCallTagARS', 'json', $context));
                 unset($data['CallTagARS']);
+            }
+            elseif (\array_key_exists('CallTagARS', $data) && $data['CallTagARS'] === null) {
+                $object->setCallTagARS(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SaturdayPickup', $data)) {
+            if (\array_key_exists('SaturdayPickup', $data) && $data['SaturdayPickup'] !== null) {
                 $object->setSaturdayPickup($data['SaturdayPickup']);
                 unset($data['SaturdayPickup']);
             }
-            if (\array_key_exists('SaturdayDelivery', $data)) {
+            elseif (\array_key_exists('SaturdayPickup', $data) && $data['SaturdayPickup'] === null) {
+                $object->setSaturdayPickup(null);
+            }
+            if (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] !== null) {
                 $object->setSaturdayDelivery($data['SaturdayDelivery']);
                 unset($data['SaturdayDelivery']);
             }
-            if (\array_key_exists('CallTagARS', $data)) {
+            elseif (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] === null) {
+                $object->setSaturdayDelivery(null);
+            }
+            if (\array_key_exists('CallTagARS', $data) && $data['CallTagARS'] !== null) {
                 $object->setCallTagARS($this->denormalizer->denormalize($data['CallTagARS'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCallTagARS', 'json', $context));
                 unset($data['CallTagARS']);
+            }
+            elseif (\array_key_exists('CallTagARS', $data) && $data['CallTagARS'] === null) {
+                $object->setCallTagARS(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

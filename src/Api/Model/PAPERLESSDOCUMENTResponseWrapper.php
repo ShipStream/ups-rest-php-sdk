@@ -15,26 +15,26 @@ class PAPERLESSDOCUMENTResponseWrapper extends \ArrayObject
     /**
      * Paperless Document API response container for Push To Image Repository request.  N/A
      *
-     * @var PushToImageRepositoryResponse
+     * @var PushToImageRepositoryResponse|null
      */
     protected $pushToImageRepositoryResponse;
     /**
      * Paperless Document API response container for Push To Image Repository request.  N/A
      *
-     * @return PushToImageRepositoryResponse
+     * @return PushToImageRepositoryResponse|null
      */
-    public function getPushToImageRepositoryResponse() : PushToImageRepositoryResponse
+    public function getPushToImageRepositoryResponse() : ?PushToImageRepositoryResponse
     {
         return $this->pushToImageRepositoryResponse;
     }
     /**
      * Paperless Document API response container for Push To Image Repository request.  N/A
      *
-     * @param PushToImageRepositoryResponse $pushToImageRepositoryResponse
+     * @param PushToImageRepositoryResponse|null $pushToImageRepositoryResponse
      *
      * @return self
      */
-    public function setPushToImageRepositoryResponse(PushToImageRepositoryResponse $pushToImageRepositoryResponse) : self
+    public function setPushToImageRepositoryResponse(?PushToImageRepositoryResponse $pushToImageRepositoryResponse) : self
     {
         $this->initialized['pushToImageRepositoryResponse'] = true;
         $this->pushToImageRepositoryResponse = $pushToImageRepositoryResponse;

@@ -15,32 +15,32 @@ class ImagePrintSize extends \ArrayObject
     /**
      * The lengths of the image print size.
      *
-     * @var string
+     * @var string|null
      */
     protected $length;
     /**
      * The widths of the image print size.
      *
-     * @var string
+     * @var string|null
      */
     protected $width;
     /**
      * The lengths of the image print size.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLength() : string
+    public function getLength() : ?string
     {
         return $this->length;
     }
     /**
      * The lengths of the image print size.
      *
-     * @param string $length
+     * @param string|null $length
      *
      * @return self
      */
-    public function setLength(string $length) : self
+    public function setLength(?string $length) : self
     {
         $this->initialized['length'] = true;
         $this->length = $length;
@@ -49,20 +49,20 @@ class ImagePrintSize extends \ArrayObject
     /**
      * The widths of the image print size.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWidth() : string
+    public function getWidth() : ?string
     {
         return $this->width;
     }
     /**
      * The widths of the image print size.
      *
-     * @param string $width
+     * @param string|null $width
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(?string $width) : self
     {
         $this->initialized['width'] = true;
         $this->width = $width;

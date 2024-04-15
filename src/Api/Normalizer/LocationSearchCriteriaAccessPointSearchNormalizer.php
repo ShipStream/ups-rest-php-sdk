@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PublicAccessPointID', $data)) {
+            if (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] !== null) {
                 $object->setPublicAccessPointID($data['PublicAccessPointID']);
                 unset($data['PublicAccessPointID']);
             }
-            if (\array_key_exists('AccessPointStatus', $data)) {
+            elseif (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] === null) {
+                $object->setPublicAccessPointID(null);
+            }
+            if (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] !== null) {
                 $object->setAccessPointStatus($data['AccessPointStatus']);
                 unset($data['AccessPointStatus']);
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            elseif (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] === null) {
+                $object->setAccessPointStatus(null);
+            }
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('IncludeCriteria', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('IncludeCriteria', $data) && $data['IncludeCriteria'] !== null) {
                 $object->setIncludeCriteria($this->denormalizer->denormalize($data['IncludeCriteria'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria', 'json', $context));
                 unset($data['IncludeCriteria']);
             }
-            if (\array_key_exists('ExcludeFromResult', $data)) {
+            elseif (\array_key_exists('IncludeCriteria', $data) && $data['IncludeCriteria'] === null) {
+                $object->setIncludeCriteria(null);
+            }
+            if (\array_key_exists('ExcludeFromResult', $data) && $data['ExcludeFromResult'] !== null) {
                 $object->setExcludeFromResult($this->denormalizer->denormalize($data['ExcludeFromResult'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult', 'json', $context));
                 unset($data['ExcludeFromResult']);
             }
-            if (\array_key_exists('ExactMatchIndicator', $data)) {
+            elseif (\array_key_exists('ExcludeFromResult', $data) && $data['ExcludeFromResult'] === null) {
+                $object->setExcludeFromResult(null);
+            }
+            if (\array_key_exists('ExactMatchIndicator', $data) && $data['ExactMatchIndicator'] !== null) {
                 $object->setExactMatchIndicator($data['ExactMatchIndicator']);
                 unset($data['ExactMatchIndicator']);
             }
-            if (\array_key_exists('ExistIndicator', $data)) {
+            elseif (\array_key_exists('ExactMatchIndicator', $data) && $data['ExactMatchIndicator'] === null) {
+                $object->setExactMatchIndicator(null);
+            }
+            if (\array_key_exists('ExistIndicator', $data) && $data['ExistIndicator'] !== null) {
                 $object->setExistIndicator($data['ExistIndicator']);
                 unset($data['ExistIndicator']);
+            }
+            elseif (\array_key_exists('ExistIndicator', $data) && $data['ExistIndicator'] === null) {
+                $object->setExistIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -141,33 +162,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PublicAccessPointID', $data)) {
+            if (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] !== null) {
                 $object->setPublicAccessPointID($data['PublicAccessPointID']);
                 unset($data['PublicAccessPointID']);
             }
-            if (\array_key_exists('AccessPointStatus', $data)) {
+            elseif (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] === null) {
+                $object->setPublicAccessPointID(null);
+            }
+            if (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] !== null) {
                 $object->setAccessPointStatus($data['AccessPointStatus']);
                 unset($data['AccessPointStatus']);
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            elseif (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] === null) {
+                $object->setAccessPointStatus(null);
+            }
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('IncludeCriteria', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('IncludeCriteria', $data) && $data['IncludeCriteria'] !== null) {
                 $object->setIncludeCriteria($this->denormalizer->denormalize($data['IncludeCriteria'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria', 'json', $context));
                 unset($data['IncludeCriteria']);
             }
-            if (\array_key_exists('ExcludeFromResult', $data)) {
+            elseif (\array_key_exists('IncludeCriteria', $data) && $data['IncludeCriteria'] === null) {
+                $object->setIncludeCriteria(null);
+            }
+            if (\array_key_exists('ExcludeFromResult', $data) && $data['ExcludeFromResult'] !== null) {
                 $object->setExcludeFromResult($this->denormalizer->denormalize($data['ExcludeFromResult'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult', 'json', $context));
                 unset($data['ExcludeFromResult']);
             }
-            if (\array_key_exists('ExactMatchIndicator', $data)) {
+            elseif (\array_key_exists('ExcludeFromResult', $data) && $data['ExcludeFromResult'] === null) {
+                $object->setExcludeFromResult(null);
+            }
+            if (\array_key_exists('ExactMatchIndicator', $data) && $data['ExactMatchIndicator'] !== null) {
                 $object->setExactMatchIndicator($data['ExactMatchIndicator']);
                 unset($data['ExactMatchIndicator']);
             }
-            if (\array_key_exists('ExistIndicator', $data)) {
+            elseif (\array_key_exists('ExactMatchIndicator', $data) && $data['ExactMatchIndicator'] === null) {
+                $object->setExactMatchIndicator(null);
+            }
+            if (\array_key_exists('ExistIndicator', $data) && $data['ExistIndicator'] !== null) {
                 $object->setExistIndicator($data['ExistIndicator']);
                 unset($data['ExistIndicator']);
+            }
+            elseif (\array_key_exists('ExistIndicator', $data) && $data['ExistIndicator'] === null) {
+                $object->setExistIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

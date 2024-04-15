@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TransactionReference', $data)) {
+            if (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] !== null) {
                 $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\RequestTransactionReference', 'json', $context));
                 unset($data['TransactionReference']);
             }
-            if (\array_key_exists('RequestAction', $data)) {
+            elseif (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] === null) {
+                $object->setTransactionReference(null);
+            }
+            if (\array_key_exists('RequestAction', $data) && $data['RequestAction'] !== null) {
                 $object->setRequestAction($data['RequestAction']);
                 unset($data['RequestAction']);
+            }
+            elseif (\array_key_exists('RequestAction', $data) && $data['RequestAction'] === null) {
+                $object->setRequestAction(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TransactionReference', $data)) {
+            if (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] !== null) {
                 $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\RequestTransactionReference', 'json', $context));
                 unset($data['TransactionReference']);
             }
-            if (\array_key_exists('RequestAction', $data)) {
+            elseif (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] === null) {
+                $object->setTransactionReference(null);
+            }
+            if (\array_key_exists('RequestAction', $data) && $data['RequestAction'] !== null) {
                 $object->setRequestAction($data['RequestAction']);
                 unset($data['RequestAction']);
+            }
+            elseif (\array_key_exists('RequestAction', $data) && $data['RequestAction'] === null) {
+                $object->setRequestAction(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

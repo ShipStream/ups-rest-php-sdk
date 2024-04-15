@@ -15,50 +15,50 @@ class CreditCardAddress extends \ArrayObject
     /**
      * Address Line 1 of the credit card billing address. Usually Street address information.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * City of the credit card billing address.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * State or province code of the credit card billing address.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * Credit card billing addressee postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Credit card billing address country or territory code.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Address Line 1 of the credit card billing address. Usually Street address information.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Address Line 1 of the credit card billing address. Usually Street address information.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -67,20 +67,20 @@ class CreditCardAddress extends \ArrayObject
     /**
      * City of the credit card billing address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * City of the credit card billing address.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -89,20 +89,20 @@ class CreditCardAddress extends \ArrayObject
     /**
      * State or province code of the credit card billing address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * State or province code of the credit card billing address.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -111,20 +111,20 @@ class CreditCardAddress extends \ArrayObject
     /**
      * Credit card billing addressee postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Credit card billing addressee postal code.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -133,20 +133,20 @@ class CreditCardAddress extends \ArrayObject
     /**
      * Credit card billing address country or territory code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Credit card billing address country or territory code.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

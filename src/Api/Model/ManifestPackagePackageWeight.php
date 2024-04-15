@@ -15,26 +15,26 @@ class ManifestPackagePackageWeight extends \ArrayObject
     /**
      * Package weight. Set to 0 for package type of letters or envelops.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * Package weight. Set to 0 for package type of letters or envelops.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * Package weight. Set to 0 for package type of letters or envelops.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

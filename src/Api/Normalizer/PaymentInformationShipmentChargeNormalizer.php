@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('BillShipper', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('BillShipper', $data) && $data['BillShipper'] !== null) {
                 $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper', 'json', $context));
                 unset($data['BillShipper']);
             }
-            if (\array_key_exists('BillReceiver', $data)) {
+            elseif (\array_key_exists('BillShipper', $data) && $data['BillShipper'] === null) {
+                $object->setBillShipper(null);
+            }
+            if (\array_key_exists('BillReceiver', $data) && $data['BillReceiver'] !== null) {
                 $object->setBillReceiver($this->denormalizer->denormalize($data['BillReceiver'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver', 'json', $context));
                 unset($data['BillReceiver']);
             }
-            if (\array_key_exists('BillThirdParty', $data)) {
+            elseif (\array_key_exists('BillReceiver', $data) && $data['BillReceiver'] === null) {
+                $object->setBillReceiver(null);
+            }
+            if (\array_key_exists('BillThirdParty', $data) && $data['BillThirdParty'] !== null) {
                 $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty', 'json', $context));
                 unset($data['BillThirdParty']);
             }
-            if (\array_key_exists('ConsigneeBilledIndicator', $data)) {
+            elseif (\array_key_exists('BillThirdParty', $data) && $data['BillThirdParty'] === null) {
+                $object->setBillThirdParty(null);
+            }
+            if (\array_key_exists('ConsigneeBilledIndicator', $data) && $data['ConsigneeBilledIndicator'] !== null) {
                 $object->setConsigneeBilledIndicator($data['ConsigneeBilledIndicator']);
                 unset($data['ConsigneeBilledIndicator']);
+            }
+            elseif (\array_key_exists('ConsigneeBilledIndicator', $data) && $data['ConsigneeBilledIndicator'] === null) {
+                $object->setConsigneeBilledIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -125,25 +140,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('BillShipper', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('BillShipper', $data) && $data['BillShipper'] !== null) {
                 $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper', 'json', $context));
                 unset($data['BillShipper']);
             }
-            if (\array_key_exists('BillReceiver', $data)) {
+            elseif (\array_key_exists('BillShipper', $data) && $data['BillShipper'] === null) {
+                $object->setBillShipper(null);
+            }
+            if (\array_key_exists('BillReceiver', $data) && $data['BillReceiver'] !== null) {
                 $object->setBillReceiver($this->denormalizer->denormalize($data['BillReceiver'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver', 'json', $context));
                 unset($data['BillReceiver']);
             }
-            if (\array_key_exists('BillThirdParty', $data)) {
+            elseif (\array_key_exists('BillReceiver', $data) && $data['BillReceiver'] === null) {
+                $object->setBillReceiver(null);
+            }
+            if (\array_key_exists('BillThirdParty', $data) && $data['BillThirdParty'] !== null) {
                 $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty', 'json', $context));
                 unset($data['BillThirdParty']);
             }
-            if (\array_key_exists('ConsigneeBilledIndicator', $data)) {
+            elseif (\array_key_exists('BillThirdParty', $data) && $data['BillThirdParty'] === null) {
+                $object->setBillThirdParty(null);
+            }
+            if (\array_key_exists('ConsigneeBilledIndicator', $data) && $data['ConsigneeBilledIndicator'] !== null) {
                 $object->setConsigneeBilledIndicator($data['ConsigneeBilledIndicator']);
                 unset($data['ConsigneeBilledIndicator']);
+            }
+            elseif (\array_key_exists('ConsigneeBilledIndicator', $data) && $data['ConsigneeBilledIndicator'] === null) {
+                $object->setConsigneeBilledIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

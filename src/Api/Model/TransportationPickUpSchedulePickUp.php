@@ -22,13 +22,13 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     6-Friday
     7-Saturday.
     *
-    * @var string
+    * @var string|null
     */
     protected $dayOfWeek;
     /**
      * Container to hold information regarding pickup time and pickup availability indicator.
      *
-     * @var PickUpPickUpDetails
+     * @var PickUpPickUpDetails|null
      */
     protected $pickUpDetails;
     /**
@@ -41,9 +41,9 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     6-Friday
     7-Saturday.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDayOfWeek() : string
+    public function getDayOfWeek() : ?string
     {
         return $this->dayOfWeek;
     }
@@ -57,11 +57,11 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     6-Friday
     7-Saturday.
     *
-    * @param string $dayOfWeek
+    * @param string|null $dayOfWeek
     *
     * @return self
     */
-    public function setDayOfWeek(string $dayOfWeek) : self
+    public function setDayOfWeek(?string $dayOfWeek) : self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;
@@ -70,20 +70,20 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     /**
      * Container to hold information regarding pickup time and pickup availability indicator.
      *
-     * @return PickUpPickUpDetails
+     * @return PickUpPickUpDetails|null
      */
-    public function getPickUpDetails() : PickUpPickUpDetails
+    public function getPickUpDetails() : ?PickUpPickUpDetails
     {
         return $this->pickUpDetails;
     }
     /**
      * Container to hold information regarding pickup time and pickup availability indicator.
      *
-     * @param PickUpPickUpDetails $pickUpDetails
+     * @param PickUpPickUpDetails|null $pickUpDetails
      *
      * @return self
      */
-    public function setPickUpDetails(PickUpPickUpDetails $pickUpDetails) : self
+    public function setPickUpDetails(?PickUpPickUpDetails $pickUpDetails) : self
     {
         $this->initialized['pickUpDetails'] = true;
         $this->pickUpDetails = $pickUpDetails;

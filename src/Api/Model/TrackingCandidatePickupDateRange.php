@@ -15,32 +15,32 @@ class TrackingCandidatePickupDateRange extends \ArrayObject
     /**
      * The beginning of the date range for the candidate. Format: YYYYMMDD  Service is only supported for 30 days
      *
-     * @var string
+     * @var string|null
      */
     protected $beginDate;
     /**
      * The end of the date range for the candidate. Format: YYYYMMDD
      *
-     * @var string
+     * @var string|null
      */
     protected $endDate;
     /**
      * The beginning of the date range for the candidate. Format: YYYYMMDD  Service is only supported for 30 days
      *
-     * @return string
+     * @return string|null
      */
-    public function getBeginDate() : string
+    public function getBeginDate() : ?string
     {
         return $this->beginDate;
     }
     /**
      * The beginning of the date range for the candidate. Format: YYYYMMDD  Service is only supported for 30 days
      *
-     * @param string $beginDate
+     * @param string|null $beginDate
      *
      * @return self
      */
-    public function setBeginDate(string $beginDate) : self
+    public function setBeginDate(?string $beginDate) : self
     {
         $this->initialized['beginDate'] = true;
         $this->beginDate = $beginDate;
@@ -49,20 +49,20 @@ class TrackingCandidatePickupDateRange extends \ArrayObject
     /**
      * The end of the date range for the candidate. Format: YYYYMMDD
      *
-     * @return string
+     * @return string|null
      */
-    public function getEndDate() : string
+    public function getEndDate() : ?string
     {
         return $this->endDate;
     }
     /**
      * The end of the date range for the candidate. Format: YYYYMMDD
      *
-     * @param string $endDate
+     * @param string|null $endDate
      *
      * @return self
      */
-    public function setEndDate(string $endDate) : self
+    public function setEndDate(?string $endDate) : self
     {
         $this->initialized['endDate'] = true;
         $this->endDate = $endDate;

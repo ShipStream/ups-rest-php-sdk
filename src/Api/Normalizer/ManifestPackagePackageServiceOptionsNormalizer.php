@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('COD', $data)) {
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('InsuredValue', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('InsuredValue', $data) && $data['InsuredValue'] !== null) {
                 $object->setInsuredValue($this->denormalizer->denormalize($data['InsuredValue'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsuredValue', 'json', $context));
                 unset($data['InsuredValue']);
             }
-            if (\array_key_exists('EarliestDeliveryTime', $data)) {
+            elseif (\array_key_exists('InsuredValue', $data) && $data['InsuredValue'] === null) {
+                $object->setInsuredValue(null);
+            }
+            if (\array_key_exists('EarliestDeliveryTime', $data) && $data['EarliestDeliveryTime'] !== null) {
                 $object->setEarliestDeliveryTime($data['EarliestDeliveryTime']);
                 unset($data['EarliestDeliveryTime']);
             }
-            if (\array_key_exists('HazardousMaterialsCode', $data)) {
+            elseif (\array_key_exists('EarliestDeliveryTime', $data) && $data['EarliestDeliveryTime'] === null) {
+                $object->setEarliestDeliveryTime(null);
+            }
+            if (\array_key_exists('HazardousMaterialsCode', $data) && $data['HazardousMaterialsCode'] !== null) {
                 $object->setHazardousMaterialsCode($data['HazardousMaterialsCode']);
                 unset($data['HazardousMaterialsCode']);
             }
-            if (\array_key_exists('HoldForPickup', $data)) {
+            elseif (\array_key_exists('HazardousMaterialsCode', $data) && $data['HazardousMaterialsCode'] === null) {
+                $object->setHazardousMaterialsCode(null);
+            }
+            if (\array_key_exists('HoldForPickup', $data) && $data['HoldForPickup'] !== null) {
                 $object->setHoldForPickup($data['HoldForPickup']);
                 unset($data['HoldForPickup']);
             }
-            if (\array_key_exists('AddShippingChargesToCODIndicator', $data)) {
+            elseif (\array_key_exists('HoldForPickup', $data) && $data['HoldForPickup'] === null) {
+                $object->setHoldForPickup(null);
+            }
+            if (\array_key_exists('AddShippingChargesToCODIndicator', $data) && $data['AddShippingChargesToCODIndicator'] !== null) {
                 $object->setAddShippingChargesToCODIndicator($data['AddShippingChargesToCODIndicator']);
                 unset($data['AddShippingChargesToCODIndicator']);
+            }
+            elseif (\array_key_exists('AddShippingChargesToCODIndicator', $data) && $data['AddShippingChargesToCODIndicator'] === null) {
+                $object->setAddShippingChargesToCODIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -132,29 +150,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('COD', $data)) {
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('InsuredValue', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('InsuredValue', $data) && $data['InsuredValue'] !== null) {
                 $object->setInsuredValue($this->denormalizer->denormalize($data['InsuredValue'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsuredValue', 'json', $context));
                 unset($data['InsuredValue']);
             }
-            if (\array_key_exists('EarliestDeliveryTime', $data)) {
+            elseif (\array_key_exists('InsuredValue', $data) && $data['InsuredValue'] === null) {
+                $object->setInsuredValue(null);
+            }
+            if (\array_key_exists('EarliestDeliveryTime', $data) && $data['EarliestDeliveryTime'] !== null) {
                 $object->setEarliestDeliveryTime($data['EarliestDeliveryTime']);
                 unset($data['EarliestDeliveryTime']);
             }
-            if (\array_key_exists('HazardousMaterialsCode', $data)) {
+            elseif (\array_key_exists('EarliestDeliveryTime', $data) && $data['EarliestDeliveryTime'] === null) {
+                $object->setEarliestDeliveryTime(null);
+            }
+            if (\array_key_exists('HazardousMaterialsCode', $data) && $data['HazardousMaterialsCode'] !== null) {
                 $object->setHazardousMaterialsCode($data['HazardousMaterialsCode']);
                 unset($data['HazardousMaterialsCode']);
             }
-            if (\array_key_exists('HoldForPickup', $data)) {
+            elseif (\array_key_exists('HazardousMaterialsCode', $data) && $data['HazardousMaterialsCode'] === null) {
+                $object->setHazardousMaterialsCode(null);
+            }
+            if (\array_key_exists('HoldForPickup', $data) && $data['HoldForPickup'] !== null) {
                 $object->setHoldForPickup($data['HoldForPickup']);
                 unset($data['HoldForPickup']);
             }
-            if (\array_key_exists('AddShippingChargesToCODIndicator', $data)) {
+            elseif (\array_key_exists('HoldForPickup', $data) && $data['HoldForPickup'] === null) {
+                $object->setHoldForPickup(null);
+            }
+            if (\array_key_exists('AddShippingChargesToCODIndicator', $data) && $data['AddShippingChargesToCODIndicator'] !== null) {
                 $object->setAddShippingChargesToCODIndicator($data['AddShippingChargesToCODIndicator']);
                 unset($data['AddShippingChargesToCODIndicator']);
+            }
+            elseif (\array_key_exists('AddShippingChargesToCODIndicator', $data) && $data['AddShippingChargesToCODIndicator'] === null) {
+                $object->setAddShippingChargesToCODIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

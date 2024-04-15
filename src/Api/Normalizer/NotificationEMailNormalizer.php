@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $values = [];
                 foreach ($data['EMailAddress'] as $value) {
                     $values[] = $value;
@@ -48,21 +48,36 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEMailAddress($values);
                 unset($data['EMailAddress']);
             }
-            if (\array_key_exists('UndeliverableEMailAddress', $data)) {
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
+            }
+            if (\array_key_exists('UndeliverableEMailAddress', $data) && $data['UndeliverableEMailAddress'] !== null) {
                 $object->setUndeliverableEMailAddress($data['UndeliverableEMailAddress']);
                 unset($data['UndeliverableEMailAddress']);
             }
-            if (\array_key_exists('FromEMailAddress', $data)) {
+            elseif (\array_key_exists('UndeliverableEMailAddress', $data) && $data['UndeliverableEMailAddress'] === null) {
+                $object->setUndeliverableEMailAddress(null);
+            }
+            if (\array_key_exists('FromEMailAddress', $data) && $data['FromEMailAddress'] !== null) {
                 $object->setFromEMailAddress($data['FromEMailAddress']);
                 unset($data['FromEMailAddress']);
             }
-            if (\array_key_exists('FromName', $data)) {
+            elseif (\array_key_exists('FromEMailAddress', $data) && $data['FromEMailAddress'] === null) {
+                $object->setFromEMailAddress(null);
+            }
+            if (\array_key_exists('FromName', $data) && $data['FromName'] !== null) {
                 $object->setFromName($data['FromName']);
                 unset($data['FromName']);
             }
-            if (\array_key_exists('Memo', $data)) {
+            elseif (\array_key_exists('FromName', $data) && $data['FromName'] === null) {
+                $object->setFromName(null);
+            }
+            if (\array_key_exists('Memo', $data) && $data['Memo'] !== null) {
                 $object->setMemo($data['Memo']);
                 unset($data['Memo']);
+            }
+            elseif (\array_key_exists('Memo', $data) && $data['Memo'] === null) {
+                $object->setMemo(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -133,7 +148,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $values = [];
                 foreach ($data['EMailAddress'] as $value) {
                     $values[] = $value;
@@ -141,21 +156,36 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEMailAddress($values);
                 unset($data['EMailAddress']);
             }
-            if (\array_key_exists('UndeliverableEMailAddress', $data)) {
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
+            }
+            if (\array_key_exists('UndeliverableEMailAddress', $data) && $data['UndeliverableEMailAddress'] !== null) {
                 $object->setUndeliverableEMailAddress($data['UndeliverableEMailAddress']);
                 unset($data['UndeliverableEMailAddress']);
             }
-            if (\array_key_exists('FromEMailAddress', $data)) {
+            elseif (\array_key_exists('UndeliverableEMailAddress', $data) && $data['UndeliverableEMailAddress'] === null) {
+                $object->setUndeliverableEMailAddress(null);
+            }
+            if (\array_key_exists('FromEMailAddress', $data) && $data['FromEMailAddress'] !== null) {
                 $object->setFromEMailAddress($data['FromEMailAddress']);
                 unset($data['FromEMailAddress']);
             }
-            if (\array_key_exists('FromName', $data)) {
+            elseif (\array_key_exists('FromEMailAddress', $data) && $data['FromEMailAddress'] === null) {
+                $object->setFromEMailAddress(null);
+            }
+            if (\array_key_exists('FromName', $data) && $data['FromName'] !== null) {
                 $object->setFromName($data['FromName']);
                 unset($data['FromName']);
             }
-            if (\array_key_exists('Memo', $data)) {
+            elseif (\array_key_exists('FromName', $data) && $data['FromName'] === null) {
+                $object->setFromName(null);
+            }
+            if (\array_key_exists('Memo', $data) && $data['Memo'] !== null) {
                 $object->setMemo($data['Memo']);
                 unset($data['Memo']);
+            }
+            elseif (\array_key_exists('Memo', $data) && $data['Memo'] === null) {
+                $object->setMemo(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -19,13 +19,13 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
     03-Unavailable
     04-Weather
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Description for DCR/ DCO unavailability.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -35,9 +35,9 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
     03-Unavailable
     04-Weather
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -48,11 +48,11 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
     03-Unavailable
     04-Weather
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -61,20 +61,20 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
     /**
      * Description for DCR/ DCO unavailability.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description for DCR/ DCO unavailability.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

@@ -15,44 +15,44 @@ class RateRequest extends \ArrayObject
     /**
      * Request container.  N/A
      *
-     * @var RateRequestRequest
+     * @var RateRequestRequest|null
      */
     protected $request;
     /**
      * Pickup Type container tag.  N/A
      *
-     * @var RateRequestPickupType
+     * @var RateRequestPickupType|null
      */
     protected $pickupType;
     /**
      * Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A
      *
-     * @var RateRequestCustomerClassification
+     * @var RateRequestCustomerClassification|null
      */
     protected $customerClassification;
     /**
      * Container for Shipment Information.  N/A
      *
-     * @var RateRequestShipment
+     * @var RateRequestShipment|null
      */
     protected $shipment;
     /**
      * Request container.  N/A
      *
-     * @return RateRequestRequest
+     * @return RateRequestRequest|null
      */
-    public function getRequest() : RateRequestRequest
+    public function getRequest() : ?RateRequestRequest
     {
         return $this->request;
     }
     /**
      * Request container.  N/A
      *
-     * @param RateRequestRequest $request
+     * @param RateRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(RateRequestRequest $request) : self
+    public function setRequest(?RateRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -61,20 +61,20 @@ class RateRequest extends \ArrayObject
     /**
      * Pickup Type container tag.  N/A
      *
-     * @return RateRequestPickupType
+     * @return RateRequestPickupType|null
      */
-    public function getPickupType() : RateRequestPickupType
+    public function getPickupType() : ?RateRequestPickupType
     {
         return $this->pickupType;
     }
     /**
      * Pickup Type container tag.  N/A
      *
-     * @param RateRequestPickupType $pickupType
+     * @param RateRequestPickupType|null $pickupType
      *
      * @return self
      */
-    public function setPickupType(RateRequestPickupType $pickupType) : self
+    public function setPickupType(?RateRequestPickupType $pickupType) : self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -83,20 +83,20 @@ class RateRequest extends \ArrayObject
     /**
      * Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A
      *
-     * @return RateRequestCustomerClassification
+     * @return RateRequestCustomerClassification|null
      */
-    public function getCustomerClassification() : RateRequestCustomerClassification
+    public function getCustomerClassification() : ?RateRequestCustomerClassification
     {
         return $this->customerClassification;
     }
     /**
      * Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A
      *
-     * @param RateRequestCustomerClassification $customerClassification
+     * @param RateRequestCustomerClassification|null $customerClassification
      *
      * @return self
      */
-    public function setCustomerClassification(RateRequestCustomerClassification $customerClassification) : self
+    public function setCustomerClassification(?RateRequestCustomerClassification $customerClassification) : self
     {
         $this->initialized['customerClassification'] = true;
         $this->customerClassification = $customerClassification;
@@ -105,20 +105,20 @@ class RateRequest extends \ArrayObject
     /**
      * Container for Shipment Information.  N/A
      *
-     * @return RateRequestShipment
+     * @return RateRequestShipment|null
      */
-    public function getShipment() : RateRequestShipment
+    public function getShipment() : ?RateRequestShipment
     {
         return $this->shipment;
     }
     /**
      * Container for Shipment Information.  N/A
      *
-     * @param RateRequestShipment $shipment
+     * @param RateRequestShipment|null $shipment
      *
      * @return self
      */
-    public function setShipment(RateRequestShipment $shipment) : self
+    public function setShipment(?RateRequestShipment $shipment) : self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

@@ -15,19 +15,19 @@ class LabelResultsLabelImage extends \ArrayObject
     /**
      * The format of a label image byte stream.
      *
-     * @var LabelImageLabelImageFormat
+     * @var LabelImageLabelImageFormat|null
      */
     protected $labelImageFormat;
     /**
      * Base 64 encoded graphic image.
      *
-     * @var string
+     * @var string|null
      */
     protected $graphicImage;
     /**
      * Base 64 encoded html browser image rendering software. This is only returned for GIF image formats.
      *
-     * @var string
+     * @var string|null
      */
     protected $hTMLImage;
     /**
@@ -35,13 +35,13 @@ class LabelResultsLabelImage extends \ArrayObject
     
     The PDF417 image will be returned when the shipment is trans-border and the service option is one of the following: Standard Express, Saver Express Plus. The image is Base 64 encoded and only returned for GIF image format.
     *
-    * @var string
+    * @var string|null
     */
     protected $pDF417;
     /**
      * Base 64 encoded graphic image of the Warsaw text and signature box.
      *
-     * @var string
+     * @var string|null
      */
     protected $internationalSignatureGraphicImage;
     /**
@@ -50,26 +50,26 @@ class LabelResultsLabelImage extends \ArrayObject
     Print/Electronic Import Control Label
     Forward shipment except for Mail Innovations Forward
     *
-    * @var string
+    * @var string|null
     */
     protected $uRL;
     /**
      * The format of a label image byte stream.
      *
-     * @return LabelImageLabelImageFormat
+     * @return LabelImageLabelImageFormat|null
      */
-    public function getLabelImageFormat() : LabelImageLabelImageFormat
+    public function getLabelImageFormat() : ?LabelImageLabelImageFormat
     {
         return $this->labelImageFormat;
     }
     /**
      * The format of a label image byte stream.
      *
-     * @param LabelImageLabelImageFormat $labelImageFormat
+     * @param LabelImageLabelImageFormat|null $labelImageFormat
      *
      * @return self
      */
-    public function setLabelImageFormat(LabelImageLabelImageFormat $labelImageFormat) : self
+    public function setLabelImageFormat(?LabelImageLabelImageFormat $labelImageFormat) : self
     {
         $this->initialized['labelImageFormat'] = true;
         $this->labelImageFormat = $labelImageFormat;
@@ -78,20 +78,20 @@ class LabelResultsLabelImage extends \ArrayObject
     /**
      * Base 64 encoded graphic image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage() : ?string
     {
         return $this->graphicImage;
     }
     /**
      * Base 64 encoded graphic image.
      *
-     * @param string $graphicImage
+     * @param string|null $graphicImage
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(?string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;
@@ -100,20 +100,20 @@ class LabelResultsLabelImage extends \ArrayObject
     /**
      * Base 64 encoded html browser image rendering software. This is only returned for GIF image formats.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHTMLImage() : string
+    public function getHTMLImage() : ?string
     {
         return $this->hTMLImage;
     }
     /**
      * Base 64 encoded html browser image rendering software. This is only returned for GIF image formats.
      *
-     * @param string $hTMLImage
+     * @param string|null $hTMLImage
      *
      * @return self
      */
-    public function setHTMLImage(string $hTMLImage) : self
+    public function setHTMLImage(?string $hTMLImage) : self
     {
         $this->initialized['hTMLImage'] = true;
         $this->hTMLImage = $hTMLImage;
@@ -124,9 +124,9 @@ class LabelResultsLabelImage extends \ArrayObject
     
     The PDF417 image will be returned when the shipment is trans-border and the service option is one of the following: Standard Express, Saver Express Plus. The image is Base 64 encoded and only returned for GIF image format.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPDF417() : string
+    public function getPDF417() : ?string
     {
         return $this->pDF417;
     }
@@ -135,11 +135,11 @@ class LabelResultsLabelImage extends \ArrayObject
     
     The PDF417 image will be returned when the shipment is trans-border and the service option is one of the following: Standard Express, Saver Express Plus. The image is Base 64 encoded and only returned for GIF image format.
     *
-    * @param string $pDF417
+    * @param string|null $pDF417
     *
     * @return self
     */
-    public function setPDF417(string $pDF417) : self
+    public function setPDF417(?string $pDF417) : self
     {
         $this->initialized['pDF417'] = true;
         $this->pDF417 = $pDF417;
@@ -148,20 +148,20 @@ class LabelResultsLabelImage extends \ArrayObject
     /**
      * Base 64 encoded graphic image of the Warsaw text and signature box.
      *
-     * @return string
+     * @return string|null
      */
-    public function getInternationalSignatureGraphicImage() : string
+    public function getInternationalSignatureGraphicImage() : ?string
     {
         return $this->internationalSignatureGraphicImage;
     }
     /**
      * Base 64 encoded graphic image of the Warsaw text and signature box.
      *
-     * @param string $internationalSignatureGraphicImage
+     * @param string|null $internationalSignatureGraphicImage
      *
      * @return self
      */
-    public function setInternationalSignatureGraphicImage(string $internationalSignatureGraphicImage) : self
+    public function setInternationalSignatureGraphicImage(?string $internationalSignatureGraphicImage) : self
     {
         $this->initialized['internationalSignatureGraphicImage'] = true;
         $this->internationalSignatureGraphicImage = $internationalSignatureGraphicImage;
@@ -173,9 +173,9 @@ class LabelResultsLabelImage extends \ArrayObject
     Print/Electronic Import Control Label
     Forward shipment except for Mail Innovations Forward
     *
-    * @return string
+    * @return string|null
     */
-    public function getURL() : string
+    public function getURL() : ?string
     {
         return $this->uRL;
     }
@@ -185,11 +185,11 @@ class LabelResultsLabelImage extends \ArrayObject
     Print/Electronic Import Control Label
     Forward shipment except for Mail Innovations Forward
     *
-    * @param string $uRL
+    * @param string|null $uRL
     *
     * @return self
     */
-    public function setURL(string $uRL) : self
+    public function setURL(?string $uRL) : self
     {
         $this->initialized['uRL'] = true;
         $this->uRL = $uRL;

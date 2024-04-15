@@ -15,32 +15,32 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
     /**
      * OptionType is a container that indicates the type of the location attribute that are available. For example if the Option Type is RetailLocation the list of all available retail locations will be returned in 1 or many corresponding OptionCodes.
      *
-     * @var AvailableLocationAttributesOptionType
+     * @var AvailableLocationAttributesOptionType|null
      */
     protected $optionType;
     /**
      * Option code is a container that contains the information of a particular retail location type or additional service or program type that is available currently. One or more of this container will be returned to give all the available codes for Retail Type or Additional Services or Program Type.
      *
-     * @var AvailableLocationAttributesOptionCode
+     * @var AvailableLocationAttributesOptionCode|null
      */
     protected $optionCode;
     /**
      * OptionType is a container that indicates the type of the location attribute that are available. For example if the Option Type is RetailLocation the list of all available retail locations will be returned in 1 or many corresponding OptionCodes.
      *
-     * @return AvailableLocationAttributesOptionType
+     * @return AvailableLocationAttributesOptionType|null
      */
-    public function getOptionType() : AvailableLocationAttributesOptionType
+    public function getOptionType() : ?AvailableLocationAttributesOptionType
     {
         return $this->optionType;
     }
     /**
      * OptionType is a container that indicates the type of the location attribute that are available. For example if the Option Type is RetailLocation the list of all available retail locations will be returned in 1 or many corresponding OptionCodes.
      *
-     * @param AvailableLocationAttributesOptionType $optionType
+     * @param AvailableLocationAttributesOptionType|null $optionType
      *
      * @return self
      */
-    public function setOptionType(AvailableLocationAttributesOptionType $optionType) : self
+    public function setOptionType(?AvailableLocationAttributesOptionType $optionType) : self
     {
         $this->initialized['optionType'] = true;
         $this->optionType = $optionType;
@@ -49,20 +49,20 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
     /**
      * Option code is a container that contains the information of a particular retail location type or additional service or program type that is available currently. One or more of this container will be returned to give all the available codes for Retail Type or Additional Services or Program Type.
      *
-     * @return AvailableLocationAttributesOptionCode
+     * @return AvailableLocationAttributesOptionCode|null
      */
-    public function getOptionCode() : AvailableLocationAttributesOptionCode
+    public function getOptionCode() : ?AvailableLocationAttributesOptionCode
     {
         return $this->optionCode;
     }
     /**
      * Option code is a container that contains the information of a particular retail location type or additional service or program type that is available currently. One or more of this container will be returned to give all the available codes for Retail Type or Additional Services or Program Type.
      *
-     * @param AvailableLocationAttributesOptionCode $optionCode
+     * @param AvailableLocationAttributesOptionCode|null $optionCode
      *
      * @return self
      */
-    public function setOptionCode(AvailableLocationAttributesOptionCode $optionCode) : self
+    public function setOptionCode(?AvailableLocationAttributesOptionCode $optionCode) : self
     {
         $this->initialized['optionCode'] = true;
         $this->optionCode = $optionCode;

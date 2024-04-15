@@ -15,32 +15,32 @@ class ShipmentDocuments extends \ArrayObject
     /**
      * 
      *
-     * @var DocumentsImage[]
+     * @var list<DocumentsImage>|null
      */
     protected $image;
     /**
      * PackingList Container.
      *
-     * @var DocumentsPackingList
+     * @var DocumentsPackingList|null
      */
     protected $packingList;
     /**
      * 
      *
-     * @return DocumentsImage[]
+     * @return list<DocumentsImage>|null
      */
-    public function getImage() : array
+    public function getImage() : ?array
     {
         return $this->image;
     }
     /**
      * 
      *
-     * @param DocumentsImage[] $image
+     * @param list<DocumentsImage>|null $image
      *
      * @return self
      */
-    public function setImage(array $image) : self
+    public function setImage(?array $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -49,20 +49,20 @@ class ShipmentDocuments extends \ArrayObject
     /**
      * PackingList Container.
      *
-     * @return DocumentsPackingList
+     * @return DocumentsPackingList|null
      */
-    public function getPackingList() : DocumentsPackingList
+    public function getPackingList() : ?DocumentsPackingList
     {
         return $this->packingList;
     }
     /**
      * PackingList Container.
      *
-     * @param DocumentsPackingList $packingList
+     * @param DocumentsPackingList|null $packingList
      *
      * @return self
      */
-    public function setPackingList(DocumentsPackingList $packingList) : self
+    public function setPackingList(?DocumentsPackingList $packingList) : self
     {
         $this->initialized['packingList'] = true;
         $this->packingList = $packingList;

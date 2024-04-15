@@ -15,26 +15,26 @@ class DropLocationAdditionalComments extends \ArrayObject
     /**
      * 
      *
-     * @var AdditionalCommentsCommentType[]
+     * @var list<AdditionalCommentsCommentType>|null
      */
     protected $commentType;
     /**
      * 
      *
-     * @return AdditionalCommentsCommentType[]
+     * @return list<AdditionalCommentsCommentType>|null
      */
-    public function getCommentType() : array
+    public function getCommentType() : ?array
     {
         return $this->commentType;
     }
     /**
      * 
      *
-     * @param AdditionalCommentsCommentType[] $commentType
+     * @param list<AdditionalCommentsCommentType>|null $commentType
      *
      * @return self
      */
-    public function setCommentType(array $commentType) : self
+    public function setCommentType(?array $commentType) : self
     {
         $this->initialized['commentType'] = true;
         $this->commentType = $commentType;

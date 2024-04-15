@@ -17,27 +17,27 @@ class EEIInformationLicense extends \ArrayObject
     
     Refer to EEI License Types and Exemptions in the Appendix  for valid values and formats.
     *
-    * @var string
+    * @var string|null
     */
     protected $number;
     /**
     * The standard license code published by US government. 
     Refer to EEI License Codes in the Appendix for valid values.  Applies to EEI form only. It is required for EEIFilingOption code 3. It is optionally required for all other filing types; however, it is used to categorize each product as SDL or non-SDL.  It is also used to identify which piece of information is applicable.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
     * The export monetary amount allowed per license. Required for a licensable product when the EEI form is selected.
     Format: Whole numbers only.  Applies to EEI form only. Required if EEIFilingOption code 1A (only for SDL shipments) or 3.
     *
-    * @var string
+    * @var string|null
     */
     protected $licenseLineValue;
     /**
      * Product ECCN Number issued by BIS (Bureau of Industry and Security). If the license number is a commerce license, ECCN must be provided. The format is #A### or EAR99  Applies to EEI forms only. It is required for EEIFilingOption code 3. ECCN is required one of the following License Exception Codes is entered: CIV, CTP, ENC, GBS, KMI, LVS, TSR
      *
-     * @var string
+     * @var string|null
      */
     protected $eCCNNumber;
     /**
@@ -45,9 +45,9 @@ class EEIInformationLicense extends \ArrayObject
     
     Refer to EEI License Types and Exemptions in the Appendix  for valid values and formats.
     *
-    * @return string
+    * @return string|null
     */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
@@ -56,11 +56,11 @@ class EEIInformationLicense extends \ArrayObject
     
     Refer to EEI License Types and Exemptions in the Appendix  for valid values and formats.
     *
-    * @param string $number
+    * @param string|null $number
     *
     * @return self
     */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -70,9 +70,9 @@ class EEIInformationLicense extends \ArrayObject
     * The standard license code published by US government. 
     Refer to EEI License Codes in the Appendix for valid values.  Applies to EEI form only. It is required for EEIFilingOption code 3. It is optionally required for all other filing types; however, it is used to categorize each product as SDL or non-SDL.  It is also used to identify which piece of information is applicable.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -80,11 +80,11 @@ class EEIInformationLicense extends \ArrayObject
     * The standard license code published by US government. 
     Refer to EEI License Codes in the Appendix for valid values.  Applies to EEI form only. It is required for EEIFilingOption code 3. It is optionally required for all other filing types; however, it is used to categorize each product as SDL or non-SDL.  It is also used to identify which piece of information is applicable.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -94,9 +94,9 @@ class EEIInformationLicense extends \ArrayObject
     * The export monetary amount allowed per license. Required for a licensable product when the EEI form is selected.
     Format: Whole numbers only.  Applies to EEI form only. Required if EEIFilingOption code 1A (only for SDL shipments) or 3.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLicenseLineValue() : string
+    public function getLicenseLineValue() : ?string
     {
         return $this->licenseLineValue;
     }
@@ -104,11 +104,11 @@ class EEIInformationLicense extends \ArrayObject
     * The export monetary amount allowed per license. Required for a licensable product when the EEI form is selected.
     Format: Whole numbers only.  Applies to EEI form only. Required if EEIFilingOption code 1A (only for SDL shipments) or 3.
     *
-    * @param string $licenseLineValue
+    * @param string|null $licenseLineValue
     *
     * @return self
     */
-    public function setLicenseLineValue(string $licenseLineValue) : self
+    public function setLicenseLineValue(?string $licenseLineValue) : self
     {
         $this->initialized['licenseLineValue'] = true;
         $this->licenseLineValue = $licenseLineValue;
@@ -117,20 +117,20 @@ class EEIInformationLicense extends \ArrayObject
     /**
      * Product ECCN Number issued by BIS (Bureau of Industry and Security). If the license number is a commerce license, ECCN must be provided. The format is #A### or EAR99  Applies to EEI forms only. It is required for EEIFilingOption code 3. ECCN is required one of the following License Exception Codes is entered: CIV, CTP, ENC, GBS, KMI, LVS, TSR
      *
-     * @return string
+     * @return string|null
      */
-    public function getECCNNumber() : string
+    public function getECCNNumber() : ?string
     {
         return $this->eCCNNumber;
     }
     /**
      * Product ECCN Number issued by BIS (Bureau of Industry and Security). If the license number is a commerce license, ECCN must be provided. The format is #A### or EAR99  Applies to EEI forms only. It is required for EEIFilingOption code 3. ECCN is required one of the following License Exception Codes is entered: CIV, CTP, ENC, GBS, KMI, LVS, TSR
      *
-     * @param string $eCCNNumber
+     * @param string|null $eCCNNumber
      *
      * @return self
      */
-    public function setECCNNumber(string $eCCNNumber) : self
+    public function setECCNNumber(?string $eCCNNumber) : self
     {
         $this->initialized['eCCNNumber'] = true;
         $this->eCCNNumber = $eCCNNumber;

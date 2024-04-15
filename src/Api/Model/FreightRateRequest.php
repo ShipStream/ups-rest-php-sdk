@@ -15,80 +15,80 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Request Container.
      *
-     * @var FreightRateRequestRequest
+     * @var FreightRateRequestRequest|null
      */
     protected $request;
     /**
      * ShipFrom Container.
      *
-     * @var FreightRateRequestShipFrom
+     * @var FreightRateRequestShipFrom|null
      */
     protected $shipFrom;
     /**
      * ShipTo Container.
      *
-     * @var FreightRateRequestShipTo
+     * @var FreightRateRequestShipTo|null
      */
     protected $shipTo;
     /**
      * Payment Information Container.
      *
-     * @var FreightRateRequestPaymentInformation
+     * @var FreightRateRequestPaymentInformation|null
      */
     protected $paymentInformation;
     /**
      * Service Container.
      *
-     * @var FreightRateRequestService
+     * @var FreightRateRequestService|null
      */
     protected $service;
     /**
     * HandlingUnitOne Container.
     Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
     *
-    * @var FreightRateRequestHandlingUnitOne
+    * @var FreightRateRequestHandlingUnitOne|null
     */
     protected $handlingUnitOne;
     /**
      * HandlingUnit Container.
      *
-     * @var FreightRateRequestHandlingUnitTwo
+     * @var FreightRateRequestHandlingUnitTwo|null
      */
     protected $handlingUnitTwo;
     /**
      * 
      *
-     * @var FreightRateRequestCommodity[]
+     * @var list<FreightRateRequestCommodity>|null
      */
     protected $commodity;
     /**
      * ShipmentServiceOptions Container.
      *
-     * @var FreightRateRequestShipmentServiceOptions
+     * @var FreightRateRequestShipmentServiceOptions|null
      */
     protected $shipmentServiceOptions;
     /**
      * Container for PickupRequest
      *
-     * @var FreightRateRequestPickupRequest
+     * @var FreightRateRequestPickupRequest|null
      */
     protected $pickupRequest;
     /**
      * Container to indicate that alternate rates are requested.
      *
-     * @var FreightRateRequestAlternateRateOptions
+     * @var FreightRateRequestAlternateRateOptions|null
      */
     protected $alternateRateOptions;
     /**
      * GFP Options container.
      *
-     * @var FreightRateRequestGFPOptions
+     * @var FreightRateRequestGFPOptions|null
      */
     protected $gFPOptions;
     /**
      * Handling unit weight container.
      *
-     * @var FreightRateRequestHandlingUnitWeight
+     * @var FreightRateRequestHandlingUnitWeight|null
      */
     protected $handlingUnitWeight;
     /**
@@ -103,57 +103,57 @@ class FreightRateRequest extends \ArrayObject
     AdjustedWeightIndicator set to "false":
     - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
     *
-    * @var string
+    * @var string|null
     */
     protected $adjustedWeightIndicator;
     /**
      * Presence of the tag indicates Time in Transit information is requested and will be returned.
      *
-     * @var string
+     * @var string|null
      */
     protected $timeInTransitIndicator;
     /**
      * 
      *
-     * @var FreightRateRequestHandlingUnits[]
+     * @var list<FreightRateRequestHandlingUnits>|null
      */
     protected $handlingUnits;
     /**
      * The presence of the AdjustedHeightIndicator indicates that allow the height reduction adjustment for density based rate request.
      *
-     * @var string
+     * @var string|null
      */
     protected $adjustedHeightIndicator;
     /**
     * The presence of the tag indicates that the rate request is density based.
     For Density Based Rating (DBR), the customer must have DBR Contract Service.
     *
-    * @var string
+    * @var string|null
     */
     protected $densityEligibleIndicator;
     /**
      * The presence of this indicator means a Quote Number will be returned for this LTL Freight Rate quote request.
      *
-     * @var string
+     * @var string|null
      */
     protected $quoteNumberIndicator;
     /**
      * Request Container.
      *
-     * @return FreightRateRequestRequest
+     * @return FreightRateRequestRequest|null
      */
-    public function getRequest() : FreightRateRequestRequest
+    public function getRequest() : ?FreightRateRequestRequest
     {
         return $this->request;
     }
     /**
      * Request Container.
      *
-     * @param FreightRateRequestRequest $request
+     * @param FreightRateRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(FreightRateRequestRequest $request) : self
+    public function setRequest(?FreightRateRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -162,20 +162,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * ShipFrom Container.
      *
-     * @return FreightRateRequestShipFrom
+     * @return FreightRateRequestShipFrom|null
      */
-    public function getShipFrom() : FreightRateRequestShipFrom
+    public function getShipFrom() : ?FreightRateRequestShipFrom
     {
         return $this->shipFrom;
     }
     /**
      * ShipFrom Container.
      *
-     * @param FreightRateRequestShipFrom $shipFrom
+     * @param FreightRateRequestShipFrom|null $shipFrom
      *
      * @return self
      */
-    public function setShipFrom(FreightRateRequestShipFrom $shipFrom) : self
+    public function setShipFrom(?FreightRateRequestShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -184,20 +184,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * ShipTo Container.
      *
-     * @return FreightRateRequestShipTo
+     * @return FreightRateRequestShipTo|null
      */
-    public function getShipTo() : FreightRateRequestShipTo
+    public function getShipTo() : ?FreightRateRequestShipTo
     {
         return $this->shipTo;
     }
     /**
      * ShipTo Container.
      *
-     * @param FreightRateRequestShipTo $shipTo
+     * @param FreightRateRequestShipTo|null $shipTo
      *
      * @return self
      */
-    public function setShipTo(FreightRateRequestShipTo $shipTo) : self
+    public function setShipTo(?FreightRateRequestShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -206,20 +206,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Payment Information Container.
      *
-     * @return FreightRateRequestPaymentInformation
+     * @return FreightRateRequestPaymentInformation|null
      */
-    public function getPaymentInformation() : FreightRateRequestPaymentInformation
+    public function getPaymentInformation() : ?FreightRateRequestPaymentInformation
     {
         return $this->paymentInformation;
     }
     /**
      * Payment Information Container.
      *
-     * @param FreightRateRequestPaymentInformation $paymentInformation
+     * @param FreightRateRequestPaymentInformation|null $paymentInformation
      *
      * @return self
      */
-    public function setPaymentInformation(FreightRateRequestPaymentInformation $paymentInformation) : self
+    public function setPaymentInformation(?FreightRateRequestPaymentInformation $paymentInformation) : self
     {
         $this->initialized['paymentInformation'] = true;
         $this->paymentInformation = $paymentInformation;
@@ -228,20 +228,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Service Container.
      *
-     * @return FreightRateRequestService
+     * @return FreightRateRequestService|null
      */
-    public function getService() : FreightRateRequestService
+    public function getService() : ?FreightRateRequestService
     {
         return $this->service;
     }
     /**
      * Service Container.
      *
-     * @param FreightRateRequestService $service
+     * @param FreightRateRequestService|null $service
      *
      * @return self
      */
-    public function setService(FreightRateRequestService $service) : self
+    public function setService(?FreightRateRequestService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -251,9 +251,9 @@ class FreightRateRequest extends \ArrayObject
     * HandlingUnitOne Container.
     Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
     *
-    * @return FreightRateRequestHandlingUnitOne
+    * @return FreightRateRequestHandlingUnitOne|null
     */
-    public function getHandlingUnitOne() : FreightRateRequestHandlingUnitOne
+    public function getHandlingUnitOne() : ?FreightRateRequestHandlingUnitOne
     {
         return $this->handlingUnitOne;
     }
@@ -261,11 +261,11 @@ class FreightRateRequest extends \ArrayObject
     * HandlingUnitOne Container.
     Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
     *
-    * @param FreightRateRequestHandlingUnitOne $handlingUnitOne
+    * @param FreightRateRequestHandlingUnitOne|null $handlingUnitOne
     *
     * @return self
     */
-    public function setHandlingUnitOne(FreightRateRequestHandlingUnitOne $handlingUnitOne) : self
+    public function setHandlingUnitOne(?FreightRateRequestHandlingUnitOne $handlingUnitOne) : self
     {
         $this->initialized['handlingUnitOne'] = true;
         $this->handlingUnitOne = $handlingUnitOne;
@@ -274,20 +274,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * HandlingUnit Container.
      *
-     * @return FreightRateRequestHandlingUnitTwo
+     * @return FreightRateRequestHandlingUnitTwo|null
      */
-    public function getHandlingUnitTwo() : FreightRateRequestHandlingUnitTwo
+    public function getHandlingUnitTwo() : ?FreightRateRequestHandlingUnitTwo
     {
         return $this->handlingUnitTwo;
     }
     /**
      * HandlingUnit Container.
      *
-     * @param FreightRateRequestHandlingUnitTwo $handlingUnitTwo
+     * @param FreightRateRequestHandlingUnitTwo|null $handlingUnitTwo
      *
      * @return self
      */
-    public function setHandlingUnitTwo(FreightRateRequestHandlingUnitTwo $handlingUnitTwo) : self
+    public function setHandlingUnitTwo(?FreightRateRequestHandlingUnitTwo $handlingUnitTwo) : self
     {
         $this->initialized['handlingUnitTwo'] = true;
         $this->handlingUnitTwo = $handlingUnitTwo;
@@ -296,20 +296,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateRequestCommodity[]
+     * @return list<FreightRateRequestCommodity>|null
      */
-    public function getCommodity() : array
+    public function getCommodity() : ?array
     {
         return $this->commodity;
     }
     /**
      * 
      *
-     * @param FreightRateRequestCommodity[] $commodity
+     * @param list<FreightRateRequestCommodity>|null $commodity
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(?array $commodity) : self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -318,20 +318,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * ShipmentServiceOptions Container.
      *
-     * @return FreightRateRequestShipmentServiceOptions
+     * @return FreightRateRequestShipmentServiceOptions|null
      */
-    public function getShipmentServiceOptions() : FreightRateRequestShipmentServiceOptions
+    public function getShipmentServiceOptions() : ?FreightRateRequestShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
      * ShipmentServiceOptions Container.
      *
-     * @param FreightRateRequestShipmentServiceOptions $shipmentServiceOptions
+     * @param FreightRateRequestShipmentServiceOptions|null $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightRateRequestShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(?FreightRateRequestShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -340,20 +340,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Container for PickupRequest
      *
-     * @return FreightRateRequestPickupRequest
+     * @return FreightRateRequestPickupRequest|null
      */
-    public function getPickupRequest() : FreightRateRequestPickupRequest
+    public function getPickupRequest() : ?FreightRateRequestPickupRequest
     {
         return $this->pickupRequest;
     }
     /**
      * Container for PickupRequest
      *
-     * @param FreightRateRequestPickupRequest $pickupRequest
+     * @param FreightRateRequestPickupRequest|null $pickupRequest
      *
      * @return self
      */
-    public function setPickupRequest(FreightRateRequestPickupRequest $pickupRequest) : self
+    public function setPickupRequest(?FreightRateRequestPickupRequest $pickupRequest) : self
     {
         $this->initialized['pickupRequest'] = true;
         $this->pickupRequest = $pickupRequest;
@@ -362,20 +362,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Container to indicate that alternate rates are requested.
      *
-     * @return FreightRateRequestAlternateRateOptions
+     * @return FreightRateRequestAlternateRateOptions|null
      */
-    public function getAlternateRateOptions() : FreightRateRequestAlternateRateOptions
+    public function getAlternateRateOptions() : ?FreightRateRequestAlternateRateOptions
     {
         return $this->alternateRateOptions;
     }
     /**
      * Container to indicate that alternate rates are requested.
      *
-     * @param FreightRateRequestAlternateRateOptions $alternateRateOptions
+     * @param FreightRateRequestAlternateRateOptions|null $alternateRateOptions
      *
      * @return self
      */
-    public function setAlternateRateOptions(FreightRateRequestAlternateRateOptions $alternateRateOptions) : self
+    public function setAlternateRateOptions(?FreightRateRequestAlternateRateOptions $alternateRateOptions) : self
     {
         $this->initialized['alternateRateOptions'] = true;
         $this->alternateRateOptions = $alternateRateOptions;
@@ -384,20 +384,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * GFP Options container.
      *
-     * @return FreightRateRequestGFPOptions
+     * @return FreightRateRequestGFPOptions|null
      */
-    public function getGFPOptions() : FreightRateRequestGFPOptions
+    public function getGFPOptions() : ?FreightRateRequestGFPOptions
     {
         return $this->gFPOptions;
     }
     /**
      * GFP Options container.
      *
-     * @param FreightRateRequestGFPOptions $gFPOptions
+     * @param FreightRateRequestGFPOptions|null $gFPOptions
      *
      * @return self
      */
-    public function setGFPOptions(FreightRateRequestGFPOptions $gFPOptions) : self
+    public function setGFPOptions(?FreightRateRequestGFPOptions $gFPOptions) : self
     {
         $this->initialized['gFPOptions'] = true;
         $this->gFPOptions = $gFPOptions;
@@ -406,20 +406,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Handling unit weight container.
      *
-     * @return FreightRateRequestHandlingUnitWeight
+     * @return FreightRateRequestHandlingUnitWeight|null
      */
-    public function getHandlingUnitWeight() : FreightRateRequestHandlingUnitWeight
+    public function getHandlingUnitWeight() : ?FreightRateRequestHandlingUnitWeight
     {
         return $this->handlingUnitWeight;
     }
     /**
      * Handling unit weight container.
      *
-     * @param FreightRateRequestHandlingUnitWeight $handlingUnitWeight
+     * @param FreightRateRequestHandlingUnitWeight|null $handlingUnitWeight
      *
      * @return self
      */
-    public function setHandlingUnitWeight(FreightRateRequestHandlingUnitWeight $handlingUnitWeight) : self
+    public function setHandlingUnitWeight(?FreightRateRequestHandlingUnitWeight $handlingUnitWeight) : self
     {
         $this->initialized['handlingUnitWeight'] = true;
         $this->handlingUnitWeight = $handlingUnitWeight;
@@ -437,9 +437,9 @@ class FreightRateRequest extends \ArrayObject
     AdjustedWeightIndicator set to "false":
     - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAdjustedWeightIndicator() : string
+    public function getAdjustedWeightIndicator() : ?string
     {
         return $this->adjustedWeightIndicator;
     }
@@ -455,11 +455,11 @@ class FreightRateRequest extends \ArrayObject
     AdjustedWeightIndicator set to "false":
     - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
     *
-    * @param string $adjustedWeightIndicator
+    * @param string|null $adjustedWeightIndicator
     *
     * @return self
     */
-    public function setAdjustedWeightIndicator(string $adjustedWeightIndicator) : self
+    public function setAdjustedWeightIndicator(?string $adjustedWeightIndicator) : self
     {
         $this->initialized['adjustedWeightIndicator'] = true;
         $this->adjustedWeightIndicator = $adjustedWeightIndicator;
@@ -468,20 +468,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * Presence of the tag indicates Time in Transit information is requested and will be returned.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTimeInTransitIndicator() : string
+    public function getTimeInTransitIndicator() : ?string
     {
         return $this->timeInTransitIndicator;
     }
     /**
      * Presence of the tag indicates Time in Transit information is requested and will be returned.
      *
-     * @param string $timeInTransitIndicator
+     * @param string|null $timeInTransitIndicator
      *
      * @return self
      */
-    public function setTimeInTransitIndicator(string $timeInTransitIndicator) : self
+    public function setTimeInTransitIndicator(?string $timeInTransitIndicator) : self
     {
         $this->initialized['timeInTransitIndicator'] = true;
         $this->timeInTransitIndicator = $timeInTransitIndicator;
@@ -490,20 +490,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateRequestHandlingUnits[]
+     * @return list<FreightRateRequestHandlingUnits>|null
      */
-    public function getHandlingUnits() : array
+    public function getHandlingUnits() : ?array
     {
         return $this->handlingUnits;
     }
     /**
      * 
      *
-     * @param FreightRateRequestHandlingUnits[] $handlingUnits
+     * @param list<FreightRateRequestHandlingUnits>|null $handlingUnits
      *
      * @return self
      */
-    public function setHandlingUnits(array $handlingUnits) : self
+    public function setHandlingUnits(?array $handlingUnits) : self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;
@@ -512,20 +512,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * The presence of the AdjustedHeightIndicator indicates that allow the height reduction adjustment for density based rate request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAdjustedHeightIndicator() : string
+    public function getAdjustedHeightIndicator() : ?string
     {
         return $this->adjustedHeightIndicator;
     }
     /**
      * The presence of the AdjustedHeightIndicator indicates that allow the height reduction adjustment for density based rate request.
      *
-     * @param string $adjustedHeightIndicator
+     * @param string|null $adjustedHeightIndicator
      *
      * @return self
      */
-    public function setAdjustedHeightIndicator(string $adjustedHeightIndicator) : self
+    public function setAdjustedHeightIndicator(?string $adjustedHeightIndicator) : self
     {
         $this->initialized['adjustedHeightIndicator'] = true;
         $this->adjustedHeightIndicator = $adjustedHeightIndicator;
@@ -535,9 +535,9 @@ class FreightRateRequest extends \ArrayObject
     * The presence of the tag indicates that the rate request is density based.
     For Density Based Rating (DBR), the customer must have DBR Contract Service.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDensityEligibleIndicator() : string
+    public function getDensityEligibleIndicator() : ?string
     {
         return $this->densityEligibleIndicator;
     }
@@ -545,11 +545,11 @@ class FreightRateRequest extends \ArrayObject
     * The presence of the tag indicates that the rate request is density based.
     For Density Based Rating (DBR), the customer must have DBR Contract Service.
     *
-    * @param string $densityEligibleIndicator
+    * @param string|null $densityEligibleIndicator
     *
     * @return self
     */
-    public function setDensityEligibleIndicator(string $densityEligibleIndicator) : self
+    public function setDensityEligibleIndicator(?string $densityEligibleIndicator) : self
     {
         $this->initialized['densityEligibleIndicator'] = true;
         $this->densityEligibleIndicator = $densityEligibleIndicator;
@@ -558,20 +558,20 @@ class FreightRateRequest extends \ArrayObject
     /**
      * The presence of this indicator means a Quote Number will be returned for this LTL Freight Rate quote request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuoteNumberIndicator() : string
+    public function getQuoteNumberIndicator() : ?string
     {
         return $this->quoteNumberIndicator;
     }
     /**
      * The presence of this indicator means a Quote Number will be returned for this LTL Freight Rate quote request.
      *
-     * @param string $quoteNumberIndicator
+     * @param string|null $quoteNumberIndicator
      *
      * @return self
      */
-    public function setQuoteNumberIndicator(string $quoteNumberIndicator) : self
+    public function setQuoteNumberIndicator(?string $quoteNumberIndicator) : self
     {
         $this->initialized['quoteNumberIndicator'] = true;
         $this->quoteNumberIndicator = $quoteNumberIndicator;

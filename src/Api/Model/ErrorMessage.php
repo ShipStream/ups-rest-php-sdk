@@ -15,32 +15,32 @@ class ErrorMessage extends \ArrayObject
     /**
      * The error code.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * The error message.
      *
-     * @var string
+     * @var string|null
      */
     protected $message;
     /**
      * The error code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The error code.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class ErrorMessage extends \ArrayObject
     /**
      * The error message.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
     /**
      * The error message.
      *
-     * @param string $message
+     * @param string|null $message
      *
      * @return self
      */
-    public function setMessage(string $message) : self
+    public function setMessage(?string $message) : self
     {
         $this->initialized['message'] = true;
         $this->message = $message;

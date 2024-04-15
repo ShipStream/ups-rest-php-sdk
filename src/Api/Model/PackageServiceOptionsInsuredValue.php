@@ -15,32 +15,32 @@ class PackageServiceOptionsInsuredValue extends \ArrayObject
     /**
      * Not populated in this release.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * The monetary value for the insured value amount associated with the package. Max value of 5,000 USD for Local and 50,000 USD for Remote.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * Not populated in this release.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * Not populated in this release.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -49,20 +49,20 @@ class PackageServiceOptionsInsuredValue extends \ArrayObject
     /**
      * The monetary value for the insured value amount associated with the package. Max value of 5,000 USD for Local and 50,000 USD for Remote.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * The monetary value for the insured value amount associated with the package. Max value of 5,000 USD for Local and 50,000 USD for Remote.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

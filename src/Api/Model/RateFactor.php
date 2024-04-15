@@ -15,32 +15,32 @@ class RateFactor extends \ArrayObject
     /**
      * Contains value pertaining to rate type code. For e.g. if discount rate is 25% then rate type code will have code type as DISCOUNT_RATE" and rate factor value will have 25"
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Unit of measurement container for factors related to Rate Types.
      *
-     * @var FactorUnitOfMeasurement
+     * @var FactorUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Contains value pertaining to rate type code. For e.g. if discount rate is 25% then rate type code will have code type as DISCOUNT_RATE" and rate factor value will have 25"
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Contains value pertaining to rate type code. For e.g. if discount rate is 25% then rate type code will have code type as DISCOUNT_RATE" and rate factor value will have 25"
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -49,20 +49,20 @@ class RateFactor extends \ArrayObject
     /**
      * Unit of measurement container for factors related to Rate Types.
      *
-     * @return FactorUnitOfMeasurement
+     * @return FactorUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : FactorUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?FactorUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Unit of measurement container for factors related to Rate Types.
      *
-     * @param FactorUnitOfMeasurement $unitOfMeasurement
+     * @param FactorUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(FactorUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?FactorUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

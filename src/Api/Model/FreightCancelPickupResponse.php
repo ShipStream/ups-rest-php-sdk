@@ -15,32 +15,32 @@ class FreightCancelPickupResponse extends \ArrayObject
     /**
      * Response container.
      *
-     * @var FreightCancelPickupResponseResponse
+     * @var FreightCancelPickupResponseResponse|null
      */
     protected $response;
     /**
      * Container which stores the response status
      *
-     * @var FreightCancelStatus
+     * @var FreightCancelStatus|null
      */
     protected $freightCancelStatus;
     /**
      * Response container.
      *
-     * @return FreightCancelPickupResponseResponse
+     * @return FreightCancelPickupResponseResponse|null
      */
-    public function getResponse() : FreightCancelPickupResponseResponse
+    public function getResponse() : ?FreightCancelPickupResponseResponse
     {
         return $this->response;
     }
     /**
      * Response container.
      *
-     * @param FreightCancelPickupResponseResponse $response
+     * @param FreightCancelPickupResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(FreightCancelPickupResponseResponse $response) : self
+    public function setResponse(?FreightCancelPickupResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class FreightCancelPickupResponse extends \ArrayObject
     /**
      * Container which stores the response status
      *
-     * @return FreightCancelStatus
+     * @return FreightCancelStatus|null
      */
-    public function getFreightCancelStatus() : FreightCancelStatus
+    public function getFreightCancelStatus() : ?FreightCancelStatus
     {
         return $this->freightCancelStatus;
     }
     /**
      * Container which stores the response status
      *
-     * @param FreightCancelStatus $freightCancelStatus
+     * @param FreightCancelStatus|null $freightCancelStatus
      *
      * @return self
      */
-    public function setFreightCancelStatus(FreightCancelStatus $freightCancelStatus) : self
+    public function setFreightCancelStatus(?FreightCancelStatus $freightCancelStatus) : self
     {
         $this->initialized['freightCancelStatus'] = true;
         $this->freightCancelStatus = $freightCancelStatus;

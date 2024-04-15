@@ -15,68 +15,68 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * Specifies Commodity Id
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityID;
     /**
      * Specifies the HTS code of the commodity
      *
-     * @var string
+     * @var string|null
      */
     protected $hsCode;
     /**
      * Duty amount of this commodity
      *
-     * @var float
+     * @var float|null
      */
     protected $commodityDuty;
     /**
      * Total tax and other fees of this commodity (excluding Duty and VAT)
      *
-     * @var float
+     * @var float|null
      */
     protected $totalCommodityTaxAndFee;
     /**
      * VAT amount of this commodity
      *
-     * @var float
+     * @var float|null
      */
     protected $commodityVAT;
     /**
      * Total combined duty, VAT, tax and other fees of this commodity
      *
-     * @var float
+     * @var float|null
      */
     protected $totalCommodityDutyAndTax;
     /**
      * Specifies the Currency Code used for commodity price
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityCurrencyCode;
     /**
      * True/False. Indicator for successful Landed Cost calculation for this commodity
      *
-     * @var bool
+     * @var bool|null
      */
     protected $isCalculable;
     /**
      * Specifies Commodity Id
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityID() : string
+    public function getCommodityID() : ?string
     {
         return $this->commodityID;
     }
     /**
      * Specifies Commodity Id
      *
-     * @param string $commodityID
+     * @param string|null $commodityID
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(?string $commodityID) : self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -85,20 +85,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * Specifies the HTS code of the commodity
      *
-     * @return string
+     * @return string|null
      */
-    public function getHsCode() : string
+    public function getHsCode() : ?string
     {
         return $this->hsCode;
     }
     /**
      * Specifies the HTS code of the commodity
      *
-     * @param string $hsCode
+     * @param string|null $hsCode
      *
      * @return self
      */
-    public function setHsCode(string $hsCode) : self
+    public function setHsCode(?string $hsCode) : self
     {
         $this->initialized['hsCode'] = true;
         $this->hsCode = $hsCode;
@@ -107,20 +107,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * Duty amount of this commodity
      *
-     * @return float
+     * @return float|null
      */
-    public function getCommodityDuty() : float
+    public function getCommodityDuty() : ?float
     {
         return $this->commodityDuty;
     }
     /**
      * Duty amount of this commodity
      *
-     * @param float $commodityDuty
+     * @param float|null $commodityDuty
      *
      * @return self
      */
-    public function setCommodityDuty(float $commodityDuty) : self
+    public function setCommodityDuty(?float $commodityDuty) : self
     {
         $this->initialized['commodityDuty'] = true;
         $this->commodityDuty = $commodityDuty;
@@ -129,20 +129,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * Total tax and other fees of this commodity (excluding Duty and VAT)
      *
-     * @return float
+     * @return float|null
      */
-    public function getTotalCommodityTaxAndFee() : float
+    public function getTotalCommodityTaxAndFee() : ?float
     {
         return $this->totalCommodityTaxAndFee;
     }
     /**
      * Total tax and other fees of this commodity (excluding Duty and VAT)
      *
-     * @param float $totalCommodityTaxAndFee
+     * @param float|null $totalCommodityTaxAndFee
      *
      * @return self
      */
-    public function setTotalCommodityTaxAndFee(float $totalCommodityTaxAndFee) : self
+    public function setTotalCommodityTaxAndFee(?float $totalCommodityTaxAndFee) : self
     {
         $this->initialized['totalCommodityTaxAndFee'] = true;
         $this->totalCommodityTaxAndFee = $totalCommodityTaxAndFee;
@@ -151,20 +151,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * VAT amount of this commodity
      *
-     * @return float
+     * @return float|null
      */
-    public function getCommodityVAT() : float
+    public function getCommodityVAT() : ?float
     {
         return $this->commodityVAT;
     }
     /**
      * VAT amount of this commodity
      *
-     * @param float $commodityVAT
+     * @param float|null $commodityVAT
      *
      * @return self
      */
-    public function setCommodityVAT(float $commodityVAT) : self
+    public function setCommodityVAT(?float $commodityVAT) : self
     {
         $this->initialized['commodityVAT'] = true;
         $this->commodityVAT = $commodityVAT;
@@ -173,20 +173,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * Total combined duty, VAT, tax and other fees of this commodity
      *
-     * @return float
+     * @return float|null
      */
-    public function getTotalCommodityDutyAndTax() : float
+    public function getTotalCommodityDutyAndTax() : ?float
     {
         return $this->totalCommodityDutyAndTax;
     }
     /**
      * Total combined duty, VAT, tax and other fees of this commodity
      *
-     * @param float $totalCommodityDutyAndTax
+     * @param float|null $totalCommodityDutyAndTax
      *
      * @return self
      */
-    public function setTotalCommodityDutyAndTax(float $totalCommodityDutyAndTax) : self
+    public function setTotalCommodityDutyAndTax(?float $totalCommodityDutyAndTax) : self
     {
         $this->initialized['totalCommodityDutyAndTax'] = true;
         $this->totalCommodityDutyAndTax = $totalCommodityDutyAndTax;
@@ -195,20 +195,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * Specifies the Currency Code used for commodity price
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityCurrencyCode() : string
+    public function getCommodityCurrencyCode() : ?string
     {
         return $this->commodityCurrencyCode;
     }
     /**
      * Specifies the Currency Code used for commodity price
      *
-     * @param string $commodityCurrencyCode
+     * @param string|null $commodityCurrencyCode
      *
      * @return self
      */
-    public function setCommodityCurrencyCode(string $commodityCurrencyCode) : self
+    public function setCommodityCurrencyCode(?string $commodityCurrencyCode) : self
     {
         $this->initialized['commodityCurrencyCode'] = true;
         $this->commodityCurrencyCode = $commodityCurrencyCode;
@@ -217,20 +217,20 @@ class ResponseShipmentItems extends \ArrayObject
     /**
      * True/False. Indicator for successful Landed Cost calculation for this commodity
      *
-     * @return bool
+     * @return bool|null
      */
-    public function getIsCalculable() : bool
+    public function getIsCalculable() : ?bool
     {
         return $this->isCalculable;
     }
     /**
      * True/False. Indicator for successful Landed Cost calculation for this commodity
      *
-     * @param bool $isCalculable
+     * @param bool|null $isCalculable
      *
      * @return self
      */
-    public function setIsCalculable(bool $isCalculable) : self
+    public function setIsCalculable(?bool $isCalculable) : self
     {
         $this->initialized['isCalculable'] = true;
         $this->isCalculable = $isCalculable;

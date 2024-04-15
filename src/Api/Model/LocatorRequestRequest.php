@@ -15,14 +15,14 @@ class LocatorRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
     * Indicates the action to be taken by the XML service. 
     The only valid value is 'Locator'.
     *
-    * @var string
+    * @var string|null
     */
     protected $requestAction;
     /**
@@ -38,26 +38,26 @@ class LocatorRequestRequest extends \ArrayObject
     56-All available Retail Locations, Additional Services and Program Types 
     64-Search for UPS Access Point Locations.
     *
-    * @var string
+    * @var string|null
     */
     protected $requestOption;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;
@@ -67,9 +67,9 @@ class LocatorRequestRequest extends \ArrayObject
     * Indicates the action to be taken by the XML service. 
     The only valid value is 'Locator'.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRequestAction() : string
+    public function getRequestAction() : ?string
     {
         return $this->requestAction;
     }
@@ -77,11 +77,11 @@ class LocatorRequestRequest extends \ArrayObject
     * Indicates the action to be taken by the XML service. 
     The only valid value is 'Locator'.
     *
-    * @param string $requestAction
+    * @param string|null $requestAction
     *
     * @return self
     */
-    public function setRequestAction(string $requestAction) : self
+    public function setRequestAction(?string $requestAction) : self
     {
         $this->initialized['requestAction'] = true;
         $this->requestAction = $requestAction;
@@ -100,9 +100,9 @@ class LocatorRequestRequest extends \ArrayObject
     56-All available Retail Locations, Additional Services and Program Types 
     64-Search for UPS Access Point Locations.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRequestOption() : string
+    public function getRequestOption() : ?string
     {
         return $this->requestOption;
     }
@@ -119,11 +119,11 @@ class LocatorRequestRequest extends \ArrayObject
     56-All available Retail Locations, Additional Services and Program Types 
     64-Search for UPS Access Point Locations.
     *
-    * @param string $requestOption
+    * @param string|null $requestOption
     *
     * @return self
     */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(?string $requestOption) : self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;

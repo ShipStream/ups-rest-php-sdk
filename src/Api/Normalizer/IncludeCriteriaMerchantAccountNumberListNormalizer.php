@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('MerchantAccountNumber', $data)) {
+            if (\array_key_exists('MerchantAccountNumber', $data) && $data['MerchantAccountNumber'] !== null) {
                 $values = [];
                 foreach ($data['MerchantAccountNumber'] as $value) {
                     $values[] = $value;
                 }
                 $object->setMerchantAccountNumber($values);
                 unset($data['MerchantAccountNumber']);
+            }
+            elseif (\array_key_exists('MerchantAccountNumber', $data) && $data['MerchantAccountNumber'] === null) {
+                $object->setMerchantAccountNumber(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('MerchantAccountNumber', $data)) {
+            if (\array_key_exists('MerchantAccountNumber', $data) && $data['MerchantAccountNumber'] !== null) {
                 $values = [];
                 foreach ($data['MerchantAccountNumber'] as $value) {
                     $values[] = $value;
                 }
                 $object->setMerchantAccountNumber($values);
                 unset($data['MerchantAccountNumber']);
+            }
+            elseif (\array_key_exists('MerchantAccountNumber', $data) && $data['MerchantAccountNumber'] === null) {
+                $object->setMerchantAccountNumber(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

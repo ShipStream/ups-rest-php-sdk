@@ -15,26 +15,26 @@ class LOCATORRequestWrapper extends \ArrayObject
     /**
      * N/A
      *
-     * @var LocatorRequest
+     * @var LocatorRequest|null
      */
     protected $locatorRequest;
     /**
      * N/A
      *
-     * @return LocatorRequest
+     * @return LocatorRequest|null
      */
-    public function getLocatorRequest() : LocatorRequest
+    public function getLocatorRequest() : ?LocatorRequest
     {
         return $this->locatorRequest;
     }
     /**
      * N/A
      *
-     * @param LocatorRequest $locatorRequest
+     * @param LocatorRequest|null $locatorRequest
      *
      * @return self
      */
-    public function setLocatorRequest(LocatorRequest $locatorRequest) : self
+    public function setLocatorRequest(?LocatorRequest $locatorRequest) : self
     {
         $this->initialized['locatorRequest'] = true;
         $this->locatorRequest = $locatorRequest;

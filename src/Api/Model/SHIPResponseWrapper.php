@@ -15,26 +15,26 @@ class SHIPResponseWrapper extends \ArrayObject
     /**
      * Shipment Response.
      *
-     * @var ShipmentResponse
+     * @var ShipmentResponse|null
      */
     protected $shipmentResponse;
     /**
      * Shipment Response.
      *
-     * @return ShipmentResponse
+     * @return ShipmentResponse|null
      */
-    public function getShipmentResponse() : ShipmentResponse
+    public function getShipmentResponse() : ?ShipmentResponse
     {
         return $this->shipmentResponse;
     }
     /**
      * Shipment Response.
      *
-     * @param ShipmentResponse $shipmentResponse
+     * @param ShipmentResponse|null $shipmentResponse
      *
      * @return self
      */
-    public function setShipmentResponse(ShipmentResponse $shipmentResponse) : self
+    public function setShipmentResponse(?ShipmentResponse $shipmentResponse) : self
     {
         $this->initialized['shipmentResponse'] = true;
         $this->shipmentResponse = $shipmentResponse;

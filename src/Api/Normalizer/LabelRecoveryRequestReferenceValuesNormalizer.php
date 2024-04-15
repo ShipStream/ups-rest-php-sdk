@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ReferenceValuesReferenceNumber', 'json', $context));
                 unset($data['ReferenceNumber']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
+            }
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ReferenceValuesReferenceNumber', 'json', $context));
                 unset($data['ReferenceNumber']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
+            }
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

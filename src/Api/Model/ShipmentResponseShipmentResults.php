@@ -15,7 +15,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentResultsDisclaimer[]|null
+     * @var list<ShipmentResultsDisclaimer>|null
      */
     protected $disclaimer;
     /**
@@ -55,7 +55,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * Billing Weight container.
      *
-     * @var ShipmentResultsBillingWeight
+     * @var ShipmentResultsBillingWeight|null
      */
     protected $billingWeight;
     /**
@@ -85,13 +85,13 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentResultsPackageResults[]|null
+     * @var list<ShipmentResultsPackageResults>|null
      */
     protected $packageResults;
     /**
      * 
      *
-     * @var ShipmentResultsControlLogReceipt[]|null
+     * @var list<ShipmentResultsControlLogReceipt>|null
      */
     protected $controlLogReceipt;
     /**
@@ -152,7 +152,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * Dangrous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages.  Only returned when DGSignatoryInfo is present.
      *
-     * @var string[]|null
+     * @var list<string>|null
      */
     protected $dGPaperImage;
     /**
@@ -170,7 +170,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentResultsDisclaimer[]|null
+     * @return list<ShipmentResultsDisclaimer>|null
      */
     public function getDisclaimer() : ?array
     {
@@ -179,7 +179,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentResultsDisclaimer[]|null $disclaimer
+     * @param list<ShipmentResultsDisclaimer>|null $disclaimer
      *
      * @return self
      */
@@ -310,20 +310,20 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * Billing Weight container.
      *
-     * @return ShipmentResultsBillingWeight
+     * @return ShipmentResultsBillingWeight|null
      */
-    public function getBillingWeight() : ShipmentResultsBillingWeight
+    public function getBillingWeight() : ?ShipmentResultsBillingWeight
     {
         return $this->billingWeight;
     }
     /**
      * Billing Weight container.
      *
-     * @param ShipmentResultsBillingWeight $billingWeight
+     * @param ShipmentResultsBillingWeight|null $billingWeight
      *
      * @return self
      */
-    public function setBillingWeight(ShipmentResultsBillingWeight $billingWeight) : self
+    public function setBillingWeight(?ShipmentResultsBillingWeight $billingWeight) : self
     {
         $this->initialized['billingWeight'] = true;
         $this->billingWeight = $billingWeight;
@@ -410,7 +410,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentResultsPackageResults[]|null
+     * @return list<ShipmentResultsPackageResults>|null
      */
     public function getPackageResults() : ?array
     {
@@ -419,7 +419,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentResultsPackageResults[]|null $packageResults
+     * @param list<ShipmentResultsPackageResults>|null $packageResults
      *
      * @return self
      */
@@ -432,7 +432,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentResultsControlLogReceipt[]|null
+     * @return list<ShipmentResultsControlLogReceipt>|null
      */
     public function getControlLogReceipt() : ?array
     {
@@ -441,7 +441,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentResultsControlLogReceipt[]|null $controlLogReceipt
+     * @param list<ShipmentResultsControlLogReceipt>|null $controlLogReceipt
      *
      * @return self
      */
@@ -634,7 +634,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * Dangrous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages.  Only returned when DGSignatoryInfo is present.
      *
-     * @return string[]|null
+     * @return list<string>|null
      */
     public function getDGPaperImage() : ?array
     {
@@ -643,7 +643,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * Dangrous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages.  Only returned when DGSignatoryInfo is present.
      *
-     * @param string[]|null $dGPaperImage
+     * @param list<string>|null $dGPaperImage
      *
      * @return self
      */

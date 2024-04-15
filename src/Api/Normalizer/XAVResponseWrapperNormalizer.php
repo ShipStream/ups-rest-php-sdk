@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('XAVResponse', $data)) {
+            if (\array_key_exists('XAVResponse', $data) && $data['XAVResponse'] !== null) {
                 $object->setXAVResponse($this->denormalizer->denormalize($data['XAVResponse'], 'ShipStream\\Ups\\Api\\Model\\XAVResponse', 'json', $context));
                 unset($data['XAVResponse']);
+            }
+            elseif (\array_key_exists('XAVResponse', $data) && $data['XAVResponse'] === null) {
+                $object->setXAVResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('XAVResponse', $data)) {
+            if (\array_key_exists('XAVResponse', $data) && $data['XAVResponse'] !== null) {
                 $object->setXAVResponse($this->denormalizer->denormalize($data['XAVResponse'], 'ShipStream\\Ups\\Api\\Model\\XAVResponse', 'json', $context));
                 unset($data['XAVResponse']);
+            }
+            elseif (\array_key_exists('XAVResponse', $data) && $data['XAVResponse'] === null) {
+                $object->setXAVResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

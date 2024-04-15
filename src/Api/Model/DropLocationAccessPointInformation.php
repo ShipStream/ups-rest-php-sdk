@@ -15,62 +15,62 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * The Public Access Point ID associated with UPS access point.
      *
-     * @var string
+     * @var string|null
      */
     protected $publicAccessPointID;
     /**
      * Image URL associated with UPS access point.
      *
-     * @var string
+     * @var string|null
      */
     protected $imageURL;
     /**
      * Container to hold list for business classification.
      *
-     * @var AccessPointInformationBusinessClassificationList
+     * @var AccessPointInformationBusinessClassificationList|null
      */
     protected $businessClassificationList;
     /**
      * Container for UPS AccessPoint status.
      *
-     * @var AccessPointInformationAccessPointStatus
+     * @var AccessPointInformationAccessPointStatus|null
      */
     protected $accessPointStatus;
     /**
      * Holds the value of facility SLIC of Access Point Location. Not implemented currently. For future use.
      *
-     * @var string
+     * @var string|null
      */
     protected $facilitySLIC;
     /**
      * Container to hold the list of private networks.
      *
-     * @var AccessPointInformationPrivateNetworkList
+     * @var AccessPointInformationPrivateNetworkList|null
      */
     protected $privateNetworkList;
     /**
      * Container to hold the status of shipping or DRC/DCO availability of a UPS Access Point.
      *
-     * @var AccessPointInformationAvailability
+     * @var AccessPointInformationAvailability|null
      */
     protected $availability;
     /**
      * The Public Access Point ID associated with UPS access point.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPublicAccessPointID() : string
+    public function getPublicAccessPointID() : ?string
     {
         return $this->publicAccessPointID;
     }
     /**
      * The Public Access Point ID associated with UPS access point.
      *
-     * @param string $publicAccessPointID
+     * @param string|null $publicAccessPointID
      *
      * @return self
      */
-    public function setPublicAccessPointID(string $publicAccessPointID) : self
+    public function setPublicAccessPointID(?string $publicAccessPointID) : self
     {
         $this->initialized['publicAccessPointID'] = true;
         $this->publicAccessPointID = $publicAccessPointID;
@@ -79,20 +79,20 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * Image URL associated with UPS access point.
      *
-     * @return string
+     * @return string|null
      */
-    public function getImageURL() : string
+    public function getImageURL() : ?string
     {
         return $this->imageURL;
     }
     /**
      * Image URL associated with UPS access point.
      *
-     * @param string $imageURL
+     * @param string|null $imageURL
      *
      * @return self
      */
-    public function setImageURL(string $imageURL) : self
+    public function setImageURL(?string $imageURL) : self
     {
         $this->initialized['imageURL'] = true;
         $this->imageURL = $imageURL;
@@ -101,20 +101,20 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * Container to hold list for business classification.
      *
-     * @return AccessPointInformationBusinessClassificationList
+     * @return AccessPointInformationBusinessClassificationList|null
      */
-    public function getBusinessClassificationList() : AccessPointInformationBusinessClassificationList
+    public function getBusinessClassificationList() : ?AccessPointInformationBusinessClassificationList
     {
         return $this->businessClassificationList;
     }
     /**
      * Container to hold list for business classification.
      *
-     * @param AccessPointInformationBusinessClassificationList $businessClassificationList
+     * @param AccessPointInformationBusinessClassificationList|null $businessClassificationList
      *
      * @return self
      */
-    public function setBusinessClassificationList(AccessPointInformationBusinessClassificationList $businessClassificationList) : self
+    public function setBusinessClassificationList(?AccessPointInformationBusinessClassificationList $businessClassificationList) : self
     {
         $this->initialized['businessClassificationList'] = true;
         $this->businessClassificationList = $businessClassificationList;
@@ -123,20 +123,20 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * Container for UPS AccessPoint status.
      *
-     * @return AccessPointInformationAccessPointStatus
+     * @return AccessPointInformationAccessPointStatus|null
      */
-    public function getAccessPointStatus() : AccessPointInformationAccessPointStatus
+    public function getAccessPointStatus() : ?AccessPointInformationAccessPointStatus
     {
         return $this->accessPointStatus;
     }
     /**
      * Container for UPS AccessPoint status.
      *
-     * @param AccessPointInformationAccessPointStatus $accessPointStatus
+     * @param AccessPointInformationAccessPointStatus|null $accessPointStatus
      *
      * @return self
      */
-    public function setAccessPointStatus(AccessPointInformationAccessPointStatus $accessPointStatus) : self
+    public function setAccessPointStatus(?AccessPointInformationAccessPointStatus $accessPointStatus) : self
     {
         $this->initialized['accessPointStatus'] = true;
         $this->accessPointStatus = $accessPointStatus;
@@ -145,20 +145,20 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * Holds the value of facility SLIC of Access Point Location. Not implemented currently. For future use.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFacilitySLIC() : string
+    public function getFacilitySLIC() : ?string
     {
         return $this->facilitySLIC;
     }
     /**
      * Holds the value of facility SLIC of Access Point Location. Not implemented currently. For future use.
      *
-     * @param string $facilitySLIC
+     * @param string|null $facilitySLIC
      *
      * @return self
      */
-    public function setFacilitySLIC(string $facilitySLIC) : self
+    public function setFacilitySLIC(?string $facilitySLIC) : self
     {
         $this->initialized['facilitySLIC'] = true;
         $this->facilitySLIC = $facilitySLIC;
@@ -167,20 +167,20 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * Container to hold the list of private networks.
      *
-     * @return AccessPointInformationPrivateNetworkList
+     * @return AccessPointInformationPrivateNetworkList|null
      */
-    public function getPrivateNetworkList() : AccessPointInformationPrivateNetworkList
+    public function getPrivateNetworkList() : ?AccessPointInformationPrivateNetworkList
     {
         return $this->privateNetworkList;
     }
     /**
      * Container to hold the list of private networks.
      *
-     * @param AccessPointInformationPrivateNetworkList $privateNetworkList
+     * @param AccessPointInformationPrivateNetworkList|null $privateNetworkList
      *
      * @return self
      */
-    public function setPrivateNetworkList(AccessPointInformationPrivateNetworkList $privateNetworkList) : self
+    public function setPrivateNetworkList(?AccessPointInformationPrivateNetworkList $privateNetworkList) : self
     {
         $this->initialized['privateNetworkList'] = true;
         $this->privateNetworkList = $privateNetworkList;
@@ -189,20 +189,20 @@ class DropLocationAccessPointInformation extends \ArrayObject
     /**
      * Container to hold the status of shipping or DRC/DCO availability of a UPS Access Point.
      *
-     * @return AccessPointInformationAvailability
+     * @return AccessPointInformationAvailability|null
      */
-    public function getAvailability() : AccessPointInformationAvailability
+    public function getAvailability() : ?AccessPointInformationAvailability
     {
         return $this->availability;
     }
     /**
      * Container to hold the status of shipping or DRC/DCO availability of a UPS Access Point.
      *
-     * @param AccessPointInformationAvailability $availability
+     * @param AccessPointInformationAvailability|null $availability
      *
      * @return self
      */
-    public function setAvailability(AccessPointInformationAvailability $availability) : self
+    public function setAvailability(?AccessPointInformationAvailability $availability) : self
     {
         $this->initialized['availability'] = true;
         $this->availability = $availability;

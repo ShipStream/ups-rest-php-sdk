@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SecureURL', $data)) {
+            if (\array_key_exists('SecureURL', $data) && $data['SecureURL'] !== null) {
                 $object->setSecureURL($data['SecureURL']);
                 unset($data['SecureURL']);
             }
-            if (\array_key_exists('NonSecureURL', $data)) {
+            elseif (\array_key_exists('SecureURL', $data) && $data['SecureURL'] === null) {
+                $object->setSecureURL(null);
+            }
+            if (\array_key_exists('NonSecureURL', $data) && $data['NonSecureURL'] !== null) {
                 $object->setNonSecureURL($data['NonSecureURL']);
                 unset($data['NonSecureURL']);
+            }
+            elseif (\array_key_exists('NonSecureURL', $data) && $data['NonSecureURL'] === null) {
+                $object->setNonSecureURL(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SecureURL', $data)) {
+            if (\array_key_exists('SecureURL', $data) && $data['SecureURL'] !== null) {
                 $object->setSecureURL($data['SecureURL']);
                 unset($data['SecureURL']);
             }
-            if (\array_key_exists('NonSecureURL', $data)) {
+            elseif (\array_key_exists('SecureURL', $data) && $data['SecureURL'] === null) {
+                $object->setSecureURL(null);
+            }
+            if (\array_key_exists('NonSecureURL', $data) && $data['NonSecureURL'] !== null) {
                 $object->setNonSecureURL($data['NonSecureURL']);
                 unset($data['NonSecureURL']);
+            }
+            elseif (\array_key_exists('NonSecureURL', $data) && $data['NonSecureURL'] === null) {
+                $object->setNonSecureURL(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

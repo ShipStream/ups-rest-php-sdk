@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightDensityInfo', $data)) {
+            if (\array_key_exists('FreightDensityInfo', $data) && $data['FreightDensityInfo'] !== null) {
                 $object->setFreightDensityInfo($this->denormalizer->denormalize($data['FreightDensityInfo'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentInformationFreightDensityInfo', 'json', $context));
                 unset($data['FreightDensityInfo']);
             }
-            if (\array_key_exists('DensityEligibleIndicator', $data)) {
+            elseif (\array_key_exists('FreightDensityInfo', $data) && $data['FreightDensityInfo'] === null) {
+                $object->setFreightDensityInfo(null);
+            }
+            if (\array_key_exists('DensityEligibleIndicator', $data) && $data['DensityEligibleIndicator'] !== null) {
                 $object->setDensityEligibleIndicator($data['DensityEligibleIndicator']);
                 unset($data['DensityEligibleIndicator']);
+            }
+            elseif (\array_key_exists('DensityEligibleIndicator', $data) && $data['DensityEligibleIndicator'] === null) {
+                $object->setDensityEligibleIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightDensityInfo', $data)) {
+            if (\array_key_exists('FreightDensityInfo', $data) && $data['FreightDensityInfo'] !== null) {
                 $object->setFreightDensityInfo($this->denormalizer->denormalize($data['FreightDensityInfo'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentInformationFreightDensityInfo', 'json', $context));
                 unset($data['FreightDensityInfo']);
             }
-            if (\array_key_exists('DensityEligibleIndicator', $data)) {
+            elseif (\array_key_exists('FreightDensityInfo', $data) && $data['FreightDensityInfo'] === null) {
+                $object->setFreightDensityInfo(null);
+            }
+            if (\array_key_exists('DensityEligibleIndicator', $data) && $data['DensityEligibleIndicator'] !== null) {
                 $object->setDensityEligibleIndicator($data['DensityEligibleIndicator']);
                 unset($data['DensityEligibleIndicator']);
+            }
+            elseif (\array_key_exists('DensityEligibleIndicator', $data) && $data['DensityEligibleIndicator'] === null) {
+                $object->setDensityEligibleIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

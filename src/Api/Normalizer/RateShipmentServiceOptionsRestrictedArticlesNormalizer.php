@@ -40,41 +40,68 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AlcoholicBeveragesIndicator', $data)) {
+            if (\array_key_exists('AlcoholicBeveragesIndicator', $data) && $data['AlcoholicBeveragesIndicator'] !== null) {
                 $object->setAlcoholicBeveragesIndicator($data['AlcoholicBeveragesIndicator']);
                 unset($data['AlcoholicBeveragesIndicator']);
             }
-            if (\array_key_exists('DiagnosticSpecimensIndicator', $data)) {
+            elseif (\array_key_exists('AlcoholicBeveragesIndicator', $data) && $data['AlcoholicBeveragesIndicator'] === null) {
+                $object->setAlcoholicBeveragesIndicator(null);
+            }
+            if (\array_key_exists('DiagnosticSpecimensIndicator', $data) && $data['DiagnosticSpecimensIndicator'] !== null) {
                 $object->setDiagnosticSpecimensIndicator($data['DiagnosticSpecimensIndicator']);
                 unset($data['DiagnosticSpecimensIndicator']);
             }
-            if (\array_key_exists('PerishablesIndicator', $data)) {
+            elseif (\array_key_exists('DiagnosticSpecimensIndicator', $data) && $data['DiagnosticSpecimensIndicator'] === null) {
+                $object->setDiagnosticSpecimensIndicator(null);
+            }
+            if (\array_key_exists('PerishablesIndicator', $data) && $data['PerishablesIndicator'] !== null) {
                 $object->setPerishablesIndicator($data['PerishablesIndicator']);
                 unset($data['PerishablesIndicator']);
             }
-            if (\array_key_exists('PlantsIndicator', $data)) {
+            elseif (\array_key_exists('PerishablesIndicator', $data) && $data['PerishablesIndicator'] === null) {
+                $object->setPerishablesIndicator(null);
+            }
+            if (\array_key_exists('PlantsIndicator', $data) && $data['PlantsIndicator'] !== null) {
                 $object->setPlantsIndicator($data['PlantsIndicator']);
                 unset($data['PlantsIndicator']);
             }
-            if (\array_key_exists('SeedsIndicator', $data)) {
+            elseif (\array_key_exists('PlantsIndicator', $data) && $data['PlantsIndicator'] === null) {
+                $object->setPlantsIndicator(null);
+            }
+            if (\array_key_exists('SeedsIndicator', $data) && $data['SeedsIndicator'] !== null) {
                 $object->setSeedsIndicator($data['SeedsIndicator']);
                 unset($data['SeedsIndicator']);
             }
-            if (\array_key_exists('SpecialExceptionsIndicator', $data)) {
+            elseif (\array_key_exists('SeedsIndicator', $data) && $data['SeedsIndicator'] === null) {
+                $object->setSeedsIndicator(null);
+            }
+            if (\array_key_exists('SpecialExceptionsIndicator', $data) && $data['SpecialExceptionsIndicator'] !== null) {
                 $object->setSpecialExceptionsIndicator($data['SpecialExceptionsIndicator']);
                 unset($data['SpecialExceptionsIndicator']);
             }
-            if (\array_key_exists('TobaccoIndicator', $data)) {
+            elseif (\array_key_exists('SpecialExceptionsIndicator', $data) && $data['SpecialExceptionsIndicator'] === null) {
+                $object->setSpecialExceptionsIndicator(null);
+            }
+            if (\array_key_exists('TobaccoIndicator', $data) && $data['TobaccoIndicator'] !== null) {
                 $object->setTobaccoIndicator($data['TobaccoIndicator']);
                 unset($data['TobaccoIndicator']);
             }
-            if (\array_key_exists('ECigarettesIndicator', $data)) {
+            elseif (\array_key_exists('TobaccoIndicator', $data) && $data['TobaccoIndicator'] === null) {
+                $object->setTobaccoIndicator(null);
+            }
+            if (\array_key_exists('ECigarettesIndicator', $data) && $data['ECigarettesIndicator'] !== null) {
                 $object->setECigarettesIndicator($data['ECigarettesIndicator']);
                 unset($data['ECigarettesIndicator']);
             }
-            if (\array_key_exists('HempCBDIndicator', $data)) {
+            elseif (\array_key_exists('ECigarettesIndicator', $data) && $data['ECigarettesIndicator'] === null) {
+                $object->setECigarettesIndicator(null);
+            }
+            if (\array_key_exists('HempCBDIndicator', $data) && $data['HempCBDIndicator'] !== null) {
                 $object->setHempCBDIndicator($data['HempCBDIndicator']);
                 unset($data['HempCBDIndicator']);
+            }
+            elseif (\array_key_exists('HempCBDIndicator', $data) && $data['HempCBDIndicator'] === null) {
+                $object->setHempCBDIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -155,41 +182,68 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AlcoholicBeveragesIndicator', $data)) {
+            if (\array_key_exists('AlcoholicBeveragesIndicator', $data) && $data['AlcoholicBeveragesIndicator'] !== null) {
                 $object->setAlcoholicBeveragesIndicator($data['AlcoholicBeveragesIndicator']);
                 unset($data['AlcoholicBeveragesIndicator']);
             }
-            if (\array_key_exists('DiagnosticSpecimensIndicator', $data)) {
+            elseif (\array_key_exists('AlcoholicBeveragesIndicator', $data) && $data['AlcoholicBeveragesIndicator'] === null) {
+                $object->setAlcoholicBeveragesIndicator(null);
+            }
+            if (\array_key_exists('DiagnosticSpecimensIndicator', $data) && $data['DiagnosticSpecimensIndicator'] !== null) {
                 $object->setDiagnosticSpecimensIndicator($data['DiagnosticSpecimensIndicator']);
                 unset($data['DiagnosticSpecimensIndicator']);
             }
-            if (\array_key_exists('PerishablesIndicator', $data)) {
+            elseif (\array_key_exists('DiagnosticSpecimensIndicator', $data) && $data['DiagnosticSpecimensIndicator'] === null) {
+                $object->setDiagnosticSpecimensIndicator(null);
+            }
+            if (\array_key_exists('PerishablesIndicator', $data) && $data['PerishablesIndicator'] !== null) {
                 $object->setPerishablesIndicator($data['PerishablesIndicator']);
                 unset($data['PerishablesIndicator']);
             }
-            if (\array_key_exists('PlantsIndicator', $data)) {
+            elseif (\array_key_exists('PerishablesIndicator', $data) && $data['PerishablesIndicator'] === null) {
+                $object->setPerishablesIndicator(null);
+            }
+            if (\array_key_exists('PlantsIndicator', $data) && $data['PlantsIndicator'] !== null) {
                 $object->setPlantsIndicator($data['PlantsIndicator']);
                 unset($data['PlantsIndicator']);
             }
-            if (\array_key_exists('SeedsIndicator', $data)) {
+            elseif (\array_key_exists('PlantsIndicator', $data) && $data['PlantsIndicator'] === null) {
+                $object->setPlantsIndicator(null);
+            }
+            if (\array_key_exists('SeedsIndicator', $data) && $data['SeedsIndicator'] !== null) {
                 $object->setSeedsIndicator($data['SeedsIndicator']);
                 unset($data['SeedsIndicator']);
             }
-            if (\array_key_exists('SpecialExceptionsIndicator', $data)) {
+            elseif (\array_key_exists('SeedsIndicator', $data) && $data['SeedsIndicator'] === null) {
+                $object->setSeedsIndicator(null);
+            }
+            if (\array_key_exists('SpecialExceptionsIndicator', $data) && $data['SpecialExceptionsIndicator'] !== null) {
                 $object->setSpecialExceptionsIndicator($data['SpecialExceptionsIndicator']);
                 unset($data['SpecialExceptionsIndicator']);
             }
-            if (\array_key_exists('TobaccoIndicator', $data)) {
+            elseif (\array_key_exists('SpecialExceptionsIndicator', $data) && $data['SpecialExceptionsIndicator'] === null) {
+                $object->setSpecialExceptionsIndicator(null);
+            }
+            if (\array_key_exists('TobaccoIndicator', $data) && $data['TobaccoIndicator'] !== null) {
                 $object->setTobaccoIndicator($data['TobaccoIndicator']);
                 unset($data['TobaccoIndicator']);
             }
-            if (\array_key_exists('ECigarettesIndicator', $data)) {
+            elseif (\array_key_exists('TobaccoIndicator', $data) && $data['TobaccoIndicator'] === null) {
+                $object->setTobaccoIndicator(null);
+            }
+            if (\array_key_exists('ECigarettesIndicator', $data) && $data['ECigarettesIndicator'] !== null) {
                 $object->setECigarettesIndicator($data['ECigarettesIndicator']);
                 unset($data['ECigarettesIndicator']);
             }
-            if (\array_key_exists('HempCBDIndicator', $data)) {
+            elseif (\array_key_exists('ECigarettesIndicator', $data) && $data['ECigarettesIndicator'] === null) {
+                $object->setECigarettesIndicator(null);
+            }
+            if (\array_key_exists('HempCBDIndicator', $data) && $data['HempCBDIndicator'] !== null) {
                 $object->setHempCBDIndicator($data['HempCBDIndicator']);
                 unset($data['HempCBDIndicator']);
+            }
+            elseif (\array_key_exists('HempCBDIndicator', $data) && $data['HempCBDIndicator'] === null) {
+                $object->setHempCBDIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

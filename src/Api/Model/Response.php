@@ -15,26 +15,26 @@ class Response extends \ArrayObject
     /**
      * The error response containing any errors that occurred.
      *
-     * @var ErrorMessage[]
+     * @var list<ErrorMessage>|null
      */
     protected $errors;
     /**
      * The error response containing any errors that occurred.
      *
-     * @return ErrorMessage[]
+     * @return list<ErrorMessage>|null
      */
-    public function getErrors() : array
+    public function getErrors() : ?array
     {
         return $this->errors;
     }
     /**
      * The error response containing any errors that occurred.
      *
-     * @param ErrorMessage[] $errors
+     * @param list<ErrorMessage>|null $errors
      *
      * @return self
      */
-    public function setErrors(array $errors) : self
+    public function setErrors(?array $errors) : self
     {
         $this->initialized['errors'] = true;
         $this->errors = $errors;

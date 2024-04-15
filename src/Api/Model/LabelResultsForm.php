@@ -15,26 +15,26 @@ class LabelResultsForm extends \ArrayObject
     /**
      * Container tag for the International Forms image.
      *
-     * @var LRFormImage
+     * @var LRFormImage|null
      */
     protected $image;
     /**
      * Container tag for the International Forms image.
      *
-     * @return LRFormImage
+     * @return LRFormImage|null
      */
-    public function getImage() : LRFormImage
+    public function getImage() : ?LRFormImage
     {
         return $this->image;
     }
     /**
      * Container tag for the International Forms image.
      *
-     * @param LRFormImage $image
+     * @param LRFormImage|null $image
      *
      * @return self
      */
-    public function setImage(LRFormImage $image) : self
+    public function setImage(?LRFormImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentDate', $data)) {
+            if (\array_key_exists('ShipmentDate', $data) && $data['ShipmentDate'] !== null) {
                 $object->setShipmentDate($data['ShipmentDate']);
                 unset($data['ShipmentDate']);
             }
-            if (\array_key_exists('PageSize', $data)) {
+            elseif (\array_key_exists('ShipmentDate', $data) && $data['ShipmentDate'] === null) {
+                $object->setShipmentDate(null);
+            }
+            if (\array_key_exists('PageSize', $data) && $data['PageSize'] !== null) {
                 $object->setPageSize($data['PageSize']);
                 unset($data['PageSize']);
             }
-            if (\array_key_exists('PrintType', $data)) {
+            elseif (\array_key_exists('PageSize', $data) && $data['PageSize'] === null) {
+                $object->setPageSize(null);
+            }
+            if (\array_key_exists('PrintType', $data) && $data['PrintType'] !== null) {
                 $object->setPrintType($data['PrintType']);
                 unset($data['PrintType']);
             }
-            if (\array_key_exists('NumOfCopies', $data)) {
+            elseif (\array_key_exists('PrintType', $data) && $data['PrintType'] === null) {
+                $object->setPrintType(null);
+            }
+            if (\array_key_exists('NumOfCopies', $data) && $data['NumOfCopies'] !== null) {
                 $object->setNumOfCopies($data['NumOfCopies']);
                 unset($data['NumOfCopies']);
             }
-            if (\array_key_exists('LanguageForUPSPremiumCare', $data)) {
+            elseif (\array_key_exists('NumOfCopies', $data) && $data['NumOfCopies'] === null) {
+                $object->setNumOfCopies(null);
+            }
+            if (\array_key_exists('LanguageForUPSPremiumCare', $data) && $data['LanguageForUPSPremiumCare'] !== null) {
                 $object->setLanguageForUPSPremiumCare($this->denormalizer->denormalize($data['LanguageForUPSPremiumCare'], 'ShipStream\\Ups\\Api\\Model\\UPSPremiumCareFormLanguageForUPSPremiumCare', 'json', $context));
                 unset($data['LanguageForUPSPremiumCare']);
+            }
+            elseif (\array_key_exists('LanguageForUPSPremiumCare', $data) && $data['LanguageForUPSPremiumCare'] === null) {
+                $object->setLanguageForUPSPremiumCare(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -117,25 +132,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentDate', $data)) {
+            if (\array_key_exists('ShipmentDate', $data) && $data['ShipmentDate'] !== null) {
                 $object->setShipmentDate($data['ShipmentDate']);
                 unset($data['ShipmentDate']);
             }
-            if (\array_key_exists('PageSize', $data)) {
+            elseif (\array_key_exists('ShipmentDate', $data) && $data['ShipmentDate'] === null) {
+                $object->setShipmentDate(null);
+            }
+            if (\array_key_exists('PageSize', $data) && $data['PageSize'] !== null) {
                 $object->setPageSize($data['PageSize']);
                 unset($data['PageSize']);
             }
-            if (\array_key_exists('PrintType', $data)) {
+            elseif (\array_key_exists('PageSize', $data) && $data['PageSize'] === null) {
+                $object->setPageSize(null);
+            }
+            if (\array_key_exists('PrintType', $data) && $data['PrintType'] !== null) {
                 $object->setPrintType($data['PrintType']);
                 unset($data['PrintType']);
             }
-            if (\array_key_exists('NumOfCopies', $data)) {
+            elseif (\array_key_exists('PrintType', $data) && $data['PrintType'] === null) {
+                $object->setPrintType(null);
+            }
+            if (\array_key_exists('NumOfCopies', $data) && $data['NumOfCopies'] !== null) {
                 $object->setNumOfCopies($data['NumOfCopies']);
                 unset($data['NumOfCopies']);
             }
-            if (\array_key_exists('LanguageForUPSPremiumCare', $data)) {
+            elseif (\array_key_exists('NumOfCopies', $data) && $data['NumOfCopies'] === null) {
+                $object->setNumOfCopies(null);
+            }
+            if (\array_key_exists('LanguageForUPSPremiumCare', $data) && $data['LanguageForUPSPremiumCare'] !== null) {
                 $object->setLanguageForUPSPremiumCare($this->denormalizer->denormalize($data['LanguageForUPSPremiumCare'], 'ShipStream\\Ups\\Api\\Model\\UPSPremiumCareFormLanguageForUPSPremiumCare', 'json', $context));
                 unset($data['LanguageForUPSPremiumCare']);
+            }
+            elseif (\array_key_exists('LanguageForUPSPremiumCare', $data) && $data['LanguageForUPSPremiumCare'] === null) {
+                $object->setLanguageForUPSPremiumCare(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

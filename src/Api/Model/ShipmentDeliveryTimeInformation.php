@@ -15,38 +15,38 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     /**
      * Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageBillType;
     /**
      * Pickup container.
      *
-     * @var DeliveryTimeInformationPickup
+     * @var DeliveryTimeInformationPickup|null
      */
     protected $pickup;
     /**
      * 
      *
-     * @var DeliveryTimeInformationReturnContractServices[]
+     * @var list<DeliveryTimeInformationReturnContractServices>|null
      */
     protected $returnContractServices;
     /**
      * Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageBillType() : string
+    public function getPackageBillType() : ?string
     {
         return $this->packageBillType;
     }
     /**
      * Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
      *
-     * @param string $packageBillType
+     * @param string|null $packageBillType
      *
      * @return self
      */
-    public function setPackageBillType(string $packageBillType) : self
+    public function setPackageBillType(?string $packageBillType) : self
     {
         $this->initialized['packageBillType'] = true;
         $this->packageBillType = $packageBillType;
@@ -55,20 +55,20 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     /**
      * Pickup container.
      *
-     * @return DeliveryTimeInformationPickup
+     * @return DeliveryTimeInformationPickup|null
      */
-    public function getPickup() : DeliveryTimeInformationPickup
+    public function getPickup() : ?DeliveryTimeInformationPickup
     {
         return $this->pickup;
     }
     /**
      * Pickup container.
      *
-     * @param DeliveryTimeInformationPickup $pickup
+     * @param DeliveryTimeInformationPickup|null $pickup
      *
      * @return self
      */
-    public function setPickup(DeliveryTimeInformationPickup $pickup) : self
+    public function setPickup(?DeliveryTimeInformationPickup $pickup) : self
     {
         $this->initialized['pickup'] = true;
         $this->pickup = $pickup;
@@ -77,20 +77,20 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryTimeInformationReturnContractServices[]
+     * @return list<DeliveryTimeInformationReturnContractServices>|null
      */
-    public function getReturnContractServices() : array
+    public function getReturnContractServices() : ?array
     {
         return $this->returnContractServices;
     }
     /**
      * 
      *
-     * @param DeliveryTimeInformationReturnContractServices[] $returnContractServices
+     * @param list<DeliveryTimeInformationReturnContractServices>|null $returnContractServices
      *
      * @return self
      */
-    public function setReturnContractServices(array $returnContractServices) : self
+    public function setReturnContractServices(?array $returnContractServices) : self
     {
         $this->initialized['returnContractServices'] = true;
         $this->returnContractServices = $returnContractServices;

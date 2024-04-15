@@ -40,53 +40,89 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CommodityID', $data)) {
+            if (\array_key_exists('CommodityID', $data) && $data['CommodityID'] !== null) {
                 $object->setCommodityID($data['CommodityID']);
                 unset($data['CommodityID']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('CommodityID', $data) && $data['CommodityID'] === null) {
+                $object->setCommodityID(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Weight', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
                 unset($data['Weight']);
             }
-            if (\array_key_exists('AdjustedWeight', $data)) {
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] !== null) {
                 $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
                 unset($data['AdjustedWeight']);
             }
-            if (\array_key_exists('Dimensions', $data)) {
+            elseif (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] === null) {
+                $object->setAdjustedWeight(null);
+            }
+            if (\array_key_exists('Dimensions', $data) && $data['Dimensions'] !== null) {
                 $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions', 'json', $context));
                 unset($data['Dimensions']);
             }
-            if (\array_key_exists('NumberOfPieces', $data)) {
+            elseif (\array_key_exists('Dimensions', $data) && $data['Dimensions'] === null) {
+                $object->setDimensions(null);
+            }
+            if (\array_key_exists('NumberOfPieces', $data) && $data['NumberOfPieces'] !== null) {
                 $object->setNumberOfPieces($data['NumberOfPieces']);
                 unset($data['NumberOfPieces']);
             }
-            if (\array_key_exists('PackagingType', $data)) {
+            elseif (\array_key_exists('NumberOfPieces', $data) && $data['NumberOfPieces'] === null) {
+                $object->setNumberOfPieces(null);
+            }
+            if (\array_key_exists('PackagingType', $data) && $data['PackagingType'] !== null) {
                 $object->setPackagingType($this->denormalizer->denormalize($data['PackagingType'], 'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType', 'json', $context));
                 unset($data['PackagingType']);
             }
-            if (\array_key_exists('DangerousGoodsIndicator', $data)) {
+            elseif (\array_key_exists('PackagingType', $data) && $data['PackagingType'] === null) {
+                $object->setPackagingType(null);
+            }
+            if (\array_key_exists('DangerousGoodsIndicator', $data) && $data['DangerousGoodsIndicator'] !== null) {
                 $object->setDangerousGoodsIndicator($data['DangerousGoodsIndicator']);
                 unset($data['DangerousGoodsIndicator']);
             }
-            if (\array_key_exists('CommodityValue', $data)) {
+            elseif (\array_key_exists('DangerousGoodsIndicator', $data) && $data['DangerousGoodsIndicator'] === null) {
+                $object->setDangerousGoodsIndicator(null);
+            }
+            if (\array_key_exists('CommodityValue', $data) && $data['CommodityValue'] !== null) {
                 $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue', 'json', $context));
                 unset($data['CommodityValue']);
             }
-            if (\array_key_exists('FreightClass', $data)) {
+            elseif (\array_key_exists('CommodityValue', $data) && $data['CommodityValue'] === null) {
+                $object->setCommodityValue(null);
+            }
+            if (\array_key_exists('FreightClass', $data) && $data['FreightClass'] !== null) {
                 $object->setFreightClass($data['FreightClass']);
                 unset($data['FreightClass']);
             }
-            if (\array_key_exists('NMFCCommodityCode', $data)) {
+            elseif (\array_key_exists('FreightClass', $data) && $data['FreightClass'] === null) {
+                $object->setFreightClass(null);
+            }
+            if (\array_key_exists('NMFCCommodityCode', $data) && $data['NMFCCommodityCode'] !== null) {
                 $object->setNMFCCommodityCode($data['NMFCCommodityCode']);
                 unset($data['NMFCCommodityCode']);
             }
-            if (\array_key_exists('NMFCCommodity', $data)) {
+            elseif (\array_key_exists('NMFCCommodityCode', $data) && $data['NMFCCommodityCode'] === null) {
+                $object->setNMFCCommodityCode(null);
+            }
+            if (\array_key_exists('NMFCCommodity', $data) && $data['NMFCCommodity'] !== null) {
                 $object->setNMFCCommodity($this->denormalizer->denormalize($data['NMFCCommodity'], 'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity', 'json', $context));
                 unset($data['NMFCCommodity']);
+            }
+            elseif (\array_key_exists('NMFCCommodity', $data) && $data['NMFCCommodity'] === null) {
+                $object->setNMFCCommodity(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -168,53 +204,89 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CommodityID', $data)) {
+            if (\array_key_exists('CommodityID', $data) && $data['CommodityID'] !== null) {
                 $object->setCommodityID($data['CommodityID']);
                 unset($data['CommodityID']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('CommodityID', $data) && $data['CommodityID'] === null) {
+                $object->setCommodityID(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Weight', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
                 unset($data['Weight']);
             }
-            if (\array_key_exists('AdjustedWeight', $data)) {
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] !== null) {
                 $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
                 unset($data['AdjustedWeight']);
             }
-            if (\array_key_exists('Dimensions', $data)) {
+            elseif (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] === null) {
+                $object->setAdjustedWeight(null);
+            }
+            if (\array_key_exists('Dimensions', $data) && $data['Dimensions'] !== null) {
                 $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions', 'json', $context));
                 unset($data['Dimensions']);
             }
-            if (\array_key_exists('NumberOfPieces', $data)) {
+            elseif (\array_key_exists('Dimensions', $data) && $data['Dimensions'] === null) {
+                $object->setDimensions(null);
+            }
+            if (\array_key_exists('NumberOfPieces', $data) && $data['NumberOfPieces'] !== null) {
                 $object->setNumberOfPieces($data['NumberOfPieces']);
                 unset($data['NumberOfPieces']);
             }
-            if (\array_key_exists('PackagingType', $data)) {
+            elseif (\array_key_exists('NumberOfPieces', $data) && $data['NumberOfPieces'] === null) {
+                $object->setNumberOfPieces(null);
+            }
+            if (\array_key_exists('PackagingType', $data) && $data['PackagingType'] !== null) {
                 $object->setPackagingType($this->denormalizer->denormalize($data['PackagingType'], 'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType', 'json', $context));
                 unset($data['PackagingType']);
             }
-            if (\array_key_exists('DangerousGoodsIndicator', $data)) {
+            elseif (\array_key_exists('PackagingType', $data) && $data['PackagingType'] === null) {
+                $object->setPackagingType(null);
+            }
+            if (\array_key_exists('DangerousGoodsIndicator', $data) && $data['DangerousGoodsIndicator'] !== null) {
                 $object->setDangerousGoodsIndicator($data['DangerousGoodsIndicator']);
                 unset($data['DangerousGoodsIndicator']);
             }
-            if (\array_key_exists('CommodityValue', $data)) {
+            elseif (\array_key_exists('DangerousGoodsIndicator', $data) && $data['DangerousGoodsIndicator'] === null) {
+                $object->setDangerousGoodsIndicator(null);
+            }
+            if (\array_key_exists('CommodityValue', $data) && $data['CommodityValue'] !== null) {
                 $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue', 'json', $context));
                 unset($data['CommodityValue']);
             }
-            if (\array_key_exists('FreightClass', $data)) {
+            elseif (\array_key_exists('CommodityValue', $data) && $data['CommodityValue'] === null) {
+                $object->setCommodityValue(null);
+            }
+            if (\array_key_exists('FreightClass', $data) && $data['FreightClass'] !== null) {
                 $object->setFreightClass($data['FreightClass']);
                 unset($data['FreightClass']);
             }
-            if (\array_key_exists('NMFCCommodityCode', $data)) {
+            elseif (\array_key_exists('FreightClass', $data) && $data['FreightClass'] === null) {
+                $object->setFreightClass(null);
+            }
+            if (\array_key_exists('NMFCCommodityCode', $data) && $data['NMFCCommodityCode'] !== null) {
                 $object->setNMFCCommodityCode($data['NMFCCommodityCode']);
                 unset($data['NMFCCommodityCode']);
             }
-            if (\array_key_exists('NMFCCommodity', $data)) {
+            elseif (\array_key_exists('NMFCCommodityCode', $data) && $data['NMFCCommodityCode'] === null) {
+                $object->setNMFCCommodityCode(null);
+            }
+            if (\array_key_exists('NMFCCommodity', $data) && $data['NMFCCommodity'] !== null) {
                 $object->setNMFCCommodity($this->denormalizer->denormalize($data['NMFCCommodity'], 'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity', 'json', $context));
                 unset($data['NMFCCommodity']);
+            }
+            elseif (\array_key_exists('NMFCCommodity', $data) && $data['NMFCCommodity'] === null) {
+                $object->setNMFCCommodity(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

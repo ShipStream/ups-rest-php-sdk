@@ -15,57 +15,57 @@ class ShipToAddress extends \ArrayObject
     /**
      * Address Line of the consignee.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * Consignee's state or province code. Required for US or Canada.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * Consignee's postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Consignee's country or territory code.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
     * This field is a flag to indicate if the receiver is a residential location. 
     True if ResidentialAddressIndicator tag exists.  This is an empty tag, any value inside is ignored.
     *
-    * @var string
+    * @var string|null
     */
     protected $residentialAddressIndicator;
     /**
      * Address Line of the consignee.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Address Line of the consignee.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -74,20 +74,20 @@ class ShipToAddress extends \ArrayObject
     /**
      * Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -96,20 +96,20 @@ class ShipToAddress extends \ArrayObject
     /**
      * Consignee's state or province code. Required for US or Canada.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * Consignee's state or province code. Required for US or Canada.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -118,20 +118,20 @@ class ShipToAddress extends \ArrayObject
     /**
      * Consignee's postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Consignee's postal code.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -140,20 +140,20 @@ class ShipToAddress extends \ArrayObject
     /**
      * Consignee's country or territory code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Consignee's country or territory code.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -163,9 +163,9 @@ class ShipToAddress extends \ArrayObject
     * This field is a flag to indicate if the receiver is a residential location. 
     True if ResidentialAddressIndicator tag exists.  This is an empty tag, any value inside is ignored.
     *
-    * @return string
+    * @return string|null
     */
-    public function getResidentialAddressIndicator() : string
+    public function getResidentialAddressIndicator() : ?string
     {
         return $this->residentialAddressIndicator;
     }
@@ -173,11 +173,11 @@ class ShipToAddress extends \ArrayObject
     * This field is a flag to indicate if the receiver is a residential location. 
     True if ResidentialAddressIndicator tag exists.  This is an empty tag, any value inside is ignored.
     *
-    * @param string $residentialAddressIndicator
+    * @param string|null $residentialAddressIndicator
     *
     * @return self
     */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
+    public function setResidentialAddressIndicator(?string $residentialAddressIndicator) : self
     {
         $this->initialized['residentialAddressIndicator'] = true;
         $this->residentialAddressIndicator = $residentialAddressIndicator;

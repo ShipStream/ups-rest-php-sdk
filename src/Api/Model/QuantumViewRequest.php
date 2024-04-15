@@ -15,13 +15,13 @@ class QuantumViewRequest extends \ArrayObject
     /**
      * Contains QuantumView request criteria components.
      *
-     * @var QuantumViewRequestRequest
+     * @var QuantumViewRequestRequest|null
      */
     protected $request;
     /**
      * 
      *
-     * @var QuantumViewRequestSubscriptionRequest[]
+     * @var list<QuantumViewRequestSubscriptionRequest>|null
      */
     protected $subscriptionRequest;
     /**
@@ -29,26 +29,26 @@ class QuantumViewRequest extends \ArrayObject
     It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. 
     It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
     *
-    * @var string
+    * @var string|null
     */
     protected $bookmark;
     /**
      * Contains QuantumView request criteria components.
      *
-     * @return QuantumViewRequestRequest
+     * @return QuantumViewRequestRequest|null
      */
-    public function getRequest() : QuantumViewRequestRequest
+    public function getRequest() : ?QuantumViewRequestRequest
     {
         return $this->request;
     }
     /**
      * Contains QuantumView request criteria components.
      *
-     * @param QuantumViewRequestRequest $request
+     * @param QuantumViewRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(QuantumViewRequestRequest $request) : self
+    public function setRequest(?QuantumViewRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -57,20 +57,20 @@ class QuantumViewRequest extends \ArrayObject
     /**
      * 
      *
-     * @return QuantumViewRequestSubscriptionRequest[]
+     * @return list<QuantumViewRequestSubscriptionRequest>|null
      */
-    public function getSubscriptionRequest() : array
+    public function getSubscriptionRequest() : ?array
     {
         return $this->subscriptionRequest;
     }
     /**
      * 
      *
-     * @param QuantumViewRequestSubscriptionRequest[] $subscriptionRequest
+     * @param list<QuantumViewRequestSubscriptionRequest>|null $subscriptionRequest
      *
      * @return self
      */
-    public function setSubscriptionRequest(array $subscriptionRequest) : self
+    public function setSubscriptionRequest(?array $subscriptionRequest) : self
     {
         $this->initialized['subscriptionRequest'] = true;
         $this->subscriptionRequest = $subscriptionRequest;
@@ -81,9 +81,9 @@ class QuantumViewRequest extends \ArrayObject
     It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. 
     It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
     *
-    * @return string
+    * @return string|null
     */
-    public function getBookmark() : string
+    public function getBookmark() : ?string
     {
         return $this->bookmark;
     }
@@ -92,11 +92,11 @@ class QuantumViewRequest extends \ArrayObject
     It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. 
     It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
     *
-    * @param string $bookmark
+    * @param string|null $bookmark
     *
     * @return self
     */
-    public function setBookmark(string $bookmark) : self
+    public function setBookmark(?string $bookmark) : self
     {
         $this->initialized['bookmark'] = true;
         $this->bookmark = $bookmark;

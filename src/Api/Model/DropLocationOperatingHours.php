@@ -15,26 +15,26 @@ class DropLocationOperatingHours extends \ArrayObject
     /**
      * 
      *
-     * @var OperatingHoursStandardHours[]
+     * @var list<OperatingHoursStandardHours>|null
      */
     protected $standardHours;
     /**
      * 
      *
-     * @return OperatingHoursStandardHours[]
+     * @return list<OperatingHoursStandardHours>|null
      */
-    public function getStandardHours() : array
+    public function getStandardHours() : ?array
     {
         return $this->standardHours;
     }
     /**
      * 
      *
-     * @param OperatingHoursStandardHours[] $standardHours
+     * @param list<OperatingHoursStandardHours>|null $standardHours
      *
      * @return self
      */
-    public function setStandardHours(array $standardHours) : self
+    public function setStandardHours(?array $standardHours) : self
     {
         $this->initialized['standardHours'] = true;
         $this->standardHours = $standardHours;

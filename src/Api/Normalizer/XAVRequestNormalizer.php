@@ -40,25 +40,37 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\XAVRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('RegionalRequestIndicator', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('RegionalRequestIndicator', $data) && $data['RegionalRequestIndicator'] !== null) {
                 $object->setRegionalRequestIndicator($data['RegionalRequestIndicator']);
                 unset($data['RegionalRequestIndicator']);
             }
-            if (\array_key_exists('MaximumCandidateListSize', $data)) {
+            elseif (\array_key_exists('RegionalRequestIndicator', $data) && $data['RegionalRequestIndicator'] === null) {
+                $object->setRegionalRequestIndicator(null);
+            }
+            if (\array_key_exists('MaximumCandidateListSize', $data) && $data['MaximumCandidateListSize'] !== null) {
                 $object->setMaximumCandidateListSize($data['MaximumCandidateListSize']);
                 unset($data['MaximumCandidateListSize']);
             }
-            if (\array_key_exists('AddressKeyFormat', $data)) {
+            elseif (\array_key_exists('MaximumCandidateListSize', $data) && $data['MaximumCandidateListSize'] === null) {
+                $object->setMaximumCandidateListSize(null);
+            }
+            if (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] !== null) {
                 $values = [];
                 foreach ($data['AddressKeyFormat'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVRequestAddressKeyFormat', 'json', $context);
                 }
                 $object->setAddressKeyFormat($values);
                 unset($data['AddressKeyFormat']);
+            }
+            elseif (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] === null) {
+                $object->setAddressKeyFormat(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -124,25 +136,37 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\XAVRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('RegionalRequestIndicator', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('RegionalRequestIndicator', $data) && $data['RegionalRequestIndicator'] !== null) {
                 $object->setRegionalRequestIndicator($data['RegionalRequestIndicator']);
                 unset($data['RegionalRequestIndicator']);
             }
-            if (\array_key_exists('MaximumCandidateListSize', $data)) {
+            elseif (\array_key_exists('RegionalRequestIndicator', $data) && $data['RegionalRequestIndicator'] === null) {
+                $object->setRegionalRequestIndicator(null);
+            }
+            if (\array_key_exists('MaximumCandidateListSize', $data) && $data['MaximumCandidateListSize'] !== null) {
                 $object->setMaximumCandidateListSize($data['MaximumCandidateListSize']);
                 unset($data['MaximumCandidateListSize']);
             }
-            if (\array_key_exists('AddressKeyFormat', $data)) {
+            elseif (\array_key_exists('MaximumCandidateListSize', $data) && $data['MaximumCandidateListSize'] === null) {
+                $object->setMaximumCandidateListSize(null);
+            }
+            if (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] !== null) {
                 $values = [];
                 foreach ($data['AddressKeyFormat'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVRequestAddressKeyFormat', 'json', $context);
                 }
                 $object->setAddressKeyFormat($values);
                 unset($data['AddressKeyFormat']);
+            }
+            elseif (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] === null) {
+                $object->setAddressKeyFormat(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

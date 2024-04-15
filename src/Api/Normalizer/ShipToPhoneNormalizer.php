@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('Extension', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('Extension', $data) && $data['Extension'] !== null) {
                 $object->setExtension($data['Extension']);
                 unset($data['Extension']);
+            }
+            elseif (\array_key_exists('Extension', $data) && $data['Extension'] === null) {
+                $object->setExtension(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('Extension', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('Extension', $data) && $data['Extension'] !== null) {
                 $object->setExtension($data['Extension']);
                 unset($data['Extension']);
+            }
+            elseif (\array_key_exists('Extension', $data) && $data['Extension'] === null) {
+                $object->setExtension(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

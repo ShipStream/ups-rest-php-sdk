@@ -15,56 +15,56 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee Street address for the COD charges.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * Payee city code for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * Payee state or province code for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * Payee town code for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $town;
     /**
      * Payee postal code for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Payee country or territory code for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Payee Street address for the COD charges.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Payee Street address for the COD charges.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -73,20 +73,20 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee city code for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * Payee city code for the COD charges.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -95,20 +95,20 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee state or province code for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * Payee state or province code for the COD charges.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -117,20 +117,20 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee town code for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTown() : string
+    public function getTown() : ?string
     {
         return $this->town;
     }
     /**
      * Payee town code for the COD charges.
      *
-     * @param string $town
+     * @param string|null $town
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(?string $town) : self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -139,20 +139,20 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee postal code for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Payee postal code for the COD charges.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -161,20 +161,20 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee country or territory code for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Payee country or territory code for the COD charges.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

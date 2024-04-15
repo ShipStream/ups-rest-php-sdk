@@ -40,45 +40,72 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('FormsHistoryDocumentID', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('FormsHistoryDocumentID', $data) && $data['FormsHistoryDocumentID'] !== null) {
                 $object->setFormsHistoryDocumentID($this->denormalizer->denormalize($data['FormsHistoryDocumentID'], 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestFormsHistoryDocumentID', 'json', $context));
                 unset($data['FormsHistoryDocumentID']);
             }
-            if (\array_key_exists('FormsGroupID', $data)) {
+            elseif (\array_key_exists('FormsHistoryDocumentID', $data) && $data['FormsHistoryDocumentID'] === null) {
+                $object->setFormsHistoryDocumentID(null);
+            }
+            if (\array_key_exists('FormsGroupID', $data) && $data['FormsGroupID'] !== null) {
                 $object->setFormsGroupID($data['FormsGroupID']);
                 unset($data['FormsGroupID']);
             }
-            if (\array_key_exists('ShipmentIdentifier', $data)) {
+            elseif (\array_key_exists('FormsGroupID', $data) && $data['FormsGroupID'] === null) {
+                $object->setFormsGroupID(null);
+            }
+            if (\array_key_exists('ShipmentIdentifier', $data) && $data['ShipmentIdentifier'] !== null) {
                 $object->setShipmentIdentifier($data['ShipmentIdentifier']);
                 unset($data['ShipmentIdentifier']);
             }
-            if (\array_key_exists('ShipmentDateAndTime', $data)) {
+            elseif (\array_key_exists('ShipmentIdentifier', $data) && $data['ShipmentIdentifier'] === null) {
+                $object->setShipmentIdentifier(null);
+            }
+            if (\array_key_exists('ShipmentDateAndTime', $data) && $data['ShipmentDateAndTime'] !== null) {
                 $object->setShipmentDateAndTime($data['ShipmentDateAndTime']);
                 unset($data['ShipmentDateAndTime']);
             }
-            if (\array_key_exists('ShipmentType', $data)) {
+            elseif (\array_key_exists('ShipmentDateAndTime', $data) && $data['ShipmentDateAndTime'] === null) {
+                $object->setShipmentDateAndTime(null);
+            }
+            if (\array_key_exists('ShipmentType', $data) && $data['ShipmentType'] !== null) {
                 $object->setShipmentType($data['ShipmentType']);
                 unset($data['ShipmentType']);
             }
-            if (\array_key_exists('PRQConfirmationNumber', $data)) {
+            elseif (\array_key_exists('ShipmentType', $data) && $data['ShipmentType'] === null) {
+                $object->setShipmentType(null);
+            }
+            if (\array_key_exists('PRQConfirmationNumber', $data) && $data['PRQConfirmationNumber'] !== null) {
                 $object->setPRQConfirmationNumber($data['PRQConfirmationNumber']);
                 unset($data['PRQConfirmationNumber']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('PRQConfirmationNumber', $data) && $data['PRQConfirmationNumber'] === null) {
+                $object->setPRQConfirmationNumber(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $values = [];
                 foreach ($data['TrackingNumber'] as $value) {
                     $values[] = $value;
                 }
                 $object->setTrackingNumber($values);
                 unset($data['TrackingNumber']);
+            }
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -153,45 +180,72 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('FormsHistoryDocumentID', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('FormsHistoryDocumentID', $data) && $data['FormsHistoryDocumentID'] !== null) {
                 $object->setFormsHistoryDocumentID($this->denormalizer->denormalize($data['FormsHistoryDocumentID'], 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestFormsHistoryDocumentID', 'json', $context));
                 unset($data['FormsHistoryDocumentID']);
             }
-            if (\array_key_exists('FormsGroupID', $data)) {
+            elseif (\array_key_exists('FormsHistoryDocumentID', $data) && $data['FormsHistoryDocumentID'] === null) {
+                $object->setFormsHistoryDocumentID(null);
+            }
+            if (\array_key_exists('FormsGroupID', $data) && $data['FormsGroupID'] !== null) {
                 $object->setFormsGroupID($data['FormsGroupID']);
                 unset($data['FormsGroupID']);
             }
-            if (\array_key_exists('ShipmentIdentifier', $data)) {
+            elseif (\array_key_exists('FormsGroupID', $data) && $data['FormsGroupID'] === null) {
+                $object->setFormsGroupID(null);
+            }
+            if (\array_key_exists('ShipmentIdentifier', $data) && $data['ShipmentIdentifier'] !== null) {
                 $object->setShipmentIdentifier($data['ShipmentIdentifier']);
                 unset($data['ShipmentIdentifier']);
             }
-            if (\array_key_exists('ShipmentDateAndTime', $data)) {
+            elseif (\array_key_exists('ShipmentIdentifier', $data) && $data['ShipmentIdentifier'] === null) {
+                $object->setShipmentIdentifier(null);
+            }
+            if (\array_key_exists('ShipmentDateAndTime', $data) && $data['ShipmentDateAndTime'] !== null) {
                 $object->setShipmentDateAndTime($data['ShipmentDateAndTime']);
                 unset($data['ShipmentDateAndTime']);
             }
-            if (\array_key_exists('ShipmentType', $data)) {
+            elseif (\array_key_exists('ShipmentDateAndTime', $data) && $data['ShipmentDateAndTime'] === null) {
+                $object->setShipmentDateAndTime(null);
+            }
+            if (\array_key_exists('ShipmentType', $data) && $data['ShipmentType'] !== null) {
                 $object->setShipmentType($data['ShipmentType']);
                 unset($data['ShipmentType']);
             }
-            if (\array_key_exists('PRQConfirmationNumber', $data)) {
+            elseif (\array_key_exists('ShipmentType', $data) && $data['ShipmentType'] === null) {
+                $object->setShipmentType(null);
+            }
+            if (\array_key_exists('PRQConfirmationNumber', $data) && $data['PRQConfirmationNumber'] !== null) {
                 $object->setPRQConfirmationNumber($data['PRQConfirmationNumber']);
                 unset($data['PRQConfirmationNumber']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('PRQConfirmationNumber', $data) && $data['PRQConfirmationNumber'] === null) {
+                $object->setPRQConfirmationNumber(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $values = [];
                 foreach ($data['TrackingNumber'] as $value) {
                     $values[] = $value;
                 }
                 $object->setTrackingNumber($values);
                 unset($data['TrackingNumber']);
+            }
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,86 +15,86 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * Base Service Charge Container.  These charges would be returned only when subversion is greater than or equal to 1701
      *
-     * @var RatedPackageBaseServiceCharge
+     * @var RatedPackageBaseServiceCharge|null
      */
     protected $baseServiceCharge;
     /**
      * Transportation Charges Container.
      *
-     * @var RatedPackageTransportationCharges
+     * @var RatedPackageTransportationCharges|null
      */
     protected $transportationCharges;
     /**
      * Service Options Charges Container.
      *
-     * @var RatedPackageServiceOptionsCharges
+     * @var RatedPackageServiceOptionsCharges|null
      */
     protected $serviceOptionsCharges;
     /**
      * Total Charges Container.
      *
-     * @var RatedPackageTotalCharges
+     * @var RatedPackageTotalCharges|null
      */
     protected $totalCharges;
     /**
      * The weight of the package in the rated Package.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * Billing Weight Container.
      *
-     * @var RatedPackageBillingWeight
+     * @var RatedPackageBillingWeight|null
      */
     protected $billingWeight;
     /**
      * 
      *
-     * @var RatedPackageAccessorial[]
+     * @var list<RatedPackageAccessorial>|null
      */
     protected $accessorial;
     /**
      * 
      *
-     * @var RatedPackageItemizedCharges[]
+     * @var list<RatedPackageItemizedCharges>|null
      */
     protected $itemizedCharges;
     /**
      * Negotiated Rates container.  These charges would be returned only when -1) subversion is greater than or equal to 16072) if negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
      *
-     * @var RatedPackageNegotiatedCharges
+     * @var RatedPackageNegotiatedCharges|null
      */
     protected $negotiatedCharges;
     /**
      * SimpleRate will be returned if Simple Rate  present in request
      *
-     * @var RatedPackageSimpleRate
+     * @var RatedPackageSimpleRate|null
      */
     protected $simpleRate;
     /**
      * 
      *
-     * @var RatedPackageRateModifier[]
+     * @var list<RatedPackageRateModifier>|null
      */
     protected $rateModifier;
     /**
      * Base Service Charge Container.  These charges would be returned only when subversion is greater than or equal to 1701
      *
-     * @return RatedPackageBaseServiceCharge
+     * @return RatedPackageBaseServiceCharge|null
      */
-    public function getBaseServiceCharge() : RatedPackageBaseServiceCharge
+    public function getBaseServiceCharge() : ?RatedPackageBaseServiceCharge
     {
         return $this->baseServiceCharge;
     }
     /**
      * Base Service Charge Container.  These charges would be returned only when subversion is greater than or equal to 1701
      *
-     * @param RatedPackageBaseServiceCharge $baseServiceCharge
+     * @param RatedPackageBaseServiceCharge|null $baseServiceCharge
      *
      * @return self
      */
-    public function setBaseServiceCharge(RatedPackageBaseServiceCharge $baseServiceCharge) : self
+    public function setBaseServiceCharge(?RatedPackageBaseServiceCharge $baseServiceCharge) : self
     {
         $this->initialized['baseServiceCharge'] = true;
         $this->baseServiceCharge = $baseServiceCharge;
@@ -103,20 +103,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * Transportation Charges Container.
      *
-     * @return RatedPackageTransportationCharges
+     * @return RatedPackageTransportationCharges|null
      */
-    public function getTransportationCharges() : RatedPackageTransportationCharges
+    public function getTransportationCharges() : ?RatedPackageTransportationCharges
     {
         return $this->transportationCharges;
     }
     /**
      * Transportation Charges Container.
      *
-     * @param RatedPackageTransportationCharges $transportationCharges
+     * @param RatedPackageTransportationCharges|null $transportationCharges
      *
      * @return self
      */
-    public function setTransportationCharges(RatedPackageTransportationCharges $transportationCharges) : self
+    public function setTransportationCharges(?RatedPackageTransportationCharges $transportationCharges) : self
     {
         $this->initialized['transportationCharges'] = true;
         $this->transportationCharges = $transportationCharges;
@@ -125,20 +125,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * Service Options Charges Container.
      *
-     * @return RatedPackageServiceOptionsCharges
+     * @return RatedPackageServiceOptionsCharges|null
      */
-    public function getServiceOptionsCharges() : RatedPackageServiceOptionsCharges
+    public function getServiceOptionsCharges() : ?RatedPackageServiceOptionsCharges
     {
         return $this->serviceOptionsCharges;
     }
     /**
      * Service Options Charges Container.
      *
-     * @param RatedPackageServiceOptionsCharges $serviceOptionsCharges
+     * @param RatedPackageServiceOptionsCharges|null $serviceOptionsCharges
      *
      * @return self
      */
-    public function setServiceOptionsCharges(RatedPackageServiceOptionsCharges $serviceOptionsCharges) : self
+    public function setServiceOptionsCharges(?RatedPackageServiceOptionsCharges $serviceOptionsCharges) : self
     {
         $this->initialized['serviceOptionsCharges'] = true;
         $this->serviceOptionsCharges = $serviceOptionsCharges;
@@ -147,20 +147,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * Total Charges Container.
      *
-     * @return RatedPackageTotalCharges
+     * @return RatedPackageTotalCharges|null
      */
-    public function getTotalCharges() : RatedPackageTotalCharges
+    public function getTotalCharges() : ?RatedPackageTotalCharges
     {
         return $this->totalCharges;
     }
     /**
      * Total Charges Container.
      *
-     * @param RatedPackageTotalCharges $totalCharges
+     * @param RatedPackageTotalCharges|null $totalCharges
      *
      * @return self
      */
-    public function setTotalCharges(RatedPackageTotalCharges $totalCharges) : self
+    public function setTotalCharges(?RatedPackageTotalCharges $totalCharges) : self
     {
         $this->initialized['totalCharges'] = true;
         $this->totalCharges = $totalCharges;
@@ -169,20 +169,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * The weight of the package in the rated Package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * The weight of the package in the rated Package.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -191,20 +191,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * Billing Weight Container.
      *
-     * @return RatedPackageBillingWeight
+     * @return RatedPackageBillingWeight|null
      */
-    public function getBillingWeight() : RatedPackageBillingWeight
+    public function getBillingWeight() : ?RatedPackageBillingWeight
     {
         return $this->billingWeight;
     }
     /**
      * Billing Weight Container.
      *
-     * @param RatedPackageBillingWeight $billingWeight
+     * @param RatedPackageBillingWeight|null $billingWeight
      *
      * @return self
      */
-    public function setBillingWeight(RatedPackageBillingWeight $billingWeight) : self
+    public function setBillingWeight(?RatedPackageBillingWeight $billingWeight) : self
     {
         $this->initialized['billingWeight'] = true;
         $this->billingWeight = $billingWeight;
@@ -213,20 +213,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * 
      *
-     * @return RatedPackageAccessorial[]
+     * @return list<RatedPackageAccessorial>|null
      */
-    public function getAccessorial() : array
+    public function getAccessorial() : ?array
     {
         return $this->accessorial;
     }
     /**
      * 
      *
-     * @param RatedPackageAccessorial[] $accessorial
+     * @param list<RatedPackageAccessorial>|null $accessorial
      *
      * @return self
      */
-    public function setAccessorial(array $accessorial) : self
+    public function setAccessorial(?array $accessorial) : self
     {
         $this->initialized['accessorial'] = true;
         $this->accessorial = $accessorial;
@@ -235,20 +235,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * 
      *
-     * @return RatedPackageItemizedCharges[]
+     * @return list<RatedPackageItemizedCharges>|null
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges() : ?array
     {
         return $this->itemizedCharges;
     }
     /**
      * 
      *
-     * @param RatedPackageItemizedCharges[] $itemizedCharges
+     * @param list<RatedPackageItemizedCharges>|null $itemizedCharges
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(?array $itemizedCharges) : self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -257,20 +257,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * Negotiated Rates container.  These charges would be returned only when -1) subversion is greater than or equal to 16072) if negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
      *
-     * @return RatedPackageNegotiatedCharges
+     * @return RatedPackageNegotiatedCharges|null
      */
-    public function getNegotiatedCharges() : RatedPackageNegotiatedCharges
+    public function getNegotiatedCharges() : ?RatedPackageNegotiatedCharges
     {
         return $this->negotiatedCharges;
     }
     /**
      * Negotiated Rates container.  These charges would be returned only when -1) subversion is greater than or equal to 16072) if negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
      *
-     * @param RatedPackageNegotiatedCharges $negotiatedCharges
+     * @param RatedPackageNegotiatedCharges|null $negotiatedCharges
      *
      * @return self
      */
-    public function setNegotiatedCharges(RatedPackageNegotiatedCharges $negotiatedCharges) : self
+    public function setNegotiatedCharges(?RatedPackageNegotiatedCharges $negotiatedCharges) : self
     {
         $this->initialized['negotiatedCharges'] = true;
         $this->negotiatedCharges = $negotiatedCharges;
@@ -279,20 +279,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * SimpleRate will be returned if Simple Rate  present in request
      *
-     * @return RatedPackageSimpleRate
+     * @return RatedPackageSimpleRate|null
      */
-    public function getSimpleRate() : RatedPackageSimpleRate
+    public function getSimpleRate() : ?RatedPackageSimpleRate
     {
         return $this->simpleRate;
     }
     /**
      * SimpleRate will be returned if Simple Rate  present in request
      *
-     * @param RatedPackageSimpleRate $simpleRate
+     * @param RatedPackageSimpleRate|null $simpleRate
      *
      * @return self
      */
-    public function setSimpleRate(RatedPackageSimpleRate $simpleRate) : self
+    public function setSimpleRate(?RatedPackageSimpleRate $simpleRate) : self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -301,20 +301,20 @@ class RatedShipmentRatedPackage extends \ArrayObject
     /**
      * 
      *
-     * @return RatedPackageRateModifier[]
+     * @return list<RatedPackageRateModifier>|null
      */
-    public function getRateModifier() : array
+    public function getRateModifier() : ?array
     {
         return $this->rateModifier;
     }
     /**
      * 
      *
-     * @param RatedPackageRateModifier[] $rateModifier
+     * @param list<RatedPackageRateModifier>|null $rateModifier
      *
      * @return self
      */
-    public function setRateModifier(array $rateModifier) : self
+    public function setRateModifier(?array $rateModifier) : self
     {
         $this->initialized['rateModifier'] = true;
         $this->rateModifier = $rateModifier;

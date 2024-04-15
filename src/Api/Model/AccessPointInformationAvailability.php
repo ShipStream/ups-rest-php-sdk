@@ -15,32 +15,32 @@ class AccessPointInformationAvailability extends \ArrayObject
     /**
      * Holds status of shipping availability.
      *
-     * @var AvailabilityShippingAvailability
+     * @var AvailabilityShippingAvailability|null
      */
     protected $shippingAvailability;
     /**
      * Holds status of DCR/DCO�availability.
      *
-     * @var AvailabilityDCRAvailability
+     * @var AvailabilityDCRAvailability|null
      */
     protected $dCRAvailability;
     /**
      * Holds status of shipping availability.
      *
-     * @return AvailabilityShippingAvailability
+     * @return AvailabilityShippingAvailability|null
      */
-    public function getShippingAvailability() : AvailabilityShippingAvailability
+    public function getShippingAvailability() : ?AvailabilityShippingAvailability
     {
         return $this->shippingAvailability;
     }
     /**
      * Holds status of shipping availability.
      *
-     * @param AvailabilityShippingAvailability $shippingAvailability
+     * @param AvailabilityShippingAvailability|null $shippingAvailability
      *
      * @return self
      */
-    public function setShippingAvailability(AvailabilityShippingAvailability $shippingAvailability) : self
+    public function setShippingAvailability(?AvailabilityShippingAvailability $shippingAvailability) : self
     {
         $this->initialized['shippingAvailability'] = true;
         $this->shippingAvailability = $shippingAvailability;
@@ -49,20 +49,20 @@ class AccessPointInformationAvailability extends \ArrayObject
     /**
      * Holds status of DCR/DCO�availability.
      *
-     * @return AvailabilityDCRAvailability
+     * @return AvailabilityDCRAvailability|null
      */
-    public function getDCRAvailability() : AvailabilityDCRAvailability
+    public function getDCRAvailability() : ?AvailabilityDCRAvailability
     {
         return $this->dCRAvailability;
     }
     /**
      * Holds status of DCR/DCO�availability.
      *
-     * @param AvailabilityDCRAvailability $dCRAvailability
+     * @param AvailabilityDCRAvailability|null $dCRAvailability
      *
      * @return self
      */
-    public function setDCRAvailability(AvailabilityDCRAvailability $dCRAvailability) : self
+    public function setDCRAvailability(?AvailabilityDCRAvailability $dCRAvailability) : self
     {
         $this->initialized['dCRAvailability'] = true;
         $this->dCRAvailability = $dCRAvailability;

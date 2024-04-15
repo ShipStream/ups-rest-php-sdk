@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('PickupType', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($data['PickupType']);
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
+            }
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('PickupType', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($data['PickupType']);
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
+            }
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

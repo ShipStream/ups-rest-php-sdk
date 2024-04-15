@@ -15,26 +15,26 @@ class FREIGHTPICKUPCANCELRequestWrapper extends \ArrayObject
     /**
      * FreightCancelPickupRequest container.
      *
-     * @var FreightCancelPickupRequest
+     * @var FreightCancelPickupRequest|null
      */
     protected $freightCancelPickupRequest;
     /**
      * FreightCancelPickupRequest container.
      *
-     * @return FreightCancelPickupRequest
+     * @return FreightCancelPickupRequest|null
      */
-    public function getFreightCancelPickupRequest() : FreightCancelPickupRequest
+    public function getFreightCancelPickupRequest() : ?FreightCancelPickupRequest
     {
         return $this->freightCancelPickupRequest;
     }
     /**
      * FreightCancelPickupRequest container.
      *
-     * @param FreightCancelPickupRequest $freightCancelPickupRequest
+     * @param FreightCancelPickupRequest|null $freightCancelPickupRequest
      *
      * @return self
      */
-    public function setFreightCancelPickupRequest(FreightCancelPickupRequest $freightCancelPickupRequest) : self
+    public function setFreightCancelPickupRequest(?FreightCancelPickupRequest $freightCancelPickupRequest) : self
     {
         $this->initialized['freightCancelPickupRequest'] = true;
         $this->freightCancelPickupRequest = $freightCancelPickupRequest;

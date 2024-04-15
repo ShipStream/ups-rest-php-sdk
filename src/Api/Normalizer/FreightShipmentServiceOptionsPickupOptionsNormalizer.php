@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HolidayPickupIndicator', $data)) {
+            if (\array_key_exists('HolidayPickupIndicator', $data) && $data['HolidayPickupIndicator'] !== null) {
                 $object->setHolidayPickupIndicator($data['HolidayPickupIndicator']);
                 unset($data['HolidayPickupIndicator']);
             }
-            if (\array_key_exists('InsidePickupIndicator', $data)) {
+            elseif (\array_key_exists('HolidayPickupIndicator', $data) && $data['HolidayPickupIndicator'] === null) {
+                $object->setHolidayPickupIndicator(null);
+            }
+            if (\array_key_exists('InsidePickupIndicator', $data) && $data['InsidePickupIndicator'] !== null) {
                 $object->setInsidePickupIndicator($data['InsidePickupIndicator']);
                 unset($data['InsidePickupIndicator']);
             }
-            if (\array_key_exists('ResidentialPickupIndicator', $data)) {
+            elseif (\array_key_exists('InsidePickupIndicator', $data) && $data['InsidePickupIndicator'] === null) {
+                $object->setInsidePickupIndicator(null);
+            }
+            if (\array_key_exists('ResidentialPickupIndicator', $data) && $data['ResidentialPickupIndicator'] !== null) {
                 $object->setResidentialPickupIndicator($data['ResidentialPickupIndicator']);
                 unset($data['ResidentialPickupIndicator']);
             }
-            if (\array_key_exists('WeekendPickupIndicator', $data)) {
+            elseif (\array_key_exists('ResidentialPickupIndicator', $data) && $data['ResidentialPickupIndicator'] === null) {
+                $object->setResidentialPickupIndicator(null);
+            }
+            if (\array_key_exists('WeekendPickupIndicator', $data) && $data['WeekendPickupIndicator'] !== null) {
                 $object->setWeekendPickupIndicator($data['WeekendPickupIndicator']);
                 unset($data['WeekendPickupIndicator']);
             }
-            if (\array_key_exists('LiftGateRequiredIndicator', $data)) {
+            elseif (\array_key_exists('WeekendPickupIndicator', $data) && $data['WeekendPickupIndicator'] === null) {
+                $object->setWeekendPickupIndicator(null);
+            }
+            if (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] !== null) {
                 $object->setLiftGateRequiredIndicator($data['LiftGateRequiredIndicator']);
                 unset($data['LiftGateRequiredIndicator']);
             }
-            if (\array_key_exists('LimitedAccessPickupIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] === null) {
+                $object->setLiftGateRequiredIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] !== null) {
                 $object->setLimitedAccessPickupIndicator($data['LimitedAccessPickupIndicator']);
                 unset($data['LimitedAccessPickupIndicator']);
+            }
+            elseif (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] === null) {
+                $object->setLimitedAccessPickupIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -134,29 +152,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HolidayPickupIndicator', $data)) {
+            if (\array_key_exists('HolidayPickupIndicator', $data) && $data['HolidayPickupIndicator'] !== null) {
                 $object->setHolidayPickupIndicator($data['HolidayPickupIndicator']);
                 unset($data['HolidayPickupIndicator']);
             }
-            if (\array_key_exists('InsidePickupIndicator', $data)) {
+            elseif (\array_key_exists('HolidayPickupIndicator', $data) && $data['HolidayPickupIndicator'] === null) {
+                $object->setHolidayPickupIndicator(null);
+            }
+            if (\array_key_exists('InsidePickupIndicator', $data) && $data['InsidePickupIndicator'] !== null) {
                 $object->setInsidePickupIndicator($data['InsidePickupIndicator']);
                 unset($data['InsidePickupIndicator']);
             }
-            if (\array_key_exists('ResidentialPickupIndicator', $data)) {
+            elseif (\array_key_exists('InsidePickupIndicator', $data) && $data['InsidePickupIndicator'] === null) {
+                $object->setInsidePickupIndicator(null);
+            }
+            if (\array_key_exists('ResidentialPickupIndicator', $data) && $data['ResidentialPickupIndicator'] !== null) {
                 $object->setResidentialPickupIndicator($data['ResidentialPickupIndicator']);
                 unset($data['ResidentialPickupIndicator']);
             }
-            if (\array_key_exists('WeekendPickupIndicator', $data)) {
+            elseif (\array_key_exists('ResidentialPickupIndicator', $data) && $data['ResidentialPickupIndicator'] === null) {
+                $object->setResidentialPickupIndicator(null);
+            }
+            if (\array_key_exists('WeekendPickupIndicator', $data) && $data['WeekendPickupIndicator'] !== null) {
                 $object->setWeekendPickupIndicator($data['WeekendPickupIndicator']);
                 unset($data['WeekendPickupIndicator']);
             }
-            if (\array_key_exists('LiftGateRequiredIndicator', $data)) {
+            elseif (\array_key_exists('WeekendPickupIndicator', $data) && $data['WeekendPickupIndicator'] === null) {
+                $object->setWeekendPickupIndicator(null);
+            }
+            if (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] !== null) {
                 $object->setLiftGateRequiredIndicator($data['LiftGateRequiredIndicator']);
                 unset($data['LiftGateRequiredIndicator']);
             }
-            if (\array_key_exists('LimitedAccessPickupIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] === null) {
+                $object->setLiftGateRequiredIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] !== null) {
                 $object->setLimitedAccessPickupIndicator($data['LimitedAccessPickupIndicator']);
                 unset($data['LimitedAccessPickupIndicator']);
+            }
+            elseif (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] === null) {
+                $object->setLimitedAccessPickupIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

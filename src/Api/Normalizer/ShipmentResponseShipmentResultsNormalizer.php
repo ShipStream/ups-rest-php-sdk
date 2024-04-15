@@ -86,9 +86,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('BillableWeightCalculationMethod', $data) && $data['BillableWeightCalculationMethod'] === null) {
                 $object->setBillableWeightCalculationMethod(null);
             }
-            if (\array_key_exists('BillingWeight', $data)) {
+            if (\array_key_exists('BillingWeight', $data) && $data['BillingWeight'] !== null) {
                 $object->setBillingWeight($this->denormalizer->denormalize($data['BillingWeight'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillingWeight', 'json', $context));
                 unset($data['BillingWeight']);
+            }
+            elseif (\array_key_exists('BillingWeight', $data) && $data['BillingWeight'] === null) {
+                $object->setBillingWeight(null);
             }
             if (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] !== null) {
                 $object->setShipmentIdentificationNumber($data['ShipmentIdentificationNumber']);
@@ -385,9 +388,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('BillableWeightCalculationMethod', $data) && $data['BillableWeightCalculationMethod'] === null) {
                 $object->setBillableWeightCalculationMethod(null);
             }
-            if (\array_key_exists('BillingWeight', $data)) {
+            if (\array_key_exists('BillingWeight', $data) && $data['BillingWeight'] !== null) {
                 $object->setBillingWeight($this->denormalizer->denormalize($data['BillingWeight'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillingWeight', 'json', $context));
                 unset($data['BillingWeight']);
+            }
+            elseif (\array_key_exists('BillingWeight', $data) && $data['BillingWeight'] === null) {
+                $object->setBillingWeight(null);
             }
             if (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] !== null) {
                 $object->setShipmentIdentificationNumber($data['ShipmentIdentificationNumber']);

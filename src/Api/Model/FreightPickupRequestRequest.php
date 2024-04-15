@@ -16,22 +16,22 @@ class FreightPickupRequestRequest extends \ArrayObject
     * Type of shipping. 
     Valid value: 1 - Ground
     *
-    * @var string
+    * @var string|null
     */
     protected $requestOption;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
     * Type of shipping. 
     Valid value: 1 - Ground
     *
-    * @return string
+    * @return string|null
     */
-    public function getRequestOption() : string
+    public function getRequestOption() : ?string
     {
         return $this->requestOption;
     }
@@ -39,11 +39,11 @@ class FreightPickupRequestRequest extends \ArrayObject
     * Type of shipping. 
     Valid value: 1 - Ground
     *
-    * @param string $requestOption
+    * @param string|null $requestOption
     *
     * @return self
     */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(?string $requestOption) : self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -52,20 +52,20 @@ class FreightPickupRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

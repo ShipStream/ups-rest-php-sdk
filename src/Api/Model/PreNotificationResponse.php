@@ -15,26 +15,26 @@ class PreNotificationResponse extends \ArrayObject
     /**
      * Contains Pre-Notification response components.
      *
-     * @var PreNotificationResponseResponse
+     * @var PreNotificationResponseResponse|null
      */
     protected $response;
     /**
      * Contains Pre-Notification response components.
      *
-     * @return PreNotificationResponseResponse
+     * @return PreNotificationResponseResponse|null
      */
-    public function getResponse() : PreNotificationResponseResponse
+    public function getResponse() : ?PreNotificationResponseResponse
     {
         return $this->response;
     }
     /**
      * Contains Pre-Notification response components.
      *
-     * @param PreNotificationResponseResponse $response
+     * @param PreNotificationResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PreNotificationResponseResponse $response) : self
+    public function setResponse(?PreNotificationResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;

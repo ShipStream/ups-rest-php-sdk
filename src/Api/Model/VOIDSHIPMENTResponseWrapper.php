@@ -15,26 +15,26 @@ class VOIDSHIPMENTResponseWrapper extends \ArrayObject
     /**
      * Void Response Container.
      *
-     * @var VoidShipmentResponse
+     * @var VoidShipmentResponse|null
      */
     protected $voidShipmentResponse;
     /**
      * Void Response Container.
      *
-     * @return VoidShipmentResponse
+     * @return VoidShipmentResponse|null
      */
-    public function getVoidShipmentResponse() : VoidShipmentResponse
+    public function getVoidShipmentResponse() : ?VoidShipmentResponse
     {
         return $this->voidShipmentResponse;
     }
     /**
      * Void Response Container.
      *
-     * @param VoidShipmentResponse $voidShipmentResponse
+     * @param VoidShipmentResponse|null $voidShipmentResponse
      *
      * @return self
      */
-    public function setVoidShipmentResponse(VoidShipmentResponse $voidShipmentResponse) : self
+    public function setVoidShipmentResponse(?VoidShipmentResponse $voidShipmentResponse) : self
     {
         $this->initialized['voidShipmentResponse'] = true;
         $this->voidShipmentResponse = $voidShipmentResponse;

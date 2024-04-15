@@ -25,13 +25,13 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     * @param string $reqoption Valid Values: 
     Ground,
     Air . Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $reqoption, \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $version, string $reqoption, ?\ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->reqoption = $reqoption;

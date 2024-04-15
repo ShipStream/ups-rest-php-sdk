@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PrimeCode', $data)) {
+            if (\array_key_exists('PrimeCode', $data) && $data['PrimeCode'] !== null) {
                 $object->setPrimeCode($data['PrimeCode']);
                 unset($data['PrimeCode']);
             }
-            if (\array_key_exists('SubCode', $data)) {
+            elseif (\array_key_exists('PrimeCode', $data) && $data['PrimeCode'] === null) {
+                $object->setPrimeCode(null);
+            }
+            if (\array_key_exists('SubCode', $data) && $data['SubCode'] !== null) {
                 $object->setSubCode($data['SubCode']);
                 unset($data['SubCode']);
+            }
+            elseif (\array_key_exists('SubCode', $data) && $data['SubCode'] === null) {
+                $object->setSubCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PrimeCode', $data)) {
+            if (\array_key_exists('PrimeCode', $data) && $data['PrimeCode'] !== null) {
                 $object->setPrimeCode($data['PrimeCode']);
                 unset($data['PrimeCode']);
             }
-            if (\array_key_exists('SubCode', $data)) {
+            elseif (\array_key_exists('PrimeCode', $data) && $data['PrimeCode'] === null) {
+                $object->setPrimeCode(null);
+            }
+            if (\array_key_exists('SubCode', $data) && $data['SubCode'] !== null) {
                 $object->setSubCode($data['SubCode']);
                 unset($data['SubCode']);
+            }
+            elseif (\array_key_exists('SubCode', $data) && $data['SubCode'] === null) {
+                $object->setSubCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

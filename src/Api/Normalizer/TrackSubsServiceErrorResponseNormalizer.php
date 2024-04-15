@@ -40,17 +40,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('response', $data)) {
+            if (\array_key_exists('response', $data) && $data['response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json', $context));
                 unset($data['response']);
             }
-            if (\array_key_exists('invalidTrackingNumbers', $data)) {
+            elseif (\array_key_exists('response', $data) && $data['response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] !== null) {
                 $values = [];
                 foreach ($data['invalidTrackingNumbers'] as $value) {
                     $values[] = $value;
                 }
                 $object->setInvalidTrackingNumbers($values);
                 unset($data['invalidTrackingNumbers']);
+            }
+            elseif (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] === null) {
+                $object->setInvalidTrackingNumbers(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,17 +118,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('response', $data)) {
+            if (\array_key_exists('response', $data) && $data['response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json', $context));
                 unset($data['response']);
             }
-            if (\array_key_exists('invalidTrackingNumbers', $data)) {
+            elseif (\array_key_exists('response', $data) && $data['response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] !== null) {
                 $values = [];
                 foreach ($data['invalidTrackingNumbers'] as $value) {
                     $values[] = $value;
                 }
                 $object->setInvalidTrackingNumbers($values);
                 unset($data['invalidTrackingNumbers']);
+            }
+            elseif (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] === null) {
+                $object->setInvalidTrackingNumbers(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

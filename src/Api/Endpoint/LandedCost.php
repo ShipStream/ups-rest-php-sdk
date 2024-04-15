@@ -9,14 +9,14 @@ class LandedCost extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impleme
      * Landed Cost provides an all-inclusive cost estimate of international shipments.
      *
      * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      *     @var string $AccountNumber 
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\LandedCostRequest $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

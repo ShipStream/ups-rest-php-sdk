@@ -40,37 +40,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Service', $data)) {
+            if (\array_key_exists('Service', $data) && $data['Service'] !== null) {
                 $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryService', 'json', $context));
                 unset($data['Service']);
             }
-            if (\array_key_exists('GuaranteedIndicator', $data)) {
+            elseif (\array_key_exists('Service', $data) && $data['Service'] === null) {
+                $object->setService(null);
+            }
+            if (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] !== null) {
                 $object->setGuaranteedIndicator($data['GuaranteedIndicator']);
                 unset($data['GuaranteedIndicator']);
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            elseif (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] === null) {
+                $object->setGuaranteedIndicator(null);
+            }
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $object->setDisclaimer($data['Disclaimer']);
                 unset($data['Disclaimer']);
             }
-            if (\array_key_exists('EstimatedArrival', $data)) {
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
+            }
+            if (\array_key_exists('EstimatedArrival', $data) && $data['EstimatedArrival'] !== null) {
                 $object->setEstimatedArrival($this->denormalizer->denormalize($data['EstimatedArrival'], 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryEstimatedArrival', 'json', $context));
                 unset($data['EstimatedArrival']);
             }
-            if (\array_key_exists('SaturdayDelivery', $data)) {
+            elseif (\array_key_exists('EstimatedArrival', $data) && $data['EstimatedArrival'] === null) {
+                $object->setEstimatedArrival(null);
+            }
+            if (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] !== null) {
                 $object->setSaturdayDelivery($data['SaturdayDelivery']);
                 unset($data['SaturdayDelivery']);
             }
-            if (\array_key_exists('SaturdayDeliveryDisclaimer', $data)) {
+            elseif (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] === null) {
+                $object->setSaturdayDelivery(null);
+            }
+            if (\array_key_exists('SaturdayDeliveryDisclaimer', $data) && $data['SaturdayDeliveryDisclaimer'] !== null) {
                 $object->setSaturdayDeliveryDisclaimer($data['SaturdayDeliveryDisclaimer']);
                 unset($data['SaturdayDeliveryDisclaimer']);
             }
-            if (\array_key_exists('SundayDelivery', $data)) {
+            elseif (\array_key_exists('SaturdayDeliveryDisclaimer', $data) && $data['SaturdayDeliveryDisclaimer'] === null) {
+                $object->setSaturdayDeliveryDisclaimer(null);
+            }
+            if (\array_key_exists('SundayDelivery', $data) && $data['SundayDelivery'] !== null) {
                 $object->setSundayDelivery($data['SundayDelivery']);
                 unset($data['SundayDelivery']);
             }
-            if (\array_key_exists('SundayDeliveryDisclaimer', $data)) {
+            elseif (\array_key_exists('SundayDelivery', $data) && $data['SundayDelivery'] === null) {
+                $object->setSundayDelivery(null);
+            }
+            if (\array_key_exists('SundayDeliveryDisclaimer', $data) && $data['SundayDeliveryDisclaimer'] !== null) {
                 $object->setSundayDeliveryDisclaimer($data['SundayDeliveryDisclaimer']);
                 unset($data['SundayDeliveryDisclaimer']);
+            }
+            elseif (\array_key_exists('SundayDeliveryDisclaimer', $data) && $data['SundayDeliveryDisclaimer'] === null) {
+                $object->setSundayDeliveryDisclaimer(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -144,37 +168,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Service', $data)) {
+            if (\array_key_exists('Service', $data) && $data['Service'] !== null) {
                 $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryService', 'json', $context));
                 unset($data['Service']);
             }
-            if (\array_key_exists('GuaranteedIndicator', $data)) {
+            elseif (\array_key_exists('Service', $data) && $data['Service'] === null) {
+                $object->setService(null);
+            }
+            if (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] !== null) {
                 $object->setGuaranteedIndicator($data['GuaranteedIndicator']);
                 unset($data['GuaranteedIndicator']);
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            elseif (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] === null) {
+                $object->setGuaranteedIndicator(null);
+            }
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $object->setDisclaimer($data['Disclaimer']);
                 unset($data['Disclaimer']);
             }
-            if (\array_key_exists('EstimatedArrival', $data)) {
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
+            }
+            if (\array_key_exists('EstimatedArrival', $data) && $data['EstimatedArrival'] !== null) {
                 $object->setEstimatedArrival($this->denormalizer->denormalize($data['EstimatedArrival'], 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryEstimatedArrival', 'json', $context));
                 unset($data['EstimatedArrival']);
             }
-            if (\array_key_exists('SaturdayDelivery', $data)) {
+            elseif (\array_key_exists('EstimatedArrival', $data) && $data['EstimatedArrival'] === null) {
+                $object->setEstimatedArrival(null);
+            }
+            if (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] !== null) {
                 $object->setSaturdayDelivery($data['SaturdayDelivery']);
                 unset($data['SaturdayDelivery']);
             }
-            if (\array_key_exists('SaturdayDeliveryDisclaimer', $data)) {
+            elseif (\array_key_exists('SaturdayDelivery', $data) && $data['SaturdayDelivery'] === null) {
+                $object->setSaturdayDelivery(null);
+            }
+            if (\array_key_exists('SaturdayDeliveryDisclaimer', $data) && $data['SaturdayDeliveryDisclaimer'] !== null) {
                 $object->setSaturdayDeliveryDisclaimer($data['SaturdayDeliveryDisclaimer']);
                 unset($data['SaturdayDeliveryDisclaimer']);
             }
-            if (\array_key_exists('SundayDelivery', $data)) {
+            elseif (\array_key_exists('SaturdayDeliveryDisclaimer', $data) && $data['SaturdayDeliveryDisclaimer'] === null) {
+                $object->setSaturdayDeliveryDisclaimer(null);
+            }
+            if (\array_key_exists('SundayDelivery', $data) && $data['SundayDelivery'] !== null) {
                 $object->setSundayDelivery($data['SundayDelivery']);
                 unset($data['SundayDelivery']);
             }
-            if (\array_key_exists('SundayDeliveryDisclaimer', $data)) {
+            elseif (\array_key_exists('SundayDelivery', $data) && $data['SundayDelivery'] === null) {
+                $object->setSundayDelivery(null);
+            }
+            if (\array_key_exists('SundayDeliveryDisclaimer', $data) && $data['SundayDeliveryDisclaimer'] !== null) {
                 $object->setSundayDeliveryDisclaimer($data['SundayDeliveryDisclaimer']);
                 unset($data['SundayDeliveryDisclaimer']);
+            }
+            elseif (\array_key_exists('SundayDeliveryDisclaimer', $data) && $data['SundayDeliveryDisclaimer'] === null) {
+                $object->setSundayDeliveryDisclaimer(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

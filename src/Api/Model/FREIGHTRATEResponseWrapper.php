@@ -15,26 +15,26 @@ class FREIGHTRATEResponseWrapper extends \ArrayObject
     /**
      * Freight Rate Response Container.
      *
-     * @var FreightRateResponse
+     * @var FreightRateResponse|null
      */
     protected $freightRateResponse;
     /**
      * Freight Rate Response Container.
      *
-     * @return FreightRateResponse
+     * @return FreightRateResponse|null
      */
-    public function getFreightRateResponse() : FreightRateResponse
+    public function getFreightRateResponse() : ?FreightRateResponse
     {
         return $this->freightRateResponse;
     }
     /**
      * Freight Rate Response Container.
      *
-     * @param FreightRateResponse $freightRateResponse
+     * @param FreightRateResponse|null $freightRateResponse
      *
      * @return self
      */
-    public function setFreightRateResponse(FreightRateResponse $freightRateResponse) : self
+    public function setFreightRateResponse(?FreightRateResponse $freightRateResponse) : self
     {
         $this->initialized['freightRateResponse'] = true;
         $this->freightRateResponse = $freightRateResponse;

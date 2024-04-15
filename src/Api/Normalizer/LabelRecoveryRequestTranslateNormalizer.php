@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LanguageCode', $data)) {
+            if (\array_key_exists('LanguageCode', $data) && $data['LanguageCode'] !== null) {
                 $object->setLanguageCode($data['LanguageCode']);
                 unset($data['LanguageCode']);
             }
-            if (\array_key_exists('DialectCode', $data)) {
+            elseif (\array_key_exists('LanguageCode', $data) && $data['LanguageCode'] === null) {
+                $object->setLanguageCode(null);
+            }
+            if (\array_key_exists('DialectCode', $data) && $data['DialectCode'] !== null) {
                 $object->setDialectCode($data['DialectCode']);
                 unset($data['DialectCode']);
             }
-            if (\array_key_exists('Code', $data)) {
+            elseif (\array_key_exists('DialectCode', $data) && $data['DialectCode'] === null) {
+                $object->setDialectCode(null);
+            }
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
+            }
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LanguageCode', $data)) {
+            if (\array_key_exists('LanguageCode', $data) && $data['LanguageCode'] !== null) {
                 $object->setLanguageCode($data['LanguageCode']);
                 unset($data['LanguageCode']);
             }
-            if (\array_key_exists('DialectCode', $data)) {
+            elseif (\array_key_exists('LanguageCode', $data) && $data['LanguageCode'] === null) {
+                $object->setLanguageCode(null);
+            }
+            if (\array_key_exists('DialectCode', $data) && $data['DialectCode'] !== null) {
                 $object->setDialectCode($data['DialectCode']);
                 unset($data['DialectCode']);
             }
-            if (\array_key_exists('Code', $data)) {
+            elseif (\array_key_exists('DialectCode', $data) && $data['DialectCode'] === null) {
+                $object->setDialectCode(null);
+            }
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
+            }
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

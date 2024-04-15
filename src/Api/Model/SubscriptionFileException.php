@@ -15,122 +15,122 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * 
      *
-     * @var ExceptionPackageReferenceNumber[]
+     * @var list<ExceptionPackageReferenceNumber>|null
      */
     protected $packageReferenceNumber;
     /**
      * 
      *
-     * @var ExceptionShipmentReferenceNumber[]
+     * @var list<ExceptionShipmentReferenceNumber>|null
      */
     protected $shipmentReferenceNumber;
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * Package's 1Z tracking number.
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
      * Date that the package is delivered. Date format is YYYYMMDD.
      *
-     * @var string
+     * @var string|null
      */
     protected $date;
     /**
      * Time that the package is delivered. Time format is HHMMSS
      *
-     * @var string
+     * @var string|null
      */
     protected $time;
     /**
      * Contains information about updated shipping address.
      *
-     * @var ExceptionUpdatedAddress
+     * @var ExceptionUpdatedAddress|null
      */
     protected $updatedAddress;
     /**
      * Code for status of updating shipping address issue.
      *
-     * @var string
+     * @var string|null
      */
     protected $statusCode;
     /**
      * Description for status of updating shipping address issue.
      *
-     * @var string
+     * @var string|null
      */
     protected $statusDescription;
     /**
      * Code for reason of updating shipping address issue.
      *
-     * @var string
+     * @var string|null
      */
     protected $reasonCode;
     /**
      * Description for reason of updating shipping address issue.
      *
-     * @var string
+     * @var string|null
      */
     protected $reasonDescription;
     /**
      * Resolution for updating shipping address issue.
      *
-     * @var ExceptionResolution
+     * @var ExceptionResolution|null
      */
     protected $resolution;
     /**
      * Rescheduled delivery date for updated shipping address. Date format is YYYYMMDD.
      *
-     * @var string
+     * @var string|null
      */
     protected $rescheduledDeliveryDate;
     /**
      * Rescheduled delivery time for updated shipping address. Time format is HHMMSS
      *
-     * @var string
+     * @var string|null
      */
     protected $rescheduledDeliveryTime;
     /**
      * Geographic location where an activity occurred during a movement of a package or shipment.(ActivityLocation in Exception is identical to the one in Manifest. But three of all elements in Exception/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
      *
-     * @var ExceptionActivityLocation
+     * @var ExceptionActivityLocation|null
      */
     protected $activityLocation;
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @var ExceptionBillToAccount
+     * @var ExceptionBillToAccount|null
      */
     protected $billToAccount;
     /**
      * The UPS Access Point Location ID.
      *
-     * @var string
+     * @var string|null
      */
     protected $accessPointLocationID;
     /**
      * 
      *
-     * @return ExceptionPackageReferenceNumber[]
+     * @return list<ExceptionPackageReferenceNumber>|null
      */
-    public function getPackageReferenceNumber() : array
+    public function getPackageReferenceNumber() : ?array
     {
         return $this->packageReferenceNumber;
     }
     /**
      * 
      *
-     * @param ExceptionPackageReferenceNumber[] $packageReferenceNumber
+     * @param list<ExceptionPackageReferenceNumber>|null $packageReferenceNumber
      *
      * @return self
      */
-    public function setPackageReferenceNumber(array $packageReferenceNumber) : self
+    public function setPackageReferenceNumber(?array $packageReferenceNumber) : self
     {
         $this->initialized['packageReferenceNumber'] = true;
         $this->packageReferenceNumber = $packageReferenceNumber;
@@ -139,20 +139,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * 
      *
-     * @return ExceptionShipmentReferenceNumber[]
+     * @return list<ExceptionShipmentReferenceNumber>|null
      */
-    public function getShipmentReferenceNumber() : array
+    public function getShipmentReferenceNumber() : ?array
     {
         return $this->shipmentReferenceNumber;
     }
     /**
      * 
      *
-     * @param ExceptionShipmentReferenceNumber[] $shipmentReferenceNumber
+     * @param list<ExceptionShipmentReferenceNumber>|null $shipmentReferenceNumber
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(array $shipmentReferenceNumber) : self
+    public function setShipmentReferenceNumber(?array $shipmentReferenceNumber) : self
     {
         $this->initialized['shipmentReferenceNumber'] = true;
         $this->shipmentReferenceNumber = $shipmentReferenceNumber;
@@ -161,20 +161,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -183,20 +183,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Package's 1Z tracking number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * Package's 1Z tracking number.
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -205,20 +205,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Date that the package is delivered. Date format is YYYYMMDD.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDate() : string
+    public function getDate() : ?string
     {
         return $this->date;
     }
     /**
      * Date that the package is delivered. Date format is YYYYMMDD.
      *
-     * @param string $date
+     * @param string|null $date
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(?string $date) : self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -227,20 +227,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Time that the package is delivered. Time format is HHMMSS
      *
-     * @return string
+     * @return string|null
      */
-    public function getTime() : string
+    public function getTime() : ?string
     {
         return $this->time;
     }
     /**
      * Time that the package is delivered. Time format is HHMMSS
      *
-     * @param string $time
+     * @param string|null $time
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(?string $time) : self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -249,20 +249,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Contains information about updated shipping address.
      *
-     * @return ExceptionUpdatedAddress
+     * @return ExceptionUpdatedAddress|null
      */
-    public function getUpdatedAddress() : ExceptionUpdatedAddress
+    public function getUpdatedAddress() : ?ExceptionUpdatedAddress
     {
         return $this->updatedAddress;
     }
     /**
      * Contains information about updated shipping address.
      *
-     * @param ExceptionUpdatedAddress $updatedAddress
+     * @param ExceptionUpdatedAddress|null $updatedAddress
      *
      * @return self
      */
-    public function setUpdatedAddress(ExceptionUpdatedAddress $updatedAddress) : self
+    public function setUpdatedAddress(?ExceptionUpdatedAddress $updatedAddress) : self
     {
         $this->initialized['updatedAddress'] = true;
         $this->updatedAddress = $updatedAddress;
@@ -271,20 +271,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Code for status of updating shipping address issue.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatusCode() : string
+    public function getStatusCode() : ?string
     {
         return $this->statusCode;
     }
     /**
      * Code for status of updating shipping address issue.
      *
-     * @param string $statusCode
+     * @param string|null $statusCode
      *
      * @return self
      */
-    public function setStatusCode(string $statusCode) : self
+    public function setStatusCode(?string $statusCode) : self
     {
         $this->initialized['statusCode'] = true;
         $this->statusCode = $statusCode;
@@ -293,20 +293,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Description for status of updating shipping address issue.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatusDescription() : string
+    public function getStatusDescription() : ?string
     {
         return $this->statusDescription;
     }
     /**
      * Description for status of updating shipping address issue.
      *
-     * @param string $statusDescription
+     * @param string|null $statusDescription
      *
      * @return self
      */
-    public function setStatusDescription(string $statusDescription) : self
+    public function setStatusDescription(?string $statusDescription) : self
     {
         $this->initialized['statusDescription'] = true;
         $this->statusDescription = $statusDescription;
@@ -315,20 +315,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Code for reason of updating shipping address issue.
      *
-     * @return string
+     * @return string|null
      */
-    public function getReasonCode() : string
+    public function getReasonCode() : ?string
     {
         return $this->reasonCode;
     }
     /**
      * Code for reason of updating shipping address issue.
      *
-     * @param string $reasonCode
+     * @param string|null $reasonCode
      *
      * @return self
      */
-    public function setReasonCode(string $reasonCode) : self
+    public function setReasonCode(?string $reasonCode) : self
     {
         $this->initialized['reasonCode'] = true;
         $this->reasonCode = $reasonCode;
@@ -337,20 +337,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Description for reason of updating shipping address issue.
      *
-     * @return string
+     * @return string|null
      */
-    public function getReasonDescription() : string
+    public function getReasonDescription() : ?string
     {
         return $this->reasonDescription;
     }
     /**
      * Description for reason of updating shipping address issue.
      *
-     * @param string $reasonDescription
+     * @param string|null $reasonDescription
      *
      * @return self
      */
-    public function setReasonDescription(string $reasonDescription) : self
+    public function setReasonDescription(?string $reasonDescription) : self
     {
         $this->initialized['reasonDescription'] = true;
         $this->reasonDescription = $reasonDescription;
@@ -359,20 +359,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Resolution for updating shipping address issue.
      *
-     * @return ExceptionResolution
+     * @return ExceptionResolution|null
      */
-    public function getResolution() : ExceptionResolution
+    public function getResolution() : ?ExceptionResolution
     {
         return $this->resolution;
     }
     /**
      * Resolution for updating shipping address issue.
      *
-     * @param ExceptionResolution $resolution
+     * @param ExceptionResolution|null $resolution
      *
      * @return self
      */
-    public function setResolution(ExceptionResolution $resolution) : self
+    public function setResolution(?ExceptionResolution $resolution) : self
     {
         $this->initialized['resolution'] = true;
         $this->resolution = $resolution;
@@ -381,20 +381,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Rescheduled delivery date for updated shipping address. Date format is YYYYMMDD.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRescheduledDeliveryDate() : string
+    public function getRescheduledDeliveryDate() : ?string
     {
         return $this->rescheduledDeliveryDate;
     }
     /**
      * Rescheduled delivery date for updated shipping address. Date format is YYYYMMDD.
      *
-     * @param string $rescheduledDeliveryDate
+     * @param string|null $rescheduledDeliveryDate
      *
      * @return self
      */
-    public function setRescheduledDeliveryDate(string $rescheduledDeliveryDate) : self
+    public function setRescheduledDeliveryDate(?string $rescheduledDeliveryDate) : self
     {
         $this->initialized['rescheduledDeliveryDate'] = true;
         $this->rescheduledDeliveryDate = $rescheduledDeliveryDate;
@@ -403,20 +403,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Rescheduled delivery time for updated shipping address. Time format is HHMMSS
      *
-     * @return string
+     * @return string|null
      */
-    public function getRescheduledDeliveryTime() : string
+    public function getRescheduledDeliveryTime() : ?string
     {
         return $this->rescheduledDeliveryTime;
     }
     /**
      * Rescheduled delivery time for updated shipping address. Time format is HHMMSS
      *
-     * @param string $rescheduledDeliveryTime
+     * @param string|null $rescheduledDeliveryTime
      *
      * @return self
      */
-    public function setRescheduledDeliveryTime(string $rescheduledDeliveryTime) : self
+    public function setRescheduledDeliveryTime(?string $rescheduledDeliveryTime) : self
     {
         $this->initialized['rescheduledDeliveryTime'] = true;
         $this->rescheduledDeliveryTime = $rescheduledDeliveryTime;
@@ -425,20 +425,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * Geographic location where an activity occurred during a movement of a package or shipment.(ActivityLocation in Exception is identical to the one in Manifest. But three of all elements in Exception/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
      *
-     * @return ExceptionActivityLocation
+     * @return ExceptionActivityLocation|null
      */
-    public function getActivityLocation() : ExceptionActivityLocation
+    public function getActivityLocation() : ?ExceptionActivityLocation
     {
         return $this->activityLocation;
     }
     /**
      * Geographic location where an activity occurred during a movement of a package or shipment.(ActivityLocation in Exception is identical to the one in Manifest. But three of all elements in Exception/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
      *
-     * @param ExceptionActivityLocation $activityLocation
+     * @param ExceptionActivityLocation|null $activityLocation
      *
      * @return self
      */
-    public function setActivityLocation(ExceptionActivityLocation $activityLocation) : self
+    public function setActivityLocation(?ExceptionActivityLocation $activityLocation) : self
     {
         $this->initialized['activityLocation'] = true;
         $this->activityLocation = $activityLocation;
@@ -447,20 +447,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @return ExceptionBillToAccount
+     * @return ExceptionBillToAccount|null
      */
-    public function getBillToAccount() : ExceptionBillToAccount
+    public function getBillToAccount() : ?ExceptionBillToAccount
     {
         return $this->billToAccount;
     }
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @param ExceptionBillToAccount $billToAccount
+     * @param ExceptionBillToAccount|null $billToAccount
      *
      * @return self
      */
-    public function setBillToAccount(ExceptionBillToAccount $billToAccount) : self
+    public function setBillToAccount(?ExceptionBillToAccount $billToAccount) : self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -469,20 +469,20 @@ class SubscriptionFileException extends \ArrayObject
     /**
      * The UPS Access Point Location ID.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccessPointLocationID() : string
+    public function getAccessPointLocationID() : ?string
     {
         return $this->accessPointLocationID;
     }
     /**
      * The UPS Access Point Location ID.
      *
-     * @param string $accessPointLocationID
+     * @param string|null $accessPointLocationID
      *
      * @return self
      */
-    public function setAccessPointLocationID(string $accessPointLocationID) : self
+    public function setAccessPointLocationID(?string $accessPointLocationID) : self
     {
         $this->initialized['accessPointLocationID'] = true;
         $this->accessPointLocationID = $accessPointLocationID;

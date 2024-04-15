@@ -15,26 +15,26 @@ class DeliveryActivityLocation extends \ArrayObject
     /**
      * Information that specifies a physical location where package delivery activity occurs.
      *
-     * @var ActivityLocationAddressArtifactFormat
+     * @var ActivityLocationAddressArtifactFormat|null
      */
     protected $addressArtifactFormat;
     /**
      * Information that specifies a physical location where package delivery activity occurs.
      *
-     * @return ActivityLocationAddressArtifactFormat
+     * @return ActivityLocationAddressArtifactFormat|null
      */
-    public function getAddressArtifactFormat() : ActivityLocationAddressArtifactFormat
+    public function getAddressArtifactFormat() : ?ActivityLocationAddressArtifactFormat
     {
         return $this->addressArtifactFormat;
     }
     /**
      * Information that specifies a physical location where package delivery activity occurs.
      *
-     * @param ActivityLocationAddressArtifactFormat $addressArtifactFormat
+     * @param ActivityLocationAddressArtifactFormat|null $addressArtifactFormat
      *
      * @return self
      */
-    public function setAddressArtifactFormat(ActivityLocationAddressArtifactFormat $addressArtifactFormat) : self
+    public function setAddressArtifactFormat(?ActivityLocationAddressArtifactFormat $addressArtifactFormat) : self
     {
         $this->initialized['addressArtifactFormat'] = true;
         $this->addressArtifactFormat = $addressArtifactFormat;

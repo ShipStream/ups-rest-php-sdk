@@ -15,26 +15,26 @@ class PICKUPCreationRequestWrapper extends \ArrayObject
     /**
      * This request is for scheduling an on-call pickup
      *
-     * @var PickupCreationRequest
+     * @var PickupCreationRequest|null
      */
     protected $pickupCreationRequest;
     /**
      * This request is for scheduling an on-call pickup
      *
-     * @return PickupCreationRequest
+     * @return PickupCreationRequest|null
      */
-    public function getPickupCreationRequest() : PickupCreationRequest
+    public function getPickupCreationRequest() : ?PickupCreationRequest
     {
         return $this->pickupCreationRequest;
     }
     /**
      * This request is for scheduling an on-call pickup
      *
-     * @param PickupCreationRequest $pickupCreationRequest
+     * @param PickupCreationRequest|null $pickupCreationRequest
      *
      * @return self
      */
-    public function setPickupCreationRequest(PickupCreationRequest $pickupCreationRequest) : self
+    public function setPickupCreationRequest(?PickupCreationRequest $pickupCreationRequest) : self
     {
         $this->initialized['pickupCreationRequest'] = true;
         $this->pickupCreationRequest = $pickupCreationRequest;

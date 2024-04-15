@@ -15,26 +15,26 @@ class EEIFilingOptionUPSFiled extends \ArrayObject
     /**
      * Container for POA.  Applicable for EEI form.
      *
-     * @var UPSFiledPOA
+     * @var UPSFiledPOA|null
      */
     protected $pOA;
     /**
      * Container for POA.  Applicable for EEI form.
      *
-     * @return UPSFiledPOA
+     * @return UPSFiledPOA|null
      */
-    public function getPOA() : UPSFiledPOA
+    public function getPOA() : ?UPSFiledPOA
     {
         return $this->pOA;
     }
     /**
      * Container for POA.  Applicable for EEI form.
      *
-     * @param UPSFiledPOA $pOA
+     * @param UPSFiledPOA|null $pOA
      *
      * @return self
      */
-    public function setPOA(UPSFiledPOA $pOA) : self
+    public function setPOA(?UPSFiledPOA $pOA) : self
     {
         $this->initialized['pOA'] = true;
         $this->pOA = $pOA;

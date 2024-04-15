@@ -15,26 +15,26 @@ class ShipmentDetailPalletInformation extends \ArrayObject
     /**
      * Dimensions of largest pallet
      *
-     * @var PalletInformationDimensions
+     * @var PalletInformationDimensions|null
      */
     protected $dimensions;
     /**
      * Dimensions of largest pallet
      *
-     * @return PalletInformationDimensions
+     * @return PalletInformationDimensions|null
      */
-    public function getDimensions() : PalletInformationDimensions
+    public function getDimensions() : ?PalletInformationDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimensions of largest pallet
      *
-     * @param PalletInformationDimensions $dimensions
+     * @param PalletInformationDimensions|null $dimensions
      *
      * @return self
      */
-    public function setDimensions(PalletInformationDimensions $dimensions) : self
+    public function setDimensions(?PalletInformationDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;

@@ -17,34 +17,34 @@ class PackageResultsForm extends \ArrayObject
     
     Valid values: 01 - All Requested International Forms.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
     * Description that indicates the type of form. Possible Values. All Requested International Forms. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var string
+    * @var string|null
     */
     protected $description;
     /**
     * Container tag for the International forms image. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var FormImage
+    * @var FormImage|null
     */
     protected $image;
     /**
     * Unique Id for later retrieval of saved version of the completed international forms. Always returned when code = 01. 01 represents international forms. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var string
+    * @var string|null
     */
     protected $formGroupId;
     /**
      * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @var string
+     * @var string|null
      */
     protected $formGroupIdName;
     /**
@@ -52,9 +52,9 @@ class PackageResultsForm extends \ArrayObject
     
     Valid values: 01 - All Requested International Forms.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -63,11 +63,11 @@ class PackageResultsForm extends \ArrayObject
     
     Valid values: 01 - All Requested International Forms.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -77,9 +77,9 @@ class PackageResultsForm extends \ArrayObject
     * Description that indicates the type of form. Possible Values. All Requested International Forms. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -87,11 +87,11 @@ class PackageResultsForm extends \ArrayObject
     * Description that indicates the type of form. Possible Values. All Requested International Forms. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param string $description
+    * @param string|null $description
     *
     * @return self
     */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -101,9 +101,9 @@ class PackageResultsForm extends \ArrayObject
     * Container tag for the International forms image. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return FormImage
+    * @return FormImage|null
     */
-    public function getImage() : FormImage
+    public function getImage() : ?FormImage
     {
         return $this->image;
     }
@@ -111,11 +111,11 @@ class PackageResultsForm extends \ArrayObject
     * Container tag for the International forms image. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param FormImage $image
+    * @param FormImage|null $image
     *
     * @return self
     */
-    public function setImage(FormImage $image) : self
+    public function setImage(?FormImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -125,9 +125,9 @@ class PackageResultsForm extends \ArrayObject
     * Unique Id for later retrieval of saved version of the completed international forms. Always returned when code = 01. 01 represents international forms. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return string
+    * @return string|null
     */
-    public function getFormGroupId() : string
+    public function getFormGroupId() : ?string
     {
         return $this->formGroupId;
     }
@@ -135,11 +135,11 @@ class PackageResultsForm extends \ArrayObject
     * Unique Id for later retrieval of saved version of the completed international forms. Always returned when code = 01. 01 represents international forms. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param string $formGroupId
+    * @param string|null $formGroupId
     *
     * @return self
     */
-    public function setFormGroupId(string $formGroupId) : self
+    public function setFormGroupId(?string $formGroupId) : self
     {
         $this->initialized['formGroupId'] = true;
         $this->formGroupId = $formGroupId;
@@ -148,20 +148,20 @@ class PackageResultsForm extends \ArrayObject
     /**
      * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFormGroupIdName() : string
+    public function getFormGroupIdName() : ?string
     {
         return $this->formGroupIdName;
     }
     /**
      * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @param string $formGroupIdName
+     * @param string|null $formGroupIdName
      *
      * @return self
      */
-    public function setFormGroupIdName(string $formGroupIdName) : self
+    public function setFormGroupIdName(?string $formGroupIdName) : self
     {
         $this->initialized['formGroupIdName'] = true;
         $this->formGroupIdName = $formGroupIdName;

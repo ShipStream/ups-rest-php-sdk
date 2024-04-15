@@ -15,32 +15,32 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
     /**
      * Container for the email message.
      *
-     * @var LabelDeliveryEMail
+     * @var LabelDeliveryEMail|null
      */
     protected $eMail;
     /**
      * Indicates the Label and Receipt URLs are to be returned in the XML response.
      *
-     * @var string
+     * @var string|null
      */
     protected $labelLinksIndicator;
     /**
      * Container for the email message.
      *
-     * @return LabelDeliveryEMail
+     * @return LabelDeliveryEMail|null
      */
-    public function getEMail() : LabelDeliveryEMail
+    public function getEMail() : ?LabelDeliveryEMail
     {
         return $this->eMail;
     }
     /**
      * Container for the email message.
      *
-     * @param LabelDeliveryEMail $eMail
+     * @param LabelDeliveryEMail|null $eMail
      *
      * @return self
      */
-    public function setEMail(LabelDeliveryEMail $eMail) : self
+    public function setEMail(?LabelDeliveryEMail $eMail) : self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;
@@ -49,20 +49,20 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
     /**
      * Indicates the Label and Receipt URLs are to be returned in the XML response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLabelLinksIndicator() : string
+    public function getLabelLinksIndicator() : ?string
     {
         return $this->labelLinksIndicator;
     }
     /**
      * Indicates the Label and Receipt URLs are to be returned in the XML response.
      *
-     * @param string $labelLinksIndicator
+     * @param string|null $labelLinksIndicator
      *
      * @return self
      */
-    public function setLabelLinksIndicator(string $labelLinksIndicator) : self
+    public function setLabelLinksIndicator(?string $labelLinksIndicator) : self
     {
         $this->initialized['labelLinksIndicator'] = true;
         $this->labelLinksIndicator = $labelLinksIndicator;

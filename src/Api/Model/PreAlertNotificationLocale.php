@@ -15,32 +15,32 @@ class PreAlertNotificationLocale extends \ArrayObject
     /**
      * Refer to Language/Dialect Combinations in the Appendix for valid pairs.
      *
-     * @var string
+     * @var string|null
      */
     protected $language;
     /**
      * Refer to Language/Dialect Combinations in the Appendix for valid pairs.
      *
-     * @var string
+     * @var string|null
      */
     protected $dialect;
     /**
      * Refer to Language/Dialect Combinations in the Appendix for valid pairs.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLanguage() : string
+    public function getLanguage() : ?string
     {
         return $this->language;
     }
     /**
      * Refer to Language/Dialect Combinations in the Appendix for valid pairs.
      *
-     * @param string $language
+     * @param string|null $language
      *
      * @return self
      */
-    public function setLanguage(string $language) : self
+    public function setLanguage(?string $language) : self
     {
         $this->initialized['language'] = true;
         $this->language = $language;
@@ -49,20 +49,20 @@ class PreAlertNotificationLocale extends \ArrayObject
     /**
      * Refer to Language/Dialect Combinations in the Appendix for valid pairs.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDialect() : string
+    public function getDialect() : ?string
     {
         return $this->dialect;
     }
     /**
      * Refer to Language/Dialect Combinations in the Appendix for valid pairs.
      *
-     * @param string $dialect
+     * @param string|null $dialect
      *
      * @return self
      */
-    public function setDialect(string $dialect) : self
+    public function setDialect(?string $dialect) : self
     {
         $this->initialized['dialect'] = true;
         $this->dialect = $dialect;

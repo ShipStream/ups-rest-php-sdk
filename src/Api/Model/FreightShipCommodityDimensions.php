@@ -15,38 +15,38 @@ class FreightShipCommodityDimensions extends \ArrayObject
     /**
      * The length of the line item used to determine density rate rating.
      *
-     * @var string
+     * @var string|null
      */
     protected $length;
     /**
      * The width of the line item used to determine the density based rating.
      *
-     * @var string
+     * @var string|null
      */
     protected $width;
     /**
      * The height of the line item used to determine density based rating.
      *
-     * @var string
+     * @var string|null
      */
     protected $height;
     /**
      * The length of the line item used to determine density rate rating.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLength() : string
+    public function getLength() : ?string
     {
         return $this->length;
     }
     /**
      * The length of the line item used to determine density rate rating.
      *
-     * @param string $length
+     * @param string|null $length
      *
      * @return self
      */
-    public function setLength(string $length) : self
+    public function setLength(?string $length) : self
     {
         $this->initialized['length'] = true;
         $this->length = $length;
@@ -55,20 +55,20 @@ class FreightShipCommodityDimensions extends \ArrayObject
     /**
      * The width of the line item used to determine the density based rating.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWidth() : string
+    public function getWidth() : ?string
     {
         return $this->width;
     }
     /**
      * The width of the line item used to determine the density based rating.
      *
-     * @param string $width
+     * @param string|null $width
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(?string $width) : self
     {
         $this->initialized['width'] = true;
         $this->width = $width;
@@ -77,20 +77,20 @@ class FreightShipCommodityDimensions extends \ArrayObject
     /**
      * The height of the line item used to determine density based rating.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHeight() : string
+    public function getHeight() : ?string
     {
         return $this->height;
     }
     /**
      * The height of the line item used to determine density based rating.
      *
-     * @param string $height
+     * @param string|null $height
      *
      * @return self
      */
-    public function setHeight(string $height) : self
+    public function setHeight(?string $height) : self
     {
         $this->initialized['height'] = true;
         $this->height = $height;

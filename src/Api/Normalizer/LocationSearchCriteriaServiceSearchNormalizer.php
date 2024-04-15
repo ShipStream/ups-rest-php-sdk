@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Time', $data)) {
+            if (\array_key_exists('Time', $data) && $data['Time'] !== null) {
                 $object->setTime($data['Time']);
                 unset($data['Time']);
             }
-            if (\array_key_exists('ServiceCode', $data)) {
+            elseif (\array_key_exists('Time', $data) && $data['Time'] === null) {
+                $object->setTime(null);
+            }
+            if (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] !== null) {
                 $values = [];
                 foreach ($data['ServiceCode'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceCode', 'json', $context);
@@ -52,13 +55,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setServiceCode($values);
                 unset($data['ServiceCode']);
             }
-            if (\array_key_exists('ServiceOptionCode', $data)) {
+            elseif (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] === null) {
+                $object->setServiceCode(null);
+            }
+            if (\array_key_exists('ServiceOptionCode', $data) && $data['ServiceOptionCode'] !== null) {
                 $values_1 = [];
                 foreach ($data['ServiceOptionCode'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceOptionCode', 'json', $context);
                 }
                 $object->setServiceOptionCode($values_1);
                 unset($data['ServiceOptionCode']);
+            }
+            elseif (\array_key_exists('ServiceOptionCode', $data) && $data['ServiceOptionCode'] === null) {
+                $object->setServiceOptionCode(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -129,11 +138,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Time', $data)) {
+            if (\array_key_exists('Time', $data) && $data['Time'] !== null) {
                 $object->setTime($data['Time']);
                 unset($data['Time']);
             }
-            if (\array_key_exists('ServiceCode', $data)) {
+            elseif (\array_key_exists('Time', $data) && $data['Time'] === null) {
+                $object->setTime(null);
+            }
+            if (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] !== null) {
                 $values = [];
                 foreach ($data['ServiceCode'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceCode', 'json', $context);
@@ -141,13 +153,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setServiceCode($values);
                 unset($data['ServiceCode']);
             }
-            if (\array_key_exists('ServiceOptionCode', $data)) {
+            elseif (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] === null) {
+                $object->setServiceCode(null);
+            }
+            if (\array_key_exists('ServiceOptionCode', $data) && $data['ServiceOptionCode'] !== null) {
                 $values_1 = [];
                 foreach ($data['ServiceOptionCode'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceOptionCode', 'json', $context);
                 }
                 $object->setServiceOptionCode($values_1);
                 unset($data['ServiceOptionCode']);
+            }
+            elseif (\array_key_exists('ServiceOptionCode', $data) && $data['ServiceOptionCode'] === null) {
+                $object->setServiceOptionCode(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

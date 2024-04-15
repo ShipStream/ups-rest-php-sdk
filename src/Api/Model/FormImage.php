@@ -15,32 +15,32 @@ class FormImage extends \ArrayObject
     /**
      * Container for the High Value Report image format information for Import Control Shipments.
      *
-     * @var ImageImageFormat
+     * @var ImageImageFormat|null
      */
     protected $imageFormat;
     /**
      * Base 64 Encoded PDF Image.
      *
-     * @var string
+     * @var string|null
      */
     protected $graphicImage;
     /**
      * Container for the High Value Report image format information for Import Control Shipments.
      *
-     * @return ImageImageFormat
+     * @return ImageImageFormat|null
      */
-    public function getImageFormat() : ImageImageFormat
+    public function getImageFormat() : ?ImageImageFormat
     {
         return $this->imageFormat;
     }
     /**
      * Container for the High Value Report image format information for Import Control Shipments.
      *
-     * @param ImageImageFormat $imageFormat
+     * @param ImageImageFormat|null $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ImageImageFormat $imageFormat) : self
+    public function setImageFormat(?ImageImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
@@ -49,20 +49,20 @@ class FormImage extends \ArrayObject
     /**
      * Base 64 Encoded PDF Image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage() : ?string
     {
         return $this->graphicImage;
     }
     /**
      * Base 64 Encoded PDF Image.
      *
-     * @param string $graphicImage
+     * @param string|null $graphicImage
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(?string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;

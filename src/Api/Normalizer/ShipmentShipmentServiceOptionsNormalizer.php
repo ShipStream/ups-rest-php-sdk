@@ -40,31 +40,49 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SaturdayDeliveryIndicator', $data)) {
+            if (\array_key_exists('SaturdayDeliveryIndicator', $data) && $data['SaturdayDeliveryIndicator'] !== null) {
                 $object->setSaturdayDeliveryIndicator($data['SaturdayDeliveryIndicator']);
                 unset($data['SaturdayDeliveryIndicator']);
             }
-            if (\array_key_exists('SaturdayPickupIndicator', $data)) {
+            elseif (\array_key_exists('SaturdayDeliveryIndicator', $data) && $data['SaturdayDeliveryIndicator'] === null) {
+                $object->setSaturdayDeliveryIndicator(null);
+            }
+            if (\array_key_exists('SaturdayPickupIndicator', $data) && $data['SaturdayPickupIndicator'] !== null) {
                 $object->setSaturdayPickupIndicator($data['SaturdayPickupIndicator']);
                 unset($data['SaturdayPickupIndicator']);
             }
-            if (\array_key_exists('COD', $data)) {
+            elseif (\array_key_exists('SaturdayPickupIndicator', $data) && $data['SaturdayPickupIndicator'] === null) {
+                $object->setSaturdayPickupIndicator(null);
+            }
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('AccessPointCOD', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] !== null) {
                 $object->setAccessPointCOD($this->denormalizer->denormalize($data['AccessPointCOD'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAccessPointCOD', 'json', $context));
                 unset($data['AccessPointCOD']);
             }
-            if (\array_key_exists('DeliverToAddresseeOnlyIndicator', $data)) {
+            elseif (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] === null) {
+                $object->setAccessPointCOD(null);
+            }
+            if (\array_key_exists('DeliverToAddresseeOnlyIndicator', $data) && $data['DeliverToAddresseeOnlyIndicator'] !== null) {
                 $object->setDeliverToAddresseeOnlyIndicator($data['DeliverToAddresseeOnlyIndicator']);
                 unset($data['DeliverToAddresseeOnlyIndicator']);
             }
-            if (\array_key_exists('DirectDeliveryOnlyIndicator', $data)) {
+            elseif (\array_key_exists('DeliverToAddresseeOnlyIndicator', $data) && $data['DeliverToAddresseeOnlyIndicator'] === null) {
+                $object->setDeliverToAddresseeOnlyIndicator(null);
+            }
+            if (\array_key_exists('DirectDeliveryOnlyIndicator', $data) && $data['DirectDeliveryOnlyIndicator'] !== null) {
                 $object->setDirectDeliveryOnlyIndicator($data['DirectDeliveryOnlyIndicator']);
                 unset($data['DirectDeliveryOnlyIndicator']);
             }
-            if (\array_key_exists('Notification', $data)) {
+            elseif (\array_key_exists('DirectDeliveryOnlyIndicator', $data) && $data['DirectDeliveryOnlyIndicator'] === null) {
+                $object->setDirectDeliveryOnlyIndicator(null);
+            }
+            if (\array_key_exists('Notification', $data) && $data['Notification'] !== null) {
                 $values = [];
                 foreach ($data['Notification'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsNotification', 'json', $context);
@@ -72,39 +90,66 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setNotification($values);
                 unset($data['Notification']);
             }
-            if (\array_key_exists('LabelDelivery', $data)) {
+            elseif (\array_key_exists('Notification', $data) && $data['Notification'] === null) {
+                $object->setNotification(null);
+            }
+            if (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] !== null) {
                 $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelDelivery', 'json', $context));
                 unset($data['LabelDelivery']);
             }
-            if (\array_key_exists('InternationalForms', $data)) {
+            elseif (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] === null) {
+                $object->setLabelDelivery(null);
+            }
+            if (\array_key_exists('InternationalForms', $data) && $data['InternationalForms'] !== null) {
                 $object->setInternationalForms($this->denormalizer->denormalize($data['InternationalForms'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms', 'json', $context));
                 unset($data['InternationalForms']);
             }
-            if (\array_key_exists('DeliveryConfirmation', $data)) {
+            elseif (\array_key_exists('InternationalForms', $data) && $data['InternationalForms'] === null) {
+                $object->setInternationalForms(null);
+            }
+            if (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] !== null) {
                 $object->setDeliveryConfirmation($this->denormalizer->denormalize($data['DeliveryConfirmation'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryConfirmation', 'json', $context));
                 unset($data['DeliveryConfirmation']);
             }
-            if (\array_key_exists('ReturnOfDocumentIndicator', $data)) {
+            elseif (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] === null) {
+                $object->setDeliveryConfirmation(null);
+            }
+            if (\array_key_exists('ReturnOfDocumentIndicator', $data) && $data['ReturnOfDocumentIndicator'] !== null) {
                 $object->setReturnOfDocumentIndicator($data['ReturnOfDocumentIndicator']);
                 unset($data['ReturnOfDocumentIndicator']);
             }
-            if (\array_key_exists('ImportControlIndicator', $data)) {
+            elseif (\array_key_exists('ReturnOfDocumentIndicator', $data) && $data['ReturnOfDocumentIndicator'] === null) {
+                $object->setReturnOfDocumentIndicator(null);
+            }
+            if (\array_key_exists('ImportControlIndicator', $data) && $data['ImportControlIndicator'] !== null) {
                 $object->setImportControlIndicator($data['ImportControlIndicator']);
                 unset($data['ImportControlIndicator']);
             }
-            if (\array_key_exists('LabelMethod', $data)) {
+            elseif (\array_key_exists('ImportControlIndicator', $data) && $data['ImportControlIndicator'] === null) {
+                $object->setImportControlIndicator(null);
+            }
+            if (\array_key_exists('LabelMethod', $data) && $data['LabelMethod'] !== null) {
                 $object->setLabelMethod($this->denormalizer->denormalize($data['LabelMethod'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelMethod', 'json', $context));
                 unset($data['LabelMethod']);
             }
-            if (\array_key_exists('CommercialInvoiceRemovalIndicator', $data)) {
+            elseif (\array_key_exists('LabelMethod', $data) && $data['LabelMethod'] === null) {
+                $object->setLabelMethod(null);
+            }
+            if (\array_key_exists('CommercialInvoiceRemovalIndicator', $data) && $data['CommercialInvoiceRemovalIndicator'] !== null) {
                 $object->setCommercialInvoiceRemovalIndicator($data['CommercialInvoiceRemovalIndicator']);
                 unset($data['CommercialInvoiceRemovalIndicator']);
             }
-            if (\array_key_exists('UPScarbonneutralIndicator', $data)) {
+            elseif (\array_key_exists('CommercialInvoiceRemovalIndicator', $data) && $data['CommercialInvoiceRemovalIndicator'] === null) {
+                $object->setCommercialInvoiceRemovalIndicator(null);
+            }
+            if (\array_key_exists('UPScarbonneutralIndicator', $data) && $data['UPScarbonneutralIndicator'] !== null) {
                 $object->setUPScarbonneutralIndicator($data['UPScarbonneutralIndicator']);
                 unset($data['UPScarbonneutralIndicator']);
             }
-            if (\array_key_exists('PreAlertNotification', $data)) {
+            elseif (\array_key_exists('UPScarbonneutralIndicator', $data) && $data['UPScarbonneutralIndicator'] === null) {
+                $object->setUPScarbonneutralIndicator(null);
+            }
+            if (\array_key_exists('PreAlertNotification', $data) && $data['PreAlertNotification'] !== null) {
                 $values_1 = [];
                 foreach ($data['PreAlertNotification'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPreAlertNotification', 'json', $context);
@@ -112,45 +157,78 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPreAlertNotification($values_1);
                 unset($data['PreAlertNotification']);
             }
-            if (\array_key_exists('ExchangeForwardIndicator', $data)) {
+            elseif (\array_key_exists('PreAlertNotification', $data) && $data['PreAlertNotification'] === null) {
+                $object->setPreAlertNotification(null);
+            }
+            if (\array_key_exists('ExchangeForwardIndicator', $data) && $data['ExchangeForwardIndicator'] !== null) {
                 $object->setExchangeForwardIndicator($data['ExchangeForwardIndicator']);
                 unset($data['ExchangeForwardIndicator']);
             }
-            if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            elseif (\array_key_exists('ExchangeForwardIndicator', $data) && $data['ExchangeForwardIndicator'] === null) {
+                $object->setExchangeForwardIndicator(null);
+            }
+            if (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] !== null) {
                 $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
                 unset($data['HoldForPickupIndicator']);
             }
-            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data)) {
+            elseif (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] === null) {
+                $object->setHoldForPickupIndicator(null);
+            }
+            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] !== null) {
                 $object->setDropoffAtUPSFacilityIndicator($data['DropoffAtUPSFacilityIndicator']);
                 unset($data['DropoffAtUPSFacilityIndicator']);
             }
-            if (\array_key_exists('LiftGateForPickUpIndicator', $data)) {
+            elseif (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] === null) {
+                $object->setDropoffAtUPSFacilityIndicator(null);
+            }
+            if (\array_key_exists('LiftGateForPickUpIndicator', $data) && $data['LiftGateForPickUpIndicator'] !== null) {
                 $object->setLiftGateForPickUpIndicator($data['LiftGateForPickUpIndicator']);
                 unset($data['LiftGateForPickUpIndicator']);
             }
-            if (\array_key_exists('LiftGateForDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateForPickUpIndicator', $data) && $data['LiftGateForPickUpIndicator'] === null) {
+                $object->setLiftGateForPickUpIndicator(null);
+            }
+            if (\array_key_exists('LiftGateForDeliveryIndicator', $data) && $data['LiftGateForDeliveryIndicator'] !== null) {
                 $object->setLiftGateForDeliveryIndicator($data['LiftGateForDeliveryIndicator']);
                 unset($data['LiftGateForDeliveryIndicator']);
             }
-            if (\array_key_exists('SDLShipmentIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateForDeliveryIndicator', $data) && $data['LiftGateForDeliveryIndicator'] === null) {
+                $object->setLiftGateForDeliveryIndicator(null);
+            }
+            if (\array_key_exists('SDLShipmentIndicator', $data) && $data['SDLShipmentIndicator'] !== null) {
                 $object->setSDLShipmentIndicator($data['SDLShipmentIndicator']);
                 unset($data['SDLShipmentIndicator']);
             }
-            if (\array_key_exists('EPRAReleaseCode', $data)) {
+            elseif (\array_key_exists('SDLShipmentIndicator', $data) && $data['SDLShipmentIndicator'] === null) {
+                $object->setSDLShipmentIndicator(null);
+            }
+            if (\array_key_exists('EPRAReleaseCode', $data) && $data['EPRAReleaseCode'] !== null) {
                 $object->setEPRAReleaseCode($data['EPRAReleaseCode']);
                 unset($data['EPRAReleaseCode']);
             }
-            if (\array_key_exists('RestrictedArticles', $data)) {
+            elseif (\array_key_exists('EPRAReleaseCode', $data) && $data['EPRAReleaseCode'] === null) {
+                $object->setEPRAReleaseCode(null);
+            }
+            if (\array_key_exists('RestrictedArticles', $data) && $data['RestrictedArticles'] !== null) {
                 $object->setRestrictedArticles($this->denormalizer->denormalize($data['RestrictedArticles'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsRestrictedArticles', 'json', $context));
                 unset($data['RestrictedArticles']);
             }
-            if (\array_key_exists('InsideDelivery', $data)) {
+            elseif (\array_key_exists('RestrictedArticles', $data) && $data['RestrictedArticles'] === null) {
+                $object->setRestrictedArticles(null);
+            }
+            if (\array_key_exists('InsideDelivery', $data) && $data['InsideDelivery'] !== null) {
                 $object->setInsideDelivery($data['InsideDelivery']);
                 unset($data['InsideDelivery']);
             }
-            if (\array_key_exists('ItemDisposal', $data)) {
+            elseif (\array_key_exists('InsideDelivery', $data) && $data['InsideDelivery'] === null) {
+                $object->setInsideDelivery(null);
+            }
+            if (\array_key_exists('ItemDisposal', $data) && $data['ItemDisposal'] !== null) {
                 $object->setItemDisposal($data['ItemDisposal']);
                 unset($data['ItemDisposal']);
+            }
+            elseif (\array_key_exists('ItemDisposal', $data) && $data['ItemDisposal'] === null) {
+                $object->setItemDisposal(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -290,31 +368,49 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SaturdayDeliveryIndicator', $data)) {
+            if (\array_key_exists('SaturdayDeliveryIndicator', $data) && $data['SaturdayDeliveryIndicator'] !== null) {
                 $object->setSaturdayDeliveryIndicator($data['SaturdayDeliveryIndicator']);
                 unset($data['SaturdayDeliveryIndicator']);
             }
-            if (\array_key_exists('SaturdayPickupIndicator', $data)) {
+            elseif (\array_key_exists('SaturdayDeliveryIndicator', $data) && $data['SaturdayDeliveryIndicator'] === null) {
+                $object->setSaturdayDeliveryIndicator(null);
+            }
+            if (\array_key_exists('SaturdayPickupIndicator', $data) && $data['SaturdayPickupIndicator'] !== null) {
                 $object->setSaturdayPickupIndicator($data['SaturdayPickupIndicator']);
                 unset($data['SaturdayPickupIndicator']);
             }
-            if (\array_key_exists('COD', $data)) {
+            elseif (\array_key_exists('SaturdayPickupIndicator', $data) && $data['SaturdayPickupIndicator'] === null) {
+                $object->setSaturdayPickupIndicator(null);
+            }
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('AccessPointCOD', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] !== null) {
                 $object->setAccessPointCOD($this->denormalizer->denormalize($data['AccessPointCOD'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAccessPointCOD', 'json', $context));
                 unset($data['AccessPointCOD']);
             }
-            if (\array_key_exists('DeliverToAddresseeOnlyIndicator', $data)) {
+            elseif (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] === null) {
+                $object->setAccessPointCOD(null);
+            }
+            if (\array_key_exists('DeliverToAddresseeOnlyIndicator', $data) && $data['DeliverToAddresseeOnlyIndicator'] !== null) {
                 $object->setDeliverToAddresseeOnlyIndicator($data['DeliverToAddresseeOnlyIndicator']);
                 unset($data['DeliverToAddresseeOnlyIndicator']);
             }
-            if (\array_key_exists('DirectDeliveryOnlyIndicator', $data)) {
+            elseif (\array_key_exists('DeliverToAddresseeOnlyIndicator', $data) && $data['DeliverToAddresseeOnlyIndicator'] === null) {
+                $object->setDeliverToAddresseeOnlyIndicator(null);
+            }
+            if (\array_key_exists('DirectDeliveryOnlyIndicator', $data) && $data['DirectDeliveryOnlyIndicator'] !== null) {
                 $object->setDirectDeliveryOnlyIndicator($data['DirectDeliveryOnlyIndicator']);
                 unset($data['DirectDeliveryOnlyIndicator']);
             }
-            if (\array_key_exists('Notification', $data)) {
+            elseif (\array_key_exists('DirectDeliveryOnlyIndicator', $data) && $data['DirectDeliveryOnlyIndicator'] === null) {
+                $object->setDirectDeliveryOnlyIndicator(null);
+            }
+            if (\array_key_exists('Notification', $data) && $data['Notification'] !== null) {
                 $values = [];
                 foreach ($data['Notification'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsNotification', 'json', $context);
@@ -322,39 +418,66 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setNotification($values);
                 unset($data['Notification']);
             }
-            if (\array_key_exists('LabelDelivery', $data)) {
+            elseif (\array_key_exists('Notification', $data) && $data['Notification'] === null) {
+                $object->setNotification(null);
+            }
+            if (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] !== null) {
                 $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelDelivery', 'json', $context));
                 unset($data['LabelDelivery']);
             }
-            if (\array_key_exists('InternationalForms', $data)) {
+            elseif (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] === null) {
+                $object->setLabelDelivery(null);
+            }
+            if (\array_key_exists('InternationalForms', $data) && $data['InternationalForms'] !== null) {
                 $object->setInternationalForms($this->denormalizer->denormalize($data['InternationalForms'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms', 'json', $context));
                 unset($data['InternationalForms']);
             }
-            if (\array_key_exists('DeliveryConfirmation', $data)) {
+            elseif (\array_key_exists('InternationalForms', $data) && $data['InternationalForms'] === null) {
+                $object->setInternationalForms(null);
+            }
+            if (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] !== null) {
                 $object->setDeliveryConfirmation($this->denormalizer->denormalize($data['DeliveryConfirmation'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryConfirmation', 'json', $context));
                 unset($data['DeliveryConfirmation']);
             }
-            if (\array_key_exists('ReturnOfDocumentIndicator', $data)) {
+            elseif (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] === null) {
+                $object->setDeliveryConfirmation(null);
+            }
+            if (\array_key_exists('ReturnOfDocumentIndicator', $data) && $data['ReturnOfDocumentIndicator'] !== null) {
                 $object->setReturnOfDocumentIndicator($data['ReturnOfDocumentIndicator']);
                 unset($data['ReturnOfDocumentIndicator']);
             }
-            if (\array_key_exists('ImportControlIndicator', $data)) {
+            elseif (\array_key_exists('ReturnOfDocumentIndicator', $data) && $data['ReturnOfDocumentIndicator'] === null) {
+                $object->setReturnOfDocumentIndicator(null);
+            }
+            if (\array_key_exists('ImportControlIndicator', $data) && $data['ImportControlIndicator'] !== null) {
                 $object->setImportControlIndicator($data['ImportControlIndicator']);
                 unset($data['ImportControlIndicator']);
             }
-            if (\array_key_exists('LabelMethod', $data)) {
+            elseif (\array_key_exists('ImportControlIndicator', $data) && $data['ImportControlIndicator'] === null) {
+                $object->setImportControlIndicator(null);
+            }
+            if (\array_key_exists('LabelMethod', $data) && $data['LabelMethod'] !== null) {
                 $object->setLabelMethod($this->denormalizer->denormalize($data['LabelMethod'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelMethod', 'json', $context));
                 unset($data['LabelMethod']);
             }
-            if (\array_key_exists('CommercialInvoiceRemovalIndicator', $data)) {
+            elseif (\array_key_exists('LabelMethod', $data) && $data['LabelMethod'] === null) {
+                $object->setLabelMethod(null);
+            }
+            if (\array_key_exists('CommercialInvoiceRemovalIndicator', $data) && $data['CommercialInvoiceRemovalIndicator'] !== null) {
                 $object->setCommercialInvoiceRemovalIndicator($data['CommercialInvoiceRemovalIndicator']);
                 unset($data['CommercialInvoiceRemovalIndicator']);
             }
-            if (\array_key_exists('UPScarbonneutralIndicator', $data)) {
+            elseif (\array_key_exists('CommercialInvoiceRemovalIndicator', $data) && $data['CommercialInvoiceRemovalIndicator'] === null) {
+                $object->setCommercialInvoiceRemovalIndicator(null);
+            }
+            if (\array_key_exists('UPScarbonneutralIndicator', $data) && $data['UPScarbonneutralIndicator'] !== null) {
                 $object->setUPScarbonneutralIndicator($data['UPScarbonneutralIndicator']);
                 unset($data['UPScarbonneutralIndicator']);
             }
-            if (\array_key_exists('PreAlertNotification', $data)) {
+            elseif (\array_key_exists('UPScarbonneutralIndicator', $data) && $data['UPScarbonneutralIndicator'] === null) {
+                $object->setUPScarbonneutralIndicator(null);
+            }
+            if (\array_key_exists('PreAlertNotification', $data) && $data['PreAlertNotification'] !== null) {
                 $values_1 = [];
                 foreach ($data['PreAlertNotification'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPreAlertNotification', 'json', $context);
@@ -362,45 +485,78 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPreAlertNotification($values_1);
                 unset($data['PreAlertNotification']);
             }
-            if (\array_key_exists('ExchangeForwardIndicator', $data)) {
+            elseif (\array_key_exists('PreAlertNotification', $data) && $data['PreAlertNotification'] === null) {
+                $object->setPreAlertNotification(null);
+            }
+            if (\array_key_exists('ExchangeForwardIndicator', $data) && $data['ExchangeForwardIndicator'] !== null) {
                 $object->setExchangeForwardIndicator($data['ExchangeForwardIndicator']);
                 unset($data['ExchangeForwardIndicator']);
             }
-            if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            elseif (\array_key_exists('ExchangeForwardIndicator', $data) && $data['ExchangeForwardIndicator'] === null) {
+                $object->setExchangeForwardIndicator(null);
+            }
+            if (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] !== null) {
                 $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
                 unset($data['HoldForPickupIndicator']);
             }
-            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data)) {
+            elseif (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] === null) {
+                $object->setHoldForPickupIndicator(null);
+            }
+            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] !== null) {
                 $object->setDropoffAtUPSFacilityIndicator($data['DropoffAtUPSFacilityIndicator']);
                 unset($data['DropoffAtUPSFacilityIndicator']);
             }
-            if (\array_key_exists('LiftGateForPickUpIndicator', $data)) {
+            elseif (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] === null) {
+                $object->setDropoffAtUPSFacilityIndicator(null);
+            }
+            if (\array_key_exists('LiftGateForPickUpIndicator', $data) && $data['LiftGateForPickUpIndicator'] !== null) {
                 $object->setLiftGateForPickUpIndicator($data['LiftGateForPickUpIndicator']);
                 unset($data['LiftGateForPickUpIndicator']);
             }
-            if (\array_key_exists('LiftGateForDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateForPickUpIndicator', $data) && $data['LiftGateForPickUpIndicator'] === null) {
+                $object->setLiftGateForPickUpIndicator(null);
+            }
+            if (\array_key_exists('LiftGateForDeliveryIndicator', $data) && $data['LiftGateForDeliveryIndicator'] !== null) {
                 $object->setLiftGateForDeliveryIndicator($data['LiftGateForDeliveryIndicator']);
                 unset($data['LiftGateForDeliveryIndicator']);
             }
-            if (\array_key_exists('SDLShipmentIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateForDeliveryIndicator', $data) && $data['LiftGateForDeliveryIndicator'] === null) {
+                $object->setLiftGateForDeliveryIndicator(null);
+            }
+            if (\array_key_exists('SDLShipmentIndicator', $data) && $data['SDLShipmentIndicator'] !== null) {
                 $object->setSDLShipmentIndicator($data['SDLShipmentIndicator']);
                 unset($data['SDLShipmentIndicator']);
             }
-            if (\array_key_exists('EPRAReleaseCode', $data)) {
+            elseif (\array_key_exists('SDLShipmentIndicator', $data) && $data['SDLShipmentIndicator'] === null) {
+                $object->setSDLShipmentIndicator(null);
+            }
+            if (\array_key_exists('EPRAReleaseCode', $data) && $data['EPRAReleaseCode'] !== null) {
                 $object->setEPRAReleaseCode($data['EPRAReleaseCode']);
                 unset($data['EPRAReleaseCode']);
             }
-            if (\array_key_exists('RestrictedArticles', $data)) {
+            elseif (\array_key_exists('EPRAReleaseCode', $data) && $data['EPRAReleaseCode'] === null) {
+                $object->setEPRAReleaseCode(null);
+            }
+            if (\array_key_exists('RestrictedArticles', $data) && $data['RestrictedArticles'] !== null) {
                 $object->setRestrictedArticles($this->denormalizer->denormalize($data['RestrictedArticles'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsRestrictedArticles', 'json', $context));
                 unset($data['RestrictedArticles']);
             }
-            if (\array_key_exists('InsideDelivery', $data)) {
+            elseif (\array_key_exists('RestrictedArticles', $data) && $data['RestrictedArticles'] === null) {
+                $object->setRestrictedArticles(null);
+            }
+            if (\array_key_exists('InsideDelivery', $data) && $data['InsideDelivery'] !== null) {
                 $object->setInsideDelivery($data['InsideDelivery']);
                 unset($data['InsideDelivery']);
             }
-            if (\array_key_exists('ItemDisposal', $data)) {
+            elseif (\array_key_exists('InsideDelivery', $data) && $data['InsideDelivery'] === null) {
+                $object->setInsideDelivery(null);
+            }
+            if (\array_key_exists('ItemDisposal', $data) && $data['ItemDisposal'] !== null) {
                 $object->setItemDisposal($data['ItemDisposal']);
                 unset($data['ItemDisposal']);
+            }
+            elseif (\array_key_exists('ItemDisposal', $data) && $data['ItemDisposal'] === null) {
+                $object->setItemDisposal(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

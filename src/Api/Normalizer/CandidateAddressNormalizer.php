@@ -40,37 +40,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('countryName', $data)) {
+            if (\array_key_exists('countryName', $data) && $data['countryName'] !== null) {
                 $object->setCountryName($data['countryName']);
                 unset($data['countryName']);
             }
-            if (\array_key_exists('countryCode', $data)) {
+            elseif (\array_key_exists('countryName', $data) && $data['countryName'] === null) {
+                $object->setCountryName(null);
+            }
+            if (\array_key_exists('countryCode', $data) && $data['countryCode'] !== null) {
                 $object->setCountryCode($data['countryCode']);
                 unset($data['countryCode']);
             }
-            if (\array_key_exists('stateProvince', $data)) {
+            elseif (\array_key_exists('countryCode', $data) && $data['countryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('stateProvince', $data) && $data['stateProvince'] !== null) {
                 $object->setStateProvince($data['stateProvince']);
                 unset($data['stateProvince']);
             }
-            if (\array_key_exists('city', $data)) {
+            elseif (\array_key_exists('stateProvince', $data) && $data['stateProvince'] === null) {
+                $object->setStateProvince(null);
+            }
+            if (\array_key_exists('city', $data) && $data['city'] !== null) {
                 $object->setCity($data['city']);
                 unset($data['city']);
             }
-            if (\array_key_exists('town', $data)) {
+            elseif (\array_key_exists('city', $data) && $data['city'] === null) {
+                $object->setCity(null);
+            }
+            if (\array_key_exists('town', $data) && $data['town'] !== null) {
                 $object->setTown($data['town']);
                 unset($data['town']);
             }
-            if (\array_key_exists('postalCode', $data)) {
+            elseif (\array_key_exists('town', $data) && $data['town'] === null) {
+                $object->setTown(null);
+            }
+            if (\array_key_exists('postalCode', $data) && $data['postalCode'] !== null) {
                 $object->setPostalCode($data['postalCode']);
                 unset($data['postalCode']);
             }
-            if (\array_key_exists('postalCodeLow', $data)) {
+            elseif (\array_key_exists('postalCode', $data) && $data['postalCode'] === null) {
+                $object->setPostalCode(null);
+            }
+            if (\array_key_exists('postalCodeLow', $data) && $data['postalCodeLow'] !== null) {
                 $object->setPostalCodeLow($data['postalCodeLow']);
                 unset($data['postalCodeLow']);
             }
-            if (\array_key_exists('postalCodeHigh', $data)) {
+            elseif (\array_key_exists('postalCodeLow', $data) && $data['postalCodeLow'] === null) {
+                $object->setPostalCodeLow(null);
+            }
+            if (\array_key_exists('postalCodeHigh', $data) && $data['postalCodeHigh'] !== null) {
                 $object->setPostalCodeHigh($data['postalCodeHigh']);
                 unset($data['postalCodeHigh']);
+            }
+            elseif (\array_key_exists('postalCodeHigh', $data) && $data['postalCodeHigh'] === null) {
+                $object->setPostalCodeHigh(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -146,37 +170,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('countryName', $data)) {
+            if (\array_key_exists('countryName', $data) && $data['countryName'] !== null) {
                 $object->setCountryName($data['countryName']);
                 unset($data['countryName']);
             }
-            if (\array_key_exists('countryCode', $data)) {
+            elseif (\array_key_exists('countryName', $data) && $data['countryName'] === null) {
+                $object->setCountryName(null);
+            }
+            if (\array_key_exists('countryCode', $data) && $data['countryCode'] !== null) {
                 $object->setCountryCode($data['countryCode']);
                 unset($data['countryCode']);
             }
-            if (\array_key_exists('stateProvince', $data)) {
+            elseif (\array_key_exists('countryCode', $data) && $data['countryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('stateProvince', $data) && $data['stateProvince'] !== null) {
                 $object->setStateProvince($data['stateProvince']);
                 unset($data['stateProvince']);
             }
-            if (\array_key_exists('city', $data)) {
+            elseif (\array_key_exists('stateProvince', $data) && $data['stateProvince'] === null) {
+                $object->setStateProvince(null);
+            }
+            if (\array_key_exists('city', $data) && $data['city'] !== null) {
                 $object->setCity($data['city']);
                 unset($data['city']);
             }
-            if (\array_key_exists('town', $data)) {
+            elseif (\array_key_exists('city', $data) && $data['city'] === null) {
+                $object->setCity(null);
+            }
+            if (\array_key_exists('town', $data) && $data['town'] !== null) {
                 $object->setTown($data['town']);
                 unset($data['town']);
             }
-            if (\array_key_exists('postalCode', $data)) {
+            elseif (\array_key_exists('town', $data) && $data['town'] === null) {
+                $object->setTown(null);
+            }
+            if (\array_key_exists('postalCode', $data) && $data['postalCode'] !== null) {
                 $object->setPostalCode($data['postalCode']);
                 unset($data['postalCode']);
             }
-            if (\array_key_exists('postalCodeLow', $data)) {
+            elseif (\array_key_exists('postalCode', $data) && $data['postalCode'] === null) {
+                $object->setPostalCode(null);
+            }
+            if (\array_key_exists('postalCodeLow', $data) && $data['postalCodeLow'] !== null) {
                 $object->setPostalCodeLow($data['postalCodeLow']);
                 unset($data['postalCodeLow']);
             }
-            if (\array_key_exists('postalCodeHigh', $data)) {
+            elseif (\array_key_exists('postalCodeLow', $data) && $data['postalCodeLow'] === null) {
+                $object->setPostalCodeLow(null);
+            }
+            if (\array_key_exists('postalCodeHigh', $data) && $data['postalCodeHigh'] !== null) {
                 $object->setPostalCodeHigh($data['postalCodeHigh']);
                 unset($data['postalCodeHigh']);
+            }
+            elseif (\array_key_exists('postalCodeHigh', $data) && $data['postalCodeHigh'] === null) {
+                $object->setPostalCodeHigh(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

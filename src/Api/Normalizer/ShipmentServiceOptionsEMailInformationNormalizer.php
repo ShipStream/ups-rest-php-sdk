@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailType', $data)) {
+            if (\array_key_exists('EMailType', $data) && $data['EMailType'] !== null) {
                 $values = [];
                 foreach ($data['EMailType'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMailType', 'json', $context);
@@ -48,9 +48,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEMailType($values);
                 unset($data['EMailType']);
             }
-            if (\array_key_exists('EMail', $data)) {
+            elseif (\array_key_exists('EMailType', $data) && $data['EMailType'] === null) {
+                $object->setEMailType(null);
+            }
+            if (\array_key_exists('EMail', $data) && $data['EMail'] !== null) {
                 $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMail', 'json', $context));
                 unset($data['EMail']);
+            }
+            elseif (\array_key_exists('EMail', $data) && $data['EMail'] === null) {
+                $object->setEMail(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -110,7 +116,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailType', $data)) {
+            if (\array_key_exists('EMailType', $data) && $data['EMailType'] !== null) {
                 $values = [];
                 foreach ($data['EMailType'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMailType', 'json', $context);
@@ -118,9 +124,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEMailType($values);
                 unset($data['EMailType']);
             }
-            if (\array_key_exists('EMail', $data)) {
+            elseif (\array_key_exists('EMailType', $data) && $data['EMailType'] === null) {
+                $object->setEMailType(null);
+            }
+            if (\array_key_exists('EMail', $data) && $data['EMail'] !== null) {
                 $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMail', 'json', $context));
                 unset($data['EMail']);
+            }
+            elseif (\array_key_exists('EMail', $data) && $data['EMail'] === null) {
+                $object->setEMail(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

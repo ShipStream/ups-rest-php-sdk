@@ -15,44 +15,44 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
     /**
      * CODValue Container.
      *
-     * @var CODCODValue
+     * @var CODCODValue|null
      */
     protected $cODValue;
     /**
      * CODPaymentMethod Container.
      *
-     * @var CODCODPaymentMethod
+     * @var CODCODPaymentMethod|null
      */
     protected $cODPaymentMethod;
     /**
      * CODBillingOption Container.
      *
-     * @var CODCODBillingOption
+     * @var CODCODBillingOption|null
      */
     protected $cODBillingOption;
     /**
      * RemitTo Container.
      *
-     * @var CODRemitTo
+     * @var CODRemitTo|null
      */
     protected $remitTo;
     /**
      * CODValue Container.
      *
-     * @return CODCODValue
+     * @return CODCODValue|null
      */
-    public function getCODValue() : CODCODValue
+    public function getCODValue() : ?CODCODValue
     {
         return $this->cODValue;
     }
     /**
      * CODValue Container.
      *
-     * @param CODCODValue $cODValue
+     * @param CODCODValue|null $cODValue
      *
      * @return self
      */
-    public function setCODValue(CODCODValue $cODValue) : self
+    public function setCODValue(?CODCODValue $cODValue) : self
     {
         $this->initialized['cODValue'] = true;
         $this->cODValue = $cODValue;
@@ -61,20 +61,20 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
     /**
      * CODPaymentMethod Container.
      *
-     * @return CODCODPaymentMethod
+     * @return CODCODPaymentMethod|null
      */
-    public function getCODPaymentMethod() : CODCODPaymentMethod
+    public function getCODPaymentMethod() : ?CODCODPaymentMethod
     {
         return $this->cODPaymentMethod;
     }
     /**
      * CODPaymentMethod Container.
      *
-     * @param CODCODPaymentMethod $cODPaymentMethod
+     * @param CODCODPaymentMethod|null $cODPaymentMethod
      *
      * @return self
      */
-    public function setCODPaymentMethod(CODCODPaymentMethod $cODPaymentMethod) : self
+    public function setCODPaymentMethod(?CODCODPaymentMethod $cODPaymentMethod) : self
     {
         $this->initialized['cODPaymentMethod'] = true;
         $this->cODPaymentMethod = $cODPaymentMethod;
@@ -83,20 +83,20 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
     /**
      * CODBillingOption Container.
      *
-     * @return CODCODBillingOption
+     * @return CODCODBillingOption|null
      */
-    public function getCODBillingOption() : CODCODBillingOption
+    public function getCODBillingOption() : ?CODCODBillingOption
     {
         return $this->cODBillingOption;
     }
     /**
      * CODBillingOption Container.
      *
-     * @param CODCODBillingOption $cODBillingOption
+     * @param CODCODBillingOption|null $cODBillingOption
      *
      * @return self
      */
-    public function setCODBillingOption(CODCODBillingOption $cODBillingOption) : self
+    public function setCODBillingOption(?CODCODBillingOption $cODBillingOption) : self
     {
         $this->initialized['cODBillingOption'] = true;
         $this->cODBillingOption = $cODBillingOption;
@@ -105,20 +105,20 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
     /**
      * RemitTo Container.
      *
-     * @return CODRemitTo
+     * @return CODRemitTo|null
      */
-    public function getRemitTo() : CODRemitTo
+    public function getRemitTo() : ?CODRemitTo
     {
         return $this->remitTo;
     }
     /**
      * RemitTo Container.
      *
-     * @param CODRemitTo $remitTo
+     * @param CODRemitTo|null $remitTo
      *
      * @return self
      */
-    public function setRemitTo(CODRemitTo $remitTo) : self
+    public function setRemitTo(?CODRemitTo $remitTo) : self
     {
         $this->initialized['remitTo'] = true;
         $this->remitTo = $remitTo;

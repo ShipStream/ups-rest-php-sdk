@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CloseTime', $data)) {
+            if (\array_key_exists('CloseTime', $data) && $data['CloseTime'] !== null) {
                 $object->setCloseTime($data['CloseTime']);
                 unset($data['CloseTime']);
             }
-            if (\array_key_exists('ReadyTime', $data)) {
+            elseif (\array_key_exists('CloseTime', $data) && $data['CloseTime'] === null) {
+                $object->setCloseTime(null);
+            }
+            if (\array_key_exists('ReadyTime', $data) && $data['ReadyTime'] !== null) {
                 $object->setReadyTime($data['ReadyTime']);
                 unset($data['ReadyTime']);
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            elseif (\array_key_exists('ReadyTime', $data) && $data['ReadyTime'] === null) {
+                $object->setReadyTime(null);
+            }
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
+            }
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CloseTime', $data)) {
+            if (\array_key_exists('CloseTime', $data) && $data['CloseTime'] !== null) {
                 $object->setCloseTime($data['CloseTime']);
                 unset($data['CloseTime']);
             }
-            if (\array_key_exists('ReadyTime', $data)) {
+            elseif (\array_key_exists('CloseTime', $data) && $data['CloseTime'] === null) {
+                $object->setCloseTime(null);
+            }
+            if (\array_key_exists('ReadyTime', $data) && $data['ReadyTime'] !== null) {
                 $object->setReadyTime($data['ReadyTime']);
                 unset($data['ReadyTime']);
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            elseif (\array_key_exists('ReadyTime', $data) && $data['ReadyTime'] === null) {
+                $object->setReadyTime(null);
+            }
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
+            }
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

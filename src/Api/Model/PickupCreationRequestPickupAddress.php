@@ -15,43 +15,43 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Company name
      *
-     * @var string
+     * @var string|null
      */
     protected $companyName;
     /**
      * Name of contact person
      *
-     * @var string
+     * @var string|null
      */
     protected $contactName;
     /**
      * Detailed street address. For Jan. 2010 release, only one AddressLine is allowed
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * Room number
      *
-     * @var string
+     * @var string|null
      */
     protected $room;
     /**
      * Floor number
      *
-     * @var string
+     * @var string|null
      */
     protected $floor;
     /**
      * City or equivalent
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * State or province for postal countries; county for Ireland (IE) and district code for Hong Kong (HK)
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvince;
     /**
@@ -59,20 +59,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     Urbanization for Puerto Rico (PR)
     Shire for United Kingdom (UK)
     *
-    * @var string
+    * @var string|null
     */
     protected $urbanization;
     /**
      * Postal code or equivalent for postal countries
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
     * The pickup country or territory code as defined by ISO-3166. 
     Refer to Country or Territory Codes in the Appendix for valid values.
     *
-    * @var string
+    * @var string|null
     */
     protected $countryCode;
     /**
@@ -81,38 +81,38 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     Y = Residential address
     N = Non-residential (Commercial) address (default)
     *
-    * @var string
+    * @var string|null
     */
     protected $residentialIndicator;
     /**
      * The specific spot to pickup at the address.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupPoint;
     /**
      * Contact telephone number.
      *
-     * @var PickupAddressPhone
+     * @var PickupAddressPhone|null
      */
     protected $phone;
     /**
      * Company name
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyName() : string
+    public function getCompanyName() : ?string
     {
         return $this->companyName;
     }
     /**
      * Company name
      *
-     * @param string $companyName
+     * @param string|null $companyName
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(?string $companyName) : self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -121,20 +121,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Name of contact person
      *
-     * @return string
+     * @return string|null
      */
-    public function getContactName() : string
+    public function getContactName() : ?string
     {
         return $this->contactName;
     }
     /**
      * Name of contact person
      *
-     * @param string $contactName
+     * @param string|null $contactName
      *
      * @return self
      */
-    public function setContactName(string $contactName) : self
+    public function setContactName(?string $contactName) : self
     {
         $this->initialized['contactName'] = true;
         $this->contactName = $contactName;
@@ -143,20 +143,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Detailed street address. For Jan. 2010 release, only one AddressLine is allowed
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Detailed street address. For Jan. 2010 release, only one AddressLine is allowed
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -165,20 +165,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Room number
      *
-     * @return string
+     * @return string|null
      */
-    public function getRoom() : string
+    public function getRoom() : ?string
     {
         return $this->room;
     }
     /**
      * Room number
      *
-     * @param string $room
+     * @param string|null $room
      *
      * @return self
      */
-    public function setRoom(string $room) : self
+    public function setRoom(?string $room) : self
     {
         $this->initialized['room'] = true;
         $this->room = $room;
@@ -187,20 +187,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Floor number
      *
-     * @return string
+     * @return string|null
      */
-    public function getFloor() : string
+    public function getFloor() : ?string
     {
         return $this->floor;
     }
     /**
      * Floor number
      *
-     * @param string $floor
+     * @param string|null $floor
      *
      * @return self
      */
-    public function setFloor(string $floor) : self
+    public function setFloor(?string $floor) : self
     {
         $this->initialized['floor'] = true;
         $this->floor = $floor;
@@ -209,20 +209,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * City or equivalent
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * City or equivalent
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -231,20 +231,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * State or province for postal countries; county for Ireland (IE) and district code for Hong Kong (HK)
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvince() : string
+    public function getStateProvince() : ?string
     {
         return $this->stateProvince;
     }
     /**
      * State or province for postal countries; county for Ireland (IE) and district code for Hong Kong (HK)
      *
-     * @param string $stateProvince
+     * @param string|null $stateProvince
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(?string $stateProvince) : self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -255,9 +255,9 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     Urbanization for Puerto Rico (PR)
     Shire for United Kingdom (UK)
     *
-    * @return string
+    * @return string|null
     */
-    public function getUrbanization() : string
+    public function getUrbanization() : ?string
     {
         return $this->urbanization;
     }
@@ -266,11 +266,11 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     Urbanization for Puerto Rico (PR)
     Shire for United Kingdom (UK)
     *
-    * @param string $urbanization
+    * @param string|null $urbanization
     *
     * @return self
     */
-    public function setUrbanization(string $urbanization) : self
+    public function setUrbanization(?string $urbanization) : self
     {
         $this->initialized['urbanization'] = true;
         $this->urbanization = $urbanization;
@@ -279,20 +279,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Postal code or equivalent for postal countries
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Postal code or equivalent for postal countries
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -302,9 +302,9 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     * The pickup country or territory code as defined by ISO-3166. 
     Refer to Country or Territory Codes in the Appendix for valid values.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
@@ -312,11 +312,11 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     * The pickup country or territory code as defined by ISO-3166. 
     Refer to Country or Territory Codes in the Appendix for valid values.
     *
-    * @param string $countryCode
+    * @param string|null $countryCode
     *
     * @return self
     */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -328,9 +328,9 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     Y = Residential address
     N = Non-residential (Commercial) address (default)
     *
-    * @return string
+    * @return string|null
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator() : ?string
     {
         return $this->residentialIndicator;
     }
@@ -340,11 +340,11 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     Y = Residential address
     N = Non-residential (Commercial) address (default)
     *
-    * @param string $residentialIndicator
+    * @param string|null $residentialIndicator
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(?string $residentialIndicator) : self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;
@@ -353,20 +353,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * The specific spot to pickup at the address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupPoint() : string
+    public function getPickupPoint() : ?string
     {
         return $this->pickupPoint;
     }
     /**
      * The specific spot to pickup at the address.
      *
-     * @param string $pickupPoint
+     * @param string|null $pickupPoint
      *
      * @return self
      */
-    public function setPickupPoint(string $pickupPoint) : self
+    public function setPickupPoint(?string $pickupPoint) : self
     {
         $this->initialized['pickupPoint'] = true;
         $this->pickupPoint = $pickupPoint;
@@ -375,20 +375,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Contact telephone number.
      *
-     * @return PickupAddressPhone
+     * @return PickupAddressPhone|null
      */
-    public function getPhone() : PickupAddressPhone
+    public function getPhone() : ?PickupAddressPhone
     {
         return $this->phone;
     }
     /**
      * Contact telephone number.
      *
-     * @param PickupAddressPhone $phone
+     * @param PickupAddressPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(PickupAddressPhone $phone) : self
+    public function setPhone(?PickupAddressPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;

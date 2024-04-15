@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupCancelResponse', $data)) {
+            if (\array_key_exists('PickupCancelResponse', $data) && $data['PickupCancelResponse'] !== null) {
                 $object->setPickupCancelResponse($this->denormalizer->denormalize($data['PickupCancelResponse'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponse', 'json', $context));
                 unset($data['PickupCancelResponse']);
+            }
+            elseif (\array_key_exists('PickupCancelResponse', $data) && $data['PickupCancelResponse'] === null) {
+                $object->setPickupCancelResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupCancelResponse', $data)) {
+            if (\array_key_exists('PickupCancelResponse', $data) && $data['PickupCancelResponse'] !== null) {
                 $object->setPickupCancelResponse($this->denormalizer->denormalize($data['PickupCancelResponse'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponse', 'json', $context));
                 unset($data['PickupCancelResponse']);
+            }
+            elseif (\array_key_exists('PickupCancelResponse', $data) && $data['PickupCancelResponse'] === null) {
+                $object->setPickupCancelResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

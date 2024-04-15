@@ -15,44 +15,44 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $invalidFieldList;
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $invalidFieldListCodes;
     /**
      * Returned as true when destination address has a candidate list
      *
-     * @var bool
+     * @var bool|null
      */
     protected $destinationAmbiguous;
     /**
      * Returned as true when origina ddress has a candidate list.
      *
-     * @var bool
+     * @var bool|null
      */
     protected $originAmbiguous;
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getInvalidFieldList() : array
+    public function getInvalidFieldList() : ?array
     {
         return $this->invalidFieldList;
     }
     /**
      * 
      *
-     * @param string[] $invalidFieldList
+     * @param list<string>|null $invalidFieldList
      *
      * @return self
      */
-    public function setInvalidFieldList(array $invalidFieldList) : self
+    public function setInvalidFieldList(?array $invalidFieldList) : self
     {
         $this->initialized['invalidFieldList'] = true;
         $this->invalidFieldList = $invalidFieldList;
@@ -61,20 +61,20 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getInvalidFieldListCodes() : array
+    public function getInvalidFieldListCodes() : ?array
     {
         return $this->invalidFieldListCodes;
     }
     /**
      * 
      *
-     * @param string[] $invalidFieldListCodes
+     * @param list<string>|null $invalidFieldListCodes
      *
      * @return self
      */
-    public function setInvalidFieldListCodes(array $invalidFieldListCodes) : self
+    public function setInvalidFieldListCodes(?array $invalidFieldListCodes) : self
     {
         $this->initialized['invalidFieldListCodes'] = true;
         $this->invalidFieldListCodes = $invalidFieldListCodes;
@@ -83,20 +83,20 @@ class ValidationList extends \ArrayObject
     /**
      * Returned as true when destination address has a candidate list
      *
-     * @return bool
+     * @return bool|null
      */
-    public function getDestinationAmbiguous() : bool
+    public function getDestinationAmbiguous() : ?bool
     {
         return $this->destinationAmbiguous;
     }
     /**
      * Returned as true when destination address has a candidate list
      *
-     * @param bool $destinationAmbiguous
+     * @param bool|null $destinationAmbiguous
      *
      * @return self
      */
-    public function setDestinationAmbiguous(bool $destinationAmbiguous) : self
+    public function setDestinationAmbiguous(?bool $destinationAmbiguous) : self
     {
         $this->initialized['destinationAmbiguous'] = true;
         $this->destinationAmbiguous = $destinationAmbiguous;
@@ -105,20 +105,20 @@ class ValidationList extends \ArrayObject
     /**
      * Returned as true when origina ddress has a candidate list.
      *
-     * @return bool
+     * @return bool|null
      */
-    public function getOriginAmbiguous() : bool
+    public function getOriginAmbiguous() : ?bool
     {
         return $this->originAmbiguous;
     }
     /**
      * Returned as true when origina ddress has a candidate list.
      *
-     * @param bool $originAmbiguous
+     * @param bool|null $originAmbiguous
      *
      * @return self
      */
-    public function setOriginAmbiguous(bool $originAmbiguous) : self
+    public function setOriginAmbiguous(?bool $originAmbiguous) : self
     {
         $this->initialized['originAmbiguous'] = true;
         $this->originAmbiguous = $originAmbiguous;

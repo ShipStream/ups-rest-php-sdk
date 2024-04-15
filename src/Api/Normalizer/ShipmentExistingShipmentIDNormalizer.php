@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentNumber', $data)) {
+            if (\array_key_exists('ShipmentNumber', $data) && $data['ShipmentNumber'] !== null) {
                 $object->setShipmentNumber($data['ShipmentNumber']);
                 unset($data['ShipmentNumber']);
             }
-            if (\array_key_exists('ConfirmationNumber', $data)) {
+            elseif (\array_key_exists('ShipmentNumber', $data) && $data['ShipmentNumber'] === null) {
+                $object->setShipmentNumber(null);
+            }
+            if (\array_key_exists('ConfirmationNumber', $data) && $data['ConfirmationNumber'] !== null) {
                 $object->setConfirmationNumber($this->denormalizer->denormalize($data['ConfirmationNumber'], 'ShipStream\\Ups\\Api\\Model\\ExistingShipmentIDConfirmationNumber', 'json', $context));
                 unset($data['ConfirmationNumber']);
+            }
+            elseif (\array_key_exists('ConfirmationNumber', $data) && $data['ConfirmationNumber'] === null) {
+                $object->setConfirmationNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentNumber', $data)) {
+            if (\array_key_exists('ShipmentNumber', $data) && $data['ShipmentNumber'] !== null) {
                 $object->setShipmentNumber($data['ShipmentNumber']);
                 unset($data['ShipmentNumber']);
             }
-            if (\array_key_exists('ConfirmationNumber', $data)) {
+            elseif (\array_key_exists('ShipmentNumber', $data) && $data['ShipmentNumber'] === null) {
+                $object->setShipmentNumber(null);
+            }
+            if (\array_key_exists('ConfirmationNumber', $data) && $data['ConfirmationNumber'] !== null) {
                 $object->setConfirmationNumber($this->denormalizer->denormalize($data['ConfirmationNumber'], 'ShipStream\\Ups\\Api\\Model\\ExistingShipmentIDConfirmationNumber', 'json', $context));
                 unset($data['ConfirmationNumber']);
+            }
+            elseif (\array_key_exists('ConfirmationNumber', $data) && $data['ConfirmationNumber'] === null) {
+                $object->setConfirmationNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

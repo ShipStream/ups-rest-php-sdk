@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('PickupPiece', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('PickupPiece', $data) && $data['PickupPiece'] !== null) {
                 $values = [];
                 foreach ($data['PickupPiece'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestPickupPiece', 'json', $context);
@@ -52,21 +55,36 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPickupPiece($values);
                 unset($data['PickupPiece']);
             }
-            if (\array_key_exists('OriginAddress', $data)) {
+            elseif (\array_key_exists('PickupPiece', $data) && $data['PickupPiece'] === null) {
+                $object->setPickupPiece(null);
+            }
+            if (\array_key_exists('OriginAddress', $data) && $data['OriginAddress'] !== null) {
                 $object->setOriginAddress($this->denormalizer->denormalize($data['OriginAddress'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestOriginAddress', 'json', $context));
                 unset($data['OriginAddress']);
             }
-            if (\array_key_exists('DestinationAddress', $data)) {
+            elseif (\array_key_exists('OriginAddress', $data) && $data['OriginAddress'] === null) {
+                $object->setOriginAddress(null);
+            }
+            if (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] !== null) {
                 $object->setDestinationAddress($this->denormalizer->denormalize($data['DestinationAddress'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestDestinationAddress', 'json', $context));
                 unset($data['DestinationAddress']);
             }
-            if (\array_key_exists('Locale', $data)) {
+            elseif (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] === null) {
+                $object->setDestinationAddress(null);
+            }
+            if (\array_key_exists('Locale', $data) && $data['Locale'] !== null) {
                 $object->setLocale($data['Locale']);
                 unset($data['Locale']);
             }
-            if (\array_key_exists('ProximitySearchIndicator', $data)) {
+            elseif (\array_key_exists('Locale', $data) && $data['Locale'] === null) {
+                $object->setLocale(null);
+            }
+            if (\array_key_exists('ProximitySearchIndicator', $data) && $data['ProximitySearchIndicator'] !== null) {
                 $object->setProximitySearchIndicator($data['ProximitySearchIndicator']);
                 unset($data['ProximitySearchIndicator']);
+            }
+            elseif (\array_key_exists('ProximitySearchIndicator', $data) && $data['ProximitySearchIndicator'] === null) {
+                $object->setProximitySearchIndicator(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -136,11 +154,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('PickupPiece', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('PickupPiece', $data) && $data['PickupPiece'] !== null) {
                 $values = [];
                 foreach ($data['PickupPiece'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestPickupPiece', 'json', $context);
@@ -148,21 +169,36 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPickupPiece($values);
                 unset($data['PickupPiece']);
             }
-            if (\array_key_exists('OriginAddress', $data)) {
+            elseif (\array_key_exists('PickupPiece', $data) && $data['PickupPiece'] === null) {
+                $object->setPickupPiece(null);
+            }
+            if (\array_key_exists('OriginAddress', $data) && $data['OriginAddress'] !== null) {
                 $object->setOriginAddress($this->denormalizer->denormalize($data['OriginAddress'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestOriginAddress', 'json', $context));
                 unset($data['OriginAddress']);
             }
-            if (\array_key_exists('DestinationAddress', $data)) {
+            elseif (\array_key_exists('OriginAddress', $data) && $data['OriginAddress'] === null) {
+                $object->setOriginAddress(null);
+            }
+            if (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] !== null) {
                 $object->setDestinationAddress($this->denormalizer->denormalize($data['DestinationAddress'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestDestinationAddress', 'json', $context));
                 unset($data['DestinationAddress']);
             }
-            if (\array_key_exists('Locale', $data)) {
+            elseif (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] === null) {
+                $object->setDestinationAddress(null);
+            }
+            if (\array_key_exists('Locale', $data) && $data['Locale'] !== null) {
                 $object->setLocale($data['Locale']);
                 unset($data['Locale']);
             }
-            if (\array_key_exists('ProximitySearchIndicator', $data)) {
+            elseif (\array_key_exists('Locale', $data) && $data['Locale'] === null) {
+                $object->setLocale(null);
+            }
+            if (\array_key_exists('ProximitySearchIndicator', $data) && $data['ProximitySearchIndicator'] !== null) {
                 $object->setProximitySearchIndicator($data['ProximitySearchIndicator']);
                 unset($data['ProximitySearchIndicator']);
+            }
+            elseif (\array_key_exists('ProximitySearchIndicator', $data) && $data['ProximitySearchIndicator'] === null) {
+                $object->setProximitySearchIndicator(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

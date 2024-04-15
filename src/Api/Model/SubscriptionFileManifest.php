@@ -15,43 +15,43 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Shipper's record for a shipment.
      *
-     * @var ManifestShipper
+     * @var ManifestShipper|null
      */
     protected $shipper;
     /**
      * Address and contact information describing the location where a return is to be delivered.
      *
-     * @var ManifestShipTo
+     * @var ManifestShipTo|null
      */
     protected $shipTo;
     /**
      * 
      *
-     * @var ManifestReferenceNumber[]
+     * @var list<ManifestReferenceNumber>|null
      */
     protected $referenceNumber;
     /**
      * Container for service code and description.
      *
-     * @var ManifestService
+     * @var ManifestService|null
      */
     protected $service;
     /**
      * Should be set equal to the date on while the packages were picked up (may be prior days date if the transmission occurs after midnight). Formatted as YYYYMMDD.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupDate;
     /**
      * The date the shipment originally was scheduled for delivery. Formatted as YYYYMMDD.
      *
-     * @var string
+     * @var string|null
      */
     protected $scheduledDeliveryDate;
     /**
      * Schedule delivery time. Time format is HHMMSS
      *
-     * @var string
+     * @var string|null
      */
     protected $scheduledDeliveryTime;
     /**
@@ -62,43 +62,43 @@ class SubscriptionFileManifest extends \ArrayObject
     3 = Non-Document
     4 = Pallet
     *
-    * @var string
+    * @var string|null
     */
     protected $documentsOnly;
     /**
      * 
      *
-     * @var ManifestPackage[]
+     * @var list<ManifestPackage>|null
      */
     protected $package;
     /**
      * Container tag for optional UPS services related to a shipment.
      *
-     * @var ManifestShipmentServiceOptions
+     * @var ManifestShipmentServiceOptions|null
      */
     protected $shipmentServiceOptions;
     /**
      * Country or Territory  of Manufacture of the contents of the package.
      *
-     * @var string
+     * @var string|null
      */
     protected $manufactureCountry;
     /**
      * Harmonized code of the package.
      *
-     * @var string
+     * @var string|null
      */
     protected $harmonizedCode;
     /**
      * Information about shipment's customs value.
      *
-     * @var ManifestCustomsValue
+     * @var ManifestCustomsValue|null
      */
     protected $customsValue;
     /**
      * User-defined special instructions for delivery.
      *
-     * @var string
+     * @var string|null
      */
     protected $specialInstructions;
     /**
@@ -114,236 +114,236 @@ class SubscriptionFileManifest extends \ArrayObject
     F/D - Free Domicile
     T/P - Third Party Billing
     *
-    * @var string
+    * @var string|null
     */
     protected $shipmentChargeType;
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @var ManifestBillToAccount
+     * @var ManifestBillToAccount|null
      */
     protected $billToAccount;
     /**
      * Indicates if consignee will be billed the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $consigneeBillIndicator;
     /**
      * Indicates whether or not to collect bill at time of delivery.
      *
-     * @var string
+     * @var string|null
      */
     protected $collectBillIndicator;
     /**
      * Indicates Location Assured Values: Y - Location Assured accessorial requested
      *
-     * @var string
+     * @var string|null
      */
     protected $locationAssured;
     /**
      * Import Control Indication is used to designate that the shipment is an Import Control shipment. If the shipment is an import control shipment then this element will have value. For no import shipment this will not be appear
      *
-     * @var string
+     * @var string|null
      */
     protected $importControl;
     /**
      * Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.
      *
-     * @var string
+     * @var string|null
      */
     protected $labelDeliveryMethod;
     /**
      * Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user's shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear
      *
-     * @var string
+     * @var string|null
      */
     protected $commercialInvoiceRemoval;
     /**
      * Postal Service Tracking ID transport company tracking number.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalServiceTrackingID;
     /**
      * (RFA) UPS returns flexible access. This element will appear with value only when returns flexible access uploaded. For no returns flexible access this element will not be appear
      *
-     * @var string
+     * @var string|null
      */
     protected $returnsFlexibleAccess;
     /**
      * UPS carbon neutral is a term used to reflect a generic term for the tagging to be included on any document, label, e-mail, etc. used to identify that the UPS carbon neutral fee is applied. This element will appear only when shipment is UPS carbon neutral with value. For non UPS carbon neutral shipping this element appear.
      *
-     * @var string
+     * @var string|null
      */
     protected $uPScarbonneutral;
     /**
      * This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.
      *
-     * @var string
+     * @var string|null
      */
     protected $product;
     /**
      * UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared
      *
-     * @var string
+     * @var string|null
      */
     protected $uPSReturnsExchange;
     /**
      * Lift Gate On Delivery - This element will appear only when Lift Gate For Delivery was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for Delivery was requested, this element will not appear.
      *
-     * @var string
+     * @var string|null
      */
     protected $liftGateOnDelivery;
     /**
      * Lift Gate On PickUp - This element will appear only when Lift Gate For PickUp was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for PickUp was requested, this element will not appear.
      *
-     * @var string
+     * @var string|null
      */
     protected $liftGateOnPickUp;
     /**
      * Pickup Preference -This element will appear only when Dropoff At UPS Facility was requested for UPS World Wide Express Freight Shipments. If no Dropoff At UPS Facility was requested, this element will not appear.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupPreference;
     /**
      * Delivery Preference - This element will appear only when Hold for pick up was requested for UPS World Wide Express Freight Shipments. If no Hold for pick up was requested, this element will not appear.
      *
-     * @var string
+     * @var string|null
      */
     protected $deliveryPreference;
     /**
      * "Y" Indicates Shipment is Direct to Retail.
      *
-     * @var string
+     * @var string|null
      */
     protected $holdForPickupAtUPSAccessPoint;
     /**
      * Information about Hold for Pickup UPS Access Point Address
      *
-     * @var ManifestUAPAddress
+     * @var ManifestUAPAddress|null
      */
     protected $uAPAddress;
     /**
      * "Y" Indicates Shipment is Deliver to Addressee.
      *
-     * @var string
+     * @var string|null
      */
     protected $deliverToAddresseeOnlyIndicator;
     /**
      * "Y" Indicates Shipment is Cash on Delivery in Direct to Retail
      *
-     * @var string
+     * @var string|null
      */
     protected $uPSAccessPointCODIndicator;
     /**
      * An accessorial Indicator flag: Y = Clinical Trial accessorial provided in Manifest. Spaces = Clinical Trial accessorial not provided in Manifest.
      *
-     * @var string
+     * @var string|null
      */
     protected $clinicalTrialIndicator;
     /**
      * An unique Clinical Trial associated with the shipment provided in Manifest.
      *
-     * @var string
+     * @var string|null
      */
     protected $clinicalTrialIndicationNumber;
     /**
      * An accessorial Indicator flag: Y = Category A Hazardous materials accessorial provided in Manifest. Spaces = Category A Hazardous materials accessorial not provided in Manifest.
      *
-     * @var string
+     * @var string|null
      */
     protected $categoryAHazardousIndicator;
     /**
      * An accessorial Indicator flag: Y = Direct Delivery accessorisal provided in Manifest. Spaces = Direct Delivery accessorial not provided in Manifest.
      *
-     * @var string
+     * @var string|null
      */
     protected $directDeliveryIndicator;
     /**
      * "Y" indicates Shipment has PackageReleaseCode Accessorial.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageReleaseCodeIndicator;
     /**
      * "Y" indicates that a UPS Proactive Response Accessorial is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $proactiveResponseIndicator;
     /**
      * "Y" indicates that a Heavy Goods White Glove Delivery Accessorial is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $whiteGloveDeliveryIndicator;
     /**
      * "Y" indicates that a Heavy Goods Room of Choice Accessorial is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $roomOfChoiceIndicator;
     /**
      * "Y" indicates that a Heavy Goods Installation Delivery Accessorial is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $installationDeliveryIndicator;
     /**
      * "Y" indicates that a Heavy Goods Item Disposal Accessorial is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $itemDisposalIndicator;
     /**
      * Lead Tracking Number in shipment
      *
-     * @var string
+     * @var string|null
      */
     protected $leadShipmentTrackingNumber;
     /**
      * "Y"  indicates that a SaturdayNonPremiumCommercialDeliveryIndicator is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $saturdayNonPremiumCommercialDeliveryIndicator;
     /**
      * "Y"  indicates that a SundayNonPremiumCommercialDeliveryIndicator is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $sundayNonPremiumCommercialDeliveryIndicator;
     /**
      * �Y� indicates that the UPS Premier accessorial is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $uPSPremierAccessorialIndicator;
     /**
      * Indicates the UPS Premier category applied to the package Valid values: 'PRS' � UPS Premier Silver, 'PRG' � UPS Premier Gold, 'PRP' - UPS Premier Platinum
      *
-     * @var string
+     * @var string|null
      */
     protected $uPSPremierCategoryCode;
     /**
      * Shipper's record for a shipment.
      *
-     * @return ManifestShipper
+     * @return ManifestShipper|null
      */
-    public function getShipper() : ManifestShipper
+    public function getShipper() : ?ManifestShipper
     {
         return $this->shipper;
     }
     /**
      * Shipper's record for a shipment.
      *
-     * @param ManifestShipper $shipper
+     * @param ManifestShipper|null $shipper
      *
      * @return self
      */
-    public function setShipper(ManifestShipper $shipper) : self
+    public function setShipper(?ManifestShipper $shipper) : self
     {
         $this->initialized['shipper'] = true;
         $this->shipper = $shipper;
@@ -352,20 +352,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Address and contact information describing the location where a return is to be delivered.
      *
-     * @return ManifestShipTo
+     * @return ManifestShipTo|null
      */
-    public function getShipTo() : ManifestShipTo
+    public function getShipTo() : ?ManifestShipTo
     {
         return $this->shipTo;
     }
     /**
      * Address and contact information describing the location where a return is to be delivered.
      *
-     * @param ManifestShipTo $shipTo
+     * @param ManifestShipTo|null $shipTo
      *
      * @return self
      */
-    public function setShipTo(ManifestShipTo $shipTo) : self
+    public function setShipTo(?ManifestShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -374,20 +374,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * 
      *
-     * @return ManifestReferenceNumber[]
+     * @return list<ManifestReferenceNumber>|null
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber() : ?array
     {
         return $this->referenceNumber;
     }
     /**
      * 
      *
-     * @param ManifestReferenceNumber[] $referenceNumber
+     * @param list<ManifestReferenceNumber>|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(?array $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -396,20 +396,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Container for service code and description.
      *
-     * @return ManifestService
+     * @return ManifestService|null
      */
-    public function getService() : ManifestService
+    public function getService() : ?ManifestService
     {
         return $this->service;
     }
     /**
      * Container for service code and description.
      *
-     * @param ManifestService $service
+     * @param ManifestService|null $service
      *
      * @return self
      */
-    public function setService(ManifestService $service) : self
+    public function setService(?ManifestService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -418,20 +418,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Should be set equal to the date on while the packages were picked up (may be prior days date if the transmission occurs after midnight). Formatted as YYYYMMDD.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupDate() : string
+    public function getPickupDate() : ?string
     {
         return $this->pickupDate;
     }
     /**
      * Should be set equal to the date on while the packages were picked up (may be prior days date if the transmission occurs after midnight). Formatted as YYYYMMDD.
      *
-     * @param string $pickupDate
+     * @param string|null $pickupDate
      *
      * @return self
      */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(?string $pickupDate) : self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -440,20 +440,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * The date the shipment originally was scheduled for delivery. Formatted as YYYYMMDD.
      *
-     * @return string
+     * @return string|null
      */
-    public function getScheduledDeliveryDate() : string
+    public function getScheduledDeliveryDate() : ?string
     {
         return $this->scheduledDeliveryDate;
     }
     /**
      * The date the shipment originally was scheduled for delivery. Formatted as YYYYMMDD.
      *
-     * @param string $scheduledDeliveryDate
+     * @param string|null $scheduledDeliveryDate
      *
      * @return self
      */
-    public function setScheduledDeliveryDate(string $scheduledDeliveryDate) : self
+    public function setScheduledDeliveryDate(?string $scheduledDeliveryDate) : self
     {
         $this->initialized['scheduledDeliveryDate'] = true;
         $this->scheduledDeliveryDate = $scheduledDeliveryDate;
@@ -462,20 +462,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Schedule delivery time. Time format is HHMMSS
      *
-     * @return string
+     * @return string|null
      */
-    public function getScheduledDeliveryTime() : string
+    public function getScheduledDeliveryTime() : ?string
     {
         return $this->scheduledDeliveryTime;
     }
     /**
      * Schedule delivery time. Time format is HHMMSS
      *
-     * @param string $scheduledDeliveryTime
+     * @param string|null $scheduledDeliveryTime
      *
      * @return self
      */
-    public function setScheduledDeliveryTime(string $scheduledDeliveryTime) : self
+    public function setScheduledDeliveryTime(?string $scheduledDeliveryTime) : self
     {
         $this->initialized['scheduledDeliveryTime'] = true;
         $this->scheduledDeliveryTime = $scheduledDeliveryTime;
@@ -489,9 +489,9 @@ class SubscriptionFileManifest extends \ArrayObject
     3 = Non-Document
     4 = Pallet
     *
-    * @return string
+    * @return string|null
     */
-    public function getDocumentsOnly() : string
+    public function getDocumentsOnly() : ?string
     {
         return $this->documentsOnly;
     }
@@ -503,11 +503,11 @@ class SubscriptionFileManifest extends \ArrayObject
     3 = Non-Document
     4 = Pallet
     *
-    * @param string $documentsOnly
+    * @param string|null $documentsOnly
     *
     * @return self
     */
-    public function setDocumentsOnly(string $documentsOnly) : self
+    public function setDocumentsOnly(?string $documentsOnly) : self
     {
         $this->initialized['documentsOnly'] = true;
         $this->documentsOnly = $documentsOnly;
@@ -516,20 +516,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * 
      *
-     * @return ManifestPackage[]
+     * @return list<ManifestPackage>|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param ManifestPackage[] $package
+     * @param list<ManifestPackage>|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
@@ -538,20 +538,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Container tag for optional UPS services related to a shipment.
      *
-     * @return ManifestShipmentServiceOptions
+     * @return ManifestShipmentServiceOptions|null
      */
-    public function getShipmentServiceOptions() : ManifestShipmentServiceOptions
+    public function getShipmentServiceOptions() : ?ManifestShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
      * Container tag for optional UPS services related to a shipment.
      *
-     * @param ManifestShipmentServiceOptions $shipmentServiceOptions
+     * @param ManifestShipmentServiceOptions|null $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(ManifestShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(?ManifestShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -560,20 +560,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Country or Territory  of Manufacture of the contents of the package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getManufactureCountry() : string
+    public function getManufactureCountry() : ?string
     {
         return $this->manufactureCountry;
     }
     /**
      * Country or Territory  of Manufacture of the contents of the package.
      *
-     * @param string $manufactureCountry
+     * @param string|null $manufactureCountry
      *
      * @return self
      */
-    public function setManufactureCountry(string $manufactureCountry) : self
+    public function setManufactureCountry(?string $manufactureCountry) : self
     {
         $this->initialized['manufactureCountry'] = true;
         $this->manufactureCountry = $manufactureCountry;
@@ -582,20 +582,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Harmonized code of the package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHarmonizedCode() : string
+    public function getHarmonizedCode() : ?string
     {
         return $this->harmonizedCode;
     }
     /**
      * Harmonized code of the package.
      *
-     * @param string $harmonizedCode
+     * @param string|null $harmonizedCode
      *
      * @return self
      */
-    public function setHarmonizedCode(string $harmonizedCode) : self
+    public function setHarmonizedCode(?string $harmonizedCode) : self
     {
         $this->initialized['harmonizedCode'] = true;
         $this->harmonizedCode = $harmonizedCode;
@@ -604,20 +604,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Information about shipment's customs value.
      *
-     * @return ManifestCustomsValue
+     * @return ManifestCustomsValue|null
      */
-    public function getCustomsValue() : ManifestCustomsValue
+    public function getCustomsValue() : ?ManifestCustomsValue
     {
         return $this->customsValue;
     }
     /**
      * Information about shipment's customs value.
      *
-     * @param ManifestCustomsValue $customsValue
+     * @param ManifestCustomsValue|null $customsValue
      *
      * @return self
      */
-    public function setCustomsValue(ManifestCustomsValue $customsValue) : self
+    public function setCustomsValue(?ManifestCustomsValue $customsValue) : self
     {
         $this->initialized['customsValue'] = true;
         $this->customsValue = $customsValue;
@@ -626,20 +626,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * User-defined special instructions for delivery.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSpecialInstructions() : string
+    public function getSpecialInstructions() : ?string
     {
         return $this->specialInstructions;
     }
     /**
      * User-defined special instructions for delivery.
      *
-     * @param string $specialInstructions
+     * @param string|null $specialInstructions
      *
      * @return self
      */
-    public function setSpecialInstructions(string $specialInstructions) : self
+    public function setSpecialInstructions(?string $specialInstructions) : self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -658,9 +658,9 @@ class SubscriptionFileManifest extends \ArrayObject
     F/D - Free Domicile
     T/P - Third Party Billing
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipmentChargeType() : string
+    public function getShipmentChargeType() : ?string
     {
         return $this->shipmentChargeType;
     }
@@ -677,11 +677,11 @@ class SubscriptionFileManifest extends \ArrayObject
     F/D - Free Domicile
     T/P - Third Party Billing
     *
-    * @param string $shipmentChargeType
+    * @param string|null $shipmentChargeType
     *
     * @return self
     */
-    public function setShipmentChargeType(string $shipmentChargeType) : self
+    public function setShipmentChargeType(?string $shipmentChargeType) : self
     {
         $this->initialized['shipmentChargeType'] = true;
         $this->shipmentChargeType = $shipmentChargeType;
@@ -690,20 +690,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @return ManifestBillToAccount
+     * @return ManifestBillToAccount|null
      */
-    public function getBillToAccount() : ManifestBillToAccount
+    public function getBillToAccount() : ?ManifestBillToAccount
     {
         return $this->billToAccount;
     }
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @param ManifestBillToAccount $billToAccount
+     * @param ManifestBillToAccount|null $billToAccount
      *
      * @return self
      */
-    public function setBillToAccount(ManifestBillToAccount $billToAccount) : self
+    public function setBillToAccount(?ManifestBillToAccount $billToAccount) : self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -712,20 +712,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Indicates if consignee will be billed the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getConsigneeBillIndicator() : string
+    public function getConsigneeBillIndicator() : ?string
     {
         return $this->consigneeBillIndicator;
     }
     /**
      * Indicates if consignee will be billed the shipment.
      *
-     * @param string $consigneeBillIndicator
+     * @param string|null $consigneeBillIndicator
      *
      * @return self
      */
-    public function setConsigneeBillIndicator(string $consigneeBillIndicator) : self
+    public function setConsigneeBillIndicator(?string $consigneeBillIndicator) : self
     {
         $this->initialized['consigneeBillIndicator'] = true;
         $this->consigneeBillIndicator = $consigneeBillIndicator;
@@ -734,20 +734,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Indicates whether or not to collect bill at time of delivery.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCollectBillIndicator() : string
+    public function getCollectBillIndicator() : ?string
     {
         return $this->collectBillIndicator;
     }
     /**
      * Indicates whether or not to collect bill at time of delivery.
      *
-     * @param string $collectBillIndicator
+     * @param string|null $collectBillIndicator
      *
      * @return self
      */
-    public function setCollectBillIndicator(string $collectBillIndicator) : self
+    public function setCollectBillIndicator(?string $collectBillIndicator) : self
     {
         $this->initialized['collectBillIndicator'] = true;
         $this->collectBillIndicator = $collectBillIndicator;
@@ -756,20 +756,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Indicates Location Assured Values: Y - Location Assured accessorial requested
      *
-     * @return string
+     * @return string|null
      */
-    public function getLocationAssured() : string
+    public function getLocationAssured() : ?string
     {
         return $this->locationAssured;
     }
     /**
      * Indicates Location Assured Values: Y - Location Assured accessorial requested
      *
-     * @param string $locationAssured
+     * @param string|null $locationAssured
      *
      * @return self
      */
-    public function setLocationAssured(string $locationAssured) : self
+    public function setLocationAssured(?string $locationAssured) : self
     {
         $this->initialized['locationAssured'] = true;
         $this->locationAssured = $locationAssured;
@@ -778,20 +778,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Import Control Indication is used to designate that the shipment is an Import Control shipment. If the shipment is an import control shipment then this element will have value. For no import shipment this will not be appear
      *
-     * @return string
+     * @return string|null
      */
-    public function getImportControl() : string
+    public function getImportControl() : ?string
     {
         return $this->importControl;
     }
     /**
      * Import Control Indication is used to designate that the shipment is an Import Control shipment. If the shipment is an import control shipment then this element will have value. For no import shipment this will not be appear
      *
-     * @param string $importControl
+     * @param string|null $importControl
      *
      * @return self
      */
-    public function setImportControl(string $importControl) : self
+    public function setImportControl(?string $importControl) : self
     {
         $this->initialized['importControl'] = true;
         $this->importControl = $importControl;
@@ -800,20 +800,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLabelDeliveryMethod() : string
+    public function getLabelDeliveryMethod() : ?string
     {
         return $this->labelDeliveryMethod;
     }
     /**
      * Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.
      *
-     * @param string $labelDeliveryMethod
+     * @param string|null $labelDeliveryMethod
      *
      * @return self
      */
-    public function setLabelDeliveryMethod(string $labelDeliveryMethod) : self
+    public function setLabelDeliveryMethod(?string $labelDeliveryMethod) : self
     {
         $this->initialized['labelDeliveryMethod'] = true;
         $this->labelDeliveryMethod = $labelDeliveryMethod;
@@ -822,20 +822,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user's shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommercialInvoiceRemoval() : string
+    public function getCommercialInvoiceRemoval() : ?string
     {
         return $this->commercialInvoiceRemoval;
     }
     /**
      * Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user's shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear
      *
-     * @param string $commercialInvoiceRemoval
+     * @param string|null $commercialInvoiceRemoval
      *
      * @return self
      */
-    public function setCommercialInvoiceRemoval(string $commercialInvoiceRemoval) : self
+    public function setCommercialInvoiceRemoval(?string $commercialInvoiceRemoval) : self
     {
         $this->initialized['commercialInvoiceRemoval'] = true;
         $this->commercialInvoiceRemoval = $commercialInvoiceRemoval;
@@ -844,20 +844,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Postal Service Tracking ID transport company tracking number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalServiceTrackingID() : string
+    public function getPostalServiceTrackingID() : ?string
     {
         return $this->postalServiceTrackingID;
     }
     /**
      * Postal Service Tracking ID transport company tracking number.
      *
-     * @param string $postalServiceTrackingID
+     * @param string|null $postalServiceTrackingID
      *
      * @return self
      */
-    public function setPostalServiceTrackingID(string $postalServiceTrackingID) : self
+    public function setPostalServiceTrackingID(?string $postalServiceTrackingID) : self
     {
         $this->initialized['postalServiceTrackingID'] = true;
         $this->postalServiceTrackingID = $postalServiceTrackingID;
@@ -866,20 +866,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * (RFA) UPS returns flexible access. This element will appear with value only when returns flexible access uploaded. For no returns flexible access this element will not be appear
      *
-     * @return string
+     * @return string|null
      */
-    public function getReturnsFlexibleAccess() : string
+    public function getReturnsFlexibleAccess() : ?string
     {
         return $this->returnsFlexibleAccess;
     }
     /**
      * (RFA) UPS returns flexible access. This element will appear with value only when returns flexible access uploaded. For no returns flexible access this element will not be appear
      *
-     * @param string $returnsFlexibleAccess
+     * @param string|null $returnsFlexibleAccess
      *
      * @return self
      */
-    public function setReturnsFlexibleAccess(string $returnsFlexibleAccess) : self
+    public function setReturnsFlexibleAccess(?string $returnsFlexibleAccess) : self
     {
         $this->initialized['returnsFlexibleAccess'] = true;
         $this->returnsFlexibleAccess = $returnsFlexibleAccess;
@@ -888,20 +888,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * UPS carbon neutral is a term used to reflect a generic term for the tagging to be included on any document, label, e-mail, etc. used to identify that the UPS carbon neutral fee is applied. This element will appear only when shipment is UPS carbon neutral with value. For non UPS carbon neutral shipping this element appear.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUPScarbonneutral() : string
+    public function getUPScarbonneutral() : ?string
     {
         return $this->uPScarbonneutral;
     }
     /**
      * UPS carbon neutral is a term used to reflect a generic term for the tagging to be included on any document, label, e-mail, etc. used to identify that the UPS carbon neutral fee is applied. This element will appear only when shipment is UPS carbon neutral with value. For non UPS carbon neutral shipping this element appear.
      *
-     * @param string $uPScarbonneutral
+     * @param string|null $uPScarbonneutral
      *
      * @return self
      */
-    public function setUPScarbonneutral(string $uPScarbonneutral) : self
+    public function setUPScarbonneutral(?string $uPScarbonneutral) : self
     {
         $this->initialized['uPScarbonneutral'] = true;
         $this->uPScarbonneutral = $uPScarbonneutral;
@@ -910,20 +910,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProduct() : string
+    public function getProduct() : ?string
     {
         return $this->product;
     }
     /**
      * This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.
      *
-     * @param string $product
+     * @param string|null $product
      *
      * @return self
      */
-    public function setProduct(string $product) : self
+    public function setProduct(?string $product) : self
     {
         $this->initialized['product'] = true;
         $this->product = $product;
@@ -932,20 +932,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared
      *
-     * @return string
+     * @return string|null
      */
-    public function getUPSReturnsExchange() : string
+    public function getUPSReturnsExchange() : ?string
     {
         return $this->uPSReturnsExchange;
     }
     /**
      * UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared
      *
-     * @param string $uPSReturnsExchange
+     * @param string|null $uPSReturnsExchange
      *
      * @return self
      */
-    public function setUPSReturnsExchange(string $uPSReturnsExchange) : self
+    public function setUPSReturnsExchange(?string $uPSReturnsExchange) : self
     {
         $this->initialized['uPSReturnsExchange'] = true;
         $this->uPSReturnsExchange = $uPSReturnsExchange;
@@ -954,20 +954,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Lift Gate On Delivery - This element will appear only when Lift Gate For Delivery was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for Delivery was requested, this element will not appear.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLiftGateOnDelivery() : string
+    public function getLiftGateOnDelivery() : ?string
     {
         return $this->liftGateOnDelivery;
     }
     /**
      * Lift Gate On Delivery - This element will appear only when Lift Gate For Delivery was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for Delivery was requested, this element will not appear.
      *
-     * @param string $liftGateOnDelivery
+     * @param string|null $liftGateOnDelivery
      *
      * @return self
      */
-    public function setLiftGateOnDelivery(string $liftGateOnDelivery) : self
+    public function setLiftGateOnDelivery(?string $liftGateOnDelivery) : self
     {
         $this->initialized['liftGateOnDelivery'] = true;
         $this->liftGateOnDelivery = $liftGateOnDelivery;
@@ -976,20 +976,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Lift Gate On PickUp - This element will appear only when Lift Gate For PickUp was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for PickUp was requested, this element will not appear.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLiftGateOnPickUp() : string
+    public function getLiftGateOnPickUp() : ?string
     {
         return $this->liftGateOnPickUp;
     }
     /**
      * Lift Gate On PickUp - This element will appear only when Lift Gate For PickUp was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for PickUp was requested, this element will not appear.
      *
-     * @param string $liftGateOnPickUp
+     * @param string|null $liftGateOnPickUp
      *
      * @return self
      */
-    public function setLiftGateOnPickUp(string $liftGateOnPickUp) : self
+    public function setLiftGateOnPickUp(?string $liftGateOnPickUp) : self
     {
         $this->initialized['liftGateOnPickUp'] = true;
         $this->liftGateOnPickUp = $liftGateOnPickUp;
@@ -998,20 +998,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Pickup Preference -This element will appear only when Dropoff At UPS Facility was requested for UPS World Wide Express Freight Shipments. If no Dropoff At UPS Facility was requested, this element will not appear.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupPreference() : string
+    public function getPickupPreference() : ?string
     {
         return $this->pickupPreference;
     }
     /**
      * Pickup Preference -This element will appear only when Dropoff At UPS Facility was requested for UPS World Wide Express Freight Shipments. If no Dropoff At UPS Facility was requested, this element will not appear.
      *
-     * @param string $pickupPreference
+     * @param string|null $pickupPreference
      *
      * @return self
      */
-    public function setPickupPreference(string $pickupPreference) : self
+    public function setPickupPreference(?string $pickupPreference) : self
     {
         $this->initialized['pickupPreference'] = true;
         $this->pickupPreference = $pickupPreference;
@@ -1020,20 +1020,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Delivery Preference - This element will appear only when Hold for pick up was requested for UPS World Wide Express Freight Shipments. If no Hold for pick up was requested, this element will not appear.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDeliveryPreference() : string
+    public function getDeliveryPreference() : ?string
     {
         return $this->deliveryPreference;
     }
     /**
      * Delivery Preference - This element will appear only when Hold for pick up was requested for UPS World Wide Express Freight Shipments. If no Hold for pick up was requested, this element will not appear.
      *
-     * @param string $deliveryPreference
+     * @param string|null $deliveryPreference
      *
      * @return self
      */
-    public function setDeliveryPreference(string $deliveryPreference) : self
+    public function setDeliveryPreference(?string $deliveryPreference) : self
     {
         $this->initialized['deliveryPreference'] = true;
         $this->deliveryPreference = $deliveryPreference;
@@ -1042,20 +1042,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" Indicates Shipment is Direct to Retail.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHoldForPickupAtUPSAccessPoint() : string
+    public function getHoldForPickupAtUPSAccessPoint() : ?string
     {
         return $this->holdForPickupAtUPSAccessPoint;
     }
     /**
      * "Y" Indicates Shipment is Direct to Retail.
      *
-     * @param string $holdForPickupAtUPSAccessPoint
+     * @param string|null $holdForPickupAtUPSAccessPoint
      *
      * @return self
      */
-    public function setHoldForPickupAtUPSAccessPoint(string $holdForPickupAtUPSAccessPoint) : self
+    public function setHoldForPickupAtUPSAccessPoint(?string $holdForPickupAtUPSAccessPoint) : self
     {
         $this->initialized['holdForPickupAtUPSAccessPoint'] = true;
         $this->holdForPickupAtUPSAccessPoint = $holdForPickupAtUPSAccessPoint;
@@ -1064,20 +1064,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Information about Hold for Pickup UPS Access Point Address
      *
-     * @return ManifestUAPAddress
+     * @return ManifestUAPAddress|null
      */
-    public function getUAPAddress() : ManifestUAPAddress
+    public function getUAPAddress() : ?ManifestUAPAddress
     {
         return $this->uAPAddress;
     }
     /**
      * Information about Hold for Pickup UPS Access Point Address
      *
-     * @param ManifestUAPAddress $uAPAddress
+     * @param ManifestUAPAddress|null $uAPAddress
      *
      * @return self
      */
-    public function setUAPAddress(ManifestUAPAddress $uAPAddress) : self
+    public function setUAPAddress(?ManifestUAPAddress $uAPAddress) : self
     {
         $this->initialized['uAPAddress'] = true;
         $this->uAPAddress = $uAPAddress;
@@ -1086,20 +1086,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" Indicates Shipment is Deliver to Addressee.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDeliverToAddresseeOnlyIndicator() : string
+    public function getDeliverToAddresseeOnlyIndicator() : ?string
     {
         return $this->deliverToAddresseeOnlyIndicator;
     }
     /**
      * "Y" Indicates Shipment is Deliver to Addressee.
      *
-     * @param string $deliverToAddresseeOnlyIndicator
+     * @param string|null $deliverToAddresseeOnlyIndicator
      *
      * @return self
      */
-    public function setDeliverToAddresseeOnlyIndicator(string $deliverToAddresseeOnlyIndicator) : self
+    public function setDeliverToAddresseeOnlyIndicator(?string $deliverToAddresseeOnlyIndicator) : self
     {
         $this->initialized['deliverToAddresseeOnlyIndicator'] = true;
         $this->deliverToAddresseeOnlyIndicator = $deliverToAddresseeOnlyIndicator;
@@ -1108,20 +1108,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" Indicates Shipment is Cash on Delivery in Direct to Retail
      *
-     * @return string
+     * @return string|null
      */
-    public function getUPSAccessPointCODIndicator() : string
+    public function getUPSAccessPointCODIndicator() : ?string
     {
         return $this->uPSAccessPointCODIndicator;
     }
     /**
      * "Y" Indicates Shipment is Cash on Delivery in Direct to Retail
      *
-     * @param string $uPSAccessPointCODIndicator
+     * @param string|null $uPSAccessPointCODIndicator
      *
      * @return self
      */
-    public function setUPSAccessPointCODIndicator(string $uPSAccessPointCODIndicator) : self
+    public function setUPSAccessPointCODIndicator(?string $uPSAccessPointCODIndicator) : self
     {
         $this->initialized['uPSAccessPointCODIndicator'] = true;
         $this->uPSAccessPointCODIndicator = $uPSAccessPointCODIndicator;
@@ -1130,20 +1130,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * An accessorial Indicator flag: Y = Clinical Trial accessorial provided in Manifest. Spaces = Clinical Trial accessorial not provided in Manifest.
      *
-     * @return string
+     * @return string|null
      */
-    public function getClinicalTrialIndicator() : string
+    public function getClinicalTrialIndicator() : ?string
     {
         return $this->clinicalTrialIndicator;
     }
     /**
      * An accessorial Indicator flag: Y = Clinical Trial accessorial provided in Manifest. Spaces = Clinical Trial accessorial not provided in Manifest.
      *
-     * @param string $clinicalTrialIndicator
+     * @param string|null $clinicalTrialIndicator
      *
      * @return self
      */
-    public function setClinicalTrialIndicator(string $clinicalTrialIndicator) : self
+    public function setClinicalTrialIndicator(?string $clinicalTrialIndicator) : self
     {
         $this->initialized['clinicalTrialIndicator'] = true;
         $this->clinicalTrialIndicator = $clinicalTrialIndicator;
@@ -1152,20 +1152,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * An unique Clinical Trial associated with the shipment provided in Manifest.
      *
-     * @return string
+     * @return string|null
      */
-    public function getClinicalTrialIndicationNumber() : string
+    public function getClinicalTrialIndicationNumber() : ?string
     {
         return $this->clinicalTrialIndicationNumber;
     }
     /**
      * An unique Clinical Trial associated with the shipment provided in Manifest.
      *
-     * @param string $clinicalTrialIndicationNumber
+     * @param string|null $clinicalTrialIndicationNumber
      *
      * @return self
      */
-    public function setClinicalTrialIndicationNumber(string $clinicalTrialIndicationNumber) : self
+    public function setClinicalTrialIndicationNumber(?string $clinicalTrialIndicationNumber) : self
     {
         $this->initialized['clinicalTrialIndicationNumber'] = true;
         $this->clinicalTrialIndicationNumber = $clinicalTrialIndicationNumber;
@@ -1174,20 +1174,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * An accessorial Indicator flag: Y = Category A Hazardous materials accessorial provided in Manifest. Spaces = Category A Hazardous materials accessorial not provided in Manifest.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCategoryAHazardousIndicator() : string
+    public function getCategoryAHazardousIndicator() : ?string
     {
         return $this->categoryAHazardousIndicator;
     }
     /**
      * An accessorial Indicator flag: Y = Category A Hazardous materials accessorial provided in Manifest. Spaces = Category A Hazardous materials accessorial not provided in Manifest.
      *
-     * @param string $categoryAHazardousIndicator
+     * @param string|null $categoryAHazardousIndicator
      *
      * @return self
      */
-    public function setCategoryAHazardousIndicator(string $categoryAHazardousIndicator) : self
+    public function setCategoryAHazardousIndicator(?string $categoryAHazardousIndicator) : self
     {
         $this->initialized['categoryAHazardousIndicator'] = true;
         $this->categoryAHazardousIndicator = $categoryAHazardousIndicator;
@@ -1196,20 +1196,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * An accessorial Indicator flag: Y = Direct Delivery accessorisal provided in Manifest. Spaces = Direct Delivery accessorial not provided in Manifest.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDirectDeliveryIndicator() : string
+    public function getDirectDeliveryIndicator() : ?string
     {
         return $this->directDeliveryIndicator;
     }
     /**
      * An accessorial Indicator flag: Y = Direct Delivery accessorisal provided in Manifest. Spaces = Direct Delivery accessorial not provided in Manifest.
      *
-     * @param string $directDeliveryIndicator
+     * @param string|null $directDeliveryIndicator
      *
      * @return self
      */
-    public function setDirectDeliveryIndicator(string $directDeliveryIndicator) : self
+    public function setDirectDeliveryIndicator(?string $directDeliveryIndicator) : self
     {
         $this->initialized['directDeliveryIndicator'] = true;
         $this->directDeliveryIndicator = $directDeliveryIndicator;
@@ -1218,20 +1218,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" indicates Shipment has PackageReleaseCode Accessorial.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageReleaseCodeIndicator() : string
+    public function getPackageReleaseCodeIndicator() : ?string
     {
         return $this->packageReleaseCodeIndicator;
     }
     /**
      * "Y" indicates Shipment has PackageReleaseCode Accessorial.
      *
-     * @param string $packageReleaseCodeIndicator
+     * @param string|null $packageReleaseCodeIndicator
      *
      * @return self
      */
-    public function setPackageReleaseCodeIndicator(string $packageReleaseCodeIndicator) : self
+    public function setPackageReleaseCodeIndicator(?string $packageReleaseCodeIndicator) : self
     {
         $this->initialized['packageReleaseCodeIndicator'] = true;
         $this->packageReleaseCodeIndicator = $packageReleaseCodeIndicator;
@@ -1240,20 +1240,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" indicates that a UPS Proactive Response Accessorial is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProactiveResponseIndicator() : string
+    public function getProactiveResponseIndicator() : ?string
     {
         return $this->proactiveResponseIndicator;
     }
     /**
      * "Y" indicates that a UPS Proactive Response Accessorial is provided.
      *
-     * @param string $proactiveResponseIndicator
+     * @param string|null $proactiveResponseIndicator
      *
      * @return self
      */
-    public function setProactiveResponseIndicator(string $proactiveResponseIndicator) : self
+    public function setProactiveResponseIndicator(?string $proactiveResponseIndicator) : self
     {
         $this->initialized['proactiveResponseIndicator'] = true;
         $this->proactiveResponseIndicator = $proactiveResponseIndicator;
@@ -1262,20 +1262,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" indicates that a Heavy Goods White Glove Delivery Accessorial is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWhiteGloveDeliveryIndicator() : string
+    public function getWhiteGloveDeliveryIndicator() : ?string
     {
         return $this->whiteGloveDeliveryIndicator;
     }
     /**
      * "Y" indicates that a Heavy Goods White Glove Delivery Accessorial is provided.
      *
-     * @param string $whiteGloveDeliveryIndicator
+     * @param string|null $whiteGloveDeliveryIndicator
      *
      * @return self
      */
-    public function setWhiteGloveDeliveryIndicator(string $whiteGloveDeliveryIndicator) : self
+    public function setWhiteGloveDeliveryIndicator(?string $whiteGloveDeliveryIndicator) : self
     {
         $this->initialized['whiteGloveDeliveryIndicator'] = true;
         $this->whiteGloveDeliveryIndicator = $whiteGloveDeliveryIndicator;
@@ -1284,20 +1284,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" indicates that a Heavy Goods Room of Choice Accessorial is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRoomOfChoiceIndicator() : string
+    public function getRoomOfChoiceIndicator() : ?string
     {
         return $this->roomOfChoiceIndicator;
     }
     /**
      * "Y" indicates that a Heavy Goods Room of Choice Accessorial is provided.
      *
-     * @param string $roomOfChoiceIndicator
+     * @param string|null $roomOfChoiceIndicator
      *
      * @return self
      */
-    public function setRoomOfChoiceIndicator(string $roomOfChoiceIndicator) : self
+    public function setRoomOfChoiceIndicator(?string $roomOfChoiceIndicator) : self
     {
         $this->initialized['roomOfChoiceIndicator'] = true;
         $this->roomOfChoiceIndicator = $roomOfChoiceIndicator;
@@ -1306,20 +1306,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" indicates that a Heavy Goods Installation Delivery Accessorial is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getInstallationDeliveryIndicator() : string
+    public function getInstallationDeliveryIndicator() : ?string
     {
         return $this->installationDeliveryIndicator;
     }
     /**
      * "Y" indicates that a Heavy Goods Installation Delivery Accessorial is provided.
      *
-     * @param string $installationDeliveryIndicator
+     * @param string|null $installationDeliveryIndicator
      *
      * @return self
      */
-    public function setInstallationDeliveryIndicator(string $installationDeliveryIndicator) : self
+    public function setInstallationDeliveryIndicator(?string $installationDeliveryIndicator) : self
     {
         $this->initialized['installationDeliveryIndicator'] = true;
         $this->installationDeliveryIndicator = $installationDeliveryIndicator;
@@ -1328,20 +1328,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y" indicates that a Heavy Goods Item Disposal Accessorial is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getItemDisposalIndicator() : string
+    public function getItemDisposalIndicator() : ?string
     {
         return $this->itemDisposalIndicator;
     }
     /**
      * "Y" indicates that a Heavy Goods Item Disposal Accessorial is provided.
      *
-     * @param string $itemDisposalIndicator
+     * @param string|null $itemDisposalIndicator
      *
      * @return self
      */
-    public function setItemDisposalIndicator(string $itemDisposalIndicator) : self
+    public function setItemDisposalIndicator(?string $itemDisposalIndicator) : self
     {
         $this->initialized['itemDisposalIndicator'] = true;
         $this->itemDisposalIndicator = $itemDisposalIndicator;
@@ -1350,20 +1350,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Lead Tracking Number in shipment
      *
-     * @return string
+     * @return string|null
      */
-    public function getLeadShipmentTrackingNumber() : string
+    public function getLeadShipmentTrackingNumber() : ?string
     {
         return $this->leadShipmentTrackingNumber;
     }
     /**
      * Lead Tracking Number in shipment
      *
-     * @param string $leadShipmentTrackingNumber
+     * @param string|null $leadShipmentTrackingNumber
      *
      * @return self
      */
-    public function setLeadShipmentTrackingNumber(string $leadShipmentTrackingNumber) : self
+    public function setLeadShipmentTrackingNumber(?string $leadShipmentTrackingNumber) : self
     {
         $this->initialized['leadShipmentTrackingNumber'] = true;
         $this->leadShipmentTrackingNumber = $leadShipmentTrackingNumber;
@@ -1372,20 +1372,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y"  indicates that a SaturdayNonPremiumCommercialDeliveryIndicator is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSaturdayNonPremiumCommercialDeliveryIndicator() : string
+    public function getSaturdayNonPremiumCommercialDeliveryIndicator() : ?string
     {
         return $this->saturdayNonPremiumCommercialDeliveryIndicator;
     }
     /**
      * "Y"  indicates that a SaturdayNonPremiumCommercialDeliveryIndicator is provided.
      *
-     * @param string $saturdayNonPremiumCommercialDeliveryIndicator
+     * @param string|null $saturdayNonPremiumCommercialDeliveryIndicator
      *
      * @return self
      */
-    public function setSaturdayNonPremiumCommercialDeliveryIndicator(string $saturdayNonPremiumCommercialDeliveryIndicator) : self
+    public function setSaturdayNonPremiumCommercialDeliveryIndicator(?string $saturdayNonPremiumCommercialDeliveryIndicator) : self
     {
         $this->initialized['saturdayNonPremiumCommercialDeliveryIndicator'] = true;
         $this->saturdayNonPremiumCommercialDeliveryIndicator = $saturdayNonPremiumCommercialDeliveryIndicator;
@@ -1394,20 +1394,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * "Y"  indicates that a SundayNonPremiumCommercialDeliveryIndicator is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSundayNonPremiumCommercialDeliveryIndicator() : string
+    public function getSundayNonPremiumCommercialDeliveryIndicator() : ?string
     {
         return $this->sundayNonPremiumCommercialDeliveryIndicator;
     }
     /**
      * "Y"  indicates that a SundayNonPremiumCommercialDeliveryIndicator is provided.
      *
-     * @param string $sundayNonPremiumCommercialDeliveryIndicator
+     * @param string|null $sundayNonPremiumCommercialDeliveryIndicator
      *
      * @return self
      */
-    public function setSundayNonPremiumCommercialDeliveryIndicator(string $sundayNonPremiumCommercialDeliveryIndicator) : self
+    public function setSundayNonPremiumCommercialDeliveryIndicator(?string $sundayNonPremiumCommercialDeliveryIndicator) : self
     {
         $this->initialized['sundayNonPremiumCommercialDeliveryIndicator'] = true;
         $this->sundayNonPremiumCommercialDeliveryIndicator = $sundayNonPremiumCommercialDeliveryIndicator;
@@ -1416,20 +1416,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * �Y� indicates that the UPS Premier accessorial is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUPSPremierAccessorialIndicator() : string
+    public function getUPSPremierAccessorialIndicator() : ?string
     {
         return $this->uPSPremierAccessorialIndicator;
     }
     /**
      * �Y� indicates that the UPS Premier accessorial is provided.
      *
-     * @param string $uPSPremierAccessorialIndicator
+     * @param string|null $uPSPremierAccessorialIndicator
      *
      * @return self
      */
-    public function setUPSPremierAccessorialIndicator(string $uPSPremierAccessorialIndicator) : self
+    public function setUPSPremierAccessorialIndicator(?string $uPSPremierAccessorialIndicator) : self
     {
         $this->initialized['uPSPremierAccessorialIndicator'] = true;
         $this->uPSPremierAccessorialIndicator = $uPSPremierAccessorialIndicator;
@@ -1438,20 +1438,20 @@ class SubscriptionFileManifest extends \ArrayObject
     /**
      * Indicates the UPS Premier category applied to the package Valid values: 'PRS' � UPS Premier Silver, 'PRG' � UPS Premier Gold, 'PRP' - UPS Premier Platinum
      *
-     * @return string
+     * @return string|null
      */
-    public function getUPSPremierCategoryCode() : string
+    public function getUPSPremierCategoryCode() : ?string
     {
         return $this->uPSPremierCategoryCode;
     }
     /**
      * Indicates the UPS Premier category applied to the package Valid values: 'PRS' � UPS Premier Silver, 'PRG' � UPS Premier Gold, 'PRP' - UPS Premier Platinum
      *
-     * @param string $uPSPremierCategoryCode
+     * @param string|null $uPSPremierCategoryCode
      *
      * @return self
      */
-    public function setUPSPremierCategoryCode(string $uPSPremierCategoryCode) : self
+    public function setUPSPremierCategoryCode(?string $uPSPremierCategoryCode) : self
     {
         $this->initialized['uPSPremierCategoryCode'] = true;
         $this->uPSPremierCategoryCode = $uPSPremierCategoryCode;

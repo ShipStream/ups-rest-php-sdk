@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Code', $data)) {
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Name', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Category', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Category', $data) && $data['Category'] !== null) {
                 $object->setCategory($data['Category']);
                 unset($data['Category']);
             }
-            if (\array_key_exists('TransportationPickUpSchedule', $data)) {
+            elseif (\array_key_exists('Category', $data) && $data['Category'] === null) {
+                $object->setCategory(null);
+            }
+            if (\array_key_exists('TransportationPickUpSchedule', $data) && $data['TransportationPickUpSchedule'] !== null) {
                 $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule', 'json', $context));
                 unset($data['TransportationPickUpSchedule']);
+            }
+            elseif (\array_key_exists('TransportationPickUpSchedule', $data) && $data['TransportationPickUpSchedule'] === null) {
+                $object->setTransportationPickUpSchedule(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -123,25 +138,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Code', $data)) {
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Name', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Category', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Category', $data) && $data['Category'] !== null) {
                 $object->setCategory($data['Category']);
                 unset($data['Category']);
             }
-            if (\array_key_exists('TransportationPickUpSchedule', $data)) {
+            elseif (\array_key_exists('Category', $data) && $data['Category'] === null) {
+                $object->setCategory(null);
+            }
+            if (\array_key_exists('TransportationPickUpSchedule', $data) && $data['TransportationPickUpSchedule'] !== null) {
                 $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule', 'json', $context));
                 unset($data['TransportationPickUpSchedule']);
+            }
+            elseif (\array_key_exists('TransportationPickUpSchedule', $data) && $data['TransportationPickUpSchedule'] === null) {
+                $object->setTransportationPickUpSchedule(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

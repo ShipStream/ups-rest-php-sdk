@@ -19,7 +19,7 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     * @param string $version Identifies the version of the API. Valid 
     values: 
     v1
-    * @param \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $regionalrequestindicator Valid values: True or False. 
     If True, either the region element or any 
@@ -37,7 +37,7 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     * }
     * @param array $accept Accept content header application/json|application/xml
     */
-    public function __construct(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], array $accept = [])
+    public function __construct(int $requestoption, string $version, ?\ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody = null, array $queryParameters = [], array $accept = [])
     {
         $this->requestoption = $requestoption;
         $this->version = $version;

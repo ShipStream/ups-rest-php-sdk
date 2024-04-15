@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ModifierType', $data)) {
+            if (\array_key_exists('ModifierType', $data) && $data['ModifierType'] !== null) {
                 $object->setModifierType($data['ModifierType']);
                 unset($data['ModifierType']);
             }
-            if (\array_key_exists('ModifierDesc', $data)) {
+            elseif (\array_key_exists('ModifierType', $data) && $data['ModifierType'] === null) {
+                $object->setModifierType(null);
+            }
+            if (\array_key_exists('ModifierDesc', $data) && $data['ModifierDesc'] !== null) {
                 $object->setModifierDesc($data['ModifierDesc']);
                 unset($data['ModifierDesc']);
             }
-            if (\array_key_exists('Amount', $data)) {
+            elseif (\array_key_exists('ModifierDesc', $data) && $data['ModifierDesc'] === null) {
+                $object->setModifierDesc(null);
+            }
+            if (\array_key_exists('Amount', $data) && $data['Amount'] !== null) {
                 $object->setAmount($data['Amount']);
                 unset($data['Amount']);
+            }
+            elseif (\array_key_exists('Amount', $data) && $data['Amount'] === null) {
+                $object->setAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ModifierType', $data)) {
+            if (\array_key_exists('ModifierType', $data) && $data['ModifierType'] !== null) {
                 $object->setModifierType($data['ModifierType']);
                 unset($data['ModifierType']);
             }
-            if (\array_key_exists('ModifierDesc', $data)) {
+            elseif (\array_key_exists('ModifierType', $data) && $data['ModifierType'] === null) {
+                $object->setModifierType(null);
+            }
+            if (\array_key_exists('ModifierDesc', $data) && $data['ModifierDesc'] !== null) {
                 $object->setModifierDesc($data['ModifierDesc']);
                 unset($data['ModifierDesc']);
             }
-            if (\array_key_exists('Amount', $data)) {
+            elseif (\array_key_exists('ModifierDesc', $data) && $data['ModifierDesc'] === null) {
+                $object->setModifierDesc(null);
+            }
+            if (\array_key_exists('Amount', $data) && $data['Amount'] !== null) {
                 $object->setAmount($data['Amount']);
                 unset($data['Amount']);
+            }
+            elseif (\array_key_exists('Amount', $data) && $data['Amount'] === null) {
+                $object->setAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

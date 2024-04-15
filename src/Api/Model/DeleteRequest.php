@@ -15,38 +15,38 @@ class DeleteRequest extends \ArrayObject
     /**
      * Contains Paperless Document API deleted request criteria components.  N/A
      *
-     * @var DeleteRequestRequest
+     * @var DeleteRequestRequest|null
      */
     protected $request;
     /**
      * The Shipper's UPS Account Number.  Your UPS Account Number must have 'Upload Forms Created Offline' enabled to use this webservice.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * DocumentId representing uploaded document to Forms History.  Only one DocumentID will be accepted for delete request.
      *
-     * @var string
+     * @var string|null
      */
     protected $documentID;
     /**
      * Contains Paperless Document API deleted request criteria components.  N/A
      *
-     * @return DeleteRequestRequest
+     * @return DeleteRequestRequest|null
      */
-    public function getRequest() : DeleteRequestRequest
+    public function getRequest() : ?DeleteRequestRequest
     {
         return $this->request;
     }
     /**
      * Contains Paperless Document API deleted request criteria components.  N/A
      *
-     * @param DeleteRequestRequest $request
+     * @param DeleteRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(DeleteRequestRequest $request) : self
+    public function setRequest(?DeleteRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -55,20 +55,20 @@ class DeleteRequest extends \ArrayObject
     /**
      * The Shipper's UPS Account Number.  Your UPS Account Number must have 'Upload Forms Created Offline' enabled to use this webservice.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * The Shipper's UPS Account Number.  Your UPS Account Number must have 'Upload Forms Created Offline' enabled to use this webservice.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -77,20 +77,20 @@ class DeleteRequest extends \ArrayObject
     /**
      * DocumentId representing uploaded document to Forms History.  Only one DocumentID will be accepted for delete request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDocumentID() : string
+    public function getDocumentID() : ?string
     {
         return $this->documentID;
     }
     /**
      * DocumentId representing uploaded document to Forms History.  Only one DocumentID will be accepted for delete request.
      *
-     * @param string $documentID
+     * @param string|null $documentID
      *
      * @return self
      */
-    public function setDocumentID(string $documentID) : self
+    public function setDocumentID(?string $documentID) : self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

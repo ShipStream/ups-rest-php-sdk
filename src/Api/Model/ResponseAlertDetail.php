@@ -15,38 +15,38 @@ class ResponseAlertDetail extends \ArrayObject
     /**
      * Warning code returned by the system.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Warning messages returned by the system.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Provides more information about the element that represents the alert.
      *
-     * @var AlertDetailElementLevelInformation
+     * @var AlertDetailElementLevelInformation|null
      */
     protected $elementLevelInformation;
     /**
      * Warning code returned by the system.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Warning code returned by the system.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -55,20 +55,20 @@ class ResponseAlertDetail extends \ArrayObject
     /**
      * Warning messages returned by the system.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Warning messages returned by the system.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -77,20 +77,20 @@ class ResponseAlertDetail extends \ArrayObject
     /**
      * Provides more information about the element that represents the alert.
      *
-     * @return AlertDetailElementLevelInformation
+     * @return AlertDetailElementLevelInformation|null
      */
-    public function getElementLevelInformation() : AlertDetailElementLevelInformation
+    public function getElementLevelInformation() : ?AlertDetailElementLevelInformation
     {
         return $this->elementLevelInformation;
     }
     /**
      * Provides more information about the element that represents the alert.
      *
-     * @param AlertDetailElementLevelInformation $elementLevelInformation
+     * @param AlertDetailElementLevelInformation|null $elementLevelInformation
      *
      * @return self
      */
-    public function setElementLevelInformation(AlertDetailElementLevelInformation $elementLevelInformation) : self
+    public function setElementLevelInformation(?AlertDetailElementLevelInformation $elementLevelInformation) : self
     {
         $this->initialized['elementLevelInformation'] = true;
         $this->elementLevelInformation = $elementLevelInformation;

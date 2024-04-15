@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HubSortCode', $data)) {
+            if (\array_key_exists('HubSortCode', $data) && $data['HubSortCode'] !== null) {
                 $object->setHubSortCode($data['HubSortCode']);
                 unset($data['HubSortCode']);
             }
-            if (\array_key_exists('FreightSortFacilityCode', $data)) {
+            elseif (\array_key_exists('HubSortCode', $data) && $data['HubSortCode'] === null) {
+                $object->setHubSortCode(null);
+            }
+            if (\array_key_exists('FreightSortFacilityCode', $data) && $data['FreightSortFacilityCode'] !== null) {
                 $object->setFreightSortFacilityCode($data['FreightSortFacilityCode']);
                 unset($data['FreightSortFacilityCode']);
+            }
+            elseif (\array_key_exists('FreightSortFacilityCode', $data) && $data['FreightSortFacilityCode'] === null) {
+                $object->setFreightSortFacilityCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HubSortCode', $data)) {
+            if (\array_key_exists('HubSortCode', $data) && $data['HubSortCode'] !== null) {
                 $object->setHubSortCode($data['HubSortCode']);
                 unset($data['HubSortCode']);
             }
-            if (\array_key_exists('FreightSortFacilityCode', $data)) {
+            elseif (\array_key_exists('HubSortCode', $data) && $data['HubSortCode'] === null) {
+                $object->setHubSortCode(null);
+            }
+            if (\array_key_exists('FreightSortFacilityCode', $data) && $data['FreightSortFacilityCode'] !== null) {
                 $object->setFreightSortFacilityCode($data['FreightSortFacilityCode']);
                 unset($data['FreightSortFacilityCode']);
+            }
+            elseif (\array_key_exists('FreightSortFacilityCode', $data) && $data['FreightSortFacilityCode'] === null) {
+                $object->setFreightSortFacilityCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

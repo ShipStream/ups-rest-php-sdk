@@ -15,32 +15,32 @@ class ManifestService extends \ArrayObject
     /**
      * For addition information, refer to the Service Codes table in the Appendix.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Not used.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * For addition information, refer to the Service Codes table in the Appendix.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * For addition information, refer to the Service Codes table in the Appendix.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class ManifestService extends \ArrayObject
     /**
      * Not used.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Not used.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

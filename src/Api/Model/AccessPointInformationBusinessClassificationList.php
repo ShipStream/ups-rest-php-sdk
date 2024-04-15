@@ -15,26 +15,26 @@ class AccessPointInformationBusinessClassificationList extends \ArrayObject
     /**
      * 
      *
-     * @var BusinessClassificationListBusinessClassification[]
+     * @var list<BusinessClassificationListBusinessClassification>|null
      */
     protected $businessClassification;
     /**
      * 
      *
-     * @return BusinessClassificationListBusinessClassification[]
+     * @return list<BusinessClassificationListBusinessClassification>|null
      */
-    public function getBusinessClassification() : array
+    public function getBusinessClassification() : ?array
     {
         return $this->businessClassification;
     }
     /**
      * 
      *
-     * @param BusinessClassificationListBusinessClassification[] $businessClassification
+     * @param list<BusinessClassificationListBusinessClassification>|null $businessClassification
      *
      * @return self
      */
-    public function setBusinessClassification(array $businessClassification) : self
+    public function setBusinessClassification(?array $businessClassification) : self
     {
         $this->initialized['businessClassification'] = true;
         $this->businessClassification = $businessClassification;

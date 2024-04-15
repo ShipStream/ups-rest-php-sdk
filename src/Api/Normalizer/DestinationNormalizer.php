@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('url', $data)) {
+            if (\array_key_exists('url', $data) && $data['url'] !== null) {
                 $object->setUrl($data['url']);
                 unset($data['url']);
             }
-            if (\array_key_exists('credentialType', $data)) {
+            elseif (\array_key_exists('url', $data) && $data['url'] === null) {
+                $object->setUrl(null);
+            }
+            if (\array_key_exists('credentialType', $data) && $data['credentialType'] !== null) {
                 $object->setCredentialType($data['credentialType']);
                 unset($data['credentialType']);
             }
-            if (\array_key_exists('credential', $data)) {
+            elseif (\array_key_exists('credentialType', $data) && $data['credentialType'] === null) {
+                $object->setCredentialType(null);
+            }
+            if (\array_key_exists('credential', $data) && $data['credential'] !== null) {
                 $object->setCredential($data['credential']);
                 unset($data['credential']);
+            }
+            elseif (\array_key_exists('credential', $data) && $data['credential'] === null) {
+                $object->setCredential(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('url', $data)) {
+            if (\array_key_exists('url', $data) && $data['url'] !== null) {
                 $object->setUrl($data['url']);
                 unset($data['url']);
             }
-            if (\array_key_exists('credentialType', $data)) {
+            elseif (\array_key_exists('url', $data) && $data['url'] === null) {
+                $object->setUrl(null);
+            }
+            if (\array_key_exists('credentialType', $data) && $data['credentialType'] !== null) {
                 $object->setCredentialType($data['credentialType']);
                 unset($data['credentialType']);
             }
-            if (\array_key_exists('credential', $data)) {
+            elseif (\array_key_exists('credentialType', $data) && $data['credentialType'] === null) {
+                $object->setCredentialType(null);
+            }
+            if (\array_key_exists('credential', $data) && $data['credential'] !== null) {
                 $object->setCredential($data['credential']);
                 unset($data['credential']);
+            }
+            elseif (\array_key_exists('credential', $data) && $data['credential'] === null) {
+                $object->setCredential(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

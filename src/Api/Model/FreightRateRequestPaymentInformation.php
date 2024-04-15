@@ -15,32 +15,32 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
     /**
      * Payer Container.
      *
-     * @var FreightRatePaymentInformationPayer
+     * @var FreightRatePaymentInformationPayer|null
      */
     protected $payer;
     /**
      * ShipmentBillingOption Container.
      *
-     * @var PaymentInformationShipmentBillingOption
+     * @var PaymentInformationShipmentBillingOption|null
      */
     protected $shipmentBillingOption;
     /**
      * Payer Container.
      *
-     * @return FreightRatePaymentInformationPayer
+     * @return FreightRatePaymentInformationPayer|null
      */
-    public function getPayer() : FreightRatePaymentInformationPayer
+    public function getPayer() : ?FreightRatePaymentInformationPayer
     {
         return $this->payer;
     }
     /**
      * Payer Container.
      *
-     * @param FreightRatePaymentInformationPayer $payer
+     * @param FreightRatePaymentInformationPayer|null $payer
      *
      * @return self
      */
-    public function setPayer(FreightRatePaymentInformationPayer $payer) : self
+    public function setPayer(?FreightRatePaymentInformationPayer $payer) : self
     {
         $this->initialized['payer'] = true;
         $this->payer = $payer;
@@ -49,20 +49,20 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
     /**
      * ShipmentBillingOption Container.
      *
-     * @return PaymentInformationShipmentBillingOption
+     * @return PaymentInformationShipmentBillingOption|null
      */
-    public function getShipmentBillingOption() : PaymentInformationShipmentBillingOption
+    public function getShipmentBillingOption() : ?PaymentInformationShipmentBillingOption
     {
         return $this->shipmentBillingOption;
     }
     /**
      * ShipmentBillingOption Container.
      *
-     * @param PaymentInformationShipmentBillingOption $shipmentBillingOption
+     * @param PaymentInformationShipmentBillingOption|null $shipmentBillingOption
      *
      * @return self
      */
-    public function setShipmentBillingOption(PaymentInformationShipmentBillingOption $shipmentBillingOption) : self
+    public function setShipmentBillingOption(?PaymentInformationShipmentBillingOption $shipmentBillingOption) : self
     {
         $this->initialized['shipmentBillingOption'] = true;
         $this->shipmentBillingOption = $shipmentBillingOption;

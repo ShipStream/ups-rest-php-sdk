@@ -15,44 +15,44 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * This contains the business classification code to exclude from UPS Access Point Search by address or geocode. Multiple codes can are possible in separate elements. Please refer to Appendix D for detailed business codes.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $businessClassificationCode;
     /**
      * This contains the business name to exclude from UPS Access Point Search by address or geocode. Partial names are accepted.
      *
-     * @var string
+     * @var string|null
      */
     protected $businessName;
     /**
      * Public Access points within Radius (in specified Unit of Measure) of any included private access points will be excluded from the results. Valid only if at least one IncludeCriteria/MerchantAccountNumber is provided.
      *
-     * @var string
+     * @var string|null
      */
     protected $radius;
     /**
      * Container to hold a list of postal codes to exclude from the access point address or geocode search.
      *
-     * @var ExcludeFromResultPostalCodeList
+     * @var ExcludeFromResultPostalCodeList|null
      */
     protected $postalCodeList;
     /**
      * This contains the business classification code to exclude from UPS Access Point Search by address or geocode. Multiple codes can are possible in separate elements. Please refer to Appendix D for detailed business codes.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getBusinessClassificationCode() : array
+    public function getBusinessClassificationCode() : ?array
     {
         return $this->businessClassificationCode;
     }
     /**
      * This contains the business classification code to exclude from UPS Access Point Search by address or geocode. Multiple codes can are possible in separate elements. Please refer to Appendix D for detailed business codes.
      *
-     * @param string[] $businessClassificationCode
+     * @param list<string>|null $businessClassificationCode
      *
      * @return self
      */
-    public function setBusinessClassificationCode(array $businessClassificationCode) : self
+    public function setBusinessClassificationCode(?array $businessClassificationCode) : self
     {
         $this->initialized['businessClassificationCode'] = true;
         $this->businessClassificationCode = $businessClassificationCode;
@@ -61,20 +61,20 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * This contains the business name to exclude from UPS Access Point Search by address or geocode. Partial names are accepted.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBusinessName() : string
+    public function getBusinessName() : ?string
     {
         return $this->businessName;
     }
     /**
      * This contains the business name to exclude from UPS Access Point Search by address or geocode. Partial names are accepted.
      *
-     * @param string $businessName
+     * @param string|null $businessName
      *
      * @return self
      */
-    public function setBusinessName(string $businessName) : self
+    public function setBusinessName(?string $businessName) : self
     {
         $this->initialized['businessName'] = true;
         $this->businessName = $businessName;
@@ -83,20 +83,20 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * Public Access points within Radius (in specified Unit of Measure) of any included private access points will be excluded from the results. Valid only if at least one IncludeCriteria/MerchantAccountNumber is provided.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRadius() : string
+    public function getRadius() : ?string
     {
         return $this->radius;
     }
     /**
      * Public Access points within Radius (in specified Unit of Measure) of any included private access points will be excluded from the results. Valid only if at least one IncludeCriteria/MerchantAccountNumber is provided.
      *
-     * @param string $radius
+     * @param string|null $radius
      *
      * @return self
      */
-    public function setRadius(string $radius) : self
+    public function setRadius(?string $radius) : self
     {
         $this->initialized['radius'] = true;
         $this->radius = $radius;
@@ -105,20 +105,20 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * Container to hold a list of postal codes to exclude from the access point address or geocode search.
      *
-     * @return ExcludeFromResultPostalCodeList
+     * @return ExcludeFromResultPostalCodeList|null
      */
-    public function getPostalCodeList() : ExcludeFromResultPostalCodeList
+    public function getPostalCodeList() : ?ExcludeFromResultPostalCodeList
     {
         return $this->postalCodeList;
     }
     /**
      * Container to hold a list of postal codes to exclude from the access point address or geocode search.
      *
-     * @param ExcludeFromResultPostalCodeList $postalCodeList
+     * @param ExcludeFromResultPostalCodeList|null $postalCodeList
      *
      * @return self
      */
-    public function setPostalCodeList(ExcludeFromResultPostalCodeList $postalCodeList) : self
+    public function setPostalCodeList(?ExcludeFromResultPostalCodeList $postalCodeList) : self
     {
         $this->initialized['postalCodeList'] = true;
         $this->postalCodeList = $postalCodeList;

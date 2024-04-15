@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ServiceCenterLocation', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ServiceCenterLocation', $data) && $data['ServiceCenterLocation'] !== null) {
                 $object->setServiceCenterLocation($this->denormalizer->denormalize($data['ServiceCenterLocation'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation', 'json', $context));
                 unset($data['ServiceCenterLocation']);
+            }
+            elseif (\array_key_exists('ServiceCenterLocation', $data) && $data['ServiceCenterLocation'] === null) {
+                $object->setServiceCenterLocation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ServiceCenterLocation', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ServiceCenterLocation', $data) && $data['ServiceCenterLocation'] !== null) {
                 $object->setServiceCenterLocation($this->denormalizer->denormalize($data['ServiceCenterLocation'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation', 'json', $context));
                 unset($data['ServiceCenterLocation']);
+            }
+            elseif (\array_key_exists('ServiceCenterLocation', $data) && $data['ServiceCenterLocation'] === null) {
+                $object->setServiceCenterLocation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

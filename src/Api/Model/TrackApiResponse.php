@@ -15,26 +15,26 @@ class TrackApiResponse extends \ArrayObject
     /**
      * 
      *
-     * @var TrackResponse
+     * @var TrackResponse|null
      */
     protected $trackResponse;
     /**
      * 
      *
-     * @return TrackResponse
+     * @return TrackResponse|null
      */
-    public function getTrackResponse() : TrackResponse
+    public function getTrackResponse() : ?TrackResponse
     {
         return $this->trackResponse;
     }
     /**
      * 
      *
-     * @param TrackResponse $trackResponse
+     * @param TrackResponse|null $trackResponse
      *
      * @return self
      */
-    public function setTrackResponse(TrackResponse $trackResponse) : self
+    public function setTrackResponse(?TrackResponse $trackResponse) : self
     {
         $this->initialized['trackResponse'] = true;
         $this->trackResponse = $trackResponse;

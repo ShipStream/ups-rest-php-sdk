@@ -15,26 +15,26 @@ class QUANTUMVIEWRequestWrapper extends \ArrayObject
     /**
      * Container for QuantumView request information.
      *
-     * @var QuantumViewRequest
+     * @var QuantumViewRequest|null
      */
     protected $quantumViewRequest;
     /**
      * Container for QuantumView request information.
      *
-     * @return QuantumViewRequest
+     * @return QuantumViewRequest|null
      */
-    public function getQuantumViewRequest() : QuantumViewRequest
+    public function getQuantumViewRequest() : ?QuantumViewRequest
     {
         return $this->quantumViewRequest;
     }
     /**
      * Container for QuantumView request information.
      *
-     * @param QuantumViewRequest $quantumViewRequest
+     * @param QuantumViewRequest|null $quantumViewRequest
      *
      * @return self
      */
-    public function setQuantumViewRequest(QuantumViewRequest $quantumViewRequest) : self
+    public function setQuantumViewRequest(?QuantumViewRequest $quantumViewRequest) : self
     {
         $this->initialized['quantumViewRequest'] = true;
         $this->quantumViewRequest = $quantumViewRequest;

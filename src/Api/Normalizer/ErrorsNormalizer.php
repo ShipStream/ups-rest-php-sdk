@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('code', $data)) {
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('description', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
-            if (\array_key_exists('message', $data)) {
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('message', $data) && $data['message'] !== null) {
                 $object->setMessage($data['message']);
                 unset($data['message']);
             }
-            if (\array_key_exists('value', $data)) {
+            elseif (\array_key_exists('message', $data) && $data['message'] === null) {
+                $object->setMessage(null);
+            }
+            if (\array_key_exists('value', $data) && $data['value'] !== null) {
                 $object->setValue($data['value']);
                 unset($data['value']);
             }
-            if (\array_key_exists('field', $data)) {
+            elseif (\array_key_exists('value', $data) && $data['value'] === null) {
+                $object->setValue(null);
+            }
+            if (\array_key_exists('field', $data) && $data['field'] !== null) {
                 $object->setField($data['field']);
                 unset($data['field']);
+            }
+            elseif (\array_key_exists('field', $data) && $data['field'] === null) {
+                $object->setField(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -127,25 +142,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('code', $data)) {
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('description', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
-            if (\array_key_exists('message', $data)) {
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('message', $data) && $data['message'] !== null) {
                 $object->setMessage($data['message']);
                 unset($data['message']);
             }
-            if (\array_key_exists('value', $data)) {
+            elseif (\array_key_exists('message', $data) && $data['message'] === null) {
+                $object->setMessage(null);
+            }
+            if (\array_key_exists('value', $data) && $data['value'] !== null) {
                 $object->setValue($data['value']);
                 unset($data['value']);
             }
-            if (\array_key_exists('field', $data)) {
+            elseif (\array_key_exists('value', $data) && $data['value'] === null) {
+                $object->setValue(null);
+            }
+            if (\array_key_exists('field', $data) && $data['field'] !== null) {
                 $object->setField($data['field']);
                 unset($data['field']);
+            }
+            elseif (\array_key_exists('field', $data) && $data['field'] === null) {
+                $object->setField(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

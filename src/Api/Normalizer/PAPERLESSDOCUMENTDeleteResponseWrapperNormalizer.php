@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DeleteResponse', $data)) {
+            if (\array_key_exists('DeleteResponse', $data) && $data['DeleteResponse'] !== null) {
                 $object->setDeleteResponse($this->denormalizer->denormalize($data['DeleteResponse'], 'ShipStream\\Ups\\Api\\Model\\DeleteResponse', 'json', $context));
                 unset($data['DeleteResponse']);
+            }
+            elseif (\array_key_exists('DeleteResponse', $data) && $data['DeleteResponse'] === null) {
+                $object->setDeleteResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DeleteResponse', $data)) {
+            if (\array_key_exists('DeleteResponse', $data) && $data['DeleteResponse'] !== null) {
                 $object->setDeleteResponse($this->denormalizer->denormalize($data['DeleteResponse'], 'ShipStream\\Ups\\Api\\Model\\DeleteResponse', 'json', $context));
                 unset($data['DeleteResponse']);
+            }
+            elseif (\array_key_exists('DeleteResponse', $data) && $data['DeleteResponse'] === null) {
+                $object->setDeleteResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

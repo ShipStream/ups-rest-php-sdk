@@ -15,32 +15,32 @@ class FreightOptionsShipmentDetail extends \ArrayObject
     /**
      * Indicates hazardous materials
      *
-     * @var string
+     * @var string|null
      */
     protected $hazmatIndicator;
     /**
      * Pallet Details.
      *
-     * @var ShipmentDetailPalletInformation
+     * @var ShipmentDetailPalletInformation|null
      */
     protected $palletInformation;
     /**
      * Indicates hazardous materials
      *
-     * @return string
+     * @return string|null
      */
-    public function getHazmatIndicator() : string
+    public function getHazmatIndicator() : ?string
     {
         return $this->hazmatIndicator;
     }
     /**
      * Indicates hazardous materials
      *
-     * @param string $hazmatIndicator
+     * @param string|null $hazmatIndicator
      *
      * @return self
      */
-    public function setHazmatIndicator(string $hazmatIndicator) : self
+    public function setHazmatIndicator(?string $hazmatIndicator) : self
     {
         $this->initialized['hazmatIndicator'] = true;
         $this->hazmatIndicator = $hazmatIndicator;
@@ -49,20 +49,20 @@ class FreightOptionsShipmentDetail extends \ArrayObject
     /**
      * Pallet Details.
      *
-     * @return ShipmentDetailPalletInformation
+     * @return ShipmentDetailPalletInformation|null
      */
-    public function getPalletInformation() : ShipmentDetailPalletInformation
+    public function getPalletInformation() : ?ShipmentDetailPalletInformation
     {
         return $this->palletInformation;
     }
     /**
      * Pallet Details.
      *
-     * @param ShipmentDetailPalletInformation $palletInformation
+     * @param ShipmentDetailPalletInformation|null $palletInformation
      *
      * @return self
      */
-    public function setPalletInformation(ShipmentDetailPalletInformation $palletInformation) : self
+    public function setPalletInformation(?ShipmentDetailPalletInformation $palletInformation) : self
     {
         $this->initialized['palletInformation'] = true;
         $this->palletInformation = $palletInformation;

@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('PickupType', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($data['PickupType']);
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('GWNStatus', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('GWNStatus', $data) && $data['GWNStatus'] !== null) {
                 $object->setGWNStatus($this->denormalizer->denormalize($data['GWNStatus'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseGWNStatus', 'json', $context));
                 unset($data['GWNStatus']);
+            }
+            elseif (\array_key_exists('GWNStatus', $data) && $data['GWNStatus'] === null) {
+                $object->setGWNStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('PickupType', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($data['PickupType']);
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('GWNStatus', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('GWNStatus', $data) && $data['GWNStatus'] !== null) {
                 $object->setGWNStatus($this->denormalizer->denormalize($data['GWNStatus'], 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseGWNStatus', 'json', $context));
                 unset($data['GWNStatus']);
+            }
+            elseif (\array_key_exists('GWNStatus', $data) && $data['GWNStatus'] === null) {
+                $object->setGWNStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

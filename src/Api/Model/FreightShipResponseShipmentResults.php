@@ -15,99 +15,99 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * Shipment pickup number.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupRequestConfirmationNumber;
     /**
     * Estimated date that the shipment will be delivered.  
     Format: YYYYMMDD.
     *
-    * @var string
+    * @var string|null
     */
     protected $deliveryDate;
     /**
      * The shipment Number assigned to the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentNumber;
     /**
      * The retrieval key for the stored BOL.
      *
-     * @var string
+     * @var string|null
      */
     protected $bOLID;
     /**
      * This indicator indicates that the rate returned is guaranteed. Can only be returned if the billing option is prepaid.
      *
-     * @var string
+     * @var string|null
      */
     protected $guaranteedIndicator;
     /**
      * This is an empty tag. The presence of the tag indicates the rate returned has a minimum charge applied to it. Can only be returned if the billing option is prepaid.
      *
-     * @var string
+     * @var string|null
      */
     protected $minimumChargeAppliedIndicator;
     /**
      * 
      *
-     * @var ShipmentResultsRate[]
+     * @var list<ShipmentResultsRate>|null
      */
     protected $rate;
     /**
      * FreightDensityRate container for Density based rating.
      *
-     * @var ShipmentResultsFreightDensityRate
+     * @var ShipmentResultsFreightDensityRate|null
      */
     protected $freightDensityRate;
     /**
      * TotalShipmentCharge Container. Can only be returned if the billing option is prepaid.
      *
-     * @var ShipmentResultsTotalShipmentCharge
+     * @var ShipmentResultsTotalShipmentCharge|null
      */
     protected $totalShipmentCharge;
     /**
      * BillableShipmentWeight Container. Can only be returned if the billing option is prepaid.
      *
-     * @var ShipmentResultsBillableShipmentWeight
+     * @var ShipmentResultsBillableShipmentWeight|null
      */
     protected $billableShipmentWeight;
     /**
      * Service Container.
      *
-     * @var ShipmentResultsService
+     * @var ShipmentResultsService|null
      */
     protected $service;
     /**
      * Documents Container.
      *
-     * @var ShipmentResultsDocuments
+     * @var ShipmentResultsDocuments|null
      */
     protected $documents;
     /**
      * Time In transit information.
      *
-     * @var ShipmentResultsTimeInTransit
+     * @var ShipmentResultsTimeInTransit|null
      */
     protected $timeInTransit;
     /**
      * Shipment pickup number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber() : ?string
     {
         return $this->pickupRequestConfirmationNumber;
     }
     /**
      * Shipment pickup number.
      *
-     * @param string $pickupRequestConfirmationNumber
+     * @param string|null $pickupRequestConfirmationNumber
      *
      * @return self
      */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(?string $pickupRequestConfirmationNumber) : self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;
@@ -117,9 +117,9 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     * Estimated date that the shipment will be delivered.  
     Format: YYYYMMDD.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDeliveryDate() : string
+    public function getDeliveryDate() : ?string
     {
         return $this->deliveryDate;
     }
@@ -127,11 +127,11 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     * Estimated date that the shipment will be delivered.  
     Format: YYYYMMDD.
     *
-    * @param string $deliveryDate
+    * @param string|null $deliveryDate
     *
     * @return self
     */
-    public function setDeliveryDate(string $deliveryDate) : self
+    public function setDeliveryDate(?string $deliveryDate) : self
     {
         $this->initialized['deliveryDate'] = true;
         $this->deliveryDate = $deliveryDate;
@@ -140,20 +140,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * The shipment Number assigned to the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentNumber() : string
+    public function getShipmentNumber() : ?string
     {
         return $this->shipmentNumber;
     }
     /**
      * The shipment Number assigned to the shipment.
      *
-     * @param string $shipmentNumber
+     * @param string|null $shipmentNumber
      *
      * @return self
      */
-    public function setShipmentNumber(string $shipmentNumber) : self
+    public function setShipmentNumber(?string $shipmentNumber) : self
     {
         $this->initialized['shipmentNumber'] = true;
         $this->shipmentNumber = $shipmentNumber;
@@ -162,20 +162,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * The retrieval key for the stored BOL.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBOLID() : string
+    public function getBOLID() : ?string
     {
         return $this->bOLID;
     }
     /**
      * The retrieval key for the stored BOL.
      *
-     * @param string $bOLID
+     * @param string|null $bOLID
      *
      * @return self
      */
-    public function setBOLID(string $bOLID) : self
+    public function setBOLID(?string $bOLID) : self
     {
         $this->initialized['bOLID'] = true;
         $this->bOLID = $bOLID;
@@ -184,20 +184,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * This indicator indicates that the rate returned is guaranteed. Can only be returned if the billing option is prepaid.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGuaranteedIndicator() : string
+    public function getGuaranteedIndicator() : ?string
     {
         return $this->guaranteedIndicator;
     }
     /**
      * This indicator indicates that the rate returned is guaranteed. Can only be returned if the billing option is prepaid.
      *
-     * @param string $guaranteedIndicator
+     * @param string|null $guaranteedIndicator
      *
      * @return self
      */
-    public function setGuaranteedIndicator(string $guaranteedIndicator) : self
+    public function setGuaranteedIndicator(?string $guaranteedIndicator) : self
     {
         $this->initialized['guaranteedIndicator'] = true;
         $this->guaranteedIndicator = $guaranteedIndicator;
@@ -206,20 +206,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * This is an empty tag. The presence of the tag indicates the rate returned has a minimum charge applied to it. Can only be returned if the billing option is prepaid.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMinimumChargeAppliedIndicator() : string
+    public function getMinimumChargeAppliedIndicator() : ?string
     {
         return $this->minimumChargeAppliedIndicator;
     }
     /**
      * This is an empty tag. The presence of the tag indicates the rate returned has a minimum charge applied to it. Can only be returned if the billing option is prepaid.
      *
-     * @param string $minimumChargeAppliedIndicator
+     * @param string|null $minimumChargeAppliedIndicator
      *
      * @return self
      */
-    public function setMinimumChargeAppliedIndicator(string $minimumChargeAppliedIndicator) : self
+    public function setMinimumChargeAppliedIndicator(?string $minimumChargeAppliedIndicator) : self
     {
         $this->initialized['minimumChargeAppliedIndicator'] = true;
         $this->minimumChargeAppliedIndicator = $minimumChargeAppliedIndicator;
@@ -228,20 +228,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentResultsRate[]
+     * @return list<ShipmentResultsRate>|null
      */
-    public function getRate() : array
+    public function getRate() : ?array
     {
         return $this->rate;
     }
     /**
      * 
      *
-     * @param ShipmentResultsRate[] $rate
+     * @param list<ShipmentResultsRate>|null $rate
      *
      * @return self
      */
-    public function setRate(array $rate) : self
+    public function setRate(?array $rate) : self
     {
         $this->initialized['rate'] = true;
         $this->rate = $rate;
@@ -250,20 +250,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * FreightDensityRate container for Density based rating.
      *
-     * @return ShipmentResultsFreightDensityRate
+     * @return ShipmentResultsFreightDensityRate|null
      */
-    public function getFreightDensityRate() : ShipmentResultsFreightDensityRate
+    public function getFreightDensityRate() : ?ShipmentResultsFreightDensityRate
     {
         return $this->freightDensityRate;
     }
     /**
      * FreightDensityRate container for Density based rating.
      *
-     * @param ShipmentResultsFreightDensityRate $freightDensityRate
+     * @param ShipmentResultsFreightDensityRate|null $freightDensityRate
      *
      * @return self
      */
-    public function setFreightDensityRate(ShipmentResultsFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(?ShipmentResultsFreightDensityRate $freightDensityRate) : self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -272,20 +272,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * TotalShipmentCharge Container. Can only be returned if the billing option is prepaid.
      *
-     * @return ShipmentResultsTotalShipmentCharge
+     * @return ShipmentResultsTotalShipmentCharge|null
      */
-    public function getTotalShipmentCharge() : ShipmentResultsTotalShipmentCharge
+    public function getTotalShipmentCharge() : ?ShipmentResultsTotalShipmentCharge
     {
         return $this->totalShipmentCharge;
     }
     /**
      * TotalShipmentCharge Container. Can only be returned if the billing option is prepaid.
      *
-     * @param ShipmentResultsTotalShipmentCharge $totalShipmentCharge
+     * @param ShipmentResultsTotalShipmentCharge|null $totalShipmentCharge
      *
      * @return self
      */
-    public function setTotalShipmentCharge(ShipmentResultsTotalShipmentCharge $totalShipmentCharge) : self
+    public function setTotalShipmentCharge(?ShipmentResultsTotalShipmentCharge $totalShipmentCharge) : self
     {
         $this->initialized['totalShipmentCharge'] = true;
         $this->totalShipmentCharge = $totalShipmentCharge;
@@ -294,20 +294,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * BillableShipmentWeight Container. Can only be returned if the billing option is prepaid.
      *
-     * @return ShipmentResultsBillableShipmentWeight
+     * @return ShipmentResultsBillableShipmentWeight|null
      */
-    public function getBillableShipmentWeight() : ShipmentResultsBillableShipmentWeight
+    public function getBillableShipmentWeight() : ?ShipmentResultsBillableShipmentWeight
     {
         return $this->billableShipmentWeight;
     }
     /**
      * BillableShipmentWeight Container. Can only be returned if the billing option is prepaid.
      *
-     * @param ShipmentResultsBillableShipmentWeight $billableShipmentWeight
+     * @param ShipmentResultsBillableShipmentWeight|null $billableShipmentWeight
      *
      * @return self
      */
-    public function setBillableShipmentWeight(ShipmentResultsBillableShipmentWeight $billableShipmentWeight) : self
+    public function setBillableShipmentWeight(?ShipmentResultsBillableShipmentWeight $billableShipmentWeight) : self
     {
         $this->initialized['billableShipmentWeight'] = true;
         $this->billableShipmentWeight = $billableShipmentWeight;
@@ -316,20 +316,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * Service Container.
      *
-     * @return ShipmentResultsService
+     * @return ShipmentResultsService|null
      */
-    public function getService() : ShipmentResultsService
+    public function getService() : ?ShipmentResultsService
     {
         return $this->service;
     }
     /**
      * Service Container.
      *
-     * @param ShipmentResultsService $service
+     * @param ShipmentResultsService|null $service
      *
      * @return self
      */
-    public function setService(ShipmentResultsService $service) : self
+    public function setService(?ShipmentResultsService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -338,20 +338,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * Documents Container.
      *
-     * @return ShipmentResultsDocuments
+     * @return ShipmentResultsDocuments|null
      */
-    public function getDocuments() : ShipmentResultsDocuments
+    public function getDocuments() : ?ShipmentResultsDocuments
     {
         return $this->documents;
     }
     /**
      * Documents Container.
      *
-     * @param ShipmentResultsDocuments $documents
+     * @param ShipmentResultsDocuments|null $documents
      *
      * @return self
      */
-    public function setDocuments(ShipmentResultsDocuments $documents) : self
+    public function setDocuments(?ShipmentResultsDocuments $documents) : self
     {
         $this->initialized['documents'] = true;
         $this->documents = $documents;
@@ -360,20 +360,20 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * Time In transit information.
      *
-     * @return ShipmentResultsTimeInTransit
+     * @return ShipmentResultsTimeInTransit|null
      */
-    public function getTimeInTransit() : ShipmentResultsTimeInTransit
+    public function getTimeInTransit() : ?ShipmentResultsTimeInTransit
     {
         return $this->timeInTransit;
     }
     /**
      * Time In transit information.
      *
-     * @param ShipmentResultsTimeInTransit $timeInTransit
+     * @param ShipmentResultsTimeInTransit|null $timeInTransit
      *
      * @return self
      */
-    public function setTimeInTransit(ShipmentResultsTimeInTransit $timeInTransit) : self
+    public function setTimeInTransit(?ShipmentResultsTimeInTransit $timeInTransit) : self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;

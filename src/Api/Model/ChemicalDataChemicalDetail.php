@@ -19,37 +19,37 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada,  
     IATA= Worldwide Air movement.
     *
-    * @var string
+    * @var string|null
     */
     protected $regulationSet;
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity. UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $iDNumber;
     /**
      * Free form text containing the full name that are used to describe a regulated chemical record.  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $hazardousMaterialsDescription;
     /**
      * This is the hazard class associated to the specified commodity.  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $classDivisionNumber;
     /**
      * Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $subRiskClass;
     /**
      * This is the packing group category associated to the specified commodity. This code represents the potential degree of danger represented by a regulated commodity being transported.  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $packagingGroupType;
     /**
@@ -60,7 +60,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     GND
     BOTH
     *
-    * @var string
+    * @var string|null
     */
     protected $specialPermit;
     /**
@@ -69,7 +69,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     Y = TechnicalName is required.
     N = TechnicalName is not required.
     *
-    * @var string
+    * @var string|null
     */
     protected $technicalNameRequiredIndicator;
     /**
@@ -79,14 +79,14 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     N = No, additional information for the shipping papers are not required.
     Y = Yes, additional information for the shipping papers are required.
     *
-    * @var string
+    * @var string|null
     */
     protected $additionalShippingInformationRequiredIndicator;
     /**
     * Defines what is restricted to pass through a tunnel.  EXAMPLES OF VALUES:
     (B),(D),(E),(B/D),(B/E),(C,D),(C/E),(D/E),Blank
     *
-    * @var string
+    * @var string|null
     */
     protected $tunnelRestrictionCode;
     /**
@@ -97,7 +97,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     3 = Use a multiplier of 1
     4 = Use a multiplier of 0 - do not apply a placard
     *
-    * @var string
+    * @var string|null
     */
     protected $transportCategory;
     /**
@@ -108,14 +108,14 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     3 = Use a multiplier of 1
     4 = Use a multiplier of 0 - do not apply a placard
     *
-    * @var string
+    * @var string|null
     */
     protected $transportMultiplierQuantity;
     /**
     * ChannelTunnelAcceptedIndicator indicates if the chemical is accepted through channel tunnel or not  Y= Accepted through channel tunnel
     N=Not accepted through channel tunnel
     *
-    * @var string
+    * @var string|null
     */
     protected $channelTunnelAcceptedIndicator;
     /**
@@ -127,7 +127,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     ADR
     IATA INTERNATIONAL AIR
     *
-    * @var string
+    * @var string|null
     */
     protected $chemicalType;
     /**
@@ -135,7 +135,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     Applicable only for TDG shipments  Y = Permitted from CA to US
     N = Not Permitted from CA to US
     *
-    * @var string
+    * @var string|null
     */
     protected $cAToUSShipmentAllowedIndicator;
     /**
@@ -145,9 +145,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada,  
     IATA= Worldwide Air movement.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet() : ?string
     {
         return $this->regulationSet;
     }
@@ -158,11 +158,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada,  
     IATA= Worldwide Air movement.
     *
-    * @param string $regulationSet
+    * @param string|null $regulationSet
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(?string $regulationSet) : self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -171,20 +171,20 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity. UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getIDNumber() : string
+    public function getIDNumber() : ?string
     {
         return $this->iDNumber;
     }
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity. UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).  It will be returned if applies for a given chemical record.
      *
-     * @param string $iDNumber
+     * @param string|null $iDNumber
      *
      * @return self
      */
-    public function setIDNumber(string $iDNumber) : self
+    public function setIDNumber(?string $iDNumber) : self
     {
         $this->initialized['iDNumber'] = true;
         $this->iDNumber = $iDNumber;
@@ -193,20 +193,20 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     /**
      * Free form text containing the full name that are used to describe a regulated chemical record.  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHazardousMaterialsDescription() : string
+    public function getHazardousMaterialsDescription() : ?string
     {
         return $this->hazardousMaterialsDescription;
     }
     /**
      * Free form text containing the full name that are used to describe a regulated chemical record.  It will be returned if applies for a given chemical record.
      *
-     * @param string $hazardousMaterialsDescription
+     * @param string|null $hazardousMaterialsDescription
      *
      * @return self
      */
-    public function setHazardousMaterialsDescription(string $hazardousMaterialsDescription) : self
+    public function setHazardousMaterialsDescription(?string $hazardousMaterialsDescription) : self
     {
         $this->initialized['hazardousMaterialsDescription'] = true;
         $this->hazardousMaterialsDescription = $hazardousMaterialsDescription;
@@ -215,20 +215,20 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     /**
      * This is the hazard class associated to the specified commodity.  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getClassDivisionNumber() : string
+    public function getClassDivisionNumber() : ?string
     {
         return $this->classDivisionNumber;
     }
     /**
      * This is the hazard class associated to the specified commodity.  It will be returned if applies for a given chemical record.
      *
-     * @param string $classDivisionNumber
+     * @param string|null $classDivisionNumber
      *
      * @return self
      */
-    public function setClassDivisionNumber(string $classDivisionNumber) : self
+    public function setClassDivisionNumber(?string $classDivisionNumber) : self
     {
         $this->initialized['classDivisionNumber'] = true;
         $this->classDivisionNumber = $classDivisionNumber;
@@ -237,20 +237,20 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     /**
      * Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubRiskClass() : string
+    public function getSubRiskClass() : ?string
     {
         return $this->subRiskClass;
     }
     /**
      * Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.
      *
-     * @param string $subRiskClass
+     * @param string|null $subRiskClass
      *
      * @return self
      */
-    public function setSubRiskClass(string $subRiskClass) : self
+    public function setSubRiskClass(?string $subRiskClass) : self
     {
         $this->initialized['subRiskClass'] = true;
         $this->subRiskClass = $subRiskClass;
@@ -259,20 +259,20 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     /**
      * This is the packing group category associated to the specified commodity. This code represents the potential degree of danger represented by a regulated commodity being transported.  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackagingGroupType() : string
+    public function getPackagingGroupType() : ?string
     {
         return $this->packagingGroupType;
     }
     /**
      * This is the packing group category associated to the specified commodity. This code represents the potential degree of danger represented by a regulated commodity being transported.  It will be returned if applies for a given chemical record.
      *
-     * @param string $packagingGroupType
+     * @param string|null $packagingGroupType
      *
      * @return self
      */
-    public function setPackagingGroupType(string $packagingGroupType) : self
+    public function setPackagingGroupType(?string $packagingGroupType) : self
     {
         $this->initialized['packagingGroupType'] = true;
         $this->packagingGroupType = $packagingGroupType;
@@ -286,9 +286,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     GND
     BOTH
     *
-    * @return string
+    * @return string|null
     */
-    public function getSpecialPermit() : string
+    public function getSpecialPermit() : ?string
     {
         return $this->specialPermit;
     }
@@ -300,11 +300,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     GND
     BOTH
     *
-    * @param string $specialPermit
+    * @param string|null $specialPermit
     *
     * @return self
     */
-    public function setSpecialPermit(string $specialPermit) : self
+    public function setSpecialPermit(?string $specialPermit) : self
     {
         $this->initialized['specialPermit'] = true;
         $this->specialPermit = $specialPermit;
@@ -316,9 +316,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     Y = TechnicalName is required.
     N = TechnicalName is not required.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTechnicalNameRequiredIndicator() : string
+    public function getTechnicalNameRequiredIndicator() : ?string
     {
         return $this->technicalNameRequiredIndicator;
     }
@@ -328,11 +328,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     Y = TechnicalName is required.
     N = TechnicalName is not required.
     *
-    * @param string $technicalNameRequiredIndicator
+    * @param string|null $technicalNameRequiredIndicator
     *
     * @return self
     */
-    public function setTechnicalNameRequiredIndicator(string $technicalNameRequiredIndicator) : self
+    public function setTechnicalNameRequiredIndicator(?string $technicalNameRequiredIndicator) : self
     {
         $this->initialized['technicalNameRequiredIndicator'] = true;
         $this->technicalNameRequiredIndicator = $technicalNameRequiredIndicator;
@@ -345,9 +345,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     N = No, additional information for the shipping papers are not required.
     Y = Yes, additional information for the shipping papers are required.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAdditionalShippingInformationRequiredIndicator() : string
+    public function getAdditionalShippingInformationRequiredIndicator() : ?string
     {
         return $this->additionalShippingInformationRequiredIndicator;
     }
@@ -358,11 +358,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     N = No, additional information for the shipping papers are not required.
     Y = Yes, additional information for the shipping papers are required.
     *
-    * @param string $additionalShippingInformationRequiredIndicator
+    * @param string|null $additionalShippingInformationRequiredIndicator
     *
     * @return self
     */
-    public function setAdditionalShippingInformationRequiredIndicator(string $additionalShippingInformationRequiredIndicator) : self
+    public function setAdditionalShippingInformationRequiredIndicator(?string $additionalShippingInformationRequiredIndicator) : self
     {
         $this->initialized['additionalShippingInformationRequiredIndicator'] = true;
         $this->additionalShippingInformationRequiredIndicator = $additionalShippingInformationRequiredIndicator;
@@ -372,9 +372,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     * Defines what is restricted to pass through a tunnel.  EXAMPLES OF VALUES:
     (B),(D),(E),(B/D),(B/E),(C,D),(C/E),(D/E),Blank
     *
-    * @return string
+    * @return string|null
     */
-    public function getTunnelRestrictionCode() : string
+    public function getTunnelRestrictionCode() : ?string
     {
         return $this->tunnelRestrictionCode;
     }
@@ -382,11 +382,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     * Defines what is restricted to pass through a tunnel.  EXAMPLES OF VALUES:
     (B),(D),(E),(B/D),(B/E),(C,D),(C/E),(D/E),Blank
     *
-    * @param string $tunnelRestrictionCode
+    * @param string|null $tunnelRestrictionCode
     *
     * @return self
     */
-    public function setTunnelRestrictionCode(string $tunnelRestrictionCode) : self
+    public function setTunnelRestrictionCode(?string $tunnelRestrictionCode) : self
     {
         $this->initialized['tunnelRestrictionCode'] = true;
         $this->tunnelRestrictionCode = $tunnelRestrictionCode;
@@ -400,9 +400,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     3 = Use a multiplier of 1
     4 = Use a multiplier of 0 - do not apply a placard
     *
-    * @return string
+    * @return string|null
     */
-    public function getTransportCategory() : string
+    public function getTransportCategory() : ?string
     {
         return $this->transportCategory;
     }
@@ -414,11 +414,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     3 = Use a multiplier of 1
     4 = Use a multiplier of 0 - do not apply a placard
     *
-    * @param string $transportCategory
+    * @param string|null $transportCategory
     *
     * @return self
     */
-    public function setTransportCategory(string $transportCategory) : self
+    public function setTransportCategory(?string $transportCategory) : self
     {
         $this->initialized['transportCategory'] = true;
         $this->transportCategory = $transportCategory;
@@ -432,9 +432,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     3 = Use a multiplier of 1
     4 = Use a multiplier of 0 - do not apply a placard
     *
-    * @return string
+    * @return string|null
     */
-    public function getTransportMultiplierQuantity() : string
+    public function getTransportMultiplierQuantity() : ?string
     {
         return $this->transportMultiplierQuantity;
     }
@@ -446,11 +446,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     3 = Use a multiplier of 1
     4 = Use a multiplier of 0 - do not apply a placard
     *
-    * @param string $transportMultiplierQuantity
+    * @param string|null $transportMultiplierQuantity
     *
     * @return self
     */
-    public function setTransportMultiplierQuantity(string $transportMultiplierQuantity) : self
+    public function setTransportMultiplierQuantity(?string $transportMultiplierQuantity) : self
     {
         $this->initialized['transportMultiplierQuantity'] = true;
         $this->transportMultiplierQuantity = $transportMultiplierQuantity;
@@ -460,9 +460,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     * ChannelTunnelAcceptedIndicator indicates if the chemical is accepted through channel tunnel or not  Y= Accepted through channel tunnel
     N=Not accepted through channel tunnel
     *
-    * @return string
+    * @return string|null
     */
-    public function getChannelTunnelAcceptedIndicator() : string
+    public function getChannelTunnelAcceptedIndicator() : ?string
     {
         return $this->channelTunnelAcceptedIndicator;
     }
@@ -470,11 +470,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     * ChannelTunnelAcceptedIndicator indicates if the chemical is accepted through channel tunnel or not  Y= Accepted through channel tunnel
     N=Not accepted through channel tunnel
     *
-    * @param string $channelTunnelAcceptedIndicator
+    * @param string|null $channelTunnelAcceptedIndicator
     *
     * @return self
     */
-    public function setChannelTunnelAcceptedIndicator(string $channelTunnelAcceptedIndicator) : self
+    public function setChannelTunnelAcceptedIndicator(?string $channelTunnelAcceptedIndicator) : self
     {
         $this->initialized['channelTunnelAcceptedIndicator'] = true;
         $this->channelTunnelAcceptedIndicator = $channelTunnelAcceptedIndicator;
@@ -489,9 +489,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     ADR
     IATA INTERNATIONAL AIR
     *
-    * @return string
+    * @return string|null
     */
-    public function getChemicalType() : string
+    public function getChemicalType() : ?string
     {
         return $this->chemicalType;
     }
@@ -504,11 +504,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     ADR
     IATA INTERNATIONAL AIR
     *
-    * @param string $chemicalType
+    * @param string|null $chemicalType
     *
     * @return self
     */
-    public function setChemicalType(string $chemicalType) : self
+    public function setChemicalType(?string $chemicalType) : self
     {
         $this->initialized['chemicalType'] = true;
         $this->chemicalType = $chemicalType;
@@ -519,9 +519,9 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     Applicable only for TDG shipments  Y = Permitted from CA to US
     N = Not Permitted from CA to US
     *
-    * @return string
+    * @return string|null
     */
-    public function getCAToUSShipmentAllowedIndicator() : string
+    public function getCAToUSShipmentAllowedIndicator() : ?string
     {
         return $this->cAToUSShipmentAllowedIndicator;
     }
@@ -530,11 +530,11 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     Applicable only for TDG shipments  Y = Permitted from CA to US
     N = Not Permitted from CA to US
     *
-    * @param string $cAToUSShipmentAllowedIndicator
+    * @param string|null $cAToUSShipmentAllowedIndicator
     *
     * @return self
     */
-    public function setCAToUSShipmentAllowedIndicator(string $cAToUSShipmentAllowedIndicator) : self
+    public function setCAToUSShipmentAllowedIndicator(?string $cAToUSShipmentAllowedIndicator) : self
     {
         $this->initialized['cAToUSShipmentAllowedIndicator'] = true;
         $this->cAToUSShipmentAllowedIndicator = $cAToUSShipmentAllowedIndicator;

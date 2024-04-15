@@ -16,23 +16,23 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     * The service code.
     96 = WWEF  Required for WWEF shipments.
     *
-    * @var string
+    * @var string|null
     */
     protected $serviceCode;
     /**
     * The container type
     03 = PALLET  Required for WWEF shipments.
     *
-    * @var string
+    * @var string|null
     */
     protected $containerCode;
     /**
     * The service code.
     96 = WWEF  Required for WWEF shipments.
     *
-    * @return string
+    * @return string|null
     */
-    public function getServiceCode() : string
+    public function getServiceCode() : ?string
     {
         return $this->serviceCode;
     }
@@ -40,11 +40,11 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     * The service code.
     96 = WWEF  Required for WWEF shipments.
     *
-    * @param string $serviceCode
+    * @param string|null $serviceCode
     *
     * @return self
     */
-    public function setServiceCode(string $serviceCode) : self
+    public function setServiceCode(?string $serviceCode) : self
     {
         $this->initialized['serviceCode'] = true;
         $this->serviceCode = $serviceCode;
@@ -54,9 +54,9 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     * The container type
     03 = PALLET  Required for WWEF shipments.
     *
-    * @return string
+    * @return string|null
     */
-    public function getContainerCode() : string
+    public function getContainerCode() : ?string
     {
         return $this->containerCode;
     }
@@ -64,11 +64,11 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     * The container type
     03 = PALLET  Required for WWEF shipments.
     *
-    * @param string $containerCode
+    * @param string|null $containerCode
     *
     * @return self
     */
-    public function setContainerCode(string $containerCode) : self
+    public function setContainerCode(?string $containerCode) : self
     {
         $this->initialized['containerCode'] = true;
         $this->containerCode = $containerCode;

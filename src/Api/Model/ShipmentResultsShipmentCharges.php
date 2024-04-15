@@ -28,50 +28,50 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     6 - General List Rates. 
     3 and 4 do not apply.
     *
-    * @var string
+    * @var string|null
     */
     protected $rateChart;
     /**
     * Base Service Charge container.
     Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
     *
-    * @var ShipmentChargesBaseServiceCharge
+    * @var ShipmentChargesBaseServiceCharge|null
     */
     protected $baseServiceCharge;
     /**
      * Transportation Charges container.
      *
-     * @var ShipmentChargesTransportationCharges
+     * @var ShipmentChargesTransportationCharges|null
      */
     protected $transportationCharges;
     /**
      * 
      *
-     * @var ShipmentChargesItemizedCharges[]
+     * @var list<ShipmentChargesItemizedCharges>|null
      */
     protected $itemizedCharges;
     /**
      * Service Option Charges container.
      *
-     * @var ShipmentChargesServiceOptionsCharges
+     * @var ShipmentChargesServiceOptionsCharges|null
      */
     protected $serviceOptionsCharges;
     /**
      * 
      *
-     * @var ShipmentChargesTaxCharges[]
+     * @var list<ShipmentChargesTaxCharges>|null
      */
     protected $taxCharges;
     /**
      * Total charges container.
      *
-     * @var ShipmentChargesTotalCharges
+     * @var ShipmentChargesTotalCharges|null
      */
     protected $totalCharges;
     /**
      * TotalChargesWithTaxes container would be returned only if TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TotalChargesWithTaxes contains total charges including total taxes applied to a shipment.
      *
-     * @var ShipmentChargesTotalChargesWithTaxes
+     * @var ShipmentChargesTotalChargesWithTaxes|null
      */
     protected $totalChargesWithTaxes;
     /**
@@ -90,9 +90,9 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     6 - General List Rates. 
     3 and 4 do not apply.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRateChart() : string
+    public function getRateChart() : ?string
     {
         return $this->rateChart;
     }
@@ -112,11 +112,11 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     6 - General List Rates. 
     3 and 4 do not apply.
     *
-    * @param string $rateChart
+    * @param string|null $rateChart
     *
     * @return self
     */
-    public function setRateChart(string $rateChart) : self
+    public function setRateChart(?string $rateChart) : self
     {
         $this->initialized['rateChart'] = true;
         $this->rateChart = $rateChart;
@@ -126,9 +126,9 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     * Base Service Charge container.
     Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
     *
-    * @return ShipmentChargesBaseServiceCharge
+    * @return ShipmentChargesBaseServiceCharge|null
     */
-    public function getBaseServiceCharge() : ShipmentChargesBaseServiceCharge
+    public function getBaseServiceCharge() : ?ShipmentChargesBaseServiceCharge
     {
         return $this->baseServiceCharge;
     }
@@ -136,11 +136,11 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     * Base Service Charge container.
     Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
     *
-    * @param ShipmentChargesBaseServiceCharge $baseServiceCharge
+    * @param ShipmentChargesBaseServiceCharge|null $baseServiceCharge
     *
     * @return self
     */
-    public function setBaseServiceCharge(ShipmentChargesBaseServiceCharge $baseServiceCharge) : self
+    public function setBaseServiceCharge(?ShipmentChargesBaseServiceCharge $baseServiceCharge) : self
     {
         $this->initialized['baseServiceCharge'] = true;
         $this->baseServiceCharge = $baseServiceCharge;
@@ -149,20 +149,20 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     /**
      * Transportation Charges container.
      *
-     * @return ShipmentChargesTransportationCharges
+     * @return ShipmentChargesTransportationCharges|null
      */
-    public function getTransportationCharges() : ShipmentChargesTransportationCharges
+    public function getTransportationCharges() : ?ShipmentChargesTransportationCharges
     {
         return $this->transportationCharges;
     }
     /**
      * Transportation Charges container.
      *
-     * @param ShipmentChargesTransportationCharges $transportationCharges
+     * @param ShipmentChargesTransportationCharges|null $transportationCharges
      *
      * @return self
      */
-    public function setTransportationCharges(ShipmentChargesTransportationCharges $transportationCharges) : self
+    public function setTransportationCharges(?ShipmentChargesTransportationCharges $transportationCharges) : self
     {
         $this->initialized['transportationCharges'] = true;
         $this->transportationCharges = $transportationCharges;
@@ -171,20 +171,20 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentChargesItemizedCharges[]
+     * @return list<ShipmentChargesItemizedCharges>|null
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges() : ?array
     {
         return $this->itemizedCharges;
     }
     /**
      * 
      *
-     * @param ShipmentChargesItemizedCharges[] $itemizedCharges
+     * @param list<ShipmentChargesItemizedCharges>|null $itemizedCharges
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(?array $itemizedCharges) : self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -193,20 +193,20 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     /**
      * Service Option Charges container.
      *
-     * @return ShipmentChargesServiceOptionsCharges
+     * @return ShipmentChargesServiceOptionsCharges|null
      */
-    public function getServiceOptionsCharges() : ShipmentChargesServiceOptionsCharges
+    public function getServiceOptionsCharges() : ?ShipmentChargesServiceOptionsCharges
     {
         return $this->serviceOptionsCharges;
     }
     /**
      * Service Option Charges container.
      *
-     * @param ShipmentChargesServiceOptionsCharges $serviceOptionsCharges
+     * @param ShipmentChargesServiceOptionsCharges|null $serviceOptionsCharges
      *
      * @return self
      */
-    public function setServiceOptionsCharges(ShipmentChargesServiceOptionsCharges $serviceOptionsCharges) : self
+    public function setServiceOptionsCharges(?ShipmentChargesServiceOptionsCharges $serviceOptionsCharges) : self
     {
         $this->initialized['serviceOptionsCharges'] = true;
         $this->serviceOptionsCharges = $serviceOptionsCharges;
@@ -215,20 +215,20 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentChargesTaxCharges[]
+     * @return list<ShipmentChargesTaxCharges>|null
      */
-    public function getTaxCharges() : array
+    public function getTaxCharges() : ?array
     {
         return $this->taxCharges;
     }
     /**
      * 
      *
-     * @param ShipmentChargesTaxCharges[] $taxCharges
+     * @param list<ShipmentChargesTaxCharges>|null $taxCharges
      *
      * @return self
      */
-    public function setTaxCharges(array $taxCharges) : self
+    public function setTaxCharges(?array $taxCharges) : self
     {
         $this->initialized['taxCharges'] = true;
         $this->taxCharges = $taxCharges;
@@ -237,20 +237,20 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     /**
      * Total charges container.
      *
-     * @return ShipmentChargesTotalCharges
+     * @return ShipmentChargesTotalCharges|null
      */
-    public function getTotalCharges() : ShipmentChargesTotalCharges
+    public function getTotalCharges() : ?ShipmentChargesTotalCharges
     {
         return $this->totalCharges;
     }
     /**
      * Total charges container.
      *
-     * @param ShipmentChargesTotalCharges $totalCharges
+     * @param ShipmentChargesTotalCharges|null $totalCharges
      *
      * @return self
      */
-    public function setTotalCharges(ShipmentChargesTotalCharges $totalCharges) : self
+    public function setTotalCharges(?ShipmentChargesTotalCharges $totalCharges) : self
     {
         $this->initialized['totalCharges'] = true;
         $this->totalCharges = $totalCharges;
@@ -259,20 +259,20 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     /**
      * TotalChargesWithTaxes container would be returned only if TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TotalChargesWithTaxes contains total charges including total taxes applied to a shipment.
      *
-     * @return ShipmentChargesTotalChargesWithTaxes
+     * @return ShipmentChargesTotalChargesWithTaxes|null
      */
-    public function getTotalChargesWithTaxes() : ShipmentChargesTotalChargesWithTaxes
+    public function getTotalChargesWithTaxes() : ?ShipmentChargesTotalChargesWithTaxes
     {
         return $this->totalChargesWithTaxes;
     }
     /**
      * TotalChargesWithTaxes container would be returned only if TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TotalChargesWithTaxes contains total charges including total taxes applied to a shipment.
      *
-     * @param ShipmentChargesTotalChargesWithTaxes $totalChargesWithTaxes
+     * @param ShipmentChargesTotalChargesWithTaxes|null $totalChargesWithTaxes
      *
      * @return self
      */
-    public function setTotalChargesWithTaxes(ShipmentChargesTotalChargesWithTaxes $totalChargesWithTaxes) : self
+    public function setTotalChargesWithTaxes(?ShipmentChargesTotalChargesWithTaxes $totalChargesWithTaxes) : self
     {
         $this->initialized['totalChargesWithTaxes'] = true;
         $this->totalChargesWithTaxes = $totalChargesWithTaxes;

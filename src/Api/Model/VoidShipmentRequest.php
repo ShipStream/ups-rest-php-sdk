@@ -15,32 +15,32 @@ class VoidShipmentRequest extends \ArrayObject
     /**
      * Request Container  N/A
      *
-     * @var VoidShipmentRequestRequest
+     * @var VoidShipmentRequestRequest|null
      */
     protected $request;
     /**
      * The container for the Ship Void Request.  N/A
      *
-     * @var VoidShipmentRequestVoidShipment
+     * @var VoidShipmentRequestVoidShipment|null
      */
     protected $voidShipment;
     /**
      * Request Container  N/A
      *
-     * @return VoidShipmentRequestRequest
+     * @return VoidShipmentRequestRequest|null
      */
-    public function getRequest() : VoidShipmentRequestRequest
+    public function getRequest() : ?VoidShipmentRequestRequest
     {
         return $this->request;
     }
     /**
      * Request Container  N/A
      *
-     * @param VoidShipmentRequestRequest $request
+     * @param VoidShipmentRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(VoidShipmentRequestRequest $request) : self
+    public function setRequest(?VoidShipmentRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -49,20 +49,20 @@ class VoidShipmentRequest extends \ArrayObject
     /**
      * The container for the Ship Void Request.  N/A
      *
-     * @return VoidShipmentRequestVoidShipment
+     * @return VoidShipmentRequestVoidShipment|null
      */
-    public function getVoidShipment() : VoidShipmentRequestVoidShipment
+    public function getVoidShipment() : ?VoidShipmentRequestVoidShipment
     {
         return $this->voidShipment;
     }
     /**
      * The container for the Ship Void Request.  N/A
      *
-     * @param VoidShipmentRequestVoidShipment $voidShipment
+     * @param VoidShipmentRequestVoidShipment|null $voidShipment
      *
      * @return self
      */
-    public function setVoidShipment(VoidShipmentRequestVoidShipment $voidShipment) : self
+    public function setVoidShipment(?VoidShipmentRequestVoidShipment $voidShipment) : self
     {
         $this->initialized['voidShipment'] = true;
         $this->voidShipment = $voidShipment;

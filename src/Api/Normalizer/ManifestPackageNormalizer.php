@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Activity', $data)) {
+            if (\array_key_exists('Activity', $data) && $data['Activity'] !== null) {
                 $values = [];
                 foreach ($data['Activity'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageActivity', 'json', $context);
@@ -48,41 +48,71 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setActivity($values);
                 unset($data['Activity']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Activity', $data) && $data['Activity'] === null) {
+                $object->setActivity(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Dimensions', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Dimensions', $data) && $data['Dimensions'] !== null) {
                 $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions', 'json', $context));
                 unset($data['Dimensions']);
             }
-            if (\array_key_exists('DimensionalWeight', $data)) {
+            elseif (\array_key_exists('Dimensions', $data) && $data['Dimensions'] === null) {
+                $object->setDimensions(null);
+            }
+            if (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] !== null) {
                 $object->setDimensionalWeight($this->denormalizer->denormalize($data['DimensionalWeight'], 'ShipStream\\Ups\\Api\\Model\\PackageDimensionalWeight', 'json', $context));
                 unset($data['DimensionalWeight']);
             }
-            if (\array_key_exists('PackageWeight', $data)) {
+            elseif (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] === null) {
+                $object->setDimensionalWeight(null);
+            }
+            if (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] !== null) {
                 $object->setPackageWeight($this->denormalizer->denormalize($data['PackageWeight'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight', 'json', $context));
                 unset($data['PackageWeight']);
             }
-            if (\array_key_exists('LargePackage', $data)) {
+            elseif (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] === null) {
+                $object->setPackageWeight(null);
+            }
+            if (\array_key_exists('LargePackage', $data) && $data['LargePackage'] !== null) {
                 $object->setLargePackage($data['LargePackage']);
                 unset($data['LargePackage']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('LargePackage', $data) && $data['LargePackage'] === null) {
+                $object->setLargePackage(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context));
                 unset($data['ReferenceNumber']);
             }
-            if (\array_key_exists('PackageServiceOptions', $data)) {
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
+            }
+            if (\array_key_exists('PackageServiceOptions', $data) && $data['PackageServiceOptions'] !== null) {
                 $object->setPackageServiceOptions($this->denormalizer->denormalize($data['PackageServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions', 'json', $context));
                 unset($data['PackageServiceOptions']);
             }
-            if (\array_key_exists('UPSPremiumCareIndicator', $data)) {
+            elseif (\array_key_exists('PackageServiceOptions', $data) && $data['PackageServiceOptions'] === null) {
+                $object->setPackageServiceOptions(null);
+            }
+            if (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] !== null) {
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
+            }
+            elseif (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] === null) {
+                $object->setUPSPremiumCareIndicator(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -170,7 +200,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Activity', $data)) {
+            if (\array_key_exists('Activity', $data) && $data['Activity'] !== null) {
                 $values = [];
                 foreach ($data['Activity'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageActivity', 'json', $context);
@@ -178,41 +208,71 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setActivity($values);
                 unset($data['Activity']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Activity', $data) && $data['Activity'] === null) {
+                $object->setActivity(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Dimensions', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Dimensions', $data) && $data['Dimensions'] !== null) {
                 $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions', 'json', $context));
                 unset($data['Dimensions']);
             }
-            if (\array_key_exists('DimensionalWeight', $data)) {
+            elseif (\array_key_exists('Dimensions', $data) && $data['Dimensions'] === null) {
+                $object->setDimensions(null);
+            }
+            if (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] !== null) {
                 $object->setDimensionalWeight($this->denormalizer->denormalize($data['DimensionalWeight'], 'ShipStream\\Ups\\Api\\Model\\PackageDimensionalWeight', 'json', $context));
                 unset($data['DimensionalWeight']);
             }
-            if (\array_key_exists('PackageWeight', $data)) {
+            elseif (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] === null) {
+                $object->setDimensionalWeight(null);
+            }
+            if (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] !== null) {
                 $object->setPackageWeight($this->denormalizer->denormalize($data['PackageWeight'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight', 'json', $context));
                 unset($data['PackageWeight']);
             }
-            if (\array_key_exists('LargePackage', $data)) {
+            elseif (\array_key_exists('PackageWeight', $data) && $data['PackageWeight'] === null) {
+                $object->setPackageWeight(null);
+            }
+            if (\array_key_exists('LargePackage', $data) && $data['LargePackage'] !== null) {
                 $object->setLargePackage($data['LargePackage']);
                 unset($data['LargePackage']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('LargePackage', $data) && $data['LargePackage'] === null) {
+                $object->setLargePackage(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context));
                 unset($data['ReferenceNumber']);
             }
-            if (\array_key_exists('PackageServiceOptions', $data)) {
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
+            }
+            if (\array_key_exists('PackageServiceOptions', $data) && $data['PackageServiceOptions'] !== null) {
                 $object->setPackageServiceOptions($this->denormalizer->denormalize($data['PackageServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions', 'json', $context));
                 unset($data['PackageServiceOptions']);
             }
-            if (\array_key_exists('UPSPremiumCareIndicator', $data)) {
+            elseif (\array_key_exists('PackageServiceOptions', $data) && $data['PackageServiceOptions'] === null) {
+                $object->setPackageServiceOptions(null);
+            }
+            if (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] !== null) {
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
+            }
+            elseif (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] === null) {
+                $object->setUPSPremiumCareIndicator(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

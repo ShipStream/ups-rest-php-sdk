@@ -15,32 +15,32 @@ class EstimatedArrivalArrival extends \ArrayObject
     /**
      * Scheduled Local Delivery Date. Format: YYYYMMDD
      *
-     * @var string
+     * @var string|null
      */
     protected $date;
     /**
      * The time UPS will pick up the shipment. This is commit Time. Military Time Format HHMMSS or HHMM
      *
-     * @var string
+     * @var string|null
      */
     protected $time;
     /**
      * Scheduled Local Delivery Date. Format: YYYYMMDD
      *
-     * @return string
+     * @return string|null
      */
-    public function getDate() : string
+    public function getDate() : ?string
     {
         return $this->date;
     }
     /**
      * Scheduled Local Delivery Date. Format: YYYYMMDD
      *
-     * @param string $date
+     * @param string|null $date
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(?string $date) : self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -49,20 +49,20 @@ class EstimatedArrivalArrival extends \ArrayObject
     /**
      * The time UPS will pick up the shipment. This is commit Time. Military Time Format HHMMSS or HHMM
      *
-     * @return string
+     * @return string|null
      */
-    public function getTime() : string
+    public function getTime() : ?string
     {
         return $this->time;
     }
     /**
      * The time UPS will pick up the shipment. This is commit Time. Military Time Format HHMMSS or HHMM
      *
-     * @param string $time
+     * @param string|null $time
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(?string $time) : self
     {
         $this->initialized['time'] = true;
         $this->time = $time;

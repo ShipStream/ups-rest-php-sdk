@@ -15,32 +15,32 @@ class TrackSubsServiceResponse extends \ArrayObject
     /**
      * List of tracking numbers with successful subscription created.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $validTrackingNumbers;
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $invalidTrackingNumbers;
     /**
      * List of tracking numbers with successful subscription created.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getValidTrackingNumbers() : array
+    public function getValidTrackingNumbers() : ?array
     {
         return $this->validTrackingNumbers;
     }
     /**
      * List of tracking numbers with successful subscription created.
      *
-     * @param string[] $validTrackingNumbers
+     * @param list<string>|null $validTrackingNumbers
      *
      * @return self
      */
-    public function setValidTrackingNumbers(array $validTrackingNumbers) : self
+    public function setValidTrackingNumbers(?array $validTrackingNumbers) : self
     {
         $this->initialized['validTrackingNumbers'] = true;
         $this->validTrackingNumbers = $validTrackingNumbers;
@@ -49,20 +49,20 @@ class TrackSubsServiceResponse extends \ArrayObject
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getInvalidTrackingNumbers() : array
+    public function getInvalidTrackingNumbers() : ?array
     {
         return $this->invalidTrackingNumbers;
     }
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @param string[] $invalidTrackingNumbers
+     * @param list<string>|null $invalidTrackingNumbers
      *
      * @return self
      */
-    public function setInvalidTrackingNumbers(array $invalidTrackingNumbers) : self
+    public function setInvalidTrackingNumbers(?array $invalidTrackingNumbers) : self
     {
         $this->initialized['invalidTrackingNumbers'] = true;
         $this->invalidTrackingNumbers = $invalidTrackingNumbers;

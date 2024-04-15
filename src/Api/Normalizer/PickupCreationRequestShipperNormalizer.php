@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Account', $data)) {
+            if (\array_key_exists('Account', $data) && $data['Account'] !== null) {
                 $object->setAccount($this->denormalizer->denormalize($data['Account'], 'ShipStream\\Ups\\Api\\Model\\ShipperAccount', 'json', $context));
                 unset($data['Account']);
             }
-            if (\array_key_exists('ChargeCard', $data)) {
+            elseif (\array_key_exists('Account', $data) && $data['Account'] === null) {
+                $object->setAccount(null);
+            }
+            if (\array_key_exists('ChargeCard', $data) && $data['ChargeCard'] !== null) {
                 $object->setChargeCard($this->denormalizer->denormalize($data['ChargeCard'], 'ShipStream\\Ups\\Api\\Model\\ShipperChargeCard', 'json', $context));
                 unset($data['ChargeCard']);
+            }
+            elseif (\array_key_exists('ChargeCard', $data) && $data['ChargeCard'] === null) {
+                $object->setChargeCard(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Account', $data)) {
+            if (\array_key_exists('Account', $data) && $data['Account'] !== null) {
                 $object->setAccount($this->denormalizer->denormalize($data['Account'], 'ShipStream\\Ups\\Api\\Model\\ShipperAccount', 'json', $context));
                 unset($data['Account']);
             }
-            if (\array_key_exists('ChargeCard', $data)) {
+            elseif (\array_key_exists('Account', $data) && $data['Account'] === null) {
+                $object->setAccount(null);
+            }
+            if (\array_key_exists('ChargeCard', $data) && $data['ChargeCard'] !== null) {
                 $object->setChargeCard($this->denormalizer->denormalize($data['ChargeCard'], 'ShipStream\\Ups\\Api\\Model\\ShipperChargeCard', 'json', $context));
                 unset($data['ChargeCard']);
+            }
+            elseif (\array_key_exists('ChargeCard', $data) && $data['ChargeCard'] === null) {
+                $object->setChargeCard(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

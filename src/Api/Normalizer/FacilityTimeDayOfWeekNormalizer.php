@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Day', $data)) {
+            if (\array_key_exists('Day', $data) && $data['Day'] !== null) {
                 $object->setDay($data['Day']);
                 unset($data['Day']);
             }
-            if (\array_key_exists('EarliestDropOfforPickup', $data)) {
+            elseif (\array_key_exists('Day', $data) && $data['Day'] === null) {
+                $object->setDay(null);
+            }
+            if (\array_key_exists('EarliestDropOfforPickup', $data) && $data['EarliestDropOfforPickup'] !== null) {
                 $object->setEarliestDropOfforPickup($data['EarliestDropOfforPickup']);
                 unset($data['EarliestDropOfforPickup']);
             }
-            if (\array_key_exists('LatestDropOfforPickup', $data)) {
+            elseif (\array_key_exists('EarliestDropOfforPickup', $data) && $data['EarliestDropOfforPickup'] === null) {
+                $object->setEarliestDropOfforPickup(null);
+            }
+            if (\array_key_exists('LatestDropOfforPickup', $data) && $data['LatestDropOfforPickup'] !== null) {
                 $object->setLatestDropOfforPickup($data['LatestDropOfforPickup']);
                 unset($data['LatestDropOfforPickup']);
             }
-            if (\array_key_exists('OpenHours', $data)) {
+            elseif (\array_key_exists('LatestDropOfforPickup', $data) && $data['LatestDropOfforPickup'] === null) {
+                $object->setLatestDropOfforPickup(null);
+            }
+            if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
                 $object->setOpenHours($data['OpenHours']);
                 unset($data['OpenHours']);
             }
-            if (\array_key_exists('CloseHours', $data)) {
+            elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+                $object->setOpenHours(null);
+            }
+            if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
                 $object->setCloseHours($data['CloseHours']);
                 unset($data['CloseHours']);
             }
-            if (\array_key_exists('PrepTime', $data)) {
+            elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+                $object->setCloseHours(null);
+            }
+            if (\array_key_exists('PrepTime', $data) && $data['PrepTime'] !== null) {
                 $object->setPrepTime($data['PrepTime']);
                 unset($data['PrepTime']);
             }
-            if (\array_key_exists('LastDrop', $data)) {
+            elseif (\array_key_exists('PrepTime', $data) && $data['PrepTime'] === null) {
+                $object->setPrepTime(null);
+            }
+            if (\array_key_exists('LastDrop', $data) && $data['LastDrop'] !== null) {
                 $object->setLastDrop($data['LastDrop']);
                 unset($data['LastDrop']);
+            }
+            elseif (\array_key_exists('LastDrop', $data) && $data['LastDrop'] === null) {
+                $object->setLastDrop(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -135,33 +156,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Day', $data)) {
+            if (\array_key_exists('Day', $data) && $data['Day'] !== null) {
                 $object->setDay($data['Day']);
                 unset($data['Day']);
             }
-            if (\array_key_exists('EarliestDropOfforPickup', $data)) {
+            elseif (\array_key_exists('Day', $data) && $data['Day'] === null) {
+                $object->setDay(null);
+            }
+            if (\array_key_exists('EarliestDropOfforPickup', $data) && $data['EarliestDropOfforPickup'] !== null) {
                 $object->setEarliestDropOfforPickup($data['EarliestDropOfforPickup']);
                 unset($data['EarliestDropOfforPickup']);
             }
-            if (\array_key_exists('LatestDropOfforPickup', $data)) {
+            elseif (\array_key_exists('EarliestDropOfforPickup', $data) && $data['EarliestDropOfforPickup'] === null) {
+                $object->setEarliestDropOfforPickup(null);
+            }
+            if (\array_key_exists('LatestDropOfforPickup', $data) && $data['LatestDropOfforPickup'] !== null) {
                 $object->setLatestDropOfforPickup($data['LatestDropOfforPickup']);
                 unset($data['LatestDropOfforPickup']);
             }
-            if (\array_key_exists('OpenHours', $data)) {
+            elseif (\array_key_exists('LatestDropOfforPickup', $data) && $data['LatestDropOfforPickup'] === null) {
+                $object->setLatestDropOfforPickup(null);
+            }
+            if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
                 $object->setOpenHours($data['OpenHours']);
                 unset($data['OpenHours']);
             }
-            if (\array_key_exists('CloseHours', $data)) {
+            elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+                $object->setOpenHours(null);
+            }
+            if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
                 $object->setCloseHours($data['CloseHours']);
                 unset($data['CloseHours']);
             }
-            if (\array_key_exists('PrepTime', $data)) {
+            elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+                $object->setCloseHours(null);
+            }
+            if (\array_key_exists('PrepTime', $data) && $data['PrepTime'] !== null) {
                 $object->setPrepTime($data['PrepTime']);
                 unset($data['PrepTime']);
             }
-            if (\array_key_exists('LastDrop', $data)) {
+            elseif (\array_key_exists('PrepTime', $data) && $data['PrepTime'] === null) {
+                $object->setPrepTime(null);
+            }
+            if (\array_key_exists('LastDrop', $data) && $data['LastDrop'] !== null) {
                 $object->setLastDrop($data['LastDrop']);
                 unset($data['LastDrop']);
+            }
+            elseif (\array_key_exists('LastDrop', $data) && $data['LastDrop'] === null) {
+                $object->setLastDrop(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

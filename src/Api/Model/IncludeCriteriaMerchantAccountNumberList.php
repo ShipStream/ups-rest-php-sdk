@@ -15,26 +15,26 @@ class IncludeCriteriaMerchantAccountNumberList extends \ArrayObject
     /**
      * Account number to be used for a private network access point search where a UPS access point candidate list is obtained in search by address or geocode search.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $merchantAccountNumber;
     /**
      * Account number to be used for a private network access point search where a UPS access point candidate list is obtained in search by address or geocode search.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getMerchantAccountNumber() : array
+    public function getMerchantAccountNumber() : ?array
     {
         return $this->merchantAccountNumber;
     }
     /**
      * Account number to be used for a private network access point search where a UPS access point candidate list is obtained in search by address or geocode search.
      *
-     * @param string[] $merchantAccountNumber
+     * @param list<string>|null $merchantAccountNumber
      *
      * @return self
      */
-    public function setMerchantAccountNumber(array $merchantAccountNumber) : self
+    public function setMerchantAccountNumber(?array $merchantAccountNumber) : self
     {
         $this->initialized['merchantAccountNumber'] = true;
         $this->merchantAccountNumber = $merchantAccountNumber;

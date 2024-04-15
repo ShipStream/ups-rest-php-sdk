@@ -15,26 +15,26 @@ class LabelImageLabelImageFormat extends \ArrayObject
     /**
      * Code type that the label image is to be generated in. Valid value returned is gif, pdf, zpl. Spl, epl2
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Code type that the label image is to be generated in. Valid value returned is gif, pdf, zpl. Spl, epl2
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code type that the label image is to be generated in. Valid value returned is gif, pdf, zpl. Spl, epl2
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

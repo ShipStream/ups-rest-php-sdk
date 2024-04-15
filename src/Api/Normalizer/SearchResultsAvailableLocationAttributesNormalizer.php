@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('OptionType', $data)) {
+            if (\array_key_exists('OptionType', $data) && $data['OptionType'] !== null) {
                 $object->setOptionType($this->denormalizer->denormalize($data['OptionType'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionType', 'json', $context));
                 unset($data['OptionType']);
             }
-            if (\array_key_exists('OptionCode', $data)) {
+            elseif (\array_key_exists('OptionType', $data) && $data['OptionType'] === null) {
+                $object->setOptionType(null);
+            }
+            if (\array_key_exists('OptionCode', $data) && $data['OptionCode'] !== null) {
                 $object->setOptionCode($this->denormalizer->denormalize($data['OptionCode'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode', 'json', $context));
                 unset($data['OptionCode']);
+            }
+            elseif (\array_key_exists('OptionCode', $data) && $data['OptionCode'] === null) {
+                $object->setOptionCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('OptionType', $data)) {
+            if (\array_key_exists('OptionType', $data) && $data['OptionType'] !== null) {
                 $object->setOptionType($this->denormalizer->denormalize($data['OptionType'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionType', 'json', $context));
                 unset($data['OptionType']);
             }
-            if (\array_key_exists('OptionCode', $data)) {
+            elseif (\array_key_exists('OptionType', $data) && $data['OptionType'] === null) {
+                $object->setOptionType(null);
+            }
+            if (\array_key_exists('OptionCode', $data) && $data['OptionCode'] !== null) {
                 $object->setOptionCode($this->denormalizer->denormalize($data['OptionCode'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode', 'json', $context));
                 unset($data['OptionCode']);
+            }
+            elseif (\array_key_exists('OptionCode', $data) && $data['OptionCode'] === null) {
+                $object->setOptionCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -18,7 +18,7 @@ class SearchOptionRelation extends \ArrayObject
     01-And (Default)
     02-Or
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
@@ -27,9 +27,9 @@ class SearchOptionRelation extends \ArrayObject
     01-And (Default)
     02-Or
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -39,11 +39,11 @@ class SearchOptionRelation extends \ArrayObject
     01-And (Default)
     02-Or
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

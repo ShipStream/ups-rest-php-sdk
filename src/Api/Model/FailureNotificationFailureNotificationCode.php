@@ -19,13 +19,13 @@ class FailureNotificationFailureNotificationCode extends \ArrayObject
     03 � Package is delivery to alternate delivery location
     04 �Package is returned to Sender from UPS Access Point Location
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Not used.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -35,9 +35,9 @@ class FailureNotificationFailureNotificationCode extends \ArrayObject
     03 � Package is delivery to alternate delivery location
     04 �Package is returned to Sender from UPS Access Point Location
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -48,11 +48,11 @@ class FailureNotificationFailureNotificationCode extends \ArrayObject
     03 � Package is delivery to alternate delivery location
     04 �Package is returned to Sender from UPS Access Point Location
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -61,20 +61,20 @@ class FailureNotificationFailureNotificationCode extends \ArrayObject
     /**
      * Not used.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Not used.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

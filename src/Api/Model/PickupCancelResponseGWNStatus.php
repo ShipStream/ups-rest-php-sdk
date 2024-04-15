@@ -24,13 +24,13 @@ class PickupCancelResponseGWNStatus extends \ArrayObject
     008 = Cancelled By Driver
     999 = Unknown
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Please refer to /PickupPendingStatusResponse/PendingStatus/PickupStatusMessage
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -45,9 +45,9 @@ class PickupCancelResponseGWNStatus extends \ArrayObject
     008 = Cancelled By Driver
     999 = Unknown
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -63,11 +63,11 @@ class PickupCancelResponseGWNStatus extends \ArrayObject
     008 = Cancelled By Driver
     999 = Unknown
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -76,20 +76,20 @@ class PickupCancelResponseGWNStatus extends \ArrayObject
     /**
      * Please refer to /PickupPendingStatusResponse/PendingStatus/PickupStatusMessage
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Please refer to /PickupPendingStatusResponse/PendingStatus/PickupStatusMessage
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

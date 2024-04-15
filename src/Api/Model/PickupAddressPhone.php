@@ -15,32 +15,32 @@ class PickupAddressPhone extends \ArrayObject
     /**
      * Phone number
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * Phone extension
      *
-     * @var string
+     * @var string|null
      */
     protected $extension;
     /**
      * Phone number
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * Phone number
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -49,20 +49,20 @@ class PickupAddressPhone extends \ArrayObject
     /**
      * Phone extension
      *
-     * @return string
+     * @return string|null
      */
-    public function getExtension() : string
+    public function getExtension() : ?string
     {
         return $this->extension;
     }
     /**
      * Phone extension
      *
-     * @param string $extension
+     * @param string|null $extension
      *
      * @return self
      */
-    public function setExtension(string $extension) : self
+    public function setExtension(?string $extension) : self
     {
         $this->initialized['extension'] = true;
         $this->extension = $extension;

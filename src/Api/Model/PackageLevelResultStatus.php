@@ -15,32 +15,32 @@ class PackageLevelResultStatus extends \ArrayObject
     /**
      * The Package Level void status code.  A numeric value that describes the status code. 1 = Voided or Already Voided;  0 = Not Voided
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * A text description of the status code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The Package Level void status code.  A numeric value that describes the status code. 1 = Voided or Already Voided;  0 = Not Voided
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The Package Level void status code.  A numeric value that describes the status code. 1 = Voided or Already Voided;  0 = Not Voided
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class PackageLevelResultStatus extends \ArrayObject
     /**
      * A text description of the status code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * A text description of the status code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

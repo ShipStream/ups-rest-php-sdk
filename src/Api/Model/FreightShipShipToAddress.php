@@ -15,56 +15,56 @@ class FreightShipShipToAddress extends \ArrayObject
     /**
      * The consignee�s street address.
      *
-     * @var string
+     * @var string|null
      */
     protected $addressLine;
     /**
      * The consignee�s city.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * The consignee�s state or province code.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * The consignee�s town code.
      *
-     * @var string
+     * @var string|null
      */
     protected $town;
     /**
      * The consignee�s postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * The consignee�s country or territory code.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * The consignee�s street address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddressLine() : string
+    public function getAddressLine() : ?string
     {
         return $this->addressLine;
     }
     /**
      * The consignee�s street address.
      *
-     * @param string $addressLine
+     * @param string|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(?string $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -73,20 +73,20 @@ class FreightShipShipToAddress extends \ArrayObject
     /**
      * The consignee�s city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * The consignee�s city.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -95,20 +95,20 @@ class FreightShipShipToAddress extends \ArrayObject
     /**
      * The consignee�s state or province code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * The consignee�s state or province code.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -117,20 +117,20 @@ class FreightShipShipToAddress extends \ArrayObject
     /**
      * The consignee�s town code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTown() : string
+    public function getTown() : ?string
     {
         return $this->town;
     }
     /**
      * The consignee�s town code.
      *
-     * @param string $town
+     * @param string|null $town
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(?string $town) : self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -139,20 +139,20 @@ class FreightShipShipToAddress extends \ArrayObject
     /**
      * The consignee�s postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * The consignee�s postal code.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -161,20 +161,20 @@ class FreightShipShipToAddress extends \ArrayObject
     /**
      * The consignee�s country or territory code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * The consignee�s country or territory code.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

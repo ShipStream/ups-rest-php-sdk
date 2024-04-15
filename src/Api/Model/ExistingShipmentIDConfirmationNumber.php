@@ -16,23 +16,23 @@ class ExistingShipmentIDConfirmationNumber extends \ArrayObject
     * Container for the type of unique pickup confirmation number.
     Required only for Shipment Updates.
     *
-    * @var ConfirmationNumberType
+    * @var ConfirmationNumberType|null
     */
     protected $type;
     /**
     * The unique pickup confirmation number or BOLID value.
     Required only for Shipment Updates.
     *
-    * @var string
+    * @var string|null
     */
     protected $value;
     /**
     * Container for the type of unique pickup confirmation number.
     Required only for Shipment Updates.
     *
-    * @return ConfirmationNumberType
+    * @return ConfirmationNumberType|null
     */
-    public function getType() : ConfirmationNumberType
+    public function getType() : ?ConfirmationNumberType
     {
         return $this->type;
     }
@@ -40,11 +40,11 @@ class ExistingShipmentIDConfirmationNumber extends \ArrayObject
     * Container for the type of unique pickup confirmation number.
     Required only for Shipment Updates.
     *
-    * @param ConfirmationNumberType $type
+    * @param ConfirmationNumberType|null $type
     *
     * @return self
     */
-    public function setType(ConfirmationNumberType $type) : self
+    public function setType(?ConfirmationNumberType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -54,9 +54,9 @@ class ExistingShipmentIDConfirmationNumber extends \ArrayObject
     * The unique pickup confirmation number or BOLID value.
     Required only for Shipment Updates.
     *
-    * @return string
+    * @return string|null
     */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
@@ -64,11 +64,11 @@ class ExistingShipmentIDConfirmationNumber extends \ArrayObject
     * The unique pickup confirmation number or BOLID value.
     Required only for Shipment Updates.
     *
-    * @param string $value
+    * @param string|null $value
     *
     * @return self
     */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

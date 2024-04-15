@@ -15,50 +15,50 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
     /**
      * Supports various optional indicators
      *
-     * @var FreightOptionsShipmentServiceOptions
+     * @var FreightOptionsShipmentServiceOptions|null
      */
     protected $shipmentServiceOptions;
     /**
      * Origin SLIC. This will be obtained from submitting a pickup service center request. See PickupGetFacilitiesServiceCenterRequest.
      *
-     * @var string
+     * @var string|null
      */
     protected $originServiceCenterCode;
     /**
      * Country or territory of Service Center SLIC chosen to drop off.
      *
-     * @var string
+     * @var string|null
      */
     protected $originServiceCountryCode;
     /**
      * Destination Address Container.
      *
-     * @var FreightOptionsDestinationAddress
+     * @var FreightOptionsDestinationAddress|null
      */
     protected $destinationAddress;
     /**
      * Refers to the ShipmentDetail Container under Freight Options
      *
-     * @var FreightOptionsShipmentDetail
+     * @var FreightOptionsShipmentDetail|null
      */
     protected $shipmentDetail;
     /**
      * Supports various optional indicators
      *
-     * @return FreightOptionsShipmentServiceOptions
+     * @return FreightOptionsShipmentServiceOptions|null
      */
-    public function getShipmentServiceOptions() : FreightOptionsShipmentServiceOptions
+    public function getShipmentServiceOptions() : ?FreightOptionsShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
      * Supports various optional indicators
      *
-     * @param FreightOptionsShipmentServiceOptions $shipmentServiceOptions
+     * @param FreightOptionsShipmentServiceOptions|null $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightOptionsShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(?FreightOptionsShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -67,20 +67,20 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
     /**
      * Origin SLIC. This will be obtained from submitting a pickup service center request. See PickupGetFacilitiesServiceCenterRequest.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginServiceCenterCode() : string
+    public function getOriginServiceCenterCode() : ?string
     {
         return $this->originServiceCenterCode;
     }
     /**
      * Origin SLIC. This will be obtained from submitting a pickup service center request. See PickupGetFacilitiesServiceCenterRequest.
      *
-     * @param string $originServiceCenterCode
+     * @param string|null $originServiceCenterCode
      *
      * @return self
      */
-    public function setOriginServiceCenterCode(string $originServiceCenterCode) : self
+    public function setOriginServiceCenterCode(?string $originServiceCenterCode) : self
     {
         $this->initialized['originServiceCenterCode'] = true;
         $this->originServiceCenterCode = $originServiceCenterCode;
@@ -89,20 +89,20 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
     /**
      * Country or territory of Service Center SLIC chosen to drop off.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginServiceCountryCode() : string
+    public function getOriginServiceCountryCode() : ?string
     {
         return $this->originServiceCountryCode;
     }
     /**
      * Country or territory of Service Center SLIC chosen to drop off.
      *
-     * @param string $originServiceCountryCode
+     * @param string|null $originServiceCountryCode
      *
      * @return self
      */
-    public function setOriginServiceCountryCode(string $originServiceCountryCode) : self
+    public function setOriginServiceCountryCode(?string $originServiceCountryCode) : self
     {
         $this->initialized['originServiceCountryCode'] = true;
         $this->originServiceCountryCode = $originServiceCountryCode;
@@ -111,20 +111,20 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
     /**
      * Destination Address Container.
      *
-     * @return FreightOptionsDestinationAddress
+     * @return FreightOptionsDestinationAddress|null
      */
-    public function getDestinationAddress() : FreightOptionsDestinationAddress
+    public function getDestinationAddress() : ?FreightOptionsDestinationAddress
     {
         return $this->destinationAddress;
     }
     /**
      * Destination Address Container.
      *
-     * @param FreightOptionsDestinationAddress $destinationAddress
+     * @param FreightOptionsDestinationAddress|null $destinationAddress
      *
      * @return self
      */
-    public function setDestinationAddress(FreightOptionsDestinationAddress $destinationAddress) : self
+    public function setDestinationAddress(?FreightOptionsDestinationAddress $destinationAddress) : self
     {
         $this->initialized['destinationAddress'] = true;
         $this->destinationAddress = $destinationAddress;
@@ -133,20 +133,20 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
     /**
      * Refers to the ShipmentDetail Container under Freight Options
      *
-     * @return FreightOptionsShipmentDetail
+     * @return FreightOptionsShipmentDetail|null
      */
-    public function getShipmentDetail() : FreightOptionsShipmentDetail
+    public function getShipmentDetail() : ?FreightOptionsShipmentDetail
     {
         return $this->shipmentDetail;
     }
     /**
      * Refers to the ShipmentDetail Container under Freight Options
      *
-     * @param FreightOptionsShipmentDetail $shipmentDetail
+     * @param FreightOptionsShipmentDetail|null $shipmentDetail
      *
      * @return self
      */
-    public function setShipmentDetail(FreightOptionsShipmentDetail $shipmentDetail) : self
+    public function setShipmentDetail(?FreightOptionsShipmentDetail $shipmentDetail) : self
     {
         $this->initialized['shipmentDetail'] = true;
         $this->shipmentDetail = $shipmentDetail;

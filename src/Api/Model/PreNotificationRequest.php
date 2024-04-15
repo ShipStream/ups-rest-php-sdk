@@ -15,32 +15,32 @@ class PreNotificationRequest extends \ArrayObject
     /**
      * Request Container
      *
-     * @var PreNotificationRequestRequest
+     * @var PreNotificationRequestRequest|null
      */
     protected $request;
     /**
      * Shipment Container
      *
-     * @var PreNotificationRequestShipment
+     * @var PreNotificationRequestShipment|null
      */
     protected $shipment;
     /**
      * Request Container
      *
-     * @return PreNotificationRequestRequest
+     * @return PreNotificationRequestRequest|null
      */
-    public function getRequest() : PreNotificationRequestRequest
+    public function getRequest() : ?PreNotificationRequestRequest
     {
         return $this->request;
     }
     /**
      * Request Container
      *
-     * @param PreNotificationRequestRequest $request
+     * @param PreNotificationRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(PreNotificationRequestRequest $request) : self
+    public function setRequest(?PreNotificationRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -49,20 +49,20 @@ class PreNotificationRequest extends \ArrayObject
     /**
      * Shipment Container
      *
-     * @return PreNotificationRequestShipment
+     * @return PreNotificationRequestShipment|null
      */
-    public function getShipment() : PreNotificationRequestShipment
+    public function getShipment() : ?PreNotificationRequestShipment
     {
         return $this->shipment;
     }
     /**
      * Shipment Container
      *
-     * @param PreNotificationRequestShipment $shipment
+     * @param PreNotificationRequestShipment|null $shipment
      *
      * @return self
      */
-    public function setShipment(PreNotificationRequestShipment $shipment) : self
+    public function setShipment(?PreNotificationRequestShipment $shipment) : self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

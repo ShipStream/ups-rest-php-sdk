@@ -15,26 +15,26 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
     /**
      * 
      *
-     * @var PostalCodeListPostalCode[]
+     * @var list<PostalCodeListPostalCode>|null
      */
     protected $postalCode;
     /**
      * 
      *
-     * @return PostalCodeListPostalCode[]
+     * @return list<PostalCodeListPostalCode>|null
      */
-    public function getPostalCode() : array
+    public function getPostalCode() : ?array
     {
         return $this->postalCode;
     }
     /**
      * 
      *
-     * @param PostalCodeListPostalCode[] $postalCode
+     * @param list<PostalCodeListPostalCode>|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(array $postalCode) : self
+    public function setPostalCode(?array $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;

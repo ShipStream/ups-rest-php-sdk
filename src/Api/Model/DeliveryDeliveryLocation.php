@@ -15,44 +15,44 @@ class DeliveryDeliveryLocation extends \ArrayObject
     /**
      * Information that specifies a physical location where package is delivered.
      *
-     * @var DeliveryLocationAddressArtifactFormat
+     * @var DeliveryLocationAddressArtifactFormat|null
      */
     protected $addressArtifactFormat;
     /**
      * Location Code for delivered package.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the location where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The person who signed for the package.
      *
-     * @var string
+     * @var string|null
      */
     protected $signedForByName;
     /**
      * Information that specifies a physical location where package is delivered.
      *
-     * @return DeliveryLocationAddressArtifactFormat
+     * @return DeliveryLocationAddressArtifactFormat|null
      */
-    public function getAddressArtifactFormat() : DeliveryLocationAddressArtifactFormat
+    public function getAddressArtifactFormat() : ?DeliveryLocationAddressArtifactFormat
     {
         return $this->addressArtifactFormat;
     }
     /**
      * Information that specifies a physical location where package is delivered.
      *
-     * @param DeliveryLocationAddressArtifactFormat $addressArtifactFormat
+     * @param DeliveryLocationAddressArtifactFormat|null $addressArtifactFormat
      *
      * @return self
      */
-    public function setAddressArtifactFormat(DeliveryLocationAddressArtifactFormat $addressArtifactFormat) : self
+    public function setAddressArtifactFormat(?DeliveryLocationAddressArtifactFormat $addressArtifactFormat) : self
     {
         $this->initialized['addressArtifactFormat'] = true;
         $this->addressArtifactFormat = $addressArtifactFormat;
@@ -61,20 +61,20 @@ class DeliveryDeliveryLocation extends \ArrayObject
     /**
      * Location Code for delivered package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Location Code for delivered package.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -83,20 +83,20 @@ class DeliveryDeliveryLocation extends \ArrayObject
     /**
      * Description of the location where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the location where package is delivered.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -105,20 +105,20 @@ class DeliveryDeliveryLocation extends \ArrayObject
     /**
      * The person who signed for the package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSignedForByName() : string
+    public function getSignedForByName() : ?string
     {
         return $this->signedForByName;
     }
     /**
      * The person who signed for the package.
      *
-     * @param string $signedForByName
+     * @param string|null $signedForByName
      *
      * @return self
      */
-    public function setSignedForByName(string $signedForByName) : self
+    public function setSignedForByName(?string $signedForByName) : self
     {
         $this->initialized['signedForByName'] = true;
         $this->signedForByName = $signedForByName;

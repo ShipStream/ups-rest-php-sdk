@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('OptionType', $data)) {
+            if (\array_key_exists('OptionType', $data) && $data['OptionType'] !== null) {
                 $object->setOptionType($this->denormalizer->denormalize($data['OptionType'], 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionType', 'json', $context));
                 unset($data['OptionType']);
             }
-            if (\array_key_exists('OptionCode', $data)) {
+            elseif (\array_key_exists('OptionType', $data) && $data['OptionType'] === null) {
+                $object->setOptionType(null);
+            }
+            if (\array_key_exists('OptionCode', $data) && $data['OptionCode'] !== null) {
                 $values = [];
                 foreach ($data['OptionCode'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionCode', 'json', $context);
@@ -52,9 +55,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOptionCode($values);
                 unset($data['OptionCode']);
             }
-            if (\array_key_exists('Relation', $data)) {
+            elseif (\array_key_exists('OptionCode', $data) && $data['OptionCode'] === null) {
+                $object->setOptionCode(null);
+            }
+            if (\array_key_exists('Relation', $data) && $data['Relation'] !== null) {
                 $object->setRelation($this->denormalizer->denormalize($data['Relation'], 'ShipStream\\Ups\\Api\\Model\\SearchOptionRelation', 'json', $context));
                 unset($data['Relation']);
+            }
+            elseif (\array_key_exists('Relation', $data) && $data['Relation'] === null) {
+                $object->setRelation(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -117,11 +126,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('OptionType', $data)) {
+            if (\array_key_exists('OptionType', $data) && $data['OptionType'] !== null) {
                 $object->setOptionType($this->denormalizer->denormalize($data['OptionType'], 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionType', 'json', $context));
                 unset($data['OptionType']);
             }
-            if (\array_key_exists('OptionCode', $data)) {
+            elseif (\array_key_exists('OptionType', $data) && $data['OptionType'] === null) {
+                $object->setOptionType(null);
+            }
+            if (\array_key_exists('OptionCode', $data) && $data['OptionCode'] !== null) {
                 $values = [];
                 foreach ($data['OptionCode'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionCode', 'json', $context);
@@ -129,9 +141,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOptionCode($values);
                 unset($data['OptionCode']);
             }
-            if (\array_key_exists('Relation', $data)) {
+            elseif (\array_key_exists('OptionCode', $data) && $data['OptionCode'] === null) {
+                $object->setOptionCode(null);
+            }
+            if (\array_key_exists('Relation', $data) && $data['Relation'] !== null) {
                 $object->setRelation($this->denormalizer->denormalize($data['Relation'], 'ShipStream\\Ups\\Api\\Model\\SearchOptionRelation', 'json', $context));
                 unset($data['Relation']);
+            }
+            elseif (\array_key_exists('Relation', $data) && $data['Relation'] === null) {
+                $object->setRelation(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

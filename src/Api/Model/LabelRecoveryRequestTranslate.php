@@ -27,7 +27,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     swe  Swedish 
     nor  Norwegian
     *
-    * @var string
+    * @var string|null
     */
     protected $languageCode;
     /**
@@ -37,7 +37,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     US - United States
     97  Not Applicable
     *
-    * @var string
+    * @var string|null
     */
     protected $dialectCode;
     /**
@@ -45,7 +45,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     Valid code: 
     01 = label direction instructions and receipt
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
@@ -63,9 +63,9 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     swe  Swedish 
     nor  Norwegian
     *
-    * @return string
+    * @return string|null
     */
-    public function getLanguageCode() : string
+    public function getLanguageCode() : ?string
     {
         return $this->languageCode;
     }
@@ -84,11 +84,11 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     swe  Swedish 
     nor  Norwegian
     *
-    * @param string $languageCode
+    * @param string|null $languageCode
     *
     * @return self
     */
-    public function setLanguageCode(string $languageCode) : self
+    public function setLanguageCode(?string $languageCode) : self
     {
         $this->initialized['languageCode'] = true;
         $this->languageCode = $languageCode;
@@ -101,9 +101,9 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     US - United States
     97  Not Applicable
     *
-    * @return string
+    * @return string|null
     */
-    public function getDialectCode() : string
+    public function getDialectCode() : ?string
     {
         return $this->dialectCode;
     }
@@ -114,11 +114,11 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     US - United States
     97  Not Applicable
     *
-    * @param string $dialectCode
+    * @param string|null $dialectCode
     *
     * @return self
     */
-    public function setDialectCode(string $dialectCode) : self
+    public function setDialectCode(?string $dialectCode) : self
     {
         $this->initialized['dialectCode'] = true;
         $this->dialectCode = $dialectCode;
@@ -129,9 +129,9 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     Valid code: 
     01 = label direction instructions and receipt
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -140,11 +140,11 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     Valid code: 
     01 = label direction instructions and receipt
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

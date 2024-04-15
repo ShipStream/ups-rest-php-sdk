@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('date', $data)) {
+            if (\array_key_exists('date', $data) && $data['date'] !== null) {
                 $object->setDate($data['date']);
                 unset($data['date']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('date', $data) && $data['date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('date', $data)) {
+            if (\array_key_exists('date', $data) && $data['date'] !== null) {
                 $object->setDate($data['date']);
                 unset($data['date']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('date', $data) && $data['date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

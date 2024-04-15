@@ -15,92 +15,92 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Expiration time for requested refresh token in seconds.
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshTokenExpiresIn;
     /**
      * Status for requested refresh token.
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshTokenStatus;
     /**
      * Type for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $tokenType;
     /**
      * Issue time for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $issuedAt;
     /**
      * Client id for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $clientId;
     /**
      * Token to be used in API requests.
      *
-     * @var string
+     * @var string|null
      */
     protected $accessToken;
     /**
      * Token to be used in refresh requests.
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshToken;
     /**
      * Scope for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $scope;
     /**
      * Issue time for requested refresh token.
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshTokenIssuedAt;
     /**
      * Expiration time for requested access token in seconds.
      *
-     * @var string
+     * @var string|null
      */
     protected $expiresIn;
     /**
      * Number of refreshes for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshCount;
     /**
      * Status for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $status;
     /**
      * Expiration time for requested refresh token in seconds.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshTokenExpiresIn() : string
+    public function getRefreshTokenExpiresIn() : ?string
     {
         return $this->refreshTokenExpiresIn;
     }
     /**
      * Expiration time for requested refresh token in seconds.
      *
-     * @param string $refreshTokenExpiresIn
+     * @param string|null $refreshTokenExpiresIn
      *
      * @return self
      */
-    public function setRefreshTokenExpiresIn(string $refreshTokenExpiresIn) : self
+    public function setRefreshTokenExpiresIn(?string $refreshTokenExpiresIn) : self
     {
         $this->initialized['refreshTokenExpiresIn'] = true;
         $this->refreshTokenExpiresIn = $refreshTokenExpiresIn;
@@ -109,20 +109,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Status for requested refresh token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshTokenStatus() : string
+    public function getRefreshTokenStatus() : ?string
     {
         return $this->refreshTokenStatus;
     }
     /**
      * Status for requested refresh token.
      *
-     * @param string $refreshTokenStatus
+     * @param string|null $refreshTokenStatus
      *
      * @return self
      */
-    public function setRefreshTokenStatus(string $refreshTokenStatus) : self
+    public function setRefreshTokenStatus(?string $refreshTokenStatus) : self
     {
         $this->initialized['refreshTokenStatus'] = true;
         $this->refreshTokenStatus = $refreshTokenStatus;
@@ -131,20 +131,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Type for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTokenType() : string
+    public function getTokenType() : ?string
     {
         return $this->tokenType;
     }
     /**
      * Type for requested token.
      *
-     * @param string $tokenType
+     * @param string|null $tokenType
      *
      * @return self
      */
-    public function setTokenType(string $tokenType) : self
+    public function setTokenType(?string $tokenType) : self
     {
         $this->initialized['tokenType'] = true;
         $this->tokenType = $tokenType;
@@ -153,20 +153,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Issue time for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getIssuedAt() : string
+    public function getIssuedAt() : ?string
     {
         return $this->issuedAt;
     }
     /**
      * Issue time for requested token.
      *
-     * @param string $issuedAt
+     * @param string|null $issuedAt
      *
      * @return self
      */
-    public function setIssuedAt(string $issuedAt) : self
+    public function setIssuedAt(?string $issuedAt) : self
     {
         $this->initialized['issuedAt'] = true;
         $this->issuedAt = $issuedAt;
@@ -175,20 +175,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Client id for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getClientId() : string
+    public function getClientId() : ?string
     {
         return $this->clientId;
     }
     /**
      * Client id for requested token.
      *
-     * @param string $clientId
+     * @param string|null $clientId
      *
      * @return self
      */
-    public function setClientId(string $clientId) : self
+    public function setClientId(?string $clientId) : self
     {
         $this->initialized['clientId'] = true;
         $this->clientId = $clientId;
@@ -197,20 +197,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Token to be used in API requests.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccessToken() : string
+    public function getAccessToken() : ?string
     {
         return $this->accessToken;
     }
     /**
      * Token to be used in API requests.
      *
-     * @param string $accessToken
+     * @param string|null $accessToken
      *
      * @return self
      */
-    public function setAccessToken(string $accessToken) : self
+    public function setAccessToken(?string $accessToken) : self
     {
         $this->initialized['accessToken'] = true;
         $this->accessToken = $accessToken;
@@ -219,20 +219,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Token to be used in refresh requests.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshToken() : string
+    public function getRefreshToken() : ?string
     {
         return $this->refreshToken;
     }
     /**
      * Token to be used in refresh requests.
      *
-     * @param string $refreshToken
+     * @param string|null $refreshToken
      *
      * @return self
      */
-    public function setRefreshToken(string $refreshToken) : self
+    public function setRefreshToken(?string $refreshToken) : self
     {
         $this->initialized['refreshToken'] = true;
         $this->refreshToken = $refreshToken;
@@ -241,20 +241,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Scope for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getScope() : string
+    public function getScope() : ?string
     {
         return $this->scope;
     }
     /**
      * Scope for requested token.
      *
-     * @param string $scope
+     * @param string|null $scope
      *
      * @return self
      */
-    public function setScope(string $scope) : self
+    public function setScope(?string $scope) : self
     {
         $this->initialized['scope'] = true;
         $this->scope = $scope;
@@ -263,20 +263,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Issue time for requested refresh token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshTokenIssuedAt() : string
+    public function getRefreshTokenIssuedAt() : ?string
     {
         return $this->refreshTokenIssuedAt;
     }
     /**
      * Issue time for requested refresh token.
      *
-     * @param string $refreshTokenIssuedAt
+     * @param string|null $refreshTokenIssuedAt
      *
      * @return self
      */
-    public function setRefreshTokenIssuedAt(string $refreshTokenIssuedAt) : self
+    public function setRefreshTokenIssuedAt(?string $refreshTokenIssuedAt) : self
     {
         $this->initialized['refreshTokenIssuedAt'] = true;
         $this->refreshTokenIssuedAt = $refreshTokenIssuedAt;
@@ -285,20 +285,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Expiration time for requested access token in seconds.
      *
-     * @return string
+     * @return string|null
      */
-    public function getExpiresIn() : string
+    public function getExpiresIn() : ?string
     {
         return $this->expiresIn;
     }
     /**
      * Expiration time for requested access token in seconds.
      *
-     * @param string $expiresIn
+     * @param string|null $expiresIn
      *
      * @return self
      */
-    public function setExpiresIn(string $expiresIn) : self
+    public function setExpiresIn(?string $expiresIn) : self
     {
         $this->initialized['expiresIn'] = true;
         $this->expiresIn = $expiresIn;
@@ -307,20 +307,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Number of refreshes for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshCount() : string
+    public function getRefreshCount() : ?string
     {
         return $this->refreshCount;
     }
     /**
      * Number of refreshes for requested token.
      *
-     * @param string $refreshCount
+     * @param string|null $refreshCount
      *
      * @return self
      */
-    public function setRefreshCount(string $refreshCount) : self
+    public function setRefreshCount(?string $refreshCount) : self
     {
         $this->initialized['refreshCount'] = true;
         $this->refreshCount = $refreshCount;
@@ -329,20 +329,20 @@ class RefreshTokenSuccessResponse extends \ArrayObject
     /**
      * Status for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatus() : string
+    public function getStatus() : ?string
     {
         return $this->status;
     }
     /**
      * Status for requested token.
      *
-     * @param string $status
+     * @param string|null $status
      *
      * @return self
      */
-    public function setStatus(string $status) : self
+    public function setStatus(?string $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

@@ -15,32 +15,32 @@ class DeliveryTimeInformationReturnContractServices extends \ArrayObject
     /**
      * Return contract Service code. Valid Code "01" - Heavy Goods. If 01 will return Heavy Goods service transit times for a given origin and destination (if applicable)  Invalid Code will be ignore.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Return contract service Description
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Return contract Service code. Valid Code "01" - Heavy Goods. If 01 will return Heavy Goods service transit times for a given origin and destination (if applicable)  Invalid Code will be ignore.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Return contract Service code. Valid Code "01" - Heavy Goods. If 01 will return Heavy Goods service transit times for a given origin and destination (if applicable)  Invalid Code will be ignore.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class DeliveryTimeInformationReturnContractServices extends \ArrayObject
     /**
      * Return contract service Description
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Return contract service Description
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

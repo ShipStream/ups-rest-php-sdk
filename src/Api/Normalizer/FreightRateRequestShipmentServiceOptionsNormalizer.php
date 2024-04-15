@@ -40,53 +40,89 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupOptions', $data)) {
+            if (\array_key_exists('PickupOptions', $data) && $data['PickupOptions'] !== null) {
                 $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions', 'json', $context));
                 unset($data['PickupOptions']);
             }
-            if (\array_key_exists('DeliveryOptions', $data)) {
+            elseif (\array_key_exists('PickupOptions', $data) && $data['PickupOptions'] === null) {
+                $object->setPickupOptions(null);
+            }
+            if (\array_key_exists('DeliveryOptions', $data) && $data['DeliveryOptions'] !== null) {
                 $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions', 'json', $context));
                 unset($data['DeliveryOptions']);
             }
-            if (\array_key_exists('OverSeasLeg', $data)) {
+            elseif (\array_key_exists('DeliveryOptions', $data) && $data['DeliveryOptions'] === null) {
+                $object->setDeliveryOptions(null);
+            }
+            if (\array_key_exists('OverSeasLeg', $data) && $data['OverSeasLeg'] !== null) {
                 $object->setOverSeasLeg($this->denormalizer->denormalize($data['OverSeasLeg'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg', 'json', $context));
                 unset($data['OverSeasLeg']);
             }
-            if (\array_key_exists('COD', $data)) {
+            elseif (\array_key_exists('OverSeasLeg', $data) && $data['OverSeasLeg'] === null) {
+                $object->setOverSeasLeg(null);
+            }
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('DangerousGoods', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('DangerousGoods', $data) && $data['DangerousGoods'] !== null) {
                 $object->setDangerousGoods($this->denormalizer->denormalize($data['DangerousGoods'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods', 'json', $context));
                 unset($data['DangerousGoods']);
             }
-            if (\array_key_exists('SortingAndSegregating', $data)) {
+            elseif (\array_key_exists('DangerousGoods', $data) && $data['DangerousGoods'] === null) {
+                $object->setDangerousGoods(null);
+            }
+            if (\array_key_exists('SortingAndSegregating', $data) && $data['SortingAndSegregating'] !== null) {
                 $object->setSortingAndSegregating($this->denormalizer->denormalize($data['SortingAndSegregating'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating', 'json', $context));
                 unset($data['SortingAndSegregating']);
             }
-            if (\array_key_exists('ExcessDeclaredValue', $data)) {
+            elseif (\array_key_exists('SortingAndSegregating', $data) && $data['SortingAndSegregating'] === null) {
+                $object->setSortingAndSegregating(null);
+            }
+            if (\array_key_exists('ExcessDeclaredValue', $data) && $data['ExcessDeclaredValue'] !== null) {
                 $object->setExcessDeclaredValue($this->denormalizer->denormalize($data['ExcessDeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue', 'json', $context));
                 unset($data['ExcessDeclaredValue']);
             }
-            if (\array_key_exists('HandlingCharge', $data)) {
+            elseif (\array_key_exists('ExcessDeclaredValue', $data) && $data['ExcessDeclaredValue'] === null) {
+                $object->setExcessDeclaredValue(null);
+            }
+            if (\array_key_exists('HandlingCharge', $data) && $data['HandlingCharge'] !== null) {
                 $object->setHandlingCharge($this->denormalizer->denormalize($data['HandlingCharge'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge', 'json', $context));
                 unset($data['HandlingCharge']);
             }
-            if (\array_key_exists('FreezableProtectionIndicator', $data)) {
+            elseif (\array_key_exists('HandlingCharge', $data) && $data['HandlingCharge'] === null) {
+                $object->setHandlingCharge(null);
+            }
+            if (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] !== null) {
                 $object->setFreezableProtectionIndicator($data['FreezableProtectionIndicator']);
                 unset($data['FreezableProtectionIndicator']);
             }
-            if (\array_key_exists('ExtremeLengthIndicator', $data)) {
+            elseif (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] === null) {
+                $object->setFreezableProtectionIndicator(null);
+            }
+            if (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] !== null) {
                 $object->setExtremeLengthIndicator($data['ExtremeLengthIndicator']);
                 unset($data['ExtremeLengthIndicator']);
             }
-            if (\array_key_exists('LinearFeet', $data)) {
+            elseif (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] === null) {
+                $object->setExtremeLengthIndicator(null);
+            }
+            if (\array_key_exists('LinearFeet', $data) && $data['LinearFeet'] !== null) {
                 $object->setLinearFeet($data['LinearFeet']);
                 unset($data['LinearFeet']);
             }
-            if (\array_key_exists('AdjustedHeight', $data)) {
+            elseif (\array_key_exists('LinearFeet', $data) && $data['LinearFeet'] === null) {
+                $object->setLinearFeet(null);
+            }
+            if (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] !== null) {
                 $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight', 'json', $context));
                 unset($data['AdjustedHeight']);
+            }
+            elseif (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] === null) {
+                $object->setAdjustedHeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -176,53 +212,89 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupOptions', $data)) {
+            if (\array_key_exists('PickupOptions', $data) && $data['PickupOptions'] !== null) {
                 $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions', 'json', $context));
                 unset($data['PickupOptions']);
             }
-            if (\array_key_exists('DeliveryOptions', $data)) {
+            elseif (\array_key_exists('PickupOptions', $data) && $data['PickupOptions'] === null) {
+                $object->setPickupOptions(null);
+            }
+            if (\array_key_exists('DeliveryOptions', $data) && $data['DeliveryOptions'] !== null) {
                 $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions', 'json', $context));
                 unset($data['DeliveryOptions']);
             }
-            if (\array_key_exists('OverSeasLeg', $data)) {
+            elseif (\array_key_exists('DeliveryOptions', $data) && $data['DeliveryOptions'] === null) {
+                $object->setDeliveryOptions(null);
+            }
+            if (\array_key_exists('OverSeasLeg', $data) && $data['OverSeasLeg'] !== null) {
                 $object->setOverSeasLeg($this->denormalizer->denormalize($data['OverSeasLeg'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg', 'json', $context));
                 unset($data['OverSeasLeg']);
             }
-            if (\array_key_exists('COD', $data)) {
+            elseif (\array_key_exists('OverSeasLeg', $data) && $data['OverSeasLeg'] === null) {
+                $object->setOverSeasLeg(null);
+            }
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('DangerousGoods', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('DangerousGoods', $data) && $data['DangerousGoods'] !== null) {
                 $object->setDangerousGoods($this->denormalizer->denormalize($data['DangerousGoods'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods', 'json', $context));
                 unset($data['DangerousGoods']);
             }
-            if (\array_key_exists('SortingAndSegregating', $data)) {
+            elseif (\array_key_exists('DangerousGoods', $data) && $data['DangerousGoods'] === null) {
+                $object->setDangerousGoods(null);
+            }
+            if (\array_key_exists('SortingAndSegregating', $data) && $data['SortingAndSegregating'] !== null) {
                 $object->setSortingAndSegregating($this->denormalizer->denormalize($data['SortingAndSegregating'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating', 'json', $context));
                 unset($data['SortingAndSegregating']);
             }
-            if (\array_key_exists('ExcessDeclaredValue', $data)) {
+            elseif (\array_key_exists('SortingAndSegregating', $data) && $data['SortingAndSegregating'] === null) {
+                $object->setSortingAndSegregating(null);
+            }
+            if (\array_key_exists('ExcessDeclaredValue', $data) && $data['ExcessDeclaredValue'] !== null) {
                 $object->setExcessDeclaredValue($this->denormalizer->denormalize($data['ExcessDeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue', 'json', $context));
                 unset($data['ExcessDeclaredValue']);
             }
-            if (\array_key_exists('HandlingCharge', $data)) {
+            elseif (\array_key_exists('ExcessDeclaredValue', $data) && $data['ExcessDeclaredValue'] === null) {
+                $object->setExcessDeclaredValue(null);
+            }
+            if (\array_key_exists('HandlingCharge', $data) && $data['HandlingCharge'] !== null) {
                 $object->setHandlingCharge($this->denormalizer->denormalize($data['HandlingCharge'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge', 'json', $context));
                 unset($data['HandlingCharge']);
             }
-            if (\array_key_exists('FreezableProtectionIndicator', $data)) {
+            elseif (\array_key_exists('HandlingCharge', $data) && $data['HandlingCharge'] === null) {
+                $object->setHandlingCharge(null);
+            }
+            if (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] !== null) {
                 $object->setFreezableProtectionIndicator($data['FreezableProtectionIndicator']);
                 unset($data['FreezableProtectionIndicator']);
             }
-            if (\array_key_exists('ExtremeLengthIndicator', $data)) {
+            elseif (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] === null) {
+                $object->setFreezableProtectionIndicator(null);
+            }
+            if (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] !== null) {
                 $object->setExtremeLengthIndicator($data['ExtremeLengthIndicator']);
                 unset($data['ExtremeLengthIndicator']);
             }
-            if (\array_key_exists('LinearFeet', $data)) {
+            elseif (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] === null) {
+                $object->setExtremeLengthIndicator(null);
+            }
+            if (\array_key_exists('LinearFeet', $data) && $data['LinearFeet'] !== null) {
                 $object->setLinearFeet($data['LinearFeet']);
                 unset($data['LinearFeet']);
             }
-            if (\array_key_exists('AdjustedHeight', $data)) {
+            elseif (\array_key_exists('LinearFeet', $data) && $data['LinearFeet'] === null) {
+                $object->setLinearFeet(null);
+            }
+            if (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] !== null) {
                 $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight', 'json', $context));
                 unset($data['AdjustedHeight']);
+            }
+            elseif (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] === null) {
+                $object->setAdjustedHeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

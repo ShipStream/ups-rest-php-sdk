@@ -15,32 +15,32 @@ class RateResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var RateResponseResponse
+     * @var RateResponseResponse|null
      */
     protected $response;
     /**
      * 
      *
-     * @var RateResponseRatedShipment[]
+     * @var list<RateResponseRatedShipment>|null
      */
     protected $ratedShipment;
     /**
      * Response Container.
      *
-     * @return RateResponseResponse
+     * @return RateResponseResponse|null
      */
-    public function getResponse() : RateResponseResponse
+    public function getResponse() : ?RateResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param RateResponseResponse $response
+     * @param RateResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(RateResponseResponse $response) : self
+    public function setResponse(?RateResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class RateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return RateResponseRatedShipment[]
+     * @return list<RateResponseRatedShipment>|null
      */
-    public function getRatedShipment() : array
+    public function getRatedShipment() : ?array
     {
         return $this->ratedShipment;
     }
     /**
      * 
      *
-     * @param RateResponseRatedShipment[] $ratedShipment
+     * @param list<RateResponseRatedShipment>|null $ratedShipment
      *
      * @return self
      */
-    public function setRatedShipment(array $ratedShipment) : self
+    public function setRatedShipment(?array $ratedShipment) : self
     {
         $this->initialized['ratedShipment'] = true;
         $this->ratedShipment = $ratedShipment;

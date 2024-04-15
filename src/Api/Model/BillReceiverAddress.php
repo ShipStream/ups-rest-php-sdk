@@ -15,26 +15,26 @@ class BillReceiverAddress extends \ArrayObject
     /**
      * The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;

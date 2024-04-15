@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('VendorCollectIDTypeCode', $data)) {
+            if (\array_key_exists('VendorCollectIDTypeCode', $data) && $data['VendorCollectIDTypeCode'] !== null) {
                 $object->setVendorCollectIDTypeCode($data['VendorCollectIDTypeCode']);
                 unset($data['VendorCollectIDTypeCode']);
             }
-            if (\array_key_exists('VendorCollectIDNumber', $data)) {
+            elseif (\array_key_exists('VendorCollectIDTypeCode', $data) && $data['VendorCollectIDTypeCode'] === null) {
+                $object->setVendorCollectIDTypeCode(null);
+            }
+            if (\array_key_exists('VendorCollectIDNumber', $data) && $data['VendorCollectIDNumber'] !== null) {
                 $object->setVendorCollectIDNumber($data['VendorCollectIDNumber']);
                 unset($data['VendorCollectIDNumber']);
             }
-            if (\array_key_exists('ConsigneeType', $data)) {
+            elseif (\array_key_exists('VendorCollectIDNumber', $data) && $data['VendorCollectIDNumber'] === null) {
+                $object->setVendorCollectIDNumber(null);
+            }
+            if (\array_key_exists('ConsigneeType', $data) && $data['ConsigneeType'] !== null) {
                 $object->setConsigneeType($data['ConsigneeType']);
                 unset($data['ConsigneeType']);
+            }
+            elseif (\array_key_exists('ConsigneeType', $data) && $data['ConsigneeType'] === null) {
+                $object->setConsigneeType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('VendorCollectIDTypeCode', $data)) {
+            if (\array_key_exists('VendorCollectIDTypeCode', $data) && $data['VendorCollectIDTypeCode'] !== null) {
                 $object->setVendorCollectIDTypeCode($data['VendorCollectIDTypeCode']);
                 unset($data['VendorCollectIDTypeCode']);
             }
-            if (\array_key_exists('VendorCollectIDNumber', $data)) {
+            elseif (\array_key_exists('VendorCollectIDTypeCode', $data) && $data['VendorCollectIDTypeCode'] === null) {
+                $object->setVendorCollectIDTypeCode(null);
+            }
+            if (\array_key_exists('VendorCollectIDNumber', $data) && $data['VendorCollectIDNumber'] !== null) {
                 $object->setVendorCollectIDNumber($data['VendorCollectIDNumber']);
                 unset($data['VendorCollectIDNumber']);
             }
-            if (\array_key_exists('ConsigneeType', $data)) {
+            elseif (\array_key_exists('VendorCollectIDNumber', $data) && $data['VendorCollectIDNumber'] === null) {
+                $object->setVendorCollectIDNumber(null);
+            }
+            if (\array_key_exists('ConsigneeType', $data) && $data['ConsigneeType'] !== null) {
                 $object->setConsigneeType($data['ConsigneeType']);
                 unset($data['ConsigneeType']);
+            }
+            elseif (\array_key_exists('ConsigneeType', $data) && $data['ConsigneeType'] === null) {
+                $object->setConsigneeType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

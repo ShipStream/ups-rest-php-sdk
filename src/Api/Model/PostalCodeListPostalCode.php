@@ -15,32 +15,32 @@ class PostalCodeListPostalCode extends \ArrayObject
     /**
      * Primary postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $primaryPostalCode;
     /**
      * Secondary postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $secondaryPostalCode;
     /**
      * Primary postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPrimaryPostalCode() : string
+    public function getPrimaryPostalCode() : ?string
     {
         return $this->primaryPostalCode;
     }
     /**
      * Primary postal code.
      *
-     * @param string $primaryPostalCode
+     * @param string|null $primaryPostalCode
      *
      * @return self
      */
-    public function setPrimaryPostalCode(string $primaryPostalCode) : self
+    public function setPrimaryPostalCode(?string $primaryPostalCode) : self
     {
         $this->initialized['primaryPostalCode'] = true;
         $this->primaryPostalCode = $primaryPostalCode;
@@ -49,20 +49,20 @@ class PostalCodeListPostalCode extends \ArrayObject
     /**
      * Secondary postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSecondaryPostalCode() : string
+    public function getSecondaryPostalCode() : ?string
     {
         return $this->secondaryPostalCode;
     }
     /**
      * Secondary postal code.
      *
-     * @param string $secondaryPostalCode
+     * @param string|null $secondaryPostalCode
      *
      * @return self
      */
-    public function setSecondaryPostalCode(string $secondaryPostalCode) : self
+    public function setSecondaryPostalCode(?string $secondaryPostalCode) : self
     {
         $this->initialized['secondaryPostalCode'] = true;
         $this->secondaryPostalCode = $secondaryPostalCode;

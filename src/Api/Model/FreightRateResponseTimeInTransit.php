@@ -15,26 +15,26 @@ class FreightRateResponseTimeInTransit extends \ArrayObject
     /**
      * Number of days in transit.
      *
-     * @var string
+     * @var string|null
      */
     protected $daysInTransit;
     /**
      * Number of days in transit.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDaysInTransit() : string
+    public function getDaysInTransit() : ?string
     {
         return $this->daysInTransit;
     }
     /**
      * Number of days in transit.
      *
-     * @param string $daysInTransit
+     * @param string|null $daysInTransit
      *
      * @return self
      */
-    public function setDaysInTransit(string $daysInTransit) : self
+    public function setDaysInTransit(?string $daysInTransit) : self
     {
         $this->initialized['daysInTransit'] = true;
         $this->daysInTransit = $daysInTransit;

@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ExportInformation', $data)) {
+            if (\array_key_exists('ExportInformation', $data) && $data['ExportInformation'] !== null) {
                 $object->setExportInformation($data['ExportInformation']);
                 unset($data['ExportInformation']);
             }
-            if (\array_key_exists('License', $data)) {
+            elseif (\array_key_exists('ExportInformation', $data) && $data['ExportInformation'] === null) {
+                $object->setExportInformation(null);
+            }
+            if (\array_key_exists('License', $data) && $data['License'] !== null) {
                 $object->setLicense($this->denormalizer->denormalize($data['License'], 'ShipStream\\Ups\\Api\\Model\\EEIInformationLicense', 'json', $context));
                 unset($data['License']);
             }
-            if (\array_key_exists('DDTCInformation', $data)) {
+            elseif (\array_key_exists('License', $data) && $data['License'] === null) {
+                $object->setLicense(null);
+            }
+            if (\array_key_exists('DDTCInformation', $data) && $data['DDTCInformation'] !== null) {
                 $object->setDDTCInformation($this->denormalizer->denormalize($data['DDTCInformation'], 'ShipStream\\Ups\\Api\\Model\\EEIInformationDDTCInformation', 'json', $context));
                 unset($data['DDTCInformation']);
+            }
+            elseif (\array_key_exists('DDTCInformation', $data) && $data['DDTCInformation'] === null) {
+                $object->setDDTCInformation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ExportInformation', $data)) {
+            if (\array_key_exists('ExportInformation', $data) && $data['ExportInformation'] !== null) {
                 $object->setExportInformation($data['ExportInformation']);
                 unset($data['ExportInformation']);
             }
-            if (\array_key_exists('License', $data)) {
+            elseif (\array_key_exists('ExportInformation', $data) && $data['ExportInformation'] === null) {
+                $object->setExportInformation(null);
+            }
+            if (\array_key_exists('License', $data) && $data['License'] !== null) {
                 $object->setLicense($this->denormalizer->denormalize($data['License'], 'ShipStream\\Ups\\Api\\Model\\EEIInformationLicense', 'json', $context));
                 unset($data['License']);
             }
-            if (\array_key_exists('DDTCInformation', $data)) {
+            elseif (\array_key_exists('License', $data) && $data['License'] === null) {
+                $object->setLicense(null);
+            }
+            if (\array_key_exists('DDTCInformation', $data) && $data['DDTCInformation'] !== null) {
                 $object->setDDTCInformation($this->denormalizer->denormalize($data['DDTCInformation'], 'ShipStream\\Ups\\Api\\Model\\EEIInformationDDTCInformation', 'json', $context));
                 unset($data['DDTCInformation']);
+            }
+            elseif (\array_key_exists('DDTCInformation', $data) && $data['DDTCInformation'] === null) {
+                $object->setDDTCInformation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

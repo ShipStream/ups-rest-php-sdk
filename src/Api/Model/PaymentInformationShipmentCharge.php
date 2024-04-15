@@ -31,25 +31,25 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     
     5) The origin and destination IATA code is the same.                                                                                                                                                                                                                                                                                                                                                                                                                                                      03 = Broker of Choice
     *
-    * @var string
+    * @var string|null
     */
     protected $type;
     /**
      * Container for the BillShipper billing option. The three payment methods that are available for the Bill Shipper billing option are alternate payment method, account number or credit card.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
      *
-     * @var ShipmentChargeBillShipper
+     * @var ShipmentChargeBillShipper|null
      */
     protected $billShipper;
     /**
      * Container for the BillReceiver billing option.  This element or its sibling element, BillShipper, BillThirdParty or Consignee Billed, must be present but no more than one can be present. For a return shipment, Bill Receiver is invalid for Transportation charges.
      *
-     * @var ShipmentChargeBillReceiver
+     * @var ShipmentChargeBillReceiver|null
      */
     protected $billReceiver;
     /**
      * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
      *
-     * @var ShipmentChargeBillThirdParty
+     * @var ShipmentChargeBillThirdParty|null
      */
     protected $billThirdParty;
     /**
@@ -59,7 +59,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     
     Declared Value, Delivery Confirmation, On Call Pickup, Remote Area Surcharge, Saturday Pickup of Delivery fees are not passed to the consignee. These charges are billed to the shippers UPS account number.
     *
-    * @var string
+    * @var string|null
     */
     protected $consigneeBilledIndicator;
     /**
@@ -81,9 +81,9 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     
     5) The origin and destination IATA code is the same.                                                                                                                                                                                                                                                                                                                                                                                                                                                      03 = Broker of Choice
     *
-    * @return string
+    * @return string|null
     */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
@@ -106,11 +106,11 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     
     5) The origin and destination IATA code is the same.                                                                                                                                                                                                                                                                                                                                                                                                                                                      03 = Broker of Choice
     *
-    * @param string $type
+    * @param string|null $type
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -119,20 +119,20 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     /**
      * Container for the BillShipper billing option. The three payment methods that are available for the Bill Shipper billing option are alternate payment method, account number or credit card.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
      *
-     * @return ShipmentChargeBillShipper
+     * @return ShipmentChargeBillShipper|null
      */
-    public function getBillShipper() : ShipmentChargeBillShipper
+    public function getBillShipper() : ?ShipmentChargeBillShipper
     {
         return $this->billShipper;
     }
     /**
      * Container for the BillShipper billing option. The three payment methods that are available for the Bill Shipper billing option are alternate payment method, account number or credit card.  This element or its sibling element, BillReceiver, BillThirdParty or ConsigneeBilledIndicator, must be present but no more than one can be present.
      *
-     * @param ShipmentChargeBillShipper $billShipper
+     * @param ShipmentChargeBillShipper|null $billShipper
      *
      * @return self
      */
-    public function setBillShipper(ShipmentChargeBillShipper $billShipper) : self
+    public function setBillShipper(?ShipmentChargeBillShipper $billShipper) : self
     {
         $this->initialized['billShipper'] = true;
         $this->billShipper = $billShipper;
@@ -141,20 +141,20 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     /**
      * Container for the BillReceiver billing option.  This element or its sibling element, BillShipper, BillThirdParty or Consignee Billed, must be present but no more than one can be present. For a return shipment, Bill Receiver is invalid for Transportation charges.
      *
-     * @return ShipmentChargeBillReceiver
+     * @return ShipmentChargeBillReceiver|null
      */
-    public function getBillReceiver() : ShipmentChargeBillReceiver
+    public function getBillReceiver() : ?ShipmentChargeBillReceiver
     {
         return $this->billReceiver;
     }
     /**
      * Container for the BillReceiver billing option.  This element or its sibling element, BillShipper, BillThirdParty or Consignee Billed, must be present but no more than one can be present. For a return shipment, Bill Receiver is invalid for Transportation charges.
      *
-     * @param ShipmentChargeBillReceiver $billReceiver
+     * @param ShipmentChargeBillReceiver|null $billReceiver
      *
      * @return self
      */
-    public function setBillReceiver(ShipmentChargeBillReceiver $billReceiver) : self
+    public function setBillReceiver(?ShipmentChargeBillReceiver $billReceiver) : self
     {
         $this->initialized['billReceiver'] = true;
         $this->billReceiver = $billReceiver;
@@ -163,20 +163,20 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     /**
      * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
      *
-     * @return ShipmentChargeBillThirdParty
+     * @return ShipmentChargeBillThirdParty|null
      */
-    public function getBillThirdParty() : ShipmentChargeBillThirdParty
+    public function getBillThirdParty() : ?ShipmentChargeBillThirdParty
     {
         return $this->billThirdParty;
     }
     /**
      * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
      *
-     * @param ShipmentChargeBillThirdParty $billThirdParty
+     * @param ShipmentChargeBillThirdParty|null $billThirdParty
      *
      * @return self
      */
-    public function setBillThirdParty(ShipmentChargeBillThirdParty $billThirdParty) : self
+    public function setBillThirdParty(?ShipmentChargeBillThirdParty $billThirdParty) : self
     {
         $this->initialized['billThirdParty'] = true;
         $this->billThirdParty = $billThirdParty;
@@ -189,9 +189,9 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     
     Declared Value, Delivery Confirmation, On Call Pickup, Remote Area Surcharge, Saturday Pickup of Delivery fees are not passed to the consignee. These charges are billed to the shippers UPS account number.
     *
-    * @return string
+    * @return string|null
     */
-    public function getConsigneeBilledIndicator() : string
+    public function getConsigneeBilledIndicator() : ?string
     {
         return $this->consigneeBilledIndicator;
     }
@@ -202,11 +202,11 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     
     Declared Value, Delivery Confirmation, On Call Pickup, Remote Area Surcharge, Saturday Pickup of Delivery fees are not passed to the consignee. These charges are billed to the shippers UPS account number.
     *
-    * @param string $consigneeBilledIndicator
+    * @param string|null $consigneeBilledIndicator
     *
     * @return self
     */
-    public function setConsigneeBilledIndicator(string $consigneeBilledIndicator) : self
+    public function setConsigneeBilledIndicator(?string $consigneeBilledIndicator) : self
     {
         $this->initialized['consigneeBilledIndicator'] = true;
         $this->consigneeBilledIndicator = $consigneeBilledIndicator;

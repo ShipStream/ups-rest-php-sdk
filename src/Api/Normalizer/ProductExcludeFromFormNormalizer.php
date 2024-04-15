@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FormType', $data)) {
+            if (\array_key_exists('FormType', $data) && $data['FormType'] !== null) {
                 $values = [];
                 foreach ($data['FormType'] as $value) {
                     $values[] = $value;
                 }
                 $object->setFormType($values);
                 unset($data['FormType']);
+            }
+            elseif (\array_key_exists('FormType', $data) && $data['FormType'] === null) {
+                $object->setFormType(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FormType', $data)) {
+            if (\array_key_exists('FormType', $data) && $data['FormType'] !== null) {
                 $values = [];
                 foreach ($data['FormType'] as $value) {
                     $values[] = $value;
                 }
                 $object->setFormType($values);
                 unset($data['FormType']);
+            }
+            elseif (\array_key_exists('FormType', $data) && $data['FormType'] === null) {
+                $object->setFormType(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

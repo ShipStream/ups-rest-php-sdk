@@ -15,44 +15,44 @@ class ShipmentAlternateDeliveryAddress extends \ArrayObject
     /**
      * Retail Location Name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Attention Name.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * UPS Access Point ID.
      *
-     * @var string
+     * @var string|null
      */
     protected $uPSAccessPointID;
     /**
      * Address Container.
      *
-     * @var AlternateDeliveryAddressAddress
+     * @var AlternateDeliveryAddressAddress|null
      */
     protected $address;
     /**
      * Retail Location Name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Retail Location Name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -61,20 +61,20 @@ class ShipmentAlternateDeliveryAddress extends \ArrayObject
     /**
      * Attention Name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Attention Name.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -83,20 +83,20 @@ class ShipmentAlternateDeliveryAddress extends \ArrayObject
     /**
      * UPS Access Point ID.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUPSAccessPointID() : string
+    public function getUPSAccessPointID() : ?string
     {
         return $this->uPSAccessPointID;
     }
     /**
      * UPS Access Point ID.
      *
-     * @param string $uPSAccessPointID
+     * @param string|null $uPSAccessPointID
      *
      * @return self
      */
-    public function setUPSAccessPointID(string $uPSAccessPointID) : self
+    public function setUPSAccessPointID(?string $uPSAccessPointID) : self
     {
         $this->initialized['uPSAccessPointID'] = true;
         $this->uPSAccessPointID = $uPSAccessPointID;
@@ -105,20 +105,20 @@ class ShipmentAlternateDeliveryAddress extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return AlternateDeliveryAddressAddress
+     * @return AlternateDeliveryAddressAddress|null
      */
-    public function getAddress() : AlternateDeliveryAddressAddress
+    public function getAddress() : ?AlternateDeliveryAddressAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param AlternateDeliveryAddressAddress $address
+     * @param AlternateDeliveryAddressAddress|null $address
      *
      * @return self
      */
-    public function setAddress(AlternateDeliveryAddressAddress $address) : self
+    public function setAddress(?AlternateDeliveryAddressAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

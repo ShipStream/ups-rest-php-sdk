@@ -15,38 +15,38 @@ class RateShipmentShipFrom extends \ArrayObject
     /**
      * Origin attention name or company name.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Origin attention name.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Address Container.
      *
-     * @var ShipFromAddress
+     * @var ShipFromAddress|null
      */
     protected $address;
     /**
      * Origin attention name or company name.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Origin attention name or company name.  Length is not validated.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -55,20 +55,20 @@ class RateShipmentShipFrom extends \ArrayObject
     /**
      * Origin attention name.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Origin attention name.  Length is not validated.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -77,20 +77,20 @@ class RateShipmentShipFrom extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipFromAddress
+     * @return ShipFromAddress|null
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress() : ?ShipFromAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipFromAddress $address
+     * @param ShipFromAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(?ShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

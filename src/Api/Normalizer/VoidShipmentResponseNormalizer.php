@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('SummaryResult', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('SummaryResult', $data) && $data['SummaryResult'] !== null) {
                 $object->setSummaryResult($this->denormalizer->denormalize($data['SummaryResult'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseSummaryResult', 'json', $context));
                 unset($data['SummaryResult']);
             }
-            if (\array_key_exists('PackageLevelResult', $data)) {
+            elseif (\array_key_exists('SummaryResult', $data) && $data['SummaryResult'] === null) {
+                $object->setSummaryResult(null);
+            }
+            if (\array_key_exists('PackageLevelResult', $data) && $data['PackageLevelResult'] !== null) {
                 $values = [];
                 foreach ($data['PackageLevelResult'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult', 'json', $context);
                 }
                 $object->setPackageLevelResult($values);
                 unset($data['PackageLevelResult']);
+            }
+            elseif (\array_key_exists('PackageLevelResult', $data) && $data['PackageLevelResult'] === null) {
+                $object->setPackageLevelResult(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -117,21 +126,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('SummaryResult', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('SummaryResult', $data) && $data['SummaryResult'] !== null) {
                 $object->setSummaryResult($this->denormalizer->denormalize($data['SummaryResult'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseSummaryResult', 'json', $context));
                 unset($data['SummaryResult']);
             }
-            if (\array_key_exists('PackageLevelResult', $data)) {
+            elseif (\array_key_exists('SummaryResult', $data) && $data['SummaryResult'] === null) {
+                $object->setSummaryResult(null);
+            }
+            if (\array_key_exists('PackageLevelResult', $data) && $data['PackageLevelResult'] !== null) {
                 $values = [];
                 foreach ($data['PackageLevelResult'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult', 'json', $context);
                 }
                 $object->setPackageLevelResult($values);
                 unset($data['PackageLevelResult']);
+            }
+            elseif (\array_key_exists('PackageLevelResult', $data) && $data['PackageLevelResult'] === null) {
+                $object->setPackageLevelResult(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -16,7 +16,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $version Identifies the version of the API. Valid 
     values: 
     v1
-    * @param \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $regionalrequestindicator Valid values: True or False. 
     If True, either the region element or any 
@@ -41,7 +41,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\XAVResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function addressValidation(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], string $fetch = self::FETCH_OBJECT, array $accept = [])
+    public function addressValidation(int $requestoption, string $version, ?\ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody = null, array $queryParameters = [], string $fetch = self::FETCH_OBJECT, array $accept = [])
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AddressValidation($requestoption, $version, $requestBody, $queryParameters, $accept), $fetch);
     }
@@ -51,7 +51,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $version Version of the API. Valid values:
     v1
     v1801. Length 5
-    * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -62,7 +62,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function chemicalReferenceData(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function chemicalReferenceData(string $version, ?\ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ChemicalReferenceData($version, $requestBody, $headerParameters), $fetch);
     }
@@ -70,7 +70,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
      *
      * @param string $version API version
-     * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -81,7 +81,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function acceptanceAuditPreCheck(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function acceptanceAuditPreCheck(string $version, ?\ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AcceptanceAuditPreCheck($version, $requestBody, $headerParameters), $fetch);
     }
@@ -89,7 +89,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * Landed Cost provides an all-inclusive cost estimate of international shipments.
      *
      * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -101,7 +101,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\LandedCostResponse|\Psr\Http\Message\ResponseInterface
      */
-    public function landedCost(string $version, \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function landedCost(string $version, ?\ShipStream\Ups\Api\Model\LandedCostRequest $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LandedCost($version, $requestBody, $headerParameters), $fetch);
     }
@@ -120,7 +120,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     48-All available Retail Locations and Program Types 
     56-All available Retail Locations, Additional Services and Program Types 
     64-Search for UPS Access Point Locations.  
-    * @param \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $Locale Locale of request
     * }
@@ -134,7 +134,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\LOCATORResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function locator(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function locator(string $version, string $reqOption, ?\ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody = null, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Locator($version, $reqOption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -219,7 +219,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * 
      *
      * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -231,7 +231,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function pushToImageRepository(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pushToImageRepository(string $version, ?\ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PushToImageRepository($version, $requestBody, $headerParameters), $fetch);
     }
@@ -239,7 +239,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * 
      *
      * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -251,7 +251,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function upload(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function upload(string $version, ?\ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Upload($version, $requestBody, $headerParameters), $fetch);
     }
@@ -287,7 +287,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     oncall
     smart
     both. Length 6
-    * @param \ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -298,7 +298,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupRate(string $version, string $pickuptype, \ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupRate(string $version, string $pickuptype, ?\ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupRate($version, $pickuptype, $requestBody, $headerParameters), $fetch);
     }
@@ -332,7 +332,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     v1607
     v1707.
     Length 5
-    * @param \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -343,7 +343,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupCreation(string $version, \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupCreation(string $version, ?\ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCreation($version, $requestBody, $headerParameters), $fetch);
     }
@@ -371,7 +371,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
      *
      * @param string $version Version of API e.g v1
-     * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -382,7 +382,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function pickupGetServiceCenterFacilities(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupGetServiceCenterFacilities(string $version, ?\ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetServiceCenterFacilities($version, $requestBody, $headerParameters), $fetch);
     }
@@ -390,7 +390,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
      *
      * @param string $version Version of API, such as v1
-     * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -401,7 +401,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function preNotification(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function preNotification(string $version, ?\ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PreNotification($version, $requestBody, $headerParameters), $fetch);
     }
@@ -409,14 +409,14 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * Get Quantum View Response
      *
      * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \ShipStream\Ups\Api\Exception\QuantumViewUnauthorizedException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function quantumView(string $version, \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody, string $fetch = self::FETCH_OBJECT)
+    public function quantumView(string $version, ?\ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody = null, string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\QuantumView($version, $requestBody), $fetch);
     }
@@ -425,7 +425,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @param string $version Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release. Supported values: v1, v1601, v1607, v1701, v1707, v2108, v2205. Length 5
      * @param string $requestoption Valid Values: Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Rate is the only valid request option for Ground Freight Pricing requests. . Length 10
-     * @param \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody 
      * @param array $queryParameters {
      *     @var string $additionalinfo Valid Values: timeintransit = The server rates with transit time information combined with requestoption in URL.Rate is the only valid request option for Ground Freight Pricing requests. Length 15
      * }
@@ -439,7 +439,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\RATEResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function rate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function rate(string $version, string $requestoption, ?\ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody = null, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Rate($version, $requestoption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -450,7 +450,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $version Indicates Ship API to display the new release features in 
     Rate API response based on Ship release. See the New 
     section for the latest Ship release. Supported values: v1, v1601, v1607, v1701, v1707, v1801, v1807, v2108, v2205 . Length 5
-    * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $additionaladdressvalidation Valid Values: 
     city = validation will include city.Length 15
@@ -466,7 +466,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\SHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function shipment(string $version, \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function shipment(string $version, ?\ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody = null, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Shipment($version, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -517,7 +517,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     features returned in the response.
     V1903
     Length 5
-    * @param \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -528,7 +528,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function labelRecovery(string $version, \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function labelRecovery(string $version, ?\ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LabelRecovery($version, $requestBody, $headerParameters), $fetch);
     }
@@ -555,7 +555,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight
      *
      * @param string $version Version of the API e.g v1
-     * @param \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -566,7 +566,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function freightPickup(string $version, \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function freightPickup(string $version, ?\ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightPickup($version, $requestBody, $headerParameters), $fetch);
     }
@@ -582,7 +582,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $requestoption Valid Values: 
     ground,
     air. Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -594,7 +594,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function freightRate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT, array $accept = [])
+    public function freightRate(string $version, string $requestoption, ?\ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT, array $accept = [])
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightRate($version, $requestoption, $requestBody, $headerParameters, $accept), $fetch);
     }
@@ -617,7 +617,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $reqoption Valid Values: 
     Ground,
     Air . Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -628,7 +628,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function freightShip(string $version, string $reqoption, \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function freightShip(string $version, string $reqoption, ?\ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightShip($version, $reqoption, $requestBody, $headerParameters), $fetch);
     }
@@ -636,7 +636,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      * Get Time and Transit Response
      *
      * @param string $version API Version
-     * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request.  Length 32
      *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
@@ -648,7 +648,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\TimeInTransitResponse|\Psr\Http\Message\ResponseInterface
      */
-    public function timeInTransit(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function timeInTransit(string $version, ?\ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\TimeInTransit($version, $requestBody, $headerParameters), $fetch);
     }

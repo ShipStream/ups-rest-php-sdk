@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DayOfWeek', $data)) {
+            if (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] !== null) {
                 $object->setDayOfWeek($data['DayOfWeek']);
                 unset($data['DayOfWeek']);
             }
-            if (\array_key_exists('PickUpDetails', $data)) {
+            elseif (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] === null) {
+                $object->setDayOfWeek(null);
+            }
+            if (\array_key_exists('PickUpDetails', $data) && $data['PickUpDetails'] !== null) {
                 $object->setPickUpDetails($this->denormalizer->denormalize($data['PickUpDetails'], 'ShipStream\\Ups\\Api\\Model\\PickUpPickUpDetails', 'json', $context));
                 unset($data['PickUpDetails']);
+            }
+            elseif (\array_key_exists('PickUpDetails', $data) && $data['PickUpDetails'] === null) {
+                $object->setPickUpDetails(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DayOfWeek', $data)) {
+            if (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] !== null) {
                 $object->setDayOfWeek($data['DayOfWeek']);
                 unset($data['DayOfWeek']);
             }
-            if (\array_key_exists('PickUpDetails', $data)) {
+            elseif (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] === null) {
+                $object->setDayOfWeek(null);
+            }
+            if (\array_key_exists('PickUpDetails', $data) && $data['PickUpDetails'] !== null) {
                 $object->setPickUpDetails($this->denormalizer->denormalize($data['PickUpDetails'], 'ShipStream\\Ups\\Api\\Model\\PickUpPickUpDetails', 'json', $context));
                 unset($data['PickUpDetails']);
+            }
+            elseif (\array_key_exists('PickUpDetails', $data) && $data['PickUpDetails'] === null) {
+                $object->setPickUpDetails(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

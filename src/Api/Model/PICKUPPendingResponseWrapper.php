@@ -15,26 +15,26 @@ class PICKUPPendingResponseWrapper extends \ArrayObject
     /**
      * The response of the pending status for on-callpickup.
      *
-     * @var PickupPendingStatusResponse
+     * @var PickupPendingStatusResponse|null
      */
     protected $pickupPendingStatusResponse;
     /**
      * The response of the pending status for on-callpickup.
      *
-     * @return PickupPendingStatusResponse
+     * @return PickupPendingStatusResponse|null
      */
-    public function getPickupPendingStatusResponse() : PickupPendingStatusResponse
+    public function getPickupPendingStatusResponse() : ?PickupPendingStatusResponse
     {
         return $this->pickupPendingStatusResponse;
     }
     /**
      * The response of the pending status for on-callpickup.
      *
-     * @param PickupPendingStatusResponse $pickupPendingStatusResponse
+     * @param PickupPendingStatusResponse|null $pickupPendingStatusResponse
      *
      * @return self
      */
-    public function setPickupPendingStatusResponse(PickupPendingStatusResponse $pickupPendingStatusResponse) : self
+    public function setPickupPendingStatusResponse(?PickupPendingStatusResponse $pickupPendingStatusResponse) : self
     {
         $this->initialized['pickupPendingStatusResponse'] = true;
         $this->pickupPendingStatusResponse = $pickupPendingStatusResponse;

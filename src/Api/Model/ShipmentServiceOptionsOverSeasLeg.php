@@ -15,32 +15,32 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
     /**
      * Dimensions Container.
      *
-     * @var OverSeasLegDimensions
+     * @var OverSeasLegDimensions|null
      */
     protected $dimensions;
     /**
      * Dimensions Value Container.
      *
-     * @var OverSeasLegValue
+     * @var OverSeasLegValue|null
      */
     protected $value;
     /**
      * Dimensions Container.
      *
-     * @return OverSeasLegDimensions
+     * @return OverSeasLegDimensions|null
      */
-    public function getDimensions() : OverSeasLegDimensions
+    public function getDimensions() : ?OverSeasLegDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimensions Container.
      *
-     * @param OverSeasLegDimensions $dimensions
+     * @param OverSeasLegDimensions|null $dimensions
      *
      * @return self
      */
-    public function setDimensions(OverSeasLegDimensions $dimensions) : self
+    public function setDimensions(?OverSeasLegDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -49,20 +49,20 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
     /**
      * Dimensions Value Container.
      *
-     * @return OverSeasLegValue
+     * @return OverSeasLegValue|null
      */
-    public function getValue() : OverSeasLegValue
+    public function getValue() : ?OverSeasLegValue
     {
         return $this->value;
     }
     /**
      * Dimensions Value Container.
      *
-     * @param OverSeasLegValue $value
+     * @param OverSeasLegValue|null $value
      *
      * @return self
      */
-    public function setValue(OverSeasLegValue $value) : self
+    public function setValue(?OverSeasLegValue $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Image', $data)) {
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $values = [];
                 foreach ($data['Image'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DocumentsImage', 'json', $context);
@@ -48,9 +48,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setImage($values);
                 unset($data['Image']);
             }
-            if (\array_key_exists('PackingList', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('PackingList', $data) && $data['PackingList'] !== null) {
                 $object->setPackingList($this->denormalizer->denormalize($data['PackingList'], 'ShipStream\\Ups\\Api\\Model\\DocumentsPackingList', 'json', $context));
                 unset($data['PackingList']);
+            }
+            elseif (\array_key_exists('PackingList', $data) && $data['PackingList'] === null) {
+                $object->setPackingList(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -114,7 +120,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Image', $data)) {
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $values = [];
                 foreach ($data['Image'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DocumentsImage', 'json', $context);
@@ -122,9 +128,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setImage($values);
                 unset($data['Image']);
             }
-            if (\array_key_exists('PackingList', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('PackingList', $data) && $data['PackingList'] !== null) {
                 $object->setPackingList($this->denormalizer->denormalize($data['PackingList'], 'ShipStream\\Ups\\Api\\Model\\DocumentsPackingList', 'json', $context));
                 unset($data['PackingList']);
+            }
+            elseif (\array_key_exists('PackingList', $data) && $data['PackingList'] === null) {
+                $object->setPackingList(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,32 +15,32 @@ class HandlingUnitsUnitOfMeasurement extends \ArrayObject
     /**
      * Code associated with Unit of Measurement for the Adjusted height. Valid value: IN
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description for UnitOfMeasurement for the adjusted height.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Code associated with Unit of Measurement for the Adjusted height. Valid value: IN
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code associated with Unit of Measurement for the Adjusted height. Valid value: IN
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class HandlingUnitsUnitOfMeasurement extends \ArrayObject
     /**
      * Description for UnitOfMeasurement for the adjusted height.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description for UnitOfMeasurement for the adjusted height.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

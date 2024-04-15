@@ -40,37 +40,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AddressLine1', $data)) {
+            if (\array_key_exists('AddressLine1', $data) && $data['AddressLine1'] !== null) {
                 $object->setAddressLine1($data['AddressLine1']);
                 unset($data['AddressLine1']);
             }
-            if (\array_key_exists('AddressLine2', $data)) {
+            elseif (\array_key_exists('AddressLine1', $data) && $data['AddressLine1'] === null) {
+                $object->setAddressLine1(null);
+            }
+            if (\array_key_exists('AddressLine2', $data) && $data['AddressLine2'] !== null) {
                 $object->setAddressLine2($data['AddressLine2']);
                 unset($data['AddressLine2']);
             }
-            if (\array_key_exists('AddressLine3', $data)) {
+            elseif (\array_key_exists('AddressLine2', $data) && $data['AddressLine2'] === null) {
+                $object->setAddressLine2(null);
+            }
+            if (\array_key_exists('AddressLine3', $data) && $data['AddressLine3'] !== null) {
                 $object->setAddressLine3($data['AddressLine3']);
                 unset($data['AddressLine3']);
             }
-            if (\array_key_exists('City', $data)) {
+            elseif (\array_key_exists('AddressLine3', $data) && $data['AddressLine3'] === null) {
+                $object->setAddressLine3(null);
+            }
+            if (\array_key_exists('City', $data) && $data['City'] !== null) {
                 $object->setCity($data['City']);
                 unset($data['City']);
             }
-            if (\array_key_exists('StateProvinceCode', $data)) {
+            elseif (\array_key_exists('City', $data) && $data['City'] === null) {
+                $object->setCity(null);
+            }
+            if (\array_key_exists('StateProvinceCode', $data) && $data['StateProvinceCode'] !== null) {
                 $object->setStateProvinceCode($data['StateProvinceCode']);
                 unset($data['StateProvinceCode']);
             }
-            if (\array_key_exists('PostalCode', $data)) {
+            elseif (\array_key_exists('StateProvinceCode', $data) && $data['StateProvinceCode'] === null) {
+                $object->setStateProvinceCode(null);
+            }
+            if (\array_key_exists('PostalCode', $data) && $data['PostalCode'] !== null) {
                 $object->setPostalCode($data['PostalCode']);
                 unset($data['PostalCode']);
             }
-            if (\array_key_exists('CountryCode', $data)) {
+            elseif (\array_key_exists('PostalCode', $data) && $data['PostalCode'] === null) {
+                $object->setPostalCode(null);
+            }
+            if (\array_key_exists('CountryCode', $data) && $data['CountryCode'] !== null) {
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
             }
-            if (\array_key_exists('ResidentialAddressIndicator', $data)) {
+            elseif (\array_key_exists('CountryCode', $data) && $data['CountryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('ResidentialAddressIndicator', $data) && $data['ResidentialAddressIndicator'] !== null) {
                 $object->setResidentialAddressIndicator($data['ResidentialAddressIndicator']);
                 unset($data['ResidentialAddressIndicator']);
+            }
+            elseif (\array_key_exists('ResidentialAddressIndicator', $data) && $data['ResidentialAddressIndicator'] === null) {
+                $object->setResidentialAddressIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -146,37 +170,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AddressLine1', $data)) {
+            if (\array_key_exists('AddressLine1', $data) && $data['AddressLine1'] !== null) {
                 $object->setAddressLine1($data['AddressLine1']);
                 unset($data['AddressLine1']);
             }
-            if (\array_key_exists('AddressLine2', $data)) {
+            elseif (\array_key_exists('AddressLine1', $data) && $data['AddressLine1'] === null) {
+                $object->setAddressLine1(null);
+            }
+            if (\array_key_exists('AddressLine2', $data) && $data['AddressLine2'] !== null) {
                 $object->setAddressLine2($data['AddressLine2']);
                 unset($data['AddressLine2']);
             }
-            if (\array_key_exists('AddressLine3', $data)) {
+            elseif (\array_key_exists('AddressLine2', $data) && $data['AddressLine2'] === null) {
+                $object->setAddressLine2(null);
+            }
+            if (\array_key_exists('AddressLine3', $data) && $data['AddressLine3'] !== null) {
                 $object->setAddressLine3($data['AddressLine3']);
                 unset($data['AddressLine3']);
             }
-            if (\array_key_exists('City', $data)) {
+            elseif (\array_key_exists('AddressLine3', $data) && $data['AddressLine3'] === null) {
+                $object->setAddressLine3(null);
+            }
+            if (\array_key_exists('City', $data) && $data['City'] !== null) {
                 $object->setCity($data['City']);
                 unset($data['City']);
             }
-            if (\array_key_exists('StateProvinceCode', $data)) {
+            elseif (\array_key_exists('City', $data) && $data['City'] === null) {
+                $object->setCity(null);
+            }
+            if (\array_key_exists('StateProvinceCode', $data) && $data['StateProvinceCode'] !== null) {
                 $object->setStateProvinceCode($data['StateProvinceCode']);
                 unset($data['StateProvinceCode']);
             }
-            if (\array_key_exists('PostalCode', $data)) {
+            elseif (\array_key_exists('StateProvinceCode', $data) && $data['StateProvinceCode'] === null) {
+                $object->setStateProvinceCode(null);
+            }
+            if (\array_key_exists('PostalCode', $data) && $data['PostalCode'] !== null) {
                 $object->setPostalCode($data['PostalCode']);
                 unset($data['PostalCode']);
             }
-            if (\array_key_exists('CountryCode', $data)) {
+            elseif (\array_key_exists('PostalCode', $data) && $data['PostalCode'] === null) {
+                $object->setPostalCode(null);
+            }
+            if (\array_key_exists('CountryCode', $data) && $data['CountryCode'] !== null) {
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
             }
-            if (\array_key_exists('ResidentialAddressIndicator', $data)) {
+            elseif (\array_key_exists('CountryCode', $data) && $data['CountryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('ResidentialAddressIndicator', $data) && $data['ResidentialAddressIndicator'] !== null) {
                 $object->setResidentialAddressIndicator($data['ResidentialAddressIndicator']);
                 unset($data['ResidentialAddressIndicator']);
+            }
+            elseif (\array_key_exists('ResidentialAddressIndicator', $data) && $data['ResidentialAddressIndicator'] === null) {
+                $object->setResidentialAddressIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

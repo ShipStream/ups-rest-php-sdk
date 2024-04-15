@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('response', $data)) {
+            if (\array_key_exists('response', $data) && $data['response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context));
                 unset($data['response']);
+            }
+            elseif (\array_key_exists('response', $data) && $data['response'] === null) {
+                $object->setResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -99,9 +102,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('response', $data)) {
+            if (\array_key_exists('response', $data) && $data['response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context));
                 unset($data['response']);
+            }
+            elseif (\array_key_exists('response', $data) && $data['response'] === null) {
+                $object->setResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

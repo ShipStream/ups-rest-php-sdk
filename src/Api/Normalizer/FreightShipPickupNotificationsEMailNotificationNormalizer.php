@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $object->setEMailAddress($data['EMailAddress']);
                 unset($data['EMailAddress']);
             }
-            if (\array_key_exists('EventType', $data)) {
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
+            }
+            if (\array_key_exists('EventType', $data) && $data['EventType'] !== null) {
                 $object->setEventType($data['EventType']);
                 unset($data['EventType']);
+            }
+            elseif (\array_key_exists('EventType', $data) && $data['EventType'] === null) {
+                $object->setEventType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $object->setEMailAddress($data['EMailAddress']);
                 unset($data['EMailAddress']);
             }
-            if (\array_key_exists('EventType', $data)) {
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
+            }
+            if (\array_key_exists('EventType', $data) && $data['EventType'] !== null) {
                 $object->setEventType($data['EventType']);
                 unset($data['EventType']);
+            }
+            elseif (\array_key_exists('EventType', $data) && $data['EventType'] === null) {
+                $object->setEventType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

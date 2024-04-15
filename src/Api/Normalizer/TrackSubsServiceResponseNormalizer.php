@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('validTrackingNumbers', $data)) {
+            if (\array_key_exists('validTrackingNumbers', $data) && $data['validTrackingNumbers'] !== null) {
                 $values = [];
                 foreach ($data['validTrackingNumbers'] as $value) {
                     $values[] = $value;
@@ -48,13 +48,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setValidTrackingNumbers($values);
                 unset($data['validTrackingNumbers']);
             }
-            if (\array_key_exists('invalidTrackingNumbers', $data)) {
+            elseif (\array_key_exists('validTrackingNumbers', $data) && $data['validTrackingNumbers'] === null) {
+                $object->setValidTrackingNumbers(null);
+            }
+            if (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] !== null) {
                 $values_1 = [];
                 foreach ($data['invalidTrackingNumbers'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setInvalidTrackingNumbers($values_1);
                 unset($data['invalidTrackingNumbers']);
+            }
+            elseif (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] === null) {
+                $object->setInvalidTrackingNumbers(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -122,7 +128,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('validTrackingNumbers', $data)) {
+            if (\array_key_exists('validTrackingNumbers', $data) && $data['validTrackingNumbers'] !== null) {
                 $values = [];
                 foreach ($data['validTrackingNumbers'] as $value) {
                     $values[] = $value;
@@ -130,13 +136,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setValidTrackingNumbers($values);
                 unset($data['validTrackingNumbers']);
             }
-            if (\array_key_exists('invalidTrackingNumbers', $data)) {
+            elseif (\array_key_exists('validTrackingNumbers', $data) && $data['validTrackingNumbers'] === null) {
+                $object->setValidTrackingNumbers(null);
+            }
+            if (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] !== null) {
                 $values_1 = [];
                 foreach ($data['invalidTrackingNumbers'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setInvalidTrackingNumbers($values_1);
                 unset($data['invalidTrackingNumbers']);
+            }
+            elseif (\array_key_exists('invalidTrackingNumbers', $data) && $data['invalidTrackingNumbers'] === null) {
+                $object->setInvalidTrackingNumbers(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

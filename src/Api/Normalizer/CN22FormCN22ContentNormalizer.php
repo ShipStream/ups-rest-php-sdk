@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CN22ContentQuantity', $data)) {
+            if (\array_key_exists('CN22ContentQuantity', $data) && $data['CN22ContentQuantity'] !== null) {
                 $object->setCN22ContentQuantity($data['CN22ContentQuantity']);
                 unset($data['CN22ContentQuantity']);
             }
-            if (\array_key_exists('CN22ContentDescription', $data)) {
+            elseif (\array_key_exists('CN22ContentQuantity', $data) && $data['CN22ContentQuantity'] === null) {
+                $object->setCN22ContentQuantity(null);
+            }
+            if (\array_key_exists('CN22ContentDescription', $data) && $data['CN22ContentDescription'] !== null) {
                 $object->setCN22ContentDescription($data['CN22ContentDescription']);
                 unset($data['CN22ContentDescription']);
             }
-            if (\array_key_exists('CN22ContentWeight', $data)) {
+            elseif (\array_key_exists('CN22ContentDescription', $data) && $data['CN22ContentDescription'] === null) {
+                $object->setCN22ContentDescription(null);
+            }
+            if (\array_key_exists('CN22ContentWeight', $data) && $data['CN22ContentWeight'] !== null) {
                 $object->setCN22ContentWeight($this->denormalizer->denormalize($data['CN22ContentWeight'], 'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight', 'json', $context));
                 unset($data['CN22ContentWeight']);
             }
-            if (\array_key_exists('CN22ContentTotalValue', $data)) {
+            elseif (\array_key_exists('CN22ContentWeight', $data) && $data['CN22ContentWeight'] === null) {
+                $object->setCN22ContentWeight(null);
+            }
+            if (\array_key_exists('CN22ContentTotalValue', $data) && $data['CN22ContentTotalValue'] !== null) {
                 $object->setCN22ContentTotalValue($data['CN22ContentTotalValue']);
                 unset($data['CN22ContentTotalValue']);
             }
-            if (\array_key_exists('CN22ContentCurrencyCode', $data)) {
+            elseif (\array_key_exists('CN22ContentTotalValue', $data) && $data['CN22ContentTotalValue'] === null) {
+                $object->setCN22ContentTotalValue(null);
+            }
+            if (\array_key_exists('CN22ContentCurrencyCode', $data) && $data['CN22ContentCurrencyCode'] !== null) {
                 $object->setCN22ContentCurrencyCode($data['CN22ContentCurrencyCode']);
                 unset($data['CN22ContentCurrencyCode']);
             }
-            if (\array_key_exists('CN22ContentCountryOfOrigin', $data)) {
+            elseif (\array_key_exists('CN22ContentCurrencyCode', $data) && $data['CN22ContentCurrencyCode'] === null) {
+                $object->setCN22ContentCurrencyCode(null);
+            }
+            if (\array_key_exists('CN22ContentCountryOfOrigin', $data) && $data['CN22ContentCountryOfOrigin'] !== null) {
                 $object->setCN22ContentCountryOfOrigin($data['CN22ContentCountryOfOrigin']);
                 unset($data['CN22ContentCountryOfOrigin']);
             }
-            if (\array_key_exists('CN22ContentTariffNumber', $data)) {
+            elseif (\array_key_exists('CN22ContentCountryOfOrigin', $data) && $data['CN22ContentCountryOfOrigin'] === null) {
+                $object->setCN22ContentCountryOfOrigin(null);
+            }
+            if (\array_key_exists('CN22ContentTariffNumber', $data) && $data['CN22ContentTariffNumber'] !== null) {
                 $object->setCN22ContentTariffNumber($data['CN22ContentTariffNumber']);
                 unset($data['CN22ContentTariffNumber']);
+            }
+            elseif (\array_key_exists('CN22ContentTariffNumber', $data) && $data['CN22ContentTariffNumber'] === null) {
+                $object->setCN22ContentTariffNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -131,33 +152,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CN22ContentQuantity', $data)) {
+            if (\array_key_exists('CN22ContentQuantity', $data) && $data['CN22ContentQuantity'] !== null) {
                 $object->setCN22ContentQuantity($data['CN22ContentQuantity']);
                 unset($data['CN22ContentQuantity']);
             }
-            if (\array_key_exists('CN22ContentDescription', $data)) {
+            elseif (\array_key_exists('CN22ContentQuantity', $data) && $data['CN22ContentQuantity'] === null) {
+                $object->setCN22ContentQuantity(null);
+            }
+            if (\array_key_exists('CN22ContentDescription', $data) && $data['CN22ContentDescription'] !== null) {
                 $object->setCN22ContentDescription($data['CN22ContentDescription']);
                 unset($data['CN22ContentDescription']);
             }
-            if (\array_key_exists('CN22ContentWeight', $data)) {
+            elseif (\array_key_exists('CN22ContentDescription', $data) && $data['CN22ContentDescription'] === null) {
+                $object->setCN22ContentDescription(null);
+            }
+            if (\array_key_exists('CN22ContentWeight', $data) && $data['CN22ContentWeight'] !== null) {
                 $object->setCN22ContentWeight($this->denormalizer->denormalize($data['CN22ContentWeight'], 'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight', 'json', $context));
                 unset($data['CN22ContentWeight']);
             }
-            if (\array_key_exists('CN22ContentTotalValue', $data)) {
+            elseif (\array_key_exists('CN22ContentWeight', $data) && $data['CN22ContentWeight'] === null) {
+                $object->setCN22ContentWeight(null);
+            }
+            if (\array_key_exists('CN22ContentTotalValue', $data) && $data['CN22ContentTotalValue'] !== null) {
                 $object->setCN22ContentTotalValue($data['CN22ContentTotalValue']);
                 unset($data['CN22ContentTotalValue']);
             }
-            if (\array_key_exists('CN22ContentCurrencyCode', $data)) {
+            elseif (\array_key_exists('CN22ContentTotalValue', $data) && $data['CN22ContentTotalValue'] === null) {
+                $object->setCN22ContentTotalValue(null);
+            }
+            if (\array_key_exists('CN22ContentCurrencyCode', $data) && $data['CN22ContentCurrencyCode'] !== null) {
                 $object->setCN22ContentCurrencyCode($data['CN22ContentCurrencyCode']);
                 unset($data['CN22ContentCurrencyCode']);
             }
-            if (\array_key_exists('CN22ContentCountryOfOrigin', $data)) {
+            elseif (\array_key_exists('CN22ContentCurrencyCode', $data) && $data['CN22ContentCurrencyCode'] === null) {
+                $object->setCN22ContentCurrencyCode(null);
+            }
+            if (\array_key_exists('CN22ContentCountryOfOrigin', $data) && $data['CN22ContentCountryOfOrigin'] !== null) {
                 $object->setCN22ContentCountryOfOrigin($data['CN22ContentCountryOfOrigin']);
                 unset($data['CN22ContentCountryOfOrigin']);
             }
-            if (\array_key_exists('CN22ContentTariffNumber', $data)) {
+            elseif (\array_key_exists('CN22ContentCountryOfOrigin', $data) && $data['CN22ContentCountryOfOrigin'] === null) {
+                $object->setCN22ContentCountryOfOrigin(null);
+            }
+            if (\array_key_exists('CN22ContentTariffNumber', $data) && $data['CN22ContentTariffNumber'] !== null) {
                 $object->setCN22ContentTariffNumber($data['CN22ContentTariffNumber']);
                 unset($data['CN22ContentTariffNumber']);
+            }
+            elseif (\array_key_exists('CN22ContentTariffNumber', $data) && $data['CN22ContentTariffNumber'] === null) {
+                $object->setCN22ContentTariffNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

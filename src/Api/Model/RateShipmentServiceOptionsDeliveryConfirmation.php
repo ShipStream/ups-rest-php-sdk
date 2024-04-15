@@ -15,26 +15,26 @@ class RateShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
     /**
      * Type of delivery confirmation.  Valid values: 1 - Delivery Confirmation Signature Required 2 - Delivery Confirmation Adult Signature Required
      *
-     * @var string
+     * @var string|null
      */
     protected $dCISType;
     /**
      * Type of delivery confirmation.  Valid values: 1 - Delivery Confirmation Signature Required 2 - Delivery Confirmation Adult Signature Required
      *
-     * @return string
+     * @return string|null
      */
-    public function getDCISType() : string
+    public function getDCISType() : ?string
     {
         return $this->dCISType;
     }
     /**
      * Type of delivery confirmation.  Valid values: 1 - Delivery Confirmation Signature Required 2 - Delivery Confirmation Adult Signature Required
      *
-     * @param string $dCISType
+     * @param string|null $dCISType
      *
      * @return self
      */
-    public function setDCISType(string $dCISType) : self
+    public function setDCISType(?string $dCISType) : self
     {
         $this->initialized['dCISType'] = true;
         $this->dCISType = $dCISType;

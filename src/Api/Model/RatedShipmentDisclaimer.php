@@ -15,32 +15,32 @@ class RatedShipmentDisclaimer extends \ArrayObject
     /**
      * Code representing type of Disclaimer. Refer to the Appendix for possible code values.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Disclaimer description. Please refer to Appendix for possible descriptions.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Code representing type of Disclaimer. Refer to the Appendix for possible code values.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code representing type of Disclaimer. Refer to the Appendix for possible code values.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class RatedShipmentDisclaimer extends \ArrayObject
     /**
      * Disclaimer description. Please refer to Appendix for possible descriptions.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Disclaimer description. Please refer to Appendix for possible descriptions.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

@@ -15,26 +15,26 @@ class PICKUPCancelResponseWrapper extends \ArrayObject
     /**
      * The response for cancelling pickup(s)
      *
-     * @var PickupCancelResponse
+     * @var PickupCancelResponse|null
      */
     protected $pickupCancelResponse;
     /**
      * The response for cancelling pickup(s)
      *
-     * @return PickupCancelResponse
+     * @return PickupCancelResponse|null
      */
-    public function getPickupCancelResponse() : PickupCancelResponse
+    public function getPickupCancelResponse() : ?PickupCancelResponse
     {
         return $this->pickupCancelResponse;
     }
     /**
      * The response for cancelling pickup(s)
      *
-     * @param PickupCancelResponse $pickupCancelResponse
+     * @param PickupCancelResponse|null $pickupCancelResponse
      *
      * @return self
      */
-    public function setPickupCancelResponse(PickupCancelResponse $pickupCancelResponse) : self
+    public function setPickupCancelResponse(?PickupCancelResponse $pickupCancelResponse) : self
     {
         $this->initialized['pickupCancelResponse'] = true;
         $this->pickupCancelResponse = $pickupCancelResponse;

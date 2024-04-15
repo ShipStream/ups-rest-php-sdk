@@ -40,29 +40,44 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Number', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('SubscriptionStatus', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('SubscriptionStatus', $data) && $data['SubscriptionStatus'] !== null) {
                 $object->setSubscriptionStatus($this->denormalizer->denormalize($data['SubscriptionStatus'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionStatus', 'json', $context));
                 unset($data['SubscriptionStatus']);
             }
-            if (\array_key_exists('DateRange', $data)) {
+            elseif (\array_key_exists('SubscriptionStatus', $data) && $data['SubscriptionStatus'] === null) {
+                $object->setSubscriptionStatus(null);
+            }
+            if (\array_key_exists('DateRange', $data) && $data['DateRange'] !== null) {
                 $object->setDateRange($this->denormalizer->denormalize($data['DateRange'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsDateRange', 'json', $context));
                 unset($data['DateRange']);
             }
-            if (\array_key_exists('SubscriptionFile', $data)) {
+            elseif (\array_key_exists('DateRange', $data) && $data['DateRange'] === null) {
+                $object->setDateRange(null);
+            }
+            if (\array_key_exists('SubscriptionFile', $data) && $data['SubscriptionFile'] !== null) {
                 $values = [];
                 foreach ($data['SubscriptionFile'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile', 'json', $context);
                 }
                 $object->setSubscriptionFile($values);
                 unset($data['SubscriptionFile']);
+            }
+            elseif (\array_key_exists('SubscriptionFile', $data) && $data['SubscriptionFile'] === null) {
+                $object->setSubscriptionFile(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -133,29 +148,44 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Number', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('SubscriptionStatus', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('SubscriptionStatus', $data) && $data['SubscriptionStatus'] !== null) {
                 $object->setSubscriptionStatus($this->denormalizer->denormalize($data['SubscriptionStatus'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionStatus', 'json', $context));
                 unset($data['SubscriptionStatus']);
             }
-            if (\array_key_exists('DateRange', $data)) {
+            elseif (\array_key_exists('SubscriptionStatus', $data) && $data['SubscriptionStatus'] === null) {
+                $object->setSubscriptionStatus(null);
+            }
+            if (\array_key_exists('DateRange', $data) && $data['DateRange'] !== null) {
                 $object->setDateRange($this->denormalizer->denormalize($data['DateRange'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsDateRange', 'json', $context));
                 unset($data['DateRange']);
             }
-            if (\array_key_exists('SubscriptionFile', $data)) {
+            elseif (\array_key_exists('DateRange', $data) && $data['DateRange'] === null) {
+                $object->setDateRange(null);
+            }
+            if (\array_key_exists('SubscriptionFile', $data) && $data['SubscriptionFile'] !== null) {
                 $values = [];
                 foreach ($data['SubscriptionFile'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile', 'json', $context);
                 }
                 $object->setSubscriptionFile($values);
                 unset($data['SubscriptionFile']);
+            }
+            elseif (\array_key_exists('SubscriptionFile', $data) && $data['SubscriptionFile'] === null) {
+                $object->setSubscriptionFile(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

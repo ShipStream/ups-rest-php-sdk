@@ -15,32 +15,32 @@ class DryIceDryIceWeight extends \ArrayObject
     /**
      * Container for Unit of measurement for Dry Ice Weight.
      *
-     * @var DryIceWeightUnitOfMeasurement
+     * @var DryIceWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Dry Ice Weight.  Cannot be more than package weight. Should be more than 0.0. Valid characters are 0-9 and "." (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including "." and can hold up to 1 decimal place.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * Container for Unit of measurement for Dry Ice Weight.
      *
-     * @return DryIceWeightUnitOfMeasurement
+     * @return DryIceWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : DryIceWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?DryIceWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Container for Unit of measurement for Dry Ice Weight.
      *
-     * @param DryIceWeightUnitOfMeasurement $unitOfMeasurement
+     * @param DryIceWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DryIceWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?DryIceWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class DryIceDryIceWeight extends \ArrayObject
     /**
      * Dry Ice Weight.  Cannot be more than package weight. Should be more than 0.0. Valid characters are 0-9 and "." (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including "." and can hold up to 1 decimal place.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * Dry Ice Weight.  Cannot be more than package weight. Should be more than 0.0. Valid characters are 0-9 and "." (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including "." and can hold up to 1 decimal place.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

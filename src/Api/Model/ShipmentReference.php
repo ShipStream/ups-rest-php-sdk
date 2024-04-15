@@ -15,46 +15,46 @@ class ShipmentReference extends \ArrayObject
     /**
      * Reference Number Container.
      *
-     * @var ReferenceNumber
+     * @var ReferenceNumber|null
      */
     protected $number;
     /**
      * The presence of the tag BarCodeIndicator indicates that the reference at index 1 is bar-coded.
      *
-     * @var string
+     * @var string|null
      */
     protected $barCodeIndicator;
     /**
     * Number of cartons attached to this reference.
     Strongly recommended for ground services.
     *
-    * @var string
+    * @var string|null
     */
     protected $numberOfCartons;
     /**
     * Reference Weight Container.
     Strongly recommended for ground services.Ignored for air services.
     *
-    * @var ReferenceWeight
+    * @var ReferenceWeight|null
     */
     protected $weight;
     /**
      * Reference Number Container.
      *
-     * @return ReferenceNumber
+     * @return ReferenceNumber|null
      */
-    public function getNumber() : ReferenceNumber
+    public function getNumber() : ?ReferenceNumber
     {
         return $this->number;
     }
     /**
      * Reference Number Container.
      *
-     * @param ReferenceNumber $number
+     * @param ReferenceNumber|null $number
      *
      * @return self
      */
-    public function setNumber(ReferenceNumber $number) : self
+    public function setNumber(?ReferenceNumber $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -63,20 +63,20 @@ class ShipmentReference extends \ArrayObject
     /**
      * The presence of the tag BarCodeIndicator indicates that the reference at index 1 is bar-coded.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBarCodeIndicator() : string
+    public function getBarCodeIndicator() : ?string
     {
         return $this->barCodeIndicator;
     }
     /**
      * The presence of the tag BarCodeIndicator indicates that the reference at index 1 is bar-coded.
      *
-     * @param string $barCodeIndicator
+     * @param string|null $barCodeIndicator
      *
      * @return self
      */
-    public function setBarCodeIndicator(string $barCodeIndicator) : self
+    public function setBarCodeIndicator(?string $barCodeIndicator) : self
     {
         $this->initialized['barCodeIndicator'] = true;
         $this->barCodeIndicator = $barCodeIndicator;
@@ -86,9 +86,9 @@ class ShipmentReference extends \ArrayObject
     * Number of cartons attached to this reference.
     Strongly recommended for ground services.
     *
-    * @return string
+    * @return string|null
     */
-    public function getNumberOfCartons() : string
+    public function getNumberOfCartons() : ?string
     {
         return $this->numberOfCartons;
     }
@@ -96,11 +96,11 @@ class ShipmentReference extends \ArrayObject
     * Number of cartons attached to this reference.
     Strongly recommended for ground services.
     *
-    * @param string $numberOfCartons
+    * @param string|null $numberOfCartons
     *
     * @return self
     */
-    public function setNumberOfCartons(string $numberOfCartons) : self
+    public function setNumberOfCartons(?string $numberOfCartons) : self
     {
         $this->initialized['numberOfCartons'] = true;
         $this->numberOfCartons = $numberOfCartons;
@@ -110,9 +110,9 @@ class ShipmentReference extends \ArrayObject
     * Reference Weight Container.
     Strongly recommended for ground services.Ignored for air services.
     *
-    * @return ReferenceWeight
+    * @return ReferenceWeight|null
     */
-    public function getWeight() : ReferenceWeight
+    public function getWeight() : ?ReferenceWeight
     {
         return $this->weight;
     }
@@ -120,11 +120,11 @@ class ShipmentReference extends \ArrayObject
     * Reference Weight Container.
     Strongly recommended for ground services.Ignored for air services.
     *
-    * @param ReferenceWeight $weight
+    * @param ReferenceWeight|null $weight
     *
     * @return self
     */
-    public function setWeight(ReferenceWeight $weight) : self
+    public function setWeight(?ReferenceWeight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

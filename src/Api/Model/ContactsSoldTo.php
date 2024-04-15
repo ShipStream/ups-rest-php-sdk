@@ -15,62 +15,62 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * Company Name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Sold to contact name.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * SoldTo Tax Identification Number.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxIdentificationNumber;
     /**
      * Phone Container.
      *
-     * @var SoldToPhone
+     * @var SoldToPhone|null
      */
     protected $phone;
     /**
      * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 - Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
      *
-     * @var string
+     * @var string|null
      */
     protected $option;
     /**
      * Sold To Address Container.  Applies to NAFTA CO.
      *
-     * @var SoldToAddress
+     * @var SoldToAddress|null
      */
     protected $address;
     /**
      * SoldTo email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Company Name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Company Name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -79,20 +79,20 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * Sold to contact name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Sold to contact name.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -101,20 +101,20 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * SoldTo Tax Identification Number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
     /**
      * SoldTo Tax Identification Number.
      *
-     * @param string $taxIdentificationNumber
+     * @param string|null $taxIdentificationNumber
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -123,20 +123,20 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * Phone Container.
      *
-     * @return SoldToPhone
+     * @return SoldToPhone|null
      */
-    public function getPhone() : SoldToPhone
+    public function getPhone() : ?SoldToPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container.
      *
-     * @param SoldToPhone $phone
+     * @param SoldToPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(SoldToPhone $phone) : self
+    public function setPhone(?SoldToPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -145,20 +145,20 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 - Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOption() : string
+    public function getOption() : ?string
     {
         return $this->option;
     }
     /**
      * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 - Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
      *
-     * @param string $option
+     * @param string|null $option
      *
      * @return self
      */
-    public function setOption(string $option) : self
+    public function setOption(?string $option) : self
     {
         $this->initialized['option'] = true;
         $this->option = $option;
@@ -167,20 +167,20 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * Sold To Address Container.  Applies to NAFTA CO.
      *
-     * @return SoldToAddress
+     * @return SoldToAddress|null
      */
-    public function getAddress() : SoldToAddress
+    public function getAddress() : ?SoldToAddress
     {
         return $this->address;
     }
     /**
      * Sold To Address Container.  Applies to NAFTA CO.
      *
-     * @param SoldToAddress $address
+     * @param SoldToAddress|null $address
      *
      * @return self
      */
-    public function setAddress(SoldToAddress $address) : self
+    public function setAddress(?SoldToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -189,20 +189,20 @@ class ContactsSoldTo extends \ArrayObject
     /**
      * SoldTo email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * SoldTo email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

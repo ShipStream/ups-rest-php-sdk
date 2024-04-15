@@ -15,38 +15,38 @@ class RateShipmentFRSPaymentInformation extends \ArrayObject
     /**
      * GFP Payment Information Type container.  GFP only.
      *
-     * @var FRSPaymentInformationType
+     * @var FRSPaymentInformationType|null
      */
     protected $type;
     /**
      * UPS Account Number.
      *
-     * @var string
+     * @var string|null
      */
     protected $accountNumber;
     /**
      * Container to hold the information for the FreightCollect and PrepaidThirdParty Address.  Note: The Address is required only when the billing option is Freight collect or ThirdParty.
      *
-     * @var FRSPaymentInformationAddress
+     * @var FRSPaymentInformationAddress|null
      */
     protected $address;
     /**
      * GFP Payment Information Type container.  GFP only.
      *
-     * @return FRSPaymentInformationType
+     * @return FRSPaymentInformationType|null
      */
-    public function getType() : FRSPaymentInformationType
+    public function getType() : ?FRSPaymentInformationType
     {
         return $this->type;
     }
     /**
      * GFP Payment Information Type container.  GFP only.
      *
-     * @param FRSPaymentInformationType $type
+     * @param FRSPaymentInformationType|null $type
      *
      * @return self
      */
-    public function setType(FRSPaymentInformationType $type) : self
+    public function setType(?FRSPaymentInformationType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -55,20 +55,20 @@ class RateShipmentFRSPaymentInformation extends \ArrayObject
     /**
      * UPS Account Number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
     /**
      * UPS Account Number.
      *
-     * @param string $accountNumber
+     * @param string|null $accountNumber
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -77,20 +77,20 @@ class RateShipmentFRSPaymentInformation extends \ArrayObject
     /**
      * Container to hold the information for the FreightCollect and PrepaidThirdParty Address.  Note: The Address is required only when the billing option is Freight collect or ThirdParty.
      *
-     * @return FRSPaymentInformationAddress
+     * @return FRSPaymentInformationAddress|null
      */
-    public function getAddress() : FRSPaymentInformationAddress
+    public function getAddress() : ?FRSPaymentInformationAddress
     {
         return $this->address;
     }
     /**
      * Container to hold the information for the FreightCollect and PrepaidThirdParty Address.  Note: The Address is required only when the billing option is Freight collect or ThirdParty.
      *
-     * @param FRSPaymentInformationAddress $address
+     * @param FRSPaymentInformationAddress|null $address
      *
      * @return self
      */
-    public function setAddress(FRSPaymentInformationAddress $address) : self
+    public function setAddress(?FRSPaymentInformationAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

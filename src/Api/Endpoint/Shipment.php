@@ -12,7 +12,7 @@ class Shipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implement
     * @param string $version Indicates Ship API to display the new release features in 
     Rate API response based on Ship release. See the New 
     section for the latest Ship release. Supported values: v1, v1601, v1607, v1701, v1707, v1801, v1807, v2108, v2205 . Length 5
-    * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $additionaladdressvalidation Valid Values: 
     city = validation will include city.Length 15
@@ -22,7 +22,7 @@ class Shipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implement
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody = null, array $queryParameters = [], array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

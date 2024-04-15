@@ -17,7 +17,7 @@ class ShipmentShipper extends \ArrayObject
     
     For forward Shipment 35 characters are accepted, but only 30 characters will be printed on the label.
     *
-    * @var string
+    * @var string|null
     */
     protected $name;
     /**
@@ -25,7 +25,7 @@ class ShipmentShipper extends \ArrayObject
     
     For forward Shipment 35 characters are accepted, but only 30 characters will be printed on the label.  Required if destination is international. Required if Invoice and CO International forms are requested and the ShipFrom address is not present.
     *
-    * @var string
+    * @var string|null
     */
     protected $attentionName;
     /**
@@ -34,19 +34,19 @@ class ShipmentShipper extends \ArrayObject
     The CompanyDisplayableName will be displayed in tracking results and notification messages in place of the name associated with the shipper account. 
     The original shipper account name will be displayed for all Return Services and Import Control Shipments.  This is available for Shipper accounts enabled by UPS and applies to Forward Shipments.
     *
-    * @var string
+    * @var string|null
     */
     protected $companyDisplayableName;
     /**
      * Shipper's Tax Identification Number.  Conditionally required if EEI form (International forms) is requested and ship From is not mentioned.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxIdentificationNumber;
     /**
      * Container tag for Phone Number.
      *
-     * @var ShipperPhone
+     * @var ShipperPhone|null
      */
     protected $phone;
     /**
@@ -62,19 +62,19 @@ class ShipmentShipper extends \ArrayObject
     
     All other accounts must be either a daily pickup account or an occasional account.
     *
-    * @var string
+    * @var string|null
     */
     protected $shipperNumber;
     /**
      * Shipper's Fax Number.
      *
-     * @var string
+     * @var string|null
      */
     protected $faxNumber;
     /**
      * Shipper's email address.  Must be associated with the UserId specified in the AccessRequest XML.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
@@ -85,7 +85,7 @@ class ShipmentShipper extends \ArrayObject
     Note: If the ShipFrom container is not present then this address will be used as the ShipFrom address. 
     If this address is used as the ShipFrom the shipment will be rated from this origin address.
     *
-    * @var ShipperAddress
+    * @var ShipperAddress|null
     */
     protected $address;
     /**
@@ -93,9 +93,9 @@ class ShipmentShipper extends \ArrayObject
     
     For forward Shipment 35 characters are accepted, but only 30 characters will be printed on the label.
     *
-    * @return string
+    * @return string|null
     */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -104,11 +104,11 @@ class ShipmentShipper extends \ArrayObject
     
     For forward Shipment 35 characters are accepted, but only 30 characters will be printed on the label.
     *
-    * @param string $name
+    * @param string|null $name
     *
     * @return self
     */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -119,9 +119,9 @@ class ShipmentShipper extends \ArrayObject
     
     For forward Shipment 35 characters are accepted, but only 30 characters will be printed on the label.  Required if destination is international. Required if Invoice and CO International forms are requested and the ShipFrom address is not present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
@@ -130,11 +130,11 @@ class ShipmentShipper extends \ArrayObject
     
     For forward Shipment 35 characters are accepted, but only 30 characters will be printed on the label.  Required if destination is international. Required if Invoice and CO International forms are requested and the ShipFrom address is not present.
     *
-    * @param string $attentionName
+    * @param string|null $attentionName
     *
     * @return self
     */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -146,9 +146,9 @@ class ShipmentShipper extends \ArrayObject
     The CompanyDisplayableName will be displayed in tracking results and notification messages in place of the name associated with the shipper account. 
     The original shipper account name will be displayed for all Return Services and Import Control Shipments.  This is available for Shipper accounts enabled by UPS and applies to Forward Shipments.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCompanyDisplayableName() : string
+    public function getCompanyDisplayableName() : ?string
     {
         return $this->companyDisplayableName;
     }
@@ -158,11 +158,11 @@ class ShipmentShipper extends \ArrayObject
     The CompanyDisplayableName will be displayed in tracking results and notification messages in place of the name associated with the shipper account. 
     The original shipper account name will be displayed for all Return Services and Import Control Shipments.  This is available for Shipper accounts enabled by UPS and applies to Forward Shipments.
     *
-    * @param string $companyDisplayableName
+    * @param string|null $companyDisplayableName
     *
     * @return self
     */
-    public function setCompanyDisplayableName(string $companyDisplayableName) : self
+    public function setCompanyDisplayableName(?string $companyDisplayableName) : self
     {
         $this->initialized['companyDisplayableName'] = true;
         $this->companyDisplayableName = $companyDisplayableName;
@@ -171,20 +171,20 @@ class ShipmentShipper extends \ArrayObject
     /**
      * Shipper's Tax Identification Number.  Conditionally required if EEI form (International forms) is requested and ship From is not mentioned.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
     /**
      * Shipper's Tax Identification Number.  Conditionally required if EEI form (International forms) is requested and ship From is not mentioned.
      *
-     * @param string $taxIdentificationNumber
+     * @param string|null $taxIdentificationNumber
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -193,20 +193,20 @@ class ShipmentShipper extends \ArrayObject
     /**
      * Container tag for Phone Number.
      *
-     * @return ShipperPhone
+     * @return ShipperPhone|null
      */
-    public function getPhone() : ShipperPhone
+    public function getPhone() : ?ShipperPhone
     {
         return $this->phone;
     }
     /**
      * Container tag for Phone Number.
      *
-     * @param ShipperPhone $phone
+     * @param ShipperPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ShipperPhone $phone) : self
+    public function setPhone(?ShipperPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -225,9 +225,9 @@ class ShipmentShipper extends \ArrayObject
     
     All other accounts must be either a daily pickup account or an occasional account.
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
@@ -244,11 +244,11 @@ class ShipmentShipper extends \ArrayObject
     
     All other accounts must be either a daily pickup account or an occasional account.
     *
-    * @param string $shipperNumber
+    * @param string|null $shipperNumber
     *
     * @return self
     */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -257,20 +257,20 @@ class ShipmentShipper extends \ArrayObject
     /**
      * Shipper's Fax Number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber() : ?string
     {
         return $this->faxNumber;
     }
     /**
      * Shipper's Fax Number.
      *
-     * @param string $faxNumber
+     * @param string|null $faxNumber
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(?string $faxNumber) : self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -279,20 +279,20 @@ class ShipmentShipper extends \ArrayObject
     /**
      * Shipper's email address.  Must be associated with the UserId specified in the AccessRequest XML.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Shipper's email address.  Must be associated with the UserId specified in the AccessRequest XML.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -306,9 +306,9 @@ class ShipmentShipper extends \ArrayObject
     Note: If the ShipFrom container is not present then this address will be used as the ShipFrom address. 
     If this address is used as the ShipFrom the shipment will be rated from this origin address.
     *
-    * @return ShipperAddress
+    * @return ShipperAddress|null
     */
-    public function getAddress() : ShipperAddress
+    public function getAddress() : ?ShipperAddress
     {
         return $this->address;
     }
@@ -320,11 +320,11 @@ class ShipmentShipper extends \ArrayObject
     Note: If the ShipFrom container is not present then this address will be used as the ShipFrom address. 
     If this address is used as the ShipFrom the shipment will be rated from this origin address.
     *
-    * @param ShipperAddress $address
+    * @param ShipperAddress|null $address
     *
     * @return self
     */
-    public function setAddress(ShipperAddress $address) : self
+    public function setAddress(?ShipperAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

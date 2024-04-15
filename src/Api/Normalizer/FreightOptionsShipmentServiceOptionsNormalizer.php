@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('OriginLiftGateIndicator', $data)) {
+            if (\array_key_exists('OriginLiftGateIndicator', $data) && $data['OriginLiftGateIndicator'] !== null) {
                 $object->setOriginLiftGateIndicator($data['OriginLiftGateIndicator']);
                 unset($data['OriginLiftGateIndicator']);
             }
-            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data)) {
+            elseif (\array_key_exists('OriginLiftGateIndicator', $data) && $data['OriginLiftGateIndicator'] === null) {
+                $object->setOriginLiftGateIndicator(null);
+            }
+            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] !== null) {
                 $object->setDropoffAtUPSFacilityIndicator($data['DropoffAtUPSFacilityIndicator']);
                 unset($data['DropoffAtUPSFacilityIndicator']);
             }
-            if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            elseif (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] === null) {
+                $object->setDropoffAtUPSFacilityIndicator(null);
+            }
+            if (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] !== null) {
                 $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
                 unset($data['HoldForPickupIndicator']);
+            }
+            elseif (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] === null) {
+                $object->setHoldForPickupIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('OriginLiftGateIndicator', $data)) {
+            if (\array_key_exists('OriginLiftGateIndicator', $data) && $data['OriginLiftGateIndicator'] !== null) {
                 $object->setOriginLiftGateIndicator($data['OriginLiftGateIndicator']);
                 unset($data['OriginLiftGateIndicator']);
             }
-            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data)) {
+            elseif (\array_key_exists('OriginLiftGateIndicator', $data) && $data['OriginLiftGateIndicator'] === null) {
+                $object->setOriginLiftGateIndicator(null);
+            }
+            if (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] !== null) {
                 $object->setDropoffAtUPSFacilityIndicator($data['DropoffAtUPSFacilityIndicator']);
                 unset($data['DropoffAtUPSFacilityIndicator']);
             }
-            if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            elseif (\array_key_exists('DropoffAtUPSFacilityIndicator', $data) && $data['DropoffAtUPSFacilityIndicator'] === null) {
+                $object->setDropoffAtUPSFacilityIndicator(null);
+            }
+            if (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] !== null) {
                 $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
                 unset($data['HoldForPickupIndicator']);
+            }
+            elseif (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] === null) {
+                $object->setHoldForPickupIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -16,23 +16,23 @@ class PickupCreationResponseWeekendServiceTerritory extends \ArrayObject
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Saturday WST
     N = Non-Saturday WST
     *
-    * @var string
+    * @var string|null
     */
     protected $satWST;
     /**
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Sunday WST
     N = Non-Sunday WST
     *
-    * @var string
+    * @var string|null
     */
     protected $sunWST;
     /**
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Saturday WST
     N = Non-Saturday WST
     *
-    * @return string
+    * @return string|null
     */
-    public function getSatWST() : string
+    public function getSatWST() : ?string
     {
         return $this->satWST;
     }
@@ -40,11 +40,11 @@ class PickupCreationResponseWeekendServiceTerritory extends \ArrayObject
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Saturday WST
     N = Non-Saturday WST
     *
-    * @param string $satWST
+    * @param string|null $satWST
     *
     * @return self
     */
-    public function setSatWST(string $satWST) : self
+    public function setSatWST(?string $satWST) : self
     {
         $this->initialized['satWST'] = true;
         $this->satWST = $satWST;
@@ -54,9 +54,9 @@ class PickupCreationResponseWeekendServiceTerritory extends \ArrayObject
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Sunday WST
     N = Non-Sunday WST
     *
-    * @return string
+    * @return string|null
     */
-    public function getSunWST() : string
+    public function getSunWST() : ?string
     {
         return $this->sunWST;
     }
@@ -64,11 +64,11 @@ class PickupCreationResponseWeekendServiceTerritory extends \ArrayObject
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Sunday WST
     N = Non-Sunday WST
     *
-    * @param string $sunWST
+    * @param string|null $sunWST
     *
     * @return self
     */
-    public function setSunWST(string $sunWST) : self
+    public function setSunWST(?string $sunWST) : self
     {
         $this->initialized['sunWST'] = true;
         $this->sunWST = $sunWST;

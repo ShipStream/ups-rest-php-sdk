@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('AttentionName', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('AttentionName', $data) && $data['AttentionName'] !== null) {
                 $object->setAttentionName($data['AttentionName']);
                 unset($data['AttentionName']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipToAddress', 'json', $context));
                 unset($data['Address']);
             }
-            if (\array_key_exists('PhoneNumber', $data)) {
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('PhoneNumber', $data) && $data['PhoneNumber'] !== null) {
                 $object->setPhoneNumber($data['PhoneNumber']);
                 unset($data['PhoneNumber']);
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            elseif (\array_key_exists('PhoneNumber', $data) && $data['PhoneNumber'] === null) {
+                $object->setPhoneNumber(null);
+            }
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $object->setEMailAddress($data['EMailAddress']);
                 unset($data['EMailAddress']);
             }
-            if (\array_key_exists('PhoneExtension', $data)) {
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
+            }
+            if (\array_key_exists('PhoneExtension', $data) && $data['PhoneExtension'] !== null) {
                 $object->setPhoneExtension($data['PhoneExtension']);
                 unset($data['PhoneExtension']);
+            }
+            elseif (\array_key_exists('PhoneExtension', $data) && $data['PhoneExtension'] === null) {
+                $object->setPhoneExtension(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -132,29 +150,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('AttentionName', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('AttentionName', $data) && $data['AttentionName'] !== null) {
                 $object->setAttentionName($data['AttentionName']);
                 unset($data['AttentionName']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipToAddress', 'json', $context));
                 unset($data['Address']);
             }
-            if (\array_key_exists('PhoneNumber', $data)) {
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('PhoneNumber', $data) && $data['PhoneNumber'] !== null) {
                 $object->setPhoneNumber($data['PhoneNumber']);
                 unset($data['PhoneNumber']);
             }
-            if (\array_key_exists('EMailAddress', $data)) {
+            elseif (\array_key_exists('PhoneNumber', $data) && $data['PhoneNumber'] === null) {
+                $object->setPhoneNumber(null);
+            }
+            if (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] !== null) {
                 $object->setEMailAddress($data['EMailAddress']);
                 unset($data['EMailAddress']);
             }
-            if (\array_key_exists('PhoneExtension', $data)) {
+            elseif (\array_key_exists('EMailAddress', $data) && $data['EMailAddress'] === null) {
+                $object->setEMailAddress(null);
+            }
+            if (\array_key_exists('PhoneExtension', $data) && $data['PhoneExtension'] !== null) {
                 $object->setPhoneExtension($data['PhoneExtension']);
                 unset($data['PhoneExtension']);
+            }
+            elseif (\array_key_exists('PhoneExtension', $data) && $data['PhoneExtension'] === null) {
+                $object->setPhoneExtension(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

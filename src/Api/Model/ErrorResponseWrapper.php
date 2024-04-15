@@ -15,26 +15,26 @@ class ErrorResponseWrapper extends \ArrayObject
     /**
      * 
      *
-     * @var Error[]
+     * @var list<Error>|null
      */
     protected $errors;
     /**
      * 
      *
-     * @return Error[]
+     * @return list<Error>|null
      */
-    public function getErrors() : array
+    public function getErrors() : ?array
     {
         return $this->errors;
     }
     /**
      * 
      *
-     * @param Error[] $errors
+     * @param list<Error>|null $errors
      *
      * @return self
      */
-    public function setErrors(array $errors) : self
+    public function setErrors(?array $errors) : self
     {
         $this->initialized['errors'] = true;
         $this->errors = $errors;

@@ -15,31 +15,31 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Address Line of the Facility.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * Facilities City.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * Facility state or province code.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvince;
     /**
      * Facility Postal Code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * UPS Pickup facility country or territory code.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
@@ -48,26 +48,26 @@ class DropOffFacilitiesAddress extends \ArrayObject
     Y = Residential address
     N = Non-residential (Commercial) address (default)
     *
-    * @var string
+    * @var string|null
     */
     protected $residentialIndicator;
     /**
      * Address Line of the Facility.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Address Line of the Facility.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -76,20 +76,20 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Facilities City.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * Facilities City.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -98,20 +98,20 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Facility state or province code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvince() : string
+    public function getStateProvince() : ?string
     {
         return $this->stateProvince;
     }
     /**
      * Facility state or province code.
      *
-     * @param string $stateProvince
+     * @param string|null $stateProvince
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(?string $stateProvince) : self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -120,20 +120,20 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Facility Postal Code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Facility Postal Code.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -142,20 +142,20 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * UPS Pickup facility country or territory code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * UPS Pickup facility country or territory code.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -167,9 +167,9 @@ class DropOffFacilitiesAddress extends \ArrayObject
     Y = Residential address
     N = Non-residential (Commercial) address (default)
     *
-    * @return string
+    * @return string|null
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator() : ?string
     {
         return $this->residentialIndicator;
     }
@@ -179,11 +179,11 @@ class DropOffFacilitiesAddress extends \ArrayObject
     Y = Residential address
     N = Non-residential (Commercial) address (default)
     *
-    * @param string $residentialIndicator
+    * @param string|null $residentialIndicator
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(?string $residentialIndicator) : self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;

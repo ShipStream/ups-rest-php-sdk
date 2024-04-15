@@ -21,13 +21,13 @@ class UltimateConsigneeUltimateConsigneeType extends \ArrayObject
     R = Reseller
     O = Other/Unknown
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Ultimate Consignee Type Description.  Applicable for EEI form only.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -39,9 +39,9 @@ class UltimateConsigneeUltimateConsigneeType extends \ArrayObject
     R = Reseller
     O = Other/Unknown
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -54,11 +54,11 @@ class UltimateConsigneeUltimateConsigneeType extends \ArrayObject
     R = Reseller
     O = Other/Unknown
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -67,20 +67,20 @@ class UltimateConsigneeUltimateConsigneeType extends \ArrayObject
     /**
      * Ultimate Consignee Type Description.  Applicable for EEI form only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Ultimate Consignee Type Description.  Applicable for EEI form only.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

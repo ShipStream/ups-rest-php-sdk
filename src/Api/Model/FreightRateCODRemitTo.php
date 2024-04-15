@@ -15,38 +15,38 @@ class FreightRateCODRemitTo extends \ArrayObject
     /**
      * The payee company name for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address Container.
      *
-     * @var RemitToAddress
+     * @var RemitToAddress|null
      */
     protected $address;
     /**
      * Payee contact name for the COD charges.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * The payee company name for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * The payee company name for the COD charges.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -55,20 +55,20 @@ class FreightRateCODRemitTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return RemitToAddress
+     * @return RemitToAddress|null
      */
-    public function getAddress() : RemitToAddress
+    public function getAddress() : ?RemitToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param RemitToAddress $address
+     * @param RemitToAddress|null $address
      *
      * @return self
      */
-    public function setAddress(RemitToAddress $address) : self
+    public function setAddress(?RemitToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -77,20 +77,20 @@ class FreightRateCODRemitTo extends \ArrayObject
     /**
      * Payee contact name for the COD charges.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Payee contact name for the COD charges.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;

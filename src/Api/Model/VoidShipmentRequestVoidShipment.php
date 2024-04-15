@@ -15,38 +15,38 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
     /**
      * Unique key to tag shipments in shipping history. It could be MyUPS registration Number or any unique identifier.
      *
-     * @var string
+     * @var string|null
      */
     protected $shippingHistoryUserKey;
     /**
      * The shipment's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentIdentificationNumber;
     /**
      * The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $trackingNumber;
     /**
      * Unique key to tag shipments in shipping history. It could be MyUPS registration Number or any unique identifier.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShippingHistoryUserKey() : string
+    public function getShippingHistoryUserKey() : ?string
     {
         return $this->shippingHistoryUserKey;
     }
     /**
      * Unique key to tag shipments in shipping history. It could be MyUPS registration Number or any unique identifier.
      *
-     * @param string $shippingHistoryUserKey
+     * @param string|null $shippingHistoryUserKey
      *
      * @return self
      */
-    public function setShippingHistoryUserKey(string $shippingHistoryUserKey) : self
+    public function setShippingHistoryUserKey(?string $shippingHistoryUserKey) : self
     {
         $this->initialized['shippingHistoryUserKey'] = true;
         $this->shippingHistoryUserKey = $shippingHistoryUserKey;
@@ -55,20 +55,20 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
     /**
      * The shipment's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentIdentificationNumber() : string
+    public function getShipmentIdentificationNumber() : ?string
     {
         return $this->shipmentIdentificationNumber;
     }
     /**
      * The shipment's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case.
      *
-     * @param string $shipmentIdentificationNumber
+     * @param string|null $shipmentIdentificationNumber
      *
      * @return self
      */
-    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber) : self
+    public function setShipmentIdentificationNumber(?string $shipmentIdentificationNumber) : self
     {
         $this->initialized['shipmentIdentificationNumber'] = true;
         $this->shipmentIdentificationNumber = $shipmentIdentificationNumber;
@@ -77,20 +77,20 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
     /**
      * The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getTrackingNumber() : array
+    public function getTrackingNumber() : ?array
     {
         return $this->trackingNumber;
     }
     /**
      * The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case
      *
-     * @param string[] $trackingNumber
+     * @param list<string>|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(array $trackingNumber) : self
+    public function setTrackingNumber(?array $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;

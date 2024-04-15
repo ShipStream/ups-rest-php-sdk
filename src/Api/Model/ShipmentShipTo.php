@@ -15,7 +15,7 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
@@ -23,68 +23,68 @@ class ShipmentShipTo extends \ArrayObject
     
     Required if Invoice International form is requested.
     *
-    * @var string
+    * @var string|null
     */
     protected $attentionName;
     /**
      * Not applicable for ShipTo
      *
-     * @var string
+     * @var string|null
      */
     protected $companyDisplayableName;
     /**
      * Consignee's tax identification number.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxIdentificationNumber;
     /**
      * Phone Container.
      *
-     * @var ShipToPhone
+     * @var ShipToPhone|null
      */
     protected $phone;
     /**
      * Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
-     * @var string
+     * @var string|null
      */
     protected $faxNumber;
     /**
      * Consignee's email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Address Container.
      *
-     * @var ShipToAddress
+     * @var ShipToAddress|null
      */
     protected $address;
     /**
      * Location ID is a unique identifier referring to a specific shipping/receiving location.  Location ID must be alphanumeric characters. All letters must be capitalized.
      *
-     * @var string
+     * @var string|null
      */
     protected $locationID;
     /**
      * Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -95,9 +95,9 @@ class ShipmentShipTo extends \ArrayObject
     
     Required if Invoice International form is requested.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
@@ -106,11 +106,11 @@ class ShipmentShipTo extends \ArrayObject
     
     Required if Invoice International form is requested.
     *
-    * @param string $attentionName
+    * @param string|null $attentionName
     *
     * @return self
     */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -119,20 +119,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Not applicable for ShipTo
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyDisplayableName() : string
+    public function getCompanyDisplayableName() : ?string
     {
         return $this->companyDisplayableName;
     }
     /**
      * Not applicable for ShipTo
      *
-     * @param string $companyDisplayableName
+     * @param string|null $companyDisplayableName
      *
      * @return self
      */
-    public function setCompanyDisplayableName(string $companyDisplayableName) : self
+    public function setCompanyDisplayableName(?string $companyDisplayableName) : self
     {
         $this->initialized['companyDisplayableName'] = true;
         $this->companyDisplayableName = $companyDisplayableName;
@@ -141,20 +141,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Consignee's tax identification number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
     /**
      * Consignee's tax identification number.
      *
-     * @param string $taxIdentificationNumber
+     * @param string|null $taxIdentificationNumber
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -163,20 +163,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Phone Container.
      *
-     * @return ShipToPhone
+     * @return ShipToPhone|null
      */
-    public function getPhone() : ShipToPhone
+    public function getPhone() : ?ShipToPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container.
      *
-     * @param ShipToPhone $phone
+     * @param ShipToPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ShipToPhone $phone) : self
+    public function setPhone(?ShipToPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -185,20 +185,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber() : ?string
     {
         return $this->faxNumber;
     }
     /**
      * Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
-     * @param string $faxNumber
+     * @param string|null $faxNumber
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(?string $faxNumber) : self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -207,20 +207,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Consignee's email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Consignee's email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -229,20 +229,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipToAddress
+     * @return ShipToAddress|null
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : ?ShipToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipToAddress $address
+     * @param ShipToAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(?ShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -251,20 +251,20 @@ class ShipmentShipTo extends \ArrayObject
     /**
      * Location ID is a unique identifier referring to a specific shipping/receiving location.  Location ID must be alphanumeric characters. All letters must be capitalized.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLocationID() : string
+    public function getLocationID() : ?string
     {
         return $this->locationID;
     }
     /**
      * Location ID is a unique identifier referring to a specific shipping/receiving location.  Location ID must be alphanumeric characters. All letters must be capitalized.
      *
-     * @param string $locationID
+     * @param string|null $locationID
      *
      * @return self
      */
-    public function setLocationID(string $locationID) : self
+    public function setLocationID(?string $locationID) : self
     {
         $this->initialized['locationID'] = true;
         $this->locationID = $locationID;

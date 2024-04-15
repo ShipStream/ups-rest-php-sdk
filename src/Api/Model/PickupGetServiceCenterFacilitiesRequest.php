@@ -15,57 +15,57 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * Container for the Request.
      *
-     * @var PickupGetServiceCenterFacilitiesRequestRequest
+     * @var PickupGetServiceCenterFacilitiesRequestRequest|null
      */
     protected $request;
     /**
      * 
      *
-     * @var PickupGetServiceCenterFacilitiesRequestPickupPiece[]
+     * @var list<PickupGetServiceCenterFacilitiesRequestPickupPiece>|null
      */
     protected $pickupPiece;
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required for drop off location search.
      *
-     * @var PickupGetServiceCenterFacilitiesRequestOriginAddress
+     * @var PickupGetServiceCenterFacilitiesRequestOriginAddress|null
      */
     protected $originAddress;
     /**
      * DestinationAddress container.  Conditionally required for pickup location search.
      *
-     * @var PickupGetServiceCenterFacilitiesRequestDestinationAddress
+     * @var PickupGetServiceCenterFacilitiesRequestDestinationAddress|null
      */
     protected $destinationAddress;
     /**
     * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US. 
     The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
     *
-    * @var string
+    * @var string|null
     */
     protected $locale;
     /**
      * Proximity Indicator.  Indicates the� user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
      *
-     * @var string
+     * @var string|null
      */
     protected $proximitySearchIndicator;
     /**
      * Container for the Request.
      *
-     * @return PickupGetServiceCenterFacilitiesRequestRequest
+     * @return PickupGetServiceCenterFacilitiesRequestRequest|null
      */
-    public function getRequest() : PickupGetServiceCenterFacilitiesRequestRequest
+    public function getRequest() : ?PickupGetServiceCenterFacilitiesRequestRequest
     {
         return $this->request;
     }
     /**
      * Container for the Request.
      *
-     * @param PickupGetServiceCenterFacilitiesRequestRequest $request
+     * @param PickupGetServiceCenterFacilitiesRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(PickupGetServiceCenterFacilitiesRequestRequest $request) : self
+    public function setRequest(?PickupGetServiceCenterFacilitiesRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -74,20 +74,20 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * 
      *
-     * @return PickupGetServiceCenterFacilitiesRequestPickupPiece[]
+     * @return list<PickupGetServiceCenterFacilitiesRequestPickupPiece>|null
      */
-    public function getPickupPiece() : array
+    public function getPickupPiece() : ?array
     {
         return $this->pickupPiece;
     }
     /**
      * 
      *
-     * @param PickupGetServiceCenterFacilitiesRequestPickupPiece[] $pickupPiece
+     * @param list<PickupGetServiceCenterFacilitiesRequestPickupPiece>|null $pickupPiece
      *
      * @return self
      */
-    public function setPickupPiece(array $pickupPiece) : self
+    public function setPickupPiece(?array $pickupPiece) : self
     {
         $this->initialized['pickupPiece'] = true;
         $this->pickupPiece = $pickupPiece;
@@ -96,20 +96,20 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required for drop off location search.
      *
-     * @return PickupGetServiceCenterFacilitiesRequestOriginAddress
+     * @return PickupGetServiceCenterFacilitiesRequestOriginAddress|null
      */
-    public function getOriginAddress() : PickupGetServiceCenterFacilitiesRequestOriginAddress
+    public function getOriginAddress() : ?PickupGetServiceCenterFacilitiesRequestOriginAddress
     {
         return $this->originAddress;
     }
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required for drop off location search.
      *
-     * @param PickupGetServiceCenterFacilitiesRequestOriginAddress $originAddress
+     * @param PickupGetServiceCenterFacilitiesRequestOriginAddress|null $originAddress
      *
      * @return self
      */
-    public function setOriginAddress(PickupGetServiceCenterFacilitiesRequestOriginAddress $originAddress) : self
+    public function setOriginAddress(?PickupGetServiceCenterFacilitiesRequestOriginAddress $originAddress) : self
     {
         $this->initialized['originAddress'] = true;
         $this->originAddress = $originAddress;
@@ -118,20 +118,20 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * DestinationAddress container.  Conditionally required for pickup location search.
      *
-     * @return PickupGetServiceCenterFacilitiesRequestDestinationAddress
+     * @return PickupGetServiceCenterFacilitiesRequestDestinationAddress|null
      */
-    public function getDestinationAddress() : PickupGetServiceCenterFacilitiesRequestDestinationAddress
+    public function getDestinationAddress() : ?PickupGetServiceCenterFacilitiesRequestDestinationAddress
     {
         return $this->destinationAddress;
     }
     /**
      * DestinationAddress container.  Conditionally required for pickup location search.
      *
-     * @param PickupGetServiceCenterFacilitiesRequestDestinationAddress $destinationAddress
+     * @param PickupGetServiceCenterFacilitiesRequestDestinationAddress|null $destinationAddress
      *
      * @return self
      */
-    public function setDestinationAddress(PickupGetServiceCenterFacilitiesRequestDestinationAddress $destinationAddress) : self
+    public function setDestinationAddress(?PickupGetServiceCenterFacilitiesRequestDestinationAddress $destinationAddress) : self
     {
         $this->initialized['destinationAddress'] = true;
         $this->destinationAddress = $destinationAddress;
@@ -141,9 +141,9 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US. 
     The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLocale() : string
+    public function getLocale() : ?string
     {
         return $this->locale;
     }
@@ -151,11 +151,11 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US. 
     The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
     *
-    * @param string $locale
+    * @param string|null $locale
     *
     * @return self
     */
-    public function setLocale(string $locale) : self
+    public function setLocale(?string $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -164,20 +164,20 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * Proximity Indicator.  Indicates the� user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProximitySearchIndicator() : string
+    public function getProximitySearchIndicator() : ?string
     {
         return $this->proximitySearchIndicator;
     }
     /**
      * Proximity Indicator.  Indicates the� user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
      *
-     * @param string $proximitySearchIndicator
+     * @param string|null $proximitySearchIndicator
      *
      * @return self
      */
-    public function setProximitySearchIndicator(string $proximitySearchIndicator) : self
+    public function setProximitySearchIndicator(?string $proximitySearchIndicator) : self
     {
         $this->initialized['proximitySearchIndicator'] = true;
         $this->proximitySearchIndicator = $proximitySearchIndicator;

@@ -15,32 +15,32 @@ class PackageDimWeight extends \ArrayObject
     /**
      * UnitOfMeasurement Container.  N/A
      *
-     * @var DimWeightUnitOfMeasurement
+     * @var DimWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Actual package weight.  Weight accepted for letters/envelopes.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * UnitOfMeasurement Container.  N/A
      *
-     * @return DimWeightUnitOfMeasurement
+     * @return DimWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : DimWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?DimWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * UnitOfMeasurement Container.  N/A
      *
-     * @param DimWeightUnitOfMeasurement $unitOfMeasurement
+     * @param DimWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DimWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?DimWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class PackageDimWeight extends \ArrayObject
     /**
      * Actual package weight.  Weight accepted for letters/envelopes.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * Actual package weight.  Weight accepted for letters/envelopes.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

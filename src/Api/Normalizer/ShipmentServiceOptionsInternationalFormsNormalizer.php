@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FormType', $data)) {
+            if (\array_key_exists('FormType', $data) && $data['FormType'] !== null) {
                 $values = [];
                 foreach ($data['FormType'] as $value) {
                     $values[] = $value;
@@ -48,35 +48,59 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setFormType($values);
                 unset($data['FormType']);
             }
-            if (\array_key_exists('UserCreatedForm', $data)) {
+            elseif (\array_key_exists('FormType', $data) && $data['FormType'] === null) {
+                $object->setFormType(null);
+            }
+            if (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] !== null) {
                 $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm', 'json', $context));
                 unset($data['UserCreatedForm']);
             }
-            if (\array_key_exists('UPSPremiumCareForm', $data)) {
+            elseif (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] === null) {
+                $object->setUserCreatedForm(null);
+            }
+            if (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] !== null) {
                 $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm', 'json', $context));
                 unset($data['UPSPremiumCareForm']);
             }
-            if (\array_key_exists('CN22Form', $data)) {
+            elseif (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] === null) {
+                $object->setUPSPremiumCareForm(null);
+            }
+            if (\array_key_exists('CN22Form', $data) && $data['CN22Form'] !== null) {
                 $object->setCN22Form($this->denormalizer->denormalize($data['CN22Form'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form', 'json', $context));
                 unset($data['CN22Form']);
             }
-            if (\array_key_exists('AdditionalDocumentIndicator', $data)) {
+            elseif (\array_key_exists('CN22Form', $data) && $data['CN22Form'] === null) {
+                $object->setCN22Form(null);
+            }
+            if (\array_key_exists('AdditionalDocumentIndicator', $data) && $data['AdditionalDocumentIndicator'] !== null) {
                 $object->setAdditionalDocumentIndicator($data['AdditionalDocumentIndicator']);
                 unset($data['AdditionalDocumentIndicator']);
             }
-            if (\array_key_exists('FormGroupIdName', $data)) {
+            elseif (\array_key_exists('AdditionalDocumentIndicator', $data) && $data['AdditionalDocumentIndicator'] === null) {
+                $object->setAdditionalDocumentIndicator(null);
+            }
+            if (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] !== null) {
                 $object->setFormGroupIdName($data['FormGroupIdName']);
                 unset($data['FormGroupIdName']);
             }
-            if (\array_key_exists('EEIFilingOption', $data)) {
+            elseif (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] === null) {
+                $object->setFormGroupIdName(null);
+            }
+            if (\array_key_exists('EEIFilingOption', $data) && $data['EEIFilingOption'] !== null) {
                 $object->setEEIFilingOption($this->denormalizer->denormalize($data['EEIFilingOption'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption', 'json', $context));
                 unset($data['EEIFilingOption']);
             }
-            if (\array_key_exists('Contacts', $data)) {
+            elseif (\array_key_exists('EEIFilingOption', $data) && $data['EEIFilingOption'] === null) {
+                $object->setEEIFilingOption(null);
+            }
+            if (\array_key_exists('Contacts', $data) && $data['Contacts'] !== null) {
                 $object->setContacts($this->denormalizer->denormalize($data['Contacts'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts', 'json', $context));
                 unset($data['Contacts']);
             }
-            if (\array_key_exists('Product', $data)) {
+            elseif (\array_key_exists('Contacts', $data) && $data['Contacts'] === null) {
+                $object->setContacts(null);
+            }
+            if (\array_key_exists('Product', $data) && $data['Product'] !== null) {
                 $values_1 = [];
                 foreach ($data['Product'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct', 'json', $context);
@@ -84,125 +108,218 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setProduct($values_1);
                 unset($data['Product']);
             }
-            if (\array_key_exists('InvoiceNumber', $data)) {
+            elseif (\array_key_exists('Product', $data) && $data['Product'] === null) {
+                $object->setProduct(null);
+            }
+            if (\array_key_exists('InvoiceNumber', $data) && $data['InvoiceNumber'] !== null) {
                 $object->setInvoiceNumber($data['InvoiceNumber']);
                 unset($data['InvoiceNumber']);
             }
-            if (\array_key_exists('InvoiceDate', $data)) {
+            elseif (\array_key_exists('InvoiceNumber', $data) && $data['InvoiceNumber'] === null) {
+                $object->setInvoiceNumber(null);
+            }
+            if (\array_key_exists('InvoiceDate', $data) && $data['InvoiceDate'] !== null) {
                 $object->setInvoiceDate($data['InvoiceDate']);
                 unset($data['InvoiceDate']);
             }
-            if (\array_key_exists('PurchaseOrderNumber', $data)) {
+            elseif (\array_key_exists('InvoiceDate', $data) && $data['InvoiceDate'] === null) {
+                $object->setInvoiceDate(null);
+            }
+            if (\array_key_exists('PurchaseOrderNumber', $data) && $data['PurchaseOrderNumber'] !== null) {
                 $object->setPurchaseOrderNumber($data['PurchaseOrderNumber']);
                 unset($data['PurchaseOrderNumber']);
             }
-            if (\array_key_exists('TermsOfShipment', $data)) {
+            elseif (\array_key_exists('PurchaseOrderNumber', $data) && $data['PurchaseOrderNumber'] === null) {
+                $object->setPurchaseOrderNumber(null);
+            }
+            if (\array_key_exists('TermsOfShipment', $data) && $data['TermsOfShipment'] !== null) {
                 $object->setTermsOfShipment($data['TermsOfShipment']);
                 unset($data['TermsOfShipment']);
             }
-            if (\array_key_exists('ReasonForExport', $data)) {
+            elseif (\array_key_exists('TermsOfShipment', $data) && $data['TermsOfShipment'] === null) {
+                $object->setTermsOfShipment(null);
+            }
+            if (\array_key_exists('ReasonForExport', $data) && $data['ReasonForExport'] !== null) {
                 $object->setReasonForExport($data['ReasonForExport']);
                 unset($data['ReasonForExport']);
             }
-            if (\array_key_exists('Comments', $data)) {
+            elseif (\array_key_exists('ReasonForExport', $data) && $data['ReasonForExport'] === null) {
+                $object->setReasonForExport(null);
+            }
+            if (\array_key_exists('Comments', $data) && $data['Comments'] !== null) {
                 $object->setComments($data['Comments']);
                 unset($data['Comments']);
             }
-            if (\array_key_exists('DeclarationStatement', $data)) {
+            elseif (\array_key_exists('Comments', $data) && $data['Comments'] === null) {
+                $object->setComments(null);
+            }
+            if (\array_key_exists('DeclarationStatement', $data) && $data['DeclarationStatement'] !== null) {
                 $object->setDeclarationStatement($data['DeclarationStatement']);
                 unset($data['DeclarationStatement']);
             }
-            if (\array_key_exists('Discount', $data)) {
+            elseif (\array_key_exists('DeclarationStatement', $data) && $data['DeclarationStatement'] === null) {
+                $object->setDeclarationStatement(null);
+            }
+            if (\array_key_exists('Discount', $data) && $data['Discount'] !== null) {
                 $object->setDiscount($this->denormalizer->denormalize($data['Discount'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount', 'json', $context));
                 unset($data['Discount']);
             }
-            if (\array_key_exists('FreightCharges', $data)) {
+            elseif (\array_key_exists('Discount', $data) && $data['Discount'] === null) {
+                $object->setDiscount(null);
+            }
+            if (\array_key_exists('FreightCharges', $data) && $data['FreightCharges'] !== null) {
                 $object->setFreightCharges($this->denormalizer->denormalize($data['FreightCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges', 'json', $context));
                 unset($data['FreightCharges']);
             }
-            if (\array_key_exists('InsuranceCharges', $data)) {
+            elseif (\array_key_exists('FreightCharges', $data) && $data['FreightCharges'] === null) {
+                $object->setFreightCharges(null);
+            }
+            if (\array_key_exists('InsuranceCharges', $data) && $data['InsuranceCharges'] !== null) {
                 $object->setInsuranceCharges($this->denormalizer->denormalize($data['InsuranceCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges', 'json', $context));
                 unset($data['InsuranceCharges']);
             }
-            if (\array_key_exists('OtherCharges', $data)) {
+            elseif (\array_key_exists('InsuranceCharges', $data) && $data['InsuranceCharges'] === null) {
+                $object->setInsuranceCharges(null);
+            }
+            if (\array_key_exists('OtherCharges', $data) && $data['OtherCharges'] !== null) {
                 $object->setOtherCharges($this->denormalizer->denormalize($data['OtherCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges', 'json', $context));
                 unset($data['OtherCharges']);
             }
-            if (\array_key_exists('CurrencyCode', $data)) {
+            elseif (\array_key_exists('OtherCharges', $data) && $data['OtherCharges'] === null) {
+                $object->setOtherCharges(null);
+            }
+            if (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] !== null) {
                 $object->setCurrencyCode($data['CurrencyCode']);
                 unset($data['CurrencyCode']);
             }
-            if (\array_key_exists('BlanketPeriod', $data)) {
+            elseif (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('BlanketPeriod', $data) && $data['BlanketPeriod'] !== null) {
                 $object->setBlanketPeriod($this->denormalizer->denormalize($data['BlanketPeriod'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod', 'json', $context));
                 unset($data['BlanketPeriod']);
             }
-            if (\array_key_exists('ExportDate', $data)) {
+            elseif (\array_key_exists('BlanketPeriod', $data) && $data['BlanketPeriod'] === null) {
+                $object->setBlanketPeriod(null);
+            }
+            if (\array_key_exists('ExportDate', $data) && $data['ExportDate'] !== null) {
                 $object->setExportDate($data['ExportDate']);
                 unset($data['ExportDate']);
             }
-            if (\array_key_exists('ExportingCarrier', $data)) {
+            elseif (\array_key_exists('ExportDate', $data) && $data['ExportDate'] === null) {
+                $object->setExportDate(null);
+            }
+            if (\array_key_exists('ExportingCarrier', $data) && $data['ExportingCarrier'] !== null) {
                 $object->setExportingCarrier($data['ExportingCarrier']);
                 unset($data['ExportingCarrier']);
             }
-            if (\array_key_exists('CarrierID', $data)) {
+            elseif (\array_key_exists('ExportingCarrier', $data) && $data['ExportingCarrier'] === null) {
+                $object->setExportingCarrier(null);
+            }
+            if (\array_key_exists('CarrierID', $data) && $data['CarrierID'] !== null) {
                 $object->setCarrierID($data['CarrierID']);
                 unset($data['CarrierID']);
             }
-            if (\array_key_exists('InBondCode', $data)) {
+            elseif (\array_key_exists('CarrierID', $data) && $data['CarrierID'] === null) {
+                $object->setCarrierID(null);
+            }
+            if (\array_key_exists('InBondCode', $data) && $data['InBondCode'] !== null) {
                 $object->setInBondCode($data['InBondCode']);
                 unset($data['InBondCode']);
             }
-            if (\array_key_exists('EntryNumber', $data)) {
+            elseif (\array_key_exists('InBondCode', $data) && $data['InBondCode'] === null) {
+                $object->setInBondCode(null);
+            }
+            if (\array_key_exists('EntryNumber', $data) && $data['EntryNumber'] !== null) {
                 $object->setEntryNumber($data['EntryNumber']);
                 unset($data['EntryNumber']);
             }
-            if (\array_key_exists('PointOfOrigin', $data)) {
+            elseif (\array_key_exists('EntryNumber', $data) && $data['EntryNumber'] === null) {
+                $object->setEntryNumber(null);
+            }
+            if (\array_key_exists('PointOfOrigin', $data) && $data['PointOfOrigin'] !== null) {
                 $object->setPointOfOrigin($data['PointOfOrigin']);
                 unset($data['PointOfOrigin']);
             }
-            if (\array_key_exists('PointOfOriginType', $data)) {
+            elseif (\array_key_exists('PointOfOrigin', $data) && $data['PointOfOrigin'] === null) {
+                $object->setPointOfOrigin(null);
+            }
+            if (\array_key_exists('PointOfOriginType', $data) && $data['PointOfOriginType'] !== null) {
                 $object->setPointOfOriginType($data['PointOfOriginType']);
                 unset($data['PointOfOriginType']);
             }
-            if (\array_key_exists('ModeOfTransport', $data)) {
+            elseif (\array_key_exists('PointOfOriginType', $data) && $data['PointOfOriginType'] === null) {
+                $object->setPointOfOriginType(null);
+            }
+            if (\array_key_exists('ModeOfTransport', $data) && $data['ModeOfTransport'] !== null) {
                 $object->setModeOfTransport($data['ModeOfTransport']);
                 unset($data['ModeOfTransport']);
             }
-            if (\array_key_exists('PortOfExport', $data)) {
+            elseif (\array_key_exists('ModeOfTransport', $data) && $data['ModeOfTransport'] === null) {
+                $object->setModeOfTransport(null);
+            }
+            if (\array_key_exists('PortOfExport', $data) && $data['PortOfExport'] !== null) {
                 $object->setPortOfExport($data['PortOfExport']);
                 unset($data['PortOfExport']);
             }
-            if (\array_key_exists('PortOfUnloading', $data)) {
+            elseif (\array_key_exists('PortOfExport', $data) && $data['PortOfExport'] === null) {
+                $object->setPortOfExport(null);
+            }
+            if (\array_key_exists('PortOfUnloading', $data) && $data['PortOfUnloading'] !== null) {
                 $object->setPortOfUnloading($data['PortOfUnloading']);
                 unset($data['PortOfUnloading']);
             }
-            if (\array_key_exists('LoadingPier', $data)) {
+            elseif (\array_key_exists('PortOfUnloading', $data) && $data['PortOfUnloading'] === null) {
+                $object->setPortOfUnloading(null);
+            }
+            if (\array_key_exists('LoadingPier', $data) && $data['LoadingPier'] !== null) {
                 $object->setLoadingPier($data['LoadingPier']);
                 unset($data['LoadingPier']);
             }
-            if (\array_key_exists('PartiesToTransaction', $data)) {
+            elseif (\array_key_exists('LoadingPier', $data) && $data['LoadingPier'] === null) {
+                $object->setLoadingPier(null);
+            }
+            if (\array_key_exists('PartiesToTransaction', $data) && $data['PartiesToTransaction'] !== null) {
                 $object->setPartiesToTransaction($data['PartiesToTransaction']);
                 unset($data['PartiesToTransaction']);
             }
-            if (\array_key_exists('RoutedExportTransactionIndicator', $data)) {
+            elseif (\array_key_exists('PartiesToTransaction', $data) && $data['PartiesToTransaction'] === null) {
+                $object->setPartiesToTransaction(null);
+            }
+            if (\array_key_exists('RoutedExportTransactionIndicator', $data) && $data['RoutedExportTransactionIndicator'] !== null) {
                 $object->setRoutedExportTransactionIndicator($data['RoutedExportTransactionIndicator']);
                 unset($data['RoutedExportTransactionIndicator']);
             }
-            if (\array_key_exists('ContainerizedIndicator', $data)) {
+            elseif (\array_key_exists('RoutedExportTransactionIndicator', $data) && $data['RoutedExportTransactionIndicator'] === null) {
+                $object->setRoutedExportTransactionIndicator(null);
+            }
+            if (\array_key_exists('ContainerizedIndicator', $data) && $data['ContainerizedIndicator'] !== null) {
                 $object->setContainerizedIndicator($data['ContainerizedIndicator']);
                 unset($data['ContainerizedIndicator']);
             }
-            if (\array_key_exists('OverridePaperlessIndicator', $data)) {
+            elseif (\array_key_exists('ContainerizedIndicator', $data) && $data['ContainerizedIndicator'] === null) {
+                $object->setContainerizedIndicator(null);
+            }
+            if (\array_key_exists('OverridePaperlessIndicator', $data) && $data['OverridePaperlessIndicator'] !== null) {
                 $object->setOverridePaperlessIndicator($data['OverridePaperlessIndicator']);
                 unset($data['OverridePaperlessIndicator']);
             }
-            if (\array_key_exists('ShipperMemo', $data)) {
+            elseif (\array_key_exists('OverridePaperlessIndicator', $data) && $data['OverridePaperlessIndicator'] === null) {
+                $object->setOverridePaperlessIndicator(null);
+            }
+            if (\array_key_exists('ShipperMemo', $data) && $data['ShipperMemo'] !== null) {
                 $object->setShipperMemo($data['ShipperMemo']);
                 unset($data['ShipperMemo']);
             }
-            if (\array_key_exists('HazardousMaterialsIndicator', $data)) {
+            elseif (\array_key_exists('ShipperMemo', $data) && $data['ShipperMemo'] === null) {
+                $object->setShipperMemo(null);
+            }
+            if (\array_key_exists('HazardousMaterialsIndicator', $data) && $data['HazardousMaterialsIndicator'] !== null) {
                 $object->setHazardousMaterialsIndicator($data['HazardousMaterialsIndicator']);
                 unset($data['HazardousMaterialsIndicator']);
+            }
+            elseif (\array_key_exists('HazardousMaterialsIndicator', $data) && $data['HazardousMaterialsIndicator'] === null) {
+                $object->setHazardousMaterialsIndicator(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -377,7 +494,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FormType', $data)) {
+            if (\array_key_exists('FormType', $data) && $data['FormType'] !== null) {
                 $values = [];
                 foreach ($data['FormType'] as $value) {
                     $values[] = $value;
@@ -385,35 +502,59 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setFormType($values);
                 unset($data['FormType']);
             }
-            if (\array_key_exists('UserCreatedForm', $data)) {
+            elseif (\array_key_exists('FormType', $data) && $data['FormType'] === null) {
+                $object->setFormType(null);
+            }
+            if (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] !== null) {
                 $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm', 'json', $context));
                 unset($data['UserCreatedForm']);
             }
-            if (\array_key_exists('UPSPremiumCareForm', $data)) {
+            elseif (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] === null) {
+                $object->setUserCreatedForm(null);
+            }
+            if (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] !== null) {
                 $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm', 'json', $context));
                 unset($data['UPSPremiumCareForm']);
             }
-            if (\array_key_exists('CN22Form', $data)) {
+            elseif (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] === null) {
+                $object->setUPSPremiumCareForm(null);
+            }
+            if (\array_key_exists('CN22Form', $data) && $data['CN22Form'] !== null) {
                 $object->setCN22Form($this->denormalizer->denormalize($data['CN22Form'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form', 'json', $context));
                 unset($data['CN22Form']);
             }
-            if (\array_key_exists('AdditionalDocumentIndicator', $data)) {
+            elseif (\array_key_exists('CN22Form', $data) && $data['CN22Form'] === null) {
+                $object->setCN22Form(null);
+            }
+            if (\array_key_exists('AdditionalDocumentIndicator', $data) && $data['AdditionalDocumentIndicator'] !== null) {
                 $object->setAdditionalDocumentIndicator($data['AdditionalDocumentIndicator']);
                 unset($data['AdditionalDocumentIndicator']);
             }
-            if (\array_key_exists('FormGroupIdName', $data)) {
+            elseif (\array_key_exists('AdditionalDocumentIndicator', $data) && $data['AdditionalDocumentIndicator'] === null) {
+                $object->setAdditionalDocumentIndicator(null);
+            }
+            if (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] !== null) {
                 $object->setFormGroupIdName($data['FormGroupIdName']);
                 unset($data['FormGroupIdName']);
             }
-            if (\array_key_exists('EEIFilingOption', $data)) {
+            elseif (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] === null) {
+                $object->setFormGroupIdName(null);
+            }
+            if (\array_key_exists('EEIFilingOption', $data) && $data['EEIFilingOption'] !== null) {
                 $object->setEEIFilingOption($this->denormalizer->denormalize($data['EEIFilingOption'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption', 'json', $context));
                 unset($data['EEIFilingOption']);
             }
-            if (\array_key_exists('Contacts', $data)) {
+            elseif (\array_key_exists('EEIFilingOption', $data) && $data['EEIFilingOption'] === null) {
+                $object->setEEIFilingOption(null);
+            }
+            if (\array_key_exists('Contacts', $data) && $data['Contacts'] !== null) {
                 $object->setContacts($this->denormalizer->denormalize($data['Contacts'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts', 'json', $context));
                 unset($data['Contacts']);
             }
-            if (\array_key_exists('Product', $data)) {
+            elseif (\array_key_exists('Contacts', $data) && $data['Contacts'] === null) {
+                $object->setContacts(null);
+            }
+            if (\array_key_exists('Product', $data) && $data['Product'] !== null) {
                 $values_1 = [];
                 foreach ($data['Product'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct', 'json', $context);
@@ -421,125 +562,218 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setProduct($values_1);
                 unset($data['Product']);
             }
-            if (\array_key_exists('InvoiceNumber', $data)) {
+            elseif (\array_key_exists('Product', $data) && $data['Product'] === null) {
+                $object->setProduct(null);
+            }
+            if (\array_key_exists('InvoiceNumber', $data) && $data['InvoiceNumber'] !== null) {
                 $object->setInvoiceNumber($data['InvoiceNumber']);
                 unset($data['InvoiceNumber']);
             }
-            if (\array_key_exists('InvoiceDate', $data)) {
+            elseif (\array_key_exists('InvoiceNumber', $data) && $data['InvoiceNumber'] === null) {
+                $object->setInvoiceNumber(null);
+            }
+            if (\array_key_exists('InvoiceDate', $data) && $data['InvoiceDate'] !== null) {
                 $object->setInvoiceDate($data['InvoiceDate']);
                 unset($data['InvoiceDate']);
             }
-            if (\array_key_exists('PurchaseOrderNumber', $data)) {
+            elseif (\array_key_exists('InvoiceDate', $data) && $data['InvoiceDate'] === null) {
+                $object->setInvoiceDate(null);
+            }
+            if (\array_key_exists('PurchaseOrderNumber', $data) && $data['PurchaseOrderNumber'] !== null) {
                 $object->setPurchaseOrderNumber($data['PurchaseOrderNumber']);
                 unset($data['PurchaseOrderNumber']);
             }
-            if (\array_key_exists('TermsOfShipment', $data)) {
+            elseif (\array_key_exists('PurchaseOrderNumber', $data) && $data['PurchaseOrderNumber'] === null) {
+                $object->setPurchaseOrderNumber(null);
+            }
+            if (\array_key_exists('TermsOfShipment', $data) && $data['TermsOfShipment'] !== null) {
                 $object->setTermsOfShipment($data['TermsOfShipment']);
                 unset($data['TermsOfShipment']);
             }
-            if (\array_key_exists('ReasonForExport', $data)) {
+            elseif (\array_key_exists('TermsOfShipment', $data) && $data['TermsOfShipment'] === null) {
+                $object->setTermsOfShipment(null);
+            }
+            if (\array_key_exists('ReasonForExport', $data) && $data['ReasonForExport'] !== null) {
                 $object->setReasonForExport($data['ReasonForExport']);
                 unset($data['ReasonForExport']);
             }
-            if (\array_key_exists('Comments', $data)) {
+            elseif (\array_key_exists('ReasonForExport', $data) && $data['ReasonForExport'] === null) {
+                $object->setReasonForExport(null);
+            }
+            if (\array_key_exists('Comments', $data) && $data['Comments'] !== null) {
                 $object->setComments($data['Comments']);
                 unset($data['Comments']);
             }
-            if (\array_key_exists('DeclarationStatement', $data)) {
+            elseif (\array_key_exists('Comments', $data) && $data['Comments'] === null) {
+                $object->setComments(null);
+            }
+            if (\array_key_exists('DeclarationStatement', $data) && $data['DeclarationStatement'] !== null) {
                 $object->setDeclarationStatement($data['DeclarationStatement']);
                 unset($data['DeclarationStatement']);
             }
-            if (\array_key_exists('Discount', $data)) {
+            elseif (\array_key_exists('DeclarationStatement', $data) && $data['DeclarationStatement'] === null) {
+                $object->setDeclarationStatement(null);
+            }
+            if (\array_key_exists('Discount', $data) && $data['Discount'] !== null) {
                 $object->setDiscount($this->denormalizer->denormalize($data['Discount'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount', 'json', $context));
                 unset($data['Discount']);
             }
-            if (\array_key_exists('FreightCharges', $data)) {
+            elseif (\array_key_exists('Discount', $data) && $data['Discount'] === null) {
+                $object->setDiscount(null);
+            }
+            if (\array_key_exists('FreightCharges', $data) && $data['FreightCharges'] !== null) {
                 $object->setFreightCharges($this->denormalizer->denormalize($data['FreightCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges', 'json', $context));
                 unset($data['FreightCharges']);
             }
-            if (\array_key_exists('InsuranceCharges', $data)) {
+            elseif (\array_key_exists('FreightCharges', $data) && $data['FreightCharges'] === null) {
+                $object->setFreightCharges(null);
+            }
+            if (\array_key_exists('InsuranceCharges', $data) && $data['InsuranceCharges'] !== null) {
                 $object->setInsuranceCharges($this->denormalizer->denormalize($data['InsuranceCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges', 'json', $context));
                 unset($data['InsuranceCharges']);
             }
-            if (\array_key_exists('OtherCharges', $data)) {
+            elseif (\array_key_exists('InsuranceCharges', $data) && $data['InsuranceCharges'] === null) {
+                $object->setInsuranceCharges(null);
+            }
+            if (\array_key_exists('OtherCharges', $data) && $data['OtherCharges'] !== null) {
                 $object->setOtherCharges($this->denormalizer->denormalize($data['OtherCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges', 'json', $context));
                 unset($data['OtherCharges']);
             }
-            if (\array_key_exists('CurrencyCode', $data)) {
+            elseif (\array_key_exists('OtherCharges', $data) && $data['OtherCharges'] === null) {
+                $object->setOtherCharges(null);
+            }
+            if (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] !== null) {
                 $object->setCurrencyCode($data['CurrencyCode']);
                 unset($data['CurrencyCode']);
             }
-            if (\array_key_exists('BlanketPeriod', $data)) {
+            elseif (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('BlanketPeriod', $data) && $data['BlanketPeriod'] !== null) {
                 $object->setBlanketPeriod($this->denormalizer->denormalize($data['BlanketPeriod'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod', 'json', $context));
                 unset($data['BlanketPeriod']);
             }
-            if (\array_key_exists('ExportDate', $data)) {
+            elseif (\array_key_exists('BlanketPeriod', $data) && $data['BlanketPeriod'] === null) {
+                $object->setBlanketPeriod(null);
+            }
+            if (\array_key_exists('ExportDate', $data) && $data['ExportDate'] !== null) {
                 $object->setExportDate($data['ExportDate']);
                 unset($data['ExportDate']);
             }
-            if (\array_key_exists('ExportingCarrier', $data)) {
+            elseif (\array_key_exists('ExportDate', $data) && $data['ExportDate'] === null) {
+                $object->setExportDate(null);
+            }
+            if (\array_key_exists('ExportingCarrier', $data) && $data['ExportingCarrier'] !== null) {
                 $object->setExportingCarrier($data['ExportingCarrier']);
                 unset($data['ExportingCarrier']);
             }
-            if (\array_key_exists('CarrierID', $data)) {
+            elseif (\array_key_exists('ExportingCarrier', $data) && $data['ExportingCarrier'] === null) {
+                $object->setExportingCarrier(null);
+            }
+            if (\array_key_exists('CarrierID', $data) && $data['CarrierID'] !== null) {
                 $object->setCarrierID($data['CarrierID']);
                 unset($data['CarrierID']);
             }
-            if (\array_key_exists('InBondCode', $data)) {
+            elseif (\array_key_exists('CarrierID', $data) && $data['CarrierID'] === null) {
+                $object->setCarrierID(null);
+            }
+            if (\array_key_exists('InBondCode', $data) && $data['InBondCode'] !== null) {
                 $object->setInBondCode($data['InBondCode']);
                 unset($data['InBondCode']);
             }
-            if (\array_key_exists('EntryNumber', $data)) {
+            elseif (\array_key_exists('InBondCode', $data) && $data['InBondCode'] === null) {
+                $object->setInBondCode(null);
+            }
+            if (\array_key_exists('EntryNumber', $data) && $data['EntryNumber'] !== null) {
                 $object->setEntryNumber($data['EntryNumber']);
                 unset($data['EntryNumber']);
             }
-            if (\array_key_exists('PointOfOrigin', $data)) {
+            elseif (\array_key_exists('EntryNumber', $data) && $data['EntryNumber'] === null) {
+                $object->setEntryNumber(null);
+            }
+            if (\array_key_exists('PointOfOrigin', $data) && $data['PointOfOrigin'] !== null) {
                 $object->setPointOfOrigin($data['PointOfOrigin']);
                 unset($data['PointOfOrigin']);
             }
-            if (\array_key_exists('PointOfOriginType', $data)) {
+            elseif (\array_key_exists('PointOfOrigin', $data) && $data['PointOfOrigin'] === null) {
+                $object->setPointOfOrigin(null);
+            }
+            if (\array_key_exists('PointOfOriginType', $data) && $data['PointOfOriginType'] !== null) {
                 $object->setPointOfOriginType($data['PointOfOriginType']);
                 unset($data['PointOfOriginType']);
             }
-            if (\array_key_exists('ModeOfTransport', $data)) {
+            elseif (\array_key_exists('PointOfOriginType', $data) && $data['PointOfOriginType'] === null) {
+                $object->setPointOfOriginType(null);
+            }
+            if (\array_key_exists('ModeOfTransport', $data) && $data['ModeOfTransport'] !== null) {
                 $object->setModeOfTransport($data['ModeOfTransport']);
                 unset($data['ModeOfTransport']);
             }
-            if (\array_key_exists('PortOfExport', $data)) {
+            elseif (\array_key_exists('ModeOfTransport', $data) && $data['ModeOfTransport'] === null) {
+                $object->setModeOfTransport(null);
+            }
+            if (\array_key_exists('PortOfExport', $data) && $data['PortOfExport'] !== null) {
                 $object->setPortOfExport($data['PortOfExport']);
                 unset($data['PortOfExport']);
             }
-            if (\array_key_exists('PortOfUnloading', $data)) {
+            elseif (\array_key_exists('PortOfExport', $data) && $data['PortOfExport'] === null) {
+                $object->setPortOfExport(null);
+            }
+            if (\array_key_exists('PortOfUnloading', $data) && $data['PortOfUnloading'] !== null) {
                 $object->setPortOfUnloading($data['PortOfUnloading']);
                 unset($data['PortOfUnloading']);
             }
-            if (\array_key_exists('LoadingPier', $data)) {
+            elseif (\array_key_exists('PortOfUnloading', $data) && $data['PortOfUnloading'] === null) {
+                $object->setPortOfUnloading(null);
+            }
+            if (\array_key_exists('LoadingPier', $data) && $data['LoadingPier'] !== null) {
                 $object->setLoadingPier($data['LoadingPier']);
                 unset($data['LoadingPier']);
             }
-            if (\array_key_exists('PartiesToTransaction', $data)) {
+            elseif (\array_key_exists('LoadingPier', $data) && $data['LoadingPier'] === null) {
+                $object->setLoadingPier(null);
+            }
+            if (\array_key_exists('PartiesToTransaction', $data) && $data['PartiesToTransaction'] !== null) {
                 $object->setPartiesToTransaction($data['PartiesToTransaction']);
                 unset($data['PartiesToTransaction']);
             }
-            if (\array_key_exists('RoutedExportTransactionIndicator', $data)) {
+            elseif (\array_key_exists('PartiesToTransaction', $data) && $data['PartiesToTransaction'] === null) {
+                $object->setPartiesToTransaction(null);
+            }
+            if (\array_key_exists('RoutedExportTransactionIndicator', $data) && $data['RoutedExportTransactionIndicator'] !== null) {
                 $object->setRoutedExportTransactionIndicator($data['RoutedExportTransactionIndicator']);
                 unset($data['RoutedExportTransactionIndicator']);
             }
-            if (\array_key_exists('ContainerizedIndicator', $data)) {
+            elseif (\array_key_exists('RoutedExportTransactionIndicator', $data) && $data['RoutedExportTransactionIndicator'] === null) {
+                $object->setRoutedExportTransactionIndicator(null);
+            }
+            if (\array_key_exists('ContainerizedIndicator', $data) && $data['ContainerizedIndicator'] !== null) {
                 $object->setContainerizedIndicator($data['ContainerizedIndicator']);
                 unset($data['ContainerizedIndicator']);
             }
-            if (\array_key_exists('OverridePaperlessIndicator', $data)) {
+            elseif (\array_key_exists('ContainerizedIndicator', $data) && $data['ContainerizedIndicator'] === null) {
+                $object->setContainerizedIndicator(null);
+            }
+            if (\array_key_exists('OverridePaperlessIndicator', $data) && $data['OverridePaperlessIndicator'] !== null) {
                 $object->setOverridePaperlessIndicator($data['OverridePaperlessIndicator']);
                 unset($data['OverridePaperlessIndicator']);
             }
-            if (\array_key_exists('ShipperMemo', $data)) {
+            elseif (\array_key_exists('OverridePaperlessIndicator', $data) && $data['OverridePaperlessIndicator'] === null) {
+                $object->setOverridePaperlessIndicator(null);
+            }
+            if (\array_key_exists('ShipperMemo', $data) && $data['ShipperMemo'] !== null) {
                 $object->setShipperMemo($data['ShipperMemo']);
                 unset($data['ShipperMemo']);
             }
-            if (\array_key_exists('HazardousMaterialsIndicator', $data)) {
+            elseif (\array_key_exists('ShipperMemo', $data) && $data['ShipperMemo'] === null) {
+                $object->setShipperMemo(null);
+            }
+            if (\array_key_exists('HazardousMaterialsIndicator', $data) && $data['HazardousMaterialsIndicator'] !== null) {
                 $object->setHazardousMaterialsIndicator($data['HazardousMaterialsIndicator']);
                 unset($data['HazardousMaterialsIndicator']);
+            }
+            elseif (\array_key_exists('HazardousMaterialsIndicator', $data) && $data['HazardousMaterialsIndicator'] === null) {
+                $object->setHazardousMaterialsIndicator(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

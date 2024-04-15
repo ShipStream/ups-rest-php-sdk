@@ -17,33 +17,33 @@ class TimeInTransitRequest extends \ArrayObject
     Valid Values: 
     Must conform to the ISO-defined country codes.  Refer to Country or Territory Codoes in the Appendix for valid values.
     *
-    * @var string
+    * @var string|null
     */
     protected $originCountryCode;
     /**
     * The shipment origin state or province.  For U.S. addresses, the value must be a valid 2-character value (per U.S. Mail standards) 
     For non-U.S. addresses the full State or Province name should be provided.
     *
-    * @var string
+    * @var string|null
     */
     protected $originStateProvince;
     /**
      * Required for International requests for those countries that do not utilize postal codes.  The shipment origin city.
      *
-     * @var string
+     * @var string|null
      */
     protected $originCityName;
     /**
      * The shipment origin town.  Town is a subdivision of city.
      *
-     * @var string
+     * @var string|null
      */
     protected $originTownName;
     /**
     * Required for Domestic requests.  The shipment origin postal code.  
     Either 5- or 9- digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $originPostalCode;
     /**
@@ -51,33 +51,33 @@ class TimeInTransitRequest extends \ArrayObject
     Valid values: 
     Must conform to ISO-defined country codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationCountryCode;
     /**
     * The shipment destination state or province.  For U.S. addresses, the value must be a valid 2-character value (per U.S. Mail standards).  
     For non-U.S. addresses the full State or Province name should be provided.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationStateProvince;
     /**
      * Required for International Requests for those countries that do not utilize postal codes. The shipment destination city.
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationCityName;
     /**
      * The shipment destination town.  Town is a subdivision of city.
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationTownName;
     /**
     * The shipment destination postal code.  
     Required for Domestic requests. Either 5- or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationPostalCode;
     /**
@@ -89,21 +89,21 @@ class TimeInTransitRequest extends \ArrayObject
     
     Defaults to commercial for International Requests.
     *
-    * @var string
+    * @var string|null
     */
     protected $residentialIndicator;
     /**
     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.  Format is YYYY-MM-DD.  YYYY = 4 digit year; MM = 2 digit month, valid values 01-12; DD = 2 digit day of month, valid values 01-31 
     If no value is provided, defaults to current system date.
     *
-    * @var string
+    * @var string|null
     */
     protected $shipDate;
     /**
     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
     Format is HH:MM:SS
     *
-    * @var string
+    * @var string|null
     */
     protected $shipTime;
     /**
@@ -113,7 +113,7 @@ class TimeInTransitRequest extends \ArrayObject
     
     Note: Maximum value is 70 kilograms or 150 pounds.
     *
-    * @var float
+    * @var float|null
     */
     protected $weight;
     /**
@@ -121,7 +121,7 @@ class TimeInTransitRequest extends \ArrayObject
     
     Valid Values: "LBS", "KGS"
     *
-    * @var string
+    * @var string|null
     */
     protected $weightUnitOfMeasure;
     /**
@@ -133,14 +133,14 @@ class TimeInTransitRequest extends \ArrayObject
     
     Note: If decimal values are used, valid values will be rounded to the tenths.
     *
-    * @var float
+    * @var float|null
     */
     protected $shipmentContentsValue;
     /**
     * Required if ShipmentContentsValue is populated.  The unit of currency used for values.  
     Valid value: must conform to ISO standards.
     *
-    * @var string
+    * @var string|null
     */
     protected $shipmentContentsCurrencyCode;
     /**
@@ -150,7 +150,7 @@ class TimeInTransitRequest extends \ArrayObject
     03 - Non Document 
     04 - WWEF (Pallet)
     *
-    * @var string
+    * @var string|null
     */
     protected $billType;
     /**
@@ -161,13 +161,13 @@ class TimeInTransitRequest extends \ArrayObject
     Defaults to true 
     Note: not to be exposed to external customers.
     *
-    * @var bool
+    * @var bool|null
     */
     protected $avvFlag;
     /**
      * Sets the number of packages in shipment.  Default value is 1.
      *
-     * @var int
+     * @var int|null
      */
     protected $numberOfPackages;
     /**
@@ -180,7 +180,7 @@ class TimeInTransitRequest extends \ArrayObject
     
     The default value is "0" 
     *
-    * @var int
+    * @var int|null
     */
     protected $dropOffAtFacilityIndicator;
     /**
@@ -193,7 +193,7 @@ class TimeInTransitRequest extends \ArrayObject
     
     The default value is "0" 
     *
-    * @var int
+    * @var int|null
     */
     protected $holdForPickupIndicator;
     /**
@@ -201,7 +201,7 @@ class TimeInTransitRequest extends \ArrayObject
     
     Default value is false.
     *
-    * @var bool
+    * @var bool|null
     */
     protected $returnUnfilterdServices;
     /**
@@ -209,7 +209,7 @@ class TimeInTransitRequest extends \ArrayObject
     
     Default value is 200.
     *
-    * @var int
+    * @var int|null
     */
     protected $maxList;
     /**
@@ -217,9 +217,9 @@ class TimeInTransitRequest extends \ArrayObject
     Valid Values: 
     Must conform to the ISO-defined country codes.  Refer to Country or Territory Codoes in the Appendix for valid values.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginCountryCode() : string
+    public function getOriginCountryCode() : ?string
     {
         return $this->originCountryCode;
     }
@@ -228,11 +228,11 @@ class TimeInTransitRequest extends \ArrayObject
     Valid Values: 
     Must conform to the ISO-defined country codes.  Refer to Country or Territory Codoes in the Appendix for valid values.
     *
-    * @param string $originCountryCode
+    * @param string|null $originCountryCode
     *
     * @return self
     */
-    public function setOriginCountryCode(string $originCountryCode) : self
+    public function setOriginCountryCode(?string $originCountryCode) : self
     {
         $this->initialized['originCountryCode'] = true;
         $this->originCountryCode = $originCountryCode;
@@ -242,9 +242,9 @@ class TimeInTransitRequest extends \ArrayObject
     * The shipment origin state or province.  For U.S. addresses, the value must be a valid 2-character value (per U.S. Mail standards) 
     For non-U.S. addresses the full State or Province name should be provided.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginStateProvince() : string
+    public function getOriginStateProvince() : ?string
     {
         return $this->originStateProvince;
     }
@@ -252,11 +252,11 @@ class TimeInTransitRequest extends \ArrayObject
     * The shipment origin state or province.  For U.S. addresses, the value must be a valid 2-character value (per U.S. Mail standards) 
     For non-U.S. addresses the full State or Province name should be provided.
     *
-    * @param string $originStateProvince
+    * @param string|null $originStateProvince
     *
     * @return self
     */
-    public function setOriginStateProvince(string $originStateProvince) : self
+    public function setOriginStateProvince(?string $originStateProvince) : self
     {
         $this->initialized['originStateProvince'] = true;
         $this->originStateProvince = $originStateProvince;
@@ -265,20 +265,20 @@ class TimeInTransitRequest extends \ArrayObject
     /**
      * Required for International requests for those countries that do not utilize postal codes.  The shipment origin city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginCityName() : string
+    public function getOriginCityName() : ?string
     {
         return $this->originCityName;
     }
     /**
      * Required for International requests for those countries that do not utilize postal codes.  The shipment origin city.
      *
-     * @param string $originCityName
+     * @param string|null $originCityName
      *
      * @return self
      */
-    public function setOriginCityName(string $originCityName) : self
+    public function setOriginCityName(?string $originCityName) : self
     {
         $this->initialized['originCityName'] = true;
         $this->originCityName = $originCityName;
@@ -287,20 +287,20 @@ class TimeInTransitRequest extends \ArrayObject
     /**
      * The shipment origin town.  Town is a subdivision of city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginTownName() : string
+    public function getOriginTownName() : ?string
     {
         return $this->originTownName;
     }
     /**
      * The shipment origin town.  Town is a subdivision of city.
      *
-     * @param string $originTownName
+     * @param string|null $originTownName
      *
      * @return self
      */
-    public function setOriginTownName(string $originTownName) : self
+    public function setOriginTownName(?string $originTownName) : self
     {
         $this->initialized['originTownName'] = true;
         $this->originTownName = $originTownName;
@@ -310,9 +310,9 @@ class TimeInTransitRequest extends \ArrayObject
     * Required for Domestic requests.  The shipment origin postal code.  
     Either 5- or 9- digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginPostalCode() : string
+    public function getOriginPostalCode() : ?string
     {
         return $this->originPostalCode;
     }
@@ -320,11 +320,11 @@ class TimeInTransitRequest extends \ArrayObject
     * Required for Domestic requests.  The shipment origin postal code.  
     Either 5- or 9- digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $originPostalCode
+    * @param string|null $originPostalCode
     *
     * @return self
     */
-    public function setOriginPostalCode(string $originPostalCode) : self
+    public function setOriginPostalCode(?string $originPostalCode) : self
     {
         $this->initialized['originPostalCode'] = true;
         $this->originPostalCode = $originPostalCode;
@@ -335,9 +335,9 @@ class TimeInTransitRequest extends \ArrayObject
     Valid values: 
     Must conform to ISO-defined country codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode() : ?string
     {
         return $this->destinationCountryCode;
     }
@@ -346,11 +346,11 @@ class TimeInTransitRequest extends \ArrayObject
     Valid values: 
     Must conform to ISO-defined country codes.
     *
-    * @param string $destinationCountryCode
+    * @param string|null $destinationCountryCode
     *
     * @return self
     */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(?string $destinationCountryCode) : self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -360,9 +360,9 @@ class TimeInTransitRequest extends \ArrayObject
     * The shipment destination state or province.  For U.S. addresses, the value must be a valid 2-character value (per U.S. Mail standards).  
     For non-U.S. addresses the full State or Province name should be provided.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationStateProvince() : string
+    public function getDestinationStateProvince() : ?string
     {
         return $this->destinationStateProvince;
     }
@@ -370,11 +370,11 @@ class TimeInTransitRequest extends \ArrayObject
     * The shipment destination state or province.  For U.S. addresses, the value must be a valid 2-character value (per U.S. Mail standards).  
     For non-U.S. addresses the full State or Province name should be provided.
     *
-    * @param string $destinationStateProvince
+    * @param string|null $destinationStateProvince
     *
     * @return self
     */
-    public function setDestinationStateProvince(string $destinationStateProvince) : self
+    public function setDestinationStateProvince(?string $destinationStateProvince) : self
     {
         $this->initialized['destinationStateProvince'] = true;
         $this->destinationStateProvince = $destinationStateProvince;
@@ -383,20 +383,20 @@ class TimeInTransitRequest extends \ArrayObject
     /**
      * Required for International Requests for those countries that do not utilize postal codes. The shipment destination city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationCityName() : string
+    public function getDestinationCityName() : ?string
     {
         return $this->destinationCityName;
     }
     /**
      * Required for International Requests for those countries that do not utilize postal codes. The shipment destination city.
      *
-     * @param string $destinationCityName
+     * @param string|null $destinationCityName
      *
      * @return self
      */
-    public function setDestinationCityName(string $destinationCityName) : self
+    public function setDestinationCityName(?string $destinationCityName) : self
     {
         $this->initialized['destinationCityName'] = true;
         $this->destinationCityName = $destinationCityName;
@@ -405,20 +405,20 @@ class TimeInTransitRequest extends \ArrayObject
     /**
      * The shipment destination town.  Town is a subdivision of city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationTownName() : string
+    public function getDestinationTownName() : ?string
     {
         return $this->destinationTownName;
     }
     /**
      * The shipment destination town.  Town is a subdivision of city.
      *
-     * @param string $destinationTownName
+     * @param string|null $destinationTownName
      *
      * @return self
      */
-    public function setDestinationTownName(string $destinationTownName) : self
+    public function setDestinationTownName(?string $destinationTownName) : self
     {
         $this->initialized['destinationTownName'] = true;
         $this->destinationTownName = $destinationTownName;
@@ -428,9 +428,9 @@ class TimeInTransitRequest extends \ArrayObject
     * The shipment destination postal code.  
     Required for Domestic requests. Either 5- or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode() : ?string
     {
         return $this->destinationPostalCode;
     }
@@ -438,11 +438,11 @@ class TimeInTransitRequest extends \ArrayObject
     * The shipment destination postal code.  
     Required for Domestic requests. Either 5- or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $destinationPostalCode
+    * @param string|null $destinationPostalCode
     *
     * @return self
     */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(?string $destinationPostalCode) : self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -457,9 +457,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     Defaults to commercial for International Requests.
     *
-    * @return string
+    * @return string|null
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator() : ?string
     {
         return $this->residentialIndicator;
     }
@@ -472,11 +472,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     Defaults to commercial for International Requests.
     *
-    * @param string $residentialIndicator
+    * @param string|null $residentialIndicator
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(?string $residentialIndicator) : self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;
@@ -486,9 +486,9 @@ class TimeInTransitRequest extends \ArrayObject
     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.  Format is YYYY-MM-DD.  YYYY = 4 digit year; MM = 2 digit month, valid values 01-12; DD = 2 digit day of month, valid values 01-31 
     If no value is provided, defaults to current system date.
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipDate() : string
+    public function getShipDate() : ?string
     {
         return $this->shipDate;
     }
@@ -496,11 +496,11 @@ class TimeInTransitRequest extends \ArrayObject
     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.  Format is YYYY-MM-DD.  YYYY = 4 digit year; MM = 2 digit month, valid values 01-12; DD = 2 digit day of month, valid values 01-31 
     If no value is provided, defaults to current system date.
     *
-    * @param string $shipDate
+    * @param string|null $shipDate
     *
     * @return self
     */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(?string $shipDate) : self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -510,9 +510,9 @@ class TimeInTransitRequest extends \ArrayObject
     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
     Format is HH:MM:SS
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipTime() : string
+    public function getShipTime() : ?string
     {
         return $this->shipTime;
     }
@@ -520,11 +520,11 @@ class TimeInTransitRequest extends \ArrayObject
     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
     Format is HH:MM:SS
     *
-    * @param string $shipTime
+    * @param string|null $shipTime
     *
     * @return self
     */
-    public function setShipTime(string $shipTime) : self
+    public function setShipTime(?string $shipTime) : self
     {
         $this->initialized['shipTime'] = true;
         $this->shipTime = $shipTime;
@@ -537,9 +537,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     Note: Maximum value is 70 kilograms or 150 pounds.
     *
-    * @return float
+    * @return float|null
     */
-    public function getWeight() : float
+    public function getWeight() : ?float
     {
         return $this->weight;
     }
@@ -550,11 +550,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     Note: Maximum value is 70 kilograms or 150 pounds.
     *
-    * @param float $weight
+    * @param float|null $weight
     *
     * @return self
     */
-    public function setWeight(float $weight) : self
+    public function setWeight(?float $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -565,9 +565,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     Valid Values: "LBS", "KGS"
     *
-    * @return string
+    * @return string|null
     */
-    public function getWeightUnitOfMeasure() : string
+    public function getWeightUnitOfMeasure() : ?string
     {
         return $this->weightUnitOfMeasure;
     }
@@ -576,11 +576,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     Valid Values: "LBS", "KGS"
     *
-    * @param string $weightUnitOfMeasure
+    * @param string|null $weightUnitOfMeasure
     *
     * @return self
     */
-    public function setWeightUnitOfMeasure(string $weightUnitOfMeasure) : self
+    public function setWeightUnitOfMeasure(?string $weightUnitOfMeasure) : self
     {
         $this->initialized['weightUnitOfMeasure'] = true;
         $this->weightUnitOfMeasure = $weightUnitOfMeasure;
@@ -595,9 +595,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     Note: If decimal values are used, valid values will be rounded to the tenths.
     *
-    * @return float
+    * @return float|null
     */
-    public function getShipmentContentsValue() : float
+    public function getShipmentContentsValue() : ?float
     {
         return $this->shipmentContentsValue;
     }
@@ -610,11 +610,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     Note: If decimal values are used, valid values will be rounded to the tenths.
     *
-    * @param float $shipmentContentsValue
+    * @param float|null $shipmentContentsValue
     *
     * @return self
     */
-    public function setShipmentContentsValue(float $shipmentContentsValue) : self
+    public function setShipmentContentsValue(?float $shipmentContentsValue) : self
     {
         $this->initialized['shipmentContentsValue'] = true;
         $this->shipmentContentsValue = $shipmentContentsValue;
@@ -624,9 +624,9 @@ class TimeInTransitRequest extends \ArrayObject
     * Required if ShipmentContentsValue is populated.  The unit of currency used for values.  
     Valid value: must conform to ISO standards.
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipmentContentsCurrencyCode() : string
+    public function getShipmentContentsCurrencyCode() : ?string
     {
         return $this->shipmentContentsCurrencyCode;
     }
@@ -634,11 +634,11 @@ class TimeInTransitRequest extends \ArrayObject
     * Required if ShipmentContentsValue is populated.  The unit of currency used for values.  
     Valid value: must conform to ISO standards.
     *
-    * @param string $shipmentContentsCurrencyCode
+    * @param string|null $shipmentContentsCurrencyCode
     *
     * @return self
     */
-    public function setShipmentContentsCurrencyCode(string $shipmentContentsCurrencyCode) : self
+    public function setShipmentContentsCurrencyCode(?string $shipmentContentsCurrencyCode) : self
     {
         $this->initialized['shipmentContentsCurrencyCode'] = true;
         $this->shipmentContentsCurrencyCode = $shipmentContentsCurrencyCode;
@@ -651,9 +651,9 @@ class TimeInTransitRequest extends \ArrayObject
     03 - Non Document 
     04 - WWEF (Pallet)
     *
-    * @return string
+    * @return string|null
     */
-    public function getBillType() : string
+    public function getBillType() : ?string
     {
         return $this->billType;
     }
@@ -664,11 +664,11 @@ class TimeInTransitRequest extends \ArrayObject
     03 - Non Document 
     04 - WWEF (Pallet)
     *
-    * @param string $billType
+    * @param string|null $billType
     *
     * @return self
     */
-    public function setBillType(string $billType) : self
+    public function setBillType(?string $billType) : self
     {
         $this->initialized['billType'] = true;
         $this->billType = $billType;
@@ -682,9 +682,9 @@ class TimeInTransitRequest extends \ArrayObject
     Defaults to true 
     Note: not to be exposed to external customers.
     *
-    * @return bool
+    * @return bool|null
     */
-    public function getAvvFlag() : bool
+    public function getAvvFlag() : ?bool
     {
         return $this->avvFlag;
     }
@@ -696,11 +696,11 @@ class TimeInTransitRequest extends \ArrayObject
     Defaults to true 
     Note: not to be exposed to external customers.
     *
-    * @param bool $avvFlag
+    * @param bool|null $avvFlag
     *
     * @return self
     */
-    public function setAvvFlag(bool $avvFlag) : self
+    public function setAvvFlag(?bool $avvFlag) : self
     {
         $this->initialized['avvFlag'] = true;
         $this->avvFlag = $avvFlag;
@@ -709,20 +709,20 @@ class TimeInTransitRequest extends \ArrayObject
     /**
      * Sets the number of packages in shipment.  Default value is 1.
      *
-     * @return int
+     * @return int|null
      */
-    public function getNumberOfPackages() : int
+    public function getNumberOfPackages() : ?int
     {
         return $this->numberOfPackages;
     }
     /**
      * Sets the number of packages in shipment.  Default value is 1.
      *
-     * @param int $numberOfPackages
+     * @param int|null $numberOfPackages
      *
      * @return self
      */
-    public function setNumberOfPackages(int $numberOfPackages) : self
+    public function setNumberOfPackages(?int $numberOfPackages) : self
     {
         $this->initialized['numberOfPackages'] = true;
         $this->numberOfPackages = $numberOfPackages;
@@ -738,9 +738,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     The default value is "0" 
     *
-    * @return int
+    * @return int|null
     */
-    public function getDropOffAtFacilityIndicator() : int
+    public function getDropOffAtFacilityIndicator() : ?int
     {
         return $this->dropOffAtFacilityIndicator;
     }
@@ -754,11 +754,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     The default value is "0" 
     *
-    * @param int $dropOffAtFacilityIndicator
+    * @param int|null $dropOffAtFacilityIndicator
     *
     * @return self
     */
-    public function setDropOffAtFacilityIndicator(int $dropOffAtFacilityIndicator) : self
+    public function setDropOffAtFacilityIndicator(?int $dropOffAtFacilityIndicator) : self
     {
         $this->initialized['dropOffAtFacilityIndicator'] = true;
         $this->dropOffAtFacilityIndicator = $dropOffAtFacilityIndicator;
@@ -774,9 +774,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     The default value is "0" 
     *
-    * @return int
+    * @return int|null
     */
-    public function getHoldForPickupIndicator() : int
+    public function getHoldForPickupIndicator() : ?int
     {
         return $this->holdForPickupIndicator;
     }
@@ -790,11 +790,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     The default value is "0" 
     *
-    * @param int $holdForPickupIndicator
+    * @param int|null $holdForPickupIndicator
     *
     * @return self
     */
-    public function setHoldForPickupIndicator(int $holdForPickupIndicator) : self
+    public function setHoldForPickupIndicator(?int $holdForPickupIndicator) : self
     {
         $this->initialized['holdForPickupIndicator'] = true;
         $this->holdForPickupIndicator = $holdForPickupIndicator;
@@ -805,9 +805,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     Default value is false.
     *
-    * @return bool
+    * @return bool|null
     */
-    public function getReturnUnfilterdServices() : bool
+    public function getReturnUnfilterdServices() : ?bool
     {
         return $this->returnUnfilterdServices;
     }
@@ -816,11 +816,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     Default value is false.
     *
-    * @param bool $returnUnfilterdServices
+    * @param bool|null $returnUnfilterdServices
     *
     * @return self
     */
-    public function setReturnUnfilterdServices(bool $returnUnfilterdServices) : self
+    public function setReturnUnfilterdServices(?bool $returnUnfilterdServices) : self
     {
         $this->initialized['returnUnfilterdServices'] = true;
         $this->returnUnfilterdServices = $returnUnfilterdServices;
@@ -831,9 +831,9 @@ class TimeInTransitRequest extends \ArrayObject
     
     Default value is 200.
     *
-    * @return int
+    * @return int|null
     */
-    public function getMaxList() : int
+    public function getMaxList() : ?int
     {
         return $this->maxList;
     }
@@ -842,11 +842,11 @@ class TimeInTransitRequest extends \ArrayObject
     
     Default value is 200.
     *
-    * @param int $maxList
+    * @param int|null $maxList
     *
     * @return self
     */
-    public function setMaxList(int $maxList) : self
+    public function setMaxList(?int $maxList) : self
     {
         $this->initialized['maxList'] = true;
         $this->maxList = $maxList;

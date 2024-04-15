@@ -15,32 +15,32 @@ class FreightShipRequest extends \ArrayObject
     /**
      * Freight Ship Request Container.
      *
-     * @var FreightShipRequestRequest
+     * @var FreightShipRequestRequest|null
      */
     protected $request;
     /**
      * Shipment Container.
      *
-     * @var FreightShipRequestShipment
+     * @var FreightShipRequestShipment|null
      */
     protected $shipment;
     /**
      * Freight Ship Request Container.
      *
-     * @return FreightShipRequestRequest
+     * @return FreightShipRequestRequest|null
      */
-    public function getRequest() : FreightShipRequestRequest
+    public function getRequest() : ?FreightShipRequestRequest
     {
         return $this->request;
     }
     /**
      * Freight Ship Request Container.
      *
-     * @param FreightShipRequestRequest $request
+     * @param FreightShipRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(FreightShipRequestRequest $request) : self
+    public function setRequest(?FreightShipRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -49,20 +49,20 @@ class FreightShipRequest extends \ArrayObject
     /**
      * Shipment Container.
      *
-     * @return FreightShipRequestShipment
+     * @return FreightShipRequestShipment|null
      */
-    public function getShipment() : FreightShipRequestShipment
+    public function getShipment() : ?FreightShipRequestShipment
     {
         return $this->shipment;
     }
     /**
      * Shipment Container.
      *
-     * @param FreightShipRequestShipment $shipment
+     * @param FreightShipRequestShipment|null $shipment
      *
      * @return self
      */
-    public function setShipment(FreightShipRequestShipment $shipment) : self
+    public function setShipment(?FreightShipRequestShipment $shipment) : self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

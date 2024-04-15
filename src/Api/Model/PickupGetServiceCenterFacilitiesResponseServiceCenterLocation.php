@@ -15,32 +15,32 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
     /**
      * 
      *
-     * @var ServiceCenterLocationDropOffFacilities[]
+     * @var list<ServiceCenterLocationDropOffFacilities>|null
      */
     protected $dropOffFacilities;
     /**
      * Returns information for Pickup Facilities. This includes name of facility, address, and business hours.
      *
-     * @var ServiceCenterLocationPickupFacilities
+     * @var ServiceCenterLocationPickupFacilities|null
      */
     protected $pickupFacilities;
     /**
      * 
      *
-     * @return ServiceCenterLocationDropOffFacilities[]
+     * @return list<ServiceCenterLocationDropOffFacilities>|null
      */
-    public function getDropOffFacilities() : array
+    public function getDropOffFacilities() : ?array
     {
         return $this->dropOffFacilities;
     }
     /**
      * 
      *
-     * @param ServiceCenterLocationDropOffFacilities[] $dropOffFacilities
+     * @param list<ServiceCenterLocationDropOffFacilities>|null $dropOffFacilities
      *
      * @return self
      */
-    public function setDropOffFacilities(array $dropOffFacilities) : self
+    public function setDropOffFacilities(?array $dropOffFacilities) : self
     {
         $this->initialized['dropOffFacilities'] = true;
         $this->dropOffFacilities = $dropOffFacilities;
@@ -49,20 +49,20 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
     /**
      * Returns information for Pickup Facilities. This includes name of facility, address, and business hours.
      *
-     * @return ServiceCenterLocationPickupFacilities
+     * @return ServiceCenterLocationPickupFacilities|null
      */
-    public function getPickupFacilities() : ServiceCenterLocationPickupFacilities
+    public function getPickupFacilities() : ?ServiceCenterLocationPickupFacilities
     {
         return $this->pickupFacilities;
     }
     /**
      * Returns information for Pickup Facilities. This includes name of facility, address, and business hours.
      *
-     * @param ServiceCenterLocationPickupFacilities $pickupFacilities
+     * @param ServiceCenterLocationPickupFacilities|null $pickupFacilities
      *
      * @return self
      */
-    public function setPickupFacilities(ServiceCenterLocationPickupFacilities $pickupFacilities) : self
+    public function setPickupFacilities(?ServiceCenterLocationPickupFacilities $pickupFacilities) : self
     {
         $this->initialized['pickupFacilities'] = true;
         $this->pickupFacilities = $pickupFacilities;

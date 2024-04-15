@@ -15,32 +15,32 @@ class PackingListReference extends \ArrayObject
     /**
      * Reference Label.
      *
-     * @var string
+     * @var string|null
      */
     protected $label;
     /**
      * Reference Value.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Reference Label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLabel() : string
+    public function getLabel() : ?string
     {
         return $this->label;
     }
     /**
      * Reference Label.
      *
-     * @param string $label
+     * @param string|null $label
      *
      * @return self
      */
-    public function setLabel(string $label) : self
+    public function setLabel(?string $label) : self
     {
         $this->initialized['label'] = true;
         $this->label = $label;
@@ -49,20 +49,20 @@ class PackingListReference extends \ArrayObject
     /**
      * Reference Value.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Reference Value.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

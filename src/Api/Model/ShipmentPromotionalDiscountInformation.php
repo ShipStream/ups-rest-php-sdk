@@ -15,32 +15,32 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
     /**
      * Promotion Code. A discount that is applied to the user.  Required if PromotionalDiscountInformation container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $promoCode;
     /**
      * Promotion Alias code  Required if PromotionalDiscountInformation container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $promoAliasCode;
     /**
      * Promotion Code. A discount that is applied to the user.  Required if PromotionalDiscountInformation container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPromoCode() : string
+    public function getPromoCode() : ?string
     {
         return $this->promoCode;
     }
     /**
      * Promotion Code. A discount that is applied to the user.  Required if PromotionalDiscountInformation container is present.
      *
-     * @param string $promoCode
+     * @param string|null $promoCode
      *
      * @return self
      */
-    public function setPromoCode(string $promoCode) : self
+    public function setPromoCode(?string $promoCode) : self
     {
         $this->initialized['promoCode'] = true;
         $this->promoCode = $promoCode;
@@ -49,20 +49,20 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
     /**
      * Promotion Alias code  Required if PromotionalDiscountInformation container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPromoAliasCode() : string
+    public function getPromoAliasCode() : ?string
     {
         return $this->promoAliasCode;
     }
     /**
      * Promotion Alias code  Required if PromotionalDiscountInformation container is present.
      *
-     * @param string $promoAliasCode
+     * @param string|null $promoAliasCode
      *
      * @return self
      */
-    public function setPromoAliasCode(string $promoAliasCode) : self
+    public function setPromoAliasCode(?string $promoAliasCode) : self
     {
         $this->initialized['promoAliasCode'] = true;
         $this->promoAliasCode = $promoAliasCode;

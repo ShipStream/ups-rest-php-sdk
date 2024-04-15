@@ -16,52 +16,52 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     * File name belonging to specific subscription requested by user.
     Format: YYMMDD_HHmmssnnn
     *
-    * @var string
+    * @var string|null
     */
     protected $fileName;
     /**
      * Container that displays whether the file is read or unread.
      *
-     * @var SubscriptionFileStatusType
+     * @var SubscriptionFileStatusType|null
      */
     protected $statusType;
     /**
      * 
      *
-     * @var SubscriptionFileManifest[]
+     * @var list<SubscriptionFileManifest>|null
      */
     protected $manifest;
     /**
      * 
      *
-     * @var SubscriptionFileOrigin[]
+     * @var list<SubscriptionFileOrigin>|null
      */
     protected $origin;
     /**
      * 
      *
-     * @var SubscriptionFileException[]
+     * @var list<SubscriptionFileException>|null
      */
     protected $exception;
     /**
      * 
      *
-     * @var SubscriptionFileDelivery[]
+     * @var list<SubscriptionFileDelivery>|null
      */
     protected $delivery;
     /**
      * 
      *
-     * @var SubscriptionFileGeneric[]
+     * @var list<SubscriptionFileGeneric>|null
      */
     protected $generic;
     /**
     * File name belonging to specific subscription requested by user.
     Format: YYMMDD_HHmmssnnn
     *
-    * @return string
+    * @return string|null
     */
-    public function getFileName() : string
+    public function getFileName() : ?string
     {
         return $this->fileName;
     }
@@ -69,11 +69,11 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     * File name belonging to specific subscription requested by user.
     Format: YYMMDD_HHmmssnnn
     *
-    * @param string $fileName
+    * @param string|null $fileName
     *
     * @return self
     */
-    public function setFileName(string $fileName) : self
+    public function setFileName(?string $fileName) : self
     {
         $this->initialized['fileName'] = true;
         $this->fileName = $fileName;
@@ -82,20 +82,20 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     /**
      * Container that displays whether the file is read or unread.
      *
-     * @return SubscriptionFileStatusType
+     * @return SubscriptionFileStatusType|null
      */
-    public function getStatusType() : SubscriptionFileStatusType
+    public function getStatusType() : ?SubscriptionFileStatusType
     {
         return $this->statusType;
     }
     /**
      * Container that displays whether the file is read or unread.
      *
-     * @param SubscriptionFileStatusType $statusType
+     * @param SubscriptionFileStatusType|null $statusType
      *
      * @return self
      */
-    public function setStatusType(SubscriptionFileStatusType $statusType) : self
+    public function setStatusType(?SubscriptionFileStatusType $statusType) : self
     {
         $this->initialized['statusType'] = true;
         $this->statusType = $statusType;
@@ -104,20 +104,20 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     /**
      * 
      *
-     * @return SubscriptionFileManifest[]
+     * @return list<SubscriptionFileManifest>|null
      */
-    public function getManifest() : array
+    public function getManifest() : ?array
     {
         return $this->manifest;
     }
     /**
      * 
      *
-     * @param SubscriptionFileManifest[] $manifest
+     * @param list<SubscriptionFileManifest>|null $manifest
      *
      * @return self
      */
-    public function setManifest(array $manifest) : self
+    public function setManifest(?array $manifest) : self
     {
         $this->initialized['manifest'] = true;
         $this->manifest = $manifest;
@@ -126,20 +126,20 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     /**
      * 
      *
-     * @return SubscriptionFileOrigin[]
+     * @return list<SubscriptionFileOrigin>|null
      */
-    public function getOrigin() : array
+    public function getOrigin() : ?array
     {
         return $this->origin;
     }
     /**
      * 
      *
-     * @param SubscriptionFileOrigin[] $origin
+     * @param list<SubscriptionFileOrigin>|null $origin
      *
      * @return self
      */
-    public function setOrigin(array $origin) : self
+    public function setOrigin(?array $origin) : self
     {
         $this->initialized['origin'] = true;
         $this->origin = $origin;
@@ -148,20 +148,20 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     /**
      * 
      *
-     * @return SubscriptionFileException[]
+     * @return list<SubscriptionFileException>|null
      */
-    public function getException() : array
+    public function getException() : ?array
     {
         return $this->exception;
     }
     /**
      * 
      *
-     * @param SubscriptionFileException[] $exception
+     * @param list<SubscriptionFileException>|null $exception
      *
      * @return self
      */
-    public function setException(array $exception) : self
+    public function setException(?array $exception) : self
     {
         $this->initialized['exception'] = true;
         $this->exception = $exception;
@@ -170,20 +170,20 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     /**
      * 
      *
-     * @return SubscriptionFileDelivery[]
+     * @return list<SubscriptionFileDelivery>|null
      */
-    public function getDelivery() : array
+    public function getDelivery() : ?array
     {
         return $this->delivery;
     }
     /**
      * 
      *
-     * @param SubscriptionFileDelivery[] $delivery
+     * @param list<SubscriptionFileDelivery>|null $delivery
      *
      * @return self
      */
-    public function setDelivery(array $delivery) : self
+    public function setDelivery(?array $delivery) : self
     {
         $this->initialized['delivery'] = true;
         $this->delivery = $delivery;
@@ -192,20 +192,20 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     /**
      * 
      *
-     * @return SubscriptionFileGeneric[]
+     * @return list<SubscriptionFileGeneric>|null
      */
-    public function getGeneric() : array
+    public function getGeneric() : ?array
     {
         return $this->generic;
     }
     /**
      * 
      *
-     * @param SubscriptionFileGeneric[] $generic
+     * @param list<SubscriptionFileGeneric>|null $generic
      *
      * @return self
      */
-    public function setGeneric(array $generic) : self
+    public function setGeneric(?array $generic) : self
     {
         $this->initialized['generic'] = true;
         $this->generic = $generic;

@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('GeocodeCandidate', $data)) {
+            if (\array_key_exists('GeocodeCandidate', $data) && $data['GeocodeCandidate'] !== null) {
                 $values = [];
                 foreach ($data['GeocodeCandidate'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate', 'json', $context);
@@ -48,7 +48,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setGeocodeCandidate($values);
                 unset($data['GeocodeCandidate']);
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            elseif (\array_key_exists('GeocodeCandidate', $data) && $data['GeocodeCandidate'] === null) {
+                $object->setGeocodeCandidate(null);
+            }
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $values_1 = [];
                 foreach ($data['Disclaimer'] as $value_1) {
                     $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
@@ -60,11 +63,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDisclaimer($values_1);
                 unset($data['Disclaimer']);
             }
-            if (\array_key_exists('DropLocation', $data)) {
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
+            }
+            if (\array_key_exists('DropLocation', $data) && $data['DropLocation'] !== null) {
                 $object->setDropLocation($this->denormalizer->denormalize($data['DropLocation'], 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation', 'json', $context));
                 unset($data['DropLocation']);
             }
-            if (\array_key_exists('AvailableLocationAttributes', $data)) {
+            elseif (\array_key_exists('DropLocation', $data) && $data['DropLocation'] === null) {
+                $object->setDropLocation(null);
+            }
+            if (\array_key_exists('AvailableLocationAttributes', $data) && $data['AvailableLocationAttributes'] !== null) {
                 $values_3 = [];
                 foreach ($data['AvailableLocationAttributes'] as $value_3) {
                     $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes', 'json', $context);
@@ -72,9 +81,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAvailableLocationAttributes($values_3);
                 unset($data['AvailableLocationAttributes']);
             }
-            if (\array_key_exists('ActiveAvailableAccessPointIndicator', $data)) {
+            elseif (\array_key_exists('AvailableLocationAttributes', $data) && $data['AvailableLocationAttributes'] === null) {
+                $object->setAvailableLocationAttributes(null);
+            }
+            if (\array_key_exists('ActiveAvailableAccessPointIndicator', $data) && $data['ActiveAvailableAccessPointIndicator'] !== null) {
                 $object->setActiveAvailableAccessPointIndicator($data['ActiveAvailableAccessPointIndicator']);
                 unset($data['ActiveAvailableAccessPointIndicator']);
+            }
+            elseif (\array_key_exists('ActiveAvailableAccessPointIndicator', $data) && $data['ActiveAvailableAccessPointIndicator'] === null) {
+                $object->setActiveAvailableAccessPointIndicator(null);
             }
             foreach ($data as $key_1 => $value_4) {
                 if (preg_match('/.*/', (string) $key_1)) {
@@ -159,7 +174,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('GeocodeCandidate', $data)) {
+            if (\array_key_exists('GeocodeCandidate', $data) && $data['GeocodeCandidate'] !== null) {
                 $values = [];
                 foreach ($data['GeocodeCandidate'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate', 'json', $context);
@@ -167,7 +182,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setGeocodeCandidate($values);
                 unset($data['GeocodeCandidate']);
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            elseif (\array_key_exists('GeocodeCandidate', $data) && $data['GeocodeCandidate'] === null) {
+                $object->setGeocodeCandidate(null);
+            }
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $values_1 = [];
                 foreach ($data['Disclaimer'] as $value_1) {
                     $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
@@ -179,11 +197,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDisclaimer($values_1);
                 unset($data['Disclaimer']);
             }
-            if (\array_key_exists('DropLocation', $data)) {
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
+            }
+            if (\array_key_exists('DropLocation', $data) && $data['DropLocation'] !== null) {
                 $object->setDropLocation($this->denormalizer->denormalize($data['DropLocation'], 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation', 'json', $context));
                 unset($data['DropLocation']);
             }
-            if (\array_key_exists('AvailableLocationAttributes', $data)) {
+            elseif (\array_key_exists('DropLocation', $data) && $data['DropLocation'] === null) {
+                $object->setDropLocation(null);
+            }
+            if (\array_key_exists('AvailableLocationAttributes', $data) && $data['AvailableLocationAttributes'] !== null) {
                 $values_3 = [];
                 foreach ($data['AvailableLocationAttributes'] as $value_3) {
                     $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes', 'json', $context);
@@ -191,9 +215,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAvailableLocationAttributes($values_3);
                 unset($data['AvailableLocationAttributes']);
             }
-            if (\array_key_exists('ActiveAvailableAccessPointIndicator', $data)) {
+            elseif (\array_key_exists('AvailableLocationAttributes', $data) && $data['AvailableLocationAttributes'] === null) {
+                $object->setAvailableLocationAttributes(null);
+            }
+            if (\array_key_exists('ActiveAvailableAccessPointIndicator', $data) && $data['ActiveAvailableAccessPointIndicator'] !== null) {
                 $object->setActiveAvailableAccessPointIndicator($data['ActiveAvailableAccessPointIndicator']);
                 unset($data['ActiveAvailableAccessPointIndicator']);
+            }
+            elseif (\array_key_exists('ActiveAvailableAccessPointIndicator', $data) && $data['ActiveAvailableAccessPointIndicator'] === null) {
+                $object->setActiveAvailableAccessPointIndicator(null);
             }
             foreach ($data as $key_1 => $value_4) {
                 if (preg_match('/.*/', (string) $key_1)) {

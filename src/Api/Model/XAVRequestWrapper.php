@@ -15,26 +15,26 @@ class XAVRequestWrapper extends \ArrayObject
     /**
      * 
      *
-     * @var XAVRequest
+     * @var XAVRequest|null
      */
     protected $xAVRequest;
     /**
      * 
      *
-     * @return XAVRequest
+     * @return XAVRequest|null
      */
-    public function getXAVRequest() : XAVRequest
+    public function getXAVRequest() : ?XAVRequest
     {
         return $this->xAVRequest;
     }
     /**
      * 
      *
-     * @param XAVRequest $xAVRequest
+     * @param XAVRequest|null $xAVRequest
      *
      * @return self
      */
-    public function setXAVRequest(XAVRequest $xAVRequest) : self
+    public function setXAVRequest(?XAVRequest $xAVRequest) : self
     {
         $this->initialized['xAVRequest'] = true;
         $this->xAVRequest = $xAVRequest;

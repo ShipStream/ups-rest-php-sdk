@@ -17,13 +17,13 @@ class DropLocationLocationAttribute extends \ArrayObject
     There are 4 types of attributes. 
     They are: Location, Retail Location, Additional Services and Program Type.
     *
-    * @var LocationAttributeOptionType
+    * @var LocationAttributeOptionType|null
     */
     protected $optionType;
     /**
      * 
      *
-     * @var LocationAttributeOptionCode[]
+     * @var list<LocationAttributeOptionCode>|null
      */
     protected $optionCode;
     /**
@@ -31,9 +31,9 @@ class DropLocationLocationAttribute extends \ArrayObject
     There are 4 types of attributes. 
     They are: Location, Retail Location, Additional Services and Program Type.
     *
-    * @return LocationAttributeOptionType
+    * @return LocationAttributeOptionType|null
     */
-    public function getOptionType() : LocationAttributeOptionType
+    public function getOptionType() : ?LocationAttributeOptionType
     {
         return $this->optionType;
     }
@@ -42,11 +42,11 @@ class DropLocationLocationAttribute extends \ArrayObject
     There are 4 types of attributes. 
     They are: Location, Retail Location, Additional Services and Program Type.
     *
-    * @param LocationAttributeOptionType $optionType
+    * @param LocationAttributeOptionType|null $optionType
     *
     * @return self
     */
-    public function setOptionType(LocationAttributeOptionType $optionType) : self
+    public function setOptionType(?LocationAttributeOptionType $optionType) : self
     {
         $this->initialized['optionType'] = true;
         $this->optionType = $optionType;
@@ -55,20 +55,20 @@ class DropLocationLocationAttribute extends \ArrayObject
     /**
      * 
      *
-     * @return LocationAttributeOptionCode[]
+     * @return list<LocationAttributeOptionCode>|null
      */
-    public function getOptionCode() : array
+    public function getOptionCode() : ?array
     {
         return $this->optionCode;
     }
     /**
      * 
      *
-     * @param LocationAttributeOptionCode[] $optionCode
+     * @param list<LocationAttributeOptionCode>|null $optionCode
      *
      * @return self
      */
-    public function setOptionCode(array $optionCode) : self
+    public function setOptionCode(?array $optionCode) : self
     {
         $this->initialized['optionCode'] = true;
         $this->optionCode = $optionCode;

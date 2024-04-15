@@ -15,26 +15,26 @@ class LABELRECOVERYResponseWrapper extends \ArrayObject
     /**
      * Response for the Label recovery request  Validates the date range and label being present. Also if the shipment is return or not
      *
-     * @var LabelRecoveryResponse
+     * @var LabelRecoveryResponse|null
      */
     protected $labelRecoveryResponse;
     /**
      * Response for the Label recovery request  Validates the date range and label being present. Also if the shipment is return or not
      *
-     * @return LabelRecoveryResponse
+     * @return LabelRecoveryResponse|null
      */
-    public function getLabelRecoveryResponse() : LabelRecoveryResponse
+    public function getLabelRecoveryResponse() : ?LabelRecoveryResponse
     {
         return $this->labelRecoveryResponse;
     }
     /**
      * Response for the Label recovery request  Validates the date range and label being present. Also if the shipment is return or not
      *
-     * @param LabelRecoveryResponse $labelRecoveryResponse
+     * @param LabelRecoveryResponse|null $labelRecoveryResponse
      *
      * @return self
      */
-    public function setLabelRecoveryResponse(LabelRecoveryResponse $labelRecoveryResponse) : self
+    public function setLabelRecoveryResponse(?LabelRecoveryResponse $labelRecoveryResponse) : self
     {
         $this->initialized['labelRecoveryResponse'] = true;
         $this->labelRecoveryResponse = $labelRecoveryResponse;

@@ -15,44 +15,44 @@ class Shipment extends \ArrayObject
     /**
      * inquiryNumber
      *
-     * @var string
+     * @var string|null
      */
     protected $inquiryNumber;
     /**
      * 
      *
-     * @var Package[]
+     * @var list<Package>|null
      */
     protected $package;
     /**
      * userRelation
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $userRelation;
     /**
      * 
      *
-     * @var Warning[]|null
+     * @var list<Warning>|null
      */
     protected $warnings;
     /**
      * inquiryNumber
      *
-     * @return string
+     * @return string|null
      */
-    public function getInquiryNumber() : string
+    public function getInquiryNumber() : ?string
     {
         return $this->inquiryNumber;
     }
     /**
      * inquiryNumber
      *
-     * @param string $inquiryNumber
+     * @param string|null $inquiryNumber
      *
      * @return self
      */
-    public function setInquiryNumber(string $inquiryNumber) : self
+    public function setInquiryNumber(?string $inquiryNumber) : self
     {
         $this->initialized['inquiryNumber'] = true;
         $this->inquiryNumber = $inquiryNumber;
@@ -61,20 +61,20 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @return Package[]
+     * @return list<Package>|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param Package[] $package
+     * @param list<Package>|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
@@ -83,20 +83,20 @@ class Shipment extends \ArrayObject
     /**
      * userRelation
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getUserRelation() : array
+    public function getUserRelation() : ?array
     {
         return $this->userRelation;
     }
     /**
      * userRelation
      *
-     * @param string[] $userRelation
+     * @param list<string>|null $userRelation
      *
      * @return self
      */
-    public function setUserRelation(array $userRelation) : self
+    public function setUserRelation(?array $userRelation) : self
     {
         $this->initialized['userRelation'] = true;
         $this->userRelation = $userRelation;
@@ -105,7 +105,7 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @return Warning[]|null
+     * @return list<Warning>|null
      */
     public function getWarnings() : ?array
     {
@@ -114,7 +114,7 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @param Warning[]|null $warnings
+     * @param list<Warning>|null $warnings
      *
      * @return self
      */

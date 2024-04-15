@@ -15,26 +15,26 @@ class PICKUPCancelRequestWrapper extends \ArrayObject
     /**
      * This request is to cancel an on-callpickup.
      *
-     * @var PickupCancelRequest
+     * @var PickupCancelRequest|null
      */
     protected $pickupCancelRequest;
     /**
      * This request is to cancel an on-callpickup.
      *
-     * @return PickupCancelRequest
+     * @return PickupCancelRequest|null
      */
-    public function getPickupCancelRequest() : PickupCancelRequest
+    public function getPickupCancelRequest() : ?PickupCancelRequest
     {
         return $this->pickupCancelRequest;
     }
     /**
      * This request is to cancel an on-callpickup.
      *
-     * @param PickupCancelRequest $pickupCancelRequest
+     * @param PickupCancelRequest|null $pickupCancelRequest
      *
      * @return self
      */
-    public function setPickupCancelRequest(PickupCancelRequest $pickupCancelRequest) : self
+    public function setPickupCancelRequest(?PickupCancelRequest $pickupCancelRequest) : self
     {
         $this->initialized['pickupCancelRequest'] = true;
         $this->pickupCancelRequest = $pickupCancelRequest;

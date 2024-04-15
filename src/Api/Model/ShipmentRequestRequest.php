@@ -20,7 +20,7 @@ class ShipmentRequestRequest extends \ArrayObject
     
     validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
     *
-    * @var string
+    * @var string|null
     */
     protected $requestOption;
     /**
@@ -34,13 +34,13 @@ class ShipmentRequestRequest extends \ArrayObject
     
     Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
     *
-    * @var string
+    * @var string|null
     */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
@@ -51,9 +51,9 @@ class ShipmentRequestRequest extends \ArrayObject
     
     validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRequestOption() : string
+    public function getRequestOption() : ?string
     {
         return $this->requestOption;
     }
@@ -65,11 +65,11 @@ class ShipmentRequestRequest extends \ArrayObject
     
     validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
     *
-    * @param string $requestOption
+    * @param string|null $requestOption
     *
     * @return self
     */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(?string $requestOption) : self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -86,9 +86,9 @@ class ShipmentRequestRequest extends \ArrayObject
     
     Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
     *
-    * @return string
+    * @return string|null
     */
-    public function getSubVersion() : string
+    public function getSubVersion() : ?string
     {
         return $this->subVersion;
     }
@@ -103,11 +103,11 @@ class ShipmentRequestRequest extends \ArrayObject
     
     Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
     *
-    * @param string $subVersion
+    * @param string|null $subVersion
     *
     * @return self
     */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(?string $subVersion) : self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -116,20 +116,20 @@ class ShipmentRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

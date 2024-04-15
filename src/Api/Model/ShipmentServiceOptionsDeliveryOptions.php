@@ -15,32 +15,32 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
     /**
      * The presence of the tag LiftGateAtDeliveryIndicator indicates that the shipment requires a lift gate for delivery.
      *
-     * @var string
+     * @var string|null
      */
     protected $liftGateAtDeliveryIndicator;
     /**
      * The presence of the tag DropOffAtUPSFacilityIndicator indicates the package will be dropped at a UPS facility for shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $dropOffAtUPSFacilityIndicator;
     /**
      * The presence of the tag LiftGateAtDeliveryIndicator indicates that the shipment requires a lift gate for delivery.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLiftGateAtDeliveryIndicator() : string
+    public function getLiftGateAtDeliveryIndicator() : ?string
     {
         return $this->liftGateAtDeliveryIndicator;
     }
     /**
      * The presence of the tag LiftGateAtDeliveryIndicator indicates that the shipment requires a lift gate for delivery.
      *
-     * @param string $liftGateAtDeliveryIndicator
+     * @param string|null $liftGateAtDeliveryIndicator
      *
      * @return self
      */
-    public function setLiftGateAtDeliveryIndicator(string $liftGateAtDeliveryIndicator) : self
+    public function setLiftGateAtDeliveryIndicator(?string $liftGateAtDeliveryIndicator) : self
     {
         $this->initialized['liftGateAtDeliveryIndicator'] = true;
         $this->liftGateAtDeliveryIndicator = $liftGateAtDeliveryIndicator;
@@ -49,20 +49,20 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
     /**
      * The presence of the tag DropOffAtUPSFacilityIndicator indicates the package will be dropped at a UPS facility for shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDropOffAtUPSFacilityIndicator() : string
+    public function getDropOffAtUPSFacilityIndicator() : ?string
     {
         return $this->dropOffAtUPSFacilityIndicator;
     }
     /**
      * The presence of the tag DropOffAtUPSFacilityIndicator indicates the package will be dropped at a UPS facility for shipment.
      *
-     * @param string $dropOffAtUPSFacilityIndicator
+     * @param string|null $dropOffAtUPSFacilityIndicator
      *
      * @return self
      */
-    public function setDropOffAtUPSFacilityIndicator(string $dropOffAtUPSFacilityIndicator) : self
+    public function setDropOffAtUPSFacilityIndicator(?string $dropOffAtUPSFacilityIndicator) : self
     {
         $this->initialized['dropOffAtUPSFacilityIndicator'] = true;
         $this->dropOffAtUPSFacilityIndicator = $dropOffAtUPSFacilityIndicator;

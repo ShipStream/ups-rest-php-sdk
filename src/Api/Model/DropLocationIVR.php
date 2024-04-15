@@ -16,23 +16,23 @@ class DropLocationIVR extends \ArrayObject
     * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
     ONLY FOR IVR.
     *
-    * @var string
+    * @var string|null
     */
     protected $phraseID;
     /**
     * Indicates to the response recipient that the information has changed, and a new audio file should be produced. 
     ONLY FOR IVR.
     *
-    * @var string
+    * @var string|null
     */
     protected $textToSpeechIndicator;
     /**
     * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
     ONLY FOR IVR.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPhraseID() : string
+    public function getPhraseID() : ?string
     {
         return $this->phraseID;
     }
@@ -40,11 +40,11 @@ class DropLocationIVR extends \ArrayObject
     * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
     ONLY FOR IVR.
     *
-    * @param string $phraseID
+    * @param string|null $phraseID
     *
     * @return self
     */
-    public function setPhraseID(string $phraseID) : self
+    public function setPhraseID(?string $phraseID) : self
     {
         $this->initialized['phraseID'] = true;
         $this->phraseID = $phraseID;
@@ -54,9 +54,9 @@ class DropLocationIVR extends \ArrayObject
     * Indicates to the response recipient that the information has changed, and a new audio file should be produced. 
     ONLY FOR IVR.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTextToSpeechIndicator() : string
+    public function getTextToSpeechIndicator() : ?string
     {
         return $this->textToSpeechIndicator;
     }
@@ -64,11 +64,11 @@ class DropLocationIVR extends \ArrayObject
     * Indicates to the response recipient that the information has changed, and a new audio file should be produced. 
     ONLY FOR IVR.
     *
-    * @param string $textToSpeechIndicator
+    * @param string|null $textToSpeechIndicator
     *
     * @return self
     */
-    public function setTextToSpeechIndicator(string $textToSpeechIndicator) : self
+    public function setTextToSpeechIndicator(?string $textToSpeechIndicator) : self
     {
         $this->initialized['textToSpeechIndicator'] = true;
         $this->textToSpeechIndicator = $textToSpeechIndicator;

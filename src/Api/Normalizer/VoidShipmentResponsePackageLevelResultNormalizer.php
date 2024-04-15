@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('Status', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
                 $object->setStatus($this->denormalizer->denormalize($data['Status'], 'ShipStream\\Ups\\Api\\Model\\PackageLevelResultStatus', 'json', $context));
                 unset($data['Status']);
+            }
+            elseif (\array_key_exists('Status', $data) && $data['Status'] === null) {
+                $object->setStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('Status', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
                 $object->setStatus($this->denormalizer->denormalize($data['Status'], 'ShipStream\\Ups\\Api\\Model\\PackageLevelResultStatus', 'json', $context));
                 unset($data['Status']);
+            }
+            elseif (\array_key_exists('Status', $data) && $data['Status'] === null) {
+                $object->setStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

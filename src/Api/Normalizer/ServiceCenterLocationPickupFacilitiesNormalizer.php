@@ -40,45 +40,75 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesAddress', 'json', $context));
                 unset($data['Address']);
             }
-            if (\array_key_exists('SLIC', $data)) {
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('SLIC', $data) && $data['SLIC'] !== null) {
                 $object->setSLIC($data['SLIC']);
                 unset($data['SLIC']);
             }
-            if (\array_key_exists('Type', $data)) {
+            elseif (\array_key_exists('SLIC', $data) && $data['SLIC'] === null) {
+                $object->setSLIC(null);
+            }
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('Timezone', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Timezone', $data) && $data['Timezone'] !== null) {
                 $object->setTimezone($data['Timezone']);
                 unset($data['Timezone']);
             }
-            if (\array_key_exists('Phone', $data)) {
+            elseif (\array_key_exists('Timezone', $data) && $data['Timezone'] === null) {
+                $object->setTimezone(null);
+            }
+            if (\array_key_exists('Phone', $data) && $data['Phone'] !== null) {
                 $object->setPhone($data['Phone']);
                 unset($data['Phone']);
             }
-            if (\array_key_exists('Fax', $data)) {
+            elseif (\array_key_exists('Phone', $data) && $data['Phone'] === null) {
+                $object->setPhone(null);
+            }
+            if (\array_key_exists('Fax', $data) && $data['Fax'] !== null) {
                 $object->setFax($data['Fax']);
                 unset($data['Fax']);
             }
-            if (\array_key_exists('FacilityTime', $data)) {
+            elseif (\array_key_exists('Fax', $data) && $data['Fax'] === null) {
+                $object->setFax(null);
+            }
+            if (\array_key_exists('FacilityTime', $data) && $data['FacilityTime'] !== null) {
                 $object->setFacilityTime($this->denormalizer->denormalize($data['FacilityTime'], 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTime', 'json', $context));
                 unset($data['FacilityTime']);
             }
-            if (\array_key_exists('AirportCode', $data)) {
+            elseif (\array_key_exists('FacilityTime', $data) && $data['FacilityTime'] === null) {
+                $object->setFacilityTime(null);
+            }
+            if (\array_key_exists('AirportCode', $data) && $data['AirportCode'] !== null) {
                 $object->setAirportCode($data['AirportCode']);
                 unset($data['AirportCode']);
             }
-            if (\array_key_exists('SortCode', $data)) {
+            elseif (\array_key_exists('AirportCode', $data) && $data['AirportCode'] === null) {
+                $object->setAirportCode(null);
+            }
+            if (\array_key_exists('SortCode', $data) && $data['SortCode'] !== null) {
                 $object->setSortCode($data['SortCode']);
                 unset($data['SortCode']);
+            }
+            elseif (\array_key_exists('SortCode', $data) && $data['SortCode'] === null) {
+                $object->setSortCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -148,45 +178,75 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesAddress', 'json', $context));
                 unset($data['Address']);
             }
-            if (\array_key_exists('SLIC', $data)) {
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('SLIC', $data) && $data['SLIC'] !== null) {
                 $object->setSLIC($data['SLIC']);
                 unset($data['SLIC']);
             }
-            if (\array_key_exists('Type', $data)) {
+            elseif (\array_key_exists('SLIC', $data) && $data['SLIC'] === null) {
+                $object->setSLIC(null);
+            }
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('Timezone', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Timezone', $data) && $data['Timezone'] !== null) {
                 $object->setTimezone($data['Timezone']);
                 unset($data['Timezone']);
             }
-            if (\array_key_exists('Phone', $data)) {
+            elseif (\array_key_exists('Timezone', $data) && $data['Timezone'] === null) {
+                $object->setTimezone(null);
+            }
+            if (\array_key_exists('Phone', $data) && $data['Phone'] !== null) {
                 $object->setPhone($data['Phone']);
                 unset($data['Phone']);
             }
-            if (\array_key_exists('Fax', $data)) {
+            elseif (\array_key_exists('Phone', $data) && $data['Phone'] === null) {
+                $object->setPhone(null);
+            }
+            if (\array_key_exists('Fax', $data) && $data['Fax'] !== null) {
                 $object->setFax($data['Fax']);
                 unset($data['Fax']);
             }
-            if (\array_key_exists('FacilityTime', $data)) {
+            elseif (\array_key_exists('Fax', $data) && $data['Fax'] === null) {
+                $object->setFax(null);
+            }
+            if (\array_key_exists('FacilityTime', $data) && $data['FacilityTime'] !== null) {
                 $object->setFacilityTime($this->denormalizer->denormalize($data['FacilityTime'], 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTime', 'json', $context));
                 unset($data['FacilityTime']);
             }
-            if (\array_key_exists('AirportCode', $data)) {
+            elseif (\array_key_exists('FacilityTime', $data) && $data['FacilityTime'] === null) {
+                $object->setFacilityTime(null);
+            }
+            if (\array_key_exists('AirportCode', $data) && $data['AirportCode'] !== null) {
                 $object->setAirportCode($data['AirportCode']);
                 unset($data['AirportCode']);
             }
-            if (\array_key_exists('SortCode', $data)) {
+            elseif (\array_key_exists('AirportCode', $data) && $data['AirportCode'] === null) {
+                $object->setAirportCode(null);
+            }
+            if (\array_key_exists('SortCode', $data) && $data['SortCode'] !== null) {
                 $object->setSortCode($data['SortCode']);
                 unset($data['SortCode']);
+            }
+            elseif (\array_key_exists('SortCode', $data) && $data['SortCode'] === null) {
+                $object->setSortCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

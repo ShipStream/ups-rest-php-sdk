@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($data['ReferenceNumber']);
                 unset($data['ReferenceNumber']);
+            }
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($data['ReferenceNumber']);
                 unset($data['ReferenceNumber']);
+            }
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

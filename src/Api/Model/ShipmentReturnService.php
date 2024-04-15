@@ -30,13 +30,13 @@ class ShipmentReturnService extends \ArrayObject
     19 = UPS Pack & Collect Service 3-Attempt Box 4
     20 = UPS Pack & Collect Service 3-Attempt Box 5
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Return Service description.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -57,9 +57,9 @@ class ShipmentReturnService extends \ArrayObject
     19 = UPS Pack & Collect Service 3-Attempt Box 4
     20 = UPS Pack & Collect Service 3-Attempt Box 5
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -81,11 +81,11 @@ class ShipmentReturnService extends \ArrayObject
     19 = UPS Pack & Collect Service 3-Attempt Box 4
     20 = UPS Pack & Collect Service 3-Attempt Box 5
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -94,20 +94,20 @@ class ShipmentReturnService extends \ArrayObject
     /**
      * Return Service description.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Return Service description.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

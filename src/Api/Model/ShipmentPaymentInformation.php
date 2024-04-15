@@ -15,32 +15,32 @@ class ShipmentPaymentInformation extends \ArrayObject
     /**
      * 
      *
-     * @var PaymentInformationShipmentCharge[]
+     * @var list<PaymentInformationShipmentCharge>|null
      */
     protected $shipmentCharge;
     /**
      * Split Duty VAT Indicator. The presence indicates the payer specified for Transportation Charges will pay transportation charges and any duties that apply to the shipment. The payer specified for Duties and Taxes will pay the VAT (Value-Added Tax) only.  This is an empty tag, any value inside is ignored. The payment method for Transportation charges must be UPS account. The UPS account must be a daily pickup account or an occasional account.
      *
-     * @var string
+     * @var string|null
      */
     protected $splitDutyVATIndicator;
     /**
      * 
      *
-     * @return PaymentInformationShipmentCharge[]
+     * @return list<PaymentInformationShipmentCharge>|null
      */
-    public function getShipmentCharge() : array
+    public function getShipmentCharge() : ?array
     {
         return $this->shipmentCharge;
     }
     /**
      * 
      *
-     * @param PaymentInformationShipmentCharge[] $shipmentCharge
+     * @param list<PaymentInformationShipmentCharge>|null $shipmentCharge
      *
      * @return self
      */
-    public function setShipmentCharge(array $shipmentCharge) : self
+    public function setShipmentCharge(?array $shipmentCharge) : self
     {
         $this->initialized['shipmentCharge'] = true;
         $this->shipmentCharge = $shipmentCharge;
@@ -49,20 +49,20 @@ class ShipmentPaymentInformation extends \ArrayObject
     /**
      * Split Duty VAT Indicator. The presence indicates the payer specified for Transportation Charges will pay transportation charges and any duties that apply to the shipment. The payer specified for Duties and Taxes will pay the VAT (Value-Added Tax) only.  This is an empty tag, any value inside is ignored. The payment method for Transportation charges must be UPS account. The UPS account must be a daily pickup account or an occasional account.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSplitDutyVATIndicator() : string
+    public function getSplitDutyVATIndicator() : ?string
     {
         return $this->splitDutyVATIndicator;
     }
     /**
      * Split Duty VAT Indicator. The presence indicates the payer specified for Transportation Charges will pay transportation charges and any duties that apply to the shipment. The payer specified for Duties and Taxes will pay the VAT (Value-Added Tax) only.  This is an empty tag, any value inside is ignored. The payment method for Transportation charges must be UPS account. The UPS account must be a daily pickup account or an occasional account.
      *
-     * @param string $splitDutyVATIndicator
+     * @param string|null $splitDutyVATIndicator
      *
      * @return self
      */
-    public function setSplitDutyVATIndicator(string $splitDutyVATIndicator) : self
+    public function setSplitDutyVATIndicator(?string $splitDutyVATIndicator) : self
     {
         $this->initialized['splitDutyVATIndicator'] = true;
         $this->splitDutyVATIndicator = $splitDutyVATIndicator;

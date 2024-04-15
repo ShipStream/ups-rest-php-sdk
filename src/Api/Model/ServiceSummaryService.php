@@ -15,26 +15,26 @@ class ServiceSummaryService extends \ArrayObject
     /**
      * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

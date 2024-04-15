@@ -16,7 +16,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     * Specify the type of pending pickup.
     01 = on-callPickup
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupType;
     /**
@@ -26,25 +26,25 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     MM = 01� 12
     dd = 01� 31
     *
-    * @var string
+    * @var string|null
     */
     protected $serviceDate;
     /**
      * Returned PRN
      *
-     * @var string
+     * @var string|null
      */
     protected $pRN;
     /**
      * Status code for Smart Pickup.
      *
-     * @var string
+     * @var string|null
      */
     protected $gWNStatusCode;
     /**
      * A unique string identifier to identify a success pre-notification processing. Only available if end result is success.
      *
-     * @var string
+     * @var string|null
      */
     protected $onCallStatusCode;
     /**
@@ -60,7 +60,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     008 = Order has invalid order status
     012 = Your pickup request is being processed
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupStatusMessage;
     /**
@@ -69,28 +69,28 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     02 = Return
     03 = Alternate Address (Not supported for now)
     *
-    * @var string
+    * @var string|null
     */
     protected $billingCode;
     /**
      * on-callpickup contact name
      *
-     * @var string
+     * @var string|null
      */
     protected $contactName;
     /**
      * Customer provided reference number for on-call pickup
      *
-     * @var string
+     * @var string|null
      */
     protected $referenceNumber;
     /**
     * Specify the type of pending pickup.
     01 = on-callPickup
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupType() : string
+    public function getPickupType() : ?string
     {
         return $this->pickupType;
     }
@@ -98,11 +98,11 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     * Specify the type of pending pickup.
     01 = on-callPickup
     *
-    * @param string $pickupType
+    * @param string|null $pickupType
     *
     * @return self
     */
-    public function setPickupType(string $pickupType) : self
+    public function setPickupType(?string $pickupType) : self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -115,9 +115,9 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     MM = 01� 12
     dd = 01� 31
     *
-    * @return string
+    * @return string|null
     */
-    public function getServiceDate() : string
+    public function getServiceDate() : ?string
     {
         return $this->serviceDate;
     }
@@ -128,11 +128,11 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     MM = 01� 12
     dd = 01� 31
     *
-    * @param string $serviceDate
+    * @param string|null $serviceDate
     *
     * @return self
     */
-    public function setServiceDate(string $serviceDate) : self
+    public function setServiceDate(?string $serviceDate) : self
     {
         $this->initialized['serviceDate'] = true;
         $this->serviceDate = $serviceDate;
@@ -141,20 +141,20 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     /**
      * Returned PRN
      *
-     * @return string
+     * @return string|null
      */
-    public function getPRN() : string
+    public function getPRN() : ?string
     {
         return $this->pRN;
     }
     /**
      * Returned PRN
      *
-     * @param string $pRN
+     * @param string|null $pRN
      *
      * @return self
      */
-    public function setPRN(string $pRN) : self
+    public function setPRN(?string $pRN) : self
     {
         $this->initialized['pRN'] = true;
         $this->pRN = $pRN;
@@ -163,20 +163,20 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     /**
      * Status code for Smart Pickup.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGWNStatusCode() : string
+    public function getGWNStatusCode() : ?string
     {
         return $this->gWNStatusCode;
     }
     /**
      * Status code for Smart Pickup.
      *
-     * @param string $gWNStatusCode
+     * @param string|null $gWNStatusCode
      *
      * @return self
      */
-    public function setGWNStatusCode(string $gWNStatusCode) : self
+    public function setGWNStatusCode(?string $gWNStatusCode) : self
     {
         $this->initialized['gWNStatusCode'] = true;
         $this->gWNStatusCode = $gWNStatusCode;
@@ -185,20 +185,20 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     /**
      * A unique string identifier to identify a success pre-notification processing. Only available if end result is success.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOnCallStatusCode() : string
+    public function getOnCallStatusCode() : ?string
     {
         return $this->onCallStatusCode;
     }
     /**
      * A unique string identifier to identify a success pre-notification processing. Only available if end result is success.
      *
-     * @param string $onCallStatusCode
+     * @param string|null $onCallStatusCode
      *
      * @return self
      */
-    public function setOnCallStatusCode(string $onCallStatusCode) : self
+    public function setOnCallStatusCode(?string $onCallStatusCode) : self
     {
         $this->initialized['onCallStatusCode'] = true;
         $this->onCallStatusCode = $onCallStatusCode;
@@ -217,9 +217,9 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     008 = Order has invalid order status
     012 = Your pickup request is being processed
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupStatusMessage() : string
+    public function getPickupStatusMessage() : ?string
     {
         return $this->pickupStatusMessage;
     }
@@ -236,11 +236,11 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     008 = Order has invalid order status
     012 = Your pickup request is being processed
     *
-    * @param string $pickupStatusMessage
+    * @param string|null $pickupStatusMessage
     *
     * @return self
     */
-    public function setPickupStatusMessage(string $pickupStatusMessage) : self
+    public function setPickupStatusMessage(?string $pickupStatusMessage) : self
     {
         $this->initialized['pickupStatusMessage'] = true;
         $this->pickupStatusMessage = $pickupStatusMessage;
@@ -252,9 +252,9 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     02 = Return
     03 = Alternate Address (Not supported for now)
     *
-    * @return string
+    * @return string|null
     */
-    public function getBillingCode() : string
+    public function getBillingCode() : ?string
     {
         return $this->billingCode;
     }
@@ -264,11 +264,11 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     02 = Return
     03 = Alternate Address (Not supported for now)
     *
-    * @param string $billingCode
+    * @param string|null $billingCode
     *
     * @return self
     */
-    public function setBillingCode(string $billingCode) : self
+    public function setBillingCode(?string $billingCode) : self
     {
         $this->initialized['billingCode'] = true;
         $this->billingCode = $billingCode;
@@ -277,20 +277,20 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     /**
      * on-callpickup contact name
      *
-     * @return string
+     * @return string|null
      */
-    public function getContactName() : string
+    public function getContactName() : ?string
     {
         return $this->contactName;
     }
     /**
      * on-callpickup contact name
      *
-     * @param string $contactName
+     * @param string|null $contactName
      *
      * @return self
      */
-    public function setContactName(string $contactName) : self
+    public function setContactName(?string $contactName) : self
     {
         $this->initialized['contactName'] = true;
         $this->contactName = $contactName;
@@ -299,20 +299,20 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     /**
      * Customer provided reference number for on-call pickup
      *
-     * @return string
+     * @return string|null
      */
-    public function getReferenceNumber() : string
+    public function getReferenceNumber() : ?string
     {
         return $this->referenceNumber;
     }
     /**
      * Customer provided reference number for on-call pickup
      *
-     * @param string $referenceNumber
+     * @param string|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(string $referenceNumber) : self
+    public function setReferenceNumber(?string $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;

@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Height', $data)) {
+            if (\array_key_exists('Height', $data) && $data['Height'] !== null) {
                 $object->setHeight($data['Height']);
                 unset($data['Height']);
             }
-            if (\array_key_exists('Width', $data)) {
+            elseif (\array_key_exists('Height', $data) && $data['Height'] === null) {
+                $object->setHeight(null);
+            }
+            if (\array_key_exists('Width', $data) && $data['Width'] !== null) {
                 $object->setWidth($data['Width']);
                 unset($data['Width']);
+            }
+            elseif (\array_key_exists('Width', $data) && $data['Width'] === null) {
+                $object->setWidth(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Height', $data)) {
+            if (\array_key_exists('Height', $data) && $data['Height'] !== null) {
                 $object->setHeight($data['Height']);
                 unset($data['Height']);
             }
-            if (\array_key_exists('Width', $data)) {
+            elseif (\array_key_exists('Height', $data) && $data['Height'] === null) {
+                $object->setHeight(null);
+            }
+            if (\array_key_exists('Width', $data) && $data['Width'] !== null) {
                 $object->setWidth($data['Width']);
                 unset($data['Width']);
+            }
+            elseif (\array_key_exists('Width', $data) && $data['Width'] === null) {
+                $object->setWidth(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,33 +15,33 @@ class ShipmentExistingShipmentID extends \ArrayObject
     /**
      * The PRO Number assigned to the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentNumber;
     /**
     * Container for the existing shipment pickup confirmation number.
     Required only for Shipment Updates.
     *
-    * @var ExistingShipmentIDConfirmationNumber
+    * @var ExistingShipmentIDConfirmationNumber|null
     */
     protected $confirmationNumber;
     /**
      * The PRO Number assigned to the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentNumber() : string
+    public function getShipmentNumber() : ?string
     {
         return $this->shipmentNumber;
     }
     /**
      * The PRO Number assigned to the shipment.
      *
-     * @param string $shipmentNumber
+     * @param string|null $shipmentNumber
      *
      * @return self
      */
-    public function setShipmentNumber(string $shipmentNumber) : self
+    public function setShipmentNumber(?string $shipmentNumber) : self
     {
         $this->initialized['shipmentNumber'] = true;
         $this->shipmentNumber = $shipmentNumber;
@@ -51,9 +51,9 @@ class ShipmentExistingShipmentID extends \ArrayObject
     * Container for the existing shipment pickup confirmation number.
     Required only for Shipment Updates.
     *
-    * @return ExistingShipmentIDConfirmationNumber
+    * @return ExistingShipmentIDConfirmationNumber|null
     */
-    public function getConfirmationNumber() : ExistingShipmentIDConfirmationNumber
+    public function getConfirmationNumber() : ?ExistingShipmentIDConfirmationNumber
     {
         return $this->confirmationNumber;
     }
@@ -61,11 +61,11 @@ class ShipmentExistingShipmentID extends \ArrayObject
     * Container for the existing shipment pickup confirmation number.
     Required only for Shipment Updates.
     *
-    * @param ExistingShipmentIDConfirmationNumber $confirmationNumber
+    * @param ExistingShipmentIDConfirmationNumber|null $confirmationNumber
     *
     * @return self
     */
-    public function setConfirmationNumber(ExistingShipmentIDConfirmationNumber $confirmationNumber) : self
+    public function setConfirmationNumber(?ExistingShipmentIDConfirmationNumber $confirmationNumber) : self
     {
         $this->initialized['confirmationNumber'] = true;
         $this->confirmationNumber = $confirmationNumber;

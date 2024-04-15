@@ -40,25 +40,37 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageIdentifier', $data)) {
+            if (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] !== null) {
                 $object->setPackageIdentifier($data['PackageIdentifier']);
                 unset($data['PackageIdentifier']);
             }
-            if (\array_key_exists('AccessibleIndicator', $data)) {
+            elseif (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] === null) {
+                $object->setPackageIdentifier(null);
+            }
+            if (\array_key_exists('AccessibleIndicator', $data) && $data['AccessibleIndicator'] !== null) {
                 $object->setAccessibleIndicator($data['AccessibleIndicator']);
                 unset($data['AccessibleIndicator']);
             }
-            if (\array_key_exists('EuropeBUIndicator', $data)) {
+            elseif (\array_key_exists('AccessibleIndicator', $data) && $data['AccessibleIndicator'] === null) {
+                $object->setAccessibleIndicator(null);
+            }
+            if (\array_key_exists('EuropeBUIndicator', $data) && $data['EuropeBUIndicator'] !== null) {
                 $object->setEuropeBUIndicator($data['EuropeBUIndicator']);
                 unset($data['EuropeBUIndicator']);
             }
-            if (\array_key_exists('ChemicalRecordResults', $data)) {
+            elseif (\array_key_exists('EuropeBUIndicator', $data) && $data['EuropeBUIndicator'] === null) {
+                $object->setEuropeBUIndicator(null);
+            }
+            if (\array_key_exists('ChemicalRecordResults', $data) && $data['ChemicalRecordResults'] !== null) {
                 $values = [];
                 foreach ($data['ChemicalRecordResults'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageResultsChemicalRecordResults', 'json', $context);
                 }
                 $object->setChemicalRecordResults($values);
                 unset($data['ChemicalRecordResults']);
+            }
+            elseif (\array_key_exists('ChemicalRecordResults', $data) && $data['ChemicalRecordResults'] === null) {
+                $object->setChemicalRecordResults(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -126,25 +138,37 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageIdentifier', $data)) {
+            if (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] !== null) {
                 $object->setPackageIdentifier($data['PackageIdentifier']);
                 unset($data['PackageIdentifier']);
             }
-            if (\array_key_exists('AccessibleIndicator', $data)) {
+            elseif (\array_key_exists('PackageIdentifier', $data) && $data['PackageIdentifier'] === null) {
+                $object->setPackageIdentifier(null);
+            }
+            if (\array_key_exists('AccessibleIndicator', $data) && $data['AccessibleIndicator'] !== null) {
                 $object->setAccessibleIndicator($data['AccessibleIndicator']);
                 unset($data['AccessibleIndicator']);
             }
-            if (\array_key_exists('EuropeBUIndicator', $data)) {
+            elseif (\array_key_exists('AccessibleIndicator', $data) && $data['AccessibleIndicator'] === null) {
+                $object->setAccessibleIndicator(null);
+            }
+            if (\array_key_exists('EuropeBUIndicator', $data) && $data['EuropeBUIndicator'] !== null) {
                 $object->setEuropeBUIndicator($data['EuropeBUIndicator']);
                 unset($data['EuropeBUIndicator']);
             }
-            if (\array_key_exists('ChemicalRecordResults', $data)) {
+            elseif (\array_key_exists('EuropeBUIndicator', $data) && $data['EuropeBUIndicator'] === null) {
+                $object->setEuropeBUIndicator(null);
+            }
+            if (\array_key_exists('ChemicalRecordResults', $data) && $data['ChemicalRecordResults'] !== null) {
                 $values = [];
                 foreach ($data['ChemicalRecordResults'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackageResultsChemicalRecordResults', 'json', $context);
                 }
                 $object->setChemicalRecordResults($values);
                 unset($data['ChemicalRecordResults']);
+            }
+            elseif (\array_key_exists('ChemicalRecordResults', $data) && $data['ChemicalRecordResults'] === null) {
+                $object->setChemicalRecordResults(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

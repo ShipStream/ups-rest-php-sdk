@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\RateType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('Factor', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Factor', $data) && $data['Factor'] !== null) {
                 $object->setFactor($this->denormalizer->denormalize($data['Factor'], 'ShipStream\\Ups\\Api\\Model\\RateFactor', 'json', $context));
                 unset($data['Factor']);
+            }
+            elseif (\array_key_exists('Factor', $data) && $data['Factor'] === null) {
+                $object->setFactor(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\RateType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('Factor', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Factor', $data) && $data['Factor'] !== null) {
                 $object->setFactor($this->denormalizer->denormalize($data['Factor'], 'ShipStream\\Ups\\Api\\Model\\RateFactor', 'json', $context));
                 unset($data['Factor']);
+            }
+            elseif (\array_key_exists('Factor', $data) && $data['Factor'] === null) {
+                $object->setFactor(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

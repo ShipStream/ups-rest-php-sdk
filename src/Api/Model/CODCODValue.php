@@ -16,7 +16,7 @@ class CODCODValue extends \ArrayObject
     * COD amount currency code type.
     Valid value: USD � United States Dollar
     *
-    * @var string
+    * @var string|null
     */
     protected $currencyCode;
     /**
@@ -29,16 +29,16 @@ class CODCODValue extends \ArrayObject
     ###############.#
     ################
     *
-    * @var string
+    * @var string|null
     */
     protected $monetaryValue;
     /**
     * COD amount currency code type.
     Valid value: USD � United States Dollar
     *
-    * @return string
+    * @return string|null
     */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
@@ -46,11 +46,11 @@ class CODCODValue extends \ArrayObject
     * COD amount currency code type.
     Valid value: USD � United States Dollar
     *
-    * @param string $currencyCode
+    * @param string|null $currencyCode
     *
     * @return self
     */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -66,9 +66,9 @@ class CODCODValue extends \ArrayObject
     ###############.#
     ################
     *
-    * @return string
+    * @return string|null
     */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
@@ -82,11 +82,11 @@ class CODCODValue extends \ArrayObject
     ###############.#
     ################
     *
-    * @param string $monetaryValue
+    * @param string|null $monetaryValue
     *
     * @return self
     */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

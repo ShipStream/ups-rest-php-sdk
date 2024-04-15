@@ -15,98 +15,98 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * 
      *
-     * @var DeliveryPackageReferenceNumber[]
+     * @var list<DeliveryPackageReferenceNumber>|null
      */
     protected $packageReferenceNumber;
     /**
      * 
      *
-     * @var DeliveryShipmentReferenceNumber[]
+     * @var list<DeliveryShipmentReferenceNumber>|null
      */
     protected $shipmentReferenceNumber;
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * Package's 1Z tracking number.
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
      * Date that the package is delivered. Date format is YYYYMMDD.
      *
-     * @var string
+     * @var string|null
      */
     protected $date;
     /**
      * Time that the package is delivered. Time format is HHMMSS
      *
-     * @var string
+     * @var string|null
      */
     protected $time;
     /**
      * Information about driver release note / signature.
      *
-     * @var string
+     * @var string|null
      */
     protected $driverRelease;
     /**
      * Geographic location where an activity occurred during a movement of a package or shipment. (ActivityLocation in Delivery is identical to the one in Manifest. But all elements in Delivery/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
      *
-     * @var DeliveryActivityLocation
+     * @var DeliveryActivityLocation|null
      */
     protected $activityLocation;
     /**
      * Information about the location where package is delivered.
      *
-     * @var DeliveryDeliveryLocation
+     * @var DeliveryDeliveryLocation|null
      */
     protected $deliveryLocation;
     /**
      * Container for cash on delivery (COD) information.
      *
-     * @var DeliveryCOD
+     * @var DeliveryCOD|null
      */
     protected $cOD;
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @var DeliveryBillToAccount
+     * @var DeliveryBillToAccount|null
      */
     protected $billToAccount;
     /**
      * Last pickup by Date from the UPS Access Point Location.
      *
-     * @var string
+     * @var string|null
      */
     protected $lastPickupDate;
     /**
      * UPS Access Point Location ID.
      *
-     * @var string
+     * @var string|null
      */
     protected $accessPointLocationID;
     /**
      * 
      *
-     * @return DeliveryPackageReferenceNumber[]
+     * @return list<DeliveryPackageReferenceNumber>|null
      */
-    public function getPackageReferenceNumber() : array
+    public function getPackageReferenceNumber() : ?array
     {
         return $this->packageReferenceNumber;
     }
     /**
      * 
      *
-     * @param DeliveryPackageReferenceNumber[] $packageReferenceNumber
+     * @param list<DeliveryPackageReferenceNumber>|null $packageReferenceNumber
      *
      * @return self
      */
-    public function setPackageReferenceNumber(array $packageReferenceNumber) : self
+    public function setPackageReferenceNumber(?array $packageReferenceNumber) : self
     {
         $this->initialized['packageReferenceNumber'] = true;
         $this->packageReferenceNumber = $packageReferenceNumber;
@@ -115,20 +115,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryShipmentReferenceNumber[]
+     * @return list<DeliveryShipmentReferenceNumber>|null
      */
-    public function getShipmentReferenceNumber() : array
+    public function getShipmentReferenceNumber() : ?array
     {
         return $this->shipmentReferenceNumber;
     }
     /**
      * 
      *
-     * @param DeliveryShipmentReferenceNumber[] $shipmentReferenceNumber
+     * @param list<DeliveryShipmentReferenceNumber>|null $shipmentReferenceNumber
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(array $shipmentReferenceNumber) : self
+    public function setShipmentReferenceNumber(?array $shipmentReferenceNumber) : self
     {
         $this->initialized['shipmentReferenceNumber'] = true;
         $this->shipmentReferenceNumber = $shipmentReferenceNumber;
@@ -137,20 +137,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -159,20 +159,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Package's 1Z tracking number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * Package's 1Z tracking number.
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -181,20 +181,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Date that the package is delivered. Date format is YYYYMMDD.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDate() : string
+    public function getDate() : ?string
     {
         return $this->date;
     }
     /**
      * Date that the package is delivered. Date format is YYYYMMDD.
      *
-     * @param string $date
+     * @param string|null $date
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(?string $date) : self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -203,20 +203,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Time that the package is delivered. Time format is HHMMSS
      *
-     * @return string
+     * @return string|null
      */
-    public function getTime() : string
+    public function getTime() : ?string
     {
         return $this->time;
     }
     /**
      * Time that the package is delivered. Time format is HHMMSS
      *
-     * @param string $time
+     * @param string|null $time
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(?string $time) : self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -225,20 +225,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Information about driver release note / signature.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDriverRelease() : string
+    public function getDriverRelease() : ?string
     {
         return $this->driverRelease;
     }
     /**
      * Information about driver release note / signature.
      *
-     * @param string $driverRelease
+     * @param string|null $driverRelease
      *
      * @return self
      */
-    public function setDriverRelease(string $driverRelease) : self
+    public function setDriverRelease(?string $driverRelease) : self
     {
         $this->initialized['driverRelease'] = true;
         $this->driverRelease = $driverRelease;
@@ -247,20 +247,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Geographic location where an activity occurred during a movement of a package or shipment. (ActivityLocation in Delivery is identical to the one in Manifest. But all elements in Delivery/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
      *
-     * @return DeliveryActivityLocation
+     * @return DeliveryActivityLocation|null
      */
-    public function getActivityLocation() : DeliveryActivityLocation
+    public function getActivityLocation() : ?DeliveryActivityLocation
     {
         return $this->activityLocation;
     }
     /**
      * Geographic location where an activity occurred during a movement of a package or shipment. (ActivityLocation in Delivery is identical to the one in Manifest. But all elements in Delivery/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
      *
-     * @param DeliveryActivityLocation $activityLocation
+     * @param DeliveryActivityLocation|null $activityLocation
      *
      * @return self
      */
-    public function setActivityLocation(DeliveryActivityLocation $activityLocation) : self
+    public function setActivityLocation(?DeliveryActivityLocation $activityLocation) : self
     {
         $this->initialized['activityLocation'] = true;
         $this->activityLocation = $activityLocation;
@@ -269,20 +269,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Information about the location where package is delivered.
      *
-     * @return DeliveryDeliveryLocation
+     * @return DeliveryDeliveryLocation|null
      */
-    public function getDeliveryLocation() : DeliveryDeliveryLocation
+    public function getDeliveryLocation() : ?DeliveryDeliveryLocation
     {
         return $this->deliveryLocation;
     }
     /**
      * Information about the location where package is delivered.
      *
-     * @param DeliveryDeliveryLocation $deliveryLocation
+     * @param DeliveryDeliveryLocation|null $deliveryLocation
      *
      * @return self
      */
-    public function setDeliveryLocation(DeliveryDeliveryLocation $deliveryLocation) : self
+    public function setDeliveryLocation(?DeliveryDeliveryLocation $deliveryLocation) : self
     {
         $this->initialized['deliveryLocation'] = true;
         $this->deliveryLocation = $deliveryLocation;
@@ -291,20 +291,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Container for cash on delivery (COD) information.
      *
-     * @return DeliveryCOD
+     * @return DeliveryCOD|null
      */
-    public function getCOD() : DeliveryCOD
+    public function getCOD() : ?DeliveryCOD
     {
         return $this->cOD;
     }
     /**
      * Container for cash on delivery (COD) information.
      *
-     * @param DeliveryCOD $cOD
+     * @param DeliveryCOD|null $cOD
      *
      * @return self
      */
-    public function setCOD(DeliveryCOD $cOD) : self
+    public function setCOD(?DeliveryCOD $cOD) : self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -313,20 +313,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @return DeliveryBillToAccount
+     * @return DeliveryBillToAccount|null
      */
-    public function getBillToAccount() : DeliveryBillToAccount
+    public function getBillToAccount() : ?DeliveryBillToAccount
     {
         return $this->billToAccount;
     }
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
      *
-     * @param DeliveryBillToAccount $billToAccount
+     * @param DeliveryBillToAccount|null $billToAccount
      *
      * @return self
      */
-    public function setBillToAccount(DeliveryBillToAccount $billToAccount) : self
+    public function setBillToAccount(?DeliveryBillToAccount $billToAccount) : self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -335,20 +335,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * Last pickup by Date from the UPS Access Point Location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLastPickupDate() : string
+    public function getLastPickupDate() : ?string
     {
         return $this->lastPickupDate;
     }
     /**
      * Last pickup by Date from the UPS Access Point Location.
      *
-     * @param string $lastPickupDate
+     * @param string|null $lastPickupDate
      *
      * @return self
      */
-    public function setLastPickupDate(string $lastPickupDate) : self
+    public function setLastPickupDate(?string $lastPickupDate) : self
     {
         $this->initialized['lastPickupDate'] = true;
         $this->lastPickupDate = $lastPickupDate;
@@ -357,20 +357,20 @@ class SubscriptionFileDelivery extends \ArrayObject
     /**
      * UPS Access Point Location ID.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccessPointLocationID() : string
+    public function getAccessPointLocationID() : ?string
     {
         return $this->accessPointLocationID;
     }
     /**
      * UPS Access Point Location ID.
      *
-     * @param string $accessPointLocationID
+     * @param string|null $accessPointLocationID
      *
      * @return self
      */
-    public function setAccessPointLocationID(string $accessPointLocationID) : self
+    public function setAccessPointLocationID(?string $accessPointLocationID) : self
     {
         $this->initialized['accessPointLocationID'] = true;
         $this->accessPointLocationID = $accessPointLocationID;

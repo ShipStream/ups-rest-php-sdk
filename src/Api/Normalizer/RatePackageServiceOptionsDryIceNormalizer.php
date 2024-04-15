@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('RegulationSet', $data)) {
+            if (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] !== null) {
                 $object->setRegulationSet($data['RegulationSet']);
                 unset($data['RegulationSet']);
             }
-            if (\array_key_exists('DryIceWeight', $data)) {
+            elseif (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] === null) {
+                $object->setRegulationSet(null);
+            }
+            if (\array_key_exists('DryIceWeight', $data) && $data['DryIceWeight'] !== null) {
                 $object->setDryIceWeight($this->denormalizer->denormalize($data['DryIceWeight'], 'ShipStream\\Ups\\Api\\Model\\DryIceDryIceWeight', 'json', $context));
                 unset($data['DryIceWeight']);
             }
-            if (\array_key_exists('MedicalUseIndicator', $data)) {
+            elseif (\array_key_exists('DryIceWeight', $data) && $data['DryIceWeight'] === null) {
+                $object->setDryIceWeight(null);
+            }
+            if (\array_key_exists('MedicalUseIndicator', $data) && $data['MedicalUseIndicator'] !== null) {
                 $object->setMedicalUseIndicator($data['MedicalUseIndicator']);
                 unset($data['MedicalUseIndicator']);
             }
-            if (\array_key_exists('AuditRequired', $data)) {
+            elseif (\array_key_exists('MedicalUseIndicator', $data) && $data['MedicalUseIndicator'] === null) {
+                $object->setMedicalUseIndicator(null);
+            }
+            if (\array_key_exists('AuditRequired', $data) && $data['AuditRequired'] !== null) {
                 $object->setAuditRequired($data['AuditRequired']);
                 unset($data['AuditRequired']);
+            }
+            elseif (\array_key_exists('AuditRequired', $data) && $data['AuditRequired'] === null) {
+                $object->setAuditRequired(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -116,21 +128,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('RegulationSet', $data)) {
+            if (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] !== null) {
                 $object->setRegulationSet($data['RegulationSet']);
                 unset($data['RegulationSet']);
             }
-            if (\array_key_exists('DryIceWeight', $data)) {
+            elseif (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] === null) {
+                $object->setRegulationSet(null);
+            }
+            if (\array_key_exists('DryIceWeight', $data) && $data['DryIceWeight'] !== null) {
                 $object->setDryIceWeight($this->denormalizer->denormalize($data['DryIceWeight'], 'ShipStream\\Ups\\Api\\Model\\DryIceDryIceWeight', 'json', $context));
                 unset($data['DryIceWeight']);
             }
-            if (\array_key_exists('MedicalUseIndicator', $data)) {
+            elseif (\array_key_exists('DryIceWeight', $data) && $data['DryIceWeight'] === null) {
+                $object->setDryIceWeight(null);
+            }
+            if (\array_key_exists('MedicalUseIndicator', $data) && $data['MedicalUseIndicator'] !== null) {
                 $object->setMedicalUseIndicator($data['MedicalUseIndicator']);
                 unset($data['MedicalUseIndicator']);
             }
-            if (\array_key_exists('AuditRequired', $data)) {
+            elseif (\array_key_exists('MedicalUseIndicator', $data) && $data['MedicalUseIndicator'] === null) {
+                $object->setMedicalUseIndicator(null);
+            }
+            if (\array_key_exists('AuditRequired', $data) && $data['AuditRequired'] !== null) {
                 $object->setAuditRequired($data['AuditRequired']);
                 unset($data['AuditRequired']);
+            }
+            elseif (\array_key_exists('AuditRequired', $data) && $data['AuditRequired'] === null) {
+                $object->setAuditRequired(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

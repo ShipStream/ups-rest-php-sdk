@@ -16,29 +16,29 @@ class FreightPickupRequestPOM extends \ArrayObject
     * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
     Must provide a POMNumber if the POMNumberType field is populated.
     *
-    * @var string
+    * @var string|null
     */
     protected $pOMNumber;
     /**
     * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
     For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @var string
+    * @var string|null
     */
     protected $pOMNumberType;
     /**
      * Container for pre-pickup notifications events
      *
-     * @var POMPickupNotifications
+     * @var POMPickupNotifications|null
      */
     protected $pickupNotifications;
     /**
     * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
     Must provide a POMNumber if the POMNumberType field is populated.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPOMNumber() : string
+    public function getPOMNumber() : ?string
     {
         return $this->pOMNumber;
     }
@@ -46,11 +46,11 @@ class FreightPickupRequestPOM extends \ArrayObject
     * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
     Must provide a POMNumber if the POMNumberType field is populated.
     *
-    * @param string $pOMNumber
+    * @param string|null $pOMNumber
     *
     * @return self
     */
-    public function setPOMNumber(string $pOMNumber) : self
+    public function setPOMNumber(?string $pOMNumber) : self
     {
         $this->initialized['pOMNumber'] = true;
         $this->pOMNumber = $pOMNumber;
@@ -60,9 +60,9 @@ class FreightPickupRequestPOM extends \ArrayObject
     * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
     For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPOMNumberType() : string
+    public function getPOMNumberType() : ?string
     {
         return $this->pOMNumberType;
     }
@@ -70,11 +70,11 @@ class FreightPickupRequestPOM extends \ArrayObject
     * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
     For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @param string $pOMNumberType
+    * @param string|null $pOMNumberType
     *
     * @return self
     */
-    public function setPOMNumberType(string $pOMNumberType) : self
+    public function setPOMNumberType(?string $pOMNumberType) : self
     {
         $this->initialized['pOMNumberType'] = true;
         $this->pOMNumberType = $pOMNumberType;
@@ -83,20 +83,20 @@ class FreightPickupRequestPOM extends \ArrayObject
     /**
      * Container for pre-pickup notifications events
      *
-     * @return POMPickupNotifications
+     * @return POMPickupNotifications|null
      */
-    public function getPickupNotifications() : POMPickupNotifications
+    public function getPickupNotifications() : ?POMPickupNotifications
     {
         return $this->pickupNotifications;
     }
     /**
      * Container for pre-pickup notifications events
      *
-     * @param POMPickupNotifications $pickupNotifications
+     * @param POMPickupNotifications|null $pickupNotifications
      *
      * @return self
      */
-    public function setPickupNotifications(POMPickupNotifications $pickupNotifications) : self
+    public function setPickupNotifications(?POMPickupNotifications $pickupNotifications) : self
     {
         $this->initialized['pickupNotifications'] = true;
         $this->pickupNotifications = $pickupNotifications;

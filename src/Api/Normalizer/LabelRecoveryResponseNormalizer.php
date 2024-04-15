@@ -40,15 +40,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ShipmentIdentificationNumber', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] !== null) {
                 $object->setShipmentIdentificationNumber($data['ShipmentIdentificationNumber']);
                 unset($data['ShipmentIdentificationNumber']);
             }
-            if (\array_key_exists('LabelResults', $data)) {
+            elseif (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] === null) {
+                $object->setShipmentIdentificationNumber(null);
+            }
+            if (\array_key_exists('LabelResults', $data) && $data['LabelResults'] !== null) {
                 $values = [];
                 foreach ($data['LabelResults'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults', 'json', $context);
@@ -56,25 +62,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLabelResults($values);
                 unset($data['LabelResults']);
             }
-            if (\array_key_exists('CODTurnInPage', $data)) {
+            elseif (\array_key_exists('LabelResults', $data) && $data['LabelResults'] === null) {
+                $object->setLabelResults(null);
+            }
+            if (\array_key_exists('CODTurnInPage', $data) && $data['CODTurnInPage'] !== null) {
                 $object->setCODTurnInPage($this->denormalizer->denormalize($data['CODTurnInPage'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseCODTurnInPage', 'json', $context));
                 unset($data['CODTurnInPage']);
             }
-            if (\array_key_exists('Form', $data)) {
+            elseif (\array_key_exists('CODTurnInPage', $data) && $data['CODTurnInPage'] === null) {
+                $object->setCODTurnInPage(null);
+            }
+            if (\array_key_exists('Form', $data) && $data['Form'] !== null) {
                 $object->setForm($this->denormalizer->denormalize($data['Form'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseForm', 'json', $context));
                 unset($data['Form']);
             }
-            if (\array_key_exists('HighValueReport', $data)) {
+            elseif (\array_key_exists('Form', $data) && $data['Form'] === null) {
+                $object->setForm(null);
+            }
+            if (\array_key_exists('HighValueReport', $data) && $data['HighValueReport'] !== null) {
                 $object->setHighValueReport($this->denormalizer->denormalize($data['HighValueReport'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseHighValueReport', 'json', $context));
                 unset($data['HighValueReport']);
             }
-            if (\array_key_exists('TrackingCandidate', $data)) {
+            elseif (\array_key_exists('HighValueReport', $data) && $data['HighValueReport'] === null) {
+                $object->setHighValueReport(null);
+            }
+            if (\array_key_exists('TrackingCandidate', $data) && $data['TrackingCandidate'] !== null) {
                 $values_1 = [];
                 foreach ($data['TrackingCandidate'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseTrackingCandidate', 'json', $context);
                 }
                 $object->setTrackingCandidate($values_1);
                 unset($data['TrackingCandidate']);
+            }
+            elseif (\array_key_exists('TrackingCandidate', $data) && $data['TrackingCandidate'] === null) {
+                $object->setTrackingCandidate(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -153,15 +174,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ShipmentIdentificationNumber', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] !== null) {
                 $object->setShipmentIdentificationNumber($data['ShipmentIdentificationNumber']);
                 unset($data['ShipmentIdentificationNumber']);
             }
-            if (\array_key_exists('LabelResults', $data)) {
+            elseif (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] === null) {
+                $object->setShipmentIdentificationNumber(null);
+            }
+            if (\array_key_exists('LabelResults', $data) && $data['LabelResults'] !== null) {
                 $values = [];
                 foreach ($data['LabelResults'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults', 'json', $context);
@@ -169,25 +196,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLabelResults($values);
                 unset($data['LabelResults']);
             }
-            if (\array_key_exists('CODTurnInPage', $data)) {
+            elseif (\array_key_exists('LabelResults', $data) && $data['LabelResults'] === null) {
+                $object->setLabelResults(null);
+            }
+            if (\array_key_exists('CODTurnInPage', $data) && $data['CODTurnInPage'] !== null) {
                 $object->setCODTurnInPage($this->denormalizer->denormalize($data['CODTurnInPage'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseCODTurnInPage', 'json', $context));
                 unset($data['CODTurnInPage']);
             }
-            if (\array_key_exists('Form', $data)) {
+            elseif (\array_key_exists('CODTurnInPage', $data) && $data['CODTurnInPage'] === null) {
+                $object->setCODTurnInPage(null);
+            }
+            if (\array_key_exists('Form', $data) && $data['Form'] !== null) {
                 $object->setForm($this->denormalizer->denormalize($data['Form'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseForm', 'json', $context));
                 unset($data['Form']);
             }
-            if (\array_key_exists('HighValueReport', $data)) {
+            elseif (\array_key_exists('Form', $data) && $data['Form'] === null) {
+                $object->setForm(null);
+            }
+            if (\array_key_exists('HighValueReport', $data) && $data['HighValueReport'] !== null) {
                 $object->setHighValueReport($this->denormalizer->denormalize($data['HighValueReport'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseHighValueReport', 'json', $context));
                 unset($data['HighValueReport']);
             }
-            if (\array_key_exists('TrackingCandidate', $data)) {
+            elseif (\array_key_exists('HighValueReport', $data) && $data['HighValueReport'] === null) {
+                $object->setHighValueReport(null);
+            }
+            if (\array_key_exists('TrackingCandidate', $data) && $data['TrackingCandidate'] !== null) {
                 $values_1 = [];
                 foreach ($data['TrackingCandidate'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseTrackingCandidate', 'json', $context);
                 }
                 $object->setTrackingCandidate($values_1);
                 unset($data['TrackingCandidate']);
+            }
+            elseif (\array_key_exists('TrackingCandidate', $data) && $data['TrackingCandidate'] === null) {
+                $object->setTrackingCandidate(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('grant_type', $data)) {
+            if (\array_key_exists('grant_type', $data) && $data['grant_type'] !== null) {
                 $object->setGrantType($data['grant_type']);
                 unset($data['grant_type']);
             }
-            if (\array_key_exists('code', $data)) {
+            elseif (\array_key_exists('grant_type', $data) && $data['grant_type'] === null) {
+                $object->setGrantType(null);
+            }
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('redirect_uri', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('redirect_uri', $data) && $data['redirect_uri'] !== null) {
                 $object->setRedirectUri($data['redirect_uri']);
                 unset($data['redirect_uri']);
+            }
+            elseif (\array_key_exists('redirect_uri', $data) && $data['redirect_uri'] === null) {
+                $object->setRedirectUri(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -111,17 +120,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('grant_type', $data)) {
+            if (\array_key_exists('grant_type', $data) && $data['grant_type'] !== null) {
                 $object->setGrantType($data['grant_type']);
                 unset($data['grant_type']);
             }
-            if (\array_key_exists('code', $data)) {
+            elseif (\array_key_exists('grant_type', $data) && $data['grant_type'] === null) {
+                $object->setGrantType(null);
+            }
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('redirect_uri', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('redirect_uri', $data) && $data['redirect_uri'] !== null) {
                 $object->setRedirectUri($data['redirect_uri']);
                 unset($data['redirect_uri']);
+            }
+            elseif (\array_key_exists('redirect_uri', $data) && $data['redirect_uri'] === null) {
+                $object->setRedirectUri(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

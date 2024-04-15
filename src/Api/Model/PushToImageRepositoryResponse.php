@@ -15,32 +15,32 @@ class PushToImageRepositoryResponse extends \ArrayObject
     /**
      * Response container.
      *
-     * @var PushToImageRepositoryResponseResponse
+     * @var PushToImageRepositoryResponseResponse|null
      */
     protected $response;
     /**
      * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).  N/A
      *
-     * @var string
+     * @var string|null
      */
     protected $formsGroupID;
     /**
      * Response container.
      *
-     * @return PushToImageRepositoryResponseResponse
+     * @return PushToImageRepositoryResponseResponse|null
      */
-    public function getResponse() : PushToImageRepositoryResponseResponse
+    public function getResponse() : ?PushToImageRepositoryResponseResponse
     {
         return $this->response;
     }
     /**
      * Response container.
      *
-     * @param PushToImageRepositoryResponseResponse $response
+     * @param PushToImageRepositoryResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PushToImageRepositoryResponseResponse $response) : self
+    public function setResponse(?PushToImageRepositoryResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class PushToImageRepositoryResponse extends \ArrayObject
     /**
      * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).  N/A
      *
-     * @return string
+     * @return string|null
      */
-    public function getFormsGroupID() : string
+    public function getFormsGroupID() : ?string
     {
         return $this->formsGroupID;
     }
     /**
      * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).  N/A
      *
-     * @param string $formsGroupID
+     * @param string|null $formsGroupID
      *
      * @return self
      */
-    public function setFormsGroupID(string $formsGroupID) : self
+    public function setFormsGroupID(?string $formsGroupID) : self
     {
         $this->initialized['formsGroupID'] = true;
         $this->formsGroupID = $formsGroupID;

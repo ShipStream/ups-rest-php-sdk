@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DCRIndicator', $data)) {
+            if (\array_key_exists('DCRIndicator', $data) && $data['DCRIndicator'] !== null) {
                 $object->setDCRIndicator($data['DCRIndicator']);
                 unset($data['DCRIndicator']);
             }
-            if (\array_key_exists('ShippingAvailabilityIndicator', $data)) {
+            elseif (\array_key_exists('DCRIndicator', $data) && $data['DCRIndicator'] === null) {
+                $object->setDCRIndicator(null);
+            }
+            if (\array_key_exists('ShippingAvailabilityIndicator', $data) && $data['ShippingAvailabilityIndicator'] !== null) {
                 $object->setShippingAvailabilityIndicator($data['ShippingAvailabilityIndicator']);
                 unset($data['ShippingAvailabilityIndicator']);
             }
-            if (\array_key_exists('ShipperPreparationDelay', $data)) {
+            elseif (\array_key_exists('ShippingAvailabilityIndicator', $data) && $data['ShippingAvailabilityIndicator'] === null) {
+                $object->setShippingAvailabilityIndicator(null);
+            }
+            if (\array_key_exists('ShipperPreparationDelay', $data) && $data['ShipperPreparationDelay'] !== null) {
                 $object->setShipperPreparationDelay($data['ShipperPreparationDelay']);
                 unset($data['ShipperPreparationDelay']);
             }
-            if (\array_key_exists('ClickAndCollectSortWithDistance', $data)) {
+            elseif (\array_key_exists('ShipperPreparationDelay', $data) && $data['ShipperPreparationDelay'] === null) {
+                $object->setShipperPreparationDelay(null);
+            }
+            if (\array_key_exists('ClickAndCollectSortWithDistance', $data) && $data['ClickAndCollectSortWithDistance'] !== null) {
                 $object->setClickAndCollectSortWithDistance($data['ClickAndCollectSortWithDistance']);
                 unset($data['ClickAndCollectSortWithDistance']);
+            }
+            elseif (\array_key_exists('ClickAndCollectSortWithDistance', $data) && $data['ClickAndCollectSortWithDistance'] === null) {
+                $object->setClickAndCollectSortWithDistance(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DCRIndicator', $data)) {
+            if (\array_key_exists('DCRIndicator', $data) && $data['DCRIndicator'] !== null) {
                 $object->setDCRIndicator($data['DCRIndicator']);
                 unset($data['DCRIndicator']);
             }
-            if (\array_key_exists('ShippingAvailabilityIndicator', $data)) {
+            elseif (\array_key_exists('DCRIndicator', $data) && $data['DCRIndicator'] === null) {
+                $object->setDCRIndicator(null);
+            }
+            if (\array_key_exists('ShippingAvailabilityIndicator', $data) && $data['ShippingAvailabilityIndicator'] !== null) {
                 $object->setShippingAvailabilityIndicator($data['ShippingAvailabilityIndicator']);
                 unset($data['ShippingAvailabilityIndicator']);
             }
-            if (\array_key_exists('ShipperPreparationDelay', $data)) {
+            elseif (\array_key_exists('ShippingAvailabilityIndicator', $data) && $data['ShippingAvailabilityIndicator'] === null) {
+                $object->setShippingAvailabilityIndicator(null);
+            }
+            if (\array_key_exists('ShipperPreparationDelay', $data) && $data['ShipperPreparationDelay'] !== null) {
                 $object->setShipperPreparationDelay($data['ShipperPreparationDelay']);
                 unset($data['ShipperPreparationDelay']);
             }
-            if (\array_key_exists('ClickAndCollectSortWithDistance', $data)) {
+            elseif (\array_key_exists('ShipperPreparationDelay', $data) && $data['ShipperPreparationDelay'] === null) {
+                $object->setShipperPreparationDelay(null);
+            }
+            if (\array_key_exists('ClickAndCollectSortWithDistance', $data) && $data['ClickAndCollectSortWithDistance'] !== null) {
                 $object->setClickAndCollectSortWithDistance($data['ClickAndCollectSortWithDistance']);
                 unset($data['ClickAndCollectSortWithDistance']);
+            }
+            elseif (\array_key_exists('ClickAndCollectSortWithDistance', $data) && $data['ClickAndCollectSortWithDistance'] === null) {
+                $object->setClickAndCollectSortWithDistance(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,37 +40,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ITARExemptionNumber', $data)) {
+            if (\array_key_exists('ITARExemptionNumber', $data) && $data['ITARExemptionNumber'] !== null) {
                 $object->setITARExemptionNumber($data['ITARExemptionNumber']);
                 unset($data['ITARExemptionNumber']);
             }
-            if (\array_key_exists('USMLCategoryCode', $data)) {
+            elseif (\array_key_exists('ITARExemptionNumber', $data) && $data['ITARExemptionNumber'] === null) {
+                $object->setITARExemptionNumber(null);
+            }
+            if (\array_key_exists('USMLCategoryCode', $data) && $data['USMLCategoryCode'] !== null) {
                 $object->setUSMLCategoryCode($data['USMLCategoryCode']);
                 unset($data['USMLCategoryCode']);
             }
-            if (\array_key_exists('EligiblePartyIndicator', $data)) {
+            elseif (\array_key_exists('USMLCategoryCode', $data) && $data['USMLCategoryCode'] === null) {
+                $object->setUSMLCategoryCode(null);
+            }
+            if (\array_key_exists('EligiblePartyIndicator', $data) && $data['EligiblePartyIndicator'] !== null) {
                 $object->setEligiblePartyIndicator($data['EligiblePartyIndicator']);
                 unset($data['EligiblePartyIndicator']);
             }
-            if (\array_key_exists('RegistrationNumber', $data)) {
+            elseif (\array_key_exists('EligiblePartyIndicator', $data) && $data['EligiblePartyIndicator'] === null) {
+                $object->setEligiblePartyIndicator(null);
+            }
+            if (\array_key_exists('RegistrationNumber', $data) && $data['RegistrationNumber'] !== null) {
                 $object->setRegistrationNumber($data['RegistrationNumber']);
                 unset($data['RegistrationNumber']);
             }
-            if (\array_key_exists('Quantity', $data)) {
+            elseif (\array_key_exists('RegistrationNumber', $data) && $data['RegistrationNumber'] === null) {
+                $object->setRegistrationNumber(null);
+            }
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $object->setQuantity($data['Quantity']);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DDTCInformationUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
             }
-            if (\array_key_exists('SignificantMilitaryEquipmentIndicator', $data)) {
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
+            }
+            if (\array_key_exists('SignificantMilitaryEquipmentIndicator', $data) && $data['SignificantMilitaryEquipmentIndicator'] !== null) {
                 $object->setSignificantMilitaryEquipmentIndicator($data['SignificantMilitaryEquipmentIndicator']);
                 unset($data['SignificantMilitaryEquipmentIndicator']);
             }
-            if (\array_key_exists('ACMNumber', $data)) {
+            elseif (\array_key_exists('SignificantMilitaryEquipmentIndicator', $data) && $data['SignificantMilitaryEquipmentIndicator'] === null) {
+                $object->setSignificantMilitaryEquipmentIndicator(null);
+            }
+            if (\array_key_exists('ACMNumber', $data) && $data['ACMNumber'] !== null) {
                 $object->setACMNumber($data['ACMNumber']);
                 unset($data['ACMNumber']);
+            }
+            elseif (\array_key_exists('ACMNumber', $data) && $data['ACMNumber'] === null) {
+                $object->setACMNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -148,37 +172,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ITARExemptionNumber', $data)) {
+            if (\array_key_exists('ITARExemptionNumber', $data) && $data['ITARExemptionNumber'] !== null) {
                 $object->setITARExemptionNumber($data['ITARExemptionNumber']);
                 unset($data['ITARExemptionNumber']);
             }
-            if (\array_key_exists('USMLCategoryCode', $data)) {
+            elseif (\array_key_exists('ITARExemptionNumber', $data) && $data['ITARExemptionNumber'] === null) {
+                $object->setITARExemptionNumber(null);
+            }
+            if (\array_key_exists('USMLCategoryCode', $data) && $data['USMLCategoryCode'] !== null) {
                 $object->setUSMLCategoryCode($data['USMLCategoryCode']);
                 unset($data['USMLCategoryCode']);
             }
-            if (\array_key_exists('EligiblePartyIndicator', $data)) {
+            elseif (\array_key_exists('USMLCategoryCode', $data) && $data['USMLCategoryCode'] === null) {
+                $object->setUSMLCategoryCode(null);
+            }
+            if (\array_key_exists('EligiblePartyIndicator', $data) && $data['EligiblePartyIndicator'] !== null) {
                 $object->setEligiblePartyIndicator($data['EligiblePartyIndicator']);
                 unset($data['EligiblePartyIndicator']);
             }
-            if (\array_key_exists('RegistrationNumber', $data)) {
+            elseif (\array_key_exists('EligiblePartyIndicator', $data) && $data['EligiblePartyIndicator'] === null) {
+                $object->setEligiblePartyIndicator(null);
+            }
+            if (\array_key_exists('RegistrationNumber', $data) && $data['RegistrationNumber'] !== null) {
                 $object->setRegistrationNumber($data['RegistrationNumber']);
                 unset($data['RegistrationNumber']);
             }
-            if (\array_key_exists('Quantity', $data)) {
+            elseif (\array_key_exists('RegistrationNumber', $data) && $data['RegistrationNumber'] === null) {
+                $object->setRegistrationNumber(null);
+            }
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $object->setQuantity($data['Quantity']);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\DDTCInformationUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
             }
-            if (\array_key_exists('SignificantMilitaryEquipmentIndicator', $data)) {
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
+            }
+            if (\array_key_exists('SignificantMilitaryEquipmentIndicator', $data) && $data['SignificantMilitaryEquipmentIndicator'] !== null) {
                 $object->setSignificantMilitaryEquipmentIndicator($data['SignificantMilitaryEquipmentIndicator']);
                 unset($data['SignificantMilitaryEquipmentIndicator']);
             }
-            if (\array_key_exists('ACMNumber', $data)) {
+            elseif (\array_key_exists('SignificantMilitaryEquipmentIndicator', $data) && $data['SignificantMilitaryEquipmentIndicator'] === null) {
+                $object->setSignificantMilitaryEquipmentIndicator(null);
+            }
+            if (\array_key_exists('ACMNumber', $data) && $data['ACMNumber'] !== null) {
                 $object->setACMNumber($data['ACMNumber']);
                 unset($data['ACMNumber']);
+            }
+            elseif (\array_key_exists('ACMNumber', $data) && $data['ACMNumber'] === null) {
+                $object->setACMNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

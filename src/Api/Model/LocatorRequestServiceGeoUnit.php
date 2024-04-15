@@ -16,23 +16,23 @@ class LocatorRequestServiceGeoUnit extends \ArrayObject
     * Service Code. Required if ServiceGeoUnit Container present. 
     Valid value is '096' .
     *
-    * @var string
+    * @var string|null
     */
     protected $serviceCode;
     /**
     * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
     Valid value is '002' .
     *
-    * @var string
+    * @var string|null
     */
     protected $geoPoliticalUnit;
     /**
     * Service Code. Required if ServiceGeoUnit Container present. 
     Valid value is '096' .
     *
-    * @return string
+    * @return string|null
     */
-    public function getServiceCode() : string
+    public function getServiceCode() : ?string
     {
         return $this->serviceCode;
     }
@@ -40,11 +40,11 @@ class LocatorRequestServiceGeoUnit extends \ArrayObject
     * Service Code. Required if ServiceGeoUnit Container present. 
     Valid value is '096' .
     *
-    * @param string $serviceCode
+    * @param string|null $serviceCode
     *
     * @return self
     */
-    public function setServiceCode(string $serviceCode) : self
+    public function setServiceCode(?string $serviceCode) : self
     {
         $this->initialized['serviceCode'] = true;
         $this->serviceCode = $serviceCode;
@@ -54,9 +54,9 @@ class LocatorRequestServiceGeoUnit extends \ArrayObject
     * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
     Valid value is '002' .
     *
-    * @return string
+    * @return string|null
     */
-    public function getGeoPoliticalUnit() : string
+    public function getGeoPoliticalUnit() : ?string
     {
         return $this->geoPoliticalUnit;
     }
@@ -64,11 +64,11 @@ class LocatorRequestServiceGeoUnit extends \ArrayObject
     * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
     Valid value is '002' .
     *
-    * @param string $geoPoliticalUnit
+    * @param string|null $geoPoliticalUnit
     *
     * @return self
     */
-    public function setGeoPoliticalUnit(string $geoPoliticalUnit) : self
+    public function setGeoPoliticalUnit(?string $geoPoliticalUnit) : self
     {
         $this->initialized['geoPoliticalUnit'] = true;
         $this->geoPoliticalUnit = $geoPoliticalUnit;

@@ -15,32 +15,32 @@ class ShipmentHandlingUnitTwo extends \ArrayObject
     /**
      * Quantity of the handling unit.
      *
-     * @var string
+     * @var string|null
      */
     protected $quantity;
     /**
      * HandlingUnit Type Container.
      *
-     * @var HandlingUnitTwoType
+     * @var HandlingUnitTwoType|null
      */
     protected $type;
     /**
      * Quantity of the handling unit.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuantity() : string
+    public function getQuantity() : ?string
     {
         return $this->quantity;
     }
     /**
      * Quantity of the handling unit.
      *
-     * @param string $quantity
+     * @param string|null $quantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(?string $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -49,20 +49,20 @@ class ShipmentHandlingUnitTwo extends \ArrayObject
     /**
      * HandlingUnit Type Container.
      *
-     * @return HandlingUnitTwoType
+     * @return HandlingUnitTwoType|null
      */
-    public function getType() : HandlingUnitTwoType
+    public function getType() : ?HandlingUnitTwoType
     {
         return $this->type;
     }
     /**
      * HandlingUnit Type Container.
      *
-     * @param HandlingUnitTwoType $type
+     * @param HandlingUnitTwoType|null $type
      *
      * @return self
      */
-    public function setType(HandlingUnitTwoType $type) : self
+    public function setType(?HandlingUnitTwoType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

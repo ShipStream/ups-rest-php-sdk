@@ -18,13 +18,13 @@ class CODCODBillingOption extends \ArrayObject
     01 - Prepaid
     02 - Freight Collect
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * A text description of the code for the COD billing option associated with the shipment service options.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -33,9 +33,9 @@ class CODCODBillingOption extends \ArrayObject
     01 - Prepaid
     02 - Freight Collect
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -45,11 +45,11 @@ class CODCODBillingOption extends \ArrayObject
     01 - Prepaid
     02 - Freight Collect
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -58,20 +58,20 @@ class CODCODBillingOption extends \ArrayObject
     /**
      * A text description of the code for the COD billing option associated with the shipment service options.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * A text description of the code for the COD billing option associated with the shipment service options.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

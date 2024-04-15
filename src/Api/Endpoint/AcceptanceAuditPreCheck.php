@@ -9,13 +9,13 @@ class AcceptanceAuditPreCheck extends \ShipStream\Ups\Api\Runtime\Client\BaseEnd
      * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
      *
      * @param string $version API version
-     * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

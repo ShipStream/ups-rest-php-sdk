@@ -15,32 +15,32 @@ class DropLocationSortCode extends \ArrayObject
     /**
      * Holds the value of the hub sort code or airport code
      *
-     * @var string
+     * @var string|null
      */
     protected $hubSortCode;
     /**
      * Holds the value of the facility location code.
      *
-     * @var string
+     * @var string|null
      */
     protected $freightSortFacilityCode;
     /**
      * Holds the value of the hub sort code or airport code
      *
-     * @return string
+     * @return string|null
      */
-    public function getHubSortCode() : string
+    public function getHubSortCode() : ?string
     {
         return $this->hubSortCode;
     }
     /**
      * Holds the value of the hub sort code or airport code
      *
-     * @param string $hubSortCode
+     * @param string|null $hubSortCode
      *
      * @return self
      */
-    public function setHubSortCode(string $hubSortCode) : self
+    public function setHubSortCode(?string $hubSortCode) : self
     {
         $this->initialized['hubSortCode'] = true;
         $this->hubSortCode = $hubSortCode;
@@ -49,20 +49,20 @@ class DropLocationSortCode extends \ArrayObject
     /**
      * Holds the value of the facility location code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFreightSortFacilityCode() : string
+    public function getFreightSortFacilityCode() : ?string
     {
         return $this->freightSortFacilityCode;
     }
     /**
      * Holds the value of the facility location code.
      *
-     * @param string $freightSortFacilityCode
+     * @param string|null $freightSortFacilityCode
      *
      * @return self
      */
-    public function setFreightSortFacilityCode(string $freightSortFacilityCode) : self
+    public function setFreightSortFacilityCode(?string $freightSortFacilityCode) : self
     {
         $this->initialized['freightSortFacilityCode'] = true;
         $this->freightSortFacilityCode = $freightSortFacilityCode;

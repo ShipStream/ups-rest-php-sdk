@@ -19,14 +19,14 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     * @param string $requestoption Valid Values: 
     ground,
     air. Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param array $accept Accept content header application/json|application/xml
     */
-    public function __construct(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = [], array $accept = [])
+    public function __construct(string $version, string $requestoption, ?\ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody = null, array $headerParameters = [], array $accept = [])
     {
         $this->version = $version;
         $this->requestoption = $requestoption;

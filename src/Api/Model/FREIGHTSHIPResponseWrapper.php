@@ -15,26 +15,26 @@ class FREIGHTSHIPResponseWrapper extends \ArrayObject
     /**
      * Freight Ship Response Container.
      *
-     * @var FreightShipResponse
+     * @var FreightShipResponse|null
      */
     protected $freightShipResponse;
     /**
      * Freight Ship Response Container.
      *
-     * @return FreightShipResponse
+     * @return FreightShipResponse|null
      */
-    public function getFreightShipResponse() : FreightShipResponse
+    public function getFreightShipResponse() : ?FreightShipResponse
     {
         return $this->freightShipResponse;
     }
     /**
      * Freight Ship Response Container.
      *
-     * @param FreightShipResponse $freightShipResponse
+     * @param FreightShipResponse|null $freightShipResponse
      *
      * @return self
      */
-    public function setFreightShipResponse(FreightShipResponse $freightShipResponse) : self
+    public function setFreightShipResponse(?FreightShipResponse $freightShipResponse) : self
     {
         $this->initialized['freightShipResponse'] = true;
         $this->freightShipResponse = $freightShipResponse;

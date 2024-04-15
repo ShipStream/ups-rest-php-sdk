@@ -18,13 +18,13 @@ class XAVResponseAddressClassification extends \ArrayObject
     1 - Commercial
     2 - Residential
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Contains the text description of the address classification code (see Code above).
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -33,9 +33,9 @@ class XAVResponseAddressClassification extends \ArrayObject
     1 - Commercial
     2 - Residential
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -45,11 +45,11 @@ class XAVResponseAddressClassification extends \ArrayObject
     1 - Commercial
     2 - Residential
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -58,20 +58,20 @@ class XAVResponseAddressClassification extends \ArrayObject
     /**
      * Contains the text description of the address classification code (see Code above).
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Contains the text description of the address classification code (see Code above).
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

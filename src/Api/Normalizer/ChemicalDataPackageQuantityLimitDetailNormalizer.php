@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageQuantityLimitTypeCode', $data)) {
+            if (\array_key_exists('PackageQuantityLimitTypeCode', $data) && $data['PackageQuantityLimitTypeCode'] !== null) {
                 $object->setPackageQuantityLimitTypeCode($data['PackageQuantityLimitTypeCode']);
                 unset($data['PackageQuantityLimitTypeCode']);
             }
-            if (\array_key_exists('Quantity', $data)) {
+            elseif (\array_key_exists('PackageQuantityLimitTypeCode', $data) && $data['PackageQuantityLimitTypeCode'] === null) {
+                $object->setPackageQuantityLimitTypeCode(null);
+            }
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $object->setQuantity($data['Quantity']);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('UOM', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UOM', $data) && $data['UOM'] !== null) {
                 $object->setUOM($data['UOM']);
                 unset($data['UOM']);
             }
-            if (\array_key_exists('PackagingInstructionCode', $data)) {
+            elseif (\array_key_exists('UOM', $data) && $data['UOM'] === null) {
+                $object->setUOM(null);
+            }
+            if (\array_key_exists('PackagingInstructionCode', $data) && $data['PackagingInstructionCode'] !== null) {
                 $object->setPackagingInstructionCode($data['PackagingInstructionCode']);
                 unset($data['PackagingInstructionCode']);
+            }
+            elseif (\array_key_exists('PackagingInstructionCode', $data) && $data['PackagingInstructionCode'] === null) {
+                $object->setPackagingInstructionCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageQuantityLimitTypeCode', $data)) {
+            if (\array_key_exists('PackageQuantityLimitTypeCode', $data) && $data['PackageQuantityLimitTypeCode'] !== null) {
                 $object->setPackageQuantityLimitTypeCode($data['PackageQuantityLimitTypeCode']);
                 unset($data['PackageQuantityLimitTypeCode']);
             }
-            if (\array_key_exists('Quantity', $data)) {
+            elseif (\array_key_exists('PackageQuantityLimitTypeCode', $data) && $data['PackageQuantityLimitTypeCode'] === null) {
+                $object->setPackageQuantityLimitTypeCode(null);
+            }
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $object->setQuantity($data['Quantity']);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('UOM', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UOM', $data) && $data['UOM'] !== null) {
                 $object->setUOM($data['UOM']);
                 unset($data['UOM']);
             }
-            if (\array_key_exists('PackagingInstructionCode', $data)) {
+            elseif (\array_key_exists('UOM', $data) && $data['UOM'] === null) {
+                $object->setUOM(null);
+            }
+            if (\array_key_exists('PackagingInstructionCode', $data) && $data['PackagingInstructionCode'] !== null) {
                 $object->setPackagingInstructionCode($data['PackagingInstructionCode']);
                 unset($data['PackagingInstructionCode']);
+            }
+            elseif (\array_key_exists('PackagingInstructionCode', $data) && $data['PackagingInstructionCode'] === null) {
+                $object->setPackagingInstructionCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

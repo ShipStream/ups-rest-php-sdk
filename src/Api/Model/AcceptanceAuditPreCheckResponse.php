@@ -15,19 +15,19 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     /**
      * Contains Dangerous Goods Utility Acceptance Audit Pre-check response components.
      *
-     * @var AcceptanceAuditPreCheckResponseResponse
+     * @var AcceptanceAuditPreCheckResponseResponse|null
      */
     protected $response;
     /**
      * Shipper's six digit account number. This is same account number present in the request that is played back in response.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * UPS service type. This is same UPS Service present in the request that is played back in response.
      *
-     * @var AcceptanceAuditPreCheckResponseService
+     * @var AcceptanceAuditPreCheckResponseService|null
      */
     protected $service;
     /**
@@ -37,32 +37,32 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     IATA
     TDG
     *
-    * @var string
+    * @var string|null
     */
     protected $regulationSet;
     /**
      * 
      *
-     * @var AcceptanceAuditPreCheckResponsePackageResults[]
+     * @var list<AcceptanceAuditPreCheckResponsePackageResults>|null
      */
     protected $packageResults;
     /**
      * Contains Dangerous Goods Utility Acceptance Audit Pre-check response components.
      *
-     * @return AcceptanceAuditPreCheckResponseResponse
+     * @return AcceptanceAuditPreCheckResponseResponse|null
      */
-    public function getResponse() : AcceptanceAuditPreCheckResponseResponse
+    public function getResponse() : ?AcceptanceAuditPreCheckResponseResponse
     {
         return $this->response;
     }
     /**
      * Contains Dangerous Goods Utility Acceptance Audit Pre-check response components.
      *
-     * @param AcceptanceAuditPreCheckResponseResponse $response
+     * @param AcceptanceAuditPreCheckResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(AcceptanceAuditPreCheckResponseResponse $response) : self
+    public function setResponse(?AcceptanceAuditPreCheckResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -71,20 +71,20 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     /**
      * Shipper's six digit account number. This is same account number present in the request that is played back in response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Shipper's six digit account number. This is same account number present in the request that is played back in response.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -93,20 +93,20 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     /**
      * UPS service type. This is same UPS Service present in the request that is played back in response.
      *
-     * @return AcceptanceAuditPreCheckResponseService
+     * @return AcceptanceAuditPreCheckResponseService|null
      */
-    public function getService() : AcceptanceAuditPreCheckResponseService
+    public function getService() : ?AcceptanceAuditPreCheckResponseService
     {
         return $this->service;
     }
     /**
      * UPS service type. This is same UPS Service present in the request that is played back in response.
      *
-     * @param AcceptanceAuditPreCheckResponseService $service
+     * @param AcceptanceAuditPreCheckResponseService|null $service
      *
      * @return self
      */
-    public function setService(AcceptanceAuditPreCheckResponseService $service) : self
+    public function setService(?AcceptanceAuditPreCheckResponseService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -119,9 +119,9 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     IATA
     TDG
     *
-    * @return string
+    * @return string|null
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet() : ?string
     {
         return $this->regulationSet;
     }
@@ -132,11 +132,11 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     IATA
     TDG
     *
-    * @param string $regulationSet
+    * @param string|null $regulationSet
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(?string $regulationSet) : self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -145,20 +145,20 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     /**
      * 
      *
-     * @return AcceptanceAuditPreCheckResponsePackageResults[]
+     * @return list<AcceptanceAuditPreCheckResponsePackageResults>|null
      */
-    public function getPackageResults() : array
+    public function getPackageResults() : ?array
     {
         return $this->packageResults;
     }
     /**
      * 
      *
-     * @param AcceptanceAuditPreCheckResponsePackageResults[] $packageResults
+     * @param list<AcceptanceAuditPreCheckResponsePackageResults>|null $packageResults
      *
      * @return self
      */
-    public function setPackageResults(array $packageResults) : self
+    public function setPackageResults(?array $packageResults) : self
     {
         $this->initialized['packageResults'] = true;
         $this->packageResults = $packageResults;

@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('currencyCode', $data)) {
+            if (\array_key_exists('currencyCode', $data) && $data['currencyCode'] !== null) {
                 $object->setCurrencyCode($data['currencyCode']);
                 unset($data['currencyCode']);
             }
-            if (\array_key_exists('transID', $data)) {
+            elseif (\array_key_exists('currencyCode', $data) && $data['currencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('transID', $data) && $data['transID'] !== null) {
                 $object->setTransID($data['transID']);
                 unset($data['transID']);
             }
-            if (\array_key_exists('allowPartialLandedCostResult', $data)) {
+            elseif (\array_key_exists('transID', $data) && $data['transID'] === null) {
+                $object->setTransID(null);
+            }
+            if (\array_key_exists('allowPartialLandedCostResult', $data) && $data['allowPartialLandedCostResult'] !== null) {
                 $object->setAllowPartialLandedCostResult($data['allowPartialLandedCostResult']);
                 unset($data['allowPartialLandedCostResult']);
             }
-            if (\array_key_exists('alversion', $data)) {
+            elseif (\array_key_exists('allowPartialLandedCostResult', $data) && $data['allowPartialLandedCostResult'] === null) {
+                $object->setAllowPartialLandedCostResult(null);
+            }
+            if (\array_key_exists('alversion', $data) && $data['alversion'] !== null) {
                 $object->setAlversion($data['alversion']);
                 unset($data['alversion']);
             }
-            if (\array_key_exists('shipment', $data)) {
+            elseif (\array_key_exists('alversion', $data) && $data['alversion'] === null) {
+                $object->setAlversion(null);
+            }
+            if (\array_key_exists('shipment', $data) && $data['shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['shipment'], 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment', 'json', $context));
                 unset($data['shipment']);
+            }
+            elseif (\array_key_exists('shipment', $data) && $data['shipment'] === null) {
+                $object->setShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -119,25 +134,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('currencyCode', $data)) {
+            if (\array_key_exists('currencyCode', $data) && $data['currencyCode'] !== null) {
                 $object->setCurrencyCode($data['currencyCode']);
                 unset($data['currencyCode']);
             }
-            if (\array_key_exists('transID', $data)) {
+            elseif (\array_key_exists('currencyCode', $data) && $data['currencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('transID', $data) && $data['transID'] !== null) {
                 $object->setTransID($data['transID']);
                 unset($data['transID']);
             }
-            if (\array_key_exists('allowPartialLandedCostResult', $data)) {
+            elseif (\array_key_exists('transID', $data) && $data['transID'] === null) {
+                $object->setTransID(null);
+            }
+            if (\array_key_exists('allowPartialLandedCostResult', $data) && $data['allowPartialLandedCostResult'] !== null) {
                 $object->setAllowPartialLandedCostResult($data['allowPartialLandedCostResult']);
                 unset($data['allowPartialLandedCostResult']);
             }
-            if (\array_key_exists('alversion', $data)) {
+            elseif (\array_key_exists('allowPartialLandedCostResult', $data) && $data['allowPartialLandedCostResult'] === null) {
+                $object->setAllowPartialLandedCostResult(null);
+            }
+            if (\array_key_exists('alversion', $data) && $data['alversion'] !== null) {
                 $object->setAlversion($data['alversion']);
                 unset($data['alversion']);
             }
-            if (\array_key_exists('shipment', $data)) {
+            elseif (\array_key_exists('alversion', $data) && $data['alversion'] === null) {
+                $object->setAlversion(null);
+            }
+            if (\array_key_exists('shipment', $data) && $data['shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['shipment'], 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment', 'json', $context));
                 unset($data['shipment']);
+            }
+            elseif (\array_key_exists('shipment', $data) && $data['shipment'] === null) {
+                $object->setShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

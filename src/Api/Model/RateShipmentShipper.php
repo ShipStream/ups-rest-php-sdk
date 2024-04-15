@@ -15,19 +15,19 @@ class RateShipmentShipper extends \ArrayObject
     /**
      * Shipper's name or company name.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Shipper's attention name.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Shipper's UPS account number.  A valid account number is required to receive negotiated rates. Optional otherwise. Cannot be present when requesting UserLevelDiscount.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
@@ -38,26 +38,26 @@ class RateShipmentShipper extends \ArrayObject
     Note: If the ShipFrom container is not present then this address will be used as the ShipFrom address. 
     If this address is used as the ShipFrom the shipment will be rated from this origin address.
     *
-    * @var ShipperAddress
+    * @var ShipperAddress|null
     */
     protected $address;
     /**
      * Shipper's name or company name.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Shipper's name or company name.  Length is not validated.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -66,20 +66,20 @@ class RateShipmentShipper extends \ArrayObject
     /**
      * Shipper's attention name.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Shipper's attention name.  Length is not validated.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -88,20 +88,20 @@ class RateShipmentShipper extends \ArrayObject
     /**
      * Shipper's UPS account number.  A valid account number is required to receive negotiated rates. Optional otherwise. Cannot be present when requesting UserLevelDiscount.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Shipper's UPS account number.  A valid account number is required to receive negotiated rates. Optional otherwise. Cannot be present when requesting UserLevelDiscount.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -115,9 +115,9 @@ class RateShipmentShipper extends \ArrayObject
     Note: If the ShipFrom container is not present then this address will be used as the ShipFrom address. 
     If this address is used as the ShipFrom the shipment will be rated from this origin address.
     *
-    * @return ShipperAddress
+    * @return ShipperAddress|null
     */
-    public function getAddress() : ShipperAddress
+    public function getAddress() : ?ShipperAddress
     {
         return $this->address;
     }
@@ -129,11 +129,11 @@ class RateShipmentShipper extends \ArrayObject
     Note: If the ShipFrom container is not present then this address will be used as the ShipFrom address. 
     If this address is used as the ShipFrom the shipment will be rated from this origin address.
     *
-    * @param ShipperAddress $address
+    * @param ShipperAddress|null $address
     *
     * @return self
     */
-    public function setAddress(ShipperAddress $address) : self
+    public function setAddress(?ShipperAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

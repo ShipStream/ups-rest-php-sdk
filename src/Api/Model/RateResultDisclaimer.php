@@ -21,13 +21,13 @@ class RateResultDisclaimer extends \ArrayObject
     04 = Taxes were unable to be determined and may apply to the shipment.
     05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Description of Disclaimer.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -39,9 +39,9 @@ class RateResultDisclaimer extends \ArrayObject
     04 = Taxes were unable to be determined and may apply to the shipment.
     05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -54,11 +54,11 @@ class RateResultDisclaimer extends \ArrayObject
     04 = Taxes were unable to be determined and may apply to the shipment.
     05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -67,20 +67,20 @@ class RateResultDisclaimer extends \ArrayObject
     /**
      * Description of Disclaimer.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of Disclaimer.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

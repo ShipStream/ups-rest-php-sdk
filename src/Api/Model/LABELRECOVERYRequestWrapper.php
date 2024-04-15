@@ -15,26 +15,26 @@ class LABELRECOVERYRequestWrapper extends \ArrayObject
     /**
      * Request for obtaining the Label for the return shipment.
      *
-     * @var LabelRecoveryRequest
+     * @var LabelRecoveryRequest|null
      */
     protected $labelRecoveryRequest;
     /**
      * Request for obtaining the Label for the return shipment.
      *
-     * @return LabelRecoveryRequest
+     * @return LabelRecoveryRequest|null
      */
-    public function getLabelRecoveryRequest() : LabelRecoveryRequest
+    public function getLabelRecoveryRequest() : ?LabelRecoveryRequest
     {
         return $this->labelRecoveryRequest;
     }
     /**
      * Request for obtaining the Label for the return shipment.
      *
-     * @param LabelRecoveryRequest $labelRecoveryRequest
+     * @param LabelRecoveryRequest|null $labelRecoveryRequest
      *
      * @return self
      */
-    public function setLabelRecoveryRequest(LabelRecoveryRequest $labelRecoveryRequest) : self
+    public function setLabelRecoveryRequest(?LabelRecoveryRequest $labelRecoveryRequest) : self
     {
         $this->initialized['labelRecoveryRequest'] = true;
         $this->labelRecoveryRequest = $labelRecoveryRequest;

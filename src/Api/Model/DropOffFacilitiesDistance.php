@@ -16,23 +16,23 @@ class DropOffFacilitiesDistance extends \ArrayObject
     * Distance from origin address. Distance based on distance UOM in request.
     Numeric value up to 200 and .2� decimal positions  Distance will be retuned for�drop off location search by proximity order.
     *
-    * @var string
+    * @var string|null
     */
     protected $value;
     /**
     * Unit Of Measure.
     Example: MI or KM
     *
-    * @var string
+    * @var string|null
     */
     protected $unitOfMeasurement;
     /**
     * Distance from origin address. Distance based on distance UOM in request.
     Numeric value up to 200 and .2� decimal positions  Distance will be retuned for�drop off location search by proximity order.
     *
-    * @return string
+    * @return string|null
     */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
@@ -40,11 +40,11 @@ class DropOffFacilitiesDistance extends \ArrayObject
     * Distance from origin address. Distance based on distance UOM in request.
     Numeric value up to 200 and .2� decimal positions  Distance will be retuned for�drop off location search by proximity order.
     *
-    * @param string $value
+    * @param string|null $value
     *
     * @return self
     */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -54,9 +54,9 @@ class DropOffFacilitiesDistance extends \ArrayObject
     * Unit Of Measure.
     Example: MI or KM
     *
-    * @return string
+    * @return string|null
     */
-    public function getUnitOfMeasurement() : string
+    public function getUnitOfMeasurement() : ?string
     {
         return $this->unitOfMeasurement;
     }
@@ -64,11 +64,11 @@ class DropOffFacilitiesDistance extends \ArrayObject
     * Unit Of Measure.
     Example: MI or KM
     *
-    * @param string $unitOfMeasurement
+    * @param string|null $unitOfMeasurement
     *
     * @return self
     */
-    public function setUnitOfMeasurement(string $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?string $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

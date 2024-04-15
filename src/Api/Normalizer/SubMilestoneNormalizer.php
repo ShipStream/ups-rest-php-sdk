@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('category', $data)) {
+            if (\array_key_exists('category', $data) && $data['category'] !== null) {
                 $object->setCategory($data['category']);
                 unset($data['category']);
+            }
+            elseif (\array_key_exists('category', $data) && $data['category'] === null) {
+                $object->setCategory(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -99,9 +102,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('category', $data)) {
+            if (\array_key_exists('category', $data) && $data['category'] !== null) {
                 $object->setCategory($data['category']);
                 unset($data['category']);
+            }
+            elseif (\array_key_exists('category', $data) && $data['category'] === null) {
+                $object->setCategory(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

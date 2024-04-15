@@ -15,44 +15,44 @@ class FreightRateResponseCommodity extends \ArrayObject
     /**
      * Unique identifier for the commodity.
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityID;
     /**
      * Description of the line item.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Commodity Weight Container.
      *
-     * @var CommodityWeight
+     * @var CommodityWeight|null
      */
     protected $weight;
     /**
      * Adjusted Weight Container.
      *
-     * @var CommodityAdjustedWeight
+     * @var CommodityAdjustedWeight|null
      */
     protected $adjustedWeight;
     /**
      * Unique identifier for the commodity.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityID() : string
+    public function getCommodityID() : ?string
     {
         return $this->commodityID;
     }
     /**
      * Unique identifier for the commodity.
      *
-     * @param string $commodityID
+     * @param string|null $commodityID
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(?string $commodityID) : self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -61,20 +61,20 @@ class FreightRateResponseCommodity extends \ArrayObject
     /**
      * Description of the line item.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the line item.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -83,20 +83,20 @@ class FreightRateResponseCommodity extends \ArrayObject
     /**
      * Commodity Weight Container.
      *
-     * @return CommodityWeight
+     * @return CommodityWeight|null
      */
-    public function getWeight() : CommodityWeight
+    public function getWeight() : ?CommodityWeight
     {
         return $this->weight;
     }
     /**
      * Commodity Weight Container.
      *
-     * @param CommodityWeight $weight
+     * @param CommodityWeight|null $weight
      *
      * @return self
      */
-    public function setWeight(CommodityWeight $weight) : self
+    public function setWeight(?CommodityWeight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -105,20 +105,20 @@ class FreightRateResponseCommodity extends \ArrayObject
     /**
      * Adjusted Weight Container.
      *
-     * @return CommodityAdjustedWeight
+     * @return CommodityAdjustedWeight|null
      */
-    public function getAdjustedWeight() : CommodityAdjustedWeight
+    public function getAdjustedWeight() : ?CommodityAdjustedWeight
     {
         return $this->adjustedWeight;
     }
     /**
      * Adjusted Weight Container.
      *
-     * @param CommodityAdjustedWeight $adjustedWeight
+     * @param CommodityAdjustedWeight|null $adjustedWeight
      *
      * @return self
      */
-    public function setAdjustedWeight(CommodityAdjustedWeight $adjustedWeight) : self
+    public function setAdjustedWeight(?CommodityAdjustedWeight $adjustedWeight) : self
     {
         $this->initialized['adjustedWeight'] = true;
         $this->adjustedWeight = $adjustedWeight;

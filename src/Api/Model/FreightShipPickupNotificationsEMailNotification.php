@@ -15,7 +15,7 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
     /**
      * Email address which should receive pre-pickup notification
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
@@ -25,26 +25,26 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
     03 = PICKUP_SECURED
     04 = PICKUP_EXCEPTION
     *
-    * @var string
+    * @var string|null
     */
     protected $eventType;
     /**
      * Email address which should receive pre-pickup notification
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Email address which should receive pre-pickup notification
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -57,9 +57,9 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
     03 = PICKUP_SECURED
     04 = PICKUP_EXCEPTION
     *
-    * @return string
+    * @return string|null
     */
-    public function getEventType() : string
+    public function getEventType() : ?string
     {
         return $this->eventType;
     }
@@ -70,11 +70,11 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
     03 = PICKUP_SECURED
     04 = PICKUP_EXCEPTION
     *
-    * @param string $eventType
+    * @param string|null $eventType
     *
     * @return self
     */
-    public function setEventType(string $eventType) : self
+    public function setEventType(?string $eventType) : self
     {
         $this->initialized['eventType'] = true;
         $this->eventType = $eventType;

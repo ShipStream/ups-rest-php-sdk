@@ -15,32 +15,32 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
     /**
      * Container for response.
      *
-     * @var PickupGetServiceCenterFacilitiesResponseResponse
+     * @var PickupGetServiceCenterFacilitiesResponseResponse|null
      */
     protected $response;
     /**
      * Locations of the nearest Service Center for Dropoff and Pickup
      *
-     * @var PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
+     * @var PickupGetServiceCenterFacilitiesResponseServiceCenterLocation|null
      */
     protected $serviceCenterLocation;
     /**
      * Container for response.
      *
-     * @return PickupGetServiceCenterFacilitiesResponseResponse
+     * @return PickupGetServiceCenterFacilitiesResponseResponse|null
      */
-    public function getResponse() : PickupGetServiceCenterFacilitiesResponseResponse
+    public function getResponse() : ?PickupGetServiceCenterFacilitiesResponseResponse
     {
         return $this->response;
     }
     /**
      * Container for response.
      *
-     * @param PickupGetServiceCenterFacilitiesResponseResponse $response
+     * @param PickupGetServiceCenterFacilitiesResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PickupGetServiceCenterFacilitiesResponseResponse $response) : self
+    public function setResponse(?PickupGetServiceCenterFacilitiesResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
     /**
      * Locations of the nearest Service Center for Dropoff and Pickup
      *
-     * @return PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
+     * @return PickupGetServiceCenterFacilitiesResponseServiceCenterLocation|null
      */
-    public function getServiceCenterLocation() : PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
+    public function getServiceCenterLocation() : ?PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
     {
         return $this->serviceCenterLocation;
     }
     /**
      * Locations of the nearest Service Center for Dropoff and Pickup
      *
-     * @param PickupGetServiceCenterFacilitiesResponseServiceCenterLocation $serviceCenterLocation
+     * @param PickupGetServiceCenterFacilitiesResponseServiceCenterLocation|null $serviceCenterLocation
      *
      * @return self
      */
-    public function setServiceCenterLocation(PickupGetServiceCenterFacilitiesResponseServiceCenterLocation $serviceCenterLocation) : self
+    public function setServiceCenterLocation(?PickupGetServiceCenterFacilitiesResponseServiceCenterLocation $serviceCenterLocation) : self
     {
         $this->initialized['serviceCenterLocation'] = true;
         $this->serviceCenterLocation = $serviceCenterLocation;

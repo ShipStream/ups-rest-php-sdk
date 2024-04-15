@@ -15,7 +15,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     /**
      * Shipment Date associated with UPS Premium Care Shipment.   Valid Format: yyyyMMdd
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentDate;
     /**
@@ -23,7 +23,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     01 = A4 Size
     02 = Letter Size
     *
-    * @var string
+    * @var string|null
     */
     protected $pageSize;
     /**
@@ -31,38 +31,38 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     01 = PNG
     02 = PDF
     *
-    * @var string
+    * @var string|null
     */
     protected $printType;
     /**
      * Number of Copies of UPS Premium Care Form.  Valid value is 02.
      *
-     * @var string
+     * @var string|null
      */
     protected $numOfCopies;
     /**
      * Container to hold languages in which UPS Premium Care Form is required.
      *
-     * @var UPSPremiumCareFormLanguageForUPSPremiumCare
+     * @var UPSPremiumCareFormLanguageForUPSPremiumCare|null
      */
     protected $languageForUPSPremiumCare;
     /**
      * Shipment Date associated with UPS Premium Care Shipment.   Valid Format: yyyyMMdd
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentDate() : string
+    public function getShipmentDate() : ?string
     {
         return $this->shipmentDate;
     }
     /**
      * Shipment Date associated with UPS Premium Care Shipment.   Valid Format: yyyyMMdd
      *
-     * @param string $shipmentDate
+     * @param string|null $shipmentDate
      *
      * @return self
      */
-    public function setShipmentDate(string $shipmentDate) : self
+    public function setShipmentDate(?string $shipmentDate) : self
     {
         $this->initialized['shipmentDate'] = true;
         $this->shipmentDate = $shipmentDate;
@@ -73,9 +73,9 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     01 = A4 Size
     02 = Letter Size
     *
-    * @return string
+    * @return string|null
     */
-    public function getPageSize() : string
+    public function getPageSize() : ?string
     {
         return $this->pageSize;
     }
@@ -84,11 +84,11 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     01 = A4 Size
     02 = Letter Size
     *
-    * @param string $pageSize
+    * @param string|null $pageSize
     *
     * @return self
     */
-    public function setPageSize(string $pageSize) : self
+    public function setPageSize(?string $pageSize) : self
     {
         $this->initialized['pageSize'] = true;
         $this->pageSize = $pageSize;
@@ -99,9 +99,9 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     01 = PNG
     02 = PDF
     *
-    * @return string
+    * @return string|null
     */
-    public function getPrintType() : string
+    public function getPrintType() : ?string
     {
         return $this->printType;
     }
@@ -110,11 +110,11 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     01 = PNG
     02 = PDF
     *
-    * @param string $printType
+    * @param string|null $printType
     *
     * @return self
     */
-    public function setPrintType(string $printType) : self
+    public function setPrintType(?string $printType) : self
     {
         $this->initialized['printType'] = true;
         $this->printType = $printType;
@@ -123,20 +123,20 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     /**
      * Number of Copies of UPS Premium Care Form.  Valid value is 02.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumOfCopies() : string
+    public function getNumOfCopies() : ?string
     {
         return $this->numOfCopies;
     }
     /**
      * Number of Copies of UPS Premium Care Form.  Valid value is 02.
      *
-     * @param string $numOfCopies
+     * @param string|null $numOfCopies
      *
      * @return self
      */
-    public function setNumOfCopies(string $numOfCopies) : self
+    public function setNumOfCopies(?string $numOfCopies) : self
     {
         $this->initialized['numOfCopies'] = true;
         $this->numOfCopies = $numOfCopies;
@@ -145,20 +145,20 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     /**
      * Container to hold languages in which UPS Premium Care Form is required.
      *
-     * @return UPSPremiumCareFormLanguageForUPSPremiumCare
+     * @return UPSPremiumCareFormLanguageForUPSPremiumCare|null
      */
-    public function getLanguageForUPSPremiumCare() : UPSPremiumCareFormLanguageForUPSPremiumCare
+    public function getLanguageForUPSPremiumCare() : ?UPSPremiumCareFormLanguageForUPSPremiumCare
     {
         return $this->languageForUPSPremiumCare;
     }
     /**
      * Container to hold languages in which UPS Premium Care Form is required.
      *
-     * @param UPSPremiumCareFormLanguageForUPSPremiumCare $languageForUPSPremiumCare
+     * @param UPSPremiumCareFormLanguageForUPSPremiumCare|null $languageForUPSPremiumCare
      *
      * @return self
      */
-    public function setLanguageForUPSPremiumCare(UPSPremiumCareFormLanguageForUPSPremiumCare $languageForUPSPremiumCare) : self
+    public function setLanguageForUPSPremiumCare(?UPSPremiumCareFormLanguageForUPSPremiumCare $languageForUPSPremiumCare) : self
     {
         $this->initialized['languageForUPSPremiumCare'] = true;
         $this->languageForUPSPremiumCare = $languageForUPSPremiumCare;

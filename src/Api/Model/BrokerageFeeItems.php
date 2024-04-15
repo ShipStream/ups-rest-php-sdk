@@ -15,32 +15,32 @@ class BrokerageFeeItems extends \ArrayObject
     /**
      * Brokerage Charge name this shipment. Possible Values: 1. Entry Preparation Fee 2. Disbursement Fee 3. Additional Line Fee
      *
-     * @var string
+     * @var string|null
      */
     protected $chargeName;
     /**
      * Fee amount for the brokerage charges
      *
-     * @var float
+     * @var float|null
      */
     protected $chargeAmount;
     /**
      * Brokerage Charge name this shipment. Possible Values: 1. Entry Preparation Fee 2. Disbursement Fee 3. Additional Line Fee
      *
-     * @return string
+     * @return string|null
      */
-    public function getChargeName() : string
+    public function getChargeName() : ?string
     {
         return $this->chargeName;
     }
     /**
      * Brokerage Charge name this shipment. Possible Values: 1. Entry Preparation Fee 2. Disbursement Fee 3. Additional Line Fee
      *
-     * @param string $chargeName
+     * @param string|null $chargeName
      *
      * @return self
      */
-    public function setChargeName(string $chargeName) : self
+    public function setChargeName(?string $chargeName) : self
     {
         $this->initialized['chargeName'] = true;
         $this->chargeName = $chargeName;
@@ -49,20 +49,20 @@ class BrokerageFeeItems extends \ArrayObject
     /**
      * Fee amount for the brokerage charges
      *
-     * @return float
+     * @return float|null
      */
-    public function getChargeAmount() : float
+    public function getChargeAmount() : ?float
     {
         return $this->chargeAmount;
     }
     /**
      * Fee amount for the brokerage charges
      *
-     * @param float $chargeAmount
+     * @param float|null $chargeAmount
      *
      * @return self
      */
-    public function setChargeAmount(float $chargeAmount) : self
+    public function setChargeAmount(?float $chargeAmount) : self
     {
         $this->initialized['chargeAmount'] = true;
         $this->chargeAmount = $chargeAmount;

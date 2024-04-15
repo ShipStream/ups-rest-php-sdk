@@ -15,26 +15,26 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
     /**
      * DocumentID represents a document uploaded to Forms History.  N/A
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $documentID;
     /**
      * DocumentID represents a document uploaded to Forms History.  N/A
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getDocumentID() : array
+    public function getDocumentID() : ?array
     {
         return $this->documentID;
     }
     /**
      * DocumentID represents a document uploaded to Forms History.  N/A
      *
-     * @param string[] $documentID
+     * @param list<string>|null $documentID
      *
      * @return self
      */
-    public function setDocumentID(array $documentID) : self
+    public function setDocumentID(?array $documentID) : self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

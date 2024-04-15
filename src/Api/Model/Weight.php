@@ -15,32 +15,32 @@ class Weight extends \ArrayObject
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $unitOfMeasurement;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getUnitOfMeasurement() : string
+    public function getUnitOfMeasurement() : ?string
     {
         return $this->unitOfMeasurement;
     }
     /**
      * 
      *
-     * @param string $unitOfMeasurement
+     * @param string|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(string $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?string $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class Weight extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * 
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

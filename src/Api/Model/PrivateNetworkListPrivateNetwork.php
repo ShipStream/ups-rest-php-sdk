@@ -15,32 +15,32 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
     /**
      * Value of networkID.
      *
-     * @var string
+     * @var string|null
      */
     protected $networkID;
     /**
      * Description of the Network.
      *
-     * @var string
+     * @var string|null
      */
     protected $networkDescription;
     /**
      * Value of networkID.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNetworkID() : string
+    public function getNetworkID() : ?string
     {
         return $this->networkID;
     }
     /**
      * Value of networkID.
      *
-     * @param string $networkID
+     * @param string|null $networkID
      *
      * @return self
      */
-    public function setNetworkID(string $networkID) : self
+    public function setNetworkID(?string $networkID) : self
     {
         $this->initialized['networkID'] = true;
         $this->networkID = $networkID;
@@ -49,20 +49,20 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
     /**
      * Description of the Network.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNetworkDescription() : string
+    public function getNetworkDescription() : ?string
     {
         return $this->networkDescription;
     }
     /**
      * Description of the Network.
      *
-     * @param string $networkDescription
+     * @param string|null $networkDescription
      *
      * @return self
      */
-    public function setNetworkDescription(string $networkDescription) : self
+    public function setNetworkDescription(?string $networkDescription) : self
     {
         $this->initialized['networkDescription'] = true;
         $this->networkDescription = $networkDescription;

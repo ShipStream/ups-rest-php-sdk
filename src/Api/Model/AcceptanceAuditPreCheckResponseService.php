@@ -15,26 +15,26 @@ class AcceptanceAuditPreCheckResponseService extends \ArrayObject
     /**
      * UPS service type code.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * UPS service type code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * UPS service type code.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

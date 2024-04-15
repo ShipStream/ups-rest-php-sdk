@@ -15,115 +15,115 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @var AccessPointInformation
+     * @var AccessPointInformation|null
      */
     protected $accessPointInformation;
     /**
      * 
      *
-     * @var Activity[]
+     * @var list<Activity>|null
      */
     protected $activity;
     /**
      * type
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $additionalAttributes;
     /**
      * type
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $additionalServices;
     /**
      * 
      *
-     * @var AlternateTrackingNumber[]
+     * @var list<AlternateTrackingNumber>|null
      */
     protected $alternateTrackingNumber;
     /**
      * 
      *
-     * @var Status
+     * @var Status|null
      */
     protected $currentStatus;
     /**
      * 
      *
-     * @var DeliveryDate[]
+     * @var list<DeliveryDate>|null
      */
     protected $deliveryDate;
     /**
      * 
      *
-     * @var DeliveryInformation
+     * @var DeliveryInformation|null
      */
     protected $deliveryInformation;
     /**
      * 
      *
-     * @var DeliveryTime
+     * @var DeliveryTime|null
      */
     protected $deliveryTime;
     /**
      * milestones
      *
-     * @var Milestones[]
+     * @var list<Milestones>|null
      */
     protected $milestones;
     /**
      * 
      *
-     * @var PackageAddress[]
+     * @var list<PackageAddress>|null
      */
     protected $packageAddress;
     /**
      * packageCount
      *
-     * @var int
+     * @var int|null
      */
     protected $packageCount;
     /**
      * 
      *
-     * @var PaymentInformation[]
+     * @var list<PaymentInformation>|null
      */
     protected $paymentInformation;
     /**
      * 
      *
-     * @var ReferenceNumber[]
+     * @var list<ReferenceNumber>|null
      */
     protected $referenceNumber;
     /**
      * 
      *
-     * @var Service
+     * @var Service|null
      */
     protected $service;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $statusCode;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $statusDescription;
     /**
      * suppressionIndicators
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $suppressionIndicators;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
@@ -135,20 +135,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return AccessPointInformation
+     * @return AccessPointInformation|null
      */
-    public function getAccessPointInformation() : AccessPointInformation
+    public function getAccessPointInformation() : ?AccessPointInformation
     {
         return $this->accessPointInformation;
     }
     /**
      * 
      *
-     * @param AccessPointInformation $accessPointInformation
+     * @param AccessPointInformation|null $accessPointInformation
      *
      * @return self
      */
-    public function setAccessPointInformation(AccessPointInformation $accessPointInformation) : self
+    public function setAccessPointInformation(?AccessPointInformation $accessPointInformation) : self
     {
         $this->initialized['accessPointInformation'] = true;
         $this->accessPointInformation = $accessPointInformation;
@@ -157,20 +157,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return Activity[]
+     * @return list<Activity>|null
      */
-    public function getActivity() : array
+    public function getActivity() : ?array
     {
         return $this->activity;
     }
     /**
      * 
      *
-     * @param Activity[] $activity
+     * @param list<Activity>|null $activity
      *
      * @return self
      */
-    public function setActivity(array $activity) : self
+    public function setActivity(?array $activity) : self
     {
         $this->initialized['activity'] = true;
         $this->activity = $activity;
@@ -179,20 +179,20 @@ class Package extends \ArrayObject
     /**
      * type
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAdditionalAttributes() : array
+    public function getAdditionalAttributes() : ?array
     {
         return $this->additionalAttributes;
     }
     /**
      * type
      *
-     * @param string[] $additionalAttributes
+     * @param list<string>|null $additionalAttributes
      *
      * @return self
      */
-    public function setAdditionalAttributes(array $additionalAttributes) : self
+    public function setAdditionalAttributes(?array $additionalAttributes) : self
     {
         $this->initialized['additionalAttributes'] = true;
         $this->additionalAttributes = $additionalAttributes;
@@ -201,20 +201,20 @@ class Package extends \ArrayObject
     /**
      * type
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAdditionalServices() : array
+    public function getAdditionalServices() : ?array
     {
         return $this->additionalServices;
     }
     /**
      * type
      *
-     * @param string[] $additionalServices
+     * @param list<string>|null $additionalServices
      *
      * @return self
      */
-    public function setAdditionalServices(array $additionalServices) : self
+    public function setAdditionalServices(?array $additionalServices) : self
     {
         $this->initialized['additionalServices'] = true;
         $this->additionalServices = $additionalServices;
@@ -223,20 +223,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return AlternateTrackingNumber[]
+     * @return list<AlternateTrackingNumber>|null
      */
-    public function getAlternateTrackingNumber() : array
+    public function getAlternateTrackingNumber() : ?array
     {
         return $this->alternateTrackingNumber;
     }
     /**
      * 
      *
-     * @param AlternateTrackingNumber[] $alternateTrackingNumber
+     * @param list<AlternateTrackingNumber>|null $alternateTrackingNumber
      *
      * @return self
      */
-    public function setAlternateTrackingNumber(array $alternateTrackingNumber) : self
+    public function setAlternateTrackingNumber(?array $alternateTrackingNumber) : self
     {
         $this->initialized['alternateTrackingNumber'] = true;
         $this->alternateTrackingNumber = $alternateTrackingNumber;
@@ -245,20 +245,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return Status
+     * @return Status|null
      */
-    public function getCurrentStatus() : Status
+    public function getCurrentStatus() : ?Status
     {
         return $this->currentStatus;
     }
     /**
      * 
      *
-     * @param Status $currentStatus
+     * @param Status|null $currentStatus
      *
      * @return self
      */
-    public function setCurrentStatus(Status $currentStatus) : self
+    public function setCurrentStatus(?Status $currentStatus) : self
     {
         $this->initialized['currentStatus'] = true;
         $this->currentStatus = $currentStatus;
@@ -267,20 +267,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryDate[]
+     * @return list<DeliveryDate>|null
      */
-    public function getDeliveryDate() : array
+    public function getDeliveryDate() : ?array
     {
         return $this->deliveryDate;
     }
     /**
      * 
      *
-     * @param DeliveryDate[] $deliveryDate
+     * @param list<DeliveryDate>|null $deliveryDate
      *
      * @return self
      */
-    public function setDeliveryDate(array $deliveryDate) : self
+    public function setDeliveryDate(?array $deliveryDate) : self
     {
         $this->initialized['deliveryDate'] = true;
         $this->deliveryDate = $deliveryDate;
@@ -289,20 +289,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryInformation
+     * @return DeliveryInformation|null
      */
-    public function getDeliveryInformation() : DeliveryInformation
+    public function getDeliveryInformation() : ?DeliveryInformation
     {
         return $this->deliveryInformation;
     }
     /**
      * 
      *
-     * @param DeliveryInformation $deliveryInformation
+     * @param DeliveryInformation|null $deliveryInformation
      *
      * @return self
      */
-    public function setDeliveryInformation(DeliveryInformation $deliveryInformation) : self
+    public function setDeliveryInformation(?DeliveryInformation $deliveryInformation) : self
     {
         $this->initialized['deliveryInformation'] = true;
         $this->deliveryInformation = $deliveryInformation;
@@ -311,20 +311,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryTime
+     * @return DeliveryTime|null
      */
-    public function getDeliveryTime() : DeliveryTime
+    public function getDeliveryTime() : ?DeliveryTime
     {
         return $this->deliveryTime;
     }
     /**
      * 
      *
-     * @param DeliveryTime $deliveryTime
+     * @param DeliveryTime|null $deliveryTime
      *
      * @return self
      */
-    public function setDeliveryTime(DeliveryTime $deliveryTime) : self
+    public function setDeliveryTime(?DeliveryTime $deliveryTime) : self
     {
         $this->initialized['deliveryTime'] = true;
         $this->deliveryTime = $deliveryTime;
@@ -333,20 +333,20 @@ class Package extends \ArrayObject
     /**
      * milestones
      *
-     * @return Milestones[]
+     * @return list<Milestones>|null
      */
-    public function getMilestones() : array
+    public function getMilestones() : ?array
     {
         return $this->milestones;
     }
     /**
      * milestones
      *
-     * @param Milestones[] $milestones
+     * @param list<Milestones>|null $milestones
      *
      * @return self
      */
-    public function setMilestones(array $milestones) : self
+    public function setMilestones(?array $milestones) : self
     {
         $this->initialized['milestones'] = true;
         $this->milestones = $milestones;
@@ -355,20 +355,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return PackageAddress[]
+     * @return list<PackageAddress>|null
      */
-    public function getPackageAddress() : array
+    public function getPackageAddress() : ?array
     {
         return $this->packageAddress;
     }
     /**
      * 
      *
-     * @param PackageAddress[] $packageAddress
+     * @param list<PackageAddress>|null $packageAddress
      *
      * @return self
      */
-    public function setPackageAddress(array $packageAddress) : self
+    public function setPackageAddress(?array $packageAddress) : self
     {
         $this->initialized['packageAddress'] = true;
         $this->packageAddress = $packageAddress;
@@ -377,20 +377,20 @@ class Package extends \ArrayObject
     /**
      * packageCount
      *
-     * @return int
+     * @return int|null
      */
-    public function getPackageCount() : int
+    public function getPackageCount() : ?int
     {
         return $this->packageCount;
     }
     /**
      * packageCount
      *
-     * @param int $packageCount
+     * @param int|null $packageCount
      *
      * @return self
      */
-    public function setPackageCount(int $packageCount) : self
+    public function setPackageCount(?int $packageCount) : self
     {
         $this->initialized['packageCount'] = true;
         $this->packageCount = $packageCount;
@@ -399,20 +399,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return PaymentInformation[]
+     * @return list<PaymentInformation>|null
      */
-    public function getPaymentInformation() : array
+    public function getPaymentInformation() : ?array
     {
         return $this->paymentInformation;
     }
     /**
      * 
      *
-     * @param PaymentInformation[] $paymentInformation
+     * @param list<PaymentInformation>|null $paymentInformation
      *
      * @return self
      */
-    public function setPaymentInformation(array $paymentInformation) : self
+    public function setPaymentInformation(?array $paymentInformation) : self
     {
         $this->initialized['paymentInformation'] = true;
         $this->paymentInformation = $paymentInformation;
@@ -421,20 +421,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return ReferenceNumber[]
+     * @return list<ReferenceNumber>|null
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber() : ?array
     {
         return $this->referenceNumber;
     }
     /**
      * 
      *
-     * @param ReferenceNumber[] $referenceNumber
+     * @param list<ReferenceNumber>|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(?array $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -443,20 +443,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return Service
+     * @return Service|null
      */
-    public function getService() : Service
+    public function getService() : ?Service
     {
         return $this->service;
     }
     /**
      * 
      *
-     * @param Service $service
+     * @param Service|null $service
      *
      * @return self
      */
-    public function setService(Service $service) : self
+    public function setService(?Service $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -465,20 +465,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatusCode() : string
+    public function getStatusCode() : ?string
     {
         return $this->statusCode;
     }
     /**
      * 
      *
-     * @param string $statusCode
+     * @param string|null $statusCode
      *
      * @return self
      */
-    public function setStatusCode(string $statusCode) : self
+    public function setStatusCode(?string $statusCode) : self
     {
         $this->initialized['statusCode'] = true;
         $this->statusCode = $statusCode;
@@ -487,20 +487,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatusDescription() : string
+    public function getStatusDescription() : ?string
     {
         return $this->statusDescription;
     }
     /**
      * 
      *
-     * @param string $statusDescription
+     * @param string|null $statusDescription
      *
      * @return self
      */
-    public function setStatusDescription(string $statusDescription) : self
+    public function setStatusDescription(?string $statusDescription) : self
     {
         $this->initialized['statusDescription'] = true;
         $this->statusDescription = $statusDescription;
@@ -509,20 +509,20 @@ class Package extends \ArrayObject
     /**
      * suppressionIndicators
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getSuppressionIndicators() : array
+    public function getSuppressionIndicators() : ?array
     {
         return $this->suppressionIndicators;
     }
     /**
      * suppressionIndicators
      *
-     * @param string[] $suppressionIndicators
+     * @param list<string>|null $suppressionIndicators
      *
      * @return self
      */
-    public function setSuppressionIndicators(array $suppressionIndicators) : self
+    public function setSuppressionIndicators(?array $suppressionIndicators) : self
     {
         $this->initialized['suppressionIndicators'] = true;
         $this->suppressionIndicators = $suppressionIndicators;
@@ -531,20 +531,20 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * 
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;

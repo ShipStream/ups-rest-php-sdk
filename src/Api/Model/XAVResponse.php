@@ -15,7 +15,7 @@ class XAVResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var XAVResponseResponse
+     * @var XAVResponseResponse|null
      */
     protected $response;
     /**
@@ -39,7 +39,7 @@ class XAVResponse extends \ArrayObject
     /**
      * AddressClassification Container.
      *
-     * @var XAVResponseAddressClassification
+     * @var XAVResponseAddressClassification|null
      */
     protected $addressClassification;
     /**
@@ -51,20 +51,20 @@ class XAVResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @return XAVResponseResponse
+     * @return XAVResponseResponse|null
      */
-    public function getResponse() : XAVResponseResponse
+    public function getResponse() : ?XAVResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param XAVResponseResponse $response
+     * @param XAVResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(XAVResponseResponse $response) : self
+    public function setResponse(?XAVResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -139,20 +139,20 @@ class XAVResponse extends \ArrayObject
     /**
      * AddressClassification Container.
      *
-     * @return XAVResponseAddressClassification
+     * @return XAVResponseAddressClassification|null
      */
-    public function getAddressClassification() : XAVResponseAddressClassification
+    public function getAddressClassification() : ?XAVResponseAddressClassification
     {
         return $this->addressClassification;
     }
     /**
      * AddressClassification Container.
      *
-     * @param XAVResponseAddressClassification $addressClassification
+     * @param XAVResponseAddressClassification|null $addressClassification
      *
      * @return self
      */
-    public function setAddressClassification(XAVResponseAddressClassification $addressClassification) : self
+    public function setAddressClassification(?XAVResponseAddressClassification $addressClassification) : self
     {
         $this->initialized['addressClassification'] = true;
         $this->addressClassification = $addressClassification;

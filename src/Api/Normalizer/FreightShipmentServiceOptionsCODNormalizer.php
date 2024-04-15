@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CODValue', $data)) {
+            if (\array_key_exists('CODValue', $data) && $data['CODValue'] !== null) {
                 $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], 'ShipStream\\Ups\\Api\\Model\\CODCODValue', 'json', $context));
                 unset($data['CODValue']);
             }
-            if (\array_key_exists('CODPaymentMethod', $data)) {
+            elseif (\array_key_exists('CODValue', $data) && $data['CODValue'] === null) {
+                $object->setCODValue(null);
+            }
+            if (\array_key_exists('CODPaymentMethod', $data) && $data['CODPaymentMethod'] !== null) {
                 $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod', 'json', $context));
                 unset($data['CODPaymentMethod']);
             }
-            if (\array_key_exists('CODBillingOption', $data)) {
+            elseif (\array_key_exists('CODPaymentMethod', $data) && $data['CODPaymentMethod'] === null) {
+                $object->setCODPaymentMethod(null);
+            }
+            if (\array_key_exists('CODBillingOption', $data) && $data['CODBillingOption'] !== null) {
                 $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption', 'json', $context));
                 unset($data['CODBillingOption']);
             }
-            if (\array_key_exists('RemitTo', $data)) {
+            elseif (\array_key_exists('CODBillingOption', $data) && $data['CODBillingOption'] === null) {
+                $object->setCODBillingOption(null);
+            }
+            if (\array_key_exists('RemitTo', $data) && $data['RemitTo'] !== null) {
                 $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], 'ShipStream\\Ups\\Api\\Model\\CODRemitTo', 'json', $context));
                 unset($data['RemitTo']);
+            }
+            elseif (\array_key_exists('RemitTo', $data) && $data['RemitTo'] === null) {
+                $object->setRemitTo(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,21 +124,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CODValue', $data)) {
+            if (\array_key_exists('CODValue', $data) && $data['CODValue'] !== null) {
                 $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], 'ShipStream\\Ups\\Api\\Model\\CODCODValue', 'json', $context));
                 unset($data['CODValue']);
             }
-            if (\array_key_exists('CODPaymentMethod', $data)) {
+            elseif (\array_key_exists('CODValue', $data) && $data['CODValue'] === null) {
+                $object->setCODValue(null);
+            }
+            if (\array_key_exists('CODPaymentMethod', $data) && $data['CODPaymentMethod'] !== null) {
                 $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod', 'json', $context));
                 unset($data['CODPaymentMethod']);
             }
-            if (\array_key_exists('CODBillingOption', $data)) {
+            elseif (\array_key_exists('CODPaymentMethod', $data) && $data['CODPaymentMethod'] === null) {
+                $object->setCODPaymentMethod(null);
+            }
+            if (\array_key_exists('CODBillingOption', $data) && $data['CODBillingOption'] !== null) {
                 $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption', 'json', $context));
                 unset($data['CODBillingOption']);
             }
-            if (\array_key_exists('RemitTo', $data)) {
+            elseif (\array_key_exists('CODBillingOption', $data) && $data['CODBillingOption'] === null) {
+                $object->setCODBillingOption(null);
+            }
+            if (\array_key_exists('RemitTo', $data) && $data['RemitTo'] !== null) {
                 $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], 'ShipStream\\Ups\\Api\\Model\\CODRemitTo', 'json', $context));
                 unset($data['RemitTo']);
+            }
+            elseif (\array_key_exists('RemitTo', $data) && $data['RemitTo'] === null) {
+                $object->setRemitTo(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

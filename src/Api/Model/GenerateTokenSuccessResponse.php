@@ -27,25 +27,25 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Type of requested access token
      *
-     * @var string
+     * @var string|null
      */
     protected $tokenType;
     /**
      * Issue time of requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $issuedAt;
     /**
      * Client id for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $clientId;
     /**
      * Token to be used in API requests.
      *
-     * @var string
+     * @var string|null
      */
     protected $accessToken;
     /**
@@ -57,7 +57,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Scope for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $scope;
     /**
@@ -69,19 +69,19 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Expire time for requested token in seconds.
      *
-     * @var string
+     * @var string|null
      */
     protected $expiresIn;
     /**
      * Number of refreshes for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $refreshCount;
     /**
      * Status for requested token.
      *
-     * @var string
+     * @var string|null
      */
     protected $status;
     /**
@@ -131,20 +131,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Type of requested access token
      *
-     * @return string
+     * @return string|null
      */
-    public function getTokenType() : string
+    public function getTokenType() : ?string
     {
         return $this->tokenType;
     }
     /**
      * Type of requested access token
      *
-     * @param string $tokenType
+     * @param string|null $tokenType
      *
      * @return self
      */
-    public function setTokenType(string $tokenType) : self
+    public function setTokenType(?string $tokenType) : self
     {
         $this->initialized['tokenType'] = true;
         $this->tokenType = $tokenType;
@@ -153,20 +153,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Issue time of requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getIssuedAt() : string
+    public function getIssuedAt() : ?string
     {
         return $this->issuedAt;
     }
     /**
      * Issue time of requested token.
      *
-     * @param string $issuedAt
+     * @param string|null $issuedAt
      *
      * @return self
      */
-    public function setIssuedAt(string $issuedAt) : self
+    public function setIssuedAt(?string $issuedAt) : self
     {
         $this->initialized['issuedAt'] = true;
         $this->issuedAt = $issuedAt;
@@ -175,20 +175,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Client id for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getClientId() : string
+    public function getClientId() : ?string
     {
         return $this->clientId;
     }
     /**
      * Client id for requested token.
      *
-     * @param string $clientId
+     * @param string|null $clientId
      *
      * @return self
      */
-    public function setClientId(string $clientId) : self
+    public function setClientId(?string $clientId) : self
     {
         $this->initialized['clientId'] = true;
         $this->clientId = $clientId;
@@ -197,20 +197,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Token to be used in API requests.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccessToken() : string
+    public function getAccessToken() : ?string
     {
         return $this->accessToken;
     }
     /**
      * Token to be used in API requests.
      *
-     * @param string $accessToken
+     * @param string|null $accessToken
      *
      * @return self
      */
-    public function setAccessToken(string $accessToken) : self
+    public function setAccessToken(?string $accessToken) : self
     {
         $this->initialized['accessToken'] = true;
         $this->accessToken = $accessToken;
@@ -241,20 +241,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Scope for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getScope() : string
+    public function getScope() : ?string
     {
         return $this->scope;
     }
     /**
      * Scope for requested token.
      *
-     * @param string $scope
+     * @param string|null $scope
      *
      * @return self
      */
-    public function setScope(string $scope) : self
+    public function setScope(?string $scope) : self
     {
         $this->initialized['scope'] = true;
         $this->scope = $scope;
@@ -285,20 +285,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Expire time for requested token in seconds.
      *
-     * @return string
+     * @return string|null
      */
-    public function getExpiresIn() : string
+    public function getExpiresIn() : ?string
     {
         return $this->expiresIn;
     }
     /**
      * Expire time for requested token in seconds.
      *
-     * @param string $expiresIn
+     * @param string|null $expiresIn
      *
      * @return self
      */
-    public function setExpiresIn(string $expiresIn) : self
+    public function setExpiresIn(?string $expiresIn) : self
     {
         $this->initialized['expiresIn'] = true;
         $this->expiresIn = $expiresIn;
@@ -307,20 +307,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Number of refreshes for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefreshCount() : string
+    public function getRefreshCount() : ?string
     {
         return $this->refreshCount;
     }
     /**
      * Number of refreshes for requested token.
      *
-     * @param string $refreshCount
+     * @param string|null $refreshCount
      *
      * @return self
      */
-    public function setRefreshCount(string $refreshCount) : self
+    public function setRefreshCount(?string $refreshCount) : self
     {
         $this->initialized['refreshCount'] = true;
         $this->refreshCount = $refreshCount;
@@ -329,20 +329,20 @@ class GenerateTokenSuccessResponse extends \ArrayObject
     /**
      * Status for requested token.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatus() : string
+    public function getStatus() : ?string
     {
         return $this->status;
     }
     /**
      * Status for requested token.
      *
-     * @param string $status
+     * @param string|null $status
      *
      * @return self
      */
-    public function setStatus(string $status) : self
+    public function setStatus(?string $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

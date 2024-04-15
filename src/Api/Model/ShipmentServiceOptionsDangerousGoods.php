@@ -15,38 +15,38 @@ class ShipmentServiceOptionsDangerousGoods extends \ArrayObject
     /**
      * The contact name for question re: Dangerous Goods.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Phone Container.
      *
-     * @var DangerousGoodsPhone
+     * @var DangerousGoodsPhone|null
      */
     protected $phone;
     /**
      * TransportationMode Container.
      *
-     * @var DangerousGoodsTransportationMode
+     * @var DangerousGoodsTransportationMode|null
      */
     protected $transportationMode;
     /**
      * The contact name for question re: Dangerous Goods.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * The contact name for question re: Dangerous Goods.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -55,20 +55,20 @@ class ShipmentServiceOptionsDangerousGoods extends \ArrayObject
     /**
      * Phone Container.
      *
-     * @return DangerousGoodsPhone
+     * @return DangerousGoodsPhone|null
      */
-    public function getPhone() : DangerousGoodsPhone
+    public function getPhone() : ?DangerousGoodsPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container.
      *
-     * @param DangerousGoodsPhone $phone
+     * @param DangerousGoodsPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(DangerousGoodsPhone $phone) : self
+    public function setPhone(?DangerousGoodsPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -77,20 +77,20 @@ class ShipmentServiceOptionsDangerousGoods extends \ArrayObject
     /**
      * TransportationMode Container.
      *
-     * @return DangerousGoodsTransportationMode
+     * @return DangerousGoodsTransportationMode|null
      */
-    public function getTransportationMode() : DangerousGoodsTransportationMode
+    public function getTransportationMode() : ?DangerousGoodsTransportationMode
     {
         return $this->transportationMode;
     }
     /**
      * TransportationMode Container.
      *
-     * @param DangerousGoodsTransportationMode $transportationMode
+     * @param DangerousGoodsTransportationMode|null $transportationMode
      *
      * @return self
      */
-    public function setTransportationMode(DangerousGoodsTransportationMode $transportationMode) : self
+    public function setTransportationMode(?DangerousGoodsTransportationMode $transportationMode) : self
     {
         $this->initialized['transportationMode'] = true;
         $this->transportationMode = $transportationMode;

@@ -15,32 +15,32 @@ class ContactsIntermediateConsignee extends \ArrayObject
     /**
      * Company Name or the Individual name of the Intermediate consignee.  Applicable for EEI form only.
      *
-     * @var string
+     * @var string|null
      */
     protected $companyName;
     /**
      * Address information of the Intermediate Consignee.  Applicable for EEI form only.
      *
-     * @var IntermediateConsigneeAddress
+     * @var IntermediateConsigneeAddress|null
      */
     protected $address;
     /**
      * Company Name or the Individual name of the Intermediate consignee.  Applicable for EEI form only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyName() : string
+    public function getCompanyName() : ?string
     {
         return $this->companyName;
     }
     /**
      * Company Name or the Individual name of the Intermediate consignee.  Applicable for EEI form only.
      *
-     * @param string $companyName
+     * @param string|null $companyName
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(?string $companyName) : self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -49,20 +49,20 @@ class ContactsIntermediateConsignee extends \ArrayObject
     /**
      * Address information of the Intermediate Consignee.  Applicable for EEI form only.
      *
-     * @return IntermediateConsigneeAddress
+     * @return IntermediateConsigneeAddress|null
      */
-    public function getAddress() : IntermediateConsigneeAddress
+    public function getAddress() : ?IntermediateConsigneeAddress
     {
         return $this->address;
     }
     /**
      * Address information of the Intermediate Consignee.  Applicable for EEI form only.
      *
-     * @param IntermediateConsigneeAddress $address
+     * @param IntermediateConsigneeAddress|null $address
      *
      * @return self
      */
-    public function setAddress(IntermediateConsigneeAddress $address) : self
+    public function setAddress(?IntermediateConsigneeAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

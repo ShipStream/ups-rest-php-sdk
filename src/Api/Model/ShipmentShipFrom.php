@@ -16,66 +16,66 @@ class ShipmentShipFrom extends \ArrayObject
     * The ship from location's name or company name. 
     35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
     *
-    * @var string
+    * @var string|null
     */
     protected $name;
     /**
     * The ship from Attention name. 
     35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
     *
-    * @var string
+    * @var string|null
     */
     protected $attentionName;
     /**
      * Not applicable for ShipFrom.
      *
-     * @var string
+     * @var string|null
      */
     protected $companyDisplayableName;
     /**
     * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
     Applies to EEI Form only.
     *
-    * @var string
+    * @var string|null
     */
     protected $taxIdentificationNumber;
     /**
      * Tax Identification Container.  Applies to EEI form only.
      *
-     * @var ShipFromTaxIDType
+     * @var ShipFromTaxIDType|null
      */
     protected $taxIDType;
     /**
      * Phone Container
      *
-     * @var ShipFromPhone
+     * @var ShipFromPhone|null
      */
     protected $phone;
     /**
      * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
-     * @var string
+     * @var string|null
      */
     protected $faxNumber;
     /**
      * Address Container.
      *
-     * @var ShipFromAddress
+     * @var ShipFromAddress|null
      */
     protected $address;
     /**
      * Vendor Information Container
      *
-     * @var ShipFromVendorInfo
+     * @var ShipFromVendorInfo|null
      */
     protected $vendorInfo;
     /**
     * The ship from location's name or company name. 
     35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
     *
-    * @return string
+    * @return string|null
     */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -83,11 +83,11 @@ class ShipmentShipFrom extends \ArrayObject
     * The ship from location's name or company name. 
     35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
     *
-    * @param string $name
+    * @param string|null $name
     *
     * @return self
     */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -97,9 +97,9 @@ class ShipmentShipFrom extends \ArrayObject
     * The ship from Attention name. 
     35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
@@ -107,11 +107,11 @@ class ShipmentShipFrom extends \ArrayObject
     * The ship from Attention name. 
     35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
     *
-    * @param string $attentionName
+    * @param string|null $attentionName
     *
     * @return self
     */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -120,20 +120,20 @@ class ShipmentShipFrom extends \ArrayObject
     /**
      * Not applicable for ShipFrom.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyDisplayableName() : string
+    public function getCompanyDisplayableName() : ?string
     {
         return $this->companyDisplayableName;
     }
     /**
      * Not applicable for ShipFrom.
      *
-     * @param string $companyDisplayableName
+     * @param string|null $companyDisplayableName
      *
      * @return self
      */
-    public function setCompanyDisplayableName(string $companyDisplayableName) : self
+    public function setCompanyDisplayableName(?string $companyDisplayableName) : self
     {
         $this->initialized['companyDisplayableName'] = true;
         $this->companyDisplayableName = $companyDisplayableName;
@@ -143,9 +143,9 @@ class ShipmentShipFrom extends \ArrayObject
     * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
     Applies to EEI Form only.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
@@ -153,11 +153,11 @@ class ShipmentShipFrom extends \ArrayObject
     * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
     Applies to EEI Form only.
     *
-    * @param string $taxIdentificationNumber
+    * @param string|null $taxIdentificationNumber
     *
     * @return self
     */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -166,20 +166,20 @@ class ShipmentShipFrom extends \ArrayObject
     /**
      * Tax Identification Container.  Applies to EEI form only.
      *
-     * @return ShipFromTaxIDType
+     * @return ShipFromTaxIDType|null
      */
-    public function getTaxIDType() : ShipFromTaxIDType
+    public function getTaxIDType() : ?ShipFromTaxIDType
     {
         return $this->taxIDType;
     }
     /**
      * Tax Identification Container.  Applies to EEI form only.
      *
-     * @param ShipFromTaxIDType $taxIDType
+     * @param ShipFromTaxIDType|null $taxIDType
      *
      * @return self
      */
-    public function setTaxIDType(ShipFromTaxIDType $taxIDType) : self
+    public function setTaxIDType(?ShipFromTaxIDType $taxIDType) : self
     {
         $this->initialized['taxIDType'] = true;
         $this->taxIDType = $taxIDType;
@@ -188,20 +188,20 @@ class ShipmentShipFrom extends \ArrayObject
     /**
      * Phone Container
      *
-     * @return ShipFromPhone
+     * @return ShipFromPhone|null
      */
-    public function getPhone() : ShipFromPhone
+    public function getPhone() : ?ShipFromPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container
      *
-     * @param ShipFromPhone $phone
+     * @param ShipFromPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ShipFromPhone $phone) : self
+    public function setPhone(?ShipFromPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -210,20 +210,20 @@ class ShipmentShipFrom extends \ArrayObject
     /**
      * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber() : ?string
     {
         return $this->faxNumber;
     }
     /**
      * The Ship from fax number.  If Ship from country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.
      *
-     * @param string $faxNumber
+     * @param string|null $faxNumber
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(?string $faxNumber) : self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -232,20 +232,20 @@ class ShipmentShipFrom extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipFromAddress
+     * @return ShipFromAddress|null
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress() : ?ShipFromAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipFromAddress $address
+     * @param ShipFromAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(?ShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -254,20 +254,20 @@ class ShipmentShipFrom extends \ArrayObject
     /**
      * Vendor Information Container
      *
-     * @return ShipFromVendorInfo
+     * @return ShipFromVendorInfo|null
      */
-    public function getVendorInfo() : ShipFromVendorInfo
+    public function getVendorInfo() : ?ShipFromVendorInfo
     {
         return $this->vendorInfo;
     }
     /**
      * Vendor Information Container
      *
-     * @param ShipFromVendorInfo $vendorInfo
+     * @param ShipFromVendorInfo|null $vendorInfo
      *
      * @return self
      */
-    public function setVendorInfo(ShipFromVendorInfo $vendorInfo) : self
+    public function setVendorInfo(?ShipFromVendorInfo $vendorInfo) : self
     {
         $this->initialized['vendorInfo'] = true;
         $this->vendorInfo = $vendorInfo;

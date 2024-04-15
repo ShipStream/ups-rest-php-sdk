@@ -17,7 +17,7 @@ class CommodityNMFCCommodity extends \ArrayObject
     Must be 6 digits representing the NMFC prime code. 
     This field is required if NMFCCommodity/SubCode is supplied.
     *
-    * @var string
+    * @var string|null
     */
     protected $primeCode;
     /**
@@ -25,7 +25,7 @@ class CommodityNMFCCommodity extends \ArrayObject
     Must be 2 digits representing the NMFC sub code.
     If this field is supplied, NMFCCommodity/PrimeCode also has to be supplied.
     *
-    * @var string
+    * @var string|null
     */
     protected $subCode;
     /**
@@ -33,9 +33,9 @@ class CommodityNMFCCommodity extends \ArrayObject
     Must be 6 digits representing the NMFC prime code. 
     This field is required if NMFCCommodity/SubCode is supplied.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPrimeCode() : string
+    public function getPrimeCode() : ?string
     {
         return $this->primeCode;
     }
@@ -44,11 +44,11 @@ class CommodityNMFCCommodity extends \ArrayObject
     Must be 6 digits representing the NMFC prime code. 
     This field is required if NMFCCommodity/SubCode is supplied.
     *
-    * @param string $primeCode
+    * @param string|null $primeCode
     *
     * @return self
     */
-    public function setPrimeCode(string $primeCode) : self
+    public function setPrimeCode(?string $primeCode) : self
     {
         $this->initialized['primeCode'] = true;
         $this->primeCode = $primeCode;
@@ -59,9 +59,9 @@ class CommodityNMFCCommodity extends \ArrayObject
     Must be 2 digits representing the NMFC sub code.
     If this field is supplied, NMFCCommodity/PrimeCode also has to be supplied.
     *
-    * @return string
+    * @return string|null
     */
-    public function getSubCode() : string
+    public function getSubCode() : ?string
     {
         return $this->subCode;
     }
@@ -70,11 +70,11 @@ class CommodityNMFCCommodity extends \ArrayObject
     Must be 2 digits representing the NMFC sub code.
     If this field is supplied, NMFCCommodity/PrimeCode also has to be supplied.
     *
-    * @param string $subCode
+    * @param string|null $subCode
     *
     * @return self
     */
-    public function setSubCode(string $subCode) : self
+    public function setSubCode(?string $subCode) : self
     {
         $this->initialized['subCode'] = true;
         $this->subCode = $subCode;

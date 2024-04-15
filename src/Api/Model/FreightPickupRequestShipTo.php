@@ -15,44 +15,44 @@ class FreightPickupRequestShipTo extends \ArrayObject
     /**
      * Contact name at the ship to location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Address Container.
      *
-     * @var FreightPickupShipToAddress
+     * @var FreightPickupShipToAddress|null
      */
     protected $address;
     /**
      * Phone Container.
      *
-     * @var ShipToPhone
+     * @var ShipToPhone|null
      */
     protected $phone;
     /**
      * Ship to email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Contact name at the ship to location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the ship to location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -61,20 +61,20 @@ class FreightPickupRequestShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return FreightPickupShipToAddress
+     * @return FreightPickupShipToAddress|null
      */
-    public function getAddress() : FreightPickupShipToAddress
+    public function getAddress() : ?FreightPickupShipToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param FreightPickupShipToAddress $address
+     * @param FreightPickupShipToAddress|null $address
      *
      * @return self
      */
-    public function setAddress(FreightPickupShipToAddress $address) : self
+    public function setAddress(?FreightPickupShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -83,20 +83,20 @@ class FreightPickupRequestShipTo extends \ArrayObject
     /**
      * Phone Container.
      *
-     * @return ShipToPhone
+     * @return ShipToPhone|null
      */
-    public function getPhone() : ShipToPhone
+    public function getPhone() : ?ShipToPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container.
      *
-     * @param ShipToPhone $phone
+     * @param ShipToPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ShipToPhone $phone) : self
+    public function setPhone(?ShipToPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -105,20 +105,20 @@ class FreightPickupRequestShipTo extends \ArrayObject
     /**
      * Ship to email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Ship to email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

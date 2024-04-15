@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('NegotiatedRatesIndicator', $data)) {
+            if (\array_key_exists('NegotiatedRatesIndicator', $data) && $data['NegotiatedRatesIndicator'] !== null) {
                 $object->setNegotiatedRatesIndicator($data['NegotiatedRatesIndicator']);
                 unset($data['NegotiatedRatesIndicator']);
             }
-            if (\array_key_exists('FRSShipmentIndicator', $data)) {
+            elseif (\array_key_exists('NegotiatedRatesIndicator', $data) && $data['NegotiatedRatesIndicator'] === null) {
+                $object->setNegotiatedRatesIndicator(null);
+            }
+            if (\array_key_exists('FRSShipmentIndicator', $data) && $data['FRSShipmentIndicator'] !== null) {
                 $object->setFRSShipmentIndicator($data['FRSShipmentIndicator']);
                 unset($data['FRSShipmentIndicator']);
             }
-            if (\array_key_exists('RateChartIndicator', $data)) {
+            elseif (\array_key_exists('FRSShipmentIndicator', $data) && $data['FRSShipmentIndicator'] === null) {
+                $object->setFRSShipmentIndicator(null);
+            }
+            if (\array_key_exists('RateChartIndicator', $data) && $data['RateChartIndicator'] !== null) {
                 $object->setRateChartIndicator($data['RateChartIndicator']);
                 unset($data['RateChartIndicator']);
             }
-            if (\array_key_exists('TPFCNegotiatedRatesIndicator', $data)) {
+            elseif (\array_key_exists('RateChartIndicator', $data) && $data['RateChartIndicator'] === null) {
+                $object->setRateChartIndicator(null);
+            }
+            if (\array_key_exists('TPFCNegotiatedRatesIndicator', $data) && $data['TPFCNegotiatedRatesIndicator'] !== null) {
                 $object->setTPFCNegotiatedRatesIndicator($data['TPFCNegotiatedRatesIndicator']);
                 unset($data['TPFCNegotiatedRatesIndicator']);
             }
-            if (\array_key_exists('UserLevelDiscountIndicator', $data)) {
+            elseif (\array_key_exists('TPFCNegotiatedRatesIndicator', $data) && $data['TPFCNegotiatedRatesIndicator'] === null) {
+                $object->setTPFCNegotiatedRatesIndicator(null);
+            }
+            if (\array_key_exists('UserLevelDiscountIndicator', $data) && $data['UserLevelDiscountIndicator'] !== null) {
                 $object->setUserLevelDiscountIndicator($data['UserLevelDiscountIndicator']);
                 unset($data['UserLevelDiscountIndicator']);
+            }
+            elseif (\array_key_exists('UserLevelDiscountIndicator', $data) && $data['UserLevelDiscountIndicator'] === null) {
+                $object->setUserLevelDiscountIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -127,25 +142,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('NegotiatedRatesIndicator', $data)) {
+            if (\array_key_exists('NegotiatedRatesIndicator', $data) && $data['NegotiatedRatesIndicator'] !== null) {
                 $object->setNegotiatedRatesIndicator($data['NegotiatedRatesIndicator']);
                 unset($data['NegotiatedRatesIndicator']);
             }
-            if (\array_key_exists('FRSShipmentIndicator', $data)) {
+            elseif (\array_key_exists('NegotiatedRatesIndicator', $data) && $data['NegotiatedRatesIndicator'] === null) {
+                $object->setNegotiatedRatesIndicator(null);
+            }
+            if (\array_key_exists('FRSShipmentIndicator', $data) && $data['FRSShipmentIndicator'] !== null) {
                 $object->setFRSShipmentIndicator($data['FRSShipmentIndicator']);
                 unset($data['FRSShipmentIndicator']);
             }
-            if (\array_key_exists('RateChartIndicator', $data)) {
+            elseif (\array_key_exists('FRSShipmentIndicator', $data) && $data['FRSShipmentIndicator'] === null) {
+                $object->setFRSShipmentIndicator(null);
+            }
+            if (\array_key_exists('RateChartIndicator', $data) && $data['RateChartIndicator'] !== null) {
                 $object->setRateChartIndicator($data['RateChartIndicator']);
                 unset($data['RateChartIndicator']);
             }
-            if (\array_key_exists('TPFCNegotiatedRatesIndicator', $data)) {
+            elseif (\array_key_exists('RateChartIndicator', $data) && $data['RateChartIndicator'] === null) {
+                $object->setRateChartIndicator(null);
+            }
+            if (\array_key_exists('TPFCNegotiatedRatesIndicator', $data) && $data['TPFCNegotiatedRatesIndicator'] !== null) {
                 $object->setTPFCNegotiatedRatesIndicator($data['TPFCNegotiatedRatesIndicator']);
                 unset($data['TPFCNegotiatedRatesIndicator']);
             }
-            if (\array_key_exists('UserLevelDiscountIndicator', $data)) {
+            elseif (\array_key_exists('TPFCNegotiatedRatesIndicator', $data) && $data['TPFCNegotiatedRatesIndicator'] === null) {
+                $object->setTPFCNegotiatedRatesIndicator(null);
+            }
+            if (\array_key_exists('UserLevelDiscountIndicator', $data) && $data['UserLevelDiscountIndicator'] !== null) {
                 $object->setUserLevelDiscountIndicator($data['UserLevelDiscountIndicator']);
                 unset($data['UserLevelDiscountIndicator']);
+            }
+            elseif (\array_key_exists('UserLevelDiscountIndicator', $data) && $data['UserLevelDiscountIndicator'] === null) {
+                $object->setUserLevelDiscountIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

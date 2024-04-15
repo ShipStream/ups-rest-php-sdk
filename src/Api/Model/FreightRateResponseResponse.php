@@ -15,38 +15,38 @@ class FreightRateResponseResponse extends \ArrayObject
     /**
      * Response Status Container.
      *
-     * @var ResponseResponseStatus
+     * @var ResponseResponseStatus|null
      */
     protected $responseStatus;
     /**
      * 
      *
-     * @var ResponseAlert[]
+     * @var list<ResponseAlert>|null
      */
     protected $alert;
     /**
      * Transaction Reference Container.
      *
-     * @var ResponseTransactionReference
+     * @var ResponseTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Response Status Container.
      *
-     * @return ResponseResponseStatus
+     * @return ResponseResponseStatus|null
      */
-    public function getResponseStatus() : ResponseResponseStatus
+    public function getResponseStatus() : ?ResponseResponseStatus
     {
         return $this->responseStatus;
     }
     /**
      * Response Status Container.
      *
-     * @param ResponseResponseStatus $responseStatus
+     * @param ResponseResponseStatus|null $responseStatus
      *
      * @return self
      */
-    public function setResponseStatus(ResponseResponseStatus $responseStatus) : self
+    public function setResponseStatus(?ResponseResponseStatus $responseStatus) : self
     {
         $this->initialized['responseStatus'] = true;
         $this->responseStatus = $responseStatus;
@@ -55,20 +55,20 @@ class FreightRateResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ResponseAlert[]
+     * @return list<ResponseAlert>|null
      */
-    public function getAlert() : array
+    public function getAlert() : ?array
     {
         return $this->alert;
     }
     /**
      * 
      *
-     * @param ResponseAlert[] $alert
+     * @param list<ResponseAlert>|null $alert
      *
      * @return self
      */
-    public function setAlert(array $alert) : self
+    public function setAlert(?array $alert) : self
     {
         $this->initialized['alert'] = true;
         $this->alert = $alert;
@@ -77,20 +77,20 @@ class FreightRateResponseResponse extends \ArrayObject
     /**
      * Transaction Reference Container.
      *
-     * @return ResponseTransactionReference
+     * @return ResponseTransactionReference|null
      */
-    public function getTransactionReference() : ResponseTransactionReference
+    public function getTransactionReference() : ?ResponseTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * Transaction Reference Container.
      *
-     * @param ResponseTransactionReference $transactionReference
+     * @param ResponseTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(ResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(?ResponseTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

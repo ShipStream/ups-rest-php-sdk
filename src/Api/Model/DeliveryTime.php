@@ -15,38 +15,38 @@ class DeliveryTime extends \ArrayObject
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $endTime;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $startTime;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $type;
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getEndTime() : string
+    public function getEndTime() : ?string
     {
         return $this->endTime;
     }
     /**
      * 
      *
-     * @param string $endTime
+     * @param string|null $endTime
      *
      * @return self
      */
-    public function setEndTime(string $endTime) : self
+    public function setEndTime(?string $endTime) : self
     {
         $this->initialized['endTime'] = true;
         $this->endTime = $endTime;
@@ -55,20 +55,20 @@ class DeliveryTime extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getStartTime() : string
+    public function getStartTime() : ?string
     {
         return $this->startTime;
     }
     /**
      * 
      *
-     * @param string $startTime
+     * @param string|null $startTime
      *
      * @return self
      */
-    public function setStartTime(string $startTime) : self
+    public function setStartTime(?string $startTime) : self
     {
         $this->initialized['startTime'] = true;
         $this->startTime = $startTime;
@@ -77,20 +77,20 @@ class DeliveryTime extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
     /**
      * 
      *
-     * @param string $type
+     * @param string|null $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

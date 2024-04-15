@@ -17,13 +17,13 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     Valied values: 1 to 200
     Default: 200
     *
-    * @var string
+    * @var string|null
     */
     protected $searchRadius;
     /**
      * Unit of Measure  Required if ProximitySearchIndicator is present. Example: MI or KM
      *
-     * @var string
+     * @var string|null
      */
     protected $distanceUnitOfMeasure;
     /**
@@ -31,7 +31,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     Valied values: 1 to 100
     Default: 100
     *
-    * @var string
+    * @var string|null
     */
     protected $maximumLocation;
     /**
@@ -39,9 +39,9 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     Valied values: 1 to 200
     Default: 200
     *
-    * @return string
+    * @return string|null
     */
-    public function getSearchRadius() : string
+    public function getSearchRadius() : ?string
     {
         return $this->searchRadius;
     }
@@ -50,11 +50,11 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     Valied values: 1 to 200
     Default: 200
     *
-    * @param string $searchRadius
+    * @param string|null $searchRadius
     *
     * @return self
     */
-    public function setSearchRadius(string $searchRadius) : self
+    public function setSearchRadius(?string $searchRadius) : self
     {
         $this->initialized['searchRadius'] = true;
         $this->searchRadius = $searchRadius;
@@ -63,20 +63,20 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     /**
      * Unit of Measure  Required if ProximitySearchIndicator is present. Example: MI or KM
      *
-     * @return string
+     * @return string|null
      */
-    public function getDistanceUnitOfMeasure() : string
+    public function getDistanceUnitOfMeasure() : ?string
     {
         return $this->distanceUnitOfMeasure;
     }
     /**
      * Unit of Measure  Required if ProximitySearchIndicator is present. Example: MI or KM
      *
-     * @param string $distanceUnitOfMeasure
+     * @param string|null $distanceUnitOfMeasure
      *
      * @return self
      */
-    public function setDistanceUnitOfMeasure(string $distanceUnitOfMeasure) : self
+    public function setDistanceUnitOfMeasure(?string $distanceUnitOfMeasure) : self
     {
         $this->initialized['distanceUnitOfMeasure'] = true;
         $this->distanceUnitOfMeasure = $distanceUnitOfMeasure;
@@ -87,9 +87,9 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     Valied values: 1 to 100
     Default: 100
     *
-    * @return string
+    * @return string|null
     */
-    public function getMaximumLocation() : string
+    public function getMaximumLocation() : ?string
     {
         return $this->maximumLocation;
     }
@@ -98,11 +98,11 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     Valied values: 1 to 100
     Default: 100
     *
-    * @param string $maximumLocation
+    * @param string|null $maximumLocation
     *
     * @return self
     */
-    public function setMaximumLocation(string $maximumLocation) : self
+    public function setMaximumLocation(?string $maximumLocation) : self
     {
         $this->initialized['maximumLocation'] = true;
         $this->maximumLocation = $maximumLocation;

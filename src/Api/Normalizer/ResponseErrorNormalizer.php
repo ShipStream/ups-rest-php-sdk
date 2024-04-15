@@ -40,23 +40,35 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ErrorSeverity', $data)) {
+            if (\array_key_exists('ErrorSeverity', $data) && $data['ErrorSeverity'] !== null) {
                 $object->setErrorSeverity($data['ErrorSeverity']);
                 unset($data['ErrorSeverity']);
             }
-            if (\array_key_exists('ErrorCode', $data)) {
+            elseif (\array_key_exists('ErrorSeverity', $data) && $data['ErrorSeverity'] === null) {
+                $object->setErrorSeverity(null);
+            }
+            if (\array_key_exists('ErrorCode', $data) && $data['ErrorCode'] !== null) {
                 $object->setErrorCode($data['ErrorCode']);
                 unset($data['ErrorCode']);
             }
-            if (\array_key_exists('ErrorDescription', $data)) {
+            elseif (\array_key_exists('ErrorCode', $data) && $data['ErrorCode'] === null) {
+                $object->setErrorCode(null);
+            }
+            if (\array_key_exists('ErrorDescription', $data) && $data['ErrorDescription'] !== null) {
                 $object->setErrorDescription($data['ErrorDescription']);
                 unset($data['ErrorDescription']);
             }
-            if (\array_key_exists('MinimumRetrySeconds', $data)) {
+            elseif (\array_key_exists('ErrorDescription', $data) && $data['ErrorDescription'] === null) {
+                $object->setErrorDescription(null);
+            }
+            if (\array_key_exists('MinimumRetrySeconds', $data) && $data['MinimumRetrySeconds'] !== null) {
                 $object->setMinimumRetrySeconds($data['MinimumRetrySeconds']);
                 unset($data['MinimumRetrySeconds']);
             }
-            if (\array_key_exists('ErrorLocation', $data)) {
+            elseif (\array_key_exists('MinimumRetrySeconds', $data) && $data['MinimumRetrySeconds'] === null) {
+                $object->setMinimumRetrySeconds(null);
+            }
+            if (\array_key_exists('ErrorLocation', $data) && $data['ErrorLocation'] !== null) {
                 $values = [];
                 foreach ($data['ErrorLocation'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ErrorErrorLocation', 'json', $context);
@@ -64,13 +76,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setErrorLocation($values);
                 unset($data['ErrorLocation']);
             }
-            if (\array_key_exists('ErrorDigest', $data)) {
+            elseif (\array_key_exists('ErrorLocation', $data) && $data['ErrorLocation'] === null) {
+                $object->setErrorLocation(null);
+            }
+            if (\array_key_exists('ErrorDigest', $data) && $data['ErrorDigest'] !== null) {
                 $values_1 = [];
                 foreach ($data['ErrorDigest'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setErrorDigest($values_1);
                 unset($data['ErrorDigest']);
+            }
+            elseif (\array_key_exists('ErrorDigest', $data) && $data['ErrorDigest'] === null) {
+                $object->setErrorDigest(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -148,23 +166,35 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ErrorSeverity', $data)) {
+            if (\array_key_exists('ErrorSeverity', $data) && $data['ErrorSeverity'] !== null) {
                 $object->setErrorSeverity($data['ErrorSeverity']);
                 unset($data['ErrorSeverity']);
             }
-            if (\array_key_exists('ErrorCode', $data)) {
+            elseif (\array_key_exists('ErrorSeverity', $data) && $data['ErrorSeverity'] === null) {
+                $object->setErrorSeverity(null);
+            }
+            if (\array_key_exists('ErrorCode', $data) && $data['ErrorCode'] !== null) {
                 $object->setErrorCode($data['ErrorCode']);
                 unset($data['ErrorCode']);
             }
-            if (\array_key_exists('ErrorDescription', $data)) {
+            elseif (\array_key_exists('ErrorCode', $data) && $data['ErrorCode'] === null) {
+                $object->setErrorCode(null);
+            }
+            if (\array_key_exists('ErrorDescription', $data) && $data['ErrorDescription'] !== null) {
                 $object->setErrorDescription($data['ErrorDescription']);
                 unset($data['ErrorDescription']);
             }
-            if (\array_key_exists('MinimumRetrySeconds', $data)) {
+            elseif (\array_key_exists('ErrorDescription', $data) && $data['ErrorDescription'] === null) {
+                $object->setErrorDescription(null);
+            }
+            if (\array_key_exists('MinimumRetrySeconds', $data) && $data['MinimumRetrySeconds'] !== null) {
                 $object->setMinimumRetrySeconds($data['MinimumRetrySeconds']);
                 unset($data['MinimumRetrySeconds']);
             }
-            if (\array_key_exists('ErrorLocation', $data)) {
+            elseif (\array_key_exists('MinimumRetrySeconds', $data) && $data['MinimumRetrySeconds'] === null) {
+                $object->setMinimumRetrySeconds(null);
+            }
+            if (\array_key_exists('ErrorLocation', $data) && $data['ErrorLocation'] !== null) {
                 $values = [];
                 foreach ($data['ErrorLocation'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ErrorErrorLocation', 'json', $context);
@@ -172,13 +202,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setErrorLocation($values);
                 unset($data['ErrorLocation']);
             }
-            if (\array_key_exists('ErrorDigest', $data)) {
+            elseif (\array_key_exists('ErrorLocation', $data) && $data['ErrorLocation'] === null) {
+                $object->setErrorLocation(null);
+            }
+            if (\array_key_exists('ErrorDigest', $data) && $data['ErrorDigest'] !== null) {
                 $values_1 = [];
                 foreach ($data['ErrorDigest'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setErrorDigest($values_1);
                 unset($data['ErrorDigest']);
+            }
+            elseif (\array_key_exists('ErrorDigest', $data) && $data['ErrorDigest'] === null) {
+                $object->setErrorDigest(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

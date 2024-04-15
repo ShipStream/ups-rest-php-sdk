@@ -15,14 +15,14 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     /**
      * Identifies the package containing Dangerous Goods.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageIdentifier;
     /**
     * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
     N = Package is not crew accessible.
     *
-    * @var string
+    * @var string|null
     */
     protected $accessibleIndicator;
     /**
@@ -30,32 +30,32 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      Y = Origin country or territory is in the Europe Business Unit.
     N = Origin country or territory is not in the Europe Business Unit.
     *
-    * @var string
+    * @var string|null
     */
     protected $europeBUIndicator;
     /**
      * 
      *
-     * @var PackageResultsChemicalRecordResults[]
+     * @var list<PackageResultsChemicalRecordResults>|null
      */
     protected $chemicalRecordResults;
     /**
      * Identifies the package containing Dangerous Goods.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier() : ?string
     {
         return $this->packageIdentifier;
     }
     /**
      * Identifies the package containing Dangerous Goods.
      *
-     * @param string $packageIdentifier
+     * @param string|null $packageIdentifier
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(?string $packageIdentifier) : self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -65,9 +65,9 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
     N = Package is not crew accessible.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAccessibleIndicator() : string
+    public function getAccessibleIndicator() : ?string
     {
         return $this->accessibleIndicator;
     }
@@ -75,11 +75,11 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
     N = Package is not crew accessible.
     *
-    * @param string $accessibleIndicator
+    * @param string|null $accessibleIndicator
     *
     * @return self
     */
-    public function setAccessibleIndicator(string $accessibleIndicator) : self
+    public function setAccessibleIndicator(?string $accessibleIndicator) : self
     {
         $this->initialized['accessibleIndicator'] = true;
         $this->accessibleIndicator = $accessibleIndicator;
@@ -90,9 +90,9 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      Y = Origin country or territory is in the Europe Business Unit.
     N = Origin country or territory is not in the Europe Business Unit.
     *
-    * @return string
+    * @return string|null
     */
-    public function getEuropeBUIndicator() : string
+    public function getEuropeBUIndicator() : ?string
     {
         return $this->europeBUIndicator;
     }
@@ -101,11 +101,11 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      Y = Origin country or territory is in the Europe Business Unit.
     N = Origin country or territory is not in the Europe Business Unit.
     *
-    * @param string $europeBUIndicator
+    * @param string|null $europeBUIndicator
     *
     * @return self
     */
-    public function setEuropeBUIndicator(string $europeBUIndicator) : self
+    public function setEuropeBUIndicator(?string $europeBUIndicator) : self
     {
         $this->initialized['europeBUIndicator'] = true;
         $this->europeBUIndicator = $europeBUIndicator;
@@ -114,20 +114,20 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     /**
      * 
      *
-     * @return PackageResultsChemicalRecordResults[]
+     * @return list<PackageResultsChemicalRecordResults>|null
      */
-    public function getChemicalRecordResults() : array
+    public function getChemicalRecordResults() : ?array
     {
         return $this->chemicalRecordResults;
     }
     /**
      * 
      *
-     * @param PackageResultsChemicalRecordResults[] $chemicalRecordResults
+     * @param list<PackageResultsChemicalRecordResults>|null $chemicalRecordResults
      *
      * @return self
      */
-    public function setChemicalRecordResults(array $chemicalRecordResults) : self
+    public function setChemicalRecordResults(?array $chemicalRecordResults) : self
     {
         $this->initialized['chemicalRecordResults'] = true;
         $this->chemicalRecordResults = $chemicalRecordResults;

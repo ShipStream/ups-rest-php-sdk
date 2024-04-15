@@ -15,50 +15,50 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Locale setting is composed of language code and country code, separated by an underscore. This field is reserved for future use.
      *
-     * @var string
+     * @var string|null
      */
     protected $locale;
     /**
      * Represents the country code. This field is reserved for future use.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Represents list of tracking numbers in request.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $trackingNumberList;
     /**
      * Represents scan/event preferences for the subscription endpoint, Place holder for Future use.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $scanPreference;
     /**
      * The destination container related to the clients endpoint API. To which messages would be sent on an event on the package.
      *
-     * @var Destination
+     * @var Destination|null
      */
     protected $destination;
     /**
      * Locale setting is composed of language code and country code, separated by an underscore. This field is reserved for future use.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLocale() : string
+    public function getLocale() : ?string
     {
         return $this->locale;
     }
     /**
      * Locale setting is composed of language code and country code, separated by an underscore. This field is reserved for future use.
      *
-     * @param string $locale
+     * @param string|null $locale
      *
      * @return self
      */
-    public function setLocale(string $locale) : self
+    public function setLocale(?string $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -67,20 +67,20 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents the country code. This field is reserved for future use.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Represents the country code. This field is reserved for future use.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -89,20 +89,20 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents list of tracking numbers in request.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getTrackingNumberList() : array
+    public function getTrackingNumberList() : ?array
     {
         return $this->trackingNumberList;
     }
     /**
      * Represents list of tracking numbers in request.
      *
-     * @param string[] $trackingNumberList
+     * @param list<string>|null $trackingNumberList
      *
      * @return self
      */
-    public function setTrackingNumberList(array $trackingNumberList) : self
+    public function setTrackingNumberList(?array $trackingNumberList) : self
     {
         $this->initialized['trackingNumberList'] = true;
         $this->trackingNumberList = $trackingNumberList;
@@ -111,20 +111,20 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents scan/event preferences for the subscription endpoint, Place holder for Future use.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getScanPreference() : array
+    public function getScanPreference() : ?array
     {
         return $this->scanPreference;
     }
     /**
      * Represents scan/event preferences for the subscription endpoint, Place holder for Future use.
      *
-     * @param string[] $scanPreference
+     * @param list<string>|null $scanPreference
      *
      * @return self
      */
-    public function setScanPreference(array $scanPreference) : self
+    public function setScanPreference(?array $scanPreference) : self
     {
         $this->initialized['scanPreference'] = true;
         $this->scanPreference = $scanPreference;
@@ -133,20 +133,20 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * The destination container related to the clients endpoint API. To which messages would be sent on an event on the package.
      *
-     * @return Destination
+     * @return Destination|null
      */
-    public function getDestination() : Destination
+    public function getDestination() : ?Destination
     {
         return $this->destination;
     }
     /**
      * The destination container related to the clients endpoint API. To which messages would be sent on an event on the package.
      *
-     * @param Destination $destination
+     * @param Destination|null $destination
      *
      * @return self
      */
-    public function setDestination(Destination $destination) : self
+    public function setDestination(?Destination $destination) : self
     {
         $this->initialized['destination'] = true;
         $this->destination = $destination;

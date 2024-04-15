@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('location', $data)) {
+            if (\array_key_exists('location', $data) && $data['location'] !== null) {
                 $object->setLocation($data['location']);
                 unset($data['location']);
             }
-            if (\array_key_exists('receivedBy', $data)) {
+            elseif (\array_key_exists('location', $data) && $data['location'] === null) {
+                $object->setLocation(null);
+            }
+            if (\array_key_exists('receivedBy', $data) && $data['receivedBy'] !== null) {
                 $object->setReceivedBy($data['receivedBy']);
                 unset($data['receivedBy']);
             }
-            if (\array_key_exists('signature', $data)) {
+            elseif (\array_key_exists('receivedBy', $data) && $data['receivedBy'] === null) {
+                $object->setReceivedBy(null);
+            }
+            if (\array_key_exists('signature', $data) && $data['signature'] !== null) {
                 $object->setSignature($this->denormalizer->denormalize($data['signature'], 'ShipStream\\Ups\\Api\\Model\\Signature', 'json', $context));
                 unset($data['signature']);
+            }
+            elseif (\array_key_exists('signature', $data) && $data['signature'] === null) {
+                $object->setSignature(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('location', $data)) {
+            if (\array_key_exists('location', $data) && $data['location'] !== null) {
                 $object->setLocation($data['location']);
                 unset($data['location']);
             }
-            if (\array_key_exists('receivedBy', $data)) {
+            elseif (\array_key_exists('location', $data) && $data['location'] === null) {
+                $object->setLocation(null);
+            }
+            if (\array_key_exists('receivedBy', $data) && $data['receivedBy'] !== null) {
                 $object->setReceivedBy($data['receivedBy']);
                 unset($data['receivedBy']);
             }
-            if (\array_key_exists('signature', $data)) {
+            elseif (\array_key_exists('receivedBy', $data) && $data['receivedBy'] === null) {
+                $object->setReceivedBy(null);
+            }
+            if (\array_key_exists('signature', $data) && $data['signature'] !== null) {
                 $object->setSignature($this->denormalizer->denormalize($data['signature'], 'ShipStream\\Ups\\Api\\Model\\Signature', 'json', $context));
                 unset($data['signature']);
+            }
+            elseif (\array_key_exists('signature', $data) && $data['signature'] === null) {
+                $object->setSignature(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

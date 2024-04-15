@@ -15,44 +15,44 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
     /**
      * This container is used for Populating EMailMessage details for PreAlertNotification.
      *
-     * @var PreAlertNotificationEMailMessage
+     * @var PreAlertNotificationEMailMessage|null
      */
     protected $eMailMessage;
     /**
      * VoiceMessage container is used for specifying phone number for receiving voice PreAlertNotification.
      *
-     * @var PreAlertNotificationVoiceMessage
+     * @var PreAlertNotificationVoiceMessage|null
      */
     protected $voiceMessage;
     /**
      * TextMessage container is used for specifying phone number for receiving text preAlertNotification.
      *
-     * @var PreAlertNotificationTextMessage
+     * @var PreAlertNotificationTextMessage|null
      */
     protected $textMessage;
     /**
      * This container is used for providing Language and dialect details for PreAlertNotification.
      *
-     * @var PreAlertNotificationLocale
+     * @var PreAlertNotificationLocale|null
      */
     protected $locale;
     /**
      * This container is used for Populating EMailMessage details for PreAlertNotification.
      *
-     * @return PreAlertNotificationEMailMessage
+     * @return PreAlertNotificationEMailMessage|null
      */
-    public function getEMailMessage() : PreAlertNotificationEMailMessage
+    public function getEMailMessage() : ?PreAlertNotificationEMailMessage
     {
         return $this->eMailMessage;
     }
     /**
      * This container is used for Populating EMailMessage details for PreAlertNotification.
      *
-     * @param PreAlertNotificationEMailMessage $eMailMessage
+     * @param PreAlertNotificationEMailMessage|null $eMailMessage
      *
      * @return self
      */
-    public function setEMailMessage(PreAlertNotificationEMailMessage $eMailMessage) : self
+    public function setEMailMessage(?PreAlertNotificationEMailMessage $eMailMessage) : self
     {
         $this->initialized['eMailMessage'] = true;
         $this->eMailMessage = $eMailMessage;
@@ -61,20 +61,20 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
     /**
      * VoiceMessage container is used for specifying phone number for receiving voice PreAlertNotification.
      *
-     * @return PreAlertNotificationVoiceMessage
+     * @return PreAlertNotificationVoiceMessage|null
      */
-    public function getVoiceMessage() : PreAlertNotificationVoiceMessage
+    public function getVoiceMessage() : ?PreAlertNotificationVoiceMessage
     {
         return $this->voiceMessage;
     }
     /**
      * VoiceMessage container is used for specifying phone number for receiving voice PreAlertNotification.
      *
-     * @param PreAlertNotificationVoiceMessage $voiceMessage
+     * @param PreAlertNotificationVoiceMessage|null $voiceMessage
      *
      * @return self
      */
-    public function setVoiceMessage(PreAlertNotificationVoiceMessage $voiceMessage) : self
+    public function setVoiceMessage(?PreAlertNotificationVoiceMessage $voiceMessage) : self
     {
         $this->initialized['voiceMessage'] = true;
         $this->voiceMessage = $voiceMessage;
@@ -83,20 +83,20 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
     /**
      * TextMessage container is used for specifying phone number for receiving text preAlertNotification.
      *
-     * @return PreAlertNotificationTextMessage
+     * @return PreAlertNotificationTextMessage|null
      */
-    public function getTextMessage() : PreAlertNotificationTextMessage
+    public function getTextMessage() : ?PreAlertNotificationTextMessage
     {
         return $this->textMessage;
     }
     /**
      * TextMessage container is used for specifying phone number for receiving text preAlertNotification.
      *
-     * @param PreAlertNotificationTextMessage $textMessage
+     * @param PreAlertNotificationTextMessage|null $textMessage
      *
      * @return self
      */
-    public function setTextMessage(PreAlertNotificationTextMessage $textMessage) : self
+    public function setTextMessage(?PreAlertNotificationTextMessage $textMessage) : self
     {
         $this->initialized['textMessage'] = true;
         $this->textMessage = $textMessage;
@@ -105,20 +105,20 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
     /**
      * This container is used for providing Language and dialect details for PreAlertNotification.
      *
-     * @return PreAlertNotificationLocale
+     * @return PreAlertNotificationLocale|null
      */
-    public function getLocale() : PreAlertNotificationLocale
+    public function getLocale() : ?PreAlertNotificationLocale
     {
         return $this->locale;
     }
     /**
      * This container is used for providing Language and dialect details for PreAlertNotification.
      *
-     * @param PreAlertNotificationLocale $locale
+     * @param PreAlertNotificationLocale|null $locale
      *
      * @return self
      */
-    public function setLocale(PreAlertNotificationLocale $locale) : self
+    public function setLocale(?PreAlertNotificationLocale $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;

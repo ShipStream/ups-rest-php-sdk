@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PostalCode', $data)) {
+            if (\array_key_exists('PostalCode', $data) && $data['PostalCode'] !== null) {
                 $values = [];
                 foreach ($data['PostalCode'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PostalCodeListPostalCode', 'json', $context);
                 }
                 $object->setPostalCode($values);
                 unset($data['PostalCode']);
+            }
+            elseif (\array_key_exists('PostalCode', $data) && $data['PostalCode'] === null) {
+                $object->setPostalCode(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PostalCode', $data)) {
+            if (\array_key_exists('PostalCode', $data) && $data['PostalCode'] !== null) {
                 $values = [];
                 foreach ($data['PostalCode'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PostalCodeListPostalCode', 'json', $context);
                 }
                 $object->setPostalCode($values);
                 unset($data['PostalCode']);
+            }
+            elseif (\array_key_exists('PostalCode', $data) && $data['PostalCode'] === null) {
+                $object->setPostalCode(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

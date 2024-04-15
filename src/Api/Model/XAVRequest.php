@@ -15,7 +15,7 @@ class XAVRequest extends \ArrayObject
     /**
      * XAV Request Container.
      *
-     * @var XAVRequestRequest
+     * @var XAVRequestRequest|null
      */
     protected $request;
     /**
@@ -24,7 +24,7 @@ class XAVRequest extends \ArrayObject
     The default is to provide street level address validation. 
     Not valid with the address classification request option.
     *
-    * @var string
+    * @var string|null
     */
     protected $regionalRequestIndicator;
     /**
@@ -33,32 +33,32 @@ class XAVRequest extends \ArrayObject
     0 - 50
     Default: 15
     *
-    * @var string
+    * @var string|null
     */
     protected $maximumCandidateListSize;
     /**
      * 
      *
-     * @var XAVRequestAddressKeyFormat[]
+     * @var list<XAVRequestAddressKeyFormat>|null
      */
     protected $addressKeyFormat;
     /**
      * XAV Request Container.
      *
-     * @return XAVRequestRequest
+     * @return XAVRequestRequest|null
      */
-    public function getRequest() : XAVRequestRequest
+    public function getRequest() : ?XAVRequestRequest
     {
         return $this->request;
     }
     /**
      * XAV Request Container.
      *
-     * @param XAVRequestRequest $request
+     * @param XAVRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(XAVRequestRequest $request) : self
+    public function setRequest(?XAVRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -70,9 +70,9 @@ class XAVRequest extends \ArrayObject
     The default is to provide street level address validation. 
     Not valid with the address classification request option.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRegionalRequestIndicator() : string
+    public function getRegionalRequestIndicator() : ?string
     {
         return $this->regionalRequestIndicator;
     }
@@ -82,11 +82,11 @@ class XAVRequest extends \ArrayObject
     The default is to provide street level address validation. 
     Not valid with the address classification request option.
     *
-    * @param string $regionalRequestIndicator
+    * @param string|null $regionalRequestIndicator
     *
     * @return self
     */
-    public function setRegionalRequestIndicator(string $regionalRequestIndicator) : self
+    public function setRegionalRequestIndicator(?string $regionalRequestIndicator) : self
     {
         $this->initialized['regionalRequestIndicator'] = true;
         $this->regionalRequestIndicator = $regionalRequestIndicator;
@@ -98,9 +98,9 @@ class XAVRequest extends \ArrayObject
     0 - 50
     Default: 15
     *
-    * @return string
+    * @return string|null
     */
-    public function getMaximumCandidateListSize() : string
+    public function getMaximumCandidateListSize() : ?string
     {
         return $this->maximumCandidateListSize;
     }
@@ -110,11 +110,11 @@ class XAVRequest extends \ArrayObject
     0 - 50
     Default: 15
     *
-    * @param string $maximumCandidateListSize
+    * @param string|null $maximumCandidateListSize
     *
     * @return self
     */
-    public function setMaximumCandidateListSize(string $maximumCandidateListSize) : self
+    public function setMaximumCandidateListSize(?string $maximumCandidateListSize) : self
     {
         $this->initialized['maximumCandidateListSize'] = true;
         $this->maximumCandidateListSize = $maximumCandidateListSize;
@@ -123,20 +123,20 @@ class XAVRequest extends \ArrayObject
     /**
      * 
      *
-     * @return XAVRequestAddressKeyFormat[]
+     * @return list<XAVRequestAddressKeyFormat>|null
      */
-    public function getAddressKeyFormat() : array
+    public function getAddressKeyFormat() : ?array
     {
         return $this->addressKeyFormat;
     }
     /**
      * 
      *
-     * @param XAVRequestAddressKeyFormat[] $addressKeyFormat
+     * @param list<XAVRequestAddressKeyFormat>|null $addressKeyFormat
      *
      * @return self
      */
-    public function setAddressKeyFormat(array $addressKeyFormat) : self
+    public function setAddressKeyFormat(?array $addressKeyFormat) : self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;

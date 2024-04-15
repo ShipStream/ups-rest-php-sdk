@@ -15,32 +15,32 @@ class VoidShipmentRequestRequest extends \ArrayObject
     /**
      * Optional processing. No options  Not used. Left for future uses
      *
-     * @var string
+     * @var string|null
      */
     protected $requestOption;
     /**
      * TransactionReference identifies transactions between client and server.  N/A
      *
-     * @var VoidRequestTransactionReference
+     * @var VoidRequestTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Optional processing. No options  Not used. Left for future uses
      *
-     * @return string
+     * @return string|null
      */
-    public function getRequestOption() : string
+    public function getRequestOption() : ?string
     {
         return $this->requestOption;
     }
     /**
      * Optional processing. No options  Not used. Left for future uses
      *
-     * @param string $requestOption
+     * @param string|null $requestOption
      *
      * @return self
      */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(?string $requestOption) : self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -49,20 +49,20 @@ class VoidShipmentRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.  N/A
      *
-     * @return VoidRequestTransactionReference
+     * @return VoidRequestTransactionReference|null
      */
-    public function getTransactionReference() : VoidRequestTransactionReference
+    public function getTransactionReference() : ?VoidRequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.  N/A
      *
-     * @param VoidRequestTransactionReference $transactionReference
+     * @param VoidRequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(VoidRequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?VoidRequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

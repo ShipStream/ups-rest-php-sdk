@@ -15,44 +15,44 @@ class Activity extends \ArrayObject
     /**
      * type
      *
-     * @var string
+     * @var string|null
      */
     protected $date;
     /**
      * 
      *
-     * @var Location
+     * @var Location|null
      */
     protected $location;
     /**
      * 
      *
-     * @var Status
+     * @var Status|null
      */
     protected $status;
     /**
      * type
      *
-     * @var string
+     * @var string|null
      */
     protected $time;
     /**
      * type
      *
-     * @return string
+     * @return string|null
      */
-    public function getDate() : string
+    public function getDate() : ?string
     {
         return $this->date;
     }
     /**
      * type
      *
-     * @param string $date
+     * @param string|null $date
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(?string $date) : self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -61,20 +61,20 @@ class Activity extends \ArrayObject
     /**
      * 
      *
-     * @return Location
+     * @return Location|null
      */
-    public function getLocation() : Location
+    public function getLocation() : ?Location
     {
         return $this->location;
     }
     /**
      * 
      *
-     * @param Location $location
+     * @param Location|null $location
      *
      * @return self
      */
-    public function setLocation(Location $location) : self
+    public function setLocation(?Location $location) : self
     {
         $this->initialized['location'] = true;
         $this->location = $location;
@@ -83,20 +83,20 @@ class Activity extends \ArrayObject
     /**
      * 
      *
-     * @return Status
+     * @return Status|null
      */
-    public function getStatus() : Status
+    public function getStatus() : ?Status
     {
         return $this->status;
     }
     /**
      * 
      *
-     * @param Status $status
+     * @param Status|null $status
      *
      * @return self
      */
-    public function setStatus(Status $status) : self
+    public function setStatus(?Status $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -105,20 +105,20 @@ class Activity extends \ArrayObject
     /**
      * type
      *
-     * @return string
+     * @return string|null
      */
-    public function getTime() : string
+    public function getTime() : ?string
     {
         return $this->time;
     }
     /**
      * type
      *
-     * @param string $time
+     * @param string|null $time
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(?string $time) : self
     {
         $this->initialized['time'] = true;
         $this->time = $time;

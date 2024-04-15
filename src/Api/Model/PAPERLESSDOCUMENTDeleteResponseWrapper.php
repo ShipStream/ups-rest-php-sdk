@@ -15,26 +15,26 @@ class PAPERLESSDOCUMENTDeleteResponseWrapper extends \ArrayObject
     /**
      * Paperless Document API response container for delete request.  N/A
      *
-     * @var DeleteResponse
+     * @var DeleteResponse|null
      */
     protected $deleteResponse;
     /**
      * Paperless Document API response container for delete request.  N/A
      *
-     * @return DeleteResponse
+     * @return DeleteResponse|null
      */
-    public function getDeleteResponse() : DeleteResponse
+    public function getDeleteResponse() : ?DeleteResponse
     {
         return $this->deleteResponse;
     }
     /**
      * Paperless Document API response container for delete request.  N/A
      *
-     * @param DeleteResponse $deleteResponse
+     * @param DeleteResponse|null $deleteResponse
      *
      * @return self
      */
-    public function setDeleteResponse(DeleteResponse $deleteResponse) : self
+    public function setDeleteResponse(?DeleteResponse $deleteResponse) : self
     {
         $this->initialized['deleteResponse'] = true;
         $this->deleteResponse = $deleteResponse;

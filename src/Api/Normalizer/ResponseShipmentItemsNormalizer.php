@@ -52,37 +52,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('commodityID', $data)) {
+            if (\array_key_exists('commodityID', $data) && $data['commodityID'] !== null) {
                 $object->setCommodityID($data['commodityID']);
                 unset($data['commodityID']);
             }
-            if (\array_key_exists('hsCode', $data)) {
+            elseif (\array_key_exists('commodityID', $data) && $data['commodityID'] === null) {
+                $object->setCommodityID(null);
+            }
+            if (\array_key_exists('hsCode', $data) && $data['hsCode'] !== null) {
                 $object->setHsCode($data['hsCode']);
                 unset($data['hsCode']);
             }
-            if (\array_key_exists('commodityDuty', $data)) {
+            elseif (\array_key_exists('hsCode', $data) && $data['hsCode'] === null) {
+                $object->setHsCode(null);
+            }
+            if (\array_key_exists('commodityDuty', $data) && $data['commodityDuty'] !== null) {
                 $object->setCommodityDuty($data['commodityDuty']);
                 unset($data['commodityDuty']);
             }
-            if (\array_key_exists('totalCommodityTaxAndFee', $data)) {
+            elseif (\array_key_exists('commodityDuty', $data) && $data['commodityDuty'] === null) {
+                $object->setCommodityDuty(null);
+            }
+            if (\array_key_exists('totalCommodityTaxAndFee', $data) && $data['totalCommodityTaxAndFee'] !== null) {
                 $object->setTotalCommodityTaxAndFee($data['totalCommodityTaxAndFee']);
                 unset($data['totalCommodityTaxAndFee']);
             }
-            if (\array_key_exists('commodityVAT', $data)) {
+            elseif (\array_key_exists('totalCommodityTaxAndFee', $data) && $data['totalCommodityTaxAndFee'] === null) {
+                $object->setTotalCommodityTaxAndFee(null);
+            }
+            if (\array_key_exists('commodityVAT', $data) && $data['commodityVAT'] !== null) {
                 $object->setCommodityVAT($data['commodityVAT']);
                 unset($data['commodityVAT']);
             }
-            if (\array_key_exists('totalCommodityDutyAndTax', $data)) {
+            elseif (\array_key_exists('commodityVAT', $data) && $data['commodityVAT'] === null) {
+                $object->setCommodityVAT(null);
+            }
+            if (\array_key_exists('totalCommodityDutyAndTax', $data) && $data['totalCommodityDutyAndTax'] !== null) {
                 $object->setTotalCommodityDutyAndTax($data['totalCommodityDutyAndTax']);
                 unset($data['totalCommodityDutyAndTax']);
             }
-            if (\array_key_exists('commodityCurrencyCode', $data)) {
+            elseif (\array_key_exists('totalCommodityDutyAndTax', $data) && $data['totalCommodityDutyAndTax'] === null) {
+                $object->setTotalCommodityDutyAndTax(null);
+            }
+            if (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] !== null) {
                 $object->setCommodityCurrencyCode($data['commodityCurrencyCode']);
                 unset($data['commodityCurrencyCode']);
             }
-            if (\array_key_exists('isCalculable', $data)) {
+            elseif (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] === null) {
+                $object->setCommodityCurrencyCode(null);
+            }
+            if (\array_key_exists('isCalculable', $data) && $data['isCalculable'] !== null) {
                 $object->setIsCalculable($data['isCalculable']);
                 unset($data['isCalculable']);
+            }
+            elseif (\array_key_exists('isCalculable', $data) && $data['isCalculable'] === null) {
+                $object->setIsCalculable(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -158,37 +182,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('commodityID', $data)) {
+            if (\array_key_exists('commodityID', $data) && $data['commodityID'] !== null) {
                 $object->setCommodityID($data['commodityID']);
                 unset($data['commodityID']);
             }
-            if (\array_key_exists('hsCode', $data)) {
+            elseif (\array_key_exists('commodityID', $data) && $data['commodityID'] === null) {
+                $object->setCommodityID(null);
+            }
+            if (\array_key_exists('hsCode', $data) && $data['hsCode'] !== null) {
                 $object->setHsCode($data['hsCode']);
                 unset($data['hsCode']);
             }
-            if (\array_key_exists('commodityDuty', $data)) {
+            elseif (\array_key_exists('hsCode', $data) && $data['hsCode'] === null) {
+                $object->setHsCode(null);
+            }
+            if (\array_key_exists('commodityDuty', $data) && $data['commodityDuty'] !== null) {
                 $object->setCommodityDuty($data['commodityDuty']);
                 unset($data['commodityDuty']);
             }
-            if (\array_key_exists('totalCommodityTaxAndFee', $data)) {
+            elseif (\array_key_exists('commodityDuty', $data) && $data['commodityDuty'] === null) {
+                $object->setCommodityDuty(null);
+            }
+            if (\array_key_exists('totalCommodityTaxAndFee', $data) && $data['totalCommodityTaxAndFee'] !== null) {
                 $object->setTotalCommodityTaxAndFee($data['totalCommodityTaxAndFee']);
                 unset($data['totalCommodityTaxAndFee']);
             }
-            if (\array_key_exists('commodityVAT', $data)) {
+            elseif (\array_key_exists('totalCommodityTaxAndFee', $data) && $data['totalCommodityTaxAndFee'] === null) {
+                $object->setTotalCommodityTaxAndFee(null);
+            }
+            if (\array_key_exists('commodityVAT', $data) && $data['commodityVAT'] !== null) {
                 $object->setCommodityVAT($data['commodityVAT']);
                 unset($data['commodityVAT']);
             }
-            if (\array_key_exists('totalCommodityDutyAndTax', $data)) {
+            elseif (\array_key_exists('commodityVAT', $data) && $data['commodityVAT'] === null) {
+                $object->setCommodityVAT(null);
+            }
+            if (\array_key_exists('totalCommodityDutyAndTax', $data) && $data['totalCommodityDutyAndTax'] !== null) {
                 $object->setTotalCommodityDutyAndTax($data['totalCommodityDutyAndTax']);
                 unset($data['totalCommodityDutyAndTax']);
             }
-            if (\array_key_exists('commodityCurrencyCode', $data)) {
+            elseif (\array_key_exists('totalCommodityDutyAndTax', $data) && $data['totalCommodityDutyAndTax'] === null) {
+                $object->setTotalCommodityDutyAndTax(null);
+            }
+            if (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] !== null) {
                 $object->setCommodityCurrencyCode($data['commodityCurrencyCode']);
                 unset($data['commodityCurrencyCode']);
             }
-            if (\array_key_exists('isCalculable', $data)) {
+            elseif (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] === null) {
+                $object->setCommodityCurrencyCode(null);
+            }
+            if (\array_key_exists('isCalculable', $data) && $data['isCalculable'] !== null) {
                 $object->setIsCalculable($data['isCalculable']);
                 unset($data['isCalculable']);
+            }
+            elseif (\array_key_exists('isCalculable', $data) && $data['isCalculable'] === null) {
+                $object->setIsCalculable(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

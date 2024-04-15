@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupGetPoliticalDivision1ListResponse', $data)) {
+            if (\array_key_exists('PickupGetPoliticalDivision1ListResponse', $data) && $data['PickupGetPoliticalDivision1ListResponse'] !== null) {
                 $object->setPickupGetPoliticalDivision1ListResponse($this->denormalizer->denormalize($data['PickupGetPoliticalDivision1ListResponse'], 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponse', 'json', $context));
                 unset($data['PickupGetPoliticalDivision1ListResponse']);
+            }
+            elseif (\array_key_exists('PickupGetPoliticalDivision1ListResponse', $data) && $data['PickupGetPoliticalDivision1ListResponse'] === null) {
+                $object->setPickupGetPoliticalDivision1ListResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupGetPoliticalDivision1ListResponse', $data)) {
+            if (\array_key_exists('PickupGetPoliticalDivision1ListResponse', $data) && $data['PickupGetPoliticalDivision1ListResponse'] !== null) {
                 $object->setPickupGetPoliticalDivision1ListResponse($this->denormalizer->denormalize($data['PickupGetPoliticalDivision1ListResponse'], 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponse', 'json', $context));
                 unset($data['PickupGetPoliticalDivision1ListResponse']);
+            }
+            elseif (\array_key_exists('PickupGetPoliticalDivision1ListResponse', $data) && $data['PickupGetPoliticalDivision1ListResponse'] === null) {
+                $object->setPickupGetPoliticalDivision1ListResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

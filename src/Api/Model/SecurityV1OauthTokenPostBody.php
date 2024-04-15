@@ -15,38 +15,38 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
     /**
      * Valid values: authorization_code, client_credentials
      *
-     * @var string
+     * @var string|null
      */
     protected $grantType = 'authorization_code';
     /**
      * Authorization code from the UPS login system.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Callback URL for the requesting application.
      *
-     * @var string
+     * @var string|null
      */
     protected $redirectUri;
     /**
      * Valid values: authorization_code, client_credentials
      *
-     * @return string
+     * @return string|null
      */
-    public function getGrantType() : string
+    public function getGrantType() : ?string
     {
         return $this->grantType;
     }
     /**
      * Valid values: authorization_code, client_credentials
      *
-     * @param string $grantType
+     * @param string|null $grantType
      *
      * @return self
      */
-    public function setGrantType(string $grantType) : self
+    public function setGrantType(?string $grantType) : self
     {
         $this->initialized['grantType'] = true;
         $this->grantType = $grantType;
@@ -55,20 +55,20 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
     /**
      * Authorization code from the UPS login system.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Authorization code from the UPS login system.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -77,20 +77,20 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
     /**
      * Callback URL for the requesting application.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRedirectUri() : string
+    public function getRedirectUri() : ?string
     {
         return $this->redirectUri;
     }
     /**
      * Callback URL for the requesting application.
      *
-     * @param string $redirectUri
+     * @param string|null $redirectUri
      *
      * @return self
      */
-    public function setRedirectUri(string $redirectUri) : self
+    public function setRedirectUri(?string $redirectUri) : self
     {
         $this->initialized['redirectUri'] = true;
         $this->redirectUri = $redirectUri;

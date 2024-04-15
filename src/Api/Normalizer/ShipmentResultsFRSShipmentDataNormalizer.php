@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TransportationCharges', $data)) {
+            if (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] !== null) {
                 $object->setTransportationCharges($this->denormalizer->denormalize($data['TransportationCharges'], 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges', 'json', $context));
                 unset($data['TransportationCharges']);
             }
-            if (\array_key_exists('FreightDensityRate', $data)) {
+            elseif (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] === null) {
+                $object->setTransportationCharges(null);
+            }
+            if (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] !== null) {
                 $object->setFreightDensityRate($this->denormalizer->denormalize($data['FreightDensityRate'], 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataFreightDensityRate', 'json', $context));
                 unset($data['FreightDensityRate']);
             }
-            if (\array_key_exists('HandlingUnits', $data)) {
+            elseif (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] === null) {
+                $object->setFreightDensityRate(null);
+            }
+            if (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] !== null) {
                 $values = [];
                 foreach ($data['HandlingUnits'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataHandlingUnits', 'json', $context);
                 }
                 $object->setHandlingUnits($values);
                 unset($data['HandlingUnits']);
+            }
+            elseif (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] === null) {
+                $object->setHandlingUnits(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -119,21 +128,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TransportationCharges', $data)) {
+            if (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] !== null) {
                 $object->setTransportationCharges($this->denormalizer->denormalize($data['TransportationCharges'], 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges', 'json', $context));
                 unset($data['TransportationCharges']);
             }
-            if (\array_key_exists('FreightDensityRate', $data)) {
+            elseif (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] === null) {
+                $object->setTransportationCharges(null);
+            }
+            if (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] !== null) {
                 $object->setFreightDensityRate($this->denormalizer->denormalize($data['FreightDensityRate'], 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataFreightDensityRate', 'json', $context));
                 unset($data['FreightDensityRate']);
             }
-            if (\array_key_exists('HandlingUnits', $data)) {
+            elseif (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] === null) {
+                $object->setFreightDensityRate(null);
+            }
+            if (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] !== null) {
                 $values = [];
                 foreach ($data['HandlingUnits'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataHandlingUnits', 'json', $context);
                 }
                 $object->setHandlingUnits($values);
                 unset($data['HandlingUnits']);
+            }
+            elseif (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] === null) {
+                $object->setHandlingUnits(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

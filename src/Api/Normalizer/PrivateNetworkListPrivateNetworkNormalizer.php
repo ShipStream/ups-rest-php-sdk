@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('NetworkID', $data)) {
+            if (\array_key_exists('NetworkID', $data) && $data['NetworkID'] !== null) {
                 $object->setNetworkID($data['NetworkID']);
                 unset($data['NetworkID']);
             }
-            if (\array_key_exists('NetworkDescription', $data)) {
+            elseif (\array_key_exists('NetworkID', $data) && $data['NetworkID'] === null) {
+                $object->setNetworkID(null);
+            }
+            if (\array_key_exists('NetworkDescription', $data) && $data['NetworkDescription'] !== null) {
                 $object->setNetworkDescription($data['NetworkDescription']);
                 unset($data['NetworkDescription']);
+            }
+            elseif (\array_key_exists('NetworkDescription', $data) && $data['NetworkDescription'] === null) {
+                $object->setNetworkDescription(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('NetworkID', $data)) {
+            if (\array_key_exists('NetworkID', $data) && $data['NetworkID'] !== null) {
                 $object->setNetworkID($data['NetworkID']);
                 unset($data['NetworkID']);
             }
-            if (\array_key_exists('NetworkDescription', $data)) {
+            elseif (\array_key_exists('NetworkID', $data) && $data['NetworkID'] === null) {
+                $object->setNetworkID(null);
+            }
+            if (\array_key_exists('NetworkDescription', $data) && $data['NetworkDescription'] !== null) {
                 $object->setNetworkDescription($data['NetworkDescription']);
                 unset($data['NetworkDescription']);
+            }
+            elseif (\array_key_exists('NetworkDescription', $data) && $data['NetworkDescription'] === null) {
+                $object->setNetworkDescription(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

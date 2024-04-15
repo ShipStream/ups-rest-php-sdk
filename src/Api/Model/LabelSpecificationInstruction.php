@@ -15,32 +15,32 @@ class LabelSpecificationInstruction extends \ArrayObject
     /**
      * For Exchange Forward Shipment, by default Label will have Exchange Routing instruction Text as EXCHANGE-LIKE ITEM ONLY. If code value is: 01- EXCHANGE-LIKE ITEM ONLY, 02- EXCHANGE-DRIVER INSTRUCTIONS INSIDE.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the label Instruction code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * For Exchange Forward Shipment, by default Label will have Exchange Routing instruction Text as EXCHANGE-LIKE ITEM ONLY. If code value is: 01- EXCHANGE-LIKE ITEM ONLY, 02- EXCHANGE-DRIVER INSTRUCTIONS INSIDE.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * For Exchange Forward Shipment, by default Label will have Exchange Routing instruction Text as EXCHANGE-LIKE ITEM ONLY. If code value is: 01- EXCHANGE-LIKE ITEM ONLY, 02- EXCHANGE-DRIVER INSTRUCTIONS INSIDE.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class LabelSpecificationInstruction extends \ArrayObject
     /**
      * Description of the label Instruction code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the label Instruction code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

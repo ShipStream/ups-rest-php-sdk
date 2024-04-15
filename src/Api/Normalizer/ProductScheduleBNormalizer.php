@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('Quantity', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $values = [];
                 foreach ($data['Quantity'] as $value) {
                     $values[] = $value;
@@ -52,13 +55,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setQuantity($values);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $values_1 = [];
                 foreach ($data['UnitOfMeasurement'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ScheduleBUnitOfMeasurement', 'json', $context);
                 }
                 $object->setUnitOfMeasurement($values_1);
                 unset($data['UnitOfMeasurement']);
+            }
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -125,11 +134,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('Quantity', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $values = [];
                 foreach ($data['Quantity'] as $value) {
                     $values[] = $value;
@@ -137,13 +149,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setQuantity($values);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $values_1 = [];
                 foreach ($data['UnitOfMeasurement'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ScheduleBUnitOfMeasurement', 'json', $context);
                 }
                 $object->setUnitOfMeasurement($values_1);
                 unset($data['UnitOfMeasurement']);
+            }
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

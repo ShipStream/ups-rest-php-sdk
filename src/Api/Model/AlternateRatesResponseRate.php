@@ -15,38 +15,38 @@ class AlternateRatesResponseRate extends \ArrayObject
     /**
      * Rate Type Container.
      *
-     * @var RateType
+     * @var RateType|null
      */
     protected $type;
     /**
      * The subtype of itemized charges rate type. Please look at Appendix 1 Adding for 1800o_RFC8654
      *
-     * @var string
+     * @var string|null
      */
     protected $subTypeCode;
     /**
      * Factor Container.
      *
-     * @var RateFactor
+     * @var RateFactor|null
      */
     protected $factor;
     /**
      * Rate Type Container.
      *
-     * @return RateType
+     * @return RateType|null
      */
-    public function getType() : RateType
+    public function getType() : ?RateType
     {
         return $this->type;
     }
     /**
      * Rate Type Container.
      *
-     * @param RateType $type
+     * @param RateType|null $type
      *
      * @return self
      */
-    public function setType(RateType $type) : self
+    public function setType(?RateType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -55,20 +55,20 @@ class AlternateRatesResponseRate extends \ArrayObject
     /**
      * The subtype of itemized charges rate type. Please look at Appendix 1 Adding for 1800o_RFC8654
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubTypeCode() : string
+    public function getSubTypeCode() : ?string
     {
         return $this->subTypeCode;
     }
     /**
      * The subtype of itemized charges rate type. Please look at Appendix 1 Adding for 1800o_RFC8654
      *
-     * @param string $subTypeCode
+     * @param string|null $subTypeCode
      *
      * @return self
      */
-    public function setSubTypeCode(string $subTypeCode) : self
+    public function setSubTypeCode(?string $subTypeCode) : self
     {
         $this->initialized['subTypeCode'] = true;
         $this->subTypeCode = $subTypeCode;
@@ -77,20 +77,20 @@ class AlternateRatesResponseRate extends \ArrayObject
     /**
      * Factor Container.
      *
-     * @return RateFactor
+     * @return RateFactor|null
      */
-    public function getFactor() : RateFactor
+    public function getFactor() : ?RateFactor
     {
         return $this->factor;
     }
     /**
      * Factor Container.
      *
-     * @param RateFactor $factor
+     * @param RateFactor|null $factor
      *
      * @return self
      */
-    public function setFactor(RateFactor $factor) : self
+    public function setFactor(?RateFactor $factor) : self
     {
         $this->initialized['factor'] = true;
         $this->factor = $factor;

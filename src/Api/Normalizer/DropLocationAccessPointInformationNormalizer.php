@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PublicAccessPointID', $data)) {
+            if (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] !== null) {
                 $object->setPublicAccessPointID($data['PublicAccessPointID']);
                 unset($data['PublicAccessPointID']);
             }
-            if (\array_key_exists('ImageURL', $data)) {
+            elseif (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] === null) {
+                $object->setPublicAccessPointID(null);
+            }
+            if (\array_key_exists('ImageURL', $data) && $data['ImageURL'] !== null) {
                 $object->setImageURL($data['ImageURL']);
                 unset($data['ImageURL']);
             }
-            if (\array_key_exists('BusinessClassificationList', $data)) {
+            elseif (\array_key_exists('ImageURL', $data) && $data['ImageURL'] === null) {
+                $object->setImageURL(null);
+            }
+            if (\array_key_exists('BusinessClassificationList', $data) && $data['BusinessClassificationList'] !== null) {
                 $object->setBusinessClassificationList($this->denormalizer->denormalize($data['BusinessClassificationList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList', 'json', $context));
                 unset($data['BusinessClassificationList']);
             }
-            if (\array_key_exists('AccessPointStatus', $data)) {
+            elseif (\array_key_exists('BusinessClassificationList', $data) && $data['BusinessClassificationList'] === null) {
+                $object->setBusinessClassificationList(null);
+            }
+            if (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] !== null) {
                 $object->setAccessPointStatus($this->denormalizer->denormalize($data['AccessPointStatus'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus', 'json', $context));
                 unset($data['AccessPointStatus']);
             }
-            if (\array_key_exists('FacilitySLIC', $data)) {
+            elseif (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] === null) {
+                $object->setAccessPointStatus(null);
+            }
+            if (\array_key_exists('FacilitySLIC', $data) && $data['FacilitySLIC'] !== null) {
                 $object->setFacilitySLIC($data['FacilitySLIC']);
                 unset($data['FacilitySLIC']);
             }
-            if (\array_key_exists('PrivateNetworkList', $data)) {
+            elseif (\array_key_exists('FacilitySLIC', $data) && $data['FacilitySLIC'] === null) {
+                $object->setFacilitySLIC(null);
+            }
+            if (\array_key_exists('PrivateNetworkList', $data) && $data['PrivateNetworkList'] !== null) {
                 $object->setPrivateNetworkList($this->denormalizer->denormalize($data['PrivateNetworkList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList', 'json', $context));
                 unset($data['PrivateNetworkList']);
             }
-            if (\array_key_exists('Availability', $data)) {
+            elseif (\array_key_exists('PrivateNetworkList', $data) && $data['PrivateNetworkList'] === null) {
+                $object->setPrivateNetworkList(null);
+            }
+            if (\array_key_exists('Availability', $data) && $data['Availability'] !== null) {
                 $object->setAvailability($this->denormalizer->denormalize($data['Availability'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability', 'json', $context));
                 unset($data['Availability']);
+            }
+            elseif (\array_key_exists('Availability', $data) && $data['Availability'] === null) {
+                $object->setAvailability(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -141,33 +162,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PublicAccessPointID', $data)) {
+            if (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] !== null) {
                 $object->setPublicAccessPointID($data['PublicAccessPointID']);
                 unset($data['PublicAccessPointID']);
             }
-            if (\array_key_exists('ImageURL', $data)) {
+            elseif (\array_key_exists('PublicAccessPointID', $data) && $data['PublicAccessPointID'] === null) {
+                $object->setPublicAccessPointID(null);
+            }
+            if (\array_key_exists('ImageURL', $data) && $data['ImageURL'] !== null) {
                 $object->setImageURL($data['ImageURL']);
                 unset($data['ImageURL']);
             }
-            if (\array_key_exists('BusinessClassificationList', $data)) {
+            elseif (\array_key_exists('ImageURL', $data) && $data['ImageURL'] === null) {
+                $object->setImageURL(null);
+            }
+            if (\array_key_exists('BusinessClassificationList', $data) && $data['BusinessClassificationList'] !== null) {
                 $object->setBusinessClassificationList($this->denormalizer->denormalize($data['BusinessClassificationList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList', 'json', $context));
                 unset($data['BusinessClassificationList']);
             }
-            if (\array_key_exists('AccessPointStatus', $data)) {
+            elseif (\array_key_exists('BusinessClassificationList', $data) && $data['BusinessClassificationList'] === null) {
+                $object->setBusinessClassificationList(null);
+            }
+            if (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] !== null) {
                 $object->setAccessPointStatus($this->denormalizer->denormalize($data['AccessPointStatus'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus', 'json', $context));
                 unset($data['AccessPointStatus']);
             }
-            if (\array_key_exists('FacilitySLIC', $data)) {
+            elseif (\array_key_exists('AccessPointStatus', $data) && $data['AccessPointStatus'] === null) {
+                $object->setAccessPointStatus(null);
+            }
+            if (\array_key_exists('FacilitySLIC', $data) && $data['FacilitySLIC'] !== null) {
                 $object->setFacilitySLIC($data['FacilitySLIC']);
                 unset($data['FacilitySLIC']);
             }
-            if (\array_key_exists('PrivateNetworkList', $data)) {
+            elseif (\array_key_exists('FacilitySLIC', $data) && $data['FacilitySLIC'] === null) {
+                $object->setFacilitySLIC(null);
+            }
+            if (\array_key_exists('PrivateNetworkList', $data) && $data['PrivateNetworkList'] !== null) {
                 $object->setPrivateNetworkList($this->denormalizer->denormalize($data['PrivateNetworkList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList', 'json', $context));
                 unset($data['PrivateNetworkList']);
             }
-            if (\array_key_exists('Availability', $data)) {
+            elseif (\array_key_exists('PrivateNetworkList', $data) && $data['PrivateNetworkList'] === null) {
+                $object->setPrivateNetworkList(null);
+            }
+            if (\array_key_exists('Availability', $data) && $data['Availability'] !== null) {
                 $object->setAvailability($this->denormalizer->denormalize($data['Availability'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability', 'json', $context));
                 unset($data['Availability']);
+            }
+            elseif (\array_key_exists('Availability', $data) && $data['Availability'] === null) {
+                $object->setAvailability(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

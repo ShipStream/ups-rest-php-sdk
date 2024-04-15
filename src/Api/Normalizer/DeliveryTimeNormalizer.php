@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('endTime', $data)) {
+            if (\array_key_exists('endTime', $data) && $data['endTime'] !== null) {
                 $object->setEndTime($data['endTime']);
                 unset($data['endTime']);
             }
-            if (\array_key_exists('startTime', $data)) {
+            elseif (\array_key_exists('endTime', $data) && $data['endTime'] === null) {
+                $object->setEndTime(null);
+            }
+            if (\array_key_exists('startTime', $data) && $data['startTime'] !== null) {
                 $object->setStartTime($data['startTime']);
                 unset($data['startTime']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('startTime', $data) && $data['startTime'] === null) {
+                $object->setStartTime(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('endTime', $data)) {
+            if (\array_key_exists('endTime', $data) && $data['endTime'] !== null) {
                 $object->setEndTime($data['endTime']);
                 unset($data['endTime']);
             }
-            if (\array_key_exists('startTime', $data)) {
+            elseif (\array_key_exists('endTime', $data) && $data['endTime'] === null) {
+                $object->setEndTime(null);
+            }
+            if (\array_key_exists('startTime', $data) && $data['startTime'] !== null) {
                 $object->setStartTime($data['startTime']);
                 unset($data['startTime']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('startTime', $data) && $data['startTime'] === null) {
+                $object->setStartTime(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

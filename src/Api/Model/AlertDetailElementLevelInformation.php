@@ -15,32 +15,32 @@ class AlertDetailElementLevelInformation extends \ArrayObject
     /**
      * Define type of element in request. Possible values are - 'H" for the header details level,  "S" for the shipment level, "P" for the package level, "C" for the commodity level.
      *
-     * @var string
+     * @var string|null
      */
     protected $level;
     /**
      * 
      *
-     * @var ElementLevelInformationElementIdentifier[]
+     * @var list<ElementLevelInformationElementIdentifier>|null
      */
     protected $elementIdentifier;
     /**
      * Define type of element in request. Possible values are - 'H" for the header details level,  "S" for the shipment level, "P" for the package level, "C" for the commodity level.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLevel() : string
+    public function getLevel() : ?string
     {
         return $this->level;
     }
     /**
      * Define type of element in request. Possible values are - 'H" for the header details level,  "S" for the shipment level, "P" for the package level, "C" for the commodity level.
      *
-     * @param string $level
+     * @param string|null $level
      *
      * @return self
      */
-    public function setLevel(string $level) : self
+    public function setLevel(?string $level) : self
     {
         $this->initialized['level'] = true;
         $this->level = $level;
@@ -49,20 +49,20 @@ class AlertDetailElementLevelInformation extends \ArrayObject
     /**
      * 
      *
-     * @return ElementLevelInformationElementIdentifier[]
+     * @return list<ElementLevelInformationElementIdentifier>|null
      */
-    public function getElementIdentifier() : array
+    public function getElementIdentifier() : ?array
     {
         return $this->elementIdentifier;
     }
     /**
      * 
      *
-     * @param ElementLevelInformationElementIdentifier[] $elementIdentifier
+     * @param list<ElementLevelInformationElementIdentifier>|null $elementIdentifier
      *
      * @return self
      */
-    public function setElementIdentifier(array $elementIdentifier) : self
+    public function setElementIdentifier(?array $elementIdentifier) : self
     {
         $this->initialized['elementIdentifier'] = true;
         $this->elementIdentifier = $elementIdentifier;

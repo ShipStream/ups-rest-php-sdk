@@ -24,26 +24,26 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     COMAT LTD - Company Material LTD
     COMAT PAX - Company Material PAX
     *
-    * @var string
+    * @var string|null
     */
     protected $packageQuantityLimitTypeCode;
     /**
      * The numerical value of the mass capacity of the regulated good.  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $quantity;
     /**
     * The unit of measure used for the mass capacity of the regulated good.
      It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
     *
-    * @var string
+    * @var string|null
     */
     protected $uOM;
     /**
      * The packing instructions related to the chemical record.  It will be returned if applies for a given chemical record.
      *
-     * @var string
+     * @var string|null
      */
     protected $packagingInstructionCode;
     /**
@@ -58,9 +58,9 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     COMAT LTD - Company Material LTD
     COMAT PAX - Company Material PAX
     *
-    * @return string
+    * @return string|null
     */
-    public function getPackageQuantityLimitTypeCode() : string
+    public function getPackageQuantityLimitTypeCode() : ?string
     {
         return $this->packageQuantityLimitTypeCode;
     }
@@ -76,11 +76,11 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     COMAT LTD - Company Material LTD
     COMAT PAX - Company Material PAX
     *
-    * @param string $packageQuantityLimitTypeCode
+    * @param string|null $packageQuantityLimitTypeCode
     *
     * @return self
     */
-    public function setPackageQuantityLimitTypeCode(string $packageQuantityLimitTypeCode) : self
+    public function setPackageQuantityLimitTypeCode(?string $packageQuantityLimitTypeCode) : self
     {
         $this->initialized['packageQuantityLimitTypeCode'] = true;
         $this->packageQuantityLimitTypeCode = $packageQuantityLimitTypeCode;
@@ -89,20 +89,20 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     /**
      * The numerical value of the mass capacity of the regulated good.  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuantity() : string
+    public function getQuantity() : ?string
     {
         return $this->quantity;
     }
     /**
      * The numerical value of the mass capacity of the regulated good.  It will be returned if applies for a given chemical record.
      *
-     * @param string $quantity
+     * @param string|null $quantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(?string $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -112,9 +112,9 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     * The unit of measure used for the mass capacity of the regulated good.
      It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
     *
-    * @return string
+    * @return string|null
     */
-    public function getUOM() : string
+    public function getUOM() : ?string
     {
         return $this->uOM;
     }
@@ -122,11 +122,11 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     * The unit of measure used for the mass capacity of the regulated good.
      It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
     *
-    * @param string $uOM
+    * @param string|null $uOM
     *
     * @return self
     */
-    public function setUOM(string $uOM) : self
+    public function setUOM(?string $uOM) : self
     {
         $this->initialized['uOM'] = true;
         $this->uOM = $uOM;
@@ -135,20 +135,20 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     /**
      * The packing instructions related to the chemical record.  It will be returned if applies for a given chemical record.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackagingInstructionCode() : string
+    public function getPackagingInstructionCode() : ?string
     {
         return $this->packagingInstructionCode;
     }
     /**
      * The packing instructions related to the chemical record.  It will be returned if applies for a given chemical record.
      *
-     * @param string $packagingInstructionCode
+     * @param string|null $packagingInstructionCode
      *
      * @return self
      */
-    public function setPackagingInstructionCode(string $packagingInstructionCode) : self
+    public function setPackagingInstructionCode(?string $packagingInstructionCode) : self
     {
         $this->initialized['packagingInstructionCode'] = true;
         $this->packagingInstructionCode = $packagingInstructionCode;

@@ -15,45 +15,45 @@ class QuantumViewResponseResponse extends \ArrayObject
     /**
      * Transaction Reference Container.
      *
-     * @var ResponseTransactionReference
+     * @var ResponseTransactionReference|null
      */
     protected $transactionReference;
     /**
     * Identifies the success or failure of the interchange. 
     1 = Success, 0 = Failure
     *
-    * @var string
+    * @var string|null
     */
     protected $responseStatusCode;
     /**
      * 'Success' or 'Failure'
      *
-     * @var string
+     * @var string|null
      */
     protected $responseStatusDescription;
     /**
      * 
      *
-     * @var ResponseError[]
+     * @var list<ResponseError>|null
      */
     protected $error;
     /**
      * Transaction Reference Container.
      *
-     * @return ResponseTransactionReference
+     * @return ResponseTransactionReference|null
      */
-    public function getTransactionReference() : ResponseTransactionReference
+    public function getTransactionReference() : ?ResponseTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * Transaction Reference Container.
      *
-     * @param ResponseTransactionReference $transactionReference
+     * @param ResponseTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(ResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(?ResponseTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;
@@ -63,9 +63,9 @@ class QuantumViewResponseResponse extends \ArrayObject
     * Identifies the success or failure of the interchange. 
     1 = Success, 0 = Failure
     *
-    * @return string
+    * @return string|null
     */
-    public function getResponseStatusCode() : string
+    public function getResponseStatusCode() : ?string
     {
         return $this->responseStatusCode;
     }
@@ -73,11 +73,11 @@ class QuantumViewResponseResponse extends \ArrayObject
     * Identifies the success or failure of the interchange. 
     1 = Success, 0 = Failure
     *
-    * @param string $responseStatusCode
+    * @param string|null $responseStatusCode
     *
     * @return self
     */
-    public function setResponseStatusCode(string $responseStatusCode) : self
+    public function setResponseStatusCode(?string $responseStatusCode) : self
     {
         $this->initialized['responseStatusCode'] = true;
         $this->responseStatusCode = $responseStatusCode;
@@ -86,20 +86,20 @@ class QuantumViewResponseResponse extends \ArrayObject
     /**
      * 'Success' or 'Failure'
      *
-     * @return string
+     * @return string|null
      */
-    public function getResponseStatusDescription() : string
+    public function getResponseStatusDescription() : ?string
     {
         return $this->responseStatusDescription;
     }
     /**
      * 'Success' or 'Failure'
      *
-     * @param string $responseStatusDescription
+     * @param string|null $responseStatusDescription
      *
      * @return self
      */
-    public function setResponseStatusDescription(string $responseStatusDescription) : self
+    public function setResponseStatusDescription(?string $responseStatusDescription) : self
     {
         $this->initialized['responseStatusDescription'] = true;
         $this->responseStatusDescription = $responseStatusDescription;
@@ -108,20 +108,20 @@ class QuantumViewResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ResponseError[]
+     * @return list<ResponseError>|null
      */
-    public function getError() : array
+    public function getError() : ?array
     {
         return $this->error;
     }
     /**
      * 
      *
-     * @param ResponseError[] $error
+     * @param list<ResponseError>|null $error
      *
      * @return self
      */
-    public function setError(array $error) : self
+    public function setError(?array $error) : self
     {
         $this->initialized['error'] = true;
         $this->error = $error;

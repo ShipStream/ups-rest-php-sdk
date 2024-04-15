@@ -15,95 +15,95 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * Unique identifier for the commodity.
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityID;
     /**
      * Description of the line item.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Commodity Weight Container.
      *
-     * @var CommodityWeight
+     * @var CommodityWeight|null
      */
     protected $weight;
     /**
      * Adjusted Weight Container.
      *
-     * @var CommodityAdjustedWeight
+     * @var CommodityAdjustedWeight|null
      */
     protected $adjustedWeight;
     /**
      * Dimensions Container.
      *
-     * @var CommodityDimensions
+     * @var CommodityDimensions|null
      */
     protected $dimensions;
     /**
      * Number of piece of the commodity in the handling unit.
      *
-     * @var string
+     * @var string|null
      */
     protected $numberOfPieces;
     /**
      * PackagingType Container.
      *
-     * @var CommodityPackagingType
+     * @var CommodityPackagingType|null
      */
     protected $packagingType;
     /**
     * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
     Required for at least one commodity when the dangerous goods accessorial is passed.
     *
-    * @var string
+    * @var string|null
     */
     protected $dangerousGoodsIndicator;
     /**
      * CommodityValue Container.
      *
-     * @var CommodityCommodityValue
+     * @var CommodityCommodityValue|null
      */
     protected $commodityValue;
     /**
     * Freight Classification. 
     Refer to Ground Freight Classes in the Appendix for valid values.
     *
-    * @var string
+    * @var string|null
     */
     protected $freightClass;
     /**
      * National Motor Freight Classification Commodity code.
      *
-     * @var string
+     * @var string|null
      */
     protected $nMFCCommodityCode;
     /**
     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
     This container is mutually exclusive with NMFCCommodityCode element above.
     *
-    * @var CommodityNMFCCommodity
+    * @var CommodityNMFCCommodity|null
     */
     protected $nMFCCommodity;
     /**
      * Unique identifier for the commodity.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityID() : string
+    public function getCommodityID() : ?string
     {
         return $this->commodityID;
     }
     /**
      * Unique identifier for the commodity.
      *
-     * @param string $commodityID
+     * @param string|null $commodityID
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(?string $commodityID) : self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -112,20 +112,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * Description of the line item.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the line item.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -134,20 +134,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * Commodity Weight Container.
      *
-     * @return CommodityWeight
+     * @return CommodityWeight|null
      */
-    public function getWeight() : CommodityWeight
+    public function getWeight() : ?CommodityWeight
     {
         return $this->weight;
     }
     /**
      * Commodity Weight Container.
      *
-     * @param CommodityWeight $weight
+     * @param CommodityWeight|null $weight
      *
      * @return self
      */
-    public function setWeight(CommodityWeight $weight) : self
+    public function setWeight(?CommodityWeight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -156,20 +156,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * Adjusted Weight Container.
      *
-     * @return CommodityAdjustedWeight
+     * @return CommodityAdjustedWeight|null
      */
-    public function getAdjustedWeight() : CommodityAdjustedWeight
+    public function getAdjustedWeight() : ?CommodityAdjustedWeight
     {
         return $this->adjustedWeight;
     }
     /**
      * Adjusted Weight Container.
      *
-     * @param CommodityAdjustedWeight $adjustedWeight
+     * @param CommodityAdjustedWeight|null $adjustedWeight
      *
      * @return self
      */
-    public function setAdjustedWeight(CommodityAdjustedWeight $adjustedWeight) : self
+    public function setAdjustedWeight(?CommodityAdjustedWeight $adjustedWeight) : self
     {
         $this->initialized['adjustedWeight'] = true;
         $this->adjustedWeight = $adjustedWeight;
@@ -178,20 +178,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * Dimensions Container.
      *
-     * @return CommodityDimensions
+     * @return CommodityDimensions|null
      */
-    public function getDimensions() : CommodityDimensions
+    public function getDimensions() : ?CommodityDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimensions Container.
      *
-     * @param CommodityDimensions $dimensions
+     * @param CommodityDimensions|null $dimensions
      *
      * @return self
      */
-    public function setDimensions(CommodityDimensions $dimensions) : self
+    public function setDimensions(?CommodityDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -200,20 +200,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * Number of piece of the commodity in the handling unit.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumberOfPieces() : string
+    public function getNumberOfPieces() : ?string
     {
         return $this->numberOfPieces;
     }
     /**
      * Number of piece of the commodity in the handling unit.
      *
-     * @param string $numberOfPieces
+     * @param string|null $numberOfPieces
      *
      * @return self
      */
-    public function setNumberOfPieces(string $numberOfPieces) : self
+    public function setNumberOfPieces(?string $numberOfPieces) : self
     {
         $this->initialized['numberOfPieces'] = true;
         $this->numberOfPieces = $numberOfPieces;
@@ -222,20 +222,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * PackagingType Container.
      *
-     * @return CommodityPackagingType
+     * @return CommodityPackagingType|null
      */
-    public function getPackagingType() : CommodityPackagingType
+    public function getPackagingType() : ?CommodityPackagingType
     {
         return $this->packagingType;
     }
     /**
      * PackagingType Container.
      *
-     * @param CommodityPackagingType $packagingType
+     * @param CommodityPackagingType|null $packagingType
      *
      * @return self
      */
-    public function setPackagingType(CommodityPackagingType $packagingType) : self
+    public function setPackagingType(?CommodityPackagingType $packagingType) : self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -245,9 +245,9 @@ class FreightRateRequestCommodity extends \ArrayObject
     * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
     Required for at least one commodity when the dangerous goods accessorial is passed.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDangerousGoodsIndicator() : string
+    public function getDangerousGoodsIndicator() : ?string
     {
         return $this->dangerousGoodsIndicator;
     }
@@ -255,11 +255,11 @@ class FreightRateRequestCommodity extends \ArrayObject
     * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
     Required for at least one commodity when the dangerous goods accessorial is passed.
     *
-    * @param string $dangerousGoodsIndicator
+    * @param string|null $dangerousGoodsIndicator
     *
     * @return self
     */
-    public function setDangerousGoodsIndicator(string $dangerousGoodsIndicator) : self
+    public function setDangerousGoodsIndicator(?string $dangerousGoodsIndicator) : self
     {
         $this->initialized['dangerousGoodsIndicator'] = true;
         $this->dangerousGoodsIndicator = $dangerousGoodsIndicator;
@@ -268,20 +268,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * CommodityValue Container.
      *
-     * @return CommodityCommodityValue
+     * @return CommodityCommodityValue|null
      */
-    public function getCommodityValue() : CommodityCommodityValue
+    public function getCommodityValue() : ?CommodityCommodityValue
     {
         return $this->commodityValue;
     }
     /**
      * CommodityValue Container.
      *
-     * @param CommodityCommodityValue $commodityValue
+     * @param CommodityCommodityValue|null $commodityValue
      *
      * @return self
      */
-    public function setCommodityValue(CommodityCommodityValue $commodityValue) : self
+    public function setCommodityValue(?CommodityCommodityValue $commodityValue) : self
     {
         $this->initialized['commodityValue'] = true;
         $this->commodityValue = $commodityValue;
@@ -291,9 +291,9 @@ class FreightRateRequestCommodity extends \ArrayObject
     * Freight Classification. 
     Refer to Ground Freight Classes in the Appendix for valid values.
     *
-    * @return string
+    * @return string|null
     */
-    public function getFreightClass() : string
+    public function getFreightClass() : ?string
     {
         return $this->freightClass;
     }
@@ -301,11 +301,11 @@ class FreightRateRequestCommodity extends \ArrayObject
     * Freight Classification. 
     Refer to Ground Freight Classes in the Appendix for valid values.
     *
-    * @param string $freightClass
+    * @param string|null $freightClass
     *
     * @return self
     */
-    public function setFreightClass(string $freightClass) : self
+    public function setFreightClass(?string $freightClass) : self
     {
         $this->initialized['freightClass'] = true;
         $this->freightClass = $freightClass;
@@ -314,20 +314,20 @@ class FreightRateRequestCommodity extends \ArrayObject
     /**
      * National Motor Freight Classification Commodity code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNMFCCommodityCode() : string
+    public function getNMFCCommodityCode() : ?string
     {
         return $this->nMFCCommodityCode;
     }
     /**
      * National Motor Freight Classification Commodity code.
      *
-     * @param string $nMFCCommodityCode
+     * @param string|null $nMFCCommodityCode
      *
      * @return self
      */
-    public function setNMFCCommodityCode(string $nMFCCommodityCode) : self
+    public function setNMFCCommodityCode(?string $nMFCCommodityCode) : self
     {
         $this->initialized['nMFCCommodityCode'] = true;
         $this->nMFCCommodityCode = $nMFCCommodityCode;
@@ -337,9 +337,9 @@ class FreightRateRequestCommodity extends \ArrayObject
     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
     This container is mutually exclusive with NMFCCommodityCode element above.
     *
-    * @return CommodityNMFCCommodity
+    * @return CommodityNMFCCommodity|null
     */
-    public function getNMFCCommodity() : CommodityNMFCCommodity
+    public function getNMFCCommodity() : ?CommodityNMFCCommodity
     {
         return $this->nMFCCommodity;
     }
@@ -347,11 +347,11 @@ class FreightRateRequestCommodity extends \ArrayObject
     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
     This container is mutually exclusive with NMFCCommodityCode element above.
     *
-    * @param CommodityNMFCCommodity $nMFCCommodity
+    * @param CommodityNMFCCommodity|null $nMFCCommodity
     *
     * @return self
     */
-    public function setNMFCCommodity(CommodityNMFCCommodity $nMFCCommodity) : self
+    public function setNMFCCommodity(?CommodityNMFCCommodity $nMFCCommodity) : self
     {
         $this->initialized['nMFCCommodity'] = true;
         $this->nMFCCommodity = $nMFCCommodity;

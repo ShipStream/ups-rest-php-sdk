@@ -15,7 +15,7 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search.  Required for non-postal country Ireland (IE).
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
@@ -24,38 +24,38 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
     2 = County for Ireland (IE)
     3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
     *
-    * @var string
+    * @var string|null
     */
     protected $stateProvince;
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search  It does not apply to non-postal countries. Example: IE and HK.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * The pickup country or territory code as defined by ISO-3166. Please check check separate pickup country or territory list to find out all the pickup eligible countries.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search.  Required for non-postal country Ireland (IE).
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search.  Required for non-postal country Ireland (IE).
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -67,9 +67,9 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
     2 = County for Ireland (IE)
     3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
     *
-    * @return string
+    * @return string|null
     */
-    public function getStateProvince() : string
+    public function getStateProvince() : ?string
     {
         return $this->stateProvince;
     }
@@ -79,11 +79,11 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
     2 = County for Ireland (IE)
     3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
     *
-    * @param string $stateProvince
+    * @param string|null $stateProvince
     *
     * @return self
     */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(?string $stateProvince) : self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -92,20 +92,20 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search  It does not apply to non-postal countries. Example: IE and HK.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search  It does not apply to non-postal countries. Example: IE and HK.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -114,20 +114,20 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
     /**
      * The pickup country or territory code as defined by ISO-3166. Please check check separate pickup country or territory list to find out all the pickup eligible countries.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * The pickup country or territory code as defined by ISO-3166. Please check check separate pickup country or territory list to find out all the pickup eligible countries.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

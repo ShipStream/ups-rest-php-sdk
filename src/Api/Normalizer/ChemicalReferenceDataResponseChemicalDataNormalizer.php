@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalDetail', $data)) {
+            if (\array_key_exists('ChemicalDetail', $data) && $data['ChemicalDetail'] !== null) {
                 $object->setChemicalDetail($this->denormalizer->denormalize($data['ChemicalDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail', 'json', $context));
                 unset($data['ChemicalDetail']);
             }
-            if (\array_key_exists('ProperShippingNameDetail', $data)) {
+            elseif (\array_key_exists('ChemicalDetail', $data) && $data['ChemicalDetail'] === null) {
+                $object->setChemicalDetail(null);
+            }
+            if (\array_key_exists('ProperShippingNameDetail', $data) && $data['ProperShippingNameDetail'] !== null) {
                 $object->setProperShippingNameDetail($this->denormalizer->denormalize($data['ProperShippingNameDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail', 'json', $context));
                 unset($data['ProperShippingNameDetail']);
             }
-            if (\array_key_exists('PackageQuantityLimitDetail', $data)) {
+            elseif (\array_key_exists('ProperShippingNameDetail', $data) && $data['ProperShippingNameDetail'] === null) {
+                $object->setProperShippingNameDetail(null);
+            }
+            if (\array_key_exists('PackageQuantityLimitDetail', $data) && $data['PackageQuantityLimitDetail'] !== null) {
                 $values = [];
                 foreach ($data['PackageQuantityLimitDetail'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail', 'json', $context);
                 }
                 $object->setPackageQuantityLimitDetail($values);
                 unset($data['PackageQuantityLimitDetail']);
+            }
+            elseif (\array_key_exists('PackageQuantityLimitDetail', $data) && $data['PackageQuantityLimitDetail'] === null) {
+                $object->setPackageQuantityLimitDetail(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -121,21 +130,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChemicalDetail', $data)) {
+            if (\array_key_exists('ChemicalDetail', $data) && $data['ChemicalDetail'] !== null) {
                 $object->setChemicalDetail($this->denormalizer->denormalize($data['ChemicalDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail', 'json', $context));
                 unset($data['ChemicalDetail']);
             }
-            if (\array_key_exists('ProperShippingNameDetail', $data)) {
+            elseif (\array_key_exists('ChemicalDetail', $data) && $data['ChemicalDetail'] === null) {
+                $object->setChemicalDetail(null);
+            }
+            if (\array_key_exists('ProperShippingNameDetail', $data) && $data['ProperShippingNameDetail'] !== null) {
                 $object->setProperShippingNameDetail($this->denormalizer->denormalize($data['ProperShippingNameDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail', 'json', $context));
                 unset($data['ProperShippingNameDetail']);
             }
-            if (\array_key_exists('PackageQuantityLimitDetail', $data)) {
+            elseif (\array_key_exists('ProperShippingNameDetail', $data) && $data['ProperShippingNameDetail'] === null) {
+                $object->setProperShippingNameDetail(null);
+            }
+            if (\array_key_exists('PackageQuantityLimitDetail', $data) && $data['PackageQuantityLimitDetail'] !== null) {
                 $values = [];
                 foreach ($data['PackageQuantityLimitDetail'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail', 'json', $context);
                 }
                 $object->setPackageQuantityLimitDetail($values);
                 unset($data['PackageQuantityLimitDetail']);
+            }
+            elseif (\array_key_exists('PackageQuantityLimitDetail', $data) && $data['PackageQuantityLimitDetail'] === null) {
+                $object->setPackageQuantityLimitDetail(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

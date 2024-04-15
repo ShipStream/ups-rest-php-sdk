@@ -21,43 +21,43 @@ class ContactsProducer extends \ArrayObject
     03 - ATTACHED LIST
     04 - UNKNOWN
     *
-    * @var string
+    * @var string|null
     */
     protected $option;
     /**
      * Company Name or the Individual name of the Producer.  Applies to NAFTA CO.  Only applicable when producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
-     * @var string
+     * @var string|null
      */
     protected $companyName;
     /**
      * Tax ID of the Producer.  Applies to NAFTA CO. Only applicable when producer option is empty or not present
      *
-     * @var string
+     * @var string|null
      */
     protected $taxIdentificationNumber;
     /**
      * Address information of the Producer.  Applies to NAFTA CO. Only applicable if producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
-     * @var ProducerAddress
+     * @var ProducerAddress|null
      */
     protected $address;
     /**
      * Contact name at the Producer location.  Applies to NAFTA CO.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Phone number information of Producer.  Applies to NAFTA CO.
      *
-     * @var ProducerPhone
+     * @var ProducerPhone|null
      */
     protected $phone;
     /**
      * Producer email address.  Applies to NAFTA CO.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
@@ -69,9 +69,9 @@ class ContactsProducer extends \ArrayObject
     03 - ATTACHED LIST
     04 - UNKNOWN
     *
-    * @return string
+    * @return string|null
     */
-    public function getOption() : string
+    public function getOption() : ?string
     {
         return $this->option;
     }
@@ -84,11 +84,11 @@ class ContactsProducer extends \ArrayObject
     03 - ATTACHED LIST
     04 - UNKNOWN
     *
-    * @param string $option
+    * @param string|null $option
     *
     * @return self
     */
-    public function setOption(string $option) : self
+    public function setOption(?string $option) : self
     {
         $this->initialized['option'] = true;
         $this->option = $option;
@@ -97,20 +97,20 @@ class ContactsProducer extends \ArrayObject
     /**
      * Company Name or the Individual name of the Producer.  Applies to NAFTA CO.  Only applicable when producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyName() : string
+    public function getCompanyName() : ?string
     {
         return $this->companyName;
     }
     /**
      * Company Name or the Individual name of the Producer.  Applies to NAFTA CO.  Only applicable when producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
-     * @param string $companyName
+     * @param string|null $companyName
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(?string $companyName) : self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -119,20 +119,20 @@ class ContactsProducer extends \ArrayObject
     /**
      * Tax ID of the Producer.  Applies to NAFTA CO. Only applicable when producer option is empty or not present
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
     /**
      * Tax ID of the Producer.  Applies to NAFTA CO. Only applicable when producer option is empty or not present
      *
-     * @param string $taxIdentificationNumber
+     * @param string|null $taxIdentificationNumber
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -141,20 +141,20 @@ class ContactsProducer extends \ArrayObject
     /**
      * Address information of the Producer.  Applies to NAFTA CO. Only applicable if producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
-     * @return ProducerAddress
+     * @return ProducerAddress|null
      */
-    public function getAddress() : ProducerAddress
+    public function getAddress() : ?ProducerAddress
     {
         return $this->address;
     }
     /**
      * Address information of the Producer.  Applies to NAFTA CO. Only applicable if producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
-     * @param ProducerAddress $address
+     * @param ProducerAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ProducerAddress $address) : self
+    public function setAddress(?ProducerAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -163,20 +163,20 @@ class ContactsProducer extends \ArrayObject
     /**
      * Contact name at the Producer location.  Applies to NAFTA CO.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the Producer location.  Applies to NAFTA CO.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -185,20 +185,20 @@ class ContactsProducer extends \ArrayObject
     /**
      * Phone number information of Producer.  Applies to NAFTA CO.
      *
-     * @return ProducerPhone
+     * @return ProducerPhone|null
      */
-    public function getPhone() : ProducerPhone
+    public function getPhone() : ?ProducerPhone
     {
         return $this->phone;
     }
     /**
      * Phone number information of Producer.  Applies to NAFTA CO.
      *
-     * @param ProducerPhone $phone
+     * @param ProducerPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ProducerPhone $phone) : self
+    public function setPhone(?ProducerPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -207,20 +207,20 @@ class ContactsProducer extends \ArrayObject
     /**
      * Producer email address.  Applies to NAFTA CO.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Producer email address.  Applies to NAFTA CO.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

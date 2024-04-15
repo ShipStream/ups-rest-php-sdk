@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentServiceOptions', $data)) {
+            if (\array_key_exists('ShipmentServiceOptions', $data) && $data['ShipmentServiceOptions'] !== null) {
                 $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentServiceOptions', 'json', $context));
                 unset($data['ShipmentServiceOptions']);
             }
-            if (\array_key_exists('OriginServiceCenterCode', $data)) {
+            elseif (\array_key_exists('ShipmentServiceOptions', $data) && $data['ShipmentServiceOptions'] === null) {
+                $object->setShipmentServiceOptions(null);
+            }
+            if (\array_key_exists('OriginServiceCenterCode', $data) && $data['OriginServiceCenterCode'] !== null) {
                 $object->setOriginServiceCenterCode($data['OriginServiceCenterCode']);
                 unset($data['OriginServiceCenterCode']);
             }
-            if (\array_key_exists('OriginServiceCountryCode', $data)) {
+            elseif (\array_key_exists('OriginServiceCenterCode', $data) && $data['OriginServiceCenterCode'] === null) {
+                $object->setOriginServiceCenterCode(null);
+            }
+            if (\array_key_exists('OriginServiceCountryCode', $data) && $data['OriginServiceCountryCode'] !== null) {
                 $object->setOriginServiceCountryCode($data['OriginServiceCountryCode']);
                 unset($data['OriginServiceCountryCode']);
             }
-            if (\array_key_exists('DestinationAddress', $data)) {
+            elseif (\array_key_exists('OriginServiceCountryCode', $data) && $data['OriginServiceCountryCode'] === null) {
+                $object->setOriginServiceCountryCode(null);
+            }
+            if (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] !== null) {
                 $object->setDestinationAddress($this->denormalizer->denormalize($data['DestinationAddress'], 'ShipStream\\Ups\\Api\\Model\\FreightOptionsDestinationAddress', 'json', $context));
                 unset($data['DestinationAddress']);
             }
-            if (\array_key_exists('ShipmentDetail', $data)) {
+            elseif (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] === null) {
+                $object->setDestinationAddress(null);
+            }
+            if (\array_key_exists('ShipmentDetail', $data) && $data['ShipmentDetail'] !== null) {
                 $object->setShipmentDetail($this->denormalizer->denormalize($data['ShipmentDetail'], 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentDetail', 'json', $context));
                 unset($data['ShipmentDetail']);
+            }
+            elseif (\array_key_exists('ShipmentDetail', $data) && $data['ShipmentDetail'] === null) {
+                $object->setShipmentDetail(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -125,25 +140,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipmentServiceOptions', $data)) {
+            if (\array_key_exists('ShipmentServiceOptions', $data) && $data['ShipmentServiceOptions'] !== null) {
                 $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentServiceOptions', 'json', $context));
                 unset($data['ShipmentServiceOptions']);
             }
-            if (\array_key_exists('OriginServiceCenterCode', $data)) {
+            elseif (\array_key_exists('ShipmentServiceOptions', $data) && $data['ShipmentServiceOptions'] === null) {
+                $object->setShipmentServiceOptions(null);
+            }
+            if (\array_key_exists('OriginServiceCenterCode', $data) && $data['OriginServiceCenterCode'] !== null) {
                 $object->setOriginServiceCenterCode($data['OriginServiceCenterCode']);
                 unset($data['OriginServiceCenterCode']);
             }
-            if (\array_key_exists('OriginServiceCountryCode', $data)) {
+            elseif (\array_key_exists('OriginServiceCenterCode', $data) && $data['OriginServiceCenterCode'] === null) {
+                $object->setOriginServiceCenterCode(null);
+            }
+            if (\array_key_exists('OriginServiceCountryCode', $data) && $data['OriginServiceCountryCode'] !== null) {
                 $object->setOriginServiceCountryCode($data['OriginServiceCountryCode']);
                 unset($data['OriginServiceCountryCode']);
             }
-            if (\array_key_exists('DestinationAddress', $data)) {
+            elseif (\array_key_exists('OriginServiceCountryCode', $data) && $data['OriginServiceCountryCode'] === null) {
+                $object->setOriginServiceCountryCode(null);
+            }
+            if (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] !== null) {
                 $object->setDestinationAddress($this->denormalizer->denormalize($data['DestinationAddress'], 'ShipStream\\Ups\\Api\\Model\\FreightOptionsDestinationAddress', 'json', $context));
                 unset($data['DestinationAddress']);
             }
-            if (\array_key_exists('ShipmentDetail', $data)) {
+            elseif (\array_key_exists('DestinationAddress', $data) && $data['DestinationAddress'] === null) {
+                $object->setDestinationAddress(null);
+            }
+            if (\array_key_exists('ShipmentDetail', $data) && $data['ShipmentDetail'] !== null) {
                 $object->setShipmentDetail($this->denormalizer->denormalize($data['ShipmentDetail'], 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentDetail', 'json', $context));
                 unset($data['ShipmentDetail']);
+            }
+            elseif (\array_key_exists('ShipmentDetail', $data) && $data['ShipmentDetail'] === null) {
+                $object->setShipmentDetail(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

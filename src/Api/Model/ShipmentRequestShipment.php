@@ -20,13 +20,13 @@ class ShipmentRequestShipment extends \ArrayObject
     Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true: 
     ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
     *
-    * @var string
+    * @var string|null
     */
     protected $description;
     /**
      * Type of Return service. When this container exists, the shipment is a return shipment.
      *
-     * @var ShipmentReturnService
+     * @var ShipmentReturnService|null
      */
     protected $returnService;
     /**
@@ -38,25 +38,25 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
     *
-    * @var string
+    * @var string|null
     */
     protected $documentsOnlyIndicator;
     /**
      * Container for the Shipper's information.
      *
-     * @var ShipmentShipper
+     * @var ShipmentShipper|null
      */
     protected $shipper;
     /**
      * Ship To Container.
      *
-     * @var ShipmentShipTo
+     * @var ShipmentShipTo|null
      */
     protected $shipTo;
     /**
      * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
      *
-     * @var ShipmentAlternateDeliveryAddress
+     * @var ShipmentAlternateDeliveryAddress|null
      */
     protected $alternateDeliveryAddress;
     /**
@@ -64,79 +64,79 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Required if pickup location is different from the shipper's address.
     *
-    * @var ShipmentShipFrom
+    * @var ShipmentShipFrom|null
     */
     protected $shipFrom;
     /**
      * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
      *
-     * @var ShipmentPaymentInformation
+     * @var ShipmentPaymentInformation|null
      */
     protected $paymentInformation;
     /**
      * Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.
      *
-     * @var ShipmentFRSPaymentInformation
+     * @var ShipmentFRSPaymentInformation|null
      */
     protected $fRSPaymentInformation;
     /**
      * Container to hold Freight Shipment information.
      *
-     * @var ShipmentFreightShipmentInformation
+     * @var ShipmentFreightShipmentInformation|null
      */
     protected $freightShipmentInformation;
     /**
      * Goods Not In Free Circulation indicator.  This is an empty tag, any value inside is ignored. This indicator is invalid for a package type of UPS Letter and DocumentsOnly.
      *
-     * @var string
+     * @var string|null
      */
     protected $goodsNotInFreeCirculationIndicator;
     /**
      * PromotionalDiscountInformation container. This container contains discount information that the customer wants to request each time while placing a shipment.
      *
-     * @var ShipmentPromotionalDiscountInformation
+     * @var ShipmentPromotionalDiscountInformation|null
      */
     protected $promotionalDiscountInformation;
     /**
      * DGSignatoryInfo Container  DGPaperImage will be returned if DGSignatoryInfo container present
      *
-     * @var ShipmentDGSignatoryInfo
+     * @var ShipmentDGSignatoryInfo|null
      */
     protected $dGSignatoryInfo;
     /**
      * ShipmentRatingOptions container.
      *
-     * @var ShipmentShipmentRatingOptions
+     * @var ShipmentShipmentRatingOptions|null
      */
     protected $shipmentRatingOptions;
     /**
      * Movement Reference Number (MRN) information.  Must contain alphanumeric characters only. Must be a length of 18 characters. The 3rd and 4th Characters must be the Shipper country or territory ISO Code.
      *
-     * @var string
+     * @var string|null
      */
     protected $movementReferenceNumber;
     /**
      * 
      *
-     * @var ShipmentReferenceNumber[]
+     * @var list<ShipmentReferenceNumber>|null
      */
     protected $referenceNumber;
     /**
      * Service Container.
      *
-     * @var ShipmentService
+     * @var ShipmentService|null
      */
     protected $service;
     /**
      * Container to hold InvoiceLineTotal Information.  Required for forward shipments whose origin is the US and destination is Puerto Rico or Canada. Not available for any other shipments. FOR OTHER DESTINATIONS the InvoiceLineTotal in the International Forms Container must be used.
      *
-     * @var ShipmentInvoiceLineTotal
+     * @var ShipmentInvoiceLineTotal|null
      */
     protected $invoiceLineTotal;
     /**
      * Total number of pieces in all pallets in a UPS Worldwide Express Freight Shipment.  It is required for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment. Valid values are 1 to 99999.
      *
-     * @var string
+     * @var string|null
      */
     protected $numOfPiecesInShipment;
     /**
@@ -149,13 +149,13 @@ class ShipmentRequestShipment extends \ArrayObject
     5 = No Service Selected. 
     Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
     *
-    * @var string
+    * @var string|null
     */
     protected $uSPSEndorsement;
     /**
      * Indicates single label with both MI label and CN22 form.  International CN22 form is required.
      *
-     * @var string
+     * @var string|null
      */
     protected $mILabelCN22Indicator;
     /**
@@ -164,7 +164,7 @@ class ShipmentRequestShipment extends \ArrayObject
     MA = Machineable
     SubClass is only required if the customer's contract have them subclass the package not UPS.
     *
-    * @var string
+    * @var string|null
     */
     protected $subClassification;
     /**
@@ -174,25 +174,25 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
     *
-    * @var string
+    * @var string|null
     */
     protected $costCenter;
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the CostCenter field to be barcoded at the bottom of the label.
      *
-     * @var string
+     * @var string|null
      */
     protected $costCenterBarcodeIndicator;
     /**
      * Customer-assigned unique piece identifier that returns visibility events.  Required only for Mail Innovations forward shipments. Alpha numeric values only. It is shown on the bottom of the shipping label as reference 1.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageID;
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the PackageID field to be barcoded at the bottom of the label.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageIDBarcodeIndicator;
     /**
@@ -201,13 +201,13 @@ class ShipmentRequestShipment extends \ArrayObject
     2 = Oversize
     3 = Not Applicable
     *
-    * @var string
+    * @var string|null
     */
     protected $irregularIndicator;
     /**
      * 
      *
-     * @var ShipmentShipmentIndicationType[]
+     * @var list<ShipmentShipmentIndicationType>|null
      */
     protected $shipmentIndicationType;
     /**
@@ -228,7 +228,7 @@ class ShipmentRequestShipment extends \ArrayObject
     
     This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
     *
-    * @var string
+    * @var string|null
     */
     protected $mIDualReturnShipmentKey;
     /**
@@ -238,26 +238,26 @@ class ShipmentRequestShipment extends \ArrayObject
     
     This indicator is not valid with UPS Mail Innovations Returns Service code.
     *
-    * @var string
+    * @var string|null
     */
     protected $mIDualReturnShipmentIndicator;
     /**
     * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
     If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
     *
-    * @var string
+    * @var string|null
     */
     protected $ratingMethodRequestedIndicator;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxInformationIndicator;
     /**
      * Container for Shipment Service Options.
      *
-     * @var ShipmentShipmentServiceOptions
+     * @var ShipmentShipmentServiceOptions|null
      */
     protected $shipmentServiceOptions;
     /**
@@ -265,39 +265,39 @@ class ShipmentRequestShipment extends \ArrayObject
     Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
     Queen's English (en_GB) is the default
     *
-    * @var string
+    * @var string|null
     */
     protected $locale;
     /**
     * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
     02 = Shipment value is above threshold value.     NA = Not Applicable
     *
-    * @var string
+    * @var string|null
     */
     protected $shipmentValueThresholdCode;
     /**
      * Master Carton ID. If Economy Service (17 or 72) : Economy Shipment will be associated with given Master Carton ID. If Non-Economy Service: Master Carton Shipment will be created for given Master Carton ID.
      *
-     * @var string
+     * @var string|null
      */
     protected $masterCartonID;
     /**
     * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client. 
     This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
     *
-    * @var string
+    * @var string|null
     */
     protected $masterCartonIndicator;
     /**
      * User can send up to 7 days in the future with current date as day zero. Format: YYYYMMDD
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentDate;
     /**
      * 
      *
-     * @var ShipmentPackage[]
+     * @var list<ShipmentPackage>|null
      */
     protected $package;
     /**
@@ -308,9 +308,9 @@ class ShipmentRequestShipment extends \ArrayObject
     Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true: 
     ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -322,11 +322,11 @@ class ShipmentRequestShipment extends \ArrayObject
     Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true: 
     ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
     *
-    * @param string $description
+    * @param string|null $description
     *
     * @return self
     */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -335,20 +335,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Type of Return service. When this container exists, the shipment is a return shipment.
      *
-     * @return ShipmentReturnService
+     * @return ShipmentReturnService|null
      */
-    public function getReturnService() : ShipmentReturnService
+    public function getReturnService() : ?ShipmentReturnService
     {
         return $this->returnService;
     }
     /**
      * Type of Return service. When this container exists, the shipment is a return shipment.
      *
-     * @param ShipmentReturnService $returnService
+     * @param ShipmentReturnService|null $returnService
      *
      * @return self
      */
-    public function setReturnService(ShipmentReturnService $returnService) : self
+    public function setReturnService(?ShipmentReturnService $returnService) : self
     {
         $this->initialized['returnService'] = true;
         $this->returnService = $returnService;
@@ -363,9 +363,9 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDocumentsOnlyIndicator() : string
+    public function getDocumentsOnlyIndicator() : ?string
     {
         return $this->documentsOnlyIndicator;
     }
@@ -378,11 +378,11 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
     *
-    * @param string $documentsOnlyIndicator
+    * @param string|null $documentsOnlyIndicator
     *
     * @return self
     */
-    public function setDocumentsOnlyIndicator(string $documentsOnlyIndicator) : self
+    public function setDocumentsOnlyIndicator(?string $documentsOnlyIndicator) : self
     {
         $this->initialized['documentsOnlyIndicator'] = true;
         $this->documentsOnlyIndicator = $documentsOnlyIndicator;
@@ -391,20 +391,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Container for the Shipper's information.
      *
-     * @return ShipmentShipper
+     * @return ShipmentShipper|null
      */
-    public function getShipper() : ShipmentShipper
+    public function getShipper() : ?ShipmentShipper
     {
         return $this->shipper;
     }
     /**
      * Container for the Shipper's information.
      *
-     * @param ShipmentShipper $shipper
+     * @param ShipmentShipper|null $shipper
      *
      * @return self
      */
-    public function setShipper(ShipmentShipper $shipper) : self
+    public function setShipper(?ShipmentShipper $shipper) : self
     {
         $this->initialized['shipper'] = true;
         $this->shipper = $shipper;
@@ -413,20 +413,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Ship To Container.
      *
-     * @return ShipmentShipTo
+     * @return ShipmentShipTo|null
      */
-    public function getShipTo() : ShipmentShipTo
+    public function getShipTo() : ?ShipmentShipTo
     {
         return $this->shipTo;
     }
     /**
      * Ship To Container.
      *
-     * @param ShipmentShipTo $shipTo
+     * @param ShipmentShipTo|null $shipTo
      *
      * @return self
      */
-    public function setShipTo(ShipmentShipTo $shipTo) : self
+    public function setShipTo(?ShipmentShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -435,20 +435,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
      *
-     * @return ShipmentAlternateDeliveryAddress
+     * @return ShipmentAlternateDeliveryAddress|null
      */
-    public function getAlternateDeliveryAddress() : ShipmentAlternateDeliveryAddress
+    public function getAlternateDeliveryAddress() : ?ShipmentAlternateDeliveryAddress
     {
         return $this->alternateDeliveryAddress;
     }
     /**
      * AlternateDeliveryAddress Container.  Alternate Delivery Address (UPS Access Point Address) required if ShipmentIndicationType is 01 or 02.
      *
-     * @param ShipmentAlternateDeliveryAddress $alternateDeliveryAddress
+     * @param ShipmentAlternateDeliveryAddress|null $alternateDeliveryAddress
      *
      * @return self
      */
-    public function setAlternateDeliveryAddress(ShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
+    public function setAlternateDeliveryAddress(?ShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
     {
         $this->initialized['alternateDeliveryAddress'] = true;
         $this->alternateDeliveryAddress = $alternateDeliveryAddress;
@@ -459,9 +459,9 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Required if pickup location is different from the shipper's address.
     *
-    * @return ShipmentShipFrom
+    * @return ShipmentShipFrom|null
     */
-    public function getShipFrom() : ShipmentShipFrom
+    public function getShipFrom() : ?ShipmentShipFrom
     {
         return $this->shipFrom;
     }
@@ -470,11 +470,11 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Required if pickup location is different from the shipper's address.
     *
-    * @param ShipmentShipFrom $shipFrom
+    * @param ShipmentShipFrom|null $shipFrom
     *
     * @return self
     */
-    public function setShipFrom(ShipmentShipFrom $shipFrom) : self
+    public function setShipFrom(?ShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -483,20 +483,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
      *
-     * @return ShipmentPaymentInformation
+     * @return ShipmentPaymentInformation|null
      */
-    public function getPaymentInformation() : ShipmentPaymentInformation
+    public function getPaymentInformation() : ?ShipmentPaymentInformation
     {
         return $this->paymentInformation;
     }
     /**
      * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
      *
-     * @param ShipmentPaymentInformation $paymentInformation
+     * @param ShipmentPaymentInformation|null $paymentInformation
      *
      * @return self
      */
-    public function setPaymentInformation(ShipmentPaymentInformation $paymentInformation) : self
+    public function setPaymentInformation(?ShipmentPaymentInformation $paymentInformation) : self
     {
         $this->initialized['paymentInformation'] = true;
         $this->paymentInformation = $paymentInformation;
@@ -505,20 +505,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.
      *
-     * @return ShipmentFRSPaymentInformation
+     * @return ShipmentFRSPaymentInformation|null
      */
-    public function getFRSPaymentInformation() : ShipmentFRSPaymentInformation
+    public function getFRSPaymentInformation() : ?ShipmentFRSPaymentInformation
     {
         return $this->fRSPaymentInformation;
     }
     /**
      * Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.
      *
-     * @param ShipmentFRSPaymentInformation $fRSPaymentInformation
+     * @param ShipmentFRSPaymentInformation|null $fRSPaymentInformation
      *
      * @return self
      */
-    public function setFRSPaymentInformation(ShipmentFRSPaymentInformation $fRSPaymentInformation) : self
+    public function setFRSPaymentInformation(?ShipmentFRSPaymentInformation $fRSPaymentInformation) : self
     {
         $this->initialized['fRSPaymentInformation'] = true;
         $this->fRSPaymentInformation = $fRSPaymentInformation;
@@ -527,20 +527,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Container to hold Freight Shipment information.
      *
-     * @return ShipmentFreightShipmentInformation
+     * @return ShipmentFreightShipmentInformation|null
      */
-    public function getFreightShipmentInformation() : ShipmentFreightShipmentInformation
+    public function getFreightShipmentInformation() : ?ShipmentFreightShipmentInformation
     {
         return $this->freightShipmentInformation;
     }
     /**
      * Container to hold Freight Shipment information.
      *
-     * @param ShipmentFreightShipmentInformation $freightShipmentInformation
+     * @param ShipmentFreightShipmentInformation|null $freightShipmentInformation
      *
      * @return self
      */
-    public function setFreightShipmentInformation(ShipmentFreightShipmentInformation $freightShipmentInformation) : self
+    public function setFreightShipmentInformation(?ShipmentFreightShipmentInformation $freightShipmentInformation) : self
     {
         $this->initialized['freightShipmentInformation'] = true;
         $this->freightShipmentInformation = $freightShipmentInformation;
@@ -549,20 +549,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Goods Not In Free Circulation indicator.  This is an empty tag, any value inside is ignored. This indicator is invalid for a package type of UPS Letter and DocumentsOnly.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGoodsNotInFreeCirculationIndicator() : string
+    public function getGoodsNotInFreeCirculationIndicator() : ?string
     {
         return $this->goodsNotInFreeCirculationIndicator;
     }
     /**
      * Goods Not In Free Circulation indicator.  This is an empty tag, any value inside is ignored. This indicator is invalid for a package type of UPS Letter and DocumentsOnly.
      *
-     * @param string $goodsNotInFreeCirculationIndicator
+     * @param string|null $goodsNotInFreeCirculationIndicator
      *
      * @return self
      */
-    public function setGoodsNotInFreeCirculationIndicator(string $goodsNotInFreeCirculationIndicator) : self
+    public function setGoodsNotInFreeCirculationIndicator(?string $goodsNotInFreeCirculationIndicator) : self
     {
         $this->initialized['goodsNotInFreeCirculationIndicator'] = true;
         $this->goodsNotInFreeCirculationIndicator = $goodsNotInFreeCirculationIndicator;
@@ -571,20 +571,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * PromotionalDiscountInformation container. This container contains discount information that the customer wants to request each time while placing a shipment.
      *
-     * @return ShipmentPromotionalDiscountInformation
+     * @return ShipmentPromotionalDiscountInformation|null
      */
-    public function getPromotionalDiscountInformation() : ShipmentPromotionalDiscountInformation
+    public function getPromotionalDiscountInformation() : ?ShipmentPromotionalDiscountInformation
     {
         return $this->promotionalDiscountInformation;
     }
     /**
      * PromotionalDiscountInformation container. This container contains discount information that the customer wants to request each time while placing a shipment.
      *
-     * @param ShipmentPromotionalDiscountInformation $promotionalDiscountInformation
+     * @param ShipmentPromotionalDiscountInformation|null $promotionalDiscountInformation
      *
      * @return self
      */
-    public function setPromotionalDiscountInformation(ShipmentPromotionalDiscountInformation $promotionalDiscountInformation) : self
+    public function setPromotionalDiscountInformation(?ShipmentPromotionalDiscountInformation $promotionalDiscountInformation) : self
     {
         $this->initialized['promotionalDiscountInformation'] = true;
         $this->promotionalDiscountInformation = $promotionalDiscountInformation;
@@ -593,20 +593,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * DGSignatoryInfo Container  DGPaperImage will be returned if DGSignatoryInfo container present
      *
-     * @return ShipmentDGSignatoryInfo
+     * @return ShipmentDGSignatoryInfo|null
      */
-    public function getDGSignatoryInfo() : ShipmentDGSignatoryInfo
+    public function getDGSignatoryInfo() : ?ShipmentDGSignatoryInfo
     {
         return $this->dGSignatoryInfo;
     }
     /**
      * DGSignatoryInfo Container  DGPaperImage will be returned if DGSignatoryInfo container present
      *
-     * @param ShipmentDGSignatoryInfo $dGSignatoryInfo
+     * @param ShipmentDGSignatoryInfo|null $dGSignatoryInfo
      *
      * @return self
      */
-    public function setDGSignatoryInfo(ShipmentDGSignatoryInfo $dGSignatoryInfo) : self
+    public function setDGSignatoryInfo(?ShipmentDGSignatoryInfo $dGSignatoryInfo) : self
     {
         $this->initialized['dGSignatoryInfo'] = true;
         $this->dGSignatoryInfo = $dGSignatoryInfo;
@@ -615,20 +615,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * ShipmentRatingOptions container.
      *
-     * @return ShipmentShipmentRatingOptions
+     * @return ShipmentShipmentRatingOptions|null
      */
-    public function getShipmentRatingOptions() : ShipmentShipmentRatingOptions
+    public function getShipmentRatingOptions() : ?ShipmentShipmentRatingOptions
     {
         return $this->shipmentRatingOptions;
     }
     /**
      * ShipmentRatingOptions container.
      *
-     * @param ShipmentShipmentRatingOptions $shipmentRatingOptions
+     * @param ShipmentShipmentRatingOptions|null $shipmentRatingOptions
      *
      * @return self
      */
-    public function setShipmentRatingOptions(ShipmentShipmentRatingOptions $shipmentRatingOptions) : self
+    public function setShipmentRatingOptions(?ShipmentShipmentRatingOptions $shipmentRatingOptions) : self
     {
         $this->initialized['shipmentRatingOptions'] = true;
         $this->shipmentRatingOptions = $shipmentRatingOptions;
@@ -637,20 +637,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Movement Reference Number (MRN) information.  Must contain alphanumeric characters only. Must be a length of 18 characters. The 3rd and 4th Characters must be the Shipper country or territory ISO Code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMovementReferenceNumber() : string
+    public function getMovementReferenceNumber() : ?string
     {
         return $this->movementReferenceNumber;
     }
     /**
      * Movement Reference Number (MRN) information.  Must contain alphanumeric characters only. Must be a length of 18 characters. The 3rd and 4th Characters must be the Shipper country or territory ISO Code.
      *
-     * @param string $movementReferenceNumber
+     * @param string|null $movementReferenceNumber
      *
      * @return self
      */
-    public function setMovementReferenceNumber(string $movementReferenceNumber) : self
+    public function setMovementReferenceNumber(?string $movementReferenceNumber) : self
     {
         $this->initialized['movementReferenceNumber'] = true;
         $this->movementReferenceNumber = $movementReferenceNumber;
@@ -659,20 +659,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentReferenceNumber[]
+     * @return list<ShipmentReferenceNumber>|null
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber() : ?array
     {
         return $this->referenceNumber;
     }
     /**
      * 
      *
-     * @param ShipmentReferenceNumber[] $referenceNumber
+     * @param list<ShipmentReferenceNumber>|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(?array $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -681,20 +681,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Service Container.
      *
-     * @return ShipmentService
+     * @return ShipmentService|null
      */
-    public function getService() : ShipmentService
+    public function getService() : ?ShipmentService
     {
         return $this->service;
     }
     /**
      * Service Container.
      *
-     * @param ShipmentService $service
+     * @param ShipmentService|null $service
      *
      * @return self
      */
-    public function setService(ShipmentService $service) : self
+    public function setService(?ShipmentService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -703,20 +703,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Container to hold InvoiceLineTotal Information.  Required for forward shipments whose origin is the US and destination is Puerto Rico or Canada. Not available for any other shipments. FOR OTHER DESTINATIONS the InvoiceLineTotal in the International Forms Container must be used.
      *
-     * @return ShipmentInvoiceLineTotal
+     * @return ShipmentInvoiceLineTotal|null
      */
-    public function getInvoiceLineTotal() : ShipmentInvoiceLineTotal
+    public function getInvoiceLineTotal() : ?ShipmentInvoiceLineTotal
     {
         return $this->invoiceLineTotal;
     }
     /**
      * Container to hold InvoiceLineTotal Information.  Required for forward shipments whose origin is the US and destination is Puerto Rico or Canada. Not available for any other shipments. FOR OTHER DESTINATIONS the InvoiceLineTotal in the International Forms Container must be used.
      *
-     * @param ShipmentInvoiceLineTotal $invoiceLineTotal
+     * @param ShipmentInvoiceLineTotal|null $invoiceLineTotal
      *
      * @return self
      */
-    public function setInvoiceLineTotal(ShipmentInvoiceLineTotal $invoiceLineTotal) : self
+    public function setInvoiceLineTotal(?ShipmentInvoiceLineTotal $invoiceLineTotal) : self
     {
         $this->initialized['invoiceLineTotal'] = true;
         $this->invoiceLineTotal = $invoiceLineTotal;
@@ -725,20 +725,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Total number of pieces in all pallets in a UPS Worldwide Express Freight Shipment.  It is required for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment. Valid values are 1 to 99999.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumOfPiecesInShipment() : string
+    public function getNumOfPiecesInShipment() : ?string
     {
         return $this->numOfPiecesInShipment;
     }
     /**
      * Total number of pieces in all pallets in a UPS Worldwide Express Freight Shipment.  It is required for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment. Valid values are 1 to 99999.
      *
-     * @param string $numOfPiecesInShipment
+     * @param string|null $numOfPiecesInShipment
      *
      * @return self
      */
-    public function setNumOfPiecesInShipment(string $numOfPiecesInShipment) : self
+    public function setNumOfPiecesInShipment(?string $numOfPiecesInShipment) : self
     {
         $this->initialized['numOfPiecesInShipment'] = true;
         $this->numOfPiecesInShipment = $numOfPiecesInShipment;
@@ -754,9 +754,9 @@ class ShipmentRequestShipment extends \ArrayObject
     5 = No Service Selected. 
     Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
     *
-    * @return string
+    * @return string|null
     */
-    public function getUSPSEndorsement() : string
+    public function getUSPSEndorsement() : ?string
     {
         return $this->uSPSEndorsement;
     }
@@ -770,11 +770,11 @@ class ShipmentRequestShipment extends \ArrayObject
     5 = No Service Selected. 
     Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
     *
-    * @param string $uSPSEndorsement
+    * @param string|null $uSPSEndorsement
     *
     * @return self
     */
-    public function setUSPSEndorsement(string $uSPSEndorsement) : self
+    public function setUSPSEndorsement(?string $uSPSEndorsement) : self
     {
         $this->initialized['uSPSEndorsement'] = true;
         $this->uSPSEndorsement = $uSPSEndorsement;
@@ -783,20 +783,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Indicates single label with both MI label and CN22 form.  International CN22 form is required.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMILabelCN22Indicator() : string
+    public function getMILabelCN22Indicator() : ?string
     {
         return $this->mILabelCN22Indicator;
     }
     /**
      * Indicates single label with both MI label and CN22 form.  International CN22 form is required.
      *
-     * @param string $mILabelCN22Indicator
+     * @param string|null $mILabelCN22Indicator
      *
      * @return self
      */
-    public function setMILabelCN22Indicator(string $mILabelCN22Indicator) : self
+    public function setMILabelCN22Indicator(?string $mILabelCN22Indicator) : self
     {
         $this->initialized['mILabelCN22Indicator'] = true;
         $this->mILabelCN22Indicator = $mILabelCN22Indicator;
@@ -808,9 +808,9 @@ class ShipmentRequestShipment extends \ArrayObject
     MA = Machineable
     SubClass is only required if the customer's contract have them subclass the package not UPS.
     *
-    * @return string
+    * @return string|null
     */
-    public function getSubClassification() : string
+    public function getSubClassification() : ?string
     {
         return $this->subClassification;
     }
@@ -820,11 +820,11 @@ class ShipmentRequestShipment extends \ArrayObject
     MA = Machineable
     SubClass is only required if the customer's contract have them subclass the package not UPS.
     *
-    * @param string $subClassification
+    * @param string|null $subClassification
     *
     * @return self
     */
-    public function setSubClassification(string $subClassification) : self
+    public function setSubClassification(?string $subClassification) : self
     {
         $this->initialized['subClassification'] = true;
         $this->subClassification = $subClassification;
@@ -837,9 +837,9 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCostCenter() : string
+    public function getCostCenter() : ?string
     {
         return $this->costCenter;
     }
@@ -850,11 +850,11 @@ class ShipmentRequestShipment extends \ArrayObject
     
     Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
     *
-    * @param string $costCenter
+    * @param string|null $costCenter
     *
     * @return self
     */
-    public function setCostCenter(string $costCenter) : self
+    public function setCostCenter(?string $costCenter) : self
     {
         $this->initialized['costCenter'] = true;
         $this->costCenter = $costCenter;
@@ -863,20 +863,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the CostCenter field to be barcoded at the bottom of the label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCostCenterBarcodeIndicator() : string
+    public function getCostCenterBarcodeIndicator() : ?string
     {
         return $this->costCenterBarcodeIndicator;
     }
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the CostCenter field to be barcoded at the bottom of the label.
      *
-     * @param string $costCenterBarcodeIndicator
+     * @param string|null $costCenterBarcodeIndicator
      *
      * @return self
      */
-    public function setCostCenterBarcodeIndicator(string $costCenterBarcodeIndicator) : self
+    public function setCostCenterBarcodeIndicator(?string $costCenterBarcodeIndicator) : self
     {
         $this->initialized['costCenterBarcodeIndicator'] = true;
         $this->costCenterBarcodeIndicator = $costCenterBarcodeIndicator;
@@ -885,20 +885,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Customer-assigned unique piece identifier that returns visibility events.  Required only for Mail Innovations forward shipments. Alpha numeric values only. It is shown on the bottom of the shipping label as reference 1.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageID() : string
+    public function getPackageID() : ?string
     {
         return $this->packageID;
     }
     /**
      * Customer-assigned unique piece identifier that returns visibility events.  Required only for Mail Innovations forward shipments. Alpha numeric values only. It is shown on the bottom of the shipping label as reference 1.
      *
-     * @param string $packageID
+     * @param string|null $packageID
      *
      * @return self
      */
-    public function setPackageID(string $packageID) : self
+    public function setPackageID(?string $packageID) : self
     {
         $this->initialized['packageID'] = true;
         $this->packageID = $packageID;
@@ -907,20 +907,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the PackageID field to be barcoded at the bottom of the label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageIDBarcodeIndicator() : string
+    public function getPackageIDBarcodeIndicator() : ?string
     {
         return $this->packageIDBarcodeIndicator;
     }
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the PackageID field to be barcoded at the bottom of the label.
      *
-     * @param string $packageIDBarcodeIndicator
+     * @param string|null $packageIDBarcodeIndicator
      *
      * @return self
      */
-    public function setPackageIDBarcodeIndicator(string $packageIDBarcodeIndicator) : self
+    public function setPackageIDBarcodeIndicator(?string $packageIDBarcodeIndicator) : self
     {
         $this->initialized['packageIDBarcodeIndicator'] = true;
         $this->packageIDBarcodeIndicator = $packageIDBarcodeIndicator;
@@ -932,9 +932,9 @@ class ShipmentRequestShipment extends \ArrayObject
     2 = Oversize
     3 = Not Applicable
     *
-    * @return string
+    * @return string|null
     */
-    public function getIrregularIndicator() : string
+    public function getIrregularIndicator() : ?string
     {
         return $this->irregularIndicator;
     }
@@ -944,11 +944,11 @@ class ShipmentRequestShipment extends \ArrayObject
     2 = Oversize
     3 = Not Applicable
     *
-    * @param string $irregularIndicator
+    * @param string|null $irregularIndicator
     *
     * @return self
     */
-    public function setIrregularIndicator(string $irregularIndicator) : self
+    public function setIrregularIndicator(?string $irregularIndicator) : self
     {
         $this->initialized['irregularIndicator'] = true;
         $this->irregularIndicator = $irregularIndicator;
@@ -957,20 +957,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentShipmentIndicationType[]
+     * @return list<ShipmentShipmentIndicationType>|null
      */
-    public function getShipmentIndicationType() : array
+    public function getShipmentIndicationType() : ?array
     {
         return $this->shipmentIndicationType;
     }
     /**
      * 
      *
-     * @param ShipmentShipmentIndicationType[] $shipmentIndicationType
+     * @param list<ShipmentShipmentIndicationType>|null $shipmentIndicationType
      *
      * @return self
      */
-    public function setShipmentIndicationType(array $shipmentIndicationType) : self
+    public function setShipmentIndicationType(?array $shipmentIndicationType) : self
     {
         $this->initialized['shipmentIndicationType'] = true;
         $this->shipmentIndicationType = $shipmentIndicationType;
@@ -994,9 +994,9 @@ class ShipmentRequestShipment extends \ArrayObject
     
     This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
     *
-    * @return string
+    * @return string|null
     */
-    public function getMIDualReturnShipmentKey() : string
+    public function getMIDualReturnShipmentKey() : ?string
     {
         return $this->mIDualReturnShipmentKey;
     }
@@ -1018,11 +1018,11 @@ class ShipmentRequestShipment extends \ArrayObject
     
     This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
     *
-    * @param string $mIDualReturnShipmentKey
+    * @param string|null $mIDualReturnShipmentKey
     *
     * @return self
     */
-    public function setMIDualReturnShipmentKey(string $mIDualReturnShipmentKey) : self
+    public function setMIDualReturnShipmentKey(?string $mIDualReturnShipmentKey) : self
     {
         $this->initialized['mIDualReturnShipmentKey'] = true;
         $this->mIDualReturnShipmentKey = $mIDualReturnShipmentKey;
@@ -1035,9 +1035,9 @@ class ShipmentRequestShipment extends \ArrayObject
     
     This indicator is not valid with UPS Mail Innovations Returns Service code.
     *
-    * @return string
+    * @return string|null
     */
-    public function getMIDualReturnShipmentIndicator() : string
+    public function getMIDualReturnShipmentIndicator() : ?string
     {
         return $this->mIDualReturnShipmentIndicator;
     }
@@ -1048,11 +1048,11 @@ class ShipmentRequestShipment extends \ArrayObject
     
     This indicator is not valid with UPS Mail Innovations Returns Service code.
     *
-    * @param string $mIDualReturnShipmentIndicator
+    * @param string|null $mIDualReturnShipmentIndicator
     *
     * @return self
     */
-    public function setMIDualReturnShipmentIndicator(string $mIDualReturnShipmentIndicator) : self
+    public function setMIDualReturnShipmentIndicator(?string $mIDualReturnShipmentIndicator) : self
     {
         $this->initialized['mIDualReturnShipmentIndicator'] = true;
         $this->mIDualReturnShipmentIndicator = $mIDualReturnShipmentIndicator;
@@ -1062,9 +1062,9 @@ class ShipmentRequestShipment extends \ArrayObject
     * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
     If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
     *
-    * @return string
+    * @return string|null
     */
-    public function getRatingMethodRequestedIndicator() : string
+    public function getRatingMethodRequestedIndicator() : ?string
     {
         return $this->ratingMethodRequestedIndicator;
     }
@@ -1072,11 +1072,11 @@ class ShipmentRequestShipment extends \ArrayObject
     * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
     If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
     *
-    * @param string $ratingMethodRequestedIndicator
+    * @param string|null $ratingMethodRequestedIndicator
     *
     * @return self
     */
-    public function setRatingMethodRequestedIndicator(string $ratingMethodRequestedIndicator) : self
+    public function setRatingMethodRequestedIndicator(?string $ratingMethodRequestedIndicator) : self
     {
         $this->initialized['ratingMethodRequestedIndicator'] = true;
         $this->ratingMethodRequestedIndicator = $ratingMethodRequestedIndicator;
@@ -1085,20 +1085,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxInformationIndicator() : string
+    public function getTaxInformationIndicator() : ?string
     {
         return $this->taxInformationIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.
      *
-     * @param string $taxInformationIndicator
+     * @param string|null $taxInformationIndicator
      *
      * @return self
      */
-    public function setTaxInformationIndicator(string $taxInformationIndicator) : self
+    public function setTaxInformationIndicator(?string $taxInformationIndicator) : self
     {
         $this->initialized['taxInformationIndicator'] = true;
         $this->taxInformationIndicator = $taxInformationIndicator;
@@ -1107,20 +1107,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Container for Shipment Service Options.
      *
-     * @return ShipmentShipmentServiceOptions
+     * @return ShipmentShipmentServiceOptions|null
      */
-    public function getShipmentServiceOptions() : ShipmentShipmentServiceOptions
+    public function getShipmentServiceOptions() : ?ShipmentShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
      * Container for Shipment Service Options.
      *
-     * @param ShipmentShipmentServiceOptions $shipmentServiceOptions
+     * @param ShipmentShipmentServiceOptions|null $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(ShipmentShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(?ShipmentShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -1131,9 +1131,9 @@ class ShipmentRequestShipment extends \ArrayObject
     Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
     Queen's English (en_GB) is the default
     *
-    * @return string
+    * @return string|null
     */
-    public function getLocale() : string
+    public function getLocale() : ?string
     {
         return $this->locale;
     }
@@ -1142,11 +1142,11 @@ class ShipmentRequestShipment extends \ArrayObject
     Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
     Queen's English (en_GB) is the default
     *
-    * @param string $locale
+    * @param string|null $locale
     *
     * @return self
     */
-    public function setLocale(string $locale) : self
+    public function setLocale(?string $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -1156,9 +1156,9 @@ class ShipmentRequestShipment extends \ArrayObject
     * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
     02 = Shipment value is above threshold value.     NA = Not Applicable
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipmentValueThresholdCode() : string
+    public function getShipmentValueThresholdCode() : ?string
     {
         return $this->shipmentValueThresholdCode;
     }
@@ -1166,11 +1166,11 @@ class ShipmentRequestShipment extends \ArrayObject
     * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
     02 = Shipment value is above threshold value.     NA = Not Applicable
     *
-    * @param string $shipmentValueThresholdCode
+    * @param string|null $shipmentValueThresholdCode
     *
     * @return self
     */
-    public function setShipmentValueThresholdCode(string $shipmentValueThresholdCode) : self
+    public function setShipmentValueThresholdCode(?string $shipmentValueThresholdCode) : self
     {
         $this->initialized['shipmentValueThresholdCode'] = true;
         $this->shipmentValueThresholdCode = $shipmentValueThresholdCode;
@@ -1179,20 +1179,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * Master Carton ID. If Economy Service (17 or 72) : Economy Shipment will be associated with given Master Carton ID. If Non-Economy Service: Master Carton Shipment will be created for given Master Carton ID.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMasterCartonID() : string
+    public function getMasterCartonID() : ?string
     {
         return $this->masterCartonID;
     }
     /**
      * Master Carton ID. If Economy Service (17 or 72) : Economy Shipment will be associated with given Master Carton ID. If Non-Economy Service: Master Carton Shipment will be created for given Master Carton ID.
      *
-     * @param string $masterCartonID
+     * @param string|null $masterCartonID
      *
      * @return self
      */
-    public function setMasterCartonID(string $masterCartonID) : self
+    public function setMasterCartonID(?string $masterCartonID) : self
     {
         $this->initialized['masterCartonID'] = true;
         $this->masterCartonID = $masterCartonID;
@@ -1202,9 +1202,9 @@ class ShipmentRequestShipment extends \ArrayObject
     * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client. 
     This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getMasterCartonIndicator() : string
+    public function getMasterCartonIndicator() : ?string
     {
         return $this->masterCartonIndicator;
     }
@@ -1212,11 +1212,11 @@ class ShipmentRequestShipment extends \ArrayObject
     * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client. 
     This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
     *
-    * @param string $masterCartonIndicator
+    * @param string|null $masterCartonIndicator
     *
     * @return self
     */
-    public function setMasterCartonIndicator(string $masterCartonIndicator) : self
+    public function setMasterCartonIndicator(?string $masterCartonIndicator) : self
     {
         $this->initialized['masterCartonIndicator'] = true;
         $this->masterCartonIndicator = $masterCartonIndicator;
@@ -1225,20 +1225,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * User can send up to 7 days in the future with current date as day zero. Format: YYYYMMDD
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentDate() : string
+    public function getShipmentDate() : ?string
     {
         return $this->shipmentDate;
     }
     /**
      * User can send up to 7 days in the future with current date as day zero. Format: YYYYMMDD
      *
-     * @param string $shipmentDate
+     * @param string|null $shipmentDate
      *
      * @return self
      */
-    public function setShipmentDate(string $shipmentDate) : self
+    public function setShipmentDate(?string $shipmentDate) : self
     {
         $this->initialized['shipmentDate'] = true;
         $this->shipmentDate = $shipmentDate;
@@ -1247,20 +1247,20 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentPackage[]
+     * @return list<ShipmentPackage>|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param ShipmentPackage[] $package
+     * @param list<ShipmentPackage>|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;

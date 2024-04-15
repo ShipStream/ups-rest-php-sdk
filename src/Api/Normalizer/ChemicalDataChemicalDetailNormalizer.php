@@ -40,65 +40,110 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('RegulationSet', $data)) {
+            if (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] !== null) {
                 $object->setRegulationSet($data['RegulationSet']);
                 unset($data['RegulationSet']);
             }
-            if (\array_key_exists('IDNumber', $data)) {
+            elseif (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] === null) {
+                $object->setRegulationSet(null);
+            }
+            if (\array_key_exists('IDNumber', $data) && $data['IDNumber'] !== null) {
                 $object->setIDNumber($data['IDNumber']);
                 unset($data['IDNumber']);
             }
-            if (\array_key_exists('HazardousMaterialsDescription', $data)) {
+            elseif (\array_key_exists('IDNumber', $data) && $data['IDNumber'] === null) {
+                $object->setIDNumber(null);
+            }
+            if (\array_key_exists('HazardousMaterialsDescription', $data) && $data['HazardousMaterialsDescription'] !== null) {
                 $object->setHazardousMaterialsDescription($data['HazardousMaterialsDescription']);
                 unset($data['HazardousMaterialsDescription']);
             }
-            if (\array_key_exists('ClassDivisionNumber', $data)) {
+            elseif (\array_key_exists('HazardousMaterialsDescription', $data) && $data['HazardousMaterialsDescription'] === null) {
+                $object->setHazardousMaterialsDescription(null);
+            }
+            if (\array_key_exists('ClassDivisionNumber', $data) && $data['ClassDivisionNumber'] !== null) {
                 $object->setClassDivisionNumber($data['ClassDivisionNumber']);
                 unset($data['ClassDivisionNumber']);
             }
-            if (\array_key_exists('SubRiskClass', $data)) {
+            elseif (\array_key_exists('ClassDivisionNumber', $data) && $data['ClassDivisionNumber'] === null) {
+                $object->setClassDivisionNumber(null);
+            }
+            if (\array_key_exists('SubRiskClass', $data) && $data['SubRiskClass'] !== null) {
                 $object->setSubRiskClass($data['SubRiskClass']);
                 unset($data['SubRiskClass']);
             }
-            if (\array_key_exists('PackagingGroupType', $data)) {
+            elseif (\array_key_exists('SubRiskClass', $data) && $data['SubRiskClass'] === null) {
+                $object->setSubRiskClass(null);
+            }
+            if (\array_key_exists('PackagingGroupType', $data) && $data['PackagingGroupType'] !== null) {
                 $object->setPackagingGroupType($data['PackagingGroupType']);
                 unset($data['PackagingGroupType']);
             }
-            if (\array_key_exists('SpecialPermit', $data)) {
+            elseif (\array_key_exists('PackagingGroupType', $data) && $data['PackagingGroupType'] === null) {
+                $object->setPackagingGroupType(null);
+            }
+            if (\array_key_exists('SpecialPermit', $data) && $data['SpecialPermit'] !== null) {
                 $object->setSpecialPermit($data['SpecialPermit']);
                 unset($data['SpecialPermit']);
             }
-            if (\array_key_exists('TechnicalNameRequiredIndicator', $data)) {
+            elseif (\array_key_exists('SpecialPermit', $data) && $data['SpecialPermit'] === null) {
+                $object->setSpecialPermit(null);
+            }
+            if (\array_key_exists('TechnicalNameRequiredIndicator', $data) && $data['TechnicalNameRequiredIndicator'] !== null) {
                 $object->setTechnicalNameRequiredIndicator($data['TechnicalNameRequiredIndicator']);
                 unset($data['TechnicalNameRequiredIndicator']);
             }
-            if (\array_key_exists('AdditionalShippingInformationRequiredIndicator', $data)) {
+            elseif (\array_key_exists('TechnicalNameRequiredIndicator', $data) && $data['TechnicalNameRequiredIndicator'] === null) {
+                $object->setTechnicalNameRequiredIndicator(null);
+            }
+            if (\array_key_exists('AdditionalShippingInformationRequiredIndicator', $data) && $data['AdditionalShippingInformationRequiredIndicator'] !== null) {
                 $object->setAdditionalShippingInformationRequiredIndicator($data['AdditionalShippingInformationRequiredIndicator']);
                 unset($data['AdditionalShippingInformationRequiredIndicator']);
             }
-            if (\array_key_exists('TunnelRestrictionCode', $data)) {
+            elseif (\array_key_exists('AdditionalShippingInformationRequiredIndicator', $data) && $data['AdditionalShippingInformationRequiredIndicator'] === null) {
+                $object->setAdditionalShippingInformationRequiredIndicator(null);
+            }
+            if (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] !== null) {
                 $object->setTunnelRestrictionCode($data['TunnelRestrictionCode']);
                 unset($data['TunnelRestrictionCode']);
             }
-            if (\array_key_exists('TransportCategory', $data)) {
+            elseif (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] === null) {
+                $object->setTunnelRestrictionCode(null);
+            }
+            if (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] !== null) {
                 $object->setTransportCategory($data['TransportCategory']);
                 unset($data['TransportCategory']);
             }
-            if (\array_key_exists('TransportMultiplierQuantity', $data)) {
+            elseif (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] === null) {
+                $object->setTransportCategory(null);
+            }
+            if (\array_key_exists('TransportMultiplierQuantity', $data) && $data['TransportMultiplierQuantity'] !== null) {
                 $object->setTransportMultiplierQuantity($data['TransportMultiplierQuantity']);
                 unset($data['TransportMultiplierQuantity']);
             }
-            if (\array_key_exists('ChannelTunnelAcceptedIndicator', $data)) {
+            elseif (\array_key_exists('TransportMultiplierQuantity', $data) && $data['TransportMultiplierQuantity'] === null) {
+                $object->setTransportMultiplierQuantity(null);
+            }
+            if (\array_key_exists('ChannelTunnelAcceptedIndicator', $data) && $data['ChannelTunnelAcceptedIndicator'] !== null) {
                 $object->setChannelTunnelAcceptedIndicator($data['ChannelTunnelAcceptedIndicator']);
                 unset($data['ChannelTunnelAcceptedIndicator']);
             }
-            if (\array_key_exists('ChemicalType', $data)) {
+            elseif (\array_key_exists('ChannelTunnelAcceptedIndicator', $data) && $data['ChannelTunnelAcceptedIndicator'] === null) {
+                $object->setChannelTunnelAcceptedIndicator(null);
+            }
+            if (\array_key_exists('ChemicalType', $data) && $data['ChemicalType'] !== null) {
                 $object->setChemicalType($data['ChemicalType']);
                 unset($data['ChemicalType']);
             }
-            if (\array_key_exists('CAToUSShipmentAllowedIndicator', $data)) {
+            elseif (\array_key_exists('ChemicalType', $data) && $data['ChemicalType'] === null) {
+                $object->setChemicalType(null);
+            }
+            if (\array_key_exists('CAToUSShipmentAllowedIndicator', $data) && $data['CAToUSShipmentAllowedIndicator'] !== null) {
                 $object->setCAToUSShipmentAllowedIndicator($data['CAToUSShipmentAllowedIndicator']);
                 unset($data['CAToUSShipmentAllowedIndicator']);
+            }
+            elseif (\array_key_exists('CAToUSShipmentAllowedIndicator', $data) && $data['CAToUSShipmentAllowedIndicator'] === null) {
+                $object->setCAToUSShipmentAllowedIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -197,65 +242,110 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('RegulationSet', $data)) {
+            if (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] !== null) {
                 $object->setRegulationSet($data['RegulationSet']);
                 unset($data['RegulationSet']);
             }
-            if (\array_key_exists('IDNumber', $data)) {
+            elseif (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] === null) {
+                $object->setRegulationSet(null);
+            }
+            if (\array_key_exists('IDNumber', $data) && $data['IDNumber'] !== null) {
                 $object->setIDNumber($data['IDNumber']);
                 unset($data['IDNumber']);
             }
-            if (\array_key_exists('HazardousMaterialsDescription', $data)) {
+            elseif (\array_key_exists('IDNumber', $data) && $data['IDNumber'] === null) {
+                $object->setIDNumber(null);
+            }
+            if (\array_key_exists('HazardousMaterialsDescription', $data) && $data['HazardousMaterialsDescription'] !== null) {
                 $object->setHazardousMaterialsDescription($data['HazardousMaterialsDescription']);
                 unset($data['HazardousMaterialsDescription']);
             }
-            if (\array_key_exists('ClassDivisionNumber', $data)) {
+            elseif (\array_key_exists('HazardousMaterialsDescription', $data) && $data['HazardousMaterialsDescription'] === null) {
+                $object->setHazardousMaterialsDescription(null);
+            }
+            if (\array_key_exists('ClassDivisionNumber', $data) && $data['ClassDivisionNumber'] !== null) {
                 $object->setClassDivisionNumber($data['ClassDivisionNumber']);
                 unset($data['ClassDivisionNumber']);
             }
-            if (\array_key_exists('SubRiskClass', $data)) {
+            elseif (\array_key_exists('ClassDivisionNumber', $data) && $data['ClassDivisionNumber'] === null) {
+                $object->setClassDivisionNumber(null);
+            }
+            if (\array_key_exists('SubRiskClass', $data) && $data['SubRiskClass'] !== null) {
                 $object->setSubRiskClass($data['SubRiskClass']);
                 unset($data['SubRiskClass']);
             }
-            if (\array_key_exists('PackagingGroupType', $data)) {
+            elseif (\array_key_exists('SubRiskClass', $data) && $data['SubRiskClass'] === null) {
+                $object->setSubRiskClass(null);
+            }
+            if (\array_key_exists('PackagingGroupType', $data) && $data['PackagingGroupType'] !== null) {
                 $object->setPackagingGroupType($data['PackagingGroupType']);
                 unset($data['PackagingGroupType']);
             }
-            if (\array_key_exists('SpecialPermit', $data)) {
+            elseif (\array_key_exists('PackagingGroupType', $data) && $data['PackagingGroupType'] === null) {
+                $object->setPackagingGroupType(null);
+            }
+            if (\array_key_exists('SpecialPermit', $data) && $data['SpecialPermit'] !== null) {
                 $object->setSpecialPermit($data['SpecialPermit']);
                 unset($data['SpecialPermit']);
             }
-            if (\array_key_exists('TechnicalNameRequiredIndicator', $data)) {
+            elseif (\array_key_exists('SpecialPermit', $data) && $data['SpecialPermit'] === null) {
+                $object->setSpecialPermit(null);
+            }
+            if (\array_key_exists('TechnicalNameRequiredIndicator', $data) && $data['TechnicalNameRequiredIndicator'] !== null) {
                 $object->setTechnicalNameRequiredIndicator($data['TechnicalNameRequiredIndicator']);
                 unset($data['TechnicalNameRequiredIndicator']);
             }
-            if (\array_key_exists('AdditionalShippingInformationRequiredIndicator', $data)) {
+            elseif (\array_key_exists('TechnicalNameRequiredIndicator', $data) && $data['TechnicalNameRequiredIndicator'] === null) {
+                $object->setTechnicalNameRequiredIndicator(null);
+            }
+            if (\array_key_exists('AdditionalShippingInformationRequiredIndicator', $data) && $data['AdditionalShippingInformationRequiredIndicator'] !== null) {
                 $object->setAdditionalShippingInformationRequiredIndicator($data['AdditionalShippingInformationRequiredIndicator']);
                 unset($data['AdditionalShippingInformationRequiredIndicator']);
             }
-            if (\array_key_exists('TunnelRestrictionCode', $data)) {
+            elseif (\array_key_exists('AdditionalShippingInformationRequiredIndicator', $data) && $data['AdditionalShippingInformationRequiredIndicator'] === null) {
+                $object->setAdditionalShippingInformationRequiredIndicator(null);
+            }
+            if (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] !== null) {
                 $object->setTunnelRestrictionCode($data['TunnelRestrictionCode']);
                 unset($data['TunnelRestrictionCode']);
             }
-            if (\array_key_exists('TransportCategory', $data)) {
+            elseif (\array_key_exists('TunnelRestrictionCode', $data) && $data['TunnelRestrictionCode'] === null) {
+                $object->setTunnelRestrictionCode(null);
+            }
+            if (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] !== null) {
                 $object->setTransportCategory($data['TransportCategory']);
                 unset($data['TransportCategory']);
             }
-            if (\array_key_exists('TransportMultiplierQuantity', $data)) {
+            elseif (\array_key_exists('TransportCategory', $data) && $data['TransportCategory'] === null) {
+                $object->setTransportCategory(null);
+            }
+            if (\array_key_exists('TransportMultiplierQuantity', $data) && $data['TransportMultiplierQuantity'] !== null) {
                 $object->setTransportMultiplierQuantity($data['TransportMultiplierQuantity']);
                 unset($data['TransportMultiplierQuantity']);
             }
-            if (\array_key_exists('ChannelTunnelAcceptedIndicator', $data)) {
+            elseif (\array_key_exists('TransportMultiplierQuantity', $data) && $data['TransportMultiplierQuantity'] === null) {
+                $object->setTransportMultiplierQuantity(null);
+            }
+            if (\array_key_exists('ChannelTunnelAcceptedIndicator', $data) && $data['ChannelTunnelAcceptedIndicator'] !== null) {
                 $object->setChannelTunnelAcceptedIndicator($data['ChannelTunnelAcceptedIndicator']);
                 unset($data['ChannelTunnelAcceptedIndicator']);
             }
-            if (\array_key_exists('ChemicalType', $data)) {
+            elseif (\array_key_exists('ChannelTunnelAcceptedIndicator', $data) && $data['ChannelTunnelAcceptedIndicator'] === null) {
+                $object->setChannelTunnelAcceptedIndicator(null);
+            }
+            if (\array_key_exists('ChemicalType', $data) && $data['ChemicalType'] !== null) {
                 $object->setChemicalType($data['ChemicalType']);
                 unset($data['ChemicalType']);
             }
-            if (\array_key_exists('CAToUSShipmentAllowedIndicator', $data)) {
+            elseif (\array_key_exists('ChemicalType', $data) && $data['ChemicalType'] === null) {
+                $object->setChemicalType(null);
+            }
+            if (\array_key_exists('CAToUSShipmentAllowedIndicator', $data) && $data['CAToUSShipmentAllowedIndicator'] !== null) {
                 $object->setCAToUSShipmentAllowedIndicator($data['CAToUSShipmentAllowedIndicator']);
                 unset($data['CAToUSShipmentAllowedIndicator']);
+            }
+            elseif (\array_key_exists('CAToUSShipmentAllowedIndicator', $data) && $data['CAToUSShipmentAllowedIndicator'] === null) {
+                $object->setCAToUSShipmentAllowedIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

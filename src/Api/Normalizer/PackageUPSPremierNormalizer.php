@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Category', $data)) {
+            if (\array_key_exists('Category', $data) && $data['Category'] !== null) {
                 $object->setCategory($data['Category']);
                 unset($data['Category']);
             }
-            if (\array_key_exists('SensorID', $data)) {
+            elseif (\array_key_exists('Category', $data) && $data['Category'] === null) {
+                $object->setCategory(null);
+            }
+            if (\array_key_exists('SensorID', $data) && $data['SensorID'] !== null) {
                 $object->setSensorID($data['SensorID']);
                 unset($data['SensorID']);
             }
-            if (\array_key_exists('HandlingInstructions', $data)) {
+            elseif (\array_key_exists('SensorID', $data) && $data['SensorID'] === null) {
+                $object->setSensorID(null);
+            }
+            if (\array_key_exists('HandlingInstructions', $data) && $data['HandlingInstructions'] !== null) {
                 $object->setHandlingInstructions($this->denormalizer->denormalize($data['HandlingInstructions'], 'ShipStream\\Ups\\Api\\Model\\UPSPremierHandlingInstructions', 'json', $context));
                 unset($data['HandlingInstructions']);
+            }
+            elseif (\array_key_exists('HandlingInstructions', $data) && $data['HandlingInstructions'] === null) {
+                $object->setHandlingInstructions(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Category', $data)) {
+            if (\array_key_exists('Category', $data) && $data['Category'] !== null) {
                 $object->setCategory($data['Category']);
                 unset($data['Category']);
             }
-            if (\array_key_exists('SensorID', $data)) {
+            elseif (\array_key_exists('Category', $data) && $data['Category'] === null) {
+                $object->setCategory(null);
+            }
+            if (\array_key_exists('SensorID', $data) && $data['SensorID'] !== null) {
                 $object->setSensorID($data['SensorID']);
                 unset($data['SensorID']);
             }
-            if (\array_key_exists('HandlingInstructions', $data)) {
+            elseif (\array_key_exists('SensorID', $data) && $data['SensorID'] === null) {
+                $object->setSensorID(null);
+            }
+            if (\array_key_exists('HandlingInstructions', $data) && $data['HandlingInstructions'] !== null) {
                 $object->setHandlingInstructions($this->denormalizer->denormalize($data['HandlingInstructions'], 'ShipStream\\Ups\\Api\\Model\\UPSPremierHandlingInstructions', 'json', $context));
                 unset($data['HandlingInstructions']);
+            }
+            elseif (\array_key_exists('HandlingInstructions', $data) && $data['HandlingInstructions'] === null) {
+                $object->setHandlingInstructions(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

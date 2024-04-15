@@ -15,32 +15,32 @@ class SoldToPhone extends \ArrayObject
     /**
      * Sold To contacts phone number.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * Sold To contacts phone extension.
      *
-     * @var string
+     * @var string|null
      */
     protected $extension;
     /**
      * Sold To contacts phone number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * Sold To contacts phone number.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -49,20 +49,20 @@ class SoldToPhone extends \ArrayObject
     /**
      * Sold To contacts phone extension.
      *
-     * @return string
+     * @return string|null
      */
-    public function getExtension() : string
+    public function getExtension() : ?string
     {
         return $this->extension;
     }
     /**
      * Sold To contacts phone extension.
      *
-     * @param string $extension
+     * @param string|null $extension
      *
      * @return self
      */
-    public function setExtension(string $extension) : self
+    public function setExtension(?string $extension) : self
     {
         $this->initialized['extension'] = true;
         $this->extension = $extension;

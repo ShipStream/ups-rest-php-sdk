@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('QuantumViewRequest', $data)) {
+            if (\array_key_exists('QuantumViewRequest', $data) && $data['QuantumViewRequest'] !== null) {
                 $object->setQuantumViewRequest($this->denormalizer->denormalize($data['QuantumViewRequest'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequest', 'json', $context));
                 unset($data['QuantumViewRequest']);
+            }
+            elseif (\array_key_exists('QuantumViewRequest', $data) && $data['QuantumViewRequest'] === null) {
+                $object->setQuantumViewRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('QuantumViewRequest', $data)) {
+            if (\array_key_exists('QuantumViewRequest', $data) && $data['QuantumViewRequest'] !== null) {
                 $object->setQuantumViewRequest($this->denormalizer->denormalize($data['QuantumViewRequest'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequest', 'json', $context));
                 unset($data['QuantumViewRequest']);
+            }
+            elseif (\array_key_exists('QuantumViewRequest', $data) && $data['QuantumViewRequest'] === null) {
+                $object->setQuantumViewRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

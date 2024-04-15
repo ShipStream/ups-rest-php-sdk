@@ -15,32 +15,32 @@ class ShipmentResultsBillableShipmentWeight extends \ArrayObject
     /**
      * UnitOfMeasurement Container.
      *
-     * @var BillableShipmentWeightUnitOfMeasurement
+     * @var BillableShipmentWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * The value for the billable weight associated with the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * UnitOfMeasurement Container.
      *
-     * @return BillableShipmentWeightUnitOfMeasurement
+     * @return BillableShipmentWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : BillableShipmentWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?BillableShipmentWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * UnitOfMeasurement Container.
      *
-     * @param BillableShipmentWeightUnitOfMeasurement $unitOfMeasurement
+     * @param BillableShipmentWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(BillableShipmentWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?BillableShipmentWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class ShipmentResultsBillableShipmentWeight extends \ArrayObject
     /**
      * The value for the billable weight associated with the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * The value for the billable weight associated with the shipment.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

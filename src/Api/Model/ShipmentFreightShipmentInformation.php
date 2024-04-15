@@ -15,33 +15,33 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
     /**
      * Freight Density Info container.  Required if DensityEligibleIndicator is present.
      *
-     * @var FreightShipmentInformationFreightDensityInfo
+     * @var FreightShipmentInformationFreightDensityInfo|null
      */
     protected $freightDensityInfo;
     /**
     * The presence of the tag indicates that the rate request is density based.
     For Density Based Rating (DBR), the customer must have DBR Contract Service.
     *
-    * @var string
+    * @var string|null
     */
     protected $densityEligibleIndicator;
     /**
      * Freight Density Info container.  Required if DensityEligibleIndicator is present.
      *
-     * @return FreightShipmentInformationFreightDensityInfo
+     * @return FreightShipmentInformationFreightDensityInfo|null
      */
-    public function getFreightDensityInfo() : FreightShipmentInformationFreightDensityInfo
+    public function getFreightDensityInfo() : ?FreightShipmentInformationFreightDensityInfo
     {
         return $this->freightDensityInfo;
     }
     /**
      * Freight Density Info container.  Required if DensityEligibleIndicator is present.
      *
-     * @param FreightShipmentInformationFreightDensityInfo $freightDensityInfo
+     * @param FreightShipmentInformationFreightDensityInfo|null $freightDensityInfo
      *
      * @return self
      */
-    public function setFreightDensityInfo(FreightShipmentInformationFreightDensityInfo $freightDensityInfo) : self
+    public function setFreightDensityInfo(?FreightShipmentInformationFreightDensityInfo $freightDensityInfo) : self
     {
         $this->initialized['freightDensityInfo'] = true;
         $this->freightDensityInfo = $freightDensityInfo;
@@ -51,9 +51,9 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
     * The presence of the tag indicates that the rate request is density based.
     For Density Based Rating (DBR), the customer must have DBR Contract Service.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDensityEligibleIndicator() : string
+    public function getDensityEligibleIndicator() : ?string
     {
         return $this->densityEligibleIndicator;
     }
@@ -61,11 +61,11 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
     * The presence of the tag indicates that the rate request is density based.
     For Density Based Rating (DBR), the customer must have DBR Contract Service.
     *
-    * @param string $densityEligibleIndicator
+    * @param string|null $densityEligibleIndicator
     *
     * @return self
     */
-    public function setDensityEligibleIndicator(string $densityEligibleIndicator) : self
+    public function setDensityEligibleIndicator(?string $densityEligibleIndicator) : self
     {
         $this->initialized['densityEligibleIndicator'] = true;
         $this->densityEligibleIndicator = $densityEligibleIndicator;

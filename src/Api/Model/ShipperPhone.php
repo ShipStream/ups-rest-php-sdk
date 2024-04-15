@@ -15,32 +15,32 @@ class ShipperPhone extends \ArrayObject
     /**
      * Shipper's phone Number.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * Shipper's phone extension.
      *
-     * @var string
+     * @var string|null
      */
     protected $extension;
     /**
      * Shipper's phone Number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * Shipper's phone Number.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -49,20 +49,20 @@ class ShipperPhone extends \ArrayObject
     /**
      * Shipper's phone extension.
      *
-     * @return string
+     * @return string|null
      */
-    public function getExtension() : string
+    public function getExtension() : ?string
     {
         return $this->extension;
     }
     /**
      * Shipper's phone extension.
      *
-     * @param string $extension
+     * @param string|null $extension
      *
      * @return self
      */
-    public function setExtension(string $extension) : self
+    public function setExtension(?string $extension) : self
     {
         $this->initialized['extension'] = true;
         $this->extension = $extension;

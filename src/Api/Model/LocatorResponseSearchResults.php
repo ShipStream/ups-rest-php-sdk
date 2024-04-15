@@ -15,7 +15,7 @@ class LocatorResponseSearchResults extends \ArrayObject
     /**
      * 
      *
-     * @var SearchResultsGeocodeCandidate[]
+     * @var list<SearchResultsGeocodeCandidate>|null
      */
     protected $geocodeCandidate;
     /**
@@ -23,19 +23,19 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     The disclaimer will note this deviation from the requested search criteria. The disclaimer is also the location where the user will receive information regarding a one-time pickup option if the first location is greater than 20 miles from the origin.
     *
-    * @var array<string, mixed>[]
+    * @var list<array<string, mixed>>|null
     */
     protected $disclaimer;
     /**
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
      *
-     * @var SearchResultsDropLocation
+     * @var SearchResultsDropLocation|null
      */
     protected $dropLocation;
     /**
      * 
      *
-     * @var SearchResultsAvailableLocationAttributes[]
+     * @var list<SearchResultsAvailableLocationAttributes>|null
      */
     protected $availableLocationAttributes;
     /**
@@ -43,26 +43,26 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     This tag is populated in the Response only if tag "ExistIndicator" was present in the Locator request.
     *
-    * @var string
+    * @var string|null
     */
     protected $activeAvailableAccessPointIndicator;
     /**
      * 
      *
-     * @return SearchResultsGeocodeCandidate[]
+     * @return list<SearchResultsGeocodeCandidate>|null
      */
-    public function getGeocodeCandidate() : array
+    public function getGeocodeCandidate() : ?array
     {
         return $this->geocodeCandidate;
     }
     /**
      * 
      *
-     * @param SearchResultsGeocodeCandidate[] $geocodeCandidate
+     * @param list<SearchResultsGeocodeCandidate>|null $geocodeCandidate
      *
      * @return self
      */
-    public function setGeocodeCandidate(array $geocodeCandidate) : self
+    public function setGeocodeCandidate(?array $geocodeCandidate) : self
     {
         $this->initialized['geocodeCandidate'] = true;
         $this->geocodeCandidate = $geocodeCandidate;
@@ -73,9 +73,9 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     The disclaimer will note this deviation from the requested search criteria. The disclaimer is also the location where the user will receive information regarding a one-time pickup option if the first location is greater than 20 miles from the origin.
     *
-    * @return array<string, mixed>[]
+    * @return list<array<string, mixed>>|null
     */
-    public function getDisclaimer() : array
+    public function getDisclaimer() : ?array
     {
         return $this->disclaimer;
     }
@@ -84,11 +84,11 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     The disclaimer will note this deviation from the requested search criteria. The disclaimer is also the location where the user will receive information regarding a one-time pickup option if the first location is greater than 20 miles from the origin.
     *
-    * @param array<string, mixed>[] $disclaimer
+    * @param list<array<string, mixed>>|null $disclaimer
     *
     * @return self
     */
-    public function setDisclaimer(array $disclaimer) : self
+    public function setDisclaimer(?array $disclaimer) : self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -97,20 +97,20 @@ class LocatorResponseSearchResults extends \ArrayObject
     /**
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
      *
-     * @return SearchResultsDropLocation
+     * @return SearchResultsDropLocation|null
      */
-    public function getDropLocation() : SearchResultsDropLocation
+    public function getDropLocation() : ?SearchResultsDropLocation
     {
         return $this->dropLocation;
     }
     /**
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
      *
-     * @param SearchResultsDropLocation $dropLocation
+     * @param SearchResultsDropLocation|null $dropLocation
      *
      * @return self
      */
-    public function setDropLocation(SearchResultsDropLocation $dropLocation) : self
+    public function setDropLocation(?SearchResultsDropLocation $dropLocation) : self
     {
         $this->initialized['dropLocation'] = true;
         $this->dropLocation = $dropLocation;
@@ -119,20 +119,20 @@ class LocatorResponseSearchResults extends \ArrayObject
     /**
      * 
      *
-     * @return SearchResultsAvailableLocationAttributes[]
+     * @return list<SearchResultsAvailableLocationAttributes>|null
      */
-    public function getAvailableLocationAttributes() : array
+    public function getAvailableLocationAttributes() : ?array
     {
         return $this->availableLocationAttributes;
     }
     /**
      * 
      *
-     * @param SearchResultsAvailableLocationAttributes[] $availableLocationAttributes
+     * @param list<SearchResultsAvailableLocationAttributes>|null $availableLocationAttributes
      *
      * @return self
      */
-    public function setAvailableLocationAttributes(array $availableLocationAttributes) : self
+    public function setAvailableLocationAttributes(?array $availableLocationAttributes) : self
     {
         $this->initialized['availableLocationAttributes'] = true;
         $this->availableLocationAttributes = $availableLocationAttributes;
@@ -143,9 +143,9 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     This tag is populated in the Response only if tag "ExistIndicator" was present in the Locator request.
     *
-    * @return string
+    * @return string|null
     */
-    public function getActiveAvailableAccessPointIndicator() : string
+    public function getActiveAvailableAccessPointIndicator() : ?string
     {
         return $this->activeAvailableAccessPointIndicator;
     }
@@ -154,11 +154,11 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     This tag is populated in the Response only if tag "ExistIndicator" was present in the Locator request.
     *
-    * @param string $activeAvailableAccessPointIndicator
+    * @param string|null $activeAvailableAccessPointIndicator
     *
     * @return self
     */
-    public function setActiveAvailableAccessPointIndicator(string $activeAvailableAccessPointIndicator) : self
+    public function setActiveAvailableAccessPointIndicator(?string $activeAvailableAccessPointIndicator) : self
     {
         $this->initialized['activeAvailableAccessPointIndicator'] = true;
         $this->activeAvailableAccessPointIndicator = $activeAvailableAccessPointIndicator;

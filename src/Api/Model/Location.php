@@ -15,32 +15,32 @@ class Location extends \ArrayObject
     /**
      * 
      *
-     * @var Address
+     * @var Address|null
      */
     protected $address;
     /**
      * slic
      *
-     * @var string
+     * @var string|null
      */
     protected $slic;
     /**
      * 
      *
-     * @return Address
+     * @return Address|null
      */
-    public function getAddress() : Address
+    public function getAddress() : ?Address
     {
         return $this->address;
     }
     /**
      * 
      *
-     * @param Address $address
+     * @param Address|null $address
      *
      * @return self
      */
-    public function setAddress(Address $address) : self
+    public function setAddress(?Address $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -49,20 +49,20 @@ class Location extends \ArrayObject
     /**
      * slic
      *
-     * @return string
+     * @return string|null
      */
-    public function getSlic() : string
+    public function getSlic() : ?string
     {
         return $this->slic;
     }
     /**
      * slic
      *
-     * @param string $slic
+     * @param string|null $slic
      *
      * @return self
      */
-    public function setSlic(string $slic) : self
+    public function setSlic(?string $slic) : self
     {
         $this->initialized['slic'] = true;
         $this->slic = $slic;

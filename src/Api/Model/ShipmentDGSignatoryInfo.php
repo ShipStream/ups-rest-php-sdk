@@ -17,26 +17,26 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     
     Note: The name of person or department he/she is employed with, are both acceptable.
     *
-    * @var string
+    * @var string|null
     */
     protected $name;
     /**
     * Title of the person signing the declaration.
     Note: The title of the person or department he/she is employed with, are both acceptable.
     *
-    * @var string
+    * @var string|null
     */
     protected $title;
     /**
      * The city of the Signatory.
      *
-     * @var string
+     * @var string|null
      */
     protected $place;
     /**
      * Date of signing the declaration form.  Valid format is YYYYMMDD.
      *
-     * @var string
+     * @var string|null
      */
     protected $date;
     /**
@@ -45,13 +45,13 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     02 = Package level                                           
      Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
     *
-    * @var string
+    * @var string|null
     */
     protected $shipperDeclaration;
     /**
      * Dangerous Goods Paper Upload Only Indicator. DG Paper will not be returned in response if UploadOnlyIndicator present.
      *
-     * @var string
+     * @var string|null
      */
     protected $uploadOnlyIndicator;
     /**
@@ -59,9 +59,9 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     
     Note: The name of person or department he/she is employed with, are both acceptable.
     *
-    * @return string
+    * @return string|null
     */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -70,11 +70,11 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     
     Note: The name of person or department he/she is employed with, are both acceptable.
     *
-    * @param string $name
+    * @param string|null $name
     *
     * @return self
     */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -84,9 +84,9 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     * Title of the person signing the declaration.
     Note: The title of the person or department he/she is employed with, are both acceptable.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTitle() : string
+    public function getTitle() : ?string
     {
         return $this->title;
     }
@@ -94,11 +94,11 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     * Title of the person signing the declaration.
     Note: The title of the person or department he/she is employed with, are both acceptable.
     *
-    * @param string $title
+    * @param string|null $title
     *
     * @return self
     */
-    public function setTitle(string $title) : self
+    public function setTitle(?string $title) : self
     {
         $this->initialized['title'] = true;
         $this->title = $title;
@@ -107,20 +107,20 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     /**
      * The city of the Signatory.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPlace() : string
+    public function getPlace() : ?string
     {
         return $this->place;
     }
     /**
      * The city of the Signatory.
      *
-     * @param string $place
+     * @param string|null $place
      *
      * @return self
      */
-    public function setPlace(string $place) : self
+    public function setPlace(?string $place) : self
     {
         $this->initialized['place'] = true;
         $this->place = $place;
@@ -129,20 +129,20 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     /**
      * Date of signing the declaration form.  Valid format is YYYYMMDD.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDate() : string
+    public function getDate() : ?string
     {
         return $this->date;
     }
     /**
      * Date of signing the declaration form.  Valid format is YYYYMMDD.
      *
-     * @param string $date
+     * @param string|null $date
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(?string $date) : self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -154,9 +154,9 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     02 = Package level                                           
      Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipperDeclaration() : string
+    public function getShipperDeclaration() : ?string
     {
         return $this->shipperDeclaration;
     }
@@ -166,11 +166,11 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     02 = Package level                                           
      Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
     *
-    * @param string $shipperDeclaration
+    * @param string|null $shipperDeclaration
     *
     * @return self
     */
-    public function setShipperDeclaration(string $shipperDeclaration) : self
+    public function setShipperDeclaration(?string $shipperDeclaration) : self
     {
         $this->initialized['shipperDeclaration'] = true;
         $this->shipperDeclaration = $shipperDeclaration;
@@ -179,20 +179,20 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     /**
      * Dangerous Goods Paper Upload Only Indicator. DG Paper will not be returned in response if UploadOnlyIndicator present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUploadOnlyIndicator() : string
+    public function getUploadOnlyIndicator() : ?string
     {
         return $this->uploadOnlyIndicator;
     }
     /**
      * Dangerous Goods Paper Upload Only Indicator. DG Paper will not be returned in response if UploadOnlyIndicator present.
      *
-     * @param string $uploadOnlyIndicator
+     * @param string|null $uploadOnlyIndicator
      *
      * @return self
      */
-    public function setUploadOnlyIndicator(string $uploadOnlyIndicator) : self
+    public function setUploadOnlyIndicator(?string $uploadOnlyIndicator) : self
     {
         $this->initialized['uploadOnlyIndicator'] = true;
         $this->uploadOnlyIndicator = $uploadOnlyIndicator;

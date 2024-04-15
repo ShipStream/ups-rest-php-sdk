@@ -15,32 +15,32 @@ class DDTCInformationUnitOfMeasurement extends \ArrayObject
     /**
      * Code of the billing weight measurement units. Values are: KGS or LBS.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the billing weight measurement units.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Code of the billing weight measurement units. Values are: KGS or LBS.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code of the billing weight measurement units. Values are: KGS or LBS.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class DDTCInformationUnitOfMeasurement extends \ArrayObject
     /**
      * Description of the billing weight measurement units.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the billing weight measurement units.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

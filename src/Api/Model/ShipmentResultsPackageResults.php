@@ -16,26 +16,26 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * Package 1Z number.  
     For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).  Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var string
+    * @var string|null
     */
     protected $trackingNumber;
     /**
      * Container for returned Rate Modifier information. Applies only if SubVersion is 2205 or greater.
      *
-     * @var PackageResultsRateModifier
+     * @var PackageResultsRateModifier|null
      */
     protected $rateModifier;
     /**
     * Base Service Charge container.
     Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
     *
-    * @var PackageResultsBaseServiceCharge
+    * @var PackageResultsBaseServiceCharge|null
     */
     protected $baseServiceCharge;
     /**
      * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico. Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @var PackageResultsServiceOptionsCharges
+     * @var PackageResultsServiceOptionsCharges|null
      */
     protected $serviceOptionsCharges;
     /**
@@ -52,13 +52,13 @@ class ShipmentResultsPackageResults extends \ArrayObject
     PRL shipments,
     Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var PackageResultsShippingReceipt
+    * @var PackageResultsShippingReceipt|null
     */
     protected $shippingReceipt;
     /**
      * USPSPICNumber is USPS Package Identification; it should be used for tracking Mail Innovations shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $uSPSPICNumber;
     /**
@@ -66,19 +66,19 @@ class ShipmentResultsPackageResults extends \ArrayObject
     Not applicable as of Jan 2015. 
     Mail Innovations shipments US to VI, PR, and GU are not considered international.
     *
-    * @var string
+    * @var string|null
     */
     protected $cN22Number;
     /**
      * 
      *
-     * @var PackageResultsAccessorial[]
+     * @var list<PackageResultsAccessorial>|null
      */
     protected $accessorial;
     /**
      * SimpleRate will be returned if Simple Rate  present in request
      *
-     * @var PackageResultsSimpleRate
+     * @var PackageResultsSimpleRate|null
      */
     protected $simpleRate;
     /**
@@ -93,7 +93,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * 
      *
-     * @var PackageResultsItemizedCharges[]
+     * @var list<PackageResultsItemizedCharges>|null
      */
     protected $itemizedCharges;
     /**
@@ -101,16 +101,16 @@ class ShipmentResultsPackageResults extends \ArrayObject
     1) Subversion is greater than or equal to 1607
     2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
     *
-    * @var PackageResultsNegotiatedCharges
+    * @var PackageResultsNegotiatedCharges|null
     */
     protected $negotiatedCharges;
     /**
     * Package 1Z number.  
     For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).  Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
@@ -118,11 +118,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * Package 1Z number.  
     For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).  Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param string $trackingNumber
+    * @param string|null $trackingNumber
     *
     * @return self
     */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -131,20 +131,20 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * Container for returned Rate Modifier information. Applies only if SubVersion is 2205 or greater.
      *
-     * @return PackageResultsRateModifier
+     * @return PackageResultsRateModifier|null
      */
-    public function getRateModifier() : PackageResultsRateModifier
+    public function getRateModifier() : ?PackageResultsRateModifier
     {
         return $this->rateModifier;
     }
     /**
      * Container for returned Rate Modifier information. Applies only if SubVersion is 2205 or greater.
      *
-     * @param PackageResultsRateModifier $rateModifier
+     * @param PackageResultsRateModifier|null $rateModifier
      *
      * @return self
      */
-    public function setRateModifier(PackageResultsRateModifier $rateModifier) : self
+    public function setRateModifier(?PackageResultsRateModifier $rateModifier) : self
     {
         $this->initialized['rateModifier'] = true;
         $this->rateModifier = $rateModifier;
@@ -154,9 +154,9 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * Base Service Charge container.
     Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
     *
-    * @return PackageResultsBaseServiceCharge
+    * @return PackageResultsBaseServiceCharge|null
     */
-    public function getBaseServiceCharge() : PackageResultsBaseServiceCharge
+    public function getBaseServiceCharge() : ?PackageResultsBaseServiceCharge
     {
         return $this->baseServiceCharge;
     }
@@ -164,11 +164,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * Base Service Charge container.
     Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
     *
-    * @param PackageResultsBaseServiceCharge $baseServiceCharge
+    * @param PackageResultsBaseServiceCharge|null $baseServiceCharge
     *
     * @return self
     */
-    public function setBaseServiceCharge(PackageResultsBaseServiceCharge $baseServiceCharge) : self
+    public function setBaseServiceCharge(?PackageResultsBaseServiceCharge $baseServiceCharge) : self
     {
         $this->initialized['baseServiceCharge'] = true;
         $this->baseServiceCharge = $baseServiceCharge;
@@ -177,20 +177,20 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico. Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @return PackageResultsServiceOptionsCharges
+     * @return PackageResultsServiceOptionsCharges|null
      */
-    public function getServiceOptionsCharges() : PackageResultsServiceOptionsCharges
+    public function getServiceOptionsCharges() : ?PackageResultsServiceOptionsCharges
     {
         return $this->serviceOptionsCharges;
     }
     /**
      * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico. Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @param PackageResultsServiceOptionsCharges $serviceOptionsCharges
+     * @param PackageResultsServiceOptionsCharges|null $serviceOptionsCharges
      *
      * @return self
      */
-    public function setServiceOptionsCharges(PackageResultsServiceOptionsCharges $serviceOptionsCharges) : self
+    public function setServiceOptionsCharges(?PackageResultsServiceOptionsCharges $serviceOptionsCharges) : self
     {
         $this->initialized['serviceOptionsCharges'] = true;
         $this->serviceOptionsCharges = $serviceOptionsCharges;
@@ -229,9 +229,9 @@ class ShipmentResultsPackageResults extends \ArrayObject
     PRL shipments,
     Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return PackageResultsShippingReceipt
+    * @return PackageResultsShippingReceipt|null
     */
-    public function getShippingReceipt() : PackageResultsShippingReceipt
+    public function getShippingReceipt() : ?PackageResultsShippingReceipt
     {
         return $this->shippingReceipt;
     }
@@ -240,11 +240,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
     PRL shipments,
     Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param PackageResultsShippingReceipt $shippingReceipt
+    * @param PackageResultsShippingReceipt|null $shippingReceipt
     *
     * @return self
     */
-    public function setShippingReceipt(PackageResultsShippingReceipt $shippingReceipt) : self
+    public function setShippingReceipt(?PackageResultsShippingReceipt $shippingReceipt) : self
     {
         $this->initialized['shippingReceipt'] = true;
         $this->shippingReceipt = $shippingReceipt;
@@ -253,20 +253,20 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * USPSPICNumber is USPS Package Identification; it should be used for tracking Mail Innovations shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUSPSPICNumber() : string
+    public function getUSPSPICNumber() : ?string
     {
         return $this->uSPSPICNumber;
     }
     /**
      * USPSPICNumber is USPS Package Identification; it should be used for tracking Mail Innovations shipments.
      *
-     * @param string $uSPSPICNumber
+     * @param string|null $uSPSPICNumber
      *
      * @return self
      */
-    public function setUSPSPICNumber(string $uSPSPICNumber) : self
+    public function setUSPSPICNumber(?string $uSPSPICNumber) : self
     {
         $this->initialized['uSPSPICNumber'] = true;
         $this->uSPSPICNumber = $uSPSPICNumber;
@@ -277,9 +277,9 @@ class ShipmentResultsPackageResults extends \ArrayObject
     Not applicable as of Jan 2015. 
     Mail Innovations shipments US to VI, PR, and GU are not considered international.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCN22Number() : string
+    public function getCN22Number() : ?string
     {
         return $this->cN22Number;
     }
@@ -288,11 +288,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
     Not applicable as of Jan 2015. 
     Mail Innovations shipments US to VI, PR, and GU are not considered international.
     *
-    * @param string $cN22Number
+    * @param string|null $cN22Number
     *
     * @return self
     */
-    public function setCN22Number(string $cN22Number) : self
+    public function setCN22Number(?string $cN22Number) : self
     {
         $this->initialized['cN22Number'] = true;
         $this->cN22Number = $cN22Number;
@@ -301,20 +301,20 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * 
      *
-     * @return PackageResultsAccessorial[]
+     * @return list<PackageResultsAccessorial>|null
      */
-    public function getAccessorial() : array
+    public function getAccessorial() : ?array
     {
         return $this->accessorial;
     }
     /**
      * 
      *
-     * @param PackageResultsAccessorial[] $accessorial
+     * @param list<PackageResultsAccessorial>|null $accessorial
      *
      * @return self
      */
-    public function setAccessorial(array $accessorial) : self
+    public function setAccessorial(?array $accessorial) : self
     {
         $this->initialized['accessorial'] = true;
         $this->accessorial = $accessorial;
@@ -323,20 +323,20 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * SimpleRate will be returned if Simple Rate  present in request
      *
-     * @return PackageResultsSimpleRate
+     * @return PackageResultsSimpleRate|null
      */
-    public function getSimpleRate() : PackageResultsSimpleRate
+    public function getSimpleRate() : ?PackageResultsSimpleRate
     {
         return $this->simpleRate;
     }
     /**
      * SimpleRate will be returned if Simple Rate  present in request
      *
-     * @param PackageResultsSimpleRate $simpleRate
+     * @param PackageResultsSimpleRate|null $simpleRate
      *
      * @return self
      */
-    public function setSimpleRate(PackageResultsSimpleRate $simpleRate) : self
+    public function setSimpleRate(?PackageResultsSimpleRate $simpleRate) : self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -373,20 +373,20 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
      * 
      *
-     * @return PackageResultsItemizedCharges[]
+     * @return list<PackageResultsItemizedCharges>|null
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges() : ?array
     {
         return $this->itemizedCharges;
     }
     /**
      * 
      *
-     * @param PackageResultsItemizedCharges[] $itemizedCharges
+     * @param list<PackageResultsItemizedCharges>|null $itemizedCharges
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(?array $itemizedCharges) : self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -397,9 +397,9 @@ class ShipmentResultsPackageResults extends \ArrayObject
     1) Subversion is greater than or equal to 1607
     2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
     *
-    * @return PackageResultsNegotiatedCharges
+    * @return PackageResultsNegotiatedCharges|null
     */
-    public function getNegotiatedCharges() : PackageResultsNegotiatedCharges
+    public function getNegotiatedCharges() : ?PackageResultsNegotiatedCharges
     {
         return $this->negotiatedCharges;
     }
@@ -408,11 +408,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
     1) Subversion is greater than or equal to 1607
     2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
     *
-    * @param PackageResultsNegotiatedCharges $negotiatedCharges
+    * @param PackageResultsNegotiatedCharges|null $negotiatedCharges
     *
     * @return self
     */
-    public function setNegotiatedCharges(PackageResultsNegotiatedCharges $negotiatedCharges) : self
+    public function setNegotiatedCharges(?PackageResultsNegotiatedCharges $negotiatedCharges) : self
     {
         $this->initialized['negotiatedCharges'] = true;
         $this->negotiatedCharges = $negotiatedCharges;

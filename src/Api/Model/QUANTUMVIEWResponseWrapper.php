@@ -15,26 +15,26 @@ class QUANTUMVIEWResponseWrapper extends \ArrayObject
     /**
      * Container for QuantumView response information.
      *
-     * @var QuantumViewResponse
+     * @var QuantumViewResponse|null
      */
     protected $quantumViewResponse;
     /**
      * Container for QuantumView response information.
      *
-     * @return QuantumViewResponse
+     * @return QuantumViewResponse|null
      */
-    public function getQuantumViewResponse() : QuantumViewResponse
+    public function getQuantumViewResponse() : ?QuantumViewResponse
     {
         return $this->quantumViewResponse;
     }
     /**
      * Container for QuantumView response information.
      *
-     * @param QuantumViewResponse $quantumViewResponse
+     * @param QuantumViewResponse|null $quantumViewResponse
      *
      * @return self
      */
-    public function setQuantumViewResponse(QuantumViewResponse $quantumViewResponse) : self
+    public function setQuantumViewResponse(?QuantumViewResponse $quantumViewResponse) : self
     {
         $this->initialized['quantumViewResponse'] = true;
         $this->quantumViewResponse = $quantumViewResponse;

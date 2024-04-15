@@ -61,19 +61,28 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('currencyCode', $data)) {
+            if (\array_key_exists('currencyCode', $data) && $data['currencyCode'] !== null) {
                 $object->setCurrencyCode($data['currencyCode']);
                 unset($data['currencyCode']);
             }
-            if (\array_key_exists('importCountryCode', $data)) {
+            elseif (\array_key_exists('currencyCode', $data) && $data['currencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] !== null) {
                 $object->setImportCountryCode($data['importCountryCode']);
                 unset($data['importCountryCode']);
             }
-            if (\array_key_exists('id', $data)) {
+            elseif (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] === null) {
+                $object->setImportCountryCode(null);
+            }
+            if (\array_key_exists('id', $data) && $data['id'] !== null) {
                 $object->setId($data['id']);
                 unset($data['id']);
             }
-            if (\array_key_exists('brokerageFeeItems', $data)) {
+            elseif (\array_key_exists('id', $data) && $data['id'] === null) {
+                $object->setId(null);
+            }
+            if (\array_key_exists('brokerageFeeItems', $data) && $data['brokerageFeeItems'] !== null) {
                 $values = [];
                 foreach ($data['brokerageFeeItems'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems', 'json', $context);
@@ -81,35 +90,59 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setBrokerageFeeItems($values);
                 unset($data['brokerageFeeItems']);
             }
-            if (\array_key_exists('totalBrokerageFees', $data)) {
+            elseif (\array_key_exists('brokerageFeeItems', $data) && $data['brokerageFeeItems'] === null) {
+                $object->setBrokerageFeeItems(null);
+            }
+            if (\array_key_exists('totalBrokerageFees', $data) && $data['totalBrokerageFees'] !== null) {
                 $object->setTotalBrokerageFees($data['totalBrokerageFees']);
                 unset($data['totalBrokerageFees']);
             }
-            if (\array_key_exists('totalDuties', $data)) {
+            elseif (\array_key_exists('totalBrokerageFees', $data) && $data['totalBrokerageFees'] === null) {
+                $object->setTotalBrokerageFees(null);
+            }
+            if (\array_key_exists('totalDuties', $data) && $data['totalDuties'] !== null) {
                 $object->setTotalDuties($data['totalDuties']);
                 unset($data['totalDuties']);
             }
-            if (\array_key_exists('totalCommodityLevelTaxesAndFees', $data)) {
+            elseif (\array_key_exists('totalDuties', $data) && $data['totalDuties'] === null) {
+                $object->setTotalDuties(null);
+            }
+            if (\array_key_exists('totalCommodityLevelTaxesAndFees', $data) && $data['totalCommodityLevelTaxesAndFees'] !== null) {
                 $object->setTotalCommodityLevelTaxesAndFees($data['totalCommodityLevelTaxesAndFees']);
                 unset($data['totalCommodityLevelTaxesAndFees']);
             }
-            if (\array_key_exists('totalShipmentLevelTaxesAndFees', $data)) {
+            elseif (\array_key_exists('totalCommodityLevelTaxesAndFees', $data) && $data['totalCommodityLevelTaxesAndFees'] === null) {
+                $object->setTotalCommodityLevelTaxesAndFees(null);
+            }
+            if (\array_key_exists('totalShipmentLevelTaxesAndFees', $data) && $data['totalShipmentLevelTaxesAndFees'] !== null) {
                 $object->setTotalShipmentLevelTaxesAndFees($data['totalShipmentLevelTaxesAndFees']);
                 unset($data['totalShipmentLevelTaxesAndFees']);
             }
-            if (\array_key_exists('totalVAT', $data)) {
+            elseif (\array_key_exists('totalShipmentLevelTaxesAndFees', $data) && $data['totalShipmentLevelTaxesAndFees'] === null) {
+                $object->setTotalShipmentLevelTaxesAndFees(null);
+            }
+            if (\array_key_exists('totalVAT', $data) && $data['totalVAT'] !== null) {
                 $object->setTotalVAT($data['totalVAT']);
                 unset($data['totalVAT']);
             }
-            if (\array_key_exists('totalDutyAndTax', $data)) {
+            elseif (\array_key_exists('totalVAT', $data) && $data['totalVAT'] === null) {
+                $object->setTotalVAT(null);
+            }
+            if (\array_key_exists('totalDutyAndTax', $data) && $data['totalDutyAndTax'] !== null) {
                 $object->setTotalDutyAndTax($data['totalDutyAndTax']);
                 unset($data['totalDutyAndTax']);
             }
-            if (\array_key_exists('grandTotal', $data)) {
+            elseif (\array_key_exists('totalDutyAndTax', $data) && $data['totalDutyAndTax'] === null) {
+                $object->setTotalDutyAndTax(null);
+            }
+            if (\array_key_exists('grandTotal', $data) && $data['grandTotal'] !== null) {
                 $object->setGrandTotal($data['grandTotal']);
                 unset($data['grandTotal']);
             }
-            if (\array_key_exists('shipmentItems', $data)) {
+            elseif (\array_key_exists('grandTotal', $data) && $data['grandTotal'] === null) {
+                $object->setGrandTotal(null);
+            }
+            if (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] !== null) {
                 $values_1 = [];
                 foreach ($data['shipmentItems'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems', 'json', $context);
@@ -117,21 +150,36 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setShipmentItems($values_1);
                 unset($data['shipmentItems']);
             }
-            if (\array_key_exists('transID', $data)) {
+            elseif (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] === null) {
+                $object->setShipmentItems(null);
+            }
+            if (\array_key_exists('transID', $data) && $data['transID'] !== null) {
                 $object->setTransID($data['transID']);
                 unset($data['transID']);
             }
-            if (\array_key_exists('perfStats', $data)) {
+            elseif (\array_key_exists('transID', $data) && $data['transID'] === null) {
+                $object->setTransID(null);
+            }
+            if (\array_key_exists('perfStats', $data) && $data['perfStats'] !== null) {
                 $object->setPerfStats($this->denormalizer->denormalize($data['perfStats'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipmentPerfStats', 'json', $context));
                 unset($data['perfStats']);
             }
-            if (\array_key_exists('alVersion', $data)) {
+            elseif (\array_key_exists('perfStats', $data) && $data['perfStats'] === null) {
+                $object->setPerfStats(null);
+            }
+            if (\array_key_exists('alVersion', $data) && $data['alVersion'] !== null) {
                 $object->setAlVersion($data['alVersion']);
                 unset($data['alVersion']);
             }
-            if (\array_key_exists('errors', $data)) {
+            elseif (\array_key_exists('alVersion', $data) && $data['alVersion'] === null) {
+                $object->setAlVersion(null);
+            }
+            if (\array_key_exists('errors', $data) && $data['errors'] !== null) {
                 $object->setErrors($this->denormalizer->denormalize($data['errors'], 'ShipStream\\Ups\\Api\\Model\\Errors', 'json', $context));
                 unset($data['errors']);
+            }
+            elseif (\array_key_exists('errors', $data) && $data['errors'] === null) {
+                $object->setErrors(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -238,19 +286,28 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('currencyCode', $data)) {
+            if (\array_key_exists('currencyCode', $data) && $data['currencyCode'] !== null) {
                 $object->setCurrencyCode($data['currencyCode']);
                 unset($data['currencyCode']);
             }
-            if (\array_key_exists('importCountryCode', $data)) {
+            elseif (\array_key_exists('currencyCode', $data) && $data['currencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] !== null) {
                 $object->setImportCountryCode($data['importCountryCode']);
                 unset($data['importCountryCode']);
             }
-            if (\array_key_exists('id', $data)) {
+            elseif (\array_key_exists('importCountryCode', $data) && $data['importCountryCode'] === null) {
+                $object->setImportCountryCode(null);
+            }
+            if (\array_key_exists('id', $data) && $data['id'] !== null) {
                 $object->setId($data['id']);
                 unset($data['id']);
             }
-            if (\array_key_exists('brokerageFeeItems', $data)) {
+            elseif (\array_key_exists('id', $data) && $data['id'] === null) {
+                $object->setId(null);
+            }
+            if (\array_key_exists('brokerageFeeItems', $data) && $data['brokerageFeeItems'] !== null) {
                 $values = [];
                 foreach ($data['brokerageFeeItems'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems', 'json', $context);
@@ -258,35 +315,59 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setBrokerageFeeItems($values);
                 unset($data['brokerageFeeItems']);
             }
-            if (\array_key_exists('totalBrokerageFees', $data)) {
+            elseif (\array_key_exists('brokerageFeeItems', $data) && $data['brokerageFeeItems'] === null) {
+                $object->setBrokerageFeeItems(null);
+            }
+            if (\array_key_exists('totalBrokerageFees', $data) && $data['totalBrokerageFees'] !== null) {
                 $object->setTotalBrokerageFees($data['totalBrokerageFees']);
                 unset($data['totalBrokerageFees']);
             }
-            if (\array_key_exists('totalDuties', $data)) {
+            elseif (\array_key_exists('totalBrokerageFees', $data) && $data['totalBrokerageFees'] === null) {
+                $object->setTotalBrokerageFees(null);
+            }
+            if (\array_key_exists('totalDuties', $data) && $data['totalDuties'] !== null) {
                 $object->setTotalDuties($data['totalDuties']);
                 unset($data['totalDuties']);
             }
-            if (\array_key_exists('totalCommodityLevelTaxesAndFees', $data)) {
+            elseif (\array_key_exists('totalDuties', $data) && $data['totalDuties'] === null) {
+                $object->setTotalDuties(null);
+            }
+            if (\array_key_exists('totalCommodityLevelTaxesAndFees', $data) && $data['totalCommodityLevelTaxesAndFees'] !== null) {
                 $object->setTotalCommodityLevelTaxesAndFees($data['totalCommodityLevelTaxesAndFees']);
                 unset($data['totalCommodityLevelTaxesAndFees']);
             }
-            if (\array_key_exists('totalShipmentLevelTaxesAndFees', $data)) {
+            elseif (\array_key_exists('totalCommodityLevelTaxesAndFees', $data) && $data['totalCommodityLevelTaxesAndFees'] === null) {
+                $object->setTotalCommodityLevelTaxesAndFees(null);
+            }
+            if (\array_key_exists('totalShipmentLevelTaxesAndFees', $data) && $data['totalShipmentLevelTaxesAndFees'] !== null) {
                 $object->setTotalShipmentLevelTaxesAndFees($data['totalShipmentLevelTaxesAndFees']);
                 unset($data['totalShipmentLevelTaxesAndFees']);
             }
-            if (\array_key_exists('totalVAT', $data)) {
+            elseif (\array_key_exists('totalShipmentLevelTaxesAndFees', $data) && $data['totalShipmentLevelTaxesAndFees'] === null) {
+                $object->setTotalShipmentLevelTaxesAndFees(null);
+            }
+            if (\array_key_exists('totalVAT', $data) && $data['totalVAT'] !== null) {
                 $object->setTotalVAT($data['totalVAT']);
                 unset($data['totalVAT']);
             }
-            if (\array_key_exists('totalDutyAndTax', $data)) {
+            elseif (\array_key_exists('totalVAT', $data) && $data['totalVAT'] === null) {
+                $object->setTotalVAT(null);
+            }
+            if (\array_key_exists('totalDutyAndTax', $data) && $data['totalDutyAndTax'] !== null) {
                 $object->setTotalDutyAndTax($data['totalDutyAndTax']);
                 unset($data['totalDutyAndTax']);
             }
-            if (\array_key_exists('grandTotal', $data)) {
+            elseif (\array_key_exists('totalDutyAndTax', $data) && $data['totalDutyAndTax'] === null) {
+                $object->setTotalDutyAndTax(null);
+            }
+            if (\array_key_exists('grandTotal', $data) && $data['grandTotal'] !== null) {
                 $object->setGrandTotal($data['grandTotal']);
                 unset($data['grandTotal']);
             }
-            if (\array_key_exists('shipmentItems', $data)) {
+            elseif (\array_key_exists('grandTotal', $data) && $data['grandTotal'] === null) {
+                $object->setGrandTotal(null);
+            }
+            if (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] !== null) {
                 $values_1 = [];
                 foreach ($data['shipmentItems'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems', 'json', $context);
@@ -294,21 +375,36 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setShipmentItems($values_1);
                 unset($data['shipmentItems']);
             }
-            if (\array_key_exists('transID', $data)) {
+            elseif (\array_key_exists('shipmentItems', $data) && $data['shipmentItems'] === null) {
+                $object->setShipmentItems(null);
+            }
+            if (\array_key_exists('transID', $data) && $data['transID'] !== null) {
                 $object->setTransID($data['transID']);
                 unset($data['transID']);
             }
-            if (\array_key_exists('perfStats', $data)) {
+            elseif (\array_key_exists('transID', $data) && $data['transID'] === null) {
+                $object->setTransID(null);
+            }
+            if (\array_key_exists('perfStats', $data) && $data['perfStats'] !== null) {
                 $object->setPerfStats($this->denormalizer->denormalize($data['perfStats'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipmentPerfStats', 'json', $context));
                 unset($data['perfStats']);
             }
-            if (\array_key_exists('alVersion', $data)) {
+            elseif (\array_key_exists('perfStats', $data) && $data['perfStats'] === null) {
+                $object->setPerfStats(null);
+            }
+            if (\array_key_exists('alVersion', $data) && $data['alVersion'] !== null) {
                 $object->setAlVersion($data['alVersion']);
                 unset($data['alVersion']);
             }
-            if (\array_key_exists('errors', $data)) {
+            elseif (\array_key_exists('alVersion', $data) && $data['alVersion'] === null) {
+                $object->setAlVersion(null);
+            }
+            if (\array_key_exists('errors', $data) && $data['errors'] !== null) {
                 $object->setErrors($this->denormalizer->denormalize($data['errors'], 'ShipStream\\Ups\\Api\\Model\\Errors', 'json', $context));
                 unset($data['errors']);
+            }
+            elseif (\array_key_exists('errors', $data) && $data['errors'] === null) {
+                $object->setErrors(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

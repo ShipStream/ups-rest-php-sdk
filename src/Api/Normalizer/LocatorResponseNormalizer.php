@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('Geocode', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('Geocode', $data) && $data['Geocode'] !== null) {
                 $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponseGeocode', 'json', $context));
                 unset($data['Geocode']);
             }
-            if (\array_key_exists('SearchResults', $data)) {
+            elseif (\array_key_exists('Geocode', $data) && $data['Geocode'] === null) {
+                $object->setGeocode(null);
+            }
+            if (\array_key_exists('SearchResults', $data) && $data['SearchResults'] !== null) {
                 $object->setSearchResults($this->denormalizer->denormalize($data['SearchResults'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults', 'json', $context));
                 unset($data['SearchResults']);
             }
-            if (\array_key_exists('AllowAllConfidenceLevels', $data)) {
+            elseif (\array_key_exists('SearchResults', $data) && $data['SearchResults'] === null) {
+                $object->setSearchResults(null);
+            }
+            if (\array_key_exists('AllowAllConfidenceLevels', $data) && $data['AllowAllConfidenceLevels'] !== null) {
                 $object->setAllowAllConfidenceLevels($data['AllowAllConfidenceLevels']);
                 unset($data['AllowAllConfidenceLevels']);
+            }
+            elseif (\array_key_exists('AllowAllConfidenceLevels', $data) && $data['AllowAllConfidenceLevels'] === null) {
+                $object->setAllowAllConfidenceLevels(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -114,21 +126,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('Geocode', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('Geocode', $data) && $data['Geocode'] !== null) {
                 $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponseGeocode', 'json', $context));
                 unset($data['Geocode']);
             }
-            if (\array_key_exists('SearchResults', $data)) {
+            elseif (\array_key_exists('Geocode', $data) && $data['Geocode'] === null) {
+                $object->setGeocode(null);
+            }
+            if (\array_key_exists('SearchResults', $data) && $data['SearchResults'] !== null) {
                 $object->setSearchResults($this->denormalizer->denormalize($data['SearchResults'], 'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults', 'json', $context));
                 unset($data['SearchResults']);
             }
-            if (\array_key_exists('AllowAllConfidenceLevels', $data)) {
+            elseif (\array_key_exists('SearchResults', $data) && $data['SearchResults'] === null) {
+                $object->setSearchResults(null);
+            }
+            if (\array_key_exists('AllowAllConfidenceLevels', $data) && $data['AllowAllConfidenceLevels'] !== null) {
                 $object->setAllowAllConfidenceLevels($data['AllowAllConfidenceLevels']);
                 unset($data['AllowAllConfidenceLevels']);
+            }
+            elseif (\array_key_exists('AllowAllConfidenceLevels', $data) && $data['AllowAllConfidenceLevels'] === null) {
+                $object->setAllowAllConfidenceLevels(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

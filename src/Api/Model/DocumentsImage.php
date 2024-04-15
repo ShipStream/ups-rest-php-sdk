@@ -15,38 +15,38 @@ class DocumentsImage extends \ArrayObject
     /**
      * Image Type Container.
      *
-     * @var ImageType
+     * @var ImageType|null
      */
     protected $type;
     /**
      * Base 64 encoded graphic image.
      *
-     * @var string
+     * @var string|null
      */
     protected $graphicImage;
     /**
      * ImageFormat Container.
      *
-     * @var ImageFormat
+     * @var ImageFormat|null
      */
     protected $format;
     /**
      * Image Type Container.
      *
-     * @return ImageType
+     * @return ImageType|null
      */
-    public function getType() : ImageType
+    public function getType() : ?ImageType
     {
         return $this->type;
     }
     /**
      * Image Type Container.
      *
-     * @param ImageType $type
+     * @param ImageType|null $type
      *
      * @return self
      */
-    public function setType(ImageType $type) : self
+    public function setType(?ImageType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -55,20 +55,20 @@ class DocumentsImage extends \ArrayObject
     /**
      * Base 64 encoded graphic image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage() : ?string
     {
         return $this->graphicImage;
     }
     /**
      * Base 64 encoded graphic image.
      *
-     * @param string $graphicImage
+     * @param string|null $graphicImage
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(?string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;
@@ -77,20 +77,20 @@ class DocumentsImage extends \ArrayObject
     /**
      * ImageFormat Container.
      *
-     * @return ImageFormat
+     * @return ImageFormat|null
      */
-    public function getFormat() : ImageFormat
+    public function getFormat() : ?ImageFormat
     {
         return $this->format;
     }
     /**
      * ImageFormat Container.
      *
-     * @param ImageFormat $format
+     * @param ImageFormat|null $format
      *
      * @return self
      */
-    public function setFormat(ImageFormat $format) : self
+    public function setFormat(?ImageFormat $format) : self
     {
         $this->initialized['format'] = true;
         $this->format = $format;

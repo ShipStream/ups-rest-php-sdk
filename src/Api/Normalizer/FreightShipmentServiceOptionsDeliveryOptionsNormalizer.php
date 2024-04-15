@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CallBeforeDeliveryIndicator', $data)) {
+            if (\array_key_exists('CallBeforeDeliveryIndicator', $data) && $data['CallBeforeDeliveryIndicator'] !== null) {
                 $object->setCallBeforeDeliveryIndicator($data['CallBeforeDeliveryIndicator']);
                 unset($data['CallBeforeDeliveryIndicator']);
             }
-            if (\array_key_exists('HolidayDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('CallBeforeDeliveryIndicator', $data) && $data['CallBeforeDeliveryIndicator'] === null) {
+                $object->setCallBeforeDeliveryIndicator(null);
+            }
+            if (\array_key_exists('HolidayDeliveryIndicator', $data) && $data['HolidayDeliveryIndicator'] !== null) {
                 $object->setHolidayDeliveryIndicator($data['HolidayDeliveryIndicator']);
                 unset($data['HolidayDeliveryIndicator']);
             }
-            if (\array_key_exists('InsideDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('HolidayDeliveryIndicator', $data) && $data['HolidayDeliveryIndicator'] === null) {
+                $object->setHolidayDeliveryIndicator(null);
+            }
+            if (\array_key_exists('InsideDeliveryIndicator', $data) && $data['InsideDeliveryIndicator'] !== null) {
                 $object->setInsideDeliveryIndicator($data['InsideDeliveryIndicator']);
                 unset($data['InsideDeliveryIndicator']);
             }
-            if (\array_key_exists('ResidentialDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('InsideDeliveryIndicator', $data) && $data['InsideDeliveryIndicator'] === null) {
+                $object->setInsideDeliveryIndicator(null);
+            }
+            if (\array_key_exists('ResidentialDeliveryIndicator', $data) && $data['ResidentialDeliveryIndicator'] !== null) {
                 $object->setResidentialDeliveryIndicator($data['ResidentialDeliveryIndicator']);
                 unset($data['ResidentialDeliveryIndicator']);
             }
-            if (\array_key_exists('WeekendDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('ResidentialDeliveryIndicator', $data) && $data['ResidentialDeliveryIndicator'] === null) {
+                $object->setResidentialDeliveryIndicator(null);
+            }
+            if (\array_key_exists('WeekendDeliveryIndicator', $data) && $data['WeekendDeliveryIndicator'] !== null) {
                 $object->setWeekendDeliveryIndicator($data['WeekendDeliveryIndicator']);
                 unset($data['WeekendDeliveryIndicator']);
             }
-            if (\array_key_exists('LiftGateRequiredIndicator', $data)) {
+            elseif (\array_key_exists('WeekendDeliveryIndicator', $data) && $data['WeekendDeliveryIndicator'] === null) {
+                $object->setWeekendDeliveryIndicator(null);
+            }
+            if (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] !== null) {
                 $object->setLiftGateRequiredIndicator($data['LiftGateRequiredIndicator']);
                 unset($data['LiftGateRequiredIndicator']);
             }
-            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] === null) {
+                $object->setLiftGateRequiredIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] !== null) {
                 $object->setLimitedAccessDeliveryIndicator($data['LimitedAccessDeliveryIndicator']);
                 unset($data['LimitedAccessDeliveryIndicator']);
+            }
+            elseif (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] === null) {
+                $object->setLimitedAccessDeliveryIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -141,33 +162,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CallBeforeDeliveryIndicator', $data)) {
+            if (\array_key_exists('CallBeforeDeliveryIndicator', $data) && $data['CallBeforeDeliveryIndicator'] !== null) {
                 $object->setCallBeforeDeliveryIndicator($data['CallBeforeDeliveryIndicator']);
                 unset($data['CallBeforeDeliveryIndicator']);
             }
-            if (\array_key_exists('HolidayDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('CallBeforeDeliveryIndicator', $data) && $data['CallBeforeDeliveryIndicator'] === null) {
+                $object->setCallBeforeDeliveryIndicator(null);
+            }
+            if (\array_key_exists('HolidayDeliveryIndicator', $data) && $data['HolidayDeliveryIndicator'] !== null) {
                 $object->setHolidayDeliveryIndicator($data['HolidayDeliveryIndicator']);
                 unset($data['HolidayDeliveryIndicator']);
             }
-            if (\array_key_exists('InsideDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('HolidayDeliveryIndicator', $data) && $data['HolidayDeliveryIndicator'] === null) {
+                $object->setHolidayDeliveryIndicator(null);
+            }
+            if (\array_key_exists('InsideDeliveryIndicator', $data) && $data['InsideDeliveryIndicator'] !== null) {
                 $object->setInsideDeliveryIndicator($data['InsideDeliveryIndicator']);
                 unset($data['InsideDeliveryIndicator']);
             }
-            if (\array_key_exists('ResidentialDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('InsideDeliveryIndicator', $data) && $data['InsideDeliveryIndicator'] === null) {
+                $object->setInsideDeliveryIndicator(null);
+            }
+            if (\array_key_exists('ResidentialDeliveryIndicator', $data) && $data['ResidentialDeliveryIndicator'] !== null) {
                 $object->setResidentialDeliveryIndicator($data['ResidentialDeliveryIndicator']);
                 unset($data['ResidentialDeliveryIndicator']);
             }
-            if (\array_key_exists('WeekendDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('ResidentialDeliveryIndicator', $data) && $data['ResidentialDeliveryIndicator'] === null) {
+                $object->setResidentialDeliveryIndicator(null);
+            }
+            if (\array_key_exists('WeekendDeliveryIndicator', $data) && $data['WeekendDeliveryIndicator'] !== null) {
                 $object->setWeekendDeliveryIndicator($data['WeekendDeliveryIndicator']);
                 unset($data['WeekendDeliveryIndicator']);
             }
-            if (\array_key_exists('LiftGateRequiredIndicator', $data)) {
+            elseif (\array_key_exists('WeekendDeliveryIndicator', $data) && $data['WeekendDeliveryIndicator'] === null) {
+                $object->setWeekendDeliveryIndicator(null);
+            }
+            if (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] !== null) {
                 $object->setLiftGateRequiredIndicator($data['LiftGateRequiredIndicator']);
                 unset($data['LiftGateRequiredIndicator']);
             }
-            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateRequiredIndicator', $data) && $data['LiftGateRequiredIndicator'] === null) {
+                $object->setLiftGateRequiredIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] !== null) {
                 $object->setLimitedAccessDeliveryIndicator($data['LimitedAccessDeliveryIndicator']);
                 unset($data['LimitedAccessDeliveryIndicator']);
+            }
+            elseif (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] === null) {
+                $object->setLimitedAccessDeliveryIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

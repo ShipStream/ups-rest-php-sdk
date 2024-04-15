@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShippingAvailability', $data)) {
+            if (\array_key_exists('ShippingAvailability', $data) && $data['ShippingAvailability'] !== null) {
                 $object->setShippingAvailability($this->denormalizer->denormalize($data['ShippingAvailability'], 'ShipStream\\Ups\\Api\\Model\\AvailabilityShippingAvailability', 'json', $context));
                 unset($data['ShippingAvailability']);
             }
-            if (\array_key_exists('DCRAvailability', $data)) {
+            elseif (\array_key_exists('ShippingAvailability', $data) && $data['ShippingAvailability'] === null) {
+                $object->setShippingAvailability(null);
+            }
+            if (\array_key_exists('DCRAvailability', $data) && $data['DCRAvailability'] !== null) {
                 $object->setDCRAvailability($this->denormalizer->denormalize($data['DCRAvailability'], 'ShipStream\\Ups\\Api\\Model\\AvailabilityDCRAvailability', 'json', $context));
                 unset($data['DCRAvailability']);
+            }
+            elseif (\array_key_exists('DCRAvailability', $data) && $data['DCRAvailability'] === null) {
+                $object->setDCRAvailability(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShippingAvailability', $data)) {
+            if (\array_key_exists('ShippingAvailability', $data) && $data['ShippingAvailability'] !== null) {
                 $object->setShippingAvailability($this->denormalizer->denormalize($data['ShippingAvailability'], 'ShipStream\\Ups\\Api\\Model\\AvailabilityShippingAvailability', 'json', $context));
                 unset($data['ShippingAvailability']);
             }
-            if (\array_key_exists('DCRAvailability', $data)) {
+            elseif (\array_key_exists('ShippingAvailability', $data) && $data['ShippingAvailability'] === null) {
+                $object->setShippingAvailability(null);
+            }
+            if (\array_key_exists('DCRAvailability', $data) && $data['DCRAvailability'] !== null) {
                 $object->setDCRAvailability($this->denormalizer->denormalize($data['DCRAvailability'], 'ShipStream\\Ups\\Api\\Model\\AvailabilityDCRAvailability', 'json', $context));
                 unset($data['DCRAvailability']);
+            }
+            elseif (\array_key_exists('DCRAvailability', $data) && $data['DCRAvailability'] === null) {
+                $object->setDCRAvailability(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

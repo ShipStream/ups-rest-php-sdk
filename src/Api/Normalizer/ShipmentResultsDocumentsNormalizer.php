@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Image', $data)) {
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $values = [];
                 foreach ($data['Image'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DocumentsImage', 'json', $context);
@@ -48,13 +48,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setImage($values);
                 unset($data['Image']);
             }
-            if (\array_key_exists('Forms', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('Forms', $data) && $data['Forms'] !== null) {
                 $values_1 = [];
                 foreach ($data['Forms'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\DocumentsForms', 'json', $context);
                 }
                 $object->setForms($values_1);
                 unset($data['Forms']);
+            }
+            elseif (\array_key_exists('Forms', $data) && $data['Forms'] === null) {
+                $object->setForms(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -122,7 +128,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Image', $data)) {
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $values = [];
                 foreach ($data['Image'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DocumentsImage', 'json', $context);
@@ -130,13 +136,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setImage($values);
                 unset($data['Image']);
             }
-            if (\array_key_exists('Forms', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('Forms', $data) && $data['Forms'] !== null) {
                 $values_1 = [];
                 foreach ($data['Forms'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\DocumentsForms', 'json', $context);
                 }
                 $object->setForms($values_1);
                 unset($data['Forms']);
+            }
+            elseif (\array_key_exists('Forms', $data) && $data['Forms'] === null) {
+                $object->setForms(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,56 +15,56 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required if proximitySearchIndicator is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $streetAddress;
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search  Conditionally required if proximitySearchIndicator is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required if proximitySearchIndicator is present and if country or territory is US/CA/IE/HK.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvince;
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search  Conditionally required if proximitySearchIndicator is present and if country or territory has postal code.It does not apply to non-postal countries such as IE and HK.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Origin Search Criteria Container  Required if Proximity SearchIndicator is present.
      *
-     * @var OriginAddressOriginSearchCriteria
+     * @var OriginAddressOriginSearchCriteria|null
      */
     protected $originSearchCriteria;
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required if proximitySearchIndicator is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStreetAddress() : string
+    public function getStreetAddress() : ?string
     {
         return $this->streetAddress;
     }
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required if proximitySearchIndicator is present.
      *
-     * @param string $streetAddress
+     * @param string|null $streetAddress
      *
      * @return self
      */
-    public function setStreetAddress(string $streetAddress) : self
+    public function setStreetAddress(?string $streetAddress) : self
     {
         $this->initialized['streetAddress'] = true;
         $this->streetAddress = $streetAddress;
@@ -73,20 +73,20 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search  Conditionally required if proximitySearchIndicator is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search  Conditionally required if proximitySearchIndicator is present.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -95,20 +95,20 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required if proximitySearchIndicator is present and if country or territory is US/CA/IE/HK.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvince() : string
+    public function getStateProvince() : ?string
     {
         return $this->stateProvince;
     }
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search.  Conditionally required if proximitySearchIndicator is present and if country or territory is US/CA/IE/HK.
      *
-     * @param string $stateProvince
+     * @param string|null $stateProvince
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(?string $stateProvince) : self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -117,20 +117,20 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search  Conditionally required if proximitySearchIndicator is present and if country or territory has postal code.It does not apply to non-postal countries such as IE and HK.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search  Conditionally required if proximitySearchIndicator is present and if country or territory has postal code.It does not apply to non-postal countries such as IE and HK.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -139,20 +139,20 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Indicates the address of the shipper to allow for the nearest Drop off facility Search
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -161,20 +161,20 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
     /**
      * Origin Search Criteria Container  Required if Proximity SearchIndicator is present.
      *
-     * @return OriginAddressOriginSearchCriteria
+     * @return OriginAddressOriginSearchCriteria|null
      */
-    public function getOriginSearchCriteria() : OriginAddressOriginSearchCriteria
+    public function getOriginSearchCriteria() : ?OriginAddressOriginSearchCriteria
     {
         return $this->originSearchCriteria;
     }
     /**
      * Origin Search Criteria Container  Required if Proximity SearchIndicator is present.
      *
-     * @param OriginAddressOriginSearchCriteria $originSearchCriteria
+     * @param OriginAddressOriginSearchCriteria|null $originSearchCriteria
      *
      * @return self
      */
-    public function setOriginSearchCriteria(OriginAddressOriginSearchCriteria $originSearchCriteria) : self
+    public function setOriginSearchCriteria(?OriginAddressOriginSearchCriteria $originSearchCriteria) : self
     {
         $this->initialized['originSearchCriteria'] = true;
         $this->originSearchCriteria = $originSearchCriteria;

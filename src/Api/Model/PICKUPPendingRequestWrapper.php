@@ -15,26 +15,26 @@ class PICKUPPendingRequestWrapper extends \ArrayObject
     /**
      * This request is used to get the pending pickup status.
      *
-     * @var PickupPendingStatusRequest
+     * @var PickupPendingStatusRequest|null
      */
     protected $pickupPendingStatusRequest;
     /**
      * This request is used to get the pending pickup status.
      *
-     * @return PickupPendingStatusRequest
+     * @return PickupPendingStatusRequest|null
      */
-    public function getPickupPendingStatusRequest() : PickupPendingStatusRequest
+    public function getPickupPendingStatusRequest() : ?PickupPendingStatusRequest
     {
         return $this->pickupPendingStatusRequest;
     }
     /**
      * This request is used to get the pending pickup status.
      *
-     * @param PickupPendingStatusRequest $pickupPendingStatusRequest
+     * @param PickupPendingStatusRequest|null $pickupPendingStatusRequest
      *
      * @return self
      */
-    public function setPickupPendingStatusRequest(PickupPendingStatusRequest $pickupPendingStatusRequest) : self
+    public function setPickupPendingStatusRequest(?PickupPendingStatusRequest $pickupPendingStatusRequest) : self
     {
         $this->initialized['pickupPendingStatusRequest'] = true;
         $this->pickupPendingStatusRequest = $pickupPendingStatusRequest;

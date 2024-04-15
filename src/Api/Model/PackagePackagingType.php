@@ -15,32 +15,32 @@ class PackagePackagingType extends \ArrayObject
     /**
      * The code for the UPS packaging type associated with the package.  Valid values: 00 = UNKNOWN  01 = UPS Letter  02 = Package  03 = Tube  04 = Pak  21 = Express Box  24 = 25KG Box  25 = 10KG Box  30 = Pallet  2a = Small Express Box  2b = Medium Express Box 2c = Large Express Box. For FRS rating requests the only valid value is customer supplied packaging "02".
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * A text description of the code for the UPS packaging type associated with the shipment.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The code for the UPS packaging type associated with the package.  Valid values: 00 = UNKNOWN  01 = UPS Letter  02 = Package  03 = Tube  04 = Pak  21 = Express Box  24 = 25KG Box  25 = 10KG Box  30 = Pallet  2a = Small Express Box  2b = Medium Express Box 2c = Large Express Box. For FRS rating requests the only valid value is customer supplied packaging "02".
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The code for the UPS packaging type associated with the package.  Valid values: 00 = UNKNOWN  01 = UPS Letter  02 = Package  03 = Tube  04 = Pak  21 = Express Box  24 = 25KG Box  25 = 10KG Box  30 = Pallet  2a = Small Express Box  2b = Medium Express Box 2c = Large Express Box. For FRS rating requests the only valid value is customer supplied packaging "02".
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class PackagePackagingType extends \ArrayObject
     /**
      * A text description of the code for the UPS packaging type associated with the shipment.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * A text description of the code for the UPS packaging type associated with the shipment.  Length is not validated.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

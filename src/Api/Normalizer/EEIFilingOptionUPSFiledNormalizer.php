@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('POA', $data)) {
+            if (\array_key_exists('POA', $data) && $data['POA'] !== null) {
                 $object->setPOA($this->denormalizer->denormalize($data['POA'], 'ShipStream\\Ups\\Api\\Model\\UPSFiledPOA', 'json', $context));
                 unset($data['POA']);
+            }
+            elseif (\array_key_exists('POA', $data) && $data['POA'] === null) {
+                $object->setPOA(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('POA', $data)) {
+            if (\array_key_exists('POA', $data) && $data['POA'] !== null) {
                 $object->setPOA($this->denormalizer->denormalize($data['POA'], 'ShipStream\\Ups\\Api\\Model\\UPSFiledPOA', 'json', $context));
                 unset($data['POA']);
+            }
+            elseif (\array_key_exists('POA', $data) && $data['POA'] === null) {
+                $object->setPOA(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

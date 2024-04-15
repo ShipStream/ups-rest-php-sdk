@@ -15,32 +15,32 @@ class PreAlertNotificationEMailMessage extends \ArrayObject
     /**
      * EMailAddress where PreAlertNotification is sent.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * This is used for notification when EMailAddress for PreAlertNotification is undeliverable.
      *
-     * @var string
+     * @var string|null
      */
     protected $undeliverableEMailAddress;
     /**
      * EMailAddress where PreAlertNotification is sent.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * EMailAddress where PreAlertNotification is sent.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -49,20 +49,20 @@ class PreAlertNotificationEMailMessage extends \ArrayObject
     /**
      * This is used for notification when EMailAddress for PreAlertNotification is undeliverable.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUndeliverableEMailAddress() : string
+    public function getUndeliverableEMailAddress() : ?string
     {
         return $this->undeliverableEMailAddress;
     }
     /**
      * This is used for notification when EMailAddress for PreAlertNotification is undeliverable.
      *
-     * @param string $undeliverableEMailAddress
+     * @param string|null $undeliverableEMailAddress
      *
      * @return self
      */
-    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress) : self
+    public function setUndeliverableEMailAddress(?string $undeliverableEMailAddress) : self
     {
         $this->initialized['undeliverableEMailAddress'] = true;
         $this->undeliverableEMailAddress = $undeliverableEMailAddress;

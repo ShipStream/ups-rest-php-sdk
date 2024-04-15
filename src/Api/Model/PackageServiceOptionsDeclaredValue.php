@@ -15,38 +15,38 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
     /**
      * Container for Declared Value Type.
      *
-     * @var DeclaredValueType
+     * @var DeclaredValueType|null
      */
     protected $type;
     /**
      * Declared value amount currency type. Defaults to the non-Euro currency used in the shippers country or territory.  Code must represent a currency that is a valid for Shipper country or territory.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * Declared value amount.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * Container for Declared Value Type.
      *
-     * @return DeclaredValueType
+     * @return DeclaredValueType|null
      */
-    public function getType() : DeclaredValueType
+    public function getType() : ?DeclaredValueType
     {
         return $this->type;
     }
     /**
      * Container for Declared Value Type.
      *
-     * @param DeclaredValueType $type
+     * @param DeclaredValueType|null $type
      *
      * @return self
      */
-    public function setType(DeclaredValueType $type) : self
+    public function setType(?DeclaredValueType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -55,20 +55,20 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
     /**
      * Declared value amount currency type. Defaults to the non-Euro currency used in the shippers country or territory.  Code must represent a currency that is a valid for Shipper country or territory.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * Declared value amount currency type. Defaults to the non-Euro currency used in the shippers country or territory.  Code must represent a currency that is a valid for Shipper country or territory.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -77,20 +77,20 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
     /**
      * Declared value amount.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Declared value amount.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

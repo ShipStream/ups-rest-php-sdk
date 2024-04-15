@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Day', $data)) {
+            if (\array_key_exists('Day', $data) && $data['Day'] !== null) {
                 $object->setDay($data['Day']);
                 unset($data['Day']);
             }
-            if (\array_key_exists('OpenHours', $data)) {
+            elseif (\array_key_exists('Day', $data) && $data['Day'] === null) {
+                $object->setDay(null);
+            }
+            if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
                 $object->setOpenHours($data['OpenHours']);
                 unset($data['OpenHours']);
             }
-            if (\array_key_exists('CloseHours', $data)) {
+            elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+                $object->setOpenHours(null);
+            }
+            if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
                 $object->setCloseHours($data['CloseHours']);
                 unset($data['CloseHours']);
             }
-            if (\array_key_exists('LatestDropOffHours', $data)) {
+            elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+                $object->setCloseHours(null);
+            }
+            if (\array_key_exists('LatestDropOffHours', $data) && $data['LatestDropOffHours'] !== null) {
                 $object->setLatestDropOffHours($data['LatestDropOffHours']);
                 unset($data['LatestDropOffHours']);
             }
-            if (\array_key_exists('PrepHours', $data)) {
+            elseif (\array_key_exists('LatestDropOffHours', $data) && $data['LatestDropOffHours'] === null) {
+                $object->setLatestDropOffHours(null);
+            }
+            if (\array_key_exists('PrepHours', $data) && $data['PrepHours'] !== null) {
                 $object->setPrepHours($data['PrepHours']);
                 unset($data['PrepHours']);
             }
-            if (\array_key_exists('ClosedIndicator', $data)) {
+            elseif (\array_key_exists('PrepHours', $data) && $data['PrepHours'] === null) {
+                $object->setPrepHours(null);
+            }
+            if (\array_key_exists('ClosedIndicator', $data) && $data['ClosedIndicator'] !== null) {
                 $object->setClosedIndicator($data['ClosedIndicator']);
                 unset($data['ClosedIndicator']);
             }
-            if (\array_key_exists('Open24HoursIndicator', $data)) {
+            elseif (\array_key_exists('ClosedIndicator', $data) && $data['ClosedIndicator'] === null) {
+                $object->setClosedIndicator(null);
+            }
+            if (\array_key_exists('Open24HoursIndicator', $data) && $data['Open24HoursIndicator'] !== null) {
                 $object->setOpen24HoursIndicator($data['Open24HoursIndicator']);
                 unset($data['Open24HoursIndicator']);
+            }
+            elseif (\array_key_exists('Open24HoursIndicator', $data) && $data['Open24HoursIndicator'] === null) {
+                $object->setOpen24HoursIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -139,33 +160,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Day', $data)) {
+            if (\array_key_exists('Day', $data) && $data['Day'] !== null) {
                 $object->setDay($data['Day']);
                 unset($data['Day']);
             }
-            if (\array_key_exists('OpenHours', $data)) {
+            elseif (\array_key_exists('Day', $data) && $data['Day'] === null) {
+                $object->setDay(null);
+            }
+            if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
                 $object->setOpenHours($data['OpenHours']);
                 unset($data['OpenHours']);
             }
-            if (\array_key_exists('CloseHours', $data)) {
+            elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+                $object->setOpenHours(null);
+            }
+            if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
                 $object->setCloseHours($data['CloseHours']);
                 unset($data['CloseHours']);
             }
-            if (\array_key_exists('LatestDropOffHours', $data)) {
+            elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+                $object->setCloseHours(null);
+            }
+            if (\array_key_exists('LatestDropOffHours', $data) && $data['LatestDropOffHours'] !== null) {
                 $object->setLatestDropOffHours($data['LatestDropOffHours']);
                 unset($data['LatestDropOffHours']);
             }
-            if (\array_key_exists('PrepHours', $data)) {
+            elseif (\array_key_exists('LatestDropOffHours', $data) && $data['LatestDropOffHours'] === null) {
+                $object->setLatestDropOffHours(null);
+            }
+            if (\array_key_exists('PrepHours', $data) && $data['PrepHours'] !== null) {
                 $object->setPrepHours($data['PrepHours']);
                 unset($data['PrepHours']);
             }
-            if (\array_key_exists('ClosedIndicator', $data)) {
+            elseif (\array_key_exists('PrepHours', $data) && $data['PrepHours'] === null) {
+                $object->setPrepHours(null);
+            }
+            if (\array_key_exists('ClosedIndicator', $data) && $data['ClosedIndicator'] !== null) {
                 $object->setClosedIndicator($data['ClosedIndicator']);
                 unset($data['ClosedIndicator']);
             }
-            if (\array_key_exists('Open24HoursIndicator', $data)) {
+            elseif (\array_key_exists('ClosedIndicator', $data) && $data['ClosedIndicator'] === null) {
+                $object->setClosedIndicator(null);
+            }
+            if (\array_key_exists('Open24HoursIndicator', $data) && $data['Open24HoursIndicator'] !== null) {
                 $object->setOpen24HoursIndicator($data['Open24HoursIndicator']);
                 unset($data['Open24HoursIndicator']);
+            }
+            elseif (\array_key_exists('Open24HoursIndicator', $data) && $data['Open24HoursIndicator'] === null) {
+                $object->setOpen24HoursIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

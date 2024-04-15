@@ -15,32 +15,32 @@ class ShipmentResultsDocuments extends \ArrayObject
     /**
      * 
      *
-     * @var DocumentsImage[]
+     * @var list<DocumentsImage>|null
      */
     protected $image;
     /**
      * 
      *
-     * @var DocumentsForms[]
+     * @var list<DocumentsForms>|null
      */
     protected $forms;
     /**
      * 
      *
-     * @return DocumentsImage[]
+     * @return list<DocumentsImage>|null
      */
-    public function getImage() : array
+    public function getImage() : ?array
     {
         return $this->image;
     }
     /**
      * 
      *
-     * @param DocumentsImage[] $image
+     * @param list<DocumentsImage>|null $image
      *
      * @return self
      */
-    public function setImage(array $image) : self
+    public function setImage(?array $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -49,20 +49,20 @@ class ShipmentResultsDocuments extends \ArrayObject
     /**
      * 
      *
-     * @return DocumentsForms[]
+     * @return list<DocumentsForms>|null
      */
-    public function getForms() : array
+    public function getForms() : ?array
     {
         return $this->forms;
     }
     /**
      * 
      *
-     * @param DocumentsForms[] $forms
+     * @param list<DocumentsForms>|null $forms
      *
      * @return self
      */
-    public function setForms(array $forms) : self
+    public function setForms(?array $forms) : self
     {
         $this->initialized['forms'] = true;
         $this->forms = $forms;

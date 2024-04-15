@@ -15,32 +15,32 @@ class ReferenceNumber extends \ArrayObject
     /**
      * number
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * type
      *
-     * @var string
+     * @var string|null
      */
     protected $type;
     /**
      * number
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * number
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -49,20 +49,20 @@ class ReferenceNumber extends \ArrayObject
     /**
      * type
      *
-     * @return string
+     * @return string|null
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
     /**
      * type
      *
-     * @param string $type
+     * @param string|null $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

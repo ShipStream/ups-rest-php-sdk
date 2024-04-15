@@ -15,26 +15,26 @@ class ShipmentServiceOptionsSortingAndSegregating extends \ArrayObject
     /**
      * Quantity of units to be sorted/segregated.
      *
-     * @var string
+     * @var string|null
      */
     protected $quantity;
     /**
      * Quantity of units to be sorted/segregated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuantity() : string
+    public function getQuantity() : ?string
     {
         return $this->quantity;
     }
     /**
      * Quantity of units to be sorted/segregated.
      *
-     * @param string $quantity
+     * @param string|null $quantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(?string $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;

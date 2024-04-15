@@ -19,13 +19,13 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     3 - Delivery City/State.
     1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
     *
-    * @var string
+    * @var string|null
     */
     protected $freightWillCallRequestType;
     /**
      * 
      *
-     * @var FreightWillCallSearchFacilityAddress[]
+     * @var list<FreightWillCallSearchFacilityAddress>|null
      */
     protected $facilityAddress;
     /**
@@ -33,7 +33,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     01-Origin facilities
     02-Destination facilities.
     *
-    * @var string
+    * @var string|null
     */
     protected $originOrDestination;
     /**
@@ -43,7 +43,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     FS-format and search
     NVR-No validation requested.
     *
-    * @var string
+    * @var string|null
     */
     protected $formatPostalCode;
     /**
@@ -56,7 +56,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     6-Friday
     7-Saturday.
     *
-    * @var string
+    * @var string|null
     */
     protected $dayOfWeekCode;
     /**
@@ -66,9 +66,9 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     3 - Delivery City/State.
     1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
     *
-    * @return string
+    * @return string|null
     */
-    public function getFreightWillCallRequestType() : string
+    public function getFreightWillCallRequestType() : ?string
     {
         return $this->freightWillCallRequestType;
     }
@@ -79,11 +79,11 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     3 - Delivery City/State.
     1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
     *
-    * @param string $freightWillCallRequestType
+    * @param string|null $freightWillCallRequestType
     *
     * @return self
     */
-    public function setFreightWillCallRequestType(string $freightWillCallRequestType) : self
+    public function setFreightWillCallRequestType(?string $freightWillCallRequestType) : self
     {
         $this->initialized['freightWillCallRequestType'] = true;
         $this->freightWillCallRequestType = $freightWillCallRequestType;
@@ -92,20 +92,20 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     /**
      * 
      *
-     * @return FreightWillCallSearchFacilityAddress[]
+     * @return list<FreightWillCallSearchFacilityAddress>|null
      */
-    public function getFacilityAddress() : array
+    public function getFacilityAddress() : ?array
     {
         return $this->facilityAddress;
     }
     /**
      * 
      *
-     * @param FreightWillCallSearchFacilityAddress[] $facilityAddress
+     * @param list<FreightWillCallSearchFacilityAddress>|null $facilityAddress
      *
      * @return self
      */
-    public function setFacilityAddress(array $facilityAddress) : self
+    public function setFacilityAddress(?array $facilityAddress) : self
     {
         $this->initialized['facilityAddress'] = true;
         $this->facilityAddress = $facilityAddress;
@@ -116,9 +116,9 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     01-Origin facilities
     02-Destination facilities.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginOrDestination() : string
+    public function getOriginOrDestination() : ?string
     {
         return $this->originOrDestination;
     }
@@ -127,11 +127,11 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     01-Origin facilities
     02-Destination facilities.
     *
-    * @param string $originOrDestination
+    * @param string|null $originOrDestination
     *
     * @return self
     */
-    public function setOriginOrDestination(string $originOrDestination) : self
+    public function setOriginOrDestination(?string $originOrDestination) : self
     {
         $this->initialized['originOrDestination'] = true;
         $this->originOrDestination = $originOrDestination;
@@ -144,9 +144,9 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     FS-format and search
     NVR-No validation requested.
     *
-    * @return string
+    * @return string|null
     */
-    public function getFormatPostalCode() : string
+    public function getFormatPostalCode() : ?string
     {
         return $this->formatPostalCode;
     }
@@ -157,11 +157,11 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     FS-format and search
     NVR-No validation requested.
     *
-    * @param string $formatPostalCode
+    * @param string|null $formatPostalCode
     *
     * @return self
     */
-    public function setFormatPostalCode(string $formatPostalCode) : self
+    public function setFormatPostalCode(?string $formatPostalCode) : self
     {
         $this->initialized['formatPostalCode'] = true;
         $this->formatPostalCode = $formatPostalCode;
@@ -177,9 +177,9 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     6-Friday
     7-Saturday.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDayOfWeekCode() : string
+    public function getDayOfWeekCode() : ?string
     {
         return $this->dayOfWeekCode;
     }
@@ -193,11 +193,11 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     6-Friday
     7-Saturday.
     *
-    * @param string $dayOfWeekCode
+    * @param string|null $dayOfWeekCode
     *
     * @return self
     */
-    public function setDayOfWeekCode(string $dayOfWeekCode) : self
+    public function setDayOfWeekCode(?string $dayOfWeekCode) : self
     {
         $this->initialized['dayOfWeekCode'] = true;
         $this->dayOfWeekCode = $dayOfWeekCode;

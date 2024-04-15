@@ -15,32 +15,32 @@ class CommodityAdjustedWeight extends \ArrayObject
     /**
      * Adjusted weight value for the commodity.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Unit of Measurement container for the Adjusted weight.
      *
-     * @var AdjustedWeightUnitOfMeasurement
+     * @var AdjustedWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Adjusted weight value for the commodity.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Adjusted weight value for the commodity.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -49,20 +49,20 @@ class CommodityAdjustedWeight extends \ArrayObject
     /**
      * Unit of Measurement container for the Adjusted weight.
      *
-     * @return AdjustedWeightUnitOfMeasurement
+     * @return AdjustedWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : AdjustedWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?AdjustedWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Unit of Measurement container for the Adjusted weight.
      *
-     * @param AdjustedWeightUnitOfMeasurement $unitOfMeasurement
+     * @param AdjustedWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(AdjustedWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?AdjustedWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

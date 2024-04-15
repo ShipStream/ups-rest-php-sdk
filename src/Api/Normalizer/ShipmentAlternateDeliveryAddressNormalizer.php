@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('AttentionName', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('AttentionName', $data) && $data['AttentionName'] !== null) {
                 $object->setAttentionName($data['AttentionName']);
                 unset($data['AttentionName']);
             }
-            if (\array_key_exists('UPSAccessPointID', $data)) {
+            elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('UPSAccessPointID', $data) && $data['UPSAccessPointID'] !== null) {
                 $object->setUPSAccessPointID($data['UPSAccessPointID']);
                 unset($data['UPSAccessPointID']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('UPSAccessPointID', $data) && $data['UPSAccessPointID'] === null) {
+                $object->setUPSAccessPointID(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\AlternateDeliveryAddressAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -114,21 +126,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('AttentionName', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('AttentionName', $data) && $data['AttentionName'] !== null) {
                 $object->setAttentionName($data['AttentionName']);
                 unset($data['AttentionName']);
             }
-            if (\array_key_exists('UPSAccessPointID', $data)) {
+            elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('UPSAccessPointID', $data) && $data['UPSAccessPointID'] !== null) {
                 $object->setUPSAccessPointID($data['UPSAccessPointID']);
                 unset($data['UPSAccessPointID']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('UPSAccessPointID', $data) && $data['UPSAccessPointID'] === null) {
+                $object->setUPSAccessPointID(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\AlternateDeliveryAddressAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

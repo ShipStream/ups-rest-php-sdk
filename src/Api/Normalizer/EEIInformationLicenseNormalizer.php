@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('Code', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('LicenseLineValue', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('LicenseLineValue', $data) && $data['LicenseLineValue'] !== null) {
                 $object->setLicenseLineValue($data['LicenseLineValue']);
                 unset($data['LicenseLineValue']);
             }
-            if (\array_key_exists('ECCNNumber', $data)) {
+            elseif (\array_key_exists('LicenseLineValue', $data) && $data['LicenseLineValue'] === null) {
+                $object->setLicenseLineValue(null);
+            }
+            if (\array_key_exists('ECCNNumber', $data) && $data['ECCNNumber'] !== null) {
                 $object->setECCNNumber($data['ECCNNumber']);
                 unset($data['ECCNNumber']);
+            }
+            elseif (\array_key_exists('ECCNNumber', $data) && $data['ECCNNumber'] === null) {
+                $object->setECCNNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('Code', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('LicenseLineValue', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('LicenseLineValue', $data) && $data['LicenseLineValue'] !== null) {
                 $object->setLicenseLineValue($data['LicenseLineValue']);
                 unset($data['LicenseLineValue']);
             }
-            if (\array_key_exists('ECCNNumber', $data)) {
+            elseif (\array_key_exists('LicenseLineValue', $data) && $data['LicenseLineValue'] === null) {
+                $object->setLicenseLineValue(null);
+            }
+            if (\array_key_exists('ECCNNumber', $data) && $data['ECCNNumber'] !== null) {
                 $object->setECCNNumber($data['ECCNNumber']);
                 unset($data['ECCNNumber']);
+            }
+            elseif (\array_key_exists('ECCNNumber', $data) && $data['ECCNNumber'] === null) {
+                $object->setECCNNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

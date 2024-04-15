@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('StreetAddress', $data)) {
+            if (\array_key_exists('StreetAddress', $data) && $data['StreetAddress'] !== null) {
                 $object->setStreetAddress($data['StreetAddress']);
                 unset($data['StreetAddress']);
             }
-            if (\array_key_exists('City', $data)) {
+            elseif (\array_key_exists('StreetAddress', $data) && $data['StreetAddress'] === null) {
+                $object->setStreetAddress(null);
+            }
+            if (\array_key_exists('City', $data) && $data['City'] !== null) {
                 $object->setCity($data['City']);
                 unset($data['City']);
             }
-            if (\array_key_exists('StateProvince', $data)) {
+            elseif (\array_key_exists('City', $data) && $data['City'] === null) {
+                $object->setCity(null);
+            }
+            if (\array_key_exists('StateProvince', $data) && $data['StateProvince'] !== null) {
                 $object->setStateProvince($data['StateProvince']);
                 unset($data['StateProvince']);
             }
-            if (\array_key_exists('PostalCode', $data)) {
+            elseif (\array_key_exists('StateProvince', $data) && $data['StateProvince'] === null) {
+                $object->setStateProvince(null);
+            }
+            if (\array_key_exists('PostalCode', $data) && $data['PostalCode'] !== null) {
                 $object->setPostalCode($data['PostalCode']);
                 unset($data['PostalCode']);
             }
-            if (\array_key_exists('CountryCode', $data)) {
+            elseif (\array_key_exists('PostalCode', $data) && $data['PostalCode'] === null) {
+                $object->setPostalCode(null);
+            }
+            if (\array_key_exists('CountryCode', $data) && $data['CountryCode'] !== null) {
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
             }
-            if (\array_key_exists('OriginSearchCriteria', $data)) {
+            elseif (\array_key_exists('CountryCode', $data) && $data['CountryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('OriginSearchCriteria', $data) && $data['OriginSearchCriteria'] !== null) {
                 $object->setOriginSearchCriteria($this->denormalizer->denormalize($data['OriginSearchCriteria'], 'ShipStream\\Ups\\Api\\Model\\OriginAddressOriginSearchCriteria', 'json', $context));
                 unset($data['OriginSearchCriteria']);
+            }
+            elseif (\array_key_exists('OriginSearchCriteria', $data) && $data['OriginSearchCriteria'] === null) {
+                $object->setOriginSearchCriteria(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -132,29 +150,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('StreetAddress', $data)) {
+            if (\array_key_exists('StreetAddress', $data) && $data['StreetAddress'] !== null) {
                 $object->setStreetAddress($data['StreetAddress']);
                 unset($data['StreetAddress']);
             }
-            if (\array_key_exists('City', $data)) {
+            elseif (\array_key_exists('StreetAddress', $data) && $data['StreetAddress'] === null) {
+                $object->setStreetAddress(null);
+            }
+            if (\array_key_exists('City', $data) && $data['City'] !== null) {
                 $object->setCity($data['City']);
                 unset($data['City']);
             }
-            if (\array_key_exists('StateProvince', $data)) {
+            elseif (\array_key_exists('City', $data) && $data['City'] === null) {
+                $object->setCity(null);
+            }
+            if (\array_key_exists('StateProvince', $data) && $data['StateProvince'] !== null) {
                 $object->setStateProvince($data['StateProvince']);
                 unset($data['StateProvince']);
             }
-            if (\array_key_exists('PostalCode', $data)) {
+            elseif (\array_key_exists('StateProvince', $data) && $data['StateProvince'] === null) {
+                $object->setStateProvince(null);
+            }
+            if (\array_key_exists('PostalCode', $data) && $data['PostalCode'] !== null) {
                 $object->setPostalCode($data['PostalCode']);
                 unset($data['PostalCode']);
             }
-            if (\array_key_exists('CountryCode', $data)) {
+            elseif (\array_key_exists('PostalCode', $data) && $data['PostalCode'] === null) {
+                $object->setPostalCode(null);
+            }
+            if (\array_key_exists('CountryCode', $data) && $data['CountryCode'] !== null) {
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
             }
-            if (\array_key_exists('OriginSearchCriteria', $data)) {
+            elseif (\array_key_exists('CountryCode', $data) && $data['CountryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('OriginSearchCriteria', $data) && $data['OriginSearchCriteria'] !== null) {
                 $object->setOriginSearchCriteria($this->denormalizer->denormalize($data['OriginSearchCriteria'], 'ShipStream\\Ups\\Api\\Model\\OriginAddressOriginSearchCriteria', 'json', $context));
                 unset($data['OriginSearchCriteria']);
+            }
+            elseif (\array_key_exists('OriginSearchCriteria', $data) && $data['OriginSearchCriteria'] === null) {
+                $object->setOriginSearchCriteria(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

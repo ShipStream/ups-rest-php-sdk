@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AvailableIndicator', $data)) {
+            if (\array_key_exists('AvailableIndicator', $data) && $data['AvailableIndicator'] !== null) {
                 $object->setAvailableIndicator($data['AvailableIndicator']);
                 unset($data['AvailableIndicator']);
             }
-            if (\array_key_exists('UnavailableReason', $data)) {
+            elseif (\array_key_exists('AvailableIndicator', $data) && $data['AvailableIndicator'] === null) {
+                $object->setAvailableIndicator(null);
+            }
+            if (\array_key_exists('UnavailableReason', $data) && $data['UnavailableReason'] !== null) {
                 $object->setUnavailableReason($this->denormalizer->denormalize($data['UnavailableReason'], 'ShipStream\\Ups\\Api\\Model\\ShippingAvailabilityUnavailableReason', 'json', $context));
                 unset($data['UnavailableReason']);
+            }
+            elseif (\array_key_exists('UnavailableReason', $data) && $data['UnavailableReason'] === null) {
+                $object->setUnavailableReason(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AvailableIndicator', $data)) {
+            if (\array_key_exists('AvailableIndicator', $data) && $data['AvailableIndicator'] !== null) {
                 $object->setAvailableIndicator($data['AvailableIndicator']);
                 unset($data['AvailableIndicator']);
             }
-            if (\array_key_exists('UnavailableReason', $data)) {
+            elseif (\array_key_exists('AvailableIndicator', $data) && $data['AvailableIndicator'] === null) {
+                $object->setAvailableIndicator(null);
+            }
+            if (\array_key_exists('UnavailableReason', $data) && $data['UnavailableReason'] !== null) {
                 $object->setUnavailableReason($this->denormalizer->denormalize($data['UnavailableReason'], 'ShipStream\\Ups\\Api\\Model\\ShippingAvailabilityUnavailableReason', 'json', $context));
                 unset($data['UnavailableReason']);
+            }
+            elseif (\array_key_exists('UnavailableReason', $data) && $data['UnavailableReason'] === null) {
+                $object->setUnavailableReason(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

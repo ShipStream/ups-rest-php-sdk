@@ -15,38 +15,38 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * Scheduled Local Drop-off Time. Format: HHMM
      *
-     * @var string
+     * @var string|null
      */
     protected $time;
     /**
      * 
      *
-     * @var ServiceSearchServiceCode[]
+     * @var list<ServiceSearchServiceCode>|null
      */
     protected $serviceCode;
     /**
      * 
      *
-     * @var ServiceSearchServiceOptionCode[]
+     * @var list<ServiceSearchServiceOptionCode>|null
      */
     protected $serviceOptionCode;
     /**
      * Scheduled Local Drop-off Time. Format: HHMM
      *
-     * @return string
+     * @return string|null
      */
-    public function getTime() : string
+    public function getTime() : ?string
     {
         return $this->time;
     }
     /**
      * Scheduled Local Drop-off Time. Format: HHMM
      *
-     * @param string $time
+     * @param string|null $time
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(?string $time) : self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -55,20 +55,20 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @return ServiceSearchServiceCode[]
+     * @return list<ServiceSearchServiceCode>|null
      */
-    public function getServiceCode() : array
+    public function getServiceCode() : ?array
     {
         return $this->serviceCode;
     }
     /**
      * 
      *
-     * @param ServiceSearchServiceCode[] $serviceCode
+     * @param list<ServiceSearchServiceCode>|null $serviceCode
      *
      * @return self
      */
-    public function setServiceCode(array $serviceCode) : self
+    public function setServiceCode(?array $serviceCode) : self
     {
         $this->initialized['serviceCode'] = true;
         $this->serviceCode = $serviceCode;
@@ -77,20 +77,20 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @return ServiceSearchServiceOptionCode[]
+     * @return list<ServiceSearchServiceOptionCode>|null
      */
-    public function getServiceOptionCode() : array
+    public function getServiceOptionCode() : ?array
     {
         return $this->serviceOptionCode;
     }
     /**
      * 
      *
-     * @param ServiceSearchServiceOptionCode[] $serviceOptionCode
+     * @param list<ServiceSearchServiceOptionCode>|null $serviceOptionCode
      *
      * @return self
      */
-    public function setServiceOptionCode(array $serviceOptionCode) : self
+    public function setServiceOptionCode(?array $serviceOptionCode) : self
     {
         $this->initialized['serviceOptionCode'] = true;
         $this->serviceOptionCode = $serviceOptionCode;

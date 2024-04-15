@@ -15,56 +15,56 @@ class ForwardAgentAddress extends \ArrayObject
     /**
      * Address line of the Forwarding agent.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * City of the Forwarding agent.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * State of the Forwarding agent.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * Town of the Forwarding Agent.
      *
-     * @var string
+     * @var string|null
      */
     protected $town;
     /**
      * Postal code of the Forwarding agent.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Country or Territory code of the Forwarding agent.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Address line of the Forwarding agent.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Address line of the Forwarding agent.
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -73,20 +73,20 @@ class ForwardAgentAddress extends \ArrayObject
     /**
      * City of the Forwarding agent.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * City of the Forwarding agent.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -95,20 +95,20 @@ class ForwardAgentAddress extends \ArrayObject
     /**
      * State of the Forwarding agent.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * State of the Forwarding agent.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -117,20 +117,20 @@ class ForwardAgentAddress extends \ArrayObject
     /**
      * Town of the Forwarding Agent.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTown() : string
+    public function getTown() : ?string
     {
         return $this->town;
     }
     /**
      * Town of the Forwarding Agent.
      *
-     * @param string $town
+     * @param string|null $town
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(?string $town) : self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -139,20 +139,20 @@ class ForwardAgentAddress extends \ArrayObject
     /**
      * Postal code of the Forwarding agent.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Postal code of the Forwarding agent.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -161,20 +161,20 @@ class ForwardAgentAddress extends \ArrayObject
     /**
      * Country or Territory code of the Forwarding agent.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Country or Territory code of the Forwarding agent.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

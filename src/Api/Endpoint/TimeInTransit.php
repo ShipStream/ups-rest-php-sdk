@@ -9,13 +9,13 @@ class TimeInTransit extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
      * Get Time and Transit Response
      *
      * @param string $version API Version
-     * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request.  Length 32
      *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

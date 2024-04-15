@@ -15,7 +15,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
     /**
      * Container for a Image Format.  Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @var ShippingReceiptImageFormat
+     * @var ShippingReceiptImageFormat|null
      */
     protected $imageFormat;
     /**
@@ -24,26 +24,26 @@ class PackageResultsShippingReceipt extends \ArrayObject
     
     The receipt image is only returned for the first 5 packages.
     *
-    * @var string
+    * @var string|null
     */
     protected $graphicImage;
     /**
      * Container for a Image Format.  Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @return ShippingReceiptImageFormat
+     * @return ShippingReceiptImageFormat|null
      */
-    public function getImageFormat() : ShippingReceiptImageFormat
+    public function getImageFormat() : ?ShippingReceiptImageFormat
     {
         return $this->imageFormat;
     }
     /**
      * Container for a Image Format.  Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @param ShippingReceiptImageFormat $imageFormat
+     * @param ShippingReceiptImageFormat|null $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ShippingReceiptImageFormat $imageFormat) : self
+    public function setImageFormat(?ShippingReceiptImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
@@ -55,9 +55,9 @@ class PackageResultsShippingReceipt extends \ArrayObject
     
     The receipt image is only returned for the first 5 packages.
     *
-    * @return string
+    * @return string|null
     */
-    public function getGraphicImage() : string
+    public function getGraphicImage() : ?string
     {
         return $this->graphicImage;
     }
@@ -67,11 +67,11 @@ class PackageResultsShippingReceipt extends \ArrayObject
     
     The receipt image is only returned for the first 5 packages.
     *
-    * @param string $graphicImage
+    * @param string|null $graphicImage
     *
     * @return self
     */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(?string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;

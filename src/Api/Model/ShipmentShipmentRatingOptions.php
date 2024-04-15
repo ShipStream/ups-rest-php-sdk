@@ -19,19 +19,19 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     
     Number are not qualified for Negotiated rates, a warning message is returned that indicates ineligibility and only the Published rates are returned in the response. As per discount eligibility of user, negotiated rates in the response may contain ABR or Web discount rates.
     *
-    * @var string
+    * @var string|null
     */
     protected $negotiatedRatesIndicator;
     /**
      * Ground Freight Pricing Rates option indicator. If the Ground Freight Pricing Shipment indicator is enabled and Shipper number is authorized then Ground Freight Pricing rates should be returned in the response.  The Shipper account number must be qualified to receive Ground Freight Pricing Density Based Shipment rates. Only the Shipper account number taken from /ShipmentRequest/Shipment/FRSPaymentInformation/AccountNumber is used when checking qualification for Ground Freight Pricing Density Based rates.
      *
-     * @var string
+     * @var string|null
      */
     protected $fRSShipmentIndicator;
     /**
      * RateChartIndicator, if present in request, response will contain RateChart element.
      *
-     * @var string
+     * @var string|null
      */
     protected $rateChartIndicator;
     /**
@@ -41,7 +41,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     
     If authorized the 3P/FC negotiated rates will be applied to the shipment and rates will be returned in response.
     *
-    * @var string
+    * @var string|null
     */
     protected $tPFCNegotiatedRatesIndicator;
     /**
@@ -50,7 +50,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     Shipper number should not be present
     User should be eligible for user level discount
     *
-    * @var string
+    * @var string|null
     */
     protected $userLevelDiscountIndicator;
     /**
@@ -60,9 +60,9 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     
     Number are not qualified for Negotiated rates, a warning message is returned that indicates ineligibility and only the Published rates are returned in the response. As per discount eligibility of user, negotiated rates in the response may contain ABR or Web discount rates.
     *
-    * @return string
+    * @return string|null
     */
-    public function getNegotiatedRatesIndicator() : string
+    public function getNegotiatedRatesIndicator() : ?string
     {
         return $this->negotiatedRatesIndicator;
     }
@@ -73,11 +73,11 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     
     Number are not qualified for Negotiated rates, a warning message is returned that indicates ineligibility and only the Published rates are returned in the response. As per discount eligibility of user, negotiated rates in the response may contain ABR or Web discount rates.
     *
-    * @param string $negotiatedRatesIndicator
+    * @param string|null $negotiatedRatesIndicator
     *
     * @return self
     */
-    public function setNegotiatedRatesIndicator(string $negotiatedRatesIndicator) : self
+    public function setNegotiatedRatesIndicator(?string $negotiatedRatesIndicator) : self
     {
         $this->initialized['negotiatedRatesIndicator'] = true;
         $this->negotiatedRatesIndicator = $negotiatedRatesIndicator;
@@ -86,20 +86,20 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     /**
      * Ground Freight Pricing Rates option indicator. If the Ground Freight Pricing Shipment indicator is enabled and Shipper number is authorized then Ground Freight Pricing rates should be returned in the response.  The Shipper account number must be qualified to receive Ground Freight Pricing Density Based Shipment rates. Only the Shipper account number taken from /ShipmentRequest/Shipment/FRSPaymentInformation/AccountNumber is used when checking qualification for Ground Freight Pricing Density Based rates.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFRSShipmentIndicator() : string
+    public function getFRSShipmentIndicator() : ?string
     {
         return $this->fRSShipmentIndicator;
     }
     /**
      * Ground Freight Pricing Rates option indicator. If the Ground Freight Pricing Shipment indicator is enabled and Shipper number is authorized then Ground Freight Pricing rates should be returned in the response.  The Shipper account number must be qualified to receive Ground Freight Pricing Density Based Shipment rates. Only the Shipper account number taken from /ShipmentRequest/Shipment/FRSPaymentInformation/AccountNumber is used when checking qualification for Ground Freight Pricing Density Based rates.
      *
-     * @param string $fRSShipmentIndicator
+     * @param string|null $fRSShipmentIndicator
      *
      * @return self
      */
-    public function setFRSShipmentIndicator(string $fRSShipmentIndicator) : self
+    public function setFRSShipmentIndicator(?string $fRSShipmentIndicator) : self
     {
         $this->initialized['fRSShipmentIndicator'] = true;
         $this->fRSShipmentIndicator = $fRSShipmentIndicator;
@@ -108,20 +108,20 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     /**
      * RateChartIndicator, if present in request, response will contain RateChart element.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRateChartIndicator() : string
+    public function getRateChartIndicator() : ?string
     {
         return $this->rateChartIndicator;
     }
     /**
      * RateChartIndicator, if present in request, response will contain RateChart element.
      *
-     * @param string $rateChartIndicator
+     * @param string|null $rateChartIndicator
      *
      * @return self
      */
-    public function setRateChartIndicator(string $rateChartIndicator) : self
+    public function setRateChartIndicator(?string $rateChartIndicator) : self
     {
         $this->initialized['rateChartIndicator'] = true;
         $this->rateChartIndicator = $rateChartIndicator;
@@ -134,9 +134,9 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     
     If authorized the 3P/FC negotiated rates will be applied to the shipment and rates will be returned in response.
     *
-    * @return string
+    * @return string|null
     */
-    public function getTPFCNegotiatedRatesIndicator() : string
+    public function getTPFCNegotiatedRatesIndicator() : ?string
     {
         return $this->tPFCNegotiatedRatesIndicator;
     }
@@ -147,11 +147,11 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     
     If authorized the 3P/FC negotiated rates will be applied to the shipment and rates will be returned in response.
     *
-    * @param string $tPFCNegotiatedRatesIndicator
+    * @param string|null $tPFCNegotiatedRatesIndicator
     *
     * @return self
     */
-    public function setTPFCNegotiatedRatesIndicator(string $tPFCNegotiatedRatesIndicator) : self
+    public function setTPFCNegotiatedRatesIndicator(?string $tPFCNegotiatedRatesIndicator) : self
     {
         $this->initialized['tPFCNegotiatedRatesIndicator'] = true;
         $this->tPFCNegotiatedRatesIndicator = $tPFCNegotiatedRatesIndicator;
@@ -163,9 +163,9 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     Shipper number should not be present
     User should be eligible for user level discount
     *
-    * @return string
+    * @return string|null
     */
-    public function getUserLevelDiscountIndicator() : string
+    public function getUserLevelDiscountIndicator() : ?string
     {
         return $this->userLevelDiscountIndicator;
     }
@@ -175,11 +175,11 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     Shipper number should not be present
     User should be eligible for user level discount
     *
-    * @param string $userLevelDiscountIndicator
+    * @param string|null $userLevelDiscountIndicator
     *
     * @return self
     */
-    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator) : self
+    public function setUserLevelDiscountIndicator(?string $userLevelDiscountIndicator) : self
     {
         $this->initialized['userLevelDiscountIndicator'] = true;
         $this->userLevelDiscountIndicator = $userLevelDiscountIndicator;

@@ -15,45 +15,45 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
     /**
      * Not used.
      *
-     * @var string
+     * @var string|null
      */
     protected $barCodeIndicator;
     /**
      * Number tag.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
     * Reflects what will go on the label as the name of the reference. 
     For addition information, refer to the Service Codes table in the Appendix.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Not used.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBarCodeIndicator() : string
+    public function getBarCodeIndicator() : ?string
     {
         return $this->barCodeIndicator;
     }
     /**
      * Not used.
      *
-     * @param string $barCodeIndicator
+     * @param string|null $barCodeIndicator
      *
      * @return self
      */
-    public function setBarCodeIndicator(string $barCodeIndicator) : self
+    public function setBarCodeIndicator(?string $barCodeIndicator) : self
     {
         $this->initialized['barCodeIndicator'] = true;
         $this->barCodeIndicator = $barCodeIndicator;
@@ -62,20 +62,20 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
     /**
      * Number tag.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * Number tag.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -85,9 +85,9 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
     * Reflects what will go on the label as the name of the reference. 
     For addition information, refer to the Service Codes table in the Appendix.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -95,11 +95,11 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
     * Reflects what will go on the label as the name of the reference. 
     For addition information, refer to the Service Codes table in the Appendix.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -108,20 +108,20 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
     /**
      * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

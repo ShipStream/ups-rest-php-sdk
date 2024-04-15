@@ -15,32 +15,32 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
     /**
      * Beginning date time for the retrieval criteria of the subscriptions. It is required for date time request criteria. Format: YYYYMMDDHHmmss.
      *
-     * @var string
+     * @var string|null
      */
     protected $beginDateTime;
     /**
      * Ending date time for the retrieval criteria of the subscriptions. Format: YYYYMMDDHHmmss.  When a null or empty EndDateTime is passed in the request, it is defaulted to 7 days from the given begin date.
      *
-     * @var string
+     * @var string|null
      */
     protected $endDateTime;
     /**
      * Beginning date time for the retrieval criteria of the subscriptions. It is required for date time request criteria. Format: YYYYMMDDHHmmss.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBeginDateTime() : string
+    public function getBeginDateTime() : ?string
     {
         return $this->beginDateTime;
     }
     /**
      * Beginning date time for the retrieval criteria of the subscriptions. It is required for date time request criteria. Format: YYYYMMDDHHmmss.
      *
-     * @param string $beginDateTime
+     * @param string|null $beginDateTime
      *
      * @return self
      */
-    public function setBeginDateTime(string $beginDateTime) : self
+    public function setBeginDateTime(?string $beginDateTime) : self
     {
         $this->initialized['beginDateTime'] = true;
         $this->beginDateTime = $beginDateTime;
@@ -49,20 +49,20 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
     /**
      * Ending date time for the retrieval criteria of the subscriptions. Format: YYYYMMDDHHmmss.  When a null or empty EndDateTime is passed in the request, it is defaulted to 7 days from the given begin date.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEndDateTime() : string
+    public function getEndDateTime() : ?string
     {
         return $this->endDateTime;
     }
     /**
      * Ending date time for the retrieval criteria of the subscriptions. Format: YYYYMMDDHHmmss.  When a null or empty EndDateTime is passed in the request, it is defaulted to 7 days from the given begin date.
      *
-     * @param string $endDateTime
+     * @param string|null $endDateTime
      *
      * @return self
      */
-    public function setEndDateTime(string $endDateTime) : self
+    public function setEndDateTime(?string $endDateTime) : self
     {
         $this->initialized['endDateTime'] = true;
         $this->endDateTime = $endDateTime;

@@ -15,32 +15,32 @@ class CommodityNMFC extends \ArrayObject
     /**
      * Specifies the Commodity's NMFC prime code.  Required if NMFC Container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $primeCode;
     /**
      * Specifies the Commodity's NMFC sub code.  Needs to be provided when the SubCode associated with the PrimeCode is other than 00. UPS defaults the sub value to 00 if not provided. If provided the Sub Code should be associated with the PrimeCode of the NMFC.
      *
-     * @var string
+     * @var string|null
      */
     protected $subCode;
     /**
      * Specifies the Commodity's NMFC prime code.  Required if NMFC Container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPrimeCode() : string
+    public function getPrimeCode() : ?string
     {
         return $this->primeCode;
     }
     /**
      * Specifies the Commodity's NMFC prime code.  Required if NMFC Container is present.
      *
-     * @param string $primeCode
+     * @param string|null $primeCode
      *
      * @return self
      */
-    public function setPrimeCode(string $primeCode) : self
+    public function setPrimeCode(?string $primeCode) : self
     {
         $this->initialized['primeCode'] = true;
         $this->primeCode = $primeCode;
@@ -49,20 +49,20 @@ class CommodityNMFC extends \ArrayObject
     /**
      * Specifies the Commodity's NMFC sub code.  Needs to be provided when the SubCode associated with the PrimeCode is other than 00. UPS defaults the sub value to 00 if not provided. If provided the Sub Code should be associated with the PrimeCode of the NMFC.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubCode() : string
+    public function getSubCode() : ?string
     {
         return $this->subCode;
     }
     /**
      * Specifies the Commodity's NMFC sub code.  Needs to be provided when the SubCode associated with the PrimeCode is other than 00. UPS defaults the sub value to 00 if not provided. If provided the Sub Code should be associated with the PrimeCode of the NMFC.
      *
-     * @param string $subCode
+     * @param string|null $subCode
      *
      * @return self
      */
-    public function setSubCode(string $subCode) : self
+    public function setSubCode(?string $subCode) : self
     {
         $this->initialized['subCode'] = true;
         $this->subCode = $subCode;

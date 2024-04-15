@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DayOfWeekCode', $data)) {
+            if (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] !== null) {
                 $object->setDayOfWeekCode($data['DayOfWeekCode']);
                 unset($data['DayOfWeekCode']);
             }
-            if (\array_key_exists('FromTime', $data)) {
+            elseif (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] === null) {
+                $object->setDayOfWeekCode(null);
+            }
+            if (\array_key_exists('FromTime', $data) && $data['FromTime'] !== null) {
                 $object->setFromTime($data['FromTime']);
                 unset($data['FromTime']);
             }
-            if (\array_key_exists('ToTime', $data)) {
+            elseif (\array_key_exists('FromTime', $data) && $data['FromTime'] === null) {
+                $object->setFromTime(null);
+            }
+            if (\array_key_exists('ToTime', $data) && $data['ToTime'] !== null) {
                 $object->setToTime($data['ToTime']);
                 unset($data['ToTime']);
+            }
+            elseif (\array_key_exists('ToTime', $data) && $data['ToTime'] === null) {
+                $object->setToTime(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DayOfWeekCode', $data)) {
+            if (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] !== null) {
                 $object->setDayOfWeekCode($data['DayOfWeekCode']);
                 unset($data['DayOfWeekCode']);
             }
-            if (\array_key_exists('FromTime', $data)) {
+            elseif (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] === null) {
+                $object->setDayOfWeekCode(null);
+            }
+            if (\array_key_exists('FromTime', $data) && $data['FromTime'] !== null) {
                 $object->setFromTime($data['FromTime']);
                 unset($data['FromTime']);
             }
-            if (\array_key_exists('ToTime', $data)) {
+            elseif (\array_key_exists('FromTime', $data) && $data['FromTime'] === null) {
+                $object->setFromTime(null);
+            }
+            if (\array_key_exists('ToTime', $data) && $data['ToTime'] !== null) {
                 $object->setToTime($data['ToTime']);
                 unset($data['ToTime']);
+            }
+            elseif (\array_key_exists('ToTime', $data) && $data['ToTime'] === null) {
+                $object->setToTime(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

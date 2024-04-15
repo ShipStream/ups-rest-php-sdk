@@ -40,33 +40,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('category', $data)) {
+            if (\array_key_exists('category', $data) && $data['category'] !== null) {
                 $object->setCategory($data['category']);
                 unset($data['category']);
             }
-            if (\array_key_exists('code', $data)) {
+            elseif (\array_key_exists('category', $data) && $data['category'] === null) {
+                $object->setCategory(null);
+            }
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('current', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('current', $data) && $data['current'] !== null) {
                 $object->setCurrent($data['current']);
                 unset($data['current']);
             }
-            if (\array_key_exists('description', $data)) {
+            elseif (\array_key_exists('current', $data) && $data['current'] === null) {
+                $object->setCurrent(null);
+            }
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
-            if (\array_key_exists('linkedActivity', $data)) {
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('linkedActivity', $data) && $data['linkedActivity'] !== null) {
                 $object->setLinkedActivity($data['linkedActivity']);
                 unset($data['linkedActivity']);
             }
-            if (\array_key_exists('state', $data)) {
+            elseif (\array_key_exists('linkedActivity', $data) && $data['linkedActivity'] === null) {
+                $object->setLinkedActivity(null);
+            }
+            if (\array_key_exists('state', $data) && $data['state'] !== null) {
                 $object->setState($data['state']);
                 unset($data['state']);
             }
-            if (\array_key_exists('subMilestone', $data)) {
+            elseif (\array_key_exists('state', $data) && $data['state'] === null) {
+                $object->setState(null);
+            }
+            if (\array_key_exists('subMilestone', $data) && $data['subMilestone'] !== null) {
                 $object->setSubMilestone($this->denormalizer->denormalize($data['subMilestone'], 'ShipStream\\Ups\\Api\\Model\\SubMilestone', 'json', $context));
                 unset($data['subMilestone']);
+            }
+            elseif (\array_key_exists('subMilestone', $data) && $data['subMilestone'] === null) {
+                $object->setSubMilestone(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -141,33 +162,54 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('category', $data)) {
+            if (\array_key_exists('category', $data) && $data['category'] !== null) {
                 $object->setCategory($data['category']);
                 unset($data['category']);
             }
-            if (\array_key_exists('code', $data)) {
+            elseif (\array_key_exists('category', $data) && $data['category'] === null) {
+                $object->setCategory(null);
+            }
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('current', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('current', $data) && $data['current'] !== null) {
                 $object->setCurrent($data['current']);
                 unset($data['current']);
             }
-            if (\array_key_exists('description', $data)) {
+            elseif (\array_key_exists('current', $data) && $data['current'] === null) {
+                $object->setCurrent(null);
+            }
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
-            if (\array_key_exists('linkedActivity', $data)) {
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('linkedActivity', $data) && $data['linkedActivity'] !== null) {
                 $object->setLinkedActivity($data['linkedActivity']);
                 unset($data['linkedActivity']);
             }
-            if (\array_key_exists('state', $data)) {
+            elseif (\array_key_exists('linkedActivity', $data) && $data['linkedActivity'] === null) {
+                $object->setLinkedActivity(null);
+            }
+            if (\array_key_exists('state', $data) && $data['state'] !== null) {
                 $object->setState($data['state']);
                 unset($data['state']);
             }
-            if (\array_key_exists('subMilestone', $data)) {
+            elseif (\array_key_exists('state', $data) && $data['state'] === null) {
+                $object->setState(null);
+            }
+            if (\array_key_exists('subMilestone', $data) && $data['subMilestone'] !== null) {
                 $object->setSubMilestone($this->denormalizer->denormalize($data['subMilestone'], 'ShipStream\\Ups\\Api\\Model\\SubMilestone', 'json', $context));
                 unset($data['subMilestone']);
+            }
+            elseif (\array_key_exists('subMilestone', $data) && $data['subMilestone'] === null) {
+                $object->setSubMilestone(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

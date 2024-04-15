@@ -15,38 +15,38 @@ class LabelRecoveryResponseResponse extends \ArrayObject
     /**
      * Response Status container
      *
-     * @var LRResponseResponseStatus
+     * @var LRResponseResponseStatus|null
      */
     protected $responseStatus;
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @var ResponseAlert
+     * @var ResponseAlert|null
      */
     protected $alert;
     /**
      * Transaction Reference Container
      *
-     * @var LRResponseTransactionReference
+     * @var LRResponseTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Response Status container
      *
-     * @return LRResponseResponseStatus
+     * @return LRResponseResponseStatus|null
      */
-    public function getResponseStatus() : LRResponseResponseStatus
+    public function getResponseStatus() : ?LRResponseResponseStatus
     {
         return $this->responseStatus;
     }
     /**
      * Response Status container
      *
-     * @param LRResponseResponseStatus $responseStatus
+     * @param LRResponseResponseStatus|null $responseStatus
      *
      * @return self
      */
-    public function setResponseStatus(LRResponseResponseStatus $responseStatus) : self
+    public function setResponseStatus(?LRResponseResponseStatus $responseStatus) : self
     {
         $this->initialized['responseStatus'] = true;
         $this->responseStatus = $responseStatus;
@@ -55,20 +55,20 @@ class LabelRecoveryResponseResponse extends \ArrayObject
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @return ResponseAlert
+     * @return ResponseAlert|null
      */
-    public function getAlert() : ResponseAlert
+    public function getAlert() : ?ResponseAlert
     {
         return $this->alert;
     }
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @param ResponseAlert $alert
+     * @param ResponseAlert|null $alert
      *
      * @return self
      */
-    public function setAlert(ResponseAlert $alert) : self
+    public function setAlert(?ResponseAlert $alert) : self
     {
         $this->initialized['alert'] = true;
         $this->alert = $alert;
@@ -77,20 +77,20 @@ class LabelRecoveryResponseResponse extends \ArrayObject
     /**
      * Transaction Reference Container
      *
-     * @return LRResponseTransactionReference
+     * @return LRResponseTransactionReference|null
      */
-    public function getTransactionReference() : LRResponseTransactionReference
+    public function getTransactionReference() : ?LRResponseTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * Transaction Reference Container
      *
-     * @param LRResponseTransactionReference $transactionReference
+     * @param LRResponseTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(LRResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(?LRResponseTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

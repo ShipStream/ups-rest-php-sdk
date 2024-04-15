@@ -15,26 +15,26 @@ class ManifestCustomsValue extends \ArrayObject
     /**
      * The shipment's customs value amount.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * The shipment's customs value amount.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * The shipment's customs value amount.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

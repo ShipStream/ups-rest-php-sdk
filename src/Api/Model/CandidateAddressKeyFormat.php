@@ -30,19 +30,19 @@ class CandidateAddressKeyFormat extends \ArrayObject
     Applicable to US and PR only. 
     Not returned if user selects the RegionalRequestIndicator.
     *
-    * @var string[]
+    * @var list<string>|null
     */
     protected $addressLine;
     /**
      * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
      *
-     * @var string
+     * @var string|null
      */
     protected $region;
     /**
      * City or Town name.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision2;
     /**
@@ -52,20 +52,20 @@ class CandidateAddressKeyFormat extends \ArrayObject
     For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
     For International the full State or Province name will be returned.
     *
-    * @var string
+    * @var string|null
     */
     protected $politicalDivision1;
     /**
      * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodePrimaryLow;
     /**
     * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
     Only returned in candidate list. May be alphanumeric
     *
-    * @var string
+    * @var string|null
     */
     protected $postcodeExtendedLow;
     /**
@@ -77,7 +77,7 @@ class CandidateAddressKeyFormat extends \ArrayObject
     /**
      * A country or territory code. Required to be returned.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
@@ -130,9 +130,9 @@ class CandidateAddressKeyFormat extends \ArrayObject
     Applicable to US and PR only. 
     Not returned if user selects the RegionalRequestIndicator.
     *
-    * @return string[]
+    * @return list<string>|null
     */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
@@ -142,11 +142,11 @@ class CandidateAddressKeyFormat extends \ArrayObject
     Applicable to US and PR only. 
     Not returned if user selects the RegionalRequestIndicator.
     *
-    * @param string[] $addressLine
+    * @param list<string>|null $addressLine
     *
     * @return self
     */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -155,20 +155,20 @@ class CandidateAddressKeyFormat extends \ArrayObject
     /**
      * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRegion() : string
+    public function getRegion() : ?string
     {
         return $this->region;
     }
     /**
      * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
      *
-     * @param string $region
+     * @param string|null $region
      *
      * @return self
      */
-    public function setRegion(string $region) : self
+    public function setRegion(?string $region) : self
     {
         $this->initialized['region'] = true;
         $this->region = $region;
@@ -177,20 +177,20 @@ class CandidateAddressKeyFormat extends \ArrayObject
     /**
      * City or Town name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2() : ?string
     {
         return $this->politicalDivision2;
     }
     /**
      * City or Town name.
      *
-     * @param string $politicalDivision2
+     * @param string|null $politicalDivision2
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(?string $politicalDivision2) : self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -203,9 +203,9 @@ class CandidateAddressKeyFormat extends \ArrayObject
     For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
     For International the full State or Province name will be returned.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1() : ?string
     {
         return $this->politicalDivision1;
     }
@@ -216,11 +216,11 @@ class CandidateAddressKeyFormat extends \ArrayObject
     For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
     For International the full State or Province name will be returned.
     *
-    * @param string $politicalDivision1
+    * @param string|null $politicalDivision1
     *
     * @return self
     */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(?string $politicalDivision1) : self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -229,20 +229,20 @@ class CandidateAddressKeyFormat extends \ArrayObject
     /**
      * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow() : ?string
     {
         return $this->postcodePrimaryLow;
     }
     /**
      * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
      *
-     * @param string $postcodePrimaryLow
+     * @param string|null $postcodePrimaryLow
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(?string $postcodePrimaryLow) : self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;
@@ -252,9 +252,9 @@ class CandidateAddressKeyFormat extends \ArrayObject
     * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
     Only returned in candidate list. May be alphanumeric
     *
-    * @return string
+    * @return string|null
     */
-    public function getPostcodeExtendedLow() : string
+    public function getPostcodeExtendedLow() : ?string
     {
         return $this->postcodeExtendedLow;
     }
@@ -262,11 +262,11 @@ class CandidateAddressKeyFormat extends \ArrayObject
     * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
     Only returned in candidate list. May be alphanumeric
     *
-    * @param string $postcodeExtendedLow
+    * @param string|null $postcodeExtendedLow
     *
     * @return self
     */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
+    public function setPostcodeExtendedLow(?string $postcodeExtendedLow) : self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;
@@ -297,20 +297,20 @@ class CandidateAddressKeyFormat extends \ArrayObject
     /**
      * A country or territory code. Required to be returned.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * A country or territory code. Required to be returned.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

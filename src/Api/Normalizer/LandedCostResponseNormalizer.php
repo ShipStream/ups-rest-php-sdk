@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('shipment', $data)) {
+            if (\array_key_exists('shipment', $data) && $data['shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['shipment'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment', 'json', $context));
                 unset($data['shipment']);
+            }
+            elseif (\array_key_exists('shipment', $data) && $data['shipment'] === null) {
+                $object->setShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('shipment', $data)) {
+            if (\array_key_exists('shipment', $data) && $data['shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['shipment'], 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment', 'json', $context));
                 unset($data['shipment']);
+            }
+            elseif (\array_key_exists('shipment', $data) && $data['shipment'] === null) {
+                $object->setShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

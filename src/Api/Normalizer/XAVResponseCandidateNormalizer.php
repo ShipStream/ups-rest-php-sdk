@@ -47,13 +47,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] === null) {
                 $object->setAddressClassification(null);
             }
-            if (\array_key_exists('AddressKeyFormat', $data)) {
+            if (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] !== null) {
                 $values = [];
                 foreach ($data['AddressKeyFormat'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CandidateAddressKeyFormat', 'json', $context);
                 }
                 $object->setAddressKeyFormat($values);
                 unset($data['AddressKeyFormat']);
+            }
+            elseif (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] === null) {
+                $object->setAddressKeyFormat(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -122,13 +125,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] === null) {
                 $object->setAddressClassification(null);
             }
-            if (\array_key_exists('AddressKeyFormat', $data)) {
+            if (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] !== null) {
                 $values = [];
                 foreach ($data['AddressKeyFormat'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CandidateAddressKeyFormat', 'json', $context);
                 }
                 $object->setAddressKeyFormat($values);
                 unset($data['AddressKeyFormat']);
+            }
+            elseif (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] === null) {
+                $object->setAddressKeyFormat(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

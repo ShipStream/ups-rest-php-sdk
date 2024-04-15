@@ -15,19 +15,19 @@ class PickupRateRequest extends \ArrayObject
     /**
      * Common element for all services
      *
-     * @var PickupRateRequestRequest
+     * @var PickupRateRequestRequest|null
      */
     protected $request;
     /**
      * Shipper account information.
      *
-     * @var PickupRateRequestShipperAccount
+     * @var PickupRateRequestShipperAccount|null
      */
     protected $shipperAccount;
     /**
      * The address to pickup the packages
      *
-     * @var PickupRateRequestPickupAddress
+     * @var PickupRateRequestPickupAddress|null
      */
     protected $pickupAddress;
     /**
@@ -36,7 +36,7 @@ class PickupRateRequest extends \ArrayObject
     Y = Alternate address
     N = Original pickup address (default)
     *
-    * @var string
+    * @var string|null
     */
     protected $alternateAddressIndicator;
     /**
@@ -45,14 +45,14 @@ class PickupRateRequest extends \ArrayObject
     02 = Future-Day Pickup
     03 = A Specific-Day Pickup  If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
     *
-    * @var string
+    * @var string|null
     */
     protected $serviceDateOption;
     /**
     * Required if the ServiceDateOption is: 
     03 A Specific-Day Pickup
     *
-    * @var PickupRateRequestPickupDateInfo
+    * @var PickupRateRequestPickupDateInfo|null
     */
     protected $pickupDateInfo;
     /**
@@ -61,7 +61,7 @@ class PickupRateRequest extends \ArrayObject
     Y = Rate this pickup with taxes
     N = Do not rate this pickup with taxes (default)
     *
-    * @var string
+    * @var string|null
     */
     protected $taxInformationIndicator;
     /**
@@ -70,26 +70,26 @@ class PickupRateRequest extends \ArrayObject
     Y = Rate this pickup with user level promo discount
     N = Do not rate this pickup with user level promo discount(default)
     *
-    * @var string
+    * @var string|null
     */
     protected $userLevelDiscountIndicator;
     /**
      * Common element for all services
      *
-     * @return PickupRateRequestRequest
+     * @return PickupRateRequestRequest|null
      */
-    public function getRequest() : PickupRateRequestRequest
+    public function getRequest() : ?PickupRateRequestRequest
     {
         return $this->request;
     }
     /**
      * Common element for all services
      *
-     * @param PickupRateRequestRequest $request
+     * @param PickupRateRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(PickupRateRequestRequest $request) : self
+    public function setRequest(?PickupRateRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -98,20 +98,20 @@ class PickupRateRequest extends \ArrayObject
     /**
      * Shipper account information.
      *
-     * @return PickupRateRequestShipperAccount
+     * @return PickupRateRequestShipperAccount|null
      */
-    public function getShipperAccount() : PickupRateRequestShipperAccount
+    public function getShipperAccount() : ?PickupRateRequestShipperAccount
     {
         return $this->shipperAccount;
     }
     /**
      * Shipper account information.
      *
-     * @param PickupRateRequestShipperAccount $shipperAccount
+     * @param PickupRateRequestShipperAccount|null $shipperAccount
      *
      * @return self
      */
-    public function setShipperAccount(PickupRateRequestShipperAccount $shipperAccount) : self
+    public function setShipperAccount(?PickupRateRequestShipperAccount $shipperAccount) : self
     {
         $this->initialized['shipperAccount'] = true;
         $this->shipperAccount = $shipperAccount;
@@ -120,20 +120,20 @@ class PickupRateRequest extends \ArrayObject
     /**
      * The address to pickup the packages
      *
-     * @return PickupRateRequestPickupAddress
+     * @return PickupRateRequestPickupAddress|null
      */
-    public function getPickupAddress() : PickupRateRequestPickupAddress
+    public function getPickupAddress() : ?PickupRateRequestPickupAddress
     {
         return $this->pickupAddress;
     }
     /**
      * The address to pickup the packages
      *
-     * @param PickupRateRequestPickupAddress $pickupAddress
+     * @param PickupRateRequestPickupAddress|null $pickupAddress
      *
      * @return self
      */
-    public function setPickupAddress(PickupRateRequestPickupAddress $pickupAddress) : self
+    public function setPickupAddress(?PickupRateRequestPickupAddress $pickupAddress) : self
     {
         $this->initialized['pickupAddress'] = true;
         $this->pickupAddress = $pickupAddress;
@@ -145,9 +145,9 @@ class PickupRateRequest extends \ArrayObject
     Y = Alternate address
     N = Original pickup address (default)
     *
-    * @return string
+    * @return string|null
     */
-    public function getAlternateAddressIndicator() : string
+    public function getAlternateAddressIndicator() : ?string
     {
         return $this->alternateAddressIndicator;
     }
@@ -157,11 +157,11 @@ class PickupRateRequest extends \ArrayObject
     Y = Alternate address
     N = Original pickup address (default)
     *
-    * @param string $alternateAddressIndicator
+    * @param string|null $alternateAddressIndicator
     *
     * @return self
     */
-    public function setAlternateAddressIndicator(string $alternateAddressIndicator) : self
+    public function setAlternateAddressIndicator(?string $alternateAddressIndicator) : self
     {
         $this->initialized['alternateAddressIndicator'] = true;
         $this->alternateAddressIndicator = $alternateAddressIndicator;
@@ -173,9 +173,9 @@ class PickupRateRequest extends \ArrayObject
     02 = Future-Day Pickup
     03 = A Specific-Day Pickup  If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
     *
-    * @return string
+    * @return string|null
     */
-    public function getServiceDateOption() : string
+    public function getServiceDateOption() : ?string
     {
         return $this->serviceDateOption;
     }
@@ -185,11 +185,11 @@ class PickupRateRequest extends \ArrayObject
     02 = Future-Day Pickup
     03 = A Specific-Day Pickup  If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
     *
-    * @param string $serviceDateOption
+    * @param string|null $serviceDateOption
     *
     * @return self
     */
-    public function setServiceDateOption(string $serviceDateOption) : self
+    public function setServiceDateOption(?string $serviceDateOption) : self
     {
         $this->initialized['serviceDateOption'] = true;
         $this->serviceDateOption = $serviceDateOption;
@@ -199,9 +199,9 @@ class PickupRateRequest extends \ArrayObject
     * Required if the ServiceDateOption is: 
     03 A Specific-Day Pickup
     *
-    * @return PickupRateRequestPickupDateInfo
+    * @return PickupRateRequestPickupDateInfo|null
     */
-    public function getPickupDateInfo() : PickupRateRequestPickupDateInfo
+    public function getPickupDateInfo() : ?PickupRateRequestPickupDateInfo
     {
         return $this->pickupDateInfo;
     }
@@ -209,11 +209,11 @@ class PickupRateRequest extends \ArrayObject
     * Required if the ServiceDateOption is: 
     03 A Specific-Day Pickup
     *
-    * @param PickupRateRequestPickupDateInfo $pickupDateInfo
+    * @param PickupRateRequestPickupDateInfo|null $pickupDateInfo
     *
     * @return self
     */
-    public function setPickupDateInfo(PickupRateRequestPickupDateInfo $pickupDateInfo) : self
+    public function setPickupDateInfo(?PickupRateRequestPickupDateInfo $pickupDateInfo) : self
     {
         $this->initialized['pickupDateInfo'] = true;
         $this->pickupDateInfo = $pickupDateInfo;
@@ -225,9 +225,9 @@ class PickupRateRequest extends \ArrayObject
     Y = Rate this pickup with taxes
     N = Do not rate this pickup with taxes (default)
     *
-    * @return string
+    * @return string|null
     */
-    public function getTaxInformationIndicator() : string
+    public function getTaxInformationIndicator() : ?string
     {
         return $this->taxInformationIndicator;
     }
@@ -237,11 +237,11 @@ class PickupRateRequest extends \ArrayObject
     Y = Rate this pickup with taxes
     N = Do not rate this pickup with taxes (default)
     *
-    * @param string $taxInformationIndicator
+    * @param string|null $taxInformationIndicator
     *
     * @return self
     */
-    public function setTaxInformationIndicator(string $taxInformationIndicator) : self
+    public function setTaxInformationIndicator(?string $taxInformationIndicator) : self
     {
         $this->initialized['taxInformationIndicator'] = true;
         $this->taxInformationIndicator = $taxInformationIndicator;
@@ -253,9 +253,9 @@ class PickupRateRequest extends \ArrayObject
     Y = Rate this pickup with user level promo discount
     N = Do not rate this pickup with user level promo discount(default)
     *
-    * @return string
+    * @return string|null
     */
-    public function getUserLevelDiscountIndicator() : string
+    public function getUserLevelDiscountIndicator() : ?string
     {
         return $this->userLevelDiscountIndicator;
     }
@@ -265,11 +265,11 @@ class PickupRateRequest extends \ArrayObject
     Y = Rate this pickup with user level promo discount
     N = Do not rate this pickup with user level promo discount(default)
     *
-    * @param string $userLevelDiscountIndicator
+    * @param string|null $userLevelDiscountIndicator
     *
     * @return self
     */
-    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator) : self
+    public function setUserLevelDiscountIndicator(?string $userLevelDiscountIndicator) : self
     {
         $this->initialized['userLevelDiscountIndicator'] = true;
         $this->userLevelDiscountIndicator = $userLevelDiscountIndicator;

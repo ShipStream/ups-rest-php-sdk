@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ImageFormat', $data)) {
+            if (\array_key_exists('ImageFormat', $data) && $data['ImageFormat'] !== null) {
                 $object->setImageFormat($this->denormalizer->denormalize($data['ImageFormat'], 'ShipStream\\Ups\\Api\\Model\\ShippingReceiptImageFormat', 'json', $context));
                 unset($data['ImageFormat']);
             }
-            if (\array_key_exists('GraphicImage', $data)) {
+            elseif (\array_key_exists('ImageFormat', $data) && $data['ImageFormat'] === null) {
+                $object->setImageFormat(null);
+            }
+            if (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] !== null) {
                 $object->setGraphicImage($data['GraphicImage']);
                 unset($data['GraphicImage']);
+            }
+            elseif (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] === null) {
+                $object->setGraphicImage(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ImageFormat', $data)) {
+            if (\array_key_exists('ImageFormat', $data) && $data['ImageFormat'] !== null) {
                 $object->setImageFormat($this->denormalizer->denormalize($data['ImageFormat'], 'ShipStream\\Ups\\Api\\Model\\ShippingReceiptImageFormat', 'json', $context));
                 unset($data['ImageFormat']);
             }
-            if (\array_key_exists('GraphicImage', $data)) {
+            elseif (\array_key_exists('ImageFormat', $data) && $data['ImageFormat'] === null) {
+                $object->setImageFormat(null);
+            }
+            if (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] !== null) {
                 $object->setGraphicImage($data['GraphicImage']);
                 unset($data['GraphicImage']);
+            }
+            elseif (\array_key_exists('GraphicImage', $data) && $data['GraphicImage'] === null) {
+                $object->setGraphicImage(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

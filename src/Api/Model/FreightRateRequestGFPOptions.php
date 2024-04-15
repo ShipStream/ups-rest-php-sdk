@@ -15,32 +15,32 @@ class FreightRateRequestGFPOptions extends \ArrayObject
     /**
      * Indicator for GFP accessorial rate indicator.
      *
-     * @var string
+     * @var string|null
      */
     protected $gPFAccesorialRateIndicator;
     /**
      * Container for On-Call related elements
      *
-     * @var GFPOptionsOnCallInformation
+     * @var GFPOptionsOnCallInformation|null
      */
     protected $onCallInformation;
     /**
      * Indicator for GFP accessorial rate indicator.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGPFAccesorialRateIndicator() : string
+    public function getGPFAccesorialRateIndicator() : ?string
     {
         return $this->gPFAccesorialRateIndicator;
     }
     /**
      * Indicator for GFP accessorial rate indicator.
      *
-     * @param string $gPFAccesorialRateIndicator
+     * @param string|null $gPFAccesorialRateIndicator
      *
      * @return self
      */
-    public function setGPFAccesorialRateIndicator(string $gPFAccesorialRateIndicator) : self
+    public function setGPFAccesorialRateIndicator(?string $gPFAccesorialRateIndicator) : self
     {
         $this->initialized['gPFAccesorialRateIndicator'] = true;
         $this->gPFAccesorialRateIndicator = $gPFAccesorialRateIndicator;
@@ -49,20 +49,20 @@ class FreightRateRequestGFPOptions extends \ArrayObject
     /**
      * Container for On-Call related elements
      *
-     * @return GFPOptionsOnCallInformation
+     * @return GFPOptionsOnCallInformation|null
      */
-    public function getOnCallInformation() : GFPOptionsOnCallInformation
+    public function getOnCallInformation() : ?GFPOptionsOnCallInformation
     {
         return $this->onCallInformation;
     }
     /**
      * Container for On-Call related elements
      *
-     * @param GFPOptionsOnCallInformation $onCallInformation
+     * @param GFPOptionsOnCallInformation|null $onCallInformation
      *
      * @return self
      */
-    public function setOnCallInformation(GFPOptionsOnCallInformation $onCallInformation) : self
+    public function setOnCallInformation(?GFPOptionsOnCallInformation $onCallInformation) : self
     {
         $this->initialized['onCallInformation'] = true;
         $this->onCallInformation = $onCallInformation;

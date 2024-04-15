@@ -15,26 +15,26 @@ class DANGEROUSGOODSUTILITYAPCRequestWrapper extends \ArrayObject
     /**
      * Dangerous Goods Utility Request container for Acceptance Audit Pre-check.
      *
-     * @var AcceptanceAuditPreCheckRequest
+     * @var AcceptanceAuditPreCheckRequest|null
      */
     protected $acceptanceAuditPreCheckRequest;
     /**
      * Dangerous Goods Utility Request container for Acceptance Audit Pre-check.
      *
-     * @return AcceptanceAuditPreCheckRequest
+     * @return AcceptanceAuditPreCheckRequest|null
      */
-    public function getAcceptanceAuditPreCheckRequest() : AcceptanceAuditPreCheckRequest
+    public function getAcceptanceAuditPreCheckRequest() : ?AcceptanceAuditPreCheckRequest
     {
         return $this->acceptanceAuditPreCheckRequest;
     }
     /**
      * Dangerous Goods Utility Request container for Acceptance Audit Pre-check.
      *
-     * @param AcceptanceAuditPreCheckRequest $acceptanceAuditPreCheckRequest
+     * @param AcceptanceAuditPreCheckRequest|null $acceptanceAuditPreCheckRequest
      *
      * @return self
      */
-    public function setAcceptanceAuditPreCheckRequest(AcceptanceAuditPreCheckRequest $acceptanceAuditPreCheckRequest) : self
+    public function setAcceptanceAuditPreCheckRequest(?AcceptanceAuditPreCheckRequest $acceptanceAuditPreCheckRequest) : self
     {
         $this->initialized['acceptanceAuditPreCheckRequest'] = true;
         $this->acceptanceAuditPreCheckRequest = $acceptanceAuditPreCheckRequest;

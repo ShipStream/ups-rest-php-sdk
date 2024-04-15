@@ -15,26 +15,26 @@ class ChemicalDataProperShippingNameDetail extends \ArrayObject
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA.
      *
-     * @var string
+     * @var string|null
      */
     protected $properShippingName;
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProperShippingName() : string
+    public function getProperShippingName() : ?string
     {
         return $this->properShippingName;
     }
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA.
      *
-     * @param string $properShippingName
+     * @param string|null $properShippingName
      *
      * @return self
      */
-    public function setProperShippingName(string $properShippingName) : self
+    public function setProperShippingName(?string $properShippingName) : self
     {
         $this->initialized['properShippingName'] = true;
         $this->properShippingName = $properShippingName;

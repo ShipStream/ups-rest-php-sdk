@@ -15,26 +15,26 @@ class RATEResponseWrapper extends \ArrayObject
     /**
      * Rate Response Container.
      *
-     * @var RateResponse
+     * @var RateResponse|null
      */
     protected $rateResponse;
     /**
      * Rate Response Container.
      *
-     * @return RateResponse
+     * @return RateResponse|null
      */
-    public function getRateResponse() : RateResponse
+    public function getRateResponse() : ?RateResponse
     {
         return $this->rateResponse;
     }
     /**
      * Rate Response Container.
      *
-     * @param RateResponse $rateResponse
+     * @param RateResponse|null $rateResponse
      *
      * @return self
      */
-    public function setRateResponse(RateResponse $rateResponse) : self
+    public function setRateResponse(?RateResponse $rateResponse) : self
     {
         $this->initialized['rateResponse'] = true;
         $this->rateResponse = $rateResponse;

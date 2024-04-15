@@ -15,13 +15,13 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * 
      *
-     * @var LocationSearchCriteriaSearchOption[]
+     * @var list<LocationSearchCriteriaSearchOption>|null
      */
     protected $searchOption;
     /**
      * If present, indicates the maximum number of locations the client wishes to receive in response; ranges from 1 to 50 with a default value of 5.
      *
-     * @var string
+     * @var string|null
      */
     protected $maximumListSize;
     /**
@@ -31,56 +31,56 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     5-100 for UnitOfMeasure MI
     5-150 for UnitOfMesaure KM
     *
-    * @var string
+    * @var string|null
     */
     protected $searchRadius;
     /**
      * Allows for users to further define the search criteria. Refer to the rules specified in Service Search section.
      *
-     * @var LocationSearchCriteriaServiceSearch
+     * @var LocationSearchCriteriaServiceSearch|null
      */
     protected $serviceSearch;
     /**
      * Freight Will Call Search Container. Required if SearchOption is '05-Freight Will Call Search'
      *
-     * @var LocationSearchCriteriaFreightWillCallSearch
+     * @var LocationSearchCriteriaFreightWillCallSearch|null
      */
     protected $freightWillCallSearch;
     /**
      * Applicable for request option 64 only. This contains inclusion and exclusion criteria for address search. It also contains Account Number and Access Point Public ID search elements.
      *
-     * @var LocationSearchCriteriaAccessPointSearch
+     * @var LocationSearchCriteriaAccessPointSearch|null
      */
     protected $accessPointSearch;
     /**
      * Container to hold open times of the Location.
      *
-     * @var LocationSearchCriteriaOpenTimeCriteria
+     * @var LocationSearchCriteriaOpenTimeCriteria|null
      */
     protected $openTimeCriteria;
     /**
      * Brexit Filter. Applicable for country code GB; Pass the PostalCode for the address in the location search if Brexit functionality is desired. UAPs with postal code starts with BT returned when brexit filter starts with BT, else UAPs returned with non BT postal code. Applicable for UAP and Proximal building search.
      *
-     * @var string
+     * @var string|null
      */
     protected $brexitFilter;
     /**
      * 
      *
-     * @return LocationSearchCriteriaSearchOption[]
+     * @return list<LocationSearchCriteriaSearchOption>|null
      */
-    public function getSearchOption() : array
+    public function getSearchOption() : ?array
     {
         return $this->searchOption;
     }
     /**
      * 
      *
-     * @param LocationSearchCriteriaSearchOption[] $searchOption
+     * @param list<LocationSearchCriteriaSearchOption>|null $searchOption
      *
      * @return self
      */
-    public function setSearchOption(array $searchOption) : self
+    public function setSearchOption(?array $searchOption) : self
     {
         $this->initialized['searchOption'] = true;
         $this->searchOption = $searchOption;
@@ -89,20 +89,20 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * If present, indicates the maximum number of locations the client wishes to receive in response; ranges from 1 to 50 with a default value of 5.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMaximumListSize() : string
+    public function getMaximumListSize() : ?string
     {
         return $this->maximumListSize;
     }
     /**
      * If present, indicates the maximum number of locations the client wishes to receive in response; ranges from 1 to 50 with a default value of 5.
      *
-     * @param string $maximumListSize
+     * @param string|null $maximumListSize
      *
      * @return self
      */
-    public function setMaximumListSize(string $maximumListSize) : self
+    public function setMaximumListSize(?string $maximumListSize) : self
     {
         $this->initialized['maximumListSize'] = true;
         $this->maximumListSize = $maximumListSize;
@@ -115,9 +115,9 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     5-100 for UnitOfMeasure MI
     5-150 for UnitOfMesaure KM
     *
-    * @return string
+    * @return string|null
     */
-    public function getSearchRadius() : string
+    public function getSearchRadius() : ?string
     {
         return $this->searchRadius;
     }
@@ -128,11 +128,11 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     5-100 for UnitOfMeasure MI
     5-150 for UnitOfMesaure KM
     *
-    * @param string $searchRadius
+    * @param string|null $searchRadius
     *
     * @return self
     */
-    public function setSearchRadius(string $searchRadius) : self
+    public function setSearchRadius(?string $searchRadius) : self
     {
         $this->initialized['searchRadius'] = true;
         $this->searchRadius = $searchRadius;
@@ -141,20 +141,20 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * Allows for users to further define the search criteria. Refer to the rules specified in Service Search section.
      *
-     * @return LocationSearchCriteriaServiceSearch
+     * @return LocationSearchCriteriaServiceSearch|null
      */
-    public function getServiceSearch() : LocationSearchCriteriaServiceSearch
+    public function getServiceSearch() : ?LocationSearchCriteriaServiceSearch
     {
         return $this->serviceSearch;
     }
     /**
      * Allows for users to further define the search criteria. Refer to the rules specified in Service Search section.
      *
-     * @param LocationSearchCriteriaServiceSearch $serviceSearch
+     * @param LocationSearchCriteriaServiceSearch|null $serviceSearch
      *
      * @return self
      */
-    public function setServiceSearch(LocationSearchCriteriaServiceSearch $serviceSearch) : self
+    public function setServiceSearch(?LocationSearchCriteriaServiceSearch $serviceSearch) : self
     {
         $this->initialized['serviceSearch'] = true;
         $this->serviceSearch = $serviceSearch;
@@ -163,20 +163,20 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * Freight Will Call Search Container. Required if SearchOption is '05-Freight Will Call Search'
      *
-     * @return LocationSearchCriteriaFreightWillCallSearch
+     * @return LocationSearchCriteriaFreightWillCallSearch|null
      */
-    public function getFreightWillCallSearch() : LocationSearchCriteriaFreightWillCallSearch
+    public function getFreightWillCallSearch() : ?LocationSearchCriteriaFreightWillCallSearch
     {
         return $this->freightWillCallSearch;
     }
     /**
      * Freight Will Call Search Container. Required if SearchOption is '05-Freight Will Call Search'
      *
-     * @param LocationSearchCriteriaFreightWillCallSearch $freightWillCallSearch
+     * @param LocationSearchCriteriaFreightWillCallSearch|null $freightWillCallSearch
      *
      * @return self
      */
-    public function setFreightWillCallSearch(LocationSearchCriteriaFreightWillCallSearch $freightWillCallSearch) : self
+    public function setFreightWillCallSearch(?LocationSearchCriteriaFreightWillCallSearch $freightWillCallSearch) : self
     {
         $this->initialized['freightWillCallSearch'] = true;
         $this->freightWillCallSearch = $freightWillCallSearch;
@@ -185,20 +185,20 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * Applicable for request option 64 only. This contains inclusion and exclusion criteria for address search. It also contains Account Number and Access Point Public ID search elements.
      *
-     * @return LocationSearchCriteriaAccessPointSearch
+     * @return LocationSearchCriteriaAccessPointSearch|null
      */
-    public function getAccessPointSearch() : LocationSearchCriteriaAccessPointSearch
+    public function getAccessPointSearch() : ?LocationSearchCriteriaAccessPointSearch
     {
         return $this->accessPointSearch;
     }
     /**
      * Applicable for request option 64 only. This contains inclusion and exclusion criteria for address search. It also contains Account Number and Access Point Public ID search elements.
      *
-     * @param LocationSearchCriteriaAccessPointSearch $accessPointSearch
+     * @param LocationSearchCriteriaAccessPointSearch|null $accessPointSearch
      *
      * @return self
      */
-    public function setAccessPointSearch(LocationSearchCriteriaAccessPointSearch $accessPointSearch) : self
+    public function setAccessPointSearch(?LocationSearchCriteriaAccessPointSearch $accessPointSearch) : self
     {
         $this->initialized['accessPointSearch'] = true;
         $this->accessPointSearch = $accessPointSearch;
@@ -207,20 +207,20 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * Container to hold open times of the Location.
      *
-     * @return LocationSearchCriteriaOpenTimeCriteria
+     * @return LocationSearchCriteriaOpenTimeCriteria|null
      */
-    public function getOpenTimeCriteria() : LocationSearchCriteriaOpenTimeCriteria
+    public function getOpenTimeCriteria() : ?LocationSearchCriteriaOpenTimeCriteria
     {
         return $this->openTimeCriteria;
     }
     /**
      * Container to hold open times of the Location.
      *
-     * @param LocationSearchCriteriaOpenTimeCriteria $openTimeCriteria
+     * @param LocationSearchCriteriaOpenTimeCriteria|null $openTimeCriteria
      *
      * @return self
      */
-    public function setOpenTimeCriteria(LocationSearchCriteriaOpenTimeCriteria $openTimeCriteria) : self
+    public function setOpenTimeCriteria(?LocationSearchCriteriaOpenTimeCriteria $openTimeCriteria) : self
     {
         $this->initialized['openTimeCriteria'] = true;
         $this->openTimeCriteria = $openTimeCriteria;
@@ -229,20 +229,20 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * Brexit Filter. Applicable for country code GB; Pass the PostalCode for the address in the location search if Brexit functionality is desired. UAPs with postal code starts with BT returned when brexit filter starts with BT, else UAPs returned with non BT postal code. Applicable for UAP and Proximal building search.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBrexitFilter() : string
+    public function getBrexitFilter() : ?string
     {
         return $this->brexitFilter;
     }
     /**
      * Brexit Filter. Applicable for country code GB; Pass the PostalCode for the address in the location search if Brexit functionality is desired. UAPs with postal code starts with BT returned when brexit filter starts with BT, else UAPs returned with non BT postal code. Applicable for UAP and Proximal building search.
      *
-     * @param string $brexitFilter
+     * @param string|null $brexitFilter
      *
      * @return self
      */
-    public function setBrexitFilter(string $brexitFilter) : self
+    public function setBrexitFilter(?string $brexitFilter) : self
     {
         $this->initialized['brexitFilter'] = true;
         $this->brexitFilter = $brexitFilter;

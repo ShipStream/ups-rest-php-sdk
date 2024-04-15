@@ -16,23 +16,23 @@ class SubscriptionEventsDateRange extends \ArrayObject
     * Beginning date time of subscription requested by user.
     Format: MM-DD-YYYY-HH-MM
     *
-    * @var string
+    * @var string|null
     */
     protected $beginDate;
     /**
     * Ending date time of subscription requested by user.
     Format: MM-DD-YYYY-HH-MM
     *
-    * @var string
+    * @var string|null
     */
     protected $endDate;
     /**
     * Beginning date time of subscription requested by user.
     Format: MM-DD-YYYY-HH-MM
     *
-    * @return string
+    * @return string|null
     */
-    public function getBeginDate() : string
+    public function getBeginDate() : ?string
     {
         return $this->beginDate;
     }
@@ -40,11 +40,11 @@ class SubscriptionEventsDateRange extends \ArrayObject
     * Beginning date time of subscription requested by user.
     Format: MM-DD-YYYY-HH-MM
     *
-    * @param string $beginDate
+    * @param string|null $beginDate
     *
     * @return self
     */
-    public function setBeginDate(string $beginDate) : self
+    public function setBeginDate(?string $beginDate) : self
     {
         $this->initialized['beginDate'] = true;
         $this->beginDate = $beginDate;
@@ -54,9 +54,9 @@ class SubscriptionEventsDateRange extends \ArrayObject
     * Ending date time of subscription requested by user.
     Format: MM-DD-YYYY-HH-MM
     *
-    * @return string
+    * @return string|null
     */
-    public function getEndDate() : string
+    public function getEndDate() : ?string
     {
         return $this->endDate;
     }
@@ -64,11 +64,11 @@ class SubscriptionEventsDateRange extends \ArrayObject
     * Ending date time of subscription requested by user.
     Format: MM-DD-YYYY-HH-MM
     *
-    * @param string $endDate
+    * @param string|null $endDate
     *
     * @return self
     */
-    public function setEndDate(string $endDate) : self
+    public function setEndDate(?string $endDate) : self
     {
         $this->initialized['endDate'] = true;
         $this->endDate = $endDate;

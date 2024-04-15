@@ -15,26 +15,26 @@ class InquireNumbers extends \ArrayObject
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $inquiryNumbers;
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getInquiryNumbers() : array
+    public function getInquiryNumbers() : ?array
     {
         return $this->inquiryNumbers;
     }
     /**
      * 
      *
-     * @param string[] $inquiryNumbers
+     * @param list<string>|null $inquiryNumbers
      *
      * @return self
      */
-    public function setInquiryNumbers(array $inquiryNumbers) : self
+    public function setInquiryNumbers(?array $inquiryNumbers) : self
     {
         $this->initialized['inquiryNumbers'] = true;
         $this->inquiryNumbers = $inquiryNumbers;

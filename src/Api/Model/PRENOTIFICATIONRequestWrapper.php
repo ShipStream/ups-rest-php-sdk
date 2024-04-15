@@ -15,26 +15,26 @@ class PRENOTIFICATIONRequestWrapper extends \ArrayObject
     /**
      * Pre-Notification Request.
      *
-     * @var PreNotificationRequest
+     * @var PreNotificationRequest|null
      */
     protected $preNotificationRequest;
     /**
      * Pre-Notification Request.
      *
-     * @return PreNotificationRequest
+     * @return PreNotificationRequest|null
      */
-    public function getPreNotificationRequest() : PreNotificationRequest
+    public function getPreNotificationRequest() : ?PreNotificationRequest
     {
         return $this->preNotificationRequest;
     }
     /**
      * Pre-Notification Request.
      *
-     * @param PreNotificationRequest $preNotificationRequest
+     * @param PreNotificationRequest|null $preNotificationRequest
      *
      * @return self
      */
-    public function setPreNotificationRequest(PreNotificationRequest $preNotificationRequest) : self
+    public function setPreNotificationRequest(?PreNotificationRequest $preNotificationRequest) : self
     {
         $this->initialized['preNotificationRequest'] = true;
         $this->preNotificationRequest = $preNotificationRequest;

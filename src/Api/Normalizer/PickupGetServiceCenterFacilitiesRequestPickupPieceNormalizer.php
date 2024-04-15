@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ServiceCode', $data)) {
+            if (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] !== null) {
                 $object->setServiceCode($data['ServiceCode']);
                 unset($data['ServiceCode']);
             }
-            if (\array_key_exists('ContainerCode', $data)) {
+            elseif (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] === null) {
+                $object->setServiceCode(null);
+            }
+            if (\array_key_exists('ContainerCode', $data) && $data['ContainerCode'] !== null) {
                 $object->setContainerCode($data['ContainerCode']);
                 unset($data['ContainerCode']);
+            }
+            elseif (\array_key_exists('ContainerCode', $data) && $data['ContainerCode'] === null) {
+                $object->setContainerCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ServiceCode', $data)) {
+            if (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] !== null) {
                 $object->setServiceCode($data['ServiceCode']);
                 unset($data['ServiceCode']);
             }
-            if (\array_key_exists('ContainerCode', $data)) {
+            elseif (\array_key_exists('ServiceCode', $data) && $data['ServiceCode'] === null) {
+                $object->setServiceCode(null);
+            }
+            if (\array_key_exists('ContainerCode', $data) && $data['ContainerCode'] !== null) {
                 $object->setContainerCode($data['ContainerCode']);
                 unset($data['ContainerCode']);
+            }
+            elseif (\array_key_exists('ContainerCode', $data) && $data['ContainerCode'] === null) {
+                $object->setContainerCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

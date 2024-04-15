@@ -15,38 +15,38 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
     /**
      * Name of subscription requested by user, as one type of request criteria. Required when the customer wants to request data for a specific subscription name. Subscription name consists of up to 21 alphanumerics.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
      *
-     * @var SubscriptionRequestDateTimeRange
+     * @var SubscriptionRequestDateTimeRange|null
      */
     protected $dateTimeRange;
     /**
      * File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $fileName;
     /**
      * Name of subscription requested by user, as one type of request criteria. Required when the customer wants to request data for a specific subscription name. Subscription name consists of up to 21 alphanumerics.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Name of subscription requested by user, as one type of request criteria. Required when the customer wants to request data for a specific subscription name. Subscription name consists of up to 21 alphanumerics.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -55,20 +55,20 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
     /**
      * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
      *
-     * @return SubscriptionRequestDateTimeRange
+     * @return SubscriptionRequestDateTimeRange|null
      */
-    public function getDateTimeRange() : SubscriptionRequestDateTimeRange
+    public function getDateTimeRange() : ?SubscriptionRequestDateTimeRange
     {
         return $this->dateTimeRange;
     }
     /**
      * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
      *
-     * @param SubscriptionRequestDateTimeRange $dateTimeRange
+     * @param SubscriptionRequestDateTimeRange|null $dateTimeRange
      *
      * @return self
      */
-    public function setDateTimeRange(SubscriptionRequestDateTimeRange $dateTimeRange) : self
+    public function setDateTimeRange(?SubscriptionRequestDateTimeRange $dateTimeRange) : self
     {
         $this->initialized['dateTimeRange'] = true;
         $this->dateTimeRange = $dateTimeRange;
@@ -77,20 +77,20 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
     /**
      * File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getFileName() : array
+    public function getFileName() : ?array
     {
         return $this->fileName;
     }
     /**
      * File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)
      *
-     * @param string[] $fileName
+     * @param list<string>|null $fileName
      *
      * @return self
      */
-    public function setFileName(array $fileName) : self
+    public function setFileName(?array $fileName) : self
     {
         $this->initialized['fileName'] = true;
         $this->fileName = $fileName;

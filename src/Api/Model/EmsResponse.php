@@ -17,7 +17,7 @@ class EmsResponse extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @var string
+    * @var string|null
     */
     protected $shipDate;
     /**
@@ -25,7 +25,7 @@ class EmsResponse extends \ArrayObject
     
     Valid Format: HH:MM:SS
     *
-    * @var string
+    * @var string|null
     */
     protected $shipTime;
     /**
@@ -35,7 +35,7 @@ class EmsResponse extends \ArrayObject
     
     Blank is the default for all Service Level values.
     *
-    * @var string
+    * @var string|null
     */
     protected $serviceLevel;
     /**
@@ -47,7 +47,7 @@ class EmsResponse extends \ArrayObject
     04 - WWEF 
     07 - Pallet
     *
-    * @var string
+    * @var string|null
     */
     protected $billType;
     /**
@@ -64,7 +64,7 @@ class EmsResponse extends \ArrayObject
     08 - Line Release 
     09 - Low Value
     *
-    * @var string
+    * @var string|null
     */
     protected $dutyType;
     /**
@@ -75,19 +75,19 @@ class EmsResponse extends \ArrayObject
     01 - Residential 
     02 - Commercial
     *
-    * @var string
+    * @var string|null
     */
     protected $residentialIndicator;
     /**
      * Destination country name value
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationCountryName;
     /**
      * Destination country code, conforms to ISO-defined country codes.
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationCountryCode;
     /**
@@ -95,7 +95,7 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationPostalCode;
     /**
@@ -103,7 +103,7 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationPostalCodeLow;
     /**
@@ -111,7 +111,7 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationPostalCodeHigh;
     /**
@@ -121,7 +121,7 @@ class EmsResponse extends \ArrayObject
     
     For non-U.S. addresses the full State or Province name will be returned.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationStateProvince;
     /**
@@ -129,19 +129,19 @@ class EmsResponse extends \ArrayObject
     
     Required for International requests for thsoe countries that do not utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $destinationCityName;
     /**
      * Origin country name value
      *
-     * @var string
+     * @var string|null
      */
     protected $originCountryName;
     /**
      * Origin country code, conforms to ISO-defined country codes.
      *
-     * @var string
+     * @var string|null
      */
     protected $originCountryCode;
     /**
@@ -149,7 +149,7 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $originPostalCode;
     /**
@@ -157,7 +157,7 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $originPostalCodeLow;
     /**
@@ -165,7 +165,7 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $originPostalCodeHigh;
     /**
@@ -175,7 +175,7 @@ class EmsResponse extends \ArrayObject
     
     For non-U.S. addresses the full State or Province name will be returned.
     *
-    * @var string
+    * @var string|null
     */
     protected $originStateProvince;
     /**
@@ -183,7 +183,7 @@ class EmsResponse extends \ArrayObject
     
     Required for International requests for thsoe countries that do not utilize postal codes.
     *
-    * @var string
+    * @var string|null
     */
     protected $originCityName;
     /**
@@ -191,13 +191,13 @@ class EmsResponse extends \ArrayObject
     
     Defaults to 0.0
     *
-    * @var string
+    * @var string|null
     */
     protected $weight;
     /**
      * Returned on response when weight was present on the request.
      *
-     * @var string
+     * @var string|null
      */
     protected $weightUnitOfMeasure;
     /**
@@ -205,13 +205,13 @@ class EmsResponse extends \ArrayObject
     
     Defaults to 0.0
     *
-    * @var string
+    * @var string|null
     */
     protected $shipmentContentsValue;
     /**
      * Returned on response when shipmentContentsValue was present on the request.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentContentsCurrencyCode;
     /**
@@ -223,19 +223,19 @@ class EmsResponse extends \ArrayObject
     
     Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
     *
-    * @var bool
+    * @var bool|null
     */
     protected $guaranteeSuspended;
     /**
      * Number of services being returned in the services array.
      *
-     * @var int
+     * @var int|null
      */
     protected $numberOfServices;
     /**
      * 
      *
-     * @var Services[]
+     * @var list<Services>|null
      */
     protected $services;
     /**
@@ -243,9 +243,9 @@ class EmsResponse extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipDate() : string
+    public function getShipDate() : ?string
     {
         return $this->shipDate;
     }
@@ -254,11 +254,11 @@ class EmsResponse extends \ArrayObject
     
     Valid Format: YYYY-MM-DD
     *
-    * @param string $shipDate
+    * @param string|null $shipDate
     *
     * @return self
     */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(?string $shipDate) : self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -269,9 +269,9 @@ class EmsResponse extends \ArrayObject
     
     Valid Format: HH:MM:SS
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipTime() : string
+    public function getShipTime() : ?string
     {
         return $this->shipTime;
     }
@@ -280,11 +280,11 @@ class EmsResponse extends \ArrayObject
     
     Valid Format: HH:MM:SS
     *
-    * @param string $shipTime
+    * @param string|null $shipTime
     *
     * @return self
     */
-    public function setShipTime(string $shipTime) : self
+    public function setShipTime(?string $shipTime) : self
     {
         $this->initialized['shipTime'] = true;
         $this->shipTime = $shipTime;
@@ -297,9 +297,9 @@ class EmsResponse extends \ArrayObject
     
     Blank is the default for all Service Level values.
     *
-    * @return string
+    * @return string|null
     */
-    public function getServiceLevel() : string
+    public function getServiceLevel() : ?string
     {
         return $this->serviceLevel;
     }
@@ -310,11 +310,11 @@ class EmsResponse extends \ArrayObject
     
     Blank is the default for all Service Level values.
     *
-    * @param string $serviceLevel
+    * @param string|null $serviceLevel
     *
     * @return self
     */
-    public function setServiceLevel(string $serviceLevel) : self
+    public function setServiceLevel(?string $serviceLevel) : self
     {
         $this->initialized['serviceLevel'] = true;
         $this->serviceLevel = $serviceLevel;
@@ -329,9 +329,9 @@ class EmsResponse extends \ArrayObject
     04 - WWEF 
     07 - Pallet
     *
-    * @return string
+    * @return string|null
     */
-    public function getBillType() : string
+    public function getBillType() : ?string
     {
         return $this->billType;
     }
@@ -344,11 +344,11 @@ class EmsResponse extends \ArrayObject
     04 - WWEF 
     07 - Pallet
     *
-    * @param string $billType
+    * @param string|null $billType
     *
     * @return self
     */
-    public function setBillType(string $billType) : self
+    public function setBillType(?string $billType) : self
     {
         $this->initialized['billType'] = true;
         $this->billType = $billType;
@@ -368,9 +368,9 @@ class EmsResponse extends \ArrayObject
     08 - Line Release 
     09 - Low Value
     *
-    * @return string
+    * @return string|null
     */
-    public function getDutyType() : string
+    public function getDutyType() : ?string
     {
         return $this->dutyType;
     }
@@ -388,11 +388,11 @@ class EmsResponse extends \ArrayObject
     08 - Line Release 
     09 - Low Value
     *
-    * @param string $dutyType
+    * @param string|null $dutyType
     *
     * @return self
     */
-    public function setDutyType(string $dutyType) : self
+    public function setDutyType(?string $dutyType) : self
     {
         $this->initialized['dutyType'] = true;
         $this->dutyType = $dutyType;
@@ -406,9 +406,9 @@ class EmsResponse extends \ArrayObject
     01 - Residential 
     02 - Commercial
     *
-    * @return string
+    * @return string|null
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator() : ?string
     {
         return $this->residentialIndicator;
     }
@@ -420,11 +420,11 @@ class EmsResponse extends \ArrayObject
     01 - Residential 
     02 - Commercial
     *
-    * @param string $residentialIndicator
+    * @param string|null $residentialIndicator
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(?string $residentialIndicator) : self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;
@@ -433,20 +433,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Destination country name value
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationCountryName() : string
+    public function getDestinationCountryName() : ?string
     {
         return $this->destinationCountryName;
     }
     /**
      * Destination country name value
      *
-     * @param string $destinationCountryName
+     * @param string|null $destinationCountryName
      *
      * @return self
      */
-    public function setDestinationCountryName(string $destinationCountryName) : self
+    public function setDestinationCountryName(?string $destinationCountryName) : self
     {
         $this->initialized['destinationCountryName'] = true;
         $this->destinationCountryName = $destinationCountryName;
@@ -455,20 +455,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Destination country code, conforms to ISO-defined country codes.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode() : ?string
     {
         return $this->destinationCountryCode;
     }
     /**
      * Destination country code, conforms to ISO-defined country codes.
      *
-     * @param string $destinationCountryCode
+     * @param string|null $destinationCountryCode
      *
      * @return self
      */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(?string $destinationCountryCode) : self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -479,9 +479,9 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode() : ?string
     {
         return $this->destinationPostalCode;
     }
@@ -490,11 +490,11 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $destinationPostalCode
+    * @param string|null $destinationPostalCode
     *
     * @return self
     */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(?string $destinationPostalCode) : self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -505,9 +505,9 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationPostalCodeLow() : string
+    public function getDestinationPostalCodeLow() : ?string
     {
         return $this->destinationPostalCodeLow;
     }
@@ -516,11 +516,11 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $destinationPostalCodeLow
+    * @param string|null $destinationPostalCodeLow
     *
     * @return self
     */
-    public function setDestinationPostalCodeLow(string $destinationPostalCodeLow) : self
+    public function setDestinationPostalCodeLow(?string $destinationPostalCodeLow) : self
     {
         $this->initialized['destinationPostalCodeLow'] = true;
         $this->destinationPostalCodeLow = $destinationPostalCodeLow;
@@ -531,9 +531,9 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationPostalCodeHigh() : string
+    public function getDestinationPostalCodeHigh() : ?string
     {
         return $this->destinationPostalCodeHigh;
     }
@@ -542,11 +542,11 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $destinationPostalCodeHigh
+    * @param string|null $destinationPostalCodeHigh
     *
     * @return self
     */
-    public function setDestinationPostalCodeHigh(string $destinationPostalCodeHigh) : self
+    public function setDestinationPostalCodeHigh(?string $destinationPostalCodeHigh) : self
     {
         $this->initialized['destinationPostalCodeHigh'] = true;
         $this->destinationPostalCodeHigh = $destinationPostalCodeHigh;
@@ -559,9 +559,9 @@ class EmsResponse extends \ArrayObject
     
     For non-U.S. addresses the full State or Province name will be returned.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationStateProvince() : string
+    public function getDestinationStateProvince() : ?string
     {
         return $this->destinationStateProvince;
     }
@@ -572,11 +572,11 @@ class EmsResponse extends \ArrayObject
     
     For non-U.S. addresses the full State or Province name will be returned.
     *
-    * @param string $destinationStateProvince
+    * @param string|null $destinationStateProvince
     *
     * @return self
     */
-    public function setDestinationStateProvince(string $destinationStateProvince) : self
+    public function setDestinationStateProvince(?string $destinationStateProvince) : self
     {
         $this->initialized['destinationStateProvince'] = true;
         $this->destinationStateProvince = $destinationStateProvince;
@@ -587,9 +587,9 @@ class EmsResponse extends \ArrayObject
     
     Required for International requests for thsoe countries that do not utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDestinationCityName() : string
+    public function getDestinationCityName() : ?string
     {
         return $this->destinationCityName;
     }
@@ -598,11 +598,11 @@ class EmsResponse extends \ArrayObject
     
     Required for International requests for thsoe countries that do not utilize postal codes.
     *
-    * @param string $destinationCityName
+    * @param string|null $destinationCityName
     *
     * @return self
     */
-    public function setDestinationCityName(string $destinationCityName) : self
+    public function setDestinationCityName(?string $destinationCityName) : self
     {
         $this->initialized['destinationCityName'] = true;
         $this->destinationCityName = $destinationCityName;
@@ -611,20 +611,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Origin country name value
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginCountryName() : string
+    public function getOriginCountryName() : ?string
     {
         return $this->originCountryName;
     }
     /**
      * Origin country name value
      *
-     * @param string $originCountryName
+     * @param string|null $originCountryName
      *
      * @return self
      */
-    public function setOriginCountryName(string $originCountryName) : self
+    public function setOriginCountryName(?string $originCountryName) : self
     {
         $this->initialized['originCountryName'] = true;
         $this->originCountryName = $originCountryName;
@@ -633,20 +633,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Origin country code, conforms to ISO-defined country codes.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginCountryCode() : string
+    public function getOriginCountryCode() : ?string
     {
         return $this->originCountryCode;
     }
     /**
      * Origin country code, conforms to ISO-defined country codes.
      *
-     * @param string $originCountryCode
+     * @param string|null $originCountryCode
      *
      * @return self
      */
-    public function setOriginCountryCode(string $originCountryCode) : self
+    public function setOriginCountryCode(?string $originCountryCode) : self
     {
         $this->initialized['originCountryCode'] = true;
         $this->originCountryCode = $originCountryCode;
@@ -657,9 +657,9 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginPostalCode() : string
+    public function getOriginPostalCode() : ?string
     {
         return $this->originPostalCode;
     }
@@ -668,11 +668,11 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $originPostalCode
+    * @param string|null $originPostalCode
     *
     * @return self
     */
-    public function setOriginPostalCode(string $originPostalCode) : self
+    public function setOriginPostalCode(?string $originPostalCode) : self
     {
         $this->initialized['originPostalCode'] = true;
         $this->originPostalCode = $originPostalCode;
@@ -683,9 +683,9 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginPostalCodeLow() : string
+    public function getOriginPostalCodeLow() : ?string
     {
         return $this->originPostalCodeLow;
     }
@@ -694,11 +694,11 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $originPostalCodeLow
+    * @param string|null $originPostalCodeLow
     *
     * @return self
     */
-    public function setOriginPostalCodeLow(string $originPostalCodeLow) : self
+    public function setOriginPostalCodeLow(?string $originPostalCodeLow) : self
     {
         $this->initialized['originPostalCodeLow'] = true;
         $this->originPostalCodeLow = $originPostalCodeLow;
@@ -709,9 +709,9 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginPostalCodeHigh() : string
+    public function getOriginPostalCodeHigh() : ?string
     {
         return $this->originPostalCodeHigh;
     }
@@ -720,11 +720,11 @@ class EmsResponse extends \ArrayObject
     
     Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
-    * @param string $originPostalCodeHigh
+    * @param string|null $originPostalCodeHigh
     *
     * @return self
     */
-    public function setOriginPostalCodeHigh(string $originPostalCodeHigh) : self
+    public function setOriginPostalCodeHigh(?string $originPostalCodeHigh) : self
     {
         $this->initialized['originPostalCodeHigh'] = true;
         $this->originPostalCodeHigh = $originPostalCodeHigh;
@@ -737,9 +737,9 @@ class EmsResponse extends \ArrayObject
     
     For non-U.S. addresses the full State or Province name will be returned.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginStateProvince() : string
+    public function getOriginStateProvince() : ?string
     {
         return $this->originStateProvince;
     }
@@ -750,11 +750,11 @@ class EmsResponse extends \ArrayObject
     
     For non-U.S. addresses the full State or Province name will be returned.
     *
-    * @param string $originStateProvince
+    * @param string|null $originStateProvince
     *
     * @return self
     */
-    public function setOriginStateProvince(string $originStateProvince) : self
+    public function setOriginStateProvince(?string $originStateProvince) : self
     {
         $this->initialized['originStateProvince'] = true;
         $this->originStateProvince = $originStateProvince;
@@ -765,9 +765,9 @@ class EmsResponse extends \ArrayObject
     
     Required for International requests for thsoe countries that do not utilize postal codes.
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginCityName() : string
+    public function getOriginCityName() : ?string
     {
         return $this->originCityName;
     }
@@ -776,11 +776,11 @@ class EmsResponse extends \ArrayObject
     
     Required for International requests for thsoe countries that do not utilize postal codes.
     *
-    * @param string $originCityName
+    * @param string|null $originCityName
     *
     * @return self
     */
-    public function setOriginCityName(string $originCityName) : self
+    public function setOriginCityName(?string $originCityName) : self
     {
         $this->initialized['originCityName'] = true;
         $this->originCityName = $originCityName;
@@ -791,9 +791,9 @@ class EmsResponse extends \ArrayObject
     
     Defaults to 0.0
     *
-    * @return string
+    * @return string|null
     */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
@@ -802,11 +802,11 @@ class EmsResponse extends \ArrayObject
     
     Defaults to 0.0
     *
-    * @param string $weight
+    * @param string|null $weight
     *
     * @return self
     */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -815,20 +815,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Returned on response when weight was present on the request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeightUnitOfMeasure() : string
+    public function getWeightUnitOfMeasure() : ?string
     {
         return $this->weightUnitOfMeasure;
     }
     /**
      * Returned on response when weight was present on the request.
      *
-     * @param string $weightUnitOfMeasure
+     * @param string|null $weightUnitOfMeasure
      *
      * @return self
      */
-    public function setWeightUnitOfMeasure(string $weightUnitOfMeasure) : self
+    public function setWeightUnitOfMeasure(?string $weightUnitOfMeasure) : self
     {
         $this->initialized['weightUnitOfMeasure'] = true;
         $this->weightUnitOfMeasure = $weightUnitOfMeasure;
@@ -839,9 +839,9 @@ class EmsResponse extends \ArrayObject
     
     Defaults to 0.0
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipmentContentsValue() : string
+    public function getShipmentContentsValue() : ?string
     {
         return $this->shipmentContentsValue;
     }
@@ -850,11 +850,11 @@ class EmsResponse extends \ArrayObject
     
     Defaults to 0.0
     *
-    * @param string $shipmentContentsValue
+    * @param string|null $shipmentContentsValue
     *
     * @return self
     */
-    public function setShipmentContentsValue(string $shipmentContentsValue) : self
+    public function setShipmentContentsValue(?string $shipmentContentsValue) : self
     {
         $this->initialized['shipmentContentsValue'] = true;
         $this->shipmentContentsValue = $shipmentContentsValue;
@@ -863,20 +863,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Returned on response when shipmentContentsValue was present on the request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentContentsCurrencyCode() : string
+    public function getShipmentContentsCurrencyCode() : ?string
     {
         return $this->shipmentContentsCurrencyCode;
     }
     /**
      * Returned on response when shipmentContentsValue was present on the request.
      *
-     * @param string $shipmentContentsCurrencyCode
+     * @param string|null $shipmentContentsCurrencyCode
      *
      * @return self
      */
-    public function setShipmentContentsCurrencyCode(string $shipmentContentsCurrencyCode) : self
+    public function setShipmentContentsCurrencyCode(?string $shipmentContentsCurrencyCode) : self
     {
         $this->initialized['shipmentContentsCurrencyCode'] = true;
         $this->shipmentContentsCurrencyCode = $shipmentContentsCurrencyCode;
@@ -891,9 +891,9 @@ class EmsResponse extends \ArrayObject
     
     Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
     *
-    * @return bool
+    * @return bool|null
     */
-    public function getGuaranteeSuspended() : bool
+    public function getGuaranteeSuspended() : ?bool
     {
         return $this->guaranteeSuspended;
     }
@@ -906,11 +906,11 @@ class EmsResponse extends \ArrayObject
     
     Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
     *
-    * @param bool $guaranteeSuspended
+    * @param bool|null $guaranteeSuspended
     *
     * @return self
     */
-    public function setGuaranteeSuspended(bool $guaranteeSuspended) : self
+    public function setGuaranteeSuspended(?bool $guaranteeSuspended) : self
     {
         $this->initialized['guaranteeSuspended'] = true;
         $this->guaranteeSuspended = $guaranteeSuspended;
@@ -919,20 +919,20 @@ class EmsResponse extends \ArrayObject
     /**
      * Number of services being returned in the services array.
      *
-     * @return int
+     * @return int|null
      */
-    public function getNumberOfServices() : int
+    public function getNumberOfServices() : ?int
     {
         return $this->numberOfServices;
     }
     /**
      * Number of services being returned in the services array.
      *
-     * @param int $numberOfServices
+     * @param int|null $numberOfServices
      *
      * @return self
      */
-    public function setNumberOfServices(int $numberOfServices) : self
+    public function setNumberOfServices(?int $numberOfServices) : self
     {
         $this->initialized['numberOfServices'] = true;
         $this->numberOfServices = $numberOfServices;
@@ -941,20 +941,20 @@ class EmsResponse extends \ArrayObject
     /**
      * 
      *
-     * @return Services[]
+     * @return list<Services>|null
      */
-    public function getServices() : array
+    public function getServices() : ?array
     {
         return $this->services;
     }
     /**
      * 
      *
-     * @param Services[] $services
+     * @param list<Services>|null $services
      *
      * @return self
      */
-    public function setServices(array $services) : self
+    public function setServices(?array $services) : self
     {
         $this->initialized['services'] = true;
         $this->services = $services;

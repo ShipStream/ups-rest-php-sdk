@@ -15,26 +15,26 @@ class PAPERLESSDOCUMENTUploadResponseWrapper extends \ArrayObject
     /**
      * Paperless Document API Response Container for upload request.  N/A
      *
-     * @var UploadResponse
+     * @var UploadResponse|null
      */
     protected $uploadResponse;
     /**
      * Paperless Document API Response Container for upload request.  N/A
      *
-     * @return UploadResponse
+     * @return UploadResponse|null
      */
-    public function getUploadResponse() : UploadResponse
+    public function getUploadResponse() : ?UploadResponse
     {
         return $this->uploadResponse;
     }
     /**
      * Paperless Document API Response Container for upload request.  N/A
      *
-     * @param UploadResponse $uploadResponse
+     * @param UploadResponse|null $uploadResponse
      *
      * @return self
      */
-    public function setUploadResponse(UploadResponse $uploadResponse) : self
+    public function setUploadResponse(?UploadResponse $uploadResponse) : self
     {
         $this->initialized['uploadResponse'] = true;
         $this->uploadResponse = $uploadResponse;

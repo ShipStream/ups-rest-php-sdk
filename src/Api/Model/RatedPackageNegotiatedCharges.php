@@ -15,26 +15,26 @@ class RatedPackageNegotiatedCharges extends \ArrayObject
     /**
      * 
      *
-     * @var NegotiatedChargesItemizedCharges[]
+     * @var list<NegotiatedChargesItemizedCharges>|null
      */
     protected $itemizedCharges;
     /**
      * 
      *
-     * @return NegotiatedChargesItemizedCharges[]
+     * @return list<NegotiatedChargesItemizedCharges>|null
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges() : ?array
     {
         return $this->itemizedCharges;
     }
     /**
      * 
      *
-     * @param NegotiatedChargesItemizedCharges[] $itemizedCharges
+     * @param list<NegotiatedChargesItemizedCharges>|null $itemizedCharges
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(?array $itemizedCharges) : self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;

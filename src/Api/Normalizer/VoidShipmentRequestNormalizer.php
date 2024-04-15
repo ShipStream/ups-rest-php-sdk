@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('VoidShipment', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('VoidShipment', $data) && $data['VoidShipment'] !== null) {
                 $object->setVoidShipment($this->denormalizer->denormalize($data['VoidShipment'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment', 'json', $context));
                 unset($data['VoidShipment']);
+            }
+            elseif (\array_key_exists('VoidShipment', $data) && $data['VoidShipment'] === null) {
+                $object->setVoidShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('VoidShipment', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('VoidShipment', $data) && $data['VoidShipment'] !== null) {
                 $object->setVoidShipment($this->denormalizer->denormalize($data['VoidShipment'], 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment', 'json', $context));
                 unset($data['VoidShipment']);
+            }
+            elseif (\array_key_exists('VoidShipment', $data) && $data['VoidShipment'] === null) {
+                $object->setVoidShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

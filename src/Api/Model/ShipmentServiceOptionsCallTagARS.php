@@ -15,7 +15,7 @@ class ShipmentServiceOptionsCallTagARS extends \ArrayObject
     /**
      * A reference number associated with the Call Tag service. Required if CallTagARS/Code is 1.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
@@ -30,26 +30,26 @@ class ShipmentServiceOptionsCallTagARS extends \ArrayObject
     06 - UPS Electronic Return Label
     08 - UPS Returns on the Web
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * A reference number associated with the Call Tag service. Required if CallTagARS/Code is 1.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * A reference number associated with the Call Tag service. Required if CallTagARS/Code is 1.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -67,9 +67,9 @@ class ShipmentServiceOptionsCallTagARS extends \ArrayObject
     06 - UPS Electronic Return Label
     08 - UPS Returns on the Web
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -85,11 +85,11 @@ class ShipmentServiceOptionsCallTagARS extends \ArrayObject
     06 - UPS Electronic Return Label
     08 - UPS Returns on the Web
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

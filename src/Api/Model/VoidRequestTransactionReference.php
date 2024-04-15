@@ -15,26 +15,26 @@ class VoidRequestTransactionReference extends \ArrayObject
     /**
      * The CustomerContext Information which will be echoed during response.
      *
-     * @var string
+     * @var string|null
      */
     protected $customerContext;
     /**
      * The CustomerContext Information which will be echoed during response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCustomerContext() : string
+    public function getCustomerContext() : ?string
     {
         return $this->customerContext;
     }
     /**
      * The CustomerContext Information which will be echoed during response.
      *
-     * @param string $customerContext
+     * @param string|null $customerContext
      *
      * @return self
      */
-    public function setCustomerContext(string $customerContext) : self
+    public function setCustomerContext(?string $customerContext) : self
     {
         $this->initialized['customerContext'] = true;
         $this->customerContext = $customerContext;

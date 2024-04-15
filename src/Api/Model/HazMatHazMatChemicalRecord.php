@@ -15,152 +15,152 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Identifies the Chemcial Record.  Required if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $chemicalRecordIdentifier;
     /**
      * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $classDivisionNumber;
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity. Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $iDNumber;
     /**
      * The method of transport by which a shipment is approved to move and the regulations associated with that method.  Only required when the CommodityRegulatedLevelCode is FR or LQ.Valid values: 01 - Highway02 - Ground03 - Passenger Aircraft04 - Cargo Aircraft Only  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package having different TransportationMode, TransportationMode of first ChemicalRecord would be considered for validating and rating the package. All TransportationMode except for '04' are general service offering. If any chemical record contains '04' as TransportationMode, ShipperNumber needs to be authorized to use '04' as TransportationMode.
      *
-     * @var string
+     * @var string|null
      */
     protected $transportationMode;
     /**
      * The Regulatory set associated with every regulated shipment. It must be the same across the shipment. Valid values:   ADR -  For Europe to Europe Ground Movement CFR -  For HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada, IATA -  For Worldwide Air movement TDG -  For Canada to Canada ground movement or Canada to U.S. standard movement  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package or multiple packages containing different RegulationSet, RegulationSet of first ChemicalRecord would be considered for validating and rating the entire shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $regulationSet;
     /**
      * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is '1', area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $emergencyPhone;
     /**
      * The emergency information, contact name and/or contact number, required to be communicated when a call is placed to the EmergencyPhoneNumber. The information is required if there is a value in the EmergencyPhoneNumber field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $emergencyContact;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, 'RQ' should be entered.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $reportableQuantity;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $subRiskClass;
     /**
      * This is the packing group category associated to the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.Valid values are:I, II,III,blank.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $packagingGroupType;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $quantity;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good. For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $uOM;
     /**
      * The packing instructions related to the chemical record. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $packagingInstructionCode;
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LR, LQ or FR.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $properShippingName;
     /**
      * The technical name (when required) for the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $technicalName;
     /**
      * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $additionalDescription;
     /**
      * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box). Required if CommodityRegulatedLevelCode = LQ or FR.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $packagingType;
     /**
      * Defines the type of label that is required on the package for the commodity. Not applicable if CommodityRegulatedLevelCode = LR or EQ.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $hazardLabelRequired;
     /**
      * The number of pieces of the specific commodity. Required if CommodityRegulatedLevelCode = LQ or FR.Valid values are 1 to 999.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $packagingTypeQuantity;
     /**
      * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ), Lightly Regulated (LR). Default value is FR.Valid values are LR, FR, LQ, EQ.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityRegulatedLevelCode;
     /**
      * Transport Category.Valid values are 0 to 4.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $transportCategory;
     /**
      * Defines what is restricted to pass through a tunnel.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $tunnelRestrictionCode;
     /**
      * Identifies the Chemcial Record.  Required if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getChemicalRecordIdentifier() : string
+    public function getChemicalRecordIdentifier() : ?string
     {
         return $this->chemicalRecordIdentifier;
     }
     /**
      * Identifies the Chemcial Record.  Required if SubVersion is greater than or equal to 1701.
      *
-     * @param string $chemicalRecordIdentifier
+     * @param string|null $chemicalRecordIdentifier
      *
      * @return self
      */
-    public function setChemicalRecordIdentifier(string $chemicalRecordIdentifier) : self
+    public function setChemicalRecordIdentifier(?string $chemicalRecordIdentifier) : self
     {
         $this->initialized['chemicalRecordIdentifier'] = true;
         $this->chemicalRecordIdentifier = $chemicalRecordIdentifier;
@@ -169,20 +169,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getClassDivisionNumber() : string
+    public function getClassDivisionNumber() : ?string
     {
         return $this->classDivisionNumber;
     }
     /**
      * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $classDivisionNumber
+     * @param string|null $classDivisionNumber
      *
      * @return self
      */
-    public function setClassDivisionNumber(string $classDivisionNumber) : self
+    public function setClassDivisionNumber(?string $classDivisionNumber) : self
     {
         $this->initialized['classDivisionNumber'] = true;
         $this->classDivisionNumber = $classDivisionNumber;
@@ -191,20 +191,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity. Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getIDNumber() : string
+    public function getIDNumber() : ?string
     {
         return $this->iDNumber;
     }
     /**
      * This is the ID number (UN/NA/ID) for the specified commodity. Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $iDNumber
+     * @param string|null $iDNumber
      *
      * @return self
      */
-    public function setIDNumber(string $iDNumber) : self
+    public function setIDNumber(?string $iDNumber) : self
     {
         $this->initialized['iDNumber'] = true;
         $this->iDNumber = $iDNumber;
@@ -213,20 +213,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The method of transport by which a shipment is approved to move and the regulations associated with that method.  Only required when the CommodityRegulatedLevelCode is FR or LQ.Valid values: 01 - Highway02 - Ground03 - Passenger Aircraft04 - Cargo Aircraft Only  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package having different TransportationMode, TransportationMode of first ChemicalRecord would be considered for validating and rating the package. All TransportationMode except for '04' are general service offering. If any chemical record contains '04' as TransportationMode, ShipperNumber needs to be authorized to use '04' as TransportationMode.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTransportationMode() : string
+    public function getTransportationMode() : ?string
     {
         return $this->transportationMode;
     }
     /**
      * The method of transport by which a shipment is approved to move and the regulations associated with that method.  Only required when the CommodityRegulatedLevelCode is FR or LQ.Valid values: 01 - Highway02 - Ground03 - Passenger Aircraft04 - Cargo Aircraft Only  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package having different TransportationMode, TransportationMode of first ChemicalRecord would be considered for validating and rating the package. All TransportationMode except for '04' are general service offering. If any chemical record contains '04' as TransportationMode, ShipperNumber needs to be authorized to use '04' as TransportationMode.
      *
-     * @param string $transportationMode
+     * @param string|null $transportationMode
      *
      * @return self
      */
-    public function setTransportationMode(string $transportationMode) : self
+    public function setTransportationMode(?string $transportationMode) : self
     {
         $this->initialized['transportationMode'] = true;
         $this->transportationMode = $transportationMode;
@@ -235,20 +235,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The Regulatory set associated with every regulated shipment. It must be the same across the shipment. Valid values:   ADR -  For Europe to Europe Ground Movement CFR -  For HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada, IATA -  For Worldwide Air movement TDG -  For Canada to Canada ground movement or Canada to U.S. standard movement  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package or multiple packages containing different RegulationSet, RegulationSet of first ChemicalRecord would be considered for validating and rating the entire shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRegulationSet() : string
+    public function getRegulationSet() : ?string
     {
         return $this->regulationSet;
     }
     /**
      * The Regulatory set associated with every regulated shipment. It must be the same across the shipment. Valid values:   ADR -  For Europe to Europe Ground Movement CFR -  For HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada, IATA -  For Worldwide Air movement TDG -  For Canada to Canada ground movement or Canada to U.S. standard movement  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package or multiple packages containing different RegulationSet, RegulationSet of first ChemicalRecord would be considered for validating and rating the entire shipment.
      *
-     * @param string $regulationSet
+     * @param string|null $regulationSet
      *
      * @return self
      */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(?string $regulationSet) : self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -257,20 +257,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is '1', area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEmergencyPhone() : string
+    public function getEmergencyPhone() : ?string
     {
         return $this->emergencyPhone;
     }
     /**
      * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is '1', area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $emergencyPhone
+     * @param string|null $emergencyPhone
      *
      * @return self
      */
-    public function setEmergencyPhone(string $emergencyPhone) : self
+    public function setEmergencyPhone(?string $emergencyPhone) : self
     {
         $this->initialized['emergencyPhone'] = true;
         $this->emergencyPhone = $emergencyPhone;
@@ -279,20 +279,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The emergency information, contact name and/or contact number, required to be communicated when a call is placed to the EmergencyPhoneNumber. The information is required if there is a value in the EmergencyPhoneNumber field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEmergencyContact() : string
+    public function getEmergencyContact() : ?string
     {
         return $this->emergencyContact;
     }
     /**
      * The emergency information, contact name and/or contact number, required to be communicated when a call is placed to the EmergencyPhoneNumber. The information is required if there is a value in the EmergencyPhoneNumber field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $emergencyContact
+     * @param string|null $emergencyContact
      *
      * @return self
      */
-    public function setEmergencyContact(string $emergencyContact) : self
+    public function setEmergencyContact(?string $emergencyContact) : self
     {
         $this->initialized['emergencyContact'] = true;
         $this->emergencyContact = $emergencyContact;
@@ -301,20 +301,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, 'RQ' should be entered.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getReportableQuantity() : string
+    public function getReportableQuantity() : ?string
     {
         return $this->reportableQuantity;
     }
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, 'RQ' should be entered.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $reportableQuantity
+     * @param string|null $reportableQuantity
      *
      * @return self
      */
-    public function setReportableQuantity(string $reportableQuantity) : self
+    public function setReportableQuantity(?string $reportableQuantity) : self
     {
         $this->initialized['reportableQuantity'] = true;
         $this->reportableQuantity = $reportableQuantity;
@@ -323,20 +323,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubRiskClass() : string
+    public function getSubRiskClass() : ?string
     {
         return $this->subRiskClass;
     }
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $subRiskClass
+     * @param string|null $subRiskClass
      *
      * @return self
      */
-    public function setSubRiskClass(string $subRiskClass) : self
+    public function setSubRiskClass(?string $subRiskClass) : self
     {
         $this->initialized['subRiskClass'] = true;
         $this->subRiskClass = $subRiskClass;
@@ -345,20 +345,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * This is the packing group category associated to the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.Valid values are:I, II,III,blank.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackagingGroupType() : string
+    public function getPackagingGroupType() : ?string
     {
         return $this->packagingGroupType;
     }
     /**
      * This is the packing group category associated to the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.Valid values are:I, II,III,blank.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $packagingGroupType
+     * @param string|null $packagingGroupType
      *
      * @return self
      */
-    public function setPackagingGroupType(string $packagingGroupType) : self
+    public function setPackagingGroupType(?string $packagingGroupType) : self
     {
         $this->initialized['packagingGroupType'] = true;
         $this->packagingGroupType = $packagingGroupType;
@@ -367,20 +367,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuantity() : string
+    public function getQuantity() : ?string
     {
         return $this->quantity;
     }
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $quantity
+     * @param string|null $quantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(?string $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -389,20 +389,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good. For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUOM() : string
+    public function getUOM() : ?string
     {
         return $this->uOM;
     }
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good. For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $uOM
+     * @param string|null $uOM
      *
      * @return self
      */
-    public function setUOM(string $uOM) : self
+    public function setUOM(?string $uOM) : self
     {
         $this->initialized['uOM'] = true;
         $this->uOM = $uOM;
@@ -411,20 +411,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The packing instructions related to the chemical record. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackagingInstructionCode() : string
+    public function getPackagingInstructionCode() : ?string
     {
         return $this->packagingInstructionCode;
     }
     /**
      * The packing instructions related to the chemical record. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $packagingInstructionCode
+     * @param string|null $packagingInstructionCode
      *
      * @return self
      */
-    public function setPackagingInstructionCode(string $packagingInstructionCode) : self
+    public function setPackagingInstructionCode(?string $packagingInstructionCode) : self
     {
         $this->initialized['packagingInstructionCode'] = true;
         $this->packagingInstructionCode = $packagingInstructionCode;
@@ -433,20 +433,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LR, LQ or FR.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProperShippingName() : string
+    public function getProperShippingName() : ?string
     {
         return $this->properShippingName;
     }
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LR, LQ or FR.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $properShippingName
+     * @param string|null $properShippingName
      *
      * @return self
      */
-    public function setProperShippingName(string $properShippingName) : self
+    public function setProperShippingName(?string $properShippingName) : self
     {
         $this->initialized['properShippingName'] = true;
         $this->properShippingName = $properShippingName;
@@ -455,20 +455,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The technical name (when required) for the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTechnicalName() : string
+    public function getTechnicalName() : ?string
     {
         return $this->technicalName;
     }
     /**
      * The technical name (when required) for the specified commodity. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $technicalName
+     * @param string|null $technicalName
      *
      * @return self
      */
-    public function setTechnicalName(string $technicalName) : self
+    public function setTechnicalName(?string $technicalName) : self
     {
         $this->initialized['technicalName'] = true;
         $this->technicalName = $technicalName;
@@ -477,20 +477,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAdditionalDescription() : string
+    public function getAdditionalDescription() : ?string
     {
         return $this->additionalDescription;
     }
     /**
      * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $additionalDescription
+     * @param string|null $additionalDescription
      *
      * @return self
      */
-    public function setAdditionalDescription(string $additionalDescription) : self
+    public function setAdditionalDescription(?string $additionalDescription) : self
     {
         $this->initialized['additionalDescription'] = true;
         $this->additionalDescription = $additionalDescription;
@@ -499,20 +499,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box). Required if CommodityRegulatedLevelCode = LQ or FR.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackagingType() : string
+    public function getPackagingType() : ?string
     {
         return $this->packagingType;
     }
     /**
      * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box). Required if CommodityRegulatedLevelCode = LQ or FR.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $packagingType
+     * @param string|null $packagingType
      *
      * @return self
      */
-    public function setPackagingType(string $packagingType) : self
+    public function setPackagingType(?string $packagingType) : self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -521,20 +521,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Defines the type of label that is required on the package for the commodity. Not applicable if CommodityRegulatedLevelCode = LR or EQ.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHazardLabelRequired() : string
+    public function getHazardLabelRequired() : ?string
     {
         return $this->hazardLabelRequired;
     }
     /**
      * Defines the type of label that is required on the package for the commodity. Not applicable if CommodityRegulatedLevelCode = LR or EQ.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $hazardLabelRequired
+     * @param string|null $hazardLabelRequired
      *
      * @return self
      */
-    public function setHazardLabelRequired(string $hazardLabelRequired) : self
+    public function setHazardLabelRequired(?string $hazardLabelRequired) : self
     {
         $this->initialized['hazardLabelRequired'] = true;
         $this->hazardLabelRequired = $hazardLabelRequired;
@@ -543,20 +543,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * The number of pieces of the specific commodity. Required if CommodityRegulatedLevelCode = LQ or FR.Valid values are 1 to 999.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackagingTypeQuantity() : string
+    public function getPackagingTypeQuantity() : ?string
     {
         return $this->packagingTypeQuantity;
     }
     /**
      * The number of pieces of the specific commodity. Required if CommodityRegulatedLevelCode = LQ or FR.Valid values are 1 to 999.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $packagingTypeQuantity
+     * @param string|null $packagingTypeQuantity
      *
      * @return self
      */
-    public function setPackagingTypeQuantity(string $packagingTypeQuantity) : self
+    public function setPackagingTypeQuantity(?string $packagingTypeQuantity) : self
     {
         $this->initialized['packagingTypeQuantity'] = true;
         $this->packagingTypeQuantity = $packagingTypeQuantity;
@@ -565,20 +565,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ), Lightly Regulated (LR). Default value is FR.Valid values are LR, FR, LQ, EQ.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityRegulatedLevelCode() : string
+    public function getCommodityRegulatedLevelCode() : ?string
     {
         return $this->commodityRegulatedLevelCode;
     }
     /**
      * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ), Lightly Regulated (LR). Default value is FR.Valid values are LR, FR, LQ, EQ.   Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $commodityRegulatedLevelCode
+     * @param string|null $commodityRegulatedLevelCode
      *
      * @return self
      */
-    public function setCommodityRegulatedLevelCode(string $commodityRegulatedLevelCode) : self
+    public function setCommodityRegulatedLevelCode(?string $commodityRegulatedLevelCode) : self
     {
         $this->initialized['commodityRegulatedLevelCode'] = true;
         $this->commodityRegulatedLevelCode = $commodityRegulatedLevelCode;
@@ -587,20 +587,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Transport Category.Valid values are 0 to 4.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTransportCategory() : string
+    public function getTransportCategory() : ?string
     {
         return $this->transportCategory;
     }
     /**
      * Transport Category.Valid values are 0 to 4.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $transportCategory
+     * @param string|null $transportCategory
      *
      * @return self
      */
-    public function setTransportCategory(string $transportCategory) : self
+    public function setTransportCategory(?string $transportCategory) : self
     {
         $this->initialized['transportCategory'] = true;
         $this->transportCategory = $transportCategory;
@@ -609,20 +609,20 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
     /**
      * Defines what is restricted to pass through a tunnel.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTunnelRestrictionCode() : string
+    public function getTunnelRestrictionCode() : ?string
     {
         return $this->tunnelRestrictionCode;
     }
     /**
      * Defines what is restricted to pass through a tunnel.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $tunnelRestrictionCode
+     * @param string|null $tunnelRestrictionCode
      *
      * @return self
      */
-    public function setTunnelRestrictionCode(string $tunnelRestrictionCode) : self
+    public function setTunnelRestrictionCode(?string $tunnelRestrictionCode) : self
     {
         $this->initialized['tunnelRestrictionCode'] = true;
         $this->tunnelRestrictionCode = $tunnelRestrictionCode;

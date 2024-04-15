@@ -15,39 +15,39 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
     /**
      * Contains Dangerous Goods Utility Acceptance Audit Pre-check request criteria elements.
      *
-     * @var AcceptanceAuditPreCheckRequestRequest
+     * @var AcceptanceAuditPreCheckRequestRequest|null
      */
     protected $request;
     /**
     * The time that the request was made from the originating system. UTC time down to milliseconds. 
     Example: 2016-07-14T12:01:33.999
     *
-    * @var string
+    * @var string|null
     */
     protected $originRecordTransactionTimestamp;
     /**
      * Contains shipment information.
      *
-     * @var AcceptanceAuditPreCheckRequestShipment
+     * @var AcceptanceAuditPreCheckRequestShipment|null
      */
     protected $shipment;
     /**
      * Contains Dangerous Goods Utility Acceptance Audit Pre-check request criteria elements.
      *
-     * @return AcceptanceAuditPreCheckRequestRequest
+     * @return AcceptanceAuditPreCheckRequestRequest|null
      */
-    public function getRequest() : AcceptanceAuditPreCheckRequestRequest
+    public function getRequest() : ?AcceptanceAuditPreCheckRequestRequest
     {
         return $this->request;
     }
     /**
      * Contains Dangerous Goods Utility Acceptance Audit Pre-check request criteria elements.
      *
-     * @param AcceptanceAuditPreCheckRequestRequest $request
+     * @param AcceptanceAuditPreCheckRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(AcceptanceAuditPreCheckRequestRequest $request) : self
+    public function setRequest(?AcceptanceAuditPreCheckRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -57,9 +57,9 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
     * The time that the request was made from the originating system. UTC time down to milliseconds. 
     Example: 2016-07-14T12:01:33.999
     *
-    * @return string
+    * @return string|null
     */
-    public function getOriginRecordTransactionTimestamp() : string
+    public function getOriginRecordTransactionTimestamp() : ?string
     {
         return $this->originRecordTransactionTimestamp;
     }
@@ -67,11 +67,11 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
     * The time that the request was made from the originating system. UTC time down to milliseconds. 
     Example: 2016-07-14T12:01:33.999
     *
-    * @param string $originRecordTransactionTimestamp
+    * @param string|null $originRecordTransactionTimestamp
     *
     * @return self
     */
-    public function setOriginRecordTransactionTimestamp(string $originRecordTransactionTimestamp) : self
+    public function setOriginRecordTransactionTimestamp(?string $originRecordTransactionTimestamp) : self
     {
         $this->initialized['originRecordTransactionTimestamp'] = true;
         $this->originRecordTransactionTimestamp = $originRecordTransactionTimestamp;
@@ -80,20 +80,20 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
     /**
      * Contains shipment information.
      *
-     * @return AcceptanceAuditPreCheckRequestShipment
+     * @return AcceptanceAuditPreCheckRequestShipment|null
      */
-    public function getShipment() : AcceptanceAuditPreCheckRequestShipment
+    public function getShipment() : ?AcceptanceAuditPreCheckRequestShipment
     {
         return $this->shipment;
     }
     /**
      * Contains shipment information.
      *
-     * @param AcceptanceAuditPreCheckRequestShipment $shipment
+     * @param AcceptanceAuditPreCheckRequestShipment|null $shipment
      *
      * @return self
      */
-    public function setShipment(AcceptanceAuditPreCheckRequestShipment $shipment) : self
+    public function setShipment(?AcceptanceAuditPreCheckRequestShipment $shipment) : self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

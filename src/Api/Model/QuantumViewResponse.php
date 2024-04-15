@@ -15,38 +15,38 @@ class QuantumViewResponse extends \ArrayObject
     /**
      * Contains Errors information tags along with the success/fail status of the QuantumView request.
      *
-     * @var QuantumViewResponseResponse
+     * @var QuantumViewResponseResponse|null
      */
     protected $response;
     /**
      * The event that a user receives echoing Subscriber ID and information for subscription event, which is a subset of Tracking information specific to either packages coming or packages going, after subscription request is made, if the user requests for XML format.
      *
-     * @var QuantumViewResponseQuantumViewEvents
+     * @var QuantumViewResponseQuantumViewEvents|null
      */
     protected $quantumViewEvents;
     /**
      * Bookmarks the file for next retrieval, It is a base64Encoded String. It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. It contains SubscriberID if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
      *
-     * @var string
+     * @var string|null
      */
     protected $bookmark;
     /**
      * Contains Errors information tags along with the success/fail status of the QuantumView request.
      *
-     * @return QuantumViewResponseResponse
+     * @return QuantumViewResponseResponse|null
      */
-    public function getResponse() : QuantumViewResponseResponse
+    public function getResponse() : ?QuantumViewResponseResponse
     {
         return $this->response;
     }
     /**
      * Contains Errors information tags along with the success/fail status of the QuantumView request.
      *
-     * @param QuantumViewResponseResponse $response
+     * @param QuantumViewResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(QuantumViewResponseResponse $response) : self
+    public function setResponse(?QuantumViewResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -55,20 +55,20 @@ class QuantumViewResponse extends \ArrayObject
     /**
      * The event that a user receives echoing Subscriber ID and information for subscription event, which is a subset of Tracking information specific to either packages coming or packages going, after subscription request is made, if the user requests for XML format.
      *
-     * @return QuantumViewResponseQuantumViewEvents
+     * @return QuantumViewResponseQuantumViewEvents|null
      */
-    public function getQuantumViewEvents() : QuantumViewResponseQuantumViewEvents
+    public function getQuantumViewEvents() : ?QuantumViewResponseQuantumViewEvents
     {
         return $this->quantumViewEvents;
     }
     /**
      * The event that a user receives echoing Subscriber ID and information for subscription event, which is a subset of Tracking information specific to either packages coming or packages going, after subscription request is made, if the user requests for XML format.
      *
-     * @param QuantumViewResponseQuantumViewEvents $quantumViewEvents
+     * @param QuantumViewResponseQuantumViewEvents|null $quantumViewEvents
      *
      * @return self
      */
-    public function setQuantumViewEvents(QuantumViewResponseQuantumViewEvents $quantumViewEvents) : self
+    public function setQuantumViewEvents(?QuantumViewResponseQuantumViewEvents $quantumViewEvents) : self
     {
         $this->initialized['quantumViewEvents'] = true;
         $this->quantumViewEvents = $quantumViewEvents;
@@ -77,20 +77,20 @@ class QuantumViewResponse extends \ArrayObject
     /**
      * Bookmarks the file for next retrieval, It is a base64Encoded String. It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. It contains SubscriberID if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBookmark() : string
+    public function getBookmark() : ?string
     {
         return $this->bookmark;
     }
     /**
      * Bookmarks the file for next retrieval, It is a base64Encoded String. It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. It contains SubscriberID if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
      *
-     * @param string $bookmark
+     * @param string|null $bookmark
      *
      * @return self
      */
-    public function setBookmark(string $bookmark) : self
+    public function setBookmark(?string $bookmark) : self
     {
         $this->initialized['bookmark'] = true;
         $this->bookmark = $bookmark;

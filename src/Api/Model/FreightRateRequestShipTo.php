@@ -15,38 +15,38 @@ class FreightRateRequestShipTo extends \ArrayObject
     /**
      * Consignee's company name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address Container.
      *
-     * @var FreightRateShipToAddress
+     * @var FreightRateShipToAddress|null
      */
     protected $address;
     /**
      * Contact name at the consignee's location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Consignee's company name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Consignee's company name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -55,20 +55,20 @@ class FreightRateRequestShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return FreightRateShipToAddress
+     * @return FreightRateShipToAddress|null
      */
-    public function getAddress() : FreightRateShipToAddress
+    public function getAddress() : ?FreightRateShipToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param FreightRateShipToAddress $address
+     * @param FreightRateShipToAddress|null $address
      *
      * @return self
      */
-    public function setAddress(FreightRateShipToAddress $address) : self
+    public function setAddress(?FreightRateShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -77,20 +77,20 @@ class FreightRateRequestShipTo extends \ArrayObject
     /**
      * Contact name at the consignee's location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the consignee's location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;

@@ -15,26 +15,26 @@ class LabelRecoveryResponseCODTurnInPage extends \ArrayObject
     /**
      * Container for COD Turnin Page Image.
      *
-     * @var LRCODTurnInPageImage
+     * @var LRCODTurnInPageImage|null
      */
     protected $image;
     /**
      * Container for COD Turnin Page Image.
      *
-     * @return LRCODTurnInPageImage
+     * @return LRCODTurnInPageImage|null
      */
-    public function getImage() : LRCODTurnInPageImage
+    public function getImage() : ?LRCODTurnInPageImage
     {
         return $this->image;
     }
     /**
      * Container for COD Turnin Page Image.
      *
-     * @param LRCODTurnInPageImage $image
+     * @param LRCODTurnInPageImage|null $image
      *
      * @return self
      */
-    public function setImage(LRCODTurnInPageImage $image) : self
+    public function setImage(?LRCODTurnInPageImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

@@ -15,32 +15,32 @@ class FRSPaymentInformationAddress extends \ArrayObject
     /**
      * The postal code for the Ground Freight Pricing payment information address.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * The country or territory code for the Ground Freight Pricing payment information address.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * The postal code for the Ground Freight Pricing payment information address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * The postal code for the Ground Freight Pricing payment information address.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -49,20 +49,20 @@ class FRSPaymentInformationAddress extends \ArrayObject
     /**
      * The country or territory code for the Ground Freight Pricing payment information address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * The country or territory code for the Ground Freight Pricing payment information address.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

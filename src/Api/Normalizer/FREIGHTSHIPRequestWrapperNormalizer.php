@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightShipRequest', $data)) {
+            if (\array_key_exists('FreightShipRequest', $data) && $data['FreightShipRequest'] !== null) {
                 $object->setFreightShipRequest($this->denormalizer->denormalize($data['FreightShipRequest'], 'ShipStream\\Ups\\Api\\Model\\FreightShipRequest', 'json', $context));
                 unset($data['FreightShipRequest']);
+            }
+            elseif (\array_key_exists('FreightShipRequest', $data) && $data['FreightShipRequest'] === null) {
+                $object->setFreightShipRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightShipRequest', $data)) {
+            if (\array_key_exists('FreightShipRequest', $data) && $data['FreightShipRequest'] !== null) {
                 $object->setFreightShipRequest($this->denormalizer->denormalize($data['FreightShipRequest'], 'ShipStream\\Ups\\Api\\Model\\FreightShipRequest', 'json', $context));
                 unset($data['FreightShipRequest']);
+            }
+            elseif (\array_key_exists('FreightShipRequest', $data) && $data['FreightShipRequest'] === null) {
+                $object->setFreightShipRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

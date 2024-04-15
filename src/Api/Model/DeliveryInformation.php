@@ -15,38 +15,38 @@ class DeliveryInformation extends \ArrayObject
     /**
      * location
      *
-     * @var string
+     * @var string|null
      */
     protected $location;
     /**
      * receivedBy
      *
-     * @var string
+     * @var string|null
      */
     protected $receivedBy;
     /**
      * 
      *
-     * @var Signature
+     * @var Signature|null
      */
     protected $signature;
     /**
      * location
      *
-     * @return string
+     * @return string|null
      */
-    public function getLocation() : string
+    public function getLocation() : ?string
     {
         return $this->location;
     }
     /**
      * location
      *
-     * @param string $location
+     * @param string|null $location
      *
      * @return self
      */
-    public function setLocation(string $location) : self
+    public function setLocation(?string $location) : self
     {
         $this->initialized['location'] = true;
         $this->location = $location;
@@ -55,20 +55,20 @@ class DeliveryInformation extends \ArrayObject
     /**
      * receivedBy
      *
-     * @return string
+     * @return string|null
      */
-    public function getReceivedBy() : string
+    public function getReceivedBy() : ?string
     {
         return $this->receivedBy;
     }
     /**
      * receivedBy
      *
-     * @param string $receivedBy
+     * @param string|null $receivedBy
      *
      * @return self
      */
-    public function setReceivedBy(string $receivedBy) : self
+    public function setReceivedBy(?string $receivedBy) : self
     {
         $this->initialized['receivedBy'] = true;
         $this->receivedBy = $receivedBy;
@@ -77,20 +77,20 @@ class DeliveryInformation extends \ArrayObject
     /**
      * 
      *
-     * @return Signature
+     * @return Signature|null
      */
-    public function getSignature() : Signature
+    public function getSignature() : ?Signature
     {
         return $this->signature;
     }
     /**
      * 
      *
-     * @param Signature $signature
+     * @param Signature|null $signature
      *
      * @return self
      */
-    public function setSignature(Signature $signature) : self
+    public function setSignature(?Signature $signature) : self
     {
         $this->initialized['signature'] = true;
         $this->signature = $signature;

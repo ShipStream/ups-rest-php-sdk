@@ -15,32 +15,32 @@ class DropLocationLocationImage extends \ArrayObject
     /**
      * Secure URL for Location Image.
      *
-     * @var string
+     * @var string|null
      */
     protected $secureURL;
     /**
      * Non Secure URL for Location Image.
      *
-     * @var string
+     * @var string|null
      */
     protected $nonSecureURL;
     /**
      * Secure URL for Location Image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSecureURL() : string
+    public function getSecureURL() : ?string
     {
         return $this->secureURL;
     }
     /**
      * Secure URL for Location Image.
      *
-     * @param string $secureURL
+     * @param string|null $secureURL
      *
      * @return self
      */
-    public function setSecureURL(string $secureURL) : self
+    public function setSecureURL(?string $secureURL) : self
     {
         $this->initialized['secureURL'] = true;
         $this->secureURL = $secureURL;
@@ -49,20 +49,20 @@ class DropLocationLocationImage extends \ArrayObject
     /**
      * Non Secure URL for Location Image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNonSecureURL() : string
+    public function getNonSecureURL() : ?string
     {
         return $this->nonSecureURL;
     }
     /**
      * Non Secure URL for Location Image.
      *
-     * @param string $nonSecureURL
+     * @param string|null $nonSecureURL
      *
      * @return self
      */
-    public function setNonSecureURL(string $nonSecureURL) : self
+    public function setNonSecureURL(?string $nonSecureURL) : self
     {
         $this->initialized['nonSecureURL'] = true;
         $this->nonSecureURL = $nonSecureURL;

@@ -15,50 +15,50 @@ class ShipperAddress extends \ArrayObject
     /**
      * The Shipper street address including name and number (when applicable).  
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * Shipper's City.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * Shipper's state or province code. For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.
      *
-     * @var string
+     * @var string|null
      */
     protected $stateProvinceCode;
     /**
      * Shipper's postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCode;
     /**
      * Shipper's country or territory code. Refer to country or territory Codes in the Appendix for valid values.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * The Shipper street address including name and number (when applicable).  
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * The Shipper street address including name and number (when applicable).  
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -67,20 +67,20 @@ class ShipperAddress extends \ArrayObject
     /**
      * Shipper's City.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * Shipper's City.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -89,20 +89,20 @@ class ShipperAddress extends \ArrayObject
     /**
      * Shipper's state or province code. For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode() : ?string
     {
         return $this->stateProvinceCode;
     }
     /**
      * Shipper's state or province code. For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.
      *
-     * @param string $stateProvinceCode
+     * @param string|null $stateProvinceCode
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(?string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -111,20 +111,20 @@ class ShipperAddress extends \ArrayObject
     /**
      * Shipper's postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCode() : string
+    public function getPostalCode() : ?string
     {
         return $this->postalCode;
     }
     /**
      * Shipper's postal code.
      *
-     * @param string $postalCode
+     * @param string|null $postalCode
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(?string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -133,20 +133,20 @@ class ShipperAddress extends \ArrayObject
     /**
      * Shipper's country or territory code. Refer to country or territory Codes in the Appendix for valid values.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Shipper's country or territory code. Refer to country or territory Codes in the Appendix for valid values.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

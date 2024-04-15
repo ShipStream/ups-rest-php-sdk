@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
             }
-            if (\array_key_exists('DocumentsOnlyIndicator', $data)) {
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('DocumentsOnlyIndicator', $data) && $data['DocumentsOnlyIndicator'] !== null) {
                 $object->setDocumentsOnlyIndicator($data['DocumentsOnlyIndicator']);
                 unset($data['DocumentsOnlyIndicator']);
             }
-            if (\array_key_exists('PackageBillType', $data)) {
+            elseif (\array_key_exists('DocumentsOnlyIndicator', $data) && $data['DocumentsOnlyIndicator'] === null) {
+                $object->setDocumentsOnlyIndicator(null);
+            }
+            if (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] !== null) {
                 $object->setPackageBillType($data['PackageBillType']);
                 unset($data['PackageBillType']);
             }
-            if (\array_key_exists('ServiceSummary', $data)) {
+            elseif (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] === null) {
+                $object->setPackageBillType(null);
+            }
+            if (\array_key_exists('ServiceSummary', $data) && $data['ServiceSummary'] !== null) {
                 $object->setServiceSummary($this->denormalizer->denormalize($data['ServiceSummary'], 'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary', 'json', $context));
                 unset($data['ServiceSummary']);
             }
-            if (\array_key_exists('AutoDutyCode', $data)) {
+            elseif (\array_key_exists('ServiceSummary', $data) && $data['ServiceSummary'] === null) {
+                $object->setServiceSummary(null);
+            }
+            if (\array_key_exists('AutoDutyCode', $data) && $data['AutoDutyCode'] !== null) {
                 $object->setAutoDutyCode($data['AutoDutyCode']);
                 unset($data['AutoDutyCode']);
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            elseif (\array_key_exists('AutoDutyCode', $data) && $data['AutoDutyCode'] === null) {
+                $object->setAutoDutyCode(null);
+            }
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $object->setDisclaimer($data['Disclaimer']);
                 unset($data['Disclaimer']);
+            }
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -130,29 +148,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
             }
-            if (\array_key_exists('DocumentsOnlyIndicator', $data)) {
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('DocumentsOnlyIndicator', $data) && $data['DocumentsOnlyIndicator'] !== null) {
                 $object->setDocumentsOnlyIndicator($data['DocumentsOnlyIndicator']);
                 unset($data['DocumentsOnlyIndicator']);
             }
-            if (\array_key_exists('PackageBillType', $data)) {
+            elseif (\array_key_exists('DocumentsOnlyIndicator', $data) && $data['DocumentsOnlyIndicator'] === null) {
+                $object->setDocumentsOnlyIndicator(null);
+            }
+            if (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] !== null) {
                 $object->setPackageBillType($data['PackageBillType']);
                 unset($data['PackageBillType']);
             }
-            if (\array_key_exists('ServiceSummary', $data)) {
+            elseif (\array_key_exists('PackageBillType', $data) && $data['PackageBillType'] === null) {
+                $object->setPackageBillType(null);
+            }
+            if (\array_key_exists('ServiceSummary', $data) && $data['ServiceSummary'] !== null) {
                 $object->setServiceSummary($this->denormalizer->denormalize($data['ServiceSummary'], 'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary', 'json', $context));
                 unset($data['ServiceSummary']);
             }
-            if (\array_key_exists('AutoDutyCode', $data)) {
+            elseif (\array_key_exists('ServiceSummary', $data) && $data['ServiceSummary'] === null) {
+                $object->setServiceSummary(null);
+            }
+            if (\array_key_exists('AutoDutyCode', $data) && $data['AutoDutyCode'] !== null) {
                 $object->setAutoDutyCode($data['AutoDutyCode']);
                 unset($data['AutoDutyCode']);
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            elseif (\array_key_exists('AutoDutyCode', $data) && $data['AutoDutyCode'] === null) {
+                $object->setAutoDutyCode(null);
+            }
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $object->setDisclaimer($data['Disclaimer']);
                 unset($data['Disclaimer']);
+            }
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

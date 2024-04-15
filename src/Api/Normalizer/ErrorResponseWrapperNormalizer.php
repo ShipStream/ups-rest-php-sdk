@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('errors', $data)) {
+            if (\array_key_exists('errors', $data) && $data['errors'] !== null) {
                 $values = [];
                 foreach ($data['errors'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Error', 'json', $context);
                 }
                 $object->setErrors($values);
                 unset($data['errors']);
+            }
+            elseif (\array_key_exists('errors', $data) && $data['errors'] === null) {
+                $object->setErrors(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,13 +110,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('errors', $data)) {
+            if (\array_key_exists('errors', $data) && $data['errors'] !== null) {
                 $values = [];
                 foreach ($data['errors'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Error', 'json', $context);
                 }
                 $object->setErrors($values);
                 unset($data['errors']);
+            }
+            elseif (\array_key_exists('errors', $data) && $data['errors'] === null) {
+                $object->setErrors(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

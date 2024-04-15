@@ -15,44 +15,44 @@ class ShipmentRequest extends \ArrayObject
     /**
      * Request Container
      *
-     * @var ShipmentRequestRequest
+     * @var ShipmentRequestRequest|null
      */
     protected $request;
     /**
      * Shipment Container
      *
-     * @var ShipmentRequestShipment
+     * @var ShipmentRequestShipment|null
      */
     protected $shipment;
     /**
      * Container used to define the properties required by the user to print and/or display the UPS shipping label.  Required for shipment without return service or shipments with PRL return service. Required for Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
      *
-     * @var ShipmentRequestLabelSpecification
+     * @var ShipmentRequestLabelSpecification|null
      */
     protected $labelSpecification;
     /**
      * Container used to allow the user to choose to print a thermal receipt.
      *
-     * @var ShipmentRequestReceiptSpecification
+     * @var ShipmentRequestReceiptSpecification|null
      */
     protected $receiptSpecification;
     /**
      * Request Container
      *
-     * @return ShipmentRequestRequest
+     * @return ShipmentRequestRequest|null
      */
-    public function getRequest() : ShipmentRequestRequest
+    public function getRequest() : ?ShipmentRequestRequest
     {
         return $this->request;
     }
     /**
      * Request Container
      *
-     * @param ShipmentRequestRequest $request
+     * @param ShipmentRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(ShipmentRequestRequest $request) : self
+    public function setRequest(?ShipmentRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -61,20 +61,20 @@ class ShipmentRequest extends \ArrayObject
     /**
      * Shipment Container
      *
-     * @return ShipmentRequestShipment
+     * @return ShipmentRequestShipment|null
      */
-    public function getShipment() : ShipmentRequestShipment
+    public function getShipment() : ?ShipmentRequestShipment
     {
         return $this->shipment;
     }
     /**
      * Shipment Container
      *
-     * @param ShipmentRequestShipment $shipment
+     * @param ShipmentRequestShipment|null $shipment
      *
      * @return self
      */
-    public function setShipment(ShipmentRequestShipment $shipment) : self
+    public function setShipment(?ShipmentRequestShipment $shipment) : self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;
@@ -83,20 +83,20 @@ class ShipmentRequest extends \ArrayObject
     /**
      * Container used to define the properties required by the user to print and/or display the UPS shipping label.  Required for shipment without return service or shipments with PRL return service. Required for Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
      *
-     * @return ShipmentRequestLabelSpecification
+     * @return ShipmentRequestLabelSpecification|null
      */
-    public function getLabelSpecification() : ShipmentRequestLabelSpecification
+    public function getLabelSpecification() : ?ShipmentRequestLabelSpecification
     {
         return $this->labelSpecification;
     }
     /**
      * Container used to define the properties required by the user to print and/or display the UPS shipping label.  Required for shipment without return service or shipments with PRL return service. Required for Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
      *
-     * @param ShipmentRequestLabelSpecification $labelSpecification
+     * @param ShipmentRequestLabelSpecification|null $labelSpecification
      *
      * @return self
      */
-    public function setLabelSpecification(ShipmentRequestLabelSpecification $labelSpecification) : self
+    public function setLabelSpecification(?ShipmentRequestLabelSpecification $labelSpecification) : self
     {
         $this->initialized['labelSpecification'] = true;
         $this->labelSpecification = $labelSpecification;
@@ -105,20 +105,20 @@ class ShipmentRequest extends \ArrayObject
     /**
      * Container used to allow the user to choose to print a thermal receipt.
      *
-     * @return ShipmentRequestReceiptSpecification
+     * @return ShipmentRequestReceiptSpecification|null
      */
-    public function getReceiptSpecification() : ShipmentRequestReceiptSpecification
+    public function getReceiptSpecification() : ?ShipmentRequestReceiptSpecification
     {
         return $this->receiptSpecification;
     }
     /**
      * Container used to allow the user to choose to print a thermal receipt.
      *
-     * @param ShipmentRequestReceiptSpecification $receiptSpecification
+     * @param ShipmentRequestReceiptSpecification|null $receiptSpecification
      *
      * @return self
      */
-    public function setReceiptSpecification(ShipmentRequestReceiptSpecification $receiptSpecification) : self
+    public function setReceiptSpecification(?ShipmentRequestReceiptSpecification $receiptSpecification) : self
     {
         $this->initialized['receiptSpecification'] = true;
         $this->receiptSpecification = $receiptSpecification;

@@ -15,74 +15,74 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Alcohol. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $alcoholicBeveragesIndicator;
     /**
      * This field is a flag to indicate if the package has Biological substances. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments. Lane check will happen based on postal code/ city.
      *
-     * @var string
+     * @var string|null
      */
     protected $diagnosticSpecimensIndicator;
     /**
      * This field is a flag to indicate if the package has Perishables. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $perishablesIndicator;
     /**
      * This field is a flag to indicate if the package has Plants. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $plantsIndicator;
     /**
      * This field is a flag to indicate if the package has Seeds. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $seedsIndicator;
     /**
      * This field is a flag to indicate if the package has Special Exceptions Restricted Materials. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $specialExceptionsIndicator;
     /**
      * This field is a flag to indicate if the package has Tobacco. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $tobaccoIndicator;
     /**
      * This field is a flag to indicate if the package has E-Cigarettes. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $eCigarettesIndicator;
     /**
      * This field is a flag to indicate if the package has Hemp/CBD. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $hempCBDIndicator;
     /**
      * This field is a flag to indicate if the package has Alcohol. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAlcoholicBeveragesIndicator() : string
+    public function getAlcoholicBeveragesIndicator() : ?string
     {
         return $this->alcoholicBeveragesIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Alcohol. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $alcoholicBeveragesIndicator
+     * @param string|null $alcoholicBeveragesIndicator
      *
      * @return self
      */
-    public function setAlcoholicBeveragesIndicator(string $alcoholicBeveragesIndicator) : self
+    public function setAlcoholicBeveragesIndicator(?string $alcoholicBeveragesIndicator) : self
     {
         $this->initialized['alcoholicBeveragesIndicator'] = true;
         $this->alcoholicBeveragesIndicator = $alcoholicBeveragesIndicator;
@@ -91,20 +91,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Biological substances. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments. Lane check will happen based on postal code/ city.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDiagnosticSpecimensIndicator() : string
+    public function getDiagnosticSpecimensIndicator() : ?string
     {
         return $this->diagnosticSpecimensIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Biological substances. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments. Lane check will happen based on postal code/ city.
      *
-     * @param string $diagnosticSpecimensIndicator
+     * @param string|null $diagnosticSpecimensIndicator
      *
      * @return self
      */
-    public function setDiagnosticSpecimensIndicator(string $diagnosticSpecimensIndicator) : self
+    public function setDiagnosticSpecimensIndicator(?string $diagnosticSpecimensIndicator) : self
     {
         $this->initialized['diagnosticSpecimensIndicator'] = true;
         $this->diagnosticSpecimensIndicator = $diagnosticSpecimensIndicator;
@@ -113,20 +113,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Perishables. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPerishablesIndicator() : string
+    public function getPerishablesIndicator() : ?string
     {
         return $this->perishablesIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Perishables. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $perishablesIndicator
+     * @param string|null $perishablesIndicator
      *
      * @return self
      */
-    public function setPerishablesIndicator(string $perishablesIndicator) : self
+    public function setPerishablesIndicator(?string $perishablesIndicator) : self
     {
         $this->initialized['perishablesIndicator'] = true;
         $this->perishablesIndicator = $perishablesIndicator;
@@ -135,20 +135,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Plants. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPlantsIndicator() : string
+    public function getPlantsIndicator() : ?string
     {
         return $this->plantsIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Plants. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $plantsIndicator
+     * @param string|null $plantsIndicator
      *
      * @return self
      */
-    public function setPlantsIndicator(string $plantsIndicator) : self
+    public function setPlantsIndicator(?string $plantsIndicator) : self
     {
         $this->initialized['plantsIndicator'] = true;
         $this->plantsIndicator = $plantsIndicator;
@@ -157,20 +157,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Seeds. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSeedsIndicator() : string
+    public function getSeedsIndicator() : ?string
     {
         return $this->seedsIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Seeds. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $seedsIndicator
+     * @param string|null $seedsIndicator
      *
      * @return self
      */
-    public function setSeedsIndicator(string $seedsIndicator) : self
+    public function setSeedsIndicator(?string $seedsIndicator) : self
     {
         $this->initialized['seedsIndicator'] = true;
         $this->seedsIndicator = $seedsIndicator;
@@ -179,20 +179,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Special Exceptions Restricted Materials. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSpecialExceptionsIndicator() : string
+    public function getSpecialExceptionsIndicator() : ?string
     {
         return $this->specialExceptionsIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Special Exceptions Restricted Materials. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $specialExceptionsIndicator
+     * @param string|null $specialExceptionsIndicator
      *
      * @return self
      */
-    public function setSpecialExceptionsIndicator(string $specialExceptionsIndicator) : self
+    public function setSpecialExceptionsIndicator(?string $specialExceptionsIndicator) : self
     {
         $this->initialized['specialExceptionsIndicator'] = true;
         $this->specialExceptionsIndicator = $specialExceptionsIndicator;
@@ -201,20 +201,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Tobacco. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTobaccoIndicator() : string
+    public function getTobaccoIndicator() : ?string
     {
         return $this->tobaccoIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Tobacco. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $tobaccoIndicator
+     * @param string|null $tobaccoIndicator
      *
      * @return self
      */
-    public function setTobaccoIndicator(string $tobaccoIndicator) : self
+    public function setTobaccoIndicator(?string $tobaccoIndicator) : self
     {
         $this->initialized['tobaccoIndicator'] = true;
         $this->tobaccoIndicator = $tobaccoIndicator;
@@ -223,20 +223,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has E-Cigarettes. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getECigarettesIndicator() : string
+    public function getECigarettesIndicator() : ?string
     {
         return $this->eCigarettesIndicator;
     }
     /**
      * This field is a flag to indicate if the package has E-Cigarettes. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $eCigarettesIndicator
+     * @param string|null $eCigarettesIndicator
      *
      * @return self
      */
-    public function setECigarettesIndicator(string $eCigarettesIndicator) : self
+    public function setECigarettesIndicator(?string $eCigarettesIndicator) : self
     {
         $this->initialized['eCigarettesIndicator'] = true;
         $this->eCigarettesIndicator = $eCigarettesIndicator;
@@ -245,20 +245,20 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
     /**
      * This field is a flag to indicate if the package has Hemp/CBD. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHempCBDIndicator() : string
+    public function getHempCBDIndicator() : ?string
     {
         return $this->hempCBDIndicator;
     }
     /**
      * This field is a flag to indicate if the package has Hemp/CBD. True if present; false otherwise.  Valid for UPS World Wide Express Freight shipments.
      *
-     * @param string $hempCBDIndicator
+     * @param string|null $hempCBDIndicator
      *
      * @return self
      */
-    public function setHempCBDIndicator(string $hempCBDIndicator) : self
+    public function setHempCBDIndicator(?string $hempCBDIndicator) : self
     {
         $this->initialized['hempCBDIndicator'] = true;
         $this->hempCBDIndicator = $hempCBDIndicator;

@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CompanyName', $data)) {
+            if (\array_key_exists('CompanyName', $data) && $data['CompanyName'] !== null) {
                 $object->setCompanyName($data['CompanyName']);
                 unset($data['CompanyName']);
             }
-            if (\array_key_exists('EMailNotification', $data)) {
+            elseif (\array_key_exists('CompanyName', $data) && $data['CompanyName'] === null) {
+                $object->setCompanyName(null);
+            }
+            if (\array_key_exists('EMailNotification', $data) && $data['EMailNotification'] !== null) {
                 $values = [];
                 foreach ($data['EMailNotification'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification', 'json', $context);
@@ -52,9 +55,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEMailNotification($values);
                 unset($data['EMailNotification']);
             }
-            if (\array_key_exists('FailedEMail', $data)) {
+            elseif (\array_key_exists('EMailNotification', $data) && $data['EMailNotification'] === null) {
+                $object->setEMailNotification(null);
+            }
+            if (\array_key_exists('FailedEMail', $data) && $data['FailedEMail'] !== null) {
                 $object->setFailedEMail($data['FailedEMail']);
                 unset($data['FailedEMail']);
+            }
+            elseif (\array_key_exists('FailedEMail', $data) && $data['FailedEMail'] === null) {
+                $object->setFailedEMail(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -121,11 +130,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CompanyName', $data)) {
+            if (\array_key_exists('CompanyName', $data) && $data['CompanyName'] !== null) {
                 $object->setCompanyName($data['CompanyName']);
                 unset($data['CompanyName']);
             }
-            if (\array_key_exists('EMailNotification', $data)) {
+            elseif (\array_key_exists('CompanyName', $data) && $data['CompanyName'] === null) {
+                $object->setCompanyName(null);
+            }
+            if (\array_key_exists('EMailNotification', $data) && $data['EMailNotification'] !== null) {
                 $values = [];
                 foreach ($data['EMailNotification'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification', 'json', $context);
@@ -133,9 +145,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEMailNotification($values);
                 unset($data['EMailNotification']);
             }
-            if (\array_key_exists('FailedEMail', $data)) {
+            elseif (\array_key_exists('EMailNotification', $data) && $data['EMailNotification'] === null) {
+                $object->setEMailNotification(null);
+            }
+            if (\array_key_exists('FailedEMail', $data) && $data['FailedEMail'] !== null) {
                 $object->setFailedEMail($data['FailedEMail']);
                 unset($data['FailedEMail']);
+            }
+            elseif (\array_key_exists('FailedEMail', $data) && $data['FailedEMail'] === null) {
+                $object->setFailedEMail(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

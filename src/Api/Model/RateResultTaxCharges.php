@@ -16,22 +16,22 @@ class RateResultTaxCharges extends \ArrayObject
     * Type of Tax code. 
     Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
     *
-    * @var string
+    * @var string|null
     */
     protected $type;
     /**
      * Monetary value of the tax.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
     * Type of Tax code. 
     Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
     *
-    * @return string
+    * @return string|null
     */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
@@ -39,11 +39,11 @@ class RateResultTaxCharges extends \ArrayObject
     * Type of Tax code. 
     Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
     *
-    * @param string $type
+    * @param string|null $type
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -52,20 +52,20 @@ class RateResultTaxCharges extends \ArrayObject
     /**
      * Monetary value of the tax.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Monetary value of the tax.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

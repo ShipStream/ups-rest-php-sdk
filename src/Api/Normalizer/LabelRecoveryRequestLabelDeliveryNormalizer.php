@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelLinkIndicator', $data)) {
+            if (\array_key_exists('LabelLinkIndicator', $data) && $data['LabelLinkIndicator'] !== null) {
                 $object->setLabelLinkIndicator($data['LabelLinkIndicator']);
                 unset($data['LabelLinkIndicator']);
             }
-            if (\array_key_exists('ResendEMailIndicator', $data)) {
+            elseif (\array_key_exists('LabelLinkIndicator', $data) && $data['LabelLinkIndicator'] === null) {
+                $object->setLabelLinkIndicator(null);
+            }
+            if (\array_key_exists('ResendEMailIndicator', $data) && $data['ResendEMailIndicator'] !== null) {
                 $object->setResendEMailIndicator($data['ResendEMailIndicator']);
                 unset($data['ResendEMailIndicator']);
+            }
+            elseif (\array_key_exists('ResendEMailIndicator', $data) && $data['ResendEMailIndicator'] === null) {
+                $object->setResendEMailIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelLinkIndicator', $data)) {
+            if (\array_key_exists('LabelLinkIndicator', $data) && $data['LabelLinkIndicator'] !== null) {
                 $object->setLabelLinkIndicator($data['LabelLinkIndicator']);
                 unset($data['LabelLinkIndicator']);
             }
-            if (\array_key_exists('ResendEMailIndicator', $data)) {
+            elseif (\array_key_exists('LabelLinkIndicator', $data) && $data['LabelLinkIndicator'] === null) {
+                $object->setLabelLinkIndicator(null);
+            }
+            if (\array_key_exists('ResendEMailIndicator', $data) && $data['ResendEMailIndicator'] !== null) {
                 $object->setResendEMailIndicator($data['ResendEMailIndicator']);
                 unset($data['ResendEMailIndicator']);
+            }
+            elseif (\array_key_exists('ResendEMailIndicator', $data) && $data['ResendEMailIndicator'] === null) {
+                $object->setResendEMailIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

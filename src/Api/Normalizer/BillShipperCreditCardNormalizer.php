@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('Number', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('ExpirationDate', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] !== null) {
                 $object->setExpirationDate($data['ExpirationDate']);
                 unset($data['ExpirationDate']);
             }
-            if (\array_key_exists('SecurityCode', $data)) {
+            elseif (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] === null) {
+                $object->setExpirationDate(null);
+            }
+            if (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] !== null) {
                 $object->setSecurityCode($data['SecurityCode']);
                 unset($data['SecurityCode']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] === null) {
+                $object->setSecurityCode(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\CreditCardAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -119,25 +134,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('Number', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($data['Number']);
                 unset($data['Number']);
             }
-            if (\array_key_exists('ExpirationDate', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] !== null) {
                 $object->setExpirationDate($data['ExpirationDate']);
                 unset($data['ExpirationDate']);
             }
-            if (\array_key_exists('SecurityCode', $data)) {
+            elseif (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] === null) {
+                $object->setExpirationDate(null);
+            }
+            if (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] !== null) {
                 $object->setSecurityCode($data['SecurityCode']);
                 unset($data['SecurityCode']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] === null) {
+                $object->setSecurityCode(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\CreditCardAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

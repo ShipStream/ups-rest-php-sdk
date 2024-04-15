@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupGetServiceCenterFacilitiesRequest', $data)) {
+            if (\array_key_exists('PickupGetServiceCenterFacilitiesRequest', $data) && $data['PickupGetServiceCenterFacilitiesRequest'] !== null) {
                 $object->setPickupGetServiceCenterFacilitiesRequest($this->denormalizer->denormalize($data['PickupGetServiceCenterFacilitiesRequest'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequest', 'json', $context));
                 unset($data['PickupGetServiceCenterFacilitiesRequest']);
+            }
+            elseif (\array_key_exists('PickupGetServiceCenterFacilitiesRequest', $data) && $data['PickupGetServiceCenterFacilitiesRequest'] === null) {
+                $object->setPickupGetServiceCenterFacilitiesRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupGetServiceCenterFacilitiesRequest', $data)) {
+            if (\array_key_exists('PickupGetServiceCenterFacilitiesRequest', $data) && $data['PickupGetServiceCenterFacilitiesRequest'] !== null) {
                 $object->setPickupGetServiceCenterFacilitiesRequest($this->denormalizer->denormalize($data['PickupGetServiceCenterFacilitiesRequest'], 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequest', 'json', $context));
                 unset($data['PickupGetServiceCenterFacilitiesRequest']);
+            }
+            elseif (\array_key_exists('PickupGetServiceCenterFacilitiesRequest', $data) && $data['PickupGetServiceCenterFacilitiesRequest'] === null) {
+                $object->setPickupGetServiceCenterFacilitiesRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

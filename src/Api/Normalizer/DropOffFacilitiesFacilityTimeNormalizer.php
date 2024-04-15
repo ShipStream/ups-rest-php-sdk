@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DayOfWeek', $data)) {
+            if (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] !== null) {
                 $values = [];
                 foreach ($data['DayOfWeek'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek', 'json', $context);
                 }
                 $object->setDayOfWeek($values);
                 unset($data['DayOfWeek']);
+            }
+            elseif (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] === null) {
+                $object->setDayOfWeek(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DayOfWeek', $data)) {
+            if (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] !== null) {
                 $values = [];
                 foreach ($data['DayOfWeek'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek', 'json', $context);
                 }
                 $object->setDayOfWeek($values);
                 unset($data['DayOfWeek']);
+            }
+            elseif (\array_key_exists('DayOfWeek', $data) && $data['DayOfWeek'] === null) {
+                $object->setDayOfWeek(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,44 +15,44 @@ class PackageDimensions extends \ArrayObject
     /**
      * UnitOfMeasurement Container.
      *
-     * @var DimensionsUnitOfMeasurement
+     * @var DimensionsUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * The length of the line item used to determine dimensional weight.
      *
-     * @var string
+     * @var string|null
      */
     protected $length;
     /**
      * The width of the line item used to determine dimensional weight.
      *
-     * @var string
+     * @var string|null
      */
     protected $width;
     /**
      * The height of the line item used to determine dimensional weight.
      *
-     * @var string
+     * @var string|null
      */
     protected $height;
     /**
      * UnitOfMeasurement Container.
      *
-     * @return DimensionsUnitOfMeasurement
+     * @return DimensionsUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : DimensionsUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?DimensionsUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * UnitOfMeasurement Container.
      *
-     * @param DimensionsUnitOfMeasurement $unitOfMeasurement
+     * @param DimensionsUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?DimensionsUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -61,20 +61,20 @@ class PackageDimensions extends \ArrayObject
     /**
      * The length of the line item used to determine dimensional weight.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLength() : string
+    public function getLength() : ?string
     {
         return $this->length;
     }
     /**
      * The length of the line item used to determine dimensional weight.
      *
-     * @param string $length
+     * @param string|null $length
      *
      * @return self
      */
-    public function setLength(string $length) : self
+    public function setLength(?string $length) : self
     {
         $this->initialized['length'] = true;
         $this->length = $length;
@@ -83,20 +83,20 @@ class PackageDimensions extends \ArrayObject
     /**
      * The width of the line item used to determine dimensional weight.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWidth() : string
+    public function getWidth() : ?string
     {
         return $this->width;
     }
     /**
      * The width of the line item used to determine dimensional weight.
      *
-     * @param string $width
+     * @param string|null $width
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(?string $width) : self
     {
         $this->initialized['width'] = true;
         $this->width = $width;
@@ -105,20 +105,20 @@ class PackageDimensions extends \ArrayObject
     /**
      * The height of the line item used to determine dimensional weight.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHeight() : string
+    public function getHeight() : ?string
     {
         return $this->height;
     }
     /**
      * The height of the line item used to determine dimensional weight.
      *
-     * @param string $height
+     * @param string|null $height
      *
      * @return self
      */
-    public function setHeight(string $height) : self
+    public function setHeight(?string $height) : self
     {
         $this->initialized['height'] = true;
         $this->height = $height;

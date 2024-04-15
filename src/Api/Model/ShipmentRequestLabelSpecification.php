@@ -15,25 +15,25 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * LabelImageFormat Container.
      *
-     * @var LabelSpecificationLabelImageFormat
+     * @var LabelSpecificationLabelImageFormat|null
      */
     protected $labelImageFormat;
     /**
      * Browser HTTPUserAgent String. This is the preferred way of identifying GIF image type to be generated.  Required if /ShipmentRequest/LabelSpecificationLabelSpecification/LabelImageFormat/Code = Gif. Default to Mozilla/4.5 if this field is missing or has invalid value.
      *
-     * @var string
+     * @var string|null
      */
     protected $hTTPUserAgent;
     /**
      * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
      *
-     * @var LabelSpecificationLabelStockSize
+     * @var LabelSpecificationLabelStockSize|null
      */
     protected $labelStockSize;
     /**
      * 
      *
-     * @var LabelSpecificationInstruction[]
+     * @var list<LabelSpecificationInstruction>|null
      */
     protected $instruction;
     /**
@@ -63,26 +63,26 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     lit = Lithuanian (Latin-2)
     eng = English (Latin-1)  Default is English (Latin-1).
     *
-    * @var string
+    * @var string|null
     */
     protected $characterSet;
     /**
      * LabelImageFormat Container.
      *
-     * @return LabelSpecificationLabelImageFormat
+     * @return LabelSpecificationLabelImageFormat|null
      */
-    public function getLabelImageFormat() : LabelSpecificationLabelImageFormat
+    public function getLabelImageFormat() : ?LabelSpecificationLabelImageFormat
     {
         return $this->labelImageFormat;
     }
     /**
      * LabelImageFormat Container.
      *
-     * @param LabelSpecificationLabelImageFormat $labelImageFormat
+     * @param LabelSpecificationLabelImageFormat|null $labelImageFormat
      *
      * @return self
      */
-    public function setLabelImageFormat(LabelSpecificationLabelImageFormat $labelImageFormat) : self
+    public function setLabelImageFormat(?LabelSpecificationLabelImageFormat $labelImageFormat) : self
     {
         $this->initialized['labelImageFormat'] = true;
         $this->labelImageFormat = $labelImageFormat;
@@ -91,20 +91,20 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * Browser HTTPUserAgent String. This is the preferred way of identifying GIF image type to be generated.  Required if /ShipmentRequest/LabelSpecificationLabelSpecification/LabelImageFormat/Code = Gif. Default to Mozilla/4.5 if this field is missing or has invalid value.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHTTPUserAgent() : string
+    public function getHTTPUserAgent() : ?string
     {
         return $this->hTTPUserAgent;
     }
     /**
      * Browser HTTPUserAgent String. This is the preferred way of identifying GIF image type to be generated.  Required if /ShipmentRequest/LabelSpecificationLabelSpecification/LabelImageFormat/Code = Gif. Default to Mozilla/4.5 if this field is missing or has invalid value.
      *
-     * @param string $hTTPUserAgent
+     * @param string|null $hTTPUserAgent
      *
      * @return self
      */
-    public function setHTTPUserAgent(string $hTTPUserAgent) : self
+    public function setHTTPUserAgent(?string $hTTPUserAgent) : self
     {
         $this->initialized['hTTPUserAgent'] = true;
         $this->hTTPUserAgent = $hTTPUserAgent;
@@ -113,20 +113,20 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
      *
-     * @return LabelSpecificationLabelStockSize
+     * @return LabelSpecificationLabelStockSize|null
      */
-    public function getLabelStockSize() : LabelSpecificationLabelStockSize
+    public function getLabelStockSize() : ?LabelSpecificationLabelStockSize
     {
         return $this->labelStockSize;
     }
     /**
      * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
      *
-     * @param LabelSpecificationLabelStockSize $labelStockSize
+     * @param LabelSpecificationLabelStockSize|null $labelStockSize
      *
      * @return self
      */
-    public function setLabelStockSize(LabelSpecificationLabelStockSize $labelStockSize) : self
+    public function setLabelStockSize(?LabelSpecificationLabelStockSize $labelStockSize) : self
     {
         $this->initialized['labelStockSize'] = true;
         $this->labelStockSize = $labelStockSize;
@@ -135,20 +135,20 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * 
      *
-     * @return LabelSpecificationInstruction[]
+     * @return list<LabelSpecificationInstruction>|null
      */
-    public function getInstruction() : array
+    public function getInstruction() : ?array
     {
         return $this->instruction;
     }
     /**
      * 
      *
-     * @param LabelSpecificationInstruction[] $instruction
+     * @param list<LabelSpecificationInstruction>|null $instruction
      *
      * @return self
      */
-    public function setInstruction(array $instruction) : self
+    public function setInstruction(?array $instruction) : self
     {
         $this->initialized['instruction'] = true;
         $this->instruction = $instruction;
@@ -181,9 +181,9 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     lit = Lithuanian (Latin-2)
     eng = English (Latin-1)  Default is English (Latin-1).
     *
-    * @return string
+    * @return string|null
     */
-    public function getCharacterSet() : string
+    public function getCharacterSet() : ?string
     {
         return $this->characterSet;
     }
@@ -214,11 +214,11 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     lit = Lithuanian (Latin-2)
     eng = English (Latin-1)  Default is English (Latin-1).
     *
-    * @param string $characterSet
+    * @param string|null $characterSet
     *
     * @return self
     */
-    public function setCharacterSet(string $characterSet) : self
+    public function setCharacterSet(?string $characterSet) : self
     {
         $this->initialized['characterSet'] = true;
         $this->characterSet = $characterSet;

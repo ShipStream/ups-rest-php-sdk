@@ -15,45 +15,45 @@ class PickupRateResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var PickupRateResponseResponse
+     * @var PickupRateResponseResponse|null
      */
     protected $response;
     /**
      * The result of rating an on-callpickup.
      *
-     * @var PickupRateResponseRateResult
+     * @var PickupRateResponseRateResult|null
      */
     protected $rateResult;
     /**
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = WST
     N = Non-WST
     *
-    * @var string
+    * @var string|null
     */
     protected $weekendServiceTerritoryIndicator;
     /**
      * WeekendServiceTerritory Container.Returned if the  subversion greater or equal to 2007.
      *
-     * @var PickupRateResponseWeekendServiceTerritory
+     * @var PickupRateResponseWeekendServiceTerritory|null
      */
     protected $weekendServiceTerritory;
     /**
      * Response Container.
      *
-     * @return PickupRateResponseResponse
+     * @return PickupRateResponseResponse|null
      */
-    public function getResponse() : PickupRateResponseResponse
+    public function getResponse() : ?PickupRateResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param PickupRateResponseResponse $response
+     * @param PickupRateResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PickupRateResponseResponse $response) : self
+    public function setResponse(?PickupRateResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -62,20 +62,20 @@ class PickupRateResponse extends \ArrayObject
     /**
      * The result of rating an on-callpickup.
      *
-     * @return PickupRateResponseRateResult
+     * @return PickupRateResponseRateResult|null
      */
-    public function getRateResult() : PickupRateResponseRateResult
+    public function getRateResult() : ?PickupRateResponseRateResult
     {
         return $this->rateResult;
     }
     /**
      * The result of rating an on-callpickup.
      *
-     * @param PickupRateResponseRateResult $rateResult
+     * @param PickupRateResponseRateResult|null $rateResult
      *
      * @return self
      */
-    public function setRateResult(PickupRateResponseRateResult $rateResult) : self
+    public function setRateResult(?PickupRateResponseRateResult $rateResult) : self
     {
         $this->initialized['rateResult'] = true;
         $this->rateResult = $rateResult;
@@ -85,9 +85,9 @@ class PickupRateResponse extends \ArrayObject
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = WST
     N = Non-WST
     *
-    * @return string
+    * @return string|null
     */
-    public function getWeekendServiceTerritoryIndicator() : string
+    public function getWeekendServiceTerritoryIndicator() : ?string
     {
         return $this->weekendServiceTerritoryIndicator;
     }
@@ -95,11 +95,11 @@ class PickupRateResponse extends \ArrayObject
     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = WST
     N = Non-WST
     *
-    * @param string $weekendServiceTerritoryIndicator
+    * @param string|null $weekendServiceTerritoryIndicator
     *
     * @return self
     */
-    public function setWeekendServiceTerritoryIndicator(string $weekendServiceTerritoryIndicator) : self
+    public function setWeekendServiceTerritoryIndicator(?string $weekendServiceTerritoryIndicator) : self
     {
         $this->initialized['weekendServiceTerritoryIndicator'] = true;
         $this->weekendServiceTerritoryIndicator = $weekendServiceTerritoryIndicator;
@@ -108,20 +108,20 @@ class PickupRateResponse extends \ArrayObject
     /**
      * WeekendServiceTerritory Container.Returned if the  subversion greater or equal to 2007.
      *
-     * @return PickupRateResponseWeekendServiceTerritory
+     * @return PickupRateResponseWeekendServiceTerritory|null
      */
-    public function getWeekendServiceTerritory() : PickupRateResponseWeekendServiceTerritory
+    public function getWeekendServiceTerritory() : ?PickupRateResponseWeekendServiceTerritory
     {
         return $this->weekendServiceTerritory;
     }
     /**
      * WeekendServiceTerritory Container.Returned if the  subversion greater or equal to 2007.
      *
-     * @param PickupRateResponseWeekendServiceTerritory $weekendServiceTerritory
+     * @param PickupRateResponseWeekendServiceTerritory|null $weekendServiceTerritory
      *
      * @return self
      */
-    public function setWeekendServiceTerritory(PickupRateResponseWeekendServiceTerritory $weekendServiceTerritory) : self
+    public function setWeekendServiceTerritory(?PickupRateResponseWeekendServiceTerritory $weekendServiceTerritory) : self
     {
         $this->initialized['weekendServiceTerritory'] = true;
         $this->weekendServiceTerritory = $weekendServiceTerritory;

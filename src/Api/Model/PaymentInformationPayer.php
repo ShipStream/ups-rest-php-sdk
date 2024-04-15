@@ -15,63 +15,63 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Payer�s company name
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address Container.
      *
-     * @var FreightShipPayerAddress
+     * @var FreightShipPayerAddress|null
      */
     protected $address;
     /**
     * Payer�s account number.
     User�s 6 digit UPS account number or 9 digit SCS account number.
     *
-    * @var string
+    * @var string|null
     */
     protected $shipperNumber;
     /**
      * Contact name at the payer�s location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Phone Container.
      *
-     * @var PayerPhone
+     * @var PayerPhone|null
      */
     protected $phone;
     /**
      * Payer�s fax number.
      *
-     * @var string
+     * @var string|null
      */
     protected $faxNumber;
     /**
      * Payer�s email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Payer�s company name
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Payer�s company name
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -80,20 +80,20 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return FreightShipPayerAddress
+     * @return FreightShipPayerAddress|null
      */
-    public function getAddress() : FreightShipPayerAddress
+    public function getAddress() : ?FreightShipPayerAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param FreightShipPayerAddress $address
+     * @param FreightShipPayerAddress|null $address
      *
      * @return self
      */
-    public function setAddress(FreightShipPayerAddress $address) : self
+    public function setAddress(?FreightShipPayerAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -103,9 +103,9 @@ class PaymentInformationPayer extends \ArrayObject
     * Payer�s account number.
     User�s 6 digit UPS account number or 9 digit SCS account number.
     *
-    * @return string
+    * @return string|null
     */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
@@ -113,11 +113,11 @@ class PaymentInformationPayer extends \ArrayObject
     * Payer�s account number.
     User�s 6 digit UPS account number or 9 digit SCS account number.
     *
-    * @param string $shipperNumber
+    * @param string|null $shipperNumber
     *
     * @return self
     */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -126,20 +126,20 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Contact name at the payer�s location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the payer�s location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -148,20 +148,20 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Phone Container.
      *
-     * @return PayerPhone
+     * @return PayerPhone|null
      */
-    public function getPhone() : PayerPhone
+    public function getPhone() : ?PayerPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container.
      *
-     * @param PayerPhone $phone
+     * @param PayerPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(PayerPhone $phone) : self
+    public function setPhone(?PayerPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -170,20 +170,20 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Payer�s fax number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber() : ?string
     {
         return $this->faxNumber;
     }
     /**
      * Payer�s fax number.
      *
-     * @param string $faxNumber
+     * @param string|null $faxNumber
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(?string $faxNumber) : self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -192,20 +192,20 @@ class PaymentInformationPayer extends \ArrayObject
     /**
      * Payer�s email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Payer�s email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

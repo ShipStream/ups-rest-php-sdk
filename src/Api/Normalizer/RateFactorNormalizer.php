@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Value', $data)) {
+            if (\array_key_exists('Value', $data) && $data['Value'] !== null) {
                 $object->setValue($data['Value']);
                 unset($data['Value']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Value', $data) && $data['Value'] === null) {
+                $object->setValue(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\FactorUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
+            }
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Value', $data)) {
+            if (\array_key_exists('Value', $data) && $data['Value'] !== null) {
                 $object->setValue($data['Value']);
                 unset($data['Value']);
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
+            elseif (\array_key_exists('Value', $data) && $data['Value'] === null) {
+                $object->setValue(null);
+            }
+            if (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] !== null) {
                 $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\FactorUnitOfMeasurement', 'json', $context));
                 unset($data['UnitOfMeasurement']);
+            }
+            elseif (\array_key_exists('UnitOfMeasurement', $data) && $data['UnitOfMeasurement'] === null) {
+                $object->setUnitOfMeasurement(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('absLayerTime', $data)) {
+            if (\array_key_exists('absLayerTime', $data) && $data['absLayerTime'] !== null) {
                 $object->setAbsLayerTime($data['absLayerTime']);
                 unset($data['absLayerTime']);
             }
-            if (\array_key_exists('fulfillTime', $data)) {
+            elseif (\array_key_exists('absLayerTime', $data) && $data['absLayerTime'] === null) {
+                $object->setAbsLayerTime(null);
+            }
+            if (\array_key_exists('fulfillTime', $data) && $data['fulfillTime'] !== null) {
                 $object->setFulfillTime($data['fulfillTime']);
                 unset($data['fulfillTime']);
             }
-            if (\array_key_exists('receiptTime', $data)) {
+            elseif (\array_key_exists('fulfillTime', $data) && $data['fulfillTime'] === null) {
+                $object->setFulfillTime(null);
+            }
+            if (\array_key_exists('receiptTime', $data) && $data['receiptTime'] !== null) {
                 $object->setReceiptTime($data['receiptTime']);
                 unset($data['receiptTime']);
+            }
+            elseif (\array_key_exists('receiptTime', $data) && $data['receiptTime'] === null) {
+                $object->setReceiptTime(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('absLayerTime', $data)) {
+            if (\array_key_exists('absLayerTime', $data) && $data['absLayerTime'] !== null) {
                 $object->setAbsLayerTime($data['absLayerTime']);
                 unset($data['absLayerTime']);
             }
-            if (\array_key_exists('fulfillTime', $data)) {
+            elseif (\array_key_exists('absLayerTime', $data) && $data['absLayerTime'] === null) {
+                $object->setAbsLayerTime(null);
+            }
+            if (\array_key_exists('fulfillTime', $data) && $data['fulfillTime'] !== null) {
                 $object->setFulfillTime($data['fulfillTime']);
                 unset($data['fulfillTime']);
             }
-            if (\array_key_exists('receiptTime', $data)) {
+            elseif (\array_key_exists('fulfillTime', $data) && $data['fulfillTime'] === null) {
+                $object->setFulfillTime(null);
+            }
+            if (\array_key_exists('receiptTime', $data) && $data['receiptTime'] !== null) {
                 $object->setReceiptTime($data['receiptTime']);
                 unset($data['receiptTime']);
+            }
+            elseif (\array_key_exists('receiptTime', $data) && $data['receiptTime'] === null) {
+                $object->setReceiptTime(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

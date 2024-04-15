@@ -15,32 +15,32 @@ class DimensionsUnitOfMeasurement extends \ArrayObject
     /**
      * The code associated with the unit of measure for the billable weight of a shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * The description for the billable weight associated with the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The code associated with the unit of measure for the billable weight of a shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The code associated with the unit of measure for the billable weight of a shipment.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class DimensionsUnitOfMeasurement extends \ArrayObject
     /**
      * The description for the billable weight associated with the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * The description for the billable weight associated with the shipment.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

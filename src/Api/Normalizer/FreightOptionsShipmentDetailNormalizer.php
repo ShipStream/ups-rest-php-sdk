@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HazmatIndicator', $data)) {
+            if (\array_key_exists('HazmatIndicator', $data) && $data['HazmatIndicator'] !== null) {
                 $object->setHazmatIndicator($data['HazmatIndicator']);
                 unset($data['HazmatIndicator']);
             }
-            if (\array_key_exists('PalletInformation', $data)) {
+            elseif (\array_key_exists('HazmatIndicator', $data) && $data['HazmatIndicator'] === null) {
+                $object->setHazmatIndicator(null);
+            }
+            if (\array_key_exists('PalletInformation', $data) && $data['PalletInformation'] !== null) {
                 $object->setPalletInformation($this->denormalizer->denormalize($data['PalletInformation'], 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPalletInformation', 'json', $context));
                 unset($data['PalletInformation']);
+            }
+            elseif (\array_key_exists('PalletInformation', $data) && $data['PalletInformation'] === null) {
+                $object->setPalletInformation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HazmatIndicator', $data)) {
+            if (\array_key_exists('HazmatIndicator', $data) && $data['HazmatIndicator'] !== null) {
                 $object->setHazmatIndicator($data['HazmatIndicator']);
                 unset($data['HazmatIndicator']);
             }
-            if (\array_key_exists('PalletInformation', $data)) {
+            elseif (\array_key_exists('HazmatIndicator', $data) && $data['HazmatIndicator'] === null) {
+                $object->setHazmatIndicator(null);
+            }
+            if (\array_key_exists('PalletInformation', $data) && $data['PalletInformation'] !== null) {
                 $object->setPalletInformation($this->denormalizer->denormalize($data['PalletInformation'], 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPalletInformation', 'json', $context));
                 unset($data['PalletInformation']);
+            }
+            elseif (\array_key_exists('PalletInformation', $data) && $data['PalletInformation'] === null) {
+                $object->setPalletInformation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

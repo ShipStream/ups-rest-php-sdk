@@ -15,50 +15,50 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
     /**
      * A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * Container for whether the subscription is active or not.
      *
-     * @var SubscriptionEventsSubscriptionStatus
+     * @var SubscriptionEventsSubscriptionStatus|null
      */
     protected $subscriptionStatus;
     /**
      * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
      *
-     * @var SubscriptionEventsDateRange
+     * @var SubscriptionEventsDateRange|null
      */
     protected $dateRange;
     /**
      * 
      *
-     * @var SubscriptionEventsSubscriptionFile[]
+     * @var list<SubscriptionEventsSubscriptionFile>|null
      */
     protected $subscriptionFile;
     /**
      * A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -67,20 +67,20 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
     /**
      * A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -89,20 +89,20 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
     /**
      * Container for whether the subscription is active or not.
      *
-     * @return SubscriptionEventsSubscriptionStatus
+     * @return SubscriptionEventsSubscriptionStatus|null
      */
-    public function getSubscriptionStatus() : SubscriptionEventsSubscriptionStatus
+    public function getSubscriptionStatus() : ?SubscriptionEventsSubscriptionStatus
     {
         return $this->subscriptionStatus;
     }
     /**
      * Container for whether the subscription is active or not.
      *
-     * @param SubscriptionEventsSubscriptionStatus $subscriptionStatus
+     * @param SubscriptionEventsSubscriptionStatus|null $subscriptionStatus
      *
      * @return self
      */
-    public function setSubscriptionStatus(SubscriptionEventsSubscriptionStatus $subscriptionStatus) : self
+    public function setSubscriptionStatus(?SubscriptionEventsSubscriptionStatus $subscriptionStatus) : self
     {
         $this->initialized['subscriptionStatus'] = true;
         $this->subscriptionStatus = $subscriptionStatus;
@@ -111,20 +111,20 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
     /**
      * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
      *
-     * @return SubscriptionEventsDateRange
+     * @return SubscriptionEventsDateRange|null
      */
-    public function getDateRange() : SubscriptionEventsDateRange
+    public function getDateRange() : ?SubscriptionEventsDateRange
     {
         return $this->dateRange;
     }
     /**
      * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
      *
-     * @param SubscriptionEventsDateRange $dateRange
+     * @param SubscriptionEventsDateRange|null $dateRange
      *
      * @return self
      */
-    public function setDateRange(SubscriptionEventsDateRange $dateRange) : self
+    public function setDateRange(?SubscriptionEventsDateRange $dateRange) : self
     {
         $this->initialized['dateRange'] = true;
         $this->dateRange = $dateRange;
@@ -133,20 +133,20 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
     /**
      * 
      *
-     * @return SubscriptionEventsSubscriptionFile[]
+     * @return list<SubscriptionEventsSubscriptionFile>|null
      */
-    public function getSubscriptionFile() : array
+    public function getSubscriptionFile() : ?array
     {
         return $this->subscriptionFile;
     }
     /**
      * 
      *
-     * @param SubscriptionEventsSubscriptionFile[] $subscriptionFile
+     * @param list<SubscriptionEventsSubscriptionFile>|null $subscriptionFile
      *
      * @return self
      */
-    public function setSubscriptionFile(array $subscriptionFile) : self
+    public function setSubscriptionFile(?array $subscriptionFile) : self
     {
         $this->initialized['subscriptionFile'] = true;
         $this->subscriptionFile = $subscriptionFile;

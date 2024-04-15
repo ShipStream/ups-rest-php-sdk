@@ -15,38 +15,38 @@ class ContactsUltimateConsignee extends \ArrayObject
     /**
      * Company Name or the Individual name of the Ultimate consignee.  Applicable for EEI form only.
      *
-     * @var string
+     * @var string|null
      */
     protected $companyName;
     /**
      * Address information of the Ultimate consignee.  Applicable for EEI form only.
      *
-     * @var UltimateConsigneeAddress
+     * @var UltimateConsigneeAddress|null
      */
     protected $address;
     /**
      * Container for providing UltimateConsignee Type.  Applicable for EEI form only.
      *
-     * @var UltimateConsigneeUltimateConsigneeType
+     * @var UltimateConsigneeUltimateConsigneeType|null
      */
     protected $ultimateConsigneeType;
     /**
      * Company Name or the Individual name of the Ultimate consignee.  Applicable for EEI form only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyName() : string
+    public function getCompanyName() : ?string
     {
         return $this->companyName;
     }
     /**
      * Company Name or the Individual name of the Ultimate consignee.  Applicable for EEI form only.
      *
-     * @param string $companyName
+     * @param string|null $companyName
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(?string $companyName) : self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -55,20 +55,20 @@ class ContactsUltimateConsignee extends \ArrayObject
     /**
      * Address information of the Ultimate consignee.  Applicable for EEI form only.
      *
-     * @return UltimateConsigneeAddress
+     * @return UltimateConsigneeAddress|null
      */
-    public function getAddress() : UltimateConsigneeAddress
+    public function getAddress() : ?UltimateConsigneeAddress
     {
         return $this->address;
     }
     /**
      * Address information of the Ultimate consignee.  Applicable for EEI form only.
      *
-     * @param UltimateConsigneeAddress $address
+     * @param UltimateConsigneeAddress|null $address
      *
      * @return self
      */
-    public function setAddress(UltimateConsigneeAddress $address) : self
+    public function setAddress(?UltimateConsigneeAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -77,20 +77,20 @@ class ContactsUltimateConsignee extends \ArrayObject
     /**
      * Container for providing UltimateConsignee Type.  Applicable for EEI form only.
      *
-     * @return UltimateConsigneeUltimateConsigneeType
+     * @return UltimateConsigneeUltimateConsigneeType|null
      */
-    public function getUltimateConsigneeType() : UltimateConsigneeUltimateConsigneeType
+    public function getUltimateConsigneeType() : ?UltimateConsigneeUltimateConsigneeType
     {
         return $this->ultimateConsigneeType;
     }
     /**
      * Container for providing UltimateConsignee Type.  Applicable for EEI form only.
      *
-     * @param UltimateConsigneeUltimateConsigneeType $ultimateConsigneeType
+     * @param UltimateConsigneeUltimateConsigneeType|null $ultimateConsigneeType
      *
      * @return self
      */
-    public function setUltimateConsigneeType(UltimateConsigneeUltimateConsigneeType $ultimateConsigneeType) : self
+    public function setUltimateConsigneeType(?UltimateConsigneeUltimateConsigneeType $ultimateConsigneeType) : self
     {
         $this->initialized['ultimateConsigneeType'] = true;
         $this->ultimateConsigneeType = $ultimateConsigneeType;

@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('CreditCard', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('CreditCard', $data) && $data['CreditCard'] !== null) {
                 $object->setCreditCard($this->denormalizer->denormalize($data['CreditCard'], 'ShipStream\\Ups\\Api\\Model\\BillShipperCreditCard', 'json', $context));
                 unset($data['CreditCard']);
             }
-            if (\array_key_exists('AlternatePaymentMethod', $data)) {
+            elseif (\array_key_exists('CreditCard', $data) && $data['CreditCard'] === null) {
+                $object->setCreditCard(null);
+            }
+            if (\array_key_exists('AlternatePaymentMethod', $data) && $data['AlternatePaymentMethod'] !== null) {
                 $object->setAlternatePaymentMethod($data['AlternatePaymentMethod']);
                 unset($data['AlternatePaymentMethod']);
+            }
+            elseif (\array_key_exists('AlternatePaymentMethod', $data) && $data['AlternatePaymentMethod'] === null) {
+                $object->setAlternatePaymentMethod(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('CreditCard', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('CreditCard', $data) && $data['CreditCard'] !== null) {
                 $object->setCreditCard($this->denormalizer->denormalize($data['CreditCard'], 'ShipStream\\Ups\\Api\\Model\\BillShipperCreditCard', 'json', $context));
                 unset($data['CreditCard']);
             }
-            if (\array_key_exists('AlternatePaymentMethod', $data)) {
+            elseif (\array_key_exists('CreditCard', $data) && $data['CreditCard'] === null) {
+                $object->setCreditCard(null);
+            }
+            if (\array_key_exists('AlternatePaymentMethod', $data) && $data['AlternatePaymentMethod'] !== null) {
                 $object->setAlternatePaymentMethod($data['AlternatePaymentMethod']);
                 unset($data['AlternatePaymentMethod']);
+            }
+            elseif (\array_key_exists('AlternatePaymentMethod', $data) && $data['AlternatePaymentMethod'] === null) {
+                $object->setAlternatePaymentMethod(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

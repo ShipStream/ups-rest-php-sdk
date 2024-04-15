@@ -15,38 +15,38 @@ class ProductScheduleB extends \ArrayObject
     /**
      * A unique 10-digit commodity classification code for the item being exported. (To classify a commodity access the following Web page: http://www.census.gov/foreign-trade/schedules/b/#search).  Applies to EEI forms only. Has to be 10 characters.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * The count of how many Schedule B units of the current good are in the shipment (EEI only). For example, if the Schedule B unit of measure is dozens and eight dozen, is being shipped, indicate 8 in this field.  Applies to EEI forms only. Conditionally required for EEI forms if ScheduleB UnitOfMeasurement is not X. Should be Numeric. Valid characters are 0 -9.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $quantity;
     /**
      * 
      *
-     * @var ScheduleBUnitOfMeasurement[]
+     * @var list<ScheduleBUnitOfMeasurement>|null
      */
     protected $unitOfMeasurement;
     /**
      * A unique 10-digit commodity classification code for the item being exported. (To classify a commodity access the following Web page: http://www.census.gov/foreign-trade/schedules/b/#search).  Applies to EEI forms only. Has to be 10 characters.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * A unique 10-digit commodity classification code for the item being exported. (To classify a commodity access the following Web page: http://www.census.gov/foreign-trade/schedules/b/#search).  Applies to EEI forms only. Has to be 10 characters.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -55,20 +55,20 @@ class ProductScheduleB extends \ArrayObject
     /**
      * The count of how many Schedule B units of the current good are in the shipment (EEI only). For example, if the Schedule B unit of measure is dozens and eight dozen, is being shipped, indicate 8 in this field.  Applies to EEI forms only. Conditionally required for EEI forms if ScheduleB UnitOfMeasurement is not X. Should be Numeric. Valid characters are 0 -9.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getQuantity() : array
+    public function getQuantity() : ?array
     {
         return $this->quantity;
     }
     /**
      * The count of how many Schedule B units of the current good are in the shipment (EEI only). For example, if the Schedule B unit of measure is dozens and eight dozen, is being shipped, indicate 8 in this field.  Applies to EEI forms only. Conditionally required for EEI forms if ScheduleB UnitOfMeasurement is not X. Should be Numeric. Valid characters are 0 -9.
      *
-     * @param string[] $quantity
+     * @param list<string>|null $quantity
      *
      * @return self
      */
-    public function setQuantity(array $quantity) : self
+    public function setQuantity(?array $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -77,20 +77,20 @@ class ProductScheduleB extends \ArrayObject
     /**
      * 
      *
-     * @return ScheduleBUnitOfMeasurement[]
+     * @return list<ScheduleBUnitOfMeasurement>|null
      */
-    public function getUnitOfMeasurement() : array
+    public function getUnitOfMeasurement() : ?array
     {
         return $this->unitOfMeasurement;
     }
     /**
      * 
      *
-     * @param ScheduleBUnitOfMeasurement[] $unitOfMeasurement
+     * @param list<ScheduleBUnitOfMeasurement>|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(array $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?array $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

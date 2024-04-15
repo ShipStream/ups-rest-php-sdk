@@ -40,45 +40,75 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $object->setDisclaimer($this->denormalizer->denormalize($data['Disclaimer'], 'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer', 'json', $context));
                 unset($data['Disclaimer']);
             }
-            if (\array_key_exists('RateType', $data)) {
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
+            }
+            if (\array_key_exists('RateType', $data) && $data['RateType'] !== null) {
                 $object->setRateType($data['RateType']);
                 unset($data['RateType']);
             }
-            if (\array_key_exists('CurrencyCode', $data)) {
+            elseif (\array_key_exists('RateType', $data) && $data['RateType'] === null) {
+                $object->setRateType(null);
+            }
+            if (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] !== null) {
                 $object->setCurrencyCode($data['CurrencyCode']);
                 unset($data['CurrencyCode']);
             }
-            if (\array_key_exists('ChargeDetail', $data)) {
+            elseif (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('ChargeDetail', $data) && $data['ChargeDetail'] !== null) {
                 $object->setChargeDetail($this->denormalizer->denormalize($data['ChargeDetail'], 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail', 'json', $context));
                 unset($data['ChargeDetail']);
             }
-            if (\array_key_exists('TaxCharges', $data)) {
+            elseif (\array_key_exists('ChargeDetail', $data) && $data['ChargeDetail'] === null) {
+                $object->setChargeDetail(null);
+            }
+            if (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] !== null) {
                 $object->setTaxCharges($this->denormalizer->denormalize($data['TaxCharges'], 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges', 'json', $context));
                 unset($data['TaxCharges']);
             }
-            if (\array_key_exists('TotalTax', $data)) {
+            elseif (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] === null) {
+                $object->setTaxCharges(null);
+            }
+            if (\array_key_exists('TotalTax', $data) && $data['TotalTax'] !== null) {
                 $object->setTotalTax($data['TotalTax']);
                 unset($data['TotalTax']);
             }
-            if (\array_key_exists('GrandTotalOfAllCharge', $data)) {
+            elseif (\array_key_exists('TotalTax', $data) && $data['TotalTax'] === null) {
+                $object->setTotalTax(null);
+            }
+            if (\array_key_exists('GrandTotalOfAllCharge', $data) && $data['GrandTotalOfAllCharge'] !== null) {
                 $object->setGrandTotalOfAllCharge($data['GrandTotalOfAllCharge']);
                 unset($data['GrandTotalOfAllCharge']);
             }
-            if (\array_key_exists('GrandTotalOfAllIncentedCharge', $data)) {
+            elseif (\array_key_exists('GrandTotalOfAllCharge', $data) && $data['GrandTotalOfAllCharge'] === null) {
+                $object->setGrandTotalOfAllCharge(null);
+            }
+            if (\array_key_exists('GrandTotalOfAllIncentedCharge', $data) && $data['GrandTotalOfAllIncentedCharge'] !== null) {
                 $object->setGrandTotalOfAllIncentedCharge($data['GrandTotalOfAllIncentedCharge']);
                 unset($data['GrandTotalOfAllIncentedCharge']);
             }
-            if (\array_key_exists('PreTaxTotalCharge', $data)) {
+            elseif (\array_key_exists('GrandTotalOfAllIncentedCharge', $data) && $data['GrandTotalOfAllIncentedCharge'] === null) {
+                $object->setGrandTotalOfAllIncentedCharge(null);
+            }
+            if (\array_key_exists('PreTaxTotalCharge', $data) && $data['PreTaxTotalCharge'] !== null) {
                 $object->setPreTaxTotalCharge($data['PreTaxTotalCharge']);
                 unset($data['PreTaxTotalCharge']);
             }
-            if (\array_key_exists('PreTaxTotalIncentedCharge', $data)) {
+            elseif (\array_key_exists('PreTaxTotalCharge', $data) && $data['PreTaxTotalCharge'] === null) {
+                $object->setPreTaxTotalCharge(null);
+            }
+            if (\array_key_exists('PreTaxTotalIncentedCharge', $data) && $data['PreTaxTotalIncentedCharge'] !== null) {
                 $object->setPreTaxTotalIncentedCharge($data['PreTaxTotalIncentedCharge']);
                 unset($data['PreTaxTotalIncentedCharge']);
+            }
+            elseif (\array_key_exists('PreTaxTotalIncentedCharge', $data) && $data['PreTaxTotalIncentedCharge'] === null) {
+                $object->setPreTaxTotalIncentedCharge(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -160,45 +190,75 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Disclaimer', $data)) {
+            if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
                 $object->setDisclaimer($this->denormalizer->denormalize($data['Disclaimer'], 'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer', 'json', $context));
                 unset($data['Disclaimer']);
             }
-            if (\array_key_exists('RateType', $data)) {
+            elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
+                $object->setDisclaimer(null);
+            }
+            if (\array_key_exists('RateType', $data) && $data['RateType'] !== null) {
                 $object->setRateType($data['RateType']);
                 unset($data['RateType']);
             }
-            if (\array_key_exists('CurrencyCode', $data)) {
+            elseif (\array_key_exists('RateType', $data) && $data['RateType'] === null) {
+                $object->setRateType(null);
+            }
+            if (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] !== null) {
                 $object->setCurrencyCode($data['CurrencyCode']);
                 unset($data['CurrencyCode']);
             }
-            if (\array_key_exists('ChargeDetail', $data)) {
+            elseif (\array_key_exists('CurrencyCode', $data) && $data['CurrencyCode'] === null) {
+                $object->setCurrencyCode(null);
+            }
+            if (\array_key_exists('ChargeDetail', $data) && $data['ChargeDetail'] !== null) {
                 $object->setChargeDetail($this->denormalizer->denormalize($data['ChargeDetail'], 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail', 'json', $context));
                 unset($data['ChargeDetail']);
             }
-            if (\array_key_exists('TaxCharges', $data)) {
+            elseif (\array_key_exists('ChargeDetail', $data) && $data['ChargeDetail'] === null) {
+                $object->setChargeDetail(null);
+            }
+            if (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] !== null) {
                 $object->setTaxCharges($this->denormalizer->denormalize($data['TaxCharges'], 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges', 'json', $context));
                 unset($data['TaxCharges']);
             }
-            if (\array_key_exists('TotalTax', $data)) {
+            elseif (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] === null) {
+                $object->setTaxCharges(null);
+            }
+            if (\array_key_exists('TotalTax', $data) && $data['TotalTax'] !== null) {
                 $object->setTotalTax($data['TotalTax']);
                 unset($data['TotalTax']);
             }
-            if (\array_key_exists('GrandTotalOfAllCharge', $data)) {
+            elseif (\array_key_exists('TotalTax', $data) && $data['TotalTax'] === null) {
+                $object->setTotalTax(null);
+            }
+            if (\array_key_exists('GrandTotalOfAllCharge', $data) && $data['GrandTotalOfAllCharge'] !== null) {
                 $object->setGrandTotalOfAllCharge($data['GrandTotalOfAllCharge']);
                 unset($data['GrandTotalOfAllCharge']);
             }
-            if (\array_key_exists('GrandTotalOfAllIncentedCharge', $data)) {
+            elseif (\array_key_exists('GrandTotalOfAllCharge', $data) && $data['GrandTotalOfAllCharge'] === null) {
+                $object->setGrandTotalOfAllCharge(null);
+            }
+            if (\array_key_exists('GrandTotalOfAllIncentedCharge', $data) && $data['GrandTotalOfAllIncentedCharge'] !== null) {
                 $object->setGrandTotalOfAllIncentedCharge($data['GrandTotalOfAllIncentedCharge']);
                 unset($data['GrandTotalOfAllIncentedCharge']);
             }
-            if (\array_key_exists('PreTaxTotalCharge', $data)) {
+            elseif (\array_key_exists('GrandTotalOfAllIncentedCharge', $data) && $data['GrandTotalOfAllIncentedCharge'] === null) {
+                $object->setGrandTotalOfAllIncentedCharge(null);
+            }
+            if (\array_key_exists('PreTaxTotalCharge', $data) && $data['PreTaxTotalCharge'] !== null) {
                 $object->setPreTaxTotalCharge($data['PreTaxTotalCharge']);
                 unset($data['PreTaxTotalCharge']);
             }
-            if (\array_key_exists('PreTaxTotalIncentedCharge', $data)) {
+            elseif (\array_key_exists('PreTaxTotalCharge', $data) && $data['PreTaxTotalCharge'] === null) {
+                $object->setPreTaxTotalCharge(null);
+            }
+            if (\array_key_exists('PreTaxTotalIncentedCharge', $data) && $data['PreTaxTotalIncentedCharge'] !== null) {
                 $object->setPreTaxTotalIncentedCharge($data['PreTaxTotalIncentedCharge']);
                 unset($data['PreTaxTotalIncentedCharge']);
+            }
+            elseif (\array_key_exists('PreTaxTotalIncentedCharge', $data) && $data['PreTaxTotalIncentedCharge'] === null) {
+                $object->setPreTaxTotalIncentedCharge(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

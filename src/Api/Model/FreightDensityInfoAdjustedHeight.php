@@ -15,32 +15,32 @@ class FreightDensityInfoAdjustedHeight extends \ArrayObject
     /**
      * Adjusted Height value for the handling unit.  Height Adjustment is done only when Handling unit type is SKD = Skid or PLT = Pallet.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Unit of Measurement container for the Adjusted height.
      *
-     * @var AdjustedHeightUnitOfMeasurement
+     * @var AdjustedHeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Adjusted Height value for the handling unit.  Height Adjustment is done only when Handling unit type is SKD = Skid or PLT = Pallet.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Adjusted Height value for the handling unit.  Height Adjustment is done only when Handling unit type is SKD = Skid or PLT = Pallet.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -49,20 +49,20 @@ class FreightDensityInfoAdjustedHeight extends \ArrayObject
     /**
      * Unit of Measurement container for the Adjusted height.
      *
-     * @return AdjustedHeightUnitOfMeasurement
+     * @return AdjustedHeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : AdjustedHeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?AdjustedHeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Unit of Measurement container for the Adjusted height.
      *
-     * @param AdjustedHeightUnitOfMeasurement $unitOfMeasurement
+     * @param AdjustedHeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(AdjustedHeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?AdjustedHeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

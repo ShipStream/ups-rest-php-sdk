@@ -15,32 +15,32 @@ class RateRequestCustomerClassification extends \ArrayObject
     /**
      * Customer classification code.  Valid values:00 -  Rates Associated with Shipper Number01 -  Daily Rates04 -  Retail Rates05 - Regional Rates06 - General List Rates53 -  Standard List RatesLength is not validated.If customer classification code is not a valid value please refer to Rate Types Table on page 11.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Customer classification description of the code above.  Ignored if provided in the Request. Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Customer classification code.  Valid values:00 -  Rates Associated with Shipper Number01 -  Daily Rates04 -  Retail Rates05 - Regional Rates06 - General List Rates53 -  Standard List RatesLength is not validated.If customer classification code is not a valid value please refer to Rate Types Table on page 11.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Customer classification code.  Valid values:00 -  Rates Associated with Shipper Number01 -  Daily Rates04 -  Retail Rates05 - Regional Rates06 - General List Rates53 -  Standard List RatesLength is not validated.If customer classification code is not a valid value please refer to Rate Types Table on page 11.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class RateRequestCustomerClassification extends \ArrayObject
     /**
      * Customer classification description of the code above.  Ignored if provided in the Request. Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Customer classification description of the code above.  Ignored if provided in the Request. Length is not validated.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

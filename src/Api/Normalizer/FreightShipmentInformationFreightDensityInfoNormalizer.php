@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AdjustedHeightIndicator', $data)) {
+            if (\array_key_exists('AdjustedHeightIndicator', $data) && $data['AdjustedHeightIndicator'] !== null) {
                 $object->setAdjustedHeightIndicator($data['AdjustedHeightIndicator']);
                 unset($data['AdjustedHeightIndicator']);
             }
-            if (\array_key_exists('AdjustedHeight', $data)) {
+            elseif (\array_key_exists('AdjustedHeightIndicator', $data) && $data['AdjustedHeightIndicator'] === null) {
+                $object->setAdjustedHeightIndicator(null);
+            }
+            if (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] !== null) {
                 $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoAdjustedHeight', 'json', $context));
                 unset($data['AdjustedHeight']);
             }
-            if (\array_key_exists('HandlingUnits', $data)) {
+            elseif (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] === null) {
+                $object->setAdjustedHeight(null);
+            }
+            if (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] !== null) {
                 $values = [];
                 foreach ($data['HandlingUnits'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoHandlingUnits', 'json', $context);
                 }
                 $object->setHandlingUnits($values);
                 unset($data['HandlingUnits']);
+            }
+            elseif (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] === null) {
+                $object->setHandlingUnits(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -121,21 +130,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AdjustedHeightIndicator', $data)) {
+            if (\array_key_exists('AdjustedHeightIndicator', $data) && $data['AdjustedHeightIndicator'] !== null) {
                 $object->setAdjustedHeightIndicator($data['AdjustedHeightIndicator']);
                 unset($data['AdjustedHeightIndicator']);
             }
-            if (\array_key_exists('AdjustedHeight', $data)) {
+            elseif (\array_key_exists('AdjustedHeightIndicator', $data) && $data['AdjustedHeightIndicator'] === null) {
+                $object->setAdjustedHeightIndicator(null);
+            }
+            if (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] !== null) {
                 $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoAdjustedHeight', 'json', $context));
                 unset($data['AdjustedHeight']);
             }
-            if (\array_key_exists('HandlingUnits', $data)) {
+            elseif (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] === null) {
+                $object->setAdjustedHeight(null);
+            }
+            if (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] !== null) {
                 $values = [];
                 foreach ($data['HandlingUnits'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoHandlingUnits', 'json', $context);
                 }
                 $object->setHandlingUnits($values);
                 unset($data['HandlingUnits']);
+            }
+            elseif (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] === null) {
+                $object->setHandlingUnits(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

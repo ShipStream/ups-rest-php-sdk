@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('address', $data)) {
+            if (\array_key_exists('address', $data) && $data['address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
                 unset($data['address']);
             }
-            if (\array_key_exists('attentionName', $data)) {
+            elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('attentionName', $data) && $data['attentionName'] !== null) {
                 $object->setAttentionName($data['attentionName']);
                 unset($data['attentionName']);
             }
-            if (\array_key_exists('name', $data)) {
+            elseif (\array_key_exists('attentionName', $data) && $data['attentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('name', $data) && $data['name'] !== null) {
                 $object->setName($data['name']);
                 unset($data['name']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('name', $data) && $data['name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('address', $data)) {
+            if (\array_key_exists('address', $data) && $data['address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
                 unset($data['address']);
             }
-            if (\array_key_exists('attentionName', $data)) {
+            elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('attentionName', $data) && $data['attentionName'] !== null) {
                 $object->setAttentionName($data['attentionName']);
                 unset($data['attentionName']);
             }
-            if (\array_key_exists('name', $data)) {
+            elseif (\array_key_exists('attentionName', $data) && $data['attentionName'] === null) {
+                $object->setAttentionName(null);
+            }
+            if (\array_key_exists('name', $data) && $data['name'] !== null) {
                 $object->setName($data['name']);
                 unset($data['name']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('name', $data) && $data['name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

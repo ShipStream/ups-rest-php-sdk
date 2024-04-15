@@ -40,37 +40,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ConsigneeName', $data)) {
+            if (\array_key_exists('ConsigneeName', $data) && $data['ConsigneeName'] !== null) {
                 $object->setConsigneeName($data['ConsigneeName']);
                 unset($data['ConsigneeName']);
             }
-            if (\array_key_exists('AddressLine', $data)) {
+            elseif (\array_key_exists('ConsigneeName', $data) && $data['ConsigneeName'] === null) {
+                $object->setConsigneeName(null);
+            }
+            if (\array_key_exists('AddressLine', $data) && $data['AddressLine'] !== null) {
                 $object->setAddressLine($data['AddressLine']);
                 unset($data['AddressLine']);
             }
-            if (\array_key_exists('PoliticalDivision3', $data)) {
+            elseif (\array_key_exists('AddressLine', $data) && $data['AddressLine'] === null) {
+                $object->setAddressLine(null);
+            }
+            if (\array_key_exists('PoliticalDivision3', $data) && $data['PoliticalDivision3'] !== null) {
                 $object->setPoliticalDivision3($data['PoliticalDivision3']);
                 unset($data['PoliticalDivision3']);
             }
-            if (\array_key_exists('PoliticalDivision2', $data)) {
+            elseif (\array_key_exists('PoliticalDivision3', $data) && $data['PoliticalDivision3'] === null) {
+                $object->setPoliticalDivision3(null);
+            }
+            if (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] !== null) {
                 $object->setPoliticalDivision2($data['PoliticalDivision2']);
                 unset($data['PoliticalDivision2']);
             }
-            if (\array_key_exists('PoliticalDivision1', $data)) {
+            elseif (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] === null) {
+                $object->setPoliticalDivision2(null);
+            }
+            if (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] !== null) {
                 $object->setPoliticalDivision1($data['PoliticalDivision1']);
                 unset($data['PoliticalDivision1']);
             }
-            if (\array_key_exists('PostcodePrimaryLow', $data)) {
+            elseif (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] === null) {
+                $object->setPoliticalDivision1(null);
+            }
+            if (\array_key_exists('PostcodePrimaryLow', $data) && $data['PostcodePrimaryLow'] !== null) {
                 $object->setPostcodePrimaryLow($data['PostcodePrimaryLow']);
                 unset($data['PostcodePrimaryLow']);
             }
-            if (\array_key_exists('PostcodeExtendedLow', $data)) {
+            elseif (\array_key_exists('PostcodePrimaryLow', $data) && $data['PostcodePrimaryLow'] === null) {
+                $object->setPostcodePrimaryLow(null);
+            }
+            if (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] !== null) {
                 $object->setPostcodeExtendedLow($data['PostcodeExtendedLow']);
                 unset($data['PostcodeExtendedLow']);
             }
-            if (\array_key_exists('CountryCode', $data)) {
+            elseif (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] === null) {
+                $object->setPostcodeExtendedLow(null);
+            }
+            if (\array_key_exists('CountryCode', $data) && $data['CountryCode'] !== null) {
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
+            }
+            elseif (\array_key_exists('CountryCode', $data) && $data['CountryCode'] === null) {
+                $object->setCountryCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -138,37 +162,61 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ConsigneeName', $data)) {
+            if (\array_key_exists('ConsigneeName', $data) && $data['ConsigneeName'] !== null) {
                 $object->setConsigneeName($data['ConsigneeName']);
                 unset($data['ConsigneeName']);
             }
-            if (\array_key_exists('AddressLine', $data)) {
+            elseif (\array_key_exists('ConsigneeName', $data) && $data['ConsigneeName'] === null) {
+                $object->setConsigneeName(null);
+            }
+            if (\array_key_exists('AddressLine', $data) && $data['AddressLine'] !== null) {
                 $object->setAddressLine($data['AddressLine']);
                 unset($data['AddressLine']);
             }
-            if (\array_key_exists('PoliticalDivision3', $data)) {
+            elseif (\array_key_exists('AddressLine', $data) && $data['AddressLine'] === null) {
+                $object->setAddressLine(null);
+            }
+            if (\array_key_exists('PoliticalDivision3', $data) && $data['PoliticalDivision3'] !== null) {
                 $object->setPoliticalDivision3($data['PoliticalDivision3']);
                 unset($data['PoliticalDivision3']);
             }
-            if (\array_key_exists('PoliticalDivision2', $data)) {
+            elseif (\array_key_exists('PoliticalDivision3', $data) && $data['PoliticalDivision3'] === null) {
+                $object->setPoliticalDivision3(null);
+            }
+            if (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] !== null) {
                 $object->setPoliticalDivision2($data['PoliticalDivision2']);
                 unset($data['PoliticalDivision2']);
             }
-            if (\array_key_exists('PoliticalDivision1', $data)) {
+            elseif (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] === null) {
+                $object->setPoliticalDivision2(null);
+            }
+            if (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] !== null) {
                 $object->setPoliticalDivision1($data['PoliticalDivision1']);
                 unset($data['PoliticalDivision1']);
             }
-            if (\array_key_exists('PostcodePrimaryLow', $data)) {
+            elseif (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] === null) {
+                $object->setPoliticalDivision1(null);
+            }
+            if (\array_key_exists('PostcodePrimaryLow', $data) && $data['PostcodePrimaryLow'] !== null) {
                 $object->setPostcodePrimaryLow($data['PostcodePrimaryLow']);
                 unset($data['PostcodePrimaryLow']);
             }
-            if (\array_key_exists('PostcodeExtendedLow', $data)) {
+            elseif (\array_key_exists('PostcodePrimaryLow', $data) && $data['PostcodePrimaryLow'] === null) {
+                $object->setPostcodePrimaryLow(null);
+            }
+            if (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] !== null) {
                 $object->setPostcodeExtendedLow($data['PostcodeExtendedLow']);
                 unset($data['PostcodeExtendedLow']);
             }
-            if (\array_key_exists('CountryCode', $data)) {
+            elseif (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] === null) {
+                $object->setPostcodeExtendedLow(null);
+            }
+            if (\array_key_exists('CountryCode', $data) && $data['CountryCode'] !== null) {
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
+            }
+            elseif (\array_key_exists('CountryCode', $data) && $data['CountryCode'] === null) {
+                $object->setCountryCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

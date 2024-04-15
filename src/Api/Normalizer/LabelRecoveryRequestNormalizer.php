@@ -40,41 +40,68 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('LabelSpecification', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] !== null) {
                 $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification', 'json', $context));
                 unset($data['LabelSpecification']);
             }
-            if (\array_key_exists('Translate', $data)) {
+            elseif (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] === null) {
+                $object->setLabelSpecification(null);
+            }
+            if (\array_key_exists('Translate', $data) && $data['Translate'] !== null) {
                 $object->setTranslate($this->denormalizer->denormalize($data['Translate'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate', 'json', $context));
                 unset($data['Translate']);
             }
-            if (\array_key_exists('LabelDelivery', $data)) {
+            elseif (\array_key_exists('Translate', $data) && $data['Translate'] === null) {
+                $object->setTranslate(null);
+            }
+            if (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] !== null) {
                 $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery', 'json', $context));
                 unset($data['LabelDelivery']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] === null) {
+                $object->setLabelDelivery(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('MailInnovationsTrackingNumber', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] !== null) {
                 $object->setMailInnovationsTrackingNumber($data['MailInnovationsTrackingNumber']);
                 unset($data['MailInnovationsTrackingNumber']);
             }
-            if (\array_key_exists('ReferenceValues', $data)) {
+            elseif (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] === null) {
+                $object->setMailInnovationsTrackingNumber(null);
+            }
+            if (\array_key_exists('ReferenceValues', $data) && $data['ReferenceValues'] !== null) {
                 $object->setReferenceValues($this->denormalizer->denormalize($data['ReferenceValues'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues', 'json', $context));
                 unset($data['ReferenceValues']);
             }
-            if (\array_key_exists('Locale', $data)) {
+            elseif (\array_key_exists('ReferenceValues', $data) && $data['ReferenceValues'] === null) {
+                $object->setReferenceValues(null);
+            }
+            if (\array_key_exists('Locale', $data) && $data['Locale'] !== null) {
                 $object->setLocale($data['Locale']);
                 unset($data['Locale']);
             }
-            if (\array_key_exists('UPSPremiumCareForm', $data)) {
+            elseif (\array_key_exists('Locale', $data) && $data['Locale'] === null) {
+                $object->setLocale(null);
+            }
+            if (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] !== null) {
                 $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm', 'json', $context));
                 unset($data['UPSPremiumCareForm']);
+            }
+            elseif (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] === null) {
+                $object->setUPSPremiumCareForm(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -153,41 +180,68 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('LabelSpecification', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] !== null) {
                 $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification', 'json', $context));
                 unset($data['LabelSpecification']);
             }
-            if (\array_key_exists('Translate', $data)) {
+            elseif (\array_key_exists('LabelSpecification', $data) && $data['LabelSpecification'] === null) {
+                $object->setLabelSpecification(null);
+            }
+            if (\array_key_exists('Translate', $data) && $data['Translate'] !== null) {
                 $object->setTranslate($this->denormalizer->denormalize($data['Translate'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate', 'json', $context));
                 unset($data['Translate']);
             }
-            if (\array_key_exists('LabelDelivery', $data)) {
+            elseif (\array_key_exists('Translate', $data) && $data['Translate'] === null) {
+                $object->setTranslate(null);
+            }
+            if (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] !== null) {
                 $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery', 'json', $context));
                 unset($data['LabelDelivery']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('LabelDelivery', $data) && $data['LabelDelivery'] === null) {
+                $object->setLabelDelivery(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('MailInnovationsTrackingNumber', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] !== null) {
                 $object->setMailInnovationsTrackingNumber($data['MailInnovationsTrackingNumber']);
                 unset($data['MailInnovationsTrackingNumber']);
             }
-            if (\array_key_exists('ReferenceValues', $data)) {
+            elseif (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] === null) {
+                $object->setMailInnovationsTrackingNumber(null);
+            }
+            if (\array_key_exists('ReferenceValues', $data) && $data['ReferenceValues'] !== null) {
                 $object->setReferenceValues($this->denormalizer->denormalize($data['ReferenceValues'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues', 'json', $context));
                 unset($data['ReferenceValues']);
             }
-            if (\array_key_exists('Locale', $data)) {
+            elseif (\array_key_exists('ReferenceValues', $data) && $data['ReferenceValues'] === null) {
+                $object->setReferenceValues(null);
+            }
+            if (\array_key_exists('Locale', $data) && $data['Locale'] !== null) {
                 $object->setLocale($data['Locale']);
                 unset($data['Locale']);
             }
-            if (\array_key_exists('UPSPremiumCareForm', $data)) {
+            elseif (\array_key_exists('Locale', $data) && $data['Locale'] === null) {
+                $object->setLocale(null);
+            }
+            if (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] !== null) {
                 $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm', 'json', $context));
                 unset($data['UPSPremiumCareForm']);
+            }
+            elseif (\array_key_exists('UPSPremiumCareForm', $data) && $data['UPSPremiumCareForm'] === null) {
+                $object->setUPSPremiumCareForm(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

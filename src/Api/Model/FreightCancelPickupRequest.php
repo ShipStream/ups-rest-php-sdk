@@ -15,32 +15,32 @@ class FreightCancelPickupRequest extends \ArrayObject
     /**
      * Request container.
      *
-     * @var FreightCancelPickupRequestRequest
+     * @var FreightCancelPickupRequestRequest|null
      */
     protected $request;
     /**
      * Confirmation number of the pickup ground freight shipment to cancel.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupRequestConfirmationNumber;
     /**
      * Request container.
      *
-     * @return FreightCancelPickupRequestRequest
+     * @return FreightCancelPickupRequestRequest|null
      */
-    public function getRequest() : FreightCancelPickupRequestRequest
+    public function getRequest() : ?FreightCancelPickupRequestRequest
     {
         return $this->request;
     }
     /**
      * Request container.
      *
-     * @param FreightCancelPickupRequestRequest $request
+     * @param FreightCancelPickupRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(FreightCancelPickupRequestRequest $request) : self
+    public function setRequest(?FreightCancelPickupRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -49,20 +49,20 @@ class FreightCancelPickupRequest extends \ArrayObject
     /**
      * Confirmation number of the pickup ground freight shipment to cancel.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber() : ?string
     {
         return $this->pickupRequestConfirmationNumber;
     }
     /**
      * Confirmation number of the pickup ground freight shipment to cancel.
      *
-     * @param string $pickupRequestConfirmationNumber
+     * @param string|null $pickupRequestConfirmationNumber
      *
      * @return self
      */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(?string $pickupRequestConfirmationNumber) : self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;

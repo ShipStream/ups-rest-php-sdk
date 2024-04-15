@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('LabelImage', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('LabelImage', $data) && $data['LabelImage'] !== null) {
                 $object->setLabelImage($this->denormalizer->denormalize($data['LabelImage'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsLabelImage', 'json', $context));
                 unset($data['LabelImage']);
             }
-            if (\array_key_exists('MailInnovationsTrackingNumber', $data)) {
+            elseif (\array_key_exists('LabelImage', $data) && $data['LabelImage'] === null) {
+                $object->setLabelImage(null);
+            }
+            if (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] !== null) {
                 $object->setMailInnovationsTrackingNumber($data['MailInnovationsTrackingNumber']);
                 unset($data['MailInnovationsTrackingNumber']);
             }
-            if (\array_key_exists('MailInnovationsLabelImage', $data)) {
+            elseif (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] === null) {
+                $object->setMailInnovationsTrackingNumber(null);
+            }
+            if (\array_key_exists('MailInnovationsLabelImage', $data) && $data['MailInnovationsLabelImage'] !== null) {
                 $object->setMailInnovationsLabelImage($this->denormalizer->denormalize($data['MailInnovationsLabelImage'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsMailInnovationsLabelImage', 'json', $context));
                 unset($data['MailInnovationsLabelImage']);
             }
-            if (\array_key_exists('Receipt', $data)) {
+            elseif (\array_key_exists('MailInnovationsLabelImage', $data) && $data['MailInnovationsLabelImage'] === null) {
+                $object->setMailInnovationsLabelImage(null);
+            }
+            if (\array_key_exists('Receipt', $data) && $data['Receipt'] !== null) {
                 $object->setReceipt($this->denormalizer->denormalize($data['Receipt'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsReceipt', 'json', $context));
                 unset($data['Receipt']);
             }
-            if (\array_key_exists('Form', $data)) {
+            elseif (\array_key_exists('Receipt', $data) && $data['Receipt'] === null) {
+                $object->setReceipt(null);
+            }
+            if (\array_key_exists('Form', $data) && $data['Form'] !== null) {
                 $object->setForm($this->denormalizer->denormalize($data['Form'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsForm', 'json', $context));
                 unset($data['Form']);
+            }
+            elseif (\array_key_exists('Form', $data) && $data['Form'] === null) {
+                $object->setForm(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -134,29 +152,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('LabelImage', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('LabelImage', $data) && $data['LabelImage'] !== null) {
                 $object->setLabelImage($this->denormalizer->denormalize($data['LabelImage'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsLabelImage', 'json', $context));
                 unset($data['LabelImage']);
             }
-            if (\array_key_exists('MailInnovationsTrackingNumber', $data)) {
+            elseif (\array_key_exists('LabelImage', $data) && $data['LabelImage'] === null) {
+                $object->setLabelImage(null);
+            }
+            if (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] !== null) {
                 $object->setMailInnovationsTrackingNumber($data['MailInnovationsTrackingNumber']);
                 unset($data['MailInnovationsTrackingNumber']);
             }
-            if (\array_key_exists('MailInnovationsLabelImage', $data)) {
+            elseif (\array_key_exists('MailInnovationsTrackingNumber', $data) && $data['MailInnovationsTrackingNumber'] === null) {
+                $object->setMailInnovationsTrackingNumber(null);
+            }
+            if (\array_key_exists('MailInnovationsLabelImage', $data) && $data['MailInnovationsLabelImage'] !== null) {
                 $object->setMailInnovationsLabelImage($this->denormalizer->denormalize($data['MailInnovationsLabelImage'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsMailInnovationsLabelImage', 'json', $context));
                 unset($data['MailInnovationsLabelImage']);
             }
-            if (\array_key_exists('Receipt', $data)) {
+            elseif (\array_key_exists('MailInnovationsLabelImage', $data) && $data['MailInnovationsLabelImage'] === null) {
+                $object->setMailInnovationsLabelImage(null);
+            }
+            if (\array_key_exists('Receipt', $data) && $data['Receipt'] !== null) {
                 $object->setReceipt($this->denormalizer->denormalize($data['Receipt'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsReceipt', 'json', $context));
                 unset($data['Receipt']);
             }
-            if (\array_key_exists('Form', $data)) {
+            elseif (\array_key_exists('Receipt', $data) && $data['Receipt'] === null) {
+                $object->setReceipt(null);
+            }
+            if (\array_key_exists('Form', $data) && $data['Form'] !== null) {
                 $object->setForm($this->denormalizer->denormalize($data['Form'], 'ShipStream\\Ups\\Api\\Model\\LabelResultsForm', 'json', $context));
                 unset($data['Form']);
+            }
+            elseif (\array_key_exists('Form', $data) && $data['Form'] === null) {
+                $object->setForm(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

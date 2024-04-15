@@ -15,26 +15,26 @@ class VOIDSHIPMENTRequestWrapper extends \ArrayObject
     /**
      * Void Shipment Request Container
      *
-     * @var VoidShipmentRequest
+     * @var VoidShipmentRequest|null
      */
     protected $voidShipmentRequest;
     /**
      * Void Shipment Request Container
      *
-     * @return VoidShipmentRequest
+     * @return VoidShipmentRequest|null
      */
-    public function getVoidShipmentRequest() : VoidShipmentRequest
+    public function getVoidShipmentRequest() : ?VoidShipmentRequest
     {
         return $this->voidShipmentRequest;
     }
     /**
      * Void Shipment Request Container
      *
-     * @param VoidShipmentRequest $voidShipmentRequest
+     * @param VoidShipmentRequest|null $voidShipmentRequest
      *
      * @return self
      */
-    public function setVoidShipmentRequest(VoidShipmentRequest $voidShipmentRequest) : self
+    public function setVoidShipmentRequest(?VoidShipmentRequest $voidShipmentRequest) : self
     {
         $this->initialized['voidShipmentRequest'] = true;
         $this->voidShipmentRequest = $voidShipmentRequest;

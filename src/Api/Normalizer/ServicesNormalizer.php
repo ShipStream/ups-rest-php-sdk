@@ -40,97 +40,166 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('serviceLevel', $data)) {
+            if (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] !== null) {
                 $object->setServiceLevel($data['serviceLevel']);
                 unset($data['serviceLevel']);
             }
-            if (\array_key_exists('serviceLevelDescription', $data)) {
+            elseif (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] === null) {
+                $object->setServiceLevel(null);
+            }
+            if (\array_key_exists('serviceLevelDescription', $data) && $data['serviceLevelDescription'] !== null) {
                 $object->setServiceLevelDescription($data['serviceLevelDescription']);
                 unset($data['serviceLevelDescription']);
             }
-            if (\array_key_exists('shipDate', $data)) {
+            elseif (\array_key_exists('serviceLevelDescription', $data) && $data['serviceLevelDescription'] === null) {
+                $object->setServiceLevelDescription(null);
+            }
+            if (\array_key_exists('shipDate', $data) && $data['shipDate'] !== null) {
                 $object->setShipDate($data['shipDate']);
                 unset($data['shipDate']);
             }
-            if (\array_key_exists('deliveryDate', $data)) {
+            elseif (\array_key_exists('shipDate', $data) && $data['shipDate'] === null) {
+                $object->setShipDate(null);
+            }
+            if (\array_key_exists('deliveryDate', $data) && $data['deliveryDate'] !== null) {
                 $object->setDeliveryDate($data['deliveryDate']);
                 unset($data['deliveryDate']);
             }
-            if (\array_key_exists('commitTime', $data)) {
+            elseif (\array_key_exists('deliveryDate', $data) && $data['deliveryDate'] === null) {
+                $object->setDeliveryDate(null);
+            }
+            if (\array_key_exists('commitTime', $data) && $data['commitTime'] !== null) {
                 $object->setCommitTime($data['commitTime']);
                 unset($data['commitTime']);
             }
-            if (\array_key_exists('deliveryTime', $data)) {
+            elseif (\array_key_exists('commitTime', $data) && $data['commitTime'] === null) {
+                $object->setCommitTime(null);
+            }
+            if (\array_key_exists('deliveryTime', $data) && $data['deliveryTime'] !== null) {
                 $object->setDeliveryTime($data['deliveryTime']);
                 unset($data['deliveryTime']);
             }
-            if (\array_key_exists('deliveryDayOfWeek', $data)) {
+            elseif (\array_key_exists('deliveryTime', $data) && $data['deliveryTime'] === null) {
+                $object->setDeliveryTime(null);
+            }
+            if (\array_key_exists('deliveryDayOfWeek', $data) && $data['deliveryDayOfWeek'] !== null) {
                 $object->setDeliveryDayOfWeek($data['deliveryDayOfWeek']);
                 unset($data['deliveryDayOfWeek']);
             }
-            if (\array_key_exists('nextDayPickupIndicator', $data)) {
+            elseif (\array_key_exists('deliveryDayOfWeek', $data) && $data['deliveryDayOfWeek'] === null) {
+                $object->setDeliveryDayOfWeek(null);
+            }
+            if (\array_key_exists('nextDayPickupIndicator', $data) && $data['nextDayPickupIndicator'] !== null) {
                 $object->setNextDayPickupIndicator($data['nextDayPickupIndicator']);
                 unset($data['nextDayPickupIndicator']);
             }
-            if (\array_key_exists('saturdayPickupIndicator', $data)) {
+            elseif (\array_key_exists('nextDayPickupIndicator', $data) && $data['nextDayPickupIndicator'] === null) {
+                $object->setNextDayPickupIndicator(null);
+            }
+            if (\array_key_exists('saturdayPickupIndicator', $data) && $data['saturdayPickupIndicator'] !== null) {
                 $object->setSaturdayPickupIndicator($data['saturdayPickupIndicator']);
                 unset($data['saturdayPickupIndicator']);
             }
-            if (\array_key_exists('saturdayDeliveryDate', $data)) {
+            elseif (\array_key_exists('saturdayPickupIndicator', $data) && $data['saturdayPickupIndicator'] === null) {
+                $object->setSaturdayPickupIndicator(null);
+            }
+            if (\array_key_exists('saturdayDeliveryDate', $data) && $data['saturdayDeliveryDate'] !== null) {
                 $object->setSaturdayDeliveryDate($data['saturdayDeliveryDate']);
                 unset($data['saturdayDeliveryDate']);
             }
-            if (\array_key_exists('saturdayDeliveryTime', $data)) {
+            elseif (\array_key_exists('saturdayDeliveryDate', $data) && $data['saturdayDeliveryDate'] === null) {
+                $object->setSaturdayDeliveryDate(null);
+            }
+            if (\array_key_exists('saturdayDeliveryTime', $data) && $data['saturdayDeliveryTime'] !== null) {
                 $object->setSaturdayDeliveryTime($data['saturdayDeliveryTime']);
                 unset($data['saturdayDeliveryTime']);
             }
-            if (\array_key_exists('serviceRemarksText', $data)) {
+            elseif (\array_key_exists('saturdayDeliveryTime', $data) && $data['saturdayDeliveryTime'] === null) {
+                $object->setSaturdayDeliveryTime(null);
+            }
+            if (\array_key_exists('serviceRemarksText', $data) && $data['serviceRemarksText'] !== null) {
                 $object->setServiceRemarksText($data['serviceRemarksText']);
                 unset($data['serviceRemarksText']);
             }
-            if (\array_key_exists('guaranteeIndicator', $data)) {
+            elseif (\array_key_exists('serviceRemarksText', $data) && $data['serviceRemarksText'] === null) {
+                $object->setServiceRemarksText(null);
+            }
+            if (\array_key_exists('guaranteeIndicator', $data) && $data['guaranteeIndicator'] !== null) {
                 $object->setGuaranteeIndicator($data['guaranteeIndicator']);
                 unset($data['guaranteeIndicator']);
             }
-            if (\array_key_exists('totalTransitDays', $data)) {
+            elseif (\array_key_exists('guaranteeIndicator', $data) && $data['guaranteeIndicator'] === null) {
+                $object->setGuaranteeIndicator(null);
+            }
+            if (\array_key_exists('totalTransitDays', $data) && $data['totalTransitDays'] !== null) {
                 $object->setTotalTransitDays($data['totalTransitDays']);
                 unset($data['totalTransitDays']);
             }
-            if (\array_key_exists('businessTransitDays', $data)) {
+            elseif (\array_key_exists('totalTransitDays', $data) && $data['totalTransitDays'] === null) {
+                $object->setTotalTransitDays(null);
+            }
+            if (\array_key_exists('businessTransitDays', $data) && $data['businessTransitDays'] !== null) {
                 $object->setBusinessTransitDays($data['businessTransitDays']);
                 unset($data['businessTransitDays']);
             }
-            if (\array_key_exists('restDaysCount', $data)) {
+            elseif (\array_key_exists('businessTransitDays', $data) && $data['businessTransitDays'] === null) {
+                $object->setBusinessTransitDays(null);
+            }
+            if (\array_key_exists('restDaysCount', $data) && $data['restDaysCount'] !== null) {
                 $object->setRestDaysCount($data['restDaysCount']);
                 unset($data['restDaysCount']);
             }
-            if (\array_key_exists('holidayCount', $data)) {
+            elseif (\array_key_exists('restDaysCount', $data) && $data['restDaysCount'] === null) {
+                $object->setRestDaysCount(null);
+            }
+            if (\array_key_exists('holidayCount', $data) && $data['holidayCount'] !== null) {
                 $object->setHolidayCount($data['holidayCount']);
                 unset($data['holidayCount']);
             }
-            if (\array_key_exists('delayCount', $data)) {
+            elseif (\array_key_exists('holidayCount', $data) && $data['holidayCount'] === null) {
+                $object->setHolidayCount(null);
+            }
+            if (\array_key_exists('delayCount', $data) && $data['delayCount'] !== null) {
                 $object->setDelayCount($data['delayCount']);
                 unset($data['delayCount']);
             }
-            if (\array_key_exists('pickupDate', $data)) {
+            elseif (\array_key_exists('delayCount', $data) && $data['delayCount'] === null) {
+                $object->setDelayCount(null);
+            }
+            if (\array_key_exists('pickupDate', $data) && $data['pickupDate'] !== null) {
                 $object->setPickupDate($data['pickupDate']);
                 unset($data['pickupDate']);
             }
-            if (\array_key_exists('pickupTime', $data)) {
+            elseif (\array_key_exists('pickupDate', $data) && $data['pickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('pickupTime', $data) && $data['pickupTime'] !== null) {
                 $object->setPickupTime($data['pickupTime']);
                 unset($data['pickupTime']);
             }
-            if (\array_key_exists('cstccutoffTime', $data)) {
+            elseif (\array_key_exists('pickupTime', $data) && $data['pickupTime'] === null) {
+                $object->setPickupTime(null);
+            }
+            if (\array_key_exists('cstccutoffTime', $data) && $data['cstccutoffTime'] !== null) {
                 $object->setCstccutoffTime($data['cstccutoffTime']);
                 unset($data['cstccutoffTime']);
             }
-            if (\array_key_exists('poddate', $data)) {
+            elseif (\array_key_exists('cstccutoffTime', $data) && $data['cstccutoffTime'] === null) {
+                $object->setCstccutoffTime(null);
+            }
+            if (\array_key_exists('poddate', $data) && $data['poddate'] !== null) {
                 $object->setPoddate($data['poddate']);
                 unset($data['poddate']);
             }
-            if (\array_key_exists('poddays', $data)) {
+            elseif (\array_key_exists('poddate', $data) && $data['poddate'] === null) {
+                $object->setPoddate(null);
+            }
+            if (\array_key_exists('poddays', $data) && $data['poddays'] !== null) {
                 $object->setPoddays($data['poddays']);
                 unset($data['poddays']);
+            }
+            elseif (\array_key_exists('poddays', $data) && $data['poddays'] === null) {
+                $object->setPoddays(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -217,97 +286,166 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('serviceLevel', $data)) {
+            if (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] !== null) {
                 $object->setServiceLevel($data['serviceLevel']);
                 unset($data['serviceLevel']);
             }
-            if (\array_key_exists('serviceLevelDescription', $data)) {
+            elseif (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] === null) {
+                $object->setServiceLevel(null);
+            }
+            if (\array_key_exists('serviceLevelDescription', $data) && $data['serviceLevelDescription'] !== null) {
                 $object->setServiceLevelDescription($data['serviceLevelDescription']);
                 unset($data['serviceLevelDescription']);
             }
-            if (\array_key_exists('shipDate', $data)) {
+            elseif (\array_key_exists('serviceLevelDescription', $data) && $data['serviceLevelDescription'] === null) {
+                $object->setServiceLevelDescription(null);
+            }
+            if (\array_key_exists('shipDate', $data) && $data['shipDate'] !== null) {
                 $object->setShipDate($data['shipDate']);
                 unset($data['shipDate']);
             }
-            if (\array_key_exists('deliveryDate', $data)) {
+            elseif (\array_key_exists('shipDate', $data) && $data['shipDate'] === null) {
+                $object->setShipDate(null);
+            }
+            if (\array_key_exists('deliveryDate', $data) && $data['deliveryDate'] !== null) {
                 $object->setDeliveryDate($data['deliveryDate']);
                 unset($data['deliveryDate']);
             }
-            if (\array_key_exists('commitTime', $data)) {
+            elseif (\array_key_exists('deliveryDate', $data) && $data['deliveryDate'] === null) {
+                $object->setDeliveryDate(null);
+            }
+            if (\array_key_exists('commitTime', $data) && $data['commitTime'] !== null) {
                 $object->setCommitTime($data['commitTime']);
                 unset($data['commitTime']);
             }
-            if (\array_key_exists('deliveryTime', $data)) {
+            elseif (\array_key_exists('commitTime', $data) && $data['commitTime'] === null) {
+                $object->setCommitTime(null);
+            }
+            if (\array_key_exists('deliveryTime', $data) && $data['deliveryTime'] !== null) {
                 $object->setDeliveryTime($data['deliveryTime']);
                 unset($data['deliveryTime']);
             }
-            if (\array_key_exists('deliveryDayOfWeek', $data)) {
+            elseif (\array_key_exists('deliveryTime', $data) && $data['deliveryTime'] === null) {
+                $object->setDeliveryTime(null);
+            }
+            if (\array_key_exists('deliveryDayOfWeek', $data) && $data['deliveryDayOfWeek'] !== null) {
                 $object->setDeliveryDayOfWeek($data['deliveryDayOfWeek']);
                 unset($data['deliveryDayOfWeek']);
             }
-            if (\array_key_exists('nextDayPickupIndicator', $data)) {
+            elseif (\array_key_exists('deliveryDayOfWeek', $data) && $data['deliveryDayOfWeek'] === null) {
+                $object->setDeliveryDayOfWeek(null);
+            }
+            if (\array_key_exists('nextDayPickupIndicator', $data) && $data['nextDayPickupIndicator'] !== null) {
                 $object->setNextDayPickupIndicator($data['nextDayPickupIndicator']);
                 unset($data['nextDayPickupIndicator']);
             }
-            if (\array_key_exists('saturdayPickupIndicator', $data)) {
+            elseif (\array_key_exists('nextDayPickupIndicator', $data) && $data['nextDayPickupIndicator'] === null) {
+                $object->setNextDayPickupIndicator(null);
+            }
+            if (\array_key_exists('saturdayPickupIndicator', $data) && $data['saturdayPickupIndicator'] !== null) {
                 $object->setSaturdayPickupIndicator($data['saturdayPickupIndicator']);
                 unset($data['saturdayPickupIndicator']);
             }
-            if (\array_key_exists('saturdayDeliveryDate', $data)) {
+            elseif (\array_key_exists('saturdayPickupIndicator', $data) && $data['saturdayPickupIndicator'] === null) {
+                $object->setSaturdayPickupIndicator(null);
+            }
+            if (\array_key_exists('saturdayDeliveryDate', $data) && $data['saturdayDeliveryDate'] !== null) {
                 $object->setSaturdayDeliveryDate($data['saturdayDeliveryDate']);
                 unset($data['saturdayDeliveryDate']);
             }
-            if (\array_key_exists('saturdayDeliveryTime', $data)) {
+            elseif (\array_key_exists('saturdayDeliveryDate', $data) && $data['saturdayDeliveryDate'] === null) {
+                $object->setSaturdayDeliveryDate(null);
+            }
+            if (\array_key_exists('saturdayDeliveryTime', $data) && $data['saturdayDeliveryTime'] !== null) {
                 $object->setSaturdayDeliveryTime($data['saturdayDeliveryTime']);
                 unset($data['saturdayDeliveryTime']);
             }
-            if (\array_key_exists('serviceRemarksText', $data)) {
+            elseif (\array_key_exists('saturdayDeliveryTime', $data) && $data['saturdayDeliveryTime'] === null) {
+                $object->setSaturdayDeliveryTime(null);
+            }
+            if (\array_key_exists('serviceRemarksText', $data) && $data['serviceRemarksText'] !== null) {
                 $object->setServiceRemarksText($data['serviceRemarksText']);
                 unset($data['serviceRemarksText']);
             }
-            if (\array_key_exists('guaranteeIndicator', $data)) {
+            elseif (\array_key_exists('serviceRemarksText', $data) && $data['serviceRemarksText'] === null) {
+                $object->setServiceRemarksText(null);
+            }
+            if (\array_key_exists('guaranteeIndicator', $data) && $data['guaranteeIndicator'] !== null) {
                 $object->setGuaranteeIndicator($data['guaranteeIndicator']);
                 unset($data['guaranteeIndicator']);
             }
-            if (\array_key_exists('totalTransitDays', $data)) {
+            elseif (\array_key_exists('guaranteeIndicator', $data) && $data['guaranteeIndicator'] === null) {
+                $object->setGuaranteeIndicator(null);
+            }
+            if (\array_key_exists('totalTransitDays', $data) && $data['totalTransitDays'] !== null) {
                 $object->setTotalTransitDays($data['totalTransitDays']);
                 unset($data['totalTransitDays']);
             }
-            if (\array_key_exists('businessTransitDays', $data)) {
+            elseif (\array_key_exists('totalTransitDays', $data) && $data['totalTransitDays'] === null) {
+                $object->setTotalTransitDays(null);
+            }
+            if (\array_key_exists('businessTransitDays', $data) && $data['businessTransitDays'] !== null) {
                 $object->setBusinessTransitDays($data['businessTransitDays']);
                 unset($data['businessTransitDays']);
             }
-            if (\array_key_exists('restDaysCount', $data)) {
+            elseif (\array_key_exists('businessTransitDays', $data) && $data['businessTransitDays'] === null) {
+                $object->setBusinessTransitDays(null);
+            }
+            if (\array_key_exists('restDaysCount', $data) && $data['restDaysCount'] !== null) {
                 $object->setRestDaysCount($data['restDaysCount']);
                 unset($data['restDaysCount']);
             }
-            if (\array_key_exists('holidayCount', $data)) {
+            elseif (\array_key_exists('restDaysCount', $data) && $data['restDaysCount'] === null) {
+                $object->setRestDaysCount(null);
+            }
+            if (\array_key_exists('holidayCount', $data) && $data['holidayCount'] !== null) {
                 $object->setHolidayCount($data['holidayCount']);
                 unset($data['holidayCount']);
             }
-            if (\array_key_exists('delayCount', $data)) {
+            elseif (\array_key_exists('holidayCount', $data) && $data['holidayCount'] === null) {
+                $object->setHolidayCount(null);
+            }
+            if (\array_key_exists('delayCount', $data) && $data['delayCount'] !== null) {
                 $object->setDelayCount($data['delayCount']);
                 unset($data['delayCount']);
             }
-            if (\array_key_exists('pickupDate', $data)) {
+            elseif (\array_key_exists('delayCount', $data) && $data['delayCount'] === null) {
+                $object->setDelayCount(null);
+            }
+            if (\array_key_exists('pickupDate', $data) && $data['pickupDate'] !== null) {
                 $object->setPickupDate($data['pickupDate']);
                 unset($data['pickupDate']);
             }
-            if (\array_key_exists('pickupTime', $data)) {
+            elseif (\array_key_exists('pickupDate', $data) && $data['pickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('pickupTime', $data) && $data['pickupTime'] !== null) {
                 $object->setPickupTime($data['pickupTime']);
                 unset($data['pickupTime']);
             }
-            if (\array_key_exists('cstccutoffTime', $data)) {
+            elseif (\array_key_exists('pickupTime', $data) && $data['pickupTime'] === null) {
+                $object->setPickupTime(null);
+            }
+            if (\array_key_exists('cstccutoffTime', $data) && $data['cstccutoffTime'] !== null) {
                 $object->setCstccutoffTime($data['cstccutoffTime']);
                 unset($data['cstccutoffTime']);
             }
-            if (\array_key_exists('poddate', $data)) {
+            elseif (\array_key_exists('cstccutoffTime', $data) && $data['cstccutoffTime'] === null) {
+                $object->setCstccutoffTime(null);
+            }
+            if (\array_key_exists('poddate', $data) && $data['poddate'] !== null) {
                 $object->setPoddate($data['poddate']);
                 unset($data['poddate']);
             }
-            if (\array_key_exists('poddays', $data)) {
+            elseif (\array_key_exists('poddate', $data) && $data['poddate'] === null) {
+                $object->setPoddate(null);
+            }
+            if (\array_key_exists('poddays', $data) && $data['poddays'] !== null) {
                 $object->setPoddays($data['poddays']);
                 unset($data['poddays']);
+            }
+            elseif (\array_key_exists('poddays', $data) && $data['poddays'] === null) {
+                $object->setPoddays(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

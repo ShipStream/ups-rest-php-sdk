@@ -15,26 +15,26 @@ class ProductPackingListInfo extends \ArrayObject
     /**
      * 
      *
-     * @var PackingListInfoPackageAssociated[]
+     * @var list<PackingListInfoPackageAssociated>|null
      */
     protected $packageAssociated;
     /**
      * 
      *
-     * @return PackingListInfoPackageAssociated[]
+     * @return list<PackingListInfoPackageAssociated>|null
      */
-    public function getPackageAssociated() : array
+    public function getPackageAssociated() : ?array
     {
         return $this->packageAssociated;
     }
     /**
      * 
      *
-     * @param PackingListInfoPackageAssociated[] $packageAssociated
+     * @param list<PackingListInfoPackageAssociated>|null $packageAssociated
      *
      * @return self
      */
-    public function setPackageAssociated(array $packageAssociated) : self
+    public function setPackageAssociated(?array $packageAssociated) : self
     {
         $this->initialized['packageAssociated'] = true;
         $this->packageAssociated = $packageAssociated;

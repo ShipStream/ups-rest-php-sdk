@@ -15,26 +15,26 @@ class FREIGHTPICKUPRequestWrapper extends \ArrayObject
     /**
      * 
      *
-     * @var FreightPickupRequest
+     * @var FreightPickupRequest|null
      */
     protected $freightPickupRequest;
     /**
      * 
      *
-     * @return FreightPickupRequest
+     * @return FreightPickupRequest|null
      */
-    public function getFreightPickupRequest() : FreightPickupRequest
+    public function getFreightPickupRequest() : ?FreightPickupRequest
     {
         return $this->freightPickupRequest;
     }
     /**
      * 
      *
-     * @param FreightPickupRequest $freightPickupRequest
+     * @param FreightPickupRequest|null $freightPickupRequest
      *
      * @return self
      */
-    public function setFreightPickupRequest(FreightPickupRequest $freightPickupRequest) : self
+    public function setFreightPickupRequest(?FreightPickupRequest $freightPickupRequest) : self
     {
         $this->initialized['freightPickupRequest'] = true;
         $this->freightPickupRequest = $freightPickupRequest;

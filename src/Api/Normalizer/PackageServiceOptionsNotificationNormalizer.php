@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('NotificationCode', $data)) {
+            if (\array_key_exists('NotificationCode', $data) && $data['NotificationCode'] !== null) {
                 $object->setNotificationCode($data['NotificationCode']);
                 unset($data['NotificationCode']);
             }
-            if (\array_key_exists('EMail', $data)) {
+            elseif (\array_key_exists('NotificationCode', $data) && $data['NotificationCode'] === null) {
+                $object->setNotificationCode(null);
+            }
+            if (\array_key_exists('EMail', $data) && $data['EMail'] !== null) {
                 $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\NotificationEMail', 'json', $context));
                 unset($data['EMail']);
+            }
+            elseif (\array_key_exists('EMail', $data) && $data['EMail'] === null) {
+                $object->setEMail(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('NotificationCode', $data)) {
+            if (\array_key_exists('NotificationCode', $data) && $data['NotificationCode'] !== null) {
                 $object->setNotificationCode($data['NotificationCode']);
                 unset($data['NotificationCode']);
             }
-            if (\array_key_exists('EMail', $data)) {
+            elseif (\array_key_exists('NotificationCode', $data) && $data['NotificationCode'] === null) {
+                $object->setNotificationCode(null);
+            }
+            if (\array_key_exists('EMail', $data) && $data['EMail'] !== null) {
                 $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\NotificationEMail', 'json', $context));
                 unset($data['EMail']);
+            }
+            elseif (\array_key_exists('EMail', $data) && $data['EMail'] === null) {
+                $object->setEMail(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

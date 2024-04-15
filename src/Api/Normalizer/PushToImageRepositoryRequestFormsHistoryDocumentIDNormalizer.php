@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DocumentID', $data)) {
+            if (\array_key_exists('DocumentID', $data) && $data['DocumentID'] !== null) {
                 $values = [];
                 foreach ($data['DocumentID'] as $value) {
                     $values[] = $value;
                 }
                 $object->setDocumentID($values);
                 unset($data['DocumentID']);
+            }
+            elseif (\array_key_exists('DocumentID', $data) && $data['DocumentID'] === null) {
+                $object->setDocumentID(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -105,13 +108,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DocumentID', $data)) {
+            if (\array_key_exists('DocumentID', $data) && $data['DocumentID'] !== null) {
                 $values = [];
                 foreach ($data['DocumentID'] as $value) {
                     $values[] = $value;
                 }
                 $object->setDocumentID($values);
                 unset($data['DocumentID']);
+            }
+            elseif (\array_key_exists('DocumentID', $data) && $data['DocumentID'] === null) {
+                $object->setDocumentID(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

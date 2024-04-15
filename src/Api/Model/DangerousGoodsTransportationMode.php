@@ -15,32 +15,32 @@ class DangerousGoodsTransportationMode extends \ArrayObject
     /**
      * The code associated with the transportation mode for the dangerous goods.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * A text description of the code for the transportation mode associated with the dangerous goods.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The code associated with the transportation mode for the dangerous goods.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The code associated with the transportation mode for the dangerous goods.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class DangerousGoodsTransportationMode extends \ArrayObject
     /**
      * A text description of the code for the transportation mode associated with the dangerous goods.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * A text description of the code for the transportation mode associated with the dangerous goods.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

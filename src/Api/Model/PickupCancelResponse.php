@@ -15,39 +15,39 @@ class PickupCancelResponse extends \ArrayObject
     /**
      * Response Container
      *
-     * @var PickupCancelResponseResponse
+     * @var PickupCancelResponseResponse|null
      */
     protected $response;
     /**
     * The type of pickup that has been cancelled.
     01 = On-Call Pickup
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupType;
     /**
      * The status of Smart Pickup that has been cancelled.
      *
-     * @var PickupCancelResponseGWNStatus
+     * @var PickupCancelResponseGWNStatus|null
      */
     protected $gWNStatus;
     /**
      * Response Container
      *
-     * @return PickupCancelResponseResponse
+     * @return PickupCancelResponseResponse|null
      */
-    public function getResponse() : PickupCancelResponseResponse
+    public function getResponse() : ?PickupCancelResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container
      *
-     * @param PickupCancelResponseResponse $response
+     * @param PickupCancelResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PickupCancelResponseResponse $response) : self
+    public function setResponse(?PickupCancelResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -57,9 +57,9 @@ class PickupCancelResponse extends \ArrayObject
     * The type of pickup that has been cancelled.
     01 = On-Call Pickup
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupType() : string
+    public function getPickupType() : ?string
     {
         return $this->pickupType;
     }
@@ -67,11 +67,11 @@ class PickupCancelResponse extends \ArrayObject
     * The type of pickup that has been cancelled.
     01 = On-Call Pickup
     *
-    * @param string $pickupType
+    * @param string|null $pickupType
     *
     * @return self
     */
-    public function setPickupType(string $pickupType) : self
+    public function setPickupType(?string $pickupType) : self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -80,20 +80,20 @@ class PickupCancelResponse extends \ArrayObject
     /**
      * The status of Smart Pickup that has been cancelled.
      *
-     * @return PickupCancelResponseGWNStatus
+     * @return PickupCancelResponseGWNStatus|null
      */
-    public function getGWNStatus() : PickupCancelResponseGWNStatus
+    public function getGWNStatus() : ?PickupCancelResponseGWNStatus
     {
         return $this->gWNStatus;
     }
     /**
      * The status of Smart Pickup that has been cancelled.
      *
-     * @param PickupCancelResponseGWNStatus $gWNStatus
+     * @param PickupCancelResponseGWNStatus|null $gWNStatus
      *
      * @return self
      */
-    public function setGWNStatus(PickupCancelResponseGWNStatus $gWNStatus) : self
+    public function setGWNStatus(?PickupCancelResponseGWNStatus $gWNStatus) : self
     {
         $this->initialized['gWNStatus'] = true;
         $this->gWNStatus = $gWNStatus;

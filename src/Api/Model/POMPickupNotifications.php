@@ -15,38 +15,38 @@ class POMPickupNotifications extends \ArrayObject
     /**
      * Name of company
      *
-     * @var string
+     * @var string|null
      */
     protected $companyName;
     /**
      * 
      *
-     * @var PickupNotificationsEMailNotification[]
+     * @var list<PickupNotificationsEMailNotification>|null
      */
     protected $eMailNotification;
     /**
      * Alternate email address to receive notifications regarding a failed email.
      *
-     * @var string
+     * @var string|null
      */
     protected $failedEMail;
     /**
      * Name of company
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyName() : string
+    public function getCompanyName() : ?string
     {
         return $this->companyName;
     }
     /**
      * Name of company
      *
-     * @param string $companyName
+     * @param string|null $companyName
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(?string $companyName) : self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -55,20 +55,20 @@ class POMPickupNotifications extends \ArrayObject
     /**
      * 
      *
-     * @return PickupNotificationsEMailNotification[]
+     * @return list<PickupNotificationsEMailNotification>|null
      */
-    public function getEMailNotification() : array
+    public function getEMailNotification() : ?array
     {
         return $this->eMailNotification;
     }
     /**
      * 
      *
-     * @param PickupNotificationsEMailNotification[] $eMailNotification
+     * @param list<PickupNotificationsEMailNotification>|null $eMailNotification
      *
      * @return self
      */
-    public function setEMailNotification(array $eMailNotification) : self
+    public function setEMailNotification(?array $eMailNotification) : self
     {
         $this->initialized['eMailNotification'] = true;
         $this->eMailNotification = $eMailNotification;
@@ -77,20 +77,20 @@ class POMPickupNotifications extends \ArrayObject
     /**
      * Alternate email address to receive notifications regarding a failed email.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFailedEMail() : string
+    public function getFailedEMail() : ?string
     {
         return $this->failedEMail;
     }
     /**
      * Alternate email address to receive notifications regarding a failed email.
      *
-     * @param string $failedEMail
+     * @param string|null $failedEMail
      *
      * @return self
      */
-    public function setFailedEMail(string $failedEMail) : self
+    public function setFailedEMail(?string $failedEMail) : self
     {
         $this->initialized['failedEMail'] = true;
         $this->failedEMail = $failedEMail;

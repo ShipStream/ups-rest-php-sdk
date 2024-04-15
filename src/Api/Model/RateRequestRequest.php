@@ -15,38 +15,38 @@ class RateRequestRequest extends \ArrayObject
     /**
      * Used to define the request type.  Valid Values:Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Ratetimeintransit = The server rates with transit time informationShoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.Rate is the only valid request option for UPS Ground Freight Pricing requests.
      *
-     * @var string
+     * @var string|null
      */
     protected $requestOption;
     /**
      * Indicates Rate API to display the new release features in Rate API response based on Rate release. See the What's New section for the latest Rate release. Supported values: 1601, 1607, 1701, 1707, 2108, 2205
      *
-     * @var string
+     * @var string|null
      */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Used to define the request type.  Valid Values:Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Ratetimeintransit = The server rates with transit time informationShoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.Rate is the only valid request option for UPS Ground Freight Pricing requests.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRequestOption() : string
+    public function getRequestOption() : ?string
     {
         return $this->requestOption;
     }
     /**
      * Used to define the request type.  Valid Values:Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Ratetimeintransit = The server rates with transit time informationShoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.Rate is the only valid request option for UPS Ground Freight Pricing requests.
      *
-     * @param string $requestOption
+     * @param string|null $requestOption
      *
      * @return self
      */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(?string $requestOption) : self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -55,20 +55,20 @@ class RateRequestRequest extends \ArrayObject
     /**
      * Indicates Rate API to display the new release features in Rate API response based on Rate release. See the What's New section for the latest Rate release. Supported values: 1601, 1607, 1701, 1707, 2108, 2205
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubVersion() : string
+    public function getSubVersion() : ?string
     {
         return $this->subVersion;
     }
     /**
      * Indicates Rate API to display the new release features in Rate API response based on Rate release. See the What's New section for the latest Rate release. Supported values: 1601, 1607, 1701, 1707, 2108, 2205
      *
-     * @param string $subVersion
+     * @param string|null $subVersion
      *
      * @return self
      */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(?string $subVersion) : self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -77,20 +77,20 @@ class RateRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

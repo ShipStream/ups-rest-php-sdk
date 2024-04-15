@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ProperShippingName', $data)) {
+            if (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] !== null) {
                 $object->setProperShippingName($data['ProperShippingName']);
                 unset($data['ProperShippingName']);
+            }
+            elseif (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] === null) {
+                $object->setProperShippingName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ProperShippingName', $data)) {
+            if (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] !== null) {
                 $object->setProperShippingName($data['ProperShippingName']);
                 unset($data['ProperShippingName']);
+            }
+            elseif (\array_key_exists('ProperShippingName', $data) && $data['ProperShippingName'] === null) {
+                $object->setProperShippingName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

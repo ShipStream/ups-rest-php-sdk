@@ -16,22 +16,22 @@ class ShipmentServiceOptionsExcessDeclaredValue extends \ArrayObject
     * Excess Declared value amount currency type.
     Valid value: USD - United States Dollar
     *
-    * @var string
+    * @var string|null
     */
     protected $currencyCode;
     /**
      * Excess Declared value amount.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
     * Excess Declared value amount currency type.
     Valid value: USD - United States Dollar
     *
-    * @return string
+    * @return string|null
     */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
@@ -39,11 +39,11 @@ class ShipmentServiceOptionsExcessDeclaredValue extends \ArrayObject
     * Excess Declared value amount currency type.
     Valid value: USD - United States Dollar
     *
-    * @param string $currencyCode
+    * @param string|null $currencyCode
     *
     * @return self
     */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -52,20 +52,20 @@ class ShipmentServiceOptionsExcessDeclaredValue extends \ArrayObject
     /**
      * Excess Declared value amount.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Excess Declared value amount.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

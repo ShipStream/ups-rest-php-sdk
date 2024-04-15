@@ -23,13 +23,13 @@ class OperatingHoursStandardHours extends \ArrayObject
     50-Drop Off Hours 
     51-Prep Hours
     *
-    * @var string
+    * @var string|null
     */
     protected $hoursType;
     /**
      * 
      *
-     * @var StandardHoursDayOfWeek[]
+     * @var list<StandardHoursDayOfWeek>|null
      */
     protected $dayOfWeek;
     /**
@@ -43,9 +43,9 @@ class OperatingHoursStandardHours extends \ArrayObject
     50-Drop Off Hours 
     51-Prep Hours
     *
-    * @return string
+    * @return string|null
     */
-    public function getHoursType() : string
+    public function getHoursType() : ?string
     {
         return $this->hoursType;
     }
@@ -60,11 +60,11 @@ class OperatingHoursStandardHours extends \ArrayObject
     50-Drop Off Hours 
     51-Prep Hours
     *
-    * @param string $hoursType
+    * @param string|null $hoursType
     *
     * @return self
     */
-    public function setHoursType(string $hoursType) : self
+    public function setHoursType(?string $hoursType) : self
     {
         $this->initialized['hoursType'] = true;
         $this->hoursType = $hoursType;
@@ -73,20 +73,20 @@ class OperatingHoursStandardHours extends \ArrayObject
     /**
      * 
      *
-     * @return StandardHoursDayOfWeek[]
+     * @return list<StandardHoursDayOfWeek>|null
      */
-    public function getDayOfWeek() : array
+    public function getDayOfWeek() : ?array
     {
         return $this->dayOfWeek;
     }
     /**
      * 
      *
-     * @param StandardHoursDayOfWeek[] $dayOfWeek
+     * @param list<StandardHoursDayOfWeek>|null $dayOfWeek
      *
      * @return self
      */
-    public function setDayOfWeek(array $dayOfWeek) : self
+    public function setDayOfWeek(?array $dayOfWeek) : self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;

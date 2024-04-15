@@ -15,37 +15,37 @@ class LabelDeliveryEMail extends \ArrayObject
     /**
      * The destination email address of the receiver returns notification email.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * The e-mail address where an undeliverable email message is sent if the Receiver Return Notification email is undeliverable.  Defaults to FromEMailAddress. Only allowed at the first package.
      *
-     * @var string
+     * @var string|null
      */
     protected $undeliverableEMailAddress;
     /**
      * The email address listed in the Reply To field of the message header, includes name and e-mail address of sender. The "From" field of the message header contains pkginfo@ups.com.  Only allowed at the first package.
      *
-     * @var string
+     * @var string|null
      */
     protected $fromEMailAddress;
     /**
      * The name the receiver return notification will appear to be from.  Defaults to the Shipper Name. Only allowed at the first package.
      *
-     * @var string
+     * @var string|null
      */
     protected $fromName;
     /**
      * User defined text that will be included in the email.  Only allowed at the first package.
      *
-     * @var string
+     * @var string|null
      */
     protected $memo;
     /**
      * The eMails subject. Defaults to the UPS Receiver Return Notification plus the shipment ID.  Only allowed at the first package.
      *
-     * @var string
+     * @var string|null
      */
     protected $subject;
     /**
@@ -69,26 +69,26 @@ class LabelDeliveryEMail extends \ArrayObject
     
     If the subject code is 08, the subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the tracking number. Only allowed at the first package.
     *
-    * @var string
+    * @var string|null
     */
     protected $subjectCode;
     /**
      * The destination email address of the receiver returns notification email.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * The destination email address of the receiver returns notification email.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -97,20 +97,20 @@ class LabelDeliveryEMail extends \ArrayObject
     /**
      * The e-mail address where an undeliverable email message is sent if the Receiver Return Notification email is undeliverable.  Defaults to FromEMailAddress. Only allowed at the first package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUndeliverableEMailAddress() : string
+    public function getUndeliverableEMailAddress() : ?string
     {
         return $this->undeliverableEMailAddress;
     }
     /**
      * The e-mail address where an undeliverable email message is sent if the Receiver Return Notification email is undeliverable.  Defaults to FromEMailAddress. Only allowed at the first package.
      *
-     * @param string $undeliverableEMailAddress
+     * @param string|null $undeliverableEMailAddress
      *
      * @return self
      */
-    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress) : self
+    public function setUndeliverableEMailAddress(?string $undeliverableEMailAddress) : self
     {
         $this->initialized['undeliverableEMailAddress'] = true;
         $this->undeliverableEMailAddress = $undeliverableEMailAddress;
@@ -119,20 +119,20 @@ class LabelDeliveryEMail extends \ArrayObject
     /**
      * The email address listed in the Reply To field of the message header, includes name and e-mail address of sender. The "From" field of the message header contains pkginfo@ups.com.  Only allowed at the first package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFromEMailAddress() : string
+    public function getFromEMailAddress() : ?string
     {
         return $this->fromEMailAddress;
     }
     /**
      * The email address listed in the Reply To field of the message header, includes name and e-mail address of sender. The "From" field of the message header contains pkginfo@ups.com.  Only allowed at the first package.
      *
-     * @param string $fromEMailAddress
+     * @param string|null $fromEMailAddress
      *
      * @return self
      */
-    public function setFromEMailAddress(string $fromEMailAddress) : self
+    public function setFromEMailAddress(?string $fromEMailAddress) : self
     {
         $this->initialized['fromEMailAddress'] = true;
         $this->fromEMailAddress = $fromEMailAddress;
@@ -141,20 +141,20 @@ class LabelDeliveryEMail extends \ArrayObject
     /**
      * The name the receiver return notification will appear to be from.  Defaults to the Shipper Name. Only allowed at the first package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFromName() : string
+    public function getFromName() : ?string
     {
         return $this->fromName;
     }
     /**
      * The name the receiver return notification will appear to be from.  Defaults to the Shipper Name. Only allowed at the first package.
      *
-     * @param string $fromName
+     * @param string|null $fromName
      *
      * @return self
      */
-    public function setFromName(string $fromName) : self
+    public function setFromName(?string $fromName) : self
     {
         $this->initialized['fromName'] = true;
         $this->fromName = $fromName;
@@ -163,20 +163,20 @@ class LabelDeliveryEMail extends \ArrayObject
     /**
      * User defined text that will be included in the email.  Only allowed at the first package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMemo() : string
+    public function getMemo() : ?string
     {
         return $this->memo;
     }
     /**
      * User defined text that will be included in the email.  Only allowed at the first package.
      *
-     * @param string $memo
+     * @param string|null $memo
      *
      * @return self
      */
-    public function setMemo(string $memo) : self
+    public function setMemo(?string $memo) : self
     {
         $this->initialized['memo'] = true;
         $this->memo = $memo;
@@ -185,20 +185,20 @@ class LabelDeliveryEMail extends \ArrayObject
     /**
      * The eMails subject. Defaults to the UPS Receiver Return Notification plus the shipment ID.  Only allowed at the first package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubject() : string
+    public function getSubject() : ?string
     {
         return $this->subject;
     }
     /**
      * The eMails subject. Defaults to the UPS Receiver Return Notification plus the shipment ID.  Only allowed at the first package.
      *
-     * @param string $subject
+     * @param string|null $subject
      *
      * @return self
      */
-    public function setSubject(string $subject) : self
+    public function setSubject(?string $subject) : self
     {
         $this->initialized['subject'] = true;
         $this->subject = $subject;
@@ -225,9 +225,9 @@ class LabelDeliveryEMail extends \ArrayObject
     
     If the subject code is 08, the subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the tracking number. Only allowed at the first package.
     *
-    * @return string
+    * @return string|null
     */
-    public function getSubjectCode() : string
+    public function getSubjectCode() : ?string
     {
         return $this->subjectCode;
     }
@@ -252,11 +252,11 @@ class LabelDeliveryEMail extends \ArrayObject
     
     If the subject code is 08, the subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the tracking number. Only allowed at the first package.
     *
-    * @param string $subjectCode
+    * @param string|null $subjectCode
     *
     * @return self
     */
-    public function setSubjectCode(string $subjectCode) : self
+    public function setSubjectCode(?string $subjectCode) : self
     {
         $this->initialized['subjectCode'] = true;
         $this->subjectCode = $subjectCode;

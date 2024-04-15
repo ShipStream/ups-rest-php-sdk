@@ -15,32 +15,32 @@ class PackageDimensionalWeight extends \ArrayObject
     /**
      * UnitOfMeasurement Container.
      *
-     * @var DimensionalWeightUnitOfMeasurement
+     * @var DimensionalWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * The value of package dimensional weight. A value of zero should be used for letters.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * UnitOfMeasurement Container.
      *
-     * @return DimensionalWeightUnitOfMeasurement
+     * @return DimensionalWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : DimensionalWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?DimensionalWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * UnitOfMeasurement Container.
      *
-     * @param DimensionalWeightUnitOfMeasurement $unitOfMeasurement
+     * @param DimensionalWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DimensionalWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?DimensionalWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class PackageDimensionalWeight extends \ArrayObject
     /**
      * The value of package dimensional weight. A value of zero should be used for letters.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * The value of package dimensional weight. A value of zero should be used for letters.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Percentage', $data)) {
+            if (\array_key_exists('Percentage', $data) && $data['Percentage'] !== null) {
                 $object->setPercentage($data['Percentage']);
                 unset($data['Percentage']);
             }
-            if (\array_key_exists('Amount', $data)) {
+            elseif (\array_key_exists('Percentage', $data) && $data['Percentage'] === null) {
+                $object->setPercentage(null);
+            }
+            if (\array_key_exists('Amount', $data) && $data['Amount'] !== null) {
                 $object->setAmount($this->denormalizer->denormalize($data['Amount'], 'ShipStream\\Ups\\Api\\Model\\HandlingChargeAmount', 'json', $context));
                 unset($data['Amount']);
+            }
+            elseif (\array_key_exists('Amount', $data) && $data['Amount'] === null) {
+                $object->setAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Percentage', $data)) {
+            if (\array_key_exists('Percentage', $data) && $data['Percentage'] !== null) {
                 $object->setPercentage($data['Percentage']);
                 unset($data['Percentage']);
             }
-            if (\array_key_exists('Amount', $data)) {
+            elseif (\array_key_exists('Percentage', $data) && $data['Percentage'] === null) {
+                $object->setPercentage(null);
+            }
+            if (\array_key_exists('Amount', $data) && $data['Amount'] !== null) {
                 $object->setAmount($this->denormalizer->denormalize($data['Amount'], 'ShipStream\\Ups\\Api\\Model\\HandlingChargeAmount', 'json', $context));
                 unset($data['Amount']);
+            }
+            elseif (\array_key_exists('Amount', $data) && $data['Amount'] === null) {
+                $object->setAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,15 +40,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipFrom', $data)) {
+            if (\array_key_exists('ShipFrom', $data) && $data['ShipFrom'] !== null) {
                 $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\PackingListShipFrom', 'json', $context));
                 unset($data['ShipFrom']);
             }
-            if (\array_key_exists('ShipTo', $data)) {
+            elseif (\array_key_exists('ShipFrom', $data) && $data['ShipFrom'] === null) {
+                $object->setShipFrom(null);
+            }
+            if (\array_key_exists('ShipTo', $data) && $data['ShipTo'] !== null) {
                 $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\PackingListShipTo', 'json', $context));
                 unset($data['ShipTo']);
             }
-            if (\array_key_exists('Reference', $data)) {
+            elseif (\array_key_exists('ShipTo', $data) && $data['ShipTo'] === null) {
+                $object->setShipTo(null);
+            }
+            if (\array_key_exists('Reference', $data) && $data['Reference'] !== null) {
                 $values = [];
                 foreach ($data['Reference'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackingListReference', 'json', $context);
@@ -56,9 +62,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setReference($values);
                 unset($data['Reference']);
             }
-            if (\array_key_exists('HandlingUnit', $data)) {
+            elseif (\array_key_exists('Reference', $data) && $data['Reference'] === null) {
+                $object->setReference(null);
+            }
+            if (\array_key_exists('HandlingUnit', $data) && $data['HandlingUnit'] !== null) {
                 $object->setHandlingUnit($this->denormalizer->denormalize($data['HandlingUnit'], 'ShipStream\\Ups\\Api\\Model\\PackingListHandlingUnit', 'json', $context));
                 unset($data['HandlingUnit']);
+            }
+            elseif (\array_key_exists('HandlingUnit', $data) && $data['HandlingUnit'] === null) {
+                $object->setHandlingUnit(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -128,15 +140,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShipFrom', $data)) {
+            if (\array_key_exists('ShipFrom', $data) && $data['ShipFrom'] !== null) {
                 $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\PackingListShipFrom', 'json', $context));
                 unset($data['ShipFrom']);
             }
-            if (\array_key_exists('ShipTo', $data)) {
+            elseif (\array_key_exists('ShipFrom', $data) && $data['ShipFrom'] === null) {
+                $object->setShipFrom(null);
+            }
+            if (\array_key_exists('ShipTo', $data) && $data['ShipTo'] !== null) {
                 $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\PackingListShipTo', 'json', $context));
                 unset($data['ShipTo']);
             }
-            if (\array_key_exists('Reference', $data)) {
+            elseif (\array_key_exists('ShipTo', $data) && $data['ShipTo'] === null) {
+                $object->setShipTo(null);
+            }
+            if (\array_key_exists('Reference', $data) && $data['Reference'] !== null) {
                 $values = [];
                 foreach ($data['Reference'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PackingListReference', 'json', $context);
@@ -144,9 +162,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setReference($values);
                 unset($data['Reference']);
             }
-            if (\array_key_exists('HandlingUnit', $data)) {
+            elseif (\array_key_exists('Reference', $data) && $data['Reference'] === null) {
+                $object->setReference(null);
+            }
+            if (\array_key_exists('HandlingUnit', $data) && $data['HandlingUnit'] !== null) {
                 $object->setHandlingUnit($this->denormalizer->denormalize($data['HandlingUnit'], 'ShipStream\\Ups\\Api\\Model\\PackingListHandlingUnit', 'json', $context));
                 unset($data['HandlingUnit']);
+            }
+            elseif (\array_key_exists('HandlingUnit', $data) && $data['HandlingUnit'] === null) {
+                $object->setHandlingUnit(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

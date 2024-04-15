@@ -15,63 +15,63 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     /**
      * The shipper�s name or company name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
     * Company�s Tax Identification Number at the pickup location.
     Required if SED form (International forms) is requested
     *
-    * @var string
+    * @var string|null
     */
     protected $taxIdentificationNumber;
     /**
      * Shipper�s Address Container.
      *
-     * @var FreightShipShipFromAddress
+     * @var FreightShipShipFromAddress|null
      */
     protected $address;
     /**
      * Contact name at the ship from location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Phone Container
      *
-     * @var ShipFromPhone
+     * @var ShipFromPhone|null
      */
     protected $phone;
     /**
      * The ship from location�s Fax Number.
      *
-     * @var string
+     * @var string|null
      */
     protected $faxNumber;
     /**
      * Shipper�s email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * The shipper�s name or company name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * The shipper�s name or company name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -81,9 +81,9 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     * Company�s Tax Identification Number at the pickup location.
     Required if SED form (International forms) is requested
     *
-    * @return string
+    * @return string|null
     */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
@@ -91,11 +91,11 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     * Company�s Tax Identification Number at the pickup location.
     Required if SED form (International forms) is requested
     *
-    * @param string $taxIdentificationNumber
+    * @param string|null $taxIdentificationNumber
     *
     * @return self
     */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -104,20 +104,20 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     /**
      * Shipper�s Address Container.
      *
-     * @return FreightShipShipFromAddress
+     * @return FreightShipShipFromAddress|null
      */
-    public function getAddress() : FreightShipShipFromAddress
+    public function getAddress() : ?FreightShipShipFromAddress
     {
         return $this->address;
     }
     /**
      * Shipper�s Address Container.
      *
-     * @param FreightShipShipFromAddress $address
+     * @param FreightShipShipFromAddress|null $address
      *
      * @return self
      */
-    public function setAddress(FreightShipShipFromAddress $address) : self
+    public function setAddress(?FreightShipShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -126,20 +126,20 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     /**
      * Contact name at the ship from location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the ship from location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -148,20 +148,20 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     /**
      * Phone Container
      *
-     * @return ShipFromPhone
+     * @return ShipFromPhone|null
      */
-    public function getPhone() : ShipFromPhone
+    public function getPhone() : ?ShipFromPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container
      *
-     * @param ShipFromPhone $phone
+     * @param ShipFromPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(ShipFromPhone $phone) : self
+    public function setPhone(?ShipFromPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -170,20 +170,20 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     /**
      * The ship from location�s Fax Number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber() : ?string
     {
         return $this->faxNumber;
     }
     /**
      * The ship from location�s Fax Number.
      *
-     * @param string $faxNumber
+     * @param string|null $faxNumber
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(?string $faxNumber) : self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -192,20 +192,20 @@ class FreightShipShipmentShipFrom extends \ArrayObject
     /**
      * Shipper�s email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Shipper�s email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

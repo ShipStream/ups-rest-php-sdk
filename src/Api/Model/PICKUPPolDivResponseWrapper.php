@@ -15,26 +15,26 @@ class PICKUPPolDivResponseWrapper extends \ArrayObject
     /**
      * The response for getting a list of valid Political Division 1 or State field in the specified country or territory.
      *
-     * @var PickupGetPoliticalDivision1ListResponse
+     * @var PickupGetPoliticalDivision1ListResponse|null
      */
     protected $pickupGetPoliticalDivision1ListResponse;
     /**
      * The response for getting a list of valid Political Division 1 or State field in the specified country or territory.
      *
-     * @return PickupGetPoliticalDivision1ListResponse
+     * @return PickupGetPoliticalDivision1ListResponse|null
      */
-    public function getPickupGetPoliticalDivision1ListResponse() : PickupGetPoliticalDivision1ListResponse
+    public function getPickupGetPoliticalDivision1ListResponse() : ?PickupGetPoliticalDivision1ListResponse
     {
         return $this->pickupGetPoliticalDivision1ListResponse;
     }
     /**
      * The response for getting a list of valid Political Division 1 or State field in the specified country or territory.
      *
-     * @param PickupGetPoliticalDivision1ListResponse $pickupGetPoliticalDivision1ListResponse
+     * @param PickupGetPoliticalDivision1ListResponse|null $pickupGetPoliticalDivision1ListResponse
      *
      * @return self
      */
-    public function setPickupGetPoliticalDivision1ListResponse(PickupGetPoliticalDivision1ListResponse $pickupGetPoliticalDivision1ListResponse) : self
+    public function setPickupGetPoliticalDivision1ListResponse(?PickupGetPoliticalDivision1ListResponse $pickupGetPoliticalDivision1ListResponse) : self
     {
         $this->initialized['pickupGetPoliticalDivision1ListResponse'] = true;
         $this->pickupGetPoliticalDivision1ListResponse = $pickupGetPoliticalDivision1ListResponse;

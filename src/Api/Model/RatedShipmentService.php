@@ -15,32 +15,32 @@ class RatedShipmentService extends \ArrayObject
     /**
      * The UPS service code.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The UPS service code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The UPS service code.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class RatedShipmentService extends \ArrayObject
     /**
      * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

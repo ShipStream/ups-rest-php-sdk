@@ -18,13 +18,13 @@ class CommodityCommodityValue extends \ArrayObject
     Valid value:
     USD - United States Dollar
     *
-    * @var string
+    * @var string|null
     */
     protected $currencyCode;
     /**
      * Commodity value amount.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
@@ -33,9 +33,9 @@ class CommodityCommodityValue extends \ArrayObject
     Valid value:
     USD - United States Dollar
     *
-    * @return string
+    * @return string|null
     */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
@@ -45,11 +45,11 @@ class CommodityCommodityValue extends \ArrayObject
     Valid value:
     USD - United States Dollar
     *
-    * @param string $currencyCode
+    * @param string|null $currencyCode
     *
     * @return self
     */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -58,20 +58,20 @@ class CommodityCommodityValue extends \ArrayObject
     /**
      * Commodity value amount.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Commodity value amount.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

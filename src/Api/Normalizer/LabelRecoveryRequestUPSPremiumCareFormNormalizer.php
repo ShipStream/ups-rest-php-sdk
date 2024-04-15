@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PageSize', $data)) {
+            if (\array_key_exists('PageSize', $data) && $data['PageSize'] !== null) {
                 $object->setPageSize($data['PageSize']);
                 unset($data['PageSize']);
             }
-            if (\array_key_exists('PrintType', $data)) {
+            elseif (\array_key_exists('PageSize', $data) && $data['PageSize'] === null) {
+                $object->setPageSize(null);
+            }
+            if (\array_key_exists('PrintType', $data) && $data['PrintType'] !== null) {
                 $object->setPrintType($data['PrintType']);
                 unset($data['PrintType']);
+            }
+            elseif (\array_key_exists('PrintType', $data) && $data['PrintType'] === null) {
+                $object->setPrintType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PageSize', $data)) {
+            if (\array_key_exists('PageSize', $data) && $data['PageSize'] !== null) {
                 $object->setPageSize($data['PageSize']);
                 unset($data['PageSize']);
             }
-            if (\array_key_exists('PrintType', $data)) {
+            elseif (\array_key_exists('PageSize', $data) && $data['PageSize'] === null) {
+                $object->setPageSize(null);
+            }
+            if (\array_key_exists('PrintType', $data) && $data['PrintType'] !== null) {
                 $object->setPrintType($data['PrintType']);
                 unset($data['PrintType']);
+            }
+            elseif (\array_key_exists('PrintType', $data) && $data['PrintType'] === null) {
+                $object->setPrintType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,32 +15,32 @@ class ShipmentResponse extends \ArrayObject
     /**
      * Response container for Shipment response.
      *
-     * @var ShipmentResponseResponse
+     * @var ShipmentResponseResponse|null
      */
     protected $response;
     /**
      * Shipment Results container.
      *
-     * @var ShipmentResponseShipmentResults
+     * @var ShipmentResponseShipmentResults|null
      */
     protected $shipmentResults;
     /**
      * Response container for Shipment response.
      *
-     * @return ShipmentResponseResponse
+     * @return ShipmentResponseResponse|null
      */
-    public function getResponse() : ShipmentResponseResponse
+    public function getResponse() : ?ShipmentResponseResponse
     {
         return $this->response;
     }
     /**
      * Response container for Shipment response.
      *
-     * @param ShipmentResponseResponse $response
+     * @param ShipmentResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(ShipmentResponseResponse $response) : self
+    public function setResponse(?ShipmentResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class ShipmentResponse extends \ArrayObject
     /**
      * Shipment Results container.
      *
-     * @return ShipmentResponseShipmentResults
+     * @return ShipmentResponseShipmentResults|null
      */
-    public function getShipmentResults() : ShipmentResponseShipmentResults
+    public function getShipmentResults() : ?ShipmentResponseShipmentResults
     {
         return $this->shipmentResults;
     }
     /**
      * Shipment Results container.
      *
-     * @param ShipmentResponseShipmentResults $shipmentResults
+     * @param ShipmentResponseShipmentResults|null $shipmentResults
      *
      * @return self
      */
-    public function setShipmentResults(ShipmentResponseShipmentResults $shipmentResults) : self
+    public function setShipmentResults(?ShipmentResponseShipmentResults $shipmentResults) : self
     {
         $this->initialized['shipmentResults'] = true;
         $this->shipmentResults = $shipmentResults;

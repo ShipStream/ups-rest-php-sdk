@@ -15,26 +15,26 @@ class SHIPRequestWrapper extends \ArrayObject
     /**
      * Shipment Request.
      *
-     * @var ShipmentRequest
+     * @var ShipmentRequest|null
      */
     protected $shipmentRequest;
     /**
      * Shipment Request.
      *
-     * @return ShipmentRequest
+     * @return ShipmentRequest|null
      */
-    public function getShipmentRequest() : ShipmentRequest
+    public function getShipmentRequest() : ?ShipmentRequest
     {
         return $this->shipmentRequest;
     }
     /**
      * Shipment Request.
      *
-     * @param ShipmentRequest $shipmentRequest
+     * @param ShipmentRequest|null $shipmentRequest
      *
      * @return self
      */
-    public function setShipmentRequest(ShipmentRequest $shipmentRequest) : self
+    public function setShipmentRequest(?ShipmentRequest $shipmentRequest) : self
     {
         $this->initialized['shipmentRequest'] = true;
         $this->shipmentRequest = $shipmentRequest;

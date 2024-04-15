@@ -15,38 +15,38 @@ class PackingListInfoPackageAssociated extends \ArrayObject
     /**
      * Package number the product should be allocated to ont he packing list.  Required for packaging list and Air Freight Packing list.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageNumber;
     /**
      * Amount of Product associated with a package.  Required for packaging list and Air Freight Packing list.
      *
-     * @var string
+     * @var string|null
      */
     protected $productAmount;
     /**
      * Product Note.
      *
-     * @var string
+     * @var string|null
      */
     protected $productNote;
     /**
      * Package number the product should be allocated to ont he packing list.  Required for packaging list and Air Freight Packing list.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageNumber() : string
+    public function getPackageNumber() : ?string
     {
         return $this->packageNumber;
     }
     /**
      * Package number the product should be allocated to ont he packing list.  Required for packaging list and Air Freight Packing list.
      *
-     * @param string $packageNumber
+     * @param string|null $packageNumber
      *
      * @return self
      */
-    public function setPackageNumber(string $packageNumber) : self
+    public function setPackageNumber(?string $packageNumber) : self
     {
         $this->initialized['packageNumber'] = true;
         $this->packageNumber = $packageNumber;
@@ -55,20 +55,20 @@ class PackingListInfoPackageAssociated extends \ArrayObject
     /**
      * Amount of Product associated with a package.  Required for packaging list and Air Freight Packing list.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProductAmount() : string
+    public function getProductAmount() : ?string
     {
         return $this->productAmount;
     }
     /**
      * Amount of Product associated with a package.  Required for packaging list and Air Freight Packing list.
      *
-     * @param string $productAmount
+     * @param string|null $productAmount
      *
      * @return self
      */
-    public function setProductAmount(string $productAmount) : self
+    public function setProductAmount(?string $productAmount) : self
     {
         $this->initialized['productAmount'] = true;
         $this->productAmount = $productAmount;
@@ -77,20 +77,20 @@ class PackingListInfoPackageAssociated extends \ArrayObject
     /**
      * Product Note.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProductNote() : string
+    public function getProductNote() : ?string
     {
         return $this->productNote;
     }
     /**
      * Product Note.
      *
-     * @param string $productNote
+     * @param string|null $productNote
      *
      * @return self
      */
-    public function setProductNote(string $productNote) : self
+    public function setProductNote(?string $productNote) : self
     {
         $this->initialized['productNote'] = true;
         $this->productNote = $productNote;

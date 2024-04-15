@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UploadRequest', $data)) {
+            if (\array_key_exists('UploadRequest', $data) && $data['UploadRequest'] !== null) {
                 $object->setUploadRequest($this->denormalizer->denormalize($data['UploadRequest'], 'ShipStream\\Ups\\Api\\Model\\UploadRequest', 'json', $context));
                 unset($data['UploadRequest']);
+            }
+            elseif (\array_key_exists('UploadRequest', $data) && $data['UploadRequest'] === null) {
+                $object->setUploadRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UploadRequest', $data)) {
+            if (\array_key_exists('UploadRequest', $data) && $data['UploadRequest'] !== null) {
                 $object->setUploadRequest($this->denormalizer->denormalize($data['UploadRequest'], 'ShipStream\\Ups\\Api\\Model\\UploadRequest', 'json', $context));
                 unset($data['UploadRequest']);
+            }
+            elseif (\array_key_exists('UploadRequest', $data) && $data['UploadRequest'] === null) {
+                $object->setUploadRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

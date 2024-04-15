@@ -15,32 +15,32 @@ class ErrorErrorLocation extends \ArrayObject
     /**
      * The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.
      *
-     * @var string
+     * @var string|null
      */
     protected $errorLocationElementName;
     /**
      * The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.
      *
-     * @var string
+     * @var string|null
      */
     protected $errorLocationAttributeName;
     /**
      * The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.
      *
-     * @return string
+     * @return string|null
      */
-    public function getErrorLocationElementName() : string
+    public function getErrorLocationElementName() : ?string
     {
         return $this->errorLocationElementName;
     }
     /**
      * The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.
      *
-     * @param string $errorLocationElementName
+     * @param string|null $errorLocationElementName
      *
      * @return self
      */
-    public function setErrorLocationElementName(string $errorLocationElementName) : self
+    public function setErrorLocationElementName(?string $errorLocationElementName) : self
     {
         $this->initialized['errorLocationElementName'] = true;
         $this->errorLocationElementName = $errorLocationElementName;
@@ -49,20 +49,20 @@ class ErrorErrorLocation extends \ArrayObject
     /**
      * The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.
      *
-     * @return string
+     * @return string|null
      */
-    public function getErrorLocationAttributeName() : string
+    public function getErrorLocationAttributeName() : ?string
     {
         return $this->errorLocationAttributeName;
     }
     /**
      * The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.
      *
-     * @param string $errorLocationAttributeName
+     * @param string|null $errorLocationAttributeName
      *
      * @return self
      */
-    public function setErrorLocationAttributeName(string $errorLocationAttributeName) : self
+    public function setErrorLocationAttributeName(?string $errorLocationAttributeName) : self
     {
         $this->initialized['errorLocationAttributeName'] = true;
         $this->errorLocationAttributeName = $errorLocationAttributeName;

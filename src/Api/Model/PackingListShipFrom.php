@@ -15,56 +15,56 @@ class PackingListShipFrom extends \ArrayObject
     /**
      * The shipper�s name or company name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Contact name at the ship from location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Shipper�s Address Container.
      *
-     * @var FreightShipShipFromAddress
+     * @var FreightShipShipFromAddress|null
      */
     protected $address;
     /**
      * The shipper�s phone number.  �
      *
-     * @var string
+     * @var string|null
      */
     protected $phoneNumber;
     /**
      * Shipper�s email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * The shipper�s phone extension.
      *
-     * @var string
+     * @var string|null
      */
     protected $phoneExtension;
     /**
      * The shipper�s name or company name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * The shipper�s name or company name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -73,20 +73,20 @@ class PackingListShipFrom extends \ArrayObject
     /**
      * Contact name at the ship from location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the ship from location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -95,20 +95,20 @@ class PackingListShipFrom extends \ArrayObject
     /**
      * Shipper�s Address Container.
      *
-     * @return FreightShipShipFromAddress
+     * @return FreightShipShipFromAddress|null
      */
-    public function getAddress() : FreightShipShipFromAddress
+    public function getAddress() : ?FreightShipShipFromAddress
     {
         return $this->address;
     }
     /**
      * Shipper�s Address Container.
      *
-     * @param FreightShipShipFromAddress $address
+     * @param FreightShipShipFromAddress|null $address
      *
      * @return self
      */
-    public function setAddress(FreightShipShipFromAddress $address) : self
+    public function setAddress(?FreightShipShipFromAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -117,20 +117,20 @@ class PackingListShipFrom extends \ArrayObject
     /**
      * The shipper�s phone number.  �
      *
-     * @return string
+     * @return string|null
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber() : ?string
     {
         return $this->phoneNumber;
     }
     /**
      * The shipper�s phone number.  �
      *
-     * @param string $phoneNumber
+     * @param string|null $phoneNumber
      *
      * @return self
      */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(?string $phoneNumber) : self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;
@@ -139,20 +139,20 @@ class PackingListShipFrom extends \ArrayObject
     /**
      * Shipper�s email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Shipper�s email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -161,20 +161,20 @@ class PackingListShipFrom extends \ArrayObject
     /**
      * The shipper�s phone extension.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPhoneExtension() : string
+    public function getPhoneExtension() : ?string
     {
         return $this->phoneExtension;
     }
     /**
      * The shipper�s phone extension.
      *
-     * @param string $phoneExtension
+     * @param string|null $phoneExtension
      *
      * @return self
      */
-    public function setPhoneExtension(string $phoneExtension) : self
+    public function setPhoneExtension(?string $phoneExtension) : self
     {
         $this->initialized['phoneExtension'] = true;
         $this->phoneExtension = $phoneExtension;

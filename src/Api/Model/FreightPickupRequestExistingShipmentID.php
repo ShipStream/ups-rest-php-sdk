@@ -15,32 +15,32 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
     /**
      * The PRO Number assigned to the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipmentNumber;
     /**
      * The retrieval key for the stored BOL.
      *
-     * @var string
+     * @var string|null
      */
     protected $bOLID;
     /**
      * The PRO Number assigned to the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipmentNumber() : string
+    public function getShipmentNumber() : ?string
     {
         return $this->shipmentNumber;
     }
     /**
      * The PRO Number assigned to the shipment.
      *
-     * @param string $shipmentNumber
+     * @param string|null $shipmentNumber
      *
      * @return self
      */
-    public function setShipmentNumber(string $shipmentNumber) : self
+    public function setShipmentNumber(?string $shipmentNumber) : self
     {
         $this->initialized['shipmentNumber'] = true;
         $this->shipmentNumber = $shipmentNumber;
@@ -49,20 +49,20 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
     /**
      * The retrieval key for the stored BOL.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBOLID() : string
+    public function getBOLID() : ?string
     {
         return $this->bOLID;
     }
     /**
      * The retrieval key for the stored BOL.
      *
-     * @param string $bOLID
+     * @param string|null $bOLID
      *
      * @return self
      */
-    public function setBOLID(string $bOLID) : self
+    public function setBOLID(?string $bOLID) : self
     {
         $this->initialized['bOLID'] = true;
         $this->bOLID = $bOLID;

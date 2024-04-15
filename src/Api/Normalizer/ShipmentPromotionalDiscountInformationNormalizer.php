@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PromoCode', $data)) {
+            if (\array_key_exists('PromoCode', $data) && $data['PromoCode'] !== null) {
                 $object->setPromoCode($data['PromoCode']);
                 unset($data['PromoCode']);
             }
-            if (\array_key_exists('PromoAliasCode', $data)) {
+            elseif (\array_key_exists('PromoCode', $data) && $data['PromoCode'] === null) {
+                $object->setPromoCode(null);
+            }
+            if (\array_key_exists('PromoAliasCode', $data) && $data['PromoAliasCode'] !== null) {
                 $object->setPromoAliasCode($data['PromoAliasCode']);
                 unset($data['PromoAliasCode']);
+            }
+            elseif (\array_key_exists('PromoAliasCode', $data) && $data['PromoAliasCode'] === null) {
+                $object->setPromoAliasCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PromoCode', $data)) {
+            if (\array_key_exists('PromoCode', $data) && $data['PromoCode'] !== null) {
                 $object->setPromoCode($data['PromoCode']);
                 unset($data['PromoCode']);
             }
-            if (\array_key_exists('PromoAliasCode', $data)) {
+            elseif (\array_key_exists('PromoCode', $data) && $data['PromoCode'] === null) {
+                $object->setPromoCode(null);
+            }
+            if (\array_key_exists('PromoAliasCode', $data) && $data['PromoAliasCode'] !== null) {
                 $object->setPromoAliasCode($data['PromoAliasCode']);
                 unset($data['PromoAliasCode']);
+            }
+            elseif (\array_key_exists('PromoAliasCode', $data) && $data['PromoAliasCode'] === null) {
+                $object->setPromoAliasCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

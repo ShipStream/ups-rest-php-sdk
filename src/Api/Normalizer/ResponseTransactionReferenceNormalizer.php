@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CustomerContext', $data)) {
+            if (\array_key_exists('CustomerContext', $data) && $data['CustomerContext'] !== null) {
                 $object->setCustomerContext($data['CustomerContext']);
                 unset($data['CustomerContext']);
+            }
+            elseif (\array_key_exists('CustomerContext', $data) && $data['CustomerContext'] === null) {
+                $object->setCustomerContext(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -99,9 +102,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CustomerContext', $data)) {
+            if (\array_key_exists('CustomerContext', $data) && $data['CustomerContext'] !== null) {
                 $object->setCustomerContext($data['CustomerContext']);
                 unset($data['CustomerContext']);
+            }
+            elseif (\array_key_exists('CustomerContext', $data) && $data['CustomerContext'] === null) {
+                $object->setCustomerContext(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -9,13 +9,13 @@ class PickupGetServiceCenterFacilities extends \ShipStream\Ups\Api\Runtime\Clien
      * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
      *
      * @param string $version Version of API e.g v1
-     * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

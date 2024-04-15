@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('XAVRequest', $data)) {
+            if (\array_key_exists('XAVRequest', $data) && $data['XAVRequest'] !== null) {
                 $object->setXAVRequest($this->denormalizer->denormalize($data['XAVRequest'], 'ShipStream\\Ups\\Api\\Model\\XAVRequest', 'json', $context));
                 unset($data['XAVRequest']);
+            }
+            elseif (\array_key_exists('XAVRequest', $data) && $data['XAVRequest'] === null) {
+                $object->setXAVRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('XAVRequest', $data)) {
+            if (\array_key_exists('XAVRequest', $data) && $data['XAVRequest'] !== null) {
                 $object->setXAVRequest($this->denormalizer->denormalize($data['XAVRequest'], 'ShipStream\\Ups\\Api\\Model\\XAVRequest', 'json', $context));
                 unset($data['XAVRequest']);
+            }
+            elseif (\array_key_exists('XAVRequest', $data) && $data['XAVRequest'] === null) {
+                $object->setXAVRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('BusinessClassificationCode', $data)) {
+            if (\array_key_exists('BusinessClassificationCode', $data) && $data['BusinessClassificationCode'] !== null) {
                 $values = [];
                 foreach ($data['BusinessClassificationCode'] as $value) {
                     $values[] = $value;
@@ -48,17 +48,29 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setBusinessClassificationCode($values);
                 unset($data['BusinessClassificationCode']);
             }
-            if (\array_key_exists('BusinessName', $data)) {
+            elseif (\array_key_exists('BusinessClassificationCode', $data) && $data['BusinessClassificationCode'] === null) {
+                $object->setBusinessClassificationCode(null);
+            }
+            if (\array_key_exists('BusinessName', $data) && $data['BusinessName'] !== null) {
                 $object->setBusinessName($data['BusinessName']);
                 unset($data['BusinessName']);
             }
-            if (\array_key_exists('Radius', $data)) {
+            elseif (\array_key_exists('BusinessName', $data) && $data['BusinessName'] === null) {
+                $object->setBusinessName(null);
+            }
+            if (\array_key_exists('Radius', $data) && $data['Radius'] !== null) {
                 $object->setRadius($data['Radius']);
                 unset($data['Radius']);
             }
-            if (\array_key_exists('PostalCodeList', $data)) {
+            elseif (\array_key_exists('Radius', $data) && $data['Radius'] === null) {
+                $object->setRadius(null);
+            }
+            if (\array_key_exists('PostalCodeList', $data) && $data['PostalCodeList'] !== null) {
                 $object->setPostalCodeList($this->denormalizer->denormalize($data['PostalCodeList'], 'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList', 'json', $context));
                 unset($data['PostalCodeList']);
+            }
+            elseif (\array_key_exists('PostalCodeList', $data) && $data['PostalCodeList'] === null) {
+                $object->setPostalCodeList(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -128,7 +140,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('BusinessClassificationCode', $data)) {
+            if (\array_key_exists('BusinessClassificationCode', $data) && $data['BusinessClassificationCode'] !== null) {
                 $values = [];
                 foreach ($data['BusinessClassificationCode'] as $value) {
                     $values[] = $value;
@@ -136,17 +148,29 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setBusinessClassificationCode($values);
                 unset($data['BusinessClassificationCode']);
             }
-            if (\array_key_exists('BusinessName', $data)) {
+            elseif (\array_key_exists('BusinessClassificationCode', $data) && $data['BusinessClassificationCode'] === null) {
+                $object->setBusinessClassificationCode(null);
+            }
+            if (\array_key_exists('BusinessName', $data) && $data['BusinessName'] !== null) {
                 $object->setBusinessName($data['BusinessName']);
                 unset($data['BusinessName']);
             }
-            if (\array_key_exists('Radius', $data)) {
+            elseif (\array_key_exists('BusinessName', $data) && $data['BusinessName'] === null) {
+                $object->setBusinessName(null);
+            }
+            if (\array_key_exists('Radius', $data) && $data['Radius'] !== null) {
                 $object->setRadius($data['Radius']);
                 unset($data['Radius']);
             }
-            if (\array_key_exists('PostalCodeList', $data)) {
+            elseif (\array_key_exists('Radius', $data) && $data['Radius'] === null) {
+                $object->setRadius(null);
+            }
+            if (\array_key_exists('PostalCodeList', $data) && $data['PostalCodeList'] !== null) {
                 $object->setPostalCodeList($this->denormalizer->denormalize($data['PostalCodeList'], 'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList', 'json', $context));
                 unset($data['PostalCodeList']);
+            }
+            elseif (\array_key_exists('PostalCodeList', $data) && $data['PostalCodeList'] === null) {
+                $object->setPostalCodeList(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

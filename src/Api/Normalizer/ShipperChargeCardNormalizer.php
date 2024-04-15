@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CardHolderName', $data)) {
+            if (\array_key_exists('CardHolderName', $data) && $data['CardHolderName'] !== null) {
                 $object->setCardHolderName($data['CardHolderName']);
                 unset($data['CardHolderName']);
             }
-            if (\array_key_exists('CardType', $data)) {
+            elseif (\array_key_exists('CardHolderName', $data) && $data['CardHolderName'] === null) {
+                $object->setCardHolderName(null);
+            }
+            if (\array_key_exists('CardType', $data) && $data['CardType'] !== null) {
                 $object->setCardType($data['CardType']);
                 unset($data['CardType']);
             }
-            if (\array_key_exists('CardNumber', $data)) {
+            elseif (\array_key_exists('CardType', $data) && $data['CardType'] === null) {
+                $object->setCardType(null);
+            }
+            if (\array_key_exists('CardNumber', $data) && $data['CardNumber'] !== null) {
                 $object->setCardNumber($data['CardNumber']);
                 unset($data['CardNumber']);
             }
-            if (\array_key_exists('ExpirationDate', $data)) {
+            elseif (\array_key_exists('CardNumber', $data) && $data['CardNumber'] === null) {
+                $object->setCardNumber(null);
+            }
+            if (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] !== null) {
                 $object->setExpirationDate($data['ExpirationDate']);
                 unset($data['ExpirationDate']);
             }
-            if (\array_key_exists('SecurityCode', $data)) {
+            elseif (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] === null) {
+                $object->setExpirationDate(null);
+            }
+            if (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] !== null) {
                 $object->setSecurityCode($data['SecurityCode']);
                 unset($data['SecurityCode']);
             }
-            if (\array_key_exists('CardAddress', $data)) {
+            elseif (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] === null) {
+                $object->setSecurityCode(null);
+            }
+            if (\array_key_exists('CardAddress', $data) && $data['CardAddress'] !== null) {
                 $object->setCardAddress($this->denormalizer->denormalize($data['CardAddress'], 'ShipStream\\Ups\\Api\\Model\\ChargeCardCardAddress', 'json', $context));
                 unset($data['CardAddress']);
+            }
+            elseif (\array_key_exists('CardAddress', $data) && $data['CardAddress'] === null) {
+                $object->setCardAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -124,29 +142,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CardHolderName', $data)) {
+            if (\array_key_exists('CardHolderName', $data) && $data['CardHolderName'] !== null) {
                 $object->setCardHolderName($data['CardHolderName']);
                 unset($data['CardHolderName']);
             }
-            if (\array_key_exists('CardType', $data)) {
+            elseif (\array_key_exists('CardHolderName', $data) && $data['CardHolderName'] === null) {
+                $object->setCardHolderName(null);
+            }
+            if (\array_key_exists('CardType', $data) && $data['CardType'] !== null) {
                 $object->setCardType($data['CardType']);
                 unset($data['CardType']);
             }
-            if (\array_key_exists('CardNumber', $data)) {
+            elseif (\array_key_exists('CardType', $data) && $data['CardType'] === null) {
+                $object->setCardType(null);
+            }
+            if (\array_key_exists('CardNumber', $data) && $data['CardNumber'] !== null) {
                 $object->setCardNumber($data['CardNumber']);
                 unset($data['CardNumber']);
             }
-            if (\array_key_exists('ExpirationDate', $data)) {
+            elseif (\array_key_exists('CardNumber', $data) && $data['CardNumber'] === null) {
+                $object->setCardNumber(null);
+            }
+            if (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] !== null) {
                 $object->setExpirationDate($data['ExpirationDate']);
                 unset($data['ExpirationDate']);
             }
-            if (\array_key_exists('SecurityCode', $data)) {
+            elseif (\array_key_exists('ExpirationDate', $data) && $data['ExpirationDate'] === null) {
+                $object->setExpirationDate(null);
+            }
+            if (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] !== null) {
                 $object->setSecurityCode($data['SecurityCode']);
                 unset($data['SecurityCode']);
             }
-            if (\array_key_exists('CardAddress', $data)) {
+            elseif (\array_key_exists('SecurityCode', $data) && $data['SecurityCode'] === null) {
+                $object->setSecurityCode(null);
+            }
+            if (\array_key_exists('CardAddress', $data) && $data['CardAddress'] !== null) {
                 $object->setCardAddress($this->denormalizer->denormalize($data['CardAddress'], 'ShipStream\\Ups\\Api\\Model\\ChargeCardCardAddress', 'json', $context));
                 unset($data['CardAddress']);
+            }
+            elseif (\array_key_exists('CardAddress', $data) && $data['CardAddress'] === null) {
+                $object->setCardAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

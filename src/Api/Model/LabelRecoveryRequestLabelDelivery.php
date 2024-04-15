@@ -18,13 +18,13 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
     Print/Electronic Import Control Label
     Forward shipment except for Mail Innovations Forward
     *
-    * @var string
+    * @var string|null
     */
     protected $labelLinkIndicator;
     /**
      * Not Used. If this tag is present, resend the Label Delivery notification email.
      *
-     * @var string
+     * @var string|null
      */
     protected $resendEMailIndicator;
     /**
@@ -33,9 +33,9 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
     Print/Electronic Import Control Label
     Forward shipment except for Mail Innovations Forward
     *
-    * @return string
+    * @return string|null
     */
-    public function getLabelLinkIndicator() : string
+    public function getLabelLinkIndicator() : ?string
     {
         return $this->labelLinkIndicator;
     }
@@ -45,11 +45,11 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
     Print/Electronic Import Control Label
     Forward shipment except for Mail Innovations Forward
     *
-    * @param string $labelLinkIndicator
+    * @param string|null $labelLinkIndicator
     *
     * @return self
     */
-    public function setLabelLinkIndicator(string $labelLinkIndicator) : self
+    public function setLabelLinkIndicator(?string $labelLinkIndicator) : self
     {
         $this->initialized['labelLinkIndicator'] = true;
         $this->labelLinkIndicator = $labelLinkIndicator;
@@ -58,20 +58,20 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
     /**
      * Not Used. If this tag is present, resend the Label Delivery notification email.
      *
-     * @return string
+     * @return string|null
      */
-    public function getResendEMailIndicator() : string
+    public function getResendEMailIndicator() : ?string
     {
         return $this->resendEMailIndicator;
     }
     /**
      * Not Used. If this tag is present, resend the Label Delivery notification email.
      *
-     * @param string $resendEMailIndicator
+     * @param string|null $resendEMailIndicator
      *
      * @return self
      */
-    public function setResendEMailIndicator(string $resendEMailIndicator) : self
+    public function setResendEMailIndicator(?string $resendEMailIndicator) : self
     {
         $this->initialized['resendEMailIndicator'] = true;
         $this->resendEMailIndicator = $resendEMailIndicator;

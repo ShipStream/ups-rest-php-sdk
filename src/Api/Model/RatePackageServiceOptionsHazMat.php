@@ -15,50 +15,50 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * Identifies the package containing Dangerous Goods.  Required if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageIdentifier;
     /**
      * QValue is required when a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA.   Applies only if SubVersion is greater than or equal to 1701. Valid values are : 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @var string
+     * @var string|null
      */
     protected $qValue;
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is overpack.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $overPackedIndicator;
     /**
      * Presence/Absence Indicator. Any value is ignored. Indicates the hazmat shipment/package is all packed in one.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $allPackedInOneIndicator;
     /**
      * 
      *
-     * @var HazMatHazMatChemicalRecord[]
+     * @var list<HazMatHazMatChemicalRecord>|null
      */
     protected $hazMatChemicalRecord;
     /**
      * Identifies the package containing Dangerous Goods.  Required if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier() : ?string
     {
         return $this->packageIdentifier;
     }
     /**
      * Identifies the package containing Dangerous Goods.  Required if SubVersion is greater than or equal to 1701.
      *
-     * @param string $packageIdentifier
+     * @param string|null $packageIdentifier
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(?string $packageIdentifier) : self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -67,20 +67,20 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * QValue is required when a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA.   Applies only if SubVersion is greater than or equal to 1701. Valid values are : 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @return string
+     * @return string|null
      */
-    public function getQValue() : string
+    public function getQValue() : ?string
     {
         return $this->qValue;
     }
     /**
      * QValue is required when a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA.   Applies only if SubVersion is greater than or equal to 1701. Valid values are : 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0
      *
-     * @param string $qValue
+     * @param string|null $qValue
      *
      * @return self
      */
-    public function setQValue(string $qValue) : self
+    public function setQValue(?string $qValue) : self
     {
         $this->initialized['qValue'] = true;
         $this->qValue = $qValue;
@@ -89,20 +89,20 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is overpack.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOverPackedIndicator() : string
+    public function getOverPackedIndicator() : ?string
     {
         return $this->overPackedIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is overpack.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $overPackedIndicator
+     * @param string|null $overPackedIndicator
      *
      * @return self
      */
-    public function setOverPackedIndicator(string $overPackedIndicator) : self
+    public function setOverPackedIndicator(?string $overPackedIndicator) : self
     {
         $this->initialized['overPackedIndicator'] = true;
         $this->overPackedIndicator = $overPackedIndicator;
@@ -111,20 +111,20 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value is ignored. Indicates the hazmat shipment/package is all packed in one.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAllPackedInOneIndicator() : string
+    public function getAllPackedInOneIndicator() : ?string
     {
         return $this->allPackedInOneIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. Indicates the hazmat shipment/package is all packed in one.  Applies only if SubVersion is greater than or equal to 1701.
      *
-     * @param string $allPackedInOneIndicator
+     * @param string|null $allPackedInOneIndicator
      *
      * @return self
      */
-    public function setAllPackedInOneIndicator(string $allPackedInOneIndicator) : self
+    public function setAllPackedInOneIndicator(?string $allPackedInOneIndicator) : self
     {
         $this->initialized['allPackedInOneIndicator'] = true;
         $this->allPackedInOneIndicator = $allPackedInOneIndicator;
@@ -133,20 +133,20 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * 
      *
-     * @return HazMatHazMatChemicalRecord[]
+     * @return list<HazMatHazMatChemicalRecord>|null
      */
-    public function getHazMatChemicalRecord() : array
+    public function getHazMatChemicalRecord() : ?array
     {
         return $this->hazMatChemicalRecord;
     }
     /**
      * 
      *
-     * @param HazMatHazMatChemicalRecord[] $hazMatChemicalRecord
+     * @param list<HazMatHazMatChemicalRecord>|null $hazMatChemicalRecord
      *
      * @return self
      */
-    public function setHazMatChemicalRecord(array $hazMatChemicalRecord) : self
+    public function setHazMatChemicalRecord(?array $hazMatChemicalRecord) : self
     {
         $this->initialized['hazMatChemicalRecord'] = true;
         $this->hazMatChemicalRecord = $hazMatChemicalRecord;

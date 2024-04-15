@@ -15,38 +15,38 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
     /**
      * Contains all of the basic information about candidate address.
      *
-     * @var GeocodeCandidateAddressKeyFormat
+     * @var GeocodeCandidateAddressKeyFormat|null
      */
     protected $addressKeyFormat;
     /**
      * Geocode is the latitude and longitude of the origin candidate.
      *
-     * @var GeocodeCandidateGeocode
+     * @var GeocodeCandidateGeocode|null
      */
     protected $geocode;
     /**
      * If a Landmark code was provided in the request, a candidate list of Landmark Names will be returned along with the corresponding address and Geocode.
      *
-     * @var string
+     * @var string|null
      */
     protected $landmarkName;
     /**
      * Contains all of the basic information about candidate address.
      *
-     * @return GeocodeCandidateAddressKeyFormat
+     * @return GeocodeCandidateAddressKeyFormat|null
      */
-    public function getAddressKeyFormat() : GeocodeCandidateAddressKeyFormat
+    public function getAddressKeyFormat() : ?GeocodeCandidateAddressKeyFormat
     {
         return $this->addressKeyFormat;
     }
     /**
      * Contains all of the basic information about candidate address.
      *
-     * @param GeocodeCandidateAddressKeyFormat $addressKeyFormat
+     * @param GeocodeCandidateAddressKeyFormat|null $addressKeyFormat
      *
      * @return self
      */
-    public function setAddressKeyFormat(GeocodeCandidateAddressKeyFormat $addressKeyFormat) : self
+    public function setAddressKeyFormat(?GeocodeCandidateAddressKeyFormat $addressKeyFormat) : self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;
@@ -55,20 +55,20 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
     /**
      * Geocode is the latitude and longitude of the origin candidate.
      *
-     * @return GeocodeCandidateGeocode
+     * @return GeocodeCandidateGeocode|null
      */
-    public function getGeocode() : GeocodeCandidateGeocode
+    public function getGeocode() : ?GeocodeCandidateGeocode
     {
         return $this->geocode;
     }
     /**
      * Geocode is the latitude and longitude of the origin candidate.
      *
-     * @param GeocodeCandidateGeocode $geocode
+     * @param GeocodeCandidateGeocode|null $geocode
      *
      * @return self
      */
-    public function setGeocode(GeocodeCandidateGeocode $geocode) : self
+    public function setGeocode(?GeocodeCandidateGeocode $geocode) : self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -77,20 +77,20 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
     /**
      * If a Landmark code was provided in the request, a candidate list of Landmark Names will be returned along with the corresponding address and Geocode.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLandmarkName() : string
+    public function getLandmarkName() : ?string
     {
         return $this->landmarkName;
     }
     /**
      * If a Landmark code was provided in the request, a candidate list of Landmark Names will be returned along with the corresponding address and Geocode.
      *
-     * @param string $landmarkName
+     * @param string|null $landmarkName
      *
      * @return self
      */
-    public function setLandmarkName(string $landmarkName) : self
+    public function setLandmarkName(?string $landmarkName) : self
     {
         $this->initialized['landmarkName'] = true;
         $this->landmarkName = $landmarkName;

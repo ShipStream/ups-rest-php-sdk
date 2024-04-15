@@ -23,19 +23,19 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     6-Friday
     7-Saturday
     *
-    * @var string
+    * @var string|null
     */
     protected $dayOfWeekCode;
     /**
      * From time. Time Format HHMM.
      *
-     * @var string
+     * @var string|null
      */
     protected $fromTime;
     /**
      * To Time. Time Format HHMM
      *
-     * @var string
+     * @var string|null
      */
     protected $toTime;
     /**
@@ -49,9 +49,9 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     6-Friday
     7-Saturday
     *
-    * @return string
+    * @return string|null
     */
-    public function getDayOfWeekCode() : string
+    public function getDayOfWeekCode() : ?string
     {
         return $this->dayOfWeekCode;
     }
@@ -66,11 +66,11 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     6-Friday
     7-Saturday
     *
-    * @param string $dayOfWeekCode
+    * @param string|null $dayOfWeekCode
     *
     * @return self
     */
-    public function setDayOfWeekCode(string $dayOfWeekCode) : self
+    public function setDayOfWeekCode(?string $dayOfWeekCode) : self
     {
         $this->initialized['dayOfWeekCode'] = true;
         $this->dayOfWeekCode = $dayOfWeekCode;
@@ -79,20 +79,20 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     /**
      * From time. Time Format HHMM.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFromTime() : string
+    public function getFromTime() : ?string
     {
         return $this->fromTime;
     }
     /**
      * From time. Time Format HHMM.
      *
-     * @param string $fromTime
+     * @param string|null $fromTime
      *
      * @return self
      */
-    public function setFromTime(string $fromTime) : self
+    public function setFromTime(?string $fromTime) : self
     {
         $this->initialized['fromTime'] = true;
         $this->fromTime = $fromTime;
@@ -101,20 +101,20 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     /**
      * To Time. Time Format HHMM
      *
-     * @return string
+     * @return string|null
      */
-    public function getToTime() : string
+    public function getToTime() : ?string
     {
         return $this->toTime;
     }
     /**
      * To Time. Time Format HHMM
      *
-     * @param string $toTime
+     * @param string|null $toTime
      *
      * @return self
      */
-    public function setToTime(string $toTime) : self
+    public function setToTime(?string $toTime) : self
     {
         $this->initialized['toTime'] = true;
         $this->toTime = $toTime;

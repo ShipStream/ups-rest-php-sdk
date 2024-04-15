@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PreNotificationRequest', $data)) {
+            if (\array_key_exists('PreNotificationRequest', $data) && $data['PreNotificationRequest'] !== null) {
                 $object->setPreNotificationRequest($this->denormalizer->denormalize($data['PreNotificationRequest'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequest', 'json', $context));
                 unset($data['PreNotificationRequest']);
+            }
+            elseif (\array_key_exists('PreNotificationRequest', $data) && $data['PreNotificationRequest'] === null) {
+                $object->setPreNotificationRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PreNotificationRequest', $data)) {
+            if (\array_key_exists('PreNotificationRequest', $data) && $data['PreNotificationRequest'] !== null) {
                 $object->setPreNotificationRequest($this->denormalizer->denormalize($data['PreNotificationRequest'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequest', 'json', $context));
                 unset($data['PreNotificationRequest']);
+            }
+            elseif (\array_key_exists('PreNotificationRequest', $data) && $data['PreNotificationRequest'] === null) {
+                $object->setPreNotificationRequest(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

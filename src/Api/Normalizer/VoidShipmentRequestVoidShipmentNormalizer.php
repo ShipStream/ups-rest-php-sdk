@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShippingHistoryUserKey', $data)) {
+            if (\array_key_exists('ShippingHistoryUserKey', $data) && $data['ShippingHistoryUserKey'] !== null) {
                 $object->setShippingHistoryUserKey($data['ShippingHistoryUserKey']);
                 unset($data['ShippingHistoryUserKey']);
             }
-            if (\array_key_exists('ShipmentIdentificationNumber', $data)) {
+            elseif (\array_key_exists('ShippingHistoryUserKey', $data) && $data['ShippingHistoryUserKey'] === null) {
+                $object->setShippingHistoryUserKey(null);
+            }
+            if (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] !== null) {
                 $object->setShipmentIdentificationNumber($data['ShipmentIdentificationNumber']);
                 unset($data['ShipmentIdentificationNumber']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] === null) {
+                $object->setShipmentIdentificationNumber(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $values = [];
                 foreach ($data['TrackingNumber'] as $value) {
                     $values[] = $value;
                 }
                 $object->setTrackingNumber($values);
                 unset($data['TrackingNumber']);
+            }
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -119,21 +128,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ShippingHistoryUserKey', $data)) {
+            if (\array_key_exists('ShippingHistoryUserKey', $data) && $data['ShippingHistoryUserKey'] !== null) {
                 $object->setShippingHistoryUserKey($data['ShippingHistoryUserKey']);
                 unset($data['ShippingHistoryUserKey']);
             }
-            if (\array_key_exists('ShipmentIdentificationNumber', $data)) {
+            elseif (\array_key_exists('ShippingHistoryUserKey', $data) && $data['ShippingHistoryUserKey'] === null) {
+                $object->setShippingHistoryUserKey(null);
+            }
+            if (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] !== null) {
                 $object->setShipmentIdentificationNumber($data['ShipmentIdentificationNumber']);
                 unset($data['ShipmentIdentificationNumber']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('ShipmentIdentificationNumber', $data) && $data['ShipmentIdentificationNumber'] === null) {
+                $object->setShipmentIdentificationNumber(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $values = [];
                 foreach ($data['TrackingNumber'] as $value) {
                     $values[] = $value;
                 }
                 $object->setTrackingNumber($values);
                 unset($data['TrackingNumber']);
+            }
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

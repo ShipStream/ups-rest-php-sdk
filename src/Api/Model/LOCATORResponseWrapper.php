@@ -15,26 +15,26 @@ class LOCATORResponseWrapper extends \ArrayObject
     /**
      * Container for LocatorResponse.
      *
-     * @var LocatorResponse
+     * @var LocatorResponse|null
      */
     protected $locatorResponse;
     /**
      * Container for LocatorResponse.
      *
-     * @return LocatorResponse
+     * @return LocatorResponse|null
      */
-    public function getLocatorResponse() : LocatorResponse
+    public function getLocatorResponse() : ?LocatorResponse
     {
         return $this->locatorResponse;
     }
     /**
      * Container for LocatorResponse.
      *
-     * @param LocatorResponse $locatorResponse
+     * @param LocatorResponse|null $locatorResponse
      *
      * @return self
      */
-    public function setLocatorResponse(LocatorResponse $locatorResponse) : self
+    public function setLocatorResponse(?LocatorResponse $locatorResponse) : self
     {
         $this->initialized['locatorResponse'] = true;
         $this->locatorResponse = $locatorResponse;

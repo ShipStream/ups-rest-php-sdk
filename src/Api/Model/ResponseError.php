@@ -15,56 +15,56 @@ class ResponseError extends \ArrayObject
     /**
      * Describes the severity of the error.�� Required if the error is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $errorSeverity;
     /**
      * A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $errorCode;
     /**
      * Describes the error code.
      *
-     * @var string
+     * @var string|null
      */
     protected $errorDescription;
     /**
      * Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)
      *
-     * @var string
+     * @var string|null
      */
     protected $minimumRetrySeconds;
     /**
      * 
      *
-     * @var ErrorErrorLocation[]
+     * @var list<ErrorErrorLocation>|null
      */
     protected $errorLocation;
     /**
      * The contents of the element in error.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $errorDigest;
     /**
      * Describes the severity of the error.�� Required if the error is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getErrorSeverity() : string
+    public function getErrorSeverity() : ?string
     {
         return $this->errorSeverity;
     }
     /**
      * Describes the severity of the error.�� Required if the error is present.
      *
-     * @param string $errorSeverity
+     * @param string|null $errorSeverity
      *
      * @return self
      */
-    public function setErrorSeverity(string $errorSeverity) : self
+    public function setErrorSeverity(?string $errorSeverity) : self
     {
         $this->initialized['errorSeverity'] = true;
         $this->errorSeverity = $errorSeverity;
@@ -73,20 +73,20 @@ class ResponseError extends \ArrayObject
     /**
      * A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getErrorCode() : string
+    public function getErrorCode() : ?string
     {
         return $this->errorCode;
     }
     /**
      * A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.
      *
-     * @param string $errorCode
+     * @param string|null $errorCode
      *
      * @return self
      */
-    public function setErrorCode(string $errorCode) : self
+    public function setErrorCode(?string $errorCode) : self
     {
         $this->initialized['errorCode'] = true;
         $this->errorCode = $errorCode;
@@ -95,20 +95,20 @@ class ResponseError extends \ArrayObject
     /**
      * Describes the error code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getErrorDescription() : string
+    public function getErrorDescription() : ?string
     {
         return $this->errorDescription;
     }
     /**
      * Describes the error code.
      *
-     * @param string $errorDescription
+     * @param string|null $errorDescription
      *
      * @return self
      */
-    public function setErrorDescription(string $errorDescription) : self
+    public function setErrorDescription(?string $errorDescription) : self
     {
         $this->initialized['errorDescription'] = true;
         $this->errorDescription = $errorDescription;
@@ -117,20 +117,20 @@ class ResponseError extends \ArrayObject
     /**
      * Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)
      *
-     * @return string
+     * @return string|null
      */
-    public function getMinimumRetrySeconds() : string
+    public function getMinimumRetrySeconds() : ?string
     {
         return $this->minimumRetrySeconds;
     }
     /**
      * Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)
      *
-     * @param string $minimumRetrySeconds
+     * @param string|null $minimumRetrySeconds
      *
      * @return self
      */
-    public function setMinimumRetrySeconds(string $minimumRetrySeconds) : self
+    public function setMinimumRetrySeconds(?string $minimumRetrySeconds) : self
     {
         $this->initialized['minimumRetrySeconds'] = true;
         $this->minimumRetrySeconds = $minimumRetrySeconds;
@@ -139,20 +139,20 @@ class ResponseError extends \ArrayObject
     /**
      * 
      *
-     * @return ErrorErrorLocation[]
+     * @return list<ErrorErrorLocation>|null
      */
-    public function getErrorLocation() : array
+    public function getErrorLocation() : ?array
     {
         return $this->errorLocation;
     }
     /**
      * 
      *
-     * @param ErrorErrorLocation[] $errorLocation
+     * @param list<ErrorErrorLocation>|null $errorLocation
      *
      * @return self
      */
-    public function setErrorLocation(array $errorLocation) : self
+    public function setErrorLocation(?array $errorLocation) : self
     {
         $this->initialized['errorLocation'] = true;
         $this->errorLocation = $errorLocation;
@@ -161,20 +161,20 @@ class ResponseError extends \ArrayObject
     /**
      * The contents of the element in error.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getErrorDigest() : array
+    public function getErrorDigest() : ?array
     {
         return $this->errorDigest;
     }
     /**
      * The contents of the element in error.
      *
-     * @param string[] $errorDigest
+     * @param list<string>|null $errorDigest
      *
      * @return self
      */
-    public function setErrorDigest(array $errorDigest) : self
+    public function setErrorDigest(?array $errorDigest) : self
     {
         $this->initialized['errorDigest'] = true;
         $this->errorDigest = $errorDigest;

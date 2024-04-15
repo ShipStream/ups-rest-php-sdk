@@ -40,41 +40,68 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupType', $data)) {
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($data['PickupType']);
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('ServiceDate', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('ServiceDate', $data) && $data['ServiceDate'] !== null) {
                 $object->setServiceDate($data['ServiceDate']);
                 unset($data['ServiceDate']);
             }
-            if (\array_key_exists('PRN', $data)) {
+            elseif (\array_key_exists('ServiceDate', $data) && $data['ServiceDate'] === null) {
+                $object->setServiceDate(null);
+            }
+            if (\array_key_exists('PRN', $data) && $data['PRN'] !== null) {
                 $object->setPRN($data['PRN']);
                 unset($data['PRN']);
             }
-            if (\array_key_exists('GWNStatusCode', $data)) {
+            elseif (\array_key_exists('PRN', $data) && $data['PRN'] === null) {
+                $object->setPRN(null);
+            }
+            if (\array_key_exists('GWNStatusCode', $data) && $data['GWNStatusCode'] !== null) {
                 $object->setGWNStatusCode($data['GWNStatusCode']);
                 unset($data['GWNStatusCode']);
             }
-            if (\array_key_exists('OnCallStatusCode', $data)) {
+            elseif (\array_key_exists('GWNStatusCode', $data) && $data['GWNStatusCode'] === null) {
+                $object->setGWNStatusCode(null);
+            }
+            if (\array_key_exists('OnCallStatusCode', $data) && $data['OnCallStatusCode'] !== null) {
                 $object->setOnCallStatusCode($data['OnCallStatusCode']);
                 unset($data['OnCallStatusCode']);
             }
-            if (\array_key_exists('PickupStatusMessage', $data)) {
+            elseif (\array_key_exists('OnCallStatusCode', $data) && $data['OnCallStatusCode'] === null) {
+                $object->setOnCallStatusCode(null);
+            }
+            if (\array_key_exists('PickupStatusMessage', $data) && $data['PickupStatusMessage'] !== null) {
                 $object->setPickupStatusMessage($data['PickupStatusMessage']);
                 unset($data['PickupStatusMessage']);
             }
-            if (\array_key_exists('BillingCode', $data)) {
+            elseif (\array_key_exists('PickupStatusMessage', $data) && $data['PickupStatusMessage'] === null) {
+                $object->setPickupStatusMessage(null);
+            }
+            if (\array_key_exists('BillingCode', $data) && $data['BillingCode'] !== null) {
                 $object->setBillingCode($data['BillingCode']);
                 unset($data['BillingCode']);
             }
-            if (\array_key_exists('ContactName', $data)) {
+            elseif (\array_key_exists('BillingCode', $data) && $data['BillingCode'] === null) {
+                $object->setBillingCode(null);
+            }
+            if (\array_key_exists('ContactName', $data) && $data['ContactName'] !== null) {
                 $object->setContactName($data['ContactName']);
                 unset($data['ContactName']);
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            elseif (\array_key_exists('ContactName', $data) && $data['ContactName'] === null) {
+                $object->setContactName(null);
+            }
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($data['ReferenceNumber']);
                 unset($data['ReferenceNumber']);
+            }
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -147,41 +174,68 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PickupType', $data)) {
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($data['PickupType']);
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('ServiceDate', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('ServiceDate', $data) && $data['ServiceDate'] !== null) {
                 $object->setServiceDate($data['ServiceDate']);
                 unset($data['ServiceDate']);
             }
-            if (\array_key_exists('PRN', $data)) {
+            elseif (\array_key_exists('ServiceDate', $data) && $data['ServiceDate'] === null) {
+                $object->setServiceDate(null);
+            }
+            if (\array_key_exists('PRN', $data) && $data['PRN'] !== null) {
                 $object->setPRN($data['PRN']);
                 unset($data['PRN']);
             }
-            if (\array_key_exists('GWNStatusCode', $data)) {
+            elseif (\array_key_exists('PRN', $data) && $data['PRN'] === null) {
+                $object->setPRN(null);
+            }
+            if (\array_key_exists('GWNStatusCode', $data) && $data['GWNStatusCode'] !== null) {
                 $object->setGWNStatusCode($data['GWNStatusCode']);
                 unset($data['GWNStatusCode']);
             }
-            if (\array_key_exists('OnCallStatusCode', $data)) {
+            elseif (\array_key_exists('GWNStatusCode', $data) && $data['GWNStatusCode'] === null) {
+                $object->setGWNStatusCode(null);
+            }
+            if (\array_key_exists('OnCallStatusCode', $data) && $data['OnCallStatusCode'] !== null) {
                 $object->setOnCallStatusCode($data['OnCallStatusCode']);
                 unset($data['OnCallStatusCode']);
             }
-            if (\array_key_exists('PickupStatusMessage', $data)) {
+            elseif (\array_key_exists('OnCallStatusCode', $data) && $data['OnCallStatusCode'] === null) {
+                $object->setOnCallStatusCode(null);
+            }
+            if (\array_key_exists('PickupStatusMessage', $data) && $data['PickupStatusMessage'] !== null) {
                 $object->setPickupStatusMessage($data['PickupStatusMessage']);
                 unset($data['PickupStatusMessage']);
             }
-            if (\array_key_exists('BillingCode', $data)) {
+            elseif (\array_key_exists('PickupStatusMessage', $data) && $data['PickupStatusMessage'] === null) {
+                $object->setPickupStatusMessage(null);
+            }
+            if (\array_key_exists('BillingCode', $data) && $data['BillingCode'] !== null) {
                 $object->setBillingCode($data['BillingCode']);
                 unset($data['BillingCode']);
             }
-            if (\array_key_exists('ContactName', $data)) {
+            elseif (\array_key_exists('BillingCode', $data) && $data['BillingCode'] === null) {
+                $object->setBillingCode(null);
+            }
+            if (\array_key_exists('ContactName', $data) && $data['ContactName'] !== null) {
                 $object->setContactName($data['ContactName']);
                 unset($data['ContactName']);
             }
-            if (\array_key_exists('ReferenceNumber', $data)) {
+            elseif (\array_key_exists('ContactName', $data) && $data['ContactName'] === null) {
+                $object->setContactName(null);
+            }
+            if (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] !== null) {
                 $object->setReferenceNumber($data['ReferenceNumber']);
                 unset($data['ReferenceNumber']);
+            }
+            elseif (\array_key_exists('ReferenceNumber', $data) && $data['ReferenceNumber'] === null) {
+                $object->setReferenceNumber(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

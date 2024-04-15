@@ -9,13 +9,13 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
      * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
      *
      * @param string $version Version of API, such as v1
-     * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
+     * @param null|\ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $version, ?\ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody = null, array $headerParameters = [])
     {
         $this->version = $version;
         $this->body = $requestBody;

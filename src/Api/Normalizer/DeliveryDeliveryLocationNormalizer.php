@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AddressArtifactFormat', $data)) {
+            if (\array_key_exists('AddressArtifactFormat', $data) && $data['AddressArtifactFormat'] !== null) {
                 $object->setAddressArtifactFormat($this->denormalizer->denormalize($data['AddressArtifactFormat'], 'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat', 'json', $context));
                 unset($data['AddressArtifactFormat']);
             }
-            if (\array_key_exists('Code', $data)) {
+            elseif (\array_key_exists('AddressArtifactFormat', $data) && $data['AddressArtifactFormat'] === null) {
+                $object->setAddressArtifactFormat(null);
+            }
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('SignedForByName', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('SignedForByName', $data) && $data['SignedForByName'] !== null) {
                 $object->setSignedForByName($data['SignedForByName']);
                 unset($data['SignedForByName']);
+            }
+            elseif (\array_key_exists('SignedForByName', $data) && $data['SignedForByName'] === null) {
+                $object->setSignedForByName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -118,21 +130,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AddressArtifactFormat', $data)) {
+            if (\array_key_exists('AddressArtifactFormat', $data) && $data['AddressArtifactFormat'] !== null) {
                 $object->setAddressArtifactFormat($this->denormalizer->denormalize($data['AddressArtifactFormat'], 'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat', 'json', $context));
                 unset($data['AddressArtifactFormat']);
             }
-            if (\array_key_exists('Code', $data)) {
+            elseif (\array_key_exists('AddressArtifactFormat', $data) && $data['AddressArtifactFormat'] === null) {
+                $object->setAddressArtifactFormat(null);
+            }
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('SignedForByName', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('SignedForByName', $data) && $data['SignedForByName'] !== null) {
                 $object->setSignedForByName($data['SignedForByName']);
                 unset($data['SignedForByName']);
+            }
+            elseif (\array_key_exists('SignedForByName', $data) && $data['SignedForByName'] === null) {
+                $object->setSignedForByName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

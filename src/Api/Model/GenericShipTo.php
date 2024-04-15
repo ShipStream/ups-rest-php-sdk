@@ -15,38 +15,38 @@ class GenericShipTo extends \ArrayObject
     /**
      * Location name that the package is shipped to.
      *
-     * @var string
+     * @var string|null
      */
     protected $locationID;
     /**
      * Alias of the location where the package is received.
      *
-     * @var string
+     * @var string|null
      */
     protected $receivingAddressName;
     /**
      * Bookmark of the package is shifted to.
      *
-     * @var string
+     * @var string|null
      */
     protected $bookmark;
     /**
      * Location name that the package is shipped to.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLocationID() : string
+    public function getLocationID() : ?string
     {
         return $this->locationID;
     }
     /**
      * Location name that the package is shipped to.
      *
-     * @param string $locationID
+     * @param string|null $locationID
      *
      * @return self
      */
-    public function setLocationID(string $locationID) : self
+    public function setLocationID(?string $locationID) : self
     {
         $this->initialized['locationID'] = true;
         $this->locationID = $locationID;
@@ -55,20 +55,20 @@ class GenericShipTo extends \ArrayObject
     /**
      * Alias of the location where the package is received.
      *
-     * @return string
+     * @return string|null
      */
-    public function getReceivingAddressName() : string
+    public function getReceivingAddressName() : ?string
     {
         return $this->receivingAddressName;
     }
     /**
      * Alias of the location where the package is received.
      *
-     * @param string $receivingAddressName
+     * @param string|null $receivingAddressName
      *
      * @return self
      */
-    public function setReceivingAddressName(string $receivingAddressName) : self
+    public function setReceivingAddressName(?string $receivingAddressName) : self
     {
         $this->initialized['receivingAddressName'] = true;
         $this->receivingAddressName = $receivingAddressName;
@@ -77,20 +77,20 @@ class GenericShipTo extends \ArrayObject
     /**
      * Bookmark of the package is shifted to.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBookmark() : string
+    public function getBookmark() : ?string
     {
         return $this->bookmark;
     }
     /**
      * Bookmark of the package is shifted to.
      *
-     * @param string $bookmark
+     * @param string|null $bookmark
      *
      * @return self
      */
-    public function setBookmark(string $bookmark) : self
+    public function setBookmark(?string $bookmark) : self
     {
         $this->initialized['bookmark'] = true;
         $this->bookmark = $bookmark;

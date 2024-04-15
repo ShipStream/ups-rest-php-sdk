@@ -21,7 +21,7 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @var string
+    * @var string|null
     */
     protected $closeTime;
     /**
@@ -33,7 +33,7 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @var string
+    * @var string|null
     */
     protected $readyTime;
     /**
@@ -42,7 +42,7 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     MM = 01� 12
     dd = 01�31
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupDate;
     /**
@@ -54,9 +54,9 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @return string
+    * @return string|null
     */
-    public function getCloseTime() : string
+    public function getCloseTime() : ?string
     {
         return $this->closeTime;
     }
@@ -69,11 +69,11 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @param string $closeTime
+    * @param string|null $closeTime
     *
     * @return self
     */
-    public function setCloseTime(string $closeTime) : self
+    public function setCloseTime(?string $closeTime) : self
     {
         $this->initialized['closeTime'] = true;
         $this->closeTime = $closeTime;
@@ -88,9 +88,9 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @return string
+    * @return string|null
     */
-    public function getReadyTime() : string
+    public function getReadyTime() : ?string
     {
         return $this->readyTime;
     }
@@ -103,11 +103,11 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     Hour: 0-23
     Minute: 0-59
     *
-    * @param string $readyTime
+    * @param string|null $readyTime
     *
     * @return self
     */
-    public function setReadyTime(string $readyTime) : self
+    public function setReadyTime(?string $readyTime) : self
     {
         $this->initialized['readyTime'] = true;
         $this->readyTime = $readyTime;
@@ -119,9 +119,9 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     MM = 01� 12
     dd = 01�31
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupDate() : string
+    public function getPickupDate() : ?string
     {
         return $this->pickupDate;
     }
@@ -131,11 +131,11 @@ class PickupCreationRequestPickupDateInfo extends \ArrayObject
     MM = 01� 12
     dd = 01�31
     *
-    * @param string $pickupDate
+    * @param string|null $pickupDate
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(?string $pickupDate) : self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;

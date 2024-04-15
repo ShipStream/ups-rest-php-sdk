@@ -17,7 +17,7 @@ class LocatorRequestTranslate extends \ArrayObject
     Default value is: en_US. 
     Examples are: fr_CA, es_MX.
     *
-    * @var string
+    * @var string|null
     */
     protected $locale;
     /**
@@ -25,9 +25,9 @@ class LocatorRequestTranslate extends \ArrayObject
     Default value is: en_US. 
     Examples are: fr_CA, es_MX.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLocale() : string
+    public function getLocale() : ?string
     {
         return $this->locale;
     }
@@ -36,11 +36,11 @@ class LocatorRequestTranslate extends \ArrayObject
     Default value is: en_US. 
     Examples are: fr_CA, es_MX.
     *
-    * @param string $locale
+    * @param string|null $locale
     *
     * @return self
     */
-    public function setLocale(string $locale) : self
+    public function setLocale(?string $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;

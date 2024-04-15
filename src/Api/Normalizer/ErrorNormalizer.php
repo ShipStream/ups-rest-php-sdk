@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('code', $data)) {
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('message', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('message', $data) && $data['message'] !== null) {
                 $object->setMessage($data['message']);
                 unset($data['message']);
+            }
+            elseif (\array_key_exists('message', $data) && $data['message'] === null) {
+                $object->setMessage(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('code', $data)) {
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
             }
-            if (\array_key_exists('message', $data)) {
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('message', $data) && $data['message'] !== null) {
                 $object->setMessage($data['message']);
                 unset($data['message']);
+            }
+            elseif (\array_key_exists('message', $data) && $data['message'] === null) {
+                $object->setMessage(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

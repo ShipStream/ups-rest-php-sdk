@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SortType', $data)) {
+            if (\array_key_exists('SortType', $data) && $data['SortType'] !== null) {
                 $object->setSortType($data['SortType']);
                 unset($data['SortType']);
+            }
+            elseif (\array_key_exists('SortType', $data) && $data['SortType'] === null) {
+                $object->setSortType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -99,9 +102,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SortType', $data)) {
+            if (\array_key_exists('SortType', $data) && $data['SortType'] !== null) {
                 $object->setSortType($data['SortType']);
                 unset($data['SortType']);
+            }
+            elseif (\array_key_exists('SortType', $data) && $data['SortType'] === null) {
+                $object->setSortType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

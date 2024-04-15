@@ -15,26 +15,26 @@ class RatePackageUPSPremier extends \ArrayObject
     /**
      * UPS Premier Category  Valid values are 01,02,03 UPS Premier Silver - 01 UPS Premier Gold - 02 UPS Premier Platinum - 03
      *
-     * @var string
+     * @var string|null
      */
     protected $category;
     /**
      * UPS Premier Category  Valid values are 01,02,03 UPS Premier Silver - 01 UPS Premier Gold - 02 UPS Premier Platinum - 03
      *
-     * @return string
+     * @return string|null
      */
-    public function getCategory() : string
+    public function getCategory() : ?string
     {
         return $this->category;
     }
     /**
      * UPS Premier Category  Valid values are 01,02,03 UPS Premier Silver - 01 UPS Premier Gold - 02 UPS Premier Platinum - 03
      *
-     * @param string $category
+     * @param string|null $category
      *
      * @return self
      */
-    public function setCategory(string $category) : self
+    public function setCategory(?string $category) : self
     {
         $this->initialized['category'] = true;
         $this->category = $category;

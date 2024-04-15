@@ -40,49 +40,82 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DeliveryConfirmation', $data)) {
+            if (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] !== null) {
                 $object->setDeliveryConfirmation($this->denormalizer->denormalize($data['DeliveryConfirmation'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeliveryConfirmation', 'json', $context));
                 unset($data['DeliveryConfirmation']);
             }
-            if (\array_key_exists('AccessPointCOD', $data)) {
+            elseif (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] === null) {
+                $object->setDeliveryConfirmation(null);
+            }
+            if (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] !== null) {
                 $object->setAccessPointCOD($this->denormalizer->denormalize($data['AccessPointCOD'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsAccessPointCOD', 'json', $context));
                 unset($data['AccessPointCOD']);
             }
-            if (\array_key_exists('COD', $data)) {
+            elseif (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] === null) {
+                $object->setAccessPointCOD(null);
+            }
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('DeclaredValue', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('DeclaredValue', $data) && $data['DeclaredValue'] !== null) {
                 $object->setDeclaredValue($this->denormalizer->denormalize($data['DeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeclaredValue', 'json', $context));
                 unset($data['DeclaredValue']);
             }
-            if (\array_key_exists('ShipperDeclaredValue', $data)) {
+            elseif (\array_key_exists('DeclaredValue', $data) && $data['DeclaredValue'] === null) {
+                $object->setDeclaredValue(null);
+            }
+            if (\array_key_exists('ShipperDeclaredValue', $data) && $data['ShipperDeclaredValue'] !== null) {
                 $object->setShipperDeclaredValue($this->denormalizer->denormalize($data['ShipperDeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsShipperDeclaredValue', 'json', $context));
                 unset($data['ShipperDeclaredValue']);
             }
-            if (\array_key_exists('ShipperReleaseIndicator', $data)) {
+            elseif (\array_key_exists('ShipperDeclaredValue', $data) && $data['ShipperDeclaredValue'] === null) {
+                $object->setShipperDeclaredValue(null);
+            }
+            if (\array_key_exists('ShipperReleaseIndicator', $data) && $data['ShipperReleaseIndicator'] !== null) {
                 $object->setShipperReleaseIndicator($data['ShipperReleaseIndicator']);
                 unset($data['ShipperReleaseIndicator']);
             }
-            if (\array_key_exists('ProactiveIndicator', $data)) {
+            elseif (\array_key_exists('ShipperReleaseIndicator', $data) && $data['ShipperReleaseIndicator'] === null) {
+                $object->setShipperReleaseIndicator(null);
+            }
+            if (\array_key_exists('ProactiveIndicator', $data) && $data['ProactiveIndicator'] !== null) {
                 $object->setProactiveIndicator($data['ProactiveIndicator']);
                 unset($data['ProactiveIndicator']);
             }
-            if (\array_key_exists('RefrigerationIndicator', $data)) {
+            elseif (\array_key_exists('ProactiveIndicator', $data) && $data['ProactiveIndicator'] === null) {
+                $object->setProactiveIndicator(null);
+            }
+            if (\array_key_exists('RefrigerationIndicator', $data) && $data['RefrigerationIndicator'] !== null) {
                 $object->setRefrigerationIndicator($data['RefrigerationIndicator']);
                 unset($data['RefrigerationIndicator']);
             }
-            if (\array_key_exists('UPSPremiumCareIndicator', $data)) {
+            elseif (\array_key_exists('RefrigerationIndicator', $data) && $data['RefrigerationIndicator'] === null) {
+                $object->setRefrigerationIndicator(null);
+            }
+            if (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] !== null) {
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
             }
-            if (\array_key_exists('HazMat', $data)) {
+            elseif (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] === null) {
+                $object->setUPSPremiumCareIndicator(null);
+            }
+            if (\array_key_exists('HazMat', $data) && $data['HazMat'] !== null) {
                 $object->setHazMat($this->denormalizer->denormalize($data['HazMat'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsHazMat', 'json', $context));
                 unset($data['HazMat']);
             }
-            if (\array_key_exists('DryIce', $data)) {
+            elseif (\array_key_exists('HazMat', $data) && $data['HazMat'] === null) {
+                $object->setHazMat(null);
+            }
+            if (\array_key_exists('DryIce', $data) && $data['DryIce'] !== null) {
                 $object->setDryIce($this->denormalizer->denormalize($data['DryIce'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDryIce', 'json', $context));
                 unset($data['DryIce']);
+            }
+            elseif (\array_key_exists('DryIce', $data) && $data['DryIce'] === null) {
+                $object->setDryIce(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -169,49 +202,82 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DeliveryConfirmation', $data)) {
+            if (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] !== null) {
                 $object->setDeliveryConfirmation($this->denormalizer->denormalize($data['DeliveryConfirmation'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeliveryConfirmation', 'json', $context));
                 unset($data['DeliveryConfirmation']);
             }
-            if (\array_key_exists('AccessPointCOD', $data)) {
+            elseif (\array_key_exists('DeliveryConfirmation', $data) && $data['DeliveryConfirmation'] === null) {
+                $object->setDeliveryConfirmation(null);
+            }
+            if (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] !== null) {
                 $object->setAccessPointCOD($this->denormalizer->denormalize($data['AccessPointCOD'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsAccessPointCOD', 'json', $context));
                 unset($data['AccessPointCOD']);
             }
-            if (\array_key_exists('COD', $data)) {
+            elseif (\array_key_exists('AccessPointCOD', $data) && $data['AccessPointCOD'] === null) {
+                $object->setAccessPointCOD(null);
+            }
+            if (\array_key_exists('COD', $data) && $data['COD'] !== null) {
                 $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCOD', 'json', $context));
                 unset($data['COD']);
             }
-            if (\array_key_exists('DeclaredValue', $data)) {
+            elseif (\array_key_exists('COD', $data) && $data['COD'] === null) {
+                $object->setCOD(null);
+            }
+            if (\array_key_exists('DeclaredValue', $data) && $data['DeclaredValue'] !== null) {
                 $object->setDeclaredValue($this->denormalizer->denormalize($data['DeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeclaredValue', 'json', $context));
                 unset($data['DeclaredValue']);
             }
-            if (\array_key_exists('ShipperDeclaredValue', $data)) {
+            elseif (\array_key_exists('DeclaredValue', $data) && $data['DeclaredValue'] === null) {
+                $object->setDeclaredValue(null);
+            }
+            if (\array_key_exists('ShipperDeclaredValue', $data) && $data['ShipperDeclaredValue'] !== null) {
                 $object->setShipperDeclaredValue($this->denormalizer->denormalize($data['ShipperDeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsShipperDeclaredValue', 'json', $context));
                 unset($data['ShipperDeclaredValue']);
             }
-            if (\array_key_exists('ShipperReleaseIndicator', $data)) {
+            elseif (\array_key_exists('ShipperDeclaredValue', $data) && $data['ShipperDeclaredValue'] === null) {
+                $object->setShipperDeclaredValue(null);
+            }
+            if (\array_key_exists('ShipperReleaseIndicator', $data) && $data['ShipperReleaseIndicator'] !== null) {
                 $object->setShipperReleaseIndicator($data['ShipperReleaseIndicator']);
                 unset($data['ShipperReleaseIndicator']);
             }
-            if (\array_key_exists('ProactiveIndicator', $data)) {
+            elseif (\array_key_exists('ShipperReleaseIndicator', $data) && $data['ShipperReleaseIndicator'] === null) {
+                $object->setShipperReleaseIndicator(null);
+            }
+            if (\array_key_exists('ProactiveIndicator', $data) && $data['ProactiveIndicator'] !== null) {
                 $object->setProactiveIndicator($data['ProactiveIndicator']);
                 unset($data['ProactiveIndicator']);
             }
-            if (\array_key_exists('RefrigerationIndicator', $data)) {
+            elseif (\array_key_exists('ProactiveIndicator', $data) && $data['ProactiveIndicator'] === null) {
+                $object->setProactiveIndicator(null);
+            }
+            if (\array_key_exists('RefrigerationIndicator', $data) && $data['RefrigerationIndicator'] !== null) {
                 $object->setRefrigerationIndicator($data['RefrigerationIndicator']);
                 unset($data['RefrigerationIndicator']);
             }
-            if (\array_key_exists('UPSPremiumCareIndicator', $data)) {
+            elseif (\array_key_exists('RefrigerationIndicator', $data) && $data['RefrigerationIndicator'] === null) {
+                $object->setRefrigerationIndicator(null);
+            }
+            if (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] !== null) {
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
             }
-            if (\array_key_exists('HazMat', $data)) {
+            elseif (\array_key_exists('UPSPremiumCareIndicator', $data) && $data['UPSPremiumCareIndicator'] === null) {
+                $object->setUPSPremiumCareIndicator(null);
+            }
+            if (\array_key_exists('HazMat', $data) && $data['HazMat'] !== null) {
                 $object->setHazMat($this->denormalizer->denormalize($data['HazMat'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsHazMat', 'json', $context));
                 unset($data['HazMat']);
             }
-            if (\array_key_exists('DryIce', $data)) {
+            elseif (\array_key_exists('HazMat', $data) && $data['HazMat'] === null) {
+                $object->setHazMat(null);
+            }
+            if (\array_key_exists('DryIce', $data) && $data['DryIce'] !== null) {
                 $object->setDryIce($this->denormalizer->denormalize($data['DryIce'], 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDryIce', 'json', $context));
                 unset($data['DryIce']);
+            }
+            elseif (\array_key_exists('DryIce', $data) && $data['DryIce'] === null) {
+                $object->setDryIce(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

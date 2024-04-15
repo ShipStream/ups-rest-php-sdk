@@ -15,32 +15,32 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
     /**
      * Container for reference number
      *
-     * @var ReferenceValuesReferenceNumber
+     * @var ReferenceValuesReferenceNumber|null
      */
     protected $referenceNumber;
     /**
      * Required if ReferenceNumber/Value is populated. Shippers six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * Container for reference number
      *
-     * @return ReferenceValuesReferenceNumber
+     * @return ReferenceValuesReferenceNumber|null
      */
-    public function getReferenceNumber() : ReferenceValuesReferenceNumber
+    public function getReferenceNumber() : ?ReferenceValuesReferenceNumber
     {
         return $this->referenceNumber;
     }
     /**
      * Container for reference number
      *
-     * @param ReferenceValuesReferenceNumber $referenceNumber
+     * @param ReferenceValuesReferenceNumber|null $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(ReferenceValuesReferenceNumber $referenceNumber) : self
+    public function setReferenceNumber(?ReferenceValuesReferenceNumber $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -49,20 +49,20 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
     /**
      * Required if ReferenceNumber/Value is populated. Shippers six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Required if ReferenceNumber/Value is populated. Shippers six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;

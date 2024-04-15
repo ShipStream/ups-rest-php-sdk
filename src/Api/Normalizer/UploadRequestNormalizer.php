@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\UploadRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('UserCreatedForm', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] !== null) {
                 $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm', 'json', $context));
                 unset($data['UserCreatedForm']);
+            }
+            elseif (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] === null) {
+                $object->setUserCreatedForm(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\UploadRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('UserCreatedForm', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] !== null) {
                 $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm', 'json', $context));
                 unset($data['UserCreatedForm']);
+            }
+            elseif (\array_key_exists('UserCreatedForm', $data) && $data['UserCreatedForm'] === null) {
+                $object->setUserCreatedForm(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

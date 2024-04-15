@@ -15,38 +15,38 @@ class FreightPickupResponseResponse extends \ArrayObject
     /**
      * Response Status Container.
      *
-     * @var ResponseResponseStatus
+     * @var ResponseResponseStatus|null
      */
     protected $responseStatus;
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @var ResponseAlert
+     * @var ResponseAlert|null
      */
     protected $alert;
     /**
      * Transaction Reference Container.
      *
-     * @var ResponseTransactionReference
+     * @var ResponseTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Response Status Container.
      *
-     * @return ResponseResponseStatus
+     * @return ResponseResponseStatus|null
      */
-    public function getResponseStatus() : ResponseResponseStatus
+    public function getResponseStatus() : ?ResponseResponseStatus
     {
         return $this->responseStatus;
     }
     /**
      * Response Status Container.
      *
-     * @param ResponseResponseStatus $responseStatus
+     * @param ResponseResponseStatus|null $responseStatus
      *
      * @return self
      */
-    public function setResponseStatus(ResponseResponseStatus $responseStatus) : self
+    public function setResponseStatus(?ResponseResponseStatus $responseStatus) : self
     {
         $this->initialized['responseStatus'] = true;
         $this->responseStatus = $responseStatus;
@@ -55,20 +55,20 @@ class FreightPickupResponseResponse extends \ArrayObject
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @return ResponseAlert
+     * @return ResponseAlert|null
      */
-    public function getAlert() : ResponseAlert
+    public function getAlert() : ?ResponseAlert
     {
         return $this->alert;
     }
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @param ResponseAlert $alert
+     * @param ResponseAlert|null $alert
      *
      * @return self
      */
-    public function setAlert(ResponseAlert $alert) : self
+    public function setAlert(?ResponseAlert $alert) : self
     {
         $this->initialized['alert'] = true;
         $this->alert = $alert;
@@ -77,20 +77,20 @@ class FreightPickupResponseResponse extends \ArrayObject
     /**
      * Transaction Reference Container.
      *
-     * @return ResponseTransactionReference
+     * @return ResponseTransactionReference|null
      */
-    public function getTransactionReference() : ResponseTransactionReference
+    public function getTransactionReference() : ?ResponseTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * Transaction Reference Container.
      *
-     * @param ResponseTransactionReference $transactionReference
+     * @param ResponseTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(ResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(?ResponseTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

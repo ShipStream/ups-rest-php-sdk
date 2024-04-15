@@ -15,38 +15,38 @@ class VoidShipmentResponseResponse extends \ArrayObject
     /**
      * Response Status Container.
      *
-     * @var VoidResponseResponseStatus
+     * @var VoidResponseResponseStatus|null
      */
     protected $responseStatus;
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @var ResponseAlert
+     * @var ResponseAlert|null
      */
     protected $alert;
     /**
      * Transaction Reference Container.
      *
-     * @var VoidResponseTransactionReference
+     * @var VoidResponseTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Response Status Container.
      *
-     * @return VoidResponseResponseStatus
+     * @return VoidResponseResponseStatus|null
      */
-    public function getResponseStatus() : VoidResponseResponseStatus
+    public function getResponseStatus() : ?VoidResponseResponseStatus
     {
         return $this->responseStatus;
     }
     /**
      * Response Status Container.
      *
-     * @param VoidResponseResponseStatus $responseStatus
+     * @param VoidResponseResponseStatus|null $responseStatus
      *
      * @return self
      */
-    public function setResponseStatus(VoidResponseResponseStatus $responseStatus) : self
+    public function setResponseStatus(?VoidResponseResponseStatus $responseStatus) : self
     {
         $this->initialized['responseStatus'] = true;
         $this->responseStatus = $responseStatus;
@@ -55,20 +55,20 @@ class VoidShipmentResponseResponse extends \ArrayObject
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @return ResponseAlert
+     * @return ResponseAlert|null
      */
-    public function getAlert() : ResponseAlert
+    public function getAlert() : ?ResponseAlert
     {
         return $this->alert;
     }
     /**
      * Alert Container. There can be zero to many alert containers with code and description.
      *
-     * @param ResponseAlert $alert
+     * @param ResponseAlert|null $alert
      *
      * @return self
      */
-    public function setAlert(ResponseAlert $alert) : self
+    public function setAlert(?ResponseAlert $alert) : self
     {
         $this->initialized['alert'] = true;
         $this->alert = $alert;
@@ -77,20 +77,20 @@ class VoidShipmentResponseResponse extends \ArrayObject
     /**
      * Transaction Reference Container.
      *
-     * @return VoidResponseTransactionReference
+     * @return VoidResponseTransactionReference|null
      */
-    public function getTransactionReference() : VoidResponseTransactionReference
+    public function getTransactionReference() : ?VoidResponseTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * Transaction Reference Container.
      *
-     * @param VoidResponseTransactionReference $transactionReference
+     * @param VoidResponseTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(VoidResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(?VoidResponseTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

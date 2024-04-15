@@ -15,26 +15,26 @@ class DeliveryCOD extends \ArrayObject
     /**
      * COD Amount container.
      *
-     * @var CODCODAmount
+     * @var CODCODAmount|null
      */
     protected $cODAmount;
     /**
      * COD Amount container.
      *
-     * @return CODCODAmount
+     * @return CODCODAmount|null
      */
-    public function getCODAmount() : CODCODAmount
+    public function getCODAmount() : ?CODCODAmount
     {
         return $this->cODAmount;
     }
     /**
      * COD Amount container.
      *
-     * @param CODCODAmount $cODAmount
+     * @param CODCODAmount|null $cODAmount
      *
      * @return self
      */
-    public function setCODAmount(CODCODAmount $cODAmount) : self
+    public function setCODAmount(?CODCODAmount $cODAmount) : self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CompanyName', $data)) {
+            if (\array_key_exists('CompanyName', $data) && $data['CompanyName'] !== null) {
                 $object->setCompanyName($data['CompanyName']);
                 unset($data['CompanyName']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('CompanyName', $data) && $data['CompanyName'] === null) {
+                $object->setCompanyName(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\IntermediateConsigneeAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CompanyName', $data)) {
+            if (\array_key_exists('CompanyName', $data) && $data['CompanyName'] !== null) {
                 $object->setCompanyName($data['CompanyName']);
                 unset($data['CompanyName']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('CompanyName', $data) && $data['CompanyName'] === null) {
+                $object->setCompanyName(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\IntermediateConsigneeAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

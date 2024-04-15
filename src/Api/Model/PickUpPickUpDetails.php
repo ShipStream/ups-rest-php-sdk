@@ -15,7 +15,7 @@ class PickUpPickUpDetails extends \ArrayObject
     /**
      * Time of pickup in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickUpTime;
     /**
@@ -23,26 +23,26 @@ class PickUpPickUpDetails extends \ArrayObject
     True-there is a pickup time
     False-there is not a pickup time.
     *
-    * @var string
+    * @var string|null
     */
     protected $noPickUpIndicator;
     /**
      * Time of pickup in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickUpTime() : string
+    public function getPickUpTime() : ?string
     {
         return $this->pickUpTime;
     }
     /**
      * Time of pickup in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @param string $pickUpTime
+     * @param string|null $pickUpTime
      *
      * @return self
      */
-    public function setPickUpTime(string $pickUpTime) : self
+    public function setPickUpTime(?string $pickUpTime) : self
     {
         $this->initialized['pickUpTime'] = true;
         $this->pickUpTime = $pickUpTime;
@@ -53,9 +53,9 @@ class PickUpPickUpDetails extends \ArrayObject
     True-there is a pickup time
     False-there is not a pickup time.
     *
-    * @return string
+    * @return string|null
     */
-    public function getNoPickUpIndicator() : string
+    public function getNoPickUpIndicator() : ?string
     {
         return $this->noPickUpIndicator;
     }
@@ -64,11 +64,11 @@ class PickUpPickUpDetails extends \ArrayObject
     True-there is a pickup time
     False-there is not a pickup time.
     *
-    * @param string $noPickUpIndicator
+    * @param string|null $noPickUpIndicator
     *
     * @return self
     */
-    public function setNoPickUpIndicator(string $noPickUpIndicator) : self
+    public function setNoPickUpIndicator(?string $noPickUpIndicator) : self
     {
         $this->initialized['noPickUpIndicator'] = true;
         $this->noPickUpIndicator = $noPickUpIndicator;

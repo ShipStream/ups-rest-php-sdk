@@ -21,7 +21,7 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     48-All available Retail Locations and Program Types 
     56-All available Retail Locations, Additional Services and Program Types 
     64-Search for UPS Access Point Locations.  
-    * @param \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody 
+    * @param null|\ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $Locale Locale of request
     * }
@@ -30,7 +30,7 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [])
+    public function __construct(string $version, string $reqOption, ?\ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody = null, array $queryParameters = [], array $headerParameters = [])
     {
         $this->version = $version;
         $this->reqOption = $reqOption;

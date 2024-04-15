@@ -15,25 +15,25 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Name of the Facility.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address of the facility.
      *
-     * @var DropOffFacilitiesAddress
+     * @var DropOffFacilitiesAddress|null
      */
     protected $address;
     /**
      * SLIC code for the UPS Drop off facility.
      *
-     * @var string
+     * @var string|null
      */
     protected $sLIC;
     /**
      * FRT for Freight or PKG for Package
      *
-     * @var string
+     * @var string|null
      */
     protected $type;
     /**
@@ -43,62 +43,62 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     Asia/Hong_Kong
     Europe/London
     *
-    * @var string
+    * @var string|null
     */
     protected $timezone;
     /**
      * Phone Number of the Drop off Facility
      *
-     * @var string
+     * @var string|null
      */
     protected $phone;
     /**
      * Drop off Facilities Fax Number
      *
-     * @var string
+     * @var string|null
      */
     protected $fax;
     /**
      * Facility Time Container
      *
-     * @var DropOffFacilitiesFacilityTime
+     * @var DropOffFacilitiesFacilityTime|null
      */
     protected $facilityTime;
     /**
      * Type of Facility.
      *
-     * @var string
+     * @var string|null
      */
     protected $originOrDestination;
     /**
      * 
      *
-     * @var DropOffFacilitiesLocalizedInstruction[]
+     * @var list<DropOffFacilitiesLocalizedInstruction>|null
      */
     protected $localizedInstruction;
     /**
      * Distance from origin  Distance will be retuned for�drop off location search by proximity order.
      *
-     * @var DropOffFacilitiesDistance
+     * @var DropOffFacilitiesDistance|null
      */
     protected $distance;
     /**
      * Name of the Facility.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Name of the Facility.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -107,20 +107,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Address of the facility.
      *
-     * @return DropOffFacilitiesAddress
+     * @return DropOffFacilitiesAddress|null
      */
-    public function getAddress() : DropOffFacilitiesAddress
+    public function getAddress() : ?DropOffFacilitiesAddress
     {
         return $this->address;
     }
     /**
      * Address of the facility.
      *
-     * @param DropOffFacilitiesAddress $address
+     * @param DropOffFacilitiesAddress|null $address
      *
      * @return self
      */
-    public function setAddress(DropOffFacilitiesAddress $address) : self
+    public function setAddress(?DropOffFacilitiesAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -129,20 +129,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * SLIC code for the UPS Drop off facility.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSLIC() : string
+    public function getSLIC() : ?string
     {
         return $this->sLIC;
     }
     /**
      * SLIC code for the UPS Drop off facility.
      *
-     * @param string $sLIC
+     * @param string|null $sLIC
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(?string $sLIC) : self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -151,20 +151,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * FRT for Freight or PKG for Package
      *
-     * @return string
+     * @return string|null
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
     /**
      * FRT for Freight or PKG for Package
      *
-     * @param string $type
+     * @param string|null $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -177,9 +177,9 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     Asia/Hong_Kong
     Europe/London
     *
-    * @return string
+    * @return string|null
     */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -190,11 +190,11 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     Asia/Hong_Kong
     Europe/London
     *
-    * @param string $timezone
+    * @param string|null $timezone
     *
     * @return self
     */
-    public function setTimezone(string $timezone) : self
+    public function setTimezone(?string $timezone) : self
     {
         $this->initialized['timezone'] = true;
         $this->timezone = $timezone;
@@ -203,20 +203,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Phone Number of the Drop off Facility
      *
-     * @return string
+     * @return string|null
      */
-    public function getPhone() : string
+    public function getPhone() : ?string
     {
         return $this->phone;
     }
     /**
      * Phone Number of the Drop off Facility
      *
-     * @param string $phone
+     * @param string|null $phone
      *
      * @return self
      */
-    public function setPhone(string $phone) : self
+    public function setPhone(?string $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -225,20 +225,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Drop off Facilities Fax Number
      *
-     * @return string
+     * @return string|null
      */
-    public function getFax() : string
+    public function getFax() : ?string
     {
         return $this->fax;
     }
     /**
      * Drop off Facilities Fax Number
      *
-     * @param string $fax
+     * @param string|null $fax
      *
      * @return self
      */
-    public function setFax(string $fax) : self
+    public function setFax(?string $fax) : self
     {
         $this->initialized['fax'] = true;
         $this->fax = $fax;
@@ -247,20 +247,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Facility Time Container
      *
-     * @return DropOffFacilitiesFacilityTime
+     * @return DropOffFacilitiesFacilityTime|null
      */
-    public function getFacilityTime() : DropOffFacilitiesFacilityTime
+    public function getFacilityTime() : ?DropOffFacilitiesFacilityTime
     {
         return $this->facilityTime;
     }
     /**
      * Facility Time Container
      *
-     * @param DropOffFacilitiesFacilityTime $facilityTime
+     * @param DropOffFacilitiesFacilityTime|null $facilityTime
      *
      * @return self
      */
-    public function setFacilityTime(DropOffFacilitiesFacilityTime $facilityTime) : self
+    public function setFacilityTime(?DropOffFacilitiesFacilityTime $facilityTime) : self
     {
         $this->initialized['facilityTime'] = true;
         $this->facilityTime = $facilityTime;
@@ -269,20 +269,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Type of Facility.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginOrDestination() : string
+    public function getOriginOrDestination() : ?string
     {
         return $this->originOrDestination;
     }
     /**
      * Type of Facility.
      *
-     * @param string $originOrDestination
+     * @param string|null $originOrDestination
      *
      * @return self
      */
-    public function setOriginOrDestination(string $originOrDestination) : self
+    public function setOriginOrDestination(?string $originOrDestination) : self
     {
         $this->initialized['originOrDestination'] = true;
         $this->originOrDestination = $originOrDestination;
@@ -291,20 +291,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * 
      *
-     * @return DropOffFacilitiesLocalizedInstruction[]
+     * @return list<DropOffFacilitiesLocalizedInstruction>|null
      */
-    public function getLocalizedInstruction() : array
+    public function getLocalizedInstruction() : ?array
     {
         return $this->localizedInstruction;
     }
     /**
      * 
      *
-     * @param DropOffFacilitiesLocalizedInstruction[] $localizedInstruction
+     * @param list<DropOffFacilitiesLocalizedInstruction>|null $localizedInstruction
      *
      * @return self
      */
-    public function setLocalizedInstruction(array $localizedInstruction) : self
+    public function setLocalizedInstruction(?array $localizedInstruction) : self
     {
         $this->initialized['localizedInstruction'] = true;
         $this->localizedInstruction = $localizedInstruction;
@@ -313,20 +313,20 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * Distance from origin  Distance will be retuned for�drop off location search by proximity order.
      *
-     * @return DropOffFacilitiesDistance
+     * @return DropOffFacilitiesDistance|null
      */
-    public function getDistance() : DropOffFacilitiesDistance
+    public function getDistance() : ?DropOffFacilitiesDistance
     {
         return $this->distance;
     }
     /**
      * Distance from origin  Distance will be retuned for�drop off location search by proximity order.
      *
-     * @param DropOffFacilitiesDistance $distance
+     * @param DropOffFacilitiesDistance|null $distance
      *
      * @return self
      */
-    public function setDistance(DropOffFacilitiesDistance $distance) : self
+    public function setDistance(?DropOffFacilitiesDistance $distance) : self
     {
         $this->initialized['distance'] = true;
         $this->distance = $distance;

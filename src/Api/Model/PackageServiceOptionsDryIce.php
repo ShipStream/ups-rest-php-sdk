@@ -15,38 +15,38 @@ class PackageServiceOptionsDryIce extends \ArrayObject
     /**
      * Regulation set for dryIce Shipment. Valid values: CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada, IATA= Worldwide Air movement.  The following values are valid: IATA, CFR.
      *
-     * @var string
+     * @var string|null
      */
     protected $regulationSet;
     /**
      * Container for Dry Ice weight.
      *
-     * @var DryIceDryIceWeight
+     * @var DryIceDryIceWeight|null
      */
     protected $dryIceWeight;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. Relevant only in CFR regulation set. If present it is used to designate the dry Ice is for any medical use and rates are adjusted for DryIce weight more than 2.5 Kgs or 5.7 Lbs.
      *
-     * @var string
+     * @var string|null
      */
     protected $medicalUseIndicator;
     /**
      * Regulation set for dryIce Shipment. Valid values: CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada, IATA= Worldwide Air movement.  The following values are valid: IATA, CFR.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRegulationSet() : string
+    public function getRegulationSet() : ?string
     {
         return $this->regulationSet;
     }
     /**
      * Regulation set for dryIce Shipment. Valid values: CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada, IATA= Worldwide Air movement.  The following values are valid: IATA, CFR.
      *
-     * @param string $regulationSet
+     * @param string|null $regulationSet
      *
      * @return self
      */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(?string $regulationSet) : self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -55,20 +55,20 @@ class PackageServiceOptionsDryIce extends \ArrayObject
     /**
      * Container for Dry Ice weight.
      *
-     * @return DryIceDryIceWeight
+     * @return DryIceDryIceWeight|null
      */
-    public function getDryIceWeight() : DryIceDryIceWeight
+    public function getDryIceWeight() : ?DryIceDryIceWeight
     {
         return $this->dryIceWeight;
     }
     /**
      * Container for Dry Ice weight.
      *
-     * @param DryIceDryIceWeight $dryIceWeight
+     * @param DryIceDryIceWeight|null $dryIceWeight
      *
      * @return self
      */
-    public function setDryIceWeight(DryIceDryIceWeight $dryIceWeight) : self
+    public function setDryIceWeight(?DryIceDryIceWeight $dryIceWeight) : self
     {
         $this->initialized['dryIceWeight'] = true;
         $this->dryIceWeight = $dryIceWeight;
@@ -77,20 +77,20 @@ class PackageServiceOptionsDryIce extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored. Relevant only in CFR regulation set. If present it is used to designate the dry Ice is for any medical use and rates are adjusted for DryIce weight more than 2.5 Kgs or 5.7 Lbs.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMedicalUseIndicator() : string
+    public function getMedicalUseIndicator() : ?string
     {
         return $this->medicalUseIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored. Relevant only in CFR regulation set. If present it is used to designate the dry Ice is for any medical use and rates are adjusted for DryIce weight more than 2.5 Kgs or 5.7 Lbs.
      *
-     * @param string $medicalUseIndicator
+     * @param string|null $medicalUseIndicator
      *
      * @return self
      */
-    public function setMedicalUseIndicator(string $medicalUseIndicator) : self
+    public function setMedicalUseIndicator(?string $medicalUseIndicator) : self
     {
         $this->initialized['medicalUseIndicator'] = true;
         $this->medicalUseIndicator = $medicalUseIndicator;

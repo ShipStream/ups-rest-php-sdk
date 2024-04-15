@@ -15,32 +15,32 @@ class ShipmentInvoiceLineTotal extends \ArrayObject
     /**
      * Invoice Line Total currency type.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999.00
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * Invoice Line Total currency type.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * Invoice Line Total currency type.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -49,20 +49,20 @@ class ShipmentInvoiceLineTotal extends \ArrayObject
     /**
      * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999.00
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999.00
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

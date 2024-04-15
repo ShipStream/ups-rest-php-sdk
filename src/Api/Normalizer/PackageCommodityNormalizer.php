@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightClass', $data)) {
+            if (\array_key_exists('FreightClass', $data) && $data['FreightClass'] !== null) {
                 $object->setFreightClass($data['FreightClass']);
                 unset($data['FreightClass']);
             }
-            if (\array_key_exists('NMFC', $data)) {
+            elseif (\array_key_exists('FreightClass', $data) && $data['FreightClass'] === null) {
+                $object->setFreightClass(null);
+            }
+            if (\array_key_exists('NMFC', $data) && $data['NMFC'] !== null) {
                 $object->setNMFC($this->denormalizer->denormalize($data['NMFC'], 'ShipStream\\Ups\\Api\\Model\\CommodityNMFC', 'json', $context));
                 unset($data['NMFC']);
+            }
+            elseif (\array_key_exists('NMFC', $data) && $data['NMFC'] === null) {
+                $object->setNMFC(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightClass', $data)) {
+            if (\array_key_exists('FreightClass', $data) && $data['FreightClass'] !== null) {
                 $object->setFreightClass($data['FreightClass']);
                 unset($data['FreightClass']);
             }
-            if (\array_key_exists('NMFC', $data)) {
+            elseif (\array_key_exists('FreightClass', $data) && $data['FreightClass'] === null) {
+                $object->setFreightClass(null);
+            }
+            if (\array_key_exists('NMFC', $data) && $data['NMFC'] !== null) {
                 $object->setNMFC($this->denormalizer->denormalize($data['NMFC'], 'ShipStream\\Ups\\Api\\Model\\CommodityNMFC', 'json', $context));
                 unset($data['NMFC']);
+            }
+            elseif (\array_key_exists('NMFC', $data) && $data['NMFC'] === null) {
+                $object->setNMFC(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

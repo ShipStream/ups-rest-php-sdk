@@ -15,7 +15,7 @@ class CN22FormCN22Content extends \ArrayObject
     /**
      * Total number of items associated with this content.  Required if the CN22 form container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $cN22ContentQuantity;
     /**
@@ -23,56 +23,56 @@ class CN22FormCN22Content extends \ArrayObject
     
     If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
     *
-    * @var string
+    * @var string|null
     */
     protected $cN22ContentDescription;
     /**
      * Container for CN22 content weight.
      *
-     * @var CN22ContentCN22ContentWeight
+     * @var CN22ContentCN22ContentWeight|null
      */
     protected $cN22ContentWeight;
     /**
      * Total value of the items associated with this content.  Required if the CN22 form container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $cN22ContentTotalValue;
     /**
      * Currently only USD is supported.  Required if the CN22 form container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $cN22ContentCurrencyCode;
     /**
      * Country or Territory of Origin from where the CN22 contents originated.
      *
-     * @var string
+     * @var string|null
      */
     protected $cN22ContentCountryOfOrigin;
     /**
      * The tariff number associated with the CN22 contents.
      *
-     * @var string
+     * @var string|null
      */
     protected $cN22ContentTariffNumber;
     /**
      * Total number of items associated with this content.  Required if the CN22 form container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCN22ContentQuantity() : string
+    public function getCN22ContentQuantity() : ?string
     {
         return $this->cN22ContentQuantity;
     }
     /**
      * Total number of items associated with this content.  Required if the CN22 form container is present.
      *
-     * @param string $cN22ContentQuantity
+     * @param string|null $cN22ContentQuantity
      *
      * @return self
      */
-    public function setCN22ContentQuantity(string $cN22ContentQuantity) : self
+    public function setCN22ContentQuantity(?string $cN22ContentQuantity) : self
     {
         $this->initialized['cN22ContentQuantity'] = true;
         $this->cN22ContentQuantity = $cN22ContentQuantity;
@@ -83,9 +83,9 @@ class CN22FormCN22Content extends \ArrayObject
     
     If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCN22ContentDescription() : string
+    public function getCN22ContentDescription() : ?string
     {
         return $this->cN22ContentDescription;
     }
@@ -94,11 +94,11 @@ class CN22FormCN22Content extends \ArrayObject
     
     If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
     *
-    * @param string $cN22ContentDescription
+    * @param string|null $cN22ContentDescription
     *
     * @return self
     */
-    public function setCN22ContentDescription(string $cN22ContentDescription) : self
+    public function setCN22ContentDescription(?string $cN22ContentDescription) : self
     {
         $this->initialized['cN22ContentDescription'] = true;
         $this->cN22ContentDescription = $cN22ContentDescription;
@@ -107,20 +107,20 @@ class CN22FormCN22Content extends \ArrayObject
     /**
      * Container for CN22 content weight.
      *
-     * @return CN22ContentCN22ContentWeight
+     * @return CN22ContentCN22ContentWeight|null
      */
-    public function getCN22ContentWeight() : CN22ContentCN22ContentWeight
+    public function getCN22ContentWeight() : ?CN22ContentCN22ContentWeight
     {
         return $this->cN22ContentWeight;
     }
     /**
      * Container for CN22 content weight.
      *
-     * @param CN22ContentCN22ContentWeight $cN22ContentWeight
+     * @param CN22ContentCN22ContentWeight|null $cN22ContentWeight
      *
      * @return self
      */
-    public function setCN22ContentWeight(CN22ContentCN22ContentWeight $cN22ContentWeight) : self
+    public function setCN22ContentWeight(?CN22ContentCN22ContentWeight $cN22ContentWeight) : self
     {
         $this->initialized['cN22ContentWeight'] = true;
         $this->cN22ContentWeight = $cN22ContentWeight;
@@ -129,20 +129,20 @@ class CN22FormCN22Content extends \ArrayObject
     /**
      * Total value of the items associated with this content.  Required if the CN22 form container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCN22ContentTotalValue() : string
+    public function getCN22ContentTotalValue() : ?string
     {
         return $this->cN22ContentTotalValue;
     }
     /**
      * Total value of the items associated with this content.  Required if the CN22 form container is present.
      *
-     * @param string $cN22ContentTotalValue
+     * @param string|null $cN22ContentTotalValue
      *
      * @return self
      */
-    public function setCN22ContentTotalValue(string $cN22ContentTotalValue) : self
+    public function setCN22ContentTotalValue(?string $cN22ContentTotalValue) : self
     {
         $this->initialized['cN22ContentTotalValue'] = true;
         $this->cN22ContentTotalValue = $cN22ContentTotalValue;
@@ -151,20 +151,20 @@ class CN22FormCN22Content extends \ArrayObject
     /**
      * Currently only USD is supported.  Required if the CN22 form container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCN22ContentCurrencyCode() : string
+    public function getCN22ContentCurrencyCode() : ?string
     {
         return $this->cN22ContentCurrencyCode;
     }
     /**
      * Currently only USD is supported.  Required if the CN22 form container is present.
      *
-     * @param string $cN22ContentCurrencyCode
+     * @param string|null $cN22ContentCurrencyCode
      *
      * @return self
      */
-    public function setCN22ContentCurrencyCode(string $cN22ContentCurrencyCode) : self
+    public function setCN22ContentCurrencyCode(?string $cN22ContentCurrencyCode) : self
     {
         $this->initialized['cN22ContentCurrencyCode'] = true;
         $this->cN22ContentCurrencyCode = $cN22ContentCurrencyCode;
@@ -173,20 +173,20 @@ class CN22FormCN22Content extends \ArrayObject
     /**
      * Country or Territory of Origin from where the CN22 contents originated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCN22ContentCountryOfOrigin() : string
+    public function getCN22ContentCountryOfOrigin() : ?string
     {
         return $this->cN22ContentCountryOfOrigin;
     }
     /**
      * Country or Territory of Origin from where the CN22 contents originated.
      *
-     * @param string $cN22ContentCountryOfOrigin
+     * @param string|null $cN22ContentCountryOfOrigin
      *
      * @return self
      */
-    public function setCN22ContentCountryOfOrigin(string $cN22ContentCountryOfOrigin) : self
+    public function setCN22ContentCountryOfOrigin(?string $cN22ContentCountryOfOrigin) : self
     {
         $this->initialized['cN22ContentCountryOfOrigin'] = true;
         $this->cN22ContentCountryOfOrigin = $cN22ContentCountryOfOrigin;
@@ -195,20 +195,20 @@ class CN22FormCN22Content extends \ArrayObject
     /**
      * The tariff number associated with the CN22 contents.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCN22ContentTariffNumber() : string
+    public function getCN22ContentTariffNumber() : ?string
     {
         return $this->cN22ContentTariffNumber;
     }
     /**
      * The tariff number associated with the CN22 contents.
      *
-     * @param string $cN22ContentTariffNumber
+     * @param string|null $cN22ContentTariffNumber
      *
      * @return self
      */
-    public function setCN22ContentTariffNumber(string $cN22ContentTariffNumber) : self
+    public function setCN22ContentTariffNumber(?string $cN22ContentTariffNumber) : self
     {
         $this->initialized['cN22ContentTariffNumber'] = true;
         $this->cN22ContentTariffNumber = $cN22ContentTariffNumber;

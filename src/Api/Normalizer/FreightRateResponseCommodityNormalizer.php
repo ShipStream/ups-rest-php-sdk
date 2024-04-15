@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CommodityID', $data)) {
+            if (\array_key_exists('CommodityID', $data) && $data['CommodityID'] !== null) {
                 $object->setCommodityID($data['CommodityID']);
                 unset($data['CommodityID']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('CommodityID', $data) && $data['CommodityID'] === null) {
+                $object->setCommodityID(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Weight', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
                 unset($data['Weight']);
             }
-            if (\array_key_exists('AdjustedWeight', $data)) {
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] !== null) {
                 $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
                 unset($data['AdjustedWeight']);
+            }
+            elseif (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] === null) {
+                $object->setAdjustedWeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -116,21 +128,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('CommodityID', $data)) {
+            if (\array_key_exists('CommodityID', $data) && $data['CommodityID'] !== null) {
                 $object->setCommodityID($data['CommodityID']);
                 unset($data['CommodityID']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('CommodityID', $data) && $data['CommodityID'] === null) {
+                $object->setCommodityID(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Weight', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
                 unset($data['Weight']);
             }
-            if (\array_key_exists('AdjustedWeight', $data)) {
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] !== null) {
                 $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
                 unset($data['AdjustedWeight']);
+            }
+            elseif (\array_key_exists('AdjustedWeight', $data) && $data['AdjustedWeight'] === null) {
+                $object->setAdjustedWeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

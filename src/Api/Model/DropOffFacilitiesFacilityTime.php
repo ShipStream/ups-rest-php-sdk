@@ -15,26 +15,26 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
     /**
      * 
      *
-     * @var FacilityTimeDayOfWeek[]
+     * @var list<FacilityTimeDayOfWeek>|null
      */
     protected $dayOfWeek;
     /**
      * 
      *
-     * @return FacilityTimeDayOfWeek[]
+     * @return list<FacilityTimeDayOfWeek>|null
      */
-    public function getDayOfWeek() : array
+    public function getDayOfWeek() : ?array
     {
         return $this->dayOfWeek;
     }
     /**
      * 
      *
-     * @param FacilityTimeDayOfWeek[] $dayOfWeek
+     * @param list<FacilityTimeDayOfWeek>|null $dayOfWeek
      *
      * @return self
      */
-    public function setDayOfWeek(array $dayOfWeek) : self
+    public function setDayOfWeek(?array $dayOfWeek) : self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;

@@ -15,26 +15,26 @@ class PAPERLESSDOCUMENTRequestWrapper extends \ArrayObject
     /**
      * Paperless Document API request container for push to Image Repository.  N/A
      *
-     * @var PushToImageRepositoryRequest
+     * @var PushToImageRepositoryRequest|null
      */
     protected $pushToImageRepositoryRequest;
     /**
      * Paperless Document API request container for push to Image Repository.  N/A
      *
-     * @return PushToImageRepositoryRequest
+     * @return PushToImageRepositoryRequest|null
      */
-    public function getPushToImageRepositoryRequest() : PushToImageRepositoryRequest
+    public function getPushToImageRepositoryRequest() : ?PushToImageRepositoryRequest
     {
         return $this->pushToImageRepositoryRequest;
     }
     /**
      * Paperless Document API request container for push to Image Repository.  N/A
      *
-     * @param PushToImageRepositoryRequest $pushToImageRepositoryRequest
+     * @param PushToImageRepositoryRequest|null $pushToImageRepositoryRequest
      *
      * @return self
      */
-    public function setPushToImageRepositoryRequest(PushToImageRepositoryRequest $pushToImageRepositoryRequest) : self
+    public function setPushToImageRepositoryRequest(?PushToImageRepositoryRequest $pushToImageRepositoryRequest) : self
     {
         $this->initialized['pushToImageRepositoryRequest'] = true;
         $this->pushToImageRepositoryRequest = $pushToImageRepositoryRequest;

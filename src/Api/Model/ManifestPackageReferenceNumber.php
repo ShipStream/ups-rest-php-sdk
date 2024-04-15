@@ -15,7 +15,7 @@ class ManifestPackageReferenceNumber extends \ArrayObject
     /**
      * Number tag.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
@@ -24,32 +24,32 @@ class ManifestPackageReferenceNumber extends \ArrayObject
     Valid if the origin/destination pair is US/US or PR/PR.
     For additional information, refer to the Reference Codes table in the Appendix.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Number tag.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * Number tag.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -61,9 +61,9 @@ class ManifestPackageReferenceNumber extends \ArrayObject
     Valid if the origin/destination pair is US/US or PR/PR.
     For additional information, refer to the Reference Codes table in the Appendix.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -73,11 +73,11 @@ class ManifestPackageReferenceNumber extends \ArrayObject
     Valid if the origin/destination pair is US/US or PR/PR.
     For additional information, refer to the Reference Codes table in the Appendix.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -86,20 +86,20 @@ class ManifestPackageReferenceNumber extends \ArrayObject
     /**
      * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

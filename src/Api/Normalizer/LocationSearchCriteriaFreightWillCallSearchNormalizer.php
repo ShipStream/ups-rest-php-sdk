@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightWillCallRequestType', $data)) {
+            if (\array_key_exists('FreightWillCallRequestType', $data) && $data['FreightWillCallRequestType'] !== null) {
                 $object->setFreightWillCallRequestType($data['FreightWillCallRequestType']);
                 unset($data['FreightWillCallRequestType']);
             }
-            if (\array_key_exists('FacilityAddress', $data)) {
+            elseif (\array_key_exists('FreightWillCallRequestType', $data) && $data['FreightWillCallRequestType'] === null) {
+                $object->setFreightWillCallRequestType(null);
+            }
+            if (\array_key_exists('FacilityAddress', $data) && $data['FacilityAddress'] !== null) {
                 $values = [];
                 foreach ($data['FacilityAddress'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress', 'json', $context);
@@ -52,17 +55,29 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setFacilityAddress($values);
                 unset($data['FacilityAddress']);
             }
-            if (\array_key_exists('OriginOrDestination', $data)) {
+            elseif (\array_key_exists('FacilityAddress', $data) && $data['FacilityAddress'] === null) {
+                $object->setFacilityAddress(null);
+            }
+            if (\array_key_exists('OriginOrDestination', $data) && $data['OriginOrDestination'] !== null) {
                 $object->setOriginOrDestination($data['OriginOrDestination']);
                 unset($data['OriginOrDestination']);
             }
-            if (\array_key_exists('FormatPostalCode', $data)) {
+            elseif (\array_key_exists('OriginOrDestination', $data) && $data['OriginOrDestination'] === null) {
+                $object->setOriginOrDestination(null);
+            }
+            if (\array_key_exists('FormatPostalCode', $data) && $data['FormatPostalCode'] !== null) {
                 $object->setFormatPostalCode($data['FormatPostalCode']);
                 unset($data['FormatPostalCode']);
             }
-            if (\array_key_exists('DayOfWeekCode', $data)) {
+            elseif (\array_key_exists('FormatPostalCode', $data) && $data['FormatPostalCode'] === null) {
+                $object->setFormatPostalCode(null);
+            }
+            if (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] !== null) {
                 $object->setDayOfWeekCode($data['DayOfWeekCode']);
                 unset($data['DayOfWeekCode']);
+            }
+            elseif (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] === null) {
+                $object->setDayOfWeekCode(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -127,11 +142,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreightWillCallRequestType', $data)) {
+            if (\array_key_exists('FreightWillCallRequestType', $data) && $data['FreightWillCallRequestType'] !== null) {
                 $object->setFreightWillCallRequestType($data['FreightWillCallRequestType']);
                 unset($data['FreightWillCallRequestType']);
             }
-            if (\array_key_exists('FacilityAddress', $data)) {
+            elseif (\array_key_exists('FreightWillCallRequestType', $data) && $data['FreightWillCallRequestType'] === null) {
+                $object->setFreightWillCallRequestType(null);
+            }
+            if (\array_key_exists('FacilityAddress', $data) && $data['FacilityAddress'] !== null) {
                 $values = [];
                 foreach ($data['FacilityAddress'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress', 'json', $context);
@@ -139,17 +157,29 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setFacilityAddress($values);
                 unset($data['FacilityAddress']);
             }
-            if (\array_key_exists('OriginOrDestination', $data)) {
+            elseif (\array_key_exists('FacilityAddress', $data) && $data['FacilityAddress'] === null) {
+                $object->setFacilityAddress(null);
+            }
+            if (\array_key_exists('OriginOrDestination', $data) && $data['OriginOrDestination'] !== null) {
                 $object->setOriginOrDestination($data['OriginOrDestination']);
                 unset($data['OriginOrDestination']);
             }
-            if (\array_key_exists('FormatPostalCode', $data)) {
+            elseif (\array_key_exists('OriginOrDestination', $data) && $data['OriginOrDestination'] === null) {
+                $object->setOriginOrDestination(null);
+            }
+            if (\array_key_exists('FormatPostalCode', $data) && $data['FormatPostalCode'] !== null) {
                 $object->setFormatPostalCode($data['FormatPostalCode']);
                 unset($data['FormatPostalCode']);
             }
-            if (\array_key_exists('DayOfWeekCode', $data)) {
+            elseif (\array_key_exists('FormatPostalCode', $data) && $data['FormatPostalCode'] === null) {
+                $object->setFormatPostalCode(null);
+            }
+            if (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] !== null) {
                 $object->setDayOfWeekCode($data['DayOfWeekCode']);
                 unset($data['DayOfWeekCode']);
+            }
+            elseif (\array_key_exists('DayOfWeekCode', $data) && $data['DayOfWeekCode'] === null) {
+                $object->setDayOfWeekCode(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

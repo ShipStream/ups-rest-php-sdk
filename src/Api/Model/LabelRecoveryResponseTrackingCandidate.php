@@ -15,44 +15,44 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
     /**
      * Packaging Tracking Number  Only supported for the web small package shipment so only supported 18 digit
      *
-     * @var string
+     * @var string|null
      */
     protected $trackingNumber;
     /**
      * Destination postal code candidate
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationPostalCode;
     /**
      * Destination country or territory code candidate, like US = USA, CA = Canada  Must be valid ups country or territory code
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationCountryCode;
     /**
      * A range of time the package was picked up.
      *
-     * @var TrackingCandidatePickupDateRange
+     * @var TrackingCandidatePickupDateRange|null
      */
     protected $pickupDateRange;
     /**
      * Packaging Tracking Number  Only supported for the web small package shipment so only supported 18 digit
      *
-     * @return string
+     * @return string|null
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber() : ?string
     {
         return $this->trackingNumber;
     }
     /**
      * Packaging Tracking Number  Only supported for the web small package shipment so only supported 18 digit
      *
-     * @param string $trackingNumber
+     * @param string|null $trackingNumber
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(?string $trackingNumber) : self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -61,20 +61,20 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
     /**
      * Destination postal code candidate
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode() : ?string
     {
         return $this->destinationPostalCode;
     }
     /**
      * Destination postal code candidate
      *
-     * @param string $destinationPostalCode
+     * @param string|null $destinationPostalCode
      *
      * @return self
      */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(?string $destinationPostalCode) : self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -83,20 +83,20 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
     /**
      * Destination country or territory code candidate, like US = USA, CA = Canada  Must be valid ups country or territory code
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode() : ?string
     {
         return $this->destinationCountryCode;
     }
     /**
      * Destination country or territory code candidate, like US = USA, CA = Canada  Must be valid ups country or territory code
      *
-     * @param string $destinationCountryCode
+     * @param string|null $destinationCountryCode
      *
      * @return self
      */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(?string $destinationCountryCode) : self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -105,20 +105,20 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
     /**
      * A range of time the package was picked up.
      *
-     * @return TrackingCandidatePickupDateRange
+     * @return TrackingCandidatePickupDateRange|null
      */
-    public function getPickupDateRange() : TrackingCandidatePickupDateRange
+    public function getPickupDateRange() : ?TrackingCandidatePickupDateRange
     {
         return $this->pickupDateRange;
     }
     /**
      * A range of time the package was picked up.
      *
-     * @param TrackingCandidatePickupDateRange $pickupDateRange
+     * @param TrackingCandidatePickupDateRange|null $pickupDateRange
      *
      * @return self
      */
-    public function setPickupDateRange(TrackingCandidatePickupDateRange $pickupDateRange) : self
+    public function setPickupDateRange(?TrackingCandidatePickupDateRange $pickupDateRange) : self
     {
         $this->initialized['pickupDateRange'] = true;
         $this->pickupDateRange = $pickupDateRange;

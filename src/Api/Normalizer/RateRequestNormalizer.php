@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\RateRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('PickupType', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($this->denormalizer->denormalize($data['PickupType'], 'ShipStream\\Ups\\Api\\Model\\RateRequestPickupType', 'json', $context));
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('CustomerClassification', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('CustomerClassification', $data) && $data['CustomerClassification'] !== null) {
                 $object->setCustomerClassification($this->denormalizer->denormalize($data['CustomerClassification'], 'ShipStream\\Ups\\Api\\Model\\RateRequestCustomerClassification', 'json', $context));
                 unset($data['CustomerClassification']);
             }
-            if (\array_key_exists('Shipment', $data)) {
+            elseif (\array_key_exists('CustomerClassification', $data) && $data['CustomerClassification'] === null) {
+                $object->setCustomerClassification(null);
+            }
+            if (\array_key_exists('Shipment', $data) && $data['Shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['Shipment'], 'ShipStream\\Ups\\Api\\Model\\RateRequestShipment', 'json', $context));
                 unset($data['Shipment']);
+            }
+            elseif (\array_key_exists('Shipment', $data) && $data['Shipment'] === null) {
+                $object->setShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -116,21 +128,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\RateRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('PickupType', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('PickupType', $data) && $data['PickupType'] !== null) {
                 $object->setPickupType($this->denormalizer->denormalize($data['PickupType'], 'ShipStream\\Ups\\Api\\Model\\RateRequestPickupType', 'json', $context));
                 unset($data['PickupType']);
             }
-            if (\array_key_exists('CustomerClassification', $data)) {
+            elseif (\array_key_exists('PickupType', $data) && $data['PickupType'] === null) {
+                $object->setPickupType(null);
+            }
+            if (\array_key_exists('CustomerClassification', $data) && $data['CustomerClassification'] !== null) {
                 $object->setCustomerClassification($this->denormalizer->denormalize($data['CustomerClassification'], 'ShipStream\\Ups\\Api\\Model\\RateRequestCustomerClassification', 'json', $context));
                 unset($data['CustomerClassification']);
             }
-            if (\array_key_exists('Shipment', $data)) {
+            elseif (\array_key_exists('CustomerClassification', $data) && $data['CustomerClassification'] === null) {
+                $object->setCustomerClassification(null);
+            }
+            if (\array_key_exists('Shipment', $data) && $data['Shipment'] !== null) {
                 $object->setShipment($this->denormalizer->denormalize($data['Shipment'], 'ShipStream\\Ups\\Api\\Model\\RateRequestShipment', 'json', $context));
                 unset($data['Shipment']);
+            }
+            elseif (\array_key_exists('Shipment', $data) && $data['Shipment'] === null) {
+                $object->setShipment(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

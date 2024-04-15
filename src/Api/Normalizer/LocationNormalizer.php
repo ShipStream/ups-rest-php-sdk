@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('address', $data)) {
+            if (\array_key_exists('address', $data) && $data['address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
                 unset($data['address']);
             }
-            if (\array_key_exists('slic', $data)) {
+            elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('slic', $data) && $data['slic'] !== null) {
                 $object->setSlic($data['slic']);
                 unset($data['slic']);
+            }
+            elseif (\array_key_exists('slic', $data) && $data['slic'] === null) {
+                $object->setSlic(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('address', $data)) {
+            if (\array_key_exists('address', $data) && $data['address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
                 unset($data['address']);
             }
-            if (\array_key_exists('slic', $data)) {
+            elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+                $object->setAddress(null);
+            }
+            if (\array_key_exists('slic', $data) && $data['slic'] !== null) {
                 $object->setSlic($data['slic']);
                 unset($data['slic']);
+            }
+            elseif (\array_key_exists('slic', $data) && $data['slic'] === null) {
+                $object->setSlic(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

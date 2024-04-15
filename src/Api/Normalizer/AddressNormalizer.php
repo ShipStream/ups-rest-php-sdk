@@ -68,13 +68,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('city', $data) && $data['city'] === null) {
                 $object->setCity(null);
             }
-            if (\array_key_exists('country', $data)) {
+            if (\array_key_exists('country', $data) && $data['country'] !== null) {
                 $object->setCountry($data['country']);
                 unset($data['country']);
             }
-            if (\array_key_exists('countryCode', $data)) {
+            elseif (\array_key_exists('country', $data) && $data['country'] === null) {
+                $object->setCountry(null);
+            }
+            if (\array_key_exists('countryCode', $data) && $data['countryCode'] !== null) {
                 $object->setCountryCode($data['countryCode']);
                 unset($data['countryCode']);
+            }
+            elseif (\array_key_exists('countryCode', $data) && $data['countryCode'] === null) {
+                $object->setCountryCode(null);
             }
             if (\array_key_exists('postalCode', $data) && $data['postalCode'] !== null) {
                 $object->setPostalCode($data['postalCode']);
@@ -194,13 +200,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('city', $data) && $data['city'] === null) {
                 $object->setCity(null);
             }
-            if (\array_key_exists('country', $data)) {
+            if (\array_key_exists('country', $data) && $data['country'] !== null) {
                 $object->setCountry($data['country']);
                 unset($data['country']);
             }
-            if (\array_key_exists('countryCode', $data)) {
+            elseif (\array_key_exists('country', $data) && $data['country'] === null) {
+                $object->setCountry(null);
+            }
+            if (\array_key_exists('countryCode', $data) && $data['countryCode'] !== null) {
                 $object->setCountryCode($data['countryCode']);
                 unset($data['countryCode']);
+            }
+            elseif (\array_key_exists('countryCode', $data) && $data['countryCode'] === null) {
+                $object->setCountryCode(null);
             }
             if (\array_key_exists('postalCode', $data) && $data['postalCode'] !== null) {
                 $object->setPostalCode($data['postalCode']);

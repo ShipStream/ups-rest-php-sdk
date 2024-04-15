@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HTMLImage', $data)) {
+            if (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] !== null) {
                 $object->setHTMLImage($data['HTMLImage']);
                 unset($data['HTMLImage']);
             }
-            if (\array_key_exists('Image', $data)) {
+            elseif (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] === null) {
+                $object->setHTMLImage(null);
+            }
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\ReceiptImage', 'json', $context));
                 unset($data['Image']);
             }
-            if (\array_key_exists('URL', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('URL', $data) && $data['URL'] !== null) {
                 $object->setURL($data['URL']);
                 unset($data['URL']);
+            }
+            elseif (\array_key_exists('URL', $data) && $data['URL'] === null) {
+                $object->setURL(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -113,17 +122,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('HTMLImage', $data)) {
+            if (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] !== null) {
                 $object->setHTMLImage($data['HTMLImage']);
                 unset($data['HTMLImage']);
             }
-            if (\array_key_exists('Image', $data)) {
+            elseif (\array_key_exists('HTMLImage', $data) && $data['HTMLImage'] === null) {
+                $object->setHTMLImage(null);
+            }
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\ReceiptImage', 'json', $context));
                 unset($data['Image']);
             }
-            if (\array_key_exists('URL', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('URL', $data) && $data['URL'] !== null) {
                 $object->setURL($data['URL']);
                 unset($data['URL']);
+            }
+            elseif (\array_key_exists('URL', $data) && $data['URL'] === null) {
+                $object->setURL(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

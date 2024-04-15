@@ -15,50 +15,50 @@ class PickupRequestRequester extends \ArrayObject
     /**
      * Indicates whether the requester is Consignee, Third Party, Shipper, other.
      *
-     * @var string
+     * @var string|null
      */
     protected $thirdPartyIndicator;
     /**
      * Requester�s name.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Requester�s email address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Requester�s company name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Phone Container
      *
-     * @var RequesterPhone
+     * @var RequesterPhone|null
      */
     protected $phone;
     /**
      * Indicates whether the requester is Consignee, Third Party, Shipper, other.
      *
-     * @return string
+     * @return string|null
      */
-    public function getThirdPartyIndicator() : string
+    public function getThirdPartyIndicator() : ?string
     {
         return $this->thirdPartyIndicator;
     }
     /**
      * Indicates whether the requester is Consignee, Third Party, Shipper, other.
      *
-     * @param string $thirdPartyIndicator
+     * @param string|null $thirdPartyIndicator
      *
      * @return self
      */
-    public function setThirdPartyIndicator(string $thirdPartyIndicator) : self
+    public function setThirdPartyIndicator(?string $thirdPartyIndicator) : self
     {
         $this->initialized['thirdPartyIndicator'] = true;
         $this->thirdPartyIndicator = $thirdPartyIndicator;
@@ -67,20 +67,20 @@ class PickupRequestRequester extends \ArrayObject
     /**
      * Requester�s name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Requester�s name.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -89,20 +89,20 @@ class PickupRequestRequester extends \ArrayObject
     /**
      * Requester�s email address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Requester�s email address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -111,20 +111,20 @@ class PickupRequestRequester extends \ArrayObject
     /**
      * Requester�s company name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Requester�s company name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -133,20 +133,20 @@ class PickupRequestRequester extends \ArrayObject
     /**
      * Phone Container
      *
-     * @return RequesterPhone
+     * @return RequesterPhone|null
      */
-    public function getPhone() : RequesterPhone
+    public function getPhone() : ?RequesterPhone
     {
         return $this->phone;
     }
     /**
      * Phone Container
      *
-     * @param RequesterPhone $phone
+     * @param RequesterPhone|null $phone
      *
      * @return self
      */
-    public function setPhone(RequesterPhone $phone) : self
+    public function setPhone(?RequesterPhone $phone) : self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;

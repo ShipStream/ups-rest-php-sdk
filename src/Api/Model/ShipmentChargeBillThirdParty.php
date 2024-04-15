@@ -19,25 +19,25 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     
     All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
     *
-    * @var string
+    * @var string|null
     */
     protected $accountNumber;
     /**
      * Posta Elettronica Certificata (PEC) which is the recipient code for the customers certified electronic mail value.
      *
-     * @var string
+     * @var string|null
      */
     protected $certifiedElectronicMail;
     /**
      * Sistema Di Interscambio(SDI) which is the recipient code for the customer's interchange value or Interchange System Code
      *
-     * @var string
+     * @var string|null
      */
     protected $interchangeSystemCode;
     /**
      * Container for additional information for the third party UPS accounts address.
      *
-     * @var BillThirdPartyAddress
+     * @var BillThirdPartyAddress|null
      */
     protected $address;
     /**
@@ -47,9 +47,9 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     
     All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
@@ -60,11 +60,11 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     
     All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
     *
-    * @param string $accountNumber
+    * @param string|null $accountNumber
     *
     * @return self
     */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -73,20 +73,20 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     /**
      * Posta Elettronica Certificata (PEC) which is the recipient code for the customers certified electronic mail value.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCertifiedElectronicMail() : string
+    public function getCertifiedElectronicMail() : ?string
     {
         return $this->certifiedElectronicMail;
     }
     /**
      * Posta Elettronica Certificata (PEC) which is the recipient code for the customers certified electronic mail value.
      *
-     * @param string $certifiedElectronicMail
+     * @param string|null $certifiedElectronicMail
      *
      * @return self
      */
-    public function setCertifiedElectronicMail(string $certifiedElectronicMail) : self
+    public function setCertifiedElectronicMail(?string $certifiedElectronicMail) : self
     {
         $this->initialized['certifiedElectronicMail'] = true;
         $this->certifiedElectronicMail = $certifiedElectronicMail;
@@ -95,20 +95,20 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     /**
      * Sistema Di Interscambio(SDI) which is the recipient code for the customer's interchange value or Interchange System Code
      *
-     * @return string
+     * @return string|null
      */
-    public function getInterchangeSystemCode() : string
+    public function getInterchangeSystemCode() : ?string
     {
         return $this->interchangeSystemCode;
     }
     /**
      * Sistema Di Interscambio(SDI) which is the recipient code for the customer's interchange value or Interchange System Code
      *
-     * @param string $interchangeSystemCode
+     * @param string|null $interchangeSystemCode
      *
      * @return self
      */
-    public function setInterchangeSystemCode(string $interchangeSystemCode) : self
+    public function setInterchangeSystemCode(?string $interchangeSystemCode) : self
     {
         $this->initialized['interchangeSystemCode'] = true;
         $this->interchangeSystemCode = $interchangeSystemCode;
@@ -117,20 +117,20 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     /**
      * Container for additional information for the third party UPS accounts address.
      *
-     * @return BillThirdPartyAddress
+     * @return BillThirdPartyAddress|null
      */
-    public function getAddress() : BillThirdPartyAddress
+    public function getAddress() : ?BillThirdPartyAddress
     {
         return $this->address;
     }
     /**
      * Container for additional information for the third party UPS accounts address.
      *
-     * @param BillThirdPartyAddress $address
+     * @param BillThirdPartyAddress|null $address
      *
      * @return self
      */
-    public function setAddress(BillThirdPartyAddress $address) : self
+    public function setAddress(?BillThirdPartyAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

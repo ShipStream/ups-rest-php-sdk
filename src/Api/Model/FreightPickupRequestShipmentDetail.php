@@ -16,40 +16,40 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
     Required if one or more commodities within the shipment is hazardous.
     *
-    * @var string
+    * @var string|null
     */
     protected $hazmatIndicator;
     /**
      * PackagingType Container.
      *
-     * @var ShipmentDetailPackagingType
+     * @var ShipmentDetailPackagingType|null
      */
     protected $packagingType;
     /**
      * Number of pieces.
      *
-     * @var string
+     * @var string|null
      */
     protected $numberOfPieces;
     /**
      * Description of the line item.
      *
-     * @var string
+     * @var string|null
      */
     protected $descriptionOfCommodity;
     /**
      * Weight Container.
      *
-     * @var ShipmentDetailWeight
+     * @var ShipmentDetailWeight|null
      */
     protected $weight;
     /**
     * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
     Required if one or more commodities within the shipment is hazardous.
     *
-    * @return string
+    * @return string|null
     */
-    public function getHazmatIndicator() : string
+    public function getHazmatIndicator() : ?string
     {
         return $this->hazmatIndicator;
     }
@@ -57,11 +57,11 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
     Required if one or more commodities within the shipment is hazardous.
     *
-    * @param string $hazmatIndicator
+    * @param string|null $hazmatIndicator
     *
     * @return self
     */
-    public function setHazmatIndicator(string $hazmatIndicator) : self
+    public function setHazmatIndicator(?string $hazmatIndicator) : self
     {
         $this->initialized['hazmatIndicator'] = true;
         $this->hazmatIndicator = $hazmatIndicator;
@@ -70,20 +70,20 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     /**
      * PackagingType Container.
      *
-     * @return ShipmentDetailPackagingType
+     * @return ShipmentDetailPackagingType|null
      */
-    public function getPackagingType() : ShipmentDetailPackagingType
+    public function getPackagingType() : ?ShipmentDetailPackagingType
     {
         return $this->packagingType;
     }
     /**
      * PackagingType Container.
      *
-     * @param ShipmentDetailPackagingType $packagingType
+     * @param ShipmentDetailPackagingType|null $packagingType
      *
      * @return self
      */
-    public function setPackagingType(ShipmentDetailPackagingType $packagingType) : self
+    public function setPackagingType(?ShipmentDetailPackagingType $packagingType) : self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -92,20 +92,20 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     /**
      * Number of pieces.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumberOfPieces() : string
+    public function getNumberOfPieces() : ?string
     {
         return $this->numberOfPieces;
     }
     /**
      * Number of pieces.
      *
-     * @param string $numberOfPieces
+     * @param string|null $numberOfPieces
      *
      * @return self
      */
-    public function setNumberOfPieces(string $numberOfPieces) : self
+    public function setNumberOfPieces(?string $numberOfPieces) : self
     {
         $this->initialized['numberOfPieces'] = true;
         $this->numberOfPieces = $numberOfPieces;
@@ -114,20 +114,20 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     /**
      * Description of the line item.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescriptionOfCommodity() : string
+    public function getDescriptionOfCommodity() : ?string
     {
         return $this->descriptionOfCommodity;
     }
     /**
      * Description of the line item.
      *
-     * @param string $descriptionOfCommodity
+     * @param string|null $descriptionOfCommodity
      *
      * @return self
      */
-    public function setDescriptionOfCommodity(string $descriptionOfCommodity) : self
+    public function setDescriptionOfCommodity(?string $descriptionOfCommodity) : self
     {
         $this->initialized['descriptionOfCommodity'] = true;
         $this->descriptionOfCommodity = $descriptionOfCommodity;
@@ -136,20 +136,20 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     /**
      * Weight Container.
      *
-     * @return ShipmentDetailWeight
+     * @return ShipmentDetailWeight|null
      */
-    public function getWeight() : ShipmentDetailWeight
+    public function getWeight() : ?ShipmentDetailWeight
     {
         return $this->weight;
     }
     /**
      * Weight Container.
      *
-     * @param ShipmentDetailWeight $weight
+     * @param ShipmentDetailWeight|null $weight
      *
      * @return self
      */
-    public function setWeight(ShipmentDetailWeight $weight) : self
+    public function setWeight(?ShipmentDetailWeight $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

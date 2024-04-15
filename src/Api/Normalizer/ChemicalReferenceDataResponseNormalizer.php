@@ -40,17 +40,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ChemicalData', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ChemicalData', $data) && $data['ChemicalData'] !== null) {
                 $values = [];
                 foreach ($data['ChemicalData'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData', 'json', $context);
                 }
                 $object->setChemicalData($values);
                 unset($data['ChemicalData']);
+            }
+            elseif (\array_key_exists('ChemicalData', $data) && $data['ChemicalData'] === null) {
+                $object->setChemicalData(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,17 +118,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ChemicalData', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ChemicalData', $data) && $data['ChemicalData'] !== null) {
                 $values = [];
                 foreach ($data['ChemicalData'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData', 'json', $context);
                 }
                 $object->setChemicalData($values);
                 unset($data['ChemicalData']);
+            }
+            elseif (\array_key_exists('ChemicalData', $data) && $data['ChemicalData'] === null) {
+                $object->setChemicalData(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

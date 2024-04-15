@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SearchRadius', $data)) {
+            if (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] !== null) {
                 $object->setSearchRadius($data['SearchRadius']);
                 unset($data['SearchRadius']);
             }
-            if (\array_key_exists('DistanceUnitOfMeasure', $data)) {
+            elseif (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] === null) {
+                $object->setSearchRadius(null);
+            }
+            if (\array_key_exists('DistanceUnitOfMeasure', $data) && $data['DistanceUnitOfMeasure'] !== null) {
                 $object->setDistanceUnitOfMeasure($data['DistanceUnitOfMeasure']);
                 unset($data['DistanceUnitOfMeasure']);
             }
-            if (\array_key_exists('MaximumLocation', $data)) {
+            elseif (\array_key_exists('DistanceUnitOfMeasure', $data) && $data['DistanceUnitOfMeasure'] === null) {
+                $object->setDistanceUnitOfMeasure(null);
+            }
+            if (\array_key_exists('MaximumLocation', $data) && $data['MaximumLocation'] !== null) {
                 $object->setMaximumLocation($data['MaximumLocation']);
                 unset($data['MaximumLocation']);
+            }
+            elseif (\array_key_exists('MaximumLocation', $data) && $data['MaximumLocation'] === null) {
+                $object->setMaximumLocation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -111,17 +120,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('SearchRadius', $data)) {
+            if (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] !== null) {
                 $object->setSearchRadius($data['SearchRadius']);
                 unset($data['SearchRadius']);
             }
-            if (\array_key_exists('DistanceUnitOfMeasure', $data)) {
+            elseif (\array_key_exists('SearchRadius', $data) && $data['SearchRadius'] === null) {
+                $object->setSearchRadius(null);
+            }
+            if (\array_key_exists('DistanceUnitOfMeasure', $data) && $data['DistanceUnitOfMeasure'] !== null) {
                 $object->setDistanceUnitOfMeasure($data['DistanceUnitOfMeasure']);
                 unset($data['DistanceUnitOfMeasure']);
             }
-            if (\array_key_exists('MaximumLocation', $data)) {
+            elseif (\array_key_exists('DistanceUnitOfMeasure', $data) && $data['DistanceUnitOfMeasure'] === null) {
+                $object->setDistanceUnitOfMeasure(null);
+            }
+            if (\array_key_exists('MaximumLocation', $data) && $data['MaximumLocation'] !== null) {
                 $object->setMaximumLocation($data['MaximumLocation']);
                 unset($data['MaximumLocation']);
+            }
+            elseif (\array_key_exists('MaximumLocation', $data) && $data['MaximumLocation'] === null) {
+                $object->setMaximumLocation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

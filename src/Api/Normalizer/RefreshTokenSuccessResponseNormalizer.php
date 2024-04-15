@@ -40,53 +40,89 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('refresh_token_expires_in', $data)) {
+            if (\array_key_exists('refresh_token_expires_in', $data) && $data['refresh_token_expires_in'] !== null) {
                 $object->setRefreshTokenExpiresIn($data['refresh_token_expires_in']);
                 unset($data['refresh_token_expires_in']);
             }
-            if (\array_key_exists('refresh_token_status', $data)) {
+            elseif (\array_key_exists('refresh_token_expires_in', $data) && $data['refresh_token_expires_in'] === null) {
+                $object->setRefreshTokenExpiresIn(null);
+            }
+            if (\array_key_exists('refresh_token_status', $data) && $data['refresh_token_status'] !== null) {
                 $object->setRefreshTokenStatus($data['refresh_token_status']);
                 unset($data['refresh_token_status']);
             }
-            if (\array_key_exists('token_type', $data)) {
+            elseif (\array_key_exists('refresh_token_status', $data) && $data['refresh_token_status'] === null) {
+                $object->setRefreshTokenStatus(null);
+            }
+            if (\array_key_exists('token_type', $data) && $data['token_type'] !== null) {
                 $object->setTokenType($data['token_type']);
                 unset($data['token_type']);
             }
-            if (\array_key_exists('issued_at', $data)) {
+            elseif (\array_key_exists('token_type', $data) && $data['token_type'] === null) {
+                $object->setTokenType(null);
+            }
+            if (\array_key_exists('issued_at', $data) && $data['issued_at'] !== null) {
                 $object->setIssuedAt($data['issued_at']);
                 unset($data['issued_at']);
             }
-            if (\array_key_exists('client_id', $data)) {
+            elseif (\array_key_exists('issued_at', $data) && $data['issued_at'] === null) {
+                $object->setIssuedAt(null);
+            }
+            if (\array_key_exists('client_id', $data) && $data['client_id'] !== null) {
                 $object->setClientId($data['client_id']);
                 unset($data['client_id']);
             }
-            if (\array_key_exists('access_token', $data)) {
+            elseif (\array_key_exists('client_id', $data) && $data['client_id'] === null) {
+                $object->setClientId(null);
+            }
+            if (\array_key_exists('access_token', $data) && $data['access_token'] !== null) {
                 $object->setAccessToken($data['access_token']);
                 unset($data['access_token']);
             }
-            if (\array_key_exists('refresh_token', $data)) {
+            elseif (\array_key_exists('access_token', $data) && $data['access_token'] === null) {
+                $object->setAccessToken(null);
+            }
+            if (\array_key_exists('refresh_token', $data) && $data['refresh_token'] !== null) {
                 $object->setRefreshToken($data['refresh_token']);
                 unset($data['refresh_token']);
             }
-            if (\array_key_exists('scope', $data)) {
+            elseif (\array_key_exists('refresh_token', $data) && $data['refresh_token'] === null) {
+                $object->setRefreshToken(null);
+            }
+            if (\array_key_exists('scope', $data) && $data['scope'] !== null) {
                 $object->setScope($data['scope']);
                 unset($data['scope']);
             }
-            if (\array_key_exists('refresh_token_issued_at', $data)) {
+            elseif (\array_key_exists('scope', $data) && $data['scope'] === null) {
+                $object->setScope(null);
+            }
+            if (\array_key_exists('refresh_token_issued_at', $data) && $data['refresh_token_issued_at'] !== null) {
                 $object->setRefreshTokenIssuedAt($data['refresh_token_issued_at']);
                 unset($data['refresh_token_issued_at']);
             }
-            if (\array_key_exists('expires_in', $data)) {
+            elseif (\array_key_exists('refresh_token_issued_at', $data) && $data['refresh_token_issued_at'] === null) {
+                $object->setRefreshTokenIssuedAt(null);
+            }
+            if (\array_key_exists('expires_in', $data) && $data['expires_in'] !== null) {
                 $object->setExpiresIn($data['expires_in']);
                 unset($data['expires_in']);
             }
-            if (\array_key_exists('refresh_count', $data)) {
+            elseif (\array_key_exists('expires_in', $data) && $data['expires_in'] === null) {
+                $object->setExpiresIn(null);
+            }
+            if (\array_key_exists('refresh_count', $data) && $data['refresh_count'] !== null) {
                 $object->setRefreshCount($data['refresh_count']);
                 unset($data['refresh_count']);
             }
-            if (\array_key_exists('status', $data)) {
+            elseif (\array_key_exists('refresh_count', $data) && $data['refresh_count'] === null) {
+                $object->setRefreshCount(null);
+            }
+            if (\array_key_exists('status', $data) && $data['status'] !== null) {
                 $object->setStatus($data['status']);
                 unset($data['status']);
+            }
+            elseif (\array_key_exists('status', $data) && $data['status'] === null) {
+                $object->setStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -176,53 +212,89 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('refresh_token_expires_in', $data)) {
+            if (\array_key_exists('refresh_token_expires_in', $data) && $data['refresh_token_expires_in'] !== null) {
                 $object->setRefreshTokenExpiresIn($data['refresh_token_expires_in']);
                 unset($data['refresh_token_expires_in']);
             }
-            if (\array_key_exists('refresh_token_status', $data)) {
+            elseif (\array_key_exists('refresh_token_expires_in', $data) && $data['refresh_token_expires_in'] === null) {
+                $object->setRefreshTokenExpiresIn(null);
+            }
+            if (\array_key_exists('refresh_token_status', $data) && $data['refresh_token_status'] !== null) {
                 $object->setRefreshTokenStatus($data['refresh_token_status']);
                 unset($data['refresh_token_status']);
             }
-            if (\array_key_exists('token_type', $data)) {
+            elseif (\array_key_exists('refresh_token_status', $data) && $data['refresh_token_status'] === null) {
+                $object->setRefreshTokenStatus(null);
+            }
+            if (\array_key_exists('token_type', $data) && $data['token_type'] !== null) {
                 $object->setTokenType($data['token_type']);
                 unset($data['token_type']);
             }
-            if (\array_key_exists('issued_at', $data)) {
+            elseif (\array_key_exists('token_type', $data) && $data['token_type'] === null) {
+                $object->setTokenType(null);
+            }
+            if (\array_key_exists('issued_at', $data) && $data['issued_at'] !== null) {
                 $object->setIssuedAt($data['issued_at']);
                 unset($data['issued_at']);
             }
-            if (\array_key_exists('client_id', $data)) {
+            elseif (\array_key_exists('issued_at', $data) && $data['issued_at'] === null) {
+                $object->setIssuedAt(null);
+            }
+            if (\array_key_exists('client_id', $data) && $data['client_id'] !== null) {
                 $object->setClientId($data['client_id']);
                 unset($data['client_id']);
             }
-            if (\array_key_exists('access_token', $data)) {
+            elseif (\array_key_exists('client_id', $data) && $data['client_id'] === null) {
+                $object->setClientId(null);
+            }
+            if (\array_key_exists('access_token', $data) && $data['access_token'] !== null) {
                 $object->setAccessToken($data['access_token']);
                 unset($data['access_token']);
             }
-            if (\array_key_exists('refresh_token', $data)) {
+            elseif (\array_key_exists('access_token', $data) && $data['access_token'] === null) {
+                $object->setAccessToken(null);
+            }
+            if (\array_key_exists('refresh_token', $data) && $data['refresh_token'] !== null) {
                 $object->setRefreshToken($data['refresh_token']);
                 unset($data['refresh_token']);
             }
-            if (\array_key_exists('scope', $data)) {
+            elseif (\array_key_exists('refresh_token', $data) && $data['refresh_token'] === null) {
+                $object->setRefreshToken(null);
+            }
+            if (\array_key_exists('scope', $data) && $data['scope'] !== null) {
                 $object->setScope($data['scope']);
                 unset($data['scope']);
             }
-            if (\array_key_exists('refresh_token_issued_at', $data)) {
+            elseif (\array_key_exists('scope', $data) && $data['scope'] === null) {
+                $object->setScope(null);
+            }
+            if (\array_key_exists('refresh_token_issued_at', $data) && $data['refresh_token_issued_at'] !== null) {
                 $object->setRefreshTokenIssuedAt($data['refresh_token_issued_at']);
                 unset($data['refresh_token_issued_at']);
             }
-            if (\array_key_exists('expires_in', $data)) {
+            elseif (\array_key_exists('refresh_token_issued_at', $data) && $data['refresh_token_issued_at'] === null) {
+                $object->setRefreshTokenIssuedAt(null);
+            }
+            if (\array_key_exists('expires_in', $data) && $data['expires_in'] !== null) {
                 $object->setExpiresIn($data['expires_in']);
                 unset($data['expires_in']);
             }
-            if (\array_key_exists('refresh_count', $data)) {
+            elseif (\array_key_exists('expires_in', $data) && $data['expires_in'] === null) {
+                $object->setExpiresIn(null);
+            }
+            if (\array_key_exists('refresh_count', $data) && $data['refresh_count'] !== null) {
                 $object->setRefreshCount($data['refresh_count']);
                 unset($data['refresh_count']);
             }
-            if (\array_key_exists('status', $data)) {
+            elseif (\array_key_exists('refresh_count', $data) && $data['refresh_count'] === null) {
+                $object->setRefreshCount(null);
+            }
+            if (\array_key_exists('status', $data) && $data['status'] !== null) {
                 $object->setStatus($data['status']);
                 unset($data['status']);
+            }
+            elseif (\array_key_exists('status', $data) && $data['status'] === null) {
+                $object->setStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

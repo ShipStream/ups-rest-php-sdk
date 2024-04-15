@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Code', $data)) {
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Image', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\FormImage', 'json', $context));
                 unset($data['Image']);
             }
-            if (\array_key_exists('FormGroupId', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('FormGroupId', $data) && $data['FormGroupId'] !== null) {
                 $object->setFormGroupId($data['FormGroupId']);
                 unset($data['FormGroupId']);
             }
-            if (\array_key_exists('FormGroupIdName', $data)) {
+            elseif (\array_key_exists('FormGroupId', $data) && $data['FormGroupId'] === null) {
+                $object->setFormGroupId(null);
+            }
+            if (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] !== null) {
                 $object->setFormGroupIdName($data['FormGroupIdName']);
                 unset($data['FormGroupIdName']);
+            }
+            elseif (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] === null) {
+                $object->setFormGroupIdName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -123,25 +138,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Code', $data)) {
+            if (\array_key_exists('Code', $data) && $data['Code'] !== null) {
                 $object->setCode($data['Code']);
                 unset($data['Code']);
             }
-            if (\array_key_exists('Description', $data)) {
+            elseif (\array_key_exists('Code', $data) && $data['Code'] === null) {
+                $object->setCode(null);
+            }
+            if (\array_key_exists('Description', $data) && $data['Description'] !== null) {
                 $object->setDescription($data['Description']);
                 unset($data['Description']);
             }
-            if (\array_key_exists('Image', $data)) {
+            elseif (\array_key_exists('Description', $data) && $data['Description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('Image', $data) && $data['Image'] !== null) {
                 $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\FormImage', 'json', $context));
                 unset($data['Image']);
             }
-            if (\array_key_exists('FormGroupId', $data)) {
+            elseif (\array_key_exists('Image', $data) && $data['Image'] === null) {
+                $object->setImage(null);
+            }
+            if (\array_key_exists('FormGroupId', $data) && $data['FormGroupId'] !== null) {
                 $object->setFormGroupId($data['FormGroupId']);
                 unset($data['FormGroupId']);
             }
-            if (\array_key_exists('FormGroupIdName', $data)) {
+            elseif (\array_key_exists('FormGroupId', $data) && $data['FormGroupId'] === null) {
+                $object->setFormGroupId(null);
+            }
+            if (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] !== null) {
                 $object->setFormGroupIdName($data['FormGroupIdName']);
                 unset($data['FormGroupIdName']);
+            }
+            elseif (\array_key_exists('FormGroupIdName', $data) && $data['FormGroupIdName'] === null) {
+                $object->setFormGroupIdName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

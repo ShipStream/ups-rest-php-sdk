@@ -40,29 +40,44 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('Service', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('Service', $data) && $data['Service'] !== null) {
                 $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseService', 'json', $context));
                 unset($data['Service']);
             }
-            if (\array_key_exists('RegulationSet', $data)) {
+            elseif (\array_key_exists('Service', $data) && $data['Service'] === null) {
+                $object->setService(null);
+            }
+            if (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] !== null) {
                 $object->setRegulationSet($data['RegulationSet']);
                 unset($data['RegulationSet']);
             }
-            if (\array_key_exists('PackageResults', $data)) {
+            elseif (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] === null) {
+                $object->setRegulationSet(null);
+            }
+            if (\array_key_exists('PackageResults', $data) && $data['PackageResults'] !== null) {
                 $values = [];
                 foreach ($data['PackageResults'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponsePackageResults', 'json', $context);
                 }
                 $object->setPackageResults($values);
                 unset($data['PackageResults']);
+            }
+            elseif (\array_key_exists('PackageResults', $data) && $data['PackageResults'] === null) {
+                $object->setPackageResults(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -133,29 +148,44 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('Service', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('Service', $data) && $data['Service'] !== null) {
                 $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseService', 'json', $context));
                 unset($data['Service']);
             }
-            if (\array_key_exists('RegulationSet', $data)) {
+            elseif (\array_key_exists('Service', $data) && $data['Service'] === null) {
+                $object->setService(null);
+            }
+            if (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] !== null) {
                 $object->setRegulationSet($data['RegulationSet']);
                 unset($data['RegulationSet']);
             }
-            if (\array_key_exists('PackageResults', $data)) {
+            elseif (\array_key_exists('RegulationSet', $data) && $data['RegulationSet'] === null) {
+                $object->setRegulationSet(null);
+            }
+            if (\array_key_exists('PackageResults', $data) && $data['PackageResults'] !== null) {
                 $values = [];
                 foreach ($data['PackageResults'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponsePackageResults', 'json', $context);
                 }
                 $object->setPackageResults($values);
                 unset($data['PackageResults']);
+            }
+            elseif (\array_key_exists('PackageResults', $data) && $data['PackageResults'] === null) {
+                $object->setPackageResults(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

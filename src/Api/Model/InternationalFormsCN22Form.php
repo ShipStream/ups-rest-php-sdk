@@ -18,20 +18,20 @@ class InternationalFormsCN22Form extends \ArrayObject
     1 = 8.5X11
      Required if the CN22 form container is present.
     *
-    * @var string
+    * @var string|null
     */
     protected $labelSize;
     /**
      * Number of label per page. Currently 1 per page is supported.  Required if the CN22 form container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $printsPerPage;
     /**
     * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
      Required if the CN22 form container is present.
     *
-    * @var string
+    * @var string|null
     */
     protected $labelPrintType;
     /**
@@ -41,25 +41,25 @@ class InternationalFormsCN22Form extends \ArrayObject
     3 = COMMERCIAL SAMPLE
     4 = OTHER  Required if the CN22 form container is present.
     *
-    * @var string
+    * @var string|null
     */
     protected $cN22Type;
     /**
      * Required if CN22Type is OTHER.  Required if the CN22 form container is present.
      *
-     * @var string
+     * @var string|null
      */
     protected $cN22OtherDescription;
     /**
      * String will replace default "Fold Here" text displayed on the label.
      *
-     * @var string
+     * @var string|null
      */
     protected $foldHereText;
     /**
      * 
      *
-     * @var CN22FormCN22Content[]
+     * @var list<CN22FormCN22Content>|null
      */
     protected $cN22Content;
     /**
@@ -68,9 +68,9 @@ class InternationalFormsCN22Form extends \ArrayObject
     1 = 8.5X11
      Required if the CN22 form container is present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLabelSize() : string
+    public function getLabelSize() : ?string
     {
         return $this->labelSize;
     }
@@ -80,11 +80,11 @@ class InternationalFormsCN22Form extends \ArrayObject
     1 = 8.5X11
      Required if the CN22 form container is present.
     *
-    * @param string $labelSize
+    * @param string|null $labelSize
     *
     * @return self
     */
-    public function setLabelSize(string $labelSize) : self
+    public function setLabelSize(?string $labelSize) : self
     {
         $this->initialized['labelSize'] = true;
         $this->labelSize = $labelSize;
@@ -93,20 +93,20 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * Number of label per page. Currently 1 per page is supported.  Required if the CN22 form container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPrintsPerPage() : string
+    public function getPrintsPerPage() : ?string
     {
         return $this->printsPerPage;
     }
     /**
      * Number of label per page. Currently 1 per page is supported.  Required if the CN22 form container is present.
      *
-     * @param string $printsPerPage
+     * @param string|null $printsPerPage
      *
      * @return self
      */
-    public function setPrintsPerPage(string $printsPerPage) : self
+    public function setPrintsPerPage(?string $printsPerPage) : self
     {
         $this->initialized['printsPerPage'] = true;
         $this->printsPerPage = $printsPerPage;
@@ -116,9 +116,9 @@ class InternationalFormsCN22Form extends \ArrayObject
     * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
      Required if the CN22 form container is present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getLabelPrintType() : string
+    public function getLabelPrintType() : ?string
     {
         return $this->labelPrintType;
     }
@@ -126,11 +126,11 @@ class InternationalFormsCN22Form extends \ArrayObject
     * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
      Required if the CN22 form container is present.
     *
-    * @param string $labelPrintType
+    * @param string|null $labelPrintType
     *
     * @return self
     */
-    public function setLabelPrintType(string $labelPrintType) : self
+    public function setLabelPrintType(?string $labelPrintType) : self
     {
         $this->initialized['labelPrintType'] = true;
         $this->labelPrintType = $labelPrintType;
@@ -143,9 +143,9 @@ class InternationalFormsCN22Form extends \ArrayObject
     3 = COMMERCIAL SAMPLE
     4 = OTHER  Required if the CN22 form container is present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCN22Type() : string
+    public function getCN22Type() : ?string
     {
         return $this->cN22Type;
     }
@@ -156,11 +156,11 @@ class InternationalFormsCN22Form extends \ArrayObject
     3 = COMMERCIAL SAMPLE
     4 = OTHER  Required if the CN22 form container is present.
     *
-    * @param string $cN22Type
+    * @param string|null $cN22Type
     *
     * @return self
     */
-    public function setCN22Type(string $cN22Type) : self
+    public function setCN22Type(?string $cN22Type) : self
     {
         $this->initialized['cN22Type'] = true;
         $this->cN22Type = $cN22Type;
@@ -169,20 +169,20 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * Required if CN22Type is OTHER.  Required if the CN22 form container is present.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCN22OtherDescription() : string
+    public function getCN22OtherDescription() : ?string
     {
         return $this->cN22OtherDescription;
     }
     /**
      * Required if CN22Type is OTHER.  Required if the CN22 form container is present.
      *
-     * @param string $cN22OtherDescription
+     * @param string|null $cN22OtherDescription
      *
      * @return self
      */
-    public function setCN22OtherDescription(string $cN22OtherDescription) : self
+    public function setCN22OtherDescription(?string $cN22OtherDescription) : self
     {
         $this->initialized['cN22OtherDescription'] = true;
         $this->cN22OtherDescription = $cN22OtherDescription;
@@ -191,20 +191,20 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * String will replace default "Fold Here" text displayed on the label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFoldHereText() : string
+    public function getFoldHereText() : ?string
     {
         return $this->foldHereText;
     }
     /**
      * String will replace default "Fold Here" text displayed on the label.
      *
-     * @param string $foldHereText
+     * @param string|null $foldHereText
      *
      * @return self
      */
-    public function setFoldHereText(string $foldHereText) : self
+    public function setFoldHereText(?string $foldHereText) : self
     {
         $this->initialized['foldHereText'] = true;
         $this->foldHereText = $foldHereText;
@@ -213,20 +213,20 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * 
      *
-     * @return CN22FormCN22Content[]
+     * @return list<CN22FormCN22Content>|null
      */
-    public function getCN22Content() : array
+    public function getCN22Content() : ?array
     {
         return $this->cN22Content;
     }
     /**
      * 
      *
-     * @param CN22FormCN22Content[] $cN22Content
+     * @param list<CN22FormCN22Content>|null $cN22Content
      *
      * @return self
      */
-    public function setCN22Content(array $cN22Content) : self
+    public function setCN22Content(?array $cN22Content) : self
     {
         $this->initialized['cN22Content'] = true;
         $this->cN22Content = $cN22Content;

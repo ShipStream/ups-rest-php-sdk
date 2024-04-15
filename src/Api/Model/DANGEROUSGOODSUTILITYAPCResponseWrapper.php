@@ -15,26 +15,26 @@ class DANGEROUSGOODSUTILITYAPCResponseWrapper extends \ArrayObject
     /**
      * Dangerous Goods Utility Response container for Acceptance Audit Pre-check.
      *
-     * @var AcceptanceAuditPreCheckResponse
+     * @var AcceptanceAuditPreCheckResponse|null
      */
     protected $acceptanceAuditPreCheckResponse;
     /**
      * Dangerous Goods Utility Response container for Acceptance Audit Pre-check.
      *
-     * @return AcceptanceAuditPreCheckResponse
+     * @return AcceptanceAuditPreCheckResponse|null
      */
-    public function getAcceptanceAuditPreCheckResponse() : AcceptanceAuditPreCheckResponse
+    public function getAcceptanceAuditPreCheckResponse() : ?AcceptanceAuditPreCheckResponse
     {
         return $this->acceptanceAuditPreCheckResponse;
     }
     /**
      * Dangerous Goods Utility Response container for Acceptance Audit Pre-check.
      *
-     * @param AcceptanceAuditPreCheckResponse $acceptanceAuditPreCheckResponse
+     * @param AcceptanceAuditPreCheckResponse|null $acceptanceAuditPreCheckResponse
      *
      * @return self
      */
-    public function setAcceptanceAuditPreCheckResponse(AcceptanceAuditPreCheckResponse $acceptanceAuditPreCheckResponse) : self
+    public function setAcceptanceAuditPreCheckResponse(?AcceptanceAuditPreCheckResponse $acceptanceAuditPreCheckResponse) : self
     {
         $this->initialized['acceptanceAuditPreCheckResponse'] = true;
         $this->acceptanceAuditPreCheckResponse = $acceptanceAuditPreCheckResponse;

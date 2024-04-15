@@ -20,13 +20,13 @@ class PackageServiceOptionsNotification extends \ArrayObject
     8 - QV Delivery Notification 
     For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
     *
-    * @var string
+    * @var string|null
     */
     protected $notificationCode;
     /**
      * Container for the e-mail message.
      *
-     * @var NotificationEMail
+     * @var NotificationEMail|null
      */
     protected $eMail;
     /**
@@ -37,9 +37,9 @@ class PackageServiceOptionsNotification extends \ArrayObject
     8 - QV Delivery Notification 
     For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
     *
-    * @return string
+    * @return string|null
     */
-    public function getNotificationCode() : string
+    public function getNotificationCode() : ?string
     {
         return $this->notificationCode;
     }
@@ -51,11 +51,11 @@ class PackageServiceOptionsNotification extends \ArrayObject
     8 - QV Delivery Notification 
     For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
     *
-    * @param string $notificationCode
+    * @param string|null $notificationCode
     *
     * @return self
     */
-    public function setNotificationCode(string $notificationCode) : self
+    public function setNotificationCode(?string $notificationCode) : self
     {
         $this->initialized['notificationCode'] = true;
         $this->notificationCode = $notificationCode;
@@ -64,20 +64,20 @@ class PackageServiceOptionsNotification extends \ArrayObject
     /**
      * Container for the e-mail message.
      *
-     * @return NotificationEMail
+     * @return NotificationEMail|null
      */
-    public function getEMail() : NotificationEMail
+    public function getEMail() : ?NotificationEMail
     {
         return $this->eMail;
     }
     /**
      * Container for the e-mail message.
      *
-     * @param NotificationEMail $eMail
+     * @param NotificationEMail|null $eMail
      *
      * @return self
      */
-    public function setEMail(NotificationEMail $eMail) : self
+    public function setEMail(?NotificationEMail $eMail) : self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;

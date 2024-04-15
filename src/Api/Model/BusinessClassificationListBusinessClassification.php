@@ -15,32 +15,32 @@ class BusinessClassificationListBusinessClassification extends \ArrayObject
     /**
      * Business Classification code of UPS Access Point. Please refer to appendix D for a list of business classification.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of business classification.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Business Classification code of UPS Access Point. Please refer to appendix D for a list of business classification.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Business Classification code of UPS Access Point. Please refer to appendix D for a list of business classification.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class BusinessClassificationListBusinessClassification extends \ArrayObject
     /**
      * Description of business classification.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of business classification.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

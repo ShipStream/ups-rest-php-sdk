@@ -16,58 +16,58 @@ class EEIInformationDDTCInformation extends \ArrayObject
     * The specific citation (exemption number) under the International Traffic in Arms Regulations (ITAR) from the Code of Federal Register (see 22 CFR 120-130) that exempts the shipment from the requirements for a license or other written authorization from the Directorate of Trade Controls (DDTC). 
     Refer to EEI License Codes in the Appendix for valid values.  Applies to EEI Form only. This field is applicable for EEIFiling option 1A and 3.
     *
-    * @var string
+    * @var string|null
     */
     protected $iTARExemptionNumber;
     /**
      * Digit numeric code (e.g. 01-18, 20 or 21). Indicates the U.S. Munitions List (USML) category article, service or related technical data as it applies to the article reported.  Applies to EEI form only. It is required for EEIFilingOption code 3.
      *
-     * @var string
+     * @var string|null
      */
     protected $uSMLCategoryCode;
     /**
      * Presence/Absent indicator. Certification by the U.S. exporter that the exporter is an eligible party to participate in the defense trade.
      *
-     * @var string
+     * @var string|null
      */
     protected $eligiblePartyIndicator;
     /**
      * It is a unique registration code assigned to the registrant. The DDTC registration code consist of a letter prefix, M (assigned to a manufacturer and/or exporter) or K (assigned to a broker), followed by four or five digits (e.g. K-1234 or M12345).  It is required for EEIFilingOption code 3.
      *
-     * @var string
+     * @var string|null
      */
     protected $registrationNumber;
     /**
      * Export Quantity.  Applies to EEI form only. It is required for EEIFilingOption code 3. Only positive integer value is valid.
      *
-     * @var string
+     * @var string|null
      */
     protected $quantity;
     /**
      * Container for unit of measurement.  Applies to EEI form only. It is required for EEIFilingOption code 3.
      *
-     * @var DDTCInformationUnitOfMeasurement
+     * @var DDTCInformationUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Presence/ Absence Indicator.  Applies to EEI form only.
      *
-     * @var string
+     * @var string|null
      */
     protected $significantMilitaryEquipmentIndicator;
     /**
      * Approved Community Member Number (ACM). It is required to be provided along with ITARExemptionNumber for some License code (SGB and SAU). The ACM# for the United Kingdom (License code SGB) must begin with UK followed by 9 numbers.  The ACM# for Australia (License Code SAU) must begin with DTT followed by 8 numbers.  Applies to EEI form only.  It is required for EEIFilingOption code 1A and 3.
      *
-     * @var string
+     * @var string|null
      */
     protected $aCMNumber;
     /**
     * The specific citation (exemption number) under the International Traffic in Arms Regulations (ITAR) from the Code of Federal Register (see 22 CFR 120-130) that exempts the shipment from the requirements for a license or other written authorization from the Directorate of Trade Controls (DDTC). 
     Refer to EEI License Codes in the Appendix for valid values.  Applies to EEI Form only. This field is applicable for EEIFiling option 1A and 3.
     *
-    * @return string
+    * @return string|null
     */
-    public function getITARExemptionNumber() : string
+    public function getITARExemptionNumber() : ?string
     {
         return $this->iTARExemptionNumber;
     }
@@ -75,11 +75,11 @@ class EEIInformationDDTCInformation extends \ArrayObject
     * The specific citation (exemption number) under the International Traffic in Arms Regulations (ITAR) from the Code of Federal Register (see 22 CFR 120-130) that exempts the shipment from the requirements for a license or other written authorization from the Directorate of Trade Controls (DDTC). 
     Refer to EEI License Codes in the Appendix for valid values.  Applies to EEI Form only. This field is applicable for EEIFiling option 1A and 3.
     *
-    * @param string $iTARExemptionNumber
+    * @param string|null $iTARExemptionNumber
     *
     * @return self
     */
-    public function setITARExemptionNumber(string $iTARExemptionNumber) : self
+    public function setITARExemptionNumber(?string $iTARExemptionNumber) : self
     {
         $this->initialized['iTARExemptionNumber'] = true;
         $this->iTARExemptionNumber = $iTARExemptionNumber;
@@ -88,20 +88,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * Digit numeric code (e.g. 01-18, 20 or 21). Indicates the U.S. Munitions List (USML) category article, service or related technical data as it applies to the article reported.  Applies to EEI form only. It is required for EEIFilingOption code 3.
      *
-     * @return string
+     * @return string|null
      */
-    public function getUSMLCategoryCode() : string
+    public function getUSMLCategoryCode() : ?string
     {
         return $this->uSMLCategoryCode;
     }
     /**
      * Digit numeric code (e.g. 01-18, 20 or 21). Indicates the U.S. Munitions List (USML) category article, service or related technical data as it applies to the article reported.  Applies to EEI form only. It is required for EEIFilingOption code 3.
      *
-     * @param string $uSMLCategoryCode
+     * @param string|null $uSMLCategoryCode
      *
      * @return self
      */
-    public function setUSMLCategoryCode(string $uSMLCategoryCode) : self
+    public function setUSMLCategoryCode(?string $uSMLCategoryCode) : self
     {
         $this->initialized['uSMLCategoryCode'] = true;
         $this->uSMLCategoryCode = $uSMLCategoryCode;
@@ -110,20 +110,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * Presence/Absent indicator. Certification by the U.S. exporter that the exporter is an eligible party to participate in the defense trade.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEligiblePartyIndicator() : string
+    public function getEligiblePartyIndicator() : ?string
     {
         return $this->eligiblePartyIndicator;
     }
     /**
      * Presence/Absent indicator. Certification by the U.S. exporter that the exporter is an eligible party to participate in the defense trade.
      *
-     * @param string $eligiblePartyIndicator
+     * @param string|null $eligiblePartyIndicator
      *
      * @return self
      */
-    public function setEligiblePartyIndicator(string $eligiblePartyIndicator) : self
+    public function setEligiblePartyIndicator(?string $eligiblePartyIndicator) : self
     {
         $this->initialized['eligiblePartyIndicator'] = true;
         $this->eligiblePartyIndicator = $eligiblePartyIndicator;
@@ -132,20 +132,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * It is a unique registration code assigned to the registrant. The DDTC registration code consist of a letter prefix, M (assigned to a manufacturer and/or exporter) or K (assigned to a broker), followed by four or five digits (e.g. K-1234 or M12345).  It is required for EEIFilingOption code 3.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRegistrationNumber() : string
+    public function getRegistrationNumber() : ?string
     {
         return $this->registrationNumber;
     }
     /**
      * It is a unique registration code assigned to the registrant. The DDTC registration code consist of a letter prefix, M (assigned to a manufacturer and/or exporter) or K (assigned to a broker), followed by four or five digits (e.g. K-1234 or M12345).  It is required for EEIFilingOption code 3.
      *
-     * @param string $registrationNumber
+     * @param string|null $registrationNumber
      *
      * @return self
      */
-    public function setRegistrationNumber(string $registrationNumber) : self
+    public function setRegistrationNumber(?string $registrationNumber) : self
     {
         $this->initialized['registrationNumber'] = true;
         $this->registrationNumber = $registrationNumber;
@@ -154,20 +154,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * Export Quantity.  Applies to EEI form only. It is required for EEIFilingOption code 3. Only positive integer value is valid.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuantity() : string
+    public function getQuantity() : ?string
     {
         return $this->quantity;
     }
     /**
      * Export Quantity.  Applies to EEI form only. It is required for EEIFilingOption code 3. Only positive integer value is valid.
      *
-     * @param string $quantity
+     * @param string|null $quantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(?string $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -176,20 +176,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * Container for unit of measurement.  Applies to EEI form only. It is required for EEIFilingOption code 3.
      *
-     * @return DDTCInformationUnitOfMeasurement
+     * @return DDTCInformationUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : DDTCInformationUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?DDTCInformationUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * Container for unit of measurement.  Applies to EEI form only. It is required for EEIFilingOption code 3.
      *
-     * @param DDTCInformationUnitOfMeasurement $unitOfMeasurement
+     * @param DDTCInformationUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DDTCInformationUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?DDTCInformationUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -198,20 +198,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * Presence/ Absence Indicator.  Applies to EEI form only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSignificantMilitaryEquipmentIndicator() : string
+    public function getSignificantMilitaryEquipmentIndicator() : ?string
     {
         return $this->significantMilitaryEquipmentIndicator;
     }
     /**
      * Presence/ Absence Indicator.  Applies to EEI form only.
      *
-     * @param string $significantMilitaryEquipmentIndicator
+     * @param string|null $significantMilitaryEquipmentIndicator
      *
      * @return self
      */
-    public function setSignificantMilitaryEquipmentIndicator(string $significantMilitaryEquipmentIndicator) : self
+    public function setSignificantMilitaryEquipmentIndicator(?string $significantMilitaryEquipmentIndicator) : self
     {
         $this->initialized['significantMilitaryEquipmentIndicator'] = true;
         $this->significantMilitaryEquipmentIndicator = $significantMilitaryEquipmentIndicator;
@@ -220,20 +220,20 @@ class EEIInformationDDTCInformation extends \ArrayObject
     /**
      * Approved Community Member Number (ACM). It is required to be provided along with ITARExemptionNumber for some License code (SGB and SAU). The ACM# for the United Kingdom (License code SGB) must begin with UK followed by 9 numbers.  The ACM# for Australia (License Code SAU) must begin with DTT followed by 8 numbers.  Applies to EEI form only.  It is required for EEIFilingOption code 1A and 3.
      *
-     * @return string
+     * @return string|null
      */
-    public function getACMNumber() : string
+    public function getACMNumber() : ?string
     {
         return $this->aCMNumber;
     }
     /**
      * Approved Community Member Number (ACM). It is required to be provided along with ITARExemptionNumber for some License code (SGB and SAU). The ACM# for the United Kingdom (License code SGB) must begin with UK followed by 9 numbers.  The ACM# for Australia (License Code SAU) must begin with DTT followed by 8 numbers.  Applies to EEI form only.  It is required for EEIFilingOption code 1A and 3.
      *
-     * @param string $aCMNumber
+     * @param string|null $aCMNumber
      *
      * @return self
      */
-    public function setACMNumber(string $aCMNumber) : self
+    public function setACMNumber(?string $aCMNumber) : self
     {
         $this->initialized['aCMNumber'] = true;
         $this->aCMNumber = $aCMNumber;

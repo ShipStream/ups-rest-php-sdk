@@ -17,7 +17,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
     *
-    * @var string
+    * @var string|null
     */
     protected $accountNumber;
     /**
@@ -29,7 +29,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     Credit card payment is valid for shipments without return service only.
     *
-    * @var BillShipperCreditCard
+    * @var BillShipperCreditCard|null
     */
     protected $creditCard;
     /**
@@ -43,7 +43,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
     *
-    * @var string
+    * @var string|null
     */
     protected $alternatePaymentMethod;
     /**
@@ -51,9 +51,9 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
@@ -62,11 +62,11 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
     *
-    * @param string $accountNumber
+    * @param string|null $accountNumber
     *
     * @return self
     */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -81,9 +81,9 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     Credit card payment is valid for shipments without return service only.
     *
-    * @return BillShipperCreditCard
+    * @return BillShipperCreditCard|null
     */
-    public function getCreditCard() : BillShipperCreditCard
+    public function getCreditCard() : ?BillShipperCreditCard
     {
         return $this->creditCard;
     }
@@ -96,11 +96,11 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     Credit card payment is valid for shipments without return service only.
     *
-    * @param BillShipperCreditCard $creditCard
+    * @param BillShipperCreditCard|null $creditCard
     *
     * @return self
     */
-    public function setCreditCard(BillShipperCreditCard $creditCard) : self
+    public function setCreditCard(?BillShipperCreditCard $creditCard) : self
     {
         $this->initialized['creditCard'] = true;
         $this->creditCard = $creditCard;
@@ -117,9 +117,9 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
     *
-    * @return string
+    * @return string|null
     */
-    public function getAlternatePaymentMethod() : string
+    public function getAlternatePaymentMethod() : ?string
     {
         return $this->alternatePaymentMethod;
     }
@@ -134,11 +134,11 @@ class ShipmentChargeBillShipper extends \ArrayObject
     
     This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
     *
-    * @param string $alternatePaymentMethod
+    * @param string|null $alternatePaymentMethod
     *
     * @return self
     */
-    public function setAlternatePaymentMethod(string $alternatePaymentMethod) : self
+    public function setAlternatePaymentMethod(?string $alternatePaymentMethod) : self
     {
         $this->initialized['alternatePaymentMethod'] = true;
         $this->alternatePaymentMethod = $alternatePaymentMethod;

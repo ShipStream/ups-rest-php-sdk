@@ -15,32 +15,32 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
     /**
      * Height of the label image. For IN, use whole inches.  For EPL2, ZPL and SPL Labels. Only valid values are 6 or 8. Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
      *
-     * @var string
+     * @var string|null
      */
     protected $height;
     /**
      * Width of the label image. For IN, use whole inches.  For EPL2, ZPL and SPL Labels. Valid value is 4. Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
      *
-     * @var string
+     * @var string|null
      */
     protected $width;
     /**
      * Height of the label image. For IN, use whole inches.  For EPL2, ZPL and SPL Labels. Only valid values are 6 or 8. Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHeight() : string
+    public function getHeight() : ?string
     {
         return $this->height;
     }
     /**
      * Height of the label image. For IN, use whole inches.  For EPL2, ZPL and SPL Labels. Only valid values are 6 or 8. Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
      *
-     * @param string $height
+     * @param string|null $height
      *
      * @return self
      */
-    public function setHeight(string $height) : self
+    public function setHeight(?string $height) : self
     {
         $this->initialized['height'] = true;
         $this->height = $height;
@@ -49,20 +49,20 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
     /**
      * Width of the label image. For IN, use whole inches.  For EPL2, ZPL and SPL Labels. Valid value is 4. Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWidth() : string
+    public function getWidth() : ?string
     {
         return $this->width;
     }
     /**
      * Width of the label image. For IN, use whole inches.  For EPL2, ZPL and SPL Labels. Valid value is 4. Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
      *
-     * @param string $width
+     * @param string|null $width
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(?string $width) : self
     {
         $this->initialized['width'] = true;
         $this->width = $width;

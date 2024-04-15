@@ -16,16 +16,16 @@ class LabelRecoveryResponseForm extends \ArrayObject
     * Container tag for the International forms image. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @var FormImage
+    * @var FormImage|null
     */
     protected $image;
     /**
     * Container tag for the International forms image. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @return FormImage
+    * @return FormImage|null
     */
-    public function getImage() : FormImage
+    public function getImage() : ?FormImage
     {
         return $this->image;
     }
@@ -33,11 +33,11 @@ class LabelRecoveryResponseForm extends \ArrayObject
     * Container tag for the International forms image. 
       Applicable only for ShipmentResponse and ShipAcceptResponse.
     *
-    * @param FormImage $image
+    * @param FormImage|null $image
     *
     * @return self
     */
-    public function setImage(FormImage $image) : self
+    public function setImage(?FormImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

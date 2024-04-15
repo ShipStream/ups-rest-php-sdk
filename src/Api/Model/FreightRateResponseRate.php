@@ -15,32 +15,32 @@ class FreightRateResponseRate extends \ArrayObject
     /**
      * Rate Type Container.
      *
-     * @var RateType
+     * @var RateType|null
      */
     protected $type;
     /**
      * Factor Container.
      *
-     * @var RateFactor
+     * @var RateFactor|null
      */
     protected $factor;
     /**
      * Rate Type Container.
      *
-     * @return RateType
+     * @return RateType|null
      */
-    public function getType() : RateType
+    public function getType() : ?RateType
     {
         return $this->type;
     }
     /**
      * Rate Type Container.
      *
-     * @param RateType $type
+     * @param RateType|null $type
      *
      * @return self
      */
-    public function setType(RateType $type) : self
+    public function setType(?RateType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -49,20 +49,20 @@ class FreightRateResponseRate extends \ArrayObject
     /**
      * Factor Container.
      *
-     * @return RateFactor
+     * @return RateFactor|null
      */
-    public function getFactor() : RateFactor
+    public function getFactor() : ?RateFactor
     {
         return $this->factor;
     }
     /**
      * Factor Container.
      *
-     * @param RateFactor $factor
+     * @param RateFactor|null $factor
      *
      * @return self
      */
-    public function setFactor(RateFactor $factor) : self
+    public function setFactor(?RateFactor $factor) : self
     {
         $this->initialized['factor'] = true;
         $this->factor = $factor;

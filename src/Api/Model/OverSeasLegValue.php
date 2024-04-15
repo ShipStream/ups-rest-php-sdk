@@ -16,23 +16,23 @@ class OverSeasLegValue extends \ArrayObject
     * Dimensions Value Cube Container.
     Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
     *
-    * @var ValueCube
+    * @var ValueCube|null
     */
     protected $cube;
     /**
     * Dimensions Value CWT Container.
     Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
     *
-    * @var ValueCWT
+    * @var ValueCWT|null
     */
     protected $cWT;
     /**
     * Dimensions Value Cube Container.
     Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
     *
-    * @return ValueCube
+    * @return ValueCube|null
     */
-    public function getCube() : ValueCube
+    public function getCube() : ?ValueCube
     {
         return $this->cube;
     }
@@ -40,11 +40,11 @@ class OverSeasLegValue extends \ArrayObject
     * Dimensions Value Cube Container.
     Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
     *
-    * @param ValueCube $cube
+    * @param ValueCube|null $cube
     *
     * @return self
     */
-    public function setCube(ValueCube $cube) : self
+    public function setCube(?ValueCube $cube) : self
     {
         $this->initialized['cube'] = true;
         $this->cube = $cube;
@@ -54,9 +54,9 @@ class OverSeasLegValue extends \ArrayObject
     * Dimensions Value CWT Container.
     Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
     *
-    * @return ValueCWT
+    * @return ValueCWT|null
     */
-    public function getCWT() : ValueCWT
+    public function getCWT() : ?ValueCWT
     {
         return $this->cWT;
     }
@@ -64,11 +64,11 @@ class OverSeasLegValue extends \ArrayObject
     * Dimensions Value CWT Container.
     Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
     *
-    * @param ValueCWT $cWT
+    * @param ValueCWT|null $cWT
     *
     * @return self
     */
-    public function setCWT(ValueCWT $cWT) : self
+    public function setCWT(?ValueCWT $cWT) : self
     {
         $this->initialized['cWT'] = true;
         $this->cWT = $cWT;

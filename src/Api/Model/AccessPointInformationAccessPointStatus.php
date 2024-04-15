@@ -19,13 +19,13 @@ class AccessPointInformationAccessPointStatus extends \ArrayObject
     07-Active-unavailable
     08-Terminated
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Description of status code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -35,9 +35,9 @@ class AccessPointInformationAccessPointStatus extends \ArrayObject
     07-Active-unavailable
     08-Terminated
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -48,11 +48,11 @@ class AccessPointInformationAccessPointStatus extends \ArrayObject
     07-Active-unavailable
     08-Terminated
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -61,20 +61,20 @@ class AccessPointInformationAccessPointStatus extends \ArrayObject
     /**
      * Description of status code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of status code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

@@ -15,32 +15,32 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
     /**
      * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active. For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account. All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
      *
-     * @var string
+     * @var string|null
      */
     protected $accountNumber;
     /**
      * Container for additional information for the third party UPS accounts address.
      *
-     * @var RateBillThirdPartyAddress
+     * @var RateBillThirdPartyAddress|null
      */
     protected $address;
     /**
      * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active. For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account. All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber() : ?string
     {
         return $this->accountNumber;
     }
     /**
      * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active. For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account. All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
      *
-     * @param string $accountNumber
+     * @param string|null $accountNumber
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(?string $accountNumber) : self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -49,20 +49,20 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
     /**
      * Container for additional information for the third party UPS accounts address.
      *
-     * @return RateBillThirdPartyAddress
+     * @return RateBillThirdPartyAddress|null
      */
-    public function getAddress() : RateBillThirdPartyAddress
+    public function getAddress() : ?RateBillThirdPartyAddress
     {
         return $this->address;
     }
     /**
      * Container for additional information for the third party UPS accounts address.
      *
-     * @param RateBillThirdPartyAddress $address
+     * @param RateBillThirdPartyAddress|null $address
      *
      * @return self
      */
-    public function setAddress(RateBillThirdPartyAddress $address) : self
+    public function setAddress(?RateBillThirdPartyAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

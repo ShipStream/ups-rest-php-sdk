@@ -15,26 +15,26 @@ class PICKUPCreationResponseWrapper extends \ArrayObject
     /**
      * The response for scheduling an on-callpickup.
      *
-     * @var PickupCreationResponse
+     * @var PickupCreationResponse|null
      */
     protected $pickupCreationResponse;
     /**
      * The response for scheduling an on-callpickup.
      *
-     * @return PickupCreationResponse
+     * @return PickupCreationResponse|null
      */
-    public function getPickupCreationResponse() : PickupCreationResponse
+    public function getPickupCreationResponse() : ?PickupCreationResponse
     {
         return $this->pickupCreationResponse;
     }
     /**
      * The response for scheduling an on-callpickup.
      *
-     * @param PickupCreationResponse $pickupCreationResponse
+     * @param PickupCreationResponse|null $pickupCreationResponse
      *
      * @return self
      */
-    public function setPickupCreationResponse(PickupCreationResponse $pickupCreationResponse) : self
+    public function setPickupCreationResponse(?PickupCreationResponse $pickupCreationResponse) : self
     {
         $this->initialized['pickupCreationResponse'] = true;
         $this->pickupCreationResponse = $pickupCreationResponse;

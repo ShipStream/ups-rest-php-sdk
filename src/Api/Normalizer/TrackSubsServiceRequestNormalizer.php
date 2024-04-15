@@ -40,15 +40,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('locale', $data)) {
+            if (\array_key_exists('locale', $data) && $data['locale'] !== null) {
                 $object->setLocale($data['locale']);
                 unset($data['locale']);
             }
-            if (\array_key_exists('countryCode', $data)) {
+            elseif (\array_key_exists('locale', $data) && $data['locale'] === null) {
+                $object->setLocale(null);
+            }
+            if (\array_key_exists('countryCode', $data) && $data['countryCode'] !== null) {
                 $object->setCountryCode($data['countryCode']);
                 unset($data['countryCode']);
             }
-            if (\array_key_exists('trackingNumberList', $data)) {
+            elseif (\array_key_exists('countryCode', $data) && $data['countryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('trackingNumberList', $data) && $data['trackingNumberList'] !== null) {
                 $values = [];
                 foreach ($data['trackingNumberList'] as $value) {
                     $values[] = $value;
@@ -56,7 +62,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setTrackingNumberList($values);
                 unset($data['trackingNumberList']);
             }
-            if (\array_key_exists('scanPreference', $data)) {
+            elseif (\array_key_exists('trackingNumberList', $data) && $data['trackingNumberList'] === null) {
+                $object->setTrackingNumberList(null);
+            }
+            if (\array_key_exists('scanPreference', $data) && $data['scanPreference'] !== null) {
                 $values_1 = [];
                 foreach ($data['scanPreference'] as $value_1) {
                     $values_1[] = $value_1;
@@ -64,9 +73,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setScanPreference($values_1);
                 unset($data['scanPreference']);
             }
-            if (\array_key_exists('destination', $data)) {
+            elseif (\array_key_exists('scanPreference', $data) && $data['scanPreference'] === null) {
+                $object->setScanPreference(null);
+            }
+            if (\array_key_exists('destination', $data) && $data['destination'] !== null) {
                 $object->setDestination($this->denormalizer->denormalize($data['destination'], 'ShipStream\\Ups\\Api\\Model\\Destination', 'json', $context));
                 unset($data['destination']);
+            }
+            elseif (\array_key_exists('destination', $data) && $data['destination'] === null) {
+                $object->setDestination(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -135,15 +150,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('locale', $data)) {
+            if (\array_key_exists('locale', $data) && $data['locale'] !== null) {
                 $object->setLocale($data['locale']);
                 unset($data['locale']);
             }
-            if (\array_key_exists('countryCode', $data)) {
+            elseif (\array_key_exists('locale', $data) && $data['locale'] === null) {
+                $object->setLocale(null);
+            }
+            if (\array_key_exists('countryCode', $data) && $data['countryCode'] !== null) {
                 $object->setCountryCode($data['countryCode']);
                 unset($data['countryCode']);
             }
-            if (\array_key_exists('trackingNumberList', $data)) {
+            elseif (\array_key_exists('countryCode', $data) && $data['countryCode'] === null) {
+                $object->setCountryCode(null);
+            }
+            if (\array_key_exists('trackingNumberList', $data) && $data['trackingNumberList'] !== null) {
                 $values = [];
                 foreach ($data['trackingNumberList'] as $value) {
                     $values[] = $value;
@@ -151,7 +172,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setTrackingNumberList($values);
                 unset($data['trackingNumberList']);
             }
-            if (\array_key_exists('scanPreference', $data)) {
+            elseif (\array_key_exists('trackingNumberList', $data) && $data['trackingNumberList'] === null) {
+                $object->setTrackingNumberList(null);
+            }
+            if (\array_key_exists('scanPreference', $data) && $data['scanPreference'] !== null) {
                 $values_1 = [];
                 foreach ($data['scanPreference'] as $value_1) {
                     $values_1[] = $value_1;
@@ -159,9 +183,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setScanPreference($values_1);
                 unset($data['scanPreference']);
             }
-            if (\array_key_exists('destination', $data)) {
+            elseif (\array_key_exists('scanPreference', $data) && $data['scanPreference'] === null) {
+                $object->setScanPreference(null);
+            }
+            if (\array_key_exists('destination', $data) && $data['destination'] !== null) {
                 $object->setDestination($this->denormalizer->denormalize($data['destination'], 'ShipStream\\Ups\\Api\\Model\\Destination', 'json', $context));
                 unset($data['destination']);
+            }
+            elseif (\array_key_exists('destination', $data) && $data['destination'] === null) {
+                $object->setDestination(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,62 +15,62 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Facility SLIC. Required for Freight Will call search if FreightWillCallRequestType is 2.
      *
-     * @var string
+     * @var string|null
      */
     protected $sLIC;
     /**
      * Address line
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $addressLine;
     /**
      * City. Required for Freight Will call search if FreightWillCallRequestType is 3.
      *
-     * @var string
+     * @var string|null
      */
     protected $city;
     /**
      * Postal code. Required for Freight Will call search if FreightWillCallRequestType is 1.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCodePrimaryLow;
     /**
      * 4 Digit postal code extension. Valid for US only.
      *
-     * @var string
+     * @var string|null
      */
     protected $postalCodeExtendedLow;
     /**
      * State. Required if FrieghtWillCallRequestType is 3 if State is available.
      *
-     * @var string
+     * @var string|null
      */
     protected $state;
     /**
      * Country or territory code.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Facility SLIC. Required for Freight Will call search if FreightWillCallRequestType is 2.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSLIC() : string
+    public function getSLIC() : ?string
     {
         return $this->sLIC;
     }
     /**
      * Facility SLIC. Required for Freight Will call search if FreightWillCallRequestType is 2.
      *
-     * @param string $sLIC
+     * @param string|null $sLIC
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(?string $sLIC) : self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -79,20 +79,20 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Address line
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getAddressLine() : array
+    public function getAddressLine() : ?array
     {
         return $this->addressLine;
     }
     /**
      * Address line
      *
-     * @param string[] $addressLine
+     * @param list<string>|null $addressLine
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(?array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -101,20 +101,20 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * City. Required for Freight Will call search if FreightWillCallRequestType is 3.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCity() : string
+    public function getCity() : ?string
     {
         return $this->city;
     }
     /**
      * City. Required for Freight Will call search if FreightWillCallRequestType is 3.
      *
-     * @param string $city
+     * @param string|null $city
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(?string $city) : self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -123,20 +123,20 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Postal code. Required for Freight Will call search if FreightWillCallRequestType is 1.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCodePrimaryLow() : string
+    public function getPostalCodePrimaryLow() : ?string
     {
         return $this->postalCodePrimaryLow;
     }
     /**
      * Postal code. Required for Freight Will call search if FreightWillCallRequestType is 1.
      *
-     * @param string $postalCodePrimaryLow
+     * @param string|null $postalCodePrimaryLow
      *
      * @return self
      */
-    public function setPostalCodePrimaryLow(string $postalCodePrimaryLow) : self
+    public function setPostalCodePrimaryLow(?string $postalCodePrimaryLow) : self
     {
         $this->initialized['postalCodePrimaryLow'] = true;
         $this->postalCodePrimaryLow = $postalCodePrimaryLow;
@@ -145,20 +145,20 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * 4 Digit postal code extension. Valid for US only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostalCodeExtendedLow() : string
+    public function getPostalCodeExtendedLow() : ?string
     {
         return $this->postalCodeExtendedLow;
     }
     /**
      * 4 Digit postal code extension. Valid for US only.
      *
-     * @param string $postalCodeExtendedLow
+     * @param string|null $postalCodeExtendedLow
      *
      * @return self
      */
-    public function setPostalCodeExtendedLow(string $postalCodeExtendedLow) : self
+    public function setPostalCodeExtendedLow(?string $postalCodeExtendedLow) : self
     {
         $this->initialized['postalCodeExtendedLow'] = true;
         $this->postalCodeExtendedLow = $postalCodeExtendedLow;
@@ -167,20 +167,20 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * State. Required if FrieghtWillCallRequestType is 3 if State is available.
      *
-     * @return string
+     * @return string|null
      */
-    public function getState() : string
+    public function getState() : ?string
     {
         return $this->state;
     }
     /**
      * State. Required if FrieghtWillCallRequestType is 3 if State is available.
      *
-     * @param string $state
+     * @param string|null $state
      *
      * @return self
      */
-    public function setState(string $state) : self
+    public function setState(?string $state) : self
     {
         $this->initialized['state'] = true;
         $this->state = $state;
@@ -189,20 +189,20 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Country or territory code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Country or territory code.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

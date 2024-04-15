@@ -15,38 +15,38 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
     /**
      * Name of company
      *
-     * @var string
+     * @var string|null
      */
     protected $companyName;
     /**
      * Container for email notifications
      *
-     * @var FreightShipPickupNotificationsEMailNotification
+     * @var FreightShipPickupNotificationsEMailNotification|null
      */
     protected $eMailNotification;
     /**
      * Alternate email address to receive failure notifications
      *
-     * @var string
+     * @var string|null
      */
     protected $failedEMail;
     /**
      * Name of company
      *
-     * @return string
+     * @return string|null
      */
-    public function getCompanyName() : string
+    public function getCompanyName() : ?string
     {
         return $this->companyName;
     }
     /**
      * Name of company
      *
-     * @param string $companyName
+     * @param string|null $companyName
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(?string $companyName) : self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -55,20 +55,20 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
     /**
      * Container for email notifications
      *
-     * @return FreightShipPickupNotificationsEMailNotification
+     * @return FreightShipPickupNotificationsEMailNotification|null
      */
-    public function getEMailNotification() : FreightShipPickupNotificationsEMailNotification
+    public function getEMailNotification() : ?FreightShipPickupNotificationsEMailNotification
     {
         return $this->eMailNotification;
     }
     /**
      * Container for email notifications
      *
-     * @param FreightShipPickupNotificationsEMailNotification $eMailNotification
+     * @param FreightShipPickupNotificationsEMailNotification|null $eMailNotification
      *
      * @return self
      */
-    public function setEMailNotification(FreightShipPickupNotificationsEMailNotification $eMailNotification) : self
+    public function setEMailNotification(?FreightShipPickupNotificationsEMailNotification $eMailNotification) : self
     {
         $this->initialized['eMailNotification'] = true;
         $this->eMailNotification = $eMailNotification;
@@ -77,20 +77,20 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
     /**
      * Alternate email address to receive failure notifications
      *
-     * @return string
+     * @return string|null
      */
-    public function getFailedEMail() : string
+    public function getFailedEMail() : ?string
     {
         return $this->failedEMail;
     }
     /**
      * Alternate email address to receive failure notifications
      *
-     * @param string $failedEMail
+     * @param string|null $failedEMail
      *
      * @return self
      */
-    public function setFailedEMail(string $failedEMail) : self
+    public function setFailedEMail(?string $failedEMail) : self
     {
         $this->initialized['failedEMail'] = true;
         $this->failedEMail = $failedEMail;

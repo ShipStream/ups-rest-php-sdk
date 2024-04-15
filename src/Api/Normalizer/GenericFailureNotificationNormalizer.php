@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FailedEmailAddress', $data)) {
+            if (\array_key_exists('FailedEmailAddress', $data) && $data['FailedEmailAddress'] !== null) {
                 $object->setFailedEmailAddress($data['FailedEmailAddress']);
                 unset($data['FailedEmailAddress']);
             }
-            if (\array_key_exists('FailureNotificationCode', $data)) {
+            elseif (\array_key_exists('FailedEmailAddress', $data) && $data['FailedEmailAddress'] === null) {
+                $object->setFailedEmailAddress(null);
+            }
+            if (\array_key_exists('FailureNotificationCode', $data) && $data['FailureNotificationCode'] !== null) {
                 $object->setFailureNotificationCode($this->denormalizer->denormalize($data['FailureNotificationCode'], 'ShipStream\\Ups\\Api\\Model\\FailureNotificationFailureNotificationCode', 'json', $context));
                 unset($data['FailureNotificationCode']);
+            }
+            elseif (\array_key_exists('FailureNotificationCode', $data) && $data['FailureNotificationCode'] === null) {
+                $object->setFailureNotificationCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FailedEmailAddress', $data)) {
+            if (\array_key_exists('FailedEmailAddress', $data) && $data['FailedEmailAddress'] !== null) {
                 $object->setFailedEmailAddress($data['FailedEmailAddress']);
                 unset($data['FailedEmailAddress']);
             }
-            if (\array_key_exists('FailureNotificationCode', $data)) {
+            elseif (\array_key_exists('FailedEmailAddress', $data) && $data['FailedEmailAddress'] === null) {
+                $object->setFailedEmailAddress(null);
+            }
+            if (\array_key_exists('FailureNotificationCode', $data) && $data['FailureNotificationCode'] !== null) {
                 $object->setFailureNotificationCode($this->denormalizer->denormalize($data['FailureNotificationCode'], 'ShipStream\\Ups\\Api\\Model\\FailureNotificationFailureNotificationCode', 'json', $context));
                 unset($data['FailureNotificationCode']);
+            }
+            elseif (\array_key_exists('FailureNotificationCode', $data) && $data['FailureNotificationCode'] === null) {
+                $object->setFailureNotificationCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

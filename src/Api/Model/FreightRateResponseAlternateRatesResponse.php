@@ -15,50 +15,50 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * Container for the type of alternate rate
      *
-     * @var AlternateRatesResponseAlternateRateType
+     * @var AlternateRatesResponseAlternateRateType|null
      */
     protected $alternateRateType;
     /**
      * 
      *
-     * @var AlternateRatesResponseRate[]
+     * @var list<AlternateRatesResponseRate>|null
      */
     protected $rate;
     /**
      * FreightDensityRate container.
      *
-     * @var AlternateRatesResponseFreightDensityRate
+     * @var AlternateRatesResponseFreightDensityRate|null
      */
     protected $freightDensityRate;
     /**
      * BillableShipmentWeight Container.
      *
-     * @var AlternateRatesResponseBillableShipmentWeight
+     * @var AlternateRatesResponseBillableShipmentWeight|null
      */
     protected $billableShipmentWeight;
     /**
      * Time In transit information.
      *
-     * @var AlternateRatesResponseTimeInTransit
+     * @var AlternateRatesResponseTimeInTransit|null
      */
     protected $timeInTransit;
     /**
      * Container for the type of alternate rate
      *
-     * @return AlternateRatesResponseAlternateRateType
+     * @return AlternateRatesResponseAlternateRateType|null
      */
-    public function getAlternateRateType() : AlternateRatesResponseAlternateRateType
+    public function getAlternateRateType() : ?AlternateRatesResponseAlternateRateType
     {
         return $this->alternateRateType;
     }
     /**
      * Container for the type of alternate rate
      *
-     * @param AlternateRatesResponseAlternateRateType $alternateRateType
+     * @param AlternateRatesResponseAlternateRateType|null $alternateRateType
      *
      * @return self
      */
-    public function setAlternateRateType(AlternateRatesResponseAlternateRateType $alternateRateType) : self
+    public function setAlternateRateType(?AlternateRatesResponseAlternateRateType $alternateRateType) : self
     {
         $this->initialized['alternateRateType'] = true;
         $this->alternateRateType = $alternateRateType;
@@ -67,20 +67,20 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * 
      *
-     * @return AlternateRatesResponseRate[]
+     * @return list<AlternateRatesResponseRate>|null
      */
-    public function getRate() : array
+    public function getRate() : ?array
     {
         return $this->rate;
     }
     /**
      * 
      *
-     * @param AlternateRatesResponseRate[] $rate
+     * @param list<AlternateRatesResponseRate>|null $rate
      *
      * @return self
      */
-    public function setRate(array $rate) : self
+    public function setRate(?array $rate) : self
     {
         $this->initialized['rate'] = true;
         $this->rate = $rate;
@@ -89,20 +89,20 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * FreightDensityRate container.
      *
-     * @return AlternateRatesResponseFreightDensityRate
+     * @return AlternateRatesResponseFreightDensityRate|null
      */
-    public function getFreightDensityRate() : AlternateRatesResponseFreightDensityRate
+    public function getFreightDensityRate() : ?AlternateRatesResponseFreightDensityRate
     {
         return $this->freightDensityRate;
     }
     /**
      * FreightDensityRate container.
      *
-     * @param AlternateRatesResponseFreightDensityRate $freightDensityRate
+     * @param AlternateRatesResponseFreightDensityRate|null $freightDensityRate
      *
      * @return self
      */
-    public function setFreightDensityRate(AlternateRatesResponseFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(?AlternateRatesResponseFreightDensityRate $freightDensityRate) : self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -111,20 +111,20 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * BillableShipmentWeight Container.
      *
-     * @return AlternateRatesResponseBillableShipmentWeight
+     * @return AlternateRatesResponseBillableShipmentWeight|null
      */
-    public function getBillableShipmentWeight() : AlternateRatesResponseBillableShipmentWeight
+    public function getBillableShipmentWeight() : ?AlternateRatesResponseBillableShipmentWeight
     {
         return $this->billableShipmentWeight;
     }
     /**
      * BillableShipmentWeight Container.
      *
-     * @param AlternateRatesResponseBillableShipmentWeight $billableShipmentWeight
+     * @param AlternateRatesResponseBillableShipmentWeight|null $billableShipmentWeight
      *
      * @return self
      */
-    public function setBillableShipmentWeight(AlternateRatesResponseBillableShipmentWeight $billableShipmentWeight) : self
+    public function setBillableShipmentWeight(?AlternateRatesResponseBillableShipmentWeight $billableShipmentWeight) : self
     {
         $this->initialized['billableShipmentWeight'] = true;
         $this->billableShipmentWeight = $billableShipmentWeight;
@@ -133,20 +133,20 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * Time In transit information.
      *
-     * @return AlternateRatesResponseTimeInTransit
+     * @return AlternateRatesResponseTimeInTransit|null
      */
-    public function getTimeInTransit() : AlternateRatesResponseTimeInTransit
+    public function getTimeInTransit() : ?AlternateRatesResponseTimeInTransit
     {
         return $this->timeInTransit;
     }
     /**
      * Time In transit information.
      *
-     * @param AlternateRatesResponseTimeInTransit $timeInTransit
+     * @param AlternateRatesResponseTimeInTransit|null $timeInTransit
      *
      * @return self
      */
-    public function setTimeInTransit(AlternateRatesResponseTimeInTransit $timeInTransit) : self
+    public function setTimeInTransit(?AlternateRatesResponseTimeInTransit $timeInTransit) : self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;

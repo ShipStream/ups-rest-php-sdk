@@ -15,44 +15,44 @@ class FreightRatePaymentInformationPayer extends \ArrayObject
     /**
      * Payer's company name
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Address Container.
      *
-     * @var PayerAddress
+     * @var PayerAddress|null
      */
     protected $address;
     /**
      * Payer's six digit account number.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * Contact name at the payer's location.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Payer's company name
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Payer's company name
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -61,20 +61,20 @@ class FreightRatePaymentInformationPayer extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return PayerAddress
+     * @return PayerAddress|null
      */
-    public function getAddress() : PayerAddress
+    public function getAddress() : ?PayerAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param PayerAddress $address
+     * @param PayerAddress|null $address
      *
      * @return self
      */
-    public function setAddress(PayerAddress $address) : self
+    public function setAddress(?PayerAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -83,20 +83,20 @@ class FreightRatePaymentInformationPayer extends \ArrayObject
     /**
      * Payer's six digit account number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Payer's six digit account number.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -105,20 +105,20 @@ class FreightRatePaymentInformationPayer extends \ArrayObject
     /**
      * Contact name at the payer's location.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Contact name at the payer's location.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;

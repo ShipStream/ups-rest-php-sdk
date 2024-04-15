@@ -15,44 +15,44 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
     /**
      * FreezableProtectionIndicator Container.
      *
-     * @var string
+     * @var string|null
      */
     protected $freezableProtectionIndicator;
     /**
      * Indicates there is limited access for pickups.
      *
-     * @var string
+     * @var string|null
      */
     protected $limitedAccessPickupIndicator;
     /**
      * Indicates there is limited access for deliveries.
      *
-     * @var string
+     * @var string|null
      */
     protected $limitedAccessDeliveryIndicator;
     /**
      * ExtremeLengthIndicator Container (greater than 15ft)
      *
-     * @var string
+     * @var string|null
      */
     protected $extremeLengthIndicator;
     /**
      * FreezableProtectionIndicator Container.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFreezableProtectionIndicator() : string
+    public function getFreezableProtectionIndicator() : ?string
     {
         return $this->freezableProtectionIndicator;
     }
     /**
      * FreezableProtectionIndicator Container.
      *
-     * @param string $freezableProtectionIndicator
+     * @param string|null $freezableProtectionIndicator
      *
      * @return self
      */
-    public function setFreezableProtectionIndicator(string $freezableProtectionIndicator) : self
+    public function setFreezableProtectionIndicator(?string $freezableProtectionIndicator) : self
     {
         $this->initialized['freezableProtectionIndicator'] = true;
         $this->freezableProtectionIndicator = $freezableProtectionIndicator;
@@ -61,20 +61,20 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
     /**
      * Indicates there is limited access for pickups.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLimitedAccessPickupIndicator() : string
+    public function getLimitedAccessPickupIndicator() : ?string
     {
         return $this->limitedAccessPickupIndicator;
     }
     /**
      * Indicates there is limited access for pickups.
      *
-     * @param string $limitedAccessPickupIndicator
+     * @param string|null $limitedAccessPickupIndicator
      *
      * @return self
      */
-    public function setLimitedAccessPickupIndicator(string $limitedAccessPickupIndicator) : self
+    public function setLimitedAccessPickupIndicator(?string $limitedAccessPickupIndicator) : self
     {
         $this->initialized['limitedAccessPickupIndicator'] = true;
         $this->limitedAccessPickupIndicator = $limitedAccessPickupIndicator;
@@ -83,20 +83,20 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
     /**
      * Indicates there is limited access for deliveries.
      *
-     * @return string
+     * @return string|null
      */
-    public function getLimitedAccessDeliveryIndicator() : string
+    public function getLimitedAccessDeliveryIndicator() : ?string
     {
         return $this->limitedAccessDeliveryIndicator;
     }
     /**
      * Indicates there is limited access for deliveries.
      *
-     * @param string $limitedAccessDeliveryIndicator
+     * @param string|null $limitedAccessDeliveryIndicator
      *
      * @return self
      */
-    public function setLimitedAccessDeliveryIndicator(string $limitedAccessDeliveryIndicator) : self
+    public function setLimitedAccessDeliveryIndicator(?string $limitedAccessDeliveryIndicator) : self
     {
         $this->initialized['limitedAccessDeliveryIndicator'] = true;
         $this->limitedAccessDeliveryIndicator = $limitedAccessDeliveryIndicator;
@@ -105,20 +105,20 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
     /**
      * ExtremeLengthIndicator Container (greater than 15ft)
      *
-     * @return string
+     * @return string|null
      */
-    public function getExtremeLengthIndicator() : string
+    public function getExtremeLengthIndicator() : ?string
     {
         return $this->extremeLengthIndicator;
     }
     /**
      * ExtremeLengthIndicator Container (greater than 15ft)
      *
-     * @param string $extremeLengthIndicator
+     * @param string|null $extremeLengthIndicator
      *
      * @return self
      */
-    public function setExtremeLengthIndicator(string $extremeLengthIndicator) : self
+    public function setExtremeLengthIndicator(?string $extremeLengthIndicator) : self
     {
         $this->initialized['extremeLengthIndicator'] = true;
         $this->extremeLengthIndicator = $extremeLengthIndicator;

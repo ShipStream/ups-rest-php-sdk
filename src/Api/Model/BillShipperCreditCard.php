@@ -30,31 +30,31 @@ class BillShipperCreditCard extends \ArrayObject
     20=VPAY
     21=Carte Bleue
     *
-    * @var string
+    * @var string|null
     */
     protected $type;
     /**
      * Credit Card number.
      *
-     * @var string
+     * @var string|null
      */
     protected $number;
     /**
      * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year (Present Year + 10 years)
      *
-     * @var string
+     * @var string|null
      */
     protected $expirationDate;
     /**
      * Three or four digits that can be found either on top of credit card number or on the back of credit card. Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits. It is required to provide the security code if credit card information is provided and when the ShipFrom countries or territories are other than the below mentioned countries or territories. Argentina, Bahamas, Costa Rica, Dominican Republic, Guatemala, Panama, Puerto Rico and Russia.
      *
-     * @var string
+     * @var string|null
      */
     protected $securityCode;
     /**
      * Container to hold the Credit card Billing Address.  It is required to provide billing address if credit card information is provided and when the ShipFrom country or territory is the US, PR, and CA.
      *
-     * @var CreditCardAddress
+     * @var CreditCardAddress|null
      */
     protected $address;
     /**
@@ -75,9 +75,9 @@ class BillShipperCreditCard extends \ArrayObject
     20=VPAY
     21=Carte Bleue
     *
-    * @return string
+    * @return string|null
     */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
@@ -99,11 +99,11 @@ class BillShipperCreditCard extends \ArrayObject
     20=VPAY
     21=Carte Bleue
     *
-    * @param string $type
+    * @param string|null $type
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -112,20 +112,20 @@ class BillShipperCreditCard extends \ArrayObject
     /**
      * Credit Card number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumber() : string
+    public function getNumber() : ?string
     {
         return $this->number;
     }
     /**
      * Credit Card number.
      *
-     * @param string $number
+     * @param string|null $number
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(?string $number) : self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -134,20 +134,20 @@ class BillShipperCreditCard extends \ArrayObject
     /**
      * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year (Present Year + 10 years)
      *
-     * @return string
+     * @return string|null
      */
-    public function getExpirationDate() : string
+    public function getExpirationDate() : ?string
     {
         return $this->expirationDate;
     }
     /**
      * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year (Present Year + 10 years)
      *
-     * @param string $expirationDate
+     * @param string|null $expirationDate
      *
      * @return self
      */
-    public function setExpirationDate(string $expirationDate) : self
+    public function setExpirationDate(?string $expirationDate) : self
     {
         $this->initialized['expirationDate'] = true;
         $this->expirationDate = $expirationDate;
@@ -156,20 +156,20 @@ class BillShipperCreditCard extends \ArrayObject
     /**
      * Three or four digits that can be found either on top of credit card number or on the back of credit card. Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits. It is required to provide the security code if credit card information is provided and when the ShipFrom countries or territories are other than the below mentioned countries or territories. Argentina, Bahamas, Costa Rica, Dominican Republic, Guatemala, Panama, Puerto Rico and Russia.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSecurityCode() : string
+    public function getSecurityCode() : ?string
     {
         return $this->securityCode;
     }
     /**
      * Three or four digits that can be found either on top of credit card number or on the back of credit card. Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits. It is required to provide the security code if credit card information is provided and when the ShipFrom countries or territories are other than the below mentioned countries or territories. Argentina, Bahamas, Costa Rica, Dominican Republic, Guatemala, Panama, Puerto Rico and Russia.
      *
-     * @param string $securityCode
+     * @param string|null $securityCode
      *
      * @return self
      */
-    public function setSecurityCode(string $securityCode) : self
+    public function setSecurityCode(?string $securityCode) : self
     {
         $this->initialized['securityCode'] = true;
         $this->securityCode = $securityCode;
@@ -178,20 +178,20 @@ class BillShipperCreditCard extends \ArrayObject
     /**
      * Container to hold the Credit card Billing Address.  It is required to provide billing address if credit card information is provided and when the ShipFrom country or territory is the US, PR, and CA.
      *
-     * @return CreditCardAddress
+     * @return CreditCardAddress|null
      */
-    public function getAddress() : CreditCardAddress
+    public function getAddress() : ?CreditCardAddress
     {
         return $this->address;
     }
     /**
      * Container to hold the Credit card Billing Address.  It is required to provide billing address if credit card information is provided and when the ShipFrom country or territory is the US, PR, and CA.
      *
-     * @param CreditCardAddress $address
+     * @param CreditCardAddress|null $address
      *
      * @return self
      */
-    public function setAddress(CreditCardAddress $address) : self
+    public function setAddress(?CreditCardAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

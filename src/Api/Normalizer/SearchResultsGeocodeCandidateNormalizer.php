@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AddressKeyFormat', $data)) {
+            if (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] !== null) {
                 $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat', 'json', $context));
                 unset($data['AddressKeyFormat']);
             }
-            if (\array_key_exists('Geocode', $data)) {
+            elseif (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] === null) {
+                $object->setAddressKeyFormat(null);
+            }
+            if (\array_key_exists('Geocode', $data) && $data['Geocode'] !== null) {
                 $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode', 'json', $context));
                 unset($data['Geocode']);
             }
-            if (\array_key_exists('LandmarkName', $data)) {
+            elseif (\array_key_exists('Geocode', $data) && $data['Geocode'] === null) {
+                $object->setGeocode(null);
+            }
+            if (\array_key_exists('LandmarkName', $data) && $data['LandmarkName'] !== null) {
                 $object->setLandmarkName($data['LandmarkName']);
                 unset($data['LandmarkName']);
+            }
+            elseif (\array_key_exists('LandmarkName', $data) && $data['LandmarkName'] === null) {
+                $object->setLandmarkName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AddressKeyFormat', $data)) {
+            if (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] !== null) {
                 $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat', 'json', $context));
                 unset($data['AddressKeyFormat']);
             }
-            if (\array_key_exists('Geocode', $data)) {
+            elseif (\array_key_exists('AddressKeyFormat', $data) && $data['AddressKeyFormat'] === null) {
+                $object->setAddressKeyFormat(null);
+            }
+            if (\array_key_exists('Geocode', $data) && $data['Geocode'] !== null) {
                 $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode', 'json', $context));
                 unset($data['Geocode']);
             }
-            if (\array_key_exists('LandmarkName', $data)) {
+            elseif (\array_key_exists('Geocode', $data) && $data['Geocode'] === null) {
+                $object->setGeocode(null);
+            }
+            if (\array_key_exists('LandmarkName', $data) && $data['LandmarkName'] !== null) {
                 $object->setLandmarkName($data['LandmarkName']);
                 unset($data['LandmarkName']);
+            }
+            elseif (\array_key_exists('LandmarkName', $data) && $data['LandmarkName'] === null) {
+                $object->setLandmarkName(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

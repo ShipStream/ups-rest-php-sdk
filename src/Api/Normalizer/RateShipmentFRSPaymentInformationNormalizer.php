@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -111,17 +120,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('AccountNumber', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] !== null) {
                 $object->setAccountNumber($data['AccountNumber']);
                 unset($data['AccountNumber']);
             }
-            if (\array_key_exists('Address', $data)) {
+            elseif (\array_key_exists('AccountNumber', $data) && $data['AccountNumber'] === null) {
+                $object->setAccountNumber(null);
+            }
+            if (\array_key_exists('Address', $data) && $data['Address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationAddress', 'json', $context));
                 unset($data['Address']);
+            }
+            elseif (\array_key_exists('Address', $data) && $data['Address'] === null) {
+                $object->setAddress(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

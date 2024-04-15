@@ -17,19 +17,19 @@ class PackageUPSPremier extends \ArrayObject
     UPS Premier Gold - 02
     UPS Premier Platinum - 03
     *
-    * @var string
+    * @var string|null
     */
     protected $category;
     /**
      * SensorID is RFID for UPS Premier Silver. SensorID is MeshID for UPS Premier Gold or UPS Premier Platinum Package.
      *
-     * @var string
+     * @var string|null
      */
     protected $sensorID;
     /**
      * Handling Instruction Container.
      *
-     * @var UPSPremierHandlingInstructions
+     * @var UPSPremierHandlingInstructions|null
      */
     protected $handlingInstructions;
     /**
@@ -37,9 +37,9 @@ class PackageUPSPremier extends \ArrayObject
     UPS Premier Gold - 02
     UPS Premier Platinum - 03
     *
-    * @return string
+    * @return string|null
     */
-    public function getCategory() : string
+    public function getCategory() : ?string
     {
         return $this->category;
     }
@@ -48,11 +48,11 @@ class PackageUPSPremier extends \ArrayObject
     UPS Premier Gold - 02
     UPS Premier Platinum - 03
     *
-    * @param string $category
+    * @param string|null $category
     *
     * @return self
     */
-    public function setCategory(string $category) : self
+    public function setCategory(?string $category) : self
     {
         $this->initialized['category'] = true;
         $this->category = $category;
@@ -61,20 +61,20 @@ class PackageUPSPremier extends \ArrayObject
     /**
      * SensorID is RFID for UPS Premier Silver. SensorID is MeshID for UPS Premier Gold or UPS Premier Platinum Package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSensorID() : string
+    public function getSensorID() : ?string
     {
         return $this->sensorID;
     }
     /**
      * SensorID is RFID for UPS Premier Silver. SensorID is MeshID for UPS Premier Gold or UPS Premier Platinum Package.
      *
-     * @param string $sensorID
+     * @param string|null $sensorID
      *
      * @return self
      */
-    public function setSensorID(string $sensorID) : self
+    public function setSensorID(?string $sensorID) : self
     {
         $this->initialized['sensorID'] = true;
         $this->sensorID = $sensorID;
@@ -83,20 +83,20 @@ class PackageUPSPremier extends \ArrayObject
     /**
      * Handling Instruction Container.
      *
-     * @return UPSPremierHandlingInstructions
+     * @return UPSPremierHandlingInstructions|null
      */
-    public function getHandlingInstructions() : UPSPremierHandlingInstructions
+    public function getHandlingInstructions() : ?UPSPremierHandlingInstructions
     {
         return $this->handlingInstructions;
     }
     /**
      * Handling Instruction Container.
      *
-     * @param UPSPremierHandlingInstructions $handlingInstructions
+     * @param UPSPremierHandlingInstructions|null $handlingInstructions
      *
      * @return self
      */
-    public function setHandlingInstructions(UPSPremierHandlingInstructions $handlingInstructions) : self
+    public function setHandlingInstructions(?UPSPremierHandlingInstructions $handlingInstructions) : self
     {
         $this->initialized['handlingInstructions'] = true;
         $this->handlingInstructions = $handlingInstructions;

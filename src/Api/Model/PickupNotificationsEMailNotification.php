@@ -15,33 +15,33 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     /**
      * Email address which should receive pre-pickup notification
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
     * Type of event for Pickup Notifications for LTL. Allows up to four events.
     For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @var string[]
+    * @var list<string>|null
     */
     protected $eventType;
     /**
      * Email address which should receive pre-pickup notification
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Email address which should receive pre-pickup notification
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -51,9 +51,9 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     * Type of event for Pickup Notifications for LTL. Allows up to four events.
     For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @return string[]
+    * @return list<string>|null
     */
-    public function getEventType() : array
+    public function getEventType() : ?array
     {
         return $this->eventType;
     }
@@ -61,11 +61,11 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     * Type of event for Pickup Notifications for LTL. Allows up to four events.
     For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @param string[] $eventType
+    * @param list<string>|null $eventType
     *
     * @return self
     */
-    public function setEventType(array $eventType) : self
+    public function setEventType(?array $eventType) : self
     {
         $this->initialized['eventType'] = true;
         $this->eventType = $eventType;

@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Cube', $data)) {
+            if (\array_key_exists('Cube', $data) && $data['Cube'] !== null) {
                 $object->setCube($this->denormalizer->denormalize($data['Cube'], 'ShipStream\\Ups\\Api\\Model\\ValueCube', 'json', $context));
                 unset($data['Cube']);
             }
-            if (\array_key_exists('CWT', $data)) {
+            elseif (\array_key_exists('Cube', $data) && $data['Cube'] === null) {
+                $object->setCube(null);
+            }
+            if (\array_key_exists('CWT', $data) && $data['CWT'] !== null) {
                 $object->setCWT($this->denormalizer->denormalize($data['CWT'], 'ShipStream\\Ups\\Api\\Model\\ValueCWT', 'json', $context));
                 unset($data['CWT']);
+            }
+            elseif (\array_key_exists('CWT', $data) && $data['CWT'] === null) {
+                $object->setCWT(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Cube', $data)) {
+            if (\array_key_exists('Cube', $data) && $data['Cube'] !== null) {
                 $object->setCube($this->denormalizer->denormalize($data['Cube'], 'ShipStream\\Ups\\Api\\Model\\ValueCube', 'json', $context));
                 unset($data['Cube']);
             }
-            if (\array_key_exists('CWT', $data)) {
+            elseif (\array_key_exists('Cube', $data) && $data['Cube'] === null) {
+                $object->setCube(null);
+            }
+            if (\array_key_exists('CWT', $data) && $data['CWT'] !== null) {
                 $object->setCWT($this->denormalizer->denormalize($data['CWT'], 'ShipStream\\Ups\\Api\\Model\\ValueCWT', 'json', $context));
                 unset($data['CWT']);
+            }
+            elseif (\array_key_exists('CWT', $data) && $data['CWT'] === null) {
+                $object->setCWT(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

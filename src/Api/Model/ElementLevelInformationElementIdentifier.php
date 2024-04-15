@@ -15,32 +15,32 @@ class ElementLevelInformationElementIdentifier extends \ArrayObject
     /**
      * Represents the type of element. Possible values are 'P' and 'C'.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Represents the value of element.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * Represents the type of element. Possible values are 'P' and 'C'.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Represents the type of element. Possible values are 'P' and 'C'.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class ElementLevelInformationElementIdentifier extends \ArrayObject
     /**
      * Represents the value of element.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Represents the value of element.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

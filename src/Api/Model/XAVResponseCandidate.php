@@ -21,7 +21,7 @@ class XAVResponseCandidate extends \ArrayObject
     /**
      * 
      *
-     * @var CandidateAddressKeyFormat[]
+     * @var list<CandidateAddressKeyFormat>|null
      */
     protected $addressKeyFormat;
     /**
@@ -49,20 +49,20 @@ class XAVResponseCandidate extends \ArrayObject
     /**
      * 
      *
-     * @return CandidateAddressKeyFormat[]
+     * @return list<CandidateAddressKeyFormat>|null
      */
-    public function getAddressKeyFormat() : array
+    public function getAddressKeyFormat() : ?array
     {
         return $this->addressKeyFormat;
     }
     /**
      * 
      *
-     * @param CandidateAddressKeyFormat[] $addressKeyFormat
+     * @param list<CandidateAddressKeyFormat>|null $addressKeyFormat
      *
      * @return self
      */
-    public function setAddressKeyFormat(array $addressKeyFormat) : self
+    public function setAddressKeyFormat(?array $addressKeyFormat) : self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;

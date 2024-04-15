@@ -15,68 +15,68 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's company name.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Shipper's Attention Name.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Shipper's Tax Identification Number.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxIdentificationNumber;
     /**
      * Shipper's Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.
      *
-     * @var string
+     * @var string|null
      */
     protected $phoneNumber;
     /**
      * Shipper's Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.
      *
-     * @var string
+     * @var string|null
      */
     protected $faxNumber;
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperNumber;
     /**
      * Shipper's designated contact eMail address.
      *
-     * @var string
+     * @var string|null
      */
     protected $eMailAddress;
     /**
      * Information that specifies a physical location.
      *
-     * @var ManifestShipperAddress
+     * @var ManifestShipperAddress|null
      */
     protected $address;
     /**
      * Shipper's company name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Shipper's company name.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -85,20 +85,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's Attention Name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Shipper's Attention Name.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -107,20 +107,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's Tax Identification Number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber() : ?string
     {
         return $this->taxIdentificationNumber;
     }
     /**
      * Shipper's Tax Identification Number.
      *
-     * @param string $taxIdentificationNumber
+     * @param string|null $taxIdentificationNumber
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(?string $taxIdentificationNumber) : self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -129,20 +129,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber() : ?string
     {
         return $this->phoneNumber;
     }
     /**
      * Shipper's Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.
      *
-     * @param string $phoneNumber
+     * @param string|null $phoneNumber
      *
      * @return self
      */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(?string $phoneNumber) : self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;
@@ -151,20 +151,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber() : ?string
     {
         return $this->faxNumber;
     }
     /**
      * Shipper's Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.
      *
-     * @param string $faxNumber
+     * @param string|null $faxNumber
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(?string $faxNumber) : self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -173,20 +173,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber() : ?string
     {
         return $this->shipperNumber;
     }
     /**
      * Shipper's six digit alphanumeric account number.
      *
-     * @param string $shipperNumber
+     * @param string|null $shipperNumber
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(?string $shipperNumber) : self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -195,20 +195,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Shipper's designated contact eMail address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress() : ?string
     {
         return $this->eMailAddress;
     }
     /**
      * Shipper's designated contact eMail address.
      *
-     * @param string $eMailAddress
+     * @param string|null $eMailAddress
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(?string $eMailAddress) : self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -217,20 +217,20 @@ class ManifestShipper extends \ArrayObject
     /**
      * Information that specifies a physical location.
      *
-     * @return ManifestShipperAddress
+     * @return ManifestShipperAddress|null
      */
-    public function getAddress() : ManifestShipperAddress
+    public function getAddress() : ?ManifestShipperAddress
     {
         return $this->address;
     }
     /**
      * Information that specifies a physical location.
      *
-     * @param ManifestShipperAddress $address
+     * @param ManifestShipperAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ManifestShipperAddress $address) : self
+    public function setAddress(?ManifestShipperAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

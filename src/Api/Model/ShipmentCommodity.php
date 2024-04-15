@@ -15,87 +15,87 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Unique identifier for the commodity.
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityID;
     /**
      * Description of articles, special marks, freight codes.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Weight of the package.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * Dimensions Container.
      *
-     * @var FreightShipCommodityDimensions
+     * @var FreightShipCommodityDimensions|null
      */
     protected $dimensions;
     /**
      * Number of Pieces.
      *
-     * @var string
+     * @var string|null
      */
     protected $numberOfPieces;
     /**
      * PackagingType Container.
      *
-     * @var CommodityPackagingType
+     * @var CommodityPackagingType|null
      */
     protected $packagingType;
     /**
      * Hazmat Indicator.
      *
-     * @var string
+     * @var string|null
      */
     protected $dangerousGoodsIndicator;
     /**
      * Unit price of the commodity.
      *
-     * @var string
+     * @var string|null
      */
     protected $commodityValue;
     /**
      * Class.
      *
-     * @var string
+     * @var string|null
      */
     protected $freightClass;
     /**
      * NMFC.
      *
-     * @var string
+     * @var string|null
      */
     protected $nMFCCommodityCode;
     /**
     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
     This container is mutually exclusive with NMFCCommodityCode element above.
     *
-    * @var CommodityNMFCCommodity
+    * @var CommodityNMFCCommodity|null
     */
     protected $nMFCCommodity;
     /**
      * Unique identifier for the commodity.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityID() : string
+    public function getCommodityID() : ?string
     {
         return $this->commodityID;
     }
     /**
      * Unique identifier for the commodity.
      *
-     * @param string $commodityID
+     * @param string|null $commodityID
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(?string $commodityID) : self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -104,20 +104,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Description of articles, special marks, freight codes.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of articles, special marks, freight codes.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -126,20 +126,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Weight of the package.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * Weight of the package.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -148,20 +148,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Dimensions Container.
      *
-     * @return FreightShipCommodityDimensions
+     * @return FreightShipCommodityDimensions|null
      */
-    public function getDimensions() : FreightShipCommodityDimensions
+    public function getDimensions() : ?FreightShipCommodityDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimensions Container.
      *
-     * @param FreightShipCommodityDimensions $dimensions
+     * @param FreightShipCommodityDimensions|null $dimensions
      *
      * @return self
      */
-    public function setDimensions(FreightShipCommodityDimensions $dimensions) : self
+    public function setDimensions(?FreightShipCommodityDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -170,20 +170,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Number of Pieces.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumberOfPieces() : string
+    public function getNumberOfPieces() : ?string
     {
         return $this->numberOfPieces;
     }
     /**
      * Number of Pieces.
      *
-     * @param string $numberOfPieces
+     * @param string|null $numberOfPieces
      *
      * @return self
      */
-    public function setNumberOfPieces(string $numberOfPieces) : self
+    public function setNumberOfPieces(?string $numberOfPieces) : self
     {
         $this->initialized['numberOfPieces'] = true;
         $this->numberOfPieces = $numberOfPieces;
@@ -192,20 +192,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * PackagingType Container.
      *
-     * @return CommodityPackagingType
+     * @return CommodityPackagingType|null
      */
-    public function getPackagingType() : CommodityPackagingType
+    public function getPackagingType() : ?CommodityPackagingType
     {
         return $this->packagingType;
     }
     /**
      * PackagingType Container.
      *
-     * @param CommodityPackagingType $packagingType
+     * @param CommodityPackagingType|null $packagingType
      *
      * @return self
      */
-    public function setPackagingType(CommodityPackagingType $packagingType) : self
+    public function setPackagingType(?CommodityPackagingType $packagingType) : self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -214,20 +214,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Hazmat Indicator.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDangerousGoodsIndicator() : string
+    public function getDangerousGoodsIndicator() : ?string
     {
         return $this->dangerousGoodsIndicator;
     }
     /**
      * Hazmat Indicator.
      *
-     * @param string $dangerousGoodsIndicator
+     * @param string|null $dangerousGoodsIndicator
      *
      * @return self
      */
-    public function setDangerousGoodsIndicator(string $dangerousGoodsIndicator) : self
+    public function setDangerousGoodsIndicator(?string $dangerousGoodsIndicator) : self
     {
         $this->initialized['dangerousGoodsIndicator'] = true;
         $this->dangerousGoodsIndicator = $dangerousGoodsIndicator;
@@ -236,20 +236,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Unit price of the commodity.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCommodityValue() : string
+    public function getCommodityValue() : ?string
     {
         return $this->commodityValue;
     }
     /**
      * Unit price of the commodity.
      *
-     * @param string $commodityValue
+     * @param string|null $commodityValue
      *
      * @return self
      */
-    public function setCommodityValue(string $commodityValue) : self
+    public function setCommodityValue(?string $commodityValue) : self
     {
         $this->initialized['commodityValue'] = true;
         $this->commodityValue = $commodityValue;
@@ -258,20 +258,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * Class.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFreightClass() : string
+    public function getFreightClass() : ?string
     {
         return $this->freightClass;
     }
     /**
      * Class.
      *
-     * @param string $freightClass
+     * @param string|null $freightClass
      *
      * @return self
      */
-    public function setFreightClass(string $freightClass) : self
+    public function setFreightClass(?string $freightClass) : self
     {
         $this->initialized['freightClass'] = true;
         $this->freightClass = $freightClass;
@@ -280,20 +280,20 @@ class ShipmentCommodity extends \ArrayObject
     /**
      * NMFC.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNMFCCommodityCode() : string
+    public function getNMFCCommodityCode() : ?string
     {
         return $this->nMFCCommodityCode;
     }
     /**
      * NMFC.
      *
-     * @param string $nMFCCommodityCode
+     * @param string|null $nMFCCommodityCode
      *
      * @return self
      */
-    public function setNMFCCommodityCode(string $nMFCCommodityCode) : self
+    public function setNMFCCommodityCode(?string $nMFCCommodityCode) : self
     {
         $this->initialized['nMFCCommodityCode'] = true;
         $this->nMFCCommodityCode = $nMFCCommodityCode;
@@ -303,9 +303,9 @@ class ShipmentCommodity extends \ArrayObject
     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
     This container is mutually exclusive with NMFCCommodityCode element above.
     *
-    * @return CommodityNMFCCommodity
+    * @return CommodityNMFCCommodity|null
     */
-    public function getNMFCCommodity() : CommodityNMFCCommodity
+    public function getNMFCCommodity() : ?CommodityNMFCCommodity
     {
         return $this->nMFCCommodity;
     }
@@ -313,11 +313,11 @@ class ShipmentCommodity extends \ArrayObject
     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
     This container is mutually exclusive with NMFCCommodityCode element above.
     *
-    * @param CommodityNMFCCommodity $nMFCCommodity
+    * @param CommodityNMFCCommodity|null $nMFCCommodity
     *
     * @return self
     */
-    public function setNMFCCommodity(CommodityNMFCCommodity $nMFCCommodity) : self
+    public function setNMFCCommodity(?CommodityNMFCCommodity $nMFCCommodity) : self
     {
         $this->initialized['nMFCCommodity'] = true;
         $this->nMFCCommodity = $nMFCCommodity;

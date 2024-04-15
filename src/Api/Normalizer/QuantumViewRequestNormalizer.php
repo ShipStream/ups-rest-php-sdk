@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('SubscriptionRequest', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('SubscriptionRequest', $data) && $data['SubscriptionRequest'] !== null) {
                 $values = [];
                 foreach ($data['SubscriptionRequest'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestSubscriptionRequest', 'json', $context);
@@ -52,9 +55,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setSubscriptionRequest($values);
                 unset($data['SubscriptionRequest']);
             }
-            if (\array_key_exists('Bookmark', $data)) {
+            elseif (\array_key_exists('SubscriptionRequest', $data) && $data['SubscriptionRequest'] === null) {
+                $object->setSubscriptionRequest(null);
+            }
+            if (\array_key_exists('Bookmark', $data) && $data['Bookmark'] !== null) {
                 $object->setBookmark($data['Bookmark']);
                 unset($data['Bookmark']);
+            }
+            elseif (\array_key_exists('Bookmark', $data) && $data['Bookmark'] === null) {
+                $object->setBookmark(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -119,11 +128,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Request', $data)) {
+            if (\array_key_exists('Request', $data) && $data['Request'] !== null) {
                 $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestRequest', 'json', $context));
                 unset($data['Request']);
             }
-            if (\array_key_exists('SubscriptionRequest', $data)) {
+            elseif (\array_key_exists('Request', $data) && $data['Request'] === null) {
+                $object->setRequest(null);
+            }
+            if (\array_key_exists('SubscriptionRequest', $data) && $data['SubscriptionRequest'] !== null) {
                 $values = [];
                 foreach ($data['SubscriptionRequest'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestSubscriptionRequest', 'json', $context);
@@ -131,9 +143,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setSubscriptionRequest($values);
                 unset($data['SubscriptionRequest']);
             }
-            if (\array_key_exists('Bookmark', $data)) {
+            elseif (\array_key_exists('SubscriptionRequest', $data) && $data['SubscriptionRequest'] === null) {
+                $object->setSubscriptionRequest(null);
+            }
+            if (\array_key_exists('Bookmark', $data) && $data['Bookmark'] !== null) {
                 $object->setBookmark($data['Bookmark']);
                 unset($data['Bookmark']);
+            }
+            elseif (\array_key_exists('Bookmark', $data) && $data['Bookmark'] === null) {
+                $object->setBookmark(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChargeCode', $data)) {
+            if (\array_key_exists('ChargeCode', $data) && $data['ChargeCode'] !== null) {
                 $object->setChargeCode($data['ChargeCode']);
                 unset($data['ChargeCode']);
             }
-            if (\array_key_exists('ChargeDescription', $data)) {
+            elseif (\array_key_exists('ChargeCode', $data) && $data['ChargeCode'] === null) {
+                $object->setChargeCode(null);
+            }
+            if (\array_key_exists('ChargeDescription', $data) && $data['ChargeDescription'] !== null) {
                 $object->setChargeDescription($data['ChargeDescription']);
                 unset($data['ChargeDescription']);
             }
-            if (\array_key_exists('ChargeAmount', $data)) {
+            elseif (\array_key_exists('ChargeDescription', $data) && $data['ChargeDescription'] === null) {
+                $object->setChargeDescription(null);
+            }
+            if (\array_key_exists('ChargeAmount', $data) && $data['ChargeAmount'] !== null) {
                 $object->setChargeAmount($data['ChargeAmount']);
                 unset($data['ChargeAmount']);
             }
-            if (\array_key_exists('IncentedAmount', $data)) {
+            elseif (\array_key_exists('ChargeAmount', $data) && $data['ChargeAmount'] === null) {
+                $object->setChargeAmount(null);
+            }
+            if (\array_key_exists('IncentedAmount', $data) && $data['IncentedAmount'] !== null) {
                 $object->setIncentedAmount($data['IncentedAmount']);
                 unset($data['IncentedAmount']);
             }
-            if (\array_key_exists('TaxAmount', $data)) {
+            elseif (\array_key_exists('IncentedAmount', $data) && $data['IncentedAmount'] === null) {
+                $object->setIncentedAmount(null);
+            }
+            if (\array_key_exists('TaxAmount', $data) && $data['TaxAmount'] !== null) {
                 $object->setTaxAmount($data['TaxAmount']);
                 unset($data['TaxAmount']);
+            }
+            elseif (\array_key_exists('TaxAmount', $data) && $data['TaxAmount'] === null) {
+                $object->setTaxAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -123,25 +138,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ChargeCode', $data)) {
+            if (\array_key_exists('ChargeCode', $data) && $data['ChargeCode'] !== null) {
                 $object->setChargeCode($data['ChargeCode']);
                 unset($data['ChargeCode']);
             }
-            if (\array_key_exists('ChargeDescription', $data)) {
+            elseif (\array_key_exists('ChargeCode', $data) && $data['ChargeCode'] === null) {
+                $object->setChargeCode(null);
+            }
+            if (\array_key_exists('ChargeDescription', $data) && $data['ChargeDescription'] !== null) {
                 $object->setChargeDescription($data['ChargeDescription']);
                 unset($data['ChargeDescription']);
             }
-            if (\array_key_exists('ChargeAmount', $data)) {
+            elseif (\array_key_exists('ChargeDescription', $data) && $data['ChargeDescription'] === null) {
+                $object->setChargeDescription(null);
+            }
+            if (\array_key_exists('ChargeAmount', $data) && $data['ChargeAmount'] !== null) {
                 $object->setChargeAmount($data['ChargeAmount']);
                 unset($data['ChargeAmount']);
             }
-            if (\array_key_exists('IncentedAmount', $data)) {
+            elseif (\array_key_exists('ChargeAmount', $data) && $data['ChargeAmount'] === null) {
+                $object->setChargeAmount(null);
+            }
+            if (\array_key_exists('IncentedAmount', $data) && $data['IncentedAmount'] !== null) {
                 $object->setIncentedAmount($data['IncentedAmount']);
                 unset($data['IncentedAmount']);
             }
-            if (\array_key_exists('TaxAmount', $data)) {
+            elseif (\array_key_exists('IncentedAmount', $data) && $data['IncentedAmount'] === null) {
+                $object->setIncentedAmount(null);
+            }
+            if (\array_key_exists('TaxAmount', $data) && $data['TaxAmount'] !== null) {
                 $object->setTaxAmount($data['TaxAmount']);
                 unset($data['TaxAmount']);
+            }
+            elseif (\array_key_exists('TaxAmount', $data) && $data['TaxAmount'] === null) {
+                $object->setTaxAmount(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

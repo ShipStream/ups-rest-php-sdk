@@ -18,7 +18,7 @@ class RateResultChargeDetail extends \ArrayObject
     B = BASE CHARGE TYPE
     S = SURCHARGE TYPE
     *
-    * @var string
+    * @var string|null
     */
     protected $chargeCode;
     /**
@@ -29,25 +29,25 @@ class RateResultChargeDetail extends \ArrayObject
     REMOTE AREA SURCHARGE
     RESIDENTIAL SURCHARGE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      SATURDAY ON-CALL STOP CHARGE
     *
-    * @var string
+    * @var string|null
     */
     protected $chargeDescription;
     /**
      * Monetary value of the charge.
      *
-     * @var string
+     * @var string|null
      */
     protected $chargeAmount;
     /**
      * Monetary value of the incented charge. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @var string
+     * @var string|null
      */
     protected $incentedAmount;
     /**
      * Monetary value of the tax if apply.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxAmount;
     /**
@@ -56,9 +56,9 @@ class RateResultChargeDetail extends \ArrayObject
     B = BASE CHARGE TYPE
     S = SURCHARGE TYPE
     *
-    * @return string
+    * @return string|null
     */
-    public function getChargeCode() : string
+    public function getChargeCode() : ?string
     {
         return $this->chargeCode;
     }
@@ -68,11 +68,11 @@ class RateResultChargeDetail extends \ArrayObject
     B = BASE CHARGE TYPE
     S = SURCHARGE TYPE
     *
-    * @param string $chargeCode
+    * @param string|null $chargeCode
     *
     * @return self
     */
-    public function setChargeCode(string $chargeCode) : self
+    public function setChargeCode(?string $chargeCode) : self
     {
         $this->initialized['chargeCode'] = true;
         $this->chargeCode = $chargeCode;
@@ -86,9 +86,9 @@ class RateResultChargeDetail extends \ArrayObject
     REMOTE AREA SURCHARGE
     RESIDENTIAL SURCHARGE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      SATURDAY ON-CALL STOP CHARGE
     *
-    * @return string
+    * @return string|null
     */
-    public function getChargeDescription() : string
+    public function getChargeDescription() : ?string
     {
         return $this->chargeDescription;
     }
@@ -100,11 +100,11 @@ class RateResultChargeDetail extends \ArrayObject
     REMOTE AREA SURCHARGE
     RESIDENTIAL SURCHARGE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      SATURDAY ON-CALL STOP CHARGE
     *
-    * @param string $chargeDescription
+    * @param string|null $chargeDescription
     *
     * @return self
     */
-    public function setChargeDescription(string $chargeDescription) : self
+    public function setChargeDescription(?string $chargeDescription) : self
     {
         $this->initialized['chargeDescription'] = true;
         $this->chargeDescription = $chargeDescription;
@@ -113,20 +113,20 @@ class RateResultChargeDetail extends \ArrayObject
     /**
      * Monetary value of the charge.
      *
-     * @return string
+     * @return string|null
      */
-    public function getChargeAmount() : string
+    public function getChargeAmount() : ?string
     {
         return $this->chargeAmount;
     }
     /**
      * Monetary value of the charge.
      *
-     * @param string $chargeAmount
+     * @param string|null $chargeAmount
      *
      * @return self
      */
-    public function setChargeAmount(string $chargeAmount) : self
+    public function setChargeAmount(?string $chargeAmount) : self
     {
         $this->initialized['chargeAmount'] = true;
         $this->chargeAmount = $chargeAmount;
@@ -135,20 +135,20 @@ class RateResultChargeDetail extends \ArrayObject
     /**
      * Monetary value of the incented charge. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @return string
+     * @return string|null
      */
-    public function getIncentedAmount() : string
+    public function getIncentedAmount() : ?string
     {
         return $this->incentedAmount;
     }
     /**
      * Monetary value of the incented charge. Only present if 1. UserLevelDiscountIndicator = Y and User Level Promotion is applied to the pickup or 2 .if any incentive rate is applied to the pickup and SubVersion on the request is greater than or equal to 1707.
      *
-     * @param string $incentedAmount
+     * @param string|null $incentedAmount
      *
      * @return self
      */
-    public function setIncentedAmount(string $incentedAmount) : self
+    public function setIncentedAmount(?string $incentedAmount) : self
     {
         $this->initialized['incentedAmount'] = true;
         $this->incentedAmount = $incentedAmount;
@@ -157,20 +157,20 @@ class RateResultChargeDetail extends \ArrayObject
     /**
      * Monetary value of the tax if apply.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxAmount() : string
+    public function getTaxAmount() : ?string
     {
         return $this->taxAmount;
     }
     /**
      * Monetary value of the tax if apply.
      *
-     * @param string $taxAmount
+     * @param string|null $taxAmount
      *
      * @return self
      */
-    public function setTaxAmount(string $taxAmount) : self
+    public function setTaxAmount(?string $taxAmount) : self
     {
         $this->initialized['taxAmount'] = true;
         $this->taxAmount = $taxAmount;

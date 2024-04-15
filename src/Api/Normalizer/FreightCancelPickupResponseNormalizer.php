@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('FreightCancelStatus', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('FreightCancelStatus', $data) && $data['FreightCancelStatus'] !== null) {
                 $object->setFreightCancelStatus($this->denormalizer->denormalize($data['FreightCancelStatus'], 'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus', 'json', $context));
                 unset($data['FreightCancelStatus']);
+            }
+            elseif (\array_key_exists('FreightCancelStatus', $data) && $data['FreightCancelStatus'] === null) {
+                $object->setFreightCancelStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('FreightCancelStatus', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('FreightCancelStatus', $data) && $data['FreightCancelStatus'] !== null) {
                 $object->setFreightCancelStatus($this->denormalizer->denormalize($data['FreightCancelStatus'], 'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus', 'json', $context));
                 unset($data['FreightCancelStatus']);
+            }
+            elseif (\array_key_exists('FreightCancelStatus', $data) && $data['FreightCancelStatus'] === null) {
+                $object->setFreightCancelStatus(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

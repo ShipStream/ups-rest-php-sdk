@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('MonetaryValue', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('MonetaryValue', $data) && $data['MonetaryValue'] !== null) {
                 $object->setMonetaryValue($data['MonetaryValue']);
                 unset($data['MonetaryValue']);
+            }
+            elseif (\array_key_exists('MonetaryValue', $data) && $data['MonetaryValue'] === null) {
+                $object->setMonetaryValue(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -102,13 +108,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Type', $data)) {
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($data['Type']);
                 unset($data['Type']);
             }
-            if (\array_key_exists('MonetaryValue', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('MonetaryValue', $data) && $data['MonetaryValue'] !== null) {
                 $object->setMonetaryValue($data['MonetaryValue']);
                 unset($data['MonetaryValue']);
+            }
+            elseif (\array_key_exists('MonetaryValue', $data) && $data['MonetaryValue'] === null) {
+                $object->setMonetaryValue(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

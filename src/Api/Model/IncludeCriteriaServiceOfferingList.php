@@ -15,26 +15,26 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
     /**
      * 
      *
-     * @var ServiceOfferingListServiceOffering[]
+     * @var list<ServiceOfferingListServiceOffering>|null
      */
     protected $serviceOffering;
     /**
      * 
      *
-     * @return ServiceOfferingListServiceOffering[]
+     * @return list<ServiceOfferingListServiceOffering>|null
      */
-    public function getServiceOffering() : array
+    public function getServiceOffering() : ?array
     {
         return $this->serviceOffering;
     }
     /**
      * 
      *
-     * @param ServiceOfferingListServiceOffering[] $serviceOffering
+     * @param list<ServiceOfferingListServiceOffering>|null $serviceOffering
      *
      * @return self
      */
-    public function setServiceOffering(array $serviceOffering) : self
+    public function setServiceOffering(?array $serviceOffering) : self
     {
         $this->initialized['serviceOffering'] = true;
         $this->serviceOffering = $serviceOffering;

@@ -40,17 +40,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\RateResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('RatedShipment', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('RatedShipment', $data) && $data['RatedShipment'] !== null) {
                 $values = [];
                 foreach ($data['RatedShipment'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment', 'json', $context);
                 }
                 $object->setRatedShipment($values);
                 unset($data['RatedShipment']);
+            }
+            elseif (\array_key_exists('RatedShipment', $data) && $data['RatedShipment'] === null) {
+                $object->setRatedShipment(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -110,17 +116,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\RateResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('RatedShipment', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('RatedShipment', $data) && $data['RatedShipment'] !== null) {
                 $values = [];
                 foreach ($data['RatedShipment'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment', 'json', $context);
                 }
                 $object->setRatedShipment($values);
                 unset($data['RatedShipment']);
+            }
+            elseif (\array_key_exists('RatedShipment', $data) && $data['RatedShipment'] === null) {
+                $object->setRatedShipment(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

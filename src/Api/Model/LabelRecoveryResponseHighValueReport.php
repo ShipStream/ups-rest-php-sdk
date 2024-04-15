@@ -15,26 +15,26 @@ class LabelRecoveryResponseHighValueReport extends \ArrayObject
     /**
      * Container for the High Value Report image for Import Control Shipments.
      *
-     * @var HighValueReportImage
+     * @var HighValueReportImage|null
      */
     protected $image;
     /**
      * Container for the High Value Report image for Import Control Shipments.
      *
-     * @return HighValueReportImage
+     * @return HighValueReportImage|null
      */
-    public function getImage() : HighValueReportImage
+    public function getImage() : ?HighValueReportImage
     {
         return $this->image;
     }
     /**
      * Container for the High Value Report image for Import Control Shipments.
      *
-     * @param HighValueReportImage $image
+     * @param HighValueReportImage|null $image
      *
      * @return self
      */
-    public function setImage(HighValueReportImage $image) : self
+    public function setImage(?HighValueReportImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

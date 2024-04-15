@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('amount', $data)) {
+            if (\array_key_exists('amount', $data) && $data['amount'] !== null) {
                 $object->setAmount($data['amount']);
                 unset($data['amount']);
             }
-            if (\array_key_exists('currency', $data)) {
+            elseif (\array_key_exists('amount', $data) && $data['amount'] === null) {
+                $object->setAmount(null);
+            }
+            if (\array_key_exists('currency', $data) && $data['currency'] !== null) {
                 $object->setCurrency($data['currency']);
                 unset($data['currency']);
             }
-            if (\array_key_exists('id', $data)) {
+            elseif (\array_key_exists('currency', $data) && $data['currency'] === null) {
+                $object->setCurrency(null);
+            }
+            if (\array_key_exists('id', $data) && $data['id'] !== null) {
                 $object->setId($data['id']);
                 unset($data['id']);
             }
-            if (\array_key_exists('paid', $data)) {
+            elseif (\array_key_exists('id', $data) && $data['id'] === null) {
+                $object->setId(null);
+            }
+            if (\array_key_exists('paid', $data) && $data['paid'] !== null) {
                 $object->setPaid($data['paid']);
                 unset($data['paid']);
             }
-            if (\array_key_exists('paymentMethod', $data)) {
+            elseif (\array_key_exists('paid', $data) && $data['paid'] === null) {
+                $object->setPaid(null);
+            }
+            if (\array_key_exists('paymentMethod', $data) && $data['paymentMethod'] !== null) {
                 $object->setPaymentMethod($data['paymentMethod']);
                 unset($data['paymentMethod']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('paymentMethod', $data) && $data['paymentMethod'] === null) {
+                $object->setPaymentMethod(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -134,29 +152,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('amount', $data)) {
+            if (\array_key_exists('amount', $data) && $data['amount'] !== null) {
                 $object->setAmount($data['amount']);
                 unset($data['amount']);
             }
-            if (\array_key_exists('currency', $data)) {
+            elseif (\array_key_exists('amount', $data) && $data['amount'] === null) {
+                $object->setAmount(null);
+            }
+            if (\array_key_exists('currency', $data) && $data['currency'] !== null) {
                 $object->setCurrency($data['currency']);
                 unset($data['currency']);
             }
-            if (\array_key_exists('id', $data)) {
+            elseif (\array_key_exists('currency', $data) && $data['currency'] === null) {
+                $object->setCurrency(null);
+            }
+            if (\array_key_exists('id', $data) && $data['id'] !== null) {
                 $object->setId($data['id']);
                 unset($data['id']);
             }
-            if (\array_key_exists('paid', $data)) {
+            elseif (\array_key_exists('id', $data) && $data['id'] === null) {
+                $object->setId(null);
+            }
+            if (\array_key_exists('paid', $data) && $data['paid'] !== null) {
                 $object->setPaid($data['paid']);
                 unset($data['paid']);
             }
-            if (\array_key_exists('paymentMethod', $data)) {
+            elseif (\array_key_exists('paid', $data) && $data['paid'] === null) {
+                $object->setPaid(null);
+            }
+            if (\array_key_exists('paymentMethod', $data) && $data['paymentMethod'] !== null) {
                 $object->setPaymentMethod($data['paymentMethod']);
                 unset($data['paymentMethod']);
             }
-            if (\array_key_exists('type', $data)) {
+            elseif (\array_key_exists('paymentMethod', $data) && $data['paymentMethod'] === null) {
+                $object->setPaymentMethod(null);
+            }
+            if (\array_key_exists('type', $data) && $data['type'] !== null) {
                 $object->setType($data['type']);
                 unset($data['type']);
+            }
+            elseif (\array_key_exists('type', $data) && $data['type'] === null) {
+                $object->setType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

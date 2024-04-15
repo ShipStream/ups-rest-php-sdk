@@ -15,7 +15,7 @@ class ShipmentResultsDisclaimer extends \ArrayObject
     /**
      * Code representing type of Disclaimer.   Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
@@ -23,26 +23,26 @@ class ShipmentResultsDisclaimer extends \ArrayObject
     
     Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
     *
-    * @var string
+    * @var string|null
     */
     protected $description;
     /**
      * Code representing type of Disclaimer.   Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code representing type of Disclaimer.   Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -53,9 +53,9 @@ class ShipmentResultsDisclaimer extends \ArrayObject
     
     Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
     *
-    * @return string
+    * @return string|null
     */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -64,11 +64,11 @@ class ShipmentResultsDisclaimer extends \ArrayObject
     
     Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
     *
-    * @param string $description
+    * @param string|null $description
     *
     * @return self
     */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

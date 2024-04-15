@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelRecoveryResponse', $data)) {
+            if (\array_key_exists('LabelRecoveryResponse', $data) && $data['LabelRecoveryResponse'] !== null) {
                 $object->setLabelRecoveryResponse($this->denormalizer->denormalize($data['LabelRecoveryResponse'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponse', 'json', $context));
                 unset($data['LabelRecoveryResponse']);
+            }
+            elseif (\array_key_exists('LabelRecoveryResponse', $data) && $data['LabelRecoveryResponse'] === null) {
+                $object->setLabelRecoveryResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LabelRecoveryResponse', $data)) {
+            if (\array_key_exists('LabelRecoveryResponse', $data) && $data['LabelRecoveryResponse'] !== null) {
                 $object->setLabelRecoveryResponse($this->denormalizer->denormalize($data['LabelRecoveryResponse'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponse', 'json', $context));
                 unset($data['LabelRecoveryResponse']);
+            }
+            elseif (\array_key_exists('LabelRecoveryResponse', $data) && $data['LabelRecoveryResponse'] === null) {
+                $object->setLabelRecoveryResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

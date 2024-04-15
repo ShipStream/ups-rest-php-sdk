@@ -40,25 +40,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ForwardAgent', $data)) {
+            if (\array_key_exists('ForwardAgent', $data) && $data['ForwardAgent'] !== null) {
                 $object->setForwardAgent($this->denormalizer->denormalize($data['ForwardAgent'], 'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent', 'json', $context));
                 unset($data['ForwardAgent']);
             }
-            if (\array_key_exists('UltimateConsignee', $data)) {
+            elseif (\array_key_exists('ForwardAgent', $data) && $data['ForwardAgent'] === null) {
+                $object->setForwardAgent(null);
+            }
+            if (\array_key_exists('UltimateConsignee', $data) && $data['UltimateConsignee'] !== null) {
                 $object->setUltimateConsignee($this->denormalizer->denormalize($data['UltimateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee', 'json', $context));
                 unset($data['UltimateConsignee']);
             }
-            if (\array_key_exists('IntermediateConsignee', $data)) {
+            elseif (\array_key_exists('UltimateConsignee', $data) && $data['UltimateConsignee'] === null) {
+                $object->setUltimateConsignee(null);
+            }
+            if (\array_key_exists('IntermediateConsignee', $data) && $data['IntermediateConsignee'] !== null) {
                 $object->setIntermediateConsignee($this->denormalizer->denormalize($data['IntermediateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee', 'json', $context));
                 unset($data['IntermediateConsignee']);
             }
-            if (\array_key_exists('Producer', $data)) {
+            elseif (\array_key_exists('IntermediateConsignee', $data) && $data['IntermediateConsignee'] === null) {
+                $object->setIntermediateConsignee(null);
+            }
+            if (\array_key_exists('Producer', $data) && $data['Producer'] !== null) {
                 $object->setProducer($this->denormalizer->denormalize($data['Producer'], 'ShipStream\\Ups\\Api\\Model\\ContactsProducer', 'json', $context));
                 unset($data['Producer']);
             }
-            if (\array_key_exists('SoldTo', $data)) {
+            elseif (\array_key_exists('Producer', $data) && $data['Producer'] === null) {
+                $object->setProducer(null);
+            }
+            if (\array_key_exists('SoldTo', $data) && $data['SoldTo'] !== null) {
                 $object->setSoldTo($this->denormalizer->denormalize($data['SoldTo'], 'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo', 'json', $context));
                 unset($data['SoldTo']);
+            }
+            elseif (\array_key_exists('SoldTo', $data) && $data['SoldTo'] === null) {
+                $object->setSoldTo(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -127,25 +142,40 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ForwardAgent', $data)) {
+            if (\array_key_exists('ForwardAgent', $data) && $data['ForwardAgent'] !== null) {
                 $object->setForwardAgent($this->denormalizer->denormalize($data['ForwardAgent'], 'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent', 'json', $context));
                 unset($data['ForwardAgent']);
             }
-            if (\array_key_exists('UltimateConsignee', $data)) {
+            elseif (\array_key_exists('ForwardAgent', $data) && $data['ForwardAgent'] === null) {
+                $object->setForwardAgent(null);
+            }
+            if (\array_key_exists('UltimateConsignee', $data) && $data['UltimateConsignee'] !== null) {
                 $object->setUltimateConsignee($this->denormalizer->denormalize($data['UltimateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee', 'json', $context));
                 unset($data['UltimateConsignee']);
             }
-            if (\array_key_exists('IntermediateConsignee', $data)) {
+            elseif (\array_key_exists('UltimateConsignee', $data) && $data['UltimateConsignee'] === null) {
+                $object->setUltimateConsignee(null);
+            }
+            if (\array_key_exists('IntermediateConsignee', $data) && $data['IntermediateConsignee'] !== null) {
                 $object->setIntermediateConsignee($this->denormalizer->denormalize($data['IntermediateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee', 'json', $context));
                 unset($data['IntermediateConsignee']);
             }
-            if (\array_key_exists('Producer', $data)) {
+            elseif (\array_key_exists('IntermediateConsignee', $data) && $data['IntermediateConsignee'] === null) {
+                $object->setIntermediateConsignee(null);
+            }
+            if (\array_key_exists('Producer', $data) && $data['Producer'] !== null) {
                 $object->setProducer($this->denormalizer->denormalize($data['Producer'], 'ShipStream\\Ups\\Api\\Model\\ContactsProducer', 'json', $context));
                 unset($data['Producer']);
             }
-            if (\array_key_exists('SoldTo', $data)) {
+            elseif (\array_key_exists('Producer', $data) && $data['Producer'] === null) {
+                $object->setProducer(null);
+            }
+            if (\array_key_exists('SoldTo', $data) && $data['SoldTo'] !== null) {
                 $object->setSoldTo($this->denormalizer->denormalize($data['SoldTo'], 'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo', 'json', $context));
                 unset($data['SoldTo']);
+            }
+            elseif (\array_key_exists('SoldTo', $data) && $data['SoldTo'] === null) {
+                $object->setSoldTo(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,32 +15,32 @@ class ShipmentServiceOptionsImportControl extends \ArrayObject
     /**
      * Code for type of Import Control shipment. Valid values are: '01' = ImportControl Print and Mail '02' = ImportControl One-Attempt                                     '03' = ImportControl Three-Attempt'04' = ImportControl Electronic Label '05' = ImportControl Print Label.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Text description of the code representing the Import Control associated with the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Code for type of Import Control shipment. Valid values are: '01' = ImportControl Print and Mail '02' = ImportControl One-Attempt                                     '03' = ImportControl Three-Attempt'04' = ImportControl Electronic Label '05' = ImportControl Print Label.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code for type of Import Control shipment. Valid values are: '01' = ImportControl Print and Mail '02' = ImportControl One-Attempt                                     '03' = ImportControl Three-Attempt'04' = ImportControl Electronic Label '05' = ImportControl Print Label.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class ShipmentServiceOptionsImportControl extends \ArrayObject
     /**
      * Text description of the code representing the Import Control associated with the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Text description of the code representing the Import Control associated with the shipment.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

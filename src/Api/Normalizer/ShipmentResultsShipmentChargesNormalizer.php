@@ -40,19 +40,28 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('RateChart', $data)) {
+            if (\array_key_exists('RateChart', $data) && $data['RateChart'] !== null) {
                 $object->setRateChart($data['RateChart']);
                 unset($data['RateChart']);
             }
-            if (\array_key_exists('BaseServiceCharge', $data)) {
+            elseif (\array_key_exists('RateChart', $data) && $data['RateChart'] === null) {
+                $object->setRateChart(null);
+            }
+            if (\array_key_exists('BaseServiceCharge', $data) && $data['BaseServiceCharge'] !== null) {
                 $object->setBaseServiceCharge($this->denormalizer->denormalize($data['BaseServiceCharge'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesBaseServiceCharge', 'json', $context));
                 unset($data['BaseServiceCharge']);
             }
-            if (\array_key_exists('TransportationCharges', $data)) {
+            elseif (\array_key_exists('BaseServiceCharge', $data) && $data['BaseServiceCharge'] === null) {
+                $object->setBaseServiceCharge(null);
+            }
+            if (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] !== null) {
                 $object->setTransportationCharges($this->denormalizer->denormalize($data['TransportationCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTransportationCharges', 'json', $context));
                 unset($data['TransportationCharges']);
             }
-            if (\array_key_exists('ItemizedCharges', $data)) {
+            elseif (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] === null) {
+                $object->setTransportationCharges(null);
+            }
+            if (\array_key_exists('ItemizedCharges', $data) && $data['ItemizedCharges'] !== null) {
                 $values = [];
                 foreach ($data['ItemizedCharges'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesItemizedCharges', 'json', $context);
@@ -60,11 +69,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setItemizedCharges($values);
                 unset($data['ItemizedCharges']);
             }
-            if (\array_key_exists('ServiceOptionsCharges', $data)) {
+            elseif (\array_key_exists('ItemizedCharges', $data) && $data['ItemizedCharges'] === null) {
+                $object->setItemizedCharges(null);
+            }
+            if (\array_key_exists('ServiceOptionsCharges', $data) && $data['ServiceOptionsCharges'] !== null) {
                 $object->setServiceOptionsCharges($this->denormalizer->denormalize($data['ServiceOptionsCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesServiceOptionsCharges', 'json', $context));
                 unset($data['ServiceOptionsCharges']);
             }
-            if (\array_key_exists('TaxCharges', $data)) {
+            elseif (\array_key_exists('ServiceOptionsCharges', $data) && $data['ServiceOptionsCharges'] === null) {
+                $object->setServiceOptionsCharges(null);
+            }
+            if (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] !== null) {
                 $values_1 = [];
                 foreach ($data['TaxCharges'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTaxCharges', 'json', $context);
@@ -72,13 +87,22 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setTaxCharges($values_1);
                 unset($data['TaxCharges']);
             }
-            if (\array_key_exists('TotalCharges', $data)) {
+            elseif (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] === null) {
+                $object->setTaxCharges(null);
+            }
+            if (\array_key_exists('TotalCharges', $data) && $data['TotalCharges'] !== null) {
                 $object->setTotalCharges($this->denormalizer->denormalize($data['TotalCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalCharges', 'json', $context));
                 unset($data['TotalCharges']);
             }
-            if (\array_key_exists('TotalChargesWithTaxes', $data)) {
+            elseif (\array_key_exists('TotalCharges', $data) && $data['TotalCharges'] === null) {
+                $object->setTotalCharges(null);
+            }
+            if (\array_key_exists('TotalChargesWithTaxes', $data) && $data['TotalChargesWithTaxes'] !== null) {
                 $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalChargesWithTaxes', 'json', $context));
                 unset($data['TotalChargesWithTaxes']);
+            }
+            elseif (\array_key_exists('TotalChargesWithTaxes', $data) && $data['TotalChargesWithTaxes'] === null) {
+                $object->setTotalChargesWithTaxes(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -158,19 +182,28 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('RateChart', $data)) {
+            if (\array_key_exists('RateChart', $data) && $data['RateChart'] !== null) {
                 $object->setRateChart($data['RateChart']);
                 unset($data['RateChart']);
             }
-            if (\array_key_exists('BaseServiceCharge', $data)) {
+            elseif (\array_key_exists('RateChart', $data) && $data['RateChart'] === null) {
+                $object->setRateChart(null);
+            }
+            if (\array_key_exists('BaseServiceCharge', $data) && $data['BaseServiceCharge'] !== null) {
                 $object->setBaseServiceCharge($this->denormalizer->denormalize($data['BaseServiceCharge'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesBaseServiceCharge', 'json', $context));
                 unset($data['BaseServiceCharge']);
             }
-            if (\array_key_exists('TransportationCharges', $data)) {
+            elseif (\array_key_exists('BaseServiceCharge', $data) && $data['BaseServiceCharge'] === null) {
+                $object->setBaseServiceCharge(null);
+            }
+            if (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] !== null) {
                 $object->setTransportationCharges($this->denormalizer->denormalize($data['TransportationCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTransportationCharges', 'json', $context));
                 unset($data['TransportationCharges']);
             }
-            if (\array_key_exists('ItemizedCharges', $data)) {
+            elseif (\array_key_exists('TransportationCharges', $data) && $data['TransportationCharges'] === null) {
+                $object->setTransportationCharges(null);
+            }
+            if (\array_key_exists('ItemizedCharges', $data) && $data['ItemizedCharges'] !== null) {
                 $values = [];
                 foreach ($data['ItemizedCharges'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesItemizedCharges', 'json', $context);
@@ -178,11 +211,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setItemizedCharges($values);
                 unset($data['ItemizedCharges']);
             }
-            if (\array_key_exists('ServiceOptionsCharges', $data)) {
+            elseif (\array_key_exists('ItemizedCharges', $data) && $data['ItemizedCharges'] === null) {
+                $object->setItemizedCharges(null);
+            }
+            if (\array_key_exists('ServiceOptionsCharges', $data) && $data['ServiceOptionsCharges'] !== null) {
                 $object->setServiceOptionsCharges($this->denormalizer->denormalize($data['ServiceOptionsCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesServiceOptionsCharges', 'json', $context));
                 unset($data['ServiceOptionsCharges']);
             }
-            if (\array_key_exists('TaxCharges', $data)) {
+            elseif (\array_key_exists('ServiceOptionsCharges', $data) && $data['ServiceOptionsCharges'] === null) {
+                $object->setServiceOptionsCharges(null);
+            }
+            if (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] !== null) {
                 $values_1 = [];
                 foreach ($data['TaxCharges'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTaxCharges', 'json', $context);
@@ -190,13 +229,22 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setTaxCharges($values_1);
                 unset($data['TaxCharges']);
             }
-            if (\array_key_exists('TotalCharges', $data)) {
+            elseif (\array_key_exists('TaxCharges', $data) && $data['TaxCharges'] === null) {
+                $object->setTaxCharges(null);
+            }
+            if (\array_key_exists('TotalCharges', $data) && $data['TotalCharges'] !== null) {
                 $object->setTotalCharges($this->denormalizer->denormalize($data['TotalCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalCharges', 'json', $context));
                 unset($data['TotalCharges']);
             }
-            if (\array_key_exists('TotalChargesWithTaxes', $data)) {
+            elseif (\array_key_exists('TotalCharges', $data) && $data['TotalCharges'] === null) {
+                $object->setTotalCharges(null);
+            }
+            if (\array_key_exists('TotalChargesWithTaxes', $data) && $data['TotalChargesWithTaxes'] !== null) {
                 $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalChargesWithTaxes', 'json', $context));
                 unset($data['TotalChargesWithTaxes']);
+            }
+            elseif (\array_key_exists('TotalChargesWithTaxes', $data) && $data['TotalChargesWithTaxes'] === null) {
+                $object->setTotalChargesWithTaxes(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

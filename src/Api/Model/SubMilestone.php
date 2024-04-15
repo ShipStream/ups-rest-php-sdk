@@ -15,26 +15,26 @@ class SubMilestone extends \ArrayObject
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $category;
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getCategory() : string
+    public function getCategory() : ?string
     {
         return $this->category;
     }
     /**
      * 
      *
-     * @param string $category
+     * @param string|null $category
      *
      * @return self
      */
-    public function setCategory(string $category) : self
+    public function setCategory(?string $category) : self
     {
         $this->initialized['category'] = true;
         $this->category = $category;

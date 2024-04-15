@@ -15,32 +15,32 @@ class ChemicalReferenceDataResponse extends \ArrayObject
     /**
      * Contains Dangerous Goods Utility Chemical Reference Data response components.
      *
-     * @var ChemicalReferenceDataResponseResponse
+     * @var ChemicalReferenceDataResponseResponse|null
      */
     protected $response;
     /**
      * 
      *
-     * @var ChemicalReferenceDataResponseChemicalData[]
+     * @var list<ChemicalReferenceDataResponseChemicalData>|null
      */
     protected $chemicalData;
     /**
      * Contains Dangerous Goods Utility Chemical Reference Data response components.
      *
-     * @return ChemicalReferenceDataResponseResponse
+     * @return ChemicalReferenceDataResponseResponse|null
      */
-    public function getResponse() : ChemicalReferenceDataResponseResponse
+    public function getResponse() : ?ChemicalReferenceDataResponseResponse
     {
         return $this->response;
     }
     /**
      * Contains Dangerous Goods Utility Chemical Reference Data response components.
      *
-     * @param ChemicalReferenceDataResponseResponse $response
+     * @param ChemicalReferenceDataResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(ChemicalReferenceDataResponseResponse $response) : self
+    public function setResponse(?ChemicalReferenceDataResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class ChemicalReferenceDataResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ChemicalReferenceDataResponseChemicalData[]
+     * @return list<ChemicalReferenceDataResponseChemicalData>|null
      */
-    public function getChemicalData() : array
+    public function getChemicalData() : ?array
     {
         return $this->chemicalData;
     }
     /**
      * 
      *
-     * @param ChemicalReferenceDataResponseChemicalData[] $chemicalData
+     * @param list<ChemicalReferenceDataResponseChemicalData>|null $chemicalData
      *
      * @return self
      */
-    public function setChemicalData(array $chemicalData) : self
+    public function setChemicalData(?array $chemicalData) : self
     {
         $this->initialized['chemicalData'] = true;
         $this->chemicalData = $chemicalData;

@@ -18,13 +18,13 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
     2 - Express COD
     3 - Tagless COD
     *
-    * @var string
+    * @var string|null
     */
     protected $cODCode;
     /**
      * COD Amount container.
      *
-     * @var CODCODAmount
+     * @var CODCODAmount|null
      */
     protected $cODAmount;
     /**
@@ -33,9 +33,9 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
     2 - Express COD
     3 - Tagless COD
     *
-    * @return string
+    * @return string|null
     */
-    public function getCODCode() : string
+    public function getCODCode() : ?string
     {
         return $this->cODCode;
     }
@@ -45,11 +45,11 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
     2 - Express COD
     3 - Tagless COD
     *
-    * @param string $cODCode
+    * @param string|null $cODCode
     *
     * @return self
     */
-    public function setCODCode(string $cODCode) : self
+    public function setCODCode(?string $cODCode) : self
     {
         $this->initialized['cODCode'] = true;
         $this->cODCode = $cODCode;
@@ -58,20 +58,20 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
     /**
      * COD Amount container.
      *
-     * @return CODCODAmount
+     * @return CODCODAmount|null
      */
-    public function getCODAmount() : CODCODAmount
+    public function getCODAmount() : ?CODCODAmount
     {
         return $this->cODAmount;
     }
     /**
      * COD Amount container.
      *
-     * @param CODCODAmount $cODAmount
+     * @param CODCODAmount|null $cODAmount
      *
      * @return self
      */
-    public function setCODAmount(CODCODAmount $cODAmount) : self
+    public function setCODAmount(?CODCODAmount $cODAmount) : self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

@@ -15,13 +15,13 @@ class LabelResultsReceipt extends \ArrayObject
     /**
      * Base 64 encoded html browser image.
      *
-     * @var string
+     * @var string|null
      */
     protected $hTMLImage;
     /**
      * Container for the receipt in the format other than HTML.
      *
-     * @var ReceiptImage
+     * @var ReceiptImage|null
      */
     protected $image;
     /**
@@ -29,26 +29,26 @@ class LabelResultsReceipt extends \ArrayObject
     Print/Electronic Return Label
     Print/Electronic Import Control Label
     *
-    * @var string
+    * @var string|null
     */
     protected $uRL;
     /**
      * Base 64 encoded html browser image.
      *
-     * @return string
+     * @return string|null
      */
-    public function getHTMLImage() : string
+    public function getHTMLImage() : ?string
     {
         return $this->hTMLImage;
     }
     /**
      * Base 64 encoded html browser image.
      *
-     * @param string $hTMLImage
+     * @param string|null $hTMLImage
      *
      * @return self
      */
-    public function setHTMLImage(string $hTMLImage) : self
+    public function setHTMLImage(?string $hTMLImage) : self
     {
         $this->initialized['hTMLImage'] = true;
         $this->hTMLImage = $hTMLImage;
@@ -57,20 +57,20 @@ class LabelResultsReceipt extends \ArrayObject
     /**
      * Container for the receipt in the format other than HTML.
      *
-     * @return ReceiptImage
+     * @return ReceiptImage|null
      */
-    public function getImage() : ReceiptImage
+    public function getImage() : ?ReceiptImage
     {
         return $this->image;
     }
     /**
      * Container for the receipt in the format other than HTML.
      *
-     * @param ReceiptImage $image
+     * @param ReceiptImage|null $image
      *
      * @return self
      */
-    public function setImage(ReceiptImage $image) : self
+    public function setImage(?ReceiptImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -81,9 +81,9 @@ class LabelResultsReceipt extends \ArrayObject
     Print/Electronic Return Label
     Print/Electronic Import Control Label
     *
-    * @return string
+    * @return string|null
     */
-    public function getURL() : string
+    public function getURL() : ?string
     {
         return $this->uRL;
     }
@@ -92,11 +92,11 @@ class LabelResultsReceipt extends \ArrayObject
     Print/Electronic Return Label
     Print/Electronic Import Control Label
     *
-    * @param string $uRL
+    * @param string|null $uRL
     *
     * @return self
     */
-    public function setURL(string $uRL) : self
+    public function setURL(?string $uRL) : self
     {
         $this->initialized['uRL'] = true;
         $this->uRL = $uRL;

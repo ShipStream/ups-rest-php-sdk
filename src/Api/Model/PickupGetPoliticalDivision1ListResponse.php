@@ -15,32 +15,32 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var PickupGetPoliticalDivision1ListResponseResponse
+     * @var PickupGetPoliticalDivision1ListResponseResponse|null
      */
     protected $response;
     /**
      * The Political Division 1/State Field.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $politicalDivision1;
     /**
      * Response Container.
      *
-     * @return PickupGetPoliticalDivision1ListResponseResponse
+     * @return PickupGetPoliticalDivision1ListResponseResponse|null
      */
-    public function getResponse() : PickupGetPoliticalDivision1ListResponseResponse
+    public function getResponse() : ?PickupGetPoliticalDivision1ListResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param PickupGetPoliticalDivision1ListResponseResponse $response
+     * @param PickupGetPoliticalDivision1ListResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PickupGetPoliticalDivision1ListResponseResponse $response) : self
+    public function setResponse(?PickupGetPoliticalDivision1ListResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
     /**
      * The Political Division 1/State Field.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getPoliticalDivision1() : array
+    public function getPoliticalDivision1() : ?array
     {
         return $this->politicalDivision1;
     }
     /**
      * The Political Division 1/State Field.
      *
-     * @param string[] $politicalDivision1
+     * @param list<string>|null $politicalDivision1
      *
      * @return self
      */
-    public function setPoliticalDivision1(array $politicalDivision1) : self
+    public function setPoliticalDivision1(?array $politicalDivision1) : self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;

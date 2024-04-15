@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('inquiryNumber', $data)) {
+            if (\array_key_exists('inquiryNumber', $data) && $data['inquiryNumber'] !== null) {
                 $object->setInquiryNumber($data['inquiryNumber']);
                 unset($data['inquiryNumber']);
             }
-            if (\array_key_exists('package', $data)) {
+            elseif (\array_key_exists('inquiryNumber', $data) && $data['inquiryNumber'] === null) {
+                $object->setInquiryNumber(null);
+            }
+            if (\array_key_exists('package', $data) && $data['package'] !== null) {
                 $values = [];
                 foreach ($data['package'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Package', 'json', $context);
@@ -52,13 +55,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPackage($values);
                 unset($data['package']);
             }
-            if (\array_key_exists('userRelation', $data)) {
+            elseif (\array_key_exists('package', $data) && $data['package'] === null) {
+                $object->setPackage(null);
+            }
+            if (\array_key_exists('userRelation', $data) && $data['userRelation'] !== null) {
                 $values_1 = [];
                 foreach ($data['userRelation'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setUserRelation($values_1);
                 unset($data['userRelation']);
+            }
+            elseif (\array_key_exists('userRelation', $data) && $data['userRelation'] === null) {
+                $object->setUserRelation(null);
             }
             if (\array_key_exists('warnings', $data) && $data['warnings'] !== null) {
                 $values_2 = [];
@@ -147,11 +156,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('inquiryNumber', $data)) {
+            if (\array_key_exists('inquiryNumber', $data) && $data['inquiryNumber'] !== null) {
                 $object->setInquiryNumber($data['inquiryNumber']);
                 unset($data['inquiryNumber']);
             }
-            if (\array_key_exists('package', $data)) {
+            elseif (\array_key_exists('inquiryNumber', $data) && $data['inquiryNumber'] === null) {
+                $object->setInquiryNumber(null);
+            }
+            if (\array_key_exists('package', $data) && $data['package'] !== null) {
                 $values = [];
                 foreach ($data['package'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Package', 'json', $context);
@@ -159,13 +171,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPackage($values);
                 unset($data['package']);
             }
-            if (\array_key_exists('userRelation', $data)) {
+            elseif (\array_key_exists('package', $data) && $data['package'] === null) {
+                $object->setPackage(null);
+            }
+            if (\array_key_exists('userRelation', $data) && $data['userRelation'] !== null) {
                 $values_1 = [];
                 foreach ($data['userRelation'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setUserRelation($values_1);
                 unset($data['userRelation']);
+            }
+            elseif (\array_key_exists('userRelation', $data) && $data['userRelation'] === null) {
+                $object->setUserRelation(null);
             }
             if (\array_key_exists('warnings', $data) && $data['warnings'] !== null) {
                 $values_2 = [];

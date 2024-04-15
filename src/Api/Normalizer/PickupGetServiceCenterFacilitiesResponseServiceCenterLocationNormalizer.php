@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DropOffFacilities', $data)) {
+            if (\array_key_exists('DropOffFacilities', $data) && $data['DropOffFacilities'] !== null) {
                 $values = [];
                 foreach ($data['DropOffFacilities'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities', 'json', $context);
@@ -48,9 +48,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDropOffFacilities($values);
                 unset($data['DropOffFacilities']);
             }
-            if (\array_key_exists('PickupFacilities', $data)) {
+            elseif (\array_key_exists('DropOffFacilities', $data) && $data['DropOffFacilities'] === null) {
+                $object->setDropOffFacilities(null);
+            }
+            if (\array_key_exists('PickupFacilities', $data) && $data['PickupFacilities'] !== null) {
                 $object->setPickupFacilities($this->denormalizer->denormalize($data['PickupFacilities'], 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationPickupFacilities', 'json', $context));
                 unset($data['PickupFacilities']);
+            }
+            elseif (\array_key_exists('PickupFacilities', $data) && $data['PickupFacilities'] === null) {
+                $object->setPickupFacilities(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -114,7 +120,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('DropOffFacilities', $data)) {
+            if (\array_key_exists('DropOffFacilities', $data) && $data['DropOffFacilities'] !== null) {
                 $values = [];
                 foreach ($data['DropOffFacilities'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities', 'json', $context);
@@ -122,9 +128,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDropOffFacilities($values);
                 unset($data['DropOffFacilities']);
             }
-            if (\array_key_exists('PickupFacilities', $data)) {
+            elseif (\array_key_exists('DropOffFacilities', $data) && $data['DropOffFacilities'] === null) {
+                $object->setDropOffFacilities(null);
+            }
+            if (\array_key_exists('PickupFacilities', $data) && $data['PickupFacilities'] !== null) {
                 $object->setPickupFacilities($this->denormalizer->denormalize($data['PickupFacilities'], 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationPickupFacilities', 'json', $context));
                 unset($data['PickupFacilities']);
+            }
+            elseif (\array_key_exists('PickupFacilities', $data) && $data['PickupFacilities'] === null) {
+                $object->setPickupFacilities(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

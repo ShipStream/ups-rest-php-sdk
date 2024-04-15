@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('Rate', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('Rate', $data) && $data['Rate'] !== null) {
                 $values = [];
                 foreach ($data['Rate'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate', 'json', $context);
@@ -52,11 +55,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRate($values);
                 unset($data['Rate']);
             }
-            if (\array_key_exists('FreightDensityRate', $data)) {
+            elseif (\array_key_exists('Rate', $data) && $data['Rate'] === null) {
+                $object->setRate(null);
+            }
+            if (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] !== null) {
                 $object->setFreightDensityRate($this->denormalizer->denormalize($data['FreightDensityRate'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseFreightDensityRate', 'json', $context));
                 unset($data['FreightDensityRate']);
             }
-            if (\array_key_exists('Commodity', $data)) {
+            elseif (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] === null) {
+                $object->setFreightDensityRate(null);
+            }
+            if (\array_key_exists('Commodity', $data) && $data['Commodity'] !== null) {
                 $values_1 = [];
                 foreach ($data['Commodity'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity', 'json', $context);
@@ -64,31 +73,52 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCommodity($values_1);
                 unset($data['Commodity']);
             }
-            if (\array_key_exists('TotalShipmentCharge', $data)) {
+            elseif (\array_key_exists('Commodity', $data) && $data['Commodity'] === null) {
+                $object->setCommodity(null);
+            }
+            if (\array_key_exists('TotalShipmentCharge', $data) && $data['TotalShipmentCharge'] !== null) {
                 $object->setTotalShipmentCharge($this->denormalizer->denormalize($data['TotalShipmentCharge'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTotalShipmentCharge', 'json', $context));
                 unset($data['TotalShipmentCharge']);
             }
-            if (\array_key_exists('BillableShipmentWeight', $data)) {
+            elseif (\array_key_exists('TotalShipmentCharge', $data) && $data['TotalShipmentCharge'] === null) {
+                $object->setTotalShipmentCharge(null);
+            }
+            if (\array_key_exists('BillableShipmentWeight', $data) && $data['BillableShipmentWeight'] !== null) {
                 $object->setBillableShipmentWeight($this->denormalizer->denormalize($data['BillableShipmentWeight'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseBillableShipmentWeight', 'json', $context));
                 unset($data['BillableShipmentWeight']);
             }
-            if (\array_key_exists('DimensionalWeight', $data)) {
+            elseif (\array_key_exists('BillableShipmentWeight', $data) && $data['BillableShipmentWeight'] === null) {
+                $object->setBillableShipmentWeight(null);
+            }
+            if (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] !== null) {
                 $object->setDimensionalWeight($this->denormalizer->denormalize($data['DimensionalWeight'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseDimensionalWeight', 'json', $context));
                 unset($data['DimensionalWeight']);
             }
-            if (\array_key_exists('Service', $data)) {
+            elseif (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] === null) {
+                $object->setDimensionalWeight(null);
+            }
+            if (\array_key_exists('Service', $data) && $data['Service'] !== null) {
                 $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseService', 'json', $context));
                 unset($data['Service']);
             }
-            if (\array_key_exists('GuaranteedIndicator', $data)) {
+            elseif (\array_key_exists('Service', $data) && $data['Service'] === null) {
+                $object->setService(null);
+            }
+            if (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] !== null) {
                 $object->setGuaranteedIndicator($data['GuaranteedIndicator']);
                 unset($data['GuaranteedIndicator']);
             }
-            if (\array_key_exists('MinimumChargeAppliedIndicator', $data)) {
+            elseif (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] === null) {
+                $object->setGuaranteedIndicator(null);
+            }
+            if (\array_key_exists('MinimumChargeAppliedIndicator', $data) && $data['MinimumChargeAppliedIndicator'] !== null) {
                 $object->setMinimumChargeAppliedIndicator($data['MinimumChargeAppliedIndicator']);
                 unset($data['MinimumChargeAppliedIndicator']);
             }
-            if (\array_key_exists('AlternateRatesResponse', $data)) {
+            elseif (\array_key_exists('MinimumChargeAppliedIndicator', $data) && $data['MinimumChargeAppliedIndicator'] === null) {
+                $object->setMinimumChargeAppliedIndicator(null);
+            }
+            if (\array_key_exists('AlternateRatesResponse', $data) && $data['AlternateRatesResponse'] !== null) {
                 $values_2 = [];
                 foreach ($data['AlternateRatesResponse'] as $value_2) {
                     $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse', 'json', $context);
@@ -96,17 +126,29 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAlternateRatesResponse($values_2);
                 unset($data['AlternateRatesResponse']);
             }
-            if (\array_key_exists('TimeInTransit', $data)) {
+            elseif (\array_key_exists('AlternateRatesResponse', $data) && $data['AlternateRatesResponse'] === null) {
+                $object->setAlternateRatesResponse(null);
+            }
+            if (\array_key_exists('TimeInTransit', $data) && $data['TimeInTransit'] !== null) {
                 $object->setTimeInTransit($this->denormalizer->denormalize($data['TimeInTransit'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTimeInTransit', 'json', $context));
                 unset($data['TimeInTransit']);
             }
-            if (\array_key_exists('HandlingUnits', $data)) {
+            elseif (\array_key_exists('TimeInTransit', $data) && $data['TimeInTransit'] === null) {
+                $object->setTimeInTransit(null);
+            }
+            if (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] !== null) {
                 $object->setHandlingUnits($this->denormalizer->denormalize($data['HandlingUnits'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseHandlingUnits', 'json', $context));
                 unset($data['HandlingUnits']);
             }
-            if (\array_key_exists('QuoteNumber', $data)) {
+            elseif (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] === null) {
+                $object->setHandlingUnits(null);
+            }
+            if (\array_key_exists('QuoteNumber', $data) && $data['QuoteNumber'] !== null) {
                 $object->setQuoteNumber($data['QuoteNumber']);
                 unset($data['QuoteNumber']);
+            }
+            elseif (\array_key_exists('QuoteNumber', $data) && $data['QuoteNumber'] === null) {
+                $object->setQuoteNumber(null);
             }
             foreach ($data as $key => $value_3) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -210,11 +252,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('Rate', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('Rate', $data) && $data['Rate'] !== null) {
                 $values = [];
                 foreach ($data['Rate'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate', 'json', $context);
@@ -222,11 +267,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRate($values);
                 unset($data['Rate']);
             }
-            if (\array_key_exists('FreightDensityRate', $data)) {
+            elseif (\array_key_exists('Rate', $data) && $data['Rate'] === null) {
+                $object->setRate(null);
+            }
+            if (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] !== null) {
                 $object->setFreightDensityRate($this->denormalizer->denormalize($data['FreightDensityRate'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseFreightDensityRate', 'json', $context));
                 unset($data['FreightDensityRate']);
             }
-            if (\array_key_exists('Commodity', $data)) {
+            elseif (\array_key_exists('FreightDensityRate', $data) && $data['FreightDensityRate'] === null) {
+                $object->setFreightDensityRate(null);
+            }
+            if (\array_key_exists('Commodity', $data) && $data['Commodity'] !== null) {
                 $values_1 = [];
                 foreach ($data['Commodity'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity', 'json', $context);
@@ -234,31 +285,52 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCommodity($values_1);
                 unset($data['Commodity']);
             }
-            if (\array_key_exists('TotalShipmentCharge', $data)) {
+            elseif (\array_key_exists('Commodity', $data) && $data['Commodity'] === null) {
+                $object->setCommodity(null);
+            }
+            if (\array_key_exists('TotalShipmentCharge', $data) && $data['TotalShipmentCharge'] !== null) {
                 $object->setTotalShipmentCharge($this->denormalizer->denormalize($data['TotalShipmentCharge'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTotalShipmentCharge', 'json', $context));
                 unset($data['TotalShipmentCharge']);
             }
-            if (\array_key_exists('BillableShipmentWeight', $data)) {
+            elseif (\array_key_exists('TotalShipmentCharge', $data) && $data['TotalShipmentCharge'] === null) {
+                $object->setTotalShipmentCharge(null);
+            }
+            if (\array_key_exists('BillableShipmentWeight', $data) && $data['BillableShipmentWeight'] !== null) {
                 $object->setBillableShipmentWeight($this->denormalizer->denormalize($data['BillableShipmentWeight'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseBillableShipmentWeight', 'json', $context));
                 unset($data['BillableShipmentWeight']);
             }
-            if (\array_key_exists('DimensionalWeight', $data)) {
+            elseif (\array_key_exists('BillableShipmentWeight', $data) && $data['BillableShipmentWeight'] === null) {
+                $object->setBillableShipmentWeight(null);
+            }
+            if (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] !== null) {
                 $object->setDimensionalWeight($this->denormalizer->denormalize($data['DimensionalWeight'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseDimensionalWeight', 'json', $context));
                 unset($data['DimensionalWeight']);
             }
-            if (\array_key_exists('Service', $data)) {
+            elseif (\array_key_exists('DimensionalWeight', $data) && $data['DimensionalWeight'] === null) {
+                $object->setDimensionalWeight(null);
+            }
+            if (\array_key_exists('Service', $data) && $data['Service'] !== null) {
                 $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseService', 'json', $context));
                 unset($data['Service']);
             }
-            if (\array_key_exists('GuaranteedIndicator', $data)) {
+            elseif (\array_key_exists('Service', $data) && $data['Service'] === null) {
+                $object->setService(null);
+            }
+            if (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] !== null) {
                 $object->setGuaranteedIndicator($data['GuaranteedIndicator']);
                 unset($data['GuaranteedIndicator']);
             }
-            if (\array_key_exists('MinimumChargeAppliedIndicator', $data)) {
+            elseif (\array_key_exists('GuaranteedIndicator', $data) && $data['GuaranteedIndicator'] === null) {
+                $object->setGuaranteedIndicator(null);
+            }
+            if (\array_key_exists('MinimumChargeAppliedIndicator', $data) && $data['MinimumChargeAppliedIndicator'] !== null) {
                 $object->setMinimumChargeAppliedIndicator($data['MinimumChargeAppliedIndicator']);
                 unset($data['MinimumChargeAppliedIndicator']);
             }
-            if (\array_key_exists('AlternateRatesResponse', $data)) {
+            elseif (\array_key_exists('MinimumChargeAppliedIndicator', $data) && $data['MinimumChargeAppliedIndicator'] === null) {
+                $object->setMinimumChargeAppliedIndicator(null);
+            }
+            if (\array_key_exists('AlternateRatesResponse', $data) && $data['AlternateRatesResponse'] !== null) {
                 $values_2 = [];
                 foreach ($data['AlternateRatesResponse'] as $value_2) {
                     $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse', 'json', $context);
@@ -266,17 +338,29 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAlternateRatesResponse($values_2);
                 unset($data['AlternateRatesResponse']);
             }
-            if (\array_key_exists('TimeInTransit', $data)) {
+            elseif (\array_key_exists('AlternateRatesResponse', $data) && $data['AlternateRatesResponse'] === null) {
+                $object->setAlternateRatesResponse(null);
+            }
+            if (\array_key_exists('TimeInTransit', $data) && $data['TimeInTransit'] !== null) {
                 $object->setTimeInTransit($this->denormalizer->denormalize($data['TimeInTransit'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTimeInTransit', 'json', $context));
                 unset($data['TimeInTransit']);
             }
-            if (\array_key_exists('HandlingUnits', $data)) {
+            elseif (\array_key_exists('TimeInTransit', $data) && $data['TimeInTransit'] === null) {
+                $object->setTimeInTransit(null);
+            }
+            if (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] !== null) {
                 $object->setHandlingUnits($this->denormalizer->denormalize($data['HandlingUnits'], 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseHandlingUnits', 'json', $context));
                 unset($data['HandlingUnits']);
             }
-            if (\array_key_exists('QuoteNumber', $data)) {
+            elseif (\array_key_exists('HandlingUnits', $data) && $data['HandlingUnits'] === null) {
+                $object->setHandlingUnits(null);
+            }
+            if (\array_key_exists('QuoteNumber', $data) && $data['QuoteNumber'] !== null) {
                 $object->setQuoteNumber($data['QuoteNumber']);
                 unset($data['QuoteNumber']);
+            }
+            elseif (\array_key_exists('QuoteNumber', $data) && $data['QuoteNumber'] === null) {
+                $object->setQuoteNumber(null);
             }
             foreach ($data as $key => $value_3) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,32 +15,32 @@ class AvailabilityShippingAvailability extends \ArrayObject
     /**
      * Presence or absence indicator. Presence means the location is available for shipping.
      *
-     * @var string
+     * @var string|null
      */
     protected $availableIndicator;
     /**
      * Container to hold shipping unavailable reason.
      *
-     * @var ShippingAvailabilityUnavailableReason
+     * @var ShippingAvailabilityUnavailableReason|null
      */
     protected $unavailableReason;
     /**
      * Presence or absence indicator. Presence means the location is available for shipping.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAvailableIndicator() : string
+    public function getAvailableIndicator() : ?string
     {
         return $this->availableIndicator;
     }
     /**
      * Presence or absence indicator. Presence means the location is available for shipping.
      *
-     * @param string $availableIndicator
+     * @param string|null $availableIndicator
      *
      * @return self
      */
-    public function setAvailableIndicator(string $availableIndicator) : self
+    public function setAvailableIndicator(?string $availableIndicator) : self
     {
         $this->initialized['availableIndicator'] = true;
         $this->availableIndicator = $availableIndicator;
@@ -49,20 +49,20 @@ class AvailabilityShippingAvailability extends \ArrayObject
     /**
      * Container to hold shipping unavailable reason.
      *
-     * @return ShippingAvailabilityUnavailableReason
+     * @return ShippingAvailabilityUnavailableReason|null
      */
-    public function getUnavailableReason() : ShippingAvailabilityUnavailableReason
+    public function getUnavailableReason() : ?ShippingAvailabilityUnavailableReason
     {
         return $this->unavailableReason;
     }
     /**
      * Container to hold shipping unavailable reason.
      *
-     * @param ShippingAvailabilityUnavailableReason $unavailableReason
+     * @param ShippingAvailabilityUnavailableReason|null $unavailableReason
      *
      * @return self
      */
-    public function setUnavailableReason(ShippingAvailabilityUnavailableReason $unavailableReason) : self
+    public function setUnavailableReason(?ShippingAvailabilityUnavailableReason $unavailableReason) : self
     {
         $this->initialized['unavailableReason'] = true;
         $this->unavailableReason = $unavailableReason;

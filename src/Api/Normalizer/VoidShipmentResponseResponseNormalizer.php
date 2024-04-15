@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ResponseStatus', $data)) {
+            if (\array_key_exists('ResponseStatus', $data) && $data['ResponseStatus'] !== null) {
                 $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], 'ShipStream\\Ups\\Api\\Model\\VoidResponseResponseStatus', 'json', $context));
                 unset($data['ResponseStatus']);
             }
-            if (\array_key_exists('Alert', $data)) {
+            elseif (\array_key_exists('ResponseStatus', $data) && $data['ResponseStatus'] === null) {
+                $object->setResponseStatus(null);
+            }
+            if (\array_key_exists('Alert', $data) && $data['Alert'] !== null) {
                 $object->setAlert($this->denormalizer->denormalize($data['Alert'], 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context));
                 unset($data['Alert']);
             }
-            if (\array_key_exists('TransactionReference', $data)) {
+            elseif (\array_key_exists('Alert', $data) && $data['Alert'] === null) {
+                $object->setAlert(null);
+            }
+            if (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] !== null) {
                 $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\VoidResponseTransactionReference', 'json', $context));
                 unset($data['TransactionReference']);
+            }
+            elseif (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] === null) {
+                $object->setTransactionReference(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -111,17 +120,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('ResponseStatus', $data)) {
+            if (\array_key_exists('ResponseStatus', $data) && $data['ResponseStatus'] !== null) {
                 $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], 'ShipStream\\Ups\\Api\\Model\\VoidResponseResponseStatus', 'json', $context));
                 unset($data['ResponseStatus']);
             }
-            if (\array_key_exists('Alert', $data)) {
+            elseif (\array_key_exists('ResponseStatus', $data) && $data['ResponseStatus'] === null) {
+                $object->setResponseStatus(null);
+            }
+            if (\array_key_exists('Alert', $data) && $data['Alert'] !== null) {
                 $object->setAlert($this->denormalizer->denormalize($data['Alert'], 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context));
                 unset($data['Alert']);
             }
-            if (\array_key_exists('TransactionReference', $data)) {
+            elseif (\array_key_exists('Alert', $data) && $data['Alert'] === null) {
+                $object->setAlert(null);
+            }
+            if (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] !== null) {
                 $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\VoidResponseTransactionReference', 'json', $context));
                 unset($data['TransactionReference']);
+            }
+            elseif (\array_key_exists('TransactionReference', $data) && $data['TransactionReference'] === null) {
+                $object->setTransactionReference(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

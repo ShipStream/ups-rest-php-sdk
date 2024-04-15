@@ -15,26 +15,26 @@ class OptionCodeTransportationPickUpSchedule extends \ArrayObject
     /**
      * 
      *
-     * @var TransportationPickUpSchedulePickUp[]
+     * @var list<TransportationPickUpSchedulePickUp>|null
      */
     protected $pickUp;
     /**
      * 
      *
-     * @return TransportationPickUpSchedulePickUp[]
+     * @return list<TransportationPickUpSchedulePickUp>|null
      */
-    public function getPickUp() : array
+    public function getPickUp() : ?array
     {
         return $this->pickUp;
     }
     /**
      * 
      *
-     * @param TransportationPickUpSchedulePickUp[] $pickUp
+     * @param list<TransportationPickUpSchedulePickUp>|null $pickUp
      *
      * @return self
      */
-    public function setPickUp(array $pickUp) : self
+    public function setPickUp(?array $pickUp) : self
     {
         $this->initialized['pickUp'] = true;
         $this->pickUp = $pickUp;

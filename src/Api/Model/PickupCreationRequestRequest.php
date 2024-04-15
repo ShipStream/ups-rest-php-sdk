@@ -22,13 +22,13 @@ class PickupCreationRequestRequest extends \ArrayObject
     Format: YYMM = Year and month of the release.
     Example: 1601 = 2016 January
     *
-    * @var string
+    * @var string|null
     */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
@@ -41,9 +41,9 @@ class PickupCreationRequestRequest extends \ArrayObject
     Format: YYMM = Year and month of the release.
     Example: 1601 = 2016 January
     *
-    * @return string
+    * @return string|null
     */
-    public function getSubVersion() : string
+    public function getSubVersion() : ?string
     {
         return $this->subVersion;
     }
@@ -57,11 +57,11 @@ class PickupCreationRequestRequest extends \ArrayObject
     Format: YYMM = Year and month of the release.
     Example: 1601 = 2016 January
     *
-    * @param string $subVersion
+    * @param string|null $subVersion
     *
     * @return self
     */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(?string $subVersion) : self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -70,20 +70,20 @@ class PickupCreationRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

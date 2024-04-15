@@ -15,7 +15,7 @@ class ShipperChargeCard extends \ArrayObject
     /**
      * Charge card holder name. If the name is not provided, defaults to "No Name Provided".
      *
-     * @var string
+     * @var string|null
      */
     protected $cardHolderName;
     /**
@@ -25,13 +25,13 @@ class ShipperChargeCard extends \ArrayObject
     04 = Mastercard
     06 = VISA  Discover card Pickup country US only.
     *
-    * @var string
+    * @var string|null
     */
     protected $cardType;
     /**
      * Charge card number.  For Privileged clients, this element must be tokenized card number.
      *
-     * @var string
+     * @var string|null
      */
     protected $cardNumber;
     /**
@@ -40,7 +40,7 @@ class ShipperChargeCard extends \ArrayObject
     yyyy = 4 digit year, valid value current year - 10 years.
     MM = 2 digit month, valid values 01-12
     *
-    * @var string
+    * @var string|null
     */
     protected $expirationDate;
     /**
@@ -48,32 +48,32 @@ class ShipperChargeCard extends \ArrayObject
     Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
     Security code is required if credit card information is provided.
     *
-    * @var string
+    * @var string|null
     */
     protected $securityCode;
     /**
      * Container to hold the Charge card address.
      *
-     * @var ChargeCardCardAddress
+     * @var ChargeCardCardAddress|null
      */
     protected $cardAddress;
     /**
      * Charge card holder name. If the name is not provided, defaults to "No Name Provided".
      *
-     * @return string
+     * @return string|null
      */
-    public function getCardHolderName() : string
+    public function getCardHolderName() : ?string
     {
         return $this->cardHolderName;
     }
     /**
      * Charge card holder name. If the name is not provided, defaults to "No Name Provided".
      *
-     * @param string $cardHolderName
+     * @param string|null $cardHolderName
      *
      * @return self
      */
-    public function setCardHolderName(string $cardHolderName) : self
+    public function setCardHolderName(?string $cardHolderName) : self
     {
         $this->initialized['cardHolderName'] = true;
         $this->cardHolderName = $cardHolderName;
@@ -86,9 +86,9 @@ class ShipperChargeCard extends \ArrayObject
     04 = Mastercard
     06 = VISA  Discover card Pickup country US only.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCardType() : string
+    public function getCardType() : ?string
     {
         return $this->cardType;
     }
@@ -99,11 +99,11 @@ class ShipperChargeCard extends \ArrayObject
     04 = Mastercard
     06 = VISA  Discover card Pickup country US only.
     *
-    * @param string $cardType
+    * @param string|null $cardType
     *
     * @return self
     */
-    public function setCardType(string $cardType) : self
+    public function setCardType(?string $cardType) : self
     {
         $this->initialized['cardType'] = true;
         $this->cardType = $cardType;
@@ -112,20 +112,20 @@ class ShipperChargeCard extends \ArrayObject
     /**
      * Charge card number.  For Privileged clients, this element must be tokenized card number.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCardNumber() : string
+    public function getCardNumber() : ?string
     {
         return $this->cardNumber;
     }
     /**
      * Charge card number.  For Privileged clients, this element must be tokenized card number.
      *
-     * @param string $cardNumber
+     * @param string|null $cardNumber
      *
      * @return self
      */
-    public function setCardNumber(string $cardNumber) : self
+    public function setCardNumber(?string $cardNumber) : self
     {
         $this->initialized['cardNumber'] = true;
         $this->cardNumber = $cardNumber;
@@ -137,9 +137,9 @@ class ShipperChargeCard extends \ArrayObject
     yyyy = 4 digit year, valid value current year - 10 years.
     MM = 2 digit month, valid values 01-12
     *
-    * @return string
+    * @return string|null
     */
-    public function getExpirationDate() : string
+    public function getExpirationDate() : ?string
     {
         return $this->expirationDate;
     }
@@ -149,11 +149,11 @@ class ShipperChargeCard extends \ArrayObject
     yyyy = 4 digit year, valid value current year - 10 years.
     MM = 2 digit month, valid values 01-12
     *
-    * @param string $expirationDate
+    * @param string|null $expirationDate
     *
     * @return self
     */
-    public function setExpirationDate(string $expirationDate) : self
+    public function setExpirationDate(?string $expirationDate) : self
     {
         $this->initialized['expirationDate'] = true;
         $this->expirationDate = $expirationDate;
@@ -164,9 +164,9 @@ class ShipperChargeCard extends \ArrayObject
     Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
     Security code is required if credit card information is provided.
     *
-    * @return string
+    * @return string|null
     */
-    public function getSecurityCode() : string
+    public function getSecurityCode() : ?string
     {
         return $this->securityCode;
     }
@@ -175,11 +175,11 @@ class ShipperChargeCard extends \ArrayObject
     Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
     Security code is required if credit card information is provided.
     *
-    * @param string $securityCode
+    * @param string|null $securityCode
     *
     * @return self
     */
-    public function setSecurityCode(string $securityCode) : self
+    public function setSecurityCode(?string $securityCode) : self
     {
         $this->initialized['securityCode'] = true;
         $this->securityCode = $securityCode;
@@ -188,20 +188,20 @@ class ShipperChargeCard extends \ArrayObject
     /**
      * Container to hold the Charge card address.
      *
-     * @return ChargeCardCardAddress
+     * @return ChargeCardCardAddress|null
      */
-    public function getCardAddress() : ChargeCardCardAddress
+    public function getCardAddress() : ?ChargeCardCardAddress
     {
         return $this->cardAddress;
     }
     /**
      * Container to hold the Charge card address.
      *
-     * @param ChargeCardCardAddress $cardAddress
+     * @param ChargeCardCardAddress|null $cardAddress
      *
      * @return self
      */
-    public function setCardAddress(ChargeCardCardAddress $cardAddress) : self
+    public function setCardAddress(?ChargeCardCardAddress $cardAddress) : self
     {
         $this->initialized['cardAddress'] = true;
         $this->cardAddress = $cardAddress;

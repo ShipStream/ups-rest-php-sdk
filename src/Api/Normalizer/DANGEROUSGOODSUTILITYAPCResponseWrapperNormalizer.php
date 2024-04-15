@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AcceptanceAuditPreCheckResponse', $data)) {
+            if (\array_key_exists('AcceptanceAuditPreCheckResponse', $data) && $data['AcceptanceAuditPreCheckResponse'] !== null) {
                 $object->setAcceptanceAuditPreCheckResponse($this->denormalizer->denormalize($data['AcceptanceAuditPreCheckResponse'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponse', 'json', $context));
                 unset($data['AcceptanceAuditPreCheckResponse']);
+            }
+            elseif (\array_key_exists('AcceptanceAuditPreCheckResponse', $data) && $data['AcceptanceAuditPreCheckResponse'] === null) {
+                $object->setAcceptanceAuditPreCheckResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -97,9 +100,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AcceptanceAuditPreCheckResponse', $data)) {
+            if (\array_key_exists('AcceptanceAuditPreCheckResponse', $data) && $data['AcceptanceAuditPreCheckResponse'] !== null) {
                 $object->setAcceptanceAuditPreCheckResponse($this->denormalizer->denormalize($data['AcceptanceAuditPreCheckResponse'], 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponse', 'json', $context));
                 unset($data['AcceptanceAuditPreCheckResponse']);
+            }
+            elseif (\array_key_exists('AcceptanceAuditPreCheckResponse', $data) && $data['AcceptanceAuditPreCheckResponse'] === null) {
+                $object->setAcceptanceAuditPreCheckResponse(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

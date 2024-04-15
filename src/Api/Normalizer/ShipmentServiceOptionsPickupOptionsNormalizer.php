@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LiftGateAtPickupIndicator', $data)) {
+            if (\array_key_exists('LiftGateAtPickupIndicator', $data) && $data['LiftGateAtPickupIndicator'] !== null) {
                 $object->setLiftGateAtPickupIndicator($data['LiftGateAtPickupIndicator']);
                 unset($data['LiftGateAtPickupIndicator']);
             }
-            if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateAtPickupIndicator', $data) && $data['LiftGateAtPickupIndicator'] === null) {
+                $object->setLiftGateAtPickupIndicator(null);
+            }
+            if (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] !== null) {
                 $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
                 unset($data['HoldForPickupIndicator']);
+            }
+            elseif (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] === null) {
+                $object->setHoldForPickupIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LiftGateAtPickupIndicator', $data)) {
+            if (\array_key_exists('LiftGateAtPickupIndicator', $data) && $data['LiftGateAtPickupIndicator'] !== null) {
                 $object->setLiftGateAtPickupIndicator($data['LiftGateAtPickupIndicator']);
                 unset($data['LiftGateAtPickupIndicator']);
             }
-            if (\array_key_exists('HoldForPickupIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateAtPickupIndicator', $data) && $data['LiftGateAtPickupIndicator'] === null) {
+                $object->setLiftGateAtPickupIndicator(null);
+            }
+            if (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] !== null) {
                 $object->setHoldForPickupIndicator($data['HoldForPickupIndicator']);
                 unset($data['HoldForPickupIndicator']);
+            }
+            elseif (\array_key_exists('HoldForPickupIndicator', $data) && $data['HoldForPickupIndicator'] === null) {
+                $object->setHoldForPickupIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

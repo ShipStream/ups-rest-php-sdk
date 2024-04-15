@@ -18,13 +18,13 @@ class AlternateRatesResponseAlternateRateType extends \ArrayObject
     2 = GFP only 
     3 = GFP and LTL
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Alternate Rate Type description.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -33,9 +33,9 @@ class AlternateRatesResponseAlternateRateType extends \ArrayObject
     2 = GFP only 
     3 = GFP and LTL
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -45,11 +45,11 @@ class AlternateRatesResponseAlternateRateType extends \ArrayObject
     2 = GFP only 
     3 = GFP and LTL
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -58,20 +58,20 @@ class AlternateRatesResponseAlternateRateType extends \ArrayObject
     /**
      * Alternate Rate Type description.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Alternate Rate Type description.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

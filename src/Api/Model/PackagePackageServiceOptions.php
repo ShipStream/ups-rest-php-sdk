@@ -17,49 +17,49 @@ class PackagePackageServiceOptions extends \ArrayObject
     Refer to Delivery Confirmation Origin-
     Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
     *
-    * @var PackageServiceOptionsDeliveryConfirmation
+    * @var PackageServiceOptionsDeliveryConfirmation|null
     */
     protected $deliveryConfirmation;
     /**
      * Container for Declared Value.
      *
-     * @var PackageServiceOptionsDeclaredValue
+     * @var PackageServiceOptionsDeclaredValue|null
      */
     protected $declaredValue;
     /**
      * Container for COD.  Indicates COD is requested. Package level COD is available for shipment without return service from US/PR to US/PR, CA to CA, and CA to US. CA to US COD is not allowed for package Letter/ Envelope. COD is not valid for return service movements.
      *
-     * @var PackageServiceOptionsCOD
+     * @var PackageServiceOptionsCOD|null
      */
     protected $cOD;
     /**
      * Access Point COD indicates Package COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Package Access Point COD is valid only for shipment without return service from US/PR to US/PR and CA to CA. Not valid with COD at package level.
      *
-     * @var PackageServiceOptionsAccessPointCOD
+     * @var PackageServiceOptionsAccessPointCOD|null
      */
     protected $accessPointCOD;
     /**
      * The presence indicates that the package may be released by driver without a signature from the consignee.  Empty Tag. Only available for US50/PR to US50/PR packages without return service.
      *
-     * @var string
+     * @var string|null
      */
     protected $shipperReleaseIndicator;
     /**
      * Receiver Return Notification.  Applicable for Shipment with returned service.
      *
-     * @var PackageServiceOptionsNotification
+     * @var PackageServiceOptionsNotification|null
      */
     protected $notification;
     /**
      * 
      *
-     * @var PackageServiceOptionsHazMat[]
+     * @var list<PackageServiceOptionsHazMat>|null
      */
     protected $hazMat;
     /**
      * Container for Dry Ice.  Maximum 1 Dry Ice is allowed. Lane check will happen based on postal code/ city.
      *
-     * @var PackageServiceOptionsDryIce
+     * @var PackageServiceOptionsDryIce|null
      */
     protected $dryIce;
     /**
@@ -81,31 +81,31 @@ class PackagePackageServiceOptions extends \ArrayObject
     UPS Standard
     Valid only for Canada to Canada movements.
     *
-    * @var string
+    * @var string|null
     */
     protected $uPSPremiumCareIndicator;
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, the package is rated for UPS Proactive Response and proactive package tracking. Contractual accessorial for health care companies to allow package monitoring throughout the UPS system.  Shippers account needs to have valid contract for UPS Proactive Reponse.
      *
-     * @var string
+     * @var string|null
      */
     protected $proactiveIndicator;
     /**
      * Identifies the package containing Dangerous Goods.  Required for Hazmat shipment if SubVersion is greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $packageIdentifier;
     /**
      * Unique identifier for clinical trials
      *
-     * @var string
+     * @var string|null
      */
     protected $clinicalTrialsID;
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package contains an item that needs refrigeration.  Shippers account needs to have a valid contract for Refrigeration.
      *
-     * @var string
+     * @var string|null
      */
     protected $refrigerationIndicator;
     /**
@@ -113,9 +113,9 @@ class PackagePackageServiceOptions extends \ArrayObject
     Refer to Delivery Confirmation Origin-
     Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
     *
-    * @return PackageServiceOptionsDeliveryConfirmation
+    * @return PackageServiceOptionsDeliveryConfirmation|null
     */
-    public function getDeliveryConfirmation() : PackageServiceOptionsDeliveryConfirmation
+    public function getDeliveryConfirmation() : ?PackageServiceOptionsDeliveryConfirmation
     {
         return $this->deliveryConfirmation;
     }
@@ -124,11 +124,11 @@ class PackagePackageServiceOptions extends \ArrayObject
     Refer to Delivery Confirmation Origin-
     Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
     *
-    * @param PackageServiceOptionsDeliveryConfirmation $deliveryConfirmation
+    * @param PackageServiceOptionsDeliveryConfirmation|null $deliveryConfirmation
     *
     * @return self
     */
-    public function setDeliveryConfirmation(PackageServiceOptionsDeliveryConfirmation $deliveryConfirmation) : self
+    public function setDeliveryConfirmation(?PackageServiceOptionsDeliveryConfirmation $deliveryConfirmation) : self
     {
         $this->initialized['deliveryConfirmation'] = true;
         $this->deliveryConfirmation = $deliveryConfirmation;
@@ -137,20 +137,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Container for Declared Value.
      *
-     * @return PackageServiceOptionsDeclaredValue
+     * @return PackageServiceOptionsDeclaredValue|null
      */
-    public function getDeclaredValue() : PackageServiceOptionsDeclaredValue
+    public function getDeclaredValue() : ?PackageServiceOptionsDeclaredValue
     {
         return $this->declaredValue;
     }
     /**
      * Container for Declared Value.
      *
-     * @param PackageServiceOptionsDeclaredValue $declaredValue
+     * @param PackageServiceOptionsDeclaredValue|null $declaredValue
      *
      * @return self
      */
-    public function setDeclaredValue(PackageServiceOptionsDeclaredValue $declaredValue) : self
+    public function setDeclaredValue(?PackageServiceOptionsDeclaredValue $declaredValue) : self
     {
         $this->initialized['declaredValue'] = true;
         $this->declaredValue = $declaredValue;
@@ -159,20 +159,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Container for COD.  Indicates COD is requested. Package level COD is available for shipment without return service from US/PR to US/PR, CA to CA, and CA to US. CA to US COD is not allowed for package Letter/ Envelope. COD is not valid for return service movements.
      *
-     * @return PackageServiceOptionsCOD
+     * @return PackageServiceOptionsCOD|null
      */
-    public function getCOD() : PackageServiceOptionsCOD
+    public function getCOD() : ?PackageServiceOptionsCOD
     {
         return $this->cOD;
     }
     /**
      * Container for COD.  Indicates COD is requested. Package level COD is available for shipment without return service from US/PR to US/PR, CA to CA, and CA to US. CA to US COD is not allowed for package Letter/ Envelope. COD is not valid for return service movements.
      *
-     * @param PackageServiceOptionsCOD $cOD
+     * @param PackageServiceOptionsCOD|null $cOD
      *
      * @return self
      */
-    public function setCOD(PackageServiceOptionsCOD $cOD) : self
+    public function setCOD(?PackageServiceOptionsCOD $cOD) : self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -181,20 +181,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Access Point COD indicates Package COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Package Access Point COD is valid only for shipment without return service from US/PR to US/PR and CA to CA. Not valid with COD at package level.
      *
-     * @return PackageServiceOptionsAccessPointCOD
+     * @return PackageServiceOptionsAccessPointCOD|null
      */
-    public function getAccessPointCOD() : PackageServiceOptionsAccessPointCOD
+    public function getAccessPointCOD() : ?PackageServiceOptionsAccessPointCOD
     {
         return $this->accessPointCOD;
     }
     /**
      * Access Point COD indicates Package COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Package Access Point COD is valid only for shipment without return service from US/PR to US/PR and CA to CA. Not valid with COD at package level.
      *
-     * @param PackageServiceOptionsAccessPointCOD $accessPointCOD
+     * @param PackageServiceOptionsAccessPointCOD|null $accessPointCOD
      *
      * @return self
      */
-    public function setAccessPointCOD(PackageServiceOptionsAccessPointCOD $accessPointCOD) : self
+    public function setAccessPointCOD(?PackageServiceOptionsAccessPointCOD $accessPointCOD) : self
     {
         $this->initialized['accessPointCOD'] = true;
         $this->accessPointCOD = $accessPointCOD;
@@ -203,20 +203,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * The presence indicates that the package may be released by driver without a signature from the consignee.  Empty Tag. Only available for US50/PR to US50/PR packages without return service.
      *
-     * @return string
+     * @return string|null
      */
-    public function getShipperReleaseIndicator() : string
+    public function getShipperReleaseIndicator() : ?string
     {
         return $this->shipperReleaseIndicator;
     }
     /**
      * The presence indicates that the package may be released by driver without a signature from the consignee.  Empty Tag. Only available for US50/PR to US50/PR packages without return service.
      *
-     * @param string $shipperReleaseIndicator
+     * @param string|null $shipperReleaseIndicator
      *
      * @return self
      */
-    public function setShipperReleaseIndicator(string $shipperReleaseIndicator) : self
+    public function setShipperReleaseIndicator(?string $shipperReleaseIndicator) : self
     {
         $this->initialized['shipperReleaseIndicator'] = true;
         $this->shipperReleaseIndicator = $shipperReleaseIndicator;
@@ -225,20 +225,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Receiver Return Notification.  Applicable for Shipment with returned service.
      *
-     * @return PackageServiceOptionsNotification
+     * @return PackageServiceOptionsNotification|null
      */
-    public function getNotification() : PackageServiceOptionsNotification
+    public function getNotification() : ?PackageServiceOptionsNotification
     {
         return $this->notification;
     }
     /**
      * Receiver Return Notification.  Applicable for Shipment with returned service.
      *
-     * @param PackageServiceOptionsNotification $notification
+     * @param PackageServiceOptionsNotification|null $notification
      *
      * @return self
      */
-    public function setNotification(PackageServiceOptionsNotification $notification) : self
+    public function setNotification(?PackageServiceOptionsNotification $notification) : self
     {
         $this->initialized['notification'] = true;
         $this->notification = $notification;
@@ -247,20 +247,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @return PackageServiceOptionsHazMat[]
+     * @return list<PackageServiceOptionsHazMat>|null
      */
-    public function getHazMat() : array
+    public function getHazMat() : ?array
     {
         return $this->hazMat;
     }
     /**
      * 
      *
-     * @param PackageServiceOptionsHazMat[] $hazMat
+     * @param list<PackageServiceOptionsHazMat>|null $hazMat
      *
      * @return self
      */
-    public function setHazMat(array $hazMat) : self
+    public function setHazMat(?array $hazMat) : self
     {
         $this->initialized['hazMat'] = true;
         $this->hazMat = $hazMat;
@@ -269,20 +269,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Container for Dry Ice.  Maximum 1 Dry Ice is allowed. Lane check will happen based on postal code/ city.
      *
-     * @return PackageServiceOptionsDryIce
+     * @return PackageServiceOptionsDryIce|null
      */
-    public function getDryIce() : PackageServiceOptionsDryIce
+    public function getDryIce() : ?PackageServiceOptionsDryIce
     {
         return $this->dryIce;
     }
     /**
      * Container for Dry Ice.  Maximum 1 Dry Ice is allowed. Lane check will happen based on postal code/ city.
      *
-     * @param PackageServiceOptionsDryIce $dryIce
+     * @param PackageServiceOptionsDryIce|null $dryIce
      *
      * @return self
      */
-    public function setDryIce(PackageServiceOptionsDryIce $dryIce) : self
+    public function setDryIce(?PackageServiceOptionsDryIce $dryIce) : self
     {
         $this->initialized['dryIce'] = true;
         $this->dryIce = $dryIce;
@@ -307,9 +307,9 @@ class PackagePackageServiceOptions extends \ArrayObject
     UPS Standard
     Valid only for Canada to Canada movements.
     *
-    * @return string
+    * @return string|null
     */
-    public function getUPSPremiumCareIndicator() : string
+    public function getUPSPremiumCareIndicator() : ?string
     {
         return $this->uPSPremiumCareIndicator;
     }
@@ -332,11 +332,11 @@ class PackagePackageServiceOptions extends \ArrayObject
     UPS Standard
     Valid only for Canada to Canada movements.
     *
-    * @param string $uPSPremiumCareIndicator
+    * @param string|null $uPSPremiumCareIndicator
     *
     * @return self
     */
-    public function setUPSPremiumCareIndicator(string $uPSPremiumCareIndicator) : self
+    public function setUPSPremiumCareIndicator(?string $uPSPremiumCareIndicator) : self
     {
         $this->initialized['uPSPremiumCareIndicator'] = true;
         $this->uPSPremiumCareIndicator = $uPSPremiumCareIndicator;
@@ -345,20 +345,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, the package is rated for UPS Proactive Response and proactive package tracking. Contractual accessorial for health care companies to allow package monitoring throughout the UPS system.  Shippers account needs to have valid contract for UPS Proactive Reponse.
      *
-     * @return string
+     * @return string|null
      */
-    public function getProactiveIndicator() : string
+    public function getProactiveIndicator() : ?string
     {
         return $this->proactiveIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, the package is rated for UPS Proactive Response and proactive package tracking. Contractual accessorial for health care companies to allow package monitoring throughout the UPS system.  Shippers account needs to have valid contract for UPS Proactive Reponse.
      *
-     * @param string $proactiveIndicator
+     * @param string|null $proactiveIndicator
      *
      * @return self
      */
-    public function setProactiveIndicator(string $proactiveIndicator) : self
+    public function setProactiveIndicator(?string $proactiveIndicator) : self
     {
         $this->initialized['proactiveIndicator'] = true;
         $this->proactiveIndicator = $proactiveIndicator;
@@ -367,20 +367,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Identifies the package containing Dangerous Goods.  Required for Hazmat shipment if SubVersion is greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier() : ?string
     {
         return $this->packageIdentifier;
     }
     /**
      * Identifies the package containing Dangerous Goods.  Required for Hazmat shipment if SubVersion is greater than or equal to 1701.
      *
-     * @param string $packageIdentifier
+     * @param string|null $packageIdentifier
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(?string $packageIdentifier) : self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -389,20 +389,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Unique identifier for clinical trials
      *
-     * @return string
+     * @return string|null
      */
-    public function getClinicalTrialsID() : string
+    public function getClinicalTrialsID() : ?string
     {
         return $this->clinicalTrialsID;
     }
     /**
      * Unique identifier for clinical trials
      *
-     * @param string $clinicalTrialsID
+     * @param string|null $clinicalTrialsID
      *
      * @return self
      */
-    public function setClinicalTrialsID(string $clinicalTrialsID) : self
+    public function setClinicalTrialsID(?string $clinicalTrialsID) : self
     {
         $this->initialized['clinicalTrialsID'] = true;
         $this->clinicalTrialsID = $clinicalTrialsID;
@@ -411,20 +411,20 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package contains an item that needs refrigeration.  Shippers account needs to have a valid contract for Refrigeration.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRefrigerationIndicator() : string
+    public function getRefrigerationIndicator() : ?string
     {
         return $this->refrigerationIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package contains an item that needs refrigeration.  Shippers account needs to have a valid contract for Refrigeration.
      *
-     * @param string $refrigerationIndicator
+     * @param string|null $refrigerationIndicator
      *
      * @return self
      */
-    public function setRefrigerationIndicator(string $refrigerationIndicator) : self
+    public function setRefrigerationIndicator(?string $refrigerationIndicator) : self
     {
         $this->initialized['refrigerationIndicator'] = true;
         $this->refrigerationIndicator = $refrigerationIndicator;

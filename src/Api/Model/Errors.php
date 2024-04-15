@@ -15,50 +15,50 @@ class Errors extends \ArrayObject
     /**
      * Error Code
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the error
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Consumer tailored error message
      *
-     * @var string
+     * @var string|null
      */
     protected $message;
     /**
      * The value that caused the error.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
      * The path to the field causing the error as returned from the backend services
      *
-     * @var string
+     * @var string|null
      */
     protected $field;
     /**
      * Error Code
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Error Code
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -67,20 +67,20 @@ class Errors extends \ArrayObject
     /**
      * Description of the error
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the error
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -89,20 +89,20 @@ class Errors extends \ArrayObject
     /**
      * Consumer tailored error message
      *
-     * @return string
+     * @return string|null
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
     /**
      * Consumer tailored error message
      *
-     * @param string $message
+     * @param string|null $message
      *
      * @return self
      */
-    public function setMessage(string $message) : self
+    public function setMessage(?string $message) : self
     {
         $this->initialized['message'] = true;
         $this->message = $message;
@@ -111,20 +111,20 @@ class Errors extends \ArrayObject
     /**
      * The value that caused the error.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * The value that caused the error.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -133,20 +133,20 @@ class Errors extends \ArrayObject
     /**
      * The path to the field causing the error as returned from the backend services
      *
-     * @return string
+     * @return string|null
      */
-    public function getField() : string
+    public function getField() : ?string
     {
         return $this->field;
     }
     /**
      * The path to the field causing the error as returned from the backend services
      *
-     * @param string $field
+     * @param string|null $field
      *
      * @return self
      */
-    public function setField(string $field) : self
+    public function setField(?string $field) : self
     {
         $this->initialized['field'] = true;
         $this->field = $field;

@@ -15,32 +15,32 @@ class PickupPendingStatusResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var PickupPendingStatusResponseResponse
+     * @var PickupPendingStatusResponseResponse|null
      */
     protected $response;
     /**
      * 
      *
-     * @var PickupPendingStatusResponsePendingStatus[]
+     * @var list<PickupPendingStatusResponsePendingStatus>|null
      */
     protected $pendingStatus;
     /**
      * Response Container.
      *
-     * @return PickupPendingStatusResponseResponse
+     * @return PickupPendingStatusResponseResponse|null
      */
-    public function getResponse() : PickupPendingStatusResponseResponse
+    public function getResponse() : ?PickupPendingStatusResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param PickupPendingStatusResponseResponse $response
+     * @param PickupPendingStatusResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(PickupPendingStatusResponseResponse $response) : self
+    public function setResponse(?PickupPendingStatusResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class PickupPendingStatusResponse extends \ArrayObject
     /**
      * 
      *
-     * @return PickupPendingStatusResponsePendingStatus[]
+     * @return list<PickupPendingStatusResponsePendingStatus>|null
      */
-    public function getPendingStatus() : array
+    public function getPendingStatus() : ?array
     {
         return $this->pendingStatus;
     }
     /**
      * 
      *
-     * @param PickupPendingStatusResponsePendingStatus[] $pendingStatus
+     * @param list<PickupPendingStatusResponsePendingStatus>|null $pendingStatus
      *
      * @return self
      */
-    public function setPendingStatus(array $pendingStatus) : self
+    public function setPendingStatus(?array $pendingStatus) : self
     {
         $this->initialized['pendingStatus'] = true;
         $this->pendingStatus = $pendingStatus;

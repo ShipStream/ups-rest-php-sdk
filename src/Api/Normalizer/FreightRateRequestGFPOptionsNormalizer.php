@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('GPFAccesorialRateIndicator', $data)) {
+            if (\array_key_exists('GPFAccesorialRateIndicator', $data) && $data['GPFAccesorialRateIndicator'] !== null) {
                 $object->setGPFAccesorialRateIndicator($data['GPFAccesorialRateIndicator']);
                 unset($data['GPFAccesorialRateIndicator']);
             }
-            if (\array_key_exists('OnCallInformation', $data)) {
+            elseif (\array_key_exists('GPFAccesorialRateIndicator', $data) && $data['GPFAccesorialRateIndicator'] === null) {
+                $object->setGPFAccesorialRateIndicator(null);
+            }
+            if (\array_key_exists('OnCallInformation', $data) && $data['OnCallInformation'] !== null) {
                 $object->setOnCallInformation($this->denormalizer->denormalize($data['OnCallInformation'], 'ShipStream\\Ups\\Api\\Model\\GFPOptionsOnCallInformation', 'json', $context));
                 unset($data['OnCallInformation']);
+            }
+            elseif (\array_key_exists('OnCallInformation', $data) && $data['OnCallInformation'] === null) {
+                $object->setOnCallInformation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('GPFAccesorialRateIndicator', $data)) {
+            if (\array_key_exists('GPFAccesorialRateIndicator', $data) && $data['GPFAccesorialRateIndicator'] !== null) {
                 $object->setGPFAccesorialRateIndicator($data['GPFAccesorialRateIndicator']);
                 unset($data['GPFAccesorialRateIndicator']);
             }
-            if (\array_key_exists('OnCallInformation', $data)) {
+            elseif (\array_key_exists('GPFAccesorialRateIndicator', $data) && $data['GPFAccesorialRateIndicator'] === null) {
+                $object->setGPFAccesorialRateIndicator(null);
+            }
+            if (\array_key_exists('OnCallInformation', $data) && $data['OnCallInformation'] !== null) {
                 $object->setOnCallInformation($this->denormalizer->denormalize($data['OnCallInformation'], 'ShipStream\\Ups\\Api\\Model\\GFPOptionsOnCallInformation', 'json', $context));
                 unset($data['OnCallInformation']);
+            }
+            elseif (\array_key_exists('OnCallInformation', $data) && $data['OnCallInformation'] === null) {
+                $object->setOnCallInformation(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

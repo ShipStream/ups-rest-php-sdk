@@ -40,29 +40,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AdditionalComments', $data)) {
+            if (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] !== null) {
                 $object->setAdditionalComments($data['AdditionalComments']);
                 unset($data['AdditionalComments']);
             }
-            if (\array_key_exists('Requester', $data)) {
+            elseif (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] === null) {
+                $object->setAdditionalComments(null);
+            }
+            if (\array_key_exists('Requester', $data) && $data['Requester'] !== null) {
                 $object->setRequester($this->denormalizer->denormalize($data['Requester'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester', 'json', $context));
                 unset($data['Requester']);
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            elseif (\array_key_exists('Requester', $data) && $data['Requester'] === null) {
+                $object->setRequester(null);
+            }
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
             }
-            if (\array_key_exists('EarliestTimeReady', $data)) {
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('EarliestTimeReady', $data) && $data['EarliestTimeReady'] !== null) {
                 $object->setEarliestTimeReady($data['EarliestTimeReady']);
                 unset($data['EarliestTimeReady']);
             }
-            if (\array_key_exists('LatestTimeReady', $data)) {
+            elseif (\array_key_exists('EarliestTimeReady', $data) && $data['EarliestTimeReady'] === null) {
+                $object->setEarliestTimeReady(null);
+            }
+            if (\array_key_exists('LatestTimeReady', $data) && $data['LatestTimeReady'] !== null) {
                 $object->setLatestTimeReady($data['LatestTimeReady']);
                 unset($data['LatestTimeReady']);
             }
-            if (\array_key_exists('POM', $data)) {
+            elseif (\array_key_exists('LatestTimeReady', $data) && $data['LatestTimeReady'] === null) {
+                $object->setLatestTimeReady(null);
+            }
+            if (\array_key_exists('POM', $data) && $data['POM'] !== null) {
                 $object->setPOM($this->denormalizer->denormalize($data['POM'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM', 'json', $context));
                 unset($data['POM']);
+            }
+            elseif (\array_key_exists('POM', $data) && $data['POM'] === null) {
+                $object->setPOM(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -130,29 +148,47 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('AdditionalComments', $data)) {
+            if (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] !== null) {
                 $object->setAdditionalComments($data['AdditionalComments']);
                 unset($data['AdditionalComments']);
             }
-            if (\array_key_exists('Requester', $data)) {
+            elseif (\array_key_exists('AdditionalComments', $data) && $data['AdditionalComments'] === null) {
+                $object->setAdditionalComments(null);
+            }
+            if (\array_key_exists('Requester', $data) && $data['Requester'] !== null) {
                 $object->setRequester($this->denormalizer->denormalize($data['Requester'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester', 'json', $context));
                 unset($data['Requester']);
             }
-            if (\array_key_exists('PickupDate', $data)) {
+            elseif (\array_key_exists('Requester', $data) && $data['Requester'] === null) {
+                $object->setRequester(null);
+            }
+            if (\array_key_exists('PickupDate', $data) && $data['PickupDate'] !== null) {
                 $object->setPickupDate($data['PickupDate']);
                 unset($data['PickupDate']);
             }
-            if (\array_key_exists('EarliestTimeReady', $data)) {
+            elseif (\array_key_exists('PickupDate', $data) && $data['PickupDate'] === null) {
+                $object->setPickupDate(null);
+            }
+            if (\array_key_exists('EarliestTimeReady', $data) && $data['EarliestTimeReady'] !== null) {
                 $object->setEarliestTimeReady($data['EarliestTimeReady']);
                 unset($data['EarliestTimeReady']);
             }
-            if (\array_key_exists('LatestTimeReady', $data)) {
+            elseif (\array_key_exists('EarliestTimeReady', $data) && $data['EarliestTimeReady'] === null) {
+                $object->setEarliestTimeReady(null);
+            }
+            if (\array_key_exists('LatestTimeReady', $data) && $data['LatestTimeReady'] !== null) {
                 $object->setLatestTimeReady($data['LatestTimeReady']);
                 unset($data['LatestTimeReady']);
             }
-            if (\array_key_exists('POM', $data)) {
+            elseif (\array_key_exists('LatestTimeReady', $data) && $data['LatestTimeReady'] === null) {
+                $object->setLatestTimeReady(null);
+            }
+            if (\array_key_exists('POM', $data) && $data['POM'] !== null) {
                 $object->setPOM($this->denormalizer->denormalize($data['POM'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM', 'json', $context));
                 unset($data['POM']);
+            }
+            elseif (\array_key_exists('POM', $data) && $data['POM'] === null) {
+                $object->setPOM(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

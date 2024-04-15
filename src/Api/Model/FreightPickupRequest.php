@@ -15,51 +15,51 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Freight Pickup Request Container.
      *
-     * @var FreightPickupRequestRequest
+     * @var FreightPickupRequestRequest|null
      */
     protected $request;
     /**
     * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
     If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupRequestConfirmationNumber;
     /**
      * Destinations postal code.
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationPostalCode;
     /**
      * Destinations country code.
      *
-     * @var string
+     * @var string|null
      */
     protected $destinationCountryCode;
     /**
      * Requester Container. Also referred to as caller.
      *
-     * @var FreightPickupRequestRequester
+     * @var FreightPickupRequestRequester|null
      */
     protected $requester;
     /**
      * ShipFrom Container.
      *
-     * @var FreightPickupRequestShipFrom
+     * @var FreightPickupRequestShipFrom|null
      */
     protected $shipFrom;
     /**
      * ShipTo Container.  Must be populated if request is a Pickup Notifications for LTL request and BOLID does not exist in the request.
      *
-     * @var FreightPickupRequestShipTo
+     * @var FreightPickupRequestShipTo|null
      */
     protected $shipTo;
     /**
     * Date of the Pickup. 
     Format:YYYYMMDD
     *
-    * @var string
+    * @var string|null
     */
     protected $pickupDate;
     /**
@@ -69,7 +69,7 @@ class FreightPickupRequest extends \ArrayObject
     HH = Hour values 00 to 23
     MM = Minute values 00 to 59
     *
-    * @var string
+    * @var string|null
     */
     protected $earliestTimeReady;
     /**
@@ -79,82 +79,82 @@ class FreightPickupRequest extends \ArrayObject
     HH = Hour values 00 to 23
     MM = Minute values 00 to 59
     *
-    * @var string
+    * @var string|null
     */
     protected $latestTimeReady;
     /**
      * ShipmentServiceOptions container.
      *
-     * @var FreightPickupRequestShipmentServiceOptions
+     * @var FreightPickupRequestShipmentServiceOptions|null
      */
     protected $shipmentServiceOptions;
     /**
      * 
      *
-     * @var FreightPickupRequestShipmentDetail[]
+     * @var list<FreightPickupRequestShipmentDetail>|null
      */
     protected $shipmentDetail;
     /**
     * ExistingShipmentID Container.
     Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
     *
-    * @var FreightPickupRequestExistingShipmentID
+    * @var FreightPickupRequestExistingShipmentID|null
     */
     protected $existingShipmentID;
     /**
      * An identifier associated to the pickup request when the user elects to include Pickup Notifications for LTL.
      *
-     * @var FreightPickupRequestPOM
+     * @var FreightPickupRequestPOM|null
      */
     protected $pOM;
     /**
      * Pickup Instructions.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupInstructions;
     /**
     * The location of the freight.
     Example: Loading Dock A
     *
-    * @var string
+    * @var string|null
     */
     protected $additionalComments;
     /**
      * Handling Instructions text
      *
-     * @var string
+     * @var string|null
      */
     protected $handlingInstructions;
     /**
      * Special Instructions text
      *
-     * @var string
+     * @var string|null
      */
     protected $specialInstructions;
     /**
      * Delivery Instructions text
      *
-     * @var string
+     * @var string|null
      */
     protected $deliveryInstructions;
     /**
      * Freight Pickup Request Container.
      *
-     * @return FreightPickupRequestRequest
+     * @return FreightPickupRequestRequest|null
      */
-    public function getRequest() : FreightPickupRequestRequest
+    public function getRequest() : ?FreightPickupRequestRequest
     {
         return $this->request;
     }
     /**
      * Freight Pickup Request Container.
      *
-     * @param FreightPickupRequestRequest $request
+     * @param FreightPickupRequestRequest|null $request
      *
      * @return self
      */
-    public function setRequest(FreightPickupRequestRequest $request) : self
+    public function setRequest(?FreightPickupRequestRequest $request) : self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -164,9 +164,9 @@ class FreightPickupRequest extends \ArrayObject
     * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
     If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber() : ?string
     {
         return $this->pickupRequestConfirmationNumber;
     }
@@ -174,11 +174,11 @@ class FreightPickupRequest extends \ArrayObject
     * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
     If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
     *
-    * @param string $pickupRequestConfirmationNumber
+    * @param string|null $pickupRequestConfirmationNumber
     *
     * @return self
     */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(?string $pickupRequestConfirmationNumber) : self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;
@@ -187,20 +187,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Destinations postal code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode() : ?string
     {
         return $this->destinationPostalCode;
     }
     /**
      * Destinations postal code.
      *
-     * @param string $destinationPostalCode
+     * @param string|null $destinationPostalCode
      *
      * @return self
      */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(?string $destinationPostalCode) : self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -209,20 +209,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Destinations country code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode() : ?string
     {
         return $this->destinationCountryCode;
     }
     /**
      * Destinations country code.
      *
-     * @param string $destinationCountryCode
+     * @param string|null $destinationCountryCode
      *
      * @return self
      */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(?string $destinationCountryCode) : self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -231,20 +231,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Requester Container. Also referred to as caller.
      *
-     * @return FreightPickupRequestRequester
+     * @return FreightPickupRequestRequester|null
      */
-    public function getRequester() : FreightPickupRequestRequester
+    public function getRequester() : ?FreightPickupRequestRequester
     {
         return $this->requester;
     }
     /**
      * Requester Container. Also referred to as caller.
      *
-     * @param FreightPickupRequestRequester $requester
+     * @param FreightPickupRequestRequester|null $requester
      *
      * @return self
      */
-    public function setRequester(FreightPickupRequestRequester $requester) : self
+    public function setRequester(?FreightPickupRequestRequester $requester) : self
     {
         $this->initialized['requester'] = true;
         $this->requester = $requester;
@@ -253,20 +253,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * ShipFrom Container.
      *
-     * @return FreightPickupRequestShipFrom
+     * @return FreightPickupRequestShipFrom|null
      */
-    public function getShipFrom() : FreightPickupRequestShipFrom
+    public function getShipFrom() : ?FreightPickupRequestShipFrom
     {
         return $this->shipFrom;
     }
     /**
      * ShipFrom Container.
      *
-     * @param FreightPickupRequestShipFrom $shipFrom
+     * @param FreightPickupRequestShipFrom|null $shipFrom
      *
      * @return self
      */
-    public function setShipFrom(FreightPickupRequestShipFrom $shipFrom) : self
+    public function setShipFrom(?FreightPickupRequestShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -275,20 +275,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * ShipTo Container.  Must be populated if request is a Pickup Notifications for LTL request and BOLID does not exist in the request.
      *
-     * @return FreightPickupRequestShipTo
+     * @return FreightPickupRequestShipTo|null
      */
-    public function getShipTo() : FreightPickupRequestShipTo
+    public function getShipTo() : ?FreightPickupRequestShipTo
     {
         return $this->shipTo;
     }
     /**
      * ShipTo Container.  Must be populated if request is a Pickup Notifications for LTL request and BOLID does not exist in the request.
      *
-     * @param FreightPickupRequestShipTo $shipTo
+     * @param FreightPickupRequestShipTo|null $shipTo
      *
      * @return self
      */
-    public function setShipTo(FreightPickupRequestShipTo $shipTo) : self
+    public function setShipTo(?FreightPickupRequestShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -298,9 +298,9 @@ class FreightPickupRequest extends \ArrayObject
     * Date of the Pickup. 
     Format:YYYYMMDD
     *
-    * @return string
+    * @return string|null
     */
-    public function getPickupDate() : string
+    public function getPickupDate() : ?string
     {
         return $this->pickupDate;
     }
@@ -308,11 +308,11 @@ class FreightPickupRequest extends \ArrayObject
     * Date of the Pickup. 
     Format:YYYYMMDD
     *
-    * @param string $pickupDate
+    * @param string|null $pickupDate
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(?string $pickupDate) : self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -325,9 +325,9 @@ class FreightPickupRequest extends \ArrayObject
     HH = Hour values 00 to 23
     MM = Minute values 00 to 59
     *
-    * @return string
+    * @return string|null
     */
-    public function getEarliestTimeReady() : string
+    public function getEarliestTimeReady() : ?string
     {
         return $this->earliestTimeReady;
     }
@@ -338,11 +338,11 @@ class FreightPickupRequest extends \ArrayObject
     HH = Hour values 00 to 23
     MM = Minute values 00 to 59
     *
-    * @param string $earliestTimeReady
+    * @param string|null $earliestTimeReady
     *
     * @return self
     */
-    public function setEarliestTimeReady(string $earliestTimeReady) : self
+    public function setEarliestTimeReady(?string $earliestTimeReady) : self
     {
         $this->initialized['earliestTimeReady'] = true;
         $this->earliestTimeReady = $earliestTimeReady;
@@ -355,9 +355,9 @@ class FreightPickupRequest extends \ArrayObject
     HH = Hour values 00 to 23
     MM = Minute values 00 to 59
     *
-    * @return string
+    * @return string|null
     */
-    public function getLatestTimeReady() : string
+    public function getLatestTimeReady() : ?string
     {
         return $this->latestTimeReady;
     }
@@ -368,11 +368,11 @@ class FreightPickupRequest extends \ArrayObject
     HH = Hour values 00 to 23
     MM = Minute values 00 to 59
     *
-    * @param string $latestTimeReady
+    * @param string|null $latestTimeReady
     *
     * @return self
     */
-    public function setLatestTimeReady(string $latestTimeReady) : self
+    public function setLatestTimeReady(?string $latestTimeReady) : self
     {
         $this->initialized['latestTimeReady'] = true;
         $this->latestTimeReady = $latestTimeReady;
@@ -381,20 +381,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * ShipmentServiceOptions container.
      *
-     * @return FreightPickupRequestShipmentServiceOptions
+     * @return FreightPickupRequestShipmentServiceOptions|null
      */
-    public function getShipmentServiceOptions() : FreightPickupRequestShipmentServiceOptions
+    public function getShipmentServiceOptions() : ?FreightPickupRequestShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
      * ShipmentServiceOptions container.
      *
-     * @param FreightPickupRequestShipmentServiceOptions $shipmentServiceOptions
+     * @param FreightPickupRequestShipmentServiceOptions|null $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightPickupRequestShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(?FreightPickupRequestShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -403,20 +403,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * 
      *
-     * @return FreightPickupRequestShipmentDetail[]
+     * @return list<FreightPickupRequestShipmentDetail>|null
      */
-    public function getShipmentDetail() : array
+    public function getShipmentDetail() : ?array
     {
         return $this->shipmentDetail;
     }
     /**
      * 
      *
-     * @param FreightPickupRequestShipmentDetail[] $shipmentDetail
+     * @param list<FreightPickupRequestShipmentDetail>|null $shipmentDetail
      *
      * @return self
      */
-    public function setShipmentDetail(array $shipmentDetail) : self
+    public function setShipmentDetail(?array $shipmentDetail) : self
     {
         $this->initialized['shipmentDetail'] = true;
         $this->shipmentDetail = $shipmentDetail;
@@ -426,9 +426,9 @@ class FreightPickupRequest extends \ArrayObject
     * ExistingShipmentID Container.
     Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
     *
-    * @return FreightPickupRequestExistingShipmentID
+    * @return FreightPickupRequestExistingShipmentID|null
     */
-    public function getExistingShipmentID() : FreightPickupRequestExistingShipmentID
+    public function getExistingShipmentID() : ?FreightPickupRequestExistingShipmentID
     {
         return $this->existingShipmentID;
     }
@@ -436,11 +436,11 @@ class FreightPickupRequest extends \ArrayObject
     * ExistingShipmentID Container.
     Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
     *
-    * @param FreightPickupRequestExistingShipmentID $existingShipmentID
+    * @param FreightPickupRequestExistingShipmentID|null $existingShipmentID
     *
     * @return self
     */
-    public function setExistingShipmentID(FreightPickupRequestExistingShipmentID $existingShipmentID) : self
+    public function setExistingShipmentID(?FreightPickupRequestExistingShipmentID $existingShipmentID) : self
     {
         $this->initialized['existingShipmentID'] = true;
         $this->existingShipmentID = $existingShipmentID;
@@ -449,20 +449,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * An identifier associated to the pickup request when the user elects to include Pickup Notifications for LTL.
      *
-     * @return FreightPickupRequestPOM
+     * @return FreightPickupRequestPOM|null
      */
-    public function getPOM() : FreightPickupRequestPOM
+    public function getPOM() : ?FreightPickupRequestPOM
     {
         return $this->pOM;
     }
     /**
      * An identifier associated to the pickup request when the user elects to include Pickup Notifications for LTL.
      *
-     * @param FreightPickupRequestPOM $pOM
+     * @param FreightPickupRequestPOM|null $pOM
      *
      * @return self
      */
-    public function setPOM(FreightPickupRequestPOM $pOM) : self
+    public function setPOM(?FreightPickupRequestPOM $pOM) : self
     {
         $this->initialized['pOM'] = true;
         $this->pOM = $pOM;
@@ -471,20 +471,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Pickup Instructions.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupInstructions() : string
+    public function getPickupInstructions() : ?string
     {
         return $this->pickupInstructions;
     }
     /**
      * Pickup Instructions.
      *
-     * @param string $pickupInstructions
+     * @param string|null $pickupInstructions
      *
      * @return self
      */
-    public function setPickupInstructions(string $pickupInstructions) : self
+    public function setPickupInstructions(?string $pickupInstructions) : self
     {
         $this->initialized['pickupInstructions'] = true;
         $this->pickupInstructions = $pickupInstructions;
@@ -494,9 +494,9 @@ class FreightPickupRequest extends \ArrayObject
     * The location of the freight.
     Example: Loading Dock A
     *
-    * @return string
+    * @return string|null
     */
-    public function getAdditionalComments() : string
+    public function getAdditionalComments() : ?string
     {
         return $this->additionalComments;
     }
@@ -504,11 +504,11 @@ class FreightPickupRequest extends \ArrayObject
     * The location of the freight.
     Example: Loading Dock A
     *
-    * @param string $additionalComments
+    * @param string|null $additionalComments
     *
     * @return self
     */
-    public function setAdditionalComments(string $additionalComments) : self
+    public function setAdditionalComments(?string $additionalComments) : self
     {
         $this->initialized['additionalComments'] = true;
         $this->additionalComments = $additionalComments;
@@ -517,20 +517,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Handling Instructions text
      *
-     * @return string
+     * @return string|null
      */
-    public function getHandlingInstructions() : string
+    public function getHandlingInstructions() : ?string
     {
         return $this->handlingInstructions;
     }
     /**
      * Handling Instructions text
      *
-     * @param string $handlingInstructions
+     * @param string|null $handlingInstructions
      *
      * @return self
      */
-    public function setHandlingInstructions(string $handlingInstructions) : self
+    public function setHandlingInstructions(?string $handlingInstructions) : self
     {
         $this->initialized['handlingInstructions'] = true;
         $this->handlingInstructions = $handlingInstructions;
@@ -539,20 +539,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Special Instructions text
      *
-     * @return string
+     * @return string|null
      */
-    public function getSpecialInstructions() : string
+    public function getSpecialInstructions() : ?string
     {
         return $this->specialInstructions;
     }
     /**
      * Special Instructions text
      *
-     * @param string $specialInstructions
+     * @param string|null $specialInstructions
      *
      * @return self
      */
-    public function setSpecialInstructions(string $specialInstructions) : self
+    public function setSpecialInstructions(?string $specialInstructions) : self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -561,20 +561,20 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * Delivery Instructions text
      *
-     * @return string
+     * @return string|null
      */
-    public function getDeliveryInstructions() : string
+    public function getDeliveryInstructions() : ?string
     {
         return $this->deliveryInstructions;
     }
     /**
      * Delivery Instructions text
      *
-     * @param string $deliveryInstructions
+     * @param string|null $deliveryInstructions
      *
      * @return self
      */
-    public function setDeliveryInstructions(string $deliveryInstructions) : self
+    public function setDeliveryInstructions(?string $deliveryInstructions) : self
     {
         $this->initialized['deliveryInstructions'] = true;
         $this->deliveryInstructions = $deliveryInstructions;

@@ -15,26 +15,26 @@ class ShipmentResultsCODTurnInPage extends \ArrayObject
     /**
      * The container of the image for COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @var CODTurnInPageImage
+     * @var CODTurnInPageImage|null
      */
     protected $image;
     /**
      * The container of the image for COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @return CODTurnInPageImage
+     * @return CODTurnInPageImage|null
      */
-    public function getImage() : CODTurnInPageImage
+    public function getImage() : ?CODTurnInPageImage
     {
         return $this->image;
     }
     /**
      * The container of the image for COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
      *
-     * @param CODTurnInPageImage $image
+     * @param CODTurnInPageImage|null $image
      *
      * @return self
      */
-    public function setImage(CODTurnInPageImage $image) : self
+    public function setImage(?CODTurnInPageImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

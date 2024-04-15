@@ -15,56 +15,56 @@ class RatedShipmentTimeInTransit extends \ArrayObject
     /**
      * The date the user requests UPS to pickup the package from the origin. Format: YYYYMMDD. In the event this Pickup date differs from the Pickup date in the Estimated Arrival Container, a warning will be returned.  In the event this Pickup date differs from the Pickup date in the Estimated Arrival Container, a warning will be returned.
      *
-     * @var string
+     * @var string|null
      */
     protected $pickupDate;
     /**
      * If the indicator is present then the shipment was processed as Document Only.
      *
-     * @var string
+     * @var string|null
      */
     protected $documentsOnlyIndicator;
     /**
      * Package bill type for the shipment. Valid values:02 - Document only 03 - Non-Document04 - Pallet
      *
-     * @var string
+     * @var string|null
      */
     protected $packageBillType;
     /**
      * Container for all available service information.
      *
-     * @var TimeInTransitServiceSummary
+     * @var TimeInTransitServiceSummary|null
      */
     protected $serviceSummary;
     /**
      * Required output for International requests. If Documents indicator is set for Non-document a duty is automatically calculated. The possible values to be returned are: 01 - Dutiable02 - Non-Dutiable03 - Low-value04 - Courier Remission05 - Gift06 - Military07 - Exception08 - Line Release09 - Section 321 low value.
      *
-     * @var string
+     * @var string|null
      */
     protected $autoDutyCode;
     /**
      * The Disclaimer is provided based upon the origin and destination country or territory codes provided in the request document. The possible disclaimers that can be returned are available in the Service Guaranteed Disclaimers table.
      *
-     * @var string
+     * @var string|null
      */
     protected $disclaimer;
     /**
      * The date the user requests UPS to pickup the package from the origin. Format: YYYYMMDD. In the event this Pickup date differs from the Pickup date in the Estimated Arrival Container, a warning will be returned.  In the event this Pickup date differs from the Pickup date in the Estimated Arrival Container, a warning will be returned.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPickupDate() : string
+    public function getPickupDate() : ?string
     {
         return $this->pickupDate;
     }
     /**
      * The date the user requests UPS to pickup the package from the origin. Format: YYYYMMDD. In the event this Pickup date differs from the Pickup date in the Estimated Arrival Container, a warning will be returned.  In the event this Pickup date differs from the Pickup date in the Estimated Arrival Container, a warning will be returned.
      *
-     * @param string $pickupDate
+     * @param string|null $pickupDate
      *
      * @return self
      */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(?string $pickupDate) : self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -73,20 +73,20 @@ class RatedShipmentTimeInTransit extends \ArrayObject
     /**
      * If the indicator is present then the shipment was processed as Document Only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDocumentsOnlyIndicator() : string
+    public function getDocumentsOnlyIndicator() : ?string
     {
         return $this->documentsOnlyIndicator;
     }
     /**
      * If the indicator is present then the shipment was processed as Document Only.
      *
-     * @param string $documentsOnlyIndicator
+     * @param string|null $documentsOnlyIndicator
      *
      * @return self
      */
-    public function setDocumentsOnlyIndicator(string $documentsOnlyIndicator) : self
+    public function setDocumentsOnlyIndicator(?string $documentsOnlyIndicator) : self
     {
         $this->initialized['documentsOnlyIndicator'] = true;
         $this->documentsOnlyIndicator = $documentsOnlyIndicator;
@@ -95,20 +95,20 @@ class RatedShipmentTimeInTransit extends \ArrayObject
     /**
      * Package bill type for the shipment. Valid values:02 - Document only 03 - Non-Document04 - Pallet
      *
-     * @return string
+     * @return string|null
      */
-    public function getPackageBillType() : string
+    public function getPackageBillType() : ?string
     {
         return $this->packageBillType;
     }
     /**
      * Package bill type for the shipment. Valid values:02 - Document only 03 - Non-Document04 - Pallet
      *
-     * @param string $packageBillType
+     * @param string|null $packageBillType
      *
      * @return self
      */
-    public function setPackageBillType(string $packageBillType) : self
+    public function setPackageBillType(?string $packageBillType) : self
     {
         $this->initialized['packageBillType'] = true;
         $this->packageBillType = $packageBillType;
@@ -117,20 +117,20 @@ class RatedShipmentTimeInTransit extends \ArrayObject
     /**
      * Container for all available service information.
      *
-     * @return TimeInTransitServiceSummary
+     * @return TimeInTransitServiceSummary|null
      */
-    public function getServiceSummary() : TimeInTransitServiceSummary
+    public function getServiceSummary() : ?TimeInTransitServiceSummary
     {
         return $this->serviceSummary;
     }
     /**
      * Container for all available service information.
      *
-     * @param TimeInTransitServiceSummary $serviceSummary
+     * @param TimeInTransitServiceSummary|null $serviceSummary
      *
      * @return self
      */
-    public function setServiceSummary(TimeInTransitServiceSummary $serviceSummary) : self
+    public function setServiceSummary(?TimeInTransitServiceSummary $serviceSummary) : self
     {
         $this->initialized['serviceSummary'] = true;
         $this->serviceSummary = $serviceSummary;
@@ -139,20 +139,20 @@ class RatedShipmentTimeInTransit extends \ArrayObject
     /**
      * Required output for International requests. If Documents indicator is set for Non-document a duty is automatically calculated. The possible values to be returned are: 01 - Dutiable02 - Non-Dutiable03 - Low-value04 - Courier Remission05 - Gift06 - Military07 - Exception08 - Line Release09 - Section 321 low value.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAutoDutyCode() : string
+    public function getAutoDutyCode() : ?string
     {
         return $this->autoDutyCode;
     }
     /**
      * Required output for International requests. If Documents indicator is set for Non-document a duty is automatically calculated. The possible values to be returned are: 01 - Dutiable02 - Non-Dutiable03 - Low-value04 - Courier Remission05 - Gift06 - Military07 - Exception08 - Line Release09 - Section 321 low value.
      *
-     * @param string $autoDutyCode
+     * @param string|null $autoDutyCode
      *
      * @return self
      */
-    public function setAutoDutyCode(string $autoDutyCode) : self
+    public function setAutoDutyCode(?string $autoDutyCode) : self
     {
         $this->initialized['autoDutyCode'] = true;
         $this->autoDutyCode = $autoDutyCode;
@@ -161,20 +161,20 @@ class RatedShipmentTimeInTransit extends \ArrayObject
     /**
      * The Disclaimer is provided based upon the origin and destination country or territory codes provided in the request document. The possible disclaimers that can be returned are available in the Service Guaranteed Disclaimers table.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDisclaimer() : string
+    public function getDisclaimer() : ?string
     {
         return $this->disclaimer;
     }
     /**
      * The Disclaimer is provided based upon the origin and destination country or territory codes provided in the request document. The possible disclaimers that can be returned are available in the Service Guaranteed Disclaimers table.
      *
-     * @param string $disclaimer
+     * @param string|null $disclaimer
      *
      * @return self
      */
-    public function setDisclaimer(string $disclaimer) : self
+    public function setDisclaimer(?string $disclaimer) : self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;

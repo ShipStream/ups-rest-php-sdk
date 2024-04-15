@@ -15,38 +15,38 @@ class VoidShipmentResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var VoidShipmentResponseResponse
+     * @var VoidShipmentResponseResponse|null
      */
     protected $response;
     /**
      * Container for the Summary Result
      *
-     * @var VoidShipmentResponseSummaryResult
+     * @var VoidShipmentResponseSummaryResult|null
      */
     protected $summaryResult;
     /**
      * 
      *
-     * @var VoidShipmentResponsePackageLevelResult[]
+     * @var list<VoidShipmentResponsePackageLevelResult>|null
      */
     protected $packageLevelResult;
     /**
      * Response Container.
      *
-     * @return VoidShipmentResponseResponse
+     * @return VoidShipmentResponseResponse|null
      */
-    public function getResponse() : VoidShipmentResponseResponse
+    public function getResponse() : ?VoidShipmentResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param VoidShipmentResponseResponse $response
+     * @param VoidShipmentResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(VoidShipmentResponseResponse $response) : self
+    public function setResponse(?VoidShipmentResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -55,20 +55,20 @@ class VoidShipmentResponse extends \ArrayObject
     /**
      * Container for the Summary Result
      *
-     * @return VoidShipmentResponseSummaryResult
+     * @return VoidShipmentResponseSummaryResult|null
      */
-    public function getSummaryResult() : VoidShipmentResponseSummaryResult
+    public function getSummaryResult() : ?VoidShipmentResponseSummaryResult
     {
         return $this->summaryResult;
     }
     /**
      * Container for the Summary Result
      *
-     * @param VoidShipmentResponseSummaryResult $summaryResult
+     * @param VoidShipmentResponseSummaryResult|null $summaryResult
      *
      * @return self
      */
-    public function setSummaryResult(VoidShipmentResponseSummaryResult $summaryResult) : self
+    public function setSummaryResult(?VoidShipmentResponseSummaryResult $summaryResult) : self
     {
         $this->initialized['summaryResult'] = true;
         $this->summaryResult = $summaryResult;
@@ -77,20 +77,20 @@ class VoidShipmentResponse extends \ArrayObject
     /**
      * 
      *
-     * @return VoidShipmentResponsePackageLevelResult[]
+     * @return list<VoidShipmentResponsePackageLevelResult>|null
      */
-    public function getPackageLevelResult() : array
+    public function getPackageLevelResult() : ?array
     {
         return $this->packageLevelResult;
     }
     /**
      * 
      *
-     * @param VoidShipmentResponsePackageLevelResult[] $packageLevelResult
+     * @param list<VoidShipmentResponsePackageLevelResult>|null $packageLevelResult
      *
      * @return self
      */
-    public function setPackageLevelResult(array $packageLevelResult) : self
+    public function setPackageLevelResult(?array $packageLevelResult) : self
     {
         $this->initialized['packageLevelResult'] = true;
         $this->packageLevelResult = $packageLevelResult;

@@ -15,7 +15,7 @@ class HandlingChargeAmount extends \ArrayObject
     /**
      * Handling charge amount currency type.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
@@ -29,26 +29,26 @@ class HandlingChargeAmount extends \ArrayObject
     ###############.#
     ################
     *
-    * @var string
+    * @var string|null
     */
     protected $monetaryValue;
     /**
      * Handling charge amount currency type.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * Handling charge amount currency type.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -65,9 +65,9 @@ class HandlingChargeAmount extends \ArrayObject
     ###############.#
     ################
     *
-    * @return string
+    * @return string|null
     */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
@@ -82,11 +82,11 @@ class HandlingChargeAmount extends \ArrayObject
     ###############.#
     ################
     *
-    * @param string $monetaryValue
+    * @param string|null $monetaryValue
     *
     * @return self
     */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

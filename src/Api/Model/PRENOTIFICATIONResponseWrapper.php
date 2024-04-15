@@ -15,26 +15,26 @@ class PRENOTIFICATIONResponseWrapper extends \ArrayObject
     /**
      * Pre-Notification Response container.
      *
-     * @var PreNotificationResponse
+     * @var PreNotificationResponse|null
      */
     protected $preNotificationResponse;
     /**
      * Pre-Notification Response container.
      *
-     * @return PreNotificationResponse
+     * @return PreNotificationResponse|null
      */
-    public function getPreNotificationResponse() : PreNotificationResponse
+    public function getPreNotificationResponse() : ?PreNotificationResponse
     {
         return $this->preNotificationResponse;
     }
     /**
      * Pre-Notification Response container.
      *
-     * @param PreNotificationResponse $preNotificationResponse
+     * @param PreNotificationResponse|null $preNotificationResponse
      *
      * @return self
      */
-    public function setPreNotificationResponse(PreNotificationResponse $preNotificationResponse) : self
+    public function setPreNotificationResponse(?PreNotificationResponse $preNotificationResponse) : self
     {
         $this->initialized['preNotificationResponse'] = true;
         $this->preNotificationResponse = $preNotificationResponse;

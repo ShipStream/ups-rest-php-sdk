@@ -15,7 +15,7 @@ class FreightRateRequestRequest extends \ArrayObject
     /**
      * Valid Value: 1 = Ground
      *
-     * @var string
+     * @var string|null
      */
     protected $requestOption;
     /**
@@ -30,32 +30,32 @@ class FreightRateRequestRequest extends \ArrayObject
     
     Supported values: 1601, 1607, 1701, 1707
     *
-    * @var string
+    * @var string|null
     */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Valid Value: 1 = Ground
      *
-     * @return string
+     * @return string|null
      */
-    public function getRequestOption() : string
+    public function getRequestOption() : ?string
     {
         return $this->requestOption;
     }
     /**
      * Valid Value: 1 = Ground
      *
-     * @param string $requestOption
+     * @param string|null $requestOption
      *
      * @return self
      */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(?string $requestOption) : self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -73,9 +73,9 @@ class FreightRateRequestRequest extends \ArrayObject
     
     Supported values: 1601, 1607, 1701, 1707
     *
-    * @return string
+    * @return string|null
     */
-    public function getSubVersion() : string
+    public function getSubVersion() : ?string
     {
         return $this->subVersion;
     }
@@ -91,11 +91,11 @@ class FreightRateRequestRequest extends \ArrayObject
     
     Supported values: 1601, 1607, 1701, 1707
     *
-    * @param string $subVersion
+    * @param string|null $subVersion
     *
     * @return self
     */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(?string $subVersion) : self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -104,20 +104,20 @@ class FreightRateRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

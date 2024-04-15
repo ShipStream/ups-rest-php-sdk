@@ -15,32 +15,32 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
     /**
      * 
      *
-     * @var ErrorResponse
+     * @var ErrorResponse|null
      */
     protected $response;
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @var string[]
+     * @var list<string>|null
      */
     protected $invalidTrackingNumbers;
     /**
      * 
      *
-     * @return ErrorResponse
+     * @return ErrorResponse|null
      */
-    public function getResponse() : ErrorResponse
+    public function getResponse() : ?ErrorResponse
     {
         return $this->response;
     }
     /**
      * 
      *
-     * @param ErrorResponse $response
+     * @param ErrorResponse|null $response
      *
      * @return self
      */
-    public function setResponse(ErrorResponse $response) : self
+    public function setResponse(?ErrorResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -49,20 +49,20 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @return string[]
+     * @return list<string>|null
      */
-    public function getInvalidTrackingNumbers() : array
+    public function getInvalidTrackingNumbers() : ?array
     {
         return $this->invalidTrackingNumbers;
     }
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @param string[] $invalidTrackingNumbers
+     * @param list<string>|null $invalidTrackingNumbers
      *
      * @return self
      */
-    public function setInvalidTrackingNumbers(array $invalidTrackingNumbers) : self
+    public function setInvalidTrackingNumbers(?array $invalidTrackingNumbers) : self
     {
         $this->initialized['invalidTrackingNumbers'] = true;
         $this->invalidTrackingNumbers = $invalidTrackingNumbers;

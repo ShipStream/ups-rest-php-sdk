@@ -39,13 +39,13 @@ class Address extends \ArrayObject
     /**
      * country
      *
-     * @var string
+     * @var string|null
      */
     protected $country;
     /**
      * countryCode
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
@@ -151,20 +151,20 @@ class Address extends \ArrayObject
     /**
      * country
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountry() : string
+    public function getCountry() : ?string
     {
         return $this->country;
     }
     /**
      * country
      *
-     * @param string $country
+     * @param string|null $country
      *
      * @return self
      */
-    public function setCountry(string $country) : self
+    public function setCountry(?string $country) : self
     {
         $this->initialized['country'] = true;
         $this->country = $country;
@@ -173,20 +173,20 @@ class Address extends \ArrayObject
     /**
      * countryCode
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * countryCode
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

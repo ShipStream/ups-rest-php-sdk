@@ -15,26 +15,26 @@ class DropLocationSpecialInstructions extends \ArrayObject
     /**
      * Walking directions, last 50 feet.
      *
-     * @var string
+     * @var string|null
      */
     protected $segment;
     /**
      * Walking directions, last 50 feet.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSegment() : string
+    public function getSegment() : ?string
     {
         return $this->segment;
     }
     /**
      * Walking directions, last 50 feet.
      *
-     * @param string $segment
+     * @param string|null $segment
      *
      * @return self
      */
-    public function setSegment(string $segment) : self
+    public function setSegment(?string $segment) : self
     {
         $this->initialized['segment'] = true;
         $this->segment = $segment;

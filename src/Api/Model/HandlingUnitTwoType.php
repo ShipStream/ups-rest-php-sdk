@@ -15,32 +15,32 @@ class HandlingUnitTwoType extends \ArrayObject
     /**
      * Code representing the form type
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the form type code.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Code representing the form type
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Code representing the form type
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class HandlingUnitTwoType extends \ArrayObject
     /**
      * Description of the form type code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the form type code.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

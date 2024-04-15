@@ -15,110 +15,110 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Consignee's name at the location where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $consigneeName;
     /**
      * Street number where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $streetNumberLow;
     /**
      * Street prefix where package is delivered, e.g. N, SE.
      *
-     * @var string
+     * @var string|null
      */
     protected $streetPrefix;
     /**
      * Street name where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $streetName;
     /**
      * Street type where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $streetType;
     /**
      * Street suffix where package is delivered, e.g. N, SE.
      *
-     * @var string
+     * @var string|null
      */
     protected $streetSuffix;
     /**
      * Building name where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $buildingName;
     /**
      * 
      *
-     * @var AddressArtifactFormatAddressExtendedInformation[]
+     * @var list<AddressArtifactFormatAddressExtendedInformation>|null
      */
     protected $addressExtendedInformation;
     /**
      * The neighborhood, town, barrio etc.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision3;
     /**
      * City name where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision2;
     /**
      * Abbreviated state or province name where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision1;
     /**
      * Abbreviated country or territory name where package is delivered.
      *
-     * @var string
+     * @var string|null
      */
     protected $countryCode;
     /**
      * Postal Code where package is delivered. Required if the user does not submit the City, Alphanumeric State/Province address combination.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodePrimaryLow;
     /**
      * 4 Digit postal code extension where package is delivered.� Valid for US only.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodeExtendedLow;
     /**
      * Residential address indicator for the location where package is delivered. The presence indicates residential address, the absence indicates a business address.
      *
-     * @var string
+     * @var string|null
      */
     protected $residentialAddressIndicator;
     /**
      * Consignee's name at the location where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getConsigneeName() : string
+    public function getConsigneeName() : ?string
     {
         return $this->consigneeName;
     }
     /**
      * Consignee's name at the location where package is delivered.
      *
-     * @param string $consigneeName
+     * @param string|null $consigneeName
      *
      * @return self
      */
-    public function setConsigneeName(string $consigneeName) : self
+    public function setConsigneeName(?string $consigneeName) : self
     {
         $this->initialized['consigneeName'] = true;
         $this->consigneeName = $consigneeName;
@@ -127,20 +127,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Street number where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStreetNumberLow() : string
+    public function getStreetNumberLow() : ?string
     {
         return $this->streetNumberLow;
     }
     /**
      * Street number where package is delivered.
      *
-     * @param string $streetNumberLow
+     * @param string|null $streetNumberLow
      *
      * @return self
      */
-    public function setStreetNumberLow(string $streetNumberLow) : self
+    public function setStreetNumberLow(?string $streetNumberLow) : self
     {
         $this->initialized['streetNumberLow'] = true;
         $this->streetNumberLow = $streetNumberLow;
@@ -149,20 +149,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Street prefix where package is delivered, e.g. N, SE.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStreetPrefix() : string
+    public function getStreetPrefix() : ?string
     {
         return $this->streetPrefix;
     }
     /**
      * Street prefix where package is delivered, e.g. N, SE.
      *
-     * @param string $streetPrefix
+     * @param string|null $streetPrefix
      *
      * @return self
      */
-    public function setStreetPrefix(string $streetPrefix) : self
+    public function setStreetPrefix(?string $streetPrefix) : self
     {
         $this->initialized['streetPrefix'] = true;
         $this->streetPrefix = $streetPrefix;
@@ -171,20 +171,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Street name where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStreetName() : string
+    public function getStreetName() : ?string
     {
         return $this->streetName;
     }
     /**
      * Street name where package is delivered.
      *
-     * @param string $streetName
+     * @param string|null $streetName
      *
      * @return self
      */
-    public function setStreetName(string $streetName) : self
+    public function setStreetName(?string $streetName) : self
     {
         $this->initialized['streetName'] = true;
         $this->streetName = $streetName;
@@ -193,20 +193,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Street type where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStreetType() : string
+    public function getStreetType() : ?string
     {
         return $this->streetType;
     }
     /**
      * Street type where package is delivered.
      *
-     * @param string $streetType
+     * @param string|null $streetType
      *
      * @return self
      */
-    public function setStreetType(string $streetType) : self
+    public function setStreetType(?string $streetType) : self
     {
         $this->initialized['streetType'] = true;
         $this->streetType = $streetType;
@@ -215,20 +215,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Street suffix where package is delivered, e.g. N, SE.
      *
-     * @return string
+     * @return string|null
      */
-    public function getStreetSuffix() : string
+    public function getStreetSuffix() : ?string
     {
         return $this->streetSuffix;
     }
     /**
      * Street suffix where package is delivered, e.g. N, SE.
      *
-     * @param string $streetSuffix
+     * @param string|null $streetSuffix
      *
      * @return self
      */
-    public function setStreetSuffix(string $streetSuffix) : self
+    public function setStreetSuffix(?string $streetSuffix) : self
     {
         $this->initialized['streetSuffix'] = true;
         $this->streetSuffix = $streetSuffix;
@@ -237,20 +237,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Building name where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getBuildingName() : string
+    public function getBuildingName() : ?string
     {
         return $this->buildingName;
     }
     /**
      * Building name where package is delivered.
      *
-     * @param string $buildingName
+     * @param string|null $buildingName
      *
      * @return self
      */
-    public function setBuildingName(string $buildingName) : self
+    public function setBuildingName(?string $buildingName) : self
     {
         $this->initialized['buildingName'] = true;
         $this->buildingName = $buildingName;
@@ -259,20 +259,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * 
      *
-     * @return AddressArtifactFormatAddressExtendedInformation[]
+     * @return list<AddressArtifactFormatAddressExtendedInformation>|null
      */
-    public function getAddressExtendedInformation() : array
+    public function getAddressExtendedInformation() : ?array
     {
         return $this->addressExtendedInformation;
     }
     /**
      * 
      *
-     * @param AddressArtifactFormatAddressExtendedInformation[] $addressExtendedInformation
+     * @param list<AddressArtifactFormatAddressExtendedInformation>|null $addressExtendedInformation
      *
      * @return self
      */
-    public function setAddressExtendedInformation(array $addressExtendedInformation) : self
+    public function setAddressExtendedInformation(?array $addressExtendedInformation) : self
     {
         $this->initialized['addressExtendedInformation'] = true;
         $this->addressExtendedInformation = $addressExtendedInformation;
@@ -281,20 +281,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * The neighborhood, town, barrio etc.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision3() : string
+    public function getPoliticalDivision3() : ?string
     {
         return $this->politicalDivision3;
     }
     /**
      * The neighborhood, town, barrio etc.
      *
-     * @param string $politicalDivision3
+     * @param string|null $politicalDivision3
      *
      * @return self
      */
-    public function setPoliticalDivision3(string $politicalDivision3) : self
+    public function setPoliticalDivision3(?string $politicalDivision3) : self
     {
         $this->initialized['politicalDivision3'] = true;
         $this->politicalDivision3 = $politicalDivision3;
@@ -303,20 +303,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * City name where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2() : ?string
     {
         return $this->politicalDivision2;
     }
     /**
      * City name where package is delivered.
      *
-     * @param string $politicalDivision2
+     * @param string|null $politicalDivision2
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(?string $politicalDivision2) : self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -325,20 +325,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Abbreviated state or province name where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1() : ?string
     {
         return $this->politicalDivision1;
     }
     /**
      * Abbreviated state or province name where package is delivered.
      *
-     * @param string $politicalDivision1
+     * @param string|null $politicalDivision1
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(?string $politicalDivision1) : self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -347,20 +347,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Abbreviated country or territory name where package is delivered.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode() : string
+    public function getCountryCode() : ?string
     {
         return $this->countryCode;
     }
     /**
      * Abbreviated country or territory name where package is delivered.
      *
-     * @param string $countryCode
+     * @param string|null $countryCode
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(?string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -369,20 +369,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Postal Code where package is delivered. Required if the user does not submit the City, Alphanumeric State/Province address combination.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow() : ?string
     {
         return $this->postcodePrimaryLow;
     }
     /**
      * Postal Code where package is delivered. Required if the user does not submit the City, Alphanumeric State/Province address combination.
      *
-     * @param string $postcodePrimaryLow
+     * @param string|null $postcodePrimaryLow
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(?string $postcodePrimaryLow) : self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;
@@ -391,20 +391,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * 4 Digit postal code extension where package is delivered.� Valid for US only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodeExtendedLow() : string
+    public function getPostcodeExtendedLow() : ?string
     {
         return $this->postcodeExtendedLow;
     }
     /**
      * 4 Digit postal code extension where package is delivered.� Valid for US only.
      *
-     * @param string $postcodeExtendedLow
+     * @param string|null $postcodeExtendedLow
      *
      * @return self
      */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
+    public function setPostcodeExtendedLow(?string $postcodeExtendedLow) : self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;
@@ -413,20 +413,20 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
     /**
      * Residential address indicator for the location where package is delivered. The presence indicates residential address, the absence indicates a business address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getResidentialAddressIndicator() : string
+    public function getResidentialAddressIndicator() : ?string
     {
         return $this->residentialAddressIndicator;
     }
     /**
      * Residential address indicator for the location where package is delivered. The presence indicates residential address, the absence indicates a business address.
      *
-     * @param string $residentialAddressIndicator
+     * @param string|null $residentialAddressIndicator
      *
      * @return self
      */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
+    public function setResidentialAddressIndicator(?string $residentialAddressIndicator) : self
     {
         $this->initialized['residentialAddressIndicator'] = true;
         $this->residentialAddressIndicator = $residentialAddressIndicator;

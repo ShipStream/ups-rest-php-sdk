@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageNumber', $data)) {
+            if (\array_key_exists('PackageNumber', $data) && $data['PackageNumber'] !== null) {
                 $object->setPackageNumber($data['PackageNumber']);
                 unset($data['PackageNumber']);
             }
-            if (\array_key_exists('ProductAmount', $data)) {
+            elseif (\array_key_exists('PackageNumber', $data) && $data['PackageNumber'] === null) {
+                $object->setPackageNumber(null);
+            }
+            if (\array_key_exists('ProductAmount', $data) && $data['ProductAmount'] !== null) {
                 $object->setProductAmount($data['ProductAmount']);
                 unset($data['ProductAmount']);
             }
-            if (\array_key_exists('ProductNote', $data)) {
+            elseif (\array_key_exists('ProductAmount', $data) && $data['ProductAmount'] === null) {
+                $object->setProductAmount(null);
+            }
+            if (\array_key_exists('ProductNote', $data) && $data['ProductNote'] !== null) {
                 $object->setProductNote($data['ProductNote']);
                 unset($data['ProductNote']);
+            }
+            elseif (\array_key_exists('ProductNote', $data) && $data['ProductNote'] === null) {
+                $object->setProductNote(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageNumber', $data)) {
+            if (\array_key_exists('PackageNumber', $data) && $data['PackageNumber'] !== null) {
                 $object->setPackageNumber($data['PackageNumber']);
                 unset($data['PackageNumber']);
             }
-            if (\array_key_exists('ProductAmount', $data)) {
+            elseif (\array_key_exists('PackageNumber', $data) && $data['PackageNumber'] === null) {
+                $object->setPackageNumber(null);
+            }
+            if (\array_key_exists('ProductAmount', $data) && $data['ProductAmount'] !== null) {
                 $object->setProductAmount($data['ProductAmount']);
                 unset($data['ProductAmount']);
             }
-            if (\array_key_exists('ProductNote', $data)) {
+            elseif (\array_key_exists('ProductAmount', $data) && $data['ProductAmount'] === null) {
+                $object->setProductAmount(null);
+            }
+            if (\array_key_exists('ProductNote', $data) && $data['ProductNote'] !== null) {
                 $object->setProductNote($data['ProductNote']);
                 unset($data['ProductNote']);
+            }
+            elseif (\array_key_exists('ProductNote', $data) && $data['ProductNote'] === null) {
+                $object->setProductNote(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

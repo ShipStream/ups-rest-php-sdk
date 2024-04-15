@@ -40,7 +40,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageReferenceNumber', $data)) {
+            if (\array_key_exists('PackageReferenceNumber', $data) && $data['PackageReferenceNumber'] !== null) {
                 $values = [];
                 foreach ($data['PackageReferenceNumber'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber', 'json', $context);
@@ -48,7 +48,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPackageReferenceNumber($values);
                 unset($data['PackageReferenceNumber']);
             }
-            if (\array_key_exists('ShipmentReferenceNumber', $data)) {
+            elseif (\array_key_exists('PackageReferenceNumber', $data) && $data['PackageReferenceNumber'] === null) {
+                $object->setPackageReferenceNumber(null);
+            }
+            if (\array_key_exists('ShipmentReferenceNumber', $data) && $data['ShipmentReferenceNumber'] !== null) {
                 $values_1 = [];
                 foreach ($data['ShipmentReferenceNumber'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber', 'json', $context);
@@ -56,37 +59,64 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setShipmentReferenceNumber($values_1);
                 unset($data['ShipmentReferenceNumber']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('ShipmentReferenceNumber', $data) && $data['ShipmentReferenceNumber'] === null) {
+                $object->setShipmentReferenceNumber(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('Date', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('Date', $data) && $data['Date'] !== null) {
                 $object->setDate($data['Date']);
                 unset($data['Date']);
             }
-            if (\array_key_exists('Time', $data)) {
+            elseif (\array_key_exists('Date', $data) && $data['Date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('Time', $data) && $data['Time'] !== null) {
                 $object->setTime($data['Time']);
                 unset($data['Time']);
             }
-            if (\array_key_exists('ActivityLocation', $data)) {
+            elseif (\array_key_exists('Time', $data) && $data['Time'] === null) {
+                $object->setTime(null);
+            }
+            if (\array_key_exists('ActivityLocation', $data) && $data['ActivityLocation'] !== null) {
                 $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], 'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation', 'json', $context));
                 unset($data['ActivityLocation']);
             }
-            if (\array_key_exists('BillToAccount', $data)) {
+            elseif (\array_key_exists('ActivityLocation', $data) && $data['ActivityLocation'] === null) {
+                $object->setActivityLocation(null);
+            }
+            if (\array_key_exists('BillToAccount', $data) && $data['BillToAccount'] !== null) {
                 $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], 'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount', 'json', $context));
                 unset($data['BillToAccount']);
             }
-            if (\array_key_exists('ScheduledDeliveryDate', $data)) {
+            elseif (\array_key_exists('BillToAccount', $data) && $data['BillToAccount'] === null) {
+                $object->setBillToAccount(null);
+            }
+            if (\array_key_exists('ScheduledDeliveryDate', $data) && $data['ScheduledDeliveryDate'] !== null) {
                 $object->setScheduledDeliveryDate($data['ScheduledDeliveryDate']);
                 unset($data['ScheduledDeliveryDate']);
             }
-            if (\array_key_exists('ScheduledDeliveryTime', $data)) {
+            elseif (\array_key_exists('ScheduledDeliveryDate', $data) && $data['ScheduledDeliveryDate'] === null) {
+                $object->setScheduledDeliveryDate(null);
+            }
+            if (\array_key_exists('ScheduledDeliveryTime', $data) && $data['ScheduledDeliveryTime'] !== null) {
                 $object->setScheduledDeliveryTime($data['ScheduledDeliveryTime']);
                 unset($data['ScheduledDeliveryTime']);
+            }
+            elseif (\array_key_exists('ScheduledDeliveryTime', $data) && $data['ScheduledDeliveryTime'] === null) {
+                $object->setScheduledDeliveryTime(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -170,7 +200,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PackageReferenceNumber', $data)) {
+            if (\array_key_exists('PackageReferenceNumber', $data) && $data['PackageReferenceNumber'] !== null) {
                 $values = [];
                 foreach ($data['PackageReferenceNumber'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber', 'json', $context);
@@ -178,7 +208,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPackageReferenceNumber($values);
                 unset($data['PackageReferenceNumber']);
             }
-            if (\array_key_exists('ShipmentReferenceNumber', $data)) {
+            elseif (\array_key_exists('PackageReferenceNumber', $data) && $data['PackageReferenceNumber'] === null) {
+                $object->setPackageReferenceNumber(null);
+            }
+            if (\array_key_exists('ShipmentReferenceNumber', $data) && $data['ShipmentReferenceNumber'] !== null) {
                 $values_1 = [];
                 foreach ($data['ShipmentReferenceNumber'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber', 'json', $context);
@@ -186,37 +219,64 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setShipmentReferenceNumber($values_1);
                 unset($data['ShipmentReferenceNumber']);
             }
-            if (\array_key_exists('ShipperNumber', $data)) {
+            elseif (\array_key_exists('ShipmentReferenceNumber', $data) && $data['ShipmentReferenceNumber'] === null) {
+                $object->setShipmentReferenceNumber(null);
+            }
+            if (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] !== null) {
                 $object->setShipperNumber($data['ShipperNumber']);
                 unset($data['ShipperNumber']);
             }
-            if (\array_key_exists('TrackingNumber', $data)) {
+            elseif (\array_key_exists('ShipperNumber', $data) && $data['ShipperNumber'] === null) {
+                $object->setShipperNumber(null);
+            }
+            if (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] !== null) {
                 $object->setTrackingNumber($data['TrackingNumber']);
                 unset($data['TrackingNumber']);
             }
-            if (\array_key_exists('Date', $data)) {
+            elseif (\array_key_exists('TrackingNumber', $data) && $data['TrackingNumber'] === null) {
+                $object->setTrackingNumber(null);
+            }
+            if (\array_key_exists('Date', $data) && $data['Date'] !== null) {
                 $object->setDate($data['Date']);
                 unset($data['Date']);
             }
-            if (\array_key_exists('Time', $data)) {
+            elseif (\array_key_exists('Date', $data) && $data['Date'] === null) {
+                $object->setDate(null);
+            }
+            if (\array_key_exists('Time', $data) && $data['Time'] !== null) {
                 $object->setTime($data['Time']);
                 unset($data['Time']);
             }
-            if (\array_key_exists('ActivityLocation', $data)) {
+            elseif (\array_key_exists('Time', $data) && $data['Time'] === null) {
+                $object->setTime(null);
+            }
+            if (\array_key_exists('ActivityLocation', $data) && $data['ActivityLocation'] !== null) {
                 $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], 'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation', 'json', $context));
                 unset($data['ActivityLocation']);
             }
-            if (\array_key_exists('BillToAccount', $data)) {
+            elseif (\array_key_exists('ActivityLocation', $data) && $data['ActivityLocation'] === null) {
+                $object->setActivityLocation(null);
+            }
+            if (\array_key_exists('BillToAccount', $data) && $data['BillToAccount'] !== null) {
                 $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], 'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount', 'json', $context));
                 unset($data['BillToAccount']);
             }
-            if (\array_key_exists('ScheduledDeliveryDate', $data)) {
+            elseif (\array_key_exists('BillToAccount', $data) && $data['BillToAccount'] === null) {
+                $object->setBillToAccount(null);
+            }
+            if (\array_key_exists('ScheduledDeliveryDate', $data) && $data['ScheduledDeliveryDate'] !== null) {
                 $object->setScheduledDeliveryDate($data['ScheduledDeliveryDate']);
                 unset($data['ScheduledDeliveryDate']);
             }
-            if (\array_key_exists('ScheduledDeliveryTime', $data)) {
+            elseif (\array_key_exists('ScheduledDeliveryDate', $data) && $data['ScheduledDeliveryDate'] === null) {
+                $object->setScheduledDeliveryDate(null);
+            }
+            if (\array_key_exists('ScheduledDeliveryTime', $data) && $data['ScheduledDeliveryTime'] !== null) {
                 $object->setScheduledDeliveryTime($data['ScheduledDeliveryTime']);
                 unset($data['ScheduledDeliveryTime']);
+            }
+            elseif (\array_key_exists('ScheduledDeliveryTime', $data) && $data['ScheduledDeliveryTime'] === null) {
+                $object->setScheduledDeliveryTime(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

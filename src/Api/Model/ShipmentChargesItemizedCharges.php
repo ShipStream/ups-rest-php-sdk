@@ -15,50 +15,50 @@ class ShipmentChargesItemizedCharges extends \ArrayObject
     /**
      * Identification code for itemized charge.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of Itemized Charge that had been charged.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The IATA currency code associated with the Itemized Charge costs for the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * Itemized Charges value amount.
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * The sub-type of ItemizedCharges type.
      *
-     * @var string
+     * @var string|null
      */
     protected $subType;
     /**
      * Identification code for itemized charge.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Identification code for itemized charge.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -67,20 +67,20 @@ class ShipmentChargesItemizedCharges extends \ArrayObject
     /**
      * Description of Itemized Charge that had been charged.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of Itemized Charge that had been charged.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -89,20 +89,20 @@ class ShipmentChargesItemizedCharges extends \ArrayObject
     /**
      * The IATA currency code associated with the Itemized Charge costs for the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * The IATA currency code associated with the Itemized Charge costs for the shipment.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -111,20 +111,20 @@ class ShipmentChargesItemizedCharges extends \ArrayObject
     /**
      * Itemized Charges value amount.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Itemized Charges value amount.
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;
@@ -133,20 +133,20 @@ class ShipmentChargesItemizedCharges extends \ArrayObject
     /**
      * The sub-type of ItemizedCharges type.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubType() : string
+    public function getSubType() : ?string
     {
         return $this->subType;
     }
     /**
      * The sub-type of ItemizedCharges type.
      *
-     * @param string $subType
+     * @param string|null $subType
      *
      * @return self
      */
-    public function setSubType(string $subType) : self
+    public function setSubType(?string $subType) : self
     {
         $this->initialized['subType'] = true;
         $this->subType = $subType;

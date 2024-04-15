@@ -15,32 +15,32 @@ class PackageServiceOptionsCOD extends \ArrayObject
     /**
      * For valid values refer to: Rating and Shipping COD Supported Countries or Territories in the Appendix.
      *
-     * @var string
+     * @var string|null
      */
     protected $cODFundsCode;
     /**
      * COD Amount container.
      *
-     * @var CODCODAmount
+     * @var CODCODAmount|null
      */
     protected $cODAmount;
     /**
      * For valid values refer to: Rating and Shipping COD Supported Countries or Territories in the Appendix.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCODFundsCode() : string
+    public function getCODFundsCode() : ?string
     {
         return $this->cODFundsCode;
     }
     /**
      * For valid values refer to: Rating and Shipping COD Supported Countries or Territories in the Appendix.
      *
-     * @param string $cODFundsCode
+     * @param string|null $cODFundsCode
      *
      * @return self
      */
-    public function setCODFundsCode(string $cODFundsCode) : self
+    public function setCODFundsCode(?string $cODFundsCode) : self
     {
         $this->initialized['cODFundsCode'] = true;
         $this->cODFundsCode = $cODFundsCode;
@@ -49,20 +49,20 @@ class PackageServiceOptionsCOD extends \ArrayObject
     /**
      * COD Amount container.
      *
-     * @return CODCODAmount
+     * @return CODCODAmount|null
      */
-    public function getCODAmount() : CODCODAmount
+    public function getCODAmount() : ?CODCODAmount
     {
         return $this->cODAmount;
     }
     /**
      * COD Amount container.
      *
-     * @param CODCODAmount $cODAmount
+     * @param CODCODAmount|null $cODAmount
      *
      * @return self
      */
-    public function setCODAmount(CODCODAmount $cODAmount) : self
+    public function setCODAmount(?CODCODAmount $cODAmount) : self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Quantity', $data)) {
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $object->setQuantity($data['Quantity']);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('Type', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('Dimensions', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Dimensions', $data) && $data['Dimensions'] !== null) {
                 $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsDimensions', 'json', $context));
                 unset($data['Dimensions']);
             }
-            if (\array_key_exists('AdjustedHeight', $data)) {
+            elseif (\array_key_exists('Dimensions', $data) && $data['Dimensions'] === null) {
+                $object->setDimensions(null);
+            }
+            if (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] !== null) {
                 $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsAdjustedHeight', 'json', $context));
                 unset($data['AdjustedHeight']);
+            }
+            elseif (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] === null) {
+                $object->setAdjustedHeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -114,21 +126,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Quantity', $data)) {
+            if (\array_key_exists('Quantity', $data) && $data['Quantity'] !== null) {
                 $object->setQuantity($data['Quantity']);
                 unset($data['Quantity']);
             }
-            if (\array_key_exists('Type', $data)) {
+            elseif (\array_key_exists('Quantity', $data) && $data['Quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('Type', $data) && $data['Type'] !== null) {
                 $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsType', 'json', $context));
                 unset($data['Type']);
             }
-            if (\array_key_exists('Dimensions', $data)) {
+            elseif (\array_key_exists('Type', $data) && $data['Type'] === null) {
+                $object->setType(null);
+            }
+            if (\array_key_exists('Dimensions', $data) && $data['Dimensions'] !== null) {
                 $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsDimensions', 'json', $context));
                 unset($data['Dimensions']);
             }
-            if (\array_key_exists('AdjustedHeight', $data)) {
+            elseif (\array_key_exists('Dimensions', $data) && $data['Dimensions'] === null) {
+                $object->setDimensions(null);
+            }
+            if (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] !== null) {
                 $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsAdjustedHeight', 'json', $context));
                 unset($data['AdjustedHeight']);
+            }
+            elseif (\array_key_exists('AdjustedHeight', $data) && $data['AdjustedHeight'] === null) {
+                $object->setAdjustedHeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

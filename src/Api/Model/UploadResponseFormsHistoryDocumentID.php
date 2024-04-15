@@ -15,26 +15,26 @@ class UploadResponseFormsHistoryDocumentID extends \ArrayObject
     /**
      * DocumentID represents a document uploaded to Forms History.  N/A
      *
-     * @var string
+     * @var string|null
      */
     protected $documentID;
     /**
      * DocumentID represents a document uploaded to Forms History.  N/A
      *
-     * @return string
+     * @return string|null
      */
-    public function getDocumentID() : string
+    public function getDocumentID() : ?string
     {
         return $this->documentID;
     }
     /**
      * DocumentID represents a document uploaded to Forms History.  N/A
      *
-     * @param string $documentID
+     * @param string|null $documentID
      *
      * @return self
      */
-    public function setDocumentID(string $documentID) : self
+    public function setDocumentID(?string $documentID) : self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

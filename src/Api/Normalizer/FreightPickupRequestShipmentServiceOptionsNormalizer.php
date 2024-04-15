@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreezableProtectionIndicator', $data)) {
+            if (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] !== null) {
                 $object->setFreezableProtectionIndicator($data['FreezableProtectionIndicator']);
                 unset($data['FreezableProtectionIndicator']);
             }
-            if (\array_key_exists('LimitedAccessPickupIndicator', $data)) {
+            elseif (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] === null) {
+                $object->setFreezableProtectionIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] !== null) {
                 $object->setLimitedAccessPickupIndicator($data['LimitedAccessPickupIndicator']);
                 unset($data['LimitedAccessPickupIndicator']);
             }
-            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] === null) {
+                $object->setLimitedAccessPickupIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] !== null) {
                 $object->setLimitedAccessDeliveryIndicator($data['LimitedAccessDeliveryIndicator']);
                 unset($data['LimitedAccessDeliveryIndicator']);
             }
-            if (\array_key_exists('ExtremeLengthIndicator', $data)) {
+            elseif (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] === null) {
+                $object->setLimitedAccessDeliveryIndicator(null);
+            }
+            if (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] !== null) {
                 $object->setExtremeLengthIndicator($data['ExtremeLengthIndicator']);
                 unset($data['ExtremeLengthIndicator']);
+            }
+            elseif (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] === null) {
+                $object->setExtremeLengthIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -120,21 +132,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('FreezableProtectionIndicator', $data)) {
+            if (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] !== null) {
                 $object->setFreezableProtectionIndicator($data['FreezableProtectionIndicator']);
                 unset($data['FreezableProtectionIndicator']);
             }
-            if (\array_key_exists('LimitedAccessPickupIndicator', $data)) {
+            elseif (\array_key_exists('FreezableProtectionIndicator', $data) && $data['FreezableProtectionIndicator'] === null) {
+                $object->setFreezableProtectionIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] !== null) {
                 $object->setLimitedAccessPickupIndicator($data['LimitedAccessPickupIndicator']);
                 unset($data['LimitedAccessPickupIndicator']);
             }
-            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data)) {
+            elseif (\array_key_exists('LimitedAccessPickupIndicator', $data) && $data['LimitedAccessPickupIndicator'] === null) {
+                $object->setLimitedAccessPickupIndicator(null);
+            }
+            if (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] !== null) {
                 $object->setLimitedAccessDeliveryIndicator($data['LimitedAccessDeliveryIndicator']);
                 unset($data['LimitedAccessDeliveryIndicator']);
             }
-            if (\array_key_exists('ExtremeLengthIndicator', $data)) {
+            elseif (\array_key_exists('LimitedAccessDeliveryIndicator', $data) && $data['LimitedAccessDeliveryIndicator'] === null) {
+                $object->setLimitedAccessDeliveryIndicator(null);
+            }
+            if (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] !== null) {
                 $object->setExtremeLengthIndicator($data['ExtremeLengthIndicator']);
                 unset($data['ExtremeLengthIndicator']);
+            }
+            elseif (\array_key_exists('ExtremeLengthIndicator', $data) && $data['ExtremeLengthIndicator'] === null) {
+                $object->setExtremeLengthIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -16,22 +16,22 @@ class PickupCreationRequestShipper extends \ArrayObject
     * Shipper account information. 
     Must provide when choose to pay the pickup by shipper account number
     *
-    * @var ShipperAccount
+    * @var ShipperAccount|null
     */
     protected $account;
     /**
      * Container for Charge Card payment method  Required if Payment method is 03. Credit/Charge card payment is valid for US, CA, PR and GB origin pickups.
      *
-     * @var ShipperChargeCard
+     * @var ShipperChargeCard|null
      */
     protected $chargeCard;
     /**
     * Shipper account information. 
     Must provide when choose to pay the pickup by shipper account number
     *
-    * @return ShipperAccount
+    * @return ShipperAccount|null
     */
-    public function getAccount() : ShipperAccount
+    public function getAccount() : ?ShipperAccount
     {
         return $this->account;
     }
@@ -39,11 +39,11 @@ class PickupCreationRequestShipper extends \ArrayObject
     * Shipper account information. 
     Must provide when choose to pay the pickup by shipper account number
     *
-    * @param ShipperAccount $account
+    * @param ShipperAccount|null $account
     *
     * @return self
     */
-    public function setAccount(ShipperAccount $account) : self
+    public function setAccount(?ShipperAccount $account) : self
     {
         $this->initialized['account'] = true;
         $this->account = $account;
@@ -52,20 +52,20 @@ class PickupCreationRequestShipper extends \ArrayObject
     /**
      * Container for Charge Card payment method  Required if Payment method is 03. Credit/Charge card payment is valid for US, CA, PR and GB origin pickups.
      *
-     * @return ShipperChargeCard
+     * @return ShipperChargeCard|null
      */
-    public function getChargeCard() : ShipperChargeCard
+    public function getChargeCard() : ?ShipperChargeCard
     {
         return $this->chargeCard;
     }
     /**
      * Container for Charge Card payment method  Required if Payment method is 03. Credit/Charge card payment is valid for US, CA, PR and GB origin pickups.
      *
-     * @param ShipperChargeCard $chargeCard
+     * @param ShipperChargeCard|null $chargeCard
      *
      * @return self
      */
-    public function setChargeCard(ShipperChargeCard $chargeCard) : self
+    public function setChargeCard(?ShipperChargeCard $chargeCard) : self
     {
         $this->initialized['chargeCard'] = true;
         $this->chargeCard = $chargeCard;

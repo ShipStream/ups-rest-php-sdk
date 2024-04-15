@@ -15,32 +15,32 @@ class PackageCommodity extends \ArrayObject
     /**
      * Freight Classification. Freight class partially determines the freight rate for the article.  Required for Ground Freight Pricing Shipments only.
      *
-     * @var string
+     * @var string|null
      */
     protected $freightClass;
     /**
      * Container to hold the NMFC codes.
      *
-     * @var CommodityNMFC
+     * @var CommodityNMFC|null
      */
     protected $nMFC;
     /**
      * Freight Classification. Freight class partially determines the freight rate for the article.  Required for Ground Freight Pricing Shipments only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getFreightClass() : string
+    public function getFreightClass() : ?string
     {
         return $this->freightClass;
     }
     /**
      * Freight Classification. Freight class partially determines the freight rate for the article.  Required for Ground Freight Pricing Shipments only.
      *
-     * @param string $freightClass
+     * @param string|null $freightClass
      *
      * @return self
      */
-    public function setFreightClass(string $freightClass) : self
+    public function setFreightClass(?string $freightClass) : self
     {
         $this->initialized['freightClass'] = true;
         $this->freightClass = $freightClass;
@@ -49,20 +49,20 @@ class PackageCommodity extends \ArrayObject
     /**
      * Container to hold the NMFC codes.
      *
-     * @return CommodityNMFC
+     * @return CommodityNMFC|null
      */
-    public function getNMFC() : CommodityNMFC
+    public function getNMFC() : ?CommodityNMFC
     {
         return $this->nMFC;
     }
     /**
      * Container to hold the NMFC codes.
      *
-     * @param CommodityNMFC $nMFC
+     * @param CommodityNMFC|null $nMFC
      *
      * @return self
      */
-    public function setNMFC(CommodityNMFC $nMFC) : self
+    public function setNMFC(?CommodityNMFC $nMFC) : self
     {
         $this->initialized['nMFC'] = true;
         $this->nMFC = $nMFC;

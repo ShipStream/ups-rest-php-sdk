@@ -46,45 +46,75 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('commodityId', $data)) {
+            if (\array_key_exists('commodityId', $data) && $data['commodityId'] !== null) {
                 $object->setCommodityId($data['commodityId']);
                 unset($data['commodityId']);
             }
-            if (\array_key_exists('grossWeight', $data)) {
+            elseif (\array_key_exists('commodityId', $data) && $data['commodityId'] === null) {
+                $object->setCommodityId(null);
+            }
+            if (\array_key_exists('grossWeight', $data) && $data['grossWeight'] !== null) {
                 $object->setGrossWeight($data['grossWeight']);
                 unset($data['grossWeight']);
             }
-            if (\array_key_exists('grossWeightUnit', $data)) {
+            elseif (\array_key_exists('grossWeight', $data) && $data['grossWeight'] === null) {
+                $object->setGrossWeight(null);
+            }
+            if (\array_key_exists('grossWeightUnit', $data) && $data['grossWeightUnit'] !== null) {
                 $object->setGrossWeightUnit($data['grossWeightUnit']);
                 unset($data['grossWeightUnit']);
             }
-            if (\array_key_exists('priceEach', $data)) {
+            elseif (\array_key_exists('grossWeightUnit', $data) && $data['grossWeightUnit'] === null) {
+                $object->setGrossWeightUnit(null);
+            }
+            if (\array_key_exists('priceEach', $data) && $data['priceEach'] !== null) {
                 $object->setPriceEach($data['priceEach']);
                 unset($data['priceEach']);
             }
-            if (\array_key_exists('commodityCurrencyCode', $data)) {
+            elseif (\array_key_exists('priceEach', $data) && $data['priceEach'] === null) {
+                $object->setPriceEach(null);
+            }
+            if (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] !== null) {
                 $object->setCommodityCurrencyCode($data['commodityCurrencyCode']);
                 unset($data['commodityCurrencyCode']);
             }
-            if (\array_key_exists('quantity', $data)) {
+            elseif (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] === null) {
+                $object->setCommodityCurrencyCode(null);
+            }
+            if (\array_key_exists('quantity', $data) && $data['quantity'] !== null) {
                 $object->setQuantity($data['quantity']);
                 unset($data['quantity']);
             }
-            if (\array_key_exists('UOM', $data)) {
+            elseif (\array_key_exists('quantity', $data) && $data['quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UOM', $data) && $data['UOM'] !== null) {
                 $object->setUOM($data['UOM']);
                 unset($data['UOM']);
             }
-            if (\array_key_exists('hsCode', $data)) {
+            elseif (\array_key_exists('UOM', $data) && $data['UOM'] === null) {
+                $object->setUOM(null);
+            }
+            if (\array_key_exists('hsCode', $data) && $data['hsCode'] !== null) {
                 $object->setHsCode($data['hsCode']);
                 unset($data['hsCode']);
             }
-            if (\array_key_exists('description', $data)) {
+            elseif (\array_key_exists('hsCode', $data) && $data['hsCode'] === null) {
+                $object->setHsCode(null);
+            }
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
-            if (\array_key_exists('originCountryCode', $data)) {
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] !== null) {
                 $object->setOriginCountryCode($data['originCountryCode']);
                 unset($data['originCountryCode']);
+            }
+            elseif (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] === null) {
+                $object->setOriginCountryCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -162,45 +192,75 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('commodityId', $data)) {
+            if (\array_key_exists('commodityId', $data) && $data['commodityId'] !== null) {
                 $object->setCommodityId($data['commodityId']);
                 unset($data['commodityId']);
             }
-            if (\array_key_exists('grossWeight', $data)) {
+            elseif (\array_key_exists('commodityId', $data) && $data['commodityId'] === null) {
+                $object->setCommodityId(null);
+            }
+            if (\array_key_exists('grossWeight', $data) && $data['grossWeight'] !== null) {
                 $object->setGrossWeight($data['grossWeight']);
                 unset($data['grossWeight']);
             }
-            if (\array_key_exists('grossWeightUnit', $data)) {
+            elseif (\array_key_exists('grossWeight', $data) && $data['grossWeight'] === null) {
+                $object->setGrossWeight(null);
+            }
+            if (\array_key_exists('grossWeightUnit', $data) && $data['grossWeightUnit'] !== null) {
                 $object->setGrossWeightUnit($data['grossWeightUnit']);
                 unset($data['grossWeightUnit']);
             }
-            if (\array_key_exists('priceEach', $data)) {
+            elseif (\array_key_exists('grossWeightUnit', $data) && $data['grossWeightUnit'] === null) {
+                $object->setGrossWeightUnit(null);
+            }
+            if (\array_key_exists('priceEach', $data) && $data['priceEach'] !== null) {
                 $object->setPriceEach($data['priceEach']);
                 unset($data['priceEach']);
             }
-            if (\array_key_exists('commodityCurrencyCode', $data)) {
+            elseif (\array_key_exists('priceEach', $data) && $data['priceEach'] === null) {
+                $object->setPriceEach(null);
+            }
+            if (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] !== null) {
                 $object->setCommodityCurrencyCode($data['commodityCurrencyCode']);
                 unset($data['commodityCurrencyCode']);
             }
-            if (\array_key_exists('quantity', $data)) {
+            elseif (\array_key_exists('commodityCurrencyCode', $data) && $data['commodityCurrencyCode'] === null) {
+                $object->setCommodityCurrencyCode(null);
+            }
+            if (\array_key_exists('quantity', $data) && $data['quantity'] !== null) {
                 $object->setQuantity($data['quantity']);
                 unset($data['quantity']);
             }
-            if (\array_key_exists('UOM', $data)) {
+            elseif (\array_key_exists('quantity', $data) && $data['quantity'] === null) {
+                $object->setQuantity(null);
+            }
+            if (\array_key_exists('UOM', $data) && $data['UOM'] !== null) {
                 $object->setUOM($data['UOM']);
                 unset($data['UOM']);
             }
-            if (\array_key_exists('hsCode', $data)) {
+            elseif (\array_key_exists('UOM', $data) && $data['UOM'] === null) {
+                $object->setUOM(null);
+            }
+            if (\array_key_exists('hsCode', $data) && $data['hsCode'] !== null) {
                 $object->setHsCode($data['hsCode']);
                 unset($data['hsCode']);
             }
-            if (\array_key_exists('description', $data)) {
+            elseif (\array_key_exists('hsCode', $data) && $data['hsCode'] === null) {
+                $object->setHsCode(null);
+            }
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
-            if (\array_key_exists('originCountryCode', $data)) {
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
+            }
+            if (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] !== null) {
                 $object->setOriginCountryCode($data['originCountryCode']);
                 unset($data['originCountryCode']);
+            }
+            elseif (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] === null) {
+                $object->setOriginCountryCode(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

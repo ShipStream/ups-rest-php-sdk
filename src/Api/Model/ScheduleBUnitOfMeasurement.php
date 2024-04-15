@@ -15,32 +15,32 @@ class ScheduleBUnitOfMeasurement extends \ArrayObject
     /**
      * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description of the Unit of Measure.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class ScheduleBUnitOfMeasurement extends \ArrayObject
     /**
      * Description of the Unit of Measure.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description of the Unit of Measure.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

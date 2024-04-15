@@ -15,32 +15,32 @@ class UPSFiledPOA extends \ArrayObject
     /**
      * Indicates the EEI UPS Filed POA filing option.  Applicable for EEI form. Valid values are 1- One Time POA; 2- Blanket POA.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * Description for POA Code.  Applicable for EEI form.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * Indicates the EEI UPS Filed POA filing option.  Applicable for EEI form. Valid values are 1- One Time POA; 2- Blanket POA.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * Indicates the EEI UPS Filed POA filing option.  Applicable for EEI form. Valid values are 1- One Time POA; 2- Blanket POA.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -49,20 +49,20 @@ class UPSFiledPOA extends \ArrayObject
     /**
      * Description for POA Code.  Applicable for EEI form.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * Description for POA Code.  Applicable for EEI form.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

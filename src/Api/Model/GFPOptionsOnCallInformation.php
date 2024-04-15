@@ -15,26 +15,26 @@ class GFPOptionsOnCallInformation extends \ArrayObject
     /**
      * The presence of OnCallPickupIndicator is to request on call pickup fee in response
      *
-     * @var string
+     * @var string|null
      */
     protected $onCallPickupIndicator;
     /**
      * The presence of OnCallPickupIndicator is to request on call pickup fee in response
      *
-     * @return string
+     * @return string|null
      */
-    public function getOnCallPickupIndicator() : string
+    public function getOnCallPickupIndicator() : ?string
     {
         return $this->onCallPickupIndicator;
     }
     /**
      * The presence of OnCallPickupIndicator is to request on call pickup fee in response
      *
-     * @param string $onCallPickupIndicator
+     * @param string|null $onCallPickupIndicator
      *
      * @return self
      */
-    public function setOnCallPickupIndicator(string $onCallPickupIndicator) : self
+    public function setOnCallPickupIndicator(?string $onCallPickupIndicator) : self
     {
         $this->initialized['onCallPickupIndicator'] = true;
         $this->onCallPickupIndicator = $onCallPickupIndicator;

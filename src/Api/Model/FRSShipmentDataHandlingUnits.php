@@ -15,44 +15,44 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
     /**
      * Handling Unit Quantity for Density based rating.
      *
-     * @var string
+     * @var string|null
      */
     protected $quantity;
     /**
      * Handling Unit Type for Density based Rating.
      *
-     * @var HandlingUnitsType
+     * @var HandlingUnitsType|null
      */
     protected $type;
     /**
      * Dimension of the handling unit for density based pricing.
      *
-     * @var HandlingUnitsDimensions
+     * @var HandlingUnitsDimensions|null
      */
     protected $dimensions;
     /**
      * Adjusted Height Container.
      *
-     * @var HandlingUnitsAdjustedHeight
+     * @var HandlingUnitsAdjustedHeight|null
      */
     protected $adjustedHeight;
     /**
      * Handling Unit Quantity for Density based rating.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuantity() : string
+    public function getQuantity() : ?string
     {
         return $this->quantity;
     }
     /**
      * Handling Unit Quantity for Density based rating.
      *
-     * @param string $quantity
+     * @param string|null $quantity
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(?string $quantity) : self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -61,20 +61,20 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
     /**
      * Handling Unit Type for Density based Rating.
      *
-     * @return HandlingUnitsType
+     * @return HandlingUnitsType|null
      */
-    public function getType() : HandlingUnitsType
+    public function getType() : ?HandlingUnitsType
     {
         return $this->type;
     }
     /**
      * Handling Unit Type for Density based Rating.
      *
-     * @param HandlingUnitsType $type
+     * @param HandlingUnitsType|null $type
      *
      * @return self
      */
-    public function setType(HandlingUnitsType $type) : self
+    public function setType(?HandlingUnitsType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -83,20 +83,20 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
     /**
      * Dimension of the handling unit for density based pricing.
      *
-     * @return HandlingUnitsDimensions
+     * @return HandlingUnitsDimensions|null
      */
-    public function getDimensions() : HandlingUnitsDimensions
+    public function getDimensions() : ?HandlingUnitsDimensions
     {
         return $this->dimensions;
     }
     /**
      * Dimension of the handling unit for density based pricing.
      *
-     * @param HandlingUnitsDimensions $dimensions
+     * @param HandlingUnitsDimensions|null $dimensions
      *
      * @return self
      */
-    public function setDimensions(HandlingUnitsDimensions $dimensions) : self
+    public function setDimensions(?HandlingUnitsDimensions $dimensions) : self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -105,20 +105,20 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
     /**
      * Adjusted Height Container.
      *
-     * @return HandlingUnitsAdjustedHeight
+     * @return HandlingUnitsAdjustedHeight|null
      */
-    public function getAdjustedHeight() : HandlingUnitsAdjustedHeight
+    public function getAdjustedHeight() : ?HandlingUnitsAdjustedHeight
     {
         return $this->adjustedHeight;
     }
     /**
      * Adjusted Height Container.
      *
-     * @param HandlingUnitsAdjustedHeight $adjustedHeight
+     * @param HandlingUnitsAdjustedHeight|null $adjustedHeight
      *
      * @return self
      */
-    public function setAdjustedHeight(HandlingUnitsAdjustedHeight $adjustedHeight) : self
+    public function setAdjustedHeight(?HandlingUnitsAdjustedHeight $adjustedHeight) : self
     {
         $this->initialized['adjustedHeight'] = true;
         $this->adjustedHeight = $adjustedHeight;

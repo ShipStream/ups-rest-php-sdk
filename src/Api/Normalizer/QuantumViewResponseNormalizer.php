@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('QuantumViewEvents', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('QuantumViewEvents', $data) && $data['QuantumViewEvents'] !== null) {
                 $object->setQuantumViewEvents($this->denormalizer->denormalize($data['QuantumViewEvents'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseQuantumViewEvents', 'json', $context));
                 unset($data['QuantumViewEvents']);
             }
-            if (\array_key_exists('Bookmark', $data)) {
+            elseif (\array_key_exists('QuantumViewEvents', $data) && $data['QuantumViewEvents'] === null) {
+                $object->setQuantumViewEvents(null);
+            }
+            if (\array_key_exists('Bookmark', $data) && $data['Bookmark'] !== null) {
                 $object->setBookmark($data['Bookmark']);
                 unset($data['Bookmark']);
+            }
+            elseif (\array_key_exists('Bookmark', $data) && $data['Bookmark'] === null) {
+                $object->setBookmark(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -109,17 +118,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('QuantumViewEvents', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('QuantumViewEvents', $data) && $data['QuantumViewEvents'] !== null) {
                 $object->setQuantumViewEvents($this->denormalizer->denormalize($data['QuantumViewEvents'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseQuantumViewEvents', 'json', $context));
                 unset($data['QuantumViewEvents']);
             }
-            if (\array_key_exists('Bookmark', $data)) {
+            elseif (\array_key_exists('QuantumViewEvents', $data) && $data['QuantumViewEvents'] === null) {
+                $object->setQuantumViewEvents(null);
+            }
+            if (\array_key_exists('Bookmark', $data) && $data['Bookmark'] !== null) {
                 $object->setBookmark($data['Bookmark']);
                 unset($data['Bookmark']);
+            }
+            elseif (\array_key_exists('Bookmark', $data) && $data['Bookmark'] === null) {
+                $object->setBookmark(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

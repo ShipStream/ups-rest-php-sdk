@@ -15,32 +15,32 @@ class QuantumViewRequestRequest extends \ArrayObject
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @var RequestTransactionReference
+     * @var RequestTransactionReference|null
      */
     protected $transactionReference;
     /**
      * Indicates the action to be taken by the XML service. The only valid value is  'QVEvents'
      *
-     * @var string
+     * @var string|null
      */
     protected $requestAction;
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @return RequestTransactionReference
+     * @return RequestTransactionReference|null
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference() : ?RequestTransactionReference
     {
         return $this->transactionReference;
     }
     /**
      * TransactionReference identifies transactions between client and server.
      *
-     * @param RequestTransactionReference $transactionReference
+     * @param RequestTransactionReference|null $transactionReference
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(?RequestTransactionReference $transactionReference) : self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;
@@ -49,20 +49,20 @@ class QuantumViewRequestRequest extends \ArrayObject
     /**
      * Indicates the action to be taken by the XML service. The only valid value is  'QVEvents'
      *
-     * @return string
+     * @return string|null
      */
-    public function getRequestAction() : string
+    public function getRequestAction() : ?string
     {
         return $this->requestAction;
     }
     /**
      * Indicates the action to be taken by the XML service. The only valid value is  'QVEvents'
      *
-     * @param string $requestAction
+     * @param string|null $requestAction
      *
      * @return self
      */
-    public function setRequestAction(string $requestAction) : self
+    public function setRequestAction(?string $requestAction) : self
     {
         $this->initialized['requestAction'] = true;
         $this->requestAction = $requestAction;

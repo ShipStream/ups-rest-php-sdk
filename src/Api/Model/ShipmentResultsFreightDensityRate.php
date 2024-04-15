@@ -15,32 +15,32 @@ class ShipmentResultsFreightDensityRate extends \ArrayObject
     /**
      * Density is returned if the Shipper is eligible for Density based rate.
      *
-     * @var string
+     * @var string|null
      */
     protected $density;
     /**
      * TotalCubic feet is returned if the Shipper is eligible for Density based rate.
      *
-     * @var string
+     * @var string|null
      */
     protected $totalCubicFeet;
     /**
      * Density is returned if the Shipper is eligible for Density based rate.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDensity() : string
+    public function getDensity() : ?string
     {
         return $this->density;
     }
     /**
      * Density is returned if the Shipper is eligible for Density based rate.
      *
-     * @param string $density
+     * @param string|null $density
      *
      * @return self
      */
-    public function setDensity(string $density) : self
+    public function setDensity(?string $density) : self
     {
         $this->initialized['density'] = true;
         $this->density = $density;
@@ -49,20 +49,20 @@ class ShipmentResultsFreightDensityRate extends \ArrayObject
     /**
      * TotalCubic feet is returned if the Shipper is eligible for Density based rate.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTotalCubicFeet() : string
+    public function getTotalCubicFeet() : ?string
     {
         return $this->totalCubicFeet;
     }
     /**
      * TotalCubic feet is returned if the Shipper is eligible for Density based rate.
      *
-     * @param string $totalCubicFeet
+     * @param string|null $totalCubicFeet
      *
      * @return self
      */
-    public function setTotalCubicFeet(string $totalCubicFeet) : self
+    public function setTotalCubicFeet(?string $totalCubicFeet) : self
     {
         $this->initialized['totalCubicFeet'] = true;
         $this->totalCubicFeet = $totalCubicFeet;

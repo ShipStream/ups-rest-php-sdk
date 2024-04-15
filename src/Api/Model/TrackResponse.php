@@ -15,26 +15,26 @@ class TrackResponse extends \ArrayObject
     /**
      * 
      *
-     * @var Shipment[]
+     * @var list<Shipment>|null
      */
     protected $shipment;
     /**
      * 
      *
-     * @return Shipment[]
+     * @return list<Shipment>|null
      */
-    public function getShipment() : array
+    public function getShipment() : ?array
     {
         return $this->shipment;
     }
     /**
      * 
      *
-     * @param Shipment[] $shipment
+     * @param list<Shipment>|null $shipment
      *
      * @return self
      */
-    public function setShipment(array $shipment) : self
+    public function setShipment(?array $shipment) : self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

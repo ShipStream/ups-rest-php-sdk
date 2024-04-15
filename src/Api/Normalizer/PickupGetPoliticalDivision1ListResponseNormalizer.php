@@ -40,17 +40,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('PoliticalDivision1', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] !== null) {
                 $values = [];
                 foreach ($data['PoliticalDivision1'] as $value) {
                     $values[] = $value;
                 }
                 $object->setPoliticalDivision1($values);
                 unset($data['PoliticalDivision1']);
+            }
+            elseif (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] === null) {
+                $object->setPoliticalDivision1(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,17 +118,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Response', $data)) {
+            if (\array_key_exists('Response', $data) && $data['Response'] !== null) {
                 $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponseResponse', 'json', $context));
                 unset($data['Response']);
             }
-            if (\array_key_exists('PoliticalDivision1', $data)) {
+            elseif (\array_key_exists('Response', $data) && $data['Response'] === null) {
+                $object->setResponse(null);
+            }
+            if (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] !== null) {
                 $values = [];
                 foreach ($data['PoliticalDivision1'] as $value) {
                     $values[] = $value;
                 }
                 $object->setPoliticalDivision1($values);
                 unset($data['PoliticalDivision1']);
+            }
+            elseif (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] === null) {
+                $object->setPoliticalDivision1(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

@@ -15,38 +15,38 @@ class RateShipmentShipTo extends \ArrayObject
     /**
      * Destination attention name or company name.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $name;
     /**
      * Destination attention name.  Length is not validated.
      *
-     * @var string
+     * @var string|null
      */
     protected $attentionName;
     /**
      * Address Container.
      *
-     * @var ShipToAddress
+     * @var ShipToAddress|null
      */
     protected $address;
     /**
      * Destination attention name or company name.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
     /**
      * Destination attention name or company name.  Length is not validated.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -55,20 +55,20 @@ class RateShipmentShipTo extends \ArrayObject
     /**
      * Destination attention name.  Length is not validated.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAttentionName() : string
+    public function getAttentionName() : ?string
     {
         return $this->attentionName;
     }
     /**
      * Destination attention name.  Length is not validated.
      *
-     * @param string $attentionName
+     * @param string|null $attentionName
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(?string $attentionName) : self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -77,20 +77,20 @@ class RateShipmentShipTo extends \ArrayObject
     /**
      * Address Container.
      *
-     * @return ShipToAddress
+     * @return ShipToAddress|null
      */
-    public function getAddress() : ShipToAddress
+    public function getAddress() : ?ShipToAddress
     {
         return $this->address;
     }
     /**
      * Address Container.
      *
-     * @param ShipToAddress $address
+     * @param ShipToAddress|null $address
      *
      * @return self
      */
-    public function setAddress(ShipToAddress $address) : self
+    public function setAddress(?ShipToAddress $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

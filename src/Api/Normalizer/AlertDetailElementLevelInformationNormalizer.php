@@ -40,17 +40,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Level', $data)) {
+            if (\array_key_exists('Level', $data) && $data['Level'] !== null) {
                 $object->setLevel($data['Level']);
                 unset($data['Level']);
             }
-            if (\array_key_exists('ElementIdentifier', $data)) {
+            elseif (\array_key_exists('Level', $data) && $data['Level'] === null) {
+                $object->setLevel(null);
+            }
+            if (\array_key_exists('ElementIdentifier', $data) && $data['ElementIdentifier'] !== null) {
                 $values = [];
                 foreach ($data['ElementIdentifier'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ElementLevelInformationElementIdentifier', 'json', $context);
                 }
                 $object->setElementIdentifier($values);
                 unset($data['ElementIdentifier']);
+            }
+            elseif (\array_key_exists('ElementIdentifier', $data) && $data['ElementIdentifier'] === null) {
+                $object->setElementIdentifier(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,17 +118,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Level', $data)) {
+            if (\array_key_exists('Level', $data) && $data['Level'] !== null) {
                 $object->setLevel($data['Level']);
                 unset($data['Level']);
             }
-            if (\array_key_exists('ElementIdentifier', $data)) {
+            elseif (\array_key_exists('Level', $data) && $data['Level'] === null) {
+                $object->setLevel(null);
+            }
+            if (\array_key_exists('ElementIdentifier', $data) && $data['ElementIdentifier'] !== null) {
                 $values = [];
                 foreach ($data['ElementIdentifier'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ElementLevelInformationElementIdentifier', 'json', $context);
                 }
                 $object->setElementIdentifier($values);
                 unset($data['ElementIdentifier']);
+            }
+            elseif (\array_key_exists('ElementIdentifier', $data) && $data['ElementIdentifier'] === null) {
+                $object->setElementIdentifier(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

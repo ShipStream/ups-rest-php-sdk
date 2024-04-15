@@ -15,62 +15,62 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $category;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
      * 
      *
-     * @var bool
+     * @var bool|null
      */
     protected $current;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $linkedActivity;
     /**
      * 
      *
-     * @var string
+     * @var string|null
      */
     protected $state;
     /**
      * 
      *
-     * @var SubMilestone
+     * @var SubMilestone|null
      */
     protected $subMilestone;
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getCategory() : string
+    public function getCategory() : ?string
     {
         return $this->category;
     }
     /**
      * 
      *
-     * @param string $category
+     * @param string|null $category
      *
      * @return self
      */
-    public function setCategory(string $category) : self
+    public function setCategory(?string $category) : self
     {
         $this->initialized['category'] = true;
         $this->category = $category;
@@ -79,20 +79,20 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * 
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -101,20 +101,20 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @return bool
+     * @return bool|null
      */
-    public function getCurrent() : bool
+    public function getCurrent() : ?bool
     {
         return $this->current;
     }
     /**
      * 
      *
-     * @param bool $current
+     * @param bool|null $current
      *
      * @return self
      */
-    public function setCurrent(bool $current) : self
+    public function setCurrent(?bool $current) : self
     {
         $this->initialized['current'] = true;
         $this->current = $current;
@@ -123,20 +123,20 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
     /**
      * 
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description) : self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -145,20 +145,20 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getLinkedActivity() : string
+    public function getLinkedActivity() : ?string
     {
         return $this->linkedActivity;
     }
     /**
      * 
      *
-     * @param string $linkedActivity
+     * @param string|null $linkedActivity
      *
      * @return self
      */
-    public function setLinkedActivity(string $linkedActivity) : self
+    public function setLinkedActivity(?string $linkedActivity) : self
     {
         $this->initialized['linkedActivity'] = true;
         $this->linkedActivity = $linkedActivity;
@@ -167,20 +167,20 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @return string
+     * @return string|null
      */
-    public function getState() : string
+    public function getState() : ?string
     {
         return $this->state;
     }
     /**
      * 
      *
-     * @param string $state
+     * @param string|null $state
      *
      * @return self
      */
-    public function setState(string $state) : self
+    public function setState(?string $state) : self
     {
         $this->initialized['state'] = true;
         $this->state = $state;
@@ -189,20 +189,20 @@ class Milestones extends \ArrayObject
     /**
      * 
      *
-     * @return SubMilestone
+     * @return SubMilestone|null
      */
-    public function getSubMilestone() : SubMilestone
+    public function getSubMilestone() : ?SubMilestone
     {
         return $this->subMilestone;
     }
     /**
      * 
      *
-     * @param SubMilestone $subMilestone
+     * @param SubMilestone|null $subMilestone
      *
      * @return self
      */
-    public function setSubMilestone(SubMilestone $subMilestone) : self
+    public function setSubMilestone(?SubMilestone $subMilestone) : self
     {
         $this->initialized['subMilestone'] = true;
         $this->subMilestone = $subMilestone;

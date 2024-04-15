@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PhraseID', $data)) {
+            if (\array_key_exists('PhraseID', $data) && $data['PhraseID'] !== null) {
                 $object->setPhraseID($data['PhraseID']);
                 unset($data['PhraseID']);
             }
-            if (\array_key_exists('TextToSpeechIndicator', $data)) {
+            elseif (\array_key_exists('PhraseID', $data) && $data['PhraseID'] === null) {
+                $object->setPhraseID(null);
+            }
+            if (\array_key_exists('TextToSpeechIndicator', $data) && $data['TextToSpeechIndicator'] !== null) {
                 $object->setTextToSpeechIndicator($data['TextToSpeechIndicator']);
                 unset($data['TextToSpeechIndicator']);
+            }
+            elseif (\array_key_exists('TextToSpeechIndicator', $data) && $data['TextToSpeechIndicator'] === null) {
+                $object->setTextToSpeechIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -104,13 +110,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('PhraseID', $data)) {
+            if (\array_key_exists('PhraseID', $data) && $data['PhraseID'] !== null) {
                 $object->setPhraseID($data['PhraseID']);
                 unset($data['PhraseID']);
             }
-            if (\array_key_exists('TextToSpeechIndicator', $data)) {
+            elseif (\array_key_exists('PhraseID', $data) && $data['PhraseID'] === null) {
+                $object->setPhraseID(null);
+            }
+            if (\array_key_exists('TextToSpeechIndicator', $data) && $data['TextToSpeechIndicator'] !== null) {
                 $object->setTextToSpeechIndicator($data['TextToSpeechIndicator']);
                 unset($data['TextToSpeechIndicator']);
+            }
+            elseif (\array_key_exists('TextToSpeechIndicator', $data) && $data['TextToSpeechIndicator'] === null) {
+                $object->setTextToSpeechIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

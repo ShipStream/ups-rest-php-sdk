@@ -40,13 +40,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LiftGateAtDeliveryIndicator', $data)) {
+            if (\array_key_exists('LiftGateAtDeliveryIndicator', $data) && $data['LiftGateAtDeliveryIndicator'] !== null) {
                 $object->setLiftGateAtDeliveryIndicator($data['LiftGateAtDeliveryIndicator']);
                 unset($data['LiftGateAtDeliveryIndicator']);
             }
-            if (\array_key_exists('DropOffAtUPSFacilityIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateAtDeliveryIndicator', $data) && $data['LiftGateAtDeliveryIndicator'] === null) {
+                $object->setLiftGateAtDeliveryIndicator(null);
+            }
+            if (\array_key_exists('DropOffAtUPSFacilityIndicator', $data) && $data['DropOffAtUPSFacilityIndicator'] !== null) {
                 $object->setDropOffAtUPSFacilityIndicator($data['DropOffAtUPSFacilityIndicator']);
                 unset($data['DropOffAtUPSFacilityIndicator']);
+            }
+            elseif (\array_key_exists('DropOffAtUPSFacilityIndicator', $data) && $data['DropOffAtUPSFacilityIndicator'] === null) {
+                $object->setDropOffAtUPSFacilityIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -106,13 +112,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('LiftGateAtDeliveryIndicator', $data)) {
+            if (\array_key_exists('LiftGateAtDeliveryIndicator', $data) && $data['LiftGateAtDeliveryIndicator'] !== null) {
                 $object->setLiftGateAtDeliveryIndicator($data['LiftGateAtDeliveryIndicator']);
                 unset($data['LiftGateAtDeliveryIndicator']);
             }
-            if (\array_key_exists('DropOffAtUPSFacilityIndicator', $data)) {
+            elseif (\array_key_exists('LiftGateAtDeliveryIndicator', $data) && $data['LiftGateAtDeliveryIndicator'] === null) {
+                $object->setLiftGateAtDeliveryIndicator(null);
+            }
+            if (\array_key_exists('DropOffAtUPSFacilityIndicator', $data) && $data['DropOffAtUPSFacilityIndicator'] !== null) {
                 $object->setDropOffAtUPSFacilityIndicator($data['DropOffAtUPSFacilityIndicator']);
                 unset($data['DropOffAtUPSFacilityIndicator']);
+            }
+            elseif (\array_key_exists('DropOffAtUPSFacilityIndicator', $data) && $data['DropOffAtUPSFacilityIndicator'] === null) {
+                $object->setDropOffAtUPSFacilityIndicator(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

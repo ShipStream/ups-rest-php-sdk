@@ -15,44 +15,44 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @var ValidationList
+     * @var ValidationList|null
      */
     protected $validationList;
     /**
      * 
      *
-     * @var CandidateAddress[]
+     * @var list<CandidateAddress>|null
      */
     protected $destinationPickList;
     /**
      * 
      *
-     * @var CandidateAddress[]
+     * @var list<CandidateAddress>|null
      */
     protected $originPickList;
     /**
      * 
      *
-     * @var EmsResponse
+     * @var EmsResponse|null
      */
     protected $emsResponse;
     /**
      * 
      *
-     * @return ValidationList
+     * @return ValidationList|null
      */
-    public function getValidationList() : ValidationList
+    public function getValidationList() : ?ValidationList
     {
         return $this->validationList;
     }
     /**
      * 
      *
-     * @param ValidationList $validationList
+     * @param ValidationList|null $validationList
      *
      * @return self
      */
-    public function setValidationList(ValidationList $validationList) : self
+    public function setValidationList(?ValidationList $validationList) : self
     {
         $this->initialized['validationList'] = true;
         $this->validationList = $validationList;
@@ -61,20 +61,20 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @return CandidateAddress[]
+     * @return list<CandidateAddress>|null
      */
-    public function getDestinationPickList() : array
+    public function getDestinationPickList() : ?array
     {
         return $this->destinationPickList;
     }
     /**
      * 
      *
-     * @param CandidateAddress[] $destinationPickList
+     * @param list<CandidateAddress>|null $destinationPickList
      *
      * @return self
      */
-    public function setDestinationPickList(array $destinationPickList) : self
+    public function setDestinationPickList(?array $destinationPickList) : self
     {
         $this->initialized['destinationPickList'] = true;
         $this->destinationPickList = $destinationPickList;
@@ -83,20 +83,20 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @return CandidateAddress[]
+     * @return list<CandidateAddress>|null
      */
-    public function getOriginPickList() : array
+    public function getOriginPickList() : ?array
     {
         return $this->originPickList;
     }
     /**
      * 
      *
-     * @param CandidateAddress[] $originPickList
+     * @param list<CandidateAddress>|null $originPickList
      *
      * @return self
      */
-    public function setOriginPickList(array $originPickList) : self
+    public function setOriginPickList(?array $originPickList) : self
     {
         $this->initialized['originPickList'] = true;
         $this->originPickList = $originPickList;
@@ -105,20 +105,20 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @return EmsResponse
+     * @return EmsResponse|null
      */
-    public function getEmsResponse() : EmsResponse
+    public function getEmsResponse() : ?EmsResponse
     {
         return $this->emsResponse;
     }
     /**
      * 
      *
-     * @param EmsResponse $emsResponse
+     * @param EmsResponse|null $emsResponse
      *
      * @return self
      */
-    public function setEmsResponse(EmsResponse $emsResponse) : self
+    public function setEmsResponse(?EmsResponse $emsResponse) : self
     {
         $this->initialized['emsResponse'] = true;
         $this->emsResponse = $emsResponse;

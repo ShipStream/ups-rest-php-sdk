@@ -40,13 +40,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('StandardHours', $data)) {
+            if (\array_key_exists('StandardHours', $data) && $data['StandardHours'] !== null) {
                 $values = [];
                 foreach ($data['StandardHours'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\OperatingHoursStandardHours', 'json', $context);
                 }
                 $object->setStandardHours($values);
                 unset($data['StandardHours']);
+            }
+            elseif (\array_key_exists('StandardHours', $data) && $data['StandardHours'] === null) {
+                $object->setStandardHours(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,13 +110,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('StandardHours', $data)) {
+            if (\array_key_exists('StandardHours', $data) && $data['StandardHours'] !== null) {
                 $values = [];
                 foreach ($data['StandardHours'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\OperatingHoursStandardHours', 'json', $context);
                 }
                 $object->setStandardHours($values);
                 unset($data['StandardHours']);
+            }
+            elseif (\array_key_exists('StandardHours', $data) && $data['StandardHours'] === null) {
+                $object->setStandardHours(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

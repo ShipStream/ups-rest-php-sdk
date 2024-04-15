@@ -15,32 +15,32 @@ class TransportationChargesDiscountAmount extends \ArrayObject
     /**
      * Discount Amount currency code.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * Discount amount monetary value.  Valid values are from 0 to 9999999999999999.99
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * Discount Amount currency code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * Discount Amount currency code.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -49,20 +49,20 @@ class TransportationChargesDiscountAmount extends \ArrayObject
     /**
      * Discount amount monetary value.  Valid values are from 0 to 9999999999999999.99
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * Discount amount monetary value.  Valid values are from 0 to 9999999999999999.99
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

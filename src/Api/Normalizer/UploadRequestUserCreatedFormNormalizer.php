@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UserCreatedFormFileName', $data)) {
+            if (\array_key_exists('UserCreatedFormFileName', $data) && $data['UserCreatedFormFileName'] !== null) {
                 $object->setUserCreatedFormFileName($data['UserCreatedFormFileName']);
                 unset($data['UserCreatedFormFileName']);
             }
-            if (\array_key_exists('UserCreatedFormFile', $data)) {
+            elseif (\array_key_exists('UserCreatedFormFileName', $data) && $data['UserCreatedFormFileName'] === null) {
+                $object->setUserCreatedFormFileName(null);
+            }
+            if (\array_key_exists('UserCreatedFormFile', $data) && $data['UserCreatedFormFile'] !== null) {
                 $object->setUserCreatedFormFile($data['UserCreatedFormFile']);
                 unset($data['UserCreatedFormFile']);
             }
-            if (\array_key_exists('UserCreatedFormFileFormat', $data)) {
+            elseif (\array_key_exists('UserCreatedFormFile', $data) && $data['UserCreatedFormFile'] === null) {
+                $object->setUserCreatedFormFile(null);
+            }
+            if (\array_key_exists('UserCreatedFormFileFormat', $data) && $data['UserCreatedFormFileFormat'] !== null) {
                 $object->setUserCreatedFormFileFormat($data['UserCreatedFormFileFormat']);
                 unset($data['UserCreatedFormFileFormat']);
             }
-            if (\array_key_exists('UserCreatedFormDocumentType', $data)) {
+            elseif (\array_key_exists('UserCreatedFormFileFormat', $data) && $data['UserCreatedFormFileFormat'] === null) {
+                $object->setUserCreatedFormFileFormat(null);
+            }
+            if (\array_key_exists('UserCreatedFormDocumentType', $data) && $data['UserCreatedFormDocumentType'] !== null) {
                 $object->setUserCreatedFormDocumentType($data['UserCreatedFormDocumentType']);
                 unset($data['UserCreatedFormDocumentType']);
+            }
+            elseif (\array_key_exists('UserCreatedFormDocumentType', $data) && $data['UserCreatedFormDocumentType'] === null) {
+                $object->setUserCreatedFormDocumentType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -112,21 +124,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UserCreatedFormFileName', $data)) {
+            if (\array_key_exists('UserCreatedFormFileName', $data) && $data['UserCreatedFormFileName'] !== null) {
                 $object->setUserCreatedFormFileName($data['UserCreatedFormFileName']);
                 unset($data['UserCreatedFormFileName']);
             }
-            if (\array_key_exists('UserCreatedFormFile', $data)) {
+            elseif (\array_key_exists('UserCreatedFormFileName', $data) && $data['UserCreatedFormFileName'] === null) {
+                $object->setUserCreatedFormFileName(null);
+            }
+            if (\array_key_exists('UserCreatedFormFile', $data) && $data['UserCreatedFormFile'] !== null) {
                 $object->setUserCreatedFormFile($data['UserCreatedFormFile']);
                 unset($data['UserCreatedFormFile']);
             }
-            if (\array_key_exists('UserCreatedFormFileFormat', $data)) {
+            elseif (\array_key_exists('UserCreatedFormFile', $data) && $data['UserCreatedFormFile'] === null) {
+                $object->setUserCreatedFormFile(null);
+            }
+            if (\array_key_exists('UserCreatedFormFileFormat', $data) && $data['UserCreatedFormFileFormat'] !== null) {
                 $object->setUserCreatedFormFileFormat($data['UserCreatedFormFileFormat']);
                 unset($data['UserCreatedFormFileFormat']);
             }
-            if (\array_key_exists('UserCreatedFormDocumentType', $data)) {
+            elseif (\array_key_exists('UserCreatedFormFileFormat', $data) && $data['UserCreatedFormFileFormat'] === null) {
+                $object->setUserCreatedFormFileFormat(null);
+            }
+            if (\array_key_exists('UserCreatedFormDocumentType', $data) && $data['UserCreatedFormDocumentType'] !== null) {
                 $object->setUserCreatedFormDocumentType($data['UserCreatedFormDocumentType']);
                 unset($data['UserCreatedFormDocumentType']);
+            }
+            elseif (\array_key_exists('UserCreatedFormDocumentType', $data) && $data['UserCreatedFormDocumentType'] === null) {
+                $object->setUserCreatedFormDocumentType(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

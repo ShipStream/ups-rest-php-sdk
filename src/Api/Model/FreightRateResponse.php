@@ -15,105 +15,105 @@ class FreightRateResponse extends \ArrayObject
     /**
      * Response Container.
      *
-     * @var FreightRateResponseResponse
+     * @var FreightRateResponseResponse|null
      */
     protected $response;
     /**
      * 
      *
-     * @var FreightRateResponseRate[]
+     * @var list<FreightRateResponseRate>|null
      */
     protected $rate;
     /**
      * FreightDensityRate container for Density based rating.
      *
-     * @var FreightRateResponseFreightDensityRate
+     * @var FreightRateResponseFreightDensityRate|null
      */
     protected $freightDensityRate;
     /**
      * 
      *
-     * @var FreightRateResponseCommodity[]
+     * @var list<FreightRateResponseCommodity>|null
      */
     protected $commodity;
     /**
      * TotalShipmentCharge Container.
      *
-     * @var FreightRateResponseTotalShipmentCharge
+     * @var FreightRateResponseTotalShipmentCharge|null
      */
     protected $totalShipmentCharge;
     /**
      * BillableShipmentWeight Container.
      *
-     * @var FreightRateResponseBillableShipmentWeight
+     * @var FreightRateResponseBillableShipmentWeight|null
      */
     protected $billableShipmentWeight;
     /**
      * DimensionalWeight Container.
      *
-     * @var FreightRateResponseDimensionalWeight
+     * @var FreightRateResponseDimensionalWeight|null
      */
     protected $dimensionalWeight;
     /**
      * Service Container.
      *
-     * @var FreightRateResponseService
+     * @var FreightRateResponseService|null
      */
     protected $service;
     /**
      * This is an empty tag. The presence of the indicator indicates the rate returned is guaranteed.
      *
-     * @var string
+     * @var string|null
      */
     protected $guaranteedIndicator;
     /**
      * This is an empty tag. The presence of the tag indicates the rate returned has a minimum charge applied to it.
      *
-     * @var string
+     * @var string|null
      */
     protected $minimumChargeAppliedIndicator;
     /**
      * 
      *
-     * @var FreightRateResponseAlternateRatesResponse[]
+     * @var list<FreightRateResponseAlternateRatesResponse>|null
      */
     protected $alternateRatesResponse;
     /**
      * Time In transit information.
      *
-     * @var FreightRateResponseTimeInTransit
+     * @var FreightRateResponseTimeInTransit|null
      */
     protected $timeInTransit;
     /**
     * Handling Unit Container for Density based rating.
     Returned if Shipper is eligible for density based pricing.
     *
-    * @var FreightRateResponseHandlingUnits
+    * @var FreightRateResponseHandlingUnits|null
     */
     protected $handlingUnits;
     /**
      * The Quote Number returned in the response associated to the specific LTL Freight Rate returned in the response.
      *
-     * @var string
+     * @var string|null
      */
     protected $quoteNumber;
     /**
      * Response Container.
      *
-     * @return FreightRateResponseResponse
+     * @return FreightRateResponseResponse|null
      */
-    public function getResponse() : FreightRateResponseResponse
+    public function getResponse() : ?FreightRateResponseResponse
     {
         return $this->response;
     }
     /**
      * Response Container.
      *
-     * @param FreightRateResponseResponse $response
+     * @param FreightRateResponseResponse|null $response
      *
      * @return self
      */
-    public function setResponse(FreightRateResponseResponse $response) : self
+    public function setResponse(?FreightRateResponseResponse $response) : self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -122,20 +122,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateResponseRate[]
+     * @return list<FreightRateResponseRate>|null
      */
-    public function getRate() : array
+    public function getRate() : ?array
     {
         return $this->rate;
     }
     /**
      * 
      *
-     * @param FreightRateResponseRate[] $rate
+     * @param list<FreightRateResponseRate>|null $rate
      *
      * @return self
      */
-    public function setRate(array $rate) : self
+    public function setRate(?array $rate) : self
     {
         $this->initialized['rate'] = true;
         $this->rate = $rate;
@@ -144,20 +144,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * FreightDensityRate container for Density based rating.
      *
-     * @return FreightRateResponseFreightDensityRate
+     * @return FreightRateResponseFreightDensityRate|null
      */
-    public function getFreightDensityRate() : FreightRateResponseFreightDensityRate
+    public function getFreightDensityRate() : ?FreightRateResponseFreightDensityRate
     {
         return $this->freightDensityRate;
     }
     /**
      * FreightDensityRate container for Density based rating.
      *
-     * @param FreightRateResponseFreightDensityRate $freightDensityRate
+     * @param FreightRateResponseFreightDensityRate|null $freightDensityRate
      *
      * @return self
      */
-    public function setFreightDensityRate(FreightRateResponseFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(?FreightRateResponseFreightDensityRate $freightDensityRate) : self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -166,20 +166,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateResponseCommodity[]
+     * @return list<FreightRateResponseCommodity>|null
      */
-    public function getCommodity() : array
+    public function getCommodity() : ?array
     {
         return $this->commodity;
     }
     /**
      * 
      *
-     * @param FreightRateResponseCommodity[] $commodity
+     * @param list<FreightRateResponseCommodity>|null $commodity
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(?array $commodity) : self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -188,20 +188,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * TotalShipmentCharge Container.
      *
-     * @return FreightRateResponseTotalShipmentCharge
+     * @return FreightRateResponseTotalShipmentCharge|null
      */
-    public function getTotalShipmentCharge() : FreightRateResponseTotalShipmentCharge
+    public function getTotalShipmentCharge() : ?FreightRateResponseTotalShipmentCharge
     {
         return $this->totalShipmentCharge;
     }
     /**
      * TotalShipmentCharge Container.
      *
-     * @param FreightRateResponseTotalShipmentCharge $totalShipmentCharge
+     * @param FreightRateResponseTotalShipmentCharge|null $totalShipmentCharge
      *
      * @return self
      */
-    public function setTotalShipmentCharge(FreightRateResponseTotalShipmentCharge $totalShipmentCharge) : self
+    public function setTotalShipmentCharge(?FreightRateResponseTotalShipmentCharge $totalShipmentCharge) : self
     {
         $this->initialized['totalShipmentCharge'] = true;
         $this->totalShipmentCharge = $totalShipmentCharge;
@@ -210,20 +210,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * BillableShipmentWeight Container.
      *
-     * @return FreightRateResponseBillableShipmentWeight
+     * @return FreightRateResponseBillableShipmentWeight|null
      */
-    public function getBillableShipmentWeight() : FreightRateResponseBillableShipmentWeight
+    public function getBillableShipmentWeight() : ?FreightRateResponseBillableShipmentWeight
     {
         return $this->billableShipmentWeight;
     }
     /**
      * BillableShipmentWeight Container.
      *
-     * @param FreightRateResponseBillableShipmentWeight $billableShipmentWeight
+     * @param FreightRateResponseBillableShipmentWeight|null $billableShipmentWeight
      *
      * @return self
      */
-    public function setBillableShipmentWeight(FreightRateResponseBillableShipmentWeight $billableShipmentWeight) : self
+    public function setBillableShipmentWeight(?FreightRateResponseBillableShipmentWeight $billableShipmentWeight) : self
     {
         $this->initialized['billableShipmentWeight'] = true;
         $this->billableShipmentWeight = $billableShipmentWeight;
@@ -232,20 +232,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * DimensionalWeight Container.
      *
-     * @return FreightRateResponseDimensionalWeight
+     * @return FreightRateResponseDimensionalWeight|null
      */
-    public function getDimensionalWeight() : FreightRateResponseDimensionalWeight
+    public function getDimensionalWeight() : ?FreightRateResponseDimensionalWeight
     {
         return $this->dimensionalWeight;
     }
     /**
      * DimensionalWeight Container.
      *
-     * @param FreightRateResponseDimensionalWeight $dimensionalWeight
+     * @param FreightRateResponseDimensionalWeight|null $dimensionalWeight
      *
      * @return self
      */
-    public function setDimensionalWeight(FreightRateResponseDimensionalWeight $dimensionalWeight) : self
+    public function setDimensionalWeight(?FreightRateResponseDimensionalWeight $dimensionalWeight) : self
     {
         $this->initialized['dimensionalWeight'] = true;
         $this->dimensionalWeight = $dimensionalWeight;
@@ -254,20 +254,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * Service Container.
      *
-     * @return FreightRateResponseService
+     * @return FreightRateResponseService|null
      */
-    public function getService() : FreightRateResponseService
+    public function getService() : ?FreightRateResponseService
     {
         return $this->service;
     }
     /**
      * Service Container.
      *
-     * @param FreightRateResponseService $service
+     * @param FreightRateResponseService|null $service
      *
      * @return self
      */
-    public function setService(FreightRateResponseService $service) : self
+    public function setService(?FreightRateResponseService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -276,20 +276,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * This is an empty tag. The presence of the indicator indicates the rate returned is guaranteed.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGuaranteedIndicator() : string
+    public function getGuaranteedIndicator() : ?string
     {
         return $this->guaranteedIndicator;
     }
     /**
      * This is an empty tag. The presence of the indicator indicates the rate returned is guaranteed.
      *
-     * @param string $guaranteedIndicator
+     * @param string|null $guaranteedIndicator
      *
      * @return self
      */
-    public function setGuaranteedIndicator(string $guaranteedIndicator) : self
+    public function setGuaranteedIndicator(?string $guaranteedIndicator) : self
     {
         $this->initialized['guaranteedIndicator'] = true;
         $this->guaranteedIndicator = $guaranteedIndicator;
@@ -298,20 +298,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * This is an empty tag. The presence of the tag indicates the rate returned has a minimum charge applied to it.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMinimumChargeAppliedIndicator() : string
+    public function getMinimumChargeAppliedIndicator() : ?string
     {
         return $this->minimumChargeAppliedIndicator;
     }
     /**
      * This is an empty tag. The presence of the tag indicates the rate returned has a minimum charge applied to it.
      *
-     * @param string $minimumChargeAppliedIndicator
+     * @param string|null $minimumChargeAppliedIndicator
      *
      * @return self
      */
-    public function setMinimumChargeAppliedIndicator(string $minimumChargeAppliedIndicator) : self
+    public function setMinimumChargeAppliedIndicator(?string $minimumChargeAppliedIndicator) : self
     {
         $this->initialized['minimumChargeAppliedIndicator'] = true;
         $this->minimumChargeAppliedIndicator = $minimumChargeAppliedIndicator;
@@ -320,20 +320,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateResponseAlternateRatesResponse[]
+     * @return list<FreightRateResponseAlternateRatesResponse>|null
      */
-    public function getAlternateRatesResponse() : array
+    public function getAlternateRatesResponse() : ?array
     {
         return $this->alternateRatesResponse;
     }
     /**
      * 
      *
-     * @param FreightRateResponseAlternateRatesResponse[] $alternateRatesResponse
+     * @param list<FreightRateResponseAlternateRatesResponse>|null $alternateRatesResponse
      *
      * @return self
      */
-    public function setAlternateRatesResponse(array $alternateRatesResponse) : self
+    public function setAlternateRatesResponse(?array $alternateRatesResponse) : self
     {
         $this->initialized['alternateRatesResponse'] = true;
         $this->alternateRatesResponse = $alternateRatesResponse;
@@ -342,20 +342,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * Time In transit information.
      *
-     * @return FreightRateResponseTimeInTransit
+     * @return FreightRateResponseTimeInTransit|null
      */
-    public function getTimeInTransit() : FreightRateResponseTimeInTransit
+    public function getTimeInTransit() : ?FreightRateResponseTimeInTransit
     {
         return $this->timeInTransit;
     }
     /**
      * Time In transit information.
      *
-     * @param FreightRateResponseTimeInTransit $timeInTransit
+     * @param FreightRateResponseTimeInTransit|null $timeInTransit
      *
      * @return self
      */
-    public function setTimeInTransit(FreightRateResponseTimeInTransit $timeInTransit) : self
+    public function setTimeInTransit(?FreightRateResponseTimeInTransit $timeInTransit) : self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;
@@ -365,9 +365,9 @@ class FreightRateResponse extends \ArrayObject
     * Handling Unit Container for Density based rating.
     Returned if Shipper is eligible for density based pricing.
     *
-    * @return FreightRateResponseHandlingUnits
+    * @return FreightRateResponseHandlingUnits|null
     */
-    public function getHandlingUnits() : FreightRateResponseHandlingUnits
+    public function getHandlingUnits() : ?FreightRateResponseHandlingUnits
     {
         return $this->handlingUnits;
     }
@@ -375,11 +375,11 @@ class FreightRateResponse extends \ArrayObject
     * Handling Unit Container for Density based rating.
     Returned if Shipper is eligible for density based pricing.
     *
-    * @param FreightRateResponseHandlingUnits $handlingUnits
+    * @param FreightRateResponseHandlingUnits|null $handlingUnits
     *
     * @return self
     */
-    public function setHandlingUnits(FreightRateResponseHandlingUnits $handlingUnits) : self
+    public function setHandlingUnits(?FreightRateResponseHandlingUnits $handlingUnits) : self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;
@@ -388,20 +388,20 @@ class FreightRateResponse extends \ArrayObject
     /**
      * The Quote Number returned in the response associated to the specific LTL Freight Rate returned in the response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getQuoteNumber() : string
+    public function getQuoteNumber() : ?string
     {
         return $this->quoteNumber;
     }
     /**
      * The Quote Number returned in the response associated to the specific LTL Freight Rate returned in the response.
      *
-     * @param string $quoteNumber
+     * @param string|null $quoteNumber
      *
      * @return self
      */
-    public function setQuoteNumber(string $quoteNumber) : self
+    public function setQuoteNumber(?string $quoteNumber) : self
     {
         $this->initialized['quoteNumber'] = true;
         $this->quoteNumber = $quoteNumber;

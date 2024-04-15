@@ -40,11 +40,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('validationList', $data)) {
+            if (\array_key_exists('validationList', $data) && $data['validationList'] !== null) {
                 $object->setValidationList($this->denormalizer->denormalize($data['validationList'], 'ShipStream\\Ups\\Api\\Model\\ValidationList', 'json', $context));
                 unset($data['validationList']);
             }
-            if (\array_key_exists('destinationPickList', $data)) {
+            elseif (\array_key_exists('validationList', $data) && $data['validationList'] === null) {
+                $object->setValidationList(null);
+            }
+            if (\array_key_exists('destinationPickList', $data) && $data['destinationPickList'] !== null) {
                 $values = [];
                 foreach ($data['destinationPickList'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress', 'json', $context);
@@ -52,7 +55,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDestinationPickList($values);
                 unset($data['destinationPickList']);
             }
-            if (\array_key_exists('originPickList', $data)) {
+            elseif (\array_key_exists('destinationPickList', $data) && $data['destinationPickList'] === null) {
+                $object->setDestinationPickList(null);
+            }
+            if (\array_key_exists('originPickList', $data) && $data['originPickList'] !== null) {
                 $values_1 = [];
                 foreach ($data['originPickList'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress', 'json', $context);
@@ -60,9 +66,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOriginPickList($values_1);
                 unset($data['originPickList']);
             }
-            if (\array_key_exists('emsResponse', $data)) {
+            elseif (\array_key_exists('originPickList', $data) && $data['originPickList'] === null) {
+                $object->setOriginPickList(null);
+            }
+            if (\array_key_exists('emsResponse', $data) && $data['emsResponse'] !== null) {
                 $object->setEmsResponse($this->denormalizer->denormalize($data['emsResponse'], 'ShipStream\\Ups\\Api\\Model\\EmsResponse', 'json', $context));
                 unset($data['emsResponse']);
+            }
+            elseif (\array_key_exists('emsResponse', $data) && $data['emsResponse'] === null) {
+                $object->setEmsResponse(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -136,11 +148,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('validationList', $data)) {
+            if (\array_key_exists('validationList', $data) && $data['validationList'] !== null) {
                 $object->setValidationList($this->denormalizer->denormalize($data['validationList'], 'ShipStream\\Ups\\Api\\Model\\ValidationList', 'json', $context));
                 unset($data['validationList']);
             }
-            if (\array_key_exists('destinationPickList', $data)) {
+            elseif (\array_key_exists('validationList', $data) && $data['validationList'] === null) {
+                $object->setValidationList(null);
+            }
+            if (\array_key_exists('destinationPickList', $data) && $data['destinationPickList'] !== null) {
                 $values = [];
                 foreach ($data['destinationPickList'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress', 'json', $context);
@@ -148,7 +163,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDestinationPickList($values);
                 unset($data['destinationPickList']);
             }
-            if (\array_key_exists('originPickList', $data)) {
+            elseif (\array_key_exists('destinationPickList', $data) && $data['destinationPickList'] === null) {
+                $object->setDestinationPickList(null);
+            }
+            if (\array_key_exists('originPickList', $data) && $data['originPickList'] !== null) {
                 $values_1 = [];
                 foreach ($data['originPickList'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress', 'json', $context);
@@ -156,9 +174,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOriginPickList($values_1);
                 unset($data['originPickList']);
             }
-            if (\array_key_exists('emsResponse', $data)) {
+            elseif (\array_key_exists('originPickList', $data) && $data['originPickList'] === null) {
+                $object->setOriginPickList(null);
+            }
+            if (\array_key_exists('emsResponse', $data) && $data['emsResponse'] !== null) {
                 $object->setEmsResponse($this->denormalizer->denormalize($data['emsResponse'], 'ShipStream\\Ups\\Api\\Model\\EmsResponse', 'json', $context));
                 unset($data['emsResponse']);
+            }
+            elseif (\array_key_exists('emsResponse', $data) && $data['emsResponse'] === null) {
+                $object->setEmsResponse(null);
             }
             foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {

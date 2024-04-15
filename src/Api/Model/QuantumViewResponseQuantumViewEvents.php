@@ -15,32 +15,32 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
     /**
      * QV XOLT subscribers ID. It is the same as the User ID.
      *
-     * @var string
+     * @var string|null
      */
     protected $subscriberID;
     /**
      * 
      *
-     * @var QuantumViewEventsSubscriptionEvents[]
+     * @var list<QuantumViewEventsSubscriptionEvents>|null
      */
     protected $subscriptionEvents;
     /**
      * QV XOLT subscribers ID. It is the same as the User ID.
      *
-     * @return string
+     * @return string|null
      */
-    public function getSubscriberID() : string
+    public function getSubscriberID() : ?string
     {
         return $this->subscriberID;
     }
     /**
      * QV XOLT subscribers ID. It is the same as the User ID.
      *
-     * @param string $subscriberID
+     * @param string|null $subscriberID
      *
      * @return self
      */
-    public function setSubscriberID(string $subscriberID) : self
+    public function setSubscriberID(?string $subscriberID) : self
     {
         $this->initialized['subscriberID'] = true;
         $this->subscriberID = $subscriberID;
@@ -49,20 +49,20 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
     /**
      * 
      *
-     * @return QuantumViewEventsSubscriptionEvents[]
+     * @return list<QuantumViewEventsSubscriptionEvents>|null
      */
-    public function getSubscriptionEvents() : array
+    public function getSubscriptionEvents() : ?array
     {
         return $this->subscriptionEvents;
     }
     /**
      * 
      *
-     * @param QuantumViewEventsSubscriptionEvents[] $subscriptionEvents
+     * @param list<QuantumViewEventsSubscriptionEvents>|null $subscriptionEvents
      *
      * @return self
      */
-    public function setSubscriptionEvents(array $subscriptionEvents) : self
+    public function setSubscriptionEvents(?array $subscriptionEvents) : self
     {
         $this->initialized['subscriptionEvents'] = true;
         $this->subscriptionEvents = $subscriptionEvents;

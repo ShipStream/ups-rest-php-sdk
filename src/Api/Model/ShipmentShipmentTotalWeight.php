@@ -15,32 +15,32 @@ class ShipmentShipmentTotalWeight extends \ArrayObject
     /**
      * UnitOfMeasurement Container.
      *
-     * @var ShipmentTotalWeightUnitOfMeasurement
+     * @var ShipmentTotalWeightUnitOfMeasurement|null
      */
     protected $unitOfMeasurement;
     /**
      * Non-zero total weight of all packages in the shipment.
      *
-     * @var string
+     * @var string|null
      */
     protected $weight;
     /**
      * UnitOfMeasurement Container.
      *
-     * @return ShipmentTotalWeightUnitOfMeasurement
+     * @return ShipmentTotalWeightUnitOfMeasurement|null
      */
-    public function getUnitOfMeasurement() : ShipmentTotalWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : ?ShipmentTotalWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
      * UnitOfMeasurement Container.
      *
-     * @param ShipmentTotalWeightUnitOfMeasurement $unitOfMeasurement
+     * @param ShipmentTotalWeightUnitOfMeasurement|null $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(ShipmentTotalWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(?ShipmentTotalWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -49,20 +49,20 @@ class ShipmentShipmentTotalWeight extends \ArrayObject
     /**
      * Non-zero total weight of all packages in the shipment.
      *
-     * @return string
+     * @return string|null
      */
-    public function getWeight() : string
+    public function getWeight() : ?string
     {
         return $this->weight;
     }
     /**
      * Non-zero total weight of all packages in the shipment.
      *
-     * @param string $weight
+     * @param string|null $weight
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(?string $weight) : self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

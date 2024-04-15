@@ -15,26 +15,26 @@ class AccessPointInformationPrivateNetworkList extends \ArrayObject
     /**
      * 
      *
-     * @var PrivateNetworkListPrivateNetwork[]
+     * @var list<PrivateNetworkListPrivateNetwork>|null
      */
     protected $privateNetwork;
     /**
      * 
      *
-     * @return PrivateNetworkListPrivateNetwork[]
+     * @return list<PrivateNetworkListPrivateNetwork>|null
      */
-    public function getPrivateNetwork() : array
+    public function getPrivateNetwork() : ?array
     {
         return $this->privateNetwork;
     }
     /**
      * 
      *
-     * @param PrivateNetworkListPrivateNetwork[] $privateNetwork
+     * @param list<PrivateNetworkListPrivateNetwork>|null $privateNetwork
      *
      * @return self
      */
-    public function setPrivateNetwork(array $privateNetwork) : self
+    public function setPrivateNetwork(?array $privateNetwork) : self
     {
         $this->initialized['privateNetwork'] = true;
         $this->privateNetwork = $privateNetwork;

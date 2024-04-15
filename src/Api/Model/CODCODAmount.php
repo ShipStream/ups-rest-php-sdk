@@ -15,32 +15,32 @@ class CODCODAmount extends \ArrayObject
     /**
      * COD amount currency code type.
      *
-     * @var string
+     * @var string|null
      */
     protected $currencyCode;
     /**
      * COD Amount.  Valid values: 0.01 USD to 50000.00 USD
      *
-     * @var string
+     * @var string|null
      */
     protected $monetaryValue;
     /**
      * COD amount currency code type.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode() : ?string
     {
         return $this->currencyCode;
     }
     /**
      * COD amount currency code type.
      *
-     * @param string $currencyCode
+     * @param string|null $currencyCode
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(?string $currencyCode) : self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -49,20 +49,20 @@ class CODCODAmount extends \ArrayObject
     /**
      * COD Amount.  Valid values: 0.01 USD to 50000.00 USD
      *
-     * @return string
+     * @return string|null
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue() : ?string
     {
         return $this->monetaryValue;
     }
     /**
      * COD Amount.  Valid values: 0.01 USD to 50000.00 USD
      *
-     * @param string $monetaryValue
+     * @param string|null $monetaryValue
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(?string $monetaryValue) : self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

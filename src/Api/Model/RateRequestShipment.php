@@ -15,164 +15,164 @@ class RateRequestShipment extends \ArrayObject
     /**
      * The time that the request was made from the originating system. UTC time down to milliseconds. Example - 2016-07-14T12:01:33.999  Applicable only for HazMat request and with subversion greater than or equal to 1701.
      *
-     * @var string
+     * @var string|null
      */
     protected $originRecordTransactionTimestamp;
     /**
      * Shipper container. Information associated with the UPS account number.
      *
-     * @var RateShipmentShipper
+     * @var RateShipmentShipper|null
      */
     protected $shipper;
     /**
      * Ship To Container  N/A
      *
-     * @var RateShipmentShipTo
+     * @var RateShipmentShipTo|null
      */
     protected $shipTo;
     /**
      * Ship From Container.  N/A
      *
-     * @var RateShipmentShipFrom
+     * @var RateShipmentShipFrom|null
      */
     protected $shipFrom;
     /**
      * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
      *
-     * @var RateShipmentAlternateDeliveryAddress
+     * @var RateShipmentAlternateDeliveryAddress|null
      */
     protected $alternateDeliveryAddress;
     /**
      * 
      *
-     * @var ShipmentShipmentIndicationType[]
+     * @var list<ShipmentShipmentIndicationType>|null
      */
     protected $shipmentIndicationType;
     /**
      * Payment details container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  This container is used for Who Pays What functionality.
      *
-     * @var ShipmentPaymentDetails
+     * @var ShipmentPaymentDetails|null
      */
     protected $paymentDetails;
     /**
      * UPS Ground Freight Pricing (GFP) Payment Information container.  Required only for GFP and when the FRSIndicator is present.
      *
-     * @var RateShipmentFRSPaymentInformation
+     * @var RateShipmentFRSPaymentInformation|null
      */
     protected $fRSPaymentInformation;
     /**
      * Container to hold Freight Shipment information.
      *
-     * @var ShipmentFreightShipmentInformation
+     * @var ShipmentFreightShipmentInformation|null
      */
     protected $freightShipmentInformation;
     /**
      * Goods Not In Free Circulation indicator.  This is an empty tag, any value inside is ignored. This indicator is invalid for a package type of UPS Letter and DocumentsOnly.
      *
-     * @var string
+     * @var string|null
      */
     protected $goodsNotInFreeCirculationIndicator;
     /**
      * Service Container.
      *
-     * @var ShipmentService
+     * @var ShipmentService|null
      */
     protected $service;
     /**
      * Total number of pieces in all pallets. Required for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
      *
-     * @var string
+     * @var string|null
      */
     protected $numOfPieces;
     /**
      * Shipment Total Weight Container. This container is only applicable for "ratetimeintransit" and "shoptimeintransit" request options.  Required for all international shipments when retreiving time in transit information, including letters and documents shipments.
      *
-     * @var ShipmentShipmentTotalWeight
+     * @var ShipmentShipmentTotalWeight|null
      */
     protected $shipmentTotalWeight;
     /**
      * Valid values are Document and Non-document. If the indicator is present then the value is Document else Non-Document. Note: Not applicable for FRS rating  requests.  Empty Tag.
      *
-     * @var string
+     * @var string|null
      */
     protected $documentsOnlyIndicator;
     /**
      * 
      *
-     * @var RateShipmentPackage[]
+     * @var list<RateShipmentPackage>|null
      */
     protected $package;
     /**
      * Shipment level Accessorials are included in this container.  N/A
      *
-     * @var RateShipmentShipmentServiceOptions
+     * @var RateShipmentShipmentServiceOptions|null
      */
     protected $shipmentServiceOptions;
     /**
      * ShipmentRatingOptions container.
      *
-     * @var ShipmentShipmentRatingOptions
+     * @var ShipmentShipmentRatingOptions|null
      */
     protected $shipmentRatingOptions;
     /**
      * Container to hold InvoiceLineTotal Information.  Required for forward shipments whose origin is the US and destination is Puerto Rico or Canada. Not available for any other shipments. FOR OTHER DESTINATIONS the InvoiceLineTotal in the International Forms Container must be used.
      *
-     * @var ShipmentInvoiceLineTotal
+     * @var ShipmentInvoiceLineTotal|null
      */
     protected $invoiceLineTotal;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator. If present, Billable Weight Calculation method and Rating Method information would be returned in response.
      *
-     * @var string
+     * @var string|null
      */
     protected $ratingMethodRequestedIndicator;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.  If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates.
      *
-     * @var string
+     * @var string|null
      */
     protected $taxInformationIndicator;
     /**
      * PromotionalDiscountInformation container. This container contains discount information that the customer wants to request each time while placing a shipment.
      *
-     * @var ShipmentPromotionalDiscountInformation
+     * @var ShipmentPromotionalDiscountInformation|null
      */
     protected $promotionalDiscountInformation;
     /**
      * Container for requesting Time In Transit Information. Required to view time in transit information.  Required to view any time in transit information.
      *
-     * @var ShipmentDeliveryTimeInformation
+     * @var ShipmentDeliveryTimeInformation|null
      */
     protected $deliveryTimeInformation;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. MasterCartonIndicator is an indicator and presence implies that shipment is Master Carton type.  If present, the shipment will be rated as a Master Carton Type. If this indicator is requested with NegotiatedRatesIndicator, rates would be returned only for Negotiated Rates and not for Published Rates.
      *
-     * @var string
+     * @var string|null
      */
     protected $masterCartonIndicator;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. WWEShipmentIndicator is an indicator and presence implies that WWE service details requested for RequestOption=Shop or  RequestOption=Shoptimeintransit  RequestOption=Shop or  RequestOption=Shoptimeintransit
      *
-     * @var string
+     * @var string|null
      */
     protected $wWEShipmentIndicator;
     /**
      * The time that the request was made from the originating system. UTC time down to milliseconds. Example - 2016-07-14T12:01:33.999  Applicable only for HazMat request and with subversion greater than or equal to 1701.
      *
-     * @return string
+     * @return string|null
      */
-    public function getOriginRecordTransactionTimestamp() : string
+    public function getOriginRecordTransactionTimestamp() : ?string
     {
         return $this->originRecordTransactionTimestamp;
     }
     /**
      * The time that the request was made from the originating system. UTC time down to milliseconds. Example - 2016-07-14T12:01:33.999  Applicable only for HazMat request and with subversion greater than or equal to 1701.
      *
-     * @param string $originRecordTransactionTimestamp
+     * @param string|null $originRecordTransactionTimestamp
      *
      * @return self
      */
-    public function setOriginRecordTransactionTimestamp(string $originRecordTransactionTimestamp) : self
+    public function setOriginRecordTransactionTimestamp(?string $originRecordTransactionTimestamp) : self
     {
         $this->initialized['originRecordTransactionTimestamp'] = true;
         $this->originRecordTransactionTimestamp = $originRecordTransactionTimestamp;
@@ -181,20 +181,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Shipper container. Information associated with the UPS account number.
      *
-     * @return RateShipmentShipper
+     * @return RateShipmentShipper|null
      */
-    public function getShipper() : RateShipmentShipper
+    public function getShipper() : ?RateShipmentShipper
     {
         return $this->shipper;
     }
     /**
      * Shipper container. Information associated with the UPS account number.
      *
-     * @param RateShipmentShipper $shipper
+     * @param RateShipmentShipper|null $shipper
      *
      * @return self
      */
-    public function setShipper(RateShipmentShipper $shipper) : self
+    public function setShipper(?RateShipmentShipper $shipper) : self
     {
         $this->initialized['shipper'] = true;
         $this->shipper = $shipper;
@@ -203,20 +203,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Ship To Container  N/A
      *
-     * @return RateShipmentShipTo
+     * @return RateShipmentShipTo|null
      */
-    public function getShipTo() : RateShipmentShipTo
+    public function getShipTo() : ?RateShipmentShipTo
     {
         return $this->shipTo;
     }
     /**
      * Ship To Container  N/A
      *
-     * @param RateShipmentShipTo $shipTo
+     * @param RateShipmentShipTo|null $shipTo
      *
      * @return self
      */
-    public function setShipTo(RateShipmentShipTo $shipTo) : self
+    public function setShipTo(?RateShipmentShipTo $shipTo) : self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -225,20 +225,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Ship From Container.  N/A
      *
-     * @return RateShipmentShipFrom
+     * @return RateShipmentShipFrom|null
      */
-    public function getShipFrom() : RateShipmentShipFrom
+    public function getShipFrom() : ?RateShipmentShipFrom
     {
         return $this->shipFrom;
     }
     /**
      * Ship From Container.  N/A
      *
-     * @param RateShipmentShipFrom $shipFrom
+     * @param RateShipmentShipFrom|null $shipFrom
      *
      * @return self
      */
-    public function setShipFrom(RateShipmentShipFrom $shipFrom) : self
+    public function setShipFrom(?RateShipmentShipFrom $shipFrom) : self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -247,20 +247,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
      *
-     * @return RateShipmentAlternateDeliveryAddress
+     * @return RateShipmentAlternateDeliveryAddress|null
      */
-    public function getAlternateDeliveryAddress() : RateShipmentAlternateDeliveryAddress
+    public function getAlternateDeliveryAddress() : ?RateShipmentAlternateDeliveryAddress
     {
         return $this->alternateDeliveryAddress;
     }
     /**
      * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
      *
-     * @param RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress
+     * @param RateShipmentAlternateDeliveryAddress|null $alternateDeliveryAddress
      *
      * @return self
      */
-    public function setAlternateDeliveryAddress(RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
+    public function setAlternateDeliveryAddress(?RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
     {
         $this->initialized['alternateDeliveryAddress'] = true;
         $this->alternateDeliveryAddress = $alternateDeliveryAddress;
@@ -269,20 +269,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentShipmentIndicationType[]
+     * @return list<ShipmentShipmentIndicationType>|null
      */
-    public function getShipmentIndicationType() : array
+    public function getShipmentIndicationType() : ?array
     {
         return $this->shipmentIndicationType;
     }
     /**
      * 
      *
-     * @param ShipmentShipmentIndicationType[] $shipmentIndicationType
+     * @param list<ShipmentShipmentIndicationType>|null $shipmentIndicationType
      *
      * @return self
      */
-    public function setShipmentIndicationType(array $shipmentIndicationType) : self
+    public function setShipmentIndicationType(?array $shipmentIndicationType) : self
     {
         $this->initialized['shipmentIndicationType'] = true;
         $this->shipmentIndicationType = $shipmentIndicationType;
@@ -291,20 +291,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Payment details container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  This container is used for Who Pays What functionality.
      *
-     * @return ShipmentPaymentDetails
+     * @return ShipmentPaymentDetails|null
      */
-    public function getPaymentDetails() : ShipmentPaymentDetails
+    public function getPaymentDetails() : ?ShipmentPaymentDetails
     {
         return $this->paymentDetails;
     }
     /**
      * Payment details container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  This container is used for Who Pays What functionality.
      *
-     * @param ShipmentPaymentDetails $paymentDetails
+     * @param ShipmentPaymentDetails|null $paymentDetails
      *
      * @return self
      */
-    public function setPaymentDetails(ShipmentPaymentDetails $paymentDetails) : self
+    public function setPaymentDetails(?ShipmentPaymentDetails $paymentDetails) : self
     {
         $this->initialized['paymentDetails'] = true;
         $this->paymentDetails = $paymentDetails;
@@ -313,20 +313,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * UPS Ground Freight Pricing (GFP) Payment Information container.  Required only for GFP and when the FRSIndicator is present.
      *
-     * @return RateShipmentFRSPaymentInformation
+     * @return RateShipmentFRSPaymentInformation|null
      */
-    public function getFRSPaymentInformation() : RateShipmentFRSPaymentInformation
+    public function getFRSPaymentInformation() : ?RateShipmentFRSPaymentInformation
     {
         return $this->fRSPaymentInformation;
     }
     /**
      * UPS Ground Freight Pricing (GFP) Payment Information container.  Required only for GFP and when the FRSIndicator is present.
      *
-     * @param RateShipmentFRSPaymentInformation $fRSPaymentInformation
+     * @param RateShipmentFRSPaymentInformation|null $fRSPaymentInformation
      *
      * @return self
      */
-    public function setFRSPaymentInformation(RateShipmentFRSPaymentInformation $fRSPaymentInformation) : self
+    public function setFRSPaymentInformation(?RateShipmentFRSPaymentInformation $fRSPaymentInformation) : self
     {
         $this->initialized['fRSPaymentInformation'] = true;
         $this->fRSPaymentInformation = $fRSPaymentInformation;
@@ -335,20 +335,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Container to hold Freight Shipment information.
      *
-     * @return ShipmentFreightShipmentInformation
+     * @return ShipmentFreightShipmentInformation|null
      */
-    public function getFreightShipmentInformation() : ShipmentFreightShipmentInformation
+    public function getFreightShipmentInformation() : ?ShipmentFreightShipmentInformation
     {
         return $this->freightShipmentInformation;
     }
     /**
      * Container to hold Freight Shipment information.
      *
-     * @param ShipmentFreightShipmentInformation $freightShipmentInformation
+     * @param ShipmentFreightShipmentInformation|null $freightShipmentInformation
      *
      * @return self
      */
-    public function setFreightShipmentInformation(ShipmentFreightShipmentInformation $freightShipmentInformation) : self
+    public function setFreightShipmentInformation(?ShipmentFreightShipmentInformation $freightShipmentInformation) : self
     {
         $this->initialized['freightShipmentInformation'] = true;
         $this->freightShipmentInformation = $freightShipmentInformation;
@@ -357,20 +357,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Goods Not In Free Circulation indicator.  This is an empty tag, any value inside is ignored. This indicator is invalid for a package type of UPS Letter and DocumentsOnly.
      *
-     * @return string
+     * @return string|null
      */
-    public function getGoodsNotInFreeCirculationIndicator() : string
+    public function getGoodsNotInFreeCirculationIndicator() : ?string
     {
         return $this->goodsNotInFreeCirculationIndicator;
     }
     /**
      * Goods Not In Free Circulation indicator.  This is an empty tag, any value inside is ignored. This indicator is invalid for a package type of UPS Letter and DocumentsOnly.
      *
-     * @param string $goodsNotInFreeCirculationIndicator
+     * @param string|null $goodsNotInFreeCirculationIndicator
      *
      * @return self
      */
-    public function setGoodsNotInFreeCirculationIndicator(string $goodsNotInFreeCirculationIndicator) : self
+    public function setGoodsNotInFreeCirculationIndicator(?string $goodsNotInFreeCirculationIndicator) : self
     {
         $this->initialized['goodsNotInFreeCirculationIndicator'] = true;
         $this->goodsNotInFreeCirculationIndicator = $goodsNotInFreeCirculationIndicator;
@@ -379,20 +379,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Service Container.
      *
-     * @return ShipmentService
+     * @return ShipmentService|null
      */
-    public function getService() : ShipmentService
+    public function getService() : ?ShipmentService
     {
         return $this->service;
     }
     /**
      * Service Container.
      *
-     * @param ShipmentService $service
+     * @param ShipmentService|null $service
      *
      * @return self
      */
-    public function setService(ShipmentService $service) : self
+    public function setService(?ShipmentService $service) : self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -401,20 +401,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Total number of pieces in all pallets. Required for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
      *
-     * @return string
+     * @return string|null
      */
-    public function getNumOfPieces() : string
+    public function getNumOfPieces() : ?string
     {
         return $this->numOfPieces;
     }
     /**
      * Total number of pieces in all pallets. Required for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipments.
      *
-     * @param string $numOfPieces
+     * @param string|null $numOfPieces
      *
      * @return self
      */
-    public function setNumOfPieces(string $numOfPieces) : self
+    public function setNumOfPieces(?string $numOfPieces) : self
     {
         $this->initialized['numOfPieces'] = true;
         $this->numOfPieces = $numOfPieces;
@@ -423,20 +423,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Shipment Total Weight Container. This container is only applicable for "ratetimeintransit" and "shoptimeintransit" request options.  Required for all international shipments when retreiving time in transit information, including letters and documents shipments.
      *
-     * @return ShipmentShipmentTotalWeight
+     * @return ShipmentShipmentTotalWeight|null
      */
-    public function getShipmentTotalWeight() : ShipmentShipmentTotalWeight
+    public function getShipmentTotalWeight() : ?ShipmentShipmentTotalWeight
     {
         return $this->shipmentTotalWeight;
     }
     /**
      * Shipment Total Weight Container. This container is only applicable for "ratetimeintransit" and "shoptimeintransit" request options.  Required for all international shipments when retreiving time in transit information, including letters and documents shipments.
      *
-     * @param ShipmentShipmentTotalWeight $shipmentTotalWeight
+     * @param ShipmentShipmentTotalWeight|null $shipmentTotalWeight
      *
      * @return self
      */
-    public function setShipmentTotalWeight(ShipmentShipmentTotalWeight $shipmentTotalWeight) : self
+    public function setShipmentTotalWeight(?ShipmentShipmentTotalWeight $shipmentTotalWeight) : self
     {
         $this->initialized['shipmentTotalWeight'] = true;
         $this->shipmentTotalWeight = $shipmentTotalWeight;
@@ -445,20 +445,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Valid values are Document and Non-document. If the indicator is present then the value is Document else Non-Document. Note: Not applicable for FRS rating  requests.  Empty Tag.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDocumentsOnlyIndicator() : string
+    public function getDocumentsOnlyIndicator() : ?string
     {
         return $this->documentsOnlyIndicator;
     }
     /**
      * Valid values are Document and Non-document. If the indicator is present then the value is Document else Non-Document. Note: Not applicable for FRS rating  requests.  Empty Tag.
      *
-     * @param string $documentsOnlyIndicator
+     * @param string|null $documentsOnlyIndicator
      *
      * @return self
      */
-    public function setDocumentsOnlyIndicator(string $documentsOnlyIndicator) : self
+    public function setDocumentsOnlyIndicator(?string $documentsOnlyIndicator) : self
     {
         $this->initialized['documentsOnlyIndicator'] = true;
         $this->documentsOnlyIndicator = $documentsOnlyIndicator;
@@ -467,20 +467,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return RateShipmentPackage[]
+     * @return list<RateShipmentPackage>|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param RateShipmentPackage[] $package
+     * @param list<RateShipmentPackage>|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
@@ -489,20 +489,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Shipment level Accessorials are included in this container.  N/A
      *
-     * @return RateShipmentShipmentServiceOptions
+     * @return RateShipmentShipmentServiceOptions|null
      */
-    public function getShipmentServiceOptions() : RateShipmentShipmentServiceOptions
+    public function getShipmentServiceOptions() : ?RateShipmentShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
     /**
      * Shipment level Accessorials are included in this container.  N/A
      *
-     * @param RateShipmentShipmentServiceOptions $shipmentServiceOptions
+     * @param RateShipmentShipmentServiceOptions|null $shipmentServiceOptions
      *
      * @return self
      */
-    public function setShipmentServiceOptions(RateShipmentShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(?RateShipmentShipmentServiceOptions $shipmentServiceOptions) : self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -511,20 +511,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * ShipmentRatingOptions container.
      *
-     * @return ShipmentShipmentRatingOptions
+     * @return ShipmentShipmentRatingOptions|null
      */
-    public function getShipmentRatingOptions() : ShipmentShipmentRatingOptions
+    public function getShipmentRatingOptions() : ?ShipmentShipmentRatingOptions
     {
         return $this->shipmentRatingOptions;
     }
     /**
      * ShipmentRatingOptions container.
      *
-     * @param ShipmentShipmentRatingOptions $shipmentRatingOptions
+     * @param ShipmentShipmentRatingOptions|null $shipmentRatingOptions
      *
      * @return self
      */
-    public function setShipmentRatingOptions(ShipmentShipmentRatingOptions $shipmentRatingOptions) : self
+    public function setShipmentRatingOptions(?ShipmentShipmentRatingOptions $shipmentRatingOptions) : self
     {
         $this->initialized['shipmentRatingOptions'] = true;
         $this->shipmentRatingOptions = $shipmentRatingOptions;
@@ -533,20 +533,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Container to hold InvoiceLineTotal Information.  Required for forward shipments whose origin is the US and destination is Puerto Rico or Canada. Not available for any other shipments. FOR OTHER DESTINATIONS the InvoiceLineTotal in the International Forms Container must be used.
      *
-     * @return ShipmentInvoiceLineTotal
+     * @return ShipmentInvoiceLineTotal|null
      */
-    public function getInvoiceLineTotal() : ShipmentInvoiceLineTotal
+    public function getInvoiceLineTotal() : ?ShipmentInvoiceLineTotal
     {
         return $this->invoiceLineTotal;
     }
     /**
      * Container to hold InvoiceLineTotal Information.  Required for forward shipments whose origin is the US and destination is Puerto Rico or Canada. Not available for any other shipments. FOR OTHER DESTINATIONS the InvoiceLineTotal in the International Forms Container must be used.
      *
-     * @param ShipmentInvoiceLineTotal $invoiceLineTotal
+     * @param ShipmentInvoiceLineTotal|null $invoiceLineTotal
      *
      * @return self
      */
-    public function setInvoiceLineTotal(ShipmentInvoiceLineTotal $invoiceLineTotal) : self
+    public function setInvoiceLineTotal(?ShipmentInvoiceLineTotal $invoiceLineTotal) : self
     {
         $this->initialized['invoiceLineTotal'] = true;
         $this->invoiceLineTotal = $invoiceLineTotal;
@@ -555,20 +555,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator. If present, Billable Weight Calculation method and Rating Method information would be returned in response.
      *
-     * @return string
+     * @return string|null
      */
-    public function getRatingMethodRequestedIndicator() : string
+    public function getRatingMethodRequestedIndicator() : ?string
     {
         return $this->ratingMethodRequestedIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator. If present, Billable Weight Calculation method and Rating Method information would be returned in response.
      *
-     * @param string $ratingMethodRequestedIndicator
+     * @param string|null $ratingMethodRequestedIndicator
      *
      * @return self
      */
-    public function setRatingMethodRequestedIndicator(string $ratingMethodRequestedIndicator) : self
+    public function setRatingMethodRequestedIndicator(?string $ratingMethodRequestedIndicator) : self
     {
         $this->initialized['ratingMethodRequestedIndicator'] = true;
         $this->ratingMethodRequestedIndicator = $ratingMethodRequestedIndicator;
@@ -577,20 +577,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.  If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates.
      *
-     * @return string
+     * @return string|null
      */
-    public function getTaxInformationIndicator() : string
+    public function getTaxInformationIndicator() : ?string
     {
         return $this->taxInformationIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.  If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates.
      *
-     * @param string $taxInformationIndicator
+     * @param string|null $taxInformationIndicator
      *
      * @return self
      */
-    public function setTaxInformationIndicator(string $taxInformationIndicator) : self
+    public function setTaxInformationIndicator(?string $taxInformationIndicator) : self
     {
         $this->initialized['taxInformationIndicator'] = true;
         $this->taxInformationIndicator = $taxInformationIndicator;
@@ -599,20 +599,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * PromotionalDiscountInformation container. This container contains discount information that the customer wants to request each time while placing a shipment.
      *
-     * @return ShipmentPromotionalDiscountInformation
+     * @return ShipmentPromotionalDiscountInformation|null
      */
-    public function getPromotionalDiscountInformation() : ShipmentPromotionalDiscountInformation
+    public function getPromotionalDiscountInformation() : ?ShipmentPromotionalDiscountInformation
     {
         return $this->promotionalDiscountInformation;
     }
     /**
      * PromotionalDiscountInformation container. This container contains discount information that the customer wants to request each time while placing a shipment.
      *
-     * @param ShipmentPromotionalDiscountInformation $promotionalDiscountInformation
+     * @param ShipmentPromotionalDiscountInformation|null $promotionalDiscountInformation
      *
      * @return self
      */
-    public function setPromotionalDiscountInformation(ShipmentPromotionalDiscountInformation $promotionalDiscountInformation) : self
+    public function setPromotionalDiscountInformation(?ShipmentPromotionalDiscountInformation $promotionalDiscountInformation) : self
     {
         $this->initialized['promotionalDiscountInformation'] = true;
         $this->promotionalDiscountInformation = $promotionalDiscountInformation;
@@ -621,20 +621,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Container for requesting Time In Transit Information. Required to view time in transit information.  Required to view any time in transit information.
      *
-     * @return ShipmentDeliveryTimeInformation
+     * @return ShipmentDeliveryTimeInformation|null
      */
-    public function getDeliveryTimeInformation() : ShipmentDeliveryTimeInformation
+    public function getDeliveryTimeInformation() : ?ShipmentDeliveryTimeInformation
     {
         return $this->deliveryTimeInformation;
     }
     /**
      * Container for requesting Time In Transit Information. Required to view time in transit information.  Required to view any time in transit information.
      *
-     * @param ShipmentDeliveryTimeInformation $deliveryTimeInformation
+     * @param ShipmentDeliveryTimeInformation|null $deliveryTimeInformation
      *
      * @return self
      */
-    public function setDeliveryTimeInformation(ShipmentDeliveryTimeInformation $deliveryTimeInformation) : self
+    public function setDeliveryTimeInformation(?ShipmentDeliveryTimeInformation $deliveryTimeInformation) : self
     {
         $this->initialized['deliveryTimeInformation'] = true;
         $this->deliveryTimeInformation = $deliveryTimeInformation;
@@ -643,20 +643,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored. MasterCartonIndicator is an indicator and presence implies that shipment is Master Carton type.  If present, the shipment will be rated as a Master Carton Type. If this indicator is requested with NegotiatedRatesIndicator, rates would be returned only for Negotiated Rates and not for Published Rates.
      *
-     * @return string
+     * @return string|null
      */
-    public function getMasterCartonIndicator() : string
+    public function getMasterCartonIndicator() : ?string
     {
         return $this->masterCartonIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored. MasterCartonIndicator is an indicator and presence implies that shipment is Master Carton type.  If present, the shipment will be rated as a Master Carton Type. If this indicator is requested with NegotiatedRatesIndicator, rates would be returned only for Negotiated Rates and not for Published Rates.
      *
-     * @param string $masterCartonIndicator
+     * @param string|null $masterCartonIndicator
      *
      * @return self
      */
-    public function setMasterCartonIndicator(string $masterCartonIndicator) : self
+    public function setMasterCartonIndicator(?string $masterCartonIndicator) : self
     {
         $this->initialized['masterCartonIndicator'] = true;
         $this->masterCartonIndicator = $masterCartonIndicator;
@@ -665,20 +665,20 @@ class RateRequestShipment extends \ArrayObject
     /**
      * Presence/Absence Indicator. Any value inside is ignored. WWEShipmentIndicator is an indicator and presence implies that WWE service details requested for RequestOption=Shop or  RequestOption=Shoptimeintransit  RequestOption=Shop or  RequestOption=Shoptimeintransit
      *
-     * @return string
+     * @return string|null
      */
-    public function getWWEShipmentIndicator() : string
+    public function getWWEShipmentIndicator() : ?string
     {
         return $this->wWEShipmentIndicator;
     }
     /**
      * Presence/Absence Indicator. Any value inside is ignored. WWEShipmentIndicator is an indicator and presence implies that WWE service details requested for RequestOption=Shop or  RequestOption=Shoptimeintransit  RequestOption=Shop or  RequestOption=Shoptimeintransit
      *
-     * @param string $wWEShipmentIndicator
+     * @param string|null $wWEShipmentIndicator
      *
      * @return self
      */
-    public function setWWEShipmentIndicator(string $wWEShipmentIndicator) : self
+    public function setWWEShipmentIndicator(?string $wWEShipmentIndicator) : self
     {
         $this->initialized['wWEShipmentIndicator'] = true;
         $this->wWEShipmentIndicator = $wWEShipmentIndicator;

@@ -15,26 +15,26 @@ class UPSPremierHandlingInstructions extends \ArrayObject
     /**
      * Handling Instruction for UPS Premier package.  Please refer Apendix UPS Premier Handling Instructions.
      *
-     * @var string
+     * @var string|null
      */
     protected $instruction;
     /**
      * Handling Instruction for UPS Premier package.  Please refer Apendix UPS Premier Handling Instructions.
      *
-     * @return string
+     * @return string|null
      */
-    public function getInstruction() : string
+    public function getInstruction() : ?string
     {
         return $this->instruction;
     }
     /**
      * Handling Instruction for UPS Premier package.  Please refer Apendix UPS Premier Handling Instructions.
      *
-     * @param string $instruction
+     * @param string|null $instruction
      *
      * @return self
      */
-    public function setInstruction(string $instruction) : self
+    public function setInstruction(?string $instruction) : self
     {
         $this->initialized['instruction'] = true;
         $this->instruction = $instruction;

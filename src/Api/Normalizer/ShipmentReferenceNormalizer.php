@@ -40,21 +40,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($this->denormalizer->denormalize($data['Number'], 'ShipStream\\Ups\\Api\\Model\\ReferenceNumber', 'json', $context));
                 unset($data['Number']);
             }
-            if (\array_key_exists('BarCodeIndicator', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('BarCodeIndicator', $data) && $data['BarCodeIndicator'] !== null) {
                 $object->setBarCodeIndicator($data['BarCodeIndicator']);
                 unset($data['BarCodeIndicator']);
             }
-            if (\array_key_exists('NumberOfCartons', $data)) {
+            elseif (\array_key_exists('BarCodeIndicator', $data) && $data['BarCodeIndicator'] === null) {
+                $object->setBarCodeIndicator(null);
+            }
+            if (\array_key_exists('NumberOfCartons', $data) && $data['NumberOfCartons'] !== null) {
                 $object->setNumberOfCartons($data['NumberOfCartons']);
                 unset($data['NumberOfCartons']);
             }
-            if (\array_key_exists('Weight', $data)) {
+            elseif (\array_key_exists('NumberOfCartons', $data) && $data['NumberOfCartons'] === null) {
+                $object->setNumberOfCartons(null);
+            }
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\ReferenceWeight', 'json', $context));
                 unset($data['Weight']);
+            }
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -118,21 +130,33 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Number', $data)) {
+            if (\array_key_exists('Number', $data) && $data['Number'] !== null) {
                 $object->setNumber($this->denormalizer->denormalize($data['Number'], 'ShipStream\\Ups\\Api\\Model\\ReferenceNumber', 'json', $context));
                 unset($data['Number']);
             }
-            if (\array_key_exists('BarCodeIndicator', $data)) {
+            elseif (\array_key_exists('Number', $data) && $data['Number'] === null) {
+                $object->setNumber(null);
+            }
+            if (\array_key_exists('BarCodeIndicator', $data) && $data['BarCodeIndicator'] !== null) {
                 $object->setBarCodeIndicator($data['BarCodeIndicator']);
                 unset($data['BarCodeIndicator']);
             }
-            if (\array_key_exists('NumberOfCartons', $data)) {
+            elseif (\array_key_exists('BarCodeIndicator', $data) && $data['BarCodeIndicator'] === null) {
+                $object->setBarCodeIndicator(null);
+            }
+            if (\array_key_exists('NumberOfCartons', $data) && $data['NumberOfCartons'] !== null) {
                 $object->setNumberOfCartons($data['NumberOfCartons']);
                 unset($data['NumberOfCartons']);
             }
-            if (\array_key_exists('Weight', $data)) {
+            elseif (\array_key_exists('NumberOfCartons', $data) && $data['NumberOfCartons'] === null) {
+                $object->setNumberOfCartons(null);
+            }
+            if (\array_key_exists('Weight', $data) && $data['Weight'] !== null) {
                 $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\ReferenceWeight', 'json', $context));
                 unset($data['Weight']);
+            }
+            elseif (\array_key_exists('Weight', $data) && $data['Weight'] === null) {
+                $object->setWeight(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

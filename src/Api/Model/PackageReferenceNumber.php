@@ -20,7 +20,7 @@ class PackageReferenceNumber extends \ArrayObject
     
     In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
     *
-    * @var string
+    * @var string|null
     */
     protected $barCodeIndicator;
     /**
@@ -28,13 +28,13 @@ class PackageReferenceNumber extends \ArrayObject
     
     Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
     *
-    * @var string
+    * @var string|null
     */
     protected $code;
     /**
      * Customer supplied reference number.  Valid if the origin/destination pair is US/US or PR/PR.
      *
-     * @var string
+     * @var string|null
      */
     protected $value;
     /**
@@ -45,9 +45,9 @@ class PackageReferenceNumber extends \ArrayObject
     
     In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
     *
-    * @return string
+    * @return string|null
     */
-    public function getBarCodeIndicator() : string
+    public function getBarCodeIndicator() : ?string
     {
         return $this->barCodeIndicator;
     }
@@ -59,11 +59,11 @@ class PackageReferenceNumber extends \ArrayObject
     
     In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
     *
-    * @param string $barCodeIndicator
+    * @param string|null $barCodeIndicator
     *
     * @return self
     */
-    public function setBarCodeIndicator(string $barCodeIndicator) : self
+    public function setBarCodeIndicator(?string $barCodeIndicator) : self
     {
         $this->initialized['barCodeIndicator'] = true;
         $this->barCodeIndicator = $barCodeIndicator;
@@ -74,9 +74,9 @@ class PackageReferenceNumber extends \ArrayObject
     
     Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
     *
-    * @return string
+    * @return string|null
     */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
@@ -85,11 +85,11 @@ class PackageReferenceNumber extends \ArrayObject
     
     Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
     *
-    * @param string $code
+    * @param string|null $code
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -98,20 +98,20 @@ class PackageReferenceNumber extends \ArrayObject
     /**
      * Customer supplied reference number.  Valid if the origin/destination pair is US/US or PR/PR.
      *
-     * @return string
+     * @return string|null
      */
-    public function getValue() : string
+    public function getValue() : ?string
     {
         return $this->value;
     }
     /**
      * Customer supplied reference number.  Valid if the origin/destination pair is US/US or PR/PR.
      *
-     * @param string $value
+     * @param string|null $value
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(?string $value) : self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

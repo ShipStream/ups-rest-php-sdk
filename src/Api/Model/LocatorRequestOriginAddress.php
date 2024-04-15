@@ -15,14 +15,14 @@ class LocatorRequestOriginAddress extends \ArrayObject
     /**
      * Geocode is the latitude and longitude of the origin address.
      *
-     * @var OriginAddressGeocode
+     * @var OriginAddressGeocode|null
      */
     protected $geocode;
     /**
     * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code. 
     The element CountryCode is required.
     *
-    * @var OriginAddressAddressKeyFormat
+    * @var OriginAddressAddressKeyFormat|null
     */
     protected $addressKeyFormat;
     /**
@@ -30,26 +30,26 @@ class LocatorRequestOriginAddress extends \ArrayObject
     
     Valid values: 1-50, default 10
     *
-    * @var string
+    * @var string|null
     */
     protected $maximumListSize;
     /**
      * Geocode is the latitude and longitude of the origin address.
      *
-     * @return OriginAddressGeocode
+     * @return OriginAddressGeocode|null
      */
-    public function getGeocode() : OriginAddressGeocode
+    public function getGeocode() : ?OriginAddressGeocode
     {
         return $this->geocode;
     }
     /**
      * Geocode is the latitude and longitude of the origin address.
      *
-     * @param OriginAddressGeocode $geocode
+     * @param OriginAddressGeocode|null $geocode
      *
      * @return self
      */
-    public function setGeocode(OriginAddressGeocode $geocode) : self
+    public function setGeocode(?OriginAddressGeocode $geocode) : self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -59,9 +59,9 @@ class LocatorRequestOriginAddress extends \ArrayObject
     * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code. 
     The element CountryCode is required.
     *
-    * @return OriginAddressAddressKeyFormat
+    * @return OriginAddressAddressKeyFormat|null
     */
-    public function getAddressKeyFormat() : OriginAddressAddressKeyFormat
+    public function getAddressKeyFormat() : ?OriginAddressAddressKeyFormat
     {
         return $this->addressKeyFormat;
     }
@@ -69,11 +69,11 @@ class LocatorRequestOriginAddress extends \ArrayObject
     * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code. 
     The element CountryCode is required.
     *
-    * @param OriginAddressAddressKeyFormat $addressKeyFormat
+    * @param OriginAddressAddressKeyFormat|null $addressKeyFormat
     *
     * @return self
     */
-    public function setAddressKeyFormat(OriginAddressAddressKeyFormat $addressKeyFormat) : self
+    public function setAddressKeyFormat(?OriginAddressAddressKeyFormat $addressKeyFormat) : self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;
@@ -84,9 +84,9 @@ class LocatorRequestOriginAddress extends \ArrayObject
     
     Valid values: 1-50, default 10
     *
-    * @return string
+    * @return string|null
     */
-    public function getMaximumListSize() : string
+    public function getMaximumListSize() : ?string
     {
         return $this->maximumListSize;
     }
@@ -95,11 +95,11 @@ class LocatorRequestOriginAddress extends \ArrayObject
     
     Valid values: 1-50, default 10
     *
-    * @param string $maximumListSize
+    * @param string|null $maximumListSize
     *
     * @return self
     */
-    public function setMaximumListSize(string $maximumListSize) : self
+    public function setMaximumListSize(?string $maximumListSize) : self
     {
         $this->initialized['maximumListSize'] = true;
         $this->maximumListSize = $maximumListSize;

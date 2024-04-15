@@ -40,17 +40,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('POMNumber', $data)) {
+            if (\array_key_exists('POMNumber', $data) && $data['POMNumber'] !== null) {
                 $object->setPOMNumber($data['POMNumber']);
                 unset($data['POMNumber']);
             }
-            if (\array_key_exists('POMNumberType', $data)) {
+            elseif (\array_key_exists('POMNumber', $data) && $data['POMNumber'] === null) {
+                $object->setPOMNumber(null);
+            }
+            if (\array_key_exists('POMNumberType', $data) && $data['POMNumberType'] !== null) {
                 $object->setPOMNumberType($data['POMNumberType']);
                 unset($data['POMNumberType']);
             }
-            if (\array_key_exists('PickupNotifications', $data)) {
+            elseif (\array_key_exists('POMNumberType', $data) && $data['POMNumberType'] === null) {
+                $object->setPOMNumberType(null);
+            }
+            if (\array_key_exists('PickupNotifications', $data) && $data['PickupNotifications'] !== null) {
                 $object->setPickupNotifications($this->denormalizer->denormalize($data['PickupNotifications'], 'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications', 'json', $context));
                 unset($data['PickupNotifications']);
+            }
+            elseif (\array_key_exists('PickupNotifications', $data) && $data['PickupNotifications'] === null) {
+                $object->setPickupNotifications(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -107,17 +116,26 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('POMNumber', $data)) {
+            if (\array_key_exists('POMNumber', $data) && $data['POMNumber'] !== null) {
                 $object->setPOMNumber($data['POMNumber']);
                 unset($data['POMNumber']);
             }
-            if (\array_key_exists('POMNumberType', $data)) {
+            elseif (\array_key_exists('POMNumber', $data) && $data['POMNumber'] === null) {
+                $object->setPOMNumber(null);
+            }
+            if (\array_key_exists('POMNumberType', $data) && $data['POMNumberType'] !== null) {
                 $object->setPOMNumberType($data['POMNumberType']);
                 unset($data['POMNumberType']);
             }
-            if (\array_key_exists('PickupNotifications', $data)) {
+            elseif (\array_key_exists('POMNumberType', $data) && $data['POMNumberType'] === null) {
+                $object->setPOMNumberType(null);
+            }
+            if (\array_key_exists('PickupNotifications', $data) && $data['PickupNotifications'] !== null) {
                 $object->setPickupNotifications($this->denormalizer->denormalize($data['PickupNotifications'], 'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications', 'json', $context));
                 unset($data['PickupNotifications']);
+            }
+            elseif (\array_key_exists('PickupNotifications', $data) && $data['PickupNotifications'] === null) {
+                $object->setPickupNotifications(null);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {

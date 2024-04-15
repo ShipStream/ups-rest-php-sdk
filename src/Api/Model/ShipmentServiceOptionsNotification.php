@@ -22,31 +22,31 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     012 - Alternate Delivery Location Notification
     013 - UAP Shipper Notification
     *
-    * @var string
+    * @var string|null
     */
     protected $notificationCode;
     /**
      * Container for the e-mail message.
      *
-     * @var NotificationEMail
+     * @var NotificationEMail|null
      */
     protected $eMail;
     /**
      * VoiceMessage container is used for specifying phone number for receiving voice Alternate Delivery Location notification and UAP Shipper notification.  Valid only for Alternate Delivery Location notification and UAP Shipper notification. VoiceMessage phone number or TextMessage phone number or email address is required for ADL notification and UAP Shipper notification.
      *
-     * @var NotificationVoiceMessage
+     * @var NotificationVoiceMessage|null
      */
     protected $voiceMessage;
     /**
      * TextMessage container is used for specifying phone number for receiving text Alternate Delivery Location notification and UAP Shipper notification.  Valid only for Alternate Delivery Location notification and UAP Shipper notification. VoiceMessage phone number or TextMessage phone number or email address is required for ADL notification and UAP Shipper notification.
      *
-     * @var NotificationTextMessage
+     * @var NotificationTextMessage|null
      */
     protected $textMessage;
     /**
      * This container is used for providing Language and dialect details for Alternate Delivery Location notifications and UAP Shipper notifications.  Valid only for Alternate Delivery Location notification and UAP Shipper notification.
      *
-     * @var NotificationLocale
+     * @var NotificationLocale|null
      */
     protected $locale;
     /**
@@ -59,9 +59,9 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     012 - Alternate Delivery Location Notification
     013 - UAP Shipper Notification
     *
-    * @return string
+    * @return string|null
     */
-    public function getNotificationCode() : string
+    public function getNotificationCode() : ?string
     {
         return $this->notificationCode;
     }
@@ -75,11 +75,11 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     012 - Alternate Delivery Location Notification
     013 - UAP Shipper Notification
     *
-    * @param string $notificationCode
+    * @param string|null $notificationCode
     *
     * @return self
     */
-    public function setNotificationCode(string $notificationCode) : self
+    public function setNotificationCode(?string $notificationCode) : self
     {
         $this->initialized['notificationCode'] = true;
         $this->notificationCode = $notificationCode;
@@ -88,20 +88,20 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     /**
      * Container for the e-mail message.
      *
-     * @return NotificationEMail
+     * @return NotificationEMail|null
      */
-    public function getEMail() : NotificationEMail
+    public function getEMail() : ?NotificationEMail
     {
         return $this->eMail;
     }
     /**
      * Container for the e-mail message.
      *
-     * @param NotificationEMail $eMail
+     * @param NotificationEMail|null $eMail
      *
      * @return self
      */
-    public function setEMail(NotificationEMail $eMail) : self
+    public function setEMail(?NotificationEMail $eMail) : self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;
@@ -110,20 +110,20 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     /**
      * VoiceMessage container is used for specifying phone number for receiving voice Alternate Delivery Location notification and UAP Shipper notification.  Valid only for Alternate Delivery Location notification and UAP Shipper notification. VoiceMessage phone number or TextMessage phone number or email address is required for ADL notification and UAP Shipper notification.
      *
-     * @return NotificationVoiceMessage
+     * @return NotificationVoiceMessage|null
      */
-    public function getVoiceMessage() : NotificationVoiceMessage
+    public function getVoiceMessage() : ?NotificationVoiceMessage
     {
         return $this->voiceMessage;
     }
     /**
      * VoiceMessage container is used for specifying phone number for receiving voice Alternate Delivery Location notification and UAP Shipper notification.  Valid only for Alternate Delivery Location notification and UAP Shipper notification. VoiceMessage phone number or TextMessage phone number or email address is required for ADL notification and UAP Shipper notification.
      *
-     * @param NotificationVoiceMessage $voiceMessage
+     * @param NotificationVoiceMessage|null $voiceMessage
      *
      * @return self
      */
-    public function setVoiceMessage(NotificationVoiceMessage $voiceMessage) : self
+    public function setVoiceMessage(?NotificationVoiceMessage $voiceMessage) : self
     {
         $this->initialized['voiceMessage'] = true;
         $this->voiceMessage = $voiceMessage;
@@ -132,20 +132,20 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     /**
      * TextMessage container is used for specifying phone number for receiving text Alternate Delivery Location notification and UAP Shipper notification.  Valid only for Alternate Delivery Location notification and UAP Shipper notification. VoiceMessage phone number or TextMessage phone number or email address is required for ADL notification and UAP Shipper notification.
      *
-     * @return NotificationTextMessage
+     * @return NotificationTextMessage|null
      */
-    public function getTextMessage() : NotificationTextMessage
+    public function getTextMessage() : ?NotificationTextMessage
     {
         return $this->textMessage;
     }
     /**
      * TextMessage container is used for specifying phone number for receiving text Alternate Delivery Location notification and UAP Shipper notification.  Valid only for Alternate Delivery Location notification and UAP Shipper notification. VoiceMessage phone number or TextMessage phone number or email address is required for ADL notification and UAP Shipper notification.
      *
-     * @param NotificationTextMessage $textMessage
+     * @param NotificationTextMessage|null $textMessage
      *
      * @return self
      */
-    public function setTextMessage(NotificationTextMessage $textMessage) : self
+    public function setTextMessage(?NotificationTextMessage $textMessage) : self
     {
         $this->initialized['textMessage'] = true;
         $this->textMessage = $textMessage;
@@ -154,20 +154,20 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     /**
      * This container is used for providing Language and dialect details for Alternate Delivery Location notifications and UAP Shipper notifications.  Valid only for Alternate Delivery Location notification and UAP Shipper notification.
      *
-     * @return NotificationLocale
+     * @return NotificationLocale|null
      */
-    public function getLocale() : NotificationLocale
+    public function getLocale() : ?NotificationLocale
     {
         return $this->locale;
     }
     /**
      * This container is used for providing Language and dialect details for Alternate Delivery Location notifications and UAP Shipper notifications.  Valid only for Alternate Delivery Location notification and UAP Shipper notification.
      *
-     * @param NotificationLocale $locale
+     * @param NotificationLocale|null $locale
      *
      * @return self
      */
-    public function setLocale(NotificationLocale $locale) : self
+    public function setLocale(?NotificationLocale $locale) : self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;

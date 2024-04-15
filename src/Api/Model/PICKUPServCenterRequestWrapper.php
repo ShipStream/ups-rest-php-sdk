@@ -15,26 +15,26 @@ class PICKUPServCenterRequestWrapper extends \ArrayObject
     /**
      * This request is to retrieve UPS Facility location information including location address, phone number, SLIC, and hours of operation for pick-up and drop-off requests
      *
-     * @var PickupGetServiceCenterFacilitiesRequest
+     * @var PickupGetServiceCenterFacilitiesRequest|null
      */
     protected $pickupGetServiceCenterFacilitiesRequest;
     /**
      * This request is to retrieve UPS Facility location information including location address, phone number, SLIC, and hours of operation for pick-up and drop-off requests
      *
-     * @return PickupGetServiceCenterFacilitiesRequest
+     * @return PickupGetServiceCenterFacilitiesRequest|null
      */
-    public function getPickupGetServiceCenterFacilitiesRequest() : PickupGetServiceCenterFacilitiesRequest
+    public function getPickupGetServiceCenterFacilitiesRequest() : ?PickupGetServiceCenterFacilitiesRequest
     {
         return $this->pickupGetServiceCenterFacilitiesRequest;
     }
     /**
      * This request is to retrieve UPS Facility location information including location address, phone number, SLIC, and hours of operation for pick-up and drop-off requests
      *
-     * @param PickupGetServiceCenterFacilitiesRequest $pickupGetServiceCenterFacilitiesRequest
+     * @param PickupGetServiceCenterFacilitiesRequest|null $pickupGetServiceCenterFacilitiesRequest
      *
      * @return self
      */
-    public function setPickupGetServiceCenterFacilitiesRequest(PickupGetServiceCenterFacilitiesRequest $pickupGetServiceCenterFacilitiesRequest) : self
+    public function setPickupGetServiceCenterFacilitiesRequest(?PickupGetServiceCenterFacilitiesRequest $pickupGetServiceCenterFacilitiesRequest) : self
     {
         $this->initialized['pickupGetServiceCenterFacilitiesRequest'] = true;
         $this->pickupGetServiceCenterFacilitiesRequest = $pickupGetServiceCenterFacilitiesRequest;

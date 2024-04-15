@@ -40,117 +40,198 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('shipDate', $data)) {
+            if (\array_key_exists('shipDate', $data) && $data['shipDate'] !== null) {
                 $object->setShipDate($data['shipDate']);
                 unset($data['shipDate']);
             }
-            if (\array_key_exists('shipTime', $data)) {
+            elseif (\array_key_exists('shipDate', $data) && $data['shipDate'] === null) {
+                $object->setShipDate(null);
+            }
+            if (\array_key_exists('shipTime', $data) && $data['shipTime'] !== null) {
                 $object->setShipTime($data['shipTime']);
                 unset($data['shipTime']);
             }
-            if (\array_key_exists('serviceLevel', $data)) {
+            elseif (\array_key_exists('shipTime', $data) && $data['shipTime'] === null) {
+                $object->setShipTime(null);
+            }
+            if (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] !== null) {
                 $object->setServiceLevel($data['serviceLevel']);
                 unset($data['serviceLevel']);
             }
-            if (\array_key_exists('billType', $data)) {
+            elseif (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] === null) {
+                $object->setServiceLevel(null);
+            }
+            if (\array_key_exists('billType', $data) && $data['billType'] !== null) {
                 $object->setBillType($data['billType']);
                 unset($data['billType']);
             }
-            if (\array_key_exists('dutyType', $data)) {
+            elseif (\array_key_exists('billType', $data) && $data['billType'] === null) {
+                $object->setBillType(null);
+            }
+            if (\array_key_exists('dutyType', $data) && $data['dutyType'] !== null) {
                 $object->setDutyType($data['dutyType']);
                 unset($data['dutyType']);
             }
-            if (\array_key_exists('residentialIndicator', $data)) {
+            elseif (\array_key_exists('dutyType', $data) && $data['dutyType'] === null) {
+                $object->setDutyType(null);
+            }
+            if (\array_key_exists('residentialIndicator', $data) && $data['residentialIndicator'] !== null) {
                 $object->setResidentialIndicator($data['residentialIndicator']);
                 unset($data['residentialIndicator']);
             }
-            if (\array_key_exists('destinationCountryName', $data)) {
+            elseif (\array_key_exists('residentialIndicator', $data) && $data['residentialIndicator'] === null) {
+                $object->setResidentialIndicator(null);
+            }
+            if (\array_key_exists('destinationCountryName', $data) && $data['destinationCountryName'] !== null) {
                 $object->setDestinationCountryName($data['destinationCountryName']);
                 unset($data['destinationCountryName']);
             }
-            if (\array_key_exists('destinationCountryCode', $data)) {
+            elseif (\array_key_exists('destinationCountryName', $data) && $data['destinationCountryName'] === null) {
+                $object->setDestinationCountryName(null);
+            }
+            if (\array_key_exists('destinationCountryCode', $data) && $data['destinationCountryCode'] !== null) {
                 $object->setDestinationCountryCode($data['destinationCountryCode']);
                 unset($data['destinationCountryCode']);
             }
-            if (\array_key_exists('destinationPostalCode', $data)) {
+            elseif (\array_key_exists('destinationCountryCode', $data) && $data['destinationCountryCode'] === null) {
+                $object->setDestinationCountryCode(null);
+            }
+            if (\array_key_exists('destinationPostalCode', $data) && $data['destinationPostalCode'] !== null) {
                 $object->setDestinationPostalCode($data['destinationPostalCode']);
                 unset($data['destinationPostalCode']);
             }
-            if (\array_key_exists('destinationPostalCodeLow', $data)) {
+            elseif (\array_key_exists('destinationPostalCode', $data) && $data['destinationPostalCode'] === null) {
+                $object->setDestinationPostalCode(null);
+            }
+            if (\array_key_exists('destinationPostalCodeLow', $data) && $data['destinationPostalCodeLow'] !== null) {
                 $object->setDestinationPostalCodeLow($data['destinationPostalCodeLow']);
                 unset($data['destinationPostalCodeLow']);
             }
-            if (\array_key_exists('destinationPostalCodeHigh', $data)) {
+            elseif (\array_key_exists('destinationPostalCodeLow', $data) && $data['destinationPostalCodeLow'] === null) {
+                $object->setDestinationPostalCodeLow(null);
+            }
+            if (\array_key_exists('destinationPostalCodeHigh', $data) && $data['destinationPostalCodeHigh'] !== null) {
                 $object->setDestinationPostalCodeHigh($data['destinationPostalCodeHigh']);
                 unset($data['destinationPostalCodeHigh']);
             }
-            if (\array_key_exists('destinationStateProvince', $data)) {
+            elseif (\array_key_exists('destinationPostalCodeHigh', $data) && $data['destinationPostalCodeHigh'] === null) {
+                $object->setDestinationPostalCodeHigh(null);
+            }
+            if (\array_key_exists('destinationStateProvince', $data) && $data['destinationStateProvince'] !== null) {
                 $object->setDestinationStateProvince($data['destinationStateProvince']);
                 unset($data['destinationStateProvince']);
             }
-            if (\array_key_exists('destinationCityName', $data)) {
+            elseif (\array_key_exists('destinationStateProvince', $data) && $data['destinationStateProvince'] === null) {
+                $object->setDestinationStateProvince(null);
+            }
+            if (\array_key_exists('destinationCityName', $data) && $data['destinationCityName'] !== null) {
                 $object->setDestinationCityName($data['destinationCityName']);
                 unset($data['destinationCityName']);
             }
-            if (\array_key_exists('originCountryName', $data)) {
+            elseif (\array_key_exists('destinationCityName', $data) && $data['destinationCityName'] === null) {
+                $object->setDestinationCityName(null);
+            }
+            if (\array_key_exists('originCountryName', $data) && $data['originCountryName'] !== null) {
                 $object->setOriginCountryName($data['originCountryName']);
                 unset($data['originCountryName']);
             }
-            if (\array_key_exists('originCountryCode', $data)) {
+            elseif (\array_key_exists('originCountryName', $data) && $data['originCountryName'] === null) {
+                $object->setOriginCountryName(null);
+            }
+            if (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] !== null) {
                 $object->setOriginCountryCode($data['originCountryCode']);
                 unset($data['originCountryCode']);
             }
-            if (\array_key_exists('originPostalCode', $data)) {
+            elseif (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] === null) {
+                $object->setOriginCountryCode(null);
+            }
+            if (\array_key_exists('originPostalCode', $data) && $data['originPostalCode'] !== null) {
                 $object->setOriginPostalCode($data['originPostalCode']);
                 unset($data['originPostalCode']);
             }
-            if (\array_key_exists('originPostalCodeLow', $data)) {
+            elseif (\array_key_exists('originPostalCode', $data) && $data['originPostalCode'] === null) {
+                $object->setOriginPostalCode(null);
+            }
+            if (\array_key_exists('originPostalCodeLow', $data) && $data['originPostalCodeLow'] !== null) {
                 $object->setOriginPostalCodeLow($data['originPostalCodeLow']);
                 unset($data['originPostalCodeLow']);
             }
-            if (\array_key_exists('originPostalCodeHigh', $data)) {
+            elseif (\array_key_exists('originPostalCodeLow', $data) && $data['originPostalCodeLow'] === null) {
+                $object->setOriginPostalCodeLow(null);
+            }
+            if (\array_key_exists('originPostalCodeHigh', $data) && $data['originPostalCodeHigh'] !== null) {
                 $object->setOriginPostalCodeHigh($data['originPostalCodeHigh']);
                 unset($data['originPostalCodeHigh']);
             }
-            if (\array_key_exists('originStateProvince', $data)) {
+            elseif (\array_key_exists('originPostalCodeHigh', $data) && $data['originPostalCodeHigh'] === null) {
+                $object->setOriginPostalCodeHigh(null);
+            }
+            if (\array_key_exists('originStateProvince', $data) && $data['originStateProvince'] !== null) {
                 $object->setOriginStateProvince($data['originStateProvince']);
                 unset($data['originStateProvince']);
             }
-            if (\array_key_exists('originCityName', $data)) {
+            elseif (\array_key_exists('originStateProvince', $data) && $data['originStateProvince'] === null) {
+                $object->setOriginStateProvince(null);
+            }
+            if (\array_key_exists('originCityName', $data) && $data['originCityName'] !== null) {
                 $object->setOriginCityName($data['originCityName']);
                 unset($data['originCityName']);
             }
-            if (\array_key_exists('weight', $data)) {
+            elseif (\array_key_exists('originCityName', $data) && $data['originCityName'] === null) {
+                $object->setOriginCityName(null);
+            }
+            if (\array_key_exists('weight', $data) && $data['weight'] !== null) {
                 $object->setWeight($data['weight']);
                 unset($data['weight']);
             }
-            if (\array_key_exists('weightUnitOfMeasure', $data)) {
+            elseif (\array_key_exists('weight', $data) && $data['weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('weightUnitOfMeasure', $data) && $data['weightUnitOfMeasure'] !== null) {
                 $object->setWeightUnitOfMeasure($data['weightUnitOfMeasure']);
                 unset($data['weightUnitOfMeasure']);
             }
-            if (\array_key_exists('shipmentContentsValue', $data)) {
+            elseif (\array_key_exists('weightUnitOfMeasure', $data) && $data['weightUnitOfMeasure'] === null) {
+                $object->setWeightUnitOfMeasure(null);
+            }
+            if (\array_key_exists('shipmentContentsValue', $data) && $data['shipmentContentsValue'] !== null) {
                 $object->setShipmentContentsValue($data['shipmentContentsValue']);
                 unset($data['shipmentContentsValue']);
             }
-            if (\array_key_exists('shipmentContentsCurrencyCode', $data)) {
+            elseif (\array_key_exists('shipmentContentsValue', $data) && $data['shipmentContentsValue'] === null) {
+                $object->setShipmentContentsValue(null);
+            }
+            if (\array_key_exists('shipmentContentsCurrencyCode', $data) && $data['shipmentContentsCurrencyCode'] !== null) {
                 $object->setShipmentContentsCurrencyCode($data['shipmentContentsCurrencyCode']);
                 unset($data['shipmentContentsCurrencyCode']);
             }
-            if (\array_key_exists('guaranteeSuspended', $data)) {
+            elseif (\array_key_exists('shipmentContentsCurrencyCode', $data) && $data['shipmentContentsCurrencyCode'] === null) {
+                $object->setShipmentContentsCurrencyCode(null);
+            }
+            if (\array_key_exists('guaranteeSuspended', $data) && $data['guaranteeSuspended'] !== null) {
                 $object->setGuaranteeSuspended($data['guaranteeSuspended']);
                 unset($data['guaranteeSuspended']);
             }
-            if (\array_key_exists('numberOfServices', $data)) {
+            elseif (\array_key_exists('guaranteeSuspended', $data) && $data['guaranteeSuspended'] === null) {
+                $object->setGuaranteeSuspended(null);
+            }
+            if (\array_key_exists('numberOfServices', $data) && $data['numberOfServices'] !== null) {
                 $object->setNumberOfServices($data['numberOfServices']);
                 unset($data['numberOfServices']);
             }
-            if (\array_key_exists('services', $data)) {
+            elseif (\array_key_exists('numberOfServices', $data) && $data['numberOfServices'] === null) {
+                $object->setNumberOfServices(null);
+            }
+            if (\array_key_exists('services', $data) && $data['services'] !== null) {
                 $values = [];
                 foreach ($data['services'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Services', 'json', $context);
                 }
                 $object->setServices($values);
                 unset($data['services']);
+            }
+            elseif (\array_key_exists('services', $data) && $data['services'] === null) {
+                $object->setServices(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -267,117 +348,198 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('shipDate', $data)) {
+            if (\array_key_exists('shipDate', $data) && $data['shipDate'] !== null) {
                 $object->setShipDate($data['shipDate']);
                 unset($data['shipDate']);
             }
-            if (\array_key_exists('shipTime', $data)) {
+            elseif (\array_key_exists('shipDate', $data) && $data['shipDate'] === null) {
+                $object->setShipDate(null);
+            }
+            if (\array_key_exists('shipTime', $data) && $data['shipTime'] !== null) {
                 $object->setShipTime($data['shipTime']);
                 unset($data['shipTime']);
             }
-            if (\array_key_exists('serviceLevel', $data)) {
+            elseif (\array_key_exists('shipTime', $data) && $data['shipTime'] === null) {
+                $object->setShipTime(null);
+            }
+            if (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] !== null) {
                 $object->setServiceLevel($data['serviceLevel']);
                 unset($data['serviceLevel']);
             }
-            if (\array_key_exists('billType', $data)) {
+            elseif (\array_key_exists('serviceLevel', $data) && $data['serviceLevel'] === null) {
+                $object->setServiceLevel(null);
+            }
+            if (\array_key_exists('billType', $data) && $data['billType'] !== null) {
                 $object->setBillType($data['billType']);
                 unset($data['billType']);
             }
-            if (\array_key_exists('dutyType', $data)) {
+            elseif (\array_key_exists('billType', $data) && $data['billType'] === null) {
+                $object->setBillType(null);
+            }
+            if (\array_key_exists('dutyType', $data) && $data['dutyType'] !== null) {
                 $object->setDutyType($data['dutyType']);
                 unset($data['dutyType']);
             }
-            if (\array_key_exists('residentialIndicator', $data)) {
+            elseif (\array_key_exists('dutyType', $data) && $data['dutyType'] === null) {
+                $object->setDutyType(null);
+            }
+            if (\array_key_exists('residentialIndicator', $data) && $data['residentialIndicator'] !== null) {
                 $object->setResidentialIndicator($data['residentialIndicator']);
                 unset($data['residentialIndicator']);
             }
-            if (\array_key_exists('destinationCountryName', $data)) {
+            elseif (\array_key_exists('residentialIndicator', $data) && $data['residentialIndicator'] === null) {
+                $object->setResidentialIndicator(null);
+            }
+            if (\array_key_exists('destinationCountryName', $data) && $data['destinationCountryName'] !== null) {
                 $object->setDestinationCountryName($data['destinationCountryName']);
                 unset($data['destinationCountryName']);
             }
-            if (\array_key_exists('destinationCountryCode', $data)) {
+            elseif (\array_key_exists('destinationCountryName', $data) && $data['destinationCountryName'] === null) {
+                $object->setDestinationCountryName(null);
+            }
+            if (\array_key_exists('destinationCountryCode', $data) && $data['destinationCountryCode'] !== null) {
                 $object->setDestinationCountryCode($data['destinationCountryCode']);
                 unset($data['destinationCountryCode']);
             }
-            if (\array_key_exists('destinationPostalCode', $data)) {
+            elseif (\array_key_exists('destinationCountryCode', $data) && $data['destinationCountryCode'] === null) {
+                $object->setDestinationCountryCode(null);
+            }
+            if (\array_key_exists('destinationPostalCode', $data) && $data['destinationPostalCode'] !== null) {
                 $object->setDestinationPostalCode($data['destinationPostalCode']);
                 unset($data['destinationPostalCode']);
             }
-            if (\array_key_exists('destinationPostalCodeLow', $data)) {
+            elseif (\array_key_exists('destinationPostalCode', $data) && $data['destinationPostalCode'] === null) {
+                $object->setDestinationPostalCode(null);
+            }
+            if (\array_key_exists('destinationPostalCodeLow', $data) && $data['destinationPostalCodeLow'] !== null) {
                 $object->setDestinationPostalCodeLow($data['destinationPostalCodeLow']);
                 unset($data['destinationPostalCodeLow']);
             }
-            if (\array_key_exists('destinationPostalCodeHigh', $data)) {
+            elseif (\array_key_exists('destinationPostalCodeLow', $data) && $data['destinationPostalCodeLow'] === null) {
+                $object->setDestinationPostalCodeLow(null);
+            }
+            if (\array_key_exists('destinationPostalCodeHigh', $data) && $data['destinationPostalCodeHigh'] !== null) {
                 $object->setDestinationPostalCodeHigh($data['destinationPostalCodeHigh']);
                 unset($data['destinationPostalCodeHigh']);
             }
-            if (\array_key_exists('destinationStateProvince', $data)) {
+            elseif (\array_key_exists('destinationPostalCodeHigh', $data) && $data['destinationPostalCodeHigh'] === null) {
+                $object->setDestinationPostalCodeHigh(null);
+            }
+            if (\array_key_exists('destinationStateProvince', $data) && $data['destinationStateProvince'] !== null) {
                 $object->setDestinationStateProvince($data['destinationStateProvince']);
                 unset($data['destinationStateProvince']);
             }
-            if (\array_key_exists('destinationCityName', $data)) {
+            elseif (\array_key_exists('destinationStateProvince', $data) && $data['destinationStateProvince'] === null) {
+                $object->setDestinationStateProvince(null);
+            }
+            if (\array_key_exists('destinationCityName', $data) && $data['destinationCityName'] !== null) {
                 $object->setDestinationCityName($data['destinationCityName']);
                 unset($data['destinationCityName']);
             }
-            if (\array_key_exists('originCountryName', $data)) {
+            elseif (\array_key_exists('destinationCityName', $data) && $data['destinationCityName'] === null) {
+                $object->setDestinationCityName(null);
+            }
+            if (\array_key_exists('originCountryName', $data) && $data['originCountryName'] !== null) {
                 $object->setOriginCountryName($data['originCountryName']);
                 unset($data['originCountryName']);
             }
-            if (\array_key_exists('originCountryCode', $data)) {
+            elseif (\array_key_exists('originCountryName', $data) && $data['originCountryName'] === null) {
+                $object->setOriginCountryName(null);
+            }
+            if (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] !== null) {
                 $object->setOriginCountryCode($data['originCountryCode']);
                 unset($data['originCountryCode']);
             }
-            if (\array_key_exists('originPostalCode', $data)) {
+            elseif (\array_key_exists('originCountryCode', $data) && $data['originCountryCode'] === null) {
+                $object->setOriginCountryCode(null);
+            }
+            if (\array_key_exists('originPostalCode', $data) && $data['originPostalCode'] !== null) {
                 $object->setOriginPostalCode($data['originPostalCode']);
                 unset($data['originPostalCode']);
             }
-            if (\array_key_exists('originPostalCodeLow', $data)) {
+            elseif (\array_key_exists('originPostalCode', $data) && $data['originPostalCode'] === null) {
+                $object->setOriginPostalCode(null);
+            }
+            if (\array_key_exists('originPostalCodeLow', $data) && $data['originPostalCodeLow'] !== null) {
                 $object->setOriginPostalCodeLow($data['originPostalCodeLow']);
                 unset($data['originPostalCodeLow']);
             }
-            if (\array_key_exists('originPostalCodeHigh', $data)) {
+            elseif (\array_key_exists('originPostalCodeLow', $data) && $data['originPostalCodeLow'] === null) {
+                $object->setOriginPostalCodeLow(null);
+            }
+            if (\array_key_exists('originPostalCodeHigh', $data) && $data['originPostalCodeHigh'] !== null) {
                 $object->setOriginPostalCodeHigh($data['originPostalCodeHigh']);
                 unset($data['originPostalCodeHigh']);
             }
-            if (\array_key_exists('originStateProvince', $data)) {
+            elseif (\array_key_exists('originPostalCodeHigh', $data) && $data['originPostalCodeHigh'] === null) {
+                $object->setOriginPostalCodeHigh(null);
+            }
+            if (\array_key_exists('originStateProvince', $data) && $data['originStateProvince'] !== null) {
                 $object->setOriginStateProvince($data['originStateProvince']);
                 unset($data['originStateProvince']);
             }
-            if (\array_key_exists('originCityName', $data)) {
+            elseif (\array_key_exists('originStateProvince', $data) && $data['originStateProvince'] === null) {
+                $object->setOriginStateProvince(null);
+            }
+            if (\array_key_exists('originCityName', $data) && $data['originCityName'] !== null) {
                 $object->setOriginCityName($data['originCityName']);
                 unset($data['originCityName']);
             }
-            if (\array_key_exists('weight', $data)) {
+            elseif (\array_key_exists('originCityName', $data) && $data['originCityName'] === null) {
+                $object->setOriginCityName(null);
+            }
+            if (\array_key_exists('weight', $data) && $data['weight'] !== null) {
                 $object->setWeight($data['weight']);
                 unset($data['weight']);
             }
-            if (\array_key_exists('weightUnitOfMeasure', $data)) {
+            elseif (\array_key_exists('weight', $data) && $data['weight'] === null) {
+                $object->setWeight(null);
+            }
+            if (\array_key_exists('weightUnitOfMeasure', $data) && $data['weightUnitOfMeasure'] !== null) {
                 $object->setWeightUnitOfMeasure($data['weightUnitOfMeasure']);
                 unset($data['weightUnitOfMeasure']);
             }
-            if (\array_key_exists('shipmentContentsValue', $data)) {
+            elseif (\array_key_exists('weightUnitOfMeasure', $data) && $data['weightUnitOfMeasure'] === null) {
+                $object->setWeightUnitOfMeasure(null);
+            }
+            if (\array_key_exists('shipmentContentsValue', $data) && $data['shipmentContentsValue'] !== null) {
                 $object->setShipmentContentsValue($data['shipmentContentsValue']);
                 unset($data['shipmentContentsValue']);
             }
-            if (\array_key_exists('shipmentContentsCurrencyCode', $data)) {
+            elseif (\array_key_exists('shipmentContentsValue', $data) && $data['shipmentContentsValue'] === null) {
+                $object->setShipmentContentsValue(null);
+            }
+            if (\array_key_exists('shipmentContentsCurrencyCode', $data) && $data['shipmentContentsCurrencyCode'] !== null) {
                 $object->setShipmentContentsCurrencyCode($data['shipmentContentsCurrencyCode']);
                 unset($data['shipmentContentsCurrencyCode']);
             }
-            if (\array_key_exists('guaranteeSuspended', $data)) {
+            elseif (\array_key_exists('shipmentContentsCurrencyCode', $data) && $data['shipmentContentsCurrencyCode'] === null) {
+                $object->setShipmentContentsCurrencyCode(null);
+            }
+            if (\array_key_exists('guaranteeSuspended', $data) && $data['guaranteeSuspended'] !== null) {
                 $object->setGuaranteeSuspended($data['guaranteeSuspended']);
                 unset($data['guaranteeSuspended']);
             }
-            if (\array_key_exists('numberOfServices', $data)) {
+            elseif (\array_key_exists('guaranteeSuspended', $data) && $data['guaranteeSuspended'] === null) {
+                $object->setGuaranteeSuspended(null);
+            }
+            if (\array_key_exists('numberOfServices', $data) && $data['numberOfServices'] !== null) {
                 $object->setNumberOfServices($data['numberOfServices']);
                 unset($data['numberOfServices']);
             }
-            if (\array_key_exists('services', $data)) {
+            elseif (\array_key_exists('numberOfServices', $data) && $data['numberOfServices'] === null) {
+                $object->setNumberOfServices(null);
+            }
+            if (\array_key_exists('services', $data) && $data['services'] !== null) {
                 $values = [];
                 foreach ($data['services'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Services', 'json', $context);
                 }
                 $object->setServices($values);
                 unset($data['services']);
+            }
+            elseif (\array_key_exists('services', $data) && $data['services'] === null) {
+                $object->setServices(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

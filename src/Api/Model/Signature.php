@@ -15,26 +15,26 @@ class Signature extends \ArrayObject
     /**
      * image
      *
-     * @var string
+     * @var string|null
      */
     protected $image;
     /**
      * image
      *
-     * @return string
+     * @return string|null
      */
-    public function getImage() : string
+    public function getImage() : ?string
     {
         return $this->image;
     }
     /**
      * image
      *
-     * @param string $image
+     * @param string|null $image
      *
      * @return self
      */
-    public function setImage(string $image) : self
+    public function setImage(?string $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

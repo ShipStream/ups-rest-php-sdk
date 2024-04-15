@@ -40,21 +40,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('DateTimeRange', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('DateTimeRange', $data) && $data['DateTimeRange'] !== null) {
                 $object->setDateTimeRange($this->denormalizer->denormalize($data['DateTimeRange'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionRequestDateTimeRange', 'json', $context));
                 unset($data['DateTimeRange']);
             }
-            if (\array_key_exists('FileName', $data)) {
+            elseif (\array_key_exists('DateTimeRange', $data) && $data['DateTimeRange'] === null) {
+                $object->setDateTimeRange(null);
+            }
+            if (\array_key_exists('FileName', $data) && $data['FileName'] !== null) {
                 $values = [];
                 foreach ($data['FileName'] as $value) {
                     $values[] = $value;
                 }
                 $object->setFileName($values);
                 unset($data['FileName']);
+            }
+            elseif (\array_key_exists('FileName', $data) && $data['FileName'] === null) {
+                $object->setFileName(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -121,21 +130,30 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('Name', $data)) {
+            if (\array_key_exists('Name', $data) && $data['Name'] !== null) {
                 $object->setName($data['Name']);
                 unset($data['Name']);
             }
-            if (\array_key_exists('DateTimeRange', $data)) {
+            elseif (\array_key_exists('Name', $data) && $data['Name'] === null) {
+                $object->setName(null);
+            }
+            if (\array_key_exists('DateTimeRange', $data) && $data['DateTimeRange'] !== null) {
                 $object->setDateTimeRange($this->denormalizer->denormalize($data['DateTimeRange'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionRequestDateTimeRange', 'json', $context));
                 unset($data['DateTimeRange']);
             }
-            if (\array_key_exists('FileName', $data)) {
+            elseif (\array_key_exists('DateTimeRange', $data) && $data['DateTimeRange'] === null) {
+                $object->setDateTimeRange(null);
+            }
+            if (\array_key_exists('FileName', $data) && $data['FileName'] !== null) {
                 $values = [];
                 foreach ($data['FileName'] as $value) {
                     $values[] = $value;
                 }
                 $object->setFileName($values);
                 unset($data['FileName']);
+            }
+            elseif (\array_key_exists('FileName', $data) && $data['FileName'] === null) {
+                $object->setFileName(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {

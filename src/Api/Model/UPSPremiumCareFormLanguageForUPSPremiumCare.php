@@ -17,7 +17,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     eng = US English
     fra = Canadian French
     *
-    * @var string[]
+    * @var list<string>|null
     */
     protected $language;
     /**
@@ -25,9 +25,9 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     eng = US English
     fra = Canadian French
     *
-    * @return string[]
+    * @return list<string>|null
     */
-    public function getLanguage() : array
+    public function getLanguage() : ?array
     {
         return $this->language;
     }
@@ -36,11 +36,11 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     eng = US English
     fra = Canadian French
     *
-    * @param string[] $language
+    * @param list<string>|null $language
     *
     * @return self
     */
-    public function setLanguage(array $language) : self
+    public function setLanguage(?array $language) : self
     {
         $this->initialized['language'] = true;
         $this->language = $language;
