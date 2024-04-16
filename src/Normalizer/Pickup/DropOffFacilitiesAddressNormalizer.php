@@ -32,6 +32,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
          * @inheritDoc
          */
         public function denormalize($data, $type, $format = null, array $context = [])
+        {
             if ($data === null || is_array($data) === false) {
                 return parent::denormalize($data, $type, $format, $context);
             }

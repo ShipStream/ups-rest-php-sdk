@@ -27,7 +27,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
     }
 } else {
-    class CandidateADdressKeyFormatNormalizer extends BaseNormalizer
+    class CandidateAddressKeyFormatNormalizer extends BaseNormalizer
     {
         /**
          * @inheritDoc
