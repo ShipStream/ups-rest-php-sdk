@@ -31,7 +31,7 @@ class ValidationList extends \ArrayObject
      */
     protected $destinationAmbiguous;
     /**
-     * Returned as true when origina ddress has a candidate list.
+     * Returned as true when original address has a candidate list.
      *
      * @var bool
      */
@@ -103,7 +103,7 @@ class ValidationList extends \ArrayObject
         return $this;
     }
     /**
-     * Returned as true when origina ddress has a candidate list.
+     * Returned as true when original address has a candidate list.
      *
      * @return bool
      */
@@ -112,7 +112,7 @@ class ValidationList extends \ArrayObject
         return $this->originAmbiguous;
     }
     /**
-     * Returned as true when origina ddress has a candidate list.
+     * Returned as true when original address has a candidate list.
      *
      * @param bool $originAmbiguous
      *

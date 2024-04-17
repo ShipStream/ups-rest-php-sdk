@@ -25,7 +25,7 @@ class CandidateAddress extends \ArrayObject
      */
     protected $countryCode;
     /**
-     * Present on response when candidate valu ehas a political division 1 value available.
+     * Present on response when candidate value has a political division 1 value available.
      *
      * @var string
      */
@@ -37,7 +37,7 @@ class CandidateAddress extends \ArrayObject
      */
     protected $city;
     /**
-     * Present on response when candidate value has a political divison 3 value available.
+     * Present on response when candidate value has a political division 3 value available.
      *
      * @var string
      */
@@ -49,13 +49,13 @@ class CandidateAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-     * Present on response when vandidate value has a postal code range value available, this is the postal range low value.
+     * Present on response when candidate value has a postal code range value available. This is the postal range low value.
      *
      * @var string
      */
     protected $postalCodeLow;
     /**
-     * Present on response when candidate value has a postal code range value available, this is the postal range high value.
+     * Present on response when candidate value has a postal code range value available. This is the postal range high value.
      *
      * @var string
      */
@@ -105,7 +105,7 @@ class CandidateAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Present on response when candidate valu ehas a political division 1 value available.
+     * Present on response when candidate value has a political division 1 value available.
      *
      * @return string
      */
@@ -114,7 +114,7 @@ class CandidateAddress extends \ArrayObject
         return $this->stateProvince;
     }
     /**
-     * Present on response when candidate valu ehas a political division 1 value available.
+     * Present on response when candidate value has a political division 1 value available.
      *
      * @param string $stateProvince
      *
@@ -149,7 +149,7 @@ class CandidateAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Present on response when candidate value has a political divison 3 value available.
+     * Present on response when candidate value has a political division 3 value available.
      *
      * @return string
      */
@@ -158,7 +158,7 @@ class CandidateAddress extends \ArrayObject
         return $this->town;
     }
     /**
-     * Present on response when candidate value has a political divison 3 value available.
+     * Present on response when candidate value has a political division 3 value available.
      *
      * @param string $town
      *
@@ -193,7 +193,7 @@ class CandidateAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Present on response when vandidate value has a postal code range value available, this is the postal range low value.
+     * Present on response when candidate value has a postal code range value available. This is the postal range low value.
      *
      * @return string
      */
@@ -202,7 +202,7 @@ class CandidateAddress extends \ArrayObject
         return $this->postalCodeLow;
     }
     /**
-     * Present on response when vandidate value has a postal code range value available, this is the postal range low value.
+     * Present on response when candidate value has a postal code range value available. This is the postal range low value.
      *
      * @param string $postalCodeLow
      *
@@ -215,7 +215,7 @@ class CandidateAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Present on response when candidate value has a postal code range value available, this is the postal range high value.
+     * Present on response when candidate value has a postal code range value available. This is the postal range high value.
      *
      * @return string
      */
@@ -224,7 +224,7 @@ class CandidateAddress extends \ArrayObject
         return $this->postalCodeHigh;
     }
     /**
-     * Present on response when candidate value has a postal code range value available, this is the postal range high value.
+     * Present on response when candidate value has a postal code range value available. This is the postal range high value.
      *
      * @param string $postalCodeHigh
      *

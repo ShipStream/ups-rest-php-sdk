@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class TimeInTransitBadRequestException extends BadRequestException
+class TimeInTransitTooManyRequestsException extends TooManyRequestsException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse
@@ -14,7 +14,7 @@ class TimeInTransitBadRequestException extends BadRequestException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Invalid Request');
+        parent::__construct('Rate Limit Exceeded');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }
