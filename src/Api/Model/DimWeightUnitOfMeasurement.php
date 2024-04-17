@@ -13,7 +13,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code representing the unit of measure associated with the package weight. 
+     * Code representing the unit of measure associated with the package weight.
      *
      * @var string
      */
@@ -25,7 +25,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-     * Code representing the unit of measure associated with the package weight. 
+     * Code representing the unit of measure associated with the package weight.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
         return $this->code;
     }
     /**
-     * Code representing the unit of measure associated with the package weight. 
+     * Code representing the unit of measure associated with the package weight.
      *
      * @param string $code
      *
