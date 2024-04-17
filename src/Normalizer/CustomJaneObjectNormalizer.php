@@ -56,6 +56,7 @@ use ShipStream\Ups\Api\Model\SubscriptionFileGeneric;
 use ShipStream\Ups\Api\Model\SubscriptionFileManifest;
 use ShipStream\Ups\Api\Model\SubscriptionFileOrigin;
 use ShipStream\Ups\Api\Model\UploadResponseResponse;
+use ShipStream\Ups\Api\Model\XAVResponse;
 use ShipStream\Ups\Api\Model\XAVResponseCandidate;
 use ShipStream\Ups\Api\Normalizer\JaneObjectNormalizer;
 
@@ -66,6 +67,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[ResponseError::class] = ResponseErrorNormalizer::class;
         // AddressValidation
         $this->normalizers[CandidateAddressKeyFormat::class] = AddressValidation\CandidateAddressKeyFormatNormalizer::class;
+        $this->normalizers[XAVResponse::class] = AddressValidation\XAVResponseNormalizer::class;
         $this->normalizers[XAVResponseCandidate::class] = AddressValidation\XAVResponseCandidateNormalizer::class;
         // DangerousGoods
         $this->normalizers[AcceptanceAuditPreCheckResponse::class] = DangerousGoods\AcceptanceAuditPreCheckResponseNormalizer::class;

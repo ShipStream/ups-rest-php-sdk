@@ -25,13 +25,10 @@ class CandidateAddressKeyFormat extends \ArrayObject
      */
     protected $attentionName;
     /**
-    * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.
-    Additional secondary information (apartment, suite, floor, etc.)
-    Applicable to US and PR only. 
-    Not returned if user selects the RegionalRequestIndicator.
-    *
-    * @var string[]
-    */
+     * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information. Additional secondary information (apartment, suite, floor, etc.) Applicable to US and PR only.  Not returned if user selects the RegionalRequestIndicator.
+     *
+     * @var string[]
+     */
     protected $addressLine;
     /**
      * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
@@ -46,14 +43,10 @@ class CandidateAddressKeyFormat extends \ArrayObject
      */
     protected $politicalDivision2;
     /**
-    * State/Province. 
-    Returned if the location is within a State/Province/Territory. 
-    For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match. 
-    For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
-    For International the full State or Province name will be returned.
-    *
-    * @var string
-    */
+     * State/Province.  Returned if the location is within a State/Province/Territory. For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match.  For Domestic addresses, the value must be a valid 2-character value (per US Mail standards).  For International the full State or Province name will be returned.
+     *
+     * @var string
+     */
     protected $politicalDivision1;
     /**
      * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
@@ -62,11 +55,10 @@ class CandidateAddressKeyFormat extends \ArrayObject
      */
     protected $postcodePrimaryLow;
     /**
-    * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
-    Only returned in candidate list. May be alphanumeric
-    *
-    * @var string
-    */
+     * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric
+     *
+     * @var string
+     */
     protected $postcodeExtendedLow;
     /**
      * Puerto Rico Political Division 3. Only Valid for Puerto Rico.
@@ -125,27 +117,21 @@ class CandidateAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.
-    Additional secondary information (apartment, suite, floor, etc.)
-    Applicable to US and PR only. 
-    Not returned if user selects the RegionalRequestIndicator.
-    *
-    * @return string[]
-    */
+     * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information. Additional secondary information (apartment, suite, floor, etc.) Applicable to US and PR only.  Not returned if user selects the RegionalRequestIndicator.
+     *
+     * @return string[]
+     */
     public function getAddressLine() : array
     {
         return $this->addressLine;
     }
     /**
-    * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.
-    Additional secondary information (apartment, suite, floor, etc.)
-    Applicable to US and PR only. 
-    Not returned if user selects the RegionalRequestIndicator.
-    *
-    * @param string[] $addressLine
-    *
-    * @return self
-    */
+     * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information. Additional secondary information (apartment, suite, floor, etc.) Applicable to US and PR only.  Not returned if user selects the RegionalRequestIndicator.
+     *
+     * @param string[] $addressLine
+     *
+     * @return self
+     */
     public function setAddressLine(array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
@@ -197,29 +183,21 @@ class CandidateAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * State/Province. 
-    Returned if the location is within a State/Province/Territory. 
-    For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match. 
-    For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
-    For International the full State or Province name will be returned.
-    *
-    * @return string
-    */
+     * State/Province.  Returned if the location is within a State/Province/Territory. For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match.  For Domestic addresses, the value must be a valid 2-character value (per US Mail standards).  For International the full State or Province name will be returned.
+     *
+     * @return string
+     */
     public function getPoliticalDivision1() : string
     {
         return $this->politicalDivision1;
     }
     /**
-    * State/Province. 
-    Returned if the location is within a State/Province/Territory. 
-    For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match. 
-    For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
-    For International the full State or Province name will be returned.
-    *
-    * @param string $politicalDivision1
-    *
-    * @return self
-    */
+     * State/Province.  Returned if the location is within a State/Province/Territory. For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match.  For Domestic addresses, the value must be a valid 2-character value (per US Mail standards).  For International the full State or Province name will be returned.
+     *
+     * @param string $politicalDivision1
+     *
+     * @return self
+     */
     public function setPoliticalDivision1(string $politicalDivision1) : self
     {
         $this->initialized['politicalDivision1'] = true;
@@ -249,23 +227,21 @@ class CandidateAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
-    Only returned in candidate list. May be alphanumeric
-    *
-    * @return string
-    */
+     * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric
+     *
+     * @return string
+     */
     public function getPostcodeExtendedLow() : string
     {
         return $this->postcodeExtendedLow;
     }
     /**
-    * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
-    Only returned in candidate list. May be alphanumeric
-    *
-    * @param string $postcodeExtendedLow
-    *
-    * @return self
-    */
+     * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric
+     *
+     * @param string $postcodeExtendedLow
+     *
+     * @return self
+     */
     public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
     {
         $this->initialized['postcodeExtendedLow'] = true;

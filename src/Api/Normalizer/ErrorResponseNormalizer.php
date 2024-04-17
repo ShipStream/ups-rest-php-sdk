@@ -40,13 +40,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('response', $data)) {
-                $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context));
-                unset($data['response']);
+            if (\array_key_exists('errors', $data)) {
+                $values = [];
+                foreach ($data['errors'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context);
+                }
+                $object->setErrors($values);
+                unset($data['errors']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -54,12 +58,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
-            if ($object->isInitialized('response') && null !== $object->getResponse()) {
-                $data['response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
+            if ($object->isInitialized('errors') && null !== $object->getErrors()) {
+                $values = [];
+                foreach ($object->getErrors() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['errors'] = $values;
             }
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
@@ -99,13 +107,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('response', $data)) {
-                $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context));
-                unset($data['response']);
+            if (\array_key_exists('errors', $data)) {
+                $values = [];
+                foreach ($data['errors'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context);
+                }
+                $object->setErrors($values);
+                unset($data['errors']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -116,12 +128,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize($object, $format = null, array $context = [])
         {
             $data = [];
-            if ($object->isInitialized('response') && null !== $object->getResponse()) {
-                $data['response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
+            if ($object->isInitialized('errors') && null !== $object->getErrors()) {
+                $values = [];
+                foreach ($object->getErrors() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['errors'] = $values;
             }
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;

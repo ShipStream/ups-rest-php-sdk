@@ -14,7 +14,7 @@ class AddressValidationUnauthorizedException extends UnauthorizedException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Unauthorized');
+        parent::__construct('Unauthorized Request');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }

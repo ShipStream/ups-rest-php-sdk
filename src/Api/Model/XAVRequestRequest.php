@@ -19,13 +19,16 @@ class XAVRequestRequest extends \ArrayObject
      */
     protected $subVersion;
     /**
-    * Identifies the optional processing to be performed.
-    If not present or invalid value then an error will be sent back. 
-    Valid values: 
-    1 - Address Validation
-    2 - Address Classification
-    3 - Address Validation and Address Classification. 
-    For a list of valid values, refer to Address Validation API - Supported Countries or Territories in the Appendix.
+    * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+    
+    Valid values:
+    
+    - 1 - Address Validation
+    - 2 - Address Classification
+    - 3 - Address Validation and Address Classification.
+    
+    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+    
     *
     * @var string
     */
@@ -59,13 +62,16 @@ class XAVRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Identifies the optional processing to be performed.
-    If not present or invalid value then an error will be sent back. 
-    Valid values: 
-    1 - Address Validation
-    2 - Address Classification
-    3 - Address Validation and Address Classification. 
-    For a list of valid values, refer to Address Validation API - Supported Countries or Territories in the Appendix.
+    * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+    
+    Valid values:
+    
+    - 1 - Address Validation
+    - 2 - Address Classification
+    - 3 - Address Validation and Address Classification.
+    
+    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+    
     *
     * @return string
     */
@@ -74,13 +80,16 @@ class XAVRequestRequest extends \ArrayObject
         return $this->requestOption;
     }
     /**
-    * Identifies the optional processing to be performed.
-    If not present or invalid value then an error will be sent back. 
-    Valid values: 
-    1 - Address Validation
-    2 - Address Classification
-    3 - Address Validation and Address Classification. 
-    For a list of valid values, refer to Address Validation API - Supported Countries or Territories in the Appendix.
+    * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+    
+    Valid values:
+    
+    - 1 - Address Validation
+    - 2 - Address Classification
+    - 3 - Address Validation and Address Classification.
+    
+    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+    
     *
     * @param string $requestOption
     *

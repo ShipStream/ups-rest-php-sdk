@@ -13,31 +13,36 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Name of business, company or person. Not returned if user selects the RegionalRequestIndicator.
+     * Name of business, company or person. Ignored if user selects the RegionalRequestIndicator.
      *
      * @var string
      */
     protected $consigneeName;
     /**
-     * Name of building. Not returned if user selects the RegionalRequestIndicator.
+     * Name of the building. Ignored if user selects the RegionalRequestIndicator.
      *
      * @var string
      */
     protected $attentionName;
     /**
-    * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.
-    Additional secondary information (apartment, suite, floor, etc.)
-    Applicable to US and PR only. 
-    Not returned if user selects the RegionalRequestIndicator.
-    *
-    * @var mixed[]
-    */
+     * Address line (street number, street name and street type) used for street level information. Additional secondary information (apartment, suite, floor, etc.). Applicable to US and PR only. Ignored if user selects the RegionalRequestIndicator.
+     *
+     * @var string[]
+     */
     protected $addressLine;
     /**
-     * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
-     *
-     * @var string
-     */
+    * If this node is present the following tags will be ignored:
+    
+    - Political Division 2
+    - Political Division 1
+    - PostcodePrimaryLow
+    - PostcodeExtendedLow
+    
+    Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
+    
+    *
+    * @var string
+    */
     protected $region;
     /**
      * City or Town name.
@@ -46,27 +51,22 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      */
     protected $politicalDivision2;
     /**
-    * State/Province. 
-    Returned if the location is within a State/Province/Territory. 
-    For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match. 
-    For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
-    For International the full State or Province name will be returned.
-    *
-    * @var string
-    */
+     * State or Province/Territory name.
+     *
+     * @var string
+     */
     protected $politicalDivision1;
     /**
-     * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
+     * Postal Code.
      *
      * @var string
      */
     protected $postcodePrimaryLow;
     /**
-    * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
-    Only returned in candidate list. May be alphanumeric
-    *
-    * @var string
-    */
+     * 4 digit Postal Code extension. For US use only.
+     *
+     * @var string
+     */
     protected $postcodeExtendedLow;
     /**
      * Puerto Rico Political Division 3. Only Valid for Puerto Rico.
@@ -75,13 +75,13 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      */
     protected $urbanization;
     /**
-     * A country or territory code. Required to be returned.
+     * Country or Territory Code. For a list of valid values, refer to the Address Validation API Supported Countries or Territories table in the Appendix.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Name of business, company or person. Not returned if user selects the RegionalRequestIndicator.
+     * Name of business, company or person. Ignored if user selects the RegionalRequestIndicator.
      *
      * @return string
      */
@@ -90,7 +90,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this->consigneeName;
     }
     /**
-     * Name of business, company or person. Not returned if user selects the RegionalRequestIndicator.
+     * Name of business, company or person. Ignored if user selects the RegionalRequestIndicator.
      *
      * @param string $consigneeName
      *
@@ -103,7 +103,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Name of building. Not returned if user selects the RegionalRequestIndicator.
+     * Name of the building. Ignored if user selects the RegionalRequestIndicator.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this->attentionName;
     }
     /**
-     * Name of building. Not returned if user selects the RegionalRequestIndicator.
+     * Name of the building. Ignored if user selects the RegionalRequestIndicator.
      *
      * @param string $attentionName
      *
@@ -125,27 +125,21 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.
-    Additional secondary information (apartment, suite, floor, etc.)
-    Applicable to US and PR only. 
-    Not returned if user selects the RegionalRequestIndicator.
-    *
-    * @return mixed[]
-    */
+     * Address line (street number, street name and street type) used for street level information. Additional secondary information (apartment, suite, floor, etc.). Applicable to US and PR only. Ignored if user selects the RegionalRequestIndicator.
+     *
+     * @return string[]
+     */
     public function getAddressLine() : array
     {
         return $this->addressLine;
     }
     /**
-    * Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.
-    Additional secondary information (apartment, suite, floor, etc.)
-    Applicable to US and PR only. 
-    Not returned if user selects the RegionalRequestIndicator.
-    *
-    * @param mixed[] $addressLine
-    *
-    * @return self
-    */
+     * Address line (street number, street name and street type) used for street level information. Additional secondary information (apartment, suite, floor, etc.). Applicable to US and PR only. Ignored if user selects the RegionalRequestIndicator.
+     *
+     * @param string[] $addressLine
+     *
+     * @return self
+     */
     public function setAddressLine(array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
@@ -153,21 +147,37 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
-     *
-     * @return string
-     */
+    * If this node is present the following tags will be ignored:
+    
+    - Political Division 2
+    - Political Division 1
+    - PostcodePrimaryLow
+    - PostcodeExtendedLow
+    
+    Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
+    
+    *
+    * @return string
+    */
     public function getRegion() : string
     {
         return $this->region;
     }
     /**
-     * Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
-     *
-     * @param string $region
-     *
-     * @return self
-     */
+    * If this node is present the following tags will be ignored:
+    
+    - Political Division 2
+    - Political Division 1
+    - PostcodePrimaryLow
+    - PostcodeExtendedLow
+    
+    Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
+    
+    *
+    * @param string $region
+    *
+    * @return self
+    */
     public function setRegion(string $region) : self
     {
         $this->initialized['region'] = true;
@@ -197,29 +207,21 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * State/Province. 
-    Returned if the location is within a State/Province/Territory. 
-    For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match. 
-    For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
-    For International the full State or Province name will be returned.
-    *
-    * @return string
-    */
+     * State or Province/Territory name.
+     *
+     * @return string
+     */
     public function getPoliticalDivision1() : string
     {
         return $this->politicalDivision1;
     }
     /**
-    * State/Province. 
-    Returned if the location is within a State/Province/Territory. 
-    For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match. 
-    For Domestic addresses, the value must be a valid 2-character value (per US Mail standards). 
-    For International the full State or Province name will be returned.
-    *
-    * @param string $politicalDivision1
-    *
-    * @return self
-    */
+     * State or Province/Territory name.
+     *
+     * @param string $politicalDivision1
+     *
+     * @return self
+     */
     public function setPoliticalDivision1(string $politicalDivision1) : self
     {
         $this->initialized['politicalDivision1'] = true;
@@ -227,7 +229,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
+     * Postal Code.
      *
      * @return string
      */
@@ -236,7 +238,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this->postcodePrimaryLow;
     }
     /**
-     * Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.
+     * Postal Code.
      *
      * @param string $postcodePrimaryLow
      *
@@ -249,23 +251,21 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
-    Only returned in candidate list. May be alphanumeric
-    *
-    * @return string
-    */
+     * 4 digit Postal Code extension. For US use only.
+     *
+     * @return string
+     */
     public function getPostcodeExtendedLow() : string
     {
         return $this->postcodeExtendedLow;
     }
     /**
-    * Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'. 
-    Only returned in candidate list. May be alphanumeric
-    *
-    * @param string $postcodeExtendedLow
-    *
-    * @return self
-    */
+     * 4 digit Postal Code extension. For US use only.
+     *
+     * @param string $postcodeExtendedLow
+     *
+     * @return self
+     */
     public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
     {
         $this->initialized['postcodeExtendedLow'] = true;
@@ -295,7 +295,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * A country or territory code. Required to be returned.
+     * Country or Territory Code. For a list of valid values, refer to the Address Validation API Supported Countries or Territories table in the Appendix.
      *
      * @return string
      */
@@ -304,7 +304,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * A country or territory code. Required to be returned.
+     * Country or Territory Code. For a list of valid values, refer to the Address Validation API Supported Countries or Territories table in the Appendix.
      *
      * @param string $countryCode
      *

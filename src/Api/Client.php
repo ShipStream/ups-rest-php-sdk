@@ -7,43 +7,73 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     /**
     * The Address Validation Street Level API can be used to check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
     *
-    * @param int $requestoption Identifies the type of request. Valid 
-    values: 
-    1 - Address Validation
-    2 - Address Classification 
-    3 - Address Validation and Address 
-    Classification.
-    * @param string $version Identifies the version of the API. Valid 
-    values: 
-    v1
+    * @param int $requestoption Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+    
+    Valid values:
+    - 1 - Address Validation
+    - 2 - Address Classification
+    - 3 - Address Validation and Address Classification.
+    
+    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+    
+    * @param string $version Identifies the version of the API.
+    
+    Valid  values:
+    - v2
+    
     * @param \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
     * @param array $queryParameters {
-    *     @var string $regionalrequestindicator Valid values: True or False. 
-    If True, either the region element or any 
-    combination of Political Division 1, 
-    Political Division 2, PostcodePrimaryLow 
-    and the PostcodeExtendedLow fields will 
-    be recognized for validation in addition to 
-    the urbanization element. If False or no 
-    indicator, street level address validation 
-    is provided
-    *     @var int $maximumcandidatelistsize Valid values: 0 – 50
-    The maximum number of Candidates to 
-    return for this request. If not provided, 
-    the default size of 15 is returned.
+    *     @var string $regionalrequestindicator Valid values: True or False.  If True, either the region element or any  combination of Political Division 1,  Political Division 2, PostcodePrimaryLow and the PostcodeExtendedLow fields will  be recognized for validation in addition to  the urbanization element. If False or no  indicator, street level address validation  is provided
+    *     @var int $maximumcandidatelistsize Valid values: 0 – 50 The maximum number of Candidates to  return for this request. If not provided,  the default size of 15 is returned.
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-    * @param array $accept Accept content header application/json|application/xml
     * @throws \ShipStream\Ups\Api\Exception\AddressValidationBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\AddressValidationUnauthorizedException
-    * @throws \ShipStream\Ups\Api\Exception\AddressValidationNotFoundException
+    * @throws \ShipStream\Ups\Api\Exception\AddressValidationForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\AddressValidationTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\XAVResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function addressValidation(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], string $fetch = self::FETCH_OBJECT, array $accept = [])
+    public function addressValidation(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AddressValidation($requestoption, $version, $requestBody, $queryParameters, $accept), $fetch);
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AddressValidation($requestoption, $version, $requestBody, $queryParameters), $fetch);
+    }
+    /**
+    * The Address Validation Street Level API can be used to check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
+    *
+    * @param int $requestoption Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+    
+    Valid values:
+    
+    - 1 - Address Validation
+    - 2 - Address Classification
+    - 3 - Address Validation and Address Classification.
+    
+    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+    
+    * @param string $deprecatedVersion Identifies the version of the API.
+    
+    Valid  values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
+    * @param array $queryParameters {
+    *     @var string $regionalrequestindicator Valid values: True or False.  If True, either the region element or any  combination of Political Division 1,  Political Division 2, PostcodePrimaryLow and the PostcodeExtendedLow fields will  be recognized for validation in addition to  the urbanization element. If False or no  indicator, street level address validation  is provided
+    *     @var int $maximumcandidatelistsize Valid values: 0 – 50 The maximum number of Candidates to  return for this request. If not provided,  the default size of 15 is returned.
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\XAVResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedAddressValidation(int $requestoption, string $deprecatedVersion, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedAddressValidation($requestoption, $deprecatedVersion, $requestBody, $queryParameters), $fetch);
     }
     /**
     * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.

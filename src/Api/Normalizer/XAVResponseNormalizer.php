@@ -69,16 +69,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
                 unset($data['AddressClassification']);
             }
-            if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
-                $object->setCandidate($this->denormalizer->denormalize($data['Candidate'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context));
+            if (\array_key_exists('Candidate', $data)) {
+                $values = [];
+                foreach ($data['Candidate'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context);
+                }
+                $object->setCandidate($values);
                 unset($data['Candidate']);
             }
-            elseif (\array_key_exists('Candidate', $data) && $data['Candidate'] === null) {
-                $object->setCandidate(null);
-            }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -100,11 +101,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['AddressClassification'] = $this->normalizer->normalize($object->getAddressClassification(), 'json', $context);
             }
             if ($object->isInitialized('candidate') && null !== $object->getCandidate()) {
-                $data['Candidate'] = $this->normalizer->normalize($object->getCandidate(), 'json', $context);
+                $values = [];
+                foreach ($object->getCandidate() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['Candidate'] = $values;
             }
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
@@ -173,16 +178,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
                 unset($data['AddressClassification']);
             }
-            if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
-                $object->setCandidate($this->denormalizer->denormalize($data['Candidate'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context));
+            if (\array_key_exists('Candidate', $data)) {
+                $values = [];
+                foreach ($data['Candidate'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context);
+                }
+                $object->setCandidate($values);
                 unset($data['Candidate']);
             }
-            elseif (\array_key_exists('Candidate', $data) && $data['Candidate'] === null) {
-                $object->setCandidate(null);
-            }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -207,11 +213,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['AddressClassification'] = $this->normalizer->normalize($object->getAddressClassification(), 'json', $context);
             }
             if ($object->isInitialized('candidate') && null !== $object->getCandidate()) {
-                $data['Candidate'] = $this->normalizer->normalize($object->getCandidate(), 'json', $context);
+                $values = [];
+                foreach ($object->getCandidate() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['Candidate'] = $values;
             }
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
