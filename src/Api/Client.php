@@ -770,18 +770,14 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\GetSingleTrackResponseUsingGET($inquiryNumber, $queryParameters, $headerParameters), $fetch);
     }
     /**
-    * The UPS Track Alert API provides best in-class package tracking visibility with near real time event updates for an improved customer experience and stream line logistic management.
-    Updates are pushed to the user as soon as available with no constant polling required, thereby improving operational efficiency.
+    * This endpoint takes a list of tracking numbers and creates a subscription for each.
+    Clients must provide the tracking numbers in the correct format.
     
-    Key Business Values:
-    - **Enhanced Customer Experience**: Near Real-time tracking information increases transparency, leading to higher customer satisfaction and trust.
-    - **Operational Efficiency**: Eliminates the necessity for continuous polling, thus saving computational resources and improving system responsiveness.
-    - **Data-Driven Decision Making**: Access to timely data can help businesses optimize their supply chain and make informed logistics decisions.
-    - **Optimizing Cash Flow Through Near Real-Time Delivery Tracking**: Improve cash flow by knowing the deliveries occurred in near real time.
-    - **Mitigating Fraud and Theft through Near Real-Time Package Status Monitoring**: Reduce fraud and theft by knowing the status of the package.
-    <br /><a href="https://developer.ups.com/api/reference/trackalert/product-info" target="_blank">Product Info</a><br /><a href="https://developer.ups.com/api/reference/trackalert/error-codes" target="_blank">Errors</a>
+    Upon success it should return:
+    - List of valid tracking number for which subscription created.
+    - List of invalid tracking number for which subscription not created.
+    
     *
-    * @param string $version API Version, e.g. v1
     * @param string $type - 'Standard' - Represents a standard subscription type that provides near real time updates on tracking status.
     
     * @param null|\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody 
@@ -793,15 +789,17 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberUnauthorizedException
     * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberNotFoundException
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberForbiddenException
     * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberMethodNotAllowedException
+    * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\ProcessSubscriptionTypeForTrackingNumberInternalServerErrorException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\TrackSubsServiceResponse|\Psr\Http\Message\ResponseInterface
     */
-    public function processSubscriptionTypeForTrackingNumber(string $version, string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function processSubscriptionTypeForTrackingNumber(string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ProcessSubscriptionTypeForTrackingNumber($version, $type, $requestBody, $headerParameters), $fetch);
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ProcessSubscriptionTypeForTrackingNumber($type, $requestBody, $headerParameters), $fetch);
     }
     public static function create($httpClient = null, array $additionalPlugins = [], array $additionalNormalizers = [])
     {

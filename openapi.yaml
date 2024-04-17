@@ -5058,19 +5058,14 @@ paths:
       security:
         -
           oauth2: []
-  '/track/{version}/subscription/{type}/package':
+  '/subscription/{type}/package':
     post:
-      summary: 'UPS Track Alert API'
-      description: "The UPS Track Alert API provides best in-class package tracking visibility with near real time event updates for an improved customer experience and stream line logistic management.\nUpdates are pushed to the user as soon as available with no constant polling required, thereby improving operational efficiency.\n\nKey Business Values:\n- **Enhanced Customer Experience**: Near Real-time tracking information increases transparency, leading to higher customer satisfaction and trust.\n- **Operational Efficiency**: Eliminates the necessity for continuous polling, thus saving computational resources and improving system responsiveness.\n- **Data-Driven Decision Making**: Access to timely data can help businesses optimize their supply chain and make informed logistics decisions.\n- **Optimizing Cash Flow Through Near Real-Time Delivery Tracking**: Improve cash flow by knowing the deliveries occurred in near real time.\n- **Mitigating Fraud and Theft through Near Real-Time Package Status Monitoring**: Reduce fraud and theft by knowing the status of the package.\n<br /><a href=\"https://developer.ups.com/api/reference/trackalert/product-info\" target=\"_blank\">Product Info</a><br /><a href=\"https://developer.ups.com/api/reference/trackalert/error-codes\" target=\"_blank\">Errors</a>"
+      tags:
+        - 'UPS Track Alert'
+      summary: 'API to create subscriptions by tracking numbers.'
+      description: "This endpoint takes a list of tracking numbers and creates a subscription for each.\nClients must provide the tracking numbers in the correct format.\n\nUpon success it should return:\n- List of valid tracking number for which subscription created.\n- List of invalid tracking number for which subscription not created.\n"
       operationId: processSubscriptionTypeForTrackingNumber
       parameters:
-        -
-          name: version
-          in: path
-          description: 'API Version, e.g. v1'
-          required: true
-          schema:
-            type: string
         -
           name: type
           in: path
@@ -5153,6 +5148,12 @@ paths:
                   -
                     code: '404'
                     message: 'The requested resource was not found.'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackSubsServiceErrorResponse'
         '405':
           description: 'Method Not Allowed'
           content:
@@ -5164,6 +5165,12 @@ paths:
                   -
                     code: '405'
                     message: 'The requested method is not allowed for this resource.'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackSubsServiceErrorResponse'
         '500':
           description: 'Internal Server Error'
       security:
@@ -28320,18 +28327,6 @@ components:
           description: 'Represents scan/event preferences for the subscription endpoint, Place holder for Future use.'
         destination:
           $ref: '#/components/schemas/Destination'
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 'The error code.'
-          example: VSS300
-        message:
-          type: string
-          description: 'The error message.'
-          example: 'Locale is required. The Subscription request has been rejected.'
-      description: 'The error response containing any errors that occurred'
     TrackSubsServiceResponse:
       type: object
       properties:
@@ -28356,24 +28351,16 @@ components:
       type: object
       properties:
         response:
-          $ref: '#/components/schemas/ErrorResponse'
+          $ref: '#/components/schemas/ErrorResponseWrapper'
         invalidTrackingNumbers:
           $ref: '#/components/schemas/TrackSubsServiceResponse/properties/invalidTrackingNumbers'
-    Response:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/ErrorMessage'
-          description: 'The error response containing any errors that occurred.'
   securitySchemes:
     oauth2:
       type: oauth2
-      description: "\"Find your Client ID and Secret on your app info page. <br/> \n 1. Select \\\\\\\"Try It\\\\\\\" <br/>  \n 2. In the Security section enter your Client ID and Secret.<br/> \n 3. Select \\\\\\\"Request Token\\\\\\\"<br/> \n 4. Enter any additional information in the Body and Parameters sections.<br/> \n 5. Select \\\\\\\"Send\\\\\\\" to execute your API request\"\n"
+      description: "\"Find your Client ID and Secret on your app info page. <br/> \n 1. Select \"Try It\" <br/>  \n 2. In the Security section enter your Client ID and Secret.<br/> \n 3. Select \\\"Request Token\\\"<br/> \n 4. Enter any additional information in the Body and Parameters sections.<br/> \n 5. Select \"Send\" to execute your API request\"\n"
       flows:
         clientCredentials:
-          tokenUrl: 'https://onlinetools.ups.com/security/v1/oauth/token'
+          tokenUrl: 'https://wwwcie.ups.com/security/v1/oauth/token'
           scopes: {  }
           x-tokenEndpointAuthMethod: client_secret_basic
     basicAuth:
