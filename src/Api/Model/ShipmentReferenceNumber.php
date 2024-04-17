@@ -17,7 +17,6 @@ class ShipmentReferenceNumber extends \ArrayObject
     
     This is an empty tag, any value inside is ignored.
      Only one shipment-level or package-level reference number can be bar coded per shipment. 
-    
     In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
     *
     * @var string
@@ -42,7 +41,6 @@ class ShipmentReferenceNumber extends \ArrayObject
     
     This is an empty tag, any value inside is ignored.
      Only one shipment-level or package-level reference number can be bar coded per shipment. 
-    
     In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
     *
     * @return string
@@ -56,7 +54,6 @@ class ShipmentReferenceNumber extends \ArrayObject
     
     This is an empty tag, any value inside is ignored.
      Only one shipment-level or package-level reference number can be bar coded per shipment. 
-    
     In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
     *
     * @param string $barCodeIndicator

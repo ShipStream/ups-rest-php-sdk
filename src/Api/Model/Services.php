@@ -17,7 +17,7 @@ class Services extends \ArrayObject
     
     Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
     
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
+     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
     *
     * @var string
     */
@@ -193,7 +193,7 @@ class Services extends \ArrayObject
     
     Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
     
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
+     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
     *
     * @return string
     */
@@ -206,7 +206,7 @@ class Services extends \ArrayObject
     
     Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
     
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
+     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
     *
     * @param string $serviceLevel
     *

@@ -178,7 +178,7 @@ class TimeInTransitRequest extends \ArrayObject
     0 = WWDTProcessIF.PICKUP_BY_UPS 
     1 = WWDTProcessIf.DROPOFF_BY_SHIPPER 
     
-    The default value is "0" 
+    The default value is "0"
     *
     * @var int
     */
@@ -191,7 +191,7 @@ class TimeInTransitRequest extends \ArrayObject
     0 = WWDTProcessIF.DELIVERY_BY_UPS 
     1 = WWDTProcessIf.PICKUP_BY_CONSIGNEE 
     
-    The default value is "0" 
+    The default value is "0"
     *
     * @var int
     */
@@ -736,7 +736,7 @@ class TimeInTransitRequest extends \ArrayObject
     0 = WWDTProcessIF.PICKUP_BY_UPS 
     1 = WWDTProcessIf.DROPOFF_BY_SHIPPER 
     
-    The default value is "0" 
+    The default value is "0"
     *
     * @return int
     */
@@ -752,7 +752,7 @@ class TimeInTransitRequest extends \ArrayObject
     0 = WWDTProcessIF.PICKUP_BY_UPS 
     1 = WWDTProcessIf.DROPOFF_BY_SHIPPER 
     
-    The default value is "0" 
+    The default value is "0"
     *
     * @param int $dropOffAtFacilityIndicator
     *
@@ -772,7 +772,7 @@ class TimeInTransitRequest extends \ArrayObject
     0 = WWDTProcessIF.DELIVERY_BY_UPS 
     1 = WWDTProcessIf.PICKUP_BY_CONSIGNEE 
     
-    The default value is "0" 
+    The default value is "0"
     *
     * @return int
     */
@@ -788,7 +788,7 @@ class TimeInTransitRequest extends \ArrayObject
     0 = WWDTProcessIF.DELIVERY_BY_UPS 
     1 = WWDTProcessIf.PICKUP_BY_CONSIGNEE 
     
-    The default value is "0" 
+    The default value is "0"
     *
     * @param int $holdForPickupIndicator
     *
