@@ -25,9 +25,10 @@ class PackageChemicalRecord extends \ArrayObject
      */
     protected $reportableQuantity;
     /**
-    * This is the hazard class associated to the specified commodity. 
+    * This is the hazard class associated to the specified commodity.
     
-    Required if CommodityRegulatedLevelCode is "LQ" or "FR"
+    Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
+    
     *
     * @var string
     */
@@ -35,7 +36,8 @@ class PackageChemicalRecord extends \ArrayObject
     /**
     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
     
-    Secondary hazardous characteristics of a package. (There can be more than one, each separated with a comma).
+    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+    
     *
     * @var string
     */
@@ -99,7 +101,8 @@ class PackageChemicalRecord extends \ArrayObject
     /**
     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
     
-    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+    Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
+    
     *
     * @var string
     */
@@ -201,9 +204,10 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * This is the hazard class associated to the specified commodity. 
+    * This is the hazard class associated to the specified commodity.
     
-    Required if CommodityRegulatedLevelCode is "LQ" or "FR"
+    Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
+    
     *
     * @return string
     */
@@ -212,9 +216,10 @@ class PackageChemicalRecord extends \ArrayObject
         return $this->classDivisionNumber;
     }
     /**
-    * This is the hazard class associated to the specified commodity. 
+    * This is the hazard class associated to the specified commodity.
     
-    Required if CommodityRegulatedLevelCode is "LQ" or "FR"
+    Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
+    
     *
     * @param string $classDivisionNumber
     *
@@ -229,7 +234,8 @@ class PackageChemicalRecord extends \ArrayObject
     /**
     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
     
-    Secondary hazardous characteristics of a package. (There can be more than one, each separated with a comma).
+    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+    
     *
     * @return string
     */
@@ -240,7 +246,8 @@ class PackageChemicalRecord extends \ArrayObject
     /**
     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
     
-    Secondary hazardous characteristics of a package. (There can be more than one, each separated with a comma).
+    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+    
     *
     * @param string $subRiskClass
     *
@@ -437,7 +444,8 @@ class PackageChemicalRecord extends \ArrayObject
     /**
     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
     
-    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+    Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
+    
     *
     * @return string
     */
@@ -448,7 +456,8 @@ class PackageChemicalRecord extends \ArrayObject
     /**
     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
     
-    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+    Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
+    
     *
     * @param string $additionalDescription
     *

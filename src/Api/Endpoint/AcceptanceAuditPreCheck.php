@@ -6,7 +6,7 @@ class AcceptanceAuditPreCheck extends \ShipStream\Ups\Api\Runtime\Client\BaseEnd
 {
     protected $version;
     /**
-     * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
+     * Enables shippers perform pre-checks before shipping dangerous goods using the chemical record identifier and the commodity's regulated level code.
      *
      * @param string $version API version
      * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
@@ -54,7 +54,10 @@ class AcceptanceAuditPreCheck extends \ShipStream\Ups\Api\Runtime\Client\BaseEnd
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper
@@ -66,8 +69,17 @@ class AcceptanceAuditPreCheck extends \ShipStream\Ups\Api\Runtime\Client\BaseEnd
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

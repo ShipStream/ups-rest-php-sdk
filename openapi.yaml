@@ -204,7 +204,7 @@ paths:
   '/dangerousgoods/{version}/chemicalreferencedata':
     post:
       summary: 'Chemical Reference Data'
-      description: 'The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.'
+      description: 'The Chemical Reference Data endpoint of the Dangerous Goods API allows shippers look up hazardous material reference information by ID number and shipping name of the specified regulated good.'
       operationId: 'Chemical Reference Data'
       parameters:
         -
@@ -252,15 +252,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DANGEROUSGOODSUTILITYResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '401':
           description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
       security:
         -
           oauth2: []
   '/dangerousgoods/{version}/acceptanceauditprecheck':
     post:
       summary: 'Acceptance Audit Pre-check'
-      description: 'The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.'
+      description: 'Enables shippers perform pre-checks before shipping dangerous goods using the chemical record identifier and the commodity''s regulated level code.'
       operationId: 'Acceptance Audit Pre-Check'
       parameters:
         -
@@ -358,8 +380,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DANGEROUSGOODSUTILITYAPCResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '401':
           description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
       security:
         -
           oauth2: []
@@ -5502,7 +5546,7 @@ components:
           maxLength: 100
           minLength: 1
           type: string
-          description: 'Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.'
+          description: 'Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  It will be returned if applies for a given chemical record.'
         PackagingGroupType:
           maximum: 1
           maxLength: 10
@@ -5752,31 +5796,31 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'The Ship From street address including name and number (when applicable).'
+          description: 'The Ship To street address including name and number (when applicable).'
         City:
           maximum: 1
           maxLength: 30
           minLength: 1
           type: string
-          description: 'The Ship From city.'
+          description: 'The Ship To city.'
         StateProvinceCode:
           maximum: 1
           maxLength: 30
           minLength: 1
           type: string
-          description: 'The Ship From locations state or province code.'
+          description: 'The Ship To locations state or province code.'
         PostalCode:
           maximum: 1
           maxLength: 9
           minLength: 1
           type: string
-          description: 'The Ship From locations postal code. 9 characters are accepted.'
+          description: 'The Ship To locations postal code. 9 characters are accepted.'
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'The Ship From locations country or territory code.'
+          description: 'The Ship To locations country or territory code.'
       description: 'Ship To address container.'
       xml:
         name: ShipToAddress
@@ -5832,7 +5876,7 @@ components:
           maxLength: 25
           minLength: 1
           type: string
-          description: "24 Hour Emergency Phone Number of the shipper. \n\nValid values for this field are (0) through (9) with trailing blanks. \n\nFor numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  The Emergency Phone Number can only include the following allowable characters  \nperiod., dash -, plus sign + and conventional parentheses ( and ), EXT or OPT\n\nRequired when (TDG regulation set and CommodityRegulatedLevelCode = FR)"
+          description: "24 Hour Emergency Phone Number of the shipper. \n\nValid values for this field are (0) through (9) with trailing blanks. \n\nFor numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  The Emergency Phone Number can only include the following allowable characters  \n“period “.”, dash “-“, plus sign “+” and conventional parentheses “(“ and “)”, “EXT or OPT”\n\nRequired when (TDG regulation set and CommodityRegulatedLevelCode = FR)\n"
         EmergencyContact:
           maximum: 1
           maxLength: 35
@@ -5910,13 +5954,13 @@ components:
           maxLength: 10
           minLength: 1
           type: string
-          description: "This is the hazard class associated to the specified commodity. \n\nRequired if CommodityRegulatedLevelCode is \"LQ\" or \"FR\""
+          description: "This is the hazard class associated to the specified commodity.\n\nRequired if CommodityRegulatedLevelCode is 'LQ' or 'FR'\n"
         SubRiskClass:
           maximum: 1
           maxLength: 100
           minLength: 1
           type: string
-          description: "Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. \n\nSecondary hazardous characteristics of a package. (There can be more than one, each separated with a comma)."
+          description: "Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. \n\nSecondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).\n"
         IDNumber:
           maximum: 1
           maxLength: 6
@@ -5964,7 +6008,7 @@ components:
           maxLength: 75
           minLength: 1
           type: string
-          description: "Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. \n\nAdditional information that may be required by regulation about a hazardous material, such as, \"Limited Quantity\", DOT-SP numbers, EX numbers."
+          description: "Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. \n\nAdditional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.\n"
         PackagingType:
           maximum: 1
           maxLength: 255
