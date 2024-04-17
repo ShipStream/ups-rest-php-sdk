@@ -17,13 +17,13 @@ class Services extends \ArrayObject
     
     Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
     
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
+     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
     *
     * @var string
     */
     protected $serviceLevel;
     /**
-     * Service name, examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Frieght
+     * Service name. Examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Freight
      *
      * @var string
      */
@@ -111,9 +111,9 @@ class Services extends \ArrayObject
     /**
     * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions: 
     
-    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guaranetee is available in SE (OPSYS data) that will be returned. 
+    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned. 
     
-    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of servies to remove guarantees for, "0" wil be returned.
+    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
     *
     * @var string
     */
@@ -171,13 +171,13 @@ class Services extends \ArrayObject
      */
     protected $pickupTime;
     /**
-     * Latest time a customer can contact UPS CST needs to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
+     * Latest time a customer can contact UPS CST to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
      *
      * @var string
      */
     protected $cstccutoffTime;
     /**
-     * Returns the date proof of delivery informatino will be available.  This data is available only for international transactions.
+     * Returns the date proof of delivery information would be available.  This data is available only for international transactions.
      *
      * @var string
      */
@@ -193,7 +193,7 @@ class Services extends \ArrayObject
     
     Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
     
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
+     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
     *
     * @return string
     */
@@ -206,7 +206,7 @@ class Services extends \ArrayObject
     
     Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
     
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
+     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
     *
     * @param string $serviceLevel
     *
@@ -219,7 +219,7 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-     * Service name, examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Frieght
+     * Service name. Examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Freight
      *
      * @return string
      */
@@ -228,7 +228,7 @@ class Services extends \ArrayObject
         return $this->serviceLevelDescription;
     }
     /**
-     * Service name, examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Frieght
+     * Service name. Examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Freight
      *
      * @param string $serviceLevelDescription
      *
@@ -503,9 +503,9 @@ class Services extends \ArrayObject
     /**
     * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions: 
     
-    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guaranetee is available in SE (OPSYS data) that will be returned. 
+    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned. 
     
-    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of servies to remove guarantees for, "0" wil be returned.
+    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
     *
     * @return string
     */
@@ -516,9 +516,9 @@ class Services extends \ArrayObject
     /**
     * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions: 
     
-    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guaranetee is available in SE (OPSYS data) that will be returned. 
+    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned. 
     
-    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of servies to remove guarantees for, "0" wil be returned.
+    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
     *
     * @param string $guaranteeIndicator
     *
@@ -705,7 +705,7 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-     * Latest time a customer can contact UPS CST needs to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
+     * Latest time a customer can contact UPS CST to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
      *
      * @return string
      */
@@ -714,7 +714,7 @@ class Services extends \ArrayObject
         return $this->cstccutoffTime;
     }
     /**
-     * Latest time a customer can contact UPS CST needs to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
+     * Latest time a customer can contact UPS CST to be notified for requesting a pickup. This data is available only for international transactions. If customer does not notify UPS for a pickup before this time, the services will not meet the guarantee commitment.
      *
      * @param string $cstccutoffTime
      *
@@ -727,7 +727,7 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-     * Returns the date proof of delivery informatino will be available.  This data is available only for international transactions.
+     * Returns the date proof of delivery information would be available.  This data is available only for international transactions.
      *
      * @return string
      */
@@ -736,7 +736,7 @@ class Services extends \ArrayObject
         return $this->poddate;
     }
     /**
-     * Returns the date proof of delivery informatino will be available.  This data is available only for international transactions.
+     * Returns the date proof of delivery information would be available.  This data is available only for international transactions.
      *
      * @param string $poddate
      *

@@ -663,21 +663,27 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightShip($version, $reqoption, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * Get Time and Transit Response
-     *
-     * @param string $version API Version
-     * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request.  Length 32
-     *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\TimeInTransitBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\TimeInTransitUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\TimeInTransitResponse|\Psr\Http\Message\ResponseInterface
-     */
+    * The Time In Transit API provides estimated delivery times for various UPS shipping services, between specified locations.
+    
+    Key Business Values:
+    - **Enhanced Customer Experience**: Allows businesses provide accurate delivery estimates to their customers, enhancing customer service.
+    - **Operational Efficiency**: Helps in logistics planning by providing transit times for different UPS services.
+    *
+    * @param string $version API Version
+    * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\TimeInTransitBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\TimeInTransitUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\TimeInTransitForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\TimeInTransitTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\TimeInTransitResponse|\Psr\Http\Message\ResponseInterface
+    */
     public function timeInTransit(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\TimeInTransit($version, $requestBody, $headerParameters), $fetch);
