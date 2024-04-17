@@ -76,7 +76,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedAddressValidation($requestoption, $deprecatedVersion, $requestBody, $queryParameters), $fetch);
     }
     /**
-    * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
+    * The Chemical Reference Data endpoint of the Dangerous Goods API allows shippers look up hazardous material reference information by ID number and shipping name of the specified regulated good.
     *
     * @param string $version Version of the API. Valid values:
     v1
@@ -87,7 +87,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -97,7 +100,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ChemicalReferenceData($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
+     * Enables shippers perform pre-checks before shipping dangerous goods using the chemical record identifier and the commodity's regulated level code.
      *
      * @param string $version API version
      * @param \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody 
@@ -106,7 +109,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
      * }
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\AcceptanceAuditPreCheckTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper|\Psr\Http\Message\ResponseInterface

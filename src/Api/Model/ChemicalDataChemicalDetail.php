@@ -41,7 +41,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      */
     protected $classDivisionNumber;
     /**
-     * Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  It will be returned if applies for a given chemical record.
      *
      * @var string
      */
@@ -235,7 +235,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
         return $this;
     }
     /**
-     * Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  It will be returned if applies for a given chemical record.
      *
      * @return string
      */
@@ -244,7 +244,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
         return $this->subRiskClass;
     }
     /**
-     * Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).  It will be returned if applies for a given chemical record.
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  It will be returned if applies for a given chemical record.
      *
      * @param string $subRiskClass
      *
