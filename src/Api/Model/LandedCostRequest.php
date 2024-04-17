@@ -25,10 +25,13 @@ class LandedCostRequest extends \ArrayObject
      */
     protected $transID;
     /**
-     * This is the optional flag to indicate that partial landed cost  calculations are acceptable to be used by upstream systems. When set to �false�, the system will return an error when at least  one commodity in the shipment is invalid (all or none); no results  will be sent back for that request. When set to �true�, the system will return partial calculations  when applicable Valid values: true = Partial Landed Cost result will return false = All or No result will return - (default)
-     *
-     * @var bool
-     */
+    * An optional flag to indicate that partial landed cost calculations are acceptable to be used by upstream systems.
+    When set to *false*, the system will return an error when at least one commodity in the shipment is invalid (all or none), and no results  will be sent back for that request. When set to *true*, the system will return partial calculations when applicable.
+    
+    Valid values: true = Partial Landed Cost result will return. false = All or No result will return (default).
+    *
+    * @var bool
+    */
     protected $allowPartialLandedCostResult;
     /**
      * Version number of the instance that processed this request. This must match the major number of the corresponding ICD version.
@@ -87,21 +90,27 @@ class LandedCostRequest extends \ArrayObject
         return $this;
     }
     /**
-     * This is the optional flag to indicate that partial landed cost  calculations are acceptable to be used by upstream systems. When set to �false�, the system will return an error when at least  one commodity in the shipment is invalid (all or none); no results  will be sent back for that request. When set to �true�, the system will return partial calculations  when applicable Valid values: true = Partial Landed Cost result will return false = All or No result will return - (default)
-     *
-     * @return bool
-     */
+    * An optional flag to indicate that partial landed cost calculations are acceptable to be used by upstream systems.
+    When set to *false*, the system will return an error when at least one commodity in the shipment is invalid (all or none), and no results  will be sent back for that request. When set to *true*, the system will return partial calculations when applicable.
+    
+    Valid values: true = Partial Landed Cost result will return. false = All or No result will return (default).
+    *
+    * @return bool
+    */
     public function getAllowPartialLandedCostResult() : bool
     {
         return $this->allowPartialLandedCostResult;
     }
     /**
-     * This is the optional flag to indicate that partial landed cost  calculations are acceptable to be used by upstream systems. When set to �false�, the system will return an error when at least  one commodity in the shipment is invalid (all or none); no results  will be sent back for that request. When set to �true�, the system will return partial calculations  when applicable Valid values: true = Partial Landed Cost result will return false = All or No result will return - (default)
-     *
-     * @param bool $allowPartialLandedCostResult
-     *
-     * @return self
-     */
+    * An optional flag to indicate that partial landed cost calculations are acceptable to be used by upstream systems.
+    When set to *false*, the system will return an error when at least one commodity in the shipment is invalid (all or none), and no results  will be sent back for that request. When set to *true*, the system will return partial calculations when applicable.
+    
+    Valid values: true = Partial Landed Cost result will return. false = All or No result will return (default).
+    *
+    * @param bool $allowPartialLandedCostResult
+    *
+    * @return self
+    */
     public function setAllowPartialLandedCostResult(bool $allowPartialLandedCostResult) : self
     {
         $this->initialized['allowPartialLandedCostResult'] = true;
