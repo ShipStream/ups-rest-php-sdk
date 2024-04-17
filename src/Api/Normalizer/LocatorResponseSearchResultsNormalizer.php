@@ -50,36 +50,32 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
             unset($data['GeocodeCandidate']);
         }
         if (\array_key_exists('Disclaimer', $data)) {
-            $values_1 = array();
-            foreach ($data['Disclaimer'] as $value_1) {
-                $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
-                foreach ($value_1 as $key => $value_2) {
-                    $values_2[$key] = $value_2;
-                }
-                $values_1[] = $values_2;
-            }
-            $object->setDisclaimer($values_1);
+            $object->setDisclaimer($data['Disclaimer']);
             unset($data['Disclaimer']);
         }
         if (\array_key_exists('DropLocation', $data)) {
-            $object->setDropLocation($this->denormalizer->denormalize($data['DropLocation'], 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation', 'json', $context));
+            $values_1 = array();
+            foreach ($data['DropLocation'] as $value_1) {
+                $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation', 'json', $context);
+            }
+            $object->setDropLocation($values_1);
             unset($data['DropLocation']);
         }
         if (\array_key_exists('AvailableLocationAttributes', $data)) {
-            $values_3 = array();
-            foreach ($data['AvailableLocationAttributes'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes', 'json', $context);
+            $values_2 = array();
+            foreach ($data['AvailableLocationAttributes'] as $value_2) {
+                $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes', 'json', $context);
             }
-            $object->setAvailableLocationAttributes($values_3);
+            $object->setAvailableLocationAttributes($values_2);
             unset($data['AvailableLocationAttributes']);
         }
         if (\array_key_exists('ActiveAvailableAccessPointIndicator', $data)) {
             $object->setActiveAvailableAccessPointIndicator($data['ActiveAvailableAccessPointIndicator']);
             unset($data['ActiveAvailableAccessPointIndicator']);
         }
-        foreach ($data as $key_1 => $value_4) {
-            if (preg_match('/.*/', (string) $key_1)) {
-                $object[$key_1] = $value_4;
+        foreach ($data as $key => $value_3) {
+            if (preg_match('/.*/', (string) $key)) {
+                $object[$key] = $value_3;
             }
         }
         return $object;
@@ -98,32 +94,28 @@ class LocatorResponseSearchResultsNormalizer implements DenormalizerInterface, N
             $data['GeocodeCandidate'] = $values;
         }
         if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
-            $values_1 = array();
-            foreach ($object->getDisclaimer() as $value_1) {
-                $values_2 = array();
-                foreach ($value_1 as $key => $value_2) {
-                    $values_2[$key] = $value_2;
-                }
-                $values_1[] = $values_2;
-            }
-            $data['Disclaimer'] = $values_1;
+            $data['Disclaimer'] = $object->getDisclaimer();
         }
         if ($object->isInitialized('dropLocation') && null !== $object->getDropLocation()) {
-            $data['DropLocation'] = $this->normalizer->normalize($object->getDropLocation(), 'json', $context);
+            $values_1 = array();
+            foreach ($object->getDropLocation() as $value_1) {
+                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+            }
+            $data['DropLocation'] = $values_1;
         }
         if ($object->isInitialized('availableLocationAttributes') && null !== $object->getAvailableLocationAttributes()) {
-            $values_3 = array();
-            foreach ($object->getAvailableLocationAttributes() as $value_3) {
-                $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+            $values_2 = array();
+            foreach ($object->getAvailableLocationAttributes() as $value_2) {
+                $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }
-            $data['AvailableLocationAttributes'] = $values_3;
+            $data['AvailableLocationAttributes'] = $values_2;
         }
         if ($object->isInitialized('activeAvailableAccessPointIndicator') && null !== $object->getActiveAvailableAccessPointIndicator()) {
             $data['ActiveAvailableAccessPointIndicator'] = $object->getActiveAvailableAccessPointIndicator();
         }
-        foreach ($object as $key_1 => $value_4) {
-            if (preg_match('/.*/', (string) $key_1)) {
-                $data[$key_1] = $value_4;
+        foreach ($object as $key => $value_3) {
+            if (preg_match('/.*/', (string) $key)) {
+                $data[$key] = $value_3;
             }
         }
         return $data;

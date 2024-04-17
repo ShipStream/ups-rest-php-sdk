@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-class AvailableLocationAttributesOptionCodeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+class AvailableLocationAttributesPickUpPickUpDetailsNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
     use DenormalizerAwareTrait;
     use NormalizerAwareTrait;
@@ -20,11 +20,11 @@ class AvailableLocationAttributesOptionCodeNormalizer implements DenormalizerInt
     use ValidatorTrait;
     public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
     {
-        return $type === 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode';
+        return $type === 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails';
     }
     public function supportsNormalization($data, $format = null, array $context = array()) : bool
     {
-        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode';
+        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails';
     }
     /**
      * @return mixed
@@ -37,29 +37,17 @@ class AvailableLocationAttributesOptionCodeNormalizer implements DenormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCode();
+        $object = new \ShipStream\Ups\Api\Model\AvailableLocationAttributesPickUpPickUpDetails();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('Code', $data)) {
-            $object->setCode($data['Code']);
-            unset($data['Code']);
+        if (\array_key_exists('PickUpTime', $data)) {
+            $object->setPickUpTime($data['PickUpTime']);
+            unset($data['PickUpTime']);
         }
-        if (\array_key_exists('Description', $data)) {
-            $object->setDescription($data['Description']);
-            unset($data['Description']);
-        }
-        if (\array_key_exists('Name', $data)) {
-            $object->setName($data['Name']);
-            unset($data['Name']);
-        }
-        if (\array_key_exists('Category', $data)) {
-            $object->setCategory($data['Category']);
-            unset($data['Category']);
-        }
-        if (\array_key_exists('TransportationPickUpSchedule', $data)) {
-            $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule', 'json', $context));
-            unset($data['TransportationPickUpSchedule']);
+        if (\array_key_exists('NoPickUpIndicator', $data)) {
+            $object->setNoPickUpIndicator($data['NoPickUpIndicator']);
+            unset($data['NoPickUpIndicator']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -74,17 +62,10 @@ class AvailableLocationAttributesOptionCodeNormalizer implements DenormalizerInt
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['Code'] = $object->getCode();
-        $data['Description'] = $object->getDescription();
-        if ($object->isInitialized('name') && null !== $object->getName()) {
-            $data['Name'] = $object->getName();
+        if ($object->isInitialized('pickUpTime') && null !== $object->getPickUpTime()) {
+            $data['PickUpTime'] = $object->getPickUpTime();
         }
-        if ($object->isInitialized('category') && null !== $object->getCategory()) {
-            $data['Category'] = $object->getCategory();
-        }
-        if ($object->isInitialized('transportationPickUpSchedule') && null !== $object->getTransportationPickUpSchedule()) {
-            $data['TransportationPickUpSchedule'] = $this->normalizer->normalize($object->getTransportationPickUpSchedule(), 'json', $context);
-        }
+        $data['NoPickUpIndicator'] = $object->getNoPickUpIndicator();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;
@@ -94,6 +75,6 @@ class AvailableLocationAttributesOptionCodeNormalizer implements DenormalizerInt
     }
     public function getSupportedTypes(?string $format = null) : array
     {
-        return array('ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode' => false);
+        return array('ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails' => false);
     }
 }

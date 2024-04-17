@@ -25,13 +25,13 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      */
     protected $shippingAvailabilityIndicator;
     /**
-     * Value for the number of days to check for shipping availability from� the current day. When this value is present, ShippingAvailabilityIndicator is implied implicitly.
+     * Value for the number of days to check for shipping availability from the current day. When this value is present, ShippingAvailabilityIndicator is implied implicitly.
      *
      * @var string
      */
     protected $shipperPreparationDelay;
     /**
-     * This contains the distance (in given UnitOfMeasurement) wherin to sort the click and collect access point locations above other� access point locations� when a UPS Access Point candidate list is obtained in search by address or geocode search.
+     * This contains the distance (in given UnitOfMeasurement) wherin to sort the click and collect access point locations above other access point locations when a UPS Access Point candidate list is obtained in search by address or geocode search.
      *
      * @var string
      */
@@ -81,7 +81,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
         return $this;
     }
     /**
-     * Value for the number of days to check for shipping availability from� the current day. When this value is present, ShippingAvailabilityIndicator is implied implicitly.
+     * Value for the number of days to check for shipping availability from the current day. When this value is present, ShippingAvailabilityIndicator is implied implicitly.
      *
      * @return string
      */
@@ -90,7 +90,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
         return $this->shipperPreparationDelay;
     }
     /**
-     * Value for the number of days to check for shipping availability from� the current day. When this value is present, ShippingAvailabilityIndicator is implied implicitly.
+     * Value for the number of days to check for shipping availability from the current day. When this value is present, ShippingAvailabilityIndicator is implied implicitly.
      *
      * @param string $shipperPreparationDelay
      *
@@ -103,7 +103,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
         return $this;
     }
     /**
-     * This contains the distance (in given UnitOfMeasurement) wherin to sort the click and collect access point locations above other� access point locations� when a UPS Access Point candidate list is obtained in search by address or geocode search.
+     * This contains the distance (in given UnitOfMeasurement) wherin to sort the click and collect access point locations above other access point locations when a UPS Access Point candidate list is obtained in search by address or geocode search.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
         return $this->clickAndCollectSortWithDistance;
     }
     /**
-     * This contains the distance (in given UnitOfMeasurement) wherin to sort the click and collect access point locations above other� access point locations� when a UPS Access Point candidate list is obtained in search by address or geocode search.
+     * This contains the distance (in given UnitOfMeasurement) wherin to sort the click and collect access point locations above other access point locations when a UPS Access Point candidate list is obtained in search by address or geocode search.
      *
      * @param string $clickAndCollectSortWithDistance
      *
