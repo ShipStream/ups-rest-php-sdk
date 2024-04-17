@@ -35,7 +35,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\XAVResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function addressValidation(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function addressValidation(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AddressValidation($requestoption, $version, $requestBody, $queryParameters), $fetch);
     }
@@ -71,7 +71,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\XAVResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function deprecatedAddressValidation(int $requestoption, string $deprecatedVersion, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function deprecatedAddressValidation(int $requestoption, string $deprecatedVersion, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedAddressValidation($requestoption, $deprecatedVersion, $requestBody, $queryParameters), $fetch);
     }
@@ -95,7 +95,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function chemicalReferenceData(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function chemicalReferenceData(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ChemicalReferenceData($version, $requestBody, $headerParameters), $fetch);
     }
@@ -117,7 +117,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function acceptanceAuditPreCheck(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function acceptanceAuditPreCheck(string $version, \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AcceptanceAuditPreCheck($version, $requestBody, $headerParameters), $fetch);
     }
@@ -140,7 +140,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\LandedCostResponse|\Psr\Http\Message\ResponseInterface
      */
-    public function landedCost(string $version, \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function landedCost(string $version, \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LandedCost($version, $requestBody, $headerParameters), $fetch);
     }
@@ -180,7 +180,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\LOCATORResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function locator(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function locator(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Locator($version, $reqOption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -220,7 +220,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\LOCATORResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function deprecatedLocator(string $deprecatedVersion, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function deprecatedLocator(string $deprecatedVersion, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedLocator($deprecatedVersion, $reqOption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -243,7 +243,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function authorizeClient(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function authorizeClient(array $queryParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AuthorizeClient($queryParameters), $fetch);
     }
@@ -297,7 +297,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function delete(string $version = 'v1', array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function delete(string $version = 'v1', array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Delete($version, $headerParameters), $fetch);
     }
@@ -317,7 +317,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function pushToImageRepository(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pushToImageRepository(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PushToImageRepository($version, $requestBody, $headerParameters), $fetch);
     }
@@ -337,7 +337,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function upload(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function upload(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Upload($version, $requestBody, $headerParameters), $fetch);
     }
@@ -361,7 +361,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupPendingStatus(string $version, string $pickuptype, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupPendingStatus(string $version, string $pickuptype, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupPendingStatus($version, $pickuptype, $headerParameters), $fetch);
     }
@@ -384,7 +384,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupRate(string $version, string $pickuptype, \ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupRate(string $version, string $pickuptype, \ShipStream\Ups\Api\Model\PICKUPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupRate($version, $pickuptype, $requestBody, $headerParameters), $fetch);
     }
@@ -406,7 +406,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupCancel(string $cancelBy, string $version = 'v1', array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupCancel(string $cancelBy, string $version = 'v1', array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCancel($cancelBy, $version, $headerParameters), $fetch);
     }
@@ -429,7 +429,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupCreation(string $version, \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupCreation(string $version, \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCreation($version, $requestBody, $headerParameters), $fetch);
     }
@@ -449,7 +449,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupGetPoliticalDivision1List(string $version, string $countrycode, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupGetPoliticalDivision1List(string $version, string $countrycode, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetPoliticalDivision1List($version, $countrycode, $headerParameters), $fetch);
     }
@@ -468,7 +468,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function pickupGetServiceCenterFacilities(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function pickupGetServiceCenterFacilities(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetServiceCenterFacilities($version, $requestBody, $headerParameters), $fetch);
     }
@@ -487,7 +487,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function preNotification(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function preNotification(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PreNotification($version, $requestBody, $headerParameters), $fetch);
     }
@@ -525,7 +525,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\RATEResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function rate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function rate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Rate($version, $requestoption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -552,7 +552,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\SHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function shipment(string $version, \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function shipment(string $version, \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Shipment($version, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
@@ -584,7 +584,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function voidShipment(string $version, string $shipmentidentificationnumber, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function voidShipment(string $version, string $shipmentidentificationnumber, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\VoidShipment($version, $shipmentidentificationnumber, $queryParameters, $headerParameters), $fetch);
     }
@@ -614,7 +614,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function labelRecovery(string $version, \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function labelRecovery(string $version, \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LabelRecovery($version, $requestBody, $headerParameters), $fetch);
     }
@@ -633,7 +633,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function freightCancelPickup(string $version = 'v1', array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function freightCancelPickup(string $version = 'v1', array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightCancelPickup($version, $headerParameters), $fetch);
     }
@@ -652,7 +652,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
      */
-    public function freightPickup(string $version, \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function freightPickup(string $version, \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightPickup($version, $requestBody, $headerParameters), $fetch);
     }
@@ -680,7 +680,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function freightRate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT, array $accept = [])
+    public function freightRate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT, array $accept = array())
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightRate($version, $requestoption, $requestBody, $headerParameters, $accept), $fetch);
     }
@@ -714,7 +714,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function freightShip(string $version, string $reqoption, \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function freightShip(string $version, string $reqoption, \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\FreightShip($version, $reqoption, $requestBody, $headerParameters), $fetch);
     }
@@ -740,24 +740,26 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\TimeInTransitResponse|\Psr\Http\Message\ResponseInterface
     */
-    public function timeInTransit(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function timeInTransit(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\TimeInTransit($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * gets single track API details
+     * 
      *
-     * @param string $inquiryNumber Tracking Number
+     * @param string $inquiryNumber The tracking number for which tracking information is requested. Each inquiry number must be between 7 and 34 characters in length.
      * @param array $queryParameters {
-     *     @var string $locale locale
-     *     @var string $returnSignature returnSignature
+     *     @var string $locale Language and country code of the user, separated by an underscore. Default value is 'en_US'
+     *     @var string $returnSignature Indicator requesting that the delivery signature image be included as part of the response (by default the image will not be returned). Returns image bytecodes of the signature.
+     *     @var string $returnMilestones returnMilestones
      * }
      * @param array $headerParameters {
-     *     @var string $transId transId
-     *     @var string $transactionSrc transactionSrc
+     *     @var string $transId An identifier unique to the request.
+     *     @var string $transactionSrc Identifies the client/source application that is calling
      * }
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETForbiddenException
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETNotFoundException
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETInternalServerErrorException
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETServiceUnavailableException
@@ -765,7 +767,7 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
      *
      * @return \ShipStream\Ups\Api\Model\TrackApiResponse|\ShipStream\Ups\Api\Model\ErrorResponse|\Psr\Http\Message\ResponseInterface
      */
-    public function getSingleTrackResponseUsingGET(string $inquiryNumber, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function getSingleTrackResponseUsingGET(string $inquiryNumber, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\GetSingleTrackResponseUsingGET($inquiryNumber, $queryParameters, $headerParameters), $fetch);
     }
@@ -797,15 +799,15 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *
     * @return \ShipStream\Ups\Api\Model\TrackSubsServiceResponse|\Psr\Http\Message\ResponseInterface
     */
-    public function processSubscriptionTypeForTrackingNumber(string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    public function processSubscriptionTypeForTrackingNumber(string $type, ?\ShipStream\Ups\Api\Model\TrackSubsServiceRequest $requestBody = null, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\ProcessSubscriptionTypeForTrackingNumber($type, $requestBody, $headerParameters), $fetch);
     }
-    public static function create($httpClient = null, array $additionalPlugins = [], array $additionalNormalizers = [])
+    public static function create($httpClient = null, array $additionalPlugins = array(), array $additionalNormalizers = array())
     {
         if (null === $httpClient) {
             $httpClient = \Http\Discovery\Psr18ClientDiscovery::find();
-            $plugins = [];
+            $plugins = array();
             if (count($additionalPlugins) > 0) {
                 $plugins = array_merge($plugins, $additionalPlugins);
             }
@@ -813,11 +815,11 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         }
         $requestFactory = \Http\Discovery\Psr17FactoryDiscovery::findRequestFactory();
         $streamFactory = \Http\Discovery\Psr17FactoryDiscovery::findStreamFactory();
-        $normalizers = [new \Symfony\Component\Serializer\Normalizer\ArrayDenormalizer(), new \ShipStream\Ups\Api\Normalizer\JaneObjectNormalizer()];
+        $normalizers = array(new \Symfony\Component\Serializer\Normalizer\ArrayDenormalizer(), new \ShipStream\Ups\Api\Normalizer\JaneObjectNormalizer());
         if (count($additionalNormalizers) > 0) {
             $normalizers = array_merge($normalizers, $additionalNormalizers);
         }
-        $serializer = new \Symfony\Component\Serializer\Serializer($normalizers, [new \Symfony\Component\Serializer\Encoder\JsonEncoder(new \Symfony\Component\Serializer\Encoder\JsonEncode(), new \Symfony\Component\Serializer\Encoder\JsonDecode(['json_decode_associative' => true]))]);
+        $serializer = new \Symfony\Component\Serializer\Serializer($normalizers, array(new \Symfony\Component\Serializer\Encoder\JsonEncoder(new \Symfony\Component\Serializer\Encoder\JsonEncode(), new \Symfony\Component\Serializer\Encoder\JsonDecode(array('json_decode_associative' => true)))));
         return new static($httpClient, $requestFactory, $serializer, $streamFactory);
     }
 }

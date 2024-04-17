@@ -13,37 +13,37 @@ class Status extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * code
+     * The current status code.
      *
      * @var string
      */
     protected $code;
     /**
-     * description
+     * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
      * @var string
      */
     protected $description;
     /**
-     * simplifiedTextDescription
+     * The current status in simplified text. This is a supplementary description providing additional information on the status of the package. Note that this field will be translated based on the locale provided in the request.
      *
      * @var string
      */
     protected $simplifiedTextDescription;
     /**
-     * statusCode
+     * The activity package detail status code see API Codes for possible values.
      *
      * @var string
      */
     protected $statusCode;
     /**
-     * type
+     * The activity status type.
      *
      * @var string
      */
     protected $type;
     /**
-     * code
+     * The current status code.
      *
      * @return string
      */
@@ -52,7 +52,7 @@ class Status extends \ArrayObject
         return $this->code;
     }
     /**
-     * code
+     * The current status code.
      *
      * @param string $code
      *
@@ -65,7 +65,7 @@ class Status extends \ArrayObject
         return $this;
     }
     /**
-     * description
+     * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class Status extends \ArrayObject
         return $this->description;
     }
     /**
-     * description
+     * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
      * @param string $description
      *
@@ -87,7 +87,7 @@ class Status extends \ArrayObject
         return $this;
     }
     /**
-     * simplifiedTextDescription
+     * The current status in simplified text. This is a supplementary description providing additional information on the status of the package. Note that this field will be translated based on the locale provided in the request.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class Status extends \ArrayObject
         return $this->simplifiedTextDescription;
     }
     /**
-     * simplifiedTextDescription
+     * The current status in simplified text. This is a supplementary description providing additional information on the status of the package. Note that this field will be translated based on the locale provided in the request.
      *
      * @param string $simplifiedTextDescription
      *
@@ -109,7 +109,7 @@ class Status extends \ArrayObject
         return $this;
     }
     /**
-     * statusCode
+     * The activity package detail status code see API Codes for possible values.
      *
      * @return string
      */
@@ -118,7 +118,7 @@ class Status extends \ArrayObject
         return $this->statusCode;
     }
     /**
-     * statusCode
+     * The activity package detail status code see API Codes for possible values.
      *
      * @param string $statusCode
      *
@@ -131,7 +131,7 @@ class Status extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The activity status type.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class Status extends \ArrayObject
         return $this->type;
     }
     /**
-     * type
+     * The activity status type.
      *
      * @param string $type
      *

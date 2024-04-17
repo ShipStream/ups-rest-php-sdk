@@ -25,7 +25,7 @@ class Shipment extends \ArrayObject
      */
     protected $package;
     /**
-     * userRelation
+     * The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper
      *
      * @var string[]
      */
@@ -81,7 +81,7 @@ class Shipment extends \ArrayObject
         return $this;
     }
     /**
-     * userRelation
+     * The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper
      *
      * @return string[]
      */
@@ -90,7 +90,7 @@ class Shipment extends \ArrayObject
         return $this->userRelation;
     }
     /**
-     * userRelation
+     * The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper
      *
      * @param string[] $userRelation
      *

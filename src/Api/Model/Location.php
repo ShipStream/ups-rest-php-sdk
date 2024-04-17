@@ -13,19 +13,19 @@ class Location extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The container which has the physical address.
      *
      * @var Address
      */
     protected $address;
     /**
-     * slic
+     * Site Location Indicator Code (SLIC)
      *
      * @var string
      */
     protected $slic;
     /**
-     * 
+     * The container which has the physical address.
      *
      * @return Address
      */
@@ -34,7 +34,7 @@ class Location extends \ArrayObject
         return $this->address;
     }
     /**
-     * 
+     * The container which has the physical address.
      *
      * @param Address $address
      *
@@ -47,7 +47,7 @@ class Location extends \ArrayObject
         return $this;
     }
     /**
-     * slic
+     * Site Location Indicator Code (SLIC)
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class Location extends \ArrayObject
         return $this->slic;
     }
     /**
-     * slic
+     * Site Location Indicator Code (SLIC)
      *
      * @param string $slic
      *

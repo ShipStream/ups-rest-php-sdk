@@ -13,13 +13,13 @@ class Signature extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * image
+     * The base64 encoded string representation of the signature image. Note: This is considered sensitive data and may only be returned for a user that has rights to the package.
      *
      * @var string
      */
     protected $image;
     /**
-     * image
+     * The base64 encoded string representation of the signature image. Note: This is considered sensitive data and may only be returned for a user that has rights to the package.
      *
      * @return string
      */
@@ -28,7 +28,7 @@ class Signature extends \ArrayObject
         return $this->image;
     }
     /**
-     * image
+     * The base64 encoded string representation of the signature image. Note: This is considered sensitive data and may only be returned for a user that has rights to the package.
      *
      * @param string $image
      *

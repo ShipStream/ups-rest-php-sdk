@@ -25,13 +25,13 @@ class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody) {
-            return [['Content-Type' => ['application/x-www-form-urlencoded']], http_build_query($serializer->normalize($this->body, 'json'))];
+            return array(array('Content-Type' => array('application/x-www-form-urlencoded')), http_build_query($serializer->normalize($this->body, 'json')));
         }
-        return [[], null];
+        return array(array(), null);
     }
     public function getExtraHeaders() : array
     {
-        return ['Accept' => ['application/json']];
+        return array('Accept' => array('application/json'));
     }
     /**
      * {@inheritdoc}
@@ -67,6 +67,6 @@ class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     }
     public function getAuthenticationScopes() : array
     {
-        return ['basicAuth'];
+        return array('basicAuth');
     }
 }

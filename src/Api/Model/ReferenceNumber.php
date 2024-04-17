@@ -13,19 +13,19 @@ class ReferenceNumber extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * number
+     * The reference number.
      *
      * @var string
      */
     protected $number;
     /**
-     * type
+     * The type of reference number. Specifies how the reference number is associated with the package.
      *
      * @var string
      */
     protected $type;
     /**
-     * number
+     * The reference number.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class ReferenceNumber extends \ArrayObject
         return $this->number;
     }
     /**
-     * number
+     * The reference number.
      *
      * @param string $number
      *
@@ -47,7 +47,7 @@ class ReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The type of reference number. Specifies how the reference number is associated with the package.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ReferenceNumber extends \ArrayObject
         return $this->type;
     }
     /**
-     * type
+     * The type of reference number. Specifies how the reference number is associated with the package.
      *
      * @param string $type
      *

@@ -13,25 +13,25 @@ class DeliveryInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * location
+     * The location where the package was dropped off. For example: 'Front Door'
      *
      * @var string
      */
     protected $location;
     /**
-     * receivedBy
+     * The individual who took possession of the package at delivery.
      *
      * @var string
      */
     protected $receivedBy;
     /**
-     * 
+     * Container with all the signature information associated to the package being delivered.
      *
      * @var Signature
      */
     protected $signature;
     /**
-     * location
+     * The location where the package was dropped off. For example: 'Front Door'
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class DeliveryInformation extends \ArrayObject
         return $this->location;
     }
     /**
-     * location
+     * The location where the package was dropped off. For example: 'Front Door'
      *
      * @param string $location
      *
@@ -53,7 +53,7 @@ class DeliveryInformation extends \ArrayObject
         return $this;
     }
     /**
-     * receivedBy
+     * The individual who took possession of the package at delivery.
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class DeliveryInformation extends \ArrayObject
         return $this->receivedBy;
     }
     /**
-     * receivedBy
+     * The individual who took possession of the package at delivery.
      *
      * @param string $receivedBy
      *
@@ -75,7 +75,7 @@ class DeliveryInformation extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container with all the signature information associated to the package being delivered.
      *
      * @return Signature
      */
@@ -84,7 +84,7 @@ class DeliveryInformation extends \ArrayObject
         return $this->signature;
     }
     /**
-     * 
+     * Container with all the signature information associated to the package being delivered.
      *
      * @param Signature $signature
      *

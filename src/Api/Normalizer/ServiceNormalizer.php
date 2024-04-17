@@ -49,6 +49,10 @@ class ServiceNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setDescription($data['description']);
             unset($data['description']);
         }
+        if (\array_key_exists('levelCode', $data)) {
+            $object->setLevelCode($data['levelCode']);
+            unset($data['levelCode']);
+        }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $object[$key] = $value;
@@ -67,6 +71,9 @@ class ServiceNormalizer implements DenormalizerInterface, NormalizerInterface, D
         }
         if ($object->isInitialized('description') && null !== $object->getDescription()) {
             $data['description'] = $object->getDescription();
+        }
+        if ($object->isInitialized('levelCode') && null !== $object->getLevelCode()) {
+            $data['levelCode'] = $object->getLevelCode();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

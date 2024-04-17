@@ -13,13 +13,13 @@ class SubMilestone extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The sub-milestone category.
      *
      * @var string
      */
     protected $category;
     /**
-     * 
+     * The sub-milestone category.
      *
      * @return string
      */
@@ -28,7 +28,7 @@ class SubMilestone extends \ArrayObject
         return $this->category;
     }
     /**
-     * 
+     * The sub-milestone category.
      *
      * @param string $category
      *

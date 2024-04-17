@@ -13,43 +13,43 @@ class PaymentInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * amount
+     * The payment amount. This value will contain the amount in dollars and cents, separated by a period (.) Example: '1025.50'.9
      *
      * @var string
      */
     protected $amount;
     /**
-     * currency
+     * The payment currency code (see API codes for possible values).
      *
      * @var string
      */
     protected $currency;
     /**
-     * id
+     * The payment internal ID. This may be used in other systems to retrieve additional information on the payment.
      *
      * @var string
      */
     protected $id;
     /**
-     * paid
+     * The indication for whether the payment is paid or not. Valid values: 'true' the payment is paid. 'false' the payment is not paid.
      *
      * @var bool
      */
     protected $paid;
     /**
-     * paymentMethod
+     * The applicable payment methods.
      *
      * @var string
      */
     protected $paymentMethod;
     /**
-     * type
+     * The payment type.
      *
      * @var string
      */
     protected $type;
     /**
-     * amount
+     * The payment amount. This value will contain the amount in dollars and cents, separated by a period (.) Example: '1025.50'.9
      *
      * @return string
      */
@@ -58,7 +58,7 @@ class PaymentInformation extends \ArrayObject
         return $this->amount;
     }
     /**
-     * amount
+     * The payment amount. This value will contain the amount in dollars and cents, separated by a period (.) Example: '1025.50'.9
      *
      * @param string $amount
      *
@@ -71,7 +71,7 @@ class PaymentInformation extends \ArrayObject
         return $this;
     }
     /**
-     * currency
+     * The payment currency code (see API codes for possible values).
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class PaymentInformation extends \ArrayObject
         return $this->currency;
     }
     /**
-     * currency
+     * The payment currency code (see API codes for possible values).
      *
      * @param string $currency
      *
@@ -93,7 +93,7 @@ class PaymentInformation extends \ArrayObject
         return $this;
     }
     /**
-     * id
+     * The payment internal ID. This may be used in other systems to retrieve additional information on the payment.
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class PaymentInformation extends \ArrayObject
         return $this->id;
     }
     /**
-     * id
+     * The payment internal ID. This may be used in other systems to retrieve additional information on the payment.
      *
      * @param string $id
      *
@@ -115,7 +115,7 @@ class PaymentInformation extends \ArrayObject
         return $this;
     }
     /**
-     * paid
+     * The indication for whether the payment is paid or not. Valid values: 'true' the payment is paid. 'false' the payment is not paid.
      *
      * @return bool
      */
@@ -124,7 +124,7 @@ class PaymentInformation extends \ArrayObject
         return $this->paid;
     }
     /**
-     * paid
+     * The indication for whether the payment is paid or not. Valid values: 'true' the payment is paid. 'false' the payment is not paid.
      *
      * @param bool $paid
      *
@@ -137,7 +137,7 @@ class PaymentInformation extends \ArrayObject
         return $this;
     }
     /**
-     * paymentMethod
+     * The applicable payment methods.
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class PaymentInformation extends \ArrayObject
         return $this->paymentMethod;
     }
     /**
-     * paymentMethod
+     * The applicable payment methods.
      *
      * @param string $paymentMethod
      *
@@ -159,7 +159,7 @@ class PaymentInformation extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The payment type.
      *
      * @return string
      */
@@ -168,7 +168,7 @@ class PaymentInformation extends \ArrayObject
         return $this->type;
     }
     /**
-     * type
+     * The payment type.
      *
      * @param string $type
      *
