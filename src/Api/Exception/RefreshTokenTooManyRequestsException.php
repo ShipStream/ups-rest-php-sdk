@@ -14,7 +14,7 @@ class RefreshTokenTooManyRequestsException extends TooManyRequestsException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Quota Limit Exceeded');
+        parent::__construct('Rate Limit Exceeded');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }

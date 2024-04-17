@@ -31,7 +31,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
      */
     protected $tokenType;
     /**
-     * Issue time of requested token.
+     * Issue time of requested token in milliseconds.
      *
      * @var string
      */
@@ -61,7 +61,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
      */
     protected $scope;
     /**
-     * Time that refresh token was issued.
+     * Time that refresh token was issued in milliseconds.
      *
      * @var string|null
      */
@@ -151,7 +151,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
         return $this;
     }
     /**
-     * Issue time of requested token.
+     * Issue time of requested token in milliseconds.
      *
      * @return string
      */
@@ -160,7 +160,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
         return $this->issuedAt;
     }
     /**
-     * Issue time of requested token.
+     * Issue time of requested token in milliseconds.
      *
      * @param string $issuedAt
      *
@@ -261,7 +261,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
         return $this;
     }
     /**
-     * Time that refresh token was issued.
+     * Time that refresh token was issued in milliseconds.
      *
      * @return string|null
      */
@@ -270,7 +270,7 @@ class GenerateTokenSuccessResponse extends \ArrayObject
         return $this->refreshTokenIssuedAt;
     }
     /**
-     * Time that refresh token was issued.
+     * Time that refresh token was issued in milliseconds.
      *
      * @param string|null $refreshTokenIssuedAt
      *
