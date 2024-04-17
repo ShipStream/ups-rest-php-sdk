@@ -5,7 +5,7 @@ namespace ShipStream\Ups\Api\Endpoint;
 class RefreshToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
     /**
-     * The RefreshToken endpoint is used to refresh an expired access token in order to continue accessing the UPS API on behalf of a user. The endpoint generates a new access/refresh token pair by exchanging a valid refresh token. A successful response returns new access and refresh tokens for ongoing API access without reprompting the user.
+     * The /refresh endpoint is used to refresh an expired access token in order to continue accessing a UPS API on behalf of a user. The endpoint generates a new access/refresh token pair by exchanging a valid refresh token. A successful response returns new access and refresh tokens for ongoing API access without re-prompting the user.
      *
      * @param null|\ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody $requestBody 
      */
@@ -38,6 +38,7 @@ class RefreshToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
      *
      * @throws \ShipStream\Ups\Api\Exception\RefreshTokenBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\RefreshTokenUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\RefreshTokenForbiddenException
      * @throws \ShipStream\Ups\Api\Exception\RefreshTokenTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
@@ -55,6 +56,9 @@ class RefreshToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\RefreshTokenUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\RefreshTokenForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\RefreshTokenTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
