@@ -1,35 +1,31 @@
 openapi: 3.0.3
 info:
   title: Address Validation - Street Level
-  termsOfService: 'https://www.ups.com/upsdeveloperkit/assets/html/serviceAgreement.html'
+  termsOfService: https://www.ups.com/upsdeveloperkit/assets/html/serviceAgreement.html
   version: ''
 servers:
-  - url: 'https://wwwcie.ups.com/api/'
+  - url: https://wwwcie.ups.com/api
     description: Customer Integration Environment
-  - url: 'https://onlinetools.ups.com/api/'
+  - url: https://onlinetools.ups.com/api
     description: Production
 tags:
   - name: AddressValidation_other
     x-displayName: Methods
-    description: >-
-      The Address Validation Street Level API can be used to check addresses
-      against the United States Postal Service database of valid addresses in
-      the U.S. and Puerto Rico. <br /><a
-      href="https://developer.ups.com/api/reference/addressvalidation/business-rules"
-      target="_blank">Business Rules</a><br /><a
-      href="https://developer.ups.com/api/reference/addressvalidation/errors"
-      target="_blank">Errors</a><br /><a
-      href="https://developer.ups.com/api/reference/addressvalidation/faq"
-      target="_blank">FAQ</a><br /><a href="https://github.com/UPS-API"
-      target="_blank">GitHub - view sample integration code</a>
+    description: |
+      The Address Validation Street Level API can be used to.
+      check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
+
+      - <a href="https://developer.ups.com/api/reference/addressvalidation/business-rules" target="_blank" rel="noopener">Business Rules</a>
+      - <a href="https://developer.ups.com/api/reference/addressvalidation/errors" target="_blank" rel="noopener">Errors</a>
+      - <a href="https://developer.ups.com/api/reference/addressvalidation/faq" target="_blank" rel="noopener">FAQ</a>
+      - <a href="https://github.com/UPS-API" target="_blank" rel="noopener noreferrer">GitHub - view sample integration code</a>
 paths:
-  '/addressvalidation/{version}/{requestoption}':
+  "/addressvalidation/{version}/{requestoption}":
     post:
       summary: Address Validation
-      description: >-
-        The Address Validation Street Level API can be used to check addresses
-        against the United States Postal Service database of valid addresses in
-        the U.S. and Puerto Rico.
+      description: The Address Validation Street Level API can be used to check addresses
+        against the United States Postal Service database of valid addresses in the
+        U.S. and Puerto Rico.
       operationId: AddressValidation
       parameters:
         - in: query
@@ -37,62 +33,56 @@ paths:
           schema:
             type: string
             minimum: 1
-          description: |-
-            Valid values: True or False. 
-            If True, either the region element or any 
-            combination of Political Division 1, 
-            Political Division 2, PostcodePrimaryLow 
-            and the PostcodeExtendedLow fields will 
-            be recognized for validation in addition to 
-            the urbanization element. If False or no 
-            indicator, street level address validation 
-            is provided
+          description: "Valid values: True or False.  If True, either the region element
+          or any  combination of Political Division 1,  Political Division 2, PostcodePrimaryLow
+           and the PostcodeExtendedLow fields will  be recognized for validation
+          in addition to  the urbanization element. If False or no  indicator, street
+          level address validation  is provided"
           required: false
         - in: query
           name: maximumcandidatelistsize
           schema:
             type: integer
             minimum: 1
-          description: |-
-            Valid values: 0 – 50
-            The maximum number of Candidates to 
-            return for this request. If not provided, 
-            the default size of 15 is returned.
+          description: "Valid values: 0 – 50 The maximum number of Candidates to  return
+          for this request. If not provided,  the default size of 15 is returned."
           required: false
         - in: path
           name: requestoption
           schema:
             type: integer
             minimum: 1
-          description: |-
-            Identifies the type of request. Valid 
-            values: 
-            1 - Address Validation
-            2 - Address Classification 
-            3 - Address Validation and Address 
-            Classification.
+          description: |
+            Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+
+            Valid values:
+            - 1 - Address Validation
+            - 2 - Address Classification
+            - 3 - Address Validation and Address Classification.
+
+            For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
           required: true
         - in: path
           name: version
           schema:
             type: string
             minimum: 1
-          description: |-
-            Identifies the version of the API. Valid 
-            values: 
-            v1
+          description: |
+            Identifies the version of the API.
+
+            Valid  values:
+            - v2
           required: true
       requestBody:
-        description: >-
-          Generate sample code for popular API requests by selecting an example
-          below. To view a full sample request and response, first click
-          "Authorize" and enter your application credentials, then populate the
-          required parameters above and click "Try it out".
+        description: Generate sample code for popular API requests by selecting an
+          example below. To view a full sample request and response, first click "Authorize"
+          and enter your application credentials, then populate the required parameters
+          above and click "Try it out".
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/XAVRequestWrapper'
+              "$ref": "#/components/schemas/XAVRequestWrapper"
             examples:
               json:
                 summary: A sample JSON request (Standard Example)
@@ -105,7 +95,7 @@ paths:
                         - 26601 ALISO CREEK ROAD
                         - STE D
                         - ALISO VIEJO TOWN CENTER
-                      Region: 'ROSWELL,GA,30076-1521'
+                      Region: ROSWELL,GA,30076-1521
                       PoliticalDivision2: ALISO VIEJO
                       PoliticalDivision1: CA
                       PostcodePrimaryLow: '92656'
@@ -114,48 +104,167 @@ paths:
                       CountryCode: US
       responses:
         '200':
-          description: successful operation
+          description: Successful Operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/XAVResponseWrapper'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/XAVResponseWrapper'
+                "$ref": "#/components/schemas/XAVResponseWrapper"
         '400':
-          description: Invalid request
+          description: Invalid Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/errorResponse'
+                "$ref": "#/components/schemas/ErrorResponse"
         '401':
-          description: Unauthorized
+          description: Unauthorized Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/errorResponse'
-        '404':
-          description: Not Found
+                "$ref": "#/components/schemas/ErrorResponse"
+        '403':
+          description: Blocked Merchant
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/errorResponse'
+                "$ref": "#/components/schemas/ErrorResponse"
+        '429':
+          description: Rate Limit Exceeded
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+  "/addressvalidation/{deprecatedVersion}/{requestoption}":
+    post:
+      deprecated: true
+      summary: Address Validation
+      description: The Address Validation Street Level API can be used to check addresses
+        against the United States Postal Service database of valid addresses in the
+        U.S. and Puerto Rico.
+      operationId: DeprecatedAddressValidation
+      parameters:
+        - in: query
+          name: regionalrequestindicator
+          schema:
+            type: string
+            minimum: 1
+          description: "Valid values: True or False.  If True, either the region element
+          or any  combination of Political Division 1,  Political Division 2, PostcodePrimaryLow
+           and the PostcodeExtendedLow fields will  be recognized for validation
+          in addition to  the urbanization element. If False or no  indicator, street
+          level address validation  is provided"
+          required: false
+        - in: query
+          name: maximumcandidatelistsize
+          schema:
+            type: integer
+            minimum: 1
+          description: "Valid values: 0 – 50 The maximum number of Candidates to  return
+          for this request. If not provided,  the default size of 15 is returned."
+          required: false
+        - in: path
+          name: requestoption
+          schema:
+            type: integer
+            minimum: 1
+          description: |
+            Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+
+            Valid values:
+
+            - 1 - Address Validation
+            - 2 - Address Classification
+            - 3 - Address Validation and Address Classification.
+
+            For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+          required: true
+        - in: path
+          name: deprecatedVersion
+          schema:
+            type: string
+            minimum: 1
+          description: |
+            Identifies the version of the API.
+
+            Valid  values:
+            - v1
+          required: true
+      requestBody:
+        description: Generate sample code for popular API requests by selecting an
+          example below. To view a full sample request and response, first click "Authorize"
+          and enter your application credentials, then populate the required parameters
+          above and click "Try it out".
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/XAVRequestWrapper"
+            examples:
+              json:
+                summary: A sample JSON request (Standard Example)
+                value:
+                  XAVRequest:
+                    AddressKeyFormat:
+                      ConsigneeName: RITZ CAMERA CENTERS-1749
+                      BuildingName: Innoplex
+                      AddressLine:
+                        - 26601 ALISO CREEK ROAD
+                        - STE D
+                        - ALISO VIEJO TOWN CENTER
+                      Region: ROSWELL,GA,30076-1521
+                      PoliticalDivision2: ALISO VIEJO
+                      PoliticalDivision1: CA
+                      PostcodePrimaryLow: '92656'
+                      PostcodeExtendedLow: '1521'
+                      Urbanization: porto arundal
+                      CountryCode: US
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/XAVResponseWrapper"
+        '400':
+          description: Invalid Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+        '401':
+          description: Unauthorized Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+        '403':
+          description: Blocked Merchant
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+        '429':
+          description: Rate Limit Exceeded
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
 security:
   - oauth2: []
 components:
   securitySchemes:
     oauth2:
       type: oauth2
-      description: >-
-        Find your Client ID and Secret on your app info page. <br/> 1. Select
-        \"Try It\" <br/> 2. In the Security section enter your Client ID and
-        Secret.<br/> 3. Select \"Request Token\"<br/> 4. Enter any additional
-        information in the Body and Parameters sections.<br/> 5. Select \"Send\"
-        to execute your API request
+      description: |
+        Find your Client ID and Secret on your app info page.
+        1. Select \"Try It\"
+        2. In the Security section enter your Client ID and Secret.
+        3. Select \"Request Token\"
+        4. Enter any additional information in the Body and Parameters sections.
+        5. Select \"Send\" to execute your API request
       flows:
         clientCredentials:
           x-tokenEndpointAuthMethod: client_secret_basic
-          tokenUrl: 'https://wwwcie.ups.com/security/v1/oauth/token'
+          tokenUrl: https://wwwcie.ups.com/security/v1/oauth/token
           scopes: {}
   schemas:
     XAVRequestWrapper:
@@ -168,7 +277,7 @@ components:
         - XAVRequest
       properties:
         XAVRequest:
-          $ref: '#/components/schemas/XAVRequest'
+          "$ref": "#/components/schemas/XAVRequest"
     XAVResponseWrapper:
       xml:
         name: XAVResponse
@@ -179,7 +288,7 @@ components:
         - XAVResponse
       properties:
         XAVResponse:
-          $ref: '#/components/schemas/XAVResponse'
+          "$ref": "#/components/schemas/XAVResponse"
     XAVRequest:
       type: object
       required:
@@ -187,28 +296,24 @@ components:
         - Request
       properties:
         Request:
-          $ref: '#/components/schemas/XAVRequest_Request'
+          "$ref": "#/components/schemas/XAVRequest_Request"
         RegionalRequestIndicator:
-          description: >-
-            If this indicator is present then either the region element or any
-            combination of Political Division 1, Political Division 2,
-            PostcodePrimaryLow and the PostcodeExtendedLow fields will be
-            recognized for validation in addition to the urbanization element. 
-
-            If this tag is present, US and PR street level address validation
-            will not occur.
-
-            The default is to provide street level address validation. 
-
-            Not valid with the address classification request option.
+          description: >
+            If this indicator is present then either the region element
+            or any combination of Political Division 1, Political Division 2, PostcodePrimaryLow
+            and the PostcodeExtendedLow fields will be recognized for validation in
+            addition to the urbanization element.  If this tag is present, US and
+            PR street level address validation will not occur. The default is to
+            provide street level address validation.  Not valid with the address
+            classification request option.
           maximum: 1
           type: string
         MaximumCandidateListSize:
-          description: |-
+          description: |
             The maximum number of Candidates to return for this request.
-            Valid values:
-            0 - 50
-            Default: 15
+
+            - Valid values: 0 - 50
+            - Default: 15
           maximum: 1
           type: string
           minLength: 1
@@ -216,7 +321,7 @@ components:
         AddressKeyFormat:
           type: array
           items:
-            $ref: '#/components/schemas/XAVRequest_AddressKeyFormat'
+            "$ref": "#/components/schemas/XAVRequest_AddressKeyFormat"
       xml:
         name: XAVRequest
       maximum: 1
@@ -232,27 +337,22 @@ components:
           minLength: 4
           maxLength: 4
         RequestOption:
-          description: >-
-            Identifies the optional processing to be performed.
+          description: |
+            Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
 
-            If not present or invalid value then an error will be sent back. 
+            Valid values:
 
-            Valid values: 
+            - 1 - Address Validation
+            - 2 - Address Classification
+            - 3 - Address Validation and Address Classification.
 
-            1 - Address Validation
-
-            2 - Address Classification
-
-            3 - Address Validation and Address Classification. 
-
-            For a list of valid values, refer to Address Validation API -
-            Supported Countries or Territories in the Appendix.
+            For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 1
         TransactionReference:
-          $ref: '#/components/schemas/Request_TransactionReference'
+          "$ref": "#/components/schemas/Request_TransactionReference"
       xml:
         name: Request
       required:
@@ -263,55 +363,49 @@ components:
       maximum: 1
       properties:
         CustomerContext:
-          description: >-
-            The CustomerContext Information which will be echoed during
-            response.
+          description: The CustomerContext Information which will be echoed during response.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 512
       xml:
         name: TransactionReference
-      description: TransactionReference identifies transactions between client and server.
+      description: TransactionReference identifies transactions between client and
+        server.
     XAVRequest_AddressKeyFormat:
       type: object
       maximum: 1
       properties:
         ConsigneeName:
-          description: >-
-            Name of business, company or person. Not returned if user selects
-            the RegionalRequestIndicator.
+          description: Name of business, company or person. Ignored if user selects the RegionalRequestIndicator.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 40
         AttentionName:
-          description: >-
-            Name of building. Not returned if user selects the
-            RegionalRequestIndicator.
+          description: Name of the building. Ignored if user selects the RegionalRequestIndicator.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 40
         AddressLine:
-          description: >-
-            Address line (street number, street name and street type, and
-            political division 1, political division 2 and postal code) used for
-            street level information.
-
-            Additional secondary information (apartment, suite, floor, etc.)
-
-            Applicable to US and PR only. 
-
-            Not returned if user selects the RegionalRequestIndicator.
+          description: Address line (street number, street name and street type) used for street level information. Additional secondary information (apartment, suite, floor, etc.). Applicable to US and PR only. Ignored if user selects the RegionalRequestIndicator.
           type: array
           maximum: 3
           minLength: 1
+          maxLength: 100
+          items:
+            type: string
         Region:
-          description: >-
-            Single entry containing in this order  Political Division 2,
-            Political Division 1 and Post Code Primary Low and/or
-            PostcodeExtendedLow.
+          description: |
+            If this node is present the following tags will be ignored:
+            
+            - Political Division 2
+            - Political Division 1
+            - PostcodePrimaryLow
+            - PostcodeExtendedLow
+            
+            Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
           maximum: 1
           type: string
           minLength: 1
@@ -323,36 +417,19 @@ components:
           minLength: 1
           maxLength: 30
         PoliticalDivision1:
-          description: >-
-            State/Province. 
-
-            Returned if the location is within a State/Province/Territory. 
-
-            For International: returned if user enters valid Country or
-            Territory Code, and City/postal code and it has a match. 
-
-            For Domestic addresses, the value must be a valid 2-character value
-            (per US Mail standards). 
-
-            For International the full State or Province name will be returned.
+          description: State or Province/Territory name.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 30
         PostcodePrimaryLow:
-          description: >-
-            Low-end Postal Code. Returned for countries or territories with
-            Postal Codes. May be alphanumeric.
+          description: Postal Code.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 10
         PostcodeExtendedLow:
-          description: >-
-            Low-end extended postal code in a range. Example in quotes: Postal
-            Code 30076-'1234'. 
-
-            Only returned in candidate list. May be alphanumeric
+          description: 4 digit Postal Code extension. For US use only.
           maximum: 1
           type: string
           minLength: 1
@@ -364,7 +441,7 @@ components:
           minLength: 1
           maxLength: 30
         CountryCode:
-          description: A country or territory code. Required to be returned.
+          description: Country or Territory Code. For a list of valid values, refer to the Address Validation API Supported Countries or Territories table in the Appendix.
           maximum: 1
           type: string
           minLength: 2
@@ -373,26 +450,24 @@ components:
         name: AddressKeyFormat
       required:
         - CountryCode
-      description: >-
+      description: |-
         AddressKeyFormat container.
-
-        The Key format is based on addressing standards jointly developed by the
-        Postal Service and mailing industry.  The information provided in the
-        Address Key container will be returned in the same format.
+        The Key format is based on addressing standards jointly developed by the Postal Service and mailing industry.  The information provided in the Address Key container will be returned in the same format.
     XAVResponse:
       type: object
       required:
         - Response
       properties:
         Response:
-          $ref: '#/components/schemas/XAVResponse_Response'
+          "$ref": "#/components/schemas/XAVResponse_Response"
         ValidAddressIndicator:
           description: Indicates query found a valid match.
           maximum: 1
           type: string
           nullable: true
         AmbiguousAddressIndicator:
-          description: Indicates query could not find exact match. Candidate list follows.
+          description: Indicates query could not find exact match. Candidate list
+            follows.
           maximum: 1
           type: string
           nullable: true
@@ -402,9 +477,15 @@ components:
           type: string
           nullable: true
         AddressClassification:
-          $ref: '#/components/schemas/XAVResponse_AddressClassification'
+          "$ref": "#/components/schemas/XAVResponse_AddressClassification"
         Candidate:
-          $ref: '#/components/schemas/XAVResponse_Candidate'
+          description: |
+            Candidate Container.
+            
+            **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+          type: array
+          items:
+            "$ref": "#/components/schemas/XAVResponse_Candidate"
       xml:
         name: XAVResponse
       maximum: 1
@@ -415,11 +496,17 @@ components:
         - ResponseStatus
       properties:
         ResponseStatus:
-          $ref: '#/components/schemas/Response_ResponseStatus'
+          "$ref": "#/components/schemas/Response_ResponseStatus"
         Alert:
-          $ref: '#/components/schemas/Response_Alert'
+          description: |
+            Alert Container.  There can be zero to many alert containers with code and description.
+
+            **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+          type: array
+          items:
+            "$ref": "#/components/schemas/Response_Alert"
         TransactionReference:
-          $ref: '#/components/schemas/Response_TransactionReference'
+          "$ref": "#/components/schemas/Response_TransactionReference"
       xml:
         name: Response
       description: Response Container.
@@ -441,9 +528,8 @@ components:
           minLength: 1
           maxLength: 1
         Description:
-          description: >-
-            Describes Response Status Code.  Returns text of 'Success' or
-            'Failure'.
+          description: Describes Response Status Code.  Returns text of 'Success'
+            or 'Failure'.
           maximum: 1
           type: string
           minLength: 1
@@ -472,16 +558,12 @@ components:
           maxLength: 150
       xml:
         name: Alert
-      description: |-
-        Alert Container. 
-        There can be zero to many alert containers with code and description.
     Response_TransactionReference:
       type: object
       maximum: 1
       properties:
         CustomerContext:
-          description: >-
-            The CustomerContext Information which will be echoed during
+          description: The CustomerContext Information which will be echoed during
             response.
           maximum: 1
           type: string
@@ -498,19 +580,20 @@ components:
         - Code
       properties:
         Code:
-          description: |-
-            Contains the classification code of the address:
-            0 - UnClassified
-            1 - Commercial
-            2 - Residential
+          description: |
+            Contains the classification code of the input address.
+
+            Valid values:
+
+            - 0 - UnClassified
+            - 1 - Commercial
+            - 2 - Residential
           maximum: 1
           type: string
           minLength: 1
           maxLength: 1
         Description:
-          description: >-
-            Contains the text description of the address classification code
-            (see Code above).
+          description: "Contains the text description of the address classification code: UnClassified, Commercial, Residential"
           maximum: 1
           type: string
           minLength: 1
@@ -522,16 +605,15 @@ components:
       type: object
       properties:
         AddressClassification:
-          $ref: '#/components/schemas/Candidate_AddressClassification'
+          "$ref": "#/components/schemas/Candidate_AddressClassification"
         AddressKeyFormat:
           type: array
           items:
-            $ref: '#/components/schemas/Candidate_AddressKeyFormat'
+            "$ref": "#/components/schemas/Candidate_AddressKeyFormat"
       xml:
         name: Candidate
       required:
         - AddressKeyFormat
-      description: Candidate Container.
       maximum: 1
       nullable: true
     Candidate_AddressClassification:
@@ -552,9 +634,8 @@ components:
           minLength: 1
           maxLength: 1
         Description:
-          description: >-
-            Contains the text description of the address classification code
-            (see Code above).
+          description: Contains the text description of the address classification
+            code (see Code above).
           maximum: 1
           type: string
           minLength: 1
@@ -568,8 +649,7 @@ components:
       maximum: 1
       properties:
         ConsigneeName:
-          description: >-
-            Name of business, company or person. Not returned if user selects
+          description: Name of business, company or person. Not returned if user selects
             the RegionalRequestIndicator.
           maximum: 1
           type: string
@@ -577,25 +657,18 @@ components:
           maxLength: 40
           nullable: true
         AttentionName:
-          description: >-
-            Name of building. Not returned if user selects the
-            RegionalRequestIndicator.
+          description: Name of building. Not returned if user selects the RegionalRequestIndicator.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 40
           nullable: true
         AddressLine:
-          description: >-
-            Address line (street number, street name and street type, and
-            political division 1, political division 2 and postal code) used for
-            street level information.
-
-            Additional secondary information (apartment, suite, floor, etc.)
-
-            Applicable to US and PR only. 
-
-            Not returned if user selects the RegionalRequestIndicator.
+          description: "Address line (street number, street name and street type,
+            and political division 1, political division 2 and postal code) used for
+            street level information. Additional secondary information (apartment,
+            suite, floor, etc.) Applicable to US and PR only.  Not returned if user
+            selects the RegionalRequestIndicator."
           type: array
           maximum: 3
           minLength: 1
@@ -603,10 +676,8 @@ components:
           items:
             type: string
         Region:
-          description: >-
-            Single entry containing in this order  Political Division 2,
-            Political Division 1 and Post Code Primary Low and/or
-            PostcodeExtendedLow.
+          description: Single entry containing in this order  Political Division 2,
+            Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
           maximum: 1
           type: string
           minLength: 1
@@ -618,36 +689,25 @@ components:
           minLength: 1
           maxLength: 30
         PoliticalDivision1:
-          description: >-
-            State/Province. 
-
-            Returned if the location is within a State/Province/Territory. 
-
-            For International: returned if user enters valid Country or
-            Territory Code, and City/postal code and it has a match. 
-
-            For Domestic addresses, the value must be a valid 2-character value
-            (per US Mail standards). 
-
-            For International the full State or Province name will be returned.
+          description: "State/Province.  Returned if the location is within a State/Province/Territory.
+             For International: returned if user enters valid Country or Territory
+            Code, and City/postal code and it has a match.  For Domestic addresses,
+            the value must be a valid 2-character value (per US Mail standards).  For
+            International the full State or Province name will be returned."
           maximum: 1
           type: string
           minLength: 1
           maxLength: 30
         PostcodePrimaryLow:
-          description: >-
-            Low-end Postal Code. Returned for countries or territories with
-            Postal Codes. May be alphanumeric.
+          description: Low-end Postal Code. Returned for countries or territories
+            with Postal Codes. May be alphanumeric.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 10
         PostcodeExtendedLow:
-          description: >-
-            Low-end extended postal code in a range. Example in quotes: Postal
-            Code 30076-'1234'. 
-
-            Only returned in candidate list. May be alphanumeric
+          description: "Low-end extended postal code in a range. Example in quotes:
+            Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric"
           maximum: 1
           type: string
           minLength: 1
@@ -670,24 +730,27 @@ components:
       required:
         - CountryCode
       description: AddressKeyFormat Container.
-    errorResponse:
+    ErrorResponse:
       type: object
       properties:
         response:
-          $ref: '#/components/schemas/errorResponseWrapper'
-    errorResponseWrapper:
+          "$ref": "#/components/schemas/ErrorResponseWrapper"
+    ErrorResponseWrapper:
       type: object
+      description: The error response containing any errors that occurred.
       properties:
         errors:
           type: array
+          description: The error array containing any errors that occurred.
           items:
-            $ref: '#/components/schemas/error'
-    error:
+            "$ref": "#/components/schemas/Error"
+    Error:
       type: object
       properties:
         code:
-          description: Error code
           type: string
+          description: The error code.
         message:
-          description: Error message
           type: string
+          description: The error message.
+      description: The error response containing any errors that occurred.

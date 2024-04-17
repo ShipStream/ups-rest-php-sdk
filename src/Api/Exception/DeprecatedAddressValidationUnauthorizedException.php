@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class AddressValidationNotFoundException extends NotFoundException
+class DeprecatedAddressValidationUnauthorizedException extends UnauthorizedException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse
@@ -14,7 +14,7 @@ class AddressValidationNotFoundException extends NotFoundException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Not Found');
+        parent::__construct('Unauthorized Request');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }

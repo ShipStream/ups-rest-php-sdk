@@ -41,13 +41,17 @@ class ErrorResponseNormalizer implements DenormalizerInterface, NormalizerInterf
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('response', $data)) {
-            $object->setResponse($this->denormalizer->denormalize($data['response'], 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context));
-            unset($data['response']);
+        if (\array_key_exists('errors', $data)) {
+            $values = array();
+            foreach ($data['errors'] as $value) {
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper', 'json', $context);
+            }
+            $object->setErrors($values);
+            unset($data['errors']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -58,12 +62,16 @@ class ErrorResponseNormalizer implements DenormalizerInterface, NormalizerInterf
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        if ($object->isInitialized('response') && null !== $object->getResponse()) {
-            $data['response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
+        if ($object->isInitialized('errors') && null !== $object->getErrors()) {
+            $values = array();
+            foreach ($object->getErrors() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['errors'] = $values;
         }
-        foreach ($object as $key => $value) {
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

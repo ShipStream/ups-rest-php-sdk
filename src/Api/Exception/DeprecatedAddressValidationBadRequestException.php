@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class AddressValidationBadRequestException extends BadRequestException
+class DeprecatedAddressValidationBadRequestException extends BadRequestException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse

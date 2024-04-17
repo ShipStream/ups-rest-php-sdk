@@ -15,29 +15,29 @@ class ErrorResponse extends \ArrayObject
     /**
      * 
      *
-     * @var ErrorResponseWrapper
+     * @var ErrorResponseWrapper[]
      */
-    protected $response;
+    protected $errors;
     /**
      * 
      *
-     * @return ErrorResponseWrapper
+     * @return ErrorResponseWrapper[]
      */
-    public function getResponse() : ErrorResponseWrapper
+    public function getErrors() : array
     {
-        return $this->response;
+        return $this->errors;
     }
     /**
      * 
      *
-     * @param ErrorResponseWrapper $response
+     * @param ErrorResponseWrapper[] $errors
      *
      * @return self
      */
-    public function setResponse(ErrorResponseWrapper $response) : self
+    public function setErrors(array $errors) : self
     {
-        $this->initialized['response'] = true;
-        $this->response = $response;
+        $this->initialized['errors'] = true;
+        $this->errors = $errors;
         return $this;
     }
 }

@@ -2,26 +2,27 @@
 
 namespace ShipStream\Ups\Api\Endpoint;
 
-class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
+class DeprecatedAddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
     protected $requestoption;
-    protected $version;
+    protected $deprecatedVersion;
     /**
     * The Address Validation Street Level API can be used to check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
     *
     * @param int $requestoption Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
     
     Valid values:
+    
     - 1 - Address Validation
     - 2 - Address Classification
     - 3 - Address Validation and Address Classification.
     
     For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
     
-    * @param string $version Identifies the version of the API.
+    * @param string $deprecatedVersion Identifies the version of the API.
     
     Valid  values:
-    - v2
+    - v1
     
     * @param \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody 
     * @param array $queryParameters {
@@ -29,10 +30,10 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     *     @var int $maximumcandidatelistsize Valid values: 0 – 50 The maximum number of Candidates to  return for this request. If not provided,  the default size of 15 is returned.
     * }
     */
-    public function __construct(int $requestoption, string $version, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array())
+    public function __construct(int $requestoption, string $deprecatedVersion, \ShipStream\Ups\Api\Model\XAVRequestWrapper $requestBody, array $queryParameters = array())
     {
         $this->requestoption = $requestoption;
-        $this->version = $version;
+        $this->deprecatedVersion = $deprecatedVersion;
         $this->body = $requestBody;
         $this->queryParameters = $queryParameters;
     }
@@ -43,7 +44,7 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     }
     public function getUri() : string
     {
-        return str_replace(array('{requestoption}', '{version}'), array($this->requestoption, $this->version), '/addressvalidation/{version}/{requestoption}');
+        return str_replace(array('{requestoption}', '{deprecatedVersion}'), array($this->requestoption, $this->deprecatedVersion), '/addressvalidation/{deprecatedVersion}/{requestoption}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
@@ -69,10 +70,10 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
     /**
      * {@inheritdoc}
      *
-     * @throws \ShipStream\Ups\Api\Exception\AddressValidationBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\AddressValidationUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\AddressValidationForbiddenException
-     * @throws \ShipStream\Ups\Api\Exception\AddressValidationTooManyRequestsException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\XAVResponseWrapper
@@ -85,16 +86,16 @@ class AddressValidation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint 
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\XAVResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\AddressValidationBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\AddressValidationUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\AddressValidationForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\AddressValidationTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedAddressValidationTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
