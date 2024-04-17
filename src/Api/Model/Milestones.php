@@ -13,49 +13,49 @@ class Milestones extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The milestone category. This will be present only when a milestone is in a COMPLETE state.
      *
      * @var string
      */
     protected $category;
     /**
-     * 
+     * The milestone code.
      *
      * @var string
      */
     protected $code;
     /**
-     * 
+     * The indication if the milestone represents the current state of the package. Valid values: 'true' this milestone is the current state of the package.  'false' this milestone is not current.
      *
      * @var bool
      */
     protected $current;
     /**
-     * 
+     * The milestone description. Note: this is not translated at this time and is returned in US English.
      *
      * @var string
      */
     protected $description;
     /**
-     * 
+     * The 0-based index of the activity that triggered this milestone. This will be returned only when a milestone is in a COMPLETE state. For example the most recent activity on the response is index 0.
      *
      * @var string
      */
     protected $linkedActivity;
     /**
-     * 
+     * The milestone state. Valid values: 'This milestone has already occurred'/'This milestone has not yet been completed'.
      *
      * @var string
      */
     protected $state;
     /**
-     * 
+     * The sub-milestone container containing information on a child milestone. Will be present only if a child milestone exists.
      *
      * @var SubMilestone
      */
     protected $subMilestone;
     /**
-     * 
+     * The milestone category. This will be present only when a milestone is in a COMPLETE state.
      *
      * @return string
      */
@@ -64,7 +64,7 @@ class Milestones extends \ArrayObject
         return $this->category;
     }
     /**
-     * 
+     * The milestone category. This will be present only when a milestone is in a COMPLETE state.
      *
      * @param string $category
      *
@@ -77,7 +77,7 @@ class Milestones extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The milestone code.
      *
      * @return string
      */
@@ -86,7 +86,7 @@ class Milestones extends \ArrayObject
         return $this->code;
     }
     /**
-     * 
+     * The milestone code.
      *
      * @param string $code
      *
@@ -99,7 +99,7 @@ class Milestones extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The indication if the milestone represents the current state of the package. Valid values: 'true' this milestone is the current state of the package.  'false' this milestone is not current.
      *
      * @return bool
      */
@@ -108,7 +108,7 @@ class Milestones extends \ArrayObject
         return $this->current;
     }
     /**
-     * 
+     * The indication if the milestone represents the current state of the package. Valid values: 'true' this milestone is the current state of the package.  'false' this milestone is not current.
      *
      * @param bool $current
      *
@@ -121,7 +121,7 @@ class Milestones extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The milestone description. Note: this is not translated at this time and is returned in US English.
      *
      * @return string
      */
@@ -130,7 +130,7 @@ class Milestones extends \ArrayObject
         return $this->description;
     }
     /**
-     * 
+     * The milestone description. Note: this is not translated at this time and is returned in US English.
      *
      * @param string $description
      *
@@ -143,7 +143,7 @@ class Milestones extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The 0-based index of the activity that triggered this milestone. This will be returned only when a milestone is in a COMPLETE state. For example the most recent activity on the response is index 0.
      *
      * @return string
      */
@@ -152,7 +152,7 @@ class Milestones extends \ArrayObject
         return $this->linkedActivity;
     }
     /**
-     * 
+     * The 0-based index of the activity that triggered this milestone. This will be returned only when a milestone is in a COMPLETE state. For example the most recent activity on the response is index 0.
      *
      * @param string $linkedActivity
      *
@@ -165,7 +165,7 @@ class Milestones extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The milestone state. Valid values: 'This milestone has already occurred'/'This milestone has not yet been completed'.
      *
      * @return string
      */
@@ -174,7 +174,7 @@ class Milestones extends \ArrayObject
         return $this->state;
     }
     /**
-     * 
+     * The milestone state. Valid values: 'This milestone has already occurred'/'This milestone has not yet been completed'.
      *
      * @param string $state
      *
@@ -187,7 +187,7 @@ class Milestones extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The sub-milestone container containing information on a child milestone. Will be present only if a child milestone exists.
      *
      * @return SubMilestone
      */
@@ -196,7 +196,7 @@ class Milestones extends \ArrayObject
         return $this->subMilestone;
     }
     /**
-     * 
+     * The sub-milestone container containing information on a child milestone. Will be present only if a child milestone exists.
      *
      * @param SubMilestone $subMilestone
      *

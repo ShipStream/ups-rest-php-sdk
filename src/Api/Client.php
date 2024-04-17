@@ -745,19 +745,21 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\TimeInTransit($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * gets single track API details
+     * 
      *
-     * @param string $inquiryNumber Tracking Number
+     * @param string $inquiryNumber The tracking number for which tracking information is requested. Each inquiry number must be between 7 and 34 characters in length.
      * @param array $queryParameters {
-     *     @var string $locale locale
-     *     @var string $returnSignature returnSignature
+     *     @var string $locale Language and country code of the user, separated by an underscore. Default value is 'en_US'
+     *     @var string $returnSignature Indicator requesting that the delivery signature image be included as part of the response (by default the image will not be returned). Returns image bytecodes of the signature.
+     *     @var string $returnMilestones returnMilestones
      * }
      * @param array $headerParameters {
-     *     @var string $transId transId
-     *     @var string $transactionSrc transactionSrc
+     *     @var string $transId An identifier unique to the request.
+     *     @var string $transactionSrc Identifies the client/source application that is calling
      * }
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETForbiddenException
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETNotFoundException
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETInternalServerErrorException
      * @throws \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETServiceUnavailableException

@@ -48,6 +48,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
+            if (\array_key_exists('levelCode', $data)) {
+                $object->setLevelCode($data['levelCode']);
+                unset($data['levelCode']);
+            }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $object[$key] = $value;
@@ -63,6 +67,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             if ($object->isInitialized('description') && null !== $object->getDescription()) {
                 $data['description'] = $object->getDescription();
+            }
+            if ($object->isInitialized('levelCode') && null !== $object->getLevelCode()) {
+                $data['levelCode'] = $object->getLevelCode();
             }
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -114,6 +121,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDescription($data['description']);
                 unset($data['description']);
             }
+            if (\array_key_exists('levelCode', $data)) {
+                $object->setLevelCode($data['levelCode']);
+                unset($data['levelCode']);
+            }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $object[$key] = $value;
@@ -132,6 +143,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             if ($object->isInitialized('description') && null !== $object->getDescription()) {
                 $data['description'] = $object->getDescription();
+            }
+            if ($object->isInitialized('levelCode') && null !== $object->getLevelCode()) {
+                $data['levelCode'] = $object->getLevelCode();
             }
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
