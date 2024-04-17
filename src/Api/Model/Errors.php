@@ -19,13 +19,13 @@ class Errors extends \ArrayObject
      */
     protected $code;
     /**
-     * Description of the error
+     * Description of the error.
      *
      * @var string
      */
     protected $description;
     /**
-     * Consumer tailored error message
+     * Consumer tailored error message.
      *
      * @var string
      */
@@ -37,7 +37,7 @@ class Errors extends \ArrayObject
      */
     protected $value;
     /**
-     * The path to the field causing the error as returned from the backend services
+     * The path to the field causing the error, as returned from the backend services.
      *
      * @var string
      */
@@ -65,7 +65,7 @@ class Errors extends \ArrayObject
         return $this;
     }
     /**
-     * Description of the error
+     * Description of the error.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class Errors extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the error
+     * Description of the error.
      *
      * @param string $description
      *
@@ -87,7 +87,7 @@ class Errors extends \ArrayObject
         return $this;
     }
     /**
-     * Consumer tailored error message
+     * Consumer tailored error message.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class Errors extends \ArrayObject
         return $this->message;
     }
     /**
-     * Consumer tailored error message
+     * Consumer tailored error message.
      *
      * @param string $message
      *
@@ -131,7 +131,7 @@ class Errors extends \ArrayObject
         return $this;
     }
     /**
-     * The path to the field causing the error as returned from the backend services
+     * The path to the field causing the error, as returned from the backend services.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class Errors extends \ArrayObject
         return $this->field;
     }
     /**
-     * The path to the field causing the error as returned from the backend services
+     * The path to the field causing the error, as returned from the backend services.
      *
      * @param string $field
      *

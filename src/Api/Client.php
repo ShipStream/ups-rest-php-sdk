@@ -122,17 +122,20 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\AcceptanceAuditPreCheck($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * Landed Cost provides an all-inclusive cost estimate of international shipments.
+     * The Landed Cost Quote API allows you to estimate the all-inclusive cost of international shipments - including applicable duties, VAT, taxes, brokerage fees, and other fees. Required parameters include the currency and shipment details, such as the commodity ID, price, quantity, and country code of origin.
      *
-     * @param string $version Version of API
+     * @param string $version Version of the API.
      * @param \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
      * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     *     @var string $AccountNumber 
+     *     @var string $transId An identifier unique to the request. Length: 32
+     *     @var string $transactionSrc An identifier of the client/source application that is making the request. Length: 512
+     *     @var string $AccountNumber The UPS account number.
      * }
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \ShipStream\Ups\Api\Exception\LandedCostBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\LandedCostUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\LandedCostForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\LandedCostTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\LandedCostResponse|\Psr\Http\Message\ResponseInterface
