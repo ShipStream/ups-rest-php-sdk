@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class LocatorUnauthorizedException extends UnauthorizedException
+class LocatorForbiddenException extends ForbiddenException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse
@@ -14,7 +14,7 @@ class LocatorUnauthorizedException extends UnauthorizedException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Unauthorized Request');
+        parent::__construct('Blocked Merchant');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }

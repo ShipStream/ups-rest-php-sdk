@@ -13,27 +13,33 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for DCR/DCO unavailability. Valid values: 
-    01-Temporarily Unavailable 
-    02-Location Full
-    03-Unavailable
-    04-Weather
+    * Code for shipping unavailability. Code for DCR/DCO unavailability.
+    
+    Valid values:
+    - 01 - Temporarily Unavailable
+    - 02 - Location Full
+    - 03 - Unavailable
+    - 04 - Weather
+    
     *
     * @var string
     */
     protected $code;
     /**
-     * Description for DCR/ DCO unavailability.
+     * Description for shipping unavailability.
      *
      * @var string
      */
     protected $description;
     /**
-    * Code for DCR/DCO unavailability. Valid values: 
-    01-Temporarily Unavailable 
-    02-Location Full
-    03-Unavailable
-    04-Weather
+    * Code for shipping unavailability. Code for DCR/DCO unavailability.
+    
+    Valid values:
+    - 01 - Temporarily Unavailable
+    - 02 - Location Full
+    - 03 - Unavailable
+    - 04 - Weather
+    
     *
     * @return string
     */
@@ -42,11 +48,14 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
         return $this->code;
     }
     /**
-    * Code for DCR/DCO unavailability. Valid values: 
-    01-Temporarily Unavailable 
-    02-Location Full
-    03-Unavailable
-    04-Weather
+    * Code for shipping unavailability. Code for DCR/DCO unavailability.
+    
+    Valid values:
+    - 01 - Temporarily Unavailable
+    - 02 - Location Full
+    - 03 - Unavailable
+    - 04 - Weather
+    
     *
     * @param string $code
     *
@@ -59,7 +68,7 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
         return $this;
     }
     /**
-     * Description for DCR/ DCO unavailability.
+     * Description for shipping unavailability.
      *
      * @return string
      */
@@ -68,7 +77,7 @@ class ShippingAvailabilityUnavailableReason extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description for DCR/ DCO unavailability.
+     * Description for shipping unavailability.
      *
      * @param string $description
      *

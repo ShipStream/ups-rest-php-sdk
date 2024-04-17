@@ -145,9 +145,13 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LandedCost($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * Get Locator Response
+    * The Locator API allows you to find UPS locations - such as drop-off points, retail locations, and UPS access points (third-party retail locations that offer UPS package drop-off, or delivery services). The API provides capabilities to search by location, services offered, program types, and related criteria. You can also retrieve hours of operation, location details, and additional UPS services offered at specific locations.
     *
     * @param string $version Version of API
+    
+    Valid values:
+    - v2
+    
     * @param string $reqOption Indicates the type of request.
     Valid values:
     1-Locations (Drop Locations and Will call locations)
@@ -168,7 +172,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\LocatorBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\LocatorUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\LocatorForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\LocatorTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\LOCATORResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -176,6 +183,46 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     public function locator(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Locator($version, $reqOption, $requestBody, $queryParameters, $headerParameters), $fetch);
+    }
+    /**
+    * The Locator API allows you to find UPS locations - such as drop-off points, retail locations, and UPS access points (third-party retail locations that offer UPS package drop-off, or delivery services). The API provides capabilities to search by location, services offered, program types, and related criteria. You can also retrieve hours of operation, location details, and additional UPS services offered at specific locations.
+    *
+    * @param string $deprecatedVersion Version of API
+    
+    Valid values:
+    - v1
+    
+    * @param string $reqOption Indicates the type of request.
+    Valid values:
+    1-Locations (Drop Locations and Will call locations)
+    8-All available Additional Services
+    16-All available Program Types
+    24-All available Additional Services and Program types
+    32-All available Retail Locations
+    40-All available Retail Locations and Additional Services 
+    48-All available Retail Locations and Program Types 
+    56-All available Retail Locations, Additional Services and Program Types 
+    64-Search for UPS Access Point Locations.  
+    * @param \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody 
+    * @param array $queryParameters {
+    *     @var string $Locale Locale of request
+    * }
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\LOCATORResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedLocator(string $deprecatedVersion, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedLocator($deprecatedVersion, $reqOption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
     /**
      * The Authorize Client endpoint initiates the OAuth flow by redirecting the user to UPS to log in and authorize the client application. It accepts the parameters listed below to facilitate the user authorization flow. A successful response redirects back to the client with an authorization code that can be exchanged for an access token.

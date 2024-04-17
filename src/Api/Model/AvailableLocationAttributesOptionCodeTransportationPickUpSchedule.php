@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Model;
 
-class DropLocationAdditionalComments extends \ArrayObject
+class AvailableLocationAttributesOptionCodeTransportationPickUpSchedule extends \ArrayObject
 {
     /**
      * @var array
@@ -13,34 +13,34 @@ class DropLocationAdditionalComments extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for CommentType Code and Text.
+     * Container to hold information regarding pickup day of the week and details.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var AdditionalCommentsCommentType[]
+     * @var AvailableLocationAttributesTransportationPickUpSchedulePickUp[]
      */
-    protected $commentType;
+    protected $pickUp;
     /**
-     * Container for CommentType Code and Text.
+     * Container to hold information regarding pickup day of the week and details.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return AdditionalCommentsCommentType[]
+     * @return AvailableLocationAttributesTransportationPickUpSchedulePickUp[]
      */
-    public function getCommentType() : array
+    public function getPickUp() : array
     {
-        return $this->commentType;
+        return $this->pickUp;
     }
     /**
-     * Container for CommentType Code and Text.
+     * Container to hold information regarding pickup day of the week and details.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param AdditionalCommentsCommentType[] $commentType
+     * @param AvailableLocationAttributesTransportationPickUpSchedulePickUp[] $pickUp
      *
      * @return self
      */
-    public function setCommentType(array $commentType) : self
+    public function setPickUp(array $pickUp) : self
     {
-        $this->initialized['commentType'] = true;
-        $this->commentType = $commentType;
+        $this->initialized['pickUp'] = true;
+        $this->pickUp = $pickUp;
         return $this;
     }
 }

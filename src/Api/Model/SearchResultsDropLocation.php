@@ -46,9 +46,14 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $addressKeyFormat;
     /**
-    * The UPS locations Phone number. A phone number of the location will be returned. 
-    10 digits allowed for US, otherwise 1..15 digits allowed. 
+    * The UPS locations Phone number. A phone number of the location will be returned.
+    
+    10 digits allowed for US, otherwise 1..15 digits allowed.
+    
     The phone number will be returned as a string.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @var string[]
     */
@@ -68,10 +73,17 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-     * 
-     *
-     * @var DropLocationLocationAttribute[]
-     */
+    * OptionType is a container that indicates the type of the location attribute.
+    
+    There are 4 types of attributes.
+    
+    They are: Location, Retail Location, Additional Services and Program Type.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
+    *
+    * @var DropLocationLocationAttribute[]
+    */
     protected $locationAttribute;
     /**
      * Container for the straight line distance from the origin to the UPS location.
@@ -80,21 +92,30 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $distance;
     /**
-     * 
+     * Walking directions.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var DropLocationSpecialInstructions[]
      */
     protected $specialInstructions;
     /**
-    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location. 
+    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+    
     When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @var string[]
     */
     protected $latestGroundDropOffTime;
     /**
-    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location. 
+    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+    
     When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @var string[]
     */
@@ -136,7 +157,7 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $homePageURL;
     /**
-     * Comments returned about the location. Text will be displayed in English or the locale given in the request. If Country Code is FR, and locale passed in the request is fr_FR then text will be displayed in French language, else comment will be displayed in English language.
+     * Comments returned about the location. Text will be displayed in English or the locale given in the request. If Country Code is FR, and locale passed in the request is "fr_FR" then text will be displayed in French language, else comment will be displayed in English language.
      *
      * @var string
      */
@@ -149,6 +170,7 @@ class SearchResultsDropLocation extends \ArrayObject
     protected $additionalComments;
     /**
      * Textual disclaimer about the drop location.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var string[]
      */
@@ -178,13 +200,15 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $operatingHours;
     /**
-     * 
+     * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var DropLocationLocalizedInstruction[]
      */
     protected $localizedInstruction;
     /**
-     * 
+     * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var DropLocationPromotionInformation[]
      */
@@ -245,9 +269,11 @@ class SearchResultsDropLocation extends \ArrayObject
     protected $featuredRank;
     /**
     * Will Call Location Indicator values:
-    Y - Signifies a Will Call location that serves the customers address. 
-    N - Signifies it is not a Will Call location.
-    Will Call locations are only returned with a "Y" indicator if the request included EnhancedSearchOption code 10.
+    - Y – Signifies a Will Call location that serves the customers address.
+    - N - Signifies it is not a Will Call location.
+    
+    Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
+    
     *
     * @var string
     */
@@ -369,9 +395,14 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The UPS locations Phone number. A phone number of the location will be returned. 
-    10 digits allowed for US, otherwise 1..15 digits allowed. 
+    * The UPS locations Phone number. A phone number of the location will be returned.
+    
+    10 digits allowed for US, otherwise 1..15 digits allowed.
+    
     The phone number will be returned as a string.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @return string[]
     */
@@ -380,9 +411,14 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->phoneNumber;
     }
     /**
-    * The UPS locations Phone number. A phone number of the location will be returned. 
-    10 digits allowed for US, otherwise 1..15 digits allowed. 
+    * The UPS locations Phone number. A phone number of the location will be returned.
+    
+    10 digits allowed for US, otherwise 1..15 digits allowed.
+    
     The phone number will be returned as a string.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @param string[] $phoneNumber
     *
@@ -443,21 +479,35 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
-     * @return DropLocationLocationAttribute[]
-     */
+    * OptionType is a container that indicates the type of the location attribute.
+    
+    There are 4 types of attributes.
+    
+    They are: Location, Retail Location, Additional Services and Program Type.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
+    *
+    * @return DropLocationLocationAttribute[]
+    */
     public function getLocationAttribute() : array
     {
         return $this->locationAttribute;
     }
     /**
-     * 
-     *
-     * @param DropLocationLocationAttribute[] $locationAttribute
-     *
-     * @return self
-     */
+    * OptionType is a container that indicates the type of the location attribute.
+    
+    There are 4 types of attributes.
+    
+    They are: Location, Retail Location, Additional Services and Program Type.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
+    *
+    * @param DropLocationLocationAttribute[] $locationAttribute
+    *
+    * @return self
+    */
     public function setLocationAttribute(array $locationAttribute) : self
     {
         $this->initialized['locationAttribute'] = true;
@@ -487,7 +537,8 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Walking directions.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return DropLocationSpecialInstructions[]
      */
@@ -496,7 +547,8 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->specialInstructions;
     }
     /**
-     * 
+     * Walking directions.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param DropLocationSpecialInstructions[] $specialInstructions
      *
@@ -509,8 +561,12 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location. 
+    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+    
     When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @return string[]
     */
@@ -519,8 +575,12 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->latestGroundDropOffTime;
     }
     /**
-    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location. 
+    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+    
     When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @param string[] $latestGroundDropOffTime
     *
@@ -533,8 +593,12 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location. 
+    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+    
     When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @return string[]
     */
@@ -543,8 +607,12 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->latestAirDropOffTime;
     }
     /**
-    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location. 
+    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+    
     When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
     *
     * @param string[] $latestAirDropOffTime
     *
@@ -689,7 +757,7 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-     * Comments returned about the location. Text will be displayed in English or the locale given in the request. If Country Code is FR, and locale passed in the request is fr_FR then text will be displayed in French language, else comment will be displayed in English language.
+     * Comments returned about the location. Text will be displayed in English or the locale given in the request. If Country Code is FR, and locale passed in the request is "fr_FR" then text will be displayed in French language, else comment will be displayed in English language.
      *
      * @return string
      */
@@ -698,7 +766,7 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->comments;
     }
     /**
-     * Comments returned about the location. Text will be displayed in English or the locale given in the request. If Country Code is FR, and locale passed in the request is fr_FR then text will be displayed in French language, else comment will be displayed in English language.
+     * Comments returned about the location. Text will be displayed in English or the locale given in the request. If Country Code is FR, and locale passed in the request is "fr_FR" then text will be displayed in French language, else comment will be displayed in English language.
      *
      * @param string $comments
      *
@@ -734,6 +802,7 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
      * Textual disclaimer about the drop location.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return string[]
      */
@@ -743,6 +812,7 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
      * Textual disclaimer about the drop location.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param string[] $disclaimer
      *
@@ -843,7 +913,8 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return DropLocationLocalizedInstruction[]
      */
@@ -852,7 +923,8 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->localizedInstruction;
     }
     /**
-     * 
+     * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param DropLocationLocalizedInstruction[] $localizedInstruction
      *
@@ -865,7 +937,8 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return DropLocationPromotionInformation[]
      */
@@ -874,7 +947,8 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this->promotionInformation;
     }
     /**
-     * 
+     * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param DropLocationPromotionInformation[] $promotionInformation
      *
@@ -1076,9 +1150,11 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
     * Will Call Location Indicator values:
-    Y - Signifies a Will Call location that serves the customers address. 
-    N - Signifies it is not a Will Call location.
-    Will Call locations are only returned with a "Y" indicator if the request included EnhancedSearchOption code 10.
+    - Y – Signifies a Will Call location that serves the customers address.
+    - N - Signifies it is not a Will Call location.
+    
+    Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
+    
     *
     * @return string
     */
@@ -1088,9 +1164,11 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
     * Will Call Location Indicator values:
-    Y - Signifies a Will Call location that serves the customers address. 
-    N - Signifies it is not a Will Call location.
-    Will Call locations are only returned with a "Y" indicator if the request included EnhancedSearchOption code 10.
+    - Y – Signifies a Will Call location that serves the customers address.
+    - N - Signifies it is not a Will Call location.
+    
+    Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
+    
     *
     * @param string $willCallLocationIndicator
     *

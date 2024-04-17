@@ -57,7 +57,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Category']);
             }
             if (\array_key_exists('TransportationPickUpSchedule', $data)) {
-                $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule', 'json', $context));
+                $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule', 'json', $context));
                 unset($data['TransportationPickUpSchedule']);
             }
             foreach ($data as $key => $value) {
@@ -140,7 +140,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Category']);
             }
             if (\array_key_exists('TransportationPickUpSchedule', $data)) {
-                $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule', 'json', $context));
+                $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule', 'json', $context));
                 unset($data['TransportationPickUpSchedule']);
             }
             foreach ($data as $key => $value) {

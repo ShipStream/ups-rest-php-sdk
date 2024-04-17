@@ -2,17 +2,17 @@
 
 namespace ShipStream\Ups\Api\Endpoint;
 
-class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
+class DeprecatedLocator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
-    protected $version;
+    protected $deprecatedVersion;
     protected $reqOption;
     /**
     * The Locator API allows you to find UPS locations - such as drop-off points, retail locations, and UPS access points (third-party retail locations that offer UPS package drop-off, or delivery services). The API provides capabilities to search by location, services offered, program types, and related criteria. You can also retrieve hours of operation, location details, and additional UPS services offered at specific locations.
     *
-    * @param string $version Version of API
+    * @param string $deprecatedVersion Version of API
     
     Valid values:
-    - v2
+    - v1
     
     * @param string $reqOption Indicates the type of request.
     Valid values:
@@ -34,9 +34,9 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [])
+    public function __construct(string $deprecatedVersion, string $reqOption, \ShipStream\Ups\Api\Model\LOCATORRequestWrapper $requestBody, array $queryParameters = [], array $headerParameters = [])
     {
-        $this->version = $version;
+        $this->deprecatedVersion = $deprecatedVersion;
         $this->reqOption = $reqOption;
         $this->body = $requestBody;
         $this->queryParameters = $queryParameters;
@@ -49,7 +49,7 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     }
     public function getUri() : string
     {
-        return str_replace(['{version}', '{reqOption}'], [$this->version, $this->reqOption], '/locations/{version}/search/availabilities/{reqOption}');
+        return str_replace(['{deprecatedVersion}', '{reqOption}'], [$this->deprecatedVersion, $this->reqOption], '/locations/{deprecatedVersion}/search/availabilities/{reqOption}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
@@ -84,10 +84,10 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
     /**
      * {@inheritdoc}
      *
-     * @throws \ShipStream\Ups\Api\Exception\LocatorBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\LocatorUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\LocatorForbiddenException
-     * @throws \ShipStream\Ups\Api\Exception\LocatorTooManyRequestsException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedLocatorTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\LOCATORResponseWrapper
@@ -100,16 +100,16 @@ class Locator extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\LOCATORResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\LocatorBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedLocatorBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\LocatorUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedLocatorUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\LocatorForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedLocatorForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\LocatorTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedLocatorTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Model;
 
-class TransportationPickUpSchedulePickUp extends \ArrayObject
+class AvailableLocationAttributesTransportationPickUpSchedulePickUp extends \ArrayObject
 {
     /**
      * @var array
@@ -13,7 +13,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Day of week.
+    * Day of the week for scheduled pickup. Valid values are:
     - 1 - Sunday
     - 2 - Monday
     - 3 - Tuesday
@@ -27,13 +27,13 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     */
     protected $dayOfWeek;
     /**
-     * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
+     * Container to hold information regarding pickup time and pickup availability indicator.
      *
-     * @var PickUpPickUpDetails
+     * @var AvailableLocationAttributesPickUpPickUpDetails
      */
     protected $pickUpDetails;
     /**
-    * Day of week.
+    * Day of the week for scheduled pickup. Valid values are:
     - 1 - Sunday
     - 2 - Monday
     - 3 - Tuesday
@@ -50,7 +50,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return $this->dayOfWeek;
     }
     /**
-    * Day of week.
+    * Day of the week for scheduled pickup. Valid values are:
     - 1 - Sunday
     - 2 - Monday
     - 3 - Tuesday
@@ -71,22 +71,22 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return $this;
     }
     /**
-     * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
+     * Container to hold information regarding pickup time and pickup availability indicator.
      *
-     * @return PickUpPickUpDetails
+     * @return AvailableLocationAttributesPickUpPickUpDetails
      */
-    public function getPickUpDetails() : PickUpPickUpDetails
+    public function getPickUpDetails() : AvailableLocationAttributesPickUpPickUpDetails
     {
         return $this->pickUpDetails;
     }
     /**
-     * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
+     * Container to hold information regarding pickup time and pickup availability indicator.
      *
-     * @param PickUpPickUpDetails $pickUpDetails
+     * @param AvailableLocationAttributesPickUpPickUpDetails $pickUpDetails
      *
      * @return self
      */
-    public function setPickUpDetails(PickUpPickUpDetails $pickUpDetails) : self
+    public function setPickUpDetails(AvailableLocationAttributesPickUpPickUpDetails $pickUpDetails) : self
     {
         $this->initialized['pickUpDetails'] = true;
         $this->pickUpDetails = $pickUpDetails;

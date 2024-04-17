@@ -13,19 +13,25 @@ class SearchOptionRelation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Applicable for Additional Services and Program Types. 
-    Valid values: 
-    01-And (Default)
-    02-Or
+    * Applicable for Additional Services and Program Types.
+    
+    Valid values:
+    
+    - 01 - And (Default)
+    - 02 - Or
+    
     *
     * @var string
     */
     protected $code;
     /**
-    * Applicable for Additional Services and Program Types. 
-    Valid values: 
-    01-And (Default)
-    02-Or
+    * Applicable for Additional Services and Program Types.
+    
+    Valid values:
+    
+    - 01 - And (Default)
+    - 02 - Or
+    
     *
     * @return string
     */
@@ -34,10 +40,13 @@ class SearchOptionRelation extends \ArrayObject
         return $this->code;
     }
     /**
-    * Applicable for Additional Services and Program Types. 
-    Valid values: 
-    01-And (Default)
-    02-Or
+    * Applicable for Additional Services and Program Types.
+    
+    Valid values:
+    
+    - 01 - And (Default)
+    - 02 - Or
+    
     *
     * @param string $code
     *
