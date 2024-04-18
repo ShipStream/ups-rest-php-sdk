@@ -670,23 +670,56 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedPickupCreation($deprecatedVersion, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
-     *
-     * @param string $version Version of API, such as v1
-     * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\PreNotificationUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
+    * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
+    *
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v2
+    
+    * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PreNotificationBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\PreNotificationUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PreNotificationForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PreNotificationTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
     public function preNotification(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PreNotification($version, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+    * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
+    *
+    * @param string $deprecatedVersion Version of API.
+    
+    Valid values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedPreNotification(string $deprecatedVersion, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedPreNotification($deprecatedVersion, $requestBody, $headerParameters), $fetch);
     }
     /**
      * Get Quantum View Response

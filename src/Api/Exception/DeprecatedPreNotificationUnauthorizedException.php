@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class PreNotificationUnauthorizedException extends UnauthorizedException
+class DeprecatedPreNotificationUnauthorizedException extends UnauthorizedException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse

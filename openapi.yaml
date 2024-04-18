@@ -2337,7 +2337,7 @@ paths:
         -
           name: version
           in: path
-          description: 'Version of API, such as v1'
+          description: "Version of API.\n\nValid values:\n- v2\n"
           required: true
           schema:
             type: string
@@ -2357,7 +2357,6 @@ paths:
                       SubVersion: '3'
                       TransactionReference:
                         CustomerContext: ''
-                        TransactionIdentifier: ''
                     Shipment:
                       ShipperNumber: ''
                       ShipmentIdentificationNumber: 1Z2398YY81288
@@ -2419,8 +2418,163 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PRENOTIFICATIONResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '401':
           description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        -
+          oauth2: []
+  '/dangerousgoods/{deprecatedVersion}/prenotification':
+    post:
+      summary: Pre-Notification
+      description: 'The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.'
+      operationId: DeprecatedPreNotification
+      parameters:
+        -
+          name: transId
+          in: header
+          description: 'An identifier unique to the request. Length 32'
+          required: false
+          schema:
+            type: string
+        -
+          name: transactionSrc
+          in: header
+          description: 'An identifier of the client/source application that is making the request.Length 512'
+          required: false
+          schema:
+            type: string
+            default: testing
+        -
+          name: deprecatedVersion
+          in: path
+          description: "Version of API.\n\nValid values:\n- v1\n"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: 'Generate sample code for popular API requests by selecting an example below. To view a full sample request and response, first click "Authorize" and enter your application credentials, then populate the required parameters above and click "Try it out".'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PRENOTIFICATIONRequestWrapper'
+            examples:
+              json:
+                summary: 'A sample JSON request (Standard Example)'
+                value:
+                  PreNotificationRequest:
+                    Request:
+                      RequestOption: RequestOption
+                      SubVersion: '3'
+                      TransactionReference:
+                        CustomerContext: ''
+                    Shipment:
+                      ShipperNumber: ''
+                      ShipmentIdentificationNumber: 1Z2398YY81288
+                      ShipFromAddress:
+                        AddressLine: 'MY STREET 12'
+                        City: BOGOTA
+                        StateProvinceCode: NJ
+                        PostalCode: K1A0B1
+                        CountryCode: CA
+                      ShipToAddress:
+                        AddressLine: 'MY STREET 12'
+                        City: BOGOTA
+                        StateProvinceCode: NJ
+                        PostalCode: K1A0B1
+                        CountryCode: CA
+                      PickupDate: '20171101'
+                      Service:
+                        Code: GND
+                        Description: Ground
+                      RegulationSet: TDG
+                      Package:
+                        TrackingNumber: 1Z33445567001
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: KGS
+                            Description: Kilo
+                          Weight: '12'
+                        TransportationMode: GND
+                        VoidIndicator: ''
+                        PackagePoints: '12'
+                        ChemicalRecord:
+                          ReportableQuantity: '1'
+                          ClassDivisionNumber: I
+                          SubRiskClass: '1234'
+                          IDNumber: UN2761
+                          PackagingGroupType: '0'
+                          Quantity: '1'
+                          UOM: LBS
+                          PackagingInstructionCode: TEST
+                          EmergencyPhone: ''
+                          EmergencyContact: ''
+                          ProperShippingName: 'TEST SHIPPING'
+                          TechnicalName: ''
+                          AdditionalDescription: ''
+                          PackagingType: ''
+                          HazardLabelRequired: LABEL
+                          PackagingTypeQuantity: '1'
+                          CommodityRegulatedLevelCode: LR
+                          TransportCategory: '0'
+                          TunnelRestrictionCode: '1'
+                          QValue: '0.1'
+                          OverPackedIndicator: ''
+                          AllPackedInOneIndicator: ''
+        required: true
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRENOTIFICATIONResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
       security:
         -
           oauth2: []
@@ -12072,12 +12226,6 @@ components:
       description: 'Request Container'
       xml:
         name: Request
-    TransactionReference_CustomerContext:
-      maximum: 1
-      maxLength: 512
-      minLength: 1
-      type: string
-      description: 'The CustomerContext Information which will be echoed during response.'
     PreNotificationRequest_Shipment:
       maximum: 1
       required:
@@ -12120,7 +12268,7 @@ components:
           maxLength: 5
           minLength: 3
           type: string
-          description: "The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. \n49CFR - Title 49 of the United States Code of Federal Regulations.  \nIATA - International Air Transport Association (IATA) Dangerous Goods Regulations."
+          description: "The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:\n- ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.\n- 49CFR – Title 49 of the United States Code of Federal Regulations.\n- IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.\n"
         Package:
           maximum: 1000
           type: array
@@ -12213,18 +12361,6 @@ components:
       description: 'Ship From address container.'
       xml:
         name: ShipFromAddress
-    Shipment_PickupDate:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Date of the On Call Air Pickup. Format is YYYYMMDD'
-    Shipment_RegulationSet:
-      maximum: 1
-      maxLength: 5
-      minLength: 3
-      type: string
-      description: "The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:                                                                                                                                                                                                                                                                                                         ADR � European Agreement concerning the International Carriage of Dangerous Goods by Road. \n49CFR � Title 49 of the United States Code of Federal Regulations.  \nIATA � International Air Transport Association (IATA) Dangerous Goods Regulations."
     PreNotificationShipment_Package:
       maximum: 1
       required:
@@ -12271,131 +12407,131 @@ components:
         - CommodityRegulatedLevelCode
       type: object
       properties:
-        ChemicalRecord_ReportableQuantity:
+        ReportableQuantity:
           maximum: 1
           maxLength: 2
           minLength: 1
           type: string
-          description: 'Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, "RQ" should be entered. Any other value will be interpreted as "Non Reportable" quantity.'
-        ChemicalRecord_ClassDivisionNumber:
+          description: 'Indicates whether or not a material being transported meets the definition of a hazardous material and meets or exceeds a reportable quantity threshold. If reportable quantity is met, "RQ" should be entered.  Any other value will be  interpreted as "Non Reportable" quantity.'
+        ClassDivisionNumber:
           maximum: 1
           maxLength: 7
           minLength: 1
           type: string
-          description: 'This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"'
-        ChemicalRecord_SubRiskClass:
+          description: 'This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is ''LQ'' or ''FR'''
+        SubRiskClass:
           maximum: 1
           maxLength: 7
           minLength: 7
           type: string
-          description: 'Secondary hazardous characteristics of a package. (There can be more than one, separate each with a comma.)'
-        ChemicalRecord_IDNumber:
+          description: 'Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma.)'
+        IDNumber:
           maximum: 1
           maxLength: 6
           minLength: 1
           type: string
           description: 'This is the ID number (UN/NA/ID) for the specified commodity.  UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).'
-        ChemicalRecord_PackagingGroupType:
+        PackagingGroupType:
           maximum: 1
           maxLength: 5
           minLength: 1
           type: string
-          description: 'This is the packing group category associated to the specified commodity.  Must be shown in Roman Numerals.  Valid values are: I, II, III and blank.'
-        ChemicalRecord_Quantity:
+          description: "This is the packing group category associated to the specified commodity. Must be shown in Roman Numerals. Valid values are:\n- I\n- II\n- III\n- blank\n"
+        Quantity:
           maximum: 1
           maxLength: 5
           minLength: 1
           type: string
           description: 'Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.'
-        ChemicalRecord_UOM:
+        UOM:
           maximum: 1
           maxLength: 10
           minLength: 1
           type: string
           description: 'Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.'
-        ChemicalRecord_PackagingInstructionCode:
+        PackagingInstructionCode:
           maximum: 1
           maxLength: 4
           minLength: 1
           type: string
           description: 'The packing instructions related to the chemical record.'
-        ChemicalRecord_EmergencyPhone:
+        EmergencyPhone:
           maximum: 1
           maxLength: 25
           minLength: 1
           type: string
-          description: "24 Hour Emergency Phone Number of the shipper. \n\nValid values for this field are (0) through (9) with trailing blanks. \n\nFor numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number. The following are restricted in the phone number \nperiod \".\", dash \"-\", plus sign \"+\" and conventional parentheses \"(\" and \")\", \"EXT\" or \"OPT\" The following are restricted in the phone number \nperiod \".\", dash \"-\", plus sign \"+\" and conventional parentheses \"(\" and \")\", \"EXT\" or \"OPT\""
-        ChemicalRecord_EmergencyContact:
+          description: "24 Hour Emergency Phone Number of the shipper.\n\nValid values for this field are (0) through (9) with trailing blanks.\n\nFor numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number\nperiod \".\", dash \"-\", plus sign \"+\" and conventional parentheses \"(\" and \")\", \"EXT\" or \"OPT\"  The following are restricted in the phone number\nperiod \".\", dash \"-\", plus sign \"+\" and conventional parentheses \"(\" and \")\", \"EXT\" or \"OPT\"\n"
+        EmergencyContact:
           maximum: 1
           maxLength: 35
           minLength: 1
           type: string
           description: 'The emergency information, contact name and/or contract number, required to be communicated when a call is placed to the EmergencyPhoneNumber.'
-        ChemicalRecord_ProperShippingName:
+        ProperShippingName:
           maximum: 1
           maxLength: 150
           minLength: 1
           type: string
           description: 'The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LQ or FR.'
-        ChemicalRecord_TechnicalName:
+        TechnicalName:
           maximum: 1
           maxLength: 200
           minLength: 200
           type: string
           description: 'The technical name (when required) for the specified commodity.'
-        ChemicalRecord_AdditionalDescription:
+        AdditionalDescription:
           maximum: 1
           maxLength: 255
           minLength: 1
           type: string
           description: 'Additional remarks or special provision information.'
-        ChemicalRecord_PackagingType:
+        PackagingType:
           maximum: 1
           maxLength: 255
           minLength: 1
           type: string
           description: 'The type of package used to contain the regulated good. (Ex: Fiberboard Box).'
-        ChemicalRecord_HazardLabelRequired:
+        HazardLabelRequired:
           maximum: 1
           maxLength: 50
           minLength: 50
           type: string
           description: 'Defines the type of label that is required on the package for the commodity.'
-        ChemicalRecord_PackagingTypeQuantity:
+        PackagingTypeQuantity:
           maximum: 1
           maxLength: 3
           minLength: 1
           type: string
           description: 'The number of pieces of the specific commodity. Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values are 1 to 999.'
-        ChemicalRecord_CommodityRegulatedLevelCode:
+        CommodityRegulatedLevelCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
           description: 'Indicates the type of commodity, Fully Regulated (FR), Limited Quantity (LQ), Lightly Regulated (LR)  Valid values are LR, FR and LQ.'
-        ChemicalRecord_TransportCategory:
+        TransportCategory:
           maximum: 1
           maxLength: 1
           minLength: 1
           type: string
-          description: 'Transport Category.   Valid values are 0 to 4.'
-        ChemicalRecord_TunnelRestrictionCode:
+          description: 'Transport Category. Valid values are 0 to 4.'
+        TunnelRestrictionCode:
           maximum: 1
           maxLength: 10
           minLength: 1
           type: string
           description: 'Defines what is restricted to pass through a tunnel.'
-        ChemicalRecord_QValue:
+        QValue:
           maximum: 1
           maxLength: 3
           minLength: 3
           type: string
           description: 'When a HazMat shipment specifies AllPackedInOneIndicator and the regulation set for that shipment is IATA,  Q-Value specifies exactly one of the following values: 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0  Valid values are : 0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9; 1.0'
-        ChemicalRecord_OverPackedIndicator:
+        OverPackedIndicator:
           maximum: 1
           type: string
           description: 'Presence/Absence Indicator. Any value is ignored. Presence indicates that shipment is overpack.'
-        ChemicalRecord_AllPackedInOneIndicator:
+        AllPackedInOneIndicator:
           maximum: 1
           type: string
           description: 'Presence/Absence Indicator. Any value is ignored. Presence indicates if multiple, different hazmat/chemicals are contained within one box in a package'
@@ -12425,23 +12561,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Response_Alert'
+          description: "Alert Container.  There can be zero to many alert containers with code and description.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         TransactionReference:
           $ref: '#/components/schemas/Response_TransactionReference'
       description: 'Contains Pre-Notification response components.'
       xml:
         name: Response
-    ResponseStatus_Code:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: "Identifies the success or failure of the transaction. \n1 = Successful"
-    ResponseStatus_Description:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Describes Response Status Code.Returns text of "Success".'
     QUANTUMVIEWRequestWrapper:
       maximum: 1
       required:
@@ -12496,6 +12621,12 @@ components:
       description: 'Contains QuantumView request criteria components.'
       xml:
         name: Request
+    TransactionReference_CustomerContext:
+      maximum: 1
+      maxLength: 512
+      minLength: 1
+      type: string
+      description: 'The CustomerContext Information which will be echoed during response.'
     Request_RequestAction:
       maximum: 1
       maxLength: 11
@@ -27534,6 +27665,18 @@ components:
       description: 'Response Container.'
       xml:
         name: Response
+    ResponseStatus_Code:
+      maximum: 1
+      maxLength: 1
+      minLength: 1
+      type: string
+      description: "Identifies the success or failure of the transaction. \n1 = Successful"
+    ResponseStatus_Description:
+      maximum: 1
+      maxLength: 35
+      minLength: 1
+      type: string
+      description: 'Describes Response Status Code.Returns text of "Success".'
     Alert_Code:
       maximum: 1
       maxLength: 10

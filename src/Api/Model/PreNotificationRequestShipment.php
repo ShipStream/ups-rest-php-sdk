@@ -49,9 +49,11 @@ class PreNotificationRequestShipment extends \ArrayObject
      */
     protected $service;
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR - Title 49 of the United States Code of Federal Regulations.  
-    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
+    - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
+    - 49CFR – Title 49 of the United States Code of Federal Regulations.
+    - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
+    
     *
     * @var string
     */
@@ -195,9 +197,11 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR - Title 49 of the United States Code of Federal Regulations.  
-    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
+    - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
+    - 49CFR – Title 49 of the United States Code of Federal Regulations.
+    - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
+    
     *
     * @return string
     */
@@ -206,9 +210,11 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->regulationSet;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are: ADR - European Agreement concerning the International Carriage of Dangerous Goods by Road. 
-    49CFR - Title 49 of the United States Code of Federal Regulations.  
-    IATA - International Air Transport Association (IATA) Dangerous Goods Regulations.
+    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
+    - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
+    - 49CFR – Title 49 of the United States Code of Federal Regulations.
+    - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
+    
     *
     * @param string $regulationSet
     *
