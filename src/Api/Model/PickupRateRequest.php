@@ -41,9 +41,11 @@ class PickupRateRequest extends \ArrayObject
     protected $alternateAddressIndicator;
     /**
     * Indicates the pickup timeframe.
-    01 = Same-Day Pickup
-    02 = Future-Day Pickup
-    03 = A Specific-Day Pickup  If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
+    - 01 = Same-Day Pickup
+    - 02 = Future-Day Pickup
+    - 03 = A Specific-Day Pickup
+    
+    If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
     *
     * @var string
     */
@@ -56,10 +58,34 @@ class PickupRateRequest extends \ArrayObject
     */
     protected $pickupDateInfo;
     /**
+    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    1 – Daily Rates
+    3 – Standard List Rates
+    4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    1 – Daily Rates
+    3 – Standard List Rates
+    4 – Retail Rates.
+    
+    All Other origins:
+    1 – Rates
+    5 - Regional Rates
+    6 - General List Rates.
+    
+    3 and 4 do not apply
+    
+    *
+    * @var string
+    */
+    protected $rateChartType;
+    /**
     * Indicates whether to return detailed taxes for on-callpickups.
     Valid values:
-    Y = Rate this pickup with taxes
-    N = Do not rate this pickup with taxes (default)
+    - Y = Rate this pickup with taxes
+    - N = Do not rate this pickup with taxes (default)
     *
     * @var string
     */
@@ -169,9 +195,11 @@ class PickupRateRequest extends \ArrayObject
     }
     /**
     * Indicates the pickup timeframe.
-    01 = Same-Day Pickup
-    02 = Future-Day Pickup
-    03 = A Specific-Day Pickup  If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
+    - 01 = Same-Day Pickup
+    - 02 = Future-Day Pickup
+    - 03 = A Specific-Day Pickup
+    
+    If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
     *
     * @return string
     */
@@ -181,9 +209,11 @@ class PickupRateRequest extends \ArrayObject
     }
     /**
     * Indicates the pickup timeframe.
-    01 = Same-Day Pickup
-    02 = Future-Day Pickup
-    03 = A Specific-Day Pickup  If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
+    - 01 = Same-Day Pickup
+    - 02 = Future-Day Pickup
+    - 03 = A Specific-Day Pickup
+    
+    If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
     *
     * @param string $serviceDateOption
     *
@@ -220,10 +250,68 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
+    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    1 – Daily Rates
+    3 – Standard List Rates
+    4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    1 – Daily Rates
+    3 – Standard List Rates
+    4 – Retail Rates.
+    
+    All Other origins:
+    1 – Rates
+    5 - Regional Rates
+    6 - General List Rates.
+    
+    3 and 4 do not apply
+    
+    *
+    * @return string
+    */
+    public function getRateChartType() : string
+    {
+        return $this->rateChartType;
+    }
+    /**
+    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    1 – Daily Rates
+    3 – Standard List Rates
+    4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    1 – Daily Rates
+    3 – Standard List Rates
+    4 – Retail Rates.
+    
+    All Other origins:
+    1 – Rates
+    5 - Regional Rates
+    6 - General List Rates.
+    
+    3 and 4 do not apply
+    
+    *
+    * @param string $rateChartType
+    *
+    * @return self
+    */
+    public function setRateChartType(string $rateChartType) : self
+    {
+        $this->initialized['rateChartType'] = true;
+        $this->rateChartType = $rateChartType;
+        return $this;
+    }
+    /**
     * Indicates whether to return detailed taxes for on-callpickups.
     Valid values:
-    Y = Rate this pickup with taxes
-    N = Do not rate this pickup with taxes (default)
+    - Y = Rate this pickup with taxes
+    - N = Do not rate this pickup with taxes (default)
     *
     * @return string
     */
@@ -234,8 +322,8 @@ class PickupRateRequest extends \ArrayObject
     /**
     * Indicates whether to return detailed taxes for on-callpickups.
     Valid values:
-    Y = Rate this pickup with taxes
-    N = Do not rate this pickup with taxes (default)
+    - Y = Rate this pickup with taxes
+    - N = Do not rate this pickup with taxes (default)
     *
     * @param string $taxInformationIndicator
     *

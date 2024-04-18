@@ -13,22 +13,28 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Saturday WST
-    N = Non-Saturday WST
+    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007. Valid Values:
+    - Y = Saturday WST
+    - N = Non-Saturday WST
+    
     *
     * @var string
     */
     protected $satWST;
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Sunday WST
-    N = Non-Sunday WST
+    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007. Valid Values:
+    - Y = Sunday WST
+    - N = Non-Sunday WST
+    
     *
     * @var string
     */
     protected $sunWST;
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Saturday WST
-    N = Non-Saturday WST
+    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007. Valid Values:
+    - Y = Saturday WST
+    - N = Non-Saturday WST
+    
     *
     * @return string
     */
@@ -37,8 +43,10 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
         return $this->satWST;
     }
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Saturday WST
-    N = Non-Saturday WST
+    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 2007. Valid Values:
+    - Y = Saturday WST
+    - N = Non-Saturday WST
+    
     *
     * @param string $satWST
     *
@@ -51,8 +59,10 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Sunday WST
-    N = Non-Sunday WST
+    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007. Valid Values:
+    - Y = Sunday WST
+    - N = Non-Sunday WST
+    
     *
     * @return string
     */
@@ -61,8 +71,10 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
         return $this->sunWST;
     }
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007.                                                                                                                                                                                                                          Valid Values:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Y = Sunday WST
-    N = Non-Sunday WST
+    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Sunday and subversion greater or equal to 2007. Valid Values:
+    - Y = Sunday WST
+    - N = Non-Sunday WST
+    
     *
     * @param string $sunWST
     *

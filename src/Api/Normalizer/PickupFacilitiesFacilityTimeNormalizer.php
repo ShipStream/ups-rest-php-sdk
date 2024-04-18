@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('DayOfWeek', $data)) {
-                $object->setDayOfWeek($this->denormalizer->denormalize($data['DayOfWeek'], 'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek', 'json', $context));
+                $object->setDayOfWeek($this->denormalizer->denormalize($data['DayOfWeek'], 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTimeDayOfWeek', 'json', $context));
                 unset($data['DayOfWeek']);
             }
             foreach ($data as $key => $value) {
@@ -98,7 +98,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('DayOfWeek', $data)) {
-                $object->setDayOfWeek($this->denormalizer->denormalize($data['DayOfWeek'], 'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek', 'json', $context));
+                $object->setDayOfWeek($this->denormalizer->denormalize($data['DayOfWeek'], 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTimeDayOfWeek', 'json', $context));
                 unset($data['DayOfWeek']);
             }
             foreach ($data as $key => $value) {

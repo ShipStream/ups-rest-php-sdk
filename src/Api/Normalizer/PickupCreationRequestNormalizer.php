@@ -48,6 +48,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRatePickupIndicator($data['RatePickupIndicator']);
                 unset($data['RatePickupIndicator']);
             }
+            if (\array_key_exists('RateChartType', $data)) {
+                $object->setRateChartType($data['RateChartType']);
+                unset($data['RateChartType']);
+            }
             if (\array_key_exists('TaxInformationIndicator', $data)) {
                 $object->setTaxInformationIndicator($data['TaxInformationIndicator']);
                 unset($data['TaxInformationIndicator']);
@@ -140,6 +144,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data = [];
             $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
             $data['RatePickupIndicator'] = $object->getRatePickupIndicator();
+            if ($object->isInitialized('rateChartType') && null !== $object->getRateChartType()) {
+                $data['RateChartType'] = $object->getRateChartType();
+            }
             if ($object->isInitialized('taxInformationIndicator') && null !== $object->getTaxInformationIndicator()) {
                 $data['TaxInformationIndicator'] = $object->getTaxInformationIndicator();
             }
@@ -242,6 +249,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRatePickupIndicator($data['RatePickupIndicator']);
                 unset($data['RatePickupIndicator']);
             }
+            if (\array_key_exists('RateChartType', $data)) {
+                $object->setRateChartType($data['RateChartType']);
+                unset($data['RateChartType']);
+            }
             if (\array_key_exists('TaxInformationIndicator', $data)) {
                 $object->setTaxInformationIndicator($data['TaxInformationIndicator']);
                 unset($data['TaxInformationIndicator']);
@@ -337,6 +348,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data = [];
             $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
             $data['RatePickupIndicator'] = $object->getRatePickupIndicator();
+            if ($object->isInitialized('rateChartType') && null !== $object->getRateChartType()) {
+                $data['RateChartType'] = $object->getRateChartType();
+            }
             if ($object->isInitialized('taxInformationIndicator') && null !== $object->getTaxInformationIndicator()) {
                 $data['TaxInformationIndicator'] = $object->getTaxInformationIndicator();
             }

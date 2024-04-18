@@ -20,7 +20,7 @@ class PickupCancelResponse extends \ArrayObject
     protected $response;
     /**
     * The type of pickup that has been cancelled.
-    01 = On-Call Pickup
+    - 01 = On-Call Pickup
     *
     * @var string
     */
@@ -55,7 +55,7 @@ class PickupCancelResponse extends \ArrayObject
     }
     /**
     * The type of pickup that has been cancelled.
-    01 = On-Call Pickup
+    - 01 = On-Call Pickup
     *
     * @return string
     */
@@ -65,7 +65,7 @@ class PickupCancelResponse extends \ArrayObject
     }
     /**
     * The type of pickup that has been cancelled.
-    01 = On-Call Pickup
+    - 01 = On-Call Pickup
     *
     * @param string $pickupType
     *

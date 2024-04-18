@@ -37,11 +37,10 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      */
     protected $type;
     /**
-    * Facility�s Timezone.
-    Format:
-    America/New_York
-    Asia/Hong_Kong
-    Europe/London
+    * Facility's Timezone. Format:
+    - America/New_York
+    - Asia/Hong_Kong
+    - Europe/London
     *
     * @var string
     */
@@ -168,11 +167,10 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
         return $this;
     }
     /**
-    * Facility�s Timezone.
-    Format:
-    America/New_York
-    Asia/Hong_Kong
-    Europe/London
+    * Facility's Timezone. Format:
+    - America/New_York
+    - Asia/Hong_Kong
+    - Europe/London
     *
     * @return string
     */
@@ -181,11 +179,10 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
         return $this->timezone;
     }
     /**
-    * Facility�s Timezone.
-    Format:
-    America/New_York
-    Asia/Hong_Kong
-    Europe/London
+    * Facility's Timezone. Format:
+    - America/New_York
+    - Asia/Hong_Kong
+    - Europe/London
     *
     * @param string $timezone
     *
