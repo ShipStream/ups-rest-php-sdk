@@ -69,6 +69,10 @@ class ContactsSoldToNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setEMailAddress($data['EMailAddress']);
             unset($data['EMailAddress']);
         }
+        if (\array_key_exists('AccountNumber', $data)) {
+            $object->setAccountNumber($data['AccountNumber']);
+            unset($data['AccountNumber']);
+        }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $object[$key] = $value;
@@ -96,6 +100,9 @@ class ContactsSoldToNormalizer implements DenormalizerInterface, NormalizerInter
         $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
         if ($object->isInitialized('eMailAddress') && null !== $object->getEMailAddress()) {
             $data['EMailAddress'] = $object->getEMailAddress();
+        }
+        if ($object->isInitialized('accountNumber') && null !== $object->getAccountNumber()) {
+            $data['AccountNumber'] = $object->getAccountNumber();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

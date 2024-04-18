@@ -13,43 +13,43 @@ class UltimateConsigneeAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address information of the Ultimate consignee.
+     * Address line of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @var string[]
      */
     protected $addressLine;
     /**
-     * Address line of the Ultimate consignee.
+     * City of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $city;
     /**
-     * State of the Ultimate consignee.
+     * State of the Ultimate consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * Town of the Ultimate consignee.
+     * Town of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $town;
     /**
-     * Postal code of the Ultimate consignee.
+     * Postal code of the Ultimate consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Country or Territory code of the Ultimate consignee.
+     * Country or Territory code of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Address information of the Ultimate consignee.
+     * Address line of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @return string[]
      */
@@ -58,7 +58,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address information of the Ultimate consignee.
+     * Address line of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @param string[] $addressLine
      *
@@ -71,7 +71,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Address line of the Ultimate consignee.
+     * City of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * Address line of the Ultimate consignee.
+     * City of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @param string $city
      *
@@ -93,7 +93,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * State of the Ultimate consignee.
+     * State of the Ultimate consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * State of the Ultimate consignee.
+     * State of the Ultimate consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code
      *
      * @param string $stateProvinceCode
      *
@@ -115,7 +115,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Town of the Ultimate consignee.
+     * Town of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -124,7 +124,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this->town;
     }
     /**
-     * Town of the Ultimate consignee.
+     * Town of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @param string $town
      *
@@ -137,7 +137,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Postal code of the Ultimate consignee.
+     * Postal code of the Ultimate consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * Postal code of the Ultimate consignee.
+     * Postal code of the Ultimate consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @param string $postalCode
      *
@@ -159,7 +159,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Country or Territory code of the Ultimate consignee.
+     * Country or Territory code of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -168,7 +168,7 @@ class UltimateConsigneeAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Country or Territory code of the Ultimate consignee.
+     * Country or Territory code of the Ultimate consignee.  Applicable for EEI form only.
      *
      * @param string $countryCode
      *

@@ -13,19 +13,19 @@ class FormImage extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container tag for the International forms image format information.
      *
      * @var ImageImageFormat
      */
     protected $imageFormat;
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded International forms image.
      *
      * @var string
      */
     protected $graphicImage;
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container tag for the International forms image format information.
      *
      * @return ImageImageFormat
      */
@@ -34,7 +34,7 @@ class FormImage extends \ArrayObject
         return $this->imageFormat;
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container tag for the International forms image format information.
      *
      * @param ImageImageFormat $imageFormat
      *
@@ -47,7 +47,7 @@ class FormImage extends \ArrayObject
         return $this;
     }
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded International forms image.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class FormImage extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded International forms image.
      *
      * @param string $graphicImage
      *

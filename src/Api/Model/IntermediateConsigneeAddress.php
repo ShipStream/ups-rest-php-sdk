@@ -13,43 +13,43 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address information of the Intermediate Consignee.
+     * Address line of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @var string[]
      */
     protected $addressLine;
     /**
-     * Address line of the Intermediate Consignee.
+     * City of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $city;
     /**
-     * State of the Intermediate Consignee.
+     * State of the Intermediate Consignee.  Applicable for EEI form only. Required for certain countries or territories.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * Town of the Intermediate Consignee.
+     * Town of the Intermediate consignee.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $town;
     /**
-     * Postal code of the Intermediate Consignee.
+     * Postal code of the Intermediate Consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Country or Territory code of the Intermediate Consignee.
+     * Country or Territory code of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Address information of the Intermediate Consignee.
+     * Address line of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @return string[]
      */
@@ -58,7 +58,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address information of the Intermediate Consignee.
+     * Address line of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @param string[] $addressLine
      *
@@ -71,7 +71,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Address line of the Intermediate Consignee.
+     * City of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * Address line of the Intermediate Consignee.
+     * City of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @param string $city
      *
@@ -93,7 +93,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * State of the Intermediate Consignee.
+     * State of the Intermediate Consignee.  Applicable for EEI form only. Required for certain countries or territories.
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * State of the Intermediate Consignee.
+     * State of the Intermediate Consignee.  Applicable for EEI form only. Required for certain countries or territories.
      *
      * @param string $stateProvinceCode
      *
@@ -115,7 +115,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Town of the Intermediate Consignee.
+     * Town of the Intermediate consignee.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -124,7 +124,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this->town;
     }
     /**
-     * Town of the Intermediate Consignee.
+     * Town of the Intermediate consignee.  Applicable for EEI form only.
      *
      * @param string $town
      *
@@ -137,7 +137,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Postal code of the Intermediate Consignee.
+     * Postal code of the Intermediate Consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * Postal code of the Intermediate Consignee.
+     * Postal code of the Intermediate Consignee.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @param string $postalCode
      *
@@ -159,7 +159,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Country or Territory code of the Intermediate Consignee.
+     * Country or Territory code of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -168,7 +168,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Country or Territory code of the Intermediate Consignee.
+     * Country or Territory code of the Intermediate Consignee.  Applicable for EEI form only.
      *
      * @param string $countryCode
      *

@@ -13,43 +13,44 @@ class PackageResultsShippingLabel extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The container image format.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * The container image format.
      *
      * @var ShippingLabelImageFormat
      */
     protected $imageFormat;
     /**
-     * Base 64 encoded graphic image.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded graphic image.
      *
      * @var string
      */
     protected $graphicImage;
     /**
-     * Base 64 encoded graphic image.  Applicable only for ShipmentResponse and ShipAcceptResponse for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
+     * Base 64 encoded graphic image. Applicable only for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var string[]
      */
     protected $graphicImagePart;
     /**
-     * Base 64 encoded graphic image of the Warsaw text and signature box. EPL2, ZPL and SPL labels. The image will be returned for non-US based shipments. One image will be given per shipment and it will be in the first PackageResults container.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded graphic image of the Warsaw text and signature box. EPL2, ZPL and SPL labels. The image will be returned for non-US based shipments. One image will be given per shipment and it will be in the first PackageResults container.
      *
      * @var string
      */
     protected $internationalSignatureGraphicImage;
     /**
-     * Base 64 encoded html browser image rendering software. This is only returned for gif and png image formats.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded html browser image rendering software. This is only returned for gif and png image formats.
      *
      * @var string
      */
     protected $hTMLImage;
     /**
-     * PDF-417 is a two-dimensional barcode, which can store up to about 1,800 printable ASCII characters or 1,100 binary characters per symbol. The symbol is rectangular. The image is Base 64 encoded and returned if the LabelImageFormat code is GIF. Shipment with PRL return service only. Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * PDF-417 is a two-dimensional barcode, which can store up to about 1,800 printable ASCII characters or 1,100 binary characters per symbol. The symbol is rectangular. The image is Base 64 encoded and returned if the LabelImageFormat code is GIF. Shipment with PRL return service only.
      *
      * @var string
      */
     protected $pDF417;
     /**
-     * The container image format.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * The container image format.
      *
      * @return ShippingLabelImageFormat
      */
@@ -58,7 +59,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this->imageFormat;
     }
     /**
-     * The container image format.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * The container image format.
      *
      * @param ShippingLabelImageFormat $imageFormat
      *
@@ -71,7 +72,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this;
     }
     /**
-     * Base 64 encoded graphic image.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded graphic image.
      *
      * @return string
      */
@@ -80,7 +81,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-     * Base 64 encoded graphic image.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded graphic image.
      *
      * @param string $graphicImage
      *
@@ -93,7 +94,8 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this;
     }
     /**
-     * Base 64 encoded graphic image.  Applicable only for ShipmentResponse and ShipAcceptResponse for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
+     * Base 64 encoded graphic image. Applicable only for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return string[]
      */
@@ -102,7 +104,8 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this->graphicImagePart;
     }
     /**
-     * Base 64 encoded graphic image.  Applicable only for ShipmentResponse and ShipAcceptResponse for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
+     * Base 64 encoded graphic image. Applicable only for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param string[] $graphicImagePart
      *
@@ -115,7 +118,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this;
     }
     /**
-     * Base 64 encoded graphic image of the Warsaw text and signature box. EPL2, ZPL and SPL labels. The image will be returned for non-US based shipments. One image will be given per shipment and it will be in the first PackageResults container.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded graphic image of the Warsaw text and signature box. EPL2, ZPL and SPL labels. The image will be returned for non-US based shipments. One image will be given per shipment and it will be in the first PackageResults container.
      *
      * @return string
      */
@@ -124,7 +127,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this->internationalSignatureGraphicImage;
     }
     /**
-     * Base 64 encoded graphic image of the Warsaw text and signature box. EPL2, ZPL and SPL labels. The image will be returned for non-US based shipments. One image will be given per shipment and it will be in the first PackageResults container.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded graphic image of the Warsaw text and signature box. EPL2, ZPL and SPL labels. The image will be returned for non-US based shipments. One image will be given per shipment and it will be in the first PackageResults container.
      *
      * @param string $internationalSignatureGraphicImage
      *
@@ -137,7 +140,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this;
     }
     /**
-     * Base 64 encoded html browser image rendering software. This is only returned for gif and png image formats.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded html browser image rendering software. This is only returned for gif and png image formats.
      *
      * @return string
      */
@@ -146,7 +149,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this->hTMLImage;
     }
     /**
-     * Base 64 encoded html browser image rendering software. This is only returned for gif and png image formats.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Base 64 encoded html browser image rendering software. This is only returned for gif and png image formats.
      *
      * @param string $hTMLImage
      *
@@ -159,7 +162,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this;
     }
     /**
-     * PDF-417 is a two-dimensional barcode, which can store up to about 1,800 printable ASCII characters or 1,100 binary characters per symbol. The symbol is rectangular. The image is Base 64 encoded and returned if the LabelImageFormat code is GIF. Shipment with PRL return service only. Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * PDF-417 is a two-dimensional barcode, which can store up to about 1,800 printable ASCII characters or 1,100 binary characters per symbol. The symbol is rectangular. The image is Base 64 encoded and returned if the LabelImageFormat code is GIF. Shipment with PRL return service only.
      *
      * @return string
      */
@@ -168,7 +171,7 @@ class PackageResultsShippingLabel extends \ArrayObject
         return $this->pDF417;
     }
     /**
-     * PDF-417 is a two-dimensional barcode, which can store up to about 1,800 printable ASCII characters or 1,100 binary characters per symbol. The symbol is rectangular. The image is Base 64 encoded and returned if the LabelImageFormat code is GIF. Shipment with PRL return service only. Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * PDF-417 is a two-dimensional barcode, which can store up to about 1,800 printable ASCII characters or 1,100 binary characters per symbol. The symbol is rectangular. The image is Base 64 encoded and returned if the LabelImageFormat code is GIF. Shipment with PRL return service only.
      *
      * @param string $pDF417
      *

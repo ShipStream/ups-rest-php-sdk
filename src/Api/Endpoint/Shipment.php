@@ -9,9 +9,11 @@ class Shipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implement
     * The Shipping API makes UPS shipping services available to client applications that communicate with UPS 
     using the Internet
     *
-    * @param string $version Indicates Ship API to display the new release features in 
-    Rate API response based on Ship release. See the New 
-    section for the latest Ship release. Supported values: v1, v1601, v1607, v1701, v1707, v1801, v1807, v2108, v2205 . Length 5
+    * @param string $version Indicates Ship API to display the new release features in Ship API response based on Ship release.
+    
+    Valid values:
+    - v2403
+    
     * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $additionaladdressvalidation Valid Values: 
@@ -73,6 +75,8 @@ class Shipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implement
      *
      * @throws \ShipStream\Ups\Api\Exception\ShipmentBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\ShipmentUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\ShipmentForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\ShipmentTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\SHIPResponseWrapper
@@ -89,6 +93,12 @@ class Shipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implement
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\ShipmentUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\ShipmentForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\ShipmentTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

@@ -42,7 +42,7 @@ class ShipmentFRSPaymentInformationNormalizer implements DenormalizerInterface, 
             return $object;
         }
         if (\array_key_exists('Type', $data)) {
-            $object->setType($data['Type']);
+            $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType', 'json', $context));
             unset($data['Type']);
         }
         if (\array_key_exists('AccountNumber', $data)) {
@@ -66,7 +66,7 @@ class ShipmentFRSPaymentInformationNormalizer implements DenormalizerInterface, 
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['Type'] = $object->getType();
+        $data['Type'] = $this->normalizer->normalize($object->getType(), 'json', $context);
         $data['AccountNumber'] = $object->getAccountNumber();
         if ($object->isInitialized('address') && null !== $object->getAddress()) {
             $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);

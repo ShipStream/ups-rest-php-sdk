@@ -14,7 +14,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     }
     /**
     * Package 1Z number.  
-    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).  Applicable only for ShipmentResponse and ShipAcceptResponse.
+    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
     *
     * @var string
     */
@@ -33,7 +33,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     */
     protected $baseServiceCharge;
     /**
-     * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico. Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico.
      *
      * @var PackageResultsServiceOptionsCharges
      */
@@ -42,7 +42,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * The container for UPS shipping label. Returned for following shipments -
     Forward shipments,
     Shipments with PRL returns service, 
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present. Applicable only for ShipmentResponse and ShipAcceptResponse.
+    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
     *
     * @var PackageResultsShippingLabel|null
     */
@@ -50,7 +50,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
     * Supported for following shipments -
     PRL shipments,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
+    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
     *
     * @var PackageResultsShippingReceipt
     */
@@ -70,7 +70,8 @@ class ShipmentResultsPackageResults extends \ArrayObject
     */
     protected $cN22Number;
     /**
-     * 
+     * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var PackageResultsAccessorial[]
      */
@@ -91,7 +92,8 @@ class ShipmentResultsPackageResults extends \ArrayObject
     */
     protected $form;
     /**
-     * 
+     * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var PackageResultsItemizedCharges[]
      */
@@ -106,7 +108,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     protected $negotiatedCharges;
     /**
     * Package 1Z number.  
-    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).  Applicable only for ShipmentResponse and ShipAcceptResponse.
+    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
     *
     * @return string
     */
@@ -116,7 +118,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     }
     /**
     * Package 1Z number.  
-    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).  Applicable only for ShipmentResponse and ShipAcceptResponse.
+    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
     *
     * @param string $trackingNumber
     *
@@ -175,7 +177,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-     * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico. Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico.
      *
      * @return PackageResultsServiceOptionsCharges
      */
@@ -184,7 +186,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this->serviceOptionsCharges;
     }
     /**
-     * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico. Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico.
      *
      * @param PackageResultsServiceOptionsCharges $serviceOptionsCharges
      *
@@ -200,7 +202,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * The container for UPS shipping label. Returned for following shipments -
     Forward shipments,
     Shipments with PRL returns service, 
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present. Applicable only for ShipmentResponse and ShipAcceptResponse.
+    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
     *
     * @return PackageResultsShippingLabel|null
     */
@@ -212,7 +214,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     * The container for UPS shipping label. Returned for following shipments -
     Forward shipments,
     Shipments with PRL returns service, 
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present. Applicable only for ShipmentResponse and ShipAcceptResponse.
+    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
     *
     * @param PackageResultsShippingLabel|null $shippingLabel
     *
@@ -227,7 +229,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
     * Supported for following shipments -
     PRL shipments,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
+    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
     *
     * @return PackageResultsShippingReceipt
     */
@@ -238,7 +240,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     /**
     * Supported for following shipments -
     PRL shipments,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
+    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
     *
     * @param PackageResultsShippingReceipt $shippingReceipt
     *
@@ -299,7 +301,8 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return PackageResultsAccessorial[]
      */
@@ -308,7 +311,8 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this->accessorial;
     }
     /**
-     * 
+     * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param PackageResultsAccessorial[] $accessorial
      *
@@ -371,7 +375,8 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return PackageResultsItemizedCharges[]
      */
@@ -380,7 +385,8 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this->itemizedCharges;
     }
     /**
-     * 
+     * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param PackageResultsItemizedCharges[] $itemizedCharges
      *

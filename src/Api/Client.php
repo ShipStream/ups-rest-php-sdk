@@ -849,9 +849,11 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * The Shipping API makes UPS shipping services available to client applications that communicate with UPS 
     using the Internet
     *
-    * @param string $version Indicates Ship API to display the new release features in 
-    Rate API response based on Ship release. See the New 
-    section for the latest Ship release. Supported values: v1, v1601, v1607, v1701, v1707, v1801, v1807, v2108, v2205 . Length 5
+    * @param string $version Indicates Ship API to display the new release features in Ship API response based on Ship release.
+    
+    Valid values:
+    - v2403
+    
     * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
     * @param array $queryParameters {
     *     @var string $additionaladdressvalidation Valid Values: 
@@ -864,6 +866,8 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
     * @throws \ShipStream\Ups\Api\Exception\ShipmentBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\ShipmentUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\ShipmentForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\ShipmentTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\SHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -876,6 +880,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * The Void Shipping API is used to cancel the previously scheduled shipment
     *
     * @param string $version API Version
+    
+    Valid values:
+    - v2403
+    
     * @param string $shipmentidentificationnumber The shipment's identification number 
     Alpha-numeric. Must pass 1Z rules. Must be 
     upper case. Length 18
@@ -896,6 +904,8 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
     * @throws \ShipStream\Ups\Api\Exception\VoidShipmentBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\VoidShipmentUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\VoidShipmentForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\VoidShipmentTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -925,7 +935,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -933,6 +946,83 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     public function labelRecovery(string $version, \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\LabelRecovery($version, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+    * The Shipping API makes UPS shipping services available to client applications that communicate with UPS 
+    using the Internet
+    *
+    * @param string $deprecatedVersion Indicates Ship API to display the new release features in Ship API response based on Ship release.
+    
+    Valid values:
+    - v1
+    - v1601
+    - v1607
+    - v1701
+    - v1707
+    - v1801
+    - v1807
+    - v2108
+    - v2205
+    
+    * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
+    * @param array $queryParameters {
+    *     @var string $additionaladdressvalidation Valid Values: 
+    city = validation will include city.Length 15
+    * }
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedShipmentBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedShipmentUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedShipmentForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedShipmentTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\SHIPResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedShipment(string $deprecatedVersion, \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedShipment($deprecatedVersion, $requestBody, $queryParameters, $headerParameters), $fetch);
+    }
+    /**
+    * The Void Shipping API is used to cancel the previously scheduled shipment
+    *
+    * @param string $deprecatedVersion API Version.
+    
+    Valid values:
+    - v1
+    
+    * @param string $shipmentidentificationnumber The shipment's identification number 
+    Alpha-numeric. Must pass 1Z rules. Must be 
+    upper case. Length 18
+    * @param array $queryParameters {
+    *     @var string $trackingnumber The package's tracking number. You may have 
+    up to 20 different tracking numbers listed.
+    If more than one tracking number, pass this 
+    value as: trackingnumber= 
+    ["1ZISUS010330563105","1ZISUS01033056310
+    8"] with a coma separating each number.
+    Alpha-numeric. Must pass 1Z rules. Must be 
+    upper case. Length 18
+    * }
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedVoidShipment(string $deprecatedVersion, string $shipmentidentificationnumber, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedVoidShipment($deprecatedVersion, $shipmentidentificationnumber, $queryParameters, $headerParameters), $fetch);
     }
     /**
      * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight

@@ -77,6 +77,14 @@ class ShipmentPackageNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setLargePackageIndicator($data['LargePackageIndicator']);
             unset($data['LargePackageIndicator']);
         }
+        if (\array_key_exists('OversizeIndicator', $data)) {
+            $object->setOversizeIndicator($data['OversizeIndicator']);
+            unset($data['OversizeIndicator']);
+        }
+        if (\array_key_exists('MinimumBillableWeightIndicator', $data)) {
+            $object->setMinimumBillableWeightIndicator($data['MinimumBillableWeightIndicator']);
+            unset($data['MinimumBillableWeightIndicator']);
+        }
         if (\array_key_exists('ReferenceNumber', $data)) {
             $values = array();
             foreach ($data['ReferenceNumber'] as $value) {
@@ -146,6 +154,12 @@ class ShipmentPackageNormalizer implements DenormalizerInterface, NormalizerInte
         }
         if ($object->isInitialized('largePackageIndicator') && null !== $object->getLargePackageIndicator()) {
             $data['LargePackageIndicator'] = $object->getLargePackageIndicator();
+        }
+        if ($object->isInitialized('oversizeIndicator') && null !== $object->getOversizeIndicator()) {
+            $data['OversizeIndicator'] = $object->getOversizeIndicator();
+        }
+        if ($object->isInitialized('minimumBillableWeightIndicator') && null !== $object->getMinimumBillableWeightIndicator()) {
+            $data['MinimumBillableWeightIndicator'] = $object->getMinimumBillableWeightIndicator();
         }
         if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
             $values = array();

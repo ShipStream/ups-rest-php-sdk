@@ -13,7 +13,7 @@ class LabelRecoveryRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Request Container.  N/A
+     * Request Container.
      *
      * @var LabelRecoveryRequestRequest
      */
@@ -95,7 +95,7 @@ class LabelRecoveryRequest extends \ArrayObject
     */
     protected $uPSPremiumCareForm;
     /**
-     * Request Container.  N/A
+     * Request Container.
      *
      * @return LabelRecoveryRequestRequest
      */
@@ -104,7 +104,7 @@ class LabelRecoveryRequest extends \ArrayObject
         return $this->request;
     }
     /**
-     * Request Container.  N/A
+     * Request Container.
      *
      * @param LabelRecoveryRequestRequest $request
      *
