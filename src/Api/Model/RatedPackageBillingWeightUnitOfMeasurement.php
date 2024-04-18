@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Model;
 
-class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
+class RatedPackageBillingWeightUnitOfMeasurement extends \ArrayObject
 {
     /**
      * @var array
@@ -13,48 +13,33 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds
-    - KGS = Kilograms.
-    
-    *
-    * @var string
-    */
+     * The code associated with the unit of measure for the billable weight of a package.
+     *
+     * @var string
+     */
     protected $code;
     /**
-     * Text description of the code representing the unit of measure associated with the shipment weight.
+     * The Description for the Unit Of Measurement.
      *
      * @var string
      */
     protected $description;
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds
-    - KGS = Kilograms.
-    
-    *
-    * @return string
-    */
+     * The code associated with the unit of measure for the billable weight of a package.
+     *
+     * @return string
+     */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds
-    - KGS = Kilograms.
-    
-    *
-    * @param string $code
-    *
-    * @return self
-    */
+     * The code associated with the unit of measure for the billable weight of a package.
+     *
+     * @param string $code
+     *
+     * @return self
+     */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -62,7 +47,7 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * Text description of the code representing the unit of measure associated with the shipment weight.
+     * The Description for the Unit Of Measurement.
      *
      * @return string
      */
@@ -71,7 +56,7 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * Text description of the code representing the unit of measure associated with the shipment weight.
+     * The Description for the Unit Of Measurement.
      *
      * @param string $description
      *

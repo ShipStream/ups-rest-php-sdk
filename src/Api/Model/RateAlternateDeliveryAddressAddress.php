@@ -31,13 +31,13 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
      */
     protected $stateProvinceCode;
     /**
-     * Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.
+     * UPS Access Point Postal code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.
+     * UPS Access Point country or territory code.
      *
      * @var string
      */
@@ -49,10 +49,17 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
      */
     protected $residentialAddressIndicator;
     /**
-     * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery
-     *
-     * @var string
-     */
+    * Presence/Absence Indicator. Any value inside is ignored.
+    
+    This field is a flag to indicate if the Alternate Delivery location is a PO box location.
+    
+    True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
+    - 01 - Hold for Pickup at UPS Access Point
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @var string
+    */
     protected $pOBoxIndicator;
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
@@ -121,7 +128,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.
+     * UPS Access Point Postal code.
      *
      * @return string
      */
@@ -130,7 +137,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.
+     * UPS Access Point Postal code.
      *
      * @param string $postalCode
      *
@@ -143,7 +150,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.
+     * UPS Access Point country or territory code.
      *
      * @return string
      */
@@ -152,7 +159,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.
+     * UPS Access Point country or territory code.
      *
      * @param string $countryCode
      *
@@ -187,21 +194,35 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery
-     *
-     * @return string
-     */
+    * Presence/Absence Indicator. Any value inside is ignored.
+    
+    This field is a flag to indicate if the Alternate Delivery location is a PO box location.
+    
+    True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
+    - 01 - Hold for Pickup at UPS Access Point
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @return string
+    */
     public function getPOBoxIndicator() : string
     {
         return $this->pOBoxIndicator;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery
-     *
-     * @param string $pOBoxIndicator
-     *
-     * @return self
-     */
+    * Presence/Absence Indicator. Any value inside is ignored.
+    
+    This field is a flag to indicate if the Alternate Delivery location is a PO box location.
+    
+    True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
+    - 01 - Hold for Pickup at UPS Access Point
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @param string $pOBoxIndicator
+    *
+    * @return self
+    */
     public function setPOBoxIndicator(string $pOBoxIndicator) : self
     {
         $this->initialized['pOBoxIndicator'] = true;

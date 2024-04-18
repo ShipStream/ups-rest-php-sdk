@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+class RatedPackageBillingWeightUnitOfMeasurementNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
     use DenormalizerAwareTrait;
     use NormalizerAwareTrait;
@@ -20,11 +20,11 @@ class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, Norm
     use ValidatorTrait;
     public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
     {
-        return $type === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight';
+        return $type === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement';
     }
     public function supportsNormalization($data, $format = null, array $context = array()) : bool
     {
-        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight';
+        return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement';
     }
     /**
      * @return mixed
@@ -37,17 +37,17 @@ class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, Norm
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \ShipStream\Ups\Api\Model\RatedPackageBillingWeight();
+        $object = new \ShipStream\Ups\Api\Model\RatedPackageBillingWeightUnitOfMeasurement();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('UnitOfMeasurement', $data)) {
-            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement', 'json', $context));
-            unset($data['UnitOfMeasurement']);
+        if (\array_key_exists('Code', $data)) {
+            $object->setCode($data['Code']);
+            unset($data['Code']);
         }
-        if (\array_key_exists('Weight', $data)) {
-            $object->setWeight($data['Weight']);
-            unset($data['Weight']);
+        if (\array_key_exists('Description', $data)) {
+            $object->setDescription($data['Description']);
+            unset($data['Description']);
         }
         foreach ($data as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -62,8 +62,8 @@ class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, Norm
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['UnitOfMeasurement'] = $this->normalizer->normalize($object->getUnitOfMeasurement(), 'json', $context);
-        $data['Weight'] = $object->getWeight();
+        $data['Code'] = $object->getCode();
+        $data['Description'] = $object->getDescription();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;
@@ -73,6 +73,6 @@ class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, Norm
     }
     public function getSupportedTypes(?string $format = null) : array
     {
-        return array('ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => false);
+        return array('ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement' => false);
     }
 }

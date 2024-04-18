@@ -13,7 +13,7 @@ class RateShipmentPackage extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Packaging Type Container.  N/A
+     * Packaging Type Container.
      *
      * @var PackagePackagingType
      */
@@ -49,13 +49,13 @@ class RateShipmentPackage extends \ArrayObject
      */
     protected $largePackageIndicator;
     /**
-     * PackageServiceOptions container.  N/A
+     * PackageServiceOptions container.
      *
      * @var RatePackagePackageServiceOptions
      */
     protected $packageServiceOptions;
     /**
-     * A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it"s a non-corrugated package.  Empty Tag.
+     * A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it's a non-corrugated package.  Empty Tag.
      *
      * @var string
      */
@@ -67,7 +67,7 @@ class RateShipmentPackage extends \ArrayObject
      */
     protected $simpleRate;
     /**
-     * UPS Premier  N/A
+     * UPS Premier
      *
      * @var RatePackageUPSPremier
      */
@@ -85,7 +85,7 @@ class RateShipmentPackage extends \ArrayObject
      */
     protected $minimumBillableWeightIndicator;
     /**
-     * Packaging Type Container.  N/A
+     * Packaging Type Container.
      *
      * @return PackagePackagingType
      */
@@ -94,7 +94,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this->packagingType;
     }
     /**
-     * Packaging Type Container.  N/A
+     * Packaging Type Container.
      *
      * @param PackagePackagingType $packagingType
      *
@@ -217,7 +217,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this;
     }
     /**
-     * PackageServiceOptions container.  N/A
+     * PackageServiceOptions container.
      *
      * @return RatePackagePackageServiceOptions
      */
@@ -226,7 +226,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this->packageServiceOptions;
     }
     /**
-     * PackageServiceOptions container.  N/A
+     * PackageServiceOptions container.
      *
      * @param RatePackagePackageServiceOptions $packageServiceOptions
      *
@@ -239,7 +239,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this;
     }
     /**
-     * A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it"s a non-corrugated package.  Empty Tag.
+     * A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it's a non-corrugated package.  Empty Tag.
      *
      * @return string
      */
@@ -248,7 +248,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this->additionalHandlingIndicator;
     }
     /**
-     * A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it"s a non-corrugated package.  Empty Tag.
+     * A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it's a non-corrugated package.  Empty Tag.
      *
      * @param string $additionalHandlingIndicator
      *
@@ -283,7 +283,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Premier  N/A
+     * UPS Premier
      *
      * @return RatePackageUPSPremier
      */
@@ -292,7 +292,7 @@ class RateShipmentPackage extends \ArrayObject
         return $this->uPSPremier;
     }
     /**
-     * UPS Premier  N/A
+     * UPS Premier
      *
      * @param RatePackageUPSPremier $uPSPremier
      *

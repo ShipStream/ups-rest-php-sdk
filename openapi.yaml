@@ -2743,7 +2743,7 @@ paths:
         -
           name: version
           in: path
-          description: 'Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release. Supported values: v1, v1601, v1607, v1701, v1707, v2108, v2205. Length 5'
+          description: "Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release.\n\nValid values:\n- v2403\n"
           required: true
           schema:
             minimum: 1
@@ -2751,10 +2751,11 @@ paths:
         -
           name: requestoption
           in: path
-          description: 'Valid Values: Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Rate is the only valid request option for Ground Freight Pricing requests. . Length 10'
+          description: "Valid Values:\n- Rate = The server rates (The default Request option is Rate if a Request Option is not provided).\n- Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses.\n- Ratetimeintransit = The server rates with transit time information\n- Shoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.\n\nRate is the only valid request option for UPS Ground Freight Pricing requests.\n"
           required: true
           schema:
             minimum: 1
+            maxLength: 10
             type: string
       requestBody:
         description: 'Generate sample code for popular API requests by selecting an example below. To view a full sample request and response, first click "Authorize" and enter your application credentials, then populate the required parameters above and click "Try it out".'
@@ -3446,8 +3447,791 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RATEResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '401':
           description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        -
+          oauth2: []
+  '/rating/{deprecatedVersion}/{requestoption}':
+    post:
+      summary: Rating
+      description: 'The Rating API is used when rating or shopping a shipment.'
+      operationId: 'Deprecated Rate'
+      parameters:
+        -
+          name: transId
+          in: header
+          description: 'An identifier unique to the request. Length 32'
+          schema:
+            type: string
+        -
+          name: transactionSrc
+          in: header
+          description: 'An identifier of the client/source application that is making the request.Length 512'
+          schema:
+            type: string
+            default: testing
+        -
+          name: additionalinfo
+          in: query
+          description: 'Valid Values: timeintransit = The server rates with transit time information combined with requestoption in URL.Rate is the only valid request option for Ground Freight Pricing requests. Length 15'
+          schema:
+            minimum: 1
+            type: string
+        -
+          name: deprecatedVersion
+          in: path
+          description: "Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release.\n\nValid values:\n- v1\n- v1601\n- v1607\n- 1701\n- 1707\n- v2108\n- v2205\n"
+          required: true
+          schema:
+            minimum: 1
+            type: string
+        -
+          name: requestoption
+          in: path
+          description: "Valid Values:\n- Rate = The server rates (The default Request option is Rate if a Request Option is not provided).\n- Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses.\n- Ratetimeintransit = The server rates with transit time information\n- Shoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.\n\nRate is the only valid request option for UPS Ground Freight Pricing requests.\n"
+          required: true
+          schema:
+            minimum: 1
+            maxLength: 10
+            type: string
+      requestBody:
+        description: 'Generate sample code for popular API requests by selecting an example below. To view a full sample request and response, first click "Authorize" and enter your application credentials, then populate the required parameters above and click "Try it out".'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RATERequestWrapper'
+            examples:
+              '1':
+                summary: 'Simple Rate Example (Standard Example)'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: CustomerContext
+                    Shipment:
+                      Shipper:
+                        Name: ShipperName
+                        ShipperNumber: ShipperNumber
+                        Address:
+                          AddressLine:
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      ShipTo:
+                        Name: ShipToName
+                        Address:
+                          AddressLine:
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      PaymentDetails:
+                        ShipmentCharge:
+                          Type: '01'
+                          BillShipper:
+                            AccountNumber: ShipperNumber
+                      Service:
+                        Code: '03'
+                        Description: Ground
+                      NumOfPieces: '1'
+                      Package:
+                        SimpleRate:
+                          Description: SimpleRateDescription
+                          Code: XS
+                        PackagingType:
+                          Code: '02'
+                          Description: Packaging
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: Inches
+                          Length: '5'
+                          Width: '5'
+                          Height: '5'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                            Description: Pounds
+                          Weight: '1'
+              '2':
+                summary: 'Negotiated Rate'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: 'Verify Success response'
+                    Shipment:
+                      Shipper:
+                        Name: Shipper_Name
+                        ShipperNumber: ''
+                        Address:
+                          AddressLine:
+                            - 'Morris Road'
+                            - 'Morris Road'
+                            - 'Morris Road'
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '21093'
+                          CountryCode: US
+                      ShipTo:
+                        Name: 'France Company'
+                        Address:
+                          AddressLine:
+                            - '103 avenue des Champs-Elysees'
+                            - '103 avenue des Champs-Elysees'
+                            - '103 avenue des Champs-Elysees'
+                          City: STARZACH
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      PaymentDetails:
+                        ShipmentCharge:
+                          Type: '01'
+                          BillThirdParty:
+                            AttentionName: Name
+                            Name: TR
+                            AccountNumber: ''
+                            Address:
+                              ResidentialAddressIndicator: 'Y'
+                              AddressLine: AdressLine
+                              City: 'NEW YORK'
+                              StateProvinceCode: NY
+                              PostalCode: '21093'
+                              CountryCode: US
+                      ShipmentRatingOptions:
+                        TPFCNegotiatedRatesIndicator: 'Y'
+                        NegotiatedRatesIndicator: 'Y'
+                      Service:
+                        Code: '03'
+                        Description: 'UPS Worldwide Economy DDU'
+                      NumOfPieces: '10'
+                      Package:
+                        PackagingType:
+                          Code: '02'
+                          Description: Packaging
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: Inches
+                          Length: '5'
+                          Width: '5'
+                          Height: '5'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                            Description: Ounces
+                          Weight: '0.1'
+                        OversizeIndicator: X
+                        MinimumBillableWeightIndicator: X
+              '3':
+                summary: 'International Rate Example'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: 'Verify Success response'
+                    Shipment:
+                      Shipper:
+                        Name: Shipper_Name
+                        ShipperNumber: ''
+                        Address:
+                          AddressLine:
+                            - 'Morris Road'
+                            - 'Morris Road'
+                            - 'Morris Road'
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipTo:
+                        Name: 'France Company'
+                        Address:
+                          AddressLine:
+                            - '103 avenue des Champs-Elysees'
+                            - '103 avenue des Champs-Elysees'
+                            - '103 avenue des Champs-Elysees'
+                          City: STARZACH
+                          StateProvinceCode: GA
+                          PostalCode: '72181'
+                          CountryCode: DE
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      PaymentDetails:
+                        ShipmentCharge:
+                          Type: '01'
+                          BillShipper:
+                            AccountNumber: ''
+                      Service:
+                        Code: '072'
+                        Description: 'UPS Worldwide Economy DDP'
+                      NumOfPieces: '10'
+                      Package:
+                        PackagingType:
+                          Code: '02'
+                          Description: Packaging
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: Inches
+                          Length: '5'
+                          Width: '5'
+                          Height: '5'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                            Description: LBS
+                          Weight: '0.1'
+                        OversizeIndicator: X
+                        MinimumBillableWeightIndicator: X
+                      ShipmentRatingOptions:
+                        NegotiatedRatesIndicator: 'Y'
+              '4':
+                summary: 'Multi-Piece Rate Example'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: CustomerContext
+                    Shipment:
+                      Shipper:
+                        Name: ShipperName
+                        ShipperNumber: ShipperNumber
+                        Address:
+                          AddressLine:
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      ShipTo:
+                        Name: ShipToName
+                        Address:
+                          AddressLine:
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      PaymentDetails:
+                        ShipmentCharge:
+                          Type: '01'
+                          BillShipper:
+                            AccountNumber: ShipperNumber
+                      Service:
+                        Code: '03'
+                        Description: Ground
+                      ShipmentTotalWeight:
+                        UnitOfMeasurement:
+                          Code: LBS
+                          Description: Pounds
+                        Weight: '3'
+                      NumOfPieces: '2'
+                      Package:
+                        -
+                          PackagingType:
+                            Code: '02'
+                            Description: Packaging
+                          Dimensions:
+                            UnitOfMeasurement:
+                              Code: IN
+                              Description: Inches
+                            Length: '5'
+                            Width: '5'
+                            Height: '5'
+                          PackageWeight:
+                            UnitOfMeasurement:
+                              Code: LBS
+                              Description: Pounds
+                            Weight: '1'
+                        -
+                          PackagingType:
+                            Code: '02'
+                            Description: Packaging
+                          Dimensions:
+                            UnitOfMeasurement:
+                              Code: IN
+                              Description: Inches
+                            Length: '4'
+                            Width: '4'
+                            Height: '4'
+                          PackageWeight:
+                            UnitOfMeasurement:
+                              Code: LBS
+                              Description: Pounds
+                            Weight: '2'
+              '5':
+                summary: 'TPFC Negotiated Rate Example'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: CustomerContext
+                    Shipment:
+                      Shipper:
+                        Name: ShipperName
+                        ShipperNumber: ShipperNumber
+                        Address:
+                          AddressLine:
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      ShipTo:
+                        Name: ShipToName
+                        Address:
+                          AddressLine:
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      PaymentDetails:
+                        -
+                          ShipmentCharge:
+                            Type: '01'
+                            BillThirdParty:
+                              AttentionName: AttentionName
+                              Name: Name
+                              AccountNumber: ThirdPartyAccount
+                              Address:
+                                AddressLine: AdressLine
+                                City: 'NEW YORK'
+                                StateProvinceCode: NY
+                                PostalCode: '21093'
+                                CountryCode: US
+                        -
+                          ShipmentCharge:
+                            Type: '02'
+                            BillThirdParty:
+                              AttentionName: AttentionName
+                              Name: Name
+                              AccountNumber: ThirdPartyAccount
+                              Address:
+                                AddressLine: AdressLine
+                                City: 'NEW YORK'
+                                StateProvinceCode: NY
+                                PostalCode: '21093'
+                                CountryCode: US
+                      Service:
+                        Code: '03'
+                        Description: Ground
+                      NumOfPieces: '1'
+                      Package:
+                        PackagingType:
+                          Code: '02'
+                          Description: Packaging
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: Inches
+                          Length: '5'
+                          Width: '5'
+                          Height: '5'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                            Description: Pounds
+                          Weight: '1'
+                        ShipmentRatingOptions:
+                          TPFCNegotiatedRatesIndicator: 'Y'
+              '6':
+                summary: 'Time In Transit Example'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: CustomerContext
+                    Shipment:
+                      Shipper:
+                        Shipper:
+                          Name: ShipperName
+                          ShipperNumber: ShipperNumber
+                          Address:
+                            AddressLine:
+                              - ShipperAddressLine
+                              - ShipperAddressLine
+                              - ShipperAddressLine
+                            City: TIMONIUM
+                            StateProvinceCode: MD
+                            PostalCode: '21093'
+                            CountryCode: US
+                        ShipTo:
+                          Name: ShipToName
+                          Address:
+                            AddressLine:
+                              - ShipToAddressLine
+                              - ShipToAddressLine
+                              - ShipToAddressLine
+                            City: Alpharetta
+                            StateProvinceCode: GA
+                            PostalCode: '30005'
+                            CountryCode: US
+                        ShipFrom:
+                          Name: ShipFromName
+                          Address:
+                            AddressLine:
+                              - ShipFromAddressLine
+                              - ShipFromAddressLine
+                              - ShipFromAddressLine
+                            City: TIMONIUM
+                            StateProvinceCode: MD
+                            PostalCode: '21093'
+                            CountryCode: US
+                        PaymentDetails:
+                          ShipmentCharge:
+                            Type: '01'
+                            BillShipper:
+                              AccountNumber: ShipperNumber
+                        Service:
+                          Code: '03'
+                          Description: Ground
+                        NumOfPieces: '1'
+                        Package:
+                          PackagingType:
+                            Code: '02'
+                            Description: Packaging
+                          Dimensions:
+                            UnitOfMeasurement:
+                              Code: IN
+                              Description: Inches
+                            Length: '5'
+                            Width: '5'
+                            Height: '5'
+                          PackageWeight:
+                            UnitOfMeasurement:
+                              Code: LBS
+                              Description: Pounds
+                            Weight: '1'
+                        DeliveryTimeInformation:
+                          PackageBillType: '03'
+                          Pickup:
+                            Date: '20230101'
+                            Time: '1000'
+              '7':
+                summary: 'Standard Account Rate Example'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: CustomerContext
+                    Shipment:
+                      Shipper:
+                        Name: ShipperName
+                        ShipperNumber: ShipperNumber
+                        Address:
+                          AddressLine:
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      ShipTo:
+                        Name: ShipToName
+                        Address:
+                          AddressLine:
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      PaymentDetails:
+                        ShipmentCharge:
+                          Type: '01'
+                          BillShipper:
+                            AccountNumber: ShipperNumber
+                      Service:
+                        Code: '03'
+                        Description: Ground
+                      NumOfPieces: '1'
+                      Package:
+                        PackagingType:
+                          Code: '02'
+                          Description: Packaging
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: Inches
+                          Length: '5'
+                          Width: '5'
+                          Height: '5'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                            Description: Pounds
+                          Weight: '1'
+              '8':
+                summary: 'Published Rate Example'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: CustomerContext
+                    Shipment:
+                      Shipper:
+                        Name: ShipperName
+                        Address:
+                          AddressLine:
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                            - ShipperAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      ShipTo:
+                        Name: ShipToName
+                        Address:
+                          AddressLine:
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                            - ShipToAddressLine
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: ShipFromName
+                        Address:
+                          AddressLine:
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                            - ShipFromAddressLine
+                          City: TIMONIUM
+                          StateProvinceCode: MD
+                          PostalCode: '21093'
+                          CountryCode: US
+                      Service:
+                        Code: '03'
+                        Description: Ground
+                      NumOfPieces: '1'
+                      Package:
+                        PackagingType:
+                          Code: '02'
+                          Description: Packaging
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: Inches
+                          Length: '5'
+                          Width: '5'
+                          Height: '5'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                            Description: Pounds
+                          Weight: '1'
+              '9':
+                summary: 'Rate with Dry Ice'
+                value:
+                  RateRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: '          '
+                    CustomerClassification:
+                      Code: '01'
+                      Description: 'Daily Rates'
+                    Shipment:
+                      ShipmentCharges:
+                        BillShipper:
+                          AccountNumber: ''
+                      DeliveryTimeInformation:
+                        PackageBillType: '07'
+                      Shipper:
+                        Name: Shipper_Name19
+                        ShipperNumber: ''
+                        Address:
+                          AddressLine: Shipper_AddressLine
+                          City: 'New York'
+                          StateProvinceCode: NY
+                          PostalCode: '10013'
+                          CountryCode: US
+                      ShipTo:
+                        Name: Shiptoname
+                        Address:
+                          ResidentialAddressIndicator: x
+                          AddressLine: '12380 Morris Road'
+                          City: Alpharetta
+                          StateProvinceCode: GA
+                          PostalCode: '30005'
+                          CountryCode: US
+                      ShipFrom:
+                        Name: Shipfromname
+                        Address:
+                          AddressLine: Shipfromaddress
+                          City: Texas
+                          StateProvinceCode: TX
+                          PostalCode: '77040'
+                          CountryCode: US
+                      Service:
+                        Code: '01'
+                        Description: 'Next Day Air'
+                      ShipmentRatingOptions:
+                        NegotiatedRatesIndicator: 'Y'
+                      Package:
+                        LargePackageIndicator: X
+                        PackagingType:
+                          Code: '02'
+                          Description: Package
+                        Dimensions:
+                          UnitOfMeasurement:
+                            Code: IN
+                            Description: INCHES
+                          Length: '6'
+                          Width: '7'
+                          Height: '8'
+                        PackageWeight:
+                          UnitOfMeasurement:
+                            Code: LBS
+                          Weight: '10'
+                        PackageServiceOptions:
+                          DryIce:
+                            RegulationSet: CFR
+                            DryIceWeight:
+                              UnitOfMeasurement:
+                                Code: '01'
+                                Description: LBS
+                              Weight: '5'
+                            AuditRequired: ''
+        required: true
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RATEResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
       security:
         -
           oauth2: []
@@ -7278,7 +8062,6 @@ components:
           description: 'Warning messages returned by the system.'
         ElementLevelInformation:
           $ref: '#/components/schemas/AlertDetail_ElementLevelInformation'
-      description: 'Alert Detail Container.  Currently applies to and returned only for request containing HazMat and SubVersion greater than or equal to 1701.'
       xml:
         name: AlertDetail
     AlertDetail_ElementLevelInformation:
@@ -7292,11 +8075,12 @@ components:
           maxLength: 1
           minLength: 1
           type: string
-          description: 'Define type of element in request. Possible values are - ''H" for the header details level,  "S" for the shipment level, "P" for the package level, "C" for the commodity level.'
+          description: "Define type of element in request. Possible values are -\n- 'H' for the header details level,\n- 'S' for the shipment level,\n- 'P' for the package level,\n- 'C' for the commodity level.\n"
         ElementIdentifier:
           type: array
           items:
             $ref: '#/components/schemas/ElementLevelInformation_ElementIdentifier'
+          description: "Contains more information about the type of element. Returned if Level is 'P' or 'C'.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       description: 'Provides more information about the element that represents the alert.'
       xml:
         name: ElementLevelInformation
@@ -7318,7 +8102,6 @@ components:
           minLength: 1
           type: string
           description: 'Represents the value of element.'
-      description: 'Contains more information about the type of element. Returned if Level is ''P'' or ''C''.'
       xml:
         name: ElementIdentifier
     AcceptanceAuditPreCheckResponse_Service:
@@ -15014,7 +15797,7 @@ components:
           $ref: '#/components/schemas/RateRequest_CustomerClassification'
         Shipment:
           $ref: '#/components/schemas/RateRequest_Shipment'
-      description: 'Rate Request container.  N/A'
+      description: 'Rate Request container.'
       xml:
         name: RateRequest
     RateRequest_Request:
@@ -15027,7 +15810,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Used to define the request type.  Valid Values:Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Ratetimeintransit = The server rates with transit time informationShoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.Rate is the only valid request option for UPS Ground Freight Pricing requests.'
+          description: "Used to define the request type. Valid Values:\n- Rate = The server rates (The default Request option is Rate if a Request Option is not provided).\n- Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses.\n- Ratetimeintransit = The server rates with transit time information\n- Shoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.\n\nRate is the only valid request option for UPS Ground Freight Pricing requests.\n"
         SubVersion:
           maximum: 1
           maxLength: 4
@@ -15057,7 +15840,7 @@ components:
           minLength: 1
           type: string
           description: 'Pickup Type Description.  Ignored if provided in the Request.'
-      description: 'Pickup Type container tag.  N/A'
+      description: 'Pickup Type container tag.'
       xml:
         name: PickupType
     RateRequest_CustomerClassification:
@@ -15078,7 +15861,7 @@ components:
           minLength: 1
           type: string
           description: 'Customer classification description of the code above.  Ignored if provided in the Request. Length is not validated.'
-      description: 'Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A'
+      description: 'Customer classification container. Valid if ShipFrom country or territory  is "US"'
       xml:
         name: CustomerClassification
     RateRequest_Shipment:
@@ -15156,7 +15939,7 @@ components:
           maximum: 1
           type: string
           description: 'Presence/Absence Indicator. Any value inside is ignored. WWEShipmentIndicator is an indicator and presence implies that WWE service details requested for RequestOption=Shop or  RequestOption=Shoptimeintransit  RequestOption=Shop or  RequestOption=Shoptimeintransit'
-      description: 'Container for Shipment Information.  N/A'
+      description: 'Container for Shipment Information.'
       xml:
         name: Shipment
     RateShipment_Shipper:
@@ -15251,7 +16034,7 @@ components:
           description: 'Destination attention name.  Length is not validated.'
         Address:
           $ref: '#/components/schemas/ShipTo_Address'
-      description: 'Ship To Container  N/A'
+      description: 'Ship To Container'
       xml:
         name: ShipTo
     ShipTo_Address:
@@ -15321,7 +16104,7 @@ components:
           description: 'Origin attention name.  Length is not validated.'
         Address:
           $ref: '#/components/schemas/ShipFrom_Address'
-      description: 'Ship From Container.  N/A'
+      description: 'Ship From Container.'
       xml:
         name: ShipFrom
     ShipFrom_Address:
@@ -15374,7 +16157,7 @@ components:
           description: 'UPS Access Point location name.'
         Address:
           $ref: '#/components/schemas/RateAlternateDeliveryAddress_Address'
-      description: 'Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery'
+      description: "Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.\n\nRequired for the following ShipmentIndicationType values:\n- 01 - Hold for Pickup at UPS Access Point™\n- 02 - UPS Access Point™ Delivery\n"
       xml:
         name: AlternateDeliveryAddress
     AlternateDeliveryAddress_Name:
@@ -15382,7 +16165,7 @@ components:
       maxLength: 35
       minLength: 1
       type: string
-      description: 'UPS Access Point location name.'
+      description: 'UPS Access Point™ location name.'
     RateAlternateDeliveryAddress_Address:
       maximum: 1
       required:
@@ -15415,13 +16198,13 @@ components:
           maxLength: 9
           minLength: 1
           type: string
-          description: 'Postal Code for UPS accounts billing address.  Postal Code  may be present when the FRS Payment Information type = 02 and type = 03.'
+          description: 'UPS Access Point Postal code.'
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Country or Territory code for the  UPS accounts & billing address.  Country or Territory Code is required when the FRS Payment Information type = 02 and type= 03.'
+          description: 'UPS Access Point country or territory code.'
         ResidentialAddressIndicator:
           maximum: 1
           type: string
@@ -15429,7 +16212,7 @@ components:
         POBoxIndicator:
           maximum: 1
           type: string
-          description: 'Presence/Absence Indicator. Any value inside is ignored.This field is a flag to indicate if the Alternate Delivery location is a PO box location. True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:01 Hold for Pickup at UPS Access Point02 UPS Access Point Delivery'
+          description: "Presence/Absence Indicator. Any value inside is ignored.\n\nThis field is a flag to indicate if the Alternate Delivery location is a PO box location.\n\nTrue if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:\n- 01 - Hold for Pickup at UPS Access Point\n- 02 - UPS Access Point™ Delivery\n"
       description: 'Address container for Alternate Delivery Address.'
       xml:
         name: Address
@@ -15785,6 +16568,27 @@ components:
       description: 'Dimension of the handling unit for density based pricing.'
       xml:
         name: Dimensions
+    HandlingUnits_UnitOfMeasurement:
+      maximum: 1
+      required:
+        - Code
+      type: object
+      properties:
+        Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
+          type: string
+          description: 'Code associated with Unit of Measurement for the Adjusted height. Valid value: IN'
+        Description:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
+          type: string
+          description: 'Description for UnitOfMeasurement for the adjusted height.'
+      description: 'UnitOfMeasurement container.'
+      xml:
+        name: UnitOfMeasurement
     Shipment_NumOfPieces:
       maximum: 1
       maxLength: 5
@@ -15818,13 +16622,13 @@ components:
           maxLength: 3
           minLength: 1
           type: string
-          description: 'The code associated with the unit of measure for the billable weight of a package.'
+          description: "Code representing the unit of measure associated with the package weight.\n\nValid values:\n- LBS = Pounds\n- KGS = Kilograms.\n"
         Description:
           maximum: 1
           maxLength: 35
           minLength: 1
           type: string
-          description: 'The Description for the Unit Of Measurement.'
+          description: 'Text description of the code representing the unit of measure associated with the shipment weight.'
       description: 'UnitOfMeasurement Container.'
       xml:
         name: UnitOfMeasurement
@@ -15855,7 +16659,7 @@ components:
         AdditionalHandlingIndicator:
           maximum: 1
           type: string
-          description: 'A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it"s a non-corrugated package.  Empty Tag.'
+          description: 'A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it''s a non-corrugated package.  Empty Tag.'
         SimpleRate:
           $ref: '#/components/schemas/Package_SimpleRate'
         UPSPremier:
@@ -15882,14 +16686,14 @@ components:
           maxLength: 2
           minLength: 2
           type: string
-          description: 'The code for the UPS packaging type associated with the package.  Valid values: 00 = UNKNOWN  01 = UPS Letter  02 = Package  03 = Tube  04 = Pak  21 = Express Box  24 = 25KG Box  25 = 10KG Box  30 = Pallet  2a = Small Express Box  2b = Medium Express Box 2c = Large Express Box. For FRS rating requests the only valid value is customer supplied packaging "02".'
+          description: "The code for the UPS packaging type associated with the package.  Valid values:\n- 00 - UNKNOWN\n- 01 - UPS Letter\n- 02 - Package\n- 03 - Tube\n- 04 - Pak\n- 21 - Express Box\n- 24 - 25KG Box\n- 25 - 10KG Box\n- 30 - Pallet\n- 2a - Small Express Box\n- 2b - Medium Express Box\n- 2c - Large Express Box.\n\nFor FRS rating requests the only valid value is customer supplied packaging “02”.\n"
         Description:
           maximum: 1
           maxLength: 35
           minLength: 1
           type: string
           description: 'A text description of the code for the UPS packaging type associated with the shipment.  Length is not validated.'
-      description: 'Packaging Type Container.  N/A'
+      description: 'Packaging Type Container.'
       xml:
         name: PackagingType
     Package_Dimensions:
@@ -16024,15 +16828,17 @@ components:
           maximum: 1
           type: string
           description: 'Presence/Absence Indicator. Any value is ignored. If present, indicates that the package contains an item that needs refrigeration.  Shippers account needs to have a valid contract for Refrigeration.'
+        Insurance:
+          $ref: '#/components/schemas/PackageServiceOptions_Insurance'
         UPSPremiumCareIndicator:
           maximum: 1
           type: string
-          description: 'An UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.  Empty Tag means indicator is present. Valid only for Canada to Canada movements.Available for the following Return Services:Returns Exchange (available with a contract)Print Return LabelPrint and MailElectronic Return LabelReturn Service Three AttemptMay be requested with following UPS services: UPS Express" EarlyUPS ExpressUPS Express SaverUPS Standard. Not available for packages with the following:Delivery Confirmation - Signature RequiredDelivery Confirmation - Adult Signature Required.'
+          description: "The UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.  Empty Tag means indicator is present.\n\nValid only for Canada to Canada movements.\n\nAvailable for the following Return Services:\n- Returns Exchange (available with a contract)\n- Print Return Label\n- Print and Mail\n- Electronic Return Label\n- Return Service Three Attempt\n\nMay be requested with following UPS services:\n- UPS Express® Early\n- UPS Express\n- UPS Express Saver\n- UPS Standard.\n\nNot available for packages with the following:\n- Delivery Confirmation - Signature Required\n- Delivery Confirmation - Adult Signature Required.\n"
         HazMat:
           $ref: '#/components/schemas/RatePackageServiceOptions_HazMat'
         DryIce:
           $ref: '#/components/schemas/RatePackageServiceOptions_DryIce'
-      description: 'PackageServiceOptions container.  N/A'
+      description: 'PackageServiceOptions container.'
       xml:
         name: PackageServiceOptions
     RatePackageServiceOptions_DeliveryConfirmation:
@@ -16046,7 +16852,7 @@ components:
           maxLength: 1
           minLength: 1
           type: string
-          description: 'Type of delivery confirmation. Valid values: 1 - Unsupported 2 - Delivery Confirmation Signature Required 3 - Delivery Confirmation Adult Signature Required'
+          description: 'Type of delivery confirmation.  Valid values: 1 - Unsupported 2 - Delivery Confirmation Signature Required 3 - Delivery Confirmation Adult Signature Required'
       description: 'Delivery Confirmation Container. For a list of valid origin/destination countries or territories please refer to appendix.  DeliveryConfirmation and COD are mutually exclusive.'
       xml:
         name: DeliveryConfirmation
@@ -16108,7 +16914,7 @@ components:
           minLength: 8
           type: string
           description: 'The monetary value for the declared value amount associated with the package.  Max value of 5,000 USD for Local and 50,000 USD for Remote. Absolute maximum value is 21474836.47'
-      description: 'Declared Value Container.  N/A'
+      description: 'Declared Value Container.'
       xml:
         name: DeclaredValue
     PackageServiceOptions_ShipperDeclaredValue:
@@ -16133,6 +16939,17 @@ components:
       description: 'Shipper Paid Declared Value Charge at Package level.   Valid for UPS World Wide Express Freight shipments.'
       xml:
         name: ShipperDeclaredValue
+    PackageServiceOptions_Insurance:
+      maximum: 1
+      type: object
+      properties:
+        BasicFlexibleParcelIndicator:
+          $ref: '#/components/schemas/Insurance_BasicFlexibleParcelIndicator'
+        ExtendedFlexibleParcelIndicator:
+          $ref: '#/components/schemas/Insurance_ExtendedFlexibleParcelIndicator'
+        TimeInTransitFlexibleParcelIndicator:
+          $ref: '#/components/schemas/Insurance_TimeInTransitFlexibleParcelIndicator'
+      description: 'Insurance Accesorial. Only one type of insurance can exist at a time on the shipment. Valid for UPS World Wide Express Freight shipments.'
     Insurance_BasicFlexibleParcelIndicator:
       maximum: 1
       required:
@@ -16250,7 +17067,7 @@ components:
           maxLength: 7
           minLength: 1
           type: string
-          description: 'This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.'
+          description: 'This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is ''LQ'' or ''FR''  Applies only if SubVersion is greater than or equal to 1701.'
         IDNumber:
           maximum: 1
           maxLength: 6
@@ -16292,7 +17109,7 @@ components:
           maxLength: 100
           minLength: 1
           type: string
-          description: 'Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.'
+          description: 'Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.'
         PackagingGroupType:
           maximum: 1
           maxLength: 10
@@ -16334,7 +17151,7 @@ components:
           maxLength: 75
           minLength: 1
           type: string
-          description: 'Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.'
+          description: "Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.\n\nAdditional information that may be required by regulation about a hazardous material, such as, \"Limited Quantity\", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.\n"
         PackagingType:
           maximum: 1
           maxLength: 255
@@ -16463,7 +17280,7 @@ components:
           minLength: 2
           type: string
           description: 'UPS Premier Category  Valid values are 01,02,03 UPS Premier Silver - 01 UPS Premier Gold - 02 UPS Premier Platinum - 03'
-      description: 'UPS Premier  N/A'
+      description: 'UPS Premier'
       xml:
         name: UPSPremier
     RateShipment_ShipmentServiceOptions:
@@ -16493,11 +17310,11 @@ components:
         DeliverToAddresseeOnlyIndicator:
           maximum: 1
           type: string
-          description: 'Presence/Absence Indicator. Any value inside is ignored. DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point package.  Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point.'
+          description: "Presence/Absence Indicator. Any value inside is ignored.\n\nDeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the \"Hold For PickUp at UPS Access Point\" package.\n\nPresence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type \"01 - Hold For PickUp at UPS Access Point\".\n"
         DirectDeliveryOnlyIndicator:
           maximum: 1
           type: string
-          description: 'Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:01 - Hold For Pickup At UPS Access Point 02 - UPS Access Point Delivery"'
+          description: "Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:\n- 01 - Hold For Pickup At UPS Access Point\n- 02 - UPS Access Point™ Delivery\n"
         COD:
           $ref: '#/components/schemas/ShipmentServiceOptions_COD'
         DeliveryConfirmation:
@@ -16539,18 +17356,18 @@ components:
         EPRAIndicator:
           maximum: 1
           type: string
-          description: 'Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment. This accessorial is only valid with ShipmentIndicationType "01" - Hold for Pickup at UPS Access Point.'
+          description: "For valid values, refer to Rating and Shipping COD Supported Countries or Territories in the Appendix.Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment.\n\nThis accessorial is only valid with ShipmentIndicationType '01' - Hold for Pickup at UPS Access Point™.\n"
         InsideDelivery:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Inside Delivery accessory. Valide values:                                         01- White Glove                        02 - Room of Choice                   03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.'
+          description: "Inside Delivery accessory. Valid values:\n- 01 - White Glove\n- 02 - Room of Choice\n- 03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.\n"
         ItemDisposalIndicator:
           maximum: 1
           type: string
           description: 'Presence/Absence Indicator. Any value inside is ignored. If present, indicates that the customer would like items disposed.   Shippers account needs to have a valid contract for Heavy Goods Service.'
-      description: 'Shipment level Accessorials are included in this container.  N/A'
+      description: 'Shipment level Accessorials are included in this container.'
       xml:
         name: ShipmentServiceOptions
     ShipmentServiceOptions_AccessPointCOD:
@@ -16593,6 +17410,28 @@ components:
       description: 'COD container  Indicates COD is requested. Shipment COD is only available for EU origin countries or territories and for shippers account type Daily Pickup and Drop Shipping. Not available to shipment with return service.'
       xml:
         name: COD
+    ShipmentServiceOptions_COD_CODAmount:
+      maximum: 1
+      required:
+        - CurrencyCode
+        - MonetaryValue
+      type: object
+      properties:
+        CurrencyCode:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
+          type: string
+          description: 'COD amount currency code type.'
+        MonetaryValue:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
+          type: string
+          description: 'COD Amount.'
+      description: 'CODAmount Container.  UPS does not support all international currency codes. Refer to the appendix for a list of valid codes.'
+      xml:
+        name: CODAmount
     RateShipmentServiceOptions_DeliveryConfirmation:
       maximum: 1
       required:
@@ -16802,7 +17641,7 @@ components:
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.'
+          description: "Valid values are:\n- 02 - Document only\n- 03 - Non-Document\n- 04 - WWEF Pallet\n- 07 - Domestic Pallet\n\nIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.\n"
         Pickup:
           $ref: '#/components/schemas/DeliveryTimeInformation_Pickup'
         ReturnContractServices:
@@ -16823,13 +17662,13 @@ components:
           maxLength: 8
           minLength: 8
           type: string
-          description: 'The date UPS picks up the package from the origin. Format: YYYYMMDD. In the event the Pickup date differs from the Ship On Date, provided in the request, a warning message will be returned.'
+          description: 'Shipment Date; The Pickup date is a Shipment Date and it is a required input field.  The user is allowed to query up to 35 days into the past and 60 days into the future. Format: YYYYMMDD  If a date is not provided, it will be defaulted to the current system date.'
         Time:
           maximum: 1
           maxLength: 6
           minLength: 4
           type: string
-          description: 'The time UPS will pick up the shipment. Military Time Format HHMMSS or HHMM'
+          description: 'Reflects the time the package is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Military Time Format HHMMSS or HHMM.   Invalid pickup time will not be validated.'
       description: 'Pickup container.'
       xml:
         name: Pickup
@@ -16866,6 +17705,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RateResponse_RatedShipment'
+          description: "RatedShipment Container.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       description: 'Rate Response Container.'
       xml:
         name: RateResponse
@@ -16881,10 +17721,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Response_Alert'
+          description: "Alert Container.  There can be zero to many alert containers with code and description.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         AlertDetail:
           type: array
           items:
             $ref: '#/components/schemas/Response_AlertDetail'
+          description: "Alert Detail Container. Currently applies to and returned only for request containing HazMat and SubVersion greater than or equal to 1701.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         TransactionReference:
           $ref: '#/components/schemas/Response_TransactionReference'
       description: 'Response Container.'
@@ -16905,6 +17747,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RatedShipment_Disclaimer'
+          description: "Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Service:
           $ref: '#/components/schemas/RatedShipment_Service'
         RateChart:
@@ -16912,11 +17755,12 @@ components:
           maxLength: 1
           minLength: 1
           type: string
-          description: 'Rate Type with which Shipment is rated. Possible RateChart values for different regions will be: US 48 origin: 1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates. Alaska/Hawaii origin:1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates.  All Other origins:1 " Rates 5 - Regional Rates 6 - General List Rates. 3 and 4 do not apply'
+          description: "Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:\n\nUS 48 origin:\n- 1 – Daily Rates\n- 3 – Standard List Rates\n- 4 – Retail Rates.\n\nAlaska/Hawaii origin:\n- 1 – Daily Rates\n- 3 – Standard List Rates\n- 4 – Retail Rates.\n\nAll Other origins:\n- 1 – Rates\n- 5 - Regional Rates\n- 6 - General List Rates.\n- 3 and 4 do not apply\n"
         RatedShipmentAlert:
           type: array
           items:
             $ref: '#/components/schemas/RatedShipment_RatedShipmentAlert'
+          description: "Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         BillableWeightCalculationMethod:
           maximum: 1
           maxLength: 2
@@ -16939,6 +17783,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RatedShipment_ItemizedCharges'
+          description: "Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         FRSShipmentData:
           $ref: '#/components/schemas/RatedShipment_FRSShipmentData'
         ServiceOptionsCharges:
@@ -16947,6 +17792,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RatedShipment_TaxCharges'
+          description: "TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         TotalCharges:
           $ref: '#/components/schemas/RatedShipment_TotalCharges'
         TotalChargesWithTaxes:
@@ -16957,6 +17803,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RatedShipment_RatedPackage'
+          description: "Rated Package Container.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         TimeInTransit:
           $ref: '#/components/schemas/RatedShipment_TimeInTransit'
         ScheduledDeliveryDate:
@@ -16967,7 +17814,6 @@ components:
           maximum: 1
           type: string
           description: 'Informational only'
-      description: 'RatedShipment Container.'
       xml:
         name: RatedShipment
     RatedShipment_Disclaimer:
@@ -16986,7 +17832,6 @@ components:
           maximum: 1
           type: string
           description: 'Disclaimer description. Please refer to Appendix for possible descriptions.'
-      description: 'Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.'
       xml:
         name: Disclaimer
     RatedShipment_Service:
@@ -17006,7 +17851,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.'
+          description: 'The UPS service Description.'
       description: 'Service Container.'
       xml:
         name: Service
@@ -17028,7 +17873,6 @@ components:
           minLength: 1
           type: string
           description: 'The rated shipment warning Description returned by the system.'
-      description: 'Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.'
       xml:
         name: RatedShipmentAlert
     RatedShipment_BillingWeight:
@@ -17045,7 +17889,7 @@ components:
           maxLength: 5
           minLength: 5
           type: string
-          description: 'The value for the billable weight associated with the package.  When using a negotiated divisor different from the published UPS divisor (139 for inches and 5,000 for cm), the weight returned is based on the published divisor. Rates, however, are based on the negotiated divisor.'
+          description: 'The value for the billable weight associated with the shipment.  When using a negotiated divisor different from the published UPS divisor (139 for inches and 5,000 for cm), the weight returned is based on the published divisor. Rates, however, are based on the negotiated divisor.'
       description: 'Billing Weight Container.'
       xml:
         name: BillingWeight
@@ -17082,13 +17926,13 @@ components:
           maxLength: 3
           minLength: 1
           type: string
-          description: 'The IATA currency code associated with the transportation costs for the package.'
+          description: 'The IATA currency code associated with the transportation costs for the shipment.'
         MonetaryValue:
           maximum: 1
           maxLength: 16
           minLength: 16
           type: string
-          description: 'The value for the transportation costs associated with the package.'
+          description: 'The value for the transportation costs associated with the shipment.'
       description: 'Transportation Charges Container.'
       xml:
         name: TransportationCharges
@@ -17151,7 +17995,6 @@ components:
           minLength: 1
           type: string
           description: 'The sub-type of Itemized Charge type.'
-      description: 'Itemized Charges are returned only when the subversion element is present and greater than or equal to ''1601''.  These charges would be returned only when subversion is greater than or equal to 1601'
       xml:
         name: ItemizedCharges
     RatedShipment_FRSShipmentData:
@@ -17168,6 +18011,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FRSShipmentData_HandlingUnits'
+          description: "Handling Unit for Density based rating container.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       description: 'FRSShipmentData container.  Only returned when the FRSShipmentIIndicator is used. UPS Ground Freight Pricing Only.'
       xml:
         name: FRSShipmentData
@@ -17358,13 +18202,13 @@ components:
           maxLength: 3
           minLength: 3
           type: string
-          description: 'The IATA currency code associated with the accessorial charges for the package.'
+          description: 'The IATA currency code associated with the accessorial charges for the shipment.'
         MonetaryValue:
           maximum: 1
           maxLength: 19
           minLength: 1
           type: string
-          description: 'The value for the accessorial charges associated with the package.'
+          description: 'The value for the accessorial charges associated with the shipment.'
       description: 'Service Options Charges Container.'
       xml:
         name: ServiceOptionsCharges
@@ -17386,7 +18230,6 @@ components:
           minLength: 1
           type: string
           description: 'Tax Monetary Value represent the Tax amount.  Valid values are from 0 to 99999999999999.99'
-      description: 'TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.'
       xml:
         name: TaxCharges
     RatedShipment_TotalCharges:
@@ -17401,13 +18244,13 @@ components:
           maxLength: 3
           minLength: 3
           type: string
-          description: 'The IATA currency code associated with the total charges for the package.'
+          description: 'The IATA currency code associated with the total charges for the shipment.'
         MonetaryValue:
           maximum: 1
           maxLength: 19
           minLength: 1
           type: string
-          description: 'The value for the total charges associated with the package.'
+          description: 'The value for the total charges associated with the shipment.'
       description: 'Total Charges Container.'
       xml:
         name: TotalCharges
@@ -17443,10 +18286,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/NegotiatedRateCharges_ItemizedCharges'
+          description: "Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'.  These charges would be returned only when subversion is greater than or equal to 1601.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         TaxCharges:
           type: array
           items:
             $ref: '#/components/schemas/NegotiatedRateCharges_TaxCharges'
+          description: "TaxCharges container are returned only when TaxInformationIndicator is present in request. TaxCharges container contains Tax information for a given shipment.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         TotalCharge:
           $ref: '#/components/schemas/NegotiatedRateCharges_TotalCharge'
         TotalChargesWithTaxes:
@@ -17593,10 +18438,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RatedPackage_Accessorial'
+          description: "The container for Accessorial indicators. This information would be returned only if ItemizedChargesRequested was present during Rate request. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707.  This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Middday Service.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ItemizedCharges:
           type: array
           items:
             $ref: '#/components/schemas/RatedPackage_ItemizedCharges'
+          description: "Itemized Charges are returned only when the subversion element is present and greater than or equal to '1607'.  These charges would be returned only when subversion is greater than or equal to 1607.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         NegotiatedCharges:
           $ref: '#/components/schemas/RatedPackage_NegotiatedCharges'
         SimpleRate:
@@ -17605,7 +18452,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RatedPackage_RateModifier'
-      description: 'Rated Package Container.'
+          description: "Container for returned Rate Modifier information. Applies only if SubVersion is 2205 or greater.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       xml:
         name: RatedPackage
     RatedPackage_TransportationCharges:
@@ -17670,13 +18517,35 @@ components:
       type: object
       properties:
         UnitOfMeasurement:
-          $ref: '#/components/schemas/BillingWeight_UnitOfMeasurement'
+          $ref: '#/components/schemas/RatedPackage_BillingWeight_UnitOfMeasurement'
         Weight:
           type: string
           description: 'The value for the billable weight associated with the package.  When using a negotiated divisor different from the published UPS divisor (139 for inches and 5,000 for cm), the weight returned is based on the published divisor. Rates, however, are based on the negotiated divisor.'
       description: 'Billing Weight Container.'
       xml:
         name: BillingWeight
+    RatedPackage_BillingWeight_UnitOfMeasurement:
+      maximum: 1
+      required:
+        - Description
+        - Code
+      type: object
+      properties:
+        Code:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
+          type: string
+          description: 'The code associated with the unit of measure for the billable weight of a package.'
+        Description:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
+          type: string
+          description: 'The Description for the Unit Of Measurement.'
+      description: 'Unit Of Measurement Container.'
+      xml:
+        name: UnitOfMeasurement
     RatedPackage_Accessorial:
       required:
         - Code
@@ -17688,7 +18557,6 @@ components:
         Description:
           type: string
           description: 'Description for Accessorial Indicator.'
-      description: 'The container for Accessorial indicators. This information would be returned only if ItemizedChargesRequested was present during Rate request. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707.  This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Middday Service.'
       xml:
         name: Accessorial
     Accessorial_Code:
@@ -17740,7 +18608,6 @@ components:
           minLength: 1
           type: string
           description: 'The sub-type of Itemized Charge type.'
-      description: 'Itemized Charges are returned only when the subversion element is present and greater than or equal to ''1607''.  These charges would be returned only when subversion is greater than or equal to 1607.'
       xml:
         name: ItemizedCharges
     RatedPackage_RateModifier:
@@ -17768,7 +18635,6 @@ components:
           minLength: 1
           type: string
           description: 'Amount. Example: "-1.00","0.25". It contains positive or negative values. Applies only if SubVersion is 2205 or greater.'
-      description: 'Container for returned Rate Modifier information. Applies only if SubVersion is 2205 or greater.'
     RatedPackage_NegotiatedCharges:
       maximum: 1
       type: object
@@ -17777,6 +18643,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/NegotiatedCharges_ItemizedCharges'
+          description: "Negotiated Itemized Accessorial and Sur Charges.  These charges would be returned only when subversion is greater than or equal to 1607.\n\n**NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       description: 'Negotiated Rates container.  These charges would be returned only when -1) subversion is greater than or equal to 16072) if negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.'
       xml:
         name: NegotiatedCharges
@@ -17832,7 +18699,7 @@ components:
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large'
+          description: "Simple Rate Code\n- XS =  Extra Small\n- S =  Small\n- M = Medium\n- L = Large\n- XL = Extra Large\n"
       description: 'SimpleRate will be returned if Simple Rate  present in request'
       xml:
         name: SimpleRate
@@ -18824,27 +19691,6 @@ components:
       description: 'Container to hold the Payment information for the Ground Freight Pricing Shipments.  Required for Ground Freight Pricing Shipments only.'
       xml:
         name: FRSPaymentInformation
-    HandlingUnits_UnitOfMeasurement:
-      maximum: 1
-      required:
-        - Code
-      type: object
-      properties:
-        Code:
-          maximum: 1
-          maxLength: 2
-          minLength: 2
-          type: string
-          description: 'Code associated with Unit of Measurement for the Adjusted height. Valid value: IN'
-        Description:
-          maximum: 1
-          maxLength: 35
-          minLength: 1
-          type: string
-          description: 'Description for UnitOfMeasurement for the adjusted height.'
-      description: 'UnitOfMeasurement container.'
-      xml:
-        name: UnitOfMeasurement
     Shipment_DGSignatoryInfo:
       maximum: 1
       type: object

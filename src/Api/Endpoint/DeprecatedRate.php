@@ -2,17 +2,23 @@
 
 namespace ShipStream\Ups\Api\Endpoint;
 
-class Rate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
+class DeprecatedRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
-    protected $version;
+    protected $deprecatedVersion;
     protected $requestoption;
     /**
     * The Rating API is used when rating or shopping a shipment.
     *
-    * @param string $version Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release.
+    * @param string $deprecatedVersion Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release.
     
     Valid values:
-    - v2403
+    - v1
+    - v1601
+    - v1607
+    - 1701
+    - 1707
+    - v2108
+    - v2205
     
     * @param string $requestoption Valid Values:
     - Rate = The server rates (The default Request option is Rate if a Request Option is not provided).
@@ -31,9 +37,9 @@ class Rate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \S
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct(string $deprecatedVersion, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array())
     {
-        $this->version = $version;
+        $this->deprecatedVersion = $deprecatedVersion;
         $this->requestoption = $requestoption;
         $this->body = $requestBody;
         $this->queryParameters = $queryParameters;
@@ -46,7 +52,7 @@ class Rate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \S
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}', '{requestoption}'), array($this->version, $this->requestoption), '/rating/{version}/{requestoption}');
+        return str_replace(array('{deprecatedVersion}', '{requestoption}'), array($this->deprecatedVersion, $this->requestoption), '/rating/{deprecatedVersion}/{requestoption}');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
@@ -81,10 +87,10 @@ class Rate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \S
     /**
      * {@inheritdoc}
      *
-     * @throws \ShipStream\Ups\Api\Exception\RateBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\RateUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\RateForbiddenException
-     * @throws \ShipStream\Ups\Api\Exception\RateTooManyRequestsException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\RATEResponseWrapper
@@ -97,16 +103,16 @@ class Rate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \S
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\RATEResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\RateBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedRateBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\RateUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedRateUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\RateForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedRateForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\RateTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedRateTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

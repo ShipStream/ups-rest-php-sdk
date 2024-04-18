@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class RateUnauthorizedException extends UnauthorizedException
+class DeprecatedRateUnauthorizedException extends UnauthorizedException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse

@@ -766,27 +766,84 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedQuantumView($deprecatedVersion, $requestBody), $fetch);
     }
     /**
-     * The Rating API is used when rating or shopping a shipment.
-     *
-     * @param string $version Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release. Supported values: v1, v1601, v1607, v1701, v1707, v2108, v2205. Length 5
-     * @param string $requestoption Valid Values: Rate = The server rates (The default Request option is Rate if a Request Option is not provided). Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses. Rate is the only valid request option for Ground Freight Pricing requests. . Length 10
-     * @param \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody 
-     * @param array $queryParameters {
-     *     @var string $additionalinfo Valid Values: timeintransit = The server rates with transit time information combined with requestoption in URL.Rate is the only valid request option for Ground Freight Pricing requests. Length 15
-     * }
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\RateUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\RATEResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
+    * The Rating API is used when rating or shopping a shipment.
+    *
+    * @param string $version Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release.
+    
+    Valid values:
+    - v2403
+    
+    * @param string $requestoption Valid Values:
+    - Rate = The server rates (The default Request option is Rate if a Request Option is not provided).
+    - Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses.
+    - Ratetimeintransit = The server rates with transit time information
+    - Shoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.
+    
+    Rate is the only valid request option for UPS Ground Freight Pricing requests.
+    
+    * @param \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody 
+    * @param array $queryParameters {
+    *     @var string $additionalinfo Valid Values: timeintransit = The server rates with transit time information combined with requestoption in URL.Rate is the only valid request option for Ground Freight Pricing requests. Length 15
+    * }
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\RateBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\RateUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\RateForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\RateTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\RATEResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
     public function rate(string $version, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Rate($version, $requestoption, $requestBody, $queryParameters, $headerParameters), $fetch);
+    }
+    /**
+    * The Rating API is used when rating or shopping a shipment.
+    *
+    * @param string $deprecatedVersion Indicates Rate API to display the new release features in Rate API response based on Rate release. See the New section for the latest Rate release.
+    
+    Valid values:
+    - v1
+    - v1601
+    - v1607
+    - 1701
+    - 1707
+    - v2108
+    - v2205
+    
+    * @param string $requestoption Valid Values:
+    - Rate = The server rates (The default Request option is Rate if a Request Option is not provided).
+    - Shop = The server validates the shipment, and returns rates for all UPS products from the ShipFrom to the ShipTo addresses.
+    - Ratetimeintransit = The server rates with transit time information
+    - Shoptimeintransit = The server validates the shipment, and returns rates and transit times for all UPS products from the ShipFrom to the ShipTo addresses.
+    
+    Rate is the only valid request option for UPS Ground Freight Pricing requests.
+    
+    * @param \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody 
+    * @param array $queryParameters {
+    *     @var string $additionalinfo Valid Values: timeintransit = The server rates with transit time information combined with requestoption in URL.Rate is the only valid request option for Ground Freight Pricing requests. Length 15
+    * }
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedRateTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\RATEResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedRate(string $deprecatedVersion, string $requestoption, \ShipStream\Ups\Api\Model\RATERequestWrapper $requestBody, array $queryParameters = array(), array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedRate($deprecatedVersion, $requestoption, $requestBody, $queryParameters, $headerParameters), $fetch);
     }
     /**
     * The Shipping API makes UPS shipping services available to client applications that communicate with UPS 

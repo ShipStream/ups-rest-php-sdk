@@ -13,27 +13,45 @@ class RatedPackageSimpleRate extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large
-     *
-     * @var string
-     */
+    * Simple Rate Code
+    - XS =  Extra Small
+    - S =  Small
+    - M = Medium
+    - L = Large
+    - XL = Extra Large
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large
-     *
-     * @return string
-     */
+    * Simple Rate Code
+    - XS =  Extra Small
+    - S =  Small
+    - M = Medium
+    - L = Large
+    - XL = Extra Large
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * Simple Rate Code
+    - XS =  Extra Small
+    - S =  Small
+    - M = Medium
+    - L = Large
+    - XL = Extra Large
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;

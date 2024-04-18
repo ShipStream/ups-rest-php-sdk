@@ -25,7 +25,8 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      */
     protected $freightDensityRate;
     /**
-     * 
+     * Handling Unit for Density based rating container.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var FRSShipmentDataHandlingUnits[]
      */
@@ -75,7 +76,8 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Handling Unit for Density based rating container.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return FRSShipmentDataHandlingUnits[]
      */
@@ -84,7 +86,8 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
         return $this->handlingUnits;
     }
     /**
-     * 
+     * Handling Unit for Density based rating container.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param FRSShipmentDataHandlingUnits[] $handlingUnits
      *
