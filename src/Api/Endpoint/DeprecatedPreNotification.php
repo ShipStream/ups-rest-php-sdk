@@ -2,16 +2,16 @@
 
 namespace ShipStream\Ups\Api\Endpoint;
 
-class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
+class DeprecatedPreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
-    protected $version;
+    protected $deprecatedVersion;
     /**
     * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
     *
-    * @param string $version Version of API.
+    * @param string $deprecatedVersion Version of API.
     
     Valid values:
-    - v2
+    - v1
     
     * @param \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody 
     * @param array $headerParameters {
@@ -19,9 +19,9 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = array())
+    public function __construct(string $deprecatedVersion, \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper $requestBody, array $headerParameters = array())
     {
-        $this->version = $version;
+        $this->deprecatedVersion = $deprecatedVersion;
         $this->body = $requestBody;
         $this->headerParameters = $headerParameters;
     }
@@ -32,7 +32,7 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     }
     public function getUri() : string
     {
-        return str_replace(array('{version}'), array($this->version), '/dangerousgoods/{version}/prenotification');
+        return str_replace(array('{deprecatedVersion}'), array($this->deprecatedVersion), '/dangerousgoods/{deprecatedVersion}/prenotification');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
@@ -58,10 +58,10 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
     /**
      * {@inheritdoc}
      *
-     * @throws \ShipStream\Ups\Api\Exception\PreNotificationBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\PreNotificationUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\PreNotificationForbiddenException
-     * @throws \ShipStream\Ups\Api\Exception\PreNotificationTooManyRequestsException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper
@@ -74,16 +74,16 @@ class PreNotification extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint im
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PreNotificationBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PreNotificationUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PreNotificationForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PreNotificationTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPreNotificationTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
