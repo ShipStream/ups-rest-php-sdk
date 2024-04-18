@@ -444,9 +444,13 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedDelete($deprecatedVersion, $headerParameters), $fetch);
     }
     /**
-    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    * Using the GET operation of the pickuptype endpoint within the Pickup API, users can retrieve the status of shipments sent via UPS pickup service. The endpoint uses the account number as a required parameter and returns a status of received/dispatched/completed/incomplete/updated ETA, or cancelled.
     *
-    * @param string $version version of API e.g v1
+    * @param string $version Version of API
+    
+    Valid values:
+    - v1
+    
     * @param string $pickuptype Type of pickup. Valid values:
     oncall
     smart
@@ -458,7 +462,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     shipper.Length 6 or 10
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -468,9 +475,13 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupPendingStatus($version, $pickuptype, $headerParameters), $fetch);
     }
     /**
-    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    * Using the POST operation of the pickuptype endpoint within the Pickup API, users can request rates for UPS on-demand package pickup. The endpoint allows users to specify pickup details like address, date/time, and other options, and returns pricing information for booking that pickup.
     *
-    * @param string $version Version of the API. Valid values v1
+    * @param string $version Version of the API.
+    
+    Valid values:
+    - v1
+    
     * @param string $pickuptype Type of pickup. Valid values:
     oncall
     smart
@@ -481,7 +492,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PickupRateBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\PickupRateUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PickupRateForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PickupRateTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -491,10 +505,14 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupRate($version, $pickuptype, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    * Using the CancelBy endpoint of the Pickup API, users can request cancellation of a UPS on-demand package pickup. When the PRN (pickup request number), transaction ID, and the transaction source are supplied as required parameters, the endpoint returns confirmation that the pickup has been cancelled.
     *
     * @param string $cancelBy Valid Values: 01 = AccountNumber, 02 = PRN
-    * @param string $version version of API e.g v1
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v2403
+    
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -503,30 +521,36 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     Required if CancelBy = prn.Length 26
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PickupCancelBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\PickupCancelUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PickupCancelForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PickupCancelTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper|\Psr\Http\Message\ResponseInterface
     */
-    public function pickupCancel(string $cancelBy, string $version = 'v1', array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    public function pickupCancel(string $cancelBy, string $version, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCancel($cancelBy, $version, $headerParameters), $fetch);
     }
     /**
     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
-    * @param string $version Version of the API. Valid values: 
-    v1
-    v1607
-    v1707.
-    Length 5
+    * @param string $version Version of the API.
+    
+    Valid values:
+    - v2403
+    
     * @param \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PickupCreationBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\PickupCreationUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PickupCreationForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PickupCreationTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -536,9 +560,13 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupCreation($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    * The countrycode endpoint of the Pickup API helps retrieve a list of political divisions (states) in a specified country or territory.
     *
-    * @param string $version Version of API e.g. v1
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v1
+    
     * @param string $countrycode Country or terrirtory for which the list will 
     represent.Length 2
     * @param array $headerParameters {
@@ -546,7 +574,10 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
     * }
     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListBadRequestException
     * @throws \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListTooManyRequestsException
     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
     *
     * @return \ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper|\Psr\Http\Message\ResponseInterface
@@ -556,23 +587,87 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetPoliticalDivision1List($version, $countrycode, $headerParameters), $fetch);
     }
     /**
-     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
-     *
-     * @param string $version Version of API e.g v1
-     * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
+    * The servicecenterlocations endpoint of the Pickup API helps retrieve service center information in a specified area - including location address, phone number, SLIC (Standard Location Identification Code), and hours of operation for pick-up and drop-off requests
+    *
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
     public function pickupGetServiceCenterFacilities(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PickupGetServiceCenterFacilities($version, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+    * Using the CancelBy endpoint of the Pickup API, users can request cancellation of a UPS on-demand package pickup. When the PRN (pickup request number), transaction ID, and the transaction source are supplied as required parameters, the endpoint returns confirmation that the pickup has been cancelled.
+    *
+    * @param string $cancelBy Valid Values: 01 = AccountNumber, 02 = PRN
+    * @param string $deprecatedVersion Version of API.
+    
+    Valid values:
+    - v1
+    
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $Prn The pickup equest number (PRN) generated by 
+    UPS pickup system.
+    Required if CancelBy = prn.Length 26
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCancelBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCancelUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCancelForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCancelTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedPickupCancel(string $cancelBy, string $deprecatedVersion, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedPickupCancel($cancelBy, $deprecatedVersion, $headerParameters), $fetch);
+    }
+    /**
+    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    *
+    * @param string $deprecatedVersion Version of the API.
+    
+    Valid values:
+    - v1
+    - v1607
+    - v1707
+    
+    * @param \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCreationBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCreationUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCreationForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPickupCreationTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedPickupCreation(string $deprecatedVersion, \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody, array $headerParameters = array(), string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedPickupCreation($deprecatedVersion, $requestBody, $headerParameters), $fetch);
     }
     /**
      * The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.

@@ -31,6 +31,7 @@ use ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse;
 use ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation;
 use ShipStream\Ups\Api\Model\PickupPendingStatusResponse;
 use ShipStream\Ups\Api\Model\PickupRateResponseRateResult;
+use ShipStream\Ups\Api\Model\PickupRateResponseResponse;
 use ShipStream\Ups\Api\Model\PreNotificationResponseResponse;
 use ShipStream\Ups\Api\Model\PushToImageRepositoryResponseResponse;
 use ShipStream\Ups\Api\Model\QuantumViewEventsSubscriptionEvents;
@@ -102,6 +103,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[PickupPendingStatusResponse::class] = Pickup\PickupPendingStatusResponseNormalizer::class;
         $this->normalizers[PickupRateResponseRateResult::class] = Pickup\PickupRateResponseRateResultNormalizer::class;
         $this->normalizers[ServiceCenterLocationDropOffFacilities::class] = Pickup\ServiceCenterLocationDropOffFacilitiesNormalizer::class;
+        $this->normalizers[PickupRateResponseResponse::class] = Pickup\PickupRateResponseResponseNormalizer::class;
         // PreNotification
         $this->normalizers[PreNotificationResponseResponse::class] = PreNotification\PreNotificationResponseResponseNormalizer::class;
         // QuantumView

@@ -13,38 +13,34 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The latest local close time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * The latest local close time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @var string
     */
     protected $closeTime;
     /**
-    * The earliest local ready Time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * The earliest local ready Time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @var string
     */
     protected $readyTime;
     /**
-    * The specific local pickup date.
-    Format: yyyyMMdd
-    yyyy = Year Applicable
-    MM = 01�12
-    dd = 01�31
+    * The specific local pickup date. Format: yyyyMMdd
+    - yyyy = Year Applicable
+    - MM = 01-12
+    - dd = 01-31
     *
     * @var string
     */
     protected $pickupDate;
     /**
-    * The latest local close time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * The latest local close time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @return string
     */
@@ -53,10 +49,9 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this->closeTime;
     }
     /**
-    * The latest local close time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * The latest local close time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @param string $closeTime
     *
@@ -69,10 +64,9 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this;
     }
     /**
-    * The earliest local ready Time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * The earliest local ready Time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @return string
     */
@@ -81,10 +75,9 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this->readyTime;
     }
     /**
-    * The earliest local ready Time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * The earliest local ready Time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @param string $readyTime
     *
@@ -97,11 +90,10 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this;
     }
     /**
-    * The specific local pickup date.
-    Format: yyyyMMdd
-    yyyy = Year Applicable
-    MM = 01�12
-    dd = 01�31
+    * The specific local pickup date. Format: yyyyMMdd
+    - yyyy = Year Applicable
+    - MM = 01-12
+    - dd = 01-31
     *
     * @return string
     */
@@ -110,11 +102,10 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this->pickupDate;
     }
     /**
-    * The specific local pickup date.
-    Format: yyyyMMdd
-    yyyy = Year Applicable
-    MM = 01�12
-    dd = 01�31
+    * The specific local pickup date. Format: yyyyMMdd
+    - yyyy = Year Applicable
+    - MM = 01-12
+    - dd = 01-31
     *
     * @param string $pickupDate
     *

@@ -28,6 +28,30 @@ class PickupCreationRequest extends \ArrayObject
     */
     protected $ratePickupIndicator;
     /**
+    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    All Other origins:
+    - 1 – Rates
+    - 5 - Regional Rates
+    - 6 - General List Rates.
+    
+    3 and 4 do not apply
+    
+    *
+    * @var string
+    */
+    protected $rateChartType;
+    /**
     * Indicates whether to return detailed taxes for the on-callpickups. 
     Valid values:
     Y = Rate this pickup with taxes
@@ -168,7 +192,7 @@ class PickupCreationRequest extends \ArrayObject
     */
     protected $cashType;
     /**
-     * This element should be set to �Y� in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
+     * This element should be set to "Y" in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
      *
      * @var string
      */
@@ -221,6 +245,64 @@ class PickupCreationRequest extends \ArrayObject
     {
         $this->initialized['ratePickupIndicator'] = true;
         $this->ratePickupIndicator = $ratePickupIndicator;
+        return $this;
+    }
+    /**
+    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    All Other origins:
+    - 1 – Rates
+    - 5 - Regional Rates
+    - 6 - General List Rates.
+    
+    3 and 4 do not apply
+    
+    *
+    * @return string
+    */
+    public function getRateChartType() : string
+    {
+        return $this->rateChartType;
+    }
+    /**
+    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    All Other origins:
+    - 1 – Rates
+    - 5 - Regional Rates
+    - 6 - General List Rates.
+    
+    3 and 4 do not apply
+    
+    *
+    * @param string $rateChartType
+    *
+    * @return self
+    */
+    public function setRateChartType(string $rateChartType) : self
+    {
+        $this->initialized['rateChartType'] = true;
+        $this->rateChartType = $rateChartType;
         return $this;
     }
     /**
@@ -674,7 +756,7 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-     * This element should be set to �Y� in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
+     * This element should be set to "Y" in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
      *
      * @return string
      */
@@ -683,7 +765,7 @@ class PickupCreationRequest extends \ArrayObject
         return $this->shippingLabelsAvailable;
     }
     /**
-     * This element should be set to �Y� in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
+     * This element should be set to "Y" in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
      *
      * @param string $shippingLabelsAvailable
      *

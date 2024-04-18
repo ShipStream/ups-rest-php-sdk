@@ -7,9 +7,13 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     protected $version;
     protected $pickuptype;
     /**
-    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    * Using the GET operation of the pickuptype endpoint within the Pickup API, users can retrieve the status of shipments sent via UPS pickup service. The endpoint uses the account number as a required parameter and returns a status of received/dispatched/completed/incomplete/updated ETA, or cancelled.
     *
-    * @param string $version version of API e.g v1
+    * @param string $version Version of API
+    
+    Valid values:
+    - v1
+    
     * @param string $pickuptype Type of pickup. Valid values:
     oncall
     smart
@@ -58,7 +62,10 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\PickupPendingStatusTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper
@@ -70,8 +77,17 @@ class PickupPendingStatus extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PICKUPPendingResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\PickupPendingStatusUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupPendingStatusBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupPendingStatusUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupPendingStatusForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupPendingStatusTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

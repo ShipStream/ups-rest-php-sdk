@@ -19,43 +19,41 @@ class FacilityTimeDayOfWeek extends \ArrayObject
      */
     protected $day;
     /**
-     * Earliest time that a customer can pick up a package.
+     * Earliest time that a customer can drop-off a package.
      *
      * @var string
      */
     protected $earliestDropOfforPickup;
     /**
-     * Latest time that a customer can pick up a package.
+     * Latest time that a customer can drop-off a package.
      *
      * @var string
      */
     protected $latestDropOfforPickup;
     /**
-    * Facility Open Hours. The latest local open time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * Facility Open Hours. The latest local open time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @var string
     */
     protected $openHours;
     /**
-    * Facility Close Hours. The latest local close time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * Facility Close Hours. The latest local close time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @var string
     */
     protected $closeHours;
     /**
-     * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
+     * Time required by the facility to prepare your shipment for movement
      *
      * @var string
      */
     protected $prepTime;
     /**
-     * Latest time a package, requiring preparation can be dropped off (Close time - Prep time).
+     * Cut-off time for drop off that day.
      *
      * @var string
      */
@@ -83,7 +81,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-     * Earliest time that a customer can pick up a package.
+     * Earliest time that a customer can drop-off a package.
      *
      * @return string
      */
@@ -92,7 +90,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this->earliestDropOfforPickup;
     }
     /**
-     * Earliest time that a customer can pick up a package.
+     * Earliest time that a customer can drop-off a package.
      *
      * @param string $earliestDropOfforPickup
      *
@@ -105,7 +103,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-     * Latest time that a customer can pick up a package.
+     * Latest time that a customer can drop-off a package.
      *
      * @return string
      */
@@ -114,7 +112,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this->latestDropOfforPickup;
     }
     /**
-     * Latest time that a customer can pick up a package.
+     * Latest time that a customer can drop-off a package.
      *
      * @param string $latestDropOfforPickup
      *
@@ -127,10 +125,9 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-    * Facility Open Hours. The latest local open time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * Facility Open Hours. The latest local open time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @return string
     */
@@ -139,10 +136,9 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this->openHours;
     }
     /**
-    * Facility Open Hours. The latest local open time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * Facility Open Hours. The latest local open time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @param string $openHours
     *
@@ -155,10 +151,9 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-    * Facility Close Hours. The latest local close time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * Facility Close Hours. The latest local close time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @return string
     */
@@ -167,10 +162,9 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this->closeHours;
     }
     /**
-    * Facility Close Hours. The latest local close time.
-    Format: HHmm
-    Hour: 0-23
-    Minute: 0-59
+    * Facility Close Hours. The latest local close time. Format: HHmm
+    - Hour: 0-23
+    - Minute: 0-59
     *
     * @param string $closeHours
     *
@@ -183,7 +177,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-     * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
+     * Time required by the facility to prepare your shipment for movement
      *
      * @return string
      */
@@ -192,7 +186,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this->prepTime;
     }
     /**
-     * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
+     * Time required by the facility to prepare your shipment for movement
      *
      * @param string $prepTime
      *
@@ -205,7 +199,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-     * Latest time a package, requiring preparation can be dropped off (Close time - Prep time).
+     * Cut-off time for drop off that day.
      *
      * @return string
      */
@@ -214,7 +208,7 @@ class FacilityTimeDayOfWeek extends \ArrayObject
         return $this->lastDrop;
     }
     /**
-     * Latest time a package, requiring preparation can be dropped off (Close time - Prep time).
+     * Cut-off time for drop off that day.
      *
      * @param string $lastDrop
      *

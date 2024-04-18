@@ -55,9 +55,9 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      */
     protected $stateProvince;
     /**
-    * Barrio for Mexico (MX)
-    Urbanization for Puerto Rico (PR)
-    Shire for United Kingdom (UK)
+    * - Barrio for Mexico (MX)
+    - Urbanization for Puerto Rico (PR)
+    - Shire for United Kingdom (UK)
     *
     * @var string
     */
@@ -251,9 +251,9 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Barrio for Mexico (MX)
-    Urbanization for Puerto Rico (PR)
-    Shire for United Kingdom (UK)
+    * - Barrio for Mexico (MX)
+    - Urbanization for Puerto Rico (PR)
+    - Shire for United Kingdom (UK)
     *
     * @return string
     */
@@ -262,9 +262,9 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
         return $this->urbanization;
     }
     /**
-    * Barrio for Mexico (MX)
-    Urbanization for Puerto Rico (PR)
-    Shire for United Kingdom (UK)
+    * - Barrio for Mexico (MX)
+    - Urbanization for Puerto Rico (PR)
+    - Shire for United Kingdom (UK)
     *
     * @param string $urbanization
     *

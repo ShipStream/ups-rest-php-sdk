@@ -42,7 +42,11 @@ class ChargeCardCardAddressNormalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('AddressLine', $data)) {
-            $object->setAddressLine($data['AddressLine']);
+            $values = array();
+            foreach ($data['AddressLine'] as $value) {
+                $values[] = $value;
+            }
+            $object->setAddressLine($values);
             unset($data['AddressLine']);
         }
         if (\array_key_exists('City', $data)) {
@@ -61,9 +65,9 @@ class ChargeCardCardAddressNormalizer implements DenormalizerInterface, Normaliz
             $object->setCountryCode($data['CountryCode']);
             unset($data['CountryCode']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -75,7 +79,11 @@ class ChargeCardCardAddressNormalizer implements DenormalizerInterface, Normaliz
     {
         $data = array();
         if ($object->isInitialized('addressLine') && null !== $object->getAddressLine()) {
-            $data['AddressLine'] = $object->getAddressLine();
+            $values = array();
+            foreach ($object->getAddressLine() as $value) {
+                $values[] = $value;
+            }
+            $data['AddressLine'] = $values;
         }
         if ($object->isInitialized('city') && null !== $object->getCity()) {
             $data['City'] = $object->getCity();
@@ -87,9 +95,9 @@ class ChargeCardCardAddressNormalizer implements DenormalizerInterface, Normaliz
             $data['PostalCode'] = $object->getPostalCode();
         }
         $data['CountryCode'] = $object->getCountryCode();
-        foreach ($object as $key => $value) {
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

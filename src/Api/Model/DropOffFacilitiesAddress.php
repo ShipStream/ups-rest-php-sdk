@@ -37,7 +37,7 @@ class DropOffFacilitiesAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-     * UPS Pickup facility country or territory code.
+     * UPS Drop Off facility country or territory code.
      *
      * @var string
      */
@@ -140,7 +140,7 @@ class DropOffFacilitiesAddress extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Pickup facility country or territory code.
+     * UPS Drop Off facility country or territory code.
      *
      * @return string
      */
@@ -149,7 +149,7 @@ class DropOffFacilitiesAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * UPS Pickup facility country or territory code.
+     * UPS Drop Off facility country or territory code.
      *
      * @param string $countryCode
      *
