@@ -13,37 +13,37 @@ class NotificationEMail extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The destination email address of the receiver returns notification email.
+     * Email address where the notification is sent.  Up to five email addresses are allowed for each type of Quantum View TM shipment notification. Up to two email address for return notification.
      *
      * @var string[]
      */
     protected $eMailAddress;
     /**
-     * The e-mail address where an undeliverable email message is sent if the Receiver Return Notification email is undeliverable.  Defaults to FromEMailAddress. Only allowed at the first package.
+     * The address where an undeliverable eMail message is sent if the eMail with the notification is undeliverable.  There can be only one UndeliverableEMailAddress for each shipment with Quantum View Shipment Notifications.
      *
      * @var string
      */
     protected $undeliverableEMailAddress;
     /**
-     * The email address listed in the Reply To field of the message header, includes name and e-mail address of sender. The "From" field of the message header contains pkginfo@ups.com.  Only allowed at the first package.
+     * The e-mail address specifies the Reply To E-mail address. The "From" field of the message header contains pkginfo@ups.com.  Valid for Return Notification only.
      *
      * @var string
      */
     protected $fromEMailAddress;
     /**
-     * The name the receiver return notification will appear to be from.  Defaults to the Shipper Name. Only allowed at the first package.
+     * The name the email will appear to be from. Defaults to the Shipper Name.  The FromName must occur only once for each shipment with Quantum View Shipment Notifications.
      *
      * @var string
      */
     protected $fromName;
     /**
-     * User defined text that will be included in the email.  Only allowed at the first package.
+     * User defined text that will be included in the eMail.  The Memo must occur only once for each shipment with Quantum View Shipment Notifications.
      *
      * @var string
      */
     protected $memo;
     /**
-     * The destination email address of the receiver returns notification email.
+     * Email address where the notification is sent.  Up to five email addresses are allowed for each type of Quantum View TM shipment notification. Up to two email address for return notification.
      *
      * @return string[]
      */
@@ -52,7 +52,7 @@ class NotificationEMail extends \ArrayObject
         return $this->eMailAddress;
     }
     /**
-     * The destination email address of the receiver returns notification email.
+     * Email address where the notification is sent.  Up to five email addresses are allowed for each type of Quantum View TM shipment notification. Up to two email address for return notification.
      *
      * @param string[] $eMailAddress
      *
@@ -65,7 +65,7 @@ class NotificationEMail extends \ArrayObject
         return $this;
     }
     /**
-     * The e-mail address where an undeliverable email message is sent if the Receiver Return Notification email is undeliverable.  Defaults to FromEMailAddress. Only allowed at the first package.
+     * The address where an undeliverable eMail message is sent if the eMail with the notification is undeliverable.  There can be only one UndeliverableEMailAddress for each shipment with Quantum View Shipment Notifications.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class NotificationEMail extends \ArrayObject
         return $this->undeliverableEMailAddress;
     }
     /**
-     * The e-mail address where an undeliverable email message is sent if the Receiver Return Notification email is undeliverable.  Defaults to FromEMailAddress. Only allowed at the first package.
+     * The address where an undeliverable eMail message is sent if the eMail with the notification is undeliverable.  There can be only one UndeliverableEMailAddress for each shipment with Quantum View Shipment Notifications.
      *
      * @param string $undeliverableEMailAddress
      *
@@ -87,7 +87,7 @@ class NotificationEMail extends \ArrayObject
         return $this;
     }
     /**
-     * The email address listed in the Reply To field of the message header, includes name and e-mail address of sender. The "From" field of the message header contains pkginfo@ups.com.  Only allowed at the first package.
+     * The e-mail address specifies the Reply To E-mail address. The "From" field of the message header contains pkginfo@ups.com.  Valid for Return Notification only.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class NotificationEMail extends \ArrayObject
         return $this->fromEMailAddress;
     }
     /**
-     * The email address listed in the Reply To field of the message header, includes name and e-mail address of sender. The "From" field of the message header contains pkginfo@ups.com.  Only allowed at the first package.
+     * The e-mail address specifies the Reply To E-mail address. The "From" field of the message header contains pkginfo@ups.com.  Valid for Return Notification only.
      *
      * @param string $fromEMailAddress
      *
@@ -109,7 +109,7 @@ class NotificationEMail extends \ArrayObject
         return $this;
     }
     /**
-     * The name the receiver return notification will appear to be from.  Defaults to the Shipper Name. Only allowed at the first package.
+     * The name the email will appear to be from. Defaults to the Shipper Name.  The FromName must occur only once for each shipment with Quantum View Shipment Notifications.
      *
      * @return string
      */
@@ -118,7 +118,7 @@ class NotificationEMail extends \ArrayObject
         return $this->fromName;
     }
     /**
-     * The name the receiver return notification will appear to be from.  Defaults to the Shipper Name. Only allowed at the first package.
+     * The name the email will appear to be from. Defaults to the Shipper Name.  The FromName must occur only once for each shipment with Quantum View Shipment Notifications.
      *
      * @param string $fromName
      *
@@ -131,7 +131,7 @@ class NotificationEMail extends \ArrayObject
         return $this;
     }
     /**
-     * User defined text that will be included in the email.  Only allowed at the first package.
+     * User defined text that will be included in the eMail.  The Memo must occur only once for each shipment with Quantum View Shipment Notifications.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class NotificationEMail extends \ArrayObject
         return $this->memo;
     }
     /**
-     * User defined text that will be included in the email.  Only allowed at the first package.
+     * User defined text that will be included in the eMail.  The Memo must occur only once for each shipment with Quantum View Shipment Notifications.
      *
      * @param string $memo
      *

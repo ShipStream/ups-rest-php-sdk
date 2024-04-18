@@ -13,33 +13,51 @@ class PackageSimpleRate extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large
-     *
-     * @var string
-     */
+    * SimpleRate code.  Valid Values
+    - XS =  Extra Small
+    - S =  Small
+    - M = Medium
+    - L = Large
+    - XL = Extra Large
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * Simple Rate Package Size Description
+     * Simple Rate description of the code above.  Currently ignored if provided in the Request. Length is not validated.
      *
      * @var string
      */
     protected $description;
     /**
-     * Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large
-     *
-     * @return string
-     */
+    * SimpleRate code.  Valid Values
+    - XS =  Extra Small
+    - S =  Small
+    - M = Medium
+    - L = Large
+    - XL = Extra Large
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Simple Rate Package Size Valid values: XS -  Extra Small S -  Small M -  Medium L - Large XL - Extra Large
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * SimpleRate code.  Valid Values
+    - XS =  Extra Small
+    - S =  Small
+    - M = Medium
+    - L = Large
+    - XL = Extra Large
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -47,7 +65,7 @@ class PackageSimpleRate extends \ArrayObject
         return $this;
     }
     /**
-     * Simple Rate Package Size Description
+     * Simple Rate description of the code above.  Currently ignored if provided in the Request. Length is not validated.
      *
      * @return string
      */
@@ -56,7 +74,7 @@ class PackageSimpleRate extends \ArrayObject
         return $this->description;
     }
     /**
-     * Simple Rate Package Size Description
+     * Simple Rate description of the code above.  Currently ignored if provided in the Request. Length is not validated.
      *
      * @param string $description
      *

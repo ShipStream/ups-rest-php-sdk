@@ -13,7 +13,7 @@ class CN22ContentWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Required if weight is provided, valid values are lbs. and ozs.
+     * Required if weight is provided, valid values are lbs. and ozs.  Required if weight is provided.
      *
      * @var string
      */
@@ -25,7 +25,7 @@ class CN22ContentWeightUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-     * Required if weight is provided, valid values are lbs. and ozs.
+     * Required if weight is provided, valid values are lbs. and ozs.  Required if weight is provided.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class CN22ContentWeightUnitOfMeasurement extends \ArrayObject
         return $this->code;
     }
     /**
-     * Required if weight is provided, valid values are lbs. and ozs.
+     * Required if weight is provided, valid values are lbs. and ozs.  Required if weight is provided.
      *
      * @param string $code
      *

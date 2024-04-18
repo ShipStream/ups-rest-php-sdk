@@ -13,13 +13,13 @@ class LabelImageLabelImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code type that the label image is to be generated in. Valid value returned is gif, pdf, zpl. Spl, epl2
+     * The format of a label image byte stream.  Code type that the label image is to be generated in. Valid value returned is GIF or PDF
      *
      * @var string
      */
     protected $code;
     /**
-     * Code type that the label image is to be generated in. Valid value returned is gif, pdf, zpl. Spl, epl2
+     * The format of a label image byte stream.  Code type that the label image is to be generated in. Valid value returned is GIF or PDF
      *
      * @return string
      */
@@ -28,7 +28,7 @@ class LabelImageLabelImageFormat extends \ArrayObject
         return $this->code;
     }
     /**
-     * Code type that the label image is to be generated in. Valid value returned is gif, pdf, zpl. Spl, epl2
+     * The format of a label image byte stream.  Code type that the label image is to be generated in. Valid value returned is GIF or PDF
      *
      * @param string $code
      *

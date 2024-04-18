@@ -19,19 +19,19 @@ class PackageDimensions extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-     * The length of the line item used to determine dimensional weight.
+     * Package length. Length must be the longest dimension of the container.  Valid values are 0 to 108 IN and 0 to 270 CM.
      *
      * @var string
      */
     protected $length;
     /**
-     * The width of the line item used to determine dimensional weight.
+     * Package width.
      *
      * @var string
      */
     protected $width;
     /**
-     * The height of the line item used to determine dimensional weight.
+     * Package height.
      *
      * @var string
      */
@@ -59,7 +59,7 @@ class PackageDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The length of the line item used to determine dimensional weight.
+     * Package length. Length must be the longest dimension of the container.  Valid values are 0 to 108 IN and 0 to 270 CM.
      *
      * @return string
      */
@@ -68,7 +68,7 @@ class PackageDimensions extends \ArrayObject
         return $this->length;
     }
     /**
-     * The length of the line item used to determine dimensional weight.
+     * Package length. Length must be the longest dimension of the container.  Valid values are 0 to 108 IN and 0 to 270 CM.
      *
      * @param string $length
      *
@@ -81,7 +81,7 @@ class PackageDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The width of the line item used to determine dimensional weight.
+     * Package width.
      *
      * @return string
      */
@@ -90,7 +90,7 @@ class PackageDimensions extends \ArrayObject
         return $this->width;
     }
     /**
-     * The width of the line item used to determine dimensional weight.
+     * Package width.
      *
      * @param string $width
      *
@@ -103,7 +103,7 @@ class PackageDimensions extends \ArrayObject
         return $this;
     }
     /**
-     * The height of the line item used to determine dimensional weight.
+     * Package height.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ class PackageDimensions extends \ArrayObject
         return $this->height;
     }
     /**
-     * The height of the line item used to determine dimensional weight.
+     * Package height.
      *
      * @param string $height
      *

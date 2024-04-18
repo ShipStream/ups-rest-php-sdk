@@ -45,7 +45,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['NotificationCode']);
             }
             if (\array_key_exists('EMail', $data)) {
-                $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\NotificationEMail', 'json', $context));
+                $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotificationEMail', 'json', $context));
                 unset($data['EMail']);
             }
             foreach ($data as $key => $value) {
@@ -107,7 +107,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['NotificationCode']);
             }
             if (\array_key_exists('EMail', $data)) {
-                $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\NotificationEMail', 'json', $context));
+                $object->setEMail($this->denormalizer->denormalize($data['EMail'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotificationEMail', 'json', $context));
                 unset($data['EMail']);
             }
             foreach ($data as $key => $value) {

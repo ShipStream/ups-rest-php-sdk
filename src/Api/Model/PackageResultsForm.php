@@ -13,44 +13,41 @@ class PackageResultsForm extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code that indicates the type of form. Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Code that indicates the type of form.  Valid values:
+    - 01 - All Requested International Forms.
     
-    Valid values: 01 - All Requested International Forms.
     *
     * @var string
     */
     protected $code;
     /**
-    * Description that indicates the type of form. Possible Values. All Requested International Forms. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @var string
-    */
+     * Description that indicates the type of form.  Possible Values: All Requested International Forms.
+     *
+     * @var string
+     */
     protected $description;
     /**
-    * Container tag for the International forms image. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @var FormImage
-    */
+     * Container tag for the International forms image.
+     *
+     * @var FormImage
+     */
     protected $image;
     /**
-    * Unique Id for later retrieval of saved version of the completed international forms. Always returned when code = 01. 01 represents international forms. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @var string
-    */
+     * Unique Id for later retrieval of saved version of the completed international forms.
+     *
+     * @var string
+     */
     protected $formGroupId;
     /**
-     * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.
      *
      * @var string
      */
     protected $formGroupIdName;
     /**
-    * Code that indicates the type of form. Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Code that indicates the type of form.  Valid values:
+    - 01 - All Requested International Forms.
     
-    Valid values: 01 - All Requested International Forms.
     *
     * @return string
     */
@@ -59,9 +56,9 @@ class PackageResultsForm extends \ArrayObject
         return $this->code;
     }
     /**
-    * Code that indicates the type of form. Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Code that indicates the type of form.  Valid values:
+    - 01 - All Requested International Forms.
     
-    Valid values: 01 - All Requested International Forms.
     *
     * @param string $code
     *
@@ -74,23 +71,21 @@ class PackageResultsForm extends \ArrayObject
         return $this;
     }
     /**
-    * Description that indicates the type of form. Possible Values. All Requested International Forms. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @return string
-    */
+     * Description that indicates the type of form.  Possible Values: All Requested International Forms.
+     *
+     * @return string
+     */
     public function getDescription() : string
     {
         return $this->description;
     }
     /**
-    * Description that indicates the type of form. Possible Values. All Requested International Forms. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @param string $description
-    *
-    * @return self
-    */
+     * Description that indicates the type of form.  Possible Values: All Requested International Forms.
+     *
+     * @param string $description
+     *
+     * @return self
+     */
     public function setDescription(string $description) : self
     {
         $this->initialized['description'] = true;
@@ -98,23 +93,21 @@ class PackageResultsForm extends \ArrayObject
         return $this;
     }
     /**
-    * Container tag for the International forms image. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @return FormImage
-    */
+     * Container tag for the International forms image.
+     *
+     * @return FormImage
+     */
     public function getImage() : FormImage
     {
         return $this->image;
     }
     /**
-    * Container tag for the International forms image. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @param FormImage $image
-    *
-    * @return self
-    */
+     * Container tag for the International forms image.
+     *
+     * @param FormImage $image
+     *
+     * @return self
+     */
     public function setImage(FormImage $image) : self
     {
         $this->initialized['image'] = true;
@@ -122,23 +115,21 @@ class PackageResultsForm extends \ArrayObject
         return $this;
     }
     /**
-    * Unique Id for later retrieval of saved version of the completed international forms. Always returned when code = 01. 01 represents international forms. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @return string
-    */
+     * Unique Id for later retrieval of saved version of the completed international forms.
+     *
+     * @return string
+     */
     public function getFormGroupId() : string
     {
         return $this->formGroupId;
     }
     /**
-    * Unique Id for later retrieval of saved version of the completed international forms. Always returned when code = 01. 01 represents international forms. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @param string $formGroupId
-    *
-    * @return self
-    */
+     * Unique Id for later retrieval of saved version of the completed international forms.
+     *
+     * @param string $formGroupId
+     *
+     * @return self
+     */
     public function setFormGroupId(string $formGroupId) : self
     {
         $this->initialized['formGroupId'] = true;
@@ -146,7 +137,7 @@ class PackageResultsForm extends \ArrayObject
         return $this;
     }
     /**
-     * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.
      *
      * @return string
      */
@@ -155,7 +146,7 @@ class PackageResultsForm extends \ArrayObject
         return $this->formGroupIdName;
     }
     /**
-     * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Contains description text which identifies the group of International forms. This element is part of both request and response. This element does not appear on the forms.
      *
      * @param string $formGroupIdName
      *

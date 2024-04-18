@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ImageFormat', $data)) {
-                $object->setImageFormat($this->denormalizer->denormalize($data['ImageFormat'], 'ShipStream\\Ups\\Api\\Model\\ImageImageFormat', 'json', $context));
+                $object->setImageFormat($this->denormalizer->denormalize($data['ImageFormat'], 'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImageImageFormat', 'json', $context));
                 unset($data['ImageFormat']);
             }
             if (\array_key_exists('GraphicImage', $data)) {
@@ -103,7 +103,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ImageFormat', $data)) {
-                $object->setImageFormat($this->denormalizer->denormalize($data['ImageFormat'], 'ShipStream\\Ups\\Api\\Model\\ImageImageFormat', 'json', $context));
+                $object->setImageFormat($this->denormalizer->denormalize($data['ImageFormat'], 'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImageImageFormat', 'json', $context));
                 unset($data['ImageFormat']);
             }
             if (\array_key_exists('GraphicImage', $data)) {

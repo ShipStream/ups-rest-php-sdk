@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Type', $data)) {
-                $object->setType($data['Type']);
+                $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType', 'json', $context));
                 unset($data['Type']);
             }
             if (\array_key_exists('AccountNumber', $data)) {
@@ -62,7 +62,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
-            $data['Type'] = $object->getType();
+            $data['Type'] = $this->normalizer->normalize($object->getType(), 'json', $context);
             $data['AccountNumber'] = $object->getAccountNumber();
             if ($object->isInitialized('address') && null !== $object->getAddress()) {
                 $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
@@ -110,7 +110,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Type', $data)) {
-                $object->setType($data['Type']);
+                $object->setType($this->denormalizer->denormalize($data['Type'], 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType', 'json', $context));
                 unset($data['Type']);
             }
             if (\array_key_exists('AccountNumber', $data)) {
@@ -134,7 +134,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize($object, $format = null, array $context = [])
         {
             $data = [];
-            $data['Type'] = $object->getType();
+            $data['Type'] = $this->normalizer->normalize($object->getType(), 'json', $context);
             $data['AccountNumber'] = $object->getAccountNumber();
             if ($object->isInitialized('address') && null !== $object->getAddress()) {
                 $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);

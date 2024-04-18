@@ -13,10 +13,17 @@ class DeclaredValueType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Declared value type. Valid values: 01=EVS, 02=DVS.  Defaults to 01 i.e. EVS if declared value type is not provided.
-     *
-     * @var string
-     */
+    * Declared value type. Valid values:
+    - 01=EVS
+    - 02=DVS
+    
+    Defaults to 01 i.e. EVS if declared value type is not provided.  The user cannot specify different type of declared value for the shipment. User can either have shipper declared value (DVS) or declared value (EVS) but not both at package level.
+    
+    Note: The Shipper Declared Value is applicable for forward shipments when the billing option is freight collect or third party.
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
      * Declared value Description.
@@ -25,21 +32,35 @@ class DeclaredValueType extends \ArrayObject
      */
     protected $description;
     /**
-     * Declared value type. Valid values: 01=EVS, 02=DVS.  Defaults to 01 i.e. EVS if declared value type is not provided.
-     *
-     * @return string
-     */
+    * Declared value type. Valid values:
+    - 01=EVS
+    - 02=DVS
+    
+    Defaults to 01 i.e. EVS if declared value type is not provided.  The user cannot specify different type of declared value for the shipment. User can either have shipper declared value (DVS) or declared value (EVS) but not both at package level.
+    
+    Note: The Shipper Declared Value is applicable for forward shipments when the billing option is freight collect or third party.
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Declared value type. Valid values: 01=EVS, 02=DVS.  Defaults to 01 i.e. EVS if declared value type is not provided.
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * Declared value type. Valid values:
+    - 01=EVS
+    - 02=DVS
+    
+    Defaults to 01 i.e. EVS if declared value type is not provided.  The user cannot specify different type of declared value for the shipment. User can either have shipper declared value (DVS) or declared value (EVS) but not both at package level.
+    
+    Note: The Shipper Declared Value is applicable for forward shipments when the billing option is freight collect or third party.
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;

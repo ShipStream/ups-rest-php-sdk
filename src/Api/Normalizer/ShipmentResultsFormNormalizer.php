@@ -49,7 +49,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('Image', $data)) {
-                $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\FormImage', 'json', $context));
+                $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage', 'json', $context));
                 unset($data['Image']);
             }
             if (\array_key_exists('FormGroupId', $data)) {
@@ -132,7 +132,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('Image', $data)) {
-                $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\FormImage', 'json', $context));
+                $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage', 'json', $context));
                 unset($data['Image']);
             }
             if (\array_key_exists('FormGroupId', $data)) {

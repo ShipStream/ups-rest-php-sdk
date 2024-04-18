@@ -49,10 +49,14 @@ class InternationalFormsProduct extends \ArrayObject
      */
     protected $jointProductionIndicator;
     /**
-     * For each good described in the Description of Goods field, where the good is subject to a regional value content (RVC) requirement, indicate NC if the RVC is calculated according to the net cost method; otherwise, indicate NO. If the RVC is calculated over a period of time then indicate NC with begin/end date by passing code ND  Applies to NAFTA CO only. Required for NAFTA CO.  Valid values: NC, ND and NO.
-     *
-     * @var string
-     */
+    * For each good described in the Description of Goods field, where the good is subject to a regional value content (RVC) requirement, indicate NC if the RVC is calculated according to the net cost method; otherwise, indicate NO. If the RVC is calculated over a period of time then indicate "NC with begin/end date" by passing code "ND"  Applies to NAFTA CO only. Required for NAFTA CO.  Valid values:
+    - NC
+    - ND
+    - NO
+    
+    *
+    * @var string
+    */
     protected $netCostCode;
     /**
      * Date Range for regional value content (RVC).  Applies to NAFTA CO only.
@@ -116,10 +120,13 @@ class InternationalFormsProduct extends \ArrayObject
      */
     protected $exportType;
     /**
-     * This amount will always be USD.  Applies to EEI forms only. Required for EEI form. Valid characters are 0-9 and ".". (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including "." and can hold up to 2 decimal places.  Note: This value is calculated based on the Product/Unit/Value and /Product/Unit/Number (Number of Units * Price per Unit). If the total value is incorrect it will be replaced by the actual calculated total value.
-     *
-     * @var string
-     */
+    * This amount will always be USD.  Applies to EEI forms only. Required for EEI form. Valid characters are 0-9 and \'.\' (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including \'.\' and can hold up to 2 decimal places.
+    
+    Note: This value is calculated based on the Product/Unit/Value and /Product/Unit/Number (Number of Units * Price per Unit). If the total value is incorrect it will be replaced by the actual calculated total value.
+    
+    *
+    * @var string
+    */
     protected $sEDTotalValue;
     /**
      * Container tag for determining whether or not to exclude product information from a particular form.  If this container is not present we assume that the DEFAULT is selected which is "none" and all products will appear on all forms.
@@ -272,21 +279,29 @@ class InternationalFormsProduct extends \ArrayObject
         return $this;
     }
     /**
-     * For each good described in the Description of Goods field, where the good is subject to a regional value content (RVC) requirement, indicate NC if the RVC is calculated according to the net cost method; otherwise, indicate NO. If the RVC is calculated over a period of time then indicate NC with begin/end date by passing code ND  Applies to NAFTA CO only. Required for NAFTA CO.  Valid values: NC, ND and NO.
-     *
-     * @return string
-     */
+    * For each good described in the Description of Goods field, where the good is subject to a regional value content (RVC) requirement, indicate NC if the RVC is calculated according to the net cost method; otherwise, indicate NO. If the RVC is calculated over a period of time then indicate "NC with begin/end date" by passing code "ND"  Applies to NAFTA CO only. Required for NAFTA CO.  Valid values:
+    - NC
+    - ND
+    - NO
+    
+    *
+    * @return string
+    */
     public function getNetCostCode() : string
     {
         return $this->netCostCode;
     }
     /**
-     * For each good described in the Description of Goods field, where the good is subject to a regional value content (RVC) requirement, indicate NC if the RVC is calculated according to the net cost method; otherwise, indicate NO. If the RVC is calculated over a period of time then indicate NC with begin/end date by passing code ND  Applies to NAFTA CO only. Required for NAFTA CO.  Valid values: NC, ND and NO.
-     *
-     * @param string $netCostCode
-     *
-     * @return self
-     */
+    * For each good described in the Description of Goods field, where the good is subject to a regional value content (RVC) requirement, indicate NC if the RVC is calculated according to the net cost method; otherwise, indicate NO. If the RVC is calculated over a period of time then indicate "NC with begin/end date" by passing code "ND"  Applies to NAFTA CO only. Required for NAFTA CO.  Valid values:
+    - NC
+    - ND
+    - NO
+    
+    *
+    * @param string $netCostCode
+    *
+    * @return self
+    */
     public function setNetCostCode(string $netCostCode) : self
     {
         $this->initialized['netCostCode'] = true;
@@ -506,21 +521,27 @@ class InternationalFormsProduct extends \ArrayObject
         return $this;
     }
     /**
-     * This amount will always be USD.  Applies to EEI forms only. Required for EEI form. Valid characters are 0-9 and ".". (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including "." and can hold up to 2 decimal places.  Note: This value is calculated based on the Product/Unit/Value and /Product/Unit/Number (Number of Units * Price per Unit). If the total value is incorrect it will be replaced by the actual calculated total value.
-     *
-     * @return string
-     */
+    * This amount will always be USD.  Applies to EEI forms only. Required for EEI form. Valid characters are 0-9 and \'.\' (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including \'.\' and can hold up to 2 decimal places.
+    
+    Note: This value is calculated based on the Product/Unit/Value and /Product/Unit/Number (Number of Units * Price per Unit). If the total value is incorrect it will be replaced by the actual calculated total value.
+    
+    *
+    * @return string
+    */
     public function getSEDTotalValue() : string
     {
         return $this->sEDTotalValue;
     }
     /**
-     * This amount will always be USD.  Applies to EEI forms only. Required for EEI form. Valid characters are 0-9 and ".". (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including "." and can hold up to 2 decimal places.  Note: This value is calculated based on the Product/Unit/Value and /Product/Unit/Number (Number of Units * Price per Unit). If the total value is incorrect it will be replaced by the actual calculated total value.
-     *
-     * @param string $sEDTotalValue
-     *
-     * @return self
-     */
+    * This amount will always be USD.  Applies to EEI forms only. Required for EEI form. Valid characters are 0-9 and \'.\' (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including \'.\' and can hold up to 2 decimal places.
+    
+    Note: This value is calculated based on the Product/Unit/Value and /Product/Unit/Number (Number of Units * Price per Unit). If the total value is incorrect it will be replaced by the actual calculated total value.
+    
+    *
+    * @param string $sEDTotalValue
+    *
+    * @return self
+    */
     public function setSEDTotalValue(string $sEDTotalValue) : self
     {
         $this->initialized['sEDTotalValue'] = true;

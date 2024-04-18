@@ -13,19 +13,19 @@ class DDTCInformationUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code of the billing weight measurement units. Values are: KGS or LBS.
+     * Required for EEI form. Unit of measurement code. The two or three (3) alpha unit of measurement for the article being shipped. For example: BAG/BG - bags  Applies to EEI form only.  It is required for EEIFilingOption code 1A and 3.
      *
      * @var string
      */
     protected $code;
     /**
-     * Description of the billing weight measurement units.
+     * Description for Unit of Measurement.  Applies to EEI form only.
      *
      * @var string
      */
     protected $description;
     /**
-     * Code of the billing weight measurement units. Values are: KGS or LBS.
+     * Required for EEI form. Unit of measurement code. The two or three (3) alpha unit of measurement for the article being shipped. For example: BAG/BG - bags  Applies to EEI form only.  It is required for EEIFilingOption code 1A and 3.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class DDTCInformationUnitOfMeasurement extends \ArrayObject
         return $this->code;
     }
     /**
-     * Code of the billing weight measurement units. Values are: KGS or LBS.
+     * Required for EEI form. Unit of measurement code. The two or three (3) alpha unit of measurement for the article being shipped. For example: BAG/BG - bags  Applies to EEI form only.  It is required for EEIFilingOption code 1A and 3.
      *
      * @param string $code
      *
@@ -47,7 +47,7 @@ class DDTCInformationUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * Description of the billing weight measurement units.
+     * Description for Unit of Measurement.  Applies to EEI form only.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class DDTCInformationUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the billing weight measurement units.
+     * Description for Unit of Measurement.  Applies to EEI form only.
      *
      * @param string $description
      *

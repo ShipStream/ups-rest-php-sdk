@@ -13,7 +13,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Type of delivery confirmation. Valid values: 
+    * Type of delivery confirmation.  Valid values: 
     1 - Delivery Confirmation Signature Required
     2 - Delivery Confirmation Adult Signature Required. Valid for forward shipments only.
     *
@@ -21,13 +21,13 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
     */
     protected $dCISType;
     /**
-     * Delivery Confirmation Control number associated with the delivery confirmation for the package.  Valid for forward shipments only.
+     * DCIS Number.
      *
      * @var string
      */
     protected $dCISNumber;
     /**
-    * Type of delivery confirmation. Valid values: 
+    * Type of delivery confirmation.  Valid values: 
     1 - Delivery Confirmation Signature Required
     2 - Delivery Confirmation Adult Signature Required. Valid for forward shipments only.
     *
@@ -38,7 +38,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
         return $this->dCISType;
     }
     /**
-    * Type of delivery confirmation. Valid values: 
+    * Type of delivery confirmation.  Valid values: 
     1 - Delivery Confirmation Signature Required
     2 - Delivery Confirmation Adult Signature Required. Valid for forward shipments only.
     *
@@ -53,7 +53,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
         return $this;
     }
     /**
-     * Delivery Confirmation Control number associated with the delivery confirmation for the package.  Valid for forward shipments only.
+     * DCIS Number.
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
         return $this->dCISNumber;
     }
     /**
-     * Delivery Confirmation Control number associated with the delivery confirmation for the package.  Valid for forward shipments only.
+     * DCIS Number.
      *
      * @param string $dCISNumber
      *

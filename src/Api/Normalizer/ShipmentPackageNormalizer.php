@@ -76,6 +76,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLargePackageIndicator($data['LargePackageIndicator']);
                 unset($data['LargePackageIndicator']);
             }
+            if (\array_key_exists('OversizeIndicator', $data)) {
+                $object->setOversizeIndicator($data['OversizeIndicator']);
+                unset($data['OversizeIndicator']);
+            }
+            if (\array_key_exists('MinimumBillableWeightIndicator', $data)) {
+                $object->setMinimumBillableWeightIndicator($data['MinimumBillableWeightIndicator']);
+                unset($data['MinimumBillableWeightIndicator']);
+            }
             if (\array_key_exists('ReferenceNumber', $data)) {
                 $values = [];
                 foreach ($data['ReferenceNumber'] as $value) {
@@ -142,6 +150,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             if ($object->isInitialized('largePackageIndicator') && null !== $object->getLargePackageIndicator()) {
                 $data['LargePackageIndicator'] = $object->getLargePackageIndicator();
+            }
+            if ($object->isInitialized('oversizeIndicator') && null !== $object->getOversizeIndicator()) {
+                $data['OversizeIndicator'] = $object->getOversizeIndicator();
+            }
+            if ($object->isInitialized('minimumBillableWeightIndicator') && null !== $object->getMinimumBillableWeightIndicator()) {
+                $data['MinimumBillableWeightIndicator'] = $object->getMinimumBillableWeightIndicator();
             }
             if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
                 $values = [];
@@ -246,6 +260,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLargePackageIndicator($data['LargePackageIndicator']);
                 unset($data['LargePackageIndicator']);
             }
+            if (\array_key_exists('OversizeIndicator', $data)) {
+                $object->setOversizeIndicator($data['OversizeIndicator']);
+                unset($data['OversizeIndicator']);
+            }
+            if (\array_key_exists('MinimumBillableWeightIndicator', $data)) {
+                $object->setMinimumBillableWeightIndicator($data['MinimumBillableWeightIndicator']);
+                unset($data['MinimumBillableWeightIndicator']);
+            }
             if (\array_key_exists('ReferenceNumber', $data)) {
                 $values = [];
                 foreach ($data['ReferenceNumber'] as $value) {
@@ -315,6 +337,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             if ($object->isInitialized('largePackageIndicator') && null !== $object->getLargePackageIndicator()) {
                 $data['LargePackageIndicator'] = $object->getLargePackageIndicator();
+            }
+            if ($object->isInitialized('oversizeIndicator') && null !== $object->getOversizeIndicator()) {
+                $data['OversizeIndicator'] = $object->getOversizeIndicator();
+            }
+            if ($object->isInitialized('minimumBillableWeightIndicator') && null !== $object->getMinimumBillableWeightIndicator()) {
+                $data['MinimumBillableWeightIndicator'] = $object->getMinimumBillableWeightIndicator();
             }
             if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
                 $values = [];

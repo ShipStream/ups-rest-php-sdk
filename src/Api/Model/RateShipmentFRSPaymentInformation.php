@@ -13,7 +13,7 @@ class RateShipmentFRSPaymentInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * GFP Payment Information Type container.  GFP only.
+     * Container to hold the Ground Freight Pricing payment type information.  It is required if the request has Ground Freight Pricing shipment indicator.
      *
      * @var FRSPaymentInformationType
      */
@@ -31,7 +31,7 @@ class RateShipmentFRSPaymentInformation extends \ArrayObject
      */
     protected $address;
     /**
-     * GFP Payment Information Type container.  GFP only.
+     * Container to hold the Ground Freight Pricing payment type information.  It is required if the request has Ground Freight Pricing shipment indicator.
      *
      * @return FRSPaymentInformationType
      */
@@ -40,7 +40,7 @@ class RateShipmentFRSPaymentInformation extends \ArrayObject
         return $this->type;
     }
     /**
-     * GFP Payment Information Type container.  GFP only.
+     * Container to hold the Ground Freight Pricing payment type information.  It is required if the request has Ground Freight Pricing shipment indicator.
      *
      * @param FRSPaymentInformationType $type
      *

@@ -19,7 +19,7 @@ class ImageImageFormat extends \ArrayObject
      */
     protected $code;
     /**
-     * Description of the image format.
+     * Description of the form image format code.
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class ImageImageFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Description of the image format.
+     * Description of the form image format code.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ImageImageFormat extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the image format.
+     * Description of the form image format code.
      *
      * @param string $description
      *

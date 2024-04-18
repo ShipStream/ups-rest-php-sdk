@@ -19,15 +19,15 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      */
     protected $hTTPUserAgent;
     /**
-     * LabelImageFormat Container.
+     * The file format of the label and receipt. Defaults to HTML format if this node does not exist.
      *
-     * @var LabelSpecificationLabelImageFormat
+     * @var LabelRecoveryLabelSpecificationLabelImageFormat
      */
     protected $labelImageFormat;
     /**
-     * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
+     * Container to hold Label Height and Width information.  Applicable if Label Image Code is ZPL, EPL and SPL. Ignored for other Label Image Code types.
      *
-     * @var LabelSpecificationLabelStockSize
+     * @var LabelRecoveryLabelSpecificationLabelStockSize
      */
     protected $labelStockSize;
     /**
@@ -53,44 +53,44 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
         return $this;
     }
     /**
-     * LabelImageFormat Container.
+     * The file format of the label and receipt. Defaults to HTML format if this node does not exist.
      *
-     * @return LabelSpecificationLabelImageFormat
+     * @return LabelRecoveryLabelSpecificationLabelImageFormat
      */
-    public function getLabelImageFormat() : LabelSpecificationLabelImageFormat
+    public function getLabelImageFormat() : LabelRecoveryLabelSpecificationLabelImageFormat
     {
         return $this->labelImageFormat;
     }
     /**
-     * LabelImageFormat Container.
+     * The file format of the label and receipt. Defaults to HTML format if this node does not exist.
      *
-     * @param LabelSpecificationLabelImageFormat $labelImageFormat
+     * @param LabelRecoveryLabelSpecificationLabelImageFormat $labelImageFormat
      *
      * @return self
      */
-    public function setLabelImageFormat(LabelSpecificationLabelImageFormat $labelImageFormat) : self
+    public function setLabelImageFormat(LabelRecoveryLabelSpecificationLabelImageFormat $labelImageFormat) : self
     {
         $this->initialized['labelImageFormat'] = true;
         $this->labelImageFormat = $labelImageFormat;
         return $this;
     }
     /**
-     * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
+     * Container to hold Label Height and Width information.  Applicable if Label Image Code is ZPL, EPL and SPL. Ignored for other Label Image Code types.
      *
-     * @return LabelSpecificationLabelStockSize
+     * @return LabelRecoveryLabelSpecificationLabelStockSize
      */
-    public function getLabelStockSize() : LabelSpecificationLabelStockSize
+    public function getLabelStockSize() : LabelRecoveryLabelSpecificationLabelStockSize
     {
         return $this->labelStockSize;
     }
     /**
-     * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
+     * Container to hold Label Height and Width information.  Applicable if Label Image Code is ZPL, EPL and SPL. Ignored for other Label Image Code types.
      *
-     * @param LabelSpecificationLabelStockSize $labelStockSize
+     * @param LabelRecoveryLabelSpecificationLabelStockSize $labelStockSize
      *
      * @return self
      */
-    public function setLabelStockSize(LabelSpecificationLabelStockSize $labelStockSize) : self
+    public function setLabelStockSize(LabelRecoveryLabelSpecificationLabelStockSize $labelStockSize) : self
     {
         $this->initialized['labelStockSize'] = true;
         $this->labelStockSize = $labelStockSize;

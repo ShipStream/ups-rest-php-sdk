@@ -45,7 +45,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CODFundsCode']);
             }
             if (\array_key_exists('CODAmount', $data)) {
-                $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\CODCODAmount', 'json', $context));
+                $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCODCODAmount', 'json', $context));
                 unset($data['CODAmount']);
             }
             foreach ($data as $key => $value) {
@@ -107,7 +107,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CODFundsCode']);
             }
             if (\array_key_exists('CODAmount', $data)) {
-                $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\CODCODAmount', 'json', $context));
+                $object->setCODAmount($this->denormalizer->denormalize($data['CODAmount'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCODCODAmount', 'json', $context));
                 unset($data['CODAmount']);
             }
             foreach ($data as $key => $value) {

@@ -65,7 +65,10 @@ class LabelRecovery extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\LabelRecoveryTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper
@@ -77,8 +80,17 @@ class LabelRecovery extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\LabelRecoveryUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\LabelRecoveryBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\LabelRecoveryUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\LabelRecoveryForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\LabelRecoveryTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

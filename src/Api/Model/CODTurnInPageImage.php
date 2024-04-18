@@ -13,41 +13,41 @@ class CODTurnInPageImage extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * The container for format of COD Turn In Page.
      *
-     * @var ImageImageFormat
+     * @var CODTurnInPageImageImageFormat
      */
     protected $imageFormat;
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded html browser image rendering software
      *
      * @var string
      */
     protected $graphicImage;
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * The container for format of COD Turn In Page.
      *
-     * @return ImageImageFormat
+     * @return CODTurnInPageImageImageFormat
      */
-    public function getImageFormat() : ImageImageFormat
+    public function getImageFormat() : CODTurnInPageImageImageFormat
     {
         return $this->imageFormat;
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * The container for format of COD Turn In Page.
      *
-     * @param ImageImageFormat $imageFormat
+     * @param CODTurnInPageImageImageFormat $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ImageImageFormat $imageFormat) : self
+    public function setImageFormat(CODTurnInPageImageImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
         return $this;
     }
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded html browser image rendering software
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class CODTurnInPageImage extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded html browser image rendering software
      *
      * @param string $graphicImage
      *

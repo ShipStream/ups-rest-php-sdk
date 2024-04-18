@@ -19,7 +19,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
      */
     protected $referenceNumber;
     /**
-     * Required if ReferenceNumber/Value is populated. Shippers six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
+     * Required if ReferenceNumber/Value is populated. Shipper's six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
         return $this;
     }
     /**
-     * Required if ReferenceNumber/Value is populated. Shippers six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
+     * Required if ReferenceNumber/Value is populated. Shipper's six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
         return $this->shipperNumber;
     }
     /**
-     * Required if ReferenceNumber/Value is populated. Shippers six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
+     * Required if ReferenceNumber/Value is populated. Shipper's six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.
      *
      * @param string $shipperNumber
      *
