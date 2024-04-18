@@ -13,7 +13,8 @@ class ManifestPackage extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Information about package delivery activity.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var PackageActivity[]
      */
@@ -44,10 +45,14 @@ class ManifestPackage extends \ArrayObject
      */
     protected $packageWeight;
     /**
-     * Values for LargePackage are:1 - Oversize 1,� 2 - Oversize 2,� 4 - Large package
-     *
-     * @var string
-     */
+    * Values for LargePackage are:
+    - 1 - Oversize 1
+    - 2 - Oversize 2
+    - 4 - Large package
+    
+    *
+    * @var string
+    */
     protected $largePackage;
     /**
      * Package's tracking number.
@@ -57,8 +62,9 @@ class ManifestPackage extends \ArrayObject
     protected $trackingNumber;
     /**
      * Container tag for information about the package-level reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ManifestPackageReferenceNumber
+     * @var ManifestPackageReferenceNumber[]
      */
     protected $referenceNumber;
     /**
@@ -74,7 +80,8 @@ class ManifestPackage extends \ArrayObject
      */
     protected $uPSPremiumCareIndicator;
     /**
-     * 
+     * Information about package delivery activity.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return PackageActivity[]
      */
@@ -83,7 +90,8 @@ class ManifestPackage extends \ArrayObject
         return $this->activity;
     }
     /**
-     * 
+     * Information about package delivery activity.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param PackageActivity[] $activity
      *
@@ -186,21 +194,29 @@ class ManifestPackage extends \ArrayObject
         return $this;
     }
     /**
-     * Values for LargePackage are:1 - Oversize 1,� 2 - Oversize 2,� 4 - Large package
-     *
-     * @return string
-     */
+    * Values for LargePackage are:
+    - 1 - Oversize 1
+    - 2 - Oversize 2
+    - 4 - Large package
+    
+    *
+    * @return string
+    */
     public function getLargePackage() : string
     {
         return $this->largePackage;
     }
     /**
-     * Values for LargePackage are:1 - Oversize 1,� 2 - Oversize 2,� 4 - Large package
-     *
-     * @param string $largePackage
-     *
-     * @return self
-     */
+    * Values for LargePackage are:
+    - 1 - Oversize 1
+    - 2 - Oversize 2
+    - 4 - Large package
+    
+    *
+    * @param string $largePackage
+    *
+    * @return self
+    */
     public function setLargePackage(string $largePackage) : self
     {
         $this->initialized['largePackage'] = true;
@@ -231,21 +247,23 @@ class ManifestPackage extends \ArrayObject
     }
     /**
      * Container tag for information about the package-level reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ManifestPackageReferenceNumber
+     * @return ManifestPackageReferenceNumber[]
      */
-    public function getReferenceNumber() : ManifestPackageReferenceNumber
+    public function getReferenceNumber() : array
     {
         return $this->referenceNumber;
     }
     /**
      * Container tag for information about the package-level reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ManifestPackageReferenceNumber $referenceNumber
+     * @param ManifestPackageReferenceNumber[] $referenceNumber
      *
      * @return self
      */
-    public function setReferenceNumber(ManifestPackageReferenceNumber $referenceNumber) : self
+    public function setReferenceNumber(array $referenceNumber) : self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;

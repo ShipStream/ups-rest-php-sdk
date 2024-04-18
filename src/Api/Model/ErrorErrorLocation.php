@@ -13,19 +13,19 @@ class ErrorErrorLocation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.
+     * The Xpath name of the element in error. This is a valid Xpath pointing to an element in the request document.
      *
      * @var string
      */
     protected $errorLocationElementName;
     /**
-     * The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.
+     * The name of the attribute in error. This is the name of the attribute contained by the Error Location element.
      *
      * @var string
      */
     protected $errorLocationAttributeName;
     /**
-     * The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.
+     * The Xpath name of the element in error. This is a valid Xpath pointing to an element in the request document.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class ErrorErrorLocation extends \ArrayObject
         return $this->errorLocationElementName;
     }
     /**
-     * The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.
+     * The Xpath name of the element in error. This is a valid Xpath pointing to an element in the request document.
      *
      * @param string $errorLocationElementName
      *
@@ -47,7 +47,7 @@ class ErrorErrorLocation extends \ArrayObject
         return $this;
     }
     /**
-     * The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.
+     * The name of the attribute in error. This is the name of the attribute contained by the Error Location element.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ErrorErrorLocation extends \ArrayObject
         return $this->errorLocationAttributeName;
     }
     /**
-     * The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.
+     * The name of the attribute in error. This is the name of the attribute contained by the Error Location element.
      *
      * @param string $errorLocationAttributeName
      *

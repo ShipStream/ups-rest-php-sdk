@@ -13,46 +13,49 @@ class ManifestShipperAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address Line 1 of the UPS Access Point.
+     * Address Line 1 of the Shipper.
      *
      * @var string
      */
     protected $addressLine1;
     /**
-     * Address Line 2 of the UPS Access Point. Usually room/floor information.
+     * Address Line 2 of the Shipper. Usually room/floor information.
      *
      * @var string
      */
     protected $addressLine2;
     /**
-     * Address Line 3 of the UPS Access Point. Usually department information.
+     * Address Line 3 of the shipper. Usually department information.
      *
      * @var string
      */
     protected $addressLine3;
     /**
-     * UPS Access Point City.
+     * Shipper's City.
      *
      * @var string
      */
     protected $city;
     /**
-     * UPS Access Point's state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.
+     * Shipper's state or province code. Must be valid US state. If the Shipper's country or territory is US or CA a two character code is required, otherwise the StateProvinceCode is optional.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * UPS Access Point's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.
+     * Shipper's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * UPS Access Point's country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA
-     *
-     * @var string
-     */
+    * Shipper's country or territory code.
+    
+    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+    
+    *
+    * @var string
+    */
     protected $countryCode;
     /**
      * If tag is present, then the address is residential address. Pickup location residential address indicator. The presence indicates residential address, the absence indicates a business address.
@@ -61,7 +64,7 @@ class ManifestShipperAddress extends \ArrayObject
      */
     protected $residentialAddressIndicator;
     /**
-     * Address Line 1 of the UPS Access Point.
+     * Address Line 1 of the Shipper.
      *
      * @return string
      */
@@ -70,7 +73,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this->addressLine1;
     }
     /**
-     * Address Line 1 of the UPS Access Point.
+     * Address Line 1 of the Shipper.
      *
      * @param string $addressLine1
      *
@@ -83,7 +86,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Address Line 2 of the UPS Access Point. Usually room/floor information.
+     * Address Line 2 of the Shipper. Usually room/floor information.
      *
      * @return string
      */
@@ -92,7 +95,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this->addressLine2;
     }
     /**
-     * Address Line 2 of the UPS Access Point. Usually room/floor information.
+     * Address Line 2 of the Shipper. Usually room/floor information.
      *
      * @param string $addressLine2
      *
@@ -105,7 +108,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Address Line 3 of the UPS Access Point. Usually department information.
+     * Address Line 3 of the shipper. Usually department information.
      *
      * @return string
      */
@@ -114,7 +117,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this->addressLine3;
     }
     /**
-     * Address Line 3 of the UPS Access Point. Usually department information.
+     * Address Line 3 of the shipper. Usually department information.
      *
      * @param string $addressLine3
      *
@@ -127,7 +130,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Access Point City.
+     * Shipper's City.
      *
      * @return string
      */
@@ -136,7 +139,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * UPS Access Point City.
+     * Shipper's City.
      *
      * @param string $city
      *
@@ -149,7 +152,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Access Point's state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.
+     * Shipper's state or province code. Must be valid US state. If the Shipper's country or territory is US or CA a two character code is required, otherwise the StateProvinceCode is optional.
      *
      * @return string
      */
@@ -158,7 +161,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * UPS Access Point's state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.
+     * Shipper's state or province code. Must be valid US state. If the Shipper's country or territory is US or CA a two character code is required, otherwise the StateProvinceCode is optional.
      *
      * @param string $stateProvinceCode
      *
@@ -171,7 +174,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Access Point's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.
+     * Shipper's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
      *
      * @return string
      */
@@ -180,7 +183,7 @@ class ManifestShipperAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * UPS Access Point's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.
+     * Shipper's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
      *
      * @param string $postalCode
      *
@@ -193,21 +196,27 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Access Point's country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA
-     *
-     * @return string
-     */
+    * Shipper's country or territory code.
+    
+    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+    
+    *
+    * @return string
+    */
     public function getCountryCode() : string
     {
         return $this->countryCode;
     }
     /**
-     * UPS Access Point's country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA
-     *
-     * @param string $countryCode
-     *
-     * @return self
-     */
+    * Shipper's country or territory code.
+    
+    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+    
+    *
+    * @param string $countryCode
+    *
+    * @return self
+    */
     public function setCountryCode(string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;

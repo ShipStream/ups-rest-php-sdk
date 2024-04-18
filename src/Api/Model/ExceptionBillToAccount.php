@@ -13,14 +13,13 @@ class ExceptionBillToAccount extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates how shipping charges for the package were billed. 
-    Valid Values: 01, 02, 03, 04, 99 
-    Value Definitions: 
-    01 Shipper
-    02 Consignee Billing 
-    03 Third Party
-    04 Freight Collect
-    99 International Bill Option
+    * Indicates how shipping charges for the package were billed. Valid Values:
+    - 01 - Shipper
+    - 02 - Consignee Billing
+    - 03 - Third Party
+    - 04 - Freight Collect
+    Indicates how shipping charges for the package were billed. Valid Values: 01 Shipper, 02 Consignee Billing ,03 Third Party, 04 Freight Collect
+    
     *
     * @var string
     */
@@ -32,14 +31,13 @@ class ExceptionBillToAccount extends \ArrayObject
      */
     protected $number;
     /**
-    * Indicates how shipping charges for the package were billed. 
-    Valid Values: 01, 02, 03, 04, 99 
-    Value Definitions: 
-    01 Shipper
-    02 Consignee Billing 
-    03 Third Party
-    04 Freight Collect
-    99 International Bill Option
+    * Indicates how shipping charges for the package were billed. Valid Values:
+    - 01 - Shipper
+    - 02 - Consignee Billing
+    - 03 - Third Party
+    - 04 - Freight Collect
+    Indicates how shipping charges for the package were billed. Valid Values: 01 Shipper, 02 Consignee Billing ,03 Third Party, 04 Freight Collect
+    
     *
     * @return string
     */
@@ -48,14 +46,13 @@ class ExceptionBillToAccount extends \ArrayObject
         return $this->option;
     }
     /**
-    * Indicates how shipping charges for the package were billed. 
-    Valid Values: 01, 02, 03, 04, 99 
-    Value Definitions: 
-    01 Shipper
-    02 Consignee Billing 
-    03 Third Party
-    04 Freight Collect
-    99 International Bill Option
+    * Indicates how shipping charges for the package were billed. Valid Values:
+    - 01 - Shipper
+    - 02 - Consignee Billing
+    - 03 - Third Party
+    - 04 - Freight Collect
+    Indicates how shipping charges for the package were billed. Valid Values: 01 Shipper, 02 Consignee Billing ,03 Third Party, 04 Freight Collect
+    
     *
     * @param string $option
     *

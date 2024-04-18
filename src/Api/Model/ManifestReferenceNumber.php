@@ -19,16 +19,13 @@ class ManifestReferenceNumber extends \ArrayObject
      */
     protected $number;
     /**
-    * Reference number type code for entire shipment, two-character alphanumeric. 
-    The code specifies the Reference name. 
-    Valid if the origin/destination pair is US/US or PR/PR.
-    For additional information, refer to the Reference Codes table in the Appendix.
-    *
-    * @var string
-    */
+     * Reflects what will go on the label as the name of the reference. For additional information, refer to the Reference Codes table in the Appendix.
+     *
+     * @var string
+     */
     protected $code;
     /**
-     * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
+     * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
      *
      * @var string
      */
@@ -56,27 +53,21 @@ class ManifestReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-    * Reference number type code for entire shipment, two-character alphanumeric. 
-    The code specifies the Reference name. 
-    Valid if the origin/destination pair is US/US or PR/PR.
-    For additional information, refer to the Reference Codes table in the Appendix.
-    *
-    * @return string
-    */
+     * Reflects what will go on the label as the name of the reference. For additional information, refer to the Reference Codes table in the Appendix.
+     *
+     * @return string
+     */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-    * Reference number type code for entire shipment, two-character alphanumeric. 
-    The code specifies the Reference name. 
-    Valid if the origin/destination pair is US/US or PR/PR.
-    For additional information, refer to the Reference Codes table in the Appendix.
-    *
-    * @param string $code
-    *
-    * @return self
-    */
+     * Reflects what will go on the label as the name of the reference. For additional information, refer to the Reference Codes table in the Appendix.
+     *
+     * @param string $code
+     *
+     * @return self
+     */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -84,7 +75,7 @@ class ManifestReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-     * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
+     * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
      *
      * @return string
      */
@@ -93,7 +84,7 @@ class ManifestReferenceNumber extends \ArrayObject
         return $this->value;
     }
     /**
-     * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
+     * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
      *
      * @param string $value
      *

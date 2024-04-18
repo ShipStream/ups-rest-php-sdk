@@ -13,25 +13,25 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Allows for secondary address information such as a suite or apartment.
+     * Allows for secondary address information such as s suite or apartment. It will be returned if there is any update due to exception.
      *
      * @var string
      */
     protected $type;
     /**
-     * The low number associated with an extended address.
+     * The lower limit associated with the extended address type. It will be returned if there is any update due to exception.
      *
      * @var string
      */
     protected $low;
     /**
-     * The high number associated with an extended address.
+     * The higher limit associated with the extended address type. It will be returned if there is any update due to exception.
      *
      * @var string
      */
     protected $high;
     /**
-     * Allows for secondary address information such as a suite or apartment.
+     * Allows for secondary address information such as s suite or apartment. It will be returned if there is any update due to exception.
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
         return $this->type;
     }
     /**
-     * Allows for secondary address information such as a suite or apartment.
+     * Allows for secondary address information such as s suite or apartment. It will be returned if there is any update due to exception.
      *
      * @param string $type
      *
@@ -53,7 +53,7 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
         return $this;
     }
     /**
-     * The low number associated with an extended address.
+     * The lower limit associated with the extended address type. It will be returned if there is any update due to exception.
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
         return $this->low;
     }
     /**
-     * The low number associated with an extended address.
+     * The lower limit associated with the extended address type. It will be returned if there is any update due to exception.
      *
      * @param string $low
      *
@@ -75,7 +75,7 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
         return $this;
     }
     /**
-     * The high number associated with an extended address.
+     * The higher limit associated with the extended address type. It will be returned if there is any update due to exception.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class UpdatedAddressAddressExtendedInformation extends \ArrayObject
         return $this->high;
     }
     /**
-     * The high number associated with an extended address.
+     * The higher limit associated with the extended address type. It will be returned if there is any update due to exception.
      *
      * @param string $high
      *
