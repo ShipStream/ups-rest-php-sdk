@@ -13,19 +13,19 @@ class RatedShipmentTotalCharges extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The IATA currency code associated with the total charges for the package.
+     * The IATA currency code associated with the total charges for the shipment.
      *
      * @var string
      */
     protected $currencyCode;
     /**
-     * The value for the total charges associated with the package.
+     * The value for the total charges associated with the shipment.
      *
      * @var string
      */
     protected $monetaryValue;
     /**
-     * The IATA currency code associated with the total charges for the package.
+     * The IATA currency code associated with the total charges for the shipment.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class RatedShipmentTotalCharges extends \ArrayObject
         return $this->currencyCode;
     }
     /**
-     * The IATA currency code associated with the total charges for the package.
+     * The IATA currency code associated with the total charges for the shipment.
      *
      * @param string $currencyCode
      *
@@ -47,7 +47,7 @@ class RatedShipmentTotalCharges extends \ArrayObject
         return $this;
     }
     /**
-     * The value for the total charges associated with the package.
+     * The value for the total charges associated with the shipment.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class RatedShipmentTotalCharges extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-     * The value for the total charges associated with the package.
+     * The value for the total charges associated with the shipment.
      *
      * @param string $monetaryValue
      *

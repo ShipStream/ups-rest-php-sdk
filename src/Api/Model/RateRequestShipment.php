@@ -25,22 +25,27 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $shipper;
     /**
-     * Ship To Container  N/A
+     * Ship To Container
      *
      * @var RateShipmentShipTo
      */
     protected $shipTo;
     /**
-     * Ship From Container.  N/A
+     * Ship From Container.
      *
      * @var RateShipmentShipFrom
      */
     protected $shipFrom;
     /**
-     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
-     *
-     * @var RateShipmentAlternateDeliveryAddress
-     */
+    * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
+    
+    Required for the following ShipmentIndicationType values:
+    - 01 - Hold for Pickup at UPS Access Point™
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @var RateShipmentAlternateDeliveryAddress
+    */
     protected $alternateDeliveryAddress;
     /**
      * 
@@ -103,7 +108,7 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $package;
     /**
-     * Shipment level Accessorials are included in this container.  N/A
+     * Shipment level Accessorials are included in this container.
      *
      * @var RateShipmentShipmentServiceOptions
      */
@@ -201,7 +206,7 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Ship To Container  N/A
+     * Ship To Container
      *
      * @return RateShipmentShipTo
      */
@@ -210,7 +215,7 @@ class RateRequestShipment extends \ArrayObject
         return $this->shipTo;
     }
     /**
-     * Ship To Container  N/A
+     * Ship To Container
      *
      * @param RateShipmentShipTo $shipTo
      *
@@ -223,7 +228,7 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Ship From Container.  N/A
+     * Ship From Container.
      *
      * @return RateShipmentShipFrom
      */
@@ -232,7 +237,7 @@ class RateRequestShipment extends \ArrayObject
         return $this->shipFrom;
     }
     /**
-     * Ship From Container.  N/A
+     * Ship From Container.
      *
      * @param RateShipmentShipFrom $shipFrom
      *
@@ -245,21 +250,31 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
-     *
-     * @return RateShipmentAlternateDeliveryAddress
-     */
+    * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
+    
+    Required for the following ShipmentIndicationType values:
+    - 01 - Hold for Pickup at UPS Access Point™
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @return RateShipmentAlternateDeliveryAddress
+    */
     public function getAlternateDeliveryAddress() : RateShipmentAlternateDeliveryAddress
     {
         return $this->alternateDeliveryAddress;
     }
     /**
-     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point locations.Required for the following ShipmentIndicationType values:01 - Hold for Pickup at UPS Access Point02 - UPS Access Point Delivery
-     *
-     * @param RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress
-     *
-     * @return self
-     */
+    * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
+    
+    Required for the following ShipmentIndicationType values:
+    - 01 - Hold for Pickup at UPS Access Point™
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @param RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress
+    *
+    * @return self
+    */
     public function setAlternateDeliveryAddress(RateShipmentAlternateDeliveryAddress $alternateDeliveryAddress) : self
     {
         $this->initialized['alternateDeliveryAddress'] = true;
@@ -487,7 +502,7 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Shipment level Accessorials are included in this container.  N/A
+     * Shipment level Accessorials are included in this container.
      *
      * @return RateShipmentShipmentServiceOptions
      */
@@ -496,7 +511,7 @@ class RateRequestShipment extends \ArrayObject
         return $this->shipmentServiceOptions;
     }
     /**
-     * Shipment level Accessorials are included in this container.  N/A
+     * Shipment level Accessorials are included in this container.
      *
      * @param RateShipmentShipmentServiceOptions $shipmentServiceOptions
      *

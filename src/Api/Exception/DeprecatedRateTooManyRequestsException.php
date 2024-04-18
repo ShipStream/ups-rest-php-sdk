@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class RateUnauthorizedException extends UnauthorizedException
+class DeprecatedRateTooManyRequestsException extends TooManyRequestsException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse
@@ -14,7 +14,7 @@ class RateUnauthorizedException extends UnauthorizedException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Unauthorized Request');
+        parent::__construct('Rate Limit Exceeded');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }

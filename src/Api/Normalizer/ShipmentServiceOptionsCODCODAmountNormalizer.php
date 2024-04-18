@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\HttpKernel\Kernel;
 if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR_VERSION === 6 and Kernel::MINOR_VERSION === 4)) {
-    class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+    class ShipmentServiceOptionsCODCODAmountNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
     {
         use DenormalizerAwareTrait;
         use NormalizerAwareTrait;
@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight';
+            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount';
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight';
+            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount';
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -36,17 +36,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (isset($data['$recursiveRef'])) {
                 return new Reference($data['$recursiveRef'], $context['document-origin']);
             }
-            $object = new \ShipStream\Ups\Api\Model\RatedPackageBillingWeight();
+            $object = new \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCODCODAmount();
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
-                $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement', 'json', $context));
-                unset($data['UnitOfMeasurement']);
+            if (\array_key_exists('CurrencyCode', $data)) {
+                $object->setCurrencyCode($data['CurrencyCode']);
+                unset($data['CurrencyCode']);
             }
-            if (\array_key_exists('Weight', $data)) {
-                $object->setWeight($data['Weight']);
-                unset($data['Weight']);
+            if (\array_key_exists('MonetaryValue', $data)) {
+                $object->setMonetaryValue($data['MonetaryValue']);
+                unset($data['MonetaryValue']);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -58,8 +58,8 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
-            $data['UnitOfMeasurement'] = $this->normalizer->normalize($object->getUnitOfMeasurement(), 'json', $context);
-            $data['Weight'] = $object->getWeight();
+            $data['CurrencyCode'] = $object->getCurrencyCode();
+            $data['MonetaryValue'] = $object->getMonetaryValue();
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $data[$key] = $value;
@@ -69,11 +69,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => false];
+            return ['ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount' => false];
         }
     }
 } else {
-    class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+    class ShipmentServiceOptionsCODCODAmountNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
     {
         use DenormalizerAwareTrait;
         use NormalizerAwareTrait;
@@ -81,11 +81,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight';
+            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount';
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight';
+            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount';
         }
         /**
          * @return mixed
@@ -98,17 +98,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (isset($data['$recursiveRef'])) {
                 return new Reference($data['$recursiveRef'], $context['document-origin']);
             }
-            $object = new \ShipStream\Ups\Api\Model\RatedPackageBillingWeight();
+            $object = new \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCODCODAmount();
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('UnitOfMeasurement', $data)) {
-                $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement', 'json', $context));
-                unset($data['UnitOfMeasurement']);
+            if (\array_key_exists('CurrencyCode', $data)) {
+                $object->setCurrencyCode($data['CurrencyCode']);
+                unset($data['CurrencyCode']);
             }
-            if (\array_key_exists('Weight', $data)) {
-                $object->setWeight($data['Weight']);
-                unset($data['Weight']);
+            if (\array_key_exists('MonetaryValue', $data)) {
+                $object->setMonetaryValue($data['MonetaryValue']);
+                unset($data['MonetaryValue']);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -123,8 +123,8 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize($object, $format = null, array $context = [])
         {
             $data = [];
-            $data['UnitOfMeasurement'] = $this->normalizer->normalize($object->getUnitOfMeasurement(), 'json', $context);
-            $data['Weight'] = $object->getWeight();
+            $data['CurrencyCode'] = $object->getCurrencyCode();
+            $data['MonetaryValue'] = $object->getMonetaryValue();
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $data[$key] = $value;
@@ -134,7 +134,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => false];
+            return ['ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount' => false];
         }
     }
 }

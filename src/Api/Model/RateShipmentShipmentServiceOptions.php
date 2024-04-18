@@ -45,16 +45,24 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     */
     protected $accessPointCOD;
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point package.  Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point.
-     *
-     * @var string
-     */
+    * Presence/Absence Indicator. Any value inside is ignored.
+    
+    DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point" package.
+    
+    Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point".
+    
+    *
+    * @var string
+    */
     protected $deliverToAddresseeOnlyIndicator;
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:01 - Hold For Pickup At UPS Access Point 02 - UPS Access Point Delivery"
-     *
-     * @var string
-     */
+    * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:
+    - 01 - Hold For Pickup At UPS Access Point
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @var string
+    */
     protected $directDeliveryOnlyIndicator;
     /**
      * COD container  Indicates COD is requested. Shipment COD is only available for EU origin countries or territories and for shippers account type Daily Pickup and Drop Shipping. Not available to shipment with return service.
@@ -135,16 +143,23 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $sDLShipmentIndicator;
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment. This accessorial is only valid with ShipmentIndicationType "01" - Hold for Pickup at UPS Access Point.
-     *
-     * @var string
-     */
+    * For valid values, refer to Rating and Shipping COD Supported Countries or Territories in the Appendix.Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment.
+    
+    This accessorial is only valid with ShipmentIndicationType '01' - Hold for Pickup at UPS Access Point™.
+    
+    *
+    * @var string
+    */
     protected $ePRAIndicator;
     /**
-     * Inside Delivery accessory. Valide values:                                         01- White Glove                        02 - Room of Choice                   03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.
-     *
-     * @var string
-     */
+    * Inside Delivery accessory. Valid values:
+    - 01 - White Glove
+    - 02 - Room of Choice
+    - 03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.
+    
+    *
+    * @var string
+    */
     protected $insideDelivery;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. If present, indicates that the customer would like items disposed.   Shippers account needs to have a valid contract for Heavy Goods Service.
@@ -267,21 +282,31 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point package.  Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point.
-     *
-     * @return string
-     */
+    * Presence/Absence Indicator. Any value inside is ignored.
+    
+    DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point" package.
+    
+    Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point".
+    
+    *
+    * @return string
+    */
     public function getDeliverToAddresseeOnlyIndicator() : string
     {
         return $this->deliverToAddresseeOnlyIndicator;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point package.  Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point.
-     *
-     * @param string $deliverToAddresseeOnlyIndicator
-     *
-     * @return self
-     */
+    * Presence/Absence Indicator. Any value inside is ignored.
+    
+    DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point" package.
+    
+    Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point".
+    
+    *
+    * @param string $deliverToAddresseeOnlyIndicator
+    *
+    * @return self
+    */
     public function setDeliverToAddresseeOnlyIndicator(string $deliverToAddresseeOnlyIndicator) : self
     {
         $this->initialized['deliverToAddresseeOnlyIndicator'] = true;
@@ -289,21 +314,27 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:01 - Hold For Pickup At UPS Access Point 02 - UPS Access Point Delivery"
-     *
-     * @return string
-     */
+    * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:
+    - 01 - Hold For Pickup At UPS Access Point
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @return string
+    */
     public function getDirectDeliveryOnlyIndicator() : string
     {
         return $this->directDeliveryOnlyIndicator;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:01 - Hold For Pickup At UPS Access Point 02 - UPS Access Point Delivery"
-     *
-     * @param string $directDeliveryOnlyIndicator
-     *
-     * @return self
-     */
+    * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the Ship To address on the shipping label.  This accessorial is not valid with Shipment Indication Types:
+    - 01 - Hold For Pickup At UPS Access Point
+    - 02 - UPS Access Point™ Delivery
+    
+    *
+    * @param string $directDeliveryOnlyIndicator
+    *
+    * @return self
+    */
     public function setDirectDeliveryOnlyIndicator(string $directDeliveryOnlyIndicator) : self
     {
         $this->initialized['directDeliveryOnlyIndicator'] = true;
@@ -597,21 +628,27 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment. This accessorial is only valid with ShipmentIndicationType "01" - Hold for Pickup at UPS Access Point.
-     *
-     * @return string
-     */
+    * For valid values, refer to Rating and Shipping COD Supported Countries or Territories in the Appendix.Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment.
+    
+    This accessorial is only valid with ShipmentIndicationType '01' - Hold for Pickup at UPS Access Point™.
+    
+    *
+    * @return string
+    */
     public function getEPRAIndicator() : string
     {
         return $this->ePRAIndicator;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment. This accessorial is only valid with ShipmentIndicationType "01" - Hold for Pickup at UPS Access Point.
-     *
-     * @param string $ePRAIndicator
-     *
-     * @return self
-     */
+    * For valid values, refer to Rating and Shipping COD Supported Countries or Territories in the Appendix.Presence/Absence Indicator. Any value inside is ignored. This field is a flag to indicate Package Release Code is requested for shipment.
+    
+    This accessorial is only valid with ShipmentIndicationType '01' - Hold for Pickup at UPS Access Point™.
+    
+    *
+    * @param string $ePRAIndicator
+    *
+    * @return self
+    */
     public function setEPRAIndicator(string $ePRAIndicator) : self
     {
         $this->initialized['ePRAIndicator'] = true;
@@ -619,21 +656,29 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Inside Delivery accessory. Valide values:                                         01- White Glove                        02 - Room of Choice                   03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.
-     *
-     * @return string
-     */
+    * Inside Delivery accessory. Valid values:
+    - 01 - White Glove
+    - 02 - Room of Choice
+    - 03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.
+    
+    *
+    * @return string
+    */
     public function getInsideDelivery() : string
     {
         return $this->insideDelivery;
     }
     /**
-     * Inside Delivery accessory. Valide values:                                         01- White Glove                        02 - Room of Choice                   03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.
-     *
-     * @param string $insideDelivery
-     *
-     * @return self
-     */
+    * Inside Delivery accessory. Valid values:
+    - 01 - White Glove
+    - 02 - Room of Choice
+    - 03 - Installation  Shippers account needs to have a valid contract for Heavy Goods Service.
+    
+    *
+    * @param string $insideDelivery
+    *
+    * @return self
+    */
     public function setInsideDelivery(string $insideDelivery) : self
     {
         $this->initialized['insideDelivery'] = true;

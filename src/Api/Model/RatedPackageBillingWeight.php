@@ -13,9 +13,9 @@ class RatedPackageBillingWeight extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Billing weight unit of measurement code. The unit of measurement used in Shipment request is returned.
+     * Unit Of Measurement Container.
      *
-     * @var BillingWeightUnitOfMeasurement
+     * @var RatedPackageBillingWeightUnitOfMeasurement
      */
     protected $unitOfMeasurement;
     /**
@@ -25,22 +25,22 @@ class RatedPackageBillingWeight extends \ArrayObject
      */
     protected $weight;
     /**
-     * Billing weight unit of measurement code. The unit of measurement used in Shipment request is returned.
+     * Unit Of Measurement Container.
      *
-     * @return BillingWeightUnitOfMeasurement
+     * @return RatedPackageBillingWeightUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : BillingWeightUnitOfMeasurement
+    public function getUnitOfMeasurement() : RatedPackageBillingWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
     /**
-     * Billing weight unit of measurement code. The unit of measurement used in Shipment request is returned.
+     * Unit Of Measurement Container.
      *
-     * @param BillingWeightUnitOfMeasurement $unitOfMeasurement
+     * @param RatedPackageBillingWeightUnitOfMeasurement $unitOfMeasurement
      *
      * @return self
      */
-    public function setUnitOfMeasurement(BillingWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(RatedPackageBillingWeightUnitOfMeasurement $unitOfMeasurement) : self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

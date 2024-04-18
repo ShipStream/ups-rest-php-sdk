@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Model;
 
-class RatedShipmentTransportationCharges extends \ArrayObject
+class ShipmentServiceOptionsCODCODAmount extends \ArrayObject
 {
     /**
      * @var array
@@ -13,19 +13,19 @@ class RatedShipmentTransportationCharges extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The IATA currency code associated with the transportation costs for the shipment.
+     * COD amount currency code type.
      *
      * @var string
      */
     protected $currencyCode;
     /**
-     * The value for the transportation costs associated with the shipment.
+     * COD Amount.
      *
      * @var string
      */
     protected $monetaryValue;
     /**
-     * The IATA currency code associated with the transportation costs for the shipment.
+     * COD amount currency code type.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class RatedShipmentTransportationCharges extends \ArrayObject
         return $this->currencyCode;
     }
     /**
-     * The IATA currency code associated with the transportation costs for the shipment.
+     * COD amount currency code type.
      *
      * @param string $currencyCode
      *
@@ -47,7 +47,7 @@ class RatedShipmentTransportationCharges extends \ArrayObject
         return $this;
     }
     /**
-     * The value for the transportation costs associated with the shipment.
+     * COD Amount.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class RatedShipmentTransportationCharges extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-     * The value for the transportation costs associated with the shipment.
+     * COD Amount.
      *
      * @param string $monetaryValue
      *
