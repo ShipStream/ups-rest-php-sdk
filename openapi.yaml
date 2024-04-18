@@ -2587,7 +2587,7 @@ paths:
         -
           name: version
           in: path
-          description: 'Version of API'
+          description: "Version of API.\n\nValid values:\n- v2\n"
           required: true
           schema:
             type: string
@@ -2619,8 +2619,98 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/QUANTUMVIEWResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '401':
           description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        -
+          oauth2: []
+  '/quantumview/{deprecatedVersion}/events':
+    post:
+      summary: 'Quantum View'
+      description: 'Get Quantum View Response'
+      operationId: DeprecatedQuantumView
+      parameters:
+        -
+          name: deprecatedVersion
+          in: path
+          description: "Version of API.\n\nValid values:\n- v1\n"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: 'Generate sample code for popular API requests by selecting an example below. To view a full sample request and response, first click "Authorize" and enter your application credentials, then populate the required parameters above and click "Try it out".'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QUANTUMVIEWRequestWrapper'
+            examples:
+              json:
+                summary: 'A sample JSON request (Standard Example)'
+                value:
+                  QuantumViewRequest:
+                    Request:
+                      TransactionReference:
+                        CustomerContext: ''
+                        XpciVersion: '1.0007'
+                      RequestAction: QVEvents
+                    SubscriptionRequest:
+                      FileName: '220104_140019001'
+                      Name: OutboundXML
+                      Bookmark: WE9MVFFBMQ==
+        required: true
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QUANTUMVIEWResponseWrapper'
+        '400':
+          description: 'Invalid Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: 'Unauthorized Request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 'Blocked Merchant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: 'Rate Limit Exceeded'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
       security:
         -
           oauth2: []
@@ -8468,27 +8558,39 @@ components:
       type: object
       properties:
         ErrorSeverity:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
-          description: 'Describes the severity of the error.�� Required if the error is present.'
+          description: 'Describes the severity of the error. Required if the error is present.'
         ErrorCode:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
-          description: 'A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.'
+          description: 'A numeric value that describes the error. Each tool defines a range of error codes. Required if the error is present.'
         ErrorDescription:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
           description: 'Describes the error code.'
         MinimumRetrySeconds:
+          maximum: 1
+          maxLength: 5
+          minLength: 1
           type: string
-          description: 'Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)'
+          description: 'Number of seconds to wait until retry. This field is populated on special conditions of the Transient Error only, as defined by the service. A number between 1 and 86400 (24 hours)'
         ErrorLocation:
           type: array
           items:
             $ref: '#/components/schemas/Error_ErrorLocation'
+          description: "Identifies the element in error.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ErrorDigest:
           type: array
           items:
             type: string
-          description: 'The contents of the element in error.'
-      description: 'If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.'
+          description: "The contents of the element in error.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       xml:
         name: Error
     Error_ErrorLocation:
@@ -8496,12 +8598,17 @@ components:
       type: object
       properties:
         ErrorLocationElementName:
+          maximum: 1
+          maxLength: 512
+          minLength: 1
           type: string
-          description: 'The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.'
+          description: 'The Xpath name of the element in error. This is a valid Xpath pointing to an element in the request document.'
         ErrorLocationAttributeName:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
-          description: 'The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.'
-      description: 'Identifies the element in error.'
+          description: 'The name of the attribute in error. This is the name of the attribute contained by the Error Location element.'
       xml:
         name: ErrorLocation
     LocatorResponse_Geocode:
@@ -12602,6 +12709,7 @@ components:
           items:
             $ref: '#/components/schemas/QuantumViewRequest_SubscriptionRequest'
         Bookmark:
+          maximum: 1
           type: string
           description: "Bookmarks the file for next retrieval. It is a base64Encoded String. \nIt contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. \nIt contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request."
       description: 'Container for QuantumView request information.'
@@ -12616,32 +12724,26 @@ components:
         TransactionReference:
           $ref: '#/components/schemas/Request_TransactionReference'
         RequestAction:
+          maximum: 1
+          maxLength: 11
+          minLength: 11
           type: string
           description: 'Indicates the action to be taken by the XML service. The only valid value is  ''QVEvents'''
       description: 'Contains QuantumView request criteria components.'
       xml:
         name: Request
-    TransactionReference_CustomerContext:
-      maximum: 1
-      maxLength: 512
-      minLength: 1
-      type: string
-      description: 'The CustomerContext Information which will be echoed during response.'
-    Request_RequestAction:
-      maximum: 1
-      maxLength: 11
-      minLength: 11
-      type: string
-      description: 'Indicates the action to be taken by the XML service. The only valid value is  ''QVEvents'''
     QuantumViewRequest_SubscriptionRequest:
       type: object
       properties:
         Name:
+          maxLength: 21
           type: string
           description: 'Name of subscription requested by user, as one type of request criteria. Required when the customer wants to request data for a specific subscription name. Subscription name consists of up to 21 alphanumerics.'
         DateTimeRange:
           $ref: '#/components/schemas/SubscriptionRequest_DateTimeRange'
         FileName:
+          maxLength: 16
+          minLength: 16
           type: array
           items:
             type: string
@@ -12649,44 +12751,25 @@ components:
       description: 'Subscription requested by user to retrieve Inbound or/and Outbound XML formed subscription information.'
       xml:
         name: SubscriptionRequest
-    SubscriptionRequest_Name:
-      maxLength: 21
-      type: string
-      description: 'Name of subscription requested by user, as one type of request criteria. Required when the customer wants to request data for a specific subscription name. Subscription name consists of up to 21 alphanumerics.'
     SubscriptionRequest_DateTimeRange:
       maximum: 1
       type: object
       properties:
         BeginDateTime:
+          maximum: 1
+          maxLength: 14
+          minLength: 14
           type: string
           description: 'Beginning date time for the retrieval criteria of the subscriptions. It is required for date time request criteria. Format: YYYYMMDDHHmmss.'
         EndDateTime:
+          maximum: 1
+          maxLength: 14
+          minLength: 14
           type: string
           description: 'Ending date time for the retrieval criteria of the subscriptions. Format: YYYYMMDDHHmmss.  When a null or empty EndDateTime is passed in the request, it is defaulted to 7 days from the given begin date.'
       description: 'The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.'
       xml:
         name: DateTimeRange
-    DateTimeRange_BeginDateTime:
-      maximum: 1
-      maxLength: 14
-      minLength: 14
-      type: string
-      description: 'Beginning date time for the retrieval criteria of the subscriptions. It is required for date time request criteria. Format: YYYYMMDDHHmmss.'
-    DateTimeRange_EndDateTime:
-      maximum: 1
-      maxLength: 14
-      minLength: 14
-      type: string
-      description: 'Ending date time for the retrieval criteria of the subscriptions. Format: YYYYMMDDHHmmss.  When a null or empty EndDateTime is passed in the request, it is defaulted to 7 days from the given begin date.'
-    SubscriptionRequest_FileName:
-      maxLength: 16
-      minLength: 16
-      type: string
-      description: 'File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)'
-    QuantumViewRequest_Bookmark:
-      maximum: 1
-      type: string
-      description: "Bookmarks the file for next retrieval. It is a base64Encoded String. \nIt contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. \nIt contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request."
     QuantumViewResponse:
       maximum: 1
       required:
@@ -12714,78 +12797,25 @@ components:
         TransactionReference:
           $ref: '#/components/schemas/Response_TransactionReference'
         ResponseStatusCode:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: "Identifies the success or failure of the interchange. \n1 = Success, 0 = Failure"
         ResponseStatusDescription:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: '''Success'' or ''Failure'''
         Error:
           type: array
           items:
             $ref: '#/components/schemas/Response_Error'
+          description: "If an error is encountered during the interchange, the Response contains an error. If the error is present, then the ErrorSeverity and ErrorCodes are required.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       description: 'Contains Errors information tags along with the success/fail status of the QuantumView request.'
       xml:
         name: Response
-    TransactionReference_XpciVersion:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'XPCI version.� Current version: 1.0007'
-    TransactionReference_ToolVersion:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: "Current tool version. \nValid value: 1.0"
-    Response_ResponseStatusCode:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: "Identifies the success or failure of the interchange. \n1 = Success, 0 = Failure"
-    Response_ResponseStatusDescription:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: '''Success'' or ''Failure'''
-    Error_ErrorSeverity:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'Describes the severity of the error.�� Required if the error is present.'
-    Error_ErrorCode:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.'
-    Error_ErrorDescription:
-      maximum: 1
-      maxLength: 50
-      minLength: 1
-      type: string
-      description: 'Describes the error code.'
-    Error_MinimumRetrySeconds:
-      maximum: 1
-      maxLength: 5
-      minLength: 1
-      type: string
-      description: 'Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)'
-    ErrorLocation_ErrorLocationElementName:
-      maximum: 1
-      maxLength: 512
-      minLength: 1
-      type: string
-      description: 'The Xpath name of the element in error.� This is a valid Xpath pointing to an element in the request document.'
-    ErrorLocation_ErrorLocationAttributeName:
-      maximum: 1
-      maxLength: 50
-      minLength: 1
-      type: string
-      description: 'The name of the attribute in error.� This is the name of the attribute contained by the Error Location element.'
     Error_ErrorDigest:
       type: string
       description: 'The contents of the element in error.'
@@ -12797,21 +12827,19 @@ components:
       type: object
       properties:
         SubscriberID:
+          maximum: 1
+          maxLength: 16
+          minLength: 1
           type: string
           description: 'QV XOLT subscribers ID. It is the same as the User ID.'
         SubscriptionEvents:
           type: array
           items:
             $ref: '#/components/schemas/QuantumViewEvents_SubscriptionEvents'
+          description: "The event that a user receives a subset of Tracking information specific to either packages coming or packages going, after subscription request is made.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       description: 'The event that a user receives echoing Subscriber ID and information for subscription event, which is a subset of Tracking information specific to either packages coming or packages going, after subscription request is made, if the user requests for XML format.'
       xml:
         name: QuantumViewEvents
-    QuantumViewEvents_SubscriberID:
-      maximum: 1
-      maxLength: 16
-      minLength: 1
-      type: string
-      description: 'QV XOLT subscribers ID. It is the same as the User ID.'
     QuantumViewEvents_SubscriptionEvents:
       maximum: 1
       required:
@@ -12819,11 +12847,17 @@ components:
       type: object
       properties:
         Name:
+          maximum: 1
+          maxLength: 21
+          minLength: 1
           type: string
-          description: 'A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.'
+          description: 'A name uniquely defined associated to the Subscription ID, for each subscription. Required if the SubscriptionEvents container is present.'
         Number:
+          maximum: 1
+          maxLength: 16
+          minLength: 1
           type: string
-          description: 'A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.'
+          description: 'A number uniquely defined associated to the Subscriber ID, for each subscription. Required if the SubscriptionEvents container is present.'
         SubscriptionStatus:
           $ref: '#/components/schemas/SubscriptionEvents_SubscriptionStatus'
         DateRange:
@@ -12832,21 +12866,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SubscriptionEvents_SubscriptionFile'
-      description: 'The event that a user receives a subset of Tracking information specific to either packages coming or packages going, after subscription request is made.'
+          description: "Container holds all of the unread files associated with the subscription.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       xml:
         name: SubscriptionEvents
-    SubscriptionEvents_Name:
-      maximum: 1
-      maxLength: 21
-      minLength: 1
-      type: string
-      description: 'A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.'
-    SubscriptionEvents_Number:
-      maximum: 1
-      maxLength: 16
-      minLength: 1
-      type: string
-      description: 'A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.'
     SubscriptionEvents_SubscriptionStatus:
       maximum: 1
       required:
@@ -12854,26 +12876,20 @@ components:
       type: object
       properties:
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 1
           type: string
-          description: "Status types of subscription. \nValid values:\nUN � Unknown\nAT � Activate\nP � Pending\nA �Active\nI � Inactive\nS - Suspended"
+          description: "Status types of subscription. Valid values:\n- UN – Unknown\n- AT – Activate\n- P – Pending\n- A –Active\n- I – Inactive\n- S - Suspended\n"
         Description:
+          maximum: 1
+          maxLength: 9
+          minLength: 1
           type: string
           description: "Description of a subscription. \nValid values: \n- Unknown (Unknown subscription status)\n- Activate (Ready for the user to activate the subscription)\n- Pending (In the process of waiting for privilege requests authorization)\n- Active (The subscription is in good standing and is active.)\n- Inactive (The subscriber puts the subscription on hold.)\n- Suspended (UPS disables the subscription.)"
       description: 'Container for whether the subscription is active or not.'
       xml:
         name: SubscriptionStatus
-    SubscriptionStatus_Code:
-      maximum: 1
-      maxLength: 2
-      minLength: 1
-      type: string
-      description: "Status types of subscription. \nValid values:\nUN � Unknown\nAT � Activate\nP � Pending\nA �Active\nI � Inactive\nS - Suspended"
-    SubscriptionStatus_Description:
-      maximum: 1
-      maxLength: 9
-      minLength: 1
-      type: string
-      description: "Description of a subscription. \nValid values: \n- Unknown (Unknown subscription status)\n- Activate (Ready for the user to activate the subscription)\n- Pending (In the process of waiting for privilege requests authorization)\n- Active (The subscription is in good standing and is active.)\n- Inactive (The subscriber puts the subscription on hold.)\n- Suspended (UPS disables the subscription.)"
     SubscriptionEvents_DateRange:
       maximum: 1
       required:
@@ -12881,26 +12897,20 @@ components:
       type: object
       properties:
         BeginDate:
+          maximum: 1
+          maxLength: 16
+          minLength: 16
           type: string
           description: "Beginning date time of subscription requested by user.\nFormat: MM-DD-YYYY-HH-MM"
         EndDate:
+          maximum: 1
+          maxLength: 16
+          minLength: 16
           type: string
           description: "Ending date time of subscription requested by user.\nFormat: MM-DD-YYYY-HH-MM"
       description: 'The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.'
       xml:
         name: DateRange
-    DateRange_BeginDate:
-      maximum: 1
-      maxLength: 16
-      minLength: 16
-      type: string
-      description: "Beginning date time of subscription requested by user.\nFormat: MM-DD-YYYY-HH-MM"
-    DateRange_EndDate:
-      maximum: 1
-      maxLength: 16
-      minLength: 16
-      type: string
-      description: "Ending date time of subscription requested by user.\nFormat: MM-DD-YYYY-HH-MM"
     SubscriptionEvents_SubscriptionFile:
       maximum: 1
       required:
@@ -12909,6 +12919,9 @@ components:
       type: object
       properties:
         FileName:
+          maximum: 1
+          maxLength: 16
+          minLength: 16
           type: string
           description: "File name belonging to specific subscription requested by user.\nFormat: YYMMDD_HHmmssnnn"
         StatusType:
@@ -12917,31 +12930,29 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SubscriptionFile_Manifest'
+          description: "Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be returned when available.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Origin:
           type: array
           items:
             $ref: '#/components/schemas/SubscriptionFile_Origin'
+          description: "Information about shipment's origin.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Exception:
           type: array
           items:
             $ref: '#/components/schemas/SubscriptionFile_Exception'
+          description: "Shipment exception data.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Delivery:
           type: array
           items:
             $ref: '#/components/schemas/SubscriptionFile_Delivery'
+          description: "Container for delivery information.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Generic:
           type: array
           items:
             $ref: '#/components/schemas/SubscriptionFile_Generic'
-      description: 'Container holds all of the unread files associated with the subscription.'
+          description: "Container for generic record information.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
       xml:
         name: SubscriptionFile
-    SubscriptionFile_FileName:
-      maximum: 1
-      maxLength: 16
-      minLength: 16
-      type: string
-      description: "File name belonging to specific subscription requested by user.\nFormat: YYMMDD_HHmmssnnn"
     SubscriptionFile_StatusType:
       maximum: 1
       required:
@@ -12950,26 +12961,20 @@ components:
       type: object
       properties:
         Code:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
-          description: "Status types of subscription file. Valid values:\nR � Read, U - Unread"
+          description: "Status types of subscription file. Valid values:\n- R – Read\n- U - Unread\n"
         Description:
+          maximum: 1
+          maxLength: 6
+          minLength: 1
           type: string
           description: 'Description of a subscription file.'
       description: 'Container that displays whether the file is read or unread.'
       xml:
         name: StatusType
-    StatusType_Code:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: "Status types of subscription file. Valid values:\nR � Read, U - Unread"
-    StatusType_Description:
-      maximum: 1
-      maxLength: 6
-      minLength: 1
-      type: string
-      description: 'Description of a subscription file.'
     SubscriptionFile_Manifest:
       maximum: 1
       required:
@@ -12987,144 +12992,256 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Manifest_ReferenceNumber'
+          description: "Shipment-level reference numbers.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Service:
           $ref: '#/components/schemas/Manifest_Service'
         PickupDate:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'Should be set equal to the date on while the packages were picked up (may be prior days date if the transmission occurs after midnight). Formatted as YYYYMMDD.'
         ScheduledDeliveryDate:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'The date the shipment originally was scheduled for delivery. Formatted as YYYYMMDD.'
         ScheduledDeliveryTime:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Schedule delivery time. Time format is HHMMSS'
         DocumentsOnly:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
-          description: "If the tag is present then the shipment is a document, otherwise the shipment is a non-document. \nValid values:� \n1 = Letter\n2 = Document (Non-Letter Document)\n3 = Non-Document\n4 = Pallet"
+          description: "If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:\n- 1 = Letter\n- 2 = Document (Non-Letter Document)\n- 3 = Non-Document\n- 4 = Pallet\n"
         Package:
           type: array
           items:
             $ref: '#/components/schemas/Manifest_Package'
+          description: "Defines a package.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipmentServiceOptions:
           $ref: '#/components/schemas/Manifest_ShipmentServiceOptions'
         ManufactureCountry:
+          maximum: 1
+          maxLength: 3
+          minLength: 1
           type: string
           description: 'Country or Territory  of Manufacture of the contents of the package.'
         HarmonizedCode:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Harmonized code of the package.'
         CustomsValue:
           $ref: '#/components/schemas/Manifest_CustomsValue'
         SpecialInstructions:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'User-defined special instructions for delivery.'
         ShipmentChargeType:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
           description: "Shipment charge type.\nValid values:\nC/F - Cost and Freight\nC/B - Consignee Billed Package\nF/C - Freight Collect\nDDP - Delivered Duty Paid\nVAT Unpaid\nFOB - Free On Board\nP/P - Prepaid\nF/D - Free Domicile\nT/P - Third Party Billing"
         BillToAccount:
           $ref: '#/components/schemas/Manifest_BillToAccount'
         ConsigneeBillIndicator:
+          maximum: 1
           type: string
           description: 'Indicates if consignee will be billed the shipment.'
         CollectBillIndicator:
+          maximum: 1
           type: string
           description: 'Indicates whether or not to collect bill at time of delivery.'
         LocationAssured:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Indicates Location Assured Values: Y - Location Assured accessorial requested'
         ImportControl:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Import Control Indication is used to designate that the shipment is an Import Control shipment. If the shipment is an import control shipment then this element will have value. For no import shipment this will not be appear'
         LabelDeliveryMethod:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
-          description: 'Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.'
+          description: 'Indicates Label Delivery Method, Values are: LDE Electronic Label. LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM Print and Mail Label.'
         CommercialInvoiceRemoval:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user''s shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear'
         PostalServiceTrackingID:
+          maximum: 1
+          maxLength: 35
+          minLength: 35
           type: string
           description: 'Postal Service Tracking ID transport company tracking number.'
         ReturnsFlexibleAccess:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '(RFA) UPS returns flexible access. This element will appear with value only when returns flexible access uploaded. For no returns flexible access this element will not be appear'
         UPScarbonneutral:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'UPS carbon neutral is a term used to reflect a generic term for the tagging to be included on any document, label, e-mail, etc. used to identify that the UPS carbon neutral fee is applied. This element will appear only when shipment is UPS carbon neutral with value. For non UPS carbon neutral shipping this element appear.'
         Product:
+          maximum: 1
           type: string
-          description: 'This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.'
+          description: 'This element will have value "PAC" for CAR shipments. For no CAR shipments this element will not be appeared.'
         UPSReturnsExchange:
+          maximum: 1
           type: string
-          description: 'UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared'
+          description: 'UPS Return and Exchange – This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not appear'
         LiftGateOnDelivery:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Lift Gate On Delivery - This element will appear only when Lift Gate For Delivery was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for Delivery was requested, this element will not appear.'
         LiftGateOnPickUp:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Lift Gate On PickUp - This element will appear only when Lift Gate For PickUp was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for PickUp was requested, this element will not appear.'
         PickupPreference:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Pickup Preference -This element will appear only when Dropoff At UPS Facility was requested for UPS World Wide Express Freight Shipments. If no Dropoff At UPS Facility was requested, this element will not appear.'
         DeliveryPreference:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Delivery Preference - This element will appear only when Hold for pick up was requested for UPS World Wide Express Freight Shipments. If no Hold for pick up was requested, this element will not appear.'
         HoldForPickupAtUPSAccessPoint:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" Indicates Shipment is Direct to Retail.'
         UAPAddress:
           $ref: '#/components/schemas/Manifest_UAPAddress'
         DeliverToAddresseeOnlyIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" Indicates Shipment is Deliver to Addressee.'
         UPSAccessPointCODIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" Indicates Shipment is Cash on Delivery in Direct to Retail'
         ClinicalTrialIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'An accessorial Indicator flag: Y = Clinical Trial accessorial provided in Manifest. Spaces = Clinical Trial accessorial not provided in Manifest.'
         ClinicalTrialIndicationNumber:
+          maximum: 1
+          maxLength: 20
           type: string
           description: 'An unique Clinical Trial associated with the shipment provided in Manifest.'
         CategoryAHazardousIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'An accessorial Indicator flag: Y = Category A Hazardous materials accessorial provided in Manifest. Spaces = Category A Hazardous materials accessorial not provided in Manifest.'
         DirectDeliveryIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'An accessorial Indicator flag: Y = Direct Delivery accessorisal provided in Manifest. Spaces = Direct Delivery accessorial not provided in Manifest.'
         PackageReleaseCodeIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" indicates Shipment has PackageReleaseCode Accessorial.'
         ProactiveResponseIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" indicates that a UPS Proactive Response Accessorial is provided.'
         WhiteGloveDeliveryIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" indicates that a Heavy Goods White Glove Delivery Accessorial is provided.'
         RoomOfChoiceIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" indicates that a Heavy Goods Room of Choice Accessorial is provided.'
         InstallationDeliveryIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" indicates that a Heavy Goods Installation Delivery Accessorial is provided.'
         ItemDisposalIndicator:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y" indicates that a Heavy Goods Item Disposal Accessorial is provided.'
         LeadShipmentTrackingNumber:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Lead Tracking Number in shipment'
         SaturdayNonPremiumCommercialDeliveryIndicator:
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y"  indicates that a SaturdayNonPremiumCommercialDeliveryIndicator is provided.'
         SundayNonPremiumCommercialDeliveryIndicator:
+          maxLength: 1
+          minLength: 1
           type: string
           description: '"Y"  indicates that a SundayNonPremiumCommercialDeliveryIndicator is provided.'
         UPSPremierAccessorialIndicator:
+          maxLength: 1
+          minLength: 1
           type: string
-          description: '�Y� indicates that the UPS Premier accessorial is provided.'
+          description: '"Y" indicates that the UPS Premier accessorial is provided.'
         UPSPremierCategoryCode:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
-          description: 'Indicates the UPS Premier category applied to the package Valid values: ''PRS'' � UPS Premier Silver, ''PRG'' � UPS Premier Gold, ''PRP'' - UPS Premier Platinum'
-      description: 'Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be return when available.'
+          description: "Indicates the UPS Premier category applied to the package Valid values:\n- 'PRS' – UPS Premier Silver\n- 'PRG' – UPS Premier Gold\n- 'PRP' - UPS Premier Platinum\n"
       xml:
         name: Manifest
     Manifest_Shipper:
@@ -13134,24 +13251,45 @@ components:
       type: object
       properties:
         Name:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Shipper''s company name.'
         AttentionName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Shipper''s Attention Name.'
         TaxIdentificationNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Shipper''s Tax Identification Number.'
         PhoneNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Shipper''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
         FaxNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Shipper''s Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
         ShipperNumber:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Shipper''s six digit alphanumeric account number.'
         EMailAddress:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
           description: 'Shipper''s designated contact eMail address.'
         Address:
@@ -13159,48 +13297,6 @@ components:
       description: 'Shipper''s record for a shipment.'
       xml:
         name: Shipper
-    Shipper_Name:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Shipper''s company name.'
-    Shipper_AttentionName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Shipper''s Attention Name.'
-    Shipper_TaxIdentificationNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'Shipper''s Tax Identification Number.'
-    Shipper_PhoneNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'Shipper''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
-    Shipper_FaxNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'Shipper''s Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
-    Shipper_ShipperNumber:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Shipper''s six digit alphanumeric account number.'
-    Shipper_EMailAddress:
-      maximum: 1
-      maxLength: 50
-      minLength: 1
-      type: string
-      description: 'Shipper''s designated contact eMail address.'
     ManifestShipper_Address:
       maximum: 1
       required:
@@ -13208,205 +13304,172 @@ components:
       type: object
       properties:
         AddressLine1:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Address Line 1 of the UPS Access Point.'
+          description: 'Address Line 1 of the Shipper.'
         AddressLine2:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Address Line 2 of the UPS Access Point. Usually room/floor information.'
+          description: 'Address Line 2 of the Shipper. Usually room/floor information.'
         AddressLine3:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Address Line 3 of the UPS Access Point. Usually department information.'
+          description: 'Address Line 3 of the shipper. Usually department information.'
         City:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
-          description: 'UPS Access Point City.'
+          description: 'Shipper''s City.'
         StateProvinceCode:
+          maximum: 1
+          maxLength: 5
+          minLength: 1
           type: string
-          description: 'UPS Access Point''s state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.'
+          description: 'Shipper''s state or province code. Must be valid US state. If the Shipper''s country or territory is US or CA a two character code is required, otherwise the StateProvinceCode is optional.'
         PostalCode:
+          maximum: 1
+          maxLength: 9
+          minLength: 1
           type: string
-          description: 'UPS Access Point''s postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.'
+          description: "Shipper's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.\n"
         CountryCode:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: 'UPS Access Point''s country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA'
+          description: "Shipper's country or territory code.\n\nValid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA\n"
         ResidentialAddressIndicator:
+          maximum: 1
           type: string
           description: 'If tag is present, then the address is residential address. Pickup location residential address indicator. The presence indicates residential address, the absence indicates a business address.'
       description: 'Information that specifies a physical location.'
       xml:
         name: Address
-    Address_AddressLine1:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Address Line 1 of the UPS Access Point.'
-    Address_AddressLine2:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Address Line 2 of the UPS Access Point. Usually room/floor information.'
-    Address_AddressLine3:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Address Line 3 of the UPS Access Point. Usually department information.'
-    Address_City:
-      maximum: 1
-      maxLength: 30
-      minLength: 30
-      type: string
-      description: 'The consignee�s city.'
-    Address_StateProvinceCode:
-      maximum: 1
-      maxLength: 5
-      minLength: 5
-      type: string
-      description: 'The consignee�s state or province code.'
-    Address_PostalCode:
-      maximum: 1
-      maxLength: 9
-      minLength: 9
-      type: string
-      description: 'The consignee�s postal code.'
-    Address_CountryCode:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: 'The consignee�s country or territory code.'
-    Address_ResidentialAddressIndicator:
-      maximum: 1
-      type: string
-      description: 'If tag is present, then the address is residential address. Pickup location residential address indicator. The presence indicates residential address, the absence indicates a business address.'
     Manifest_ShipTo:
       maximum: 1
       type: object
       properties:
         ShipperAssignedIdentificationNumber:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'An identification number specified by shipper.'
         CompanyName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Consignee''s company name.'
         AttentionName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Contact name at the consignee''s location.'
         PhoneNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Consignee''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
         TaxIdentificationNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Consignee''s Tax Identification Number.'
         FaxNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Consignee''s Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
         EMailAddress:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
           description: 'Consignee''s email address.'
         Address:
           $ref: '#/components/schemas/ManifestShipTo_Address'
         LocationID:
+          maximum: 1
+          maxLength: 10
+          minLength: 3
           type: string
           description: 'Location name that the package is shipped to.'
         ReceivingAddressName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Alias of the location where the package is received.'
+          description: 'Name of the location where the package is received.'
       description: 'Address and contact information describing the location where a return is to be delivered.'
       xml:
         name: ShipTo
-    ShipTo_ShipperAssignedIdentificationNumber:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'An identification number specified by shipper.'
-    ShipTo_CompanyName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Consignee''s company name.'
-    ShipTo_AttentionName:
-      maximum: 1
-      maxLength: 35
-      minLength: 35
-      type: string
-      description: 'Contact name at the ship to location.'
-    ShipTo_PhoneNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 15
-      type: string
-      description: 'The consignee�s phone number.'
-    ShipTo_TaxIdentificationNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 15
-      type: string
-      description: 'Company''s Tax Identification Number of the Consignee'
-    ShipTo_FaxNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 15
-      type: string
-      description: 'Consignee�s fax number.'
-    ShipTo_EMailAddress:
-      maximum: 1
-      maxLength: 50
-      minLength: 50
-      type: string
-      description: 'Consignee�s email address.'
     ManifestShipTo_Address:
       maximum: 1
       type: object
       properties:
         ConsigneeName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Consignee''s name.'
         AddressLine1:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Address Line 1 of the UPS Access Point.'
+          description: 'Address Line 1 of the Consignee.'
         AddressLine2:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Address Line 2 of the UPS Access Point. Usually room/floor information.'
+          description: 'Address Line 2 of the Consignee.'
         AddressLine3:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Address Line 3 of the UPS Access Point. Usually department information.'
+          description: 'Address Line 3 of the Consignee.'
         City:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
-          description: 'UPS Access Point City.'
+          description: 'Consignee''s City.'
         StateProvinceCode:
+          maximum: 1
+          maxLength: 5
+          minLength: 1
           type: string
-          description: 'UPS Access Point''s state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.'
+          description: 'Consignee''s state or province code. Must be valid US state. If the consignee''s country or territory  is US or CA a two character code is required. Otherwise, the StateProvinceCode is optional.'
         PostalCode:
+          maximum: 1
+          maxLength: 9
+          minLength: 1
           type: string
-          description: 'UPS Access Point''s postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.'
+          description: "Consignee's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.\n"
         CountryCode:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: 'UPS Access Point''s country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA'
+          description: "Consignee's country or territory  code.\n\nValid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA\n"
       description: 'Information that specifies a physical location.'
       xml:
         name: Address
-    Address_ConsigneeName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Consignee''s name.'
-    ShipTo_LocationID:
-      maximum: 1
-      maxLength: 10
-      minLength: 3
-      type: string
-      description: 'Location name that the package is shipped to.'
-    ShipTo_ReceivingAddressName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Alias of the location where the package is received.'
     Manifest_ReferenceNumber:
       maximum: 1
       required:
@@ -13414,35 +13477,25 @@ components:
       type: object
       properties:
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Reference number type code for entire shipment, two-character alphanumeric. \nThe code specifies the Reference name. \nValid if the origin/destination pair is US/US or PR/PR.\nFor additional information, refer to the Reference Codes table in the Appendix."
+          description: 'Reflects what will go on the label as the name of the reference. For additional information, refer to the Reference Codes table in the Appendix.'
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
-          description: 'Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.'
-      description: 'Shipment-level reference numbers.'
+          description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
       xml:
         name: ReferenceNumber
-    ReferenceNumber_Number:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Number tag.'
-    ReferenceNumber_Code:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: "Reference number type code for entire shipment, two-character alphanumeric. \nThe code specifies the Reference name. \nValid if the origin/destination pair is US/US or PR/PR.\nFor additional information, refer to the Reference Codes table in the Appendix."
-    ReferenceNumber_Value:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.'
     Manifest_Service:
       maximum: 1
       required:
@@ -13450,50 +13503,18 @@ components:
       type: object
       properties:
         Code:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
           description: 'For addition information, refer to the Service Codes table in the Appendix.'
         Description:
+          maximum: 1
           type: string
-          description: 'Not used.'
+          description: 'Description of the service code. Examples are Next Day Air, Worldwide Express, and Ground.'
       description: 'Container for service code and description.'
       xml:
         name: Service
-    Service_Code:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: 'The code for the UPS Service associated with the shipment.'
-    Service_Description:
-      maximum: 1
-      maxLength: 35
-      minLength: 35
-      type: string
-      description: 'A text description of the UPS Service associated with the shipment.'
-    Manifest_PickupDate:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Should be set equal to the date on while the packages were picked up (may be prior days date if the transmission occurs after midnight). Formatted as YYYYMMDD.'
-    Manifest_ScheduledDeliveryDate:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'The date the shipment originally was scheduled for delivery. Formatted as YYYYMMDD.'
-    Manifest_ScheduledDeliveryTime:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Schedule delivery time. Time format is HHMMSS'
-    Manifest_DocumentsOnly:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: "If the tag is present then the shipment is a document, otherwise the shipment is a non-document. \nValid values:� \n1 = Letter\n2 = Document (Non-Letter Document)\n3 = Non-Document\n4 = Pallet"
     Manifest_Package:
       maximum: 1
       type: object
@@ -13502,7 +13523,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Package_Activity'
+          description: "Information about package delivery activity.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Description:
+          maximum: 1
+          maxLength: 120
+          minLength: 1
           type: string
           description: 'Description of package merchandise.'
         Dimensions:
@@ -13512,19 +13537,29 @@ components:
         PackageWeight:
           $ref: '#/components/schemas/ManifestPackage_PackageWeight'
         LargePackage:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
-          description: 'Values for LargePackage are:1 - Oversize 1,� 2 - Oversize 2,� 4 - Large package'
+          description: "Values for LargePackage are:\n- 1 - Oversize 1\n- 2 - Oversize 2\n- 4 - Large package\n"
         TrackingNumber:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Package''s tracking number.'
         ReferenceNumber:
-          $ref: '#/components/schemas/ManifestPackage_ReferenceNumber'
+          type: array
+          items:
+            $ref: '#/components/schemas/ManifestPackage_ReferenceNumber'
+          description: "Container tag for information about the package-level reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         PackageServiceOptions:
           $ref: '#/components/schemas/ManifestPackage_PackageServiceOptions'
         UPSPremiumCareIndicator:
+          maximum: 1
+          maxLength: 1
           type: string
           description: 'Presence of the tag indicates UPSPremiumCare applies to this package'
-      description: 'Defines a package.'
       xml:
         name: Package
     Package_Activity:
@@ -13532,32 +13567,19 @@ components:
       type: object
       properties:
         Date:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
-          description: 'Date of package activity (i.e. YYYYMMDD).� If generic record ActivityType is TC then event date is the date of first USPS scan.'
+          description: 'Date of package delivery activity. Date format: YYYYMMDD.'
         Time:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
-          description: 'Time of package activity(i.e. HHMMSS).� If generic record ActivityType is TC then event time is the time of first USPS scan.'
-      description: 'Information about package delivery activity.'
+          description: 'Time of package delivery activity. Time format: HHMMSS'
       xml:
         name: Activity
-    Activity_Date:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Date of package activity (i.e. YYYYMMDD).� If generic record ActivityType is TC then event date is the date of first USPS scan.'
-    Activity_Time:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Time of package activity(i.e. HHMMSS).� If generic record ActivityType is TC then event time is the time of first USPS scan.'
-    Package_Description:
-      maximum: 1
-      maxLength: 120
-      minLength: 1
-      type: string
-      description: 'Description of package merchandise.'
     ManifestPackage_Dimensions:
       maximum: 1
       required:
@@ -13567,35 +13589,26 @@ components:
       type: object
       properties:
         Length:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
           description: "Package length. \nValid values: 0 to 108 IN and 0 to 270 CM"
         Width:
+          maximum: 1
+          maxLength: 9
+          minLength: 9
           type: string
           description: 'Package width.'
         Height:
+          maximum: 1
+          maxLength: 9
+          minLength: 9
           type: string
           description: 'Package height.'
       description: "Container tag for package dimension information. \nLength + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM."
       xml:
         name: Dimensions
-    Dimensions_Length:
-      maximum: 1
-      maxLength: 19
-      minLength: 1
-      type: string
-      description: 'The length of the line item used to determine density rate rating.'
-    Dimensions_Width:
-      maximum: 1
-      maxLength: 19
-      minLength: 1
-      type: string
-      description: 'The width of the line item used to determine the density based rating.'
-    Dimensions_Height:
-      maximum: 1
-      maxLength: 19
-      minLength: 1
-      type: string
-      description: 'The height of the line item used to determine density based rating.'
     Package_DimensionalWeight:
       maximum: 1
       required:
@@ -13632,18 +13645,6 @@ components:
       description: 'UnitOfMeasurement Container.'
       xml:
         name: UnitOfMeasurement
-    UnitOfMeasurement_Code:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: 'The code associated with the unit of measure for the billable weight of a shipment.'
-    UnitOfMeasurement_Description:
-      maximum: 1
-      maxLength: 35
-      minLength: 35
-      type: string
-      description: 'The description for the billable weight associated with the shipment.'
     DimensionalWeight_Weight:
       maximum: 1
       maxLength: 6
@@ -13657,17 +13658,14 @@ components:
       type: object
       properties:
         Weight:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Package weight. Set to 0 for package type of letters or envelops.'
       description: 'Container tag for package weight. Required when the package type is not UPS Letter.'
       xml:
         name: PackageWeight
-    PackageWeight_Weight:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Package weight. Set to 0 for package type of letters or envelops.'
     Package_LargePackage:
       maximum: 1
       maxLength: 1
@@ -13690,12 +13688,17 @@ components:
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: "Reference number type code for entire shipment, two-character alphanumeric. \nThe code specifies the Reference name. \nValid if the origin/destination pair is US/US or PR/PR.\nFor additional information, refer to the Reference Codes table in the Appendix."
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.'
-      description: 'Container tag for information about the package-level reference number.'
       xml:
         name: ReferenceNumber
     ManifestPackage_PackageServiceOptions:
@@ -13709,15 +13712,23 @@ components:
         InsuredValue:
           $ref: '#/components/schemas/PackageServiceOptions_InsuredValue'
         EarliestDeliveryTime:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Earliest delivery time. Time format is HHMMSS.'
         HazardousMaterialsCode:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
-          description: "Indicates if the package contains hazardous materials. \nValid values: \n1 - Hazardous Material\n2 - Electronically billed hazardous material.�\nIf present, only one package may exist in the shipment."
+          description: "Indicates if the package contains hazardous materials. Valid values:\n- 1 - Hazardous Material\n- 2 - Electronically billed hazardous material.\n\nIf present, only one package may exist in the shipment.\n"
         HoldForPickup:
+          maximum: 1
           type: string
           description: 'A flag indicating if a package should be held for pickup. True if tag exists, false otherwise.'
         AddShippingChargesToCODIndicator:
+          maximum: 1
           type: string
           description: 'An indicator flag that represents a Collect on Delivery (COD) package.'
       description: 'Defines service options used for the package(s).'
@@ -13763,18 +13774,6 @@ components:
       description: 'COD Amount container.'
       xml:
         name: CODAmount
-    CODAmount_CurrencyCode:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: "The IATA currency code associated with the COD amount for the package. Required if the value for COD amount exists in MonetaryValue tag. Must match one of the IATA currency codes. \nFor additional information, refer to Currency Codes in the Appendix for valid values."
-    CODAmount_MonetaryValue:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'The COD value for the package. Required if CODCode is 1.Absolute maximum value is for a 32 bit float is� 3.40282347e+38f.'
     PackageServiceOptions_InsuredValue:
       maximum: 1
       required:
@@ -13782,45 +13781,18 @@ components:
       type: object
       properties:
         CurrencyCode:
+          maximum: 1
           type: string
           description: 'Not populated in this release.'
         MonetaryValue:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'The monetary value for the insured value amount associated with the package. Max value of 5,000 USD for Local and 50,000 USD for Remote.'
       description: 'Container tag for insured value amount for the package.'
       xml:
         name: InsuredValue
-    InsuredValue_CurrencyCode:
-      maximum: 1
-      type: string
-      description: 'Not populated in this release.'
-    InsuredValue_MonetaryValue:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'The monetary value for the insured value amount associated with the package. Max value of 5,000 USD for Local and 50,000 USD for Remote.'
-    PackageServiceOptions_EarliestDeliveryTime:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Earliest delivery time. Time format is HHMMSS.'
-    PackageServiceOptions_HazardousMaterialsCode:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: "Indicates if the package contains hazardous materials. \nValid values: \n1 - Hazardous Material\n2 - Electronically billed hazardous material.�\nIf present, only one package may exist in the shipment."
-    PackageServiceOptions_HoldForPickup:
-      maximum: 1
-      type: string
-      description: 'A flag indicating if a package should be held for pickup. True if tag exists, false otherwise.'
-    Package_UPSPremiumCareIndicator:
-      maximum: 1
-      maxLength: 1
-      type: string
-      description: 'Presence of the tag indicates UPSPremiumCare applies to this package'
     Manifest_ShipmentServiceOptions:
       maximum: 1
       required:
@@ -13829,9 +13801,11 @@ components:
       type: object
       properties:
         SaturdayPickup:
+          maximum: 1
           type: string
           description: 'A flag indicating if the shipment requires a Saturday pickup. True if tag exists, false otherwise.'
         SaturdayDelivery:
+          maximum: 1
           type: string
           description: 'A flag indicating if the shipment requires a Saturday Delivery. True if tag exists, false otherwise.'
         CallTagARS:
@@ -13839,51 +13813,25 @@ components:
       description: 'Container tag for optional UPS services related to a shipment.'
       xml:
         name: ShipmentServiceOptions
-    ShipmentServiceOptions_SaturdayPickup:
-      maximum: 1
-      type: string
-      description: 'A flag indicating if the shipment requires a Saturday pickup. True if tag exists, false otherwise.'
-    ShipmentServiceOptions_SaturdayDelivery:
-      maximum: 1
-      type: string
-      description: 'A flag indicating if the shipment requires a Saturday Delivery. True if tag exists, false otherwise.'
     ShipmentServiceOptions_CallTagARS:
       maximum: 1
       type: object
       properties:
         Number:
+          maximum: 1
+          maxLength: 12
+          minLength: 12
           type: string
           description: 'A reference number associated with the Call Tag service. Required if CallTagARS/Code is 1.'
         Code:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
           description: "The type of Call Tag service. \nValid values:\n00 - No return service\n01 - UPS Call Tag Service\n02 - UPS Print and Mail\n03 - 1 UPS Pickup Attempt\n04 - UPS Print Return Label\n05 - Online Call Tag (3 UPS Pickup Attempts)\n06 - UPS Electronic Return Label\n08 - UPS Returns on the Web"
       description: 'Container for Call Tag service.'
       xml:
         name: CallTagARS
-    CallTagARS_Number:
-      maximum: 1
-      maxLength: 12
-      minLength: 12
-      type: string
-      description: 'A reference number associated with the Call Tag service. Required if CallTagARS/Code is 1.'
-    CallTagARS_Code:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: "The type of Call Tag service. \nValid values:\n00 - No return service\n01 - UPS Call Tag Service\n02 - UPS Print and Mail\n03 - 1 UPS Pickup Attempt\n04 - UPS Print Return Label\n05 - Online Call Tag (3 UPS Pickup Attempts)\n06 - UPS Electronic Return Label\n08 - UPS Returns on the Web"
-    Manifest_ManufactureCountry:
-      maximum: 1
-      maxLength: 3
-      minLength: 1
-      type: string
-      description: 'Country or Territory  of Manufacture of the contents of the package.'
-    Manifest_HarmonizedCode:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Harmonized code of the package.'
     Manifest_CustomsValue:
       maximum: 1
       required:
@@ -13891,29 +13839,14 @@ components:
       type: object
       properties:
         MonetaryValue:
+          maximum: 1
+          maxLength: 16
+          minLength: 16
           type: string
           description: 'The shipment''s customs value amount.'
       description: 'Information about shipment''s customs value.'
       xml:
         name: CustomsValue
-    CustomsValue_MonetaryValue:
-      maximum: 1
-      maxLength: 16
-      minLength: 16
-      type: string
-      description: 'The shipment''s customs value amount.'
-    Manifest_SpecialInstructions:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'User-defined special instructions for delivery.'
-    Manifest_ShipmentChargeType:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: "Shipment charge type.\nValid values:\nC/F - Cost and Freight\nC/B - Consignee Billed Package\nF/C - Freight Collect\nDDP - Delivered Duty Paid\nVAT Unpaid\nFOB - Free On Board\nP/P - Prepaid\nF/D - Free Domicile\nT/P - Third Party Billing"
     Manifest_BillToAccount:
       maximum: 1
       required:
@@ -13922,275 +13855,96 @@ components:
       type: object
       properties:
         Option:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Indicates how shipping charges for the package were billed. \nValid Values: 01, 02, 03, 04, 99 \nValue Definitions: \n01 Shipper\n02 Consignee Billing \n03 Third Party\n04 Freight Collect\n99 International Bill Option"
+          description: "Indicates how shipping charges for the package were billed. Valid values:\n- 01 - Shipper\n- 02 - Consignee Billing\n- 03 - Third Party\n- 04 - Freight Collect\n"
         Number:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'The UPS Account number to which the shipping charges were billed.'
       description: 'The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.'
       xml:
         name: BillToAccount
-    BillToAccount_Option:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: "Indicates how shipping charges for the package were billed. \nValid Values: 01, 02, 03, 04, 99 \nValue Definitions: \n01 Shipper\n02 Consignee Billing \n03 Third Party\n04 Freight Collect\n99 International Bill Option"
-    BillToAccount_Number:
-      maximum: 1
-      maxLength: 10
-      minLength: 1
-      type: string
-      description: 'The UPS Account number to which the shipping charges were billed.'
-    Manifest_ConsigneeBillIndicator:
-      maximum: 1
-      type: string
-      description: 'Indicates if consignee will be billed the shipment.'
-    Manifest_CollectBillIndicator:
-      maximum: 1
-      type: string
-      description: 'Indicates whether or not to collect bill at time of delivery.'
-    Manifest_LocationAssured:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Indicates Location Assured Values: Y - Location Assured accessorial requested'
-    Manifest_ImportControl:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Import Control Indication is used to designate that the shipment is an Import Control shipment. If the shipment is an import control shipment then this element will have value. For no import shipment this will not be appear'
-    Manifest_LabelDeliveryMethod:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: 'Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.'
-    Manifest_CommercialInvoiceRemoval:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user''s shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear'
-    Manifest_PostalServiceTrackingID:
-      maximum: 1
-      maxLength: 35
-      minLength: 35
-      type: string
-      description: 'Postal Service Tracking ID transport company tracking number.'
-    Manifest_ReturnsFlexibleAccess:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '(RFA) UPS returns flexible access. This element will appear with value only when returns flexible access uploaded. For no returns flexible access this element will not be appear'
-    Manifest_UPScarbonneutral:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'UPS carbon neutral is a term used to reflect a generic term for the tagging to be included on any document, label, e-mail, etc. used to identify that the UPS carbon neutral fee is applied. This element will appear only when shipment is UPS carbon neutral with value. For non UPS carbon neutral shipping this element appear.'
-    Manifest_Product:
-      maximum: 1
-      type: string
-      description: 'This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.'
-    Manifest_UPSReturnsExchange:
-      maximum: 1
-      type: string
-      description: 'UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared'
-    Manifest_LiftGateOnDelivery:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Lift Gate On Delivery - This element will appear only when Lift Gate For Delivery was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for Delivery was requested, this element will not appear.'
-    Manifest_LiftGateOnPickUp:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Lift Gate On PickUp - This element will appear only when Lift Gate For PickUp was requested for UPS World Wide Express Freight Shipments. If no Lift Gate for PickUp was requested, this element will not appear.'
-    Manifest_PickupPreference:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Pickup Preference -This element will appear only when Dropoff At UPS Facility was requested for UPS World Wide Express Freight Shipments. If no Dropoff At UPS Facility was requested, this element will not appear.'
-    Manifest_DeliveryPreference:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Delivery Preference - This element will appear only when Hold for pick up was requested for UPS World Wide Express Freight Shipments. If no Hold for pick up was requested, this element will not appear.'
-    Manifest_HoldForPickupAtUPSAccessPoint:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" Indicates Shipment is Direct to Retail.'
     Manifest_UAPAddress:
       maximum: 1
       type: object
       properties:
         CompanyName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'The name of person or company to whom package was shipped.'
         AttentionName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'The "Attention To" field for the person/company to whom package is shipped.'
         Address:
           $ref: '#/components/schemas/UAPAddress_Address'
         PhoneNumber:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'UPS Access Point''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
       description: 'Information about Hold for Pickup UPS Access Point Address'
       xml:
         name: UAPAddress
-    UAPAddress_CompanyName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'The name of person or company to whom package was shipped.'
-    UAPAddress_AttentionName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'The "Attention To" field for the person/company to whom package is shipped.'
     UAPAddress_Address:
       maximum: 1
       type: object
       properties:
         AddressLine1:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Address Line 1 of the UPS Access Point.'
         AddressLine2:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Address Line 2 of the UPS Access Point. Usually room/floor information.'
         AddressLine3:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Address Line 3 of the UPS Access Point. Usually department information.'
         City:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
           description: 'UPS Access Point City.'
         StateProvinceCode:
+          maximum: 1
+          maxLength: 5
+          minLength: 1
           type: string
           description: 'UPS Access Point''s state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.'
         PostalCode:
+          maximum: 1
+          maxLength: 9
+          minLength: 1
           type: string
           description: 'UPS Access Point''s postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.'
         CountryCode:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: 'UPS Access Point''s country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA'
       description: 'Information that specifies a physical location.'
       xml:
         name: Address
-    UAPAddress_PhoneNumber:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'UPS Access Point''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
-    Manifest_DeliverToAddresseeOnlyIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" Indicates Shipment is Deliver to Addressee.'
-    Manifest_UPSAccessPointCODIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" Indicates Shipment is Cash on Delivery in Direct to Retail'
-    Manifest_ClinicalTrialIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'An accessorial Indicator flag: Y = Clinical Trial accessorial provided in Manifest. Spaces = Clinical Trial accessorial not provided in Manifest.'
-    Manifest_ClinicalTrialIndicationNumber:
-      maximum: 1
-      maxLength: 20
-      type: string
-      description: 'An unique Clinical Trial associated with the shipment provided in Manifest.'
-    Manifest_CategoryAHazardousIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'An accessorial Indicator flag: Y = Category A Hazardous materials accessorial provided in Manifest. Spaces = Category A Hazardous materials accessorial not provided in Manifest.'
-    Manifest_DirectDeliveryIndicator:
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'An accessorial Indicator flag: Y = Direct Delivery accessorisal provided in Manifest. Spaces = Direct Delivery accessorial not provided in Manifest.'
-    Manifest_PackageReleaseCodeIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" indicates Shipment has PackageReleaseCode Accessorial.'
-    Manifest_ProactiveResponseIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" indicates that a UPS Proactive Response Accessorial is provided.'
-    Manifest_WhiteGloveDeliveryIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" indicates that a Heavy Goods White Glove Delivery Accessorial is provided.'
-    Manifest_RoomOfChoiceIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" indicates that a Heavy Goods Room of Choice Accessorial is provided.'
-    Manifest_InstallationDeliveryIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" indicates that a Heavy Goods Installation Delivery Accessorial is provided.'
-    Manifest_ItemDisposalIndicator:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y" indicates that a Heavy Goods Item Disposal Accessorial is provided.'
-    Manifest_LeadShipmentTrackingNumber:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Lead Tracking Number in shipment'
-    Manifest_SaturdayNonPremiumCommercialDeliveryIndicator:
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y"  indicates that a SaturdayNonPremiumCommercialDeliveryIndicator is provided.'
-    Manifest_SundayNonPremiumCommercialDeliveryIndicator:
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '"Y"  indicates that a SundayNonPremiumCommercialDeliveryIndicator is provided.'
-    Manifest_UPSPremierAccessorialIndicator:
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: '�Y� indicates that the UPS Premier accessorial is provided.'
-    Manifest_UPSPremierCategoryCode:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: 'Indicates the UPS Premier category applied to the package Valid values: ''PRS'' � UPS Premier Silver, ''PRG'' � UPS Premier Gold, ''PRP'' - UPS Premier Platinum'
     SubscriptionFile_Origin:
       maximum: 1
       required:
@@ -14204,20 +13958,34 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Origin_PackageReferenceNumber'
+          description: "Package-level reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipmentReferenceNumber:
           type: array
           items:
             $ref: '#/components/schemas/Origin_ShipmentReferenceNumber'
+          description: "Container tag for shipment reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipperNumber:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Shipper''s six digit alphanumeric account number.'
         TrackingNumber:
+          maximum: 1
+          maxLength: 18
+          minLength: 18
           type: string
           description: 'Package''s 1Z tracking number.'
         Date:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'Date that the package is picked up at the origin. Date format is YYYYMMDD.'
         Time:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Time that the package is picked up at the origin. Time format is HHMMSS.'
         ActivityLocation:
@@ -14225,12 +13993,17 @@ components:
         BillToAccount:
           $ref: '#/components/schemas/Origin_BillToAccount'
         ScheduledDeliveryDate:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'Scheduled delivery date for destination address. Date format is YYYYMMDD.'
         ScheduledDeliveryTime:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Scheduled delivery time for destination address. Time format is HHMMSS.'
-      description: 'Information about shipment''s origin.'
       xml:
         name: Origin
     Origin_PackageReferenceNumber:
@@ -14240,42 +14013,29 @@ components:
       type: object
       properties:
         BarCodeIndicator:
+          maximum: 1
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
-          description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
+          description: "Reflects what will go on the label as the name of the reference.\n\nFor additional information, refer to the Reference Codes table in the Appendix.\n"
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Package-level reference number.'
       xml:
         name: PackageReferenceNumber
-    PackageReferenceNumber_BarCodeIndicator:
-      maximum: 1
-      type: string
-      description: 'Not used.'
-    PackageReferenceNumber_Number:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Number tag.'
-    PackageReferenceNumber_Code:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
-    PackageReferenceNumber_Value:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
     Origin_ShipmentReferenceNumber:
       maximum: 1
       required:
@@ -14283,66 +14043,29 @@ components:
       type: object
       properties:
         BarCodeIndicator:
+          maximum: 1
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
-          description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
+          description: "Reflects what will go on the label as the name of the reference.\n\nFor additional information, refer to the Reference Codes table in the Appendix.\n"
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Container tag for shipment reference number.'
       xml:
         name: ShipmentReferenceNumber
-    ShipmentReferenceNumber_BarCodeIndicator:
-      maximum: 1
-      type: string
-      description: 'Not used.'
-    ShipmentReferenceNumber_Number:
-      maximum: 1
-      maxLength: 1
-      minLength: 1
-      type: string
-      description: 'Number tag.'
-    ShipmentReferenceNumber_Code:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
-    ShipmentReferenceNumber_Value:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-    Origin_ShipperNumber:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Shipper''s six digit alphanumeric account number.'
-    Origin_TrackingNumber:
-      maximum: 1
-      maxLength: 18
-      minLength: 18
-      type: string
-      description: 'Package''s 1Z tracking number.'
-    Origin_Date:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Date that the package is picked up at the origin. Date format is YYYYMMDD.'
-    Origin_Time:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Time that the package is picked up at the origin. Time format is HHMMSS.'
     Origin_ActivityLocation:
       maximum: 1
       required:
@@ -14359,35 +14082,26 @@ components:
       type: object
       properties:
         PoliticalDivision2:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
-          description: 'City name where package is delivered.'
+          description: 'City of an activity occurred during a package shipment.'
         PoliticalDivision1:
+          maximum: 1
+          maxLength: 5
+          minLength: 2
           type: string
-          description: 'Abbreviated state or province name where package is delivered.'
+          description: 'State or province code of an activity occurred during a package shipment. Must be valid US state. If the country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.'
         CountryCode:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
-          description: 'Abbreviated country or territory name where package is delivered.'
+          description: 'Country or Territory code of an activity occurred during a package shipment. Valid values: CA, MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA'
       description: 'Information that specifies a physical location where package delivery activity occurs.'
       xml:
         name: AddressArtifactFormat
-    AddressArtifactFormat_PoliticalDivision2:
-      maximum: 1
-      maxLength: 30
-      minLength: 1
-      type: string
-      description: 'City name where package is delivered.'
-    AddressArtifactFormat_PoliticalDivision1:
-      maximum: 1
-      maxLength: 5
-      minLength: 2
-      type: string
-      description: 'Abbreviated state or province name where package is delivered.'
-    AddressArtifactFormat_CountryCode:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: 'Abbreviated country or territory name where package is delivered.'
     Origin_BillToAccount:
       maximum: 1
       required:
@@ -14396,26 +14110,20 @@ components:
       type: object
       properties:
         Option:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Indicates how shipping charges for the package were billed. \nValid Values: 01, 02, 03, 04, 99 \nValue Definitions: \n01 Shipper\n02 Consignee Billing \n03 Third Party\n04 Freight Collect\n99 International Bill Option"
+          description: "Indicates how shipping charges for the package were billed. Valid Values:\n- 01 - Shipper\n- 02 - Consignee Billing\n- 03 - Third Party\n- 04 - Freight Collect\n"
         Number:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'The UPS Account number to which the shipping charges were billed.'
       description: 'The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.'
       xml:
         name: BillToAccount
-    Origin_ScheduledDeliveryDate:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Scheduled delivery date for destination address. Date format is YYYYMMDD.'
-    Origin_ScheduledDeliveryTime:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Scheduled delivery time for destination address. Time format is HHMMSS.'
     SubscriptionFile_Exception:
       maximum: 1
       required:
@@ -14429,42 +14137,74 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Exception_PackageReferenceNumber'
+          description: "Package-level reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipmentReferenceNumber:
           type: array
           items:
             $ref: '#/components/schemas/Exception_ShipmentReferenceNumber'
+          description: "Container tag for shipment reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipperNumber:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Shipper''s six digit alphanumeric account number.'
         TrackingNumber:
+          maximum: 1
+          maxLength: 18
+          minLength: 18
           type: string
           description: 'Package''s 1Z tracking number.'
         Date:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'Date that the package is delivered. Date format is YYYYMMDD.'
         Time:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Time that the package is delivered. Time format is HHMMSS'
         UpdatedAddress:
           $ref: '#/components/schemas/Exception_UpdatedAddress'
         StatusCode:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: 'Code for status of updating shipping address issue.'
         StatusDescription:
+          maximum: 1
+          maxLength: 120
+          minLength: 1
           type: string
           description: 'Description for status of updating shipping address issue.'
         ReasonCode:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: 'Code for reason of updating shipping address issue.'
         ReasonDescription:
+          maximum: 1
+          maxLength: 40
+          minLength: 1
           type: string
           description: 'Description for reason of updating shipping address issue.'
         Resolution:
           $ref: '#/components/schemas/Exception_Resolution'
         RescheduledDeliveryDate:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
           description: 'Rescheduled delivery date for updated shipping address. Date format is YYYYMMDD.'
         RescheduledDeliveryTime:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Rescheduled delivery time for updated shipping address. Time format is HHMMSS'
         ActivityLocation:
@@ -14472,9 +14212,10 @@ components:
         BillToAccount:
           $ref: '#/components/schemas/Exception_BillToAccount'
         AccessPointLocationID:
+          maximum: 1
+          maxLength: 9
           type: string
           description: 'The UPS Access Point Location ID.'
-      description: 'Shipment exception data.'
       xml:
         name: Exception
     Exception_PackageReferenceNumber:
@@ -14484,18 +14225,27 @@ components:
       type: object
       properties:
         BarCodeIndicator:
+          maximum: 1
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
+          description: "Reflects what will go on the label as the name of the reference.\n\nFor additional information, refer to the Reference Codes table in the Appendix.\n"
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Package-level reference number.'
       xml:
         name: PackageReferenceNumber
     Exception_ShipmentReferenceNumber:
@@ -14505,212 +14255,131 @@ components:
       type: object
       properties:
         BarCodeIndicator:
+          maximum: 1
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
+          description: "Reflects what will go on the label as the name of the reference.\n\nFor additional information, refer to the Reference Codes table in the Appendix.\n"
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Container tag for shipment reference number.'
       xml:
         name: ShipmentReferenceNumber
-    Exception_ShipperNumber:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Shipper''s six digit alphanumeric account number.'
-    Exception_TrackingNumber:
-      maximum: 1
-      maxLength: 18
-      minLength: 18
-      type: string
-      description: 'Package''s 1Z tracking number.'
-    Exception_Date:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Date that the package is delivered. Date format is YYYYMMDD.'
-    Exception_Time:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Time that the package is delivered. Time format is HHMMSS'
     Exception_UpdatedAddress:
       maximum: 1
       type: object
       properties:
         ConsigneeName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Consignee''s name for package shipping address. It will be returned if there is any update due to exception.'
         StreetNumberLow:
+          maximum: 1
+          maxLength: 11
+          minLength: 1
           type: string
           description: 'Street number of updated shipping address. It will be returned if there is any update due to exception.'
         StreetPrefix:
+          maximum: 1
+          maxLength: 2
+          minLength: 1
           type: string
           description: 'Street prefix of updated shipping address, e.g. N, SE. It will be returned if there is any update due to exception.'
         StreetName:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
           description: 'Street name of updated shipping address. It will be returned if there is any update due to exception.'
         StreetType:
+          maximum: 1
+          maxLength: 4
+          minLength: 1
           type: string
           description: 'Street type of updated shipping address, e.g. ST. It will be returned if there is any update due to exception.'
         StreetSuffix:
+          maximum: 1
+          maxLength: 2
+          minLength: 1
           type: string
           description: 'Street suffix of updated shipping address, e.g. N, SE. It will be returned if there is any update due to exception.'
         AddressExtendedInformation:
           type: array
           items:
             $ref: '#/components/schemas/UpdatedAddress_AddressExtendedInformation'
+          description: "Container for information about updated shipping address. It will be returned if there is any update due to exception.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         PoliticalDivision3:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
           description: 'The neighborhood, town, barrio etc. It will be returned if there is any update due to exception.'
         PoliticalDivision2:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
           description: 'City name of updated shipping address. It will be returned if there is any update due to exception.'
         PoliticalDivision1:
+          maximum: 1
+          maxLength: 5
+          minLength: 2
           type: string
           description: 'Abbreviated state or province name of updated shipping address. It will be returned if there is any update due to exception.'
         CountryCode:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
           description: 'Abbreviated country or territory name of updated shipping address. It will be returned if there is any update due to exception.'
         PostcodePrimaryLow:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'Postal Code of updated shipping address. It will be returned if there is any update due to exception.'
       description: 'Contains information about updated shipping address.'
       xml:
         name: UpdatedAddress
-    UpdatedAddress_ConsigneeName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Consignee''s name for package shipping address. It will be returned if there is any update due to exception.'
-    UpdatedAddress_StreetNumberLow:
-      maximum: 1
-      maxLength: 11
-      minLength: 1
-      type: string
-      description: 'Street number of updated shipping address. It will be returned if there is any update due to exception.'
-    UpdatedAddress_StreetPrefix:
-      maximum: 1
-      maxLength: 2
-      minLength: 1
-      type: string
-      description: 'Street prefix of updated shipping address, e.g. N, SE. It will be returned if there is any update due to exception.'
-    UpdatedAddress_StreetName:
-      maximum: 1
-      maxLength: 50
-      minLength: 1
-      type: string
-      description: 'Street name of updated shipping address. It will be returned if there is any update due to exception.'
-    UpdatedAddress_StreetType:
-      maximum: 1
-      maxLength: 4
-      minLength: 1
-      type: string
-      description: 'Street type of updated shipping address, e.g. ST. It will be returned if there is any update due to exception.'
-    UpdatedAddress_StreetSuffix:
-      maximum: 1
-      maxLength: 2
-      minLength: 1
-      type: string
-      description: 'Street suffix of updated shipping address, e.g. N, SE. It will be returned if there is any update due to exception.'
     UpdatedAddress_AddressExtendedInformation:
       maximum: 1
       type: object
       properties:
         Type:
+          maximum: 1
+          maxLength: 40
+          minLength: 1
           type: string
-          description: 'Allows for secondary address information such as a suite or apartment.'
+          description: 'Allows for secondary address information such as s suite or apartment. It will be returned if there is any update due to exception.'
         Low:
+          maximum: 1
+          maxLength: 11
+          minLength: 1
           type: string
-          description: 'The low number associated with an extended address.'
+          description: 'The lower limit associated with the extended address type. It will be returned if there is any update due to exception.'
         High:
+          maximum: 1
+          maxLength: 3
+          minLength: 1
           type: string
-          description: 'The high number associated with an extended address.'
-      description: 'Container for information about updated shipping address. It will be returned if there is any update due to exception.'
+          description: 'The higher limit associated with the extended address type. It will be returned if there is any update due to exception.'
       xml:
         name: AddressExtendedInformation
-    AddressExtendedInformation_Type:
-      maximum: 1
-      maxLength: 40
-      minLength: 1
-      type: string
-      description: 'Allows for secondary address information such as a suite or apartment.'
-    AddressExtendedInformation_Low:
-      maximum: 1
-      maxLength: 11
-      minLength: 1
-      type: string
-      description: 'The low number associated with an extended address.'
-    AddressExtendedInformation_High:
-      maximum: 1
-      maxLength: 3
-      minLength: 1
-      type: string
-      description: 'The high number associated with an extended address.'
-    UpdatedAddress_PoliticalDivision3:
-      maximum: 1
-      maxLength: 30
-      minLength: 1
-      type: string
-      description: 'The neighborhood, town, barrio etc. It will be returned if there is any update due to exception.'
-    UpdatedAddress_PoliticalDivision2:
-      maximum: 1
-      maxLength: 30
-      minLength: 1
-      type: string
-      description: 'City name of updated shipping address. It will be returned if there is any update due to exception.'
-    UpdatedAddress_PoliticalDivision1:
-      maximum: 1
-      maxLength: 5
-      minLength: 2
-      type: string
-      description: 'Abbreviated state or province name of updated shipping address. It will be returned if there is any update due to exception.'
-    UpdatedAddress_CountryCode:
-      maximum: 1
-      maxLength: 3
-      minLength: 3
-      type: string
-      description: 'Abbreviated country or territory name of updated shipping address. It will be returned if there is any update due to exception.'
-    UpdatedAddress_PostcodePrimaryLow:
-      maximum: 1
-      maxLength: 10
-      minLength: 1
-      type: string
-      description: 'Postal Code of updated shipping address. It will be returned if there is any update due to exception.'
-    Exception_StatusCode:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: 'Code for status of updating shipping address issue.'
-    Exception_StatusDescription:
-      maximum: 1
-      maxLength: 120
-      minLength: 1
-      type: string
-      description: 'Description for status of updating shipping address issue.'
-    Exception_ReasonCode:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: 'Code for reason of updating shipping address issue.'
-    Exception_ReasonDescription:
-      maximum: 1
-      maxLength: 40
-      minLength: 1
-      type: string
-      description: 'Description for reason of updating shipping address issue.'
     Exception_Resolution:
       maximum: 1
       required:
@@ -14718,38 +14387,20 @@ components:
       type: object
       properties:
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: 'Type of resolution for updating shipping address issue.'
         Description:
+          maximum: 1
+          maxLength: 40
+          minLength: 1
           type: string
           description: 'Description of resolution type for updating shipping address.'
       description: 'Resolution for updating shipping address issue.'
       xml:
         name: Resolution
-    Resolution_Code:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: 'Type of resolution for updating shipping address issue.'
-    Resolution_Description:
-      maximum: 1
-      maxLength: 40
-      minLength: 1
-      type: string
-      description: 'Description of resolution type for updating shipping address.'
-    Exception_RescheduledDeliveryDate:
-      maximum: 1
-      maxLength: 8
-      minLength: 8
-      type: string
-      description: 'Rescheduled delivery date for updated shipping address. Date format is YYYYMMDD.'
-    Exception_RescheduledDeliveryTime:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Rescheduled delivery time for updated shipping address. Time format is HHMMSS'
     Exception_ActivityLocation:
       maximum: 1
       required:
@@ -14769,19 +14420,20 @@ components:
       type: object
       properties:
         Option:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Indicates how shipping charges for the package were billed. \nValid Values: 01, 02, 03, 04, 99 \nValue Definitions: \n01 Shipper\n02 Consignee Billing \n03 Third Party\n04 Freight Collect\n99 International Bill Option"
+          description: "Indicates how shipping charges for the package were billed. Valid Values:\n- 01 - Shipper\n- 02 - Consignee Billing\n- 03 - Third Party\n- 04 - Freight Collect\nIndicates how shipping charges for the package were billed. Valid Values: 01 Shipper, 02 Consignee Billing ,03 Third Party, 04 Freight Collect\n"
         Number:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'The UPS Account number to which the shipping charges were billed.'
       description: 'The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.'
       xml:
         name: BillToAccount
-    Exception_AccessPointLocationID:
-      maximum: 1
-      maxLength: 9
-      type: string
-      description: 'The UPS Access Point Location ID.'
     SubscriptionFile_Delivery:
       maximum: 1
       required:
@@ -14795,23 +14447,40 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Delivery_PackageReferenceNumber'
+          description: "Package-level reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipmentReferenceNumber:
           type: array
           items:
             $ref: '#/components/schemas/Delivery_ShipmentReferenceNumber'
+          description: "Container tag for shipment reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         ShipperNumber:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
           description: 'Shipper''s six digit alphanumeric account number.'
         TrackingNumber:
+          maximum: 1
+          maxLength: 18
+          minLength: 18
           type: string
           description: 'Package''s 1Z tracking number.'
         Date:
+          maximum: 1
+          maxLength: 8
+          minLength: 1
           type: string
           description: 'Date that the package is delivered. Date format is YYYYMMDD.'
         Time:
+          maximum: 1
+          maxLength: 6
+          minLength: 1
           type: string
           description: 'Time that the package is delivered. Time format is HHMMSS'
         DriverRelease:
+          maximum: 1
+          maxLength: 40
+          minLength: 1
           type: string
           description: 'Information about driver release note / signature.'
         ActivityLocation:
@@ -14823,12 +14492,17 @@ components:
         BillToAccount:
           $ref: '#/components/schemas/Delivery_BillToAccount'
         LastPickupDate:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'Last pickup by Date from the UPS Access Point Location.'
         AccessPointLocationID:
+          maximum: 1
+          maxLength: 9
+          minLength: 1
           type: string
           description: 'UPS Access Point Location ID.'
-      description: 'Container for delivery information.'
       xml:
         name: Delivery
     Delivery_PackageReferenceNumber:
@@ -14841,15 +14515,23 @@ components:
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
+          description: "Reflects what will go on the label as the name of the reference.\n\nFor additional information, refer to the Reference Codes table in the Appendix.\n"
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Package-level reference number.'
       xml:
         name: PackageReferenceNumber
     Delivery_ShipmentReferenceNumber:
@@ -14862,47 +14544,25 @@ components:
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
+          description: "Reflects what will go on the label as the name of the reference.\n\nFor additional information, refer to the Reference Codes table in the Appendix.\n"
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Container tag for shipment reference number.'
       xml:
         name: ShipmentReferenceNumber
-    Delivery_ShipperNumber:
-      maximum: 1
-      maxLength: 6
-      minLength: 6
-      type: string
-      description: 'Shipper''s six digit alphanumeric account number.'
-    Delivery_TrackingNumber:
-      maximum: 1
-      maxLength: 18
-      minLength: 18
-      type: string
-      description: 'Package''s 1Z tracking number.'
-    Delivery_Date:
-      maximum: 1
-      maxLength: 8
-      minLength: 1
-      type: string
-      description: 'Date that the package is delivered. Date format is YYYYMMDD.'
-    Delivery_Time:
-      maximum: 1
-      maxLength: 6
-      minLength: 1
-      type: string
-      description: 'Time that the package is delivered. Time format is HHMMSS'
-    Delivery_DriverRelease:
-      maximum: 1
-      maxLength: 40
-      minLength: 1
-      type: string
-      description: 'Information about driver release note / signature.'
     Delivery_ActivityLocation:
       maximum: 1
       required:
@@ -14923,12 +14583,21 @@ components:
         AddressArtifactFormat:
           $ref: '#/components/schemas/DeliveryLocation_AddressArtifactFormat'
         Code:
+          maximum: 1
+          maxLength: 16
+          minLength: 1
           type: string
           description: 'Location Code for delivered package.'
         Description:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Description of the location where package is delivered.'
         SignedForByName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'The person who signed for the package.'
       description: 'Information about the location where package is delivered.'
@@ -14941,152 +14610,116 @@ components:
       type: object
       properties:
         ConsigneeName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Consignee''s name at the location where package is delivered.'
         StreetNumberLow:
+          maximum: 1
+          maxLength: 11
+          minLength: 1
           type: string
           description: 'Street number where package is delivered.'
         StreetPrefix:
+          maximum: 1
+          maxLength: 2
+          minLength: 1
           type: string
           description: 'Street prefix where package is delivered, e.g. N, SE.'
         StreetName:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
           description: 'Street name where package is delivered.'
         StreetType:
+          maximum: 1
+          maxLength: 3
+          minLength: 1
           type: string
           description: 'Street type where package is delivered.'
         StreetSuffix:
+          maximum: 1
+          maxLength: 2
+          minLength: 1
           type: string
           description: 'Street suffix where package is delivered, e.g. N, SE.'
         BuildingName:
+          maximum: 1
+          maxLength: 40
+          minLength: 1
           type: string
           description: 'Building name where package is delivered.'
         AddressExtendedInformation:
           type: array
           items:
             $ref: '#/components/schemas/AddressArtifactFormat_AddressExtendedInformation'
+          description: "Container tag for additional address information where package is delivered.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         PoliticalDivision3:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
           description: 'The neighborhood, town, barrio etc.'
         PoliticalDivision2:
+          maximum: 1
+          maxLength: 30
+          minLength: 1
           type: string
           description: 'City name where package is delivered.'
         PoliticalDivision1:
+          maximum: 1
+          maxLength: 5
+          minLength: 1
           type: string
           description: 'Abbreviated state or province name where package is delivered.'
         CountryCode:
           type: string
           description: 'Abbreviated country or territory name where package is delivered.'
         PostcodePrimaryLow:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
           description: 'Postal Code where package is delivered. Required if the user does not submit the City, Alphanumeric State/Province address combination.'
         PostcodeExtendedLow:
+          maximum: 1
+          maxLength: 4
+          minLength: 1
           type: string
-          description: '4 Digit postal code extension where package is delivered.� Valid for US only.'
+          description: '4 Digit postal code extension where package is delivered. Valid for US only.'
         ResidentialAddressIndicator:
+          maximum: 1
           type: string
           description: 'Residential address indicator for the location where package is delivered. The presence indicates residential address, the absence indicates a business address.'
       description: 'Information that specifies a physical location where package is delivered.'
       xml:
         name: AddressArtifactFormat
-    AddressArtifactFormat_ConsigneeName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Consignee''s name at the location where package is delivered.'
-    AddressArtifactFormat_StreetNumberLow:
-      maximum: 1
-      maxLength: 11
-      minLength: 1
-      type: string
-      description: 'Street number where package is delivered.'
-    AddressArtifactFormat_StreetPrefix:
-      maximum: 1
-      maxLength: 2
-      minLength: 1
-      type: string
-      description: 'Street prefix where package is delivered, e.g. N, SE.'
-    AddressArtifactFormat_StreetName:
-      maximum: 1
-      maxLength: 50
-      minLength: 1
-      type: string
-      description: 'Street name where package is delivered.'
-    AddressArtifactFormat_StreetType:
-      maximum: 1
-      maxLength: 3
-      minLength: 1
-      type: string
-      description: 'Street type where package is delivered.'
-    AddressArtifactFormat_StreetSuffix:
-      maximum: 1
-      maxLength: 2
-      minLength: 1
-      type: string
-      description: 'Street suffix where package is delivered, e.g. N, SE.'
-    AddressArtifactFormat_BuildingName:
-      maximum: 1
-      maxLength: 40
-      minLength: 1
-      type: string
-      description: 'Building name where package is delivered.'
     AddressArtifactFormat_AddressExtendedInformation:
       maximum: 1
       type: object
       properties:
         Type:
+          maximum: 1
+          maxLength: 40
+          minLength: 1
           type: string
           description: 'Allows for secondary address information such as a suite or apartment.'
         Low:
+          maximum: 1
+          maxLength: 11
+          minLength: 1
           type: string
           description: 'The low number associated with an extended address.'
         High:
+          maximum: 1
+          maxLength: 3
+          minLength: 1
           type: string
           description: 'The high number associated with an extended address.'
-      description: 'Container tag for additional address information where package is delivered.'
       xml:
         name: AddressExtendedInformation
-    AddressArtifactFormat_PoliticalDivision3:
-      maximum: 1
-      maxLength: 30
-      minLength: 1
-      type: string
-      description: 'The neighborhood, town, barrio etc.'
-    AddressArtifactFormat_PostcodePrimaryLow:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'Postal Code where package is delivered. Required if the user does not submit the City, Alphanumeric State/Province address combination.'
-    AddressArtifactFormat_PostcodeExtendedLow:
-      maximum: 1
-      maxLength: 4
-      minLength: 1
-      type: string
-      description: '4 Digit postal code extension where package is delivered.� Valid for US only.'
-    AddressArtifactFormat_ResidentialAddressIndicator:
-      maximum: 1
-      type: string
-      description: 'Residential address indicator for the location where package is delivered. The presence indicates residential address, the absence indicates a business address.'
-    DeliveryLocation_Code:
-      maximum: 1
-      maxLength: 16
-      minLength: 1
-      type: string
-      description: 'Location Code for delivered package.'
-    DeliveryLocation_Description:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: 'Description of the location where package is delivered.'
-    DeliveryLocation_SignedForByName:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'The person who signed for the package.'
     Delivery_COD:
       maximum: 1
       type: object
@@ -15104,26 +14737,20 @@ components:
       type: object
       properties:
         Option:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Indicates how shipping charges for the package were billed. \nValid Values: 01, 02, 03, 04, 99 \nValue Definitions: \n01 Shipper\n02 Consignee Billing \n03 Third Party\n04 Freight Collect\n99 International Bill Option"
+          description: "Indicates how shipping charges for the package were billed. Valid Values:\n- 01 - Shipper\n- 02 - Consignee Billing\n- 03 - Third Party\n- 04 - Freight Collect\n"
         Number:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'The UPS Account number to which the shipping charges were billed.'
       description: 'The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.'
       xml:
         name: BillToAccount
-    Delivery_LastPickupDate:
-      maximum: 1
-      maxLength: 10
-      minLength: 1
-      type: string
-      description: 'Last pickup by Date from the UPS Access Point Location.'
-    Delivery_AccessPointLocationID:
-      maximum: 1
-      maxLength: 9
-      minLength: 1
-      type: string
-      description: 'UPS Access Point Location ID.'
     SubscriptionFile_Generic:
       maximum: 1
       required:
@@ -15132,22 +14759,33 @@ components:
       type: object
       properties:
         ActivityType:
+          maximum: 1
+          maxLength: 15
+          minLength: 1
           type: string
-          description: "Unique identifier that defines the type of activity. \nVM = Void for Manifest \nUR = Undeliverable Returns\nIR = Invoice Removal Successful \nTC = Transport Company USPS scan PS = 'Postal Service Possession Scan'\nFN = UPS Access Point/Alternate Delivery Location Email Notification Failure\nDS = Destination Scan\nAG = Package is in transit to a UPS facility\nRE = UPS Returns Exchange \nRP = Retail Pickup\nUD = Updated delivery date                                                                                              OD = Out for Delivery                                                                                                        SD = Scheduled for Delivery                                                                                              FM = Tendered to FMP"
+          description: "Unique identifier that defines the type of activity.\n- VM = Void for Manifest\n- UR = Undeliverable Returns\n- IR = Invoice Removal Successful\n- TC = Transport Company USPS scan PS = 'Postal Service Possession Scan'\n- FN = UPS Access Point/Alternate Delivery Location Email Notification Failure\n- DS = Destination Scan\n- AG = Package is in transit to a UPS facility\n- RE = UPS Returns Exchange\n- RP = Retail Pickup\n- UD = Updated delivery date\n- OD = Out for Delivery\n- SD = Scheduled for Delivery\n- FM = Tendered to FMP\n- PT = UPS Courier Handoff (Package Tendered) DIALS -VX\n- PC = UPS Courier Confirmation – XPLD -VX\n"
         TrackingNumber:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Package''s tracking number.'
         ShipperNumber:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'Shipper''s alphanumeric account number.'
         ShipmentReferenceNumber:
           type: array
           items:
             $ref: '#/components/schemas/Generic_ShipmentReferenceNumber'
+          description: "Container tag for shipment reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         PackageReferenceNumber:
           type: array
           items:
             $ref: '#/components/schemas/Generic_PackageReferenceNumber'
+          description: "Package-level reference number.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
         Service:
           $ref: '#/components/schemas/Generic_Service'
         Activity:
@@ -15157,31 +14795,15 @@ components:
         ShipTo:
           $ref: '#/components/schemas/Generic_ShipTo'
         RescheduledDeliveryDate:
+          maximum: 1
+          maxLength: 8
+          minLength: 1
           type: string
-          description: "If Activity Type is \"DS\" or \"UD\", this element will contain Rescheduled Delivery Date. \nFormat will be YYYYMMDD.                                                                                               If Activity Type is \"OD\", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.                                                                                                                     If Activity Type is \"SD\", this element will contain agreed upon date with Customer for delivery Date . Format will be YYYYMMDD."
+          description: "If Activity Type is \"DS\" or \"UD\", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.\n\nIf Activity Type is \"OD\", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.\n\nIf Activity Type is \"SD\", this element will contain agreed upon date with Customer for delivery Date. Format will be YYYYMMDD.\n"
         FailureNotification:
           $ref: '#/components/schemas/Generic_FailureNotification'
-      description: 'Container for generic record information.'
       xml:
         name: Generic
-    Generic_ActivityType:
-      maximum: 1
-      maxLength: 15
-      minLength: 1
-      type: string
-      description: "Unique identifier that defines the type of activity. \nVM = Void for Manifest \nUR = Undeliverable Returns\nIR = Invoice Removal Successful \nTC = Transport Company USPS scan PS = 'Postal Service Possession Scan'\nFN = UPS Access Point/Alternate Delivery Location Email Notification Failure\nDS = Destination Scan\nAG = Package is in transit to a UPS facility\nRE = UPS Returns Exchange \nRP = Retail Pickup\nUD = Updated delivery date                                                                                              OD = Out for Delivery                                                                                                        SD = Scheduled for Delivery                                                                                              FM = Tendered to FMP"
-    Generic_TrackingNumber:
-      maximum: 1
-      maxLength: 35
-      minLength: 1
-      type: string
-      description: 'Package''s tracking number.'
-    Generic_ShipperNumber:
-      maximum: 1
-      maxLength: 10
-      minLength: 1
-      type: string
-      description: 'Shipper''s alphanumeric account number.'
     Generic_ShipmentReferenceNumber:
       maximum: 1
       required:
@@ -15192,15 +14814,23 @@ components:
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Container tag for shipment reference number.'
       xml:
         name: ShipmentReferenceNumber
     Generic_PackageReferenceNumber:
@@ -15213,15 +14843,23 @@ components:
           type: string
           description: 'Not used.'
         Number:
+          maximum: 1
+          maxLength: 1
+          minLength: 1
           type: string
           description: 'Number tag.'
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: "Reflects what will go on the label as the name of the reference. \nFor addition information, refer to the Service Codes table in the Appendix."
         Value:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.'
-      description: 'Package-level reference number.'
       xml:
         name: PackageReferenceNumber
     Generic_Service:
@@ -15231,9 +14869,13 @@ components:
       type: object
       properties:
         Code:
+          maximum: 1
+          maxLength: 3
+          minLength: 3
           type: string
           description: 'For addition information, refer to the Service Codes table in the Appendix.'
         Description:
+          maximum: 1
           type: string
           description: 'Not used.'
       description: 'Container for service code and description.'
@@ -15244,11 +14886,17 @@ components:
       type: object
       properties:
         Date:
+          maximum: 1
+          maxLength: 8
+          minLength: 8
           type: string
-          description: 'Date of package activity (i.e. YYYYMMDD).� If generic record ActivityType is TC then event date is the date of first USPS scan.'
+          description: 'Date of package activity (i.e. YYYYMMDD). If generic record ActivityType is TC then event date is the date of first USPS scan.'
         Time:
+          maximum: 1
+          maxLength: 6
+          minLength: 6
           type: string
-          description: 'Time of package activity(i.e. HHMMSS).� If generic record ActivityType is TC then event time is the time of first USPS scan.'
+          description: 'Time of package activity(i.e. HHMMSS). If generic record ActivityType is TC then event time is the time of first USPS scan.'
       description: 'Information about package activity.'
       xml:
         name: Activity
@@ -15260,9 +14908,15 @@ components:
       type: object
       properties:
         Option:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
           description: "Indicates how shipping charges for the package were billed. \nValid Values: 01, 02, 03, 04, 99 \nValue Definitions: \n01 Shipper\n02 Consignee Billing \n03 Third Party\n04 Freight Collect\n99 International Bill Option"
         Number:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
           type: string
           description: 'The UPS Account number to which the shipping charges were billed.'
       description: 'The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.'
@@ -15273,32 +14927,32 @@ components:
       type: object
       properties:
         LocationID:
+          maximum: 1
+          maxLength: 10
+          minLength: 3
           type: string
           description: 'Location name that the package is shipped to.'
         ReceivingAddressName:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
           type: string
           description: 'Alias of the location where the package is received.'
         Bookmark:
+          maximum: 1
           type: string
           description: 'Bookmark of the package is shifted to.'
       description: 'Address and contact information describing the location where a return is to be delivered.'
       xml:
         name: ShipTo
-    ShipTo_Bookmark:
-      maximum: 1
-      type: string
-      description: 'Bookmark of the package is shifted to.'
-    Generic_RescheduledDeliveryDate:
-      maximum: 1
-      maxLength: 8
-      minLength: 1
-      type: string
-      description: "If Activity Type is \"DS\" or \"UD\", this element will contain Rescheduled Delivery Date. \nFormat will be YYYYMMDD.                                                                                               If Activity Type is \"OD\", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.                                                                                                                     If Activity Type is \"SD\", this element will contain agreed upon date with Customer for delivery Date . Format will be YYYYMMDD."
     Generic_FailureNotification:
       maximum: 1
       type: object
       properties:
         FailedEmailAddress:
+          maximum: 1
+          maxLength: 50
+          minLength: 1
           type: string
           description: 'Email address that failed when an attempt was made to send email to the customer'
         FailureNotificationCode:
@@ -15306,39 +14960,23 @@ components:
       description: 'Failure notification information containing email address and Notification code'
       xml:
         name: FailureNotification
-    FailureNotification_FailedEmailAddress:
-      maximum: 1
-      maxLength: 50
-      minLength: 1
-      type: string
-      description: 'Email address that failed when an attempt was made to send email to the customer'
     FailureNotification_FailureNotificationCode:
       maximum: 1
       type: object
       properties:
         Code:
+          maximum: 1
+          maxLength: 2
+          minLength: 2
           type: string
-          description: "Code representing type of failure email notification. Valid values:\n01 � Package is ready to pickup at UPS Access Point - Original\n02 � Package is ready to pickup at UPS Access Point - Reminder\n03 � Package is delivery to alternate delivery location\n04 �Package is returned to Sender from UPS Access Point Location"
+          description: "Code representing type of failure email notification. Valid values:\n- 01 – Package is ready to pickup at UPS Access Point - Original\n- 02 – Package is ready to pickup at UPS Access Point - Reminder\n- 03 – Package is delivery to alternate delivery location\n- 04 – Package is returned to Sender from UPS Access Point Location"
         Description:
+          maximum: 1
           type: string
           description: 'Not used.'
       description: 'Failure notification code information describing code.'
       xml:
         name: FailureNotificationCode
-    FailureNotificationCode_Code:
-      maximum: 1
-      maxLength: 2
-      minLength: 2
-      type: string
-      description: "Code representing type of failure email notification. Valid values:\n01 � Package is ready to pickup at UPS Access Point - Original\n02 � Package is ready to pickup at UPS Access Point - Reminder\n03 � Package is delivery to alternate delivery location\n04 �Package is returned to Sender from UPS Access Point Location"
-    FailureNotificationCode_Description:
-      maximum: 1
-      type: string
-      description: 'Not used.'
-    QuantumViewResponse_Bookmark:
-      maximum: 1
-      type: string
-      description: 'Bookmarks the file for next retrieval, It is a base64Encoded String. It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. It contains SubscriberID if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.'
     RATERequestWrapper:
       maximum: 1
       required:
@@ -24159,6 +23797,12 @@ components:
       description: 'Request container.'
       xml:
         name: Request
+    TransactionReference_CustomerContext:
+      maximum: 1
+      maxLength: 512
+      minLength: 1
+      type: string
+      description: 'The CustomerContext Information which will be echoed during response.'
     TransactionReference_TransactionIdentifier:
       maximum: 1
       maxLength: 35
@@ -26080,12 +25724,36 @@ components:
       minLength: 35
       type: string
       description: 'The consignee�s street address.'
+    Address_City:
+      maximum: 1
+      maxLength: 30
+      minLength: 30
+      type: string
+      description: 'The consignee�s city.'
+    Address_StateProvinceCode:
+      maximum: 1
+      maxLength: 5
+      minLength: 5
+      type: string
+      description: 'The consignee�s state or province code.'
     Address_Town:
       maximum: 1
       maxLength: 15
       minLength: 15
       type: string
       description: 'The consignee�s town code.'
+    Address_PostalCode:
+      maximum: 1
+      maxLength: 9
+      minLength: 9
+      type: string
+      description: 'The consignee�s postal code.'
+    Address_CountryCode:
+      maximum: 1
+      maxLength: 2
+      minLength: 2
+      type: string
+      description: 'The consignee�s country or territory code.'
     ShipFrom_AttentionName:
       maximum: 1
       maxLength: 35
@@ -26156,6 +25824,12 @@ components:
       minLength: 35
       type: string
       description: 'The Consignee�s name or company name.'
+    ShipTo_TaxIdentificationNumber:
+      maximum: 1
+      maxLength: 15
+      minLength: 15
+      type: string
+      description: 'Company''s Tax Identification Number of the Consignee'
     FreightShipShipTo_Address:
       maximum: 1
       required:
@@ -26185,6 +25859,24 @@ components:
       description: 'Consignee�s Address Container.'
       xml:
         name: Address
+    ShipTo_AttentionName:
+      maximum: 1
+      maxLength: 35
+      minLength: 35
+      type: string
+      description: 'Contact name at the ship to location.'
+    ShipTo_FaxNumber:
+      maximum: 1
+      maxLength: 15
+      minLength: 15
+      type: string
+      description: 'Consignee�s fax number.'
+    ShipTo_EMailAddress:
+      maximum: 1
+      maxLength: 50
+      minLength: 50
+      type: string
+      description: 'Consignee�s email address.'
     FreightShipShipment_PaymentInformation:
       maximum: 1
       required:
@@ -26314,6 +26006,18 @@ components:
       minLength: 35
       type: string
       description: 'Billing Option Description.'
+    Service_Code:
+      maximum: 1
+      maxLength: 3
+      minLength: 3
+      type: string
+      description: 'The code for the UPS Service associated with the shipment.'
+    Service_Description:
+      maximum: 1
+      maxLength: 35
+      minLength: 35
+      type: string
+      description: 'A text description of the UPS Service associated with the shipment.'
     Shipment_HandlingUnitOne:
       maximum: 1
       required:
@@ -26494,6 +26198,18 @@ components:
       minLength: 150
       type: string
       description: 'Description of articles, special marks, freight codes.'
+    UnitOfMeasurement_Code:
+      maximum: 1
+      maxLength: 3
+      minLength: 3
+      type: string
+      description: 'The code associated with the unit of measure for the billable weight of a shipment.'
+    UnitOfMeasurement_Description:
+      maximum: 1
+      maxLength: 35
+      minLength: 35
+      type: string
+      description: 'The description for the billable weight associated with the shipment.'
     Weight_Value:
       maximum: 1
       maxLength: 16
@@ -26520,6 +26236,24 @@ components:
       description: 'Dimensions Container.'
       xml:
         name: Dimensions
+    Dimensions_Length:
+      maximum: 1
+      maxLength: 19
+      minLength: 1
+      type: string
+      description: 'The length of the line item used to determine density rate rating.'
+    Dimensions_Width:
+      maximum: 1
+      maxLength: 19
+      minLength: 1
+      type: string
+      description: 'The width of the line item used to determine the density based rating.'
+    Dimensions_Height:
+      maximum: 1
+      maxLength: 19
+      minLength: 1
+      type: string
+      description: 'The height of the line item used to determine density based rating.'
     Commodity_NumberOfPieces:
       maximum: 1
       maxLength: 3
@@ -27473,6 +27207,12 @@ components:
       description: 'PackingList ShipTo Container.'
       xml:
         name: ShipTo
+    ShipTo_PhoneNumber:
+      maximum: 1
+      maxLength: 15
+      minLength: 15
+      type: string
+      description: 'The consignee�s phone number.'
     ShipTo_PhoneExtension:
       maximum: 1
       maxLength: 4

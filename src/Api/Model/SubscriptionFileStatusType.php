@@ -14,7 +14,9 @@ class SubscriptionFileStatusType extends \ArrayObject
     }
     /**
     * Status types of subscription file. Valid values:
-    R � Read, U - Unread
+    - R – Read
+    - U - Unread
+    
     *
     * @var string
     */
@@ -27,7 +29,9 @@ class SubscriptionFileStatusType extends \ArrayObject
     protected $description;
     /**
     * Status types of subscription file. Valid values:
-    R � Read, U - Unread
+    - R – Read
+    - U - Unread
+    
     *
     * @return string
     */
@@ -37,7 +41,9 @@ class SubscriptionFileStatusType extends \ArrayObject
     }
     /**
     * Status types of subscription file. Valid values:
-    R � Read, U - Unread
+    - R – Read
+    - U - Unread
+    
     *
     * @param string $code
     *

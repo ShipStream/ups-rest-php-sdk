@@ -73,7 +73,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['TrackingNumber']);
             }
             if (\array_key_exists('ReferenceNumber', $data)) {
-                $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context));
+                $values_1 = [];
+                foreach ($data['ReferenceNumber'] as $value_1) {
+                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context);
+                }
+                $object->setReferenceNumber($values_1);
                 unset($data['ReferenceNumber']);
             }
             if (\array_key_exists('PackageServiceOptions', $data)) {
@@ -84,9 +88,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
             }
-            foreach ($data as $key => $value_1) {
+            foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value_1;
+                    $object[$key] = $value_2;
                 }
             }
             return $object;
@@ -120,7 +124,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['TrackingNumber'] = $object->getTrackingNumber();
             }
             if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
-                $data['ReferenceNumber'] = $this->normalizer->normalize($object->getReferenceNumber(), 'json', $context);
+                $values_1 = [];
+                foreach ($object->getReferenceNumber() as $value_1) {
+                    $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                }
+                $data['ReferenceNumber'] = $values_1;
             }
             if ($object->isInitialized('packageServiceOptions') && null !== $object->getPackageServiceOptions()) {
                 $data['PackageServiceOptions'] = $this->normalizer->normalize($object->getPackageServiceOptions(), 'json', $context);
@@ -128,9 +136,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if ($object->isInitialized('uPSPremiumCareIndicator') && null !== $object->getUPSPremiumCareIndicator()) {
                 $data['UPSPremiumCareIndicator'] = $object->getUPSPremiumCareIndicator();
             }
-            foreach ($object as $key => $value_1) {
+            foreach ($object as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value_1;
+                    $data[$key] = $value_2;
                 }
             }
             return $data;
@@ -203,7 +211,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['TrackingNumber']);
             }
             if (\array_key_exists('ReferenceNumber', $data)) {
-                $object->setReferenceNumber($this->denormalizer->denormalize($data['ReferenceNumber'], 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context));
+                $values_1 = [];
+                foreach ($data['ReferenceNumber'] as $value_1) {
+                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber', 'json', $context);
+                }
+                $object->setReferenceNumber($values_1);
                 unset($data['ReferenceNumber']);
             }
             if (\array_key_exists('PackageServiceOptions', $data)) {
@@ -214,9 +226,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
             }
-            foreach ($data as $key => $value_1) {
+            foreach ($data as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value_1;
+                    $object[$key] = $value_2;
                 }
             }
             return $object;
@@ -253,7 +265,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['TrackingNumber'] = $object->getTrackingNumber();
             }
             if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
-                $data['ReferenceNumber'] = $this->normalizer->normalize($object->getReferenceNumber(), 'json', $context);
+                $values_1 = [];
+                foreach ($object->getReferenceNumber() as $value_1) {
+                    $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                }
+                $data['ReferenceNumber'] = $values_1;
             }
             if ($object->isInitialized('packageServiceOptions') && null !== $object->getPackageServiceOptions()) {
                 $data['PackageServiceOptions'] = $this->normalizer->normalize($object->getPackageServiceOptions(), 'json', $context);
@@ -261,9 +277,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if ($object->isInitialized('uPSPremiumCareIndicator') && null !== $object->getUPSPremiumCareIndicator()) {
                 $data['UPSPremiumCareIndicator'] = $object->getUPSPremiumCareIndicator();
             }
-            foreach ($object as $key => $value_1) {
+            foreach ($object as $key => $value_2) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value_1;
+                    $data[$key] = $value_2;
                 }
             }
             return $data;

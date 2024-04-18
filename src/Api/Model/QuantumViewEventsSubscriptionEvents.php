@@ -13,13 +13,13 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.
+     * A name uniquely defined associated to the Subscription ID, for each subscription. Required if the SubscriptionEvents container is present.
      *
      * @var string
      */
     protected $name;
     /**
-     * A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.
+     * A number uniquely defined associated to the Subscriber ID, for each subscription. Required if the SubscriptionEvents container is present.
      *
      * @var string
      */
@@ -37,13 +37,14 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      */
     protected $dateRange;
     /**
-     * 
+     * Container holds all of the unread files associated with the subscription.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var SubscriptionEventsSubscriptionFile[]
      */
     protected $subscriptionFile;
     /**
-     * A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.
+     * A name uniquely defined associated to the Subscription ID, for each subscription. Required if the SubscriptionEvents container is present.
      *
      * @return string
      */
@@ -52,7 +53,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
         return $this->name;
     }
     /**
-     * A name uniquely defined associated to the Subscription ID, for each subscription.� Required if the SubscriptionEvents container is present.
+     * A name uniquely defined associated to the Subscription ID, for each subscription. Required if the SubscriptionEvents container is present.
      *
      * @param string $name
      *
@@ -65,7 +66,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
         return $this;
     }
     /**
-     * A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.
+     * A number uniquely defined associated to the Subscriber ID, for each subscription. Required if the SubscriptionEvents container is present.
      *
      * @return string
      */
@@ -74,7 +75,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
         return $this->number;
     }
     /**
-     * A number uniquely defined associated to the Subscriber ID, for each subscription.� Required if the SubscriptionEvents container is present.
+     * A number uniquely defined associated to the Subscriber ID, for each subscription. Required if the SubscriptionEvents container is present.
      *
      * @param string $number
      *
@@ -131,7 +132,8 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container holds all of the unread files associated with the subscription.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return SubscriptionEventsSubscriptionFile[]
      */
@@ -140,7 +142,8 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
         return $this->subscriptionFile;
     }
     /**
-     * 
+     * Container holds all of the unread files associated with the subscription.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param SubscriptionEventsSubscriptionFile[] $subscriptionFile
      *

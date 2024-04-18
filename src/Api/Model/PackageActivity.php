@@ -13,19 +13,19 @@ class PackageActivity extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Date of package activity (i.e. YYYYMMDD).� If generic record ActivityType is TC then event date is the date of first USPS scan.
+     * Date of package delivery activity. Date format: YYYYMMDD.
      *
      * @var string
      */
     protected $date;
     /**
-     * Time of package activity(i.e. HHMMSS).� If generic record ActivityType is TC then event time is the time of first USPS scan.
+     * Time of package delivery activity. Time format: HHMMSS
      *
      * @var string
      */
     protected $time;
     /**
-     * Date of package activity (i.e. YYYYMMDD).� If generic record ActivityType is TC then event date is the date of first USPS scan.
+     * Date of package delivery activity. Date format: YYYYMMDD.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class PackageActivity extends \ArrayObject
         return $this->date;
     }
     /**
-     * Date of package activity (i.e. YYYYMMDD).� If generic record ActivityType is TC then event date is the date of first USPS scan.
+     * Date of package delivery activity. Date format: YYYYMMDD.
      *
      * @param string $date
      *
@@ -47,7 +47,7 @@ class PackageActivity extends \ArrayObject
         return $this;
     }
     /**
-     * Time of package activity(i.e. HHMMSS).� If generic record ActivityType is TC then event time is the time of first USPS scan.
+     * Time of package delivery activity. Time format: HHMMSS
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class PackageActivity extends \ArrayObject
         return $this->time;
     }
     /**
-     * Time of package activity(i.e. HHMMSS).� If generic record ActivityType is TC then event time is the time of first USPS scan.
+     * Time of package delivery activity. Time format: HHMMSS
      *
      * @param string $time
      *

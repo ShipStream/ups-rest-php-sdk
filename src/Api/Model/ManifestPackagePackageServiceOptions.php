@@ -31,11 +31,12 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      */
     protected $earliestDeliveryTime;
     /**
-    * Indicates if the package contains hazardous materials. 
-    Valid values: 
-    1 - Hazardous Material
-    2 - Electronically billed hazardous material.�
+    * Indicates if the package contains hazardous materials. Valid values:
+    - 1 - Hazardous Material
+    - 2 - Electronically billed hazardous material.
+    
     If present, only one package may exist in the shipment.
+    
     *
     * @var string
     */
@@ -119,11 +120,12 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the package contains hazardous materials. 
-    Valid values: 
-    1 - Hazardous Material
-    2 - Electronically billed hazardous material.�
+    * Indicates if the package contains hazardous materials. Valid values:
+    - 1 - Hazardous Material
+    - 2 - Electronically billed hazardous material.
+    
     If present, only one package may exist in the shipment.
+    
     *
     * @return string
     */
@@ -132,11 +134,12 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
         return $this->hazardousMaterialsCode;
     }
     /**
-    * Indicates if the package contains hazardous materials. 
-    Valid values: 
-    1 - Hazardous Material
-    2 - Electronically billed hazardous material.�
+    * Indicates if the package contains hazardous materials. Valid values:
+    - 1 - Hazardous Material
+    - 2 - Electronically billed hazardous material.
+    
     If present, only one package may exist in the shipment.
+    
     *
     * @param string $hazardousMaterialsCode
     *

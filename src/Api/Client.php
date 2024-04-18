@@ -722,19 +722,48 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedPreNotification($deprecatedVersion, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * Get Quantum View Response
-     *
-     * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\QuantumViewUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
+    * Get Quantum View Response
+    *
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v2
+    
+    * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\QuantumViewBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\QuantumViewUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\QuantumViewForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\QuantumViewTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
     public function quantumView(string $version, \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody, string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\QuantumView($version, $requestBody), $fetch);
+    }
+    /**
+    * Get Quantum View Response
+    *
+    * @param string $deprecatedVersion Version of API.
+    
+    Valid values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedQuantumView(string $deprecatedVersion, \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody, string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedQuantumView($deprecatedVersion, $requestBody), $fetch);
     }
     /**
      * The Rating API is used when rating or shopping a shipment.

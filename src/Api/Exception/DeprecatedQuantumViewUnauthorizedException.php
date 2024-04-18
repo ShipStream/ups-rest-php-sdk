@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class QuantumViewUnauthorizedException extends UnauthorizedException
+class DeprecatedQuantumViewUnauthorizedException extends UnauthorizedException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse

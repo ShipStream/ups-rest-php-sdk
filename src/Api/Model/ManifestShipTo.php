@@ -67,7 +67,7 @@ class ManifestShipTo extends \ArrayObject
      */
     protected $locationID;
     /**
-     * Alias of the location where the package is received.
+     * Name of the location where the package is received.
      *
      * @var string
      */
@@ -271,7 +271,7 @@ class ManifestShipTo extends \ArrayObject
         return $this;
     }
     /**
-     * Alias of the location where the package is received.
+     * Name of the location where the package is received.
      *
      * @return string
      */
@@ -280,7 +280,7 @@ class ManifestShipTo extends \ArrayObject
         return $this->receivingAddressName;
     }
     /**
-     * Alias of the location where the package is received.
+     * Name of the location where the package is received.
      *
      * @param string $receivingAddressName
      *

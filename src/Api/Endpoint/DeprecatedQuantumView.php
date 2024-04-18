@@ -2,22 +2,22 @@
 
 namespace ShipStream\Ups\Api\Endpoint;
 
-class QuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
+class DeprecatedQuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
-    protected $version;
+    protected $deprecatedVersion;
     /**
     * Get Quantum View Response
     *
-    * @param string $version Version of API.
+    * @param string $deprecatedVersion Version of API.
     
     Valid values:
-    - v2
+    - v1
     
     * @param \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody 
     */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody)
+    public function __construct(string $deprecatedVersion, \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper $requestBody)
     {
-        $this->version = $version;
+        $this->deprecatedVersion = $deprecatedVersion;
         $this->body = $requestBody;
     }
     use \ShipStream\Ups\Api\Runtime\Client\EndpointTrait;
@@ -27,7 +27,7 @@ class QuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     }
     public function getUri() : string
     {
-        return str_replace(['{version}'], [$this->version], '/quantumview/{version}/events');
+        return str_replace(['{deprecatedVersion}'], [$this->deprecatedVersion], '/quantumview/{deprecatedVersion}/events');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
@@ -43,10 +43,10 @@ class QuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     /**
      * {@inheritdoc}
      *
-     * @throws \ShipStream\Ups\Api\Exception\QuantumViewBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\QuantumViewUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\QuantumViewForbiddenException
-     * @throws \ShipStream\Ups\Api\Exception\QuantumViewTooManyRequestsException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper
@@ -59,16 +59,16 @@ class QuantumView extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\QuantumViewBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\QuantumViewUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\QuantumViewForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\QuantumViewTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedQuantumViewTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
