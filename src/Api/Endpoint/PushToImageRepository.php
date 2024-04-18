@@ -6,16 +6,20 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
 {
     protected $version;
     /**
-     * 
-     *
-     * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     *     @var string $ShipperNumber Shipper Number
-     * }
-     */
+    * The Paperless Document API web service allows the users to upload their own customized trade documents for customs clearance to Forms History. 
+    *
+    * @param string $version Version of API
+    
+    Valid values:
+    - v2
+    
+    * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Shipper Number
+    * }
+    */
     public function __construct(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
@@ -56,7 +60,10 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper
@@ -68,8 +75,17 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

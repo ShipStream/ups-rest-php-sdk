@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class UploadUnauthorizedException extends UnauthorizedException
+class DeprecatedDeleteBadRequestException extends BadRequestException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse
@@ -14,7 +14,7 @@ class UploadUnauthorizedException extends UnauthorizedException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('Unauthorized Request');
+        parent::__construct('Invalid Request');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }

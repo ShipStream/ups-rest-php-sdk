@@ -42,12 +42,16 @@ class UploadResponseFormsHistoryDocumentIDNormalizer implements DenormalizerInte
             return $object;
         }
         if (\array_key_exists('DocumentID', $data)) {
-            $object->setDocumentID($data['DocumentID']);
+            $values = array();
+            foreach ($data['DocumentID'] as $value) {
+                $values[] = $value;
+            }
+            $object->setDocumentID($values);
             unset($data['DocumentID']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -58,10 +62,14 @@ class UploadResponseFormsHistoryDocumentIDNormalizer implements DenormalizerInte
     public function normalize($object, $format = null, array $context = array())
     {
         $data = array();
-        $data['DocumentID'] = $object->getDocumentID();
-        foreach ($object as $key => $value) {
+        $values = array();
+        foreach ($object->getDocumentID() as $value) {
+            $values[] = $value;
+        }
+        $data['DocumentID'] = $values;
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

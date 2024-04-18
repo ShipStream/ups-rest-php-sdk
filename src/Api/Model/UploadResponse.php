@@ -19,7 +19,7 @@ class UploadResponse extends \ArrayObject
      */
     protected $response;
     /**
-     * The container for DocumentID(s).  N/A
+     * The container for DocumentID(s).
      *
      * @var UploadResponseFormsHistoryDocumentID
      */
@@ -47,7 +47,7 @@ class UploadResponse extends \ArrayObject
         return $this;
     }
     /**
-     * The container for DocumentID(s).  N/A
+     * The container for DocumentID(s).
      *
      * @return UploadResponseFormsHistoryDocumentID
      */
@@ -56,7 +56,7 @@ class UploadResponse extends \ArrayObject
         return $this->formsHistoryDocumentID;
     }
     /**
-     * The container for DocumentID(s).  N/A
+     * The container for DocumentID(s).
      *
      * @param UploadResponseFormsHistoryDocumentID $formsHistoryDocumentID
      *

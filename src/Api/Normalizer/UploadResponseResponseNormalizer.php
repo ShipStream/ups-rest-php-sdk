@@ -46,16 +46,20 @@ class UploadResponseResponseNormalizer implements DenormalizerInterface, Normali
             unset($data['ResponseStatus']);
         }
         if (\array_key_exists('Alert', $data)) {
-            $object->setAlert($this->denormalizer->denormalize($data['Alert'], 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context));
+            $values = array();
+            foreach ($data['Alert'] as $value) {
+                $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context);
+            }
+            $object->setAlert($values);
             unset($data['Alert']);
         }
         if (\array_key_exists('TransactionReference', $data)) {
             $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference', 'json', $context));
             unset($data['TransactionReference']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -68,14 +72,18 @@ class UploadResponseResponseNormalizer implements DenormalizerInterface, Normali
         $data = array();
         $data['ResponseStatus'] = $this->normalizer->normalize($object->getResponseStatus(), 'json', $context);
         if ($object->isInitialized('alert') && null !== $object->getAlert()) {
-            $data['Alert'] = $this->normalizer->normalize($object->getAlert(), 'json', $context);
+            $values = array();
+            foreach ($object->getAlert() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['Alert'] = $values;
         }
         if ($object->isInitialized('transactionReference') && null !== $object->getTransactionReference()) {
             $data['TransactionReference'] = $this->normalizer->normalize($object->getTransactionReference(), 'json', $context);
         }
-        foreach ($object as $key => $value) {
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

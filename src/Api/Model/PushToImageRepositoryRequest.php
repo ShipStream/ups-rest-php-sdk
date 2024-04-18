@@ -13,7 +13,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Contains Paperless Document API PushToImageRepository request criteria components.  N/A
+     * Contains Paperless Document API PushToImageRepository request criteria components.
      *
      * @var PushToImageRepositoryRequestRequest
      */
@@ -25,49 +25,49 @@ class PushToImageRepositoryRequest extends \ArrayObject
      */
     protected $shipperNumber;
     /**
-     * The container for DocumentID(s).  N/A
+     * The container for DocumentID(s).
      *
      * @var PushToImageRepositoryRequestFormsHistoryDocumentID
      */
     protected $formsHistoryDocumentID;
     /**
-     * FormsGroupID would be required in Push Request if user needs to update uploaded DocumentID(s) in Forms History.  N/A
+     * FormsGroupID would be required in Push Request if user needs to update uploaded DocumentID(s) in Forms History.
      *
      * @var string
      */
     protected $formsGroupID;
     /**
-     * Shipment Identifier is required for this request.  N/A
+     * Shipment Identifier is required for this request.
      *
      * @var string
      */
     protected $shipmentIdentifier;
     /**
-     * The date and time of the processed shipment. Required only for small package shipments. The valid format is yyyy-MM-dd-HH.mm.ss  N/A
+     * The date and time of the processed shipment. Required only for small package shipments. The valid format is yyyy-MM-dd-HH.mm.ss
      *
      * @var string
      */
     protected $shipmentDateAndTime;
     /**
-     * Valid values are: 1 = small package, 2 = freight.  N/A
+     * Valid values are: 1 = small package, 2 = freight. 
      *
      * @var string
      */
     protected $shipmentType;
     /**
-     * PRQ Confirmation being specified by client. Required for freight shipments.  N/A
+     * PRQ Confirmation being specified by client. Required for freight shipments.
      *
      * @var string
      */
     protected $pRQConfirmationNumber;
     /**
-     * UPS Tracking Number associated with this shipment. Required only for small package shipment.  N/A
+     * UPS Tracking Number associated with this shipment. Required only for small package shipment.
      *
      * @var string[]
      */
     protected $trackingNumber;
     /**
-     * Contains Paperless Document API PushToImageRepository request criteria components.  N/A
+     * Contains Paperless Document API PushToImageRepository request criteria components.
      *
      * @return PushToImageRepositoryRequestRequest
      */
@@ -76,7 +76,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->request;
     }
     /**
-     * Contains Paperless Document API PushToImageRepository request criteria components.  N/A
+     * Contains Paperless Document API PushToImageRepository request criteria components.
      *
      * @param PushToImageRepositoryRequestRequest $request
      *
@@ -111,7 +111,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * The container for DocumentID(s).  N/A
+     * The container for DocumentID(s).
      *
      * @return PushToImageRepositoryRequestFormsHistoryDocumentID
      */
@@ -120,7 +120,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->formsHistoryDocumentID;
     }
     /**
-     * The container for DocumentID(s).  N/A
+     * The container for DocumentID(s).
      *
      * @param PushToImageRepositoryRequestFormsHistoryDocumentID $formsHistoryDocumentID
      *
@@ -133,7 +133,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * FormsGroupID would be required in Push Request if user needs to update uploaded DocumentID(s) in Forms History.  N/A
+     * FormsGroupID would be required in Push Request if user needs to update uploaded DocumentID(s) in Forms History.
      *
      * @return string
      */
@@ -142,7 +142,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->formsGroupID;
     }
     /**
-     * FormsGroupID would be required in Push Request if user needs to update uploaded DocumentID(s) in Forms History.  N/A
+     * FormsGroupID would be required in Push Request if user needs to update uploaded DocumentID(s) in Forms History.
      *
      * @param string $formsGroupID
      *
@@ -155,7 +155,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Shipment Identifier is required for this request.  N/A
+     * Shipment Identifier is required for this request.
      *
      * @return string
      */
@@ -164,7 +164,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->shipmentIdentifier;
     }
     /**
-     * Shipment Identifier is required for this request.  N/A
+     * Shipment Identifier is required for this request.
      *
      * @param string $shipmentIdentifier
      *
@@ -177,7 +177,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * The date and time of the processed shipment. Required only for small package shipments. The valid format is yyyy-MM-dd-HH.mm.ss  N/A
+     * The date and time of the processed shipment. Required only for small package shipments. The valid format is yyyy-MM-dd-HH.mm.ss
      *
      * @return string
      */
@@ -186,7 +186,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->shipmentDateAndTime;
     }
     /**
-     * The date and time of the processed shipment. Required only for small package shipments. The valid format is yyyy-MM-dd-HH.mm.ss  N/A
+     * The date and time of the processed shipment. Required only for small package shipments. The valid format is yyyy-MM-dd-HH.mm.ss
      *
      * @param string $shipmentDateAndTime
      *
@@ -199,7 +199,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Valid values are: 1 = small package, 2 = freight.  N/A
+     * Valid values are: 1 = small package, 2 = freight. 
      *
      * @return string
      */
@@ -208,7 +208,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->shipmentType;
     }
     /**
-     * Valid values are: 1 = small package, 2 = freight.  N/A
+     * Valid values are: 1 = small package, 2 = freight. 
      *
      * @param string $shipmentType
      *
@@ -221,7 +221,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * PRQ Confirmation being specified by client. Required for freight shipments.  N/A
+     * PRQ Confirmation being specified by client. Required for freight shipments.
      *
      * @return string
      */
@@ -230,7 +230,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->pRQConfirmationNumber;
     }
     /**
-     * PRQ Confirmation being specified by client. Required for freight shipments.  N/A
+     * PRQ Confirmation being specified by client. Required for freight shipments.
      *
      * @param string $pRQConfirmationNumber
      *
@@ -243,7 +243,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Tracking Number associated with this shipment. Required only for small package shipment.  N/A
+     * UPS Tracking Number associated with this shipment. Required only for small package shipment.
      *
      * @return string[]
      */
@@ -252,7 +252,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this->trackingNumber;
     }
     /**
-     * UPS Tracking Number associated with this shipment. Required only for small package shipment.  N/A
+     * UPS Tracking Number associated with this shipment. Required only for small package shipment.
      *
      * @param string[] $trackingNumber
      *
