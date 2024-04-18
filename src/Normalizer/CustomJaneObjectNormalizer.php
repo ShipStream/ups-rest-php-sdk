@@ -55,6 +55,7 @@ use ShipStream\Ups\Api\Model\SubscriptionFileException;
 use ShipStream\Ups\Api\Model\SubscriptionFileGeneric;
 use ShipStream\Ups\Api\Model\SubscriptionFileManifest;
 use ShipStream\Ups\Api\Model\SubscriptionFileOrigin;
+use ShipStream\Ups\Api\Model\UploadResponseFormsHistoryDocumentID;
 use ShipStream\Ups\Api\Model\UploadResponseResponse;
 use ShipStream\Ups\Api\Model\XAVResponse;
 use ShipStream\Ups\Api\Model\XAVResponseCandidate;
@@ -93,6 +94,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[DeleteResponseResponse::class] = Paperless\DeleteResponseResponseNormalizer::class;
         $this->normalizers[PushToImageRepositoryResponseResponse::class] = Paperless\PushToImageRepositoryResponseResponseNormalizer::class;
         $this->normalizers[UploadResponseResponse::class] = Paperless\UploadResponseResponseNormalizer::class;
+        $this->normalizers[UploadResponseFormsHistoryDocumentID::class] = Paperless\UploadResponseFormsHistoryDocumentIDNormalizer::class;
         // Pickup
         $this->normalizers[DropOffFacilitiesAddress::class] = Pickup\DropOffFacilitiesAddressNormalizer::class;
         $this->normalizers[PickupGetPoliticalDivision1ListResponse::class] = Pickup\PickupGetPoliticalDivision1ListResponseNormalizer::class;

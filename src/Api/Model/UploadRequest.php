@@ -13,7 +13,7 @@ class UploadRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Contains Paperless Document API upload request criteria components.  N/A
+     * Contains Paperless Document API upload request criteria components.
      *
      * @var UploadRequestRequest
      */
@@ -25,13 +25,13 @@ class UploadRequest extends \ArrayObject
      */
     protected $shipperNumber;
     /**
-     * The container for User Created Form. The container holds the file. Total number of allowed files per shipment is 13.  N/A
+     * 
      *
-     * @var UploadRequestUserCreatedForm
+     * @var UploadRequestUserCreatedForm[]
      */
     protected $userCreatedForm;
     /**
-     * Contains Paperless Document API upload request criteria components.  N/A
+     * Contains Paperless Document API upload request criteria components.
      *
      * @return UploadRequestRequest
      */
@@ -40,7 +40,7 @@ class UploadRequest extends \ArrayObject
         return $this->request;
     }
     /**
-     * Contains Paperless Document API upload request criteria components.  N/A
+     * Contains Paperless Document API upload request criteria components.
      *
      * @param UploadRequestRequest $request
      *
@@ -75,22 +75,22 @@ class UploadRequest extends \ArrayObject
         return $this;
     }
     /**
-     * The container for User Created Form. The container holds the file. Total number of allowed files per shipment is 13.  N/A
+     * 
      *
-     * @return UploadRequestUserCreatedForm
+     * @return UploadRequestUserCreatedForm[]
      */
-    public function getUserCreatedForm() : UploadRequestUserCreatedForm
+    public function getUserCreatedForm() : array
     {
         return $this->userCreatedForm;
     }
     /**
-     * The container for User Created Form. The container holds the file. Total number of allowed files per shipment is 13.  N/A
+     * 
      *
-     * @param UploadRequestUserCreatedForm $userCreatedForm
+     * @param UploadRequestUserCreatedForm[] $userCreatedForm
      *
      * @return self
      */
-    public function setUserCreatedForm(UploadRequestUserCreatedForm $userCreatedForm) : self
+    public function setUserCreatedForm(array $userCreatedForm) : self
     {
         $this->initialized['userCreatedForm'] = true;
         $this->userCreatedForm = $userCreatedForm;

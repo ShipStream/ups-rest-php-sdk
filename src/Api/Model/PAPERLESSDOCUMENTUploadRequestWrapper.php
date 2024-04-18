@@ -13,13 +13,13 @@ class PAPERLESSDOCUMENTUploadRequestWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Paperless Document API Request container for uploading User Created Forms.  N/A
+     * Paperless Document API Request container for uploading User Created Forms.
      *
      * @var UploadRequest
      */
     protected $uploadRequest;
     /**
-     * Paperless Document API Request container for uploading User Created Forms.  N/A
+     * Paperless Document API Request container for uploading User Created Forms.
      *
      * @return UploadRequest
      */
@@ -28,7 +28,7 @@ class PAPERLESSDOCUMENTUploadRequestWrapper extends \ArrayObject
         return $this->uploadRequest;
     }
     /**
-     * Paperless Document API Request container for uploading User Created Forms.  N/A
+     * Paperless Document API Request container for uploading User Created Forms.
      *
      * @param UploadRequest $uploadRequest
      *

@@ -13,13 +13,13 @@ class PAPERLESSDOCUMENTResponseWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Paperless Document API response container for Push To Image Repository request.  N/A
+     * Paperless Document API response container for Push To Image Repository request.
      *
      * @var PushToImageRepositoryResponse
      */
     protected $pushToImageRepositoryResponse;
     /**
-     * Paperless Document API response container for Push To Image Repository request.  N/A
+     * Paperless Document API response container for Push To Image Repository request.
      *
      * @return PushToImageRepositoryResponse
      */
@@ -28,7 +28,7 @@ class PAPERLESSDOCUMENTResponseWrapper extends \ArrayObject
         return $this->pushToImageRepositoryResponse;
     }
     /**
-     * Paperless Document API response container for Push To Image Repository request.  N/A
+     * Paperless Document API response container for Push To Image Repository request.
      *
      * @param PushToImageRepositoryResponse $pushToImageRepositoryResponse
      *

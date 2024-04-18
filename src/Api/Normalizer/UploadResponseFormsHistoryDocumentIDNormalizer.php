@@ -41,12 +41,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('DocumentID', $data)) {
-                $object->setDocumentID($data['DocumentID']);
+                $values = [];
+                foreach ($data['DocumentID'] as $value) {
+                    $values[] = $value;
+                }
+                $object->setDocumentID($values);
                 unset($data['DocumentID']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -54,10 +58,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
-            $data['DocumentID'] = $object->getDocumentID();
-            foreach ($object as $key => $value) {
+            $values = [];
+            foreach ($object->getDocumentID() as $value) {
+                $values[] = $value;
+            }
+            $data['DocumentID'] = $values;
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
@@ -98,12 +106,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('DocumentID', $data)) {
-                $object->setDocumentID($data['DocumentID']);
+                $values = [];
+                foreach ($data['DocumentID'] as $value) {
+                    $values[] = $value;
+                }
+                $object->setDocumentID($values);
                 unset($data['DocumentID']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -114,10 +126,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         public function normalize($object, $format = null, array $context = [])
         {
             $data = [];
-            $data['DocumentID'] = $object->getDocumentID();
-            foreach ($object as $key => $value) {
+            $values = [];
+            foreach ($object->getDocumentID() as $value) {
+                $values[] = $value;
+            }
+            $data['DocumentID'] = $values;
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;

@@ -13,13 +13,13 @@ class PAPERLESSDOCUMENTUploadResponseWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Paperless Document API Response Container for upload request.  N/A
+     * Paperless Document API Response Container for upload request.
      *
      * @var UploadResponse
      */
     protected $uploadResponse;
     /**
-     * Paperless Document API Response Container for upload request.  N/A
+     * Paperless Document API Response Container for upload request.
      *
      * @return UploadResponse
      */
@@ -28,7 +28,7 @@ class PAPERLESSDOCUMENTUploadResponseWrapper extends \ArrayObject
         return $this->uploadResponse;
     }
     /**
-     * Paperless Document API Response Container for upload request.  N/A
+     * Paperless Document API Response Container for upload request.
      *
      * @param UploadResponse $uploadResponse
      *

@@ -282,64 +282,166 @@ class Client extends \ShipStream\Ups\Api\Runtime\Client\Client
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\RefreshToken($requestBody), $fetch);
     }
     /**
-     * 
-     *
-     * @param string $version Version of API
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     *     @var string $ShipperNumber Your Shipper Number
-     *     @var string $DocumentId DocumentId representing uploaded document to Forms History.  Only one DocumentID will be accepted for delete request.
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\DeleteUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
-    public function delete(string $version = 'v1', array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    * The Paperless Document API web service allows the users to upload,delete and push to image repository their own customized trade documents for customs clearance to Forms History. 
+    *
+    * @param string $version Version of API
+    
+    Valid values:
+    - v2
+    
+    * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Shipper Number
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\UploadBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\UploadUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\UploadForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\UploadTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function upload(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Delete($version, $headerParameters), $fetch);
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Upload($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
-     *
-     * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     *     @var string $ShipperNumber Shipper Number
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
+    * The Paperless Document API web service allows the users to upload their own customized trade documents for customs clearance to Forms History. 
+    *
+    * @param string $version Version of API
+    
+    Valid values:
+    - v2
+    
+    * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Shipper Number
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
     public function pushToImageRepository(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
         return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\PushToImageRepository($version, $requestBody, $headerParameters), $fetch);
     }
     /**
-     * 
-     *
-     * @param string $version Version of API
-     * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     *     @var string $ShipperNumber Shipper Number
-     * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \ShipStream\Ups\Api\Exception\UploadUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
-     *
-     * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper|\Psr\Http\Message\ResponseInterface
-     */
-    public function upload(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    * The Paperless Document API web service allows the users to upload their own customized trade documents for customs clearance to Forms History.
+    *
+    * @param string $version Version of API
+    
+    Valid values:
+    - v2
+    
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Your Shipper Number
+    *     @var string $DocumentId DocumentId representing uploaded document to Forms History. Only one DocumentID will be accepted for delete request.
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeleteBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeleteUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeleteForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeleteTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function delete(string $version, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Upload($version, $requestBody, $headerParameters), $fetch);
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\Delete($version, $headerParameters), $fetch);
+    }
+    /**
+    * The Paperless Document API web service allows the users to upload,delete and push to image repository their own customized trade documents for customs clearance to Forms History. 
+    *
+    * @param string $deprecatedVersion Version of API
+    
+    Valid values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Shipper Number
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedUploadBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedUploadUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedUploadForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedUploadTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedUpload(string $deprecatedVersion, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedUpload($deprecatedVersion, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+    * The Paperless Document API web service allows the users to upload their own customized trade documents for customs clearance to Forms History. 
+    *
+    * @param string $deprecatedVersion Version of API
+    
+    Valid values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Shipper Number
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedPushToImageRepository(string $deprecatedVersion, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedPushToImageRepository($deprecatedVersion, $requestBody, $headerParameters), $fetch);
+    }
+    /**
+    * The Paperless Document API web service allows the users to upload their own customized trade documents for customs clearance to Forms History.
+    *
+    * @param string $deprecatedVersion Version of API
+    
+    Valid values:
+    - v1
+    
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    *     @var string $ShipperNumber Your Shipper Number
+    *     @var string $DocumentId DocumentId representing uploaded document to Forms History. Only one DocumentID will be accepted for delete request.
+    * }
+    * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedDeleteBadRequestException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedDeleteUnauthorizedException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedDeleteForbiddenException
+    * @throws \ShipStream\Ups\Api\Exception\DeprecatedDeleteTooManyRequestsException
+    * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
+    *
+    * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper|\Psr\Http\Message\ResponseInterface
+    */
+    public function deprecatedDelete(string $deprecatedVersion, array $headerParameters = [], string $fetch = self::FETCH_OBJECT)
+    {
+        return $this->executeEndpoint(new \ShipStream\Ups\Api\Endpoint\DeprecatedDelete($deprecatedVersion, $headerParameters), $fetch);
     }
     /**
     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.

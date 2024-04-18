@@ -2,7 +2,7 @@
 
 namespace ShipStream\Ups\Api\Exception;
 
-class UploadUnauthorizedException extends UnauthorizedException
+class DeprecatedUploadUnauthorizedException extends UnauthorizedException
 {
     /**
      * @var \ShipStream\Ups\Api\Model\ErrorResponse

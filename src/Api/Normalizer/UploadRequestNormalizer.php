@@ -49,12 +49,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ShipperNumber']);
             }
             if (\array_key_exists('UserCreatedForm', $data)) {
-                $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm', 'json', $context));
+                $values = [];
+                foreach ($data['UserCreatedForm'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm', 'json', $context);
+                }
+                $object->setUserCreatedForm($values);
                 unset($data['UserCreatedForm']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -64,10 +68,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data = [];
             $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
             $data['ShipperNumber'] = $object->getShipperNumber();
-            $data['UserCreatedForm'] = $this->normalizer->normalize($object->getUserCreatedForm(), 'json', $context);
-            foreach ($object as $key => $value) {
+            $values = [];
+            foreach ($object->getUserCreatedForm() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['UserCreatedForm'] = $values;
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
@@ -116,12 +124,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ShipperNumber']);
             }
             if (\array_key_exists('UserCreatedForm', $data)) {
-                $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm', 'json', $context));
+                $values = [];
+                foreach ($data['UserCreatedForm'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm', 'json', $context);
+                }
+                $object->setUserCreatedForm($values);
                 unset($data['UserCreatedForm']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -134,10 +146,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data = [];
             $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
             $data['ShipperNumber'] = $object->getShipperNumber();
-            $data['UserCreatedForm'] = $this->normalizer->normalize($object->getUserCreatedForm(), 'json', $context);
-            foreach ($object as $key => $value) {
+            $values = [];
+            foreach ($object->getUserCreatedForm() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['UserCreatedForm'] = $values;
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;

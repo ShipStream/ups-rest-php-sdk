@@ -13,28 +13,31 @@ class UploadResponseFormsHistoryDocumentID extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * DocumentID represents a document uploaded to Forms History.  N/A
+     * DocumentID represents a document uploaded to Forms History.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var string
+     * @var string[]
      */
     protected $documentID;
     /**
-     * DocumentID represents a document uploaded to Forms History.  N/A
+     * DocumentID represents a document uploaded to Forms History.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return string
+     * @return string[]
      */
-    public function getDocumentID() : string
+    public function getDocumentID() : array
     {
         return $this->documentID;
     }
     /**
-     * DocumentID represents a document uploaded to Forms History.  N/A
+     * DocumentID represents a document uploaded to Forms History.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param string $documentID
+     * @param string[] $documentID
      *
      * @return self
      */
-    public function setDocumentID(string $documentID) : self
+    public function setDocumentID(array $documentID) : self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

@@ -2,16 +2,16 @@
 
 namespace ShipStream\Ups\Api\Endpoint;
 
-class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
+class DeprecatedPushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
-    protected $version;
+    protected $deprecatedVersion;
     /**
     * The Paperless Document API web service allows the users to upload their own customized trade documents for customs clearance to Forms History. 
     *
-    * @param string $version Version of API
+    * @param string $deprecatedVersion Version of API
     
     Valid values:
-    - v2
+    - v1
     
     * @param \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody 
     * @param array $headerParameters {
@@ -20,9 +20,9 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     *     @var string $ShipperNumber Shipper Number
     * }
     */
-    public function __construct(string $version, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = [])
+    public function __construct(string $deprecatedVersion, \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper $requestBody, array $headerParameters = [])
     {
-        $this->version = $version;
+        $this->deprecatedVersion = $deprecatedVersion;
         $this->body = $requestBody;
         $this->headerParameters = $headerParameters;
     }
@@ -33,7 +33,7 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     }
     public function getUri() : string
     {
-        return str_replace(['{version}'], [$this->version], '/paperlessdocuments/{version}/image');
+        return str_replace(['{deprecatedVersion}'], [$this->deprecatedVersion], '/paperlessdocuments/{deprecatedVersion}/image');
     }
     public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
@@ -60,10 +60,10 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     /**
      * {@inheritdoc}
      *
-     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryBadRequestException
-     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException
-     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryForbiddenException
-     * @throws \ShipStream\Ups\Api\Exception\PushToImageRepositoryTooManyRequestsException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryBadRequestException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper
@@ -76,16 +76,16 @@ class PushToImageRepository extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PushToImageRepositoryTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\DeprecatedPushToImageRepositoryTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
