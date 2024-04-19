@@ -31701,6 +31701,7 @@ components:
         code:
           type: string
           description: 'The current status code.'
+          nullable: true
           example: SR
         description:
           type: string

@@ -15,7 +15,7 @@ class Status extends \ArrayObject
     /**
      * The current status code.
      *
-     * @var string
+     * @var string|null
      */
     protected $code;
     /**
@@ -45,20 +45,20 @@ class Status extends \ArrayObject
     /**
      * The current status code.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
     /**
      * The current status code.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(?string $code) : self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
