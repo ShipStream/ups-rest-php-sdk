@@ -31407,6 +31407,7 @@ components:
           nullable: true
           example: NJ
       description: 'The container which has the physical address.'
+      nullable: true
     AlternateTrackingNumber:
       title: AlternateTrackingNumber
       type: object

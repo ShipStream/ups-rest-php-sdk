@@ -41,9 +41,12 @@ class PackageAddressNormalizer implements DenormalizerInterface, NormalizerInter
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('address', $data)) {
+        if (\array_key_exists('address', $data) && $data['address'] !== null) {
             $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
             unset($data['address']);
+        }
+        elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+            $object->setAddress(null);
         }
         if (\array_key_exists('attentionName', $data)) {
             $object->setAttentionName($data['attentionName']);

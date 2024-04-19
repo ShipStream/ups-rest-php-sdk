@@ -15,7 +15,7 @@ class Location extends \ArrayObject
     /**
      * The container which has the physical address.
      *
-     * @var Address
+     * @var Address|null
      */
     protected $address;
     /**
@@ -27,20 +27,20 @@ class Location extends \ArrayObject
     /**
      * The container which has the physical address.
      *
-     * @return Address
+     * @return Address|null
      */
-    public function getAddress() : Address
+    public function getAddress() : ?Address
     {
         return $this->address;
     }
     /**
      * The container which has the physical address.
      *
-     * @param Address $address
+     * @param Address|null $address
      *
      * @return self
      */
-    public function setAddress(Address $address) : self
+    public function setAddress(?Address $address) : self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
