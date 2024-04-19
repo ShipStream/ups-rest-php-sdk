@@ -13,13 +13,13 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * DocumentID represents a document uploaded to Forms History.  N/A
+     * DocumentID represents a document uploaded to Forms History.
      *
      * @var string[]
      */
     protected $documentID;
     /**
-     * DocumentID represents a document uploaded to Forms History.  N/A
+     * DocumentID represents a document uploaded to Forms History.
      *
      * @return string[]
      */
@@ -28,7 +28,7 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
         return $this->documentID;
     }
     /**
-     * DocumentID represents a document uploaded to Forms History.  N/A
+     * DocumentID represents a document uploaded to Forms History.
      *
      * @param string[] $documentID
      *

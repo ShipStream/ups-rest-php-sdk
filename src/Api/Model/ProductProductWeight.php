@@ -19,7 +19,7 @@ class ProductProductWeight extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-     * Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and "."  (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including "." and can hold up to 1 decimal place.
+     * Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and '.' (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including '.' and can hold up to 1 decimal place.
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class ProductProductWeight extends \ArrayObject
         return $this;
     }
     /**
-     * Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and "."  (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including "." and can hold up to 1 decimal place.
+     * Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and '.' (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including '.' and can hold up to 1 decimal place.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ProductProductWeight extends \ArrayObject
         return $this->weight;
     }
     /**
-     * Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and "."  (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including "." and can hold up to 1 decimal place.
+     * Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and '.' (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including '.' and can hold up to 1 decimal place.
      *
      * @param string $weight
      *

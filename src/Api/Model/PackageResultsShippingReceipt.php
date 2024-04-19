@@ -13,14 +13,13 @@ class PackageResultsShippingReceipt extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for a Image Format.  Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Container for a Image Format.
      *
      * @var ShippingReceiptImageFormat
      */
     protected $imageFormat;
     /**
-    * Base 64 encoded receipt in HTML format. 
-     Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Base 64 encoded receipt in HTML format.
     
     The receipt image is only returned for the first 5 packages.
     *
@@ -28,7 +27,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
     */
     protected $graphicImage;
     /**
-     * Container for a Image Format.  Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Container for a Image Format.
      *
      * @return ShippingReceiptImageFormat
      */
@@ -37,7 +36,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
         return $this->imageFormat;
     }
     /**
-     * Container for a Image Format.  Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Container for a Image Format.
      *
      * @param ShippingReceiptImageFormat $imageFormat
      *
@@ -50,8 +49,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
         return $this;
     }
     /**
-    * Base 64 encoded receipt in HTML format. 
-     Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Base 64 encoded receipt in HTML format.
     
     The receipt image is only returned for the first 5 packages.
     *
@@ -62,8 +60,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-    * Base 64 encoded receipt in HTML format. 
-     Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Base 64 encoded receipt in HTML format.
     
     The receipt image is only returned for the first 5 packages.
     *

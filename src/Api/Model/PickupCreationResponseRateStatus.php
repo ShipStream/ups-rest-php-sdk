@@ -14,10 +14,11 @@ class PickupCreationResponseRateStatus extends \ArrayObject
     }
     /**
     * The rating status.
-    01 = Rate available
-    02 = Rate not available
-    03 = Rate not apply
-    04 = Rate not requested
+    - 01 = Rate available
+    - 02 = Rate not available
+    - 03 = Rate not apply
+    - 04 = Rate not requested
+    
     - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
     - If 02 is returned, then OnCallPickupRateResult will not be returned.
     - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.
@@ -34,10 +35,11 @@ class PickupCreationResponseRateStatus extends \ArrayObject
     protected $description;
     /**
     * The rating status.
-    01 = Rate available
-    02 = Rate not available
-    03 = Rate not apply
-    04 = Rate not requested
+    - 01 = Rate available
+    - 02 = Rate not available
+    - 03 = Rate not apply
+    - 04 = Rate not requested
+    
     - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
     - If 02 is returned, then OnCallPickupRateResult will not be returned.
     - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.
@@ -51,10 +53,11 @@ class PickupCreationResponseRateStatus extends \ArrayObject
     }
     /**
     * The rating status.
-    01 = Rate available
-    02 = Rate not available
-    03 = Rate not apply
-    04 = Rate not requested
+    - 01 = Rate available
+    - 02 = Rate not available
+    - 03 = Rate not apply
+    - 04 = Rate not requested
+    
     - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
     - If 02 is returned, then OnCallPickupRateResult will not be returned.
     - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.

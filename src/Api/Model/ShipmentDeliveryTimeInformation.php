@@ -13,10 +13,17 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
-     *
-     * @var string
-     */
+    * Valid values are:
+    - 02 - Document only
+    - 03 - Non-Document
+    - 04 - WWEF Pallet
+    - 07 - Domestic Pallet
+    
+    If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
+    
+    *
+    * @var string
+    */
     protected $packageBillType;
     /**
      * Pickup container.
@@ -31,21 +38,35 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      */
     protected $returnContractServices;
     /**
-     * Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
-     *
-     * @return string
-     */
+    * Valid values are:
+    - 02 - Document only
+    - 03 - Non-Document
+    - 04 - WWEF Pallet
+    - 07 - Domestic Pallet
+    
+    If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
+    
+    *
+    * @return string
+    */
     public function getPackageBillType() : string
     {
         return $this->packageBillType;
     }
     /**
-     * Valid values are:02 - Document only 03 - Non-Document04 - WWEF Pallet07 - Domestic PalletIf 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
-     *
-     * @param string $packageBillType
-     *
-     * @return self
-     */
+    * Valid values are:
+    - 02 - Document only
+    - 03 - Non-Document
+    - 04 - WWEF Pallet
+    - 07 - Domestic Pallet
+    
+    If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
+    
+    *
+    * @param string $packageBillType
+    *
+    * @return self
+    */
     public function setPackageBillType(string $packageBillType) : self
     {
         $this->initialized['packageBillType'] = true;

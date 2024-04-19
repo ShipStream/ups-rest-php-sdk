@@ -6,15 +6,19 @@ class PickupGetServiceCenterFacilities extends \ShipStream\Ups\Api\Runtime\Clien
 {
     protected $version;
     /**
-     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
-     *
-     * @param string $version Version of API e.g v1
-     * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request. Length 32
-     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
-     * }
-     */
+    * The servicecenterlocations endpoint of the Pickup API helps retrieve service center information in a specified area - including location address, phone number, SLIC (Standard Location Identification Code), and hours of operation for pick-up and drop-off requests
+    *
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v1
+    
+    * @param \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
+    * }
+    */
     public function __construct(string $version, \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper $requestBody, array $headerParameters = [])
     {
         $this->version = $version;
@@ -54,7 +58,10 @@ class PickupGetServiceCenterFacilities extends \ShipStream\Ups\Api\Runtime\Clien
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper
@@ -66,8 +73,17 @@ class PickupGetServiceCenterFacilities extends \ShipStream\Ups\Api\Runtime\Clien
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupGetServiceCenterFacilitiesTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

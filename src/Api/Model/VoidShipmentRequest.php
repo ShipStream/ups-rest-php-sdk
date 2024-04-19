@@ -13,19 +13,19 @@ class VoidShipmentRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Request Container  N/A
+     * Request Container
      *
      * @var VoidShipmentRequestRequest
      */
     protected $request;
     /**
-     * The container for the Ship Void Request.  N/A
+     * The container for the Ship Void Request.
      *
      * @var VoidShipmentRequestVoidShipment
      */
     protected $voidShipment;
     /**
-     * Request Container  N/A
+     * Request Container
      *
      * @return VoidShipmentRequestRequest
      */
@@ -34,7 +34,7 @@ class VoidShipmentRequest extends \ArrayObject
         return $this->request;
     }
     /**
-     * Request Container  N/A
+     * Request Container
      *
      * @param VoidShipmentRequestRequest $request
      *
@@ -47,7 +47,7 @@ class VoidShipmentRequest extends \ArrayObject
         return $this;
     }
     /**
-     * The container for the Ship Void Request.  N/A
+     * The container for the Ship Void Request.
      *
      * @return VoidShipmentRequestVoidShipment
      */
@@ -56,7 +56,7 @@ class VoidShipmentRequest extends \ArrayObject
         return $this->voidShipment;
     }
     /**
-     * The container for the Ship Void Request.  N/A
+     * The container for the Ship Void Request.
      *
      * @param VoidShipmentRequestVoidShipment $voidShipment
      *

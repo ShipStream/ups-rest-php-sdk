@@ -29,9 +29,6 @@ $config = new \ShipStream\Ups\Config([
     // The URL to redirect to after authenticating with UPS using Authorization Code flow.
     // Required only when using Authorization Code flow, defaults to an empty string.
     'redirect_uri' => 'https://example.com/oauth/callback',
-    // Merchant identifier sent with OAuth authentication requests.
-    // Optional, defaults to null.
-    'merchant_id' => 'your_unique_merchant_id'
 ]);
 
 $client = \ShipStream\Ups\ClientFactory::create($config);

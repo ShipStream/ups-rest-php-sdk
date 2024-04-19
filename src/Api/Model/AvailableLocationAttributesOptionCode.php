@@ -39,7 +39,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
     /**
      * Container to hold information regarding pickup details for each day of the week.
      *
-     * @var OptionCodeTransportationPickUpSchedule
+     * @var AvailableLocationAttributesOptionCodeTransportationPickUpSchedule
      */
     protected $transportationPickUpSchedule;
     /**
@@ -133,20 +133,20 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
     /**
      * Container to hold information regarding pickup details for each day of the week.
      *
-     * @return OptionCodeTransportationPickUpSchedule
+     * @return AvailableLocationAttributesOptionCodeTransportationPickUpSchedule
      */
-    public function getTransportationPickUpSchedule() : OptionCodeTransportationPickUpSchedule
+    public function getTransportationPickUpSchedule() : AvailableLocationAttributesOptionCodeTransportationPickUpSchedule
     {
         return $this->transportationPickUpSchedule;
     }
     /**
      * Container to hold information regarding pickup details for each day of the week.
      *
-     * @param OptionCodeTransportationPickUpSchedule $transportationPickUpSchedule
+     * @param AvailableLocationAttributesOptionCodeTransportationPickUpSchedule $transportationPickUpSchedule
      *
      * @return self
      */
-    public function setTransportationPickUpSchedule(OptionCodeTransportationPickUpSchedule $transportationPickUpSchedule) : self
+    public function setTransportationPickUpSchedule(AvailableLocationAttributesOptionCodeTransportationPickUpSchedule $transportationPickUpSchedule) : self
     {
         $this->initialized['transportationPickUpSchedule'] = true;
         $this->transportationPickUpSchedule = $transportationPickUpSchedule;

@@ -45,7 +45,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $deliverToAddresseeOnlyIndicator;
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the ship to address on the shipping label.  This accessorial is not valid with Shipment Indication Type "01 - Hold For Pickup At UPS Access Point" and "02 - UPS Access Point Delivery".
+     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the ship to address on the shipping label. This accessorial is not valid with Shipment Indication Type "01 - Hold For Pickup At UPS Access Point" and "02 - UPS Access Point™ Delivery".
      *
      * @var string
      */
@@ -157,7 +157,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $sDLShipmentIndicator;
     /**
-     * Package Release code allows the consignee or claimant to pick-up a package at a UPS Access Point. The shipper must provide the Package Release Code to the consignee so that they can provide the code to the UPS Access Point personnel as another item for authentication before the package is released to them. Package Release Code is only valid with ShipmentIndicationType 01 - Hold for Pickup at UPS Access Point.  The release code must be between length 4 and 6 and only contain numbers.
+     * Package Release code allows the consignee or claimant to pick-up a package at a UPS Access Point™. The shipper must provide the Package Release Code to the consignee so that they can provide the code to the UPS Access Point personnel as another item for authentication before the package is released to them. Package Release Code is only valid with ShipmentIndicationType 01 - Hold for Pickup at UPS Access Point™.  The release code must be between length 4 and 6 and only contain numbers.
      *
      * @var string
      */
@@ -299,7 +299,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the ship to address on the shipping label.  This accessorial is not valid with Shipment Indication Type "01 - Hold For Pickup At UPS Access Point" and "02 - UPS Access Point Delivery".
+     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the ship to address on the shipping label. This accessorial is not valid with Shipment Indication Type "01 - Hold For Pickup At UPS Access Point" and "02 - UPS Access Point™ Delivery".
      *
      * @return string
      */
@@ -308,7 +308,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this->directDeliveryOnlyIndicator;
     }
     /**
-     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the ship to address on the shipping label.  This accessorial is not valid with Shipment Indication Type "01 - Hold For Pickup At UPS Access Point" and "02 - UPS Access Point Delivery".
+     * Presence/Absence Indicator. Any value inside is ignored. Direct Delivery Only (DDO) accessorial in a request would ensure that delivery is made only to the ship to address on the shipping label. This accessorial is not valid with Shipment Indication Type "01 - Hold For Pickup At UPS Access Point" and "02 - UPS Access Point™ Delivery".
      *
      * @param string $directDeliveryOnlyIndicator
      *
@@ -693,7 +693,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * Package Release code allows the consignee or claimant to pick-up a package at a UPS Access Point. The shipper must provide the Package Release Code to the consignee so that they can provide the code to the UPS Access Point personnel as another item for authentication before the package is released to them. Package Release Code is only valid with ShipmentIndicationType 01 - Hold for Pickup at UPS Access Point.  The release code must be between length 4 and 6 and only contain numbers.
+     * Package Release code allows the consignee or claimant to pick-up a package at a UPS Access Point™. The shipper must provide the Package Release Code to the consignee so that they can provide the code to the UPS Access Point personnel as another item for authentication before the package is released to them. Package Release Code is only valid with ShipmentIndicationType 01 - Hold for Pickup at UPS Access Point™.  The release code must be between length 4 and 6 and only contain numbers.
      *
      * @return string
      */
@@ -702,7 +702,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this->ePRAReleaseCode;
     }
     /**
-     * Package Release code allows the consignee or claimant to pick-up a package at a UPS Access Point. The shipper must provide the Package Release Code to the consignee so that they can provide the code to the UPS Access Point personnel as another item for authentication before the package is released to them. Package Release Code is only valid with ShipmentIndicationType 01 - Hold for Pickup at UPS Access Point.  The release code must be between length 4 and 6 and only contain numbers.
+     * Package Release code allows the consignee or claimant to pick-up a package at a UPS Access Point™. The shipper must provide the Package Release Code to the consignee so that they can provide the code to the UPS Access Point personnel as another item for authentication before the package is released to them. Package Release Code is only valid with ShipmentIndicationType 01 - Hold for Pickup at UPS Access Point™.  The release code must be between length 4 and 6 and only contain numbers.
      *
      * @param string $ePRAReleaseCode
      *

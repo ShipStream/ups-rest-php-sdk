@@ -19,73 +19,73 @@ class LandedCostResponseShipment extends \ArrayObject
      */
     protected $currencyCode;
     /**
-     * Specifies the Import/Ship To/Destination/Final country of the shipment. Check Country List in the Appendices section.
+     * Specifies the Import/Ship-To/Destination/Final country of the shipment. Please check country list in the Appendices section.
      *
      * @var string
      */
     protected $importCountryCode;
     /**
-     * Specifies the Shipment ID in the Landed Cost quote
+     * Specifies the Shipment ID in the Landed Cost quote.
      *
      * @var string
      */
     protected $id;
     /**
-     * An Array of Brokerage fee
+     * An array of Brokerage fees.
      *
      * @var BrokerageFeeItems[]
      */
     protected $brokerageFeeItems;
     /**
-     * Grand Total of all applicable Brokerage Fees
+     * Grand total of all applicable Brokerage fees.
      *
      * @var float
      */
     protected $totalBrokerageFees;
     /**
-     * Total duty amount of this shipment
+     * Total duty amount of this shipment.
      *
      * @var float
      */
     protected $totalDuties;
     /**
-     * Total tax and other fees at commodity level
+     * Total tax and other fees at commodity level.
      *
      * @var float
      */
     protected $totalCommodityLevelTaxesAndFees;
     /**
-     * Total tax and other fees at shipment level
+     * Total tax and other fees at shipment level.
      *
      * @var float
      */
     protected $totalShipmentLevelTaxesAndFees;
     /**
-     * Total VAT of this shipment
+     * Total VAT of the shipment.
      *
      * @var float
      */
     protected $totalVAT;
     /**
-     * Grand Total combined duty, VAT, tax, and other fees of all commodities of this shipment including shipment level taxes and fee
+     * Grand total of the combined duty, VAT, tax, and other fees of all commodities in this shipment including shipment level taxes and fees.
      *
      * @var float
      */
     protected $totalDutyAndTax;
     /**
-     * (TotalDutyAndTax+ totalBrokerageFees)
+     * Sum of totalDutyAndTax + totalBrokerageFees
      *
      * @var float
      */
     protected $grandTotal;
     /**
-     * An Array or List of Landed Cost result for all valid commodities
+     * An array of Landed Cost for all valid commodities.
      *
      * @var ResponseShipmentItems[]
      */
     protected $shipmentItems;
     /**
-     * An identifier unique to the request
+     * An identifier unique to the request.
      *
      * @var string
      */
@@ -97,7 +97,7 @@ class LandedCostResponseShipment extends \ArrayObject
      */
     protected $perfStats;
     /**
-     * Version number of the instance that processed this request. Default by 1
+     * Version number of the instance that processed this request. Default is 1.
      *
      * @var int
      */
@@ -131,7 +131,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Specifies the Import/Ship To/Destination/Final country of the shipment. Check Country List in the Appendices section.
+     * Specifies the Import/Ship-To/Destination/Final country of the shipment. Please check country list in the Appendices section.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->importCountryCode;
     }
     /**
-     * Specifies the Import/Ship To/Destination/Final country of the shipment. Check Country List in the Appendices section.
+     * Specifies the Import/Ship-To/Destination/Final country of the shipment. Please check country list in the Appendices section.
      *
      * @param string $importCountryCode
      *
@@ -153,7 +153,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Specifies the Shipment ID in the Landed Cost quote
+     * Specifies the Shipment ID in the Landed Cost quote.
      *
      * @return string
      */
@@ -162,7 +162,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->id;
     }
     /**
-     * Specifies the Shipment ID in the Landed Cost quote
+     * Specifies the Shipment ID in the Landed Cost quote.
      *
      * @param string $id
      *
@@ -175,7 +175,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * An Array of Brokerage fee
+     * An array of Brokerage fees.
      *
      * @return BrokerageFeeItems[]
      */
@@ -184,7 +184,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->brokerageFeeItems;
     }
     /**
-     * An Array of Brokerage fee
+     * An array of Brokerage fees.
      *
      * @param BrokerageFeeItems[] $brokerageFeeItems
      *
@@ -197,7 +197,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Grand Total of all applicable Brokerage Fees
+     * Grand total of all applicable Brokerage fees.
      *
      * @return float
      */
@@ -206,7 +206,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->totalBrokerageFees;
     }
     /**
-     * Grand Total of all applicable Brokerage Fees
+     * Grand total of all applicable Brokerage fees.
      *
      * @param float $totalBrokerageFees
      *
@@ -219,7 +219,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Total duty amount of this shipment
+     * Total duty amount of this shipment.
      *
      * @return float
      */
@@ -228,7 +228,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->totalDuties;
     }
     /**
-     * Total duty amount of this shipment
+     * Total duty amount of this shipment.
      *
      * @param float $totalDuties
      *
@@ -241,7 +241,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Total tax and other fees at commodity level
+     * Total tax and other fees at commodity level.
      *
      * @return float
      */
@@ -250,7 +250,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->totalCommodityLevelTaxesAndFees;
     }
     /**
-     * Total tax and other fees at commodity level
+     * Total tax and other fees at commodity level.
      *
      * @param float $totalCommodityLevelTaxesAndFees
      *
@@ -263,7 +263,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Total tax and other fees at shipment level
+     * Total tax and other fees at shipment level.
      *
      * @return float
      */
@@ -272,7 +272,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->totalShipmentLevelTaxesAndFees;
     }
     /**
-     * Total tax and other fees at shipment level
+     * Total tax and other fees at shipment level.
      *
      * @param float $totalShipmentLevelTaxesAndFees
      *
@@ -285,7 +285,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Total VAT of this shipment
+     * Total VAT of the shipment.
      *
      * @return float
      */
@@ -294,7 +294,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->totalVAT;
     }
     /**
-     * Total VAT of this shipment
+     * Total VAT of the shipment.
      *
      * @param float $totalVAT
      *
@@ -307,7 +307,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Grand Total combined duty, VAT, tax, and other fees of all commodities of this shipment including shipment level taxes and fee
+     * Grand total of the combined duty, VAT, tax, and other fees of all commodities in this shipment including shipment level taxes and fees.
      *
      * @return float
      */
@@ -316,7 +316,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->totalDutyAndTax;
     }
     /**
-     * Grand Total combined duty, VAT, tax, and other fees of all commodities of this shipment including shipment level taxes and fee
+     * Grand total of the combined duty, VAT, tax, and other fees of all commodities in this shipment including shipment level taxes and fees.
      *
      * @param float $totalDutyAndTax
      *
@@ -329,7 +329,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * (TotalDutyAndTax+ totalBrokerageFees)
+     * Sum of totalDutyAndTax + totalBrokerageFees
      *
      * @return float
      */
@@ -338,7 +338,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->grandTotal;
     }
     /**
-     * (TotalDutyAndTax+ totalBrokerageFees)
+     * Sum of totalDutyAndTax + totalBrokerageFees
      *
      * @param float $grandTotal
      *
@@ -351,7 +351,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * An Array or List of Landed Cost result for all valid commodities
+     * An array of Landed Cost for all valid commodities.
      *
      * @return ResponseShipmentItems[]
      */
@@ -360,7 +360,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->shipmentItems;
     }
     /**
-     * An Array or List of Landed Cost result for all valid commodities
+     * An array of Landed Cost for all valid commodities.
      *
      * @param ResponseShipmentItems[] $shipmentItems
      *
@@ -373,7 +373,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * An identifier unique to the request
+     * An identifier unique to the request.
      *
      * @return string
      */
@@ -382,7 +382,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->transID;
     }
     /**
-     * An identifier unique to the request
+     * An identifier unique to the request.
      *
      * @param string $transID
      *
@@ -417,7 +417,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Version number of the instance that processed this request. Default by 1
+     * Version number of the instance that processed this request. Default is 1.
      *
      * @return int
      */
@@ -426,7 +426,7 @@ class LandedCostResponseShipment extends \ArrayObject
         return $this->alVersion;
     }
     /**
-     * Version number of the instance that processed this request. Default by 1
+     * Version number of the instance that processed this request. Default is 1.
      *
      * @param int $alVersion
      *

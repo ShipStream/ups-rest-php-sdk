@@ -13,33 +13,42 @@ class DryIceWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code of the billing weight measurement units. Values are: KGS or LBS.
-     *
-     * @var string
-     */
+    * DryIce weight unit of measurement code. Valid values:
+    - 00 = KG (Metric Unit of Measurements) or KGS
+    - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * Description of the billing weight measurement units.
+     * Description for unit of measurement for Dry Ice Weight.
      *
      * @var string
      */
     protected $description;
     /**
-     * Code of the billing weight measurement units. Values are: KGS or LBS.
-     *
-     * @return string
-     */
+    * DryIce weight unit of measurement code. Valid values:
+    - 00 = KG (Metric Unit of Measurements) or KGS
+    - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Code of the billing weight measurement units. Values are: KGS or LBS.
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * DryIce weight unit of measurement code. Valid values:
+    - 00 = KG (Metric Unit of Measurements) or KGS
+    - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -47,7 +56,7 @@ class DryIceWeightUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * Description of the billing weight measurement units.
+     * Description for unit of measurement for Dry Ice Weight.
      *
      * @return string
      */
@@ -56,7 +65,7 @@ class DryIceWeightUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the billing weight measurement units.
+     * Description for unit of measurement for Dry Ice Weight.
      *
      * @param string $description
      *

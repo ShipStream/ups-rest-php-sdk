@@ -13,13 +13,13 @@ class RATERequestWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Rate Request container.  N/A
+     * Rate Request container.
      *
      * @var RateRequest
      */
     protected $rateRequest;
     /**
-     * Rate Request container.  N/A
+     * Rate Request container.
      *
      * @return RateRequest
      */
@@ -28,7 +28,7 @@ class RATERequestWrapper extends \ArrayObject
         return $this->rateRequest;
     }
     /**
-     * Rate Request container.  N/A
+     * Rate Request container.
      *
      * @param RateRequest $rateRequest
      *

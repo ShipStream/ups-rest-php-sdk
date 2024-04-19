@@ -64,6 +64,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPickupDateInfo($this->denormalizer->denormalize($data['PickupDateInfo'], 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupDateInfo', 'json', $context));
                 unset($data['PickupDateInfo']);
             }
+            if (\array_key_exists('RateChartType', $data)) {
+                $object->setRateChartType($data['RateChartType']);
+                unset($data['RateChartType']);
+            }
             if (\array_key_exists('TaxInformationIndicator', $data)) {
                 $object->setTaxInformationIndicator($data['TaxInformationIndicator']);
                 unset($data['TaxInformationIndicator']);
@@ -91,6 +95,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data['ServiceDateOption'] = $object->getServiceDateOption();
             if ($object->isInitialized('pickupDateInfo') && null !== $object->getPickupDateInfo()) {
                 $data['PickupDateInfo'] = $this->normalizer->normalize($object->getPickupDateInfo(), 'json', $context);
+            }
+            if ($object->isInitialized('rateChartType') && null !== $object->getRateChartType()) {
+                $data['RateChartType'] = $object->getRateChartType();
             }
             if ($object->isInitialized('taxInformationIndicator') && null !== $object->getTaxInformationIndicator()) {
                 $data['TaxInformationIndicator'] = $object->getTaxInformationIndicator();
@@ -164,6 +171,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPickupDateInfo($this->denormalizer->denormalize($data['PickupDateInfo'], 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupDateInfo', 'json', $context));
                 unset($data['PickupDateInfo']);
             }
+            if (\array_key_exists('RateChartType', $data)) {
+                $object->setRateChartType($data['RateChartType']);
+                unset($data['RateChartType']);
+            }
             if (\array_key_exists('TaxInformationIndicator', $data)) {
                 $object->setTaxInformationIndicator($data['TaxInformationIndicator']);
                 unset($data['TaxInformationIndicator']);
@@ -194,6 +205,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data['ServiceDateOption'] = $object->getServiceDateOption();
             if ($object->isInitialized('pickupDateInfo') && null !== $object->getPickupDateInfo()) {
                 $data['PickupDateInfo'] = $this->normalizer->normalize($object->getPickupDateInfo(), 'json', $context);
+            }
+            if ($object->isInitialized('rateChartType') && null !== $object->getRateChartType()) {
+                $data['RateChartType'] = $object->getRateChartType();
             }
             if ($object->isInitialized('taxInformationIndicator') && null !== $object->getTaxInformationIndicator()) {
                 $data['TaxInformationIndicator'] = $object->getTaxInformationIndicator();

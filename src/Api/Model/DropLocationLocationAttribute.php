@@ -13,39 +13,40 @@ class DropLocationLocationAttribute extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * OptionType is a container that indicates the type of the location attribute. 
-    There are 4 types of attributes. 
-    They are: Location, Retail Location, Additional Services and Program Type.
-    *
-    * @var LocationAttributeOptionType
-    */
+     * 
+     *
+     * @var LocationAttributeOptionType
+     */
     protected $optionType;
+    /**
+    * Option code is a container that contains the information of a particular type of Location or retail location or additional service or program type that the drop location contains.
+    
+    If the OptionType is Location or Retail Location Type there will be one code since each location has only one location type or retail location type.
+    
+    If the Option type is additional services or program types there can be one or more option codes.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
+    *
+    * @var LocationAttributeOptionCode[]
+    */
+    protected $optionCode;
     /**
      * 
      *
-     * @var LocationAttributeOptionCode[]
+     * @return LocationAttributeOptionType
      */
-    protected $optionCode;
-    /**
-    * OptionType is a container that indicates the type of the location attribute. 
-    There are 4 types of attributes. 
-    They are: Location, Retail Location, Additional Services and Program Type.
-    *
-    * @return LocationAttributeOptionType
-    */
     public function getOptionType() : LocationAttributeOptionType
     {
         return $this->optionType;
     }
     /**
-    * OptionType is a container that indicates the type of the location attribute. 
-    There are 4 types of attributes. 
-    They are: Location, Retail Location, Additional Services and Program Type.
-    *
-    * @param LocationAttributeOptionType $optionType
-    *
-    * @return self
-    */
+     * 
+     *
+     * @param LocationAttributeOptionType $optionType
+     *
+     * @return self
+     */
     public function setOptionType(LocationAttributeOptionType $optionType) : self
     {
         $this->initialized['optionType'] = true;
@@ -53,21 +54,35 @@ class DropLocationLocationAttribute extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
-     * @return LocationAttributeOptionCode[]
-     */
+    * Option code is a container that contains the information of a particular type of Location or retail location or additional service or program type that the drop location contains.
+    
+    If the OptionType is Location or Retail Location Type there will be one code since each location has only one location type or retail location type.
+    
+    If the Option type is additional services or program types there can be one or more option codes.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
+    *
+    * @return LocationAttributeOptionCode[]
+    */
     public function getOptionCode() : array
     {
         return $this->optionCode;
     }
     /**
-     * 
-     *
-     * @param LocationAttributeOptionCode[] $optionCode
-     *
-     * @return self
-     */
+    * Option code is a container that contains the information of a particular type of Location or retail location or additional service or program type that the drop location contains.
+    
+    If the OptionType is Location or Retail Location Type there will be one code since each location has only one location type or retail location type.
+    
+    If the Option type is additional services or program types there can be one or more option codes.
+    
+    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+    
+    *
+    * @param LocationAttributeOptionCode[] $optionCode
+    *
+    * @return self
+    */
     public function setOptionCode(array $optionCode) : self
     {
         $this->initialized['optionCode'] = true;

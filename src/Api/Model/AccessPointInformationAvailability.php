@@ -19,7 +19,7 @@ class AccessPointInformationAvailability extends \ArrayObject
      */
     protected $shippingAvailability;
     /**
-     * Holds status of DCR/DCO�availability.
+     * Holds status of DCR/DCO availability.
      *
      * @var AvailabilityDCRAvailability
      */
@@ -47,7 +47,7 @@ class AccessPointInformationAvailability extends \ArrayObject
         return $this;
     }
     /**
-     * Holds status of DCR/DCO�availability.
+     * Holds status of DCR/DCO availability.
      *
      * @return AvailabilityDCRAvailability
      */
@@ -56,7 +56,7 @@ class AccessPointInformationAvailability extends \ArrayObject
         return $this->dCRAvailability;
     }
     /**
-     * Holds status of DCR/DCO�availability.
+     * Holds status of DCR/DCO availability.
      *
      * @param AvailabilityDCRAvailability $dCRAvailability
      *

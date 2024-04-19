@@ -19,7 +19,7 @@ class ShipmentChargesTotalChargesWithTaxes extends \ArrayObject
      */
     protected $currencyCode;
     /**
-     * TotalChargesWithTaxes monetary value amount.  Valid values are from 0 to 9999999999999999.99
+     * TotalChargesWithTaxes monetary value amount.  Valid values are from 0 to 99999999999999.99
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class ShipmentChargesTotalChargesWithTaxes extends \ArrayObject
         return $this;
     }
     /**
-     * TotalChargesWithTaxes monetary value amount.  Valid values are from 0 to 9999999999999999.99
+     * TotalChargesWithTaxes monetary value amount.  Valid values are from 0 to 99999999999999.99
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ShipmentChargesTotalChargesWithTaxes extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-     * TotalChargesWithTaxes monetary value amount.  Valid values are from 0 to 9999999999999999.99
+     * TotalChargesWithTaxes monetary value amount.  Valid values are from 0 to 99999999999999.99
      *
      * @param string $monetaryValue
      *

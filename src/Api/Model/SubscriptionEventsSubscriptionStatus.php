@@ -13,14 +13,14 @@ class SubscriptionEventsSubscriptionStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Status types of subscription. 
-    Valid values:
-    UN � Unknown
-    AT � Activate
-    P � Pending
-    A �Active
-    I � Inactive
-    S - Suspended
+    * Status types of subscription. Valid values:
+    - UN – Unknown
+    - AT – Activate
+    - P – Pending
+    - A –Active
+    - I – Inactive
+    - S - Suspended
+    
     *
     * @var string
     */
@@ -39,14 +39,14 @@ class SubscriptionEventsSubscriptionStatus extends \ArrayObject
     */
     protected $description;
     /**
-    * Status types of subscription. 
-    Valid values:
-    UN � Unknown
-    AT � Activate
-    P � Pending
-    A �Active
-    I � Inactive
-    S - Suspended
+    * Status types of subscription. Valid values:
+    - UN – Unknown
+    - AT – Activate
+    - P – Pending
+    - A –Active
+    - I – Inactive
+    - S - Suspended
+    
     *
     * @return string
     */
@@ -55,14 +55,14 @@ class SubscriptionEventsSubscriptionStatus extends \ArrayObject
         return $this->code;
     }
     /**
-    * Status types of subscription. 
-    Valid values:
-    UN � Unknown
-    AT � Activate
-    P � Pending
-    A �Active
-    I � Inactive
-    S - Suspended
+    * Status types of subscription. Valid values:
+    - UN – Unknown
+    - AT – Activate
+    - P – Pending
+    - A –Active
+    - I – Inactive
+    - S - Suspended
+    
     *
     * @param string $code
     *

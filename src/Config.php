@@ -23,8 +23,6 @@ final class Config
 
     private string $redirectUri;
 
-    private ?string $merchantId;
-
     /**
      * @throws InvalidArgumentException
      */
@@ -44,7 +42,6 @@ final class Config
         $this->clientId = $config['client_id'];
         $this->clientSecret = $config['client_secret'];
         $this->redirectUri = $config['redirect_uri'] ?? '';
-        $this->merchantId = $config['merchant_id'] ?? null;
     }
 
     public function getEnvironmentBaseUrl(): string
@@ -77,8 +74,11 @@ final class Config
         return (string)$this->redirectUri;
     }
 
+    /**
+     * @deprecated
+     */
     public function getMerchantId(): ?string
     {
-        return $this->merchantId;
+        return null;
     }
 }

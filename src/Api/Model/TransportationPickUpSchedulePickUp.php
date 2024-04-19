@@ -13,33 +13,35 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Day of the week for scheduled pickup. Valid values are: 
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
+    * Day of week.
+    - 1 - Sunday
+    - 2 - Monday
+    - 3 - Tuesday
+    - 4 - Wednesday
+    - 5 - Thursday
+    - 6 - Friday
+    - 7 - Saturday.
+    
     *
     * @var string
     */
     protected $dayOfWeek;
     /**
-     * Container to hold information regarding pickup time and pickup availability indicator.
+     * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
      *
      * @var PickUpPickUpDetails
      */
     protected $pickUpDetails;
     /**
-    * Day of the week for scheduled pickup. Valid values are: 
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
+    * Day of week.
+    - 1 - Sunday
+    - 2 - Monday
+    - 3 - Tuesday
+    - 4 - Wednesday
+    - 5 - Thursday
+    - 6 - Friday
+    - 7 - Saturday.
+    
     *
     * @return string
     */
@@ -48,14 +50,15 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return $this->dayOfWeek;
     }
     /**
-    * Day of the week for scheduled pickup. Valid values are: 
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
+    * Day of week.
+    - 1 - Sunday
+    - 2 - Monday
+    - 3 - Tuesday
+    - 4 - Wednesday
+    - 5 - Thursday
+    - 6 - Friday
+    - 7 - Saturday.
+    
     *
     * @param string $dayOfWeek
     *
@@ -68,7 +71,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return $this;
     }
     /**
-     * Container to hold information regarding pickup time and pickup availability indicator.
+     * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
      *
      * @return PickUpPickUpDetails
      */
@@ -77,7 +80,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return $this->pickUpDetails;
     }
     /**
-     * Container to hold information regarding pickup time and pickup availability indicator.
+     * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
      *
      * @param PickUpPickUpDetails $pickUpDetails
      *

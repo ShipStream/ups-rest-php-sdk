@@ -15,7 +15,7 @@ class ChargeCardCardAddress extends \ArrayObject
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
      *
-     * @var string
+     * @var string[]
      */
     protected $addressLine;
     /**
@@ -38,7 +38,8 @@ class ChargeCardCardAddress extends \ArrayObject
     protected $postalCode;
     /**
     * Charge card billing address country or territory code defined by ISO-3166.
-     Upper-case two letter string. For Discover card it should be US.
+    
+    Upper-case two letter string. For Discover card it should be US.
     *
     * @var string
     */
@@ -46,20 +47,20 @@ class ChargeCardCardAddress extends \ArrayObject
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
      *
-     * @return string
+     * @return string[]
      */
-    public function getAddressLine() : string
+    public function getAddressLine() : array
     {
         return $this->addressLine;
     }
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
      *
-     * @param string $addressLine
+     * @param string[] $addressLine
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -133,7 +134,8 @@ class ChargeCardCardAddress extends \ArrayObject
     }
     /**
     * Charge card billing address country or territory code defined by ISO-3166.
-     Upper-case two letter string. For Discover card it should be US.
+    
+    Upper-case two letter string. For Discover card it should be US.
     *
     * @return string
     */
@@ -143,7 +145,8 @@ class ChargeCardCardAddress extends \ArrayObject
     }
     /**
     * Charge card billing address country or territory code defined by ISO-3166.
-     Upper-case two letter string. For Discover card it should be US.
+    
+    Upper-case two letter string. For Discover card it should be US.
     *
     * @param string $countryCode
     *

@@ -13,33 +13,42 @@ class BrokerageFeeItems extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Brokerage Charge name this shipment. Possible Values: 1. Entry Preparation Fee 2. Disbursement Fee 3. Additional Line Fee
-     *
-     * @var string
-     */
+    * Brokerage charge name for this shipment. Possible Values:
+    1. Entry Preparation Fee 
+    2. Disbursement Fee 
+    3. Additional Line Fee
+    *
+    * @var string
+    */
     protected $chargeName;
     /**
-     * Fee amount for the brokerage charges
+     * Fee amount for the brokerage charges.
      *
      * @var float
      */
     protected $chargeAmount;
     /**
-     * Brokerage Charge name this shipment. Possible Values: 1. Entry Preparation Fee 2. Disbursement Fee 3. Additional Line Fee
-     *
-     * @return string
-     */
+    * Brokerage charge name for this shipment. Possible Values:
+    1. Entry Preparation Fee 
+    2. Disbursement Fee 
+    3. Additional Line Fee
+    *
+    * @return string
+    */
     public function getChargeName() : string
     {
         return $this->chargeName;
     }
     /**
-     * Brokerage Charge name this shipment. Possible Values: 1. Entry Preparation Fee 2. Disbursement Fee 3. Additional Line Fee
-     *
-     * @param string $chargeName
-     *
-     * @return self
-     */
+    * Brokerage charge name for this shipment. Possible Values:
+    1. Entry Preparation Fee 
+    2. Disbursement Fee 
+    3. Additional Line Fee
+    *
+    * @param string $chargeName
+    *
+    * @return self
+    */
     public function setChargeName(string $chargeName) : self
     {
         $this->initialized['chargeName'] = true;
@@ -47,7 +56,7 @@ class BrokerageFeeItems extends \ArrayObject
         return $this;
     }
     /**
-     * Fee amount for the brokerage charges
+     * Fee amount for the brokerage charges.
      *
      * @return float
      */
@@ -56,7 +65,7 @@ class BrokerageFeeItems extends \ArrayObject
         return $this->chargeAmount;
     }
     /**
-     * Fee amount for the brokerage charges
+     * Fee amount for the brokerage charges.
      *
      * @param float $chargeAmount
      *

@@ -13,25 +13,33 @@ class XAVResponseAddressClassification extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Contains the classification code of the address:
-    0 - UnClassified
-    1 - Commercial
-    2 - Residential
+    * Contains the classification code of the input address.
+    
+    Valid values:
+    
+    - 0 - UnClassified
+    - 1 - Commercial
+    - 2 - Residential
+    
     *
     * @var string
     */
     protected $code;
     /**
-     * Contains the text description of the address classification code (see Code above).
+     * Contains the text description of the address classification code: UnClassified, Commercial, Residential
      *
      * @var string
      */
     protected $description;
     /**
-    * Contains the classification code of the address:
-    0 - UnClassified
-    1 - Commercial
-    2 - Residential
+    * Contains the classification code of the input address.
+    
+    Valid values:
+    
+    - 0 - UnClassified
+    - 1 - Commercial
+    - 2 - Residential
+    
     *
     * @return string
     */
@@ -40,10 +48,14 @@ class XAVResponseAddressClassification extends \ArrayObject
         return $this->code;
     }
     /**
-    * Contains the classification code of the address:
-    0 - UnClassified
-    1 - Commercial
-    2 - Residential
+    * Contains the classification code of the input address.
+    
+    Valid values:
+    
+    - 0 - UnClassified
+    - 1 - Commercial
+    - 2 - Residential
+    
     *
     * @param string $code
     *
@@ -56,7 +68,7 @@ class XAVResponseAddressClassification extends \ArrayObject
         return $this;
     }
     /**
-     * Contains the text description of the address classification code (see Code above).
+     * Contains the text description of the address classification code: UnClassified, Commercial, Residential
      *
      * @return string
      */
@@ -65,7 +77,7 @@ class XAVResponseAddressClassification extends \ArrayObject
         return $this->description;
     }
     /**
-     * Contains the text description of the address classification code (see Code above).
+     * Contains the text description of the address classification code: UnClassified, Commercial, Residential
      *
      * @param string $description
      *

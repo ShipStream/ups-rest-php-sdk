@@ -37,7 +37,7 @@ class ContactsSoldTo extends \ArrayObject
      */
     protected $phone;
     /**
-     * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 - Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
+     * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 – Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
      *
      * @var string
      */
@@ -54,6 +54,12 @@ class ContactsSoldTo extends \ArrayObject
      * @var string
      */
     protected $eMailAddress;
+    /**
+     * SoldTo AccountNumber
+     *
+     * @var string
+     */
+    protected $accountNumber;
     /**
      * Company Name.
      *
@@ -143,7 +149,7 @@ class ContactsSoldTo extends \ArrayObject
         return $this;
     }
     /**
-     * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 - Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
+     * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 – Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
      *
      * @return string
      */
@@ -152,7 +158,7 @@ class ContactsSoldTo extends \ArrayObject
         return $this->option;
     }
     /**
-     * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 - Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
+     * The text associated with the code will be printed in the sold to section of the NAFTA CO form.  The values indicate the following: 01 – Unknown.  Applies to NAFTA CO form. Possible Values are 01 and 02.
      *
      * @param string $option
      *
@@ -206,6 +212,28 @@ class ContactsSoldTo extends \ArrayObject
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
+        return $this;
+    }
+    /**
+     * SoldTo AccountNumber
+     *
+     * @return string
+     */
+    public function getAccountNumber() : string
+    {
+        return $this->accountNumber;
+    }
+    /**
+     * SoldTo AccountNumber
+     *
+     * @param string $accountNumber
+     *
+     * @return self
+     */
+    public function setAccountNumber(string $accountNumber) : self
+    {
+        $this->initialized['accountNumber'] = true;
+        $this->accountNumber = $accountNumber;
         return $this;
     }
 }

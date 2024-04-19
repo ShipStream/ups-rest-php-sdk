@@ -15,7 +15,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
     /**
      * Container to hold the Ground Freight Pricing payment type information.  It is required if the request has Ground Freight Pricing shipment indicator.
      *
-     * @var string
+     * @var FRSPaymentInformationType
      */
     protected $type;
     /**
@@ -33,20 +33,20 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
     /**
      * Container to hold the Ground Freight Pricing payment type information.  It is required if the request has Ground Freight Pricing shipment indicator.
      *
-     * @return string
+     * @return FRSPaymentInformationType
      */
-    public function getType() : string
+    public function getType() : FRSPaymentInformationType
     {
         return $this->type;
     }
     /**
      * Container to hold the Ground Freight Pricing payment type information.  It is required if the request has Ground Freight Pricing shipment indicator.
      *
-     * @param string $type
+     * @param FRSPaymentInformationType $type
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(FRSPaymentInformationType $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

@@ -13,19 +13,19 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Name. (Also includes the building name)Return if available.
+     * Name. Not relevant for candidate list.
      *
      * @var string
      */
     protected $consigneeName;
     /**
-     * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
+     * Address Line Information. The address level or Intersection information must be returned if provided in the request. The AddressLine will be a combination of up to 3 separate address lines, each separated by a new line character.
      *
      * @var string
      */
     protected $addressLine;
     /**
-     * Subdivision within a City.� e.g., a Barrio.
+     * Subdivision within a City. e.g., a Barrio.
      *
      * @var string
      */
@@ -55,13 +55,13 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
      */
     protected $postcodeExtendedLow;
     /**
-     * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
+     * A country or territory code. Valid values for candidates to be returned are: US-United States (meaning US 50)
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Name. (Also includes the building name)Return if available.
+     * Name. Not relevant for candidate list.
      *
      * @return string
      */
@@ -70,7 +70,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this->consigneeName;
     }
     /**
-     * Name. (Also includes the building name)Return if available.
+     * Name. Not relevant for candidate list.
      *
      * @param string $consigneeName
      *
@@ -83,7 +83,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
+     * Address Line Information. The address level or Intersection information must be returned if provided in the request. The AddressLine will be a combination of up to 3 separate address lines, each separated by a new line character.
      *
      * @return string
      */
@@ -92,7 +92,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
+     * Address Line Information. The address level or Intersection information must be returned if provided in the request. The AddressLine will be a combination of up to 3 separate address lines, each separated by a new line character.
      *
      * @param string $addressLine
      *
@@ -105,7 +105,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Subdivision within a City.� e.g., a Barrio.
+     * Subdivision within a City. e.g., a Barrio.
      *
      * @return string
      */
@@ -114,7 +114,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this->politicalDivision3;
     }
     /**
-     * Subdivision within a City.� e.g., a Barrio.
+     * Subdivision within a City. e.g., a Barrio.
      *
      * @param string $politicalDivision3
      *
@@ -215,7 +215,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
+     * A country or territory code. Valid values for candidates to be returned are: US-United States (meaning US 50)
      *
      * @return string
      */
@@ -224,7 +224,7 @@ class GeocodeCandidateAddressKeyFormat extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
+     * A country or territory code. Valid values for candidates to be returned are: US-United States (meaning US 50)
      *
      * @param string $countryCode
      *

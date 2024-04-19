@@ -21,7 +21,7 @@ class PackageServiceOptionsCOD extends \ArrayObject
     /**
      * COD Amount container.
      *
-     * @var CODCODAmount
+     * @var PackageServiceOptionsCODCODAmount
      */
     protected $cODAmount;
     /**
@@ -49,20 +49,20 @@ class PackageServiceOptionsCOD extends \ArrayObject
     /**
      * COD Amount container.
      *
-     * @return CODCODAmount
+     * @return PackageServiceOptionsCODCODAmount
      */
-    public function getCODAmount() : CODCODAmount
+    public function getCODAmount() : PackageServiceOptionsCODCODAmount
     {
         return $this->cODAmount;
     }
     /**
      * COD Amount container.
      *
-     * @param CODCODAmount $cODAmount
+     * @param PackageServiceOptionsCODCODAmount $cODAmount
      *
      * @return self
      */
-    public function setCODAmount(CODCODAmount $cODAmount) : self
+    public function setCODAmount(PackageServiceOptionsCODCODAmount $cODAmount) : self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

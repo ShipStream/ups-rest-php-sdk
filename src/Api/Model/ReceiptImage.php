@@ -13,41 +13,41 @@ class ReceiptImage extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container for the format of the receipt.
      *
-     * @var ImageImageFormat
+     * @var ReceiptImageImageFormat
      */
     protected $imageFormat;
     /**
-     * Base 64 encoded High Value Report image.
+     * Base 64 encoded graphic image
      *
      * @var string
      */
     protected $graphicImage;
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container for the format of the receipt.
      *
-     * @return ImageImageFormat
+     * @return ReceiptImageImageFormat
      */
-    public function getImageFormat() : ImageImageFormat
+    public function getImageFormat() : ReceiptImageImageFormat
     {
         return $this->imageFormat;
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container for the format of the receipt.
      *
-     * @param ImageImageFormat $imageFormat
+     * @param ReceiptImageImageFormat $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ImageImageFormat $imageFormat) : self
+    public function setImageFormat(ReceiptImageImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
         return $this;
     }
     /**
-     * Base 64 encoded High Value Report image.
+     * Base 64 encoded graphic image
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ReceiptImage extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-     * Base 64 encoded High Value Report image.
+     * Base 64 encoded graphic image
      *
      * @param string $graphicImage
      *

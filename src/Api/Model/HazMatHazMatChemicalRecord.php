@@ -19,7 +19,7 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
      */
     protected $chemicalRecordIdentifier;
     /**
-     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.
+     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'  Applies only if SubVersion is greater than or equal to 1701.
      *
      * @var string
      */
@@ -61,7 +61,7 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
      */
     protected $reportableQuantity;
     /**
-     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
      *
      * @var string
      */
@@ -103,10 +103,13 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
      */
     protected $technicalName;
     /**
-     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
-     *
-     * @var string
-     */
+    * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+    
+    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
+    
+    *
+    * @var string
+    */
     protected $additionalDescription;
     /**
      * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box). Required if CommodityRegulatedLevelCode = LQ or FR.   Applies only if SubVersion is greater than or equal to 1701.
@@ -167,7 +170,7 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.
+     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'  Applies only if SubVersion is greater than or equal to 1701.
      *
      * @return string
      */
@@ -176,7 +179,7 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
         return $this->classDivisionNumber;
     }
     /**
-     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is "LQ" or "FR"  Applies only if SubVersion is greater than or equal to 1701.
+     * This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'  Applies only if SubVersion is greater than or equal to 1701.
      *
      * @param string $classDivisionNumber
      *
@@ -321,7 +324,7 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
      *
      * @return string
      */
@@ -330,7 +333,7 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
         return $this->subRiskClass;
     }
     /**
-     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one " separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).  Applies only if SubVersion is greater than or equal to 1701.
      *
      * @param string $subRiskClass
      *
@@ -475,21 +478,27 @@ class HazMatHazMatChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
-     *
-     * @return string
-     */
+    * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+    
+    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
+    
+    *
+    * @return string
+    */
     public function getAdditionalDescription() : string
     {
         return $this->additionalDescription;
     }
     /**
-     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
-     *
-     * @param string $additionalDescription
-     *
-     * @return self
-     */
+    * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+    
+    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.  Applies only if SubVersion is greater than or equal to 1701.
+    
+    *
+    * @param string $additionalDescription
+    *
+    * @return self
+    */
     public function setAdditionalDescription(string $additionalDescription) : self
     {
         $this->initialized['additionalDescription'] = true;

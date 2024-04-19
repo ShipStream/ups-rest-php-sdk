@@ -19,13 +19,15 @@ class RateResponseResponse extends \ArrayObject
      */
     protected $responseStatus;
     /**
-     * 
+     * Alert Container.  There can be zero to many alert containers with code and description.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ResponseAlert[]
      */
     protected $alert;
     /**
-     * 
+     * Alert Detail Container. Currently applies to and returned only for request containing HazMat and SubVersion greater than or equal to 1701.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ResponseAlertDetail[]
      */
@@ -59,7 +61,8 @@ class RateResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Alert Container.  There can be zero to many alert containers with code and description.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ResponseAlert[]
      */
@@ -68,7 +71,8 @@ class RateResponseResponse extends \ArrayObject
         return $this->alert;
     }
     /**
-     * 
+     * Alert Container.  There can be zero to many alert containers with code and description.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ResponseAlert[] $alert
      *
@@ -81,7 +85,8 @@ class RateResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Alert Detail Container. Currently applies to and returned only for request containing HazMat and SubVersion greater than or equal to 1701.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ResponseAlertDetail[]
      */
@@ -90,7 +95,8 @@ class RateResponseResponse extends \ArrayObject
         return $this->alertDetail;
     }
     /**
-     * 
+     * Alert Detail Container. Currently applies to and returned only for request containing HazMat and SubVersion greater than or equal to 1701.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ResponseAlertDetail[] $alertDetail
      *

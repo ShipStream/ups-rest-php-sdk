@@ -72,6 +72,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRefrigerationIndicator($data['RefrigerationIndicator']);
                 unset($data['RefrigerationIndicator']);
             }
+            if (\array_key_exists('Insurance', $data)) {
+                $object->setInsurance($this->denormalizer->denormalize($data['Insurance'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsurance', 'json', $context));
+                unset($data['Insurance']);
+            }
             if (\array_key_exists('UPSPremiumCareIndicator', $data)) {
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
@@ -117,6 +121,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             if ($object->isInitialized('refrigerationIndicator') && null !== $object->getRefrigerationIndicator()) {
                 $data['RefrigerationIndicator'] = $object->getRefrigerationIndicator();
+            }
+            if ($object->isInitialized('insurance') && null !== $object->getInsurance()) {
+                $data['Insurance'] = $this->normalizer->normalize($object->getInsurance(), 'json', $context);
             }
             if ($object->isInitialized('uPSPremiumCareIndicator') && null !== $object->getUPSPremiumCareIndicator()) {
                 $data['UPSPremiumCareIndicator'] = $object->getUPSPremiumCareIndicator();
@@ -201,6 +208,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRefrigerationIndicator($data['RefrigerationIndicator']);
                 unset($data['RefrigerationIndicator']);
             }
+            if (\array_key_exists('Insurance', $data)) {
+                $object->setInsurance($this->denormalizer->denormalize($data['Insurance'], 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsurance', 'json', $context));
+                unset($data['Insurance']);
+            }
             if (\array_key_exists('UPSPremiumCareIndicator', $data)) {
                 $object->setUPSPremiumCareIndicator($data['UPSPremiumCareIndicator']);
                 unset($data['UPSPremiumCareIndicator']);
@@ -249,6 +260,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             if ($object->isInitialized('refrigerationIndicator') && null !== $object->getRefrigerationIndicator()) {
                 $data['RefrigerationIndicator'] = $object->getRefrigerationIndicator();
+            }
+            if ($object->isInitialized('insurance') && null !== $object->getInsurance()) {
+                $data['Insurance'] = $this->normalizer->normalize($object->getInsurance(), 'json', $context);
             }
             if ($object->isInitialized('uPSPremiumCareIndicator') && null !== $object->getUPSPremiumCareIndicator()) {
                 $data['UPSPremiumCareIndicator'] = $object->getUPSPremiumCareIndicator();

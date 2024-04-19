@@ -59,7 +59,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         {
             $data = [];
             $data['Code'] = $object->getCode();
-            $data['Description'] = $object->getDescription();
+            if ($object->isInitialized('description') && null !== $object->getDescription()) {
+                $data['Description'] = $object->getDescription();
+            }
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $data[$key] = $value;
@@ -124,7 +126,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         {
             $data = [];
             $data['Code'] = $object->getCode();
-            $data['Description'] = $object->getDescription();
+            if ($object->isInitialized('description') && null !== $object->getDescription()) {
+                $data['Description'] = $object->getDescription();
+            }
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $data[$key] = $value;

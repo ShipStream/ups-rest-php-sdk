@@ -19,7 +19,7 @@ class ShipmentInvoiceLineTotal extends \ArrayObject
      */
     protected $currencyCode;
     /**
-     * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999.00
+     * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class ShipmentInvoiceLineTotal extends \ArrayObject
         return $this;
     }
     /**
-     * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999.00
+     * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ShipmentInvoiceLineTotal extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-     * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999.00
+     * Invoice Line Total amount for the entire shipment.  Valid values are from 1 to 99999999
      *
      * @param string $monetaryValue
      *

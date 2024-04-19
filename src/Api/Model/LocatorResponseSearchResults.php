@@ -13,7 +13,8 @@ class LocatorResponseSearchResults extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * If the origin address provided in the location request document does not have a match, a list of candidate addresses, geocodes and optionally a landmark will be returned.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var SearchResultsGeocodeCandidate[]
      */
@@ -23,17 +24,19 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     The disclaimer will note this deviation from the requested search criteria. The disclaimer is also the location where the user will receive information regarding a one-time pickup option if the first location is greater than 20 miles from the origin.
     *
-    * @var array<string, mixed>[]
+    * @var string
     */
     protected $disclaimer;
     /**
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SearchResultsDropLocation
+     * @var SearchResultsDropLocation[]
      */
     protected $dropLocation;
     /**
-     * 
+     * This container contains the information about the currently existing Retail Locations or Additional Services or Program types.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var SearchResultsAvailableLocationAttributes[]
      */
@@ -47,7 +50,8 @@ class LocatorResponseSearchResults extends \ArrayObject
     */
     protected $activeAvailableAccessPointIndicator;
     /**
-     * 
+     * If the origin address provided in the location request document does not have a match, a list of candidate addresses, geocodes and optionally a landmark will be returned.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return SearchResultsGeocodeCandidate[]
      */
@@ -56,7 +60,8 @@ class LocatorResponseSearchResults extends \ArrayObject
         return $this->geocodeCandidate;
     }
     /**
-     * 
+     * If the origin address provided in the location request document does not have a match, a list of candidate addresses, geocodes and optionally a landmark will be returned.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param SearchResultsGeocodeCandidate[] $geocodeCandidate
      *
@@ -73,9 +78,9 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     The disclaimer will note this deviation from the requested search criteria. The disclaimer is also the location where the user will receive information regarding a one-time pickup option if the first location is greater than 20 miles from the origin.
     *
-    * @return array<string, mixed>[]
+    * @return string
     */
-    public function getDisclaimer() : array
+    public function getDisclaimer() : string
     {
         return $this->disclaimer;
     }
@@ -84,11 +89,11 @@ class LocatorResponseSearchResults extends \ArrayObject
     
     The disclaimer will note this deviation from the requested search criteria. The disclaimer is also the location where the user will receive information regarding a one-time pickup option if the first location is greater than 20 miles from the origin.
     *
-    * @param array<string, mixed>[] $disclaimer
+    * @param string $disclaimer
     *
     * @return self
     */
-    public function setDisclaimer(array $disclaimer) : self
+    public function setDisclaimer(string $disclaimer) : self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -96,28 +101,31 @@ class LocatorResponseSearchResults extends \ArrayObject
     }
     /**
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SearchResultsDropLocation
+     * @return SearchResultsDropLocation[]
      */
-    public function getDropLocation() : SearchResultsDropLocation
+    public function getDropLocation() : array
     {
         return $this->dropLocation;
     }
     /**
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SearchResultsDropLocation $dropLocation
+     * @param SearchResultsDropLocation[] $dropLocation
      *
      * @return self
      */
-    public function setDropLocation(SearchResultsDropLocation $dropLocation) : self
+    public function setDropLocation(array $dropLocation) : self
     {
         $this->initialized['dropLocation'] = true;
         $this->dropLocation = $dropLocation;
         return $this;
     }
     /**
-     * 
+     * This container contains the information about the currently existing Retail Locations or Additional Services or Program types.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return SearchResultsAvailableLocationAttributes[]
      */
@@ -126,7 +134,8 @@ class LocatorResponseSearchResults extends \ArrayObject
         return $this->availableLocationAttributes;
     }
     /**
-     * 
+     * This container contains the information about the currently existing Retail Locations or Additional Services or Program types.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param SearchResultsAvailableLocationAttributes[] $availableLocationAttributes
      *

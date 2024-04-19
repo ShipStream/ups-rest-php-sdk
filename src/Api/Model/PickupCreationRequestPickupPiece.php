@@ -33,12 +33,13 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     */
     protected $destinationCountryCode;
     /**
-    * Container type. 
-    Valid values:
-    01 = PACKAGE
-    02 = UPS LETTER
-    03 = PALLET
+    * Container type. Valid values:
+    - 01 = PACKAGE
+    - 02 = UPS LETTER
+    - 03 = PALLET
+    
     Note: 03 is used for only WWEF services
+    
     *
     * @var string
     */
@@ -114,12 +115,13 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
         return $this;
     }
     /**
-    * Container type. 
-    Valid values:
-    01 = PACKAGE
-    02 = UPS LETTER
-    03 = PALLET
+    * Container type. Valid values:
+    - 01 = PACKAGE
+    - 02 = UPS LETTER
+    - 03 = PALLET
+    
     Note: 03 is used for only WWEF services
+    
     *
     * @return string
     */
@@ -128,12 +130,13 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
         return $this->containerCode;
     }
     /**
-    * Container type. 
-    Valid values:
-    01 = PACKAGE
-    02 = UPS LETTER
-    03 = PALLET
+    * Container type. Valid values:
+    - 01 = PACKAGE
+    - 02 = UPS LETTER
+    - 03 = PALLET
+    
     Note: 03 is used for only WWEF services
+    
     *
     * @param string $containerCode
     *

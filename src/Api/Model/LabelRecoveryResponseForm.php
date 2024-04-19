@@ -13,31 +13,28 @@ class LabelRecoveryResponseForm extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Container tag for the International forms image. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @var FormImage
-    */
+     * Container tag for the International Forms image.
+     *
+     * @var LabelRecoveryFormImage
+     */
     protected $image;
     /**
-    * Container tag for the International forms image. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @return FormImage
-    */
-    public function getImage() : FormImage
+     * Container tag for the International Forms image.
+     *
+     * @return LabelRecoveryFormImage
+     */
+    public function getImage() : LabelRecoveryFormImage
     {
         return $this->image;
     }
     /**
-    * Container tag for the International forms image. 
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @param FormImage $image
-    *
-    * @return self
-    */
-    public function setImage(FormImage $image) : self
+     * Container tag for the International Forms image.
+     *
+     * @param LabelRecoveryFormImage $image
+     *
+     * @return self
+     */
+    public function setImage(LabelRecoveryFormImage $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

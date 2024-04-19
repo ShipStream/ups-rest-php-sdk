@@ -13,7 +13,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Valid values: authorization_code, client_credentials
+     * Valid values: authorization_code
      *
      * @var string
      */
@@ -31,7 +31,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      */
     protected $redirectUri;
     /**
-     * Valid values: authorization_code, client_credentials
+     * Valid values: authorization_code
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
         return $this->grantType;
     }
     /**
-     * Valid values: authorization_code, client_credentials
+     * Valid values: authorization_code
      *
      * @param string $grantType
      *

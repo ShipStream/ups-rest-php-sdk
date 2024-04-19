@@ -13,19 +13,19 @@ class ProducerAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address information of the Producer.
+     * Address line of the Producer.
      *
      * @var string[]
      */
     protected $addressLine;
     /**
-     * Address line of the Producer.
+     * City of the Producer.  Applies to NAFTA CO. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
      * @var string
      */
     protected $city;
     /**
-     * State of the Producer.
+     * State of the Producer.  Applies to NAFTA CO. Required for certain countries or territories.
      *
      * @var string
      */
@@ -37,19 +37,19 @@ class ProducerAddress extends \ArrayObject
      */
     protected $town;
     /**
-     * Postal code of the Producer.
+     * Postal code of the Producer.  Applies to NAFTA CO. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Country or Territory code of the Producer.
+     * Country or Territory code of the Producer.  Applies to NAFTA CO.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Address information of the Producer.
+     * Address line of the Producer.
      *
      * @return string[]
      */
@@ -58,7 +58,7 @@ class ProducerAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address information of the Producer.
+     * Address line of the Producer.
      *
      * @param string[] $addressLine
      *
@@ -71,7 +71,7 @@ class ProducerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Address line of the Producer.
+     * City of the Producer.  Applies to NAFTA CO. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class ProducerAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * Address line of the Producer.
+     * City of the Producer.  Applies to NAFTA CO. Conditionally required for: NAFTA CO, when Producer option is not specified.
      *
      * @param string $city
      *
@@ -93,7 +93,7 @@ class ProducerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * State of the Producer.
+     * State of the Producer.  Applies to NAFTA CO. Required for certain countries or territories.
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class ProducerAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * State of the Producer.
+     * State of the Producer.  Applies to NAFTA CO. Required for certain countries or territories.
      *
      * @param string $stateProvinceCode
      *
@@ -137,7 +137,7 @@ class ProducerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Postal code of the Producer.
+     * Postal code of the Producer.  Applies to NAFTA CO. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class ProducerAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * Postal code of the Producer.
+     * Postal code of the Producer.  Applies to NAFTA CO. Required for certain countries or territories. The length of the postal code depends on the country or territory code.
      *
      * @param string $postalCode
      *
@@ -159,7 +159,7 @@ class ProducerAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Country or Territory code of the Producer.
+     * Country or Territory code of the Producer.  Applies to NAFTA CO.
      *
      * @return string
      */
@@ -168,7 +168,7 @@ class ProducerAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Country or Territory code of the Producer.
+     * Country or Territory code of the Producer.  Applies to NAFTA CO.
      *
      * @param string $countryCode
      *

@@ -20,10 +20,10 @@ class ShipperChargeCard extends \ArrayObject
     protected $cardHolderName;
     /**
     * Charge card type. Valid values:
-    01 = American Express
-    03 = Discover
-    04 = Mastercard
-    06 = VISA  Discover card Pickup country US only.
+    - 01 = American Express
+    - 03 = Discover
+    - 04 = Mastercard
+    - 06 = VISA  Discover card Pickup country US only.
     *
     * @var string
     */
@@ -81,10 +81,10 @@ class ShipperChargeCard extends \ArrayObject
     }
     /**
     * Charge card type. Valid values:
-    01 = American Express
-    03 = Discover
-    04 = Mastercard
-    06 = VISA  Discover card Pickup country US only.
+    - 01 = American Express
+    - 03 = Discover
+    - 04 = Mastercard
+    - 06 = VISA  Discover card Pickup country US only.
     *
     * @return string
     */
@@ -94,10 +94,10 @@ class ShipperChargeCard extends \ArrayObject
     }
     /**
     * Charge card type. Valid values:
-    01 = American Express
-    03 = Discover
-    04 = Mastercard
-    06 = VISA  Discover card Pickup country US only.
+    - 01 = American Express
+    - 03 = Discover
+    - 04 = Mastercard
+    - 06 = VISA  Discover card Pickup country US only.
     *
     * @param string $cardType
     *

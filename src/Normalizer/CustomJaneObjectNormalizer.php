@@ -31,6 +31,7 @@ use ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse;
 use ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation;
 use ShipStream\Ups\Api\Model\PickupPendingStatusResponse;
 use ShipStream\Ups\Api\Model\PickupRateResponseRateResult;
+use ShipStream\Ups\Api\Model\PickupRateResponseResponse;
 use ShipStream\Ups\Api\Model\PreNotificationResponseResponse;
 use ShipStream\Ups\Api\Model\PushToImageRepositoryResponseResponse;
 use ShipStream\Ups\Api\Model\QuantumViewEventsSubscriptionEvents;
@@ -55,7 +56,9 @@ use ShipStream\Ups\Api\Model\SubscriptionFileException;
 use ShipStream\Ups\Api\Model\SubscriptionFileGeneric;
 use ShipStream\Ups\Api\Model\SubscriptionFileManifest;
 use ShipStream\Ups\Api\Model\SubscriptionFileOrigin;
+use ShipStream\Ups\Api\Model\UploadResponseFormsHistoryDocumentID;
 use ShipStream\Ups\Api\Model\UploadResponseResponse;
+use ShipStream\Ups\Api\Model\XAVResponse;
 use ShipStream\Ups\Api\Model\XAVResponseCandidate;
 use ShipStream\Ups\Api\Normalizer\JaneObjectNormalizer;
 
@@ -66,6 +69,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[ResponseError::class] = ResponseErrorNormalizer::class;
         // AddressValidation
         $this->normalizers[CandidateAddressKeyFormat::class] = AddressValidation\CandidateAddressKeyFormatNormalizer::class;
+        $this->normalizers[XAVResponse::class] = AddressValidation\XAVResponseNormalizer::class;
         $this->normalizers[XAVResponseCandidate::class] = AddressValidation\XAVResponseCandidateNormalizer::class;
         // DangerousGoods
         $this->normalizers[AcceptanceAuditPreCheckResponse::class] = DangerousGoods\AcceptanceAuditPreCheckResponseNormalizer::class;
@@ -91,6 +95,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[DeleteResponseResponse::class] = Paperless\DeleteResponseResponseNormalizer::class;
         $this->normalizers[PushToImageRepositoryResponseResponse::class] = Paperless\PushToImageRepositoryResponseResponseNormalizer::class;
         $this->normalizers[UploadResponseResponse::class] = Paperless\UploadResponseResponseNormalizer::class;
+        $this->normalizers[UploadResponseFormsHistoryDocumentID::class] = Paperless\UploadResponseFormsHistoryDocumentIDNormalizer::class;
         // Pickup
         $this->normalizers[DropOffFacilitiesAddress::class] = Pickup\DropOffFacilitiesAddressNormalizer::class;
         $this->normalizers[PickupGetPoliticalDivision1ListResponse::class] = Pickup\PickupGetPoliticalDivision1ListResponseNormalizer::class;
@@ -98,6 +103,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[PickupPendingStatusResponse::class] = Pickup\PickupPendingStatusResponseNormalizer::class;
         $this->normalizers[PickupRateResponseRateResult::class] = Pickup\PickupRateResponseRateResultNormalizer::class;
         $this->normalizers[ServiceCenterLocationDropOffFacilities::class] = Pickup\ServiceCenterLocationDropOffFacilitiesNormalizer::class;
+        $this->normalizers[PickupRateResponseResponse::class] = Pickup\PickupRateResponseResponseNormalizer::class;
         // PreNotification
         $this->normalizers[PreNotificationResponseResponse::class] = PreNotification\PreNotificationResponseResponseNormalizer::class;
         // QuantumView

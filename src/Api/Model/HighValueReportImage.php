@@ -15,11 +15,11 @@ class HighValueReportImage extends \ArrayObject
     /**
      * Container for the High Value Report image format information for Import Control Shipments.
      *
-     * @var ImageImageFormat
+     * @var HighValueReportImageImageFormat
      */
     protected $imageFormat;
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded High Value Report image.
      *
      * @var string
      */
@@ -27,27 +27,27 @@ class HighValueReportImage extends \ArrayObject
     /**
      * Container for the High Value Report image format information for Import Control Shipments.
      *
-     * @return ImageImageFormat
+     * @return HighValueReportImageImageFormat
      */
-    public function getImageFormat() : ImageImageFormat
+    public function getImageFormat() : HighValueReportImageImageFormat
     {
         return $this->imageFormat;
     }
     /**
      * Container for the High Value Report image format information for Import Control Shipments.
      *
-     * @param ImageImageFormat $imageFormat
+     * @param HighValueReportImageImageFormat $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ImageImageFormat $imageFormat) : self
+    public function setImageFormat(HighValueReportImageImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
         return $this;
     }
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded High Value Report image.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class HighValueReportImage extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-     * Base 64 Encoded PDF Image.
+     * Base 64 encoded High Value Report image.
      *
      * @param string $graphicImage
      *

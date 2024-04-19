@@ -13,19 +13,19 @@ class SummaryResultStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Package Level void status code.  A numeric value that describes the status code. 1 = Voided or Already Voided;  0 = Not Voided
+     * Code for the status of the Summary Result
      *
      * @var string
      */
     protected $code;
     /**
-     * A text description of the status code.
+     * Description of the status of the Summary Result
      *
      * @var string
      */
     protected $description;
     /**
-     * The Package Level void status code.  A numeric value that describes the status code. 1 = Voided or Already Voided;  0 = Not Voided
+     * Code for the status of the Summary Result
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class SummaryResultStatus extends \ArrayObject
         return $this->code;
     }
     /**
-     * The Package Level void status code.  A numeric value that describes the status code. 1 = Voided or Already Voided;  0 = Not Voided
+     * Code for the status of the Summary Result
      *
      * @param string $code
      *
@@ -47,7 +47,7 @@ class SummaryResultStatus extends \ArrayObject
         return $this;
     }
     /**
-     * A text description of the status code.
+     * Description of the status of the Summary Result
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class SummaryResultStatus extends \ArrayObject
         return $this->description;
     }
     /**
-     * A text description of the status code.
+     * Description of the status of the Summary Result
      *
      * @param string $description
      *

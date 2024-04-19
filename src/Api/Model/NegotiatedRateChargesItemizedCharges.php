@@ -25,13 +25,13 @@ class NegotiatedRateChargesItemizedCharges extends \ArrayObject
      */
     protected $description;
     /**
-     * The IATA currency code associated with the Itemized Charge costs for the shipment.
+     * Itemized Charges currency code type. The currency code used in the Shipment request is returned.
      *
      * @var string
      */
     protected $currencyCode;
     /**
-     * Itemized Charges value amount.
+     * Itemized Charges value amount.  Valid values are from 0 to 99999999999999.99
      *
      * @var string
      */
@@ -87,7 +87,7 @@ class NegotiatedRateChargesItemizedCharges extends \ArrayObject
         return $this;
     }
     /**
-     * The IATA currency code associated with the Itemized Charge costs for the shipment.
+     * Itemized Charges currency code type. The currency code used in the Shipment request is returned.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class NegotiatedRateChargesItemizedCharges extends \ArrayObject
         return $this->currencyCode;
     }
     /**
-     * The IATA currency code associated with the Itemized Charge costs for the shipment.
+     * Itemized Charges currency code type. The currency code used in the Shipment request is returned.
      *
      * @param string $currencyCode
      *
@@ -109,7 +109,7 @@ class NegotiatedRateChargesItemizedCharges extends \ArrayObject
         return $this;
     }
     /**
-     * Itemized Charges value amount.
+     * Itemized Charges value amount.  Valid values are from 0 to 99999999999999.99
      *
      * @return string
      */
@@ -118,7 +118,7 @@ class NegotiatedRateChargesItemizedCharges extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-     * Itemized Charges value amount.
+     * Itemized Charges value amount.  Valid values are from 0 to 99999999999999.99
      *
      * @param string $monetaryValue
      *

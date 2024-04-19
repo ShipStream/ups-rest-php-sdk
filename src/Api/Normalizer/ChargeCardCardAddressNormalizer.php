@@ -41,7 +41,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('AddressLine', $data)) {
-                $object->setAddressLine($data['AddressLine']);
+                $values = [];
+                foreach ($data['AddressLine'] as $value) {
+                    $values[] = $value;
+                }
+                $object->setAddressLine($values);
                 unset($data['AddressLine']);
             }
             if (\array_key_exists('City', $data)) {
@@ -60,9 +64,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -71,7 +75,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         {
             $data = [];
             if ($object->isInitialized('addressLine') && null !== $object->getAddressLine()) {
-                $data['AddressLine'] = $object->getAddressLine();
+                $values = [];
+                foreach ($object->getAddressLine() as $value) {
+                    $values[] = $value;
+                }
+                $data['AddressLine'] = $values;
             }
             if ($object->isInitialized('city') && null !== $object->getCity()) {
                 $data['City'] = $object->getCity();
@@ -83,9 +91,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['PostalCode'] = $object->getPostalCode();
             }
             $data['CountryCode'] = $object->getCountryCode();
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
@@ -126,7 +134,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('AddressLine', $data)) {
-                $object->setAddressLine($data['AddressLine']);
+                $values = [];
+                foreach ($data['AddressLine'] as $value) {
+                    $values[] = $value;
+                }
+                $object->setAddressLine($values);
                 unset($data['AddressLine']);
             }
             if (\array_key_exists('City', $data)) {
@@ -145,9 +157,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCountryCode($data['CountryCode']);
                 unset($data['CountryCode']);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -159,7 +171,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         {
             $data = [];
             if ($object->isInitialized('addressLine') && null !== $object->getAddressLine()) {
-                $data['AddressLine'] = $object->getAddressLine();
+                $values = [];
+                foreach ($object->getAddressLine() as $value) {
+                    $values[] = $value;
+                }
+                $data['AddressLine'] = $values;
             }
             if ($object->isInitialized('city') && null !== $object->getCity()) {
                 $data['City'] = $object->getCity();
@@ -171,9 +187,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['PostalCode'] = $object->getPostalCode();
             }
             $data['CountryCode'] = $object->getCountryCode();
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;

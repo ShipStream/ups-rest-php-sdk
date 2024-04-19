@@ -13,33 +13,45 @@ class FRSPaymentInformationType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Payer Type code for FRS Rate request. Valid Values are: 01 = Prepaid 02 = FreightCollect 03 = BillThirdParty
-     *
-     * @var string
-     */
+    * Valid codes:
+    - 01 = Prepaid
+    - 02 = FreightCollect
+    - 03 = ThirdParty
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * Text description of the code representing the GFP payment type.
+     * Specifies the description for Ground Freight Pricing payment type.
      *
      * @var string
      */
     protected $description;
     /**
-     * Payer Type code for FRS Rate request. Valid Values are: 01 = Prepaid 02 = FreightCollect 03 = BillThirdParty
-     *
-     * @return string
-     */
+    * Valid codes:
+    - 01 = Prepaid
+    - 02 = FreightCollect
+    - 03 = ThirdParty
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Payer Type code for FRS Rate request. Valid Values are: 01 = Prepaid 02 = FreightCollect 03 = BillThirdParty
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * Valid codes:
+    - 01 = Prepaid
+    - 02 = FreightCollect
+    - 03 = ThirdParty
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -47,7 +59,7 @@ class FRSPaymentInformationType extends \ArrayObject
         return $this;
     }
     /**
-     * Text description of the code representing the GFP payment type.
+     * Specifies the description for Ground Freight Pricing payment type.
      *
      * @return string
      */
@@ -56,7 +68,7 @@ class FRSPaymentInformationType extends \ArrayObject
         return $this->description;
     }
     /**
-     * Text description of the code representing the GFP payment type.
+     * Specifies the description for Ground Freight Pricing payment type.
      *
      * @param string $description
      *

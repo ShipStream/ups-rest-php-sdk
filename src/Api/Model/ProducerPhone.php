@@ -13,19 +13,19 @@ class ProducerPhone extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The locations phone number of the Producer.
+     * The locations phone number of the Producer. Applies to NAFTA CO.
      *
      * @var string
      */
     protected $number;
     /**
-     * The locations phone extension of the Producer.
+     * The locations phone extension of the Producer. Applies to NAFTA CO.
      *
      * @var string
      */
     protected $extension;
     /**
-     * The locations phone number of the Producer.
+     * The locations phone number of the Producer. Applies to NAFTA CO.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class ProducerPhone extends \ArrayObject
         return $this->number;
     }
     /**
-     * The locations phone number of the Producer.
+     * The locations phone number of the Producer. Applies to NAFTA CO.
      *
      * @param string $number
      *
@@ -47,7 +47,7 @@ class ProducerPhone extends \ArrayObject
         return $this;
     }
     /**
-     * The locations phone extension of the Producer.
+     * The locations phone extension of the Producer. Applies to NAFTA CO.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ProducerPhone extends \ArrayObject
         return $this->extension;
     }
     /**
-     * The locations phone extension of the Producer.
+     * The locations phone extension of the Producer. Applies to NAFTA CO.
      *
      * @param string $extension
      *

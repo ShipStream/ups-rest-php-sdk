@@ -25,7 +25,8 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $shipTo;
     /**
-     * 
+     * Shipment-level reference numbers.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ManifestReferenceNumber[]
      */
@@ -55,18 +56,19 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $scheduledDeliveryTime;
     /**
-    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. 
-    Valid values:� 
-    1 = Letter
-    2 = Document (Non-Letter Document)
-    3 = Non-Document
-    4 = Pallet
+    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
+    - 1 = Letter
+    - 2 = Document (Non-Letter Document)
+    - 3 = Non-Document
+    - 4 = Pallet
+    
     *
     * @var string
     */
     protected $documentsOnly;
     /**
-     * 
+     * Defines a package.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ManifestPackage[]
      */
@@ -148,7 +150,7 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $importControl;
     /**
-     * Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.
+     * Indicates Label Delivery Method, Values are: LDE Electronic Label. LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM Print and Mail Label.
      *
      * @var string
      */
@@ -178,13 +180,13 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $uPScarbonneutral;
     /**
-     * This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.
+     * This element will have value "PAC" for CAR shipments. For no CAR shipments this element will not be appeared.
      *
      * @var string
      */
     protected $product;
     /**
-     * UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared
+     * UPS Return and Exchange – This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not appear
      *
      * @var string
      */
@@ -316,16 +318,20 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $sundayNonPremiumCommercialDeliveryIndicator;
     /**
-     * �Y� indicates that the UPS Premier accessorial is provided.
+     * "Y" indicates that the UPS Premier accessorial is provided.
      *
      * @var string
      */
     protected $uPSPremierAccessorialIndicator;
     /**
-     * Indicates the UPS Premier category applied to the package Valid values: 'PRS' � UPS Premier Silver, 'PRG' � UPS Premier Gold, 'PRP' - UPS Premier Platinum
-     *
-     * @var string
-     */
+    * Indicates the UPS Premier category applied to the package Valid values:
+    - 'PRS' – UPS Premier Silver
+    - 'PRG' – UPS Premier Gold
+    - 'PRP' - UPS Premier Platinum
+    
+    *
+    * @var string
+    */
     protected $uPSPremierCategoryCode;
     /**
      * Shipper's record for a shipment.
@@ -372,7 +378,8 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Shipment-level reference numbers.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ManifestReferenceNumber[]
      */
@@ -381,7 +388,8 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->referenceNumber;
     }
     /**
-     * 
+     * Shipment-level reference numbers.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ManifestReferenceNumber[] $referenceNumber
      *
@@ -482,12 +490,12 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. 
-    Valid values:� 
-    1 = Letter
-    2 = Document (Non-Letter Document)
-    3 = Non-Document
-    4 = Pallet
+    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
+    - 1 = Letter
+    - 2 = Document (Non-Letter Document)
+    - 3 = Non-Document
+    - 4 = Pallet
+    
     *
     * @return string
     */
@@ -496,12 +504,12 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->documentsOnly;
     }
     /**
-    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. 
-    Valid values:� 
-    1 = Letter
-    2 = Document (Non-Letter Document)
-    3 = Non-Document
-    4 = Pallet
+    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
+    - 1 = Letter
+    - 2 = Document (Non-Letter Document)
+    - 3 = Non-Document
+    - 4 = Pallet
+    
     *
     * @param string $documentsOnly
     *
@@ -514,7 +522,8 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Defines a package.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ManifestPackage[]
      */
@@ -523,7 +532,8 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->package;
     }
     /**
-     * 
+     * Defines a package.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ManifestPackage[] $package
      *
@@ -798,7 +808,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.
+     * Indicates Label Delivery Method, Values are: LDE Electronic Label. LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM Print and Mail Label.
      *
      * @return string
      */
@@ -807,7 +817,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->labelDeliveryMethod;
     }
     /**
-     * Indicates Label Delivery Method, Values are: LDE Electronic Label .LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM� Print and Mail Label.
+     * Indicates Label Delivery Method, Values are: LDE Electronic Label. LDO One Attempt. LDP Print Label. LDT Three Attempt. LPM Print and Mail Label.
      *
      * @param string $labelDeliveryMethod
      *
@@ -908,7 +918,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.
+     * This element will have value "PAC" for CAR shipments. For no CAR shipments this element will not be appeared.
      *
      * @return string
      */
@@ -917,7 +927,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->product;
     }
     /**
-     * This element will have value �PAC� for CAR shipments. For no CAR shipments this element will not be appeared.
+     * This element will have value "PAC" for CAR shipments. For no CAR shipments this element will not be appeared.
      *
      * @param string $product
      *
@@ -930,7 +940,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared
+     * UPS Return and Exchange – This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not appear
      *
      * @return string
      */
@@ -939,7 +949,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->uPSReturnsExchange;
     }
     /**
-     * UPS Return and Exchange � This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not be appeared
+     * UPS Return and Exchange – This element will appear with value Y only when UPS Return and Exchange was requested. For no UPS Returns and Exchange then this element will not appear
      *
      * @param string $uPSReturnsExchange
      *
@@ -1414,7 +1424,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * �Y� indicates that the UPS Premier accessorial is provided.
+     * "Y" indicates that the UPS Premier accessorial is provided.
      *
      * @return string
      */
@@ -1423,7 +1433,7 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this->uPSPremierAccessorialIndicator;
     }
     /**
-     * �Y� indicates that the UPS Premier accessorial is provided.
+     * "Y" indicates that the UPS Premier accessorial is provided.
      *
      * @param string $uPSPremierAccessorialIndicator
      *
@@ -1436,21 +1446,29 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-     * Indicates the UPS Premier category applied to the package Valid values: 'PRS' � UPS Premier Silver, 'PRG' � UPS Premier Gold, 'PRP' - UPS Premier Platinum
-     *
-     * @return string
-     */
+    * Indicates the UPS Premier category applied to the package Valid values:
+    - 'PRS' – UPS Premier Silver
+    - 'PRG' – UPS Premier Gold
+    - 'PRP' - UPS Premier Platinum
+    
+    *
+    * @return string
+    */
     public function getUPSPremierCategoryCode() : string
     {
         return $this->uPSPremierCategoryCode;
     }
     /**
-     * Indicates the UPS Premier category applied to the package Valid values: 'PRS' � UPS Premier Silver, 'PRG' � UPS Premier Gold, 'PRP' - UPS Premier Platinum
-     *
-     * @param string $uPSPremierCategoryCode
-     *
-     * @return self
-     */
+    * Indicates the UPS Premier category applied to the package Valid values:
+    - 'PRS' – UPS Premier Silver
+    - 'PRG' – UPS Premier Gold
+    - 'PRP' - UPS Premier Platinum
+    
+    *
+    * @param string $uPSPremierCategoryCode
+    *
+    * @return self
+    */
     public function setUPSPremierCategoryCode(string $uPSPremierCategoryCode) : self
     {
         $this->initialized['uPSPremierCategoryCode'] = true;

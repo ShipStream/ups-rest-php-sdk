@@ -13,20 +13,21 @@ class PackageResultsServiceOptionsCharges extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Package accessorial charges currency code type. The currency code used in the Shipment request is returned.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Package accessorial charges currency code type. The currency code used in the Shipment request is returned.
      *
      * @var string
      */
     protected $currencyCode;
     /**
-    * Package accessorial charges value amount.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Package accessorial charges value amount.
+    
     Valid values are from 0 to 99999999999999.99
     *
     * @var string
     */
     protected $monetaryValue;
     /**
-     * Package accessorial charges currency code type. The currency code used in the Shipment request is returned.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Package accessorial charges currency code type. The currency code used in the Shipment request is returned.
      *
      * @return string
      */
@@ -35,7 +36,7 @@ class PackageResultsServiceOptionsCharges extends \ArrayObject
         return $this->currencyCode;
     }
     /**
-     * Package accessorial charges currency code type. The currency code used in the Shipment request is returned.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Package accessorial charges currency code type. The currency code used in the Shipment request is returned.
      *
      * @param string $currencyCode
      *
@@ -48,7 +49,8 @@ class PackageResultsServiceOptionsCharges extends \ArrayObject
         return $this;
     }
     /**
-    * Package accessorial charges value amount.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Package accessorial charges value amount.
+    
     Valid values are from 0 to 99999999999999.99
     *
     * @return string
@@ -58,7 +60,8 @@ class PackageResultsServiceOptionsCharges extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-    * Package accessorial charges value amount.   Applicable only for ShipmentResponse and ShipAcceptResponse.
+    * Package accessorial charges value amount.
+    
     Valid values are from 0 to 99999999999999.99
     *
     * @param string $monetaryValue

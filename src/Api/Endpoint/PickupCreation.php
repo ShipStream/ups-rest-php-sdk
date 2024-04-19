@@ -8,11 +8,11 @@ class PickupCreation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imp
     /**
     * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
     *
-    * @param string $version Version of the API. Valid values: 
-    v1
-    v1607
-    v1707.
-    Length 5
+    * @param string $version Version of the API.
+    
+    Valid values:
+    - v2403
+    
     * @param \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper $requestBody 
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
@@ -58,7 +58,10 @@ class PickupCreation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imp
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\PickupCreationBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\PickupCreationUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\PickupCreationForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\PickupCreationTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper
@@ -70,8 +73,17 @@ class PickupCreation extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imp
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PICKUPCreationResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\PickupCreationUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCreationBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCreationUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCreationForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCreationTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

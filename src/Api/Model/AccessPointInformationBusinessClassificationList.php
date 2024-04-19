@@ -13,13 +13,15 @@ class AccessPointInformationBusinessClassificationList extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Container to hold Business classification of UPS access point.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var BusinessClassificationListBusinessClassification[]
      */
     protected $businessClassification;
     /**
-     * 
+     * Container to hold Business classification of UPS access point.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return BusinessClassificationListBusinessClassification[]
      */
@@ -28,7 +30,8 @@ class AccessPointInformationBusinessClassificationList extends \ArrayObject
         return $this->businessClassification;
     }
     /**
-     * 
+     * Container to hold Business classification of UPS access point.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param BusinessClassificationListBusinessClassification[] $businessClassification
      *

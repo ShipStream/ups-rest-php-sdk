@@ -44,8 +44,9 @@ class XAVResponse extends \ArrayObject
     protected $addressClassification;
     /**
      * Candidate Container.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var XAVResponseCandidate|null
+     * @var XAVResponseCandidate[]
      */
     protected $candidate;
     /**
@@ -160,21 +161,23 @@ class XAVResponse extends \ArrayObject
     }
     /**
      * Candidate Container.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return XAVResponseCandidate|null
+     * @return XAVResponseCandidate[]
      */
-    public function getCandidate() : ?XAVResponseCandidate
+    public function getCandidate() : array
     {
         return $this->candidate;
     }
     /**
      * Candidate Container.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param XAVResponseCandidate|null $candidate
+     * @param XAVResponseCandidate[] $candidate
      *
      * @return self
      */
-    public function setCandidate(?XAVResponseCandidate $candidate) : self
+    public function setCandidate(array $candidate) : self
     {
         $this->initialized['candidate'] = true;
         $this->candidate = $candidate;

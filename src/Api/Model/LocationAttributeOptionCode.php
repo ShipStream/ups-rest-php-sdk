@@ -13,51 +13,63 @@ class LocationAttributeOptionCode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * N/A
-     *
-     * @var string
-     */
+    * Only applicabe for OptionType = 03 (Additional Services). Valid values:
+    - 06 - Non transportation
+    - 07 - Transportation
+    
+    *
+    * @var string
+    */
     protected $category;
     /**
-     * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
+     * These codes vary by country or territory. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country. Refer to Location Search Option Codes in the Appendix for additional information.
      *
      * @var string
      */
     protected $code;
     /**
-     * Description is only applicable for Program types and Additional Services. It is not provided with Location detail. It is only provided when the request is for All available additional ser-vices or all available Program types. Text will be displayed in the locale requested.
-     *
-     * @var string
-     */
+    * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
+    
+    It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
+    
+    *
+    * @var string
+    */
     protected $description;
     /**
-     * Name will indicate the name of Location/Retail Location or Additional Services or Program Types depending on the option code. Text will be displayed in the locale requested.
+     * Name will indicate the name of any Additional Services/ Program Types depending on the option code. Text will be displayed in the locale selected.
      *
      * @var string
      */
     protected $name;
     /**
-     * Container to hold information regarding pickup details for each day of the week.
+     * TransportationPickUpSchedule container contains details of Latest Drop Off time/Pickup Time for the transportation services (Ground/Air/Standard/Express/International) of the location.
      *
      * @var OptionCodeTransportationPickUpSchedule
      */
     protected $transportationPickUpSchedule;
     /**
-     * N/A
-     *
-     * @return string
-     */
+    * Only applicabe for OptionType = 03 (Additional Services). Valid values:
+    - 06 - Non transportation
+    - 07 - Transportation
+    
+    *
+    * @return string
+    */
     public function getCategory() : string
     {
         return $this->category;
     }
     /**
-     * N/A
-     *
-     * @param string $category
-     *
-     * @return self
-     */
+    * Only applicabe for OptionType = 03 (Additional Services). Valid values:
+    - 06 - Non transportation
+    - 07 - Transportation
+    
+    *
+    * @param string $category
+    *
+    * @return self
+    */
     public function setCategory(string $category) : self
     {
         $this->initialized['category'] = true;
@@ -65,7 +77,7 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this;
     }
     /**
-     * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
+     * These codes vary by country or territory. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country. Refer to Location Search Option Codes in the Appendix for additional information.
      *
      * @return string
      */
@@ -74,7 +86,7 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this->code;
     }
     /**
-     * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
+     * These codes vary by country or territory. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country. Refer to Location Search Option Codes in the Appendix for additional information.
      *
      * @param string $code
      *
@@ -87,21 +99,27 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this;
     }
     /**
-     * Description is only applicable for Program types and Additional Services. It is not provided with Location detail. It is only provided when the request is for All available additional ser-vices or all available Program types. Text will be displayed in the locale requested.
-     *
-     * @return string
-     */
+    * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
+    
+    It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
+    
+    *
+    * @return string
+    */
     public function getDescription() : string
     {
         return $this->description;
     }
     /**
-     * Description is only applicable for Program types and Additional Services. It is not provided with Location detail. It is only provided when the request is for All available additional ser-vices or all available Program types. Text will be displayed in the locale requested.
-     *
-     * @param string $description
-     *
-     * @return self
-     */
+    * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
+    
+    It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
+    
+    *
+    * @param string $description
+    *
+    * @return self
+    */
     public function setDescription(string $description) : self
     {
         $this->initialized['description'] = true;
@@ -109,7 +127,7 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this;
     }
     /**
-     * Name will indicate the name of Location/Retail Location or Additional Services or Program Types depending on the option code. Text will be displayed in the locale requested.
+     * Name will indicate the name of any Additional Services/ Program Types depending on the option code. Text will be displayed in the locale selected.
      *
      * @return string
      */
@@ -118,7 +136,7 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this->name;
     }
     /**
-     * Name will indicate the name of Location/Retail Location or Additional Services or Program Types depending on the option code. Text will be displayed in the locale requested.
+     * Name will indicate the name of any Additional Services/ Program Types depending on the option code. Text will be displayed in the locale selected.
      *
      * @param string $name
      *
@@ -131,7 +149,7 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this;
     }
     /**
-     * Container to hold information regarding pickup details for each day of the week.
+     * TransportationPickUpSchedule container contains details of Latest Drop Off time/Pickup Time for the transportation services (Ground/Air/Standard/Express/International) of the location.
      *
      * @return OptionCodeTransportationPickUpSchedule
      */
@@ -140,7 +158,7 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this->transportationPickUpSchedule;
     }
     /**
-     * Container to hold information regarding pickup details for each day of the week.
+     * TransportationPickUpSchedule container contains details of Latest Drop Off time/Pickup Time for the transportation services (Ground/Air/Standard/Express/International) of the location.
      *
      * @param OptionCodeTransportationPickUpSchedule $transportationPickUpSchedule
      *

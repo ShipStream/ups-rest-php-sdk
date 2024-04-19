@@ -13,21 +13,24 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates the name of the International
-    Form requested.
-    Valid values:  
-    01 - Invoice
-    03 - CO
-    04 - NAFTA CO
-    05 - Partial Invoice
-    06 - Packinglist
-    07 - Customer Generated Forms
-    08 - Air Freight Packing List
-    09 - CN22 Form
-    10 - UPS Premium Care Form
-    11 - EEI
-    For shipment with return service, 01, 05 or 10 are the only valid values. 
+    * Indicates the name of the International Form requested.
+    
+    Valid values:
+    - 01 - Invoice
+    - 03 - CO
+    - 04 - NAFTA CO
+    - 05 - Partial Invoice
+    - 06 - Packinglist
+    - 07 - Customer Generated Forms
+    - 08 – Air Freight Packing List
+    - 09 - CN22 Form
+    - 10 – UPS Premium Care Form
+    - 11 - EEI
+    
+    For shipment with return service, 05 or 10 are the only valid values.
+    
     Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
+    
     *
     * @var string[]
     */
@@ -186,10 +189,13 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $exportDate;
     /**
-     * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.  Applies to CO and EEI forms only. Required for CO and EEI forms.
-     *
-     * @var string
-     */
+    * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
+    
+    If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
+    
+    *
+    * @var string
+    */
     protected $exportingCarrier;
     /**
      * The four-character Standard Carrier Alpha Code (SCAC) for vessel, rail, and truck shipments. For air shipment, enter the two or three character International Air Transport Association (IATA) code.  Applies to EEI forms only. No Validations.
@@ -246,9 +252,16 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $loadingPier;
     /**
-    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only. 
+    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
     
-    Valid values: R - Related, N - Non-related.
+    Valid values:
+    - R - Related
+    - N - Non-related.
+    
+    Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
+    
+    Default will be set to N - Non-related if invalid code present with length of one.
+    
     *
     * @var string
     */
@@ -284,21 +297,24 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $hazardousMaterialsIndicator;
     /**
-    * Indicates the name of the International
-    Form requested.
-    Valid values:  
-    01 - Invoice
-    03 - CO
-    04 - NAFTA CO
-    05 - Partial Invoice
-    06 - Packinglist
-    07 - Customer Generated Forms
-    08 - Air Freight Packing List
-    09 - CN22 Form
-    10 - UPS Premium Care Form
-    11 - EEI
-    For shipment with return service, 01, 05 or 10 are the only valid values. 
+    * Indicates the name of the International Form requested.
+    
+    Valid values:
+    - 01 - Invoice
+    - 03 - CO
+    - 04 - NAFTA CO
+    - 05 - Partial Invoice
+    - 06 - Packinglist
+    - 07 - Customer Generated Forms
+    - 08 – Air Freight Packing List
+    - 09 - CN22 Form
+    - 10 – UPS Premium Care Form
+    - 11 - EEI
+    
+    For shipment with return service, 05 or 10 are the only valid values.
+    
     Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
+    
     *
     * @return string[]
     */
@@ -307,21 +323,24 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this->formType;
     }
     /**
-    * Indicates the name of the International
-    Form requested.
-    Valid values:  
-    01 - Invoice
-    03 - CO
-    04 - NAFTA CO
-    05 - Partial Invoice
-    06 - Packinglist
-    07 - Customer Generated Forms
-    08 - Air Freight Packing List
-    09 - CN22 Form
-    10 - UPS Premium Care Form
-    11 - EEI
-    For shipment with return service, 01, 05 or 10 are the only valid values. 
+    * Indicates the name of the International Form requested.
+    
+    Valid values:
+    - 01 - Invoice
+    - 03 - CO
+    - 04 - NAFTA CO
+    - 05 - Partial Invoice
+    - 06 - Packinglist
+    - 07 - Customer Generated Forms
+    - 08 – Air Freight Packing List
+    - 09 - CN22 Form
+    - 10 – UPS Premium Care Form
+    - 11 - EEI
+    
+    For shipment with return service, 05 or 10 are the only valid values.
+    
     Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
+    
     *
     * @param string[] $formType
     *
@@ -860,21 +879,27 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-     * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.  Applies to CO and EEI forms only. Required for CO and EEI forms.
-     *
-     * @return string
-     */
+    * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
+    
+    If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
+    
+    *
+    * @return string
+    */
     public function getExportingCarrier() : string
     {
         return $this->exportingCarrier;
     }
     /**
-     * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.  Applies to CO and EEI forms only. Required for CO and EEI forms.
-     *
-     * @param string $exportingCarrier
-     *
-     * @return self
-     */
+    * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
+    
+    If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
+    
+    *
+    * @param string $exportingCarrier
+    *
+    * @return self
+    */
     public function setExportingCarrier(string $exportingCarrier) : self
     {
         $this->initialized['exportingCarrier'] = true;
@@ -1080,9 +1105,16 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only. 
+    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
     
-    Valid values: R - Related, N - Non-related.
+    Valid values:
+    - R - Related
+    - N - Non-related.
+    
+    Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
+    
+    Default will be set to N - Non-related if invalid code present with length of one.
+    
     *
     * @return string
     */
@@ -1091,9 +1123,16 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this->partiesToTransaction;
     }
     /**
-    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only. 
+    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
     
-    Valid values: R - Related, N - Non-related.
+    Valid values:
+    - R - Related
+    - N - Non-related.
+    
+    Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
+    
+    Default will be set to N - Non-related if invalid code present with length of one.
+    
     *
     * @param string $partiesToTransaction
     *

@@ -13,33 +13,39 @@ class ShippingReceiptImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code representing the format in which a receipt is delivered. Valid values: HTML = HTML format.
-     *
-     * @var string
-     */
+    * Code representing the format in which a receipt is delivered. Valid values:
+    - HTML = HTML format
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * Description of the image format.
+     * Description of the image format code.
      *
      * @var string
      */
     protected $description;
     /**
-     * Code representing the format in which a receipt is delivered. Valid values: HTML = HTML format.
-     *
-     * @return string
-     */
+    * Code representing the format in which a receipt is delivered. Valid values:
+    - HTML = HTML format
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Code representing the format in which a receipt is delivered. Valid values: HTML = HTML format.
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * Code representing the format in which a receipt is delivered. Valid values:
+    - HTML = HTML format
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -47,7 +53,7 @@ class ShippingReceiptImageFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Description of the image format.
+     * Description of the image format code.
      *
      * @return string
      */
@@ -56,7 +62,7 @@ class ShippingReceiptImageFormat extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the image format.
+     * Description of the image format code.
      *
      * @param string $description
      *

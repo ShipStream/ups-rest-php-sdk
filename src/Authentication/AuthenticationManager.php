@@ -106,13 +106,8 @@ class AuthenticationManager
             $body->setRedirectUri($this->config->getRedirectUri());
         }
 
-        $headers = [];
-        if ($this->config->getMerchantId()) {
-            $headers['x-merchant-id'] = $this->config->getMerchantId();
-        }
-
         try {
-            $response = $this->client->generateToken($body, $headers);
+            $response = $this->client->generateToken($body);
             if ($response->getStatus() !== 'approved') {
                 throw new AuthenticationException("Invalid access token status: {$response->getStatus()}");
             }

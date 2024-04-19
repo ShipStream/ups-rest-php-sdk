@@ -13,13 +13,13 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Name. (Also includes the building name)Return if available.
+     * Name. Not relevant for this tool
      *
      * @var string
      */
     protected $consigneeName;
     /**
-     * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
+     * Address Line Information. The user may submit street level address information or provide Intersection information.
      *
      * @var string
      */
@@ -37,25 +37,25 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      */
     protected $addressLine3;
     /**
-     * Subdivision within a City. e.g., a Barrio.
+     * Barrio or other sub-division of City
      *
      * @var string
      */
     protected $politicalDivision3;
     /**
-     * City.
+     * City or Town.
      *
      * @var string
      */
     protected $politicalDivision2;
     /**
-     * State/Province.
+     * State or province
      *
      * @var string
      */
     protected $politicalDivision1;
     /**
-     * Postal Code.
+     * Main postal code. Required if the user does not submit the City, State/Province address combination.
      *
      * @var string
      */
@@ -67,19 +67,26 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      */
     protected $postcodeExtendedLow;
     /**
-     * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
+     * Two-character country or territory abbreviation
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
-     *
-     * @var string
-     */
+    * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
+    
+    Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
+    
+    SingleLineAddress used for the lookup
+    
+    SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
+    
+    *
+    * @var string
+    */
     protected $singleLineAddress;
     /**
-     * Name. (Also includes the building name)Return if available.
+     * Name. Not relevant for this tool
      *
      * @return string
      */
@@ -88,7 +95,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->consigneeName;
     }
     /**
-     * Name. (Also includes the building name)Return if available.
+     * Name. Not relevant for this tool
      *
      * @param string $consigneeName
      *
@@ -101,7 +108,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
+     * Address Line Information. The user may submit street level address information or provide Intersection information.
      *
      * @return string
      */
@@ -110,7 +117,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address Line Information of the UPS location The address level or Intersection information. Only two address lines will be returned. The second line may contain such information as the building name, the suite, and room.
+     * Address Line Information. The user may submit street level address information or provide Intersection information.
      *
      * @param string $addressLine
      *
@@ -167,7 +174,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Subdivision within a City. e.g., a Barrio.
+     * Barrio or other sub-division of City
      *
      * @return string
      */
@@ -176,7 +183,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->politicalDivision3;
     }
     /**
-     * Subdivision within a City. e.g., a Barrio.
+     * Barrio or other sub-division of City
      *
      * @param string $politicalDivision3
      *
@@ -189,7 +196,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * City.
+     * City or Town.
      *
      * @return string
      */
@@ -198,7 +205,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->politicalDivision2;
     }
     /**
-     * City.
+     * City or Town.
      *
      * @param string $politicalDivision2
      *
@@ -211,7 +218,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * State/Province.
+     * State or province
      *
      * @return string
      */
@@ -220,7 +227,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->politicalDivision1;
     }
     /**
-     * State/Province.
+     * State or province
      *
      * @param string $politicalDivision1
      *
@@ -233,7 +240,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Postal Code.
+     * Main postal code. Required if the user does not submit the City, State/Province address combination.
      *
      * @return string
      */
@@ -242,7 +249,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->postcodePrimaryLow;
     }
     /**
-     * Postal Code.
+     * Main postal code. Required if the user does not submit the City, State/Province address combination.
      *
      * @param string $postcodePrimaryLow
      *
@@ -277,7 +284,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
+     * Two-character country or territory abbreviation
      *
      * @return string
      */
@@ -286,7 +293,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * A country or territory code. Valid values to be returned are: US-United States (meaning US 50).
+     * Two-character country or territory abbreviation
      *
      * @param string $countryCode
      *
@@ -299,21 +306,35 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
-     *
-     * @return string
-     */
+    * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
+    
+    Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
+    
+    SingleLineAddress used for the lookup
+    
+    SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
+    
+    *
+    * @return string
+    */
     public function getSingleLineAddress() : string
     {
         return $this->singleLineAddress;
     }
     /**
-     * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
-     *
-     * @param string $singleLineAddress
-     *
-     * @return self
-     */
+    * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
+    
+    Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
+    
+    SingleLineAddress used for the lookup
+    
+    SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
+    
+    *
+    * @param string $singleLineAddress
+    *
+    * @return self
+    */
     public function setSingleLineAddress(string $singleLineAddress) : self
     {
         $this->initialized['singleLineAddress'] = true;

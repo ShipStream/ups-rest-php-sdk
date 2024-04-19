@@ -19,19 +19,19 @@ class RateRequest extends \ArrayObject
      */
     protected $request;
     /**
-     * Pickup Type container tag.  N/A
+     * Pickup Type container tag.
      *
      * @var RateRequestPickupType
      */
     protected $pickupType;
     /**
-     * Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A
+     * Customer classification container. Valid if ShipFrom country or territory  is "US"
      *
      * @var RateRequestCustomerClassification
      */
     protected $customerClassification;
     /**
-     * Container for Shipment Information.  N/A
+     * Container for Shipment Information.
      *
      * @var RateRequestShipment
      */
@@ -59,7 +59,7 @@ class RateRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Pickup Type container tag.  N/A
+     * Pickup Type container tag.
      *
      * @return RateRequestPickupType
      */
@@ -68,7 +68,7 @@ class RateRequest extends \ArrayObject
         return $this->pickupType;
     }
     /**
-     * Pickup Type container tag.  N/A
+     * Pickup Type container tag.
      *
      * @param RateRequestPickupType $pickupType
      *
@@ -81,7 +81,7 @@ class RateRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A
+     * Customer classification container. Valid if ShipFrom country or territory  is "US"
      *
      * @return RateRequestCustomerClassification
      */
@@ -90,7 +90,7 @@ class RateRequest extends \ArrayObject
         return $this->customerClassification;
     }
     /**
-     * Customer classification container. Valid if ShipFrom country or territory  is "US"  N/A
+     * Customer classification container. Valid if ShipFrom country or territory  is "US"
      *
      * @param RateRequestCustomerClassification $customerClassification
      *
@@ -103,7 +103,7 @@ class RateRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Container for Shipment Information.  N/A
+     * Container for Shipment Information.
      *
      * @return RateRequestShipment
      */
@@ -112,7 +112,7 @@ class RateRequest extends \ArrayObject
         return $this->shipment;
     }
     /**
-     * Container for Shipment Information.  N/A
+     * Container for Shipment Information.
      *
      * @param RateRequestShipment $shipment
      *

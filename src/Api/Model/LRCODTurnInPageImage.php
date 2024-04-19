@@ -13,41 +13,41 @@ class LRCODTurnInPageImage extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container for the format of image.
      *
-     * @var ImageImageFormat
+     * @var LRCODTurnInPageImageImageFormat
      */
     protected $imageFormat;
     /**
-     * Base 64 encoded High Value Report image.
+     * Base64 Encoded COD Turnin Page image.
      *
      * @var string
      */
     protected $graphicImage;
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container for the format of image.
      *
-     * @return ImageImageFormat
+     * @return LRCODTurnInPageImageImageFormat
      */
-    public function getImageFormat() : ImageImageFormat
+    public function getImageFormat() : LRCODTurnInPageImageImageFormat
     {
         return $this->imageFormat;
     }
     /**
-     * Container for the High Value Report image format information for Import Control Shipments.
+     * Container for the format of image.
      *
-     * @param ImageImageFormat $imageFormat
+     * @param LRCODTurnInPageImageImageFormat $imageFormat
      *
      * @return self
      */
-    public function setImageFormat(ImageImageFormat $imageFormat) : self
+    public function setImageFormat(LRCODTurnInPageImageImageFormat $imageFormat) : self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
         return $this;
     }
     /**
-     * Base 64 encoded High Value Report image.
+     * Base64 Encoded COD Turnin Page image.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class LRCODTurnInPageImage extends \ArrayObject
         return $this->graphicImage;
     }
     /**
-     * Base 64 encoded High Value Report image.
+     * Base64 Encoded COD Turnin Page image.
      *
      * @param string $graphicImage
      *

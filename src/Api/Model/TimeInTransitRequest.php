@@ -15,7 +15,7 @@ class TimeInTransitRequest extends \ArrayObject
     /**
     * The country code of the origin shipment. 
     Valid Values: 
-    Must conform to the ISO-defined country codes.  Refer to Country or Territory Codoes in the Appendix for valid values.
+    Must conform to the ISO-defined, two-letter country or territory codes.  Refer to Country or Territory Codes in the Appendix above for valid values.
     *
     * @var string
     */
@@ -28,20 +28,20 @@ class TimeInTransitRequest extends \ArrayObject
     */
     protected $originStateProvince;
     /**
-     * Required for International requests for those countries that do not utilize postal codes.  The shipment origin city.
+     * The shipment origin city. Required for International requests for those countries that do not utilize postal codes.
      *
      * @var string
      */
     protected $originCityName;
     /**
-     * The shipment origin town.  Town is a subdivision of city.
+     * The shipment origin town. Town is a subdivision of city.
      *
      * @var string
      */
     protected $originTownName;
     /**
     * Required for Domestic requests.  The shipment origin postal code.  
-    Either 5- or 9- digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
+    Either the 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -62,7 +62,7 @@ class TimeInTransitRequest extends \ArrayObject
     */
     protected $destinationStateProvince;
     /**
-     * Required for International Requests for those countries that do not utilize postal codes. The shipment destination city.
+     * The shipment destination city. Required for International Requests for those countries that do not utilize postal codes.
      *
      * @var string
      */
@@ -75,15 +75,16 @@ class TimeInTransitRequest extends \ArrayObject
     protected $destinationTownName;
     /**
     * The shipment destination postal code.  
-    Required for Domestic requests. Either 5- or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
+    Required for Domestic requests. Either 5, or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
     protected $destinationPostalCode;
     /**
-    * Required for Domestic requests. 
+    * Indicates if address is residential or commercial. Required for Domestic requests. 
     
     Valid values: "01", "02" 
+    
     01 = Residential 
     02 = Commercial 
     
@@ -93,7 +94,15 @@ class TimeInTransitRequest extends \ArrayObject
     */
     protected $residentialIndicator;
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.  Format is YYYY-MM-DD.  YYYY = 4 digit year; MM = 2 digit month, valid values 01-12; DD = 2 digit day of month, valid values 01-31 
+    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Allowed range is up to 60 days in future and 35 days in past. This date may or may not be the UPS business date. 
+    
+    Format is YYYY-MM-DD.  
+    
+    YYYY = 4 digit year; 
+    
+    MM = 2 digit month, valid values 01-12; 
+    
+    DD = 2 digit day of month, valid values 01-31 
     If no value is provided, defaults to current system date.
     *
     * @var string
@@ -101,13 +110,15 @@ class TimeInTransitRequest extends \ArrayObject
     protected $shipDate;
     /**
     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
-    Format is HH:MM:SS
+    Format is HH:MM:SS 
+    
+    Defaults to current time if not provided.
     *
     * @var string
     */
     protected $shipTime;
     /**
-    * Required for International requests.  The weight of the shipment. 
+    * The weight of the shipment. Required for International requests. 
     
     Note: If decimal values are used, valid values will be rounded to the tenths.  
     
@@ -125,11 +136,11 @@ class TimeInTransitRequest extends \ArrayObject
     */
     protected $weightUnitOfMeasure;
     /**
-    * The monetary value of shpment contents. 
+    * The monetary value of shipment contents. 
     
     Required when origin country does not equal destination country and BillType is 03 (non-documented) or 04 (WWEF) 
     
-    Required when origin country does not equal destination country, and destination country = CA, and BIllType = 02 (document). 
+    Required when origin country does not equal destination country, and destination country = CA, and BillType = 02 (document). 
     
     Note: If decimal values are used, valid values will be rounded to the tenths.
     *
@@ -137,7 +148,7 @@ class TimeInTransitRequest extends \ArrayObject
     */
     protected $shipmentContentsValue;
     /**
-    * Required if ShipmentContentsValue is populated.  The unit of currency used for values.  
+    * The unit of currency used for values. Required if ShipmentContentsValue is populated. 
     Valid value: must conform to ISO standards.
     *
     * @var string
@@ -215,7 +226,7 @@ class TimeInTransitRequest extends \ArrayObject
     /**
     * The country code of the origin shipment. 
     Valid Values: 
-    Must conform to the ISO-defined country codes.  Refer to Country or Territory Codoes in the Appendix for valid values.
+    Must conform to the ISO-defined, two-letter country or territory codes.  Refer to Country or Territory Codes in the Appendix above for valid values.
     *
     * @return string
     */
@@ -226,7 +237,7 @@ class TimeInTransitRequest extends \ArrayObject
     /**
     * The country code of the origin shipment. 
     Valid Values: 
-    Must conform to the ISO-defined country codes.  Refer to Country or Territory Codoes in the Appendix for valid values.
+    Must conform to the ISO-defined, two-letter country or territory codes.  Refer to Country or Territory Codes in the Appendix above for valid values.
     *
     * @param string $originCountryCode
     *
@@ -263,7 +274,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Required for International requests for those countries that do not utilize postal codes.  The shipment origin city.
+     * The shipment origin city. Required for International requests for those countries that do not utilize postal codes.
      *
      * @return string
      */
@@ -272,7 +283,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->originCityName;
     }
     /**
-     * Required for International requests for those countries that do not utilize postal codes.  The shipment origin city.
+     * The shipment origin city. Required for International requests for those countries that do not utilize postal codes.
      *
      * @param string $originCityName
      *
@@ -285,7 +296,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-     * The shipment origin town.  Town is a subdivision of city.
+     * The shipment origin town. Town is a subdivision of city.
      *
      * @return string
      */
@@ -294,7 +305,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->originTownName;
     }
     /**
-     * The shipment origin town.  Town is a subdivision of city.
+     * The shipment origin town. Town is a subdivision of city.
      *
      * @param string $originTownName
      *
@@ -308,7 +319,7 @@ class TimeInTransitRequest extends \ArrayObject
     }
     /**
     * Required for Domestic requests.  The shipment origin postal code.  
-    Either 5- or 9- digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
+    Either the 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -318,7 +329,7 @@ class TimeInTransitRequest extends \ArrayObject
     }
     /**
     * Required for Domestic requests.  The shipment origin postal code.  
-    Either 5- or 9- digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
+    Either the 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $originPostalCode
     *
@@ -381,7 +392,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Required for International Requests for those countries that do not utilize postal codes. The shipment destination city.
+     * The shipment destination city. Required for International Requests for those countries that do not utilize postal codes.
      *
      * @return string
      */
@@ -390,7 +401,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->destinationCityName;
     }
     /**
-     * Required for International Requests for those countries that do not utilize postal codes. The shipment destination city.
+     * The shipment destination city. Required for International Requests for those countries that do not utilize postal codes.
      *
      * @param string $destinationCityName
      *
@@ -426,7 +437,7 @@ class TimeInTransitRequest extends \ArrayObject
     }
     /**
     * The shipment destination postal code.  
-    Required for Domestic requests. Either 5- or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
+    Required for Domestic requests. Either 5, or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -436,7 +447,7 @@ class TimeInTransitRequest extends \ArrayObject
     }
     /**
     * The shipment destination postal code.  
-    Required for Domestic requests. Either 5- or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
+    Required for Domestic requests. Either 5, or 9-digit U.S. zip codes must be used for U.S. addresses.  For non-U.S. addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $destinationPostalCode
     *
@@ -449,9 +460,10 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Required for Domestic requests. 
+    * Indicates if address is residential or commercial. Required for Domestic requests. 
     
     Valid values: "01", "02" 
+    
     01 = Residential 
     02 = Commercial 
     
@@ -464,9 +476,10 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->residentialIndicator;
     }
     /**
-    * Required for Domestic requests. 
+    * Indicates if address is residential or commercial. Required for Domestic requests. 
     
     Valid values: "01", "02" 
+    
     01 = Residential 
     02 = Commercial 
     
@@ -483,7 +496,15 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.  Format is YYYY-MM-DD.  YYYY = 4 digit year; MM = 2 digit month, valid values 01-12; DD = 2 digit day of month, valid values 01-31 
+    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Allowed range is up to 60 days in future and 35 days in past. This date may or may not be the UPS business date. 
+    
+    Format is YYYY-MM-DD.  
+    
+    YYYY = 4 digit year; 
+    
+    MM = 2 digit month, valid values 01-12; 
+    
+    DD = 2 digit day of month, valid values 01-31 
     If no value is provided, defaults to current system date.
     *
     * @return string
@@ -493,7 +514,15 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->shipDate;
     }
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.  Format is YYYY-MM-DD.  YYYY = 4 digit year; MM = 2 digit month, valid values 01-12; DD = 2 digit day of month, valid values 01-31 
+    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Allowed range is up to 60 days in future and 35 days in past. This date may or may not be the UPS business date. 
+    
+    Format is YYYY-MM-DD.  
+    
+    YYYY = 4 digit year; 
+    
+    MM = 2 digit month, valid values 01-12; 
+    
+    DD = 2 digit day of month, valid values 01-31 
     If no value is provided, defaults to current system date.
     *
     * @param string $shipDate
@@ -508,7 +537,9 @@ class TimeInTransitRequest extends \ArrayObject
     }
     /**
     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
-    Format is HH:MM:SS
+    Format is HH:MM:SS 
+    
+    Defaults to current time if not provided.
     *
     * @return string
     */
@@ -518,7 +549,9 @@ class TimeInTransitRequest extends \ArrayObject
     }
     /**
     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
-    Format is HH:MM:SS
+    Format is HH:MM:SS 
+    
+    Defaults to current time if not provided.
     *
     * @param string $shipTime
     *
@@ -531,7 +564,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Required for International requests.  The weight of the shipment. 
+    * The weight of the shipment. Required for International requests. 
     
     Note: If decimal values are used, valid values will be rounded to the tenths.  
     
@@ -544,7 +577,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->weight;
     }
     /**
-    * Required for International requests.  The weight of the shipment. 
+    * The weight of the shipment. Required for International requests. 
     
     Note: If decimal values are used, valid values will be rounded to the tenths.  
     
@@ -587,11 +620,11 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The monetary value of shpment contents. 
+    * The monetary value of shipment contents. 
     
     Required when origin country does not equal destination country and BillType is 03 (non-documented) or 04 (WWEF) 
     
-    Required when origin country does not equal destination country, and destination country = CA, and BIllType = 02 (document). 
+    Required when origin country does not equal destination country, and destination country = CA, and BillType = 02 (document). 
     
     Note: If decimal values are used, valid values will be rounded to the tenths.
     *
@@ -602,11 +635,11 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->shipmentContentsValue;
     }
     /**
-    * The monetary value of shpment contents. 
+    * The monetary value of shipment contents. 
     
     Required when origin country does not equal destination country and BillType is 03 (non-documented) or 04 (WWEF) 
     
-    Required when origin country does not equal destination country, and destination country = CA, and BIllType = 02 (document). 
+    Required when origin country does not equal destination country, and destination country = CA, and BillType = 02 (document). 
     
     Note: If decimal values are used, valid values will be rounded to the tenths.
     *
@@ -621,7 +654,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Required if ShipmentContentsValue is populated.  The unit of currency used for values.  
+    * The unit of currency used for values. Required if ShipmentContentsValue is populated. 
     Valid value: must conform to ISO standards.
     *
     * @return string
@@ -631,7 +664,7 @@ class TimeInTransitRequest extends \ArrayObject
         return $this->shipmentContentsCurrencyCode;
     }
     /**
-    * Required if ShipmentContentsValue is populated.  The unit of currency used for values.  
+    * The unit of currency used for values. Required if ShipmentContentsValue is populated. 
     Valid value: must conform to ISO standards.
     *
     * @param string $shipmentContentsCurrencyCode

@@ -25,7 +25,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      */
     protected $addressLine;
     /**
-     * Subdivision within a City.� e.g., a Barrio.
+     * Subdivision within a City. e.g., a Barrio.
      *
      * @var string
      */
@@ -105,7 +105,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Subdivision within a City.� e.g., a Barrio.
+     * Subdivision within a City. e.g., a Barrio.
      *
      * @return string
      */
@@ -114,7 +114,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
         return $this->politicalDivision3;
     }
     /**
-     * Subdivision within a City.� e.g., a Barrio.
+     * Subdivision within a City. e.g., a Barrio.
      *
      * @param string $politicalDivision3
      *

@@ -15,26 +15,26 @@ class PickupFacilitiesFacilityTime extends \ArrayObject
     /**
      * Facility Hours of Operation Container
      *
-     * @var FacilityTimeDayOfWeek
+     * @var PickupFacilitiesFacilityTimeDayOfWeek
      */
     protected $dayOfWeek;
     /**
      * Facility Hours of Operation Container
      *
-     * @return FacilityTimeDayOfWeek
+     * @return PickupFacilitiesFacilityTimeDayOfWeek
      */
-    public function getDayOfWeek() : FacilityTimeDayOfWeek
+    public function getDayOfWeek() : PickupFacilitiesFacilityTimeDayOfWeek
     {
         return $this->dayOfWeek;
     }
     /**
      * Facility Hours of Operation Container
      *
-     * @param FacilityTimeDayOfWeek $dayOfWeek
+     * @param PickupFacilitiesFacilityTimeDayOfWeek $dayOfWeek
      *
      * @return self
      */
-    public function setDayOfWeek(FacilityTimeDayOfWeek $dayOfWeek) : self
+    public function setDayOfWeek(PickupFacilitiesFacilityTimeDayOfWeek $dayOfWeek) : self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;

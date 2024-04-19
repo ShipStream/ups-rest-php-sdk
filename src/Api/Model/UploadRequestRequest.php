@@ -13,7 +13,7 @@ class UploadRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Enables the user to specify optional processing. Currently, there is no optional process in Paperless Document API.  N/A
+     * Enables the user to specify optional processing. Currently, there is no optional process in Paperless Document API.
      *
      * @var string
      */
@@ -31,7 +31,7 @@ class UploadRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-     * Enables the user to specify optional processing. Currently, there is no optional process in Paperless Document API.  N/A
+     * Enables the user to specify optional processing. Currently, there is no optional process in Paperless Document API.
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class UploadRequestRequest extends \ArrayObject
         return $this->requestOption;
     }
     /**
-     * Enables the user to specify optional processing. Currently, there is no optional process in Paperless Document API.  N/A
+     * Enables the user to specify optional processing. Currently, there is no optional process in Paperless Document API.
      *
      * @param string $requestOption
      *

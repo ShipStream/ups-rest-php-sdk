@@ -13,19 +13,19 @@ class OriginAddressGeocode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The latitude of the location address or the center point of the area code.
+     * The latitude of the origin address or the center point of the area code.
      *
      * @var string
      */
     protected $latitude;
     /**
-     * The longitude of the location address or the center point of the area code.
+     * The longitude of the origin address or the center point of the area code.
      *
      * @var string
      */
     protected $longitude;
     /**
-     * The latitude of the location address or the center point of the area code.
+     * The latitude of the origin address or the center point of the area code.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class OriginAddressGeocode extends \ArrayObject
         return $this->latitude;
     }
     /**
-     * The latitude of the location address or the center point of the area code.
+     * The latitude of the origin address or the center point of the area code.
      *
      * @param string $latitude
      *
@@ -47,7 +47,7 @@ class OriginAddressGeocode extends \ArrayObject
         return $this;
     }
     /**
-     * The longitude of the location address or the center point of the area code.
+     * The longitude of the origin address or the center point of the area code.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class OriginAddressGeocode extends \ArrayObject
         return $this->longitude;
     }
     /**
-     * The longitude of the location address or the center point of the area code.
+     * The longitude of the origin address or the center point of the area code.
      *
      * @param string $longitude
      *

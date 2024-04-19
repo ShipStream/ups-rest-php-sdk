@@ -13,13 +13,15 @@ class OptionCodeTransportationPickUpSchedule extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * PickUp container contains details of day of week and corresponding pickup times for that service.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var TransportationPickUpSchedulePickUp[]
      */
     protected $pickUp;
     /**
-     * 
+     * PickUp container contains details of day of week and corresponding pickup times for that service.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return TransportationPickUpSchedulePickUp[]
      */
@@ -28,7 +30,8 @@ class OptionCodeTransportationPickUpSchedule extends \ArrayObject
         return $this->pickUp;
     }
     /**
-     * 
+     * PickUp container contains details of day of week and corresponding pickup times for that service.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param TransportationPickUpSchedulePickUp[] $pickUp
      *

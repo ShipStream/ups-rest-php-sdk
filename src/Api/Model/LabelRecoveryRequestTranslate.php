@@ -13,29 +13,30 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The Language code. The language codes are three letter language codes. 
-    Supported languages are: 
-    eng - English 
-    spa - Spanish 
-    ita - Italian
-    fra - French 
-    deu - German 
-    por -Portuguese 
-    nld  Dutch
-    dan - Danish 
-    fin - Finnish 
-    swe  Swedish 
-    nor  Norwegian
+    * The Language code. The language codes are three letter language codes. Supported languages are:
+    - eng - English
+    - spa - Spanish
+    - ita - Italian
+    - fra - French
+    - deu - German
+    - por -Portuguese
+    - nld – Dutch
+    - dan - Danish
+    - fin - Finnish
+    - swe – Swedish
+    - nor – Norwegian
+    
     *
     * @var string
     */
     protected $languageCode;
     /**
-    * Valid dialect codes are: 
-    CA - Canada
-    GB - Great Britain
-    US - United States
-    97  Not Applicable
+    * Valid dialect codes are:
+    - CA - Canada
+    - GB - Great Britain
+    - US - United States
+    - 97 – Not Applicable
+    
     *
     * @var string
     */
@@ -49,19 +50,19 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     */
     protected $code;
     /**
-    * The Language code. The language codes are three letter language codes. 
-    Supported languages are: 
-    eng - English 
-    spa - Spanish 
-    ita - Italian
-    fra - French 
-    deu - German 
-    por -Portuguese 
-    nld  Dutch
-    dan - Danish 
-    fin - Finnish 
-    swe  Swedish 
-    nor  Norwegian
+    * The Language code. The language codes are three letter language codes. Supported languages are:
+    - eng - English
+    - spa - Spanish
+    - ita - Italian
+    - fra - French
+    - deu - German
+    - por -Portuguese
+    - nld – Dutch
+    - dan - Danish
+    - fin - Finnish
+    - swe – Swedish
+    - nor – Norwegian
+    
     *
     * @return string
     */
@@ -70,19 +71,19 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return $this->languageCode;
     }
     /**
-    * The Language code. The language codes are three letter language codes. 
-    Supported languages are: 
-    eng - English 
-    spa - Spanish 
-    ita - Italian
-    fra - French 
-    deu - German 
-    por -Portuguese 
-    nld  Dutch
-    dan - Danish 
-    fin - Finnish 
-    swe  Swedish 
-    nor  Norwegian
+    * The Language code. The language codes are three letter language codes. Supported languages are:
+    - eng - English
+    - spa - Spanish
+    - ita - Italian
+    - fra - French
+    - deu - German
+    - por -Portuguese
+    - nld – Dutch
+    - dan - Danish
+    - fin - Finnish
+    - swe – Swedish
+    - nor – Norwegian
+    
     *
     * @param string $languageCode
     *
@@ -95,11 +96,12 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return $this;
     }
     /**
-    * Valid dialect codes are: 
-    CA - Canada
-    GB - Great Britain
-    US - United States
-    97  Not Applicable
+    * Valid dialect codes are:
+    - CA - Canada
+    - GB - Great Britain
+    - US - United States
+    - 97 – Not Applicable
+    
     *
     * @return string
     */
@@ -108,11 +110,12 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return $this->dialectCode;
     }
     /**
-    * Valid dialect codes are: 
-    CA - Canada
-    GB - Great Britain
-    US - United States
-    97  Not Applicable
+    * Valid dialect codes are:
+    - CA - Canada
+    - GB - Great Britain
+    - US - United States
+    - 97 – Not Applicable
+    
     *
     * @param string $dialectCode
     *

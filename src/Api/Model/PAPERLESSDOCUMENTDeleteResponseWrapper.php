@@ -13,13 +13,13 @@ class PAPERLESSDOCUMENTDeleteResponseWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Paperless Document API response container for delete request.  N/A
+     * Paperless Document API response container for delete request.
      *
      * @var DeleteResponse
      */
     protected $deleteResponse;
     /**
-     * Paperless Document API response container for delete request.  N/A
+     * Paperless Document API response container for delete request.
      *
      * @return DeleteResponse
      */
@@ -28,7 +28,7 @@ class PAPERLESSDOCUMENTDeleteResponseWrapper extends \ArrayObject
         return $this->deleteResponse;
     }
     /**
-     * Paperless Document API response container for delete request.  N/A
+     * Paperless Document API response container for delete request.
      *
      * @param DeleteResponse $deleteResponse
      *

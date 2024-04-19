@@ -20,8 +20,8 @@ class PickupRateResponseRateResult extends \ArrayObject
     protected $disclaimer;
     /**
     * Indicates the pickup is rated as same-day or future-day pickup.
-    SD = Same-day Pickup
-    FD = Future-day Pickup
+    - SD = Same-day Pickup
+    - FD = Future-day Pickup
     *
     * @var string
     */
@@ -98,8 +98,8 @@ class PickupRateResponseRateResult extends \ArrayObject
     }
     /**
     * Indicates the pickup is rated as same-day or future-day pickup.
-    SD = Same-day Pickup
-    FD = Future-day Pickup
+    - SD = Same-day Pickup
+    - FD = Future-day Pickup
     *
     * @return string
     */
@@ -109,8 +109,8 @@ class PickupRateResponseRateResult extends \ArrayObject
     }
     /**
     * Indicates the pickup is rated as same-day or future-day pickup.
-    SD = Same-day Pickup
-    FD = Future-day Pickup
+    - SD = Same-day Pickup
+    - FD = Future-day Pickup
     *
     * @param string $rateType
     *
