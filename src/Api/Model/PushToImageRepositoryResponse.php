@@ -19,7 +19,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
      */
     protected $response;
     /**
-     * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).  N/A
+     * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
         return $this;
     }
     /**
-     * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).  N/A
+     * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
         return $this->formsGroupID;
     }
     /**
-     * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).  N/A
+     * FormsGroupID is a consolidated ID representing one or multiple DocumentID(s).
      *
      * @param string $formsGroupID
      *

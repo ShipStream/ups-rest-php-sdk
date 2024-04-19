@@ -37,9 +37,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $recordIdentifier3;
     /**
-    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
+    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
     
-    Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).
+    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+    
     *
     * @var string
     */
@@ -51,11 +52,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $aDRItemNumber;
     /**
-    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values: 
-    1 = I, 
-    2 = II, 
-    3 = III,
-    and blank.
+    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
+    - "1" = "I",
+    - "2" = "II",
+    - "3" = "III",
+    - and blank.
+    
     *
     * @var string
     */
@@ -75,9 +77,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     */
     protected $hazardLabelRequired;
     /**
-    * This is the hazard class associated to the specified commodity. 
+    * This is the hazard class associated to the specified commodity.
     
     Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
+    
     *
     * @var string
     */
@@ -123,8 +126,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $properShippingName;
     /**
-    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    Additional information that may be required by regulation about a hazardous material, such as, 'Limited Quantity', DOT-SP numbers, EX numbers.
+    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+    
+    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+    
     *
     * @var string
     */
@@ -147,8 +152,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $packagingInstructionCode;
     /**
-    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.                        The following are restricted in the phone number  
-    period '.', dash '-', plus sign '+' and conventional parentheses '(' and ')', 'EXT' or 'OPT'
+    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
+    
+    The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+    
     *
     * @var string
     */
@@ -316,9 +323,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
+    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
     
-    Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).
+    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+    
     *
     * @return string
     */
@@ -327,9 +335,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this->subRiskClass;
     }
     /**
-    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
+    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
     
-    Secondary hazardous characteristics of a package. (There can be more than one separate each with a comma).
+    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+    
     *
     * @param string $subRiskClass
     *
@@ -364,11 +373,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values: 
-    1 = I, 
-    2 = II, 
-    3 = III,
-    and blank.
+    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
+    - "1" = "I",
+    - "2" = "II",
+    - "3" = "III",
+    - and blank.
+    
     *
     * @return string
     */
@@ -377,11 +387,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this->aDRPackingGroupLetter;
     }
     /**
-    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values: 
-    1 = I, 
-    2 = II, 
-    3 = III,
-    and blank.
+    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
+    - "1" = "I",
+    - "2" = "II",
+    - "3" = "III",
+    - and blank.
+    
     *
     * @param string $aDRPackingGroupLetter
     *
@@ -442,9 +453,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * This is the hazard class associated to the specified commodity. 
+    * This is the hazard class associated to the specified commodity.
     
     Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
+    
     *
     * @return string
     */
@@ -453,9 +465,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this->classDivisionNumber;
     }
     /**
-    * This is the hazard class associated to the specified commodity. 
+    * This is the hazard class associated to the specified commodity.
     
     Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
+    
     *
     * @param string $classDivisionNumber
     *
@@ -608,8 +621,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    Additional information that may be required by regulation about a hazardous material, such as, 'Limited Quantity', DOT-SP numbers, EX numbers.
+    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+    
+    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+    
     *
     * @return string
     */
@@ -618,8 +633,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this->additionalDescription;
     }
     /**
-    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    Additional information that may be required by regulation about a hazardous material, such as, 'Limited Quantity', DOT-SP numbers, EX numbers.
+    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+    
+    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+    
     *
     * @param string $additionalDescription
     *
@@ -686,8 +703,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.                        The following are restricted in the phone number  
-    period '.', dash '-', plus sign '+' and conventional parentheses '(' and ')', 'EXT' or 'OPT'
+    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
+    
+    The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+    
     *
     * @return string
     */
@@ -696,8 +715,10 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this->emergencyPhone;
     }
     /**
-    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.                        The following are restricted in the phone number  
-    period '.', dash '-', plus sign '+' and conventional parentheses '(' and ')', 'EXT' or 'OPT'
+    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
+    
+    The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+    
     *
     * @param string $emergencyPhone
     *

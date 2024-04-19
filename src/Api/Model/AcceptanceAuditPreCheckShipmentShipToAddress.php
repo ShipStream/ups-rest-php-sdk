@@ -13,37 +13,37 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Ship From street address including name and number (when applicable).
+     * The Ship To street address including name and number (when applicable).
      *
      * @var string
      */
     protected $addressLine;
     /**
-     * The Ship From city.
+     * The Ship To city.
      *
      * @var string
      */
     protected $city;
     /**
-     * The Ship From locations state or province code.
+     * The Ship To locations state or province code.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * The Ship From locations postal code. 9 characters are accepted.
+     * The Ship To locations postal code. 9 characters are accepted.
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * The Ship From locations country or territory code.
+     * The Ship To locations country or territory code.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * The Ship From street address including name and number (when applicable).
+     * The Ship To street address including name and number (when applicable).
      *
      * @return string
      */
@@ -52,7 +52,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * The Ship From street address including name and number (when applicable).
+     * The Ship To street address including name and number (when applicable).
      *
      * @param string $addressLine
      *
@@ -65,7 +65,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship From city.
+     * The Ship To city.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * The Ship From city.
+     * The Ship To city.
      *
      * @param string $city
      *
@@ -87,7 +87,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship From locations state or province code.
+     * The Ship To locations state or province code.
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * The Ship From locations state or province code.
+     * The Ship To locations state or province code.
      *
      * @param string $stateProvinceCode
      *
@@ -109,7 +109,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship From locations postal code. 9 characters are accepted.
+     * The Ship To locations postal code. 9 characters are accepted.
      *
      * @return string
      */
@@ -118,7 +118,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * The Ship From locations postal code. 9 characters are accepted.
+     * The Ship To locations postal code. 9 characters are accepted.
      *
      * @param string $postalCode
      *
@@ -131,7 +131,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * The Ship From locations country or territory code.
+     * The Ship To locations country or territory code.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class AcceptanceAuditPreCheckShipmentShipToAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * The Ship From locations country or territory code.
+     * The Ship To locations country or territory code.
      *
      * @param string $countryCode
      *

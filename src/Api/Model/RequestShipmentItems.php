@@ -13,7 +13,7 @@ class RequestShipmentItems extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Commodity ID is used to associate tariffs with product in the output. Should be unique for each commodity in a request. It is an arbitrary string provided by the user of the API that will be returned with the Landed Cost Quote to indicate which commodity tariffs apply to.
+     * Commodity ID is used to associate tariffs with product in the output. Should be unique for each commodity in a request. It is an arbitrary string provided by the user of the API that will be returned with the Landed Cost Quote to indicate which commodity the tariffs apply to.
      *
      * @var string
      */
@@ -49,13 +49,13 @@ class RequestShipmentItems extends \ArrayObject
      */
     protected $quantity;
     /**
-     * Specify unit of measure. Check UOM List in the Appendices section
+     * Specifies unit of measure. Check UOM List in the Appendices section.
      *
      * @var string
      */
     protected $uOM;
     /**
-     * Specifies a valid HS or HTS code for the shipment�s destination or import country. This field is required if description is not provided. Valid HTS Code with or without periods
+     * Specifies a valid HS or HTS code for the shipment's destination or import country. This field is required if description is not provided.
      *
      * @var string
      */
@@ -73,7 +73,7 @@ class RequestShipmentItems extends \ArrayObject
      */
     protected $originCountryCode;
     /**
-     * Commodity ID is used to associate tariffs with product in the output. Should be unique for each commodity in a request. It is an arbitrary string provided by the user of the API that will be returned with the Landed Cost Quote to indicate which commodity tariffs apply to.
+     * Commodity ID is used to associate tariffs with product in the output. Should be unique for each commodity in a request. It is an arbitrary string provided by the user of the API that will be returned with the Landed Cost Quote to indicate which commodity the tariffs apply to.
      *
      * @return string
      */
@@ -82,7 +82,7 @@ class RequestShipmentItems extends \ArrayObject
         return $this->commodityId;
     }
     /**
-     * Commodity ID is used to associate tariffs with product in the output. Should be unique for each commodity in a request. It is an arbitrary string provided by the user of the API that will be returned with the Landed Cost Quote to indicate which commodity tariffs apply to.
+     * Commodity ID is used to associate tariffs with product in the output. Should be unique for each commodity in a request. It is an arbitrary string provided by the user of the API that will be returned with the Landed Cost Quote to indicate which commodity the tariffs apply to.
      *
      * @param string $commodityId
      *
@@ -205,7 +205,7 @@ class RequestShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Specify unit of measure. Check UOM List in the Appendices section
+     * Specifies unit of measure. Check UOM List in the Appendices section.
      *
      * @return string
      */
@@ -214,7 +214,7 @@ class RequestShipmentItems extends \ArrayObject
         return $this->uOM;
     }
     /**
-     * Specify unit of measure. Check UOM List in the Appendices section
+     * Specifies unit of measure. Check UOM List in the Appendices section.
      *
      * @param string $uOM
      *
@@ -227,7 +227,7 @@ class RequestShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Specifies a valid HS or HTS code for the shipment�s destination or import country. This field is required if description is not provided. Valid HTS Code with or without periods
+     * Specifies a valid HS or HTS code for the shipment's destination or import country. This field is required if description is not provided.
      *
      * @return string
      */
@@ -236,7 +236,7 @@ class RequestShipmentItems extends \ArrayObject
         return $this->hsCode;
     }
     /**
-     * Specifies a valid HS or HTS code for the shipment�s destination or import country. This field is required if description is not provided. Valid HTS Code with or without periods
+     * Specifies a valid HS or HTS code for the shipment's destination or import country. This field is required if description is not provided.
      *
      * @param string $hsCode
      *

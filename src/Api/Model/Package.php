@@ -13,7 +13,7 @@ class Package extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The container that has all the information related to the access point where the package is destined for/delivered to.
      *
      * @var AccessPointInformation
      */
@@ -25,13 +25,13 @@ class Package extends \ArrayObject
      */
     protected $activity;
     /**
-     * type
+     * The list of additional attributes that may be associated with the package. Presence of any element indicates the package has that attribute.
      *
      * @var string[]
      */
     protected $additionalAttributes;
     /**
-     * type
+     * The list of additional services that may be associated with the package. Presence of any element indicates that the package has that service.
      *
      * @var string[]
      */
@@ -43,7 +43,7 @@ class Package extends \ArrayObject
      */
     protected $alternateTrackingNumber;
     /**
-     * 
+     * The container which has the current package status
      *
      * @var Status
      */
@@ -55,13 +55,13 @@ class Package extends \ArrayObject
      */
     protected $deliveryDate;
     /**
-     * 
+     * Container with all information related to the delivery of the package. Populated only when the package is delivered.
      *
      * @var DeliveryInformation
      */
     protected $deliveryInformation;
     /**
-     * 
+     * The container which has all delivery times associated with the package.
      *
      * @var DeliveryTime
      */
@@ -79,7 +79,7 @@ class Package extends \ArrayObject
      */
     protected $packageAddress;
     /**
-     * packageCount
+     * The total number of packages in the shipment. Note that this number may be greater than the number of returned packages in the response. In such cases subsequent calls are needed to get additional packages.
      *
      * @var int
      */
@@ -97,7 +97,7 @@ class Package extends \ArrayObject
      */
     protected $referenceNumber;
     /**
-     * 
+     * The container which has the package service information.
      *
      * @var Service
      */
@@ -109,13 +109,13 @@ class Package extends \ArrayObject
      */
     protected $statusCode;
     /**
-     * 
+     * The activity status description. Note: this field will be translated based on the locale provided in the request.
      *
      * @var string
      */
     protected $statusDescription;
     /**
-     * suppressionIndicators
+     * Contains values which signify that certain data should be suppressed or hidden. Valid values: Tracking activity details should be hidden. Note: this is mainly intended for use by UPS.com applications.
      *
      * @var string[]
      */
@@ -127,13 +127,13 @@ class Package extends \ArrayObject
      */
     protected $trackingNumber;
     /**
-     * 
+     * The weight container for the package.
      *
      * @var Weight|null
      */
     protected $weight;
     /**
-     * 
+     * The container that has all the information related to the access point where the package is destined for/delivered to.
      *
      * @return AccessPointInformation
      */
@@ -142,7 +142,7 @@ class Package extends \ArrayObject
         return $this->accessPointInformation;
     }
     /**
-     * 
+     * The container that has all the information related to the access point where the package is destined for/delivered to.
      *
      * @param AccessPointInformation $accessPointInformation
      *
@@ -177,7 +177,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The list of additional attributes that may be associated with the package. Presence of any element indicates the package has that attribute.
      *
      * @return string[]
      */
@@ -186,7 +186,7 @@ class Package extends \ArrayObject
         return $this->additionalAttributes;
     }
     /**
-     * type
+     * The list of additional attributes that may be associated with the package. Presence of any element indicates the package has that attribute.
      *
      * @param string[] $additionalAttributes
      *
@@ -199,7 +199,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The list of additional services that may be associated with the package. Presence of any element indicates that the package has that service.
      *
      * @return string[]
      */
@@ -208,7 +208,7 @@ class Package extends \ArrayObject
         return $this->additionalServices;
     }
     /**
-     * type
+     * The list of additional services that may be associated with the package. Presence of any element indicates that the package has that service.
      *
      * @param string[] $additionalServices
      *
@@ -243,7 +243,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The container which has the current package status
      *
      * @return Status
      */
@@ -252,7 +252,7 @@ class Package extends \ArrayObject
         return $this->currentStatus;
     }
     /**
-     * 
+     * The container which has the current package status
      *
      * @param Status $currentStatus
      *
@@ -287,7 +287,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container with all information related to the delivery of the package. Populated only when the package is delivered.
      *
      * @return DeliveryInformation
      */
@@ -296,7 +296,7 @@ class Package extends \ArrayObject
         return $this->deliveryInformation;
     }
     /**
-     * 
+     * Container with all information related to the delivery of the package. Populated only when the package is delivered.
      *
      * @param DeliveryInformation $deliveryInformation
      *
@@ -309,7 +309,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The container which has all delivery times associated with the package.
      *
      * @return DeliveryTime
      */
@@ -318,7 +318,7 @@ class Package extends \ArrayObject
         return $this->deliveryTime;
     }
     /**
-     * 
+     * The container which has all delivery times associated with the package.
      *
      * @param DeliveryTime $deliveryTime
      *
@@ -375,7 +375,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * packageCount
+     * The total number of packages in the shipment. Note that this number may be greater than the number of returned packages in the response. In such cases subsequent calls are needed to get additional packages.
      *
      * @return int
      */
@@ -384,7 +384,7 @@ class Package extends \ArrayObject
         return $this->packageCount;
     }
     /**
-     * packageCount
+     * The total number of packages in the shipment. Note that this number may be greater than the number of returned packages in the response. In such cases subsequent calls are needed to get additional packages.
      *
      * @param int $packageCount
      *
@@ -441,7 +441,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The container which has the package service information.
      *
      * @return Service
      */
@@ -450,7 +450,7 @@ class Package extends \ArrayObject
         return $this->service;
     }
     /**
-     * 
+     * The container which has the package service information.
      *
      * @param Service $service
      *
@@ -485,7 +485,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The activity status description. Note: this field will be translated based on the locale provided in the request.
      *
      * @return string
      */
@@ -494,7 +494,7 @@ class Package extends \ArrayObject
         return $this->statusDescription;
     }
     /**
-     * 
+     * The activity status description. Note: this field will be translated based on the locale provided in the request.
      *
      * @param string $statusDescription
      *
@@ -507,7 +507,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * suppressionIndicators
+     * Contains values which signify that certain data should be suppressed or hidden. Valid values: Tracking activity details should be hidden. Note: this is mainly intended for use by UPS.com applications.
      *
      * @return string[]
      */
@@ -516,7 +516,7 @@ class Package extends \ArrayObject
         return $this->suppressionIndicators;
     }
     /**
-     * suppressionIndicators
+     * Contains values which signify that certain data should be suppressed or hidden. Valid values: Tracking activity details should be hidden. Note: this is mainly intended for use by UPS.com applications.
      *
      * @param string[] $suppressionIndicators
      *
@@ -551,7 +551,7 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The weight container for the package.
      *
      * @return Weight|null
      */
@@ -560,7 +560,7 @@ class Package extends \ArrayObject
         return $this->weight;
     }
     /**
-     * 
+     * The weight container for the package.
      *
      * @param Weight|null $weight
      *

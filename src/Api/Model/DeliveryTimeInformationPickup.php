@@ -13,19 +13,19 @@ class DeliveryTimeInformationPickup extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The date UPS picks up the package from the origin. Format: YYYYMMDD. In the event the Pickup date differs from the Ship On Date, provided in the request, a warning message will be returned.
+     * Shipment Date; The Pickup date is a Shipment Date and it is a required input field.  The user is allowed to query up to 35 days into the past and 60 days into the future. Format: YYYYMMDD  If a date is not provided, it will be defaulted to the current system date.
      *
      * @var string
      */
     protected $date;
     /**
-     * The time UPS will pick up the shipment. Military Time Format HHMMSS or HHMM
+     * Reflects the time the package is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Military Time Format HHMMSS or HHMM.   Invalid pickup time will not be validated.
      *
      * @var string
      */
     protected $time;
     /**
-     * The date UPS picks up the package from the origin. Format: YYYYMMDD. In the event the Pickup date differs from the Ship On Date, provided in the request, a warning message will be returned.
+     * Shipment Date; The Pickup date is a Shipment Date and it is a required input field.  The user is allowed to query up to 35 days into the past and 60 days into the future. Format: YYYYMMDD  If a date is not provided, it will be defaulted to the current system date.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
         return $this->date;
     }
     /**
-     * The date UPS picks up the package from the origin. Format: YYYYMMDD. In the event the Pickup date differs from the Ship On Date, provided in the request, a warning message will be returned.
+     * Shipment Date; The Pickup date is a Shipment Date and it is a required input field.  The user is allowed to query up to 35 days into the past and 60 days into the future. Format: YYYYMMDD  If a date is not provided, it will be defaulted to the current system date.
      *
      * @param string $date
      *
@@ -47,7 +47,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
         return $this;
     }
     /**
-     * The time UPS will pick up the shipment. Military Time Format HHMMSS or HHMM
+     * Reflects the time the package is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Military Time Format HHMMSS or HHMM.   Invalid pickup time will not be validated.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
         return $this->time;
     }
     /**
-     * The time UPS will pick up the shipment. Military Time Format HHMMSS or HHMM
+     * Reflects the time the package is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  Military Time Format HHMMSS or HHMM.   Invalid pickup time will not be validated.
      *
      * @param string $time
      *

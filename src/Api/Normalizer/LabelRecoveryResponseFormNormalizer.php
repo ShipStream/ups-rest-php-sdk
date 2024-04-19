@@ -42,7 +42,7 @@ class LabelRecoveryResponseFormNormalizer implements DenormalizerInterface, Norm
             return $object;
         }
         if (\array_key_exists('Image', $data)) {
-            $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\FormImage', 'json', $context));
+            $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryFormImage', 'json', $context));
             unset($data['Image']);
         }
         foreach ($data as $key => $value) {

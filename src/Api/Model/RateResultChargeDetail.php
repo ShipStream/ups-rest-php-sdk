@@ -14,20 +14,21 @@ class RateResultChargeDetail extends \ArrayObject
     }
     /**
     * Indicates the general charge type
-    A = ACCESSORIAL TYPE
-    B = BASE CHARGE TYPE
-    S = SURCHARGE TYPE
+    - A = ACCESSORIAL TYPE
+    - B = BASE CHARGE TYPE
+    - S = SURCHARGE TYPE
     *
     * @var string
     */
     protected $chargeCode;
     /**
     * Description of each charge.The possible descriptions are:
-    BASE CHARGE
-    EXTENDED AREA SURCHARGE
-    FUEL SURCHARGE
-    REMOTE AREA SURCHARGE
-    RESIDENTIAL SURCHARGE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      SATURDAY ON-CALL STOP CHARGE
+    - BASE CHARGE
+    - EXTENDED AREA SURCHARGE
+    - FUEL SURCHARGE
+    - REMOTE AREA SURCHARGE
+    - RESIDENTIAL SURCHARGE
+    - SATURDAY ON-CALL STOP CHARGE
     *
     * @var string
     */
@@ -52,9 +53,9 @@ class RateResultChargeDetail extends \ArrayObject
     protected $taxAmount;
     /**
     * Indicates the general charge type
-    A = ACCESSORIAL TYPE
-    B = BASE CHARGE TYPE
-    S = SURCHARGE TYPE
+    - A = ACCESSORIAL TYPE
+    - B = BASE CHARGE TYPE
+    - S = SURCHARGE TYPE
     *
     * @return string
     */
@@ -64,9 +65,9 @@ class RateResultChargeDetail extends \ArrayObject
     }
     /**
     * Indicates the general charge type
-    A = ACCESSORIAL TYPE
-    B = BASE CHARGE TYPE
-    S = SURCHARGE TYPE
+    - A = ACCESSORIAL TYPE
+    - B = BASE CHARGE TYPE
+    - S = SURCHARGE TYPE
     *
     * @param string $chargeCode
     *
@@ -80,11 +81,12 @@ class RateResultChargeDetail extends \ArrayObject
     }
     /**
     * Description of each charge.The possible descriptions are:
-    BASE CHARGE
-    EXTENDED AREA SURCHARGE
-    FUEL SURCHARGE
-    REMOTE AREA SURCHARGE
-    RESIDENTIAL SURCHARGE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      SATURDAY ON-CALL STOP CHARGE
+    - BASE CHARGE
+    - EXTENDED AREA SURCHARGE
+    - FUEL SURCHARGE
+    - REMOTE AREA SURCHARGE
+    - RESIDENTIAL SURCHARGE
+    - SATURDAY ON-CALL STOP CHARGE
     *
     * @return string
     */
@@ -94,11 +96,12 @@ class RateResultChargeDetail extends \ArrayObject
     }
     /**
     * Description of each charge.The possible descriptions are:
-    BASE CHARGE
-    EXTENDED AREA SURCHARGE
-    FUEL SURCHARGE
-    REMOTE AREA SURCHARGE
-    RESIDENTIAL SURCHARGE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      SATURDAY ON-CALL STOP CHARGE
+    - BASE CHARGE
+    - EXTENDED AREA SURCHARGE
+    - FUEL SURCHARGE
+    - REMOTE AREA SURCHARGE
+    - RESIDENTIAL SURCHARGE
+    - SATURDAY ON-CALL STOP CHARGE
     *
     * @param string $chargeDescription
     *

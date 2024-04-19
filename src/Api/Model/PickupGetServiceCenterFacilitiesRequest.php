@@ -44,7 +44,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     */
     protected $locale;
     /**
-     * Proximity Indicator.  Indicates the� user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
+     * Proximity Indicator. Indicates the user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
      *
      * @var string
      */
@@ -162,7 +162,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Proximity Indicator.  Indicates the� user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
+     * Proximity Indicator. Indicates the user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
      *
      * @return string
      */
@@ -171,7 +171,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
         return $this->proximitySearchIndicator;
     }
     /**
-     * Proximity Indicator.  Indicates the� user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
+     * Proximity Indicator. Indicates the user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
      *
      * @param string $proximitySearchIndicator
      *

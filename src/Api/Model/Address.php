@@ -13,55 +13,55 @@ class Address extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * addressLine1
+     * The physical street address line 1.
      *
      * @var string|null
      */
     protected $addressLine1;
     /**
-     * addressLine2
+     * The physical street address line 2.
      *
      * @var string|null
      */
     protected $addressLine2;
     /**
-     * addressLine3
+     * The physical street address line 3.
      *
      * @var string|null
      */
     protected $addressLine3;
     /**
-     * city
+     * The physical address city.
      *
      * @var string|null
      */
     protected $city;
     /**
-     * country
+     * The physical address country.
      *
      * @var string
      */
     protected $country;
     /**
-     * countryCode
+     * The physical address country code.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * postalCode
+     * The physical address postal code.
      *
      * @var string|null
      */
     protected $postalCode;
     /**
-     * stateProvince
+     * The physical address state or province.
      *
      * @var string|null
      */
     protected $stateProvince;
     /**
-     * addressLine1
+     * The physical street address line 1.
      *
      * @return string|null
      */
@@ -70,7 +70,7 @@ class Address extends \ArrayObject
         return $this->addressLine1;
     }
     /**
-     * addressLine1
+     * The physical street address line 1.
      *
      * @param string|null $addressLine1
      *
@@ -83,7 +83,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * addressLine2
+     * The physical street address line 2.
      *
      * @return string|null
      */
@@ -92,7 +92,7 @@ class Address extends \ArrayObject
         return $this->addressLine2;
     }
     /**
-     * addressLine2
+     * The physical street address line 2.
      *
      * @param string|null $addressLine2
      *
@@ -105,7 +105,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * addressLine3
+     * The physical street address line 3.
      *
      * @return string|null
      */
@@ -114,7 +114,7 @@ class Address extends \ArrayObject
         return $this->addressLine3;
     }
     /**
-     * addressLine3
+     * The physical street address line 3.
      *
      * @param string|null $addressLine3
      *
@@ -127,7 +127,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * city
+     * The physical address city.
      *
      * @return string|null
      */
@@ -136,7 +136,7 @@ class Address extends \ArrayObject
         return $this->city;
     }
     /**
-     * city
+     * The physical address city.
      *
      * @param string|null $city
      *
@@ -149,7 +149,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * country
+     * The physical address country.
      *
      * @return string
      */
@@ -158,7 +158,7 @@ class Address extends \ArrayObject
         return $this->country;
     }
     /**
-     * country
+     * The physical address country.
      *
      * @param string $country
      *
@@ -171,7 +171,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * countryCode
+     * The physical address country code.
      *
      * @return string
      */
@@ -180,7 +180,7 @@ class Address extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * countryCode
+     * The physical address country code.
      *
      * @param string $countryCode
      *
@@ -193,7 +193,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * postalCode
+     * The physical address postal code.
      *
      * @return string|null
      */
@@ -202,7 +202,7 @@ class Address extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * postalCode
+     * The physical address postal code.
      *
      * @param string|null $postalCode
      *
@@ -215,7 +215,7 @@ class Address extends \ArrayObject
         return $this;
     }
     /**
-     * stateProvince
+     * The physical address state or province.
      *
      * @return string|null
      */
@@ -224,7 +224,7 @@ class Address extends \ArrayObject
         return $this->stateProvince;
     }
     /**
-     * stateProvince
+     * The physical address state or province.
      *
      * @param string|null $stateProvince
      *

@@ -13,22 +13,28 @@ class ShipperAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The Shipper street address including name and number (when applicable).  
-     *
-     * @var string[]
-     */
+    * The Shipper street address including name and number (when applicable). Up to three occurrences are allowed; only the first is printed on the label.
+    
+    35 characters are accepted, but for the first occurrence, only 30 characters will be printed on the label for return shipments.
+    
+    *
+    * @var string[]
+    */
     protected $addressLine;
     /**
-     * Shipper's City.
+     * Shipper's City.   For forward Shipment 30 characters are accepted, but only 15 characters will be printed on the label.
      *
      * @var string
      */
     protected $city;
     /**
-     * Shipper's state or province code. For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.
-     *
-     * @var string
-     */
+    * Shipper's state or province code.
+    
+    For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.  For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account.
+    
+    *
+    * @var string
+    */
     protected $stateProvinceCode;
     /**
      * Shipper's postal code.
@@ -37,27 +43,38 @@ class ShipperAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-     * Shipper's country or territory code. Refer to country or territory Codes in the Appendix for valid values.
-     *
-     * @var string
-     */
+    * Shipper's country or territory code.
+    
+    Refer to country or territory Codes in the Appendix for valid values.
+    
+    Drop Shipper accounts are valid for return service shipments only if the account is Trade Direct (TD) enabled.
+    
+    *
+    * @var string
+    */
     protected $countryCode;
     /**
-     * The Shipper street address including name and number (when applicable).  
-     *
-     * @return string[]
-     */
+    * The Shipper street address including name and number (when applicable). Up to three occurrences are allowed; only the first is printed on the label.
+    
+    35 characters are accepted, but for the first occurrence, only 30 characters will be printed on the label for return shipments.
+    
+    *
+    * @return string[]
+    */
     public function getAddressLine() : array
     {
         return $this->addressLine;
     }
     /**
-     * The Shipper street address including name and number (when applicable).  
-     *
-     * @param string[] $addressLine
-     *
-     * @return self
-     */
+    * The Shipper street address including name and number (when applicable). Up to three occurrences are allowed; only the first is printed on the label.
+    
+    35 characters are accepted, but for the first occurrence, only 30 characters will be printed on the label for return shipments.
+    
+    *
+    * @param string[] $addressLine
+    *
+    * @return self
+    */
     public function setAddressLine(array $addressLine) : self
     {
         $this->initialized['addressLine'] = true;
@@ -65,7 +82,7 @@ class ShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper's City.
+     * Shipper's City.   For forward Shipment 30 characters are accepted, but only 15 characters will be printed on the label.
      *
      * @return string
      */
@@ -74,7 +91,7 @@ class ShipperAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * Shipper's City.
+     * Shipper's City.   For forward Shipment 30 characters are accepted, but only 15 characters will be printed on the label.
      *
      * @param string $city
      *
@@ -87,21 +104,27 @@ class ShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper's state or province code. For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.
-     *
-     * @return string
-     */
+    * Shipper's state or province code.
+    
+    For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.  For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account.
+    
+    *
+    * @return string
+    */
     public function getStateProvinceCode() : string
     {
         return $this->stateProvinceCode;
     }
     /**
-     * Shipper's state or province code. For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.
-     *
-     * @param string $stateProvinceCode
-     *
-     * @return self
-     */
+    * Shipper's state or province code.
+    
+    For forward Shipment 5 characters are accepted, but only 2 characters will be printed on the label.  For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account.
+    
+    *
+    * @param string $stateProvinceCode
+    *
+    * @return self
+    */
     public function setStateProvinceCode(string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
@@ -131,21 +154,31 @@ class ShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Shipper's country or territory code. Refer to country or territory Codes in the Appendix for valid values.
-     *
-     * @return string
-     */
+    * Shipper's country or territory code.
+    
+    Refer to country or territory Codes in the Appendix for valid values.
+    
+    Drop Shipper accounts are valid for return service shipments only if the account is Trade Direct (TD) enabled.
+    
+    *
+    * @return string
+    */
     public function getCountryCode() : string
     {
         return $this->countryCode;
     }
     /**
-     * Shipper's country or territory code. Refer to country or territory Codes in the Appendix for valid values.
-     *
-     * @param string $countryCode
-     *
-     * @return self
-     */
+    * Shipper's country or territory code.
+    
+    Refer to country or territory Codes in the Appendix for valid values.
+    
+    Drop Shipper accounts are valid for return service shipments only if the account is Trade Direct (TD) enabled.
+    
+    *
+    * @param string $countryCode
+    *
+    * @return self
+    */
     public function setCountryCode(string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;

@@ -27,7 +27,6 @@ class FreightRateRequestRequest extends \ArrayObject
     
     Format: YYMM = Year and month of the release.
     Example: 1601 = 2016 January
-    
     Supported values: 1601, 1607, 1701, 1707
     *
     * @var string
@@ -70,7 +69,6 @@ class FreightRateRequestRequest extends \ArrayObject
     
     Format: YYMM = Year and month of the release.
     Example: 1601 = 2016 January
-    
     Supported values: 1601, 1607, 1701, 1707
     *
     * @return string
@@ -88,7 +86,6 @@ class FreightRateRequestRequest extends \ArrayObject
     
     Format: YYMM = Year and month of the release.
     Example: 1601 = 2016 January
-    
     Supported values: 1601, 1607, 1701, 1707
     *
     * @param string $subVersion

@@ -19,7 +19,7 @@ class CODCODAmount extends \ArrayObject
      */
     protected $currencyCode;
     /**
-     * COD Amount.  Valid values: 0.01 USD to 50000.00 USD
+     * COD Amount monetary value.
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class CODCODAmount extends \ArrayObject
         return $this;
     }
     /**
-     * COD Amount.  Valid values: 0.01 USD to 50000.00 USD
+     * COD Amount monetary value.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class CODCODAmount extends \ArrayObject
         return $this->monetaryValue;
     }
     /**
-     * COD Amount.  Valid values: 0.01 USD to 50000.00 USD
+     * COD Amount monetary value.
      *
      * @param string $monetaryValue
      *

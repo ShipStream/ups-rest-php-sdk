@@ -13,13 +13,13 @@ class ShipmentResultsHighValueReport extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for the High Value Report image for Import Control Shipments.
+     * Container tag for the High Value Report image.
      *
      * @var HighValueReportImage
      */
     protected $image;
     /**
-     * Container for the High Value Report image for Import Control Shipments.
+     * Container tag for the High Value Report image.
      *
      * @return HighValueReportImage
      */
@@ -28,7 +28,7 @@ class ShipmentResultsHighValueReport extends \ArrayObject
         return $this->image;
     }
     /**
-     * Container for the High Value Report image for Import Control Shipments.
+     * Container tag for the High Value Report image.
      *
      * @param HighValueReportImage $image
      *

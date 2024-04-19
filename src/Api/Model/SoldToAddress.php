@@ -13,7 +13,7 @@ class SoldToAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * SoldTo location's street address.
+     * SoldTo location's street address.  Applies to NAFTA CO.
      *
      * @var string[]
      */
@@ -25,7 +25,7 @@ class SoldToAddress extends \ArrayObject
      */
     protected $city;
     /**
-     * SoldTo location's state or province code.
+     * SoldTo location's state or province code.  Required for certain countries or territories.
      *
      * @var string
      */
@@ -49,7 +49,7 @@ class SoldToAddress extends \ArrayObject
      */
     protected $countryCode;
     /**
-     * SoldTo location's street address.
+     * SoldTo location's street address.  Applies to NAFTA CO.
      *
      * @return string[]
      */
@@ -58,7 +58,7 @@ class SoldToAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * SoldTo location's street address.
+     * SoldTo location's street address.  Applies to NAFTA CO.
      *
      * @param string[] $addressLine
      *
@@ -93,7 +93,7 @@ class SoldToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * SoldTo location's state or province code.
+     * SoldTo location's state or province code.  Required for certain countries or territories.
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class SoldToAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * SoldTo location's state or province code.
+     * SoldTo location's state or province code.  Required for certain countries or territories.
      *
      * @param string $stateProvinceCode
      *

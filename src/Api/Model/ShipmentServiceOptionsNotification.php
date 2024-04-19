@@ -13,20 +13,28 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The type of notification requested. Valid values:
-    5 - QV In-transit Notification
-    6 - QV Ship Notification
-    7 - QV Exception Notification
-    8 - QV Delivery Notification
-    2 - Return Notification or Label Creation Notification
-    012 - Alternate Delivery Location Notification
-    013 - UAP Shipper Notification
+    * The type of notification requested.
+    
+    Note:
+    - QVN Exception notification and return notification are not applicable to GFP.
+    - QV In-transit and Return Notifications are only valid for ImportControl and Return shipment.
+    - QV In-transit Notification is allowed for return shipments only.
+    - QV Ship Notification is allowed for forward moving shipments only.
+    
+    Valid values:
+    - 5 - QV In-transit Notification
+    - 6 - QV Ship Notification
+    - 7 - QV Exception Notification
+    - 8 - QV Delivery Notification
+    - 2 - Return Notification or Label Creation Notification
+    - 012 - Alternate Delivery Location Notification
+    - 013 - UAP Shipper Notification.
     *
     * @var string
     */
     protected $notificationCode;
     /**
-     * Container for the e-mail message.
+     * Container for Email Information.
      *
      * @var NotificationEMail
      */
@@ -50,14 +58,22 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      */
     protected $locale;
     /**
-    * The type of notification requested. Valid values:
-    5 - QV In-transit Notification
-    6 - QV Ship Notification
-    7 - QV Exception Notification
-    8 - QV Delivery Notification
-    2 - Return Notification or Label Creation Notification
-    012 - Alternate Delivery Location Notification
-    013 - UAP Shipper Notification
+    * The type of notification requested.
+    
+    Note:
+    - QVN Exception notification and return notification are not applicable to GFP.
+    - QV In-transit and Return Notifications are only valid for ImportControl and Return shipment.
+    - QV In-transit Notification is allowed for return shipments only.
+    - QV Ship Notification is allowed for forward moving shipments only.
+    
+    Valid values:
+    - 5 - QV In-transit Notification
+    - 6 - QV Ship Notification
+    - 7 - QV Exception Notification
+    - 8 - QV Delivery Notification
+    - 2 - Return Notification or Label Creation Notification
+    - 012 - Alternate Delivery Location Notification
+    - 013 - UAP Shipper Notification.
     *
     * @return string
     */
@@ -66,14 +82,22 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
         return $this->notificationCode;
     }
     /**
-    * The type of notification requested. Valid values:
-    5 - QV In-transit Notification
-    6 - QV Ship Notification
-    7 - QV Exception Notification
-    8 - QV Delivery Notification
-    2 - Return Notification or Label Creation Notification
-    012 - Alternate Delivery Location Notification
-    013 - UAP Shipper Notification
+    * The type of notification requested.
+    
+    Note:
+    - QVN Exception notification and return notification are not applicable to GFP.
+    - QV In-transit and Return Notifications are only valid for ImportControl and Return shipment.
+    - QV In-transit Notification is allowed for return shipments only.
+    - QV Ship Notification is allowed for forward moving shipments only.
+    
+    Valid values:
+    - 5 - QV In-transit Notification
+    - 6 - QV Ship Notification
+    - 7 - QV Exception Notification
+    - 8 - QV Delivery Notification
+    - 2 - Return Notification or Label Creation Notification
+    - 012 - Alternate Delivery Location Notification
+    - 013 - UAP Shipper Notification.
     *
     * @param string $notificationCode
     *
@@ -86,7 +110,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
         return $this;
     }
     /**
-     * Container for the e-mail message.
+     * Container for Email Information.
      *
      * @return NotificationEMail
      */
@@ -95,7 +119,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
         return $this->eMail;
     }
     /**
-     * Container for the e-mail message.
+     * Container for Email Information.
      *
      * @param NotificationEMail $eMail
      *

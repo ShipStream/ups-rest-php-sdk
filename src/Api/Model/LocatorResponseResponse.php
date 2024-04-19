@@ -33,7 +33,7 @@ class LocatorResponseResponse extends \ArrayObject
      */
     protected $responseStatusDescription;
     /**
-     * If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.
+     * 
      *
      * @var ResponseError
      */
@@ -109,7 +109,7 @@ class LocatorResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.
+     * 
      *
      * @return ResponseError
      */
@@ -118,7 +118,7 @@ class LocatorResponseResponse extends \ArrayObject
         return $this->error;
     }
     /**
-     * If an error is encountered during the interchange, the Response contains an error.� If the error is present, then the ErrorSeverity and ErrorCodes are required.
+     * 
      *
      * @param ResponseError $error
      *

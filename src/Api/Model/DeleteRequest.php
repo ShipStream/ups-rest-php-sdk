@@ -13,7 +13,7 @@ class DeleteRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Contains Paperless Document API deleted request criteria components.  N/A
+     * Contains Paperless Document API deleted request criteria components.
      *
      * @var DeleteRequestRequest
      */
@@ -31,7 +31,7 @@ class DeleteRequest extends \ArrayObject
      */
     protected $documentID;
     /**
-     * Contains Paperless Document API deleted request criteria components.  N/A
+     * Contains Paperless Document API deleted request criteria components.
      *
      * @return DeleteRequestRequest
      */
@@ -40,7 +40,7 @@ class DeleteRequest extends \ArrayObject
         return $this->request;
     }
     /**
-     * Contains Paperless Document API deleted request criteria components.  N/A
+     * Contains Paperless Document API deleted request criteria components.
      *
      * @param DeleteRequestRequest $request
      *

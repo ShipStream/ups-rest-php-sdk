@@ -19,7 +19,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
      */
     protected $requestOption;
     /**
-     * TransactionReference identifies transactions between client and server.  N/A
+     * TransactionReference identifies transactions between client and server.
      *
      * @var VoidRequestTransactionReference
      */
@@ -47,7 +47,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-     * TransactionReference identifies transactions between client and server.  N/A
+     * TransactionReference identifies transactions between client and server.
      *
      * @return VoidRequestTransactionReference
      */
@@ -56,7 +56,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
         return $this->transactionReference;
     }
     /**
-     * TransactionReference identifies transactions between client and server.  N/A
+     * TransactionReference identifies transactions between client and server.
      *
      * @param VoidRequestTransactionReference $transactionReference
      *

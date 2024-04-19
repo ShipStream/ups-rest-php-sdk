@@ -13,7 +13,7 @@ class ShipToAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address Line of the consignee.
+     * Address Line of the consignee. Only first two Address Lines will be printed on the label.
      *
      * @var string[]
      */
@@ -25,22 +25,35 @@ class ShipToAddress extends \ArrayObject
      */
     protected $city;
     /**
-     * Consignee's state or province code. Required for US or Canada.
-     *
-     * @var string
-     */
+    * Consignee's state or province code. Required for US or Canada.  If destination is US or CA, then the value must be a valid US State/ Canadian Province code.
+    
+    If the country or territory is Ireland, the StateProvinceCode will contain the county.
+    
+    *
+    * @var string
+    */
     protected $stateProvinceCode;
     /**
-     * Consignee's postal code.
-     *
-     * @var string
-     */
+    * Consignee's postal code.  If the ShipTo country or territory is US or Puerto Rico, 5 or 9 digits are required.
+    
+    If the ShipTo country or territory is CA, then the postal code is required and must be 6 alphanumeric characters whose format is A#A#A# where A is an uppercase letter and # is a digit.
+    
+    Otherwise optional. For all other countries or territories the postal code is optional and must be no more than 9 alphanumeric characters long.
+    
+    *
+    * @var string
+    */
     protected $postalCode;
     /**
-     * Consignee's country or territory code.
-     *
-     * @var string
-     */
+    * Consignee's country or territory code.  Must be a valid UPS Billing country or territory code.
+    For Return Shipment the country or territory code must meet the following conditions:
+    - At least two of the following country or territory codes are the same: ShipTo, ShipFrom, and Shipper.
+    - None of the following country or territory codes are the same and are a member of the EU: ShipTo, ShipFrom, and Shipper.
+    - If any of the two following country or territory codes: ShipTo/ ShipFrom/ Shipper are members in EU otherwise check if the shipper has Third country or territory Contract.
+    
+    *
+    * @var string
+    */
     protected $countryCode;
     /**
     * This field is a flag to indicate if the receiver is a residential location. 
@@ -50,7 +63,7 @@ class ShipToAddress extends \ArrayObject
     */
     protected $residentialAddressIndicator;
     /**
-     * Address Line of the consignee.
+     * Address Line of the consignee. Only first two Address Lines will be printed on the label.
      *
      * @return string[]
      */
@@ -59,7 +72,7 @@ class ShipToAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address Line of the consignee.
+     * Address Line of the consignee. Only first two Address Lines will be printed on the label.
      *
      * @param string[] $addressLine
      *
@@ -94,21 +107,27 @@ class ShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee's state or province code. Required for US or Canada.
-     *
-     * @return string
-     */
+    * Consignee's state or province code. Required for US or Canada.  If destination is US or CA, then the value must be a valid US State/ Canadian Province code.
+    
+    If the country or territory is Ireland, the StateProvinceCode will contain the county.
+    
+    *
+    * @return string
+    */
     public function getStateProvinceCode() : string
     {
         return $this->stateProvinceCode;
     }
     /**
-     * Consignee's state or province code. Required for US or Canada.
-     *
-     * @param string $stateProvinceCode
-     *
-     * @return self
-     */
+    * Consignee's state or province code. Required for US or Canada.  If destination is US or CA, then the value must be a valid US State/ Canadian Province code.
+    
+    If the country or territory is Ireland, the StateProvinceCode will contain the county.
+    
+    *
+    * @param string $stateProvinceCode
+    *
+    * @return self
+    */
     public function setStateProvinceCode(string $stateProvinceCode) : self
     {
         $this->initialized['stateProvinceCode'] = true;
@@ -116,21 +135,31 @@ class ShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee's postal code.
-     *
-     * @return string
-     */
+    * Consignee's postal code.  If the ShipTo country or territory is US or Puerto Rico, 5 or 9 digits are required.
+    
+    If the ShipTo country or territory is CA, then the postal code is required and must be 6 alphanumeric characters whose format is A#A#A# where A is an uppercase letter and # is a digit.
+    
+    Otherwise optional. For all other countries or territories the postal code is optional and must be no more than 9 alphanumeric characters long.
+    
+    *
+    * @return string
+    */
     public function getPostalCode() : string
     {
         return $this->postalCode;
     }
     /**
-     * Consignee's postal code.
-     *
-     * @param string $postalCode
-     *
-     * @return self
-     */
+    * Consignee's postal code.  If the ShipTo country or territory is US or Puerto Rico, 5 or 9 digits are required.
+    
+    If the ShipTo country or territory is CA, then the postal code is required and must be 6 alphanumeric characters whose format is A#A#A# where A is an uppercase letter and # is a digit.
+    
+    Otherwise optional. For all other countries or territories the postal code is optional and must be no more than 9 alphanumeric characters long.
+    
+    *
+    * @param string $postalCode
+    *
+    * @return self
+    */
     public function setPostalCode(string $postalCode) : self
     {
         $this->initialized['postalCode'] = true;
@@ -138,21 +167,31 @@ class ShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Consignee's country or territory code.
-     *
-     * @return string
-     */
+    * Consignee's country or territory code.  Must be a valid UPS Billing country or territory code.
+    For Return Shipment the country or territory code must meet the following conditions:
+    - At least two of the following country or territory codes are the same: ShipTo, ShipFrom, and Shipper.
+    - None of the following country or territory codes are the same and are a member of the EU: ShipTo, ShipFrom, and Shipper.
+    - If any of the two following country or territory codes: ShipTo/ ShipFrom/ Shipper are members in EU otherwise check if the shipper has Third country or territory Contract.
+    
+    *
+    * @return string
+    */
     public function getCountryCode() : string
     {
         return $this->countryCode;
     }
     /**
-     * Consignee's country or territory code.
-     *
-     * @param string $countryCode
-     *
-     * @return self
-     */
+    * Consignee's country or territory code.  Must be a valid UPS Billing country or territory code.
+    For Return Shipment the country or territory code must meet the following conditions:
+    - At least two of the following country or territory codes are the same: ShipTo, ShipFrom, and Shipper.
+    - None of the following country or territory codes are the same and are a member of the EU: ShipTo, ShipFrom, and Shipper.
+    - If any of the two following country or territory codes: ShipTo/ ShipFrom/ Shipper are members in EU otherwise check if the shipper has Third country or territory Contract.
+    
+    *
+    * @param string $countryCode
+    *
+    * @return self
+    */
     public function setCountryCode(string $countryCode) : self
     {
         $this->initialized['countryCode'] = true;

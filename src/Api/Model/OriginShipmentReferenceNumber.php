@@ -25,8 +25,10 @@ class OriginShipmentReferenceNumber extends \ArrayObject
      */
     protected $number;
     /**
-    * Reflects what will go on the label as the name of the reference. 
-    For addition information, refer to the Service Codes table in the Appendix.
+    * Reflects what will go on the label as the name of the reference.
+    
+    For additional information, refer to the Reference Codes table in the Appendix.
+    
     *
     * @var string
     */
@@ -82,8 +84,10 @@ class OriginShipmentReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-    * Reflects what will go on the label as the name of the reference. 
-    For addition information, refer to the Service Codes table in the Appendix.
+    * Reflects what will go on the label as the name of the reference.
+    
+    For additional information, refer to the Reference Codes table in the Appendix.
+    
     *
     * @return string
     */
@@ -92,8 +96,10 @@ class OriginShipmentReferenceNumber extends \ArrayObject
         return $this->code;
     }
     /**
-    * Reflects what will go on the label as the name of the reference. 
-    For addition information, refer to the Service Codes table in the Appendix.
+    * Reflects what will go on the label as the name of the reference.
+    
+    For additional information, refer to the Reference Codes table in the Appendix.
+    
     *
     * @param string $code
     *

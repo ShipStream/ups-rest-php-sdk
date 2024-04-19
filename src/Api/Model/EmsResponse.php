@@ -93,7 +93,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code.  Required for US domestic requests. 
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -101,7 +101,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -109,7 +109,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -127,7 +127,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination city. 
     
-    Required for International requests for thsoe countries that do not utilize postal codes.
+    Required for International requests for those countries that do not utilize postal codes.
     *
     * @var string
     */
@@ -147,7 +147,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code.  Required for US domestic requests. 
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -155,7 +155,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -163,7 +163,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @var string
     */
@@ -181,13 +181,13 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin city. 
     
-    Required for International requests for thsoe countries that do not utilize postal codes.
+    Required for International requests for those countries that do not utilize postal codes.
     *
     * @var string
     */
     protected $originCityName;
     /**
-    * Shipment weight.  Value is only requried for international shipment.  
+    * Shipment weight.  Value is only required for international shipment.  
     
     Defaults to 0.0
     *
@@ -219,7 +219,7 @@ class EmsResponse extends \ArrayObject
     
      The logic for determining if guarantees are suspended applies per origin country. 
     
-    The following wil be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
+    The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
     
     Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
     *
@@ -477,7 +477,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code.  Required for US domestic requests. 
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -488,7 +488,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code.  Required for US domestic requests. 
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $destinationPostalCode
     *
@@ -503,7 +503,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -514,7 +514,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $destinationPostalCodeLow
     *
@@ -529,7 +529,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -540,7 +540,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $destinationPostalCodeHigh
     *
@@ -585,7 +585,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination city. 
     
-    Required for International requests for thsoe countries that do not utilize postal codes.
+    Required for International requests for those countries that do not utilize postal codes.
     *
     * @return string
     */
@@ -596,7 +596,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment destination city. 
     
-    Required for International requests for thsoe countries that do not utilize postal codes.
+    Required for International requests for those countries that do not utilize postal codes.
     *
     * @param string $destinationCityName
     *
@@ -655,7 +655,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code.  Required for US domestic requests. 
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -666,7 +666,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code.  Required for US domestic requests. 
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $originPostalCode
     *
@@ -681,7 +681,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -692,7 +692,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $originPostalCodeLow
     *
@@ -707,7 +707,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @return string
     */
@@ -718,7 +718,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.  
     
-    Either 5- or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
     *
     * @param string $originPostalCodeHigh
     *
@@ -763,7 +763,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin city. 
     
-    Required for International requests for thsoe countries that do not utilize postal codes.
+    Required for International requests for those countries that do not utilize postal codes.
     *
     * @return string
     */
@@ -774,7 +774,7 @@ class EmsResponse extends \ArrayObject
     /**
     * The shipment origin city. 
     
-    Required for International requests for thsoe countries that do not utilize postal codes.
+    Required for International requests for those countries that do not utilize postal codes.
     *
     * @param string $originCityName
     *
@@ -787,7 +787,7 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Shipment weight.  Value is only requried for international shipment.  
+    * Shipment weight.  Value is only required for international shipment.  
     
     Defaults to 0.0
     *
@@ -798,7 +798,7 @@ class EmsResponse extends \ArrayObject
         return $this->weight;
     }
     /**
-    * Shipment weight.  Value is only requried for international shipment.  
+    * Shipment weight.  Value is only required for international shipment.  
     
     Defaults to 0.0
     *
@@ -887,7 +887,7 @@ class EmsResponse extends \ArrayObject
     
      The logic for determining if guarantees are suspended applies per origin country. 
     
-    The following wil be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
+    The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
     
     Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
     *
@@ -902,7 +902,7 @@ class EmsResponse extends \ArrayObject
     
      The logic for determining if guarantees are suspended applies per origin country. 
     
-    The following wil be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
+    The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
     
     Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
     *

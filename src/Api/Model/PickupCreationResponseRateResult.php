@@ -20,8 +20,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
     protected $disclaimer;
     /**
     * Indicates this pickup is rated as same-day or future-day pickup.
-    SD = Same-day Pickup
-    FD = Future-day Pickup
+    - SD = Same-day Pickup
+    - FD = Future-day Pickup
     *
     * @var string
     */
@@ -33,13 +33,15 @@ class PickupCreationResponseRateResult extends \ArrayObject
      */
     protected $currencyCode;
     /**
-     * 
+     * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RateResultChargeDetail[]
      */
     protected $chargeDetail;
     /**
-     * 
+     * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RateResultTaxCharges[]
      */
@@ -98,8 +100,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
     }
     /**
     * Indicates this pickup is rated as same-day or future-day pickup.
-    SD = Same-day Pickup
-    FD = Future-day Pickup
+    - SD = Same-day Pickup
+    - FD = Future-day Pickup
     *
     * @return string
     */
@@ -109,8 +111,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
     }
     /**
     * Indicates this pickup is rated as same-day or future-day pickup.
-    SD = Same-day Pickup
-    FD = Future-day Pickup
+    - SD = Same-day Pickup
+    - FD = Future-day Pickup
     *
     * @param string $rateType
     *
@@ -145,7 +147,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RateResultChargeDetail[]
      */
@@ -154,7 +157,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
         return $this->chargeDetail;
     }
     /**
-     * 
+     * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RateResultChargeDetail[] $chargeDetail
      *
@@ -167,7 +171,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RateResultTaxCharges[]
      */
@@ -176,7 +181,8 @@ class PickupCreationResponseRateResult extends \ArrayObject
         return $this->taxCharges;
     }
     /**
-     * 
+     * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RateResultTaxCharges[] $taxCharges
      *

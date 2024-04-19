@@ -13,19 +13,19 @@ class HandlingUnitsUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code associated with Unit of Measurement for the Adjusted height. Valid value: IN
+     * Code for UnitOfMeasurement for the line item dimension. Valid value is IN
      *
      * @var string
      */
     protected $code;
     /**
-     * Description for UnitOfMeasurement for the adjusted height.
+     * Description for UnitOfMeasurement for the line item dimension.
      *
      * @var string
      */
     protected $description;
     /**
-     * Code associated with Unit of Measurement for the Adjusted height. Valid value: IN
+     * Code for UnitOfMeasurement for the line item dimension. Valid value is IN
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class HandlingUnitsUnitOfMeasurement extends \ArrayObject
         return $this->code;
     }
     /**
-     * Code associated with Unit of Measurement for the Adjusted height. Valid value: IN
+     * Code for UnitOfMeasurement for the line item dimension. Valid value is IN
      *
      * @param string $code
      *
@@ -47,7 +47,7 @@ class HandlingUnitsUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * Description for UnitOfMeasurement for the adjusted height.
+     * Description for UnitOfMeasurement for the line item dimension.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class HandlingUnitsUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description for UnitOfMeasurement for the adjusted height.
+     * Description for UnitOfMeasurement for the line item dimension.
      *
      * @param string $description
      *

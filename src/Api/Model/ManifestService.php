@@ -19,7 +19,7 @@ class ManifestService extends \ArrayObject
      */
     protected $code;
     /**
-     * Not used.
+     * Description of the service code. Examples are Next Day Air, Worldwide Express, and Ground.
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class ManifestService extends \ArrayObject
         return $this;
     }
     /**
-     * Not used.
+     * Description of the service code. Examples are Next Day Air, Worldwide Express, and Ground.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class ManifestService extends \ArrayObject
         return $this->description;
     }
     /**
-     * Not used.
+     * Description of the service code. Examples are Next Day Air, Worldwide Express, and Ground.
      *
      * @param string $description
      *

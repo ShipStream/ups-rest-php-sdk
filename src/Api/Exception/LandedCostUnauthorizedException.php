@@ -5,22 +5,22 @@ namespace ShipStream\Ups\Api\Exception;
 class LandedCostUnauthorizedException extends UnauthorizedException
 {
     /**
-     * @var \ShipStream\Ups\Api\Model\Errors
+     * @var \ShipStream\Ups\Api\Model\ErrorResponse
      */
-    private $errors;
+    private $errorResponse;
     /**
      * @var \Psr\Http\Message\ResponseInterface
      */
     private $response;
-    public function __construct(\ShipStream\Ups\Api\Model\Errors $errors, \Psr\Http\Message\ResponseInterface $response)
+    public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
         parent::__construct('Unauthorized Request');
-        $this->errors = $errors;
+        $this->errorResponse = $errorResponse;
         $this->response = $response;
     }
-    public function getErrors() : \ShipStream\Ups\Api\Model\Errors
+    public function getErrorResponse() : \ShipStream\Ups\Api\Model\ErrorResponse
     {
-        return $this->errors;
+        return $this->errorResponse;
     }
     public function getResponse() : \Psr\Http\Message\ResponseInterface
     {

@@ -20,7 +20,8 @@ class PickupCancelRequest extends \ArrayObject
     protected $request;
     /**
     * Cancel pickup by Pickup Request Number (PRN).
-    01= Account Number                                             02 = PRN
+    - 01= Account Number
+    - 02 = PRN
     *
     * @var string
     */
@@ -56,7 +57,8 @@ class PickupCancelRequest extends \ArrayObject
     }
     /**
     * Cancel pickup by Pickup Request Number (PRN).
-    01= Account Number                                             02 = PRN
+    - 01= Account Number
+    - 02 = PRN
     *
     * @return string
     */
@@ -66,7 +68,8 @@ class PickupCancelRequest extends \ArrayObject
     }
     /**
     * Cancel pickup by Pickup Request Number (PRN).
-    01= Account Number                                             02 = PRN
+    - 01= Account Number
+    - 02 = PRN
     *
     * @param string $cancelBy
     *

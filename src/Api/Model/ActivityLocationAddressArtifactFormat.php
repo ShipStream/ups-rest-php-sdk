@@ -13,25 +13,25 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * City name where package is delivered.
+     * City of an activity occurred during a package shipment.
      *
      * @var string
      */
     protected $politicalDivision2;
     /**
-     * Abbreviated state or province name where package is delivered.
+     * State or province code of an activity occurred during a package shipment. Must be valid US state. If the country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.
      *
      * @var string
      */
     protected $politicalDivision1;
     /**
-     * Abbreviated country or territory name where package is delivered.
+     * Country or Territory code of an activity occurred during a package shipment. Valid values: CA, MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * City name where package is delivered.
+     * City of an activity occurred during a package shipment.
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
         return $this->politicalDivision2;
     }
     /**
-     * City name where package is delivered.
+     * City of an activity occurred during a package shipment.
      *
      * @param string $politicalDivision2
      *
@@ -53,7 +53,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Abbreviated state or province name where package is delivered.
+     * State or province code of an activity occurred during a package shipment. Must be valid US state. If the country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
         return $this->politicalDivision1;
     }
     /**
-     * Abbreviated state or province name where package is delivered.
+     * State or province code of an activity occurred during a package shipment. Must be valid US state. If the country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.
      *
      * @param string $politicalDivision1
      *
@@ -75,7 +75,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Abbreviated country or territory name where package is delivered.
+     * Country or Territory code of an activity occurred during a package shipment. Valid values: CA, MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Abbreviated country or territory name where package is delivered.
+     * Country or Territory code of an activity occurred during a package shipment. Valid values: CA, MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA
      *
      * @param string $countryCode
      *

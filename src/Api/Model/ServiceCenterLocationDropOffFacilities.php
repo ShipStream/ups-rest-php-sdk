@@ -37,11 +37,10 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      */
     protected $type;
     /**
-    * Facility�s Timezone
-    Format:
-    America/New_York
-    Asia/Hong_Kong
-    Europe/London
+    * Facility's Timezone. Format:
+    - America/New_York
+    - Asia/Hong_Kong
+    - Europe/London
     *
     * @var string
     */
@@ -77,7 +76,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      */
     protected $localizedInstruction;
     /**
-     * Distance from origin  Distance will be retuned for�drop off location search by proximity order.
+     * Distance from origin  Distance will be retuned for drop off location search by proximity order.
      *
      * @var DropOffFacilitiesDistance
      */
@@ -171,11 +170,10 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this;
     }
     /**
-    * Facility�s Timezone
-    Format:
-    America/New_York
-    Asia/Hong_Kong
-    Europe/London
+    * Facility's Timezone. Format:
+    - America/New_York
+    - Asia/Hong_Kong
+    - Europe/London
     *
     * @return string
     */
@@ -184,11 +182,10 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this->timezone;
     }
     /**
-    * Facility�s Timezone
-    Format:
-    America/New_York
-    Asia/Hong_Kong
-    Europe/London
+    * Facility's Timezone. Format:
+    - America/New_York
+    - Asia/Hong_Kong
+    - Europe/London
     *
     * @param string $timezone
     *
@@ -311,7 +308,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this;
     }
     /**
-     * Distance from origin  Distance will be retuned for�drop off location search by proximity order.
+     * Distance from origin  Distance will be retuned for drop off location search by proximity order.
      *
      * @return DropOffFacilitiesDistance
      */
@@ -320,7 +317,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this->distance;
     }
     /**
-     * Distance from origin  Distance will be retuned for�drop off location search by proximity order.
+     * Distance from origin  Distance will be retuned for drop off location search by proximity order.
      *
      * @param DropOffFacilitiesDistance $distance
      *

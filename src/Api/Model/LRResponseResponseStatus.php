@@ -13,19 +13,19 @@ class LRResponseResponseStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Identifies the success or failure of the transaction. 1 = Successful
+     * Identifies the success status of the transaction. 1= Success
      *
      * @var string
      */
     protected $code;
     /**
-     * Describes Response Status Code. Returns text of Success.
+     * Describes Response Status Code. Returns the text "Success"
      *
      * @var string
      */
     protected $description;
     /**
-     * Identifies the success or failure of the transaction. 1 = Successful
+     * Identifies the success status of the transaction. 1= Success
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class LRResponseResponseStatus extends \ArrayObject
         return $this->code;
     }
     /**
-     * Identifies the success or failure of the transaction. 1 = Successful
+     * Identifies the success status of the transaction. 1= Success
      *
      * @param string $code
      *
@@ -47,7 +47,7 @@ class LRResponseResponseStatus extends \ArrayObject
         return $this;
     }
     /**
-     * Describes Response Status Code. Returns text of Success.
+     * Describes Response Status Code. Returns the text "Success"
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class LRResponseResponseStatus extends \ArrayObject
         return $this->description;
     }
     /**
-     * Describes Response Status Code. Returns text of Success.
+     * Describes Response Status Code. Returns the text "Success"
      *
      * @param string $description
      *

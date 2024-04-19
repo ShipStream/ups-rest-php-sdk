@@ -13,33 +13,48 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The code associated with the unit of measure for the billable weight of a package.
-     *
-     * @var string
-     */
+    * Code representing the unit of measure associated with the package weight.
+    
+    Valid values:
+    - LBS = Pounds
+    - KGS = Kilograms.
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * The Description for the Unit Of Measurement.
+     * Text description of the code representing the unit of measure associated with the shipment weight.
      *
      * @var string
      */
     protected $description;
     /**
-     * The code associated with the unit of measure for the billable weight of a package.
-     *
-     * @return string
-     */
+    * Code representing the unit of measure associated with the package weight.
+    
+    Valid values:
+    - LBS = Pounds
+    - KGS = Kilograms.
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * The code associated with the unit of measure for the billable weight of a package.
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * Code representing the unit of measure associated with the package weight.
+    
+    Valid values:
+    - LBS = Pounds
+    - KGS = Kilograms.
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -47,7 +62,7 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return $this;
     }
     /**
-     * The Description for the Unit Of Measurement.
+     * Text description of the code representing the unit of measure associated with the shipment weight.
      *
      * @return string
      */
@@ -56,7 +71,7 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return $this->description;
     }
     /**
-     * The Description for the Unit Of Measurement.
+     * Text description of the code representing the unit of measure associated with the shipment weight.
      *
      * @param string $description
      *

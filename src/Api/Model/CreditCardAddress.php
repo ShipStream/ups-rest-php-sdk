@@ -37,7 +37,7 @@ class CreditCardAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-     * Credit card billing address country or territory code.
+     * Credit card billing address country or territory code. Must be a valid UPS Billing country or territory code.
      *
      * @var string
      */
@@ -131,7 +131,7 @@ class CreditCardAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Credit card billing address country or territory code.
+     * Credit card billing address country or territory code. Must be a valid UPS Billing country or territory code.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class CreditCardAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Credit card billing address country or territory code.
+     * Credit card billing address country or territory code. Must be a valid UPS Billing country or territory code.
      *
      * @param string $countryCode
      *

@@ -13,13 +13,15 @@ class RatedPackageNegotiatedCharges extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Negotiated Itemized Accessorial and Sur Charges.  These charges would be returned only when subversion is greater than or equal to 1607.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var NegotiatedChargesItemizedCharges[]
      */
     protected $itemizedCharges;
     /**
-     * 
+     * Negotiated Itemized Accessorial and Sur Charges.  These charges would be returned only when subversion is greater than or equal to 1607.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return NegotiatedChargesItemizedCharges[]
      */
@@ -28,7 +30,8 @@ class RatedPackageNegotiatedCharges extends \ArrayObject
         return $this->itemizedCharges;
     }
     /**
-     * 
+     * Negotiated Itemized Accessorial and Sur Charges.  These charges would be returned only when subversion is greater than or equal to 1607.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param NegotiatedChargesItemizedCharges[] $itemizedCharges
      *

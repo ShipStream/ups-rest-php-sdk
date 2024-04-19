@@ -13,13 +13,13 @@ class ResponseError extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Describes the severity of the error.�� Required if the error is present.
+     * Describes the severity of the error. Required if the error is present.
      *
      * @var string
      */
     protected $errorSeverity;
     /**
-     * A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.
+     * A numeric value that describes the error. Each tool defines a range of error codes. Required if the error is present.
      *
      * @var string
      */
@@ -31,25 +31,27 @@ class ResponseError extends \ArrayObject
      */
     protected $errorDescription;
     /**
-     * Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)
+     * Number of seconds to wait until retry. This field is populated on special conditions of the Transient Error only, as defined by the service. A number between 1 and 86400 (24 hours)
      *
      * @var string
      */
     protected $minimumRetrySeconds;
     /**
-     * 
+     * Identifies the element in error.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ErrorErrorLocation[]
      */
     protected $errorLocation;
     /**
      * The contents of the element in error.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var string[]
      */
     protected $errorDigest;
     /**
-     * Describes the severity of the error.�� Required if the error is present.
+     * Describes the severity of the error. Required if the error is present.
      *
      * @return string
      */
@@ -58,7 +60,7 @@ class ResponseError extends \ArrayObject
         return $this->errorSeverity;
     }
     /**
-     * Describes the severity of the error.�� Required if the error is present.
+     * Describes the severity of the error. Required if the error is present.
      *
      * @param string $errorSeverity
      *
@@ -71,7 +73,7 @@ class ResponseError extends \ArrayObject
         return $this;
     }
     /**
-     * A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.
+     * A numeric value that describes the error. Each tool defines a range of error codes. Required if the error is present.
      *
      * @return string
      */
@@ -80,7 +82,7 @@ class ResponseError extends \ArrayObject
         return $this->errorCode;
     }
     /**
-     * A numeric value that describes the error.� Each tool defines a range of error codes. Required if the error is present.
+     * A numeric value that describes the error. Each tool defines a range of error codes. Required if the error is present.
      *
      * @param string $errorCode
      *
@@ -115,7 +117,7 @@ class ResponseError extends \ArrayObject
         return $this;
     }
     /**
-     * Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)
+     * Number of seconds to wait until retry. This field is populated on special conditions of the Transient Error only, as defined by the service. A number between 1 and 86400 (24 hours)
      *
      * @return string
      */
@@ -124,7 +126,7 @@ class ResponseError extends \ArrayObject
         return $this->minimumRetrySeconds;
     }
     /**
-     * Number of seconds to wait until retry.� This field is populated on special conditions of the Transient Error only, as defined by the service.� A number between 1 and 86400 (24 hours)
+     * Number of seconds to wait until retry. This field is populated on special conditions of the Transient Error only, as defined by the service. A number between 1 and 86400 (24 hours)
      *
      * @param string $minimumRetrySeconds
      *
@@ -137,7 +139,8 @@ class ResponseError extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Identifies the element in error.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ErrorErrorLocation[]
      */
@@ -146,7 +149,8 @@ class ResponseError extends \ArrayObject
         return $this->errorLocation;
     }
     /**
-     * 
+     * Identifies the element in error.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ErrorErrorLocation[] $errorLocation
      *
@@ -160,6 +164,7 @@ class ResponseError extends \ArrayObject
     }
     /**
      * The contents of the element in error.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return string[]
      */
@@ -169,6 +174,7 @@ class ResponseError extends \ArrayObject
     }
     /**
      * The contents of the element in error.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param string[] $errorDigest
      *

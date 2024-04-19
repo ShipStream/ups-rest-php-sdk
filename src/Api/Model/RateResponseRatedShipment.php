@@ -13,7 +13,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RatedShipmentDisclaimer[]
      */
@@ -25,13 +26,31 @@ class RateResponseRatedShipment extends \ArrayObject
      */
     protected $service;
     /**
-     * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be: US 48 origin: 1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates. Alaska/Hawaii origin:1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates.  All Other origins:1 " Rates 5 - Regional Rates 6 - General List Rates. 3 and 4 do not apply
-     *
-     * @var string
-     */
+    * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    All Other origins:
+    - 1 – Rates
+    - 5 - Regional Rates
+    - 6 - General List Rates.
+    - 3 and 4 do not apply
+    
+    *
+    * @var string
+    */
     protected $rateChart;
     /**
-     * 
+     * Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RatedShipmentRatedShipmentAlert[]
      */
@@ -67,7 +86,8 @@ class RateResponseRatedShipment extends \ArrayObject
      */
     protected $baseServiceCharge;
     /**
-     * 
+     * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RatedShipmentItemizedCharges[]
      */
@@ -85,7 +105,8 @@ class RateResponseRatedShipment extends \ArrayObject
      */
     protected $serviceOptionsCharges;
     /**
-     * 
+     * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RatedShipmentTaxCharges[]
      */
@@ -109,7 +130,8 @@ class RateResponseRatedShipment extends \ArrayObject
      */
     protected $negotiatedRateCharges;
     /**
-     * 
+     * Rated Package Container.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var RatedShipmentRatedPackage[]
      */
@@ -133,7 +155,8 @@ class RateResponseRatedShipment extends \ArrayObject
      */
     protected $roarRatedIndicator;
     /**
-     * 
+     * Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RatedShipmentDisclaimer[]
      */
@@ -142,7 +165,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this->disclaimer;
     }
     /**
-     * 
+     * Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RatedShipmentDisclaimer[] $disclaimer
      *
@@ -177,21 +201,55 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this;
     }
     /**
-     * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be: US 48 origin: 1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates. Alaska/Hawaii origin:1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates.  All Other origins:1 " Rates 5 - Regional Rates 6 - General List Rates. 3 and 4 do not apply
-     *
-     * @return string
-     */
+    * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    All Other origins:
+    - 1 – Rates
+    - 5 - Regional Rates
+    - 6 - General List Rates.
+    - 3 and 4 do not apply
+    
+    *
+    * @return string
+    */
     public function getRateChart() : string
     {
         return $this->rateChart;
     }
     /**
-     * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be: US 48 origin: 1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates. Alaska/Hawaii origin:1 " Daily Rates 3 " Standard List Rates 4 " Retail Rates.  All Other origins:1 " Rates 5 - Regional Rates 6 - General List Rates. 3 and 4 do not apply
-     *
-     * @param string $rateChart
-     *
-     * @return self
-     */
+    * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
+    
+    US 48 origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    Alaska/Hawaii origin:
+    - 1 – Daily Rates
+    - 3 – Standard List Rates
+    - 4 – Retail Rates.
+    
+    All Other origins:
+    - 1 – Rates
+    - 5 - Regional Rates
+    - 6 - General List Rates.
+    - 3 and 4 do not apply
+    
+    *
+    * @param string $rateChart
+    *
+    * @return self
+    */
     public function setRateChart(string $rateChart) : self
     {
         $this->initialized['rateChart'] = true;
@@ -199,7 +257,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RatedShipmentRatedShipmentAlert[]
      */
@@ -208,7 +267,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this->ratedShipmentAlert;
     }
     /**
-     * 
+     * Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RatedShipmentRatedShipmentAlert[] $ratedShipmentAlert
      *
@@ -331,7 +391,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RatedShipmentItemizedCharges[]
      */
@@ -340,7 +401,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this->itemizedCharges;
     }
     /**
-     * 
+     * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RatedShipmentItemizedCharges[] $itemizedCharges
      *
@@ -397,7 +459,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RatedShipmentTaxCharges[]
      */
@@ -406,7 +469,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this->taxCharges;
     }
     /**
-     * 
+     * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RatedShipmentTaxCharges[] $taxCharges
      *
@@ -485,7 +549,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Rated Package Container.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return RatedShipmentRatedPackage[]
      */
@@ -494,7 +559,8 @@ class RateResponseRatedShipment extends \ArrayObject
         return $this->ratedPackage;
     }
     /**
-     * 
+     * Rated Package Container.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param RatedShipmentRatedPackage[] $ratedPackage
      *

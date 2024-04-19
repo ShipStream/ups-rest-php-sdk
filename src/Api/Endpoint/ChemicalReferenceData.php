@@ -6,7 +6,7 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
 {
     protected $version;
     /**
-    * The Dangerous Goods API provides the ability to determine what Dangerous Goods (also known as Hazardous Materials) can be carried by UPS.
+    * The Chemical Reference Data endpoint of the Dangerous Goods API allows shippers look up hazardous material reference information by ID number and shipping name of the specified regulated good.
     *
     * @param string $version Version of the API. Valid values:
     v1
@@ -56,7 +56,10 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\ChemicalReferenceDataTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper
@@ -68,8 +71,17 @@ class ChemicalReferenceData extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpo
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\ChemicalReferenceDataUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\ChemicalReferenceDataBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\ChemicalReferenceDataUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\ChemicalReferenceDataForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\ChemicalReferenceDataTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

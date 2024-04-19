@@ -13,19 +13,25 @@ class Service extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * code
+     * The service name code.
      *
      * @var string
      */
     protected $code;
     /**
-     * description
+     * The service name description. Note that this field will be translated based on the locale provided in the request.
      *
      * @var string
      */
     protected $description;
     /**
-     * code
+     * levelCode
+     *
+     * @var string
+     */
+    protected $levelCode;
+    /**
+     * The service name code.
      *
      * @return string
      */
@@ -34,7 +40,7 @@ class Service extends \ArrayObject
         return $this->code;
     }
     /**
-     * code
+     * The service name code.
      *
      * @param string $code
      *
@@ -47,7 +53,7 @@ class Service extends \ArrayObject
         return $this;
     }
     /**
-     * description
+     * The service name description. Note that this field will be translated based on the locale provided in the request.
      *
      * @return string
      */
@@ -56,7 +62,7 @@ class Service extends \ArrayObject
         return $this->description;
     }
     /**
-     * description
+     * The service name description. Note that this field will be translated based on the locale provided in the request.
      *
      * @param string $description
      *
@@ -66,6 +72,28 @@ class Service extends \ArrayObject
     {
         $this->initialized['description'] = true;
         $this->description = $description;
+        return $this;
+    }
+    /**
+     * levelCode
+     *
+     * @return string
+     */
+    public function getLevelCode() : string
+    {
+        return $this->levelCode;
+    }
+    /**
+     * levelCode
+     *
+     * @param string $levelCode
+     *
+     * @return self
+     */
+    public function setLevelCode(string $levelCode) : self
+    {
+        $this->initialized['levelCode'] = true;
+        $this->levelCode = $levelCode;
         return $this;
     }
 }

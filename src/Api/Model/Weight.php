@@ -13,19 +13,19 @@ class Weight extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms.
      *
      * @var string
      */
     protected $unitOfMeasurement;
     /**
-     * 
+     * The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms.
      *
      * @var string
      */
     protected $weight;
     /**
-     * 
+     * The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class Weight extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * 
+     * The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms.
      *
      * @param string $unitOfMeasurement
      *
@@ -47,7 +47,7 @@ class Weight extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class Weight extends \ArrayObject
         return $this->weight;
     }
     /**
-     * 
+     * The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms.
      *
      * @param string $weight
      *

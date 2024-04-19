@@ -13,19 +13,19 @@ class AlternateTrackingNumber extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * number
+     * The alternate tracking number.
      *
      * @var string
      */
     protected $number;
     /**
-     * type
+     * The type of alternate number. Non-typed numbers are typically UPS tracking numbers.
      *
      * @var string
      */
     protected $type;
     /**
-     * number
+     * The alternate tracking number.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class AlternateTrackingNumber extends \ArrayObject
         return $this->number;
     }
     /**
-     * number
+     * The alternate tracking number.
      *
      * @param string $number
      *
@@ -47,7 +47,7 @@ class AlternateTrackingNumber extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The type of alternate number. Non-typed numbers are typically UPS tracking numbers.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class AlternateTrackingNumber extends \ArrayObject
         return $this->type;
     }
     /**
-     * type
+     * The type of alternate number. Non-typed numbers are typically UPS tracking numbers.
      *
      * @param string $type
      *

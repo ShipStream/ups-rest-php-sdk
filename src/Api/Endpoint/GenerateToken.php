@@ -5,17 +5,13 @@ namespace ShipStream\Ups\Api\Endpoint;
 class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implements \ShipStream\Ups\Api\Runtime\Client\Endpoint
 {
     /**
-     * The Generate Token endpoint exchanges the authorization code received from Authorize Client for an access token and a refresh token. The client uses the access token to make API requests on behalf of the user by including it in the Authorization header. The access token will expire after a certain period and can be refreshed by using the RefreshToken endpoint.
+     * The Generate Token endpoint exchanges the authorization code received from the client application for an access token and a refresh token. The client uses the access token to make API requests on behalf of the user by including it in the authorization header. The access token will expire after a certain period and can be refreshed by using the /refresh endpoint.
      *
      * @param null|\ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody $requestBody 
-     * @param array $headerParameters {
-     *     @var string $x-merchant-id Client merchant ID
-     * }
      */
-    public function __construct(?\ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody $requestBody = null, array $headerParameters = array())
+    public function __construct(?\ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody $requestBody = null)
     {
         $this->body = $requestBody;
-        $this->headerParameters = $headerParameters;
     }
     use \ShipStream\Ups\Api\Runtime\Client\EndpointTrait;
     public function getMethod() : string
@@ -36,15 +32,6 @@ class GenerateToken extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
     public function getExtraHeaders() : array
     {
         return array('Accept' => array('application/json'));
-    }
-    protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
-    {
-        $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('x-merchant-id'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('x-merchant-id', array('string'));
-        return $optionsResolver;
     }
     /**
      * {@inheritdoc}

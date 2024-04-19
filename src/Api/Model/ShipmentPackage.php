@@ -31,7 +31,7 @@ class ShipmentPackage extends \ArrayObject
      */
     protected $numOfPieces;
     /**
-     * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including "." and can hold up to 2 decimal place. (e.g. 999999999.99)
+     * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including '.' and can hold up to 2 decimal place. (e.g. 999999999.99)
      *
      * @var string
      */
@@ -68,6 +68,18 @@ class ShipmentPackage extends \ArrayObject
     * @var string
     */
     protected $largePackageIndicator;
+    /**
+     * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is over size.   Applicable for UPS Worldwide Economy DDU service.
+     *
+     * @var string
+     */
+    protected $oversizeIndicator;
+    /**
+     * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is qualified for minimum billable weight.   Applicable for UPS Worldwide Economy DDU service.
+     *
+     * @var string
+     */
+    protected $minimumBillableWeightIndicator;
     /**
      * 
      *
@@ -177,7 +189,7 @@ class ShipmentPackage extends \ArrayObject
         return $this;
     }
     /**
-     * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including "." and can hold up to 2 decimal place. (e.g. 999999999.99)
+     * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including '.' and can hold up to 2 decimal place. (e.g. 999999999.99)
      *
      * @return string
      */
@@ -186,7 +198,7 @@ class ShipmentPackage extends \ArrayObject
         return $this->unitPrice;
     }
     /**
-     * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including "." and can hold up to 2 decimal place. (e.g. 999999999.99)
+     * Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including '.' and can hold up to 2 decimal place. (e.g. 999999999.99)
      *
      * @param string $unitPrice
      *
@@ -310,6 +322,50 @@ class ShipmentPackage extends \ArrayObject
     {
         $this->initialized['largePackageIndicator'] = true;
         $this->largePackageIndicator = $largePackageIndicator;
+        return $this;
+    }
+    /**
+     * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is over size.   Applicable for UPS Worldwide Economy DDU service.
+     *
+     * @return string
+     */
+    public function getOversizeIndicator() : string
+    {
+        return $this->oversizeIndicator;
+    }
+    /**
+     * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is over size.   Applicable for UPS Worldwide Economy DDU service.
+     *
+     * @param string $oversizeIndicator
+     *
+     * @return self
+     */
+    public function setOversizeIndicator(string $oversizeIndicator) : self
+    {
+        $this->initialized['oversizeIndicator'] = true;
+        $this->oversizeIndicator = $oversizeIndicator;
+        return $this;
+    }
+    /**
+     * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is qualified for minimum billable weight.   Applicable for UPS Worldwide Economy DDU service.
+     *
+     * @return string
+     */
+    public function getMinimumBillableWeightIndicator() : string
+    {
+        return $this->minimumBillableWeightIndicator;
+    }
+    /**
+     * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is qualified for minimum billable weight.   Applicable for UPS Worldwide Economy DDU service.
+     *
+     * @param string $minimumBillableWeightIndicator
+     *
+     * @return self
+     */
+    public function setMinimumBillableWeightIndicator(string $minimumBillableWeightIndicator) : self
+    {
+        $this->initialized['minimumBillableWeightIndicator'] = true;
+        $this->minimumBillableWeightIndicator = $minimumBillableWeightIndicator;
         return $this;
     }
     /**

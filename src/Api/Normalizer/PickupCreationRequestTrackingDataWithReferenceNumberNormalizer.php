@@ -46,12 +46,16 @@ class PickupCreationRequestTrackingDataWithReferenceNumberNormalizer implements 
             unset($data['TrackingNumber']);
         }
         if (\array_key_exists('ReferenceNumber', $data)) {
-            $object->setReferenceNumber($data['ReferenceNumber']);
+            $values = array();
+            foreach ($data['ReferenceNumber'] as $value) {
+                $values[] = $value;
+            }
+            $object->setReferenceNumber($values);
             unset($data['ReferenceNumber']);
         }
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value;
+                $object[$key] = $value_1;
             }
         }
         return $object;
@@ -64,11 +68,15 @@ class PickupCreationRequestTrackingDataWithReferenceNumberNormalizer implements 
         $data = array();
         $data['TrackingNumber'] = $object->getTrackingNumber();
         if ($object->isInitialized('referenceNumber') && null !== $object->getReferenceNumber()) {
-            $data['ReferenceNumber'] = $object->getReferenceNumber();
+            $values = array();
+            foreach ($object->getReferenceNumber() as $value) {
+                $values[] = $value;
+            }
+            $data['ReferenceNumber'] = $values;
         }
-        foreach ($object as $key => $value) {
+        foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data[$key] = $value_1;
             }
         }
         return $data;

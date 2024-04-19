@@ -13,25 +13,25 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Time taken through the abstraction layer in milliseconds
+     * Time taken through the abstraction layer in milliseconds.
      *
      * @var string
      */
     protected $absLayerTime;
     /**
-     * Request completed time
+     * Time taken to complete the request.
      *
      * @var string
      */
     protected $fulfillTime;
     /**
-     * Request receipt time
+     * Time taken to receive the request.
      *
      * @var string
      */
     protected $receiptTime;
     /**
-     * Time taken through the abstraction layer in milliseconds
+     * Time taken through the abstraction layer in milliseconds.
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
         return $this->absLayerTime;
     }
     /**
-     * Time taken through the abstraction layer in milliseconds
+     * Time taken through the abstraction layer in milliseconds.
      *
      * @param string $absLayerTime
      *
@@ -53,7 +53,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
         return $this;
     }
     /**
-     * Request completed time
+     * Time taken to complete the request.
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
         return $this->fulfillTime;
     }
     /**
-     * Request completed time
+     * Time taken to complete the request.
      *
      * @param string $fulfillTime
      *
@@ -75,7 +75,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
         return $this;
     }
     /**
-     * Request receipt time
+     * Time taken to receive the request.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
         return $this->receiptTime;
     }
     /**
-     * Request receipt time
+     * Time taken to receive the request.
      *
      * @param string $receiptTime
      *

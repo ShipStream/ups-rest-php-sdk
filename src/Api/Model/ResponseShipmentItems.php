@@ -13,55 +13,55 @@ class ResponseShipmentItems extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Specifies Commodity Id
+     * Specifies the commodity ID.
      *
      * @var string
      */
     protected $commodityID;
     /**
-     * Specifies the HTS code of the commodity
+     * Specifies the HTS code of the commodity.
      *
      * @var string
      */
     protected $hsCode;
     /**
-     * Duty amount of this commodity
+     * Duty amount for this commodity.
      *
      * @var float
      */
     protected $commodityDuty;
     /**
-     * Total tax and other fees of this commodity (excluding Duty and VAT)
+     * Total tax and other fees for this commodity (excluding commodity duty and VAT).
      *
      * @var float
      */
     protected $totalCommodityTaxAndFee;
     /**
-     * VAT amount of this commodity
+     * VAT amount for this commodity.
      *
      * @var float
      */
     protected $commodityVAT;
     /**
-     * Total combined duty, VAT, tax and other fees of this commodity
+     * Sum of commodity duty, VAT, tax, and other fees for this commodity.
      *
      * @var float
      */
     protected $totalCommodityDutyAndTax;
     /**
-     * Specifies the Currency Code used for commodity price
+     * Specifies the currency code used for commodity's price.
      *
      * @var string
      */
     protected $commodityCurrencyCode;
     /**
-     * True/False. Indicator for successful Landed Cost calculation for this commodity
+     * True/False. Indicates if Landed Cost can successful calculated for this commodity.
      *
      * @var bool
      */
     protected $isCalculable;
     /**
-     * Specifies Commodity Id
+     * Specifies the commodity ID.
      *
      * @return string
      */
@@ -70,7 +70,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->commodityID;
     }
     /**
-     * Specifies Commodity Id
+     * Specifies the commodity ID.
      *
      * @param string $commodityID
      *
@@ -83,7 +83,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Specifies the HTS code of the commodity
+     * Specifies the HTS code of the commodity.
      *
      * @return string
      */
@@ -92,7 +92,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->hsCode;
     }
     /**
-     * Specifies the HTS code of the commodity
+     * Specifies the HTS code of the commodity.
      *
      * @param string $hsCode
      *
@@ -105,7 +105,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Duty amount of this commodity
+     * Duty amount for this commodity.
      *
      * @return float
      */
@@ -114,7 +114,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->commodityDuty;
     }
     /**
-     * Duty amount of this commodity
+     * Duty amount for this commodity.
      *
      * @param float $commodityDuty
      *
@@ -127,7 +127,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Total tax and other fees of this commodity (excluding Duty and VAT)
+     * Total tax and other fees for this commodity (excluding commodity duty and VAT).
      *
      * @return float
      */
@@ -136,7 +136,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->totalCommodityTaxAndFee;
     }
     /**
-     * Total tax and other fees of this commodity (excluding Duty and VAT)
+     * Total tax and other fees for this commodity (excluding commodity duty and VAT).
      *
      * @param float $totalCommodityTaxAndFee
      *
@@ -149,7 +149,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * VAT amount of this commodity
+     * VAT amount for this commodity.
      *
      * @return float
      */
@@ -158,7 +158,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->commodityVAT;
     }
     /**
-     * VAT amount of this commodity
+     * VAT amount for this commodity.
      *
      * @param float $commodityVAT
      *
@@ -171,7 +171,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Total combined duty, VAT, tax and other fees of this commodity
+     * Sum of commodity duty, VAT, tax, and other fees for this commodity.
      *
      * @return float
      */
@@ -180,7 +180,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->totalCommodityDutyAndTax;
     }
     /**
-     * Total combined duty, VAT, tax and other fees of this commodity
+     * Sum of commodity duty, VAT, tax, and other fees for this commodity.
      *
      * @param float $totalCommodityDutyAndTax
      *
@@ -193,7 +193,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * Specifies the Currency Code used for commodity price
+     * Specifies the currency code used for commodity's price.
      *
      * @return string
      */
@@ -202,7 +202,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->commodityCurrencyCode;
     }
     /**
-     * Specifies the Currency Code used for commodity price
+     * Specifies the currency code used for commodity's price.
      *
      * @param string $commodityCurrencyCode
      *
@@ -215,7 +215,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this;
     }
     /**
-     * True/False. Indicator for successful Landed Cost calculation for this commodity
+     * True/False. Indicates if Landed Cost can successful calculated for this commodity.
      *
      * @return bool
      */
@@ -224,7 +224,7 @@ class ResponseShipmentItems extends \ArrayObject
         return $this->isCalculable;
     }
     /**
-     * True/False. Indicator for successful Landed Cost calculation for this commodity
+     * True/False. Indicates if Landed Cost can successful calculated for this commodity.
      *
      * @param bool $isCalculable
      *

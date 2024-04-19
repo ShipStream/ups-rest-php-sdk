@@ -13,7 +13,7 @@ class PackageDimWeight extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * UnitOfMeasurement Container.  N/A
+     * UnitOfMeasurement Container.
      *
      * @var DimWeightUnitOfMeasurement
      */
@@ -25,7 +25,7 @@ class PackageDimWeight extends \ArrayObject
      */
     protected $weight;
     /**
-     * UnitOfMeasurement Container.  N/A
+     * UnitOfMeasurement Container.
      *
      * @return DimWeightUnitOfMeasurement
      */
@@ -34,7 +34,7 @@ class PackageDimWeight extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * UnitOfMeasurement Container.  N/A
+     * UnitOfMeasurement Container.
      *
      * @param DimWeightUnitOfMeasurement $unitOfMeasurement
      *

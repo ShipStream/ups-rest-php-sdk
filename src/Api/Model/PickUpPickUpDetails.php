@@ -13,21 +13,19 @@ class PickUpPickUpDetails extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Time of pickup in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
+     * Pickup time of transportation service for a location in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
      * @var string
      */
     protected $pickUpTime;
     /**
-    * Indicates whether or not there is a pickup time for the specified day of the week. Valid values: 
-    True-there is a pickup time
-    False-there is not a pickup time.
-    *
-    * @var string
-    */
+     * Presence or Absence Indicator. If present, Indicates that there is no pickup time for the day.
+     *
+     * @var string
+     */
     protected $noPickUpIndicator;
     /**
-     * Time of pickup in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
+     * Pickup time of transportation service for a location in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
      * @return string
      */
@@ -36,7 +34,7 @@ class PickUpPickUpDetails extends \ArrayObject
         return $this->pickUpTime;
     }
     /**
-     * Time of pickup in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
+     * Pickup time of transportation service for a location in military format (HHMM) e.g. 0930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
      * @param string $pickUpTime
      *
@@ -49,25 +47,21 @@ class PickUpPickUpDetails extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates whether or not there is a pickup time for the specified day of the week. Valid values: 
-    True-there is a pickup time
-    False-there is not a pickup time.
-    *
-    * @return string
-    */
+     * Presence or Absence Indicator. If present, Indicates that there is no pickup time for the day.
+     *
+     * @return string
+     */
     public function getNoPickUpIndicator() : string
     {
         return $this->noPickUpIndicator;
     }
     /**
-    * Indicates whether or not there is a pickup time for the specified day of the week. Valid values: 
-    True-there is a pickup time
-    False-there is not a pickup time.
-    *
-    * @param string $noPickUpIndicator
-    *
-    * @return self
-    */
+     * Presence or Absence Indicator. If present, Indicates that there is no pickup time for the day.
+     *
+     * @param string $noPickUpIndicator
+     *
+     * @return self
+     */
     public function setNoPickUpIndicator(string $noPickUpIndicator) : self
     {
         $this->initialized['noPickUpIndicator'] = true;

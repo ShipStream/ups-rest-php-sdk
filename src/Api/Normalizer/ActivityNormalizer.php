@@ -45,6 +45,18 @@ class ActivityNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setDate($data['date']);
             unset($data['date']);
         }
+        if (\array_key_exists('gmtDate', $data)) {
+            $object->setGmtDate($data['gmtDate']);
+            unset($data['gmtDate']);
+        }
+        if (\array_key_exists('gmtOffset', $data)) {
+            $object->setGmtOffset($data['gmtOffset']);
+            unset($data['gmtOffset']);
+        }
+        if (\array_key_exists('gmtTime', $data)) {
+            $object->setGmtTime($data['gmtTime']);
+            unset($data['gmtTime']);
+        }
         if (\array_key_exists('location', $data)) {
             $object->setLocation($this->denormalizer->denormalize($data['location'], 'ShipStream\\Ups\\Api\\Model\\Location', 'json', $context));
             unset($data['location']);
@@ -72,6 +84,15 @@ class ActivityNormalizer implements DenormalizerInterface, NormalizerInterface, 
         $data = array();
         if ($object->isInitialized('date') && null !== $object->getDate()) {
             $data['date'] = $object->getDate();
+        }
+        if ($object->isInitialized('gmtDate') && null !== $object->getGmtDate()) {
+            $data['gmtDate'] = $object->getGmtDate();
+        }
+        if ($object->isInitialized('gmtOffset') && null !== $object->getGmtOffset()) {
+            $data['gmtOffset'] = $object->getGmtOffset();
+        }
+        if ($object->isInitialized('gmtTime') && null !== $object->getGmtTime()) {
+            $data['gmtTime'] = $object->getGmtTime();
         }
         if ($object->isInitialized('location') && null !== $object->getLocation()) {
             $data['location'] = $this->normalizer->normalize($object->getLocation(), 'json', $context);

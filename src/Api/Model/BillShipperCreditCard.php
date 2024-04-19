@@ -14,21 +14,21 @@ class BillShipperCreditCard extends \ArrayObject
     }
     /**
     * Valid values:
-    01 = American Express
-    03 = Discover
-    04 = MasterCard
-    05 = Optima
-    06 = VISA
-    07 = Bravo
-    08 = Diners Club
-    13=Dankort
-    14=Hipercard
-    15=JCB
-    17=Postepay
-    18=UnionPay/ExpressPay
-    19=Visa Electron
-    20=VPAY
-    21=Carte Bleue
+    - 01 = American Express
+    - 03 = Discover
+    - 04 = MasterCard
+    - 05 = Optima
+    - 06 = VISA
+    - 07 = Bravo
+    - 08 = Diners Club
+    - 13 = Dankort
+    - 14 = Hipercard
+    - 15 = JCB
+    - 17 = Postepay
+    - 18 = UnionPay/ExpressPay
+    - 19 = Visa Electron
+    - 20 = VPAY
+    - 21 = Carte Bleue
     *
     * @var string
     */
@@ -40,7 +40,7 @@ class BillShipperCreditCard extends \ArrayObject
      */
     protected $number;
     /**
-     * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year (Present Year + 10 years)
+     * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year - (Present Year + 10 years)
      *
      * @var string
      */
@@ -59,21 +59,21 @@ class BillShipperCreditCard extends \ArrayObject
     protected $address;
     /**
     * Valid values:
-    01 = American Express
-    03 = Discover
-    04 = MasterCard
-    05 = Optima
-    06 = VISA
-    07 = Bravo
-    08 = Diners Club
-    13=Dankort
-    14=Hipercard
-    15=JCB
-    17=Postepay
-    18=UnionPay/ExpressPay
-    19=Visa Electron
-    20=VPAY
-    21=Carte Bleue
+    - 01 = American Express
+    - 03 = Discover
+    - 04 = MasterCard
+    - 05 = Optima
+    - 06 = VISA
+    - 07 = Bravo
+    - 08 = Diners Club
+    - 13 = Dankort
+    - 14 = Hipercard
+    - 15 = JCB
+    - 17 = Postepay
+    - 18 = UnionPay/ExpressPay
+    - 19 = Visa Electron
+    - 20 = VPAY
+    - 21 = Carte Bleue
     *
     * @return string
     */
@@ -83,21 +83,21 @@ class BillShipperCreditCard extends \ArrayObject
     }
     /**
     * Valid values:
-    01 = American Express
-    03 = Discover
-    04 = MasterCard
-    05 = Optima
-    06 = VISA
-    07 = Bravo
-    08 = Diners Club
-    13=Dankort
-    14=Hipercard
-    15=JCB
-    17=Postepay
-    18=UnionPay/ExpressPay
-    19=Visa Electron
-    20=VPAY
-    21=Carte Bleue
+    - 01 = American Express
+    - 03 = Discover
+    - 04 = MasterCard
+    - 05 = Optima
+    - 06 = VISA
+    - 07 = Bravo
+    - 08 = Diners Club
+    - 13 = Dankort
+    - 14 = Hipercard
+    - 15 = JCB
+    - 17 = Postepay
+    - 18 = UnionPay/ExpressPay
+    - 19 = Visa Electron
+    - 20 = VPAY
+    - 21 = Carte Bleue
     *
     * @param string $type
     *
@@ -132,7 +132,7 @@ class BillShipperCreditCard extends \ArrayObject
         return $this;
     }
     /**
-     * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year (Present Year + 10 years)
+     * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year - (Present Year + 10 years)
      *
      * @return string
      */
@@ -141,7 +141,7 @@ class BillShipperCreditCard extends \ArrayObject
         return $this->expirationDate;
     }
     /**
-     * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year (Present Year + 10 years)
+     * Format is MMYYYY where MM is the 2 digit month and YYYY is the 4 digit year.  Valid month values are 01-12 and valid year values are Present Year - (Present Year + 10 years)
      *
      * @param string $expirationDate
      *

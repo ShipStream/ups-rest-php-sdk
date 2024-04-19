@@ -13,19 +13,19 @@ class LocatorResponseGeocode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The latitude of the location address or the center point of the area code.
+     * The latitude of the origin address, center point of the exchange, center point of the postal code, or center point of the city.
      *
      * @var string
      */
     protected $latitude;
     /**
-     * The longitude of the location address or the center point of the area code.
+     * The longitude of the origin address, center point of the exchange, center point of the postal code, or center point of the city.
      *
      * @var string
      */
     protected $longitude;
     /**
-     * The latitude of the location address or the center point of the area code.
+     * The latitude of the origin address, center point of the exchange, center point of the postal code, or center point of the city.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class LocatorResponseGeocode extends \ArrayObject
         return $this->latitude;
     }
     /**
-     * The latitude of the location address or the center point of the area code.
+     * The latitude of the origin address, center point of the exchange, center point of the postal code, or center point of the city.
      *
      * @param string $latitude
      *
@@ -47,7 +47,7 @@ class LocatorResponseGeocode extends \ArrayObject
         return $this;
     }
     /**
-     * The longitude of the location address or the center point of the area code.
+     * The longitude of the origin address, center point of the exchange, center point of the postal code, or center point of the city.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class LocatorResponseGeocode extends \ArrayObject
         return $this->longitude;
     }
     /**
-     * The longitude of the location address or the center point of the area code.
+     * The longitude of the origin address, center point of the exchange, center point of the postal code, or center point of the city.
      *
      * @param string $longitude
      *

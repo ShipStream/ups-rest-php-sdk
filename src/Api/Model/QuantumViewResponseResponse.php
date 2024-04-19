@@ -32,7 +32,8 @@ class QuantumViewResponseResponse extends \ArrayObject
      */
     protected $responseStatusDescription;
     /**
-     * 
+     * If an error is encountered during the interchange, the Response contains an error. If the error is present, then the ErrorSeverity and ErrorCodes are required.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ResponseError[]
      */
@@ -106,7 +107,8 @@ class QuantumViewResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * If an error is encountered during the interchange, the Response contains an error. If the error is present, then the ErrorSeverity and ErrorCodes are required.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ResponseError[]
      */
@@ -115,7 +117,8 @@ class QuantumViewResponseResponse extends \ArrayObject
         return $this->error;
     }
     /**
-     * 
+     * If an error is encountered during the interchange, the Response contains an error. If the error is present, then the ErrorSeverity and ErrorCodes are required.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ResponseError[] $error
      *

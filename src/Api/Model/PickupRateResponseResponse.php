@@ -19,9 +19,9 @@ class PickupRateResponseResponse extends \ArrayObject
      */
     protected $responseStatus;
     /**
-     * Alert Container. There can be zero to many alert containers with code and description.
+     * 
      *
-     * @var ResponseAlert
+     * @var ResponseAlert[]
      */
     protected $alert;
     /**
@@ -53,22 +53,22 @@ class PickupRateResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * Alert Container. There can be zero to many alert containers with code and description.
+     * 
      *
-     * @return ResponseAlert
+     * @return ResponseAlert[]
      */
-    public function getAlert() : ResponseAlert
+    public function getAlert() : array
     {
         return $this->alert;
     }
     /**
-     * Alert Container. There can be zero to many alert containers with code and description.
+     * 
      *
-     * @param ResponseAlert $alert
+     * @param ResponseAlert[] $alert
      *
      * @return self
      */
-    public function setAlert(ResponseAlert $alert) : self
+    public function setAlert(array $alert) : self
     {
         $this->initialized['alert'] = true;
         $this->alert = $alert;

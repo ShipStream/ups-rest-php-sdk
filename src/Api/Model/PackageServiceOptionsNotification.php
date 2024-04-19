@@ -26,7 +26,7 @@ class PackageServiceOptionsNotification extends \ArrayObject
     /**
      * Container for the e-mail message.
      *
-     * @var NotificationEMail
+     * @var PackageServiceOptionsNotificationEMail
      */
     protected $eMail;
     /**
@@ -64,20 +64,20 @@ class PackageServiceOptionsNotification extends \ArrayObject
     /**
      * Container for the e-mail message.
      *
-     * @return NotificationEMail
+     * @return PackageServiceOptionsNotificationEMail
      */
-    public function getEMail() : NotificationEMail
+    public function getEMail() : PackageServiceOptionsNotificationEMail
     {
         return $this->eMail;
     }
     /**
      * Container for the e-mail message.
      *
-     * @param NotificationEMail $eMail
+     * @param PackageServiceOptionsNotificationEMail $eMail
      *
      * @return self
      */
-    public function setEMail(NotificationEMail $eMail) : self
+    public function setEMail(PackageServiceOptionsNotificationEMail $eMail) : self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;

@@ -19,7 +19,7 @@ class RatedShipmentService extends \ArrayObject
      */
     protected $code;
     /**
-     * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
+     * The UPS service Description.
      *
      * @var string
      */
@@ -47,7 +47,7 @@ class RatedShipmentService extends \ArrayObject
         return $this;
     }
     /**
-     * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
+     * The UPS service Description.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class RatedShipmentService extends \ArrayObject
         return $this->description;
     }
     /**
-     * Optional. Description of service. Example, UPS Next Day Air, UPS Ground etc, as referenced by the Service Code.
+     * The UPS service Description.
      *
      * @param string $description
      *

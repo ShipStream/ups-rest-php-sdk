@@ -42,7 +42,7 @@ class RatedPackageBillingWeightNormalizer implements DenormalizerInterface, Norm
             return $object;
         }
         if (\array_key_exists('UnitOfMeasurement', $data)) {
-            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\BillingWeightUnitOfMeasurement', 'json', $context));
+            $object->setUnitOfMeasurement($this->denormalizer->denormalize($data['UnitOfMeasurement'], 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement', 'json', $context));
             unset($data['UnitOfMeasurement']);
         }
         if (\array_key_exists('Weight', $data)) {

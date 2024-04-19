@@ -41,7 +41,7 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] !== null) {
+        if (\array_key_exists('Disclaimer', $data)) {
             $values = array();
             foreach ($data['Disclaimer'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDisclaimer', 'json', $context);
@@ -49,15 +49,9 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
             $object->setDisclaimer($values);
             unset($data['Disclaimer']);
         }
-        elseif (\array_key_exists('Disclaimer', $data) && $data['Disclaimer'] === null) {
-            $object->setDisclaimer(null);
-        }
-        if (\array_key_exists('ShipmentCharges', $data) && $data['ShipmentCharges'] !== null) {
+        if (\array_key_exists('ShipmentCharges', $data)) {
             $object->setShipmentCharges($this->denormalizer->denormalize($data['ShipmentCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsShipmentCharges', 'json', $context));
             unset($data['ShipmentCharges']);
-        }
-        elseif (\array_key_exists('ShipmentCharges', $data) && $data['ShipmentCharges'] === null) {
-            $object->setShipmentCharges(null);
         }
         if (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] !== null) {
             $object->setNegotiatedRateCharges($this->denormalizer->denormalize($data['NegotiatedRateCharges'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsNegotiatedRateCharges', 'json', $context));

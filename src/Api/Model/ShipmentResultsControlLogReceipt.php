@@ -13,20 +13,19 @@ class ShipmentResultsControlLogReceipt extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Container for the High Value report format required if parent exist.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Container for the High Value report format required if parent exist.
      *
      * @var ControlLogReceiptImageFormat
      */
     protected $imageFormat;
     /**
-    * Base 64 encoded html, EPL2, ZPL or SPL image.
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @var string
-    */
+     * Base 64 encoded html, EPL2, ZPL or SPL image.
+     *
+     * @var string
+     */
     protected $graphicImage;
     /**
-     * Container for the High Value report format required if parent exist.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Container for the High Value report format required if parent exist.
      *
      * @return ControlLogReceiptImageFormat
      */
@@ -35,7 +34,7 @@ class ShipmentResultsControlLogReceipt extends \ArrayObject
         return $this->imageFormat;
     }
     /**
-     * Container for the High Value report format required if parent exist.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * Container for the High Value report format required if parent exist.
      *
      * @param ControlLogReceiptImageFormat $imageFormat
      *
@@ -48,23 +47,21 @@ class ShipmentResultsControlLogReceipt extends \ArrayObject
         return $this;
     }
     /**
-    * Base 64 encoded html, EPL2, ZPL or SPL image.
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @return string
-    */
+     * Base 64 encoded html, EPL2, ZPL or SPL image.
+     *
+     * @return string
+     */
     public function getGraphicImage() : string
     {
         return $this->graphicImage;
     }
     /**
-    * Base 64 encoded html, EPL2, ZPL or SPL image.
-      Applicable only for ShipmentResponse and ShipAcceptResponse.
-    *
-    * @param string $graphicImage
-    *
-    * @return self
-    */
+     * Base 64 encoded html, EPL2, ZPL or SPL image.
+     *
+     * @param string $graphicImage
+     *
+     * @return self
+     */
     public function setGraphicImage(string $graphicImage) : self
     {
         $this->initialized['graphicImage'] = true;

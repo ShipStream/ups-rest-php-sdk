@@ -49,7 +49,8 @@ class ExceptionUpdatedAddress extends \ArrayObject
      */
     protected $streetSuffix;
     /**
-     * 
+     * Container for information about updated shipping address. It will be returned if there is any update due to exception.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var UpdatedAddressAddressExtendedInformation[]
      */
@@ -217,7 +218,8 @@ class ExceptionUpdatedAddress extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container for information about updated shipping address. It will be returned if there is any update due to exception.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return UpdatedAddressAddressExtendedInformation[]
      */
@@ -226,7 +228,8 @@ class ExceptionUpdatedAddress extends \ArrayObject
         return $this->addressExtendedInformation;
     }
     /**
-     * 
+     * Container for information about updated shipping address. It will be returned if there is any update due to exception.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param UpdatedAddressAddressExtendedInformation[] $addressExtendedInformation
      *

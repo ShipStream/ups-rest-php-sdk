@@ -55,7 +55,8 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
      */
     protected $buildingName;
     /**
-     * 
+     * Container tag for additional address information where package is delivered.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var AddressArtifactFormatAddressExtendedInformation[]
      */
@@ -91,7 +92,7 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
      */
     protected $postcodePrimaryLow;
     /**
-     * 4 Digit postal code extension where package is delivered.� Valid for US only.
+     * 4 Digit postal code extension where package is delivered. Valid for US only.
      *
      * @var string
      */
@@ -257,7 +258,8 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container tag for additional address information where package is delivered.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return AddressArtifactFormatAddressExtendedInformation[]
      */
@@ -266,7 +268,8 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
         return $this->addressExtendedInformation;
     }
     /**
-     * 
+     * Container tag for additional address information where package is delivered.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param AddressArtifactFormatAddressExtendedInformation[] $addressExtendedInformation
      *
@@ -389,7 +392,7 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
         return $this;
     }
     /**
-     * 4 Digit postal code extension where package is delivered.� Valid for US only.
+     * 4 Digit postal code extension where package is delivered. Valid for US only.
      *
      * @return string
      */
@@ -398,7 +401,7 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
         return $this->postcodeExtendedLow;
     }
     /**
-     * 4 Digit postal code extension where package is delivered.� Valid for US only.
+     * 4 Digit postal code extension where package is delivered. Valid for US only.
      *
      * @param string $postcodeExtendedLow
      *

@@ -13,13 +13,13 @@ class RateResultDisclaimer extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Disclaimer code. 
-    Valid values: 
-    01 = Taxes are included in the shipping cost and apply to the transportation charges but additional duties/taxes may apply and are not reflected in the total amount due.
-    02 = Additional duties/taxes may apply and are not reflected in the total amount due.
-    03 = Additional duties/taxes may apply and are not reflected in the total amount due.
-    04 = Taxes were unable to be determined and may apply to the shipment.
-    05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
+    * Disclaimer code. Valid values:
+    - 01 = Taxes are included in the shipping cost and apply to the transportation charges but additional duties/taxes may apply and are not reflected in the total amount due.
+    - 02 = Additional duties/taxes may apply and are not reflected in the total amount due.
+    - 03 = Additional duties/taxes may apply and are not reflected in the total amount due.
+    - 04 = Taxes were unable to be determined and may apply to the shipment.
+    - 05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
+    
     *
     * @var string
     */
@@ -31,13 +31,13 @@ class RateResultDisclaimer extends \ArrayObject
      */
     protected $description;
     /**
-    * Disclaimer code. 
-    Valid values: 
-    01 = Taxes are included in the shipping cost and apply to the transportation charges but additional duties/taxes may apply and are not reflected in the total amount due.
-    02 = Additional duties/taxes may apply and are not reflected in the total amount due.
-    03 = Additional duties/taxes may apply and are not reflected in the total amount due.
-    04 = Taxes were unable to be determined and may apply to the shipment.
-    05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
+    * Disclaimer code. Valid values:
+    - 01 = Taxes are included in the shipping cost and apply to the transportation charges but additional duties/taxes may apply and are not reflected in the total amount due.
+    - 02 = Additional duties/taxes may apply and are not reflected in the total amount due.
+    - 03 = Additional duties/taxes may apply and are not reflected in the total amount due.
+    - 04 = Taxes were unable to be determined and may apply to the shipment.
+    - 05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
+    
     *
     * @return string
     */
@@ -46,13 +46,13 @@ class RateResultDisclaimer extends \ArrayObject
         return $this->code;
     }
     /**
-    * Disclaimer code. 
-    Valid values: 
-    01 = Taxes are included in the shipping cost and apply to the transportation charges but additional duties/taxes may apply and are not reflected in the total amount due.
-    02 = Additional duties/taxes may apply and are not reflected in the total amount due.
-    03 = Additional duties/taxes may apply and are not reflected in the total amount due.
-    04 = Taxes were unable to be determined and may apply to the shipment.
-    05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
+    * Disclaimer code. Valid values:
+    - 01 = Taxes are included in the shipping cost and apply to the transportation charges but additional duties/taxes may apply and are not reflected in the total amount due.
+    - 02 = Additional duties/taxes may apply and are not reflected in the total amount due.
+    - 03 = Additional duties/taxes may apply and are not reflected in the total amount due.
+    - 04 = Taxes were unable to be determined and may apply to the shipment.
+    - 05 = Rate excludes VAT. Rate includes a fuel surcharge, but excludes taxes, duties and other charges that may apply to the shipment.
+    
     *
     * @param string $code
     *

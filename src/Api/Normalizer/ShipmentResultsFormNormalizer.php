@@ -50,7 +50,7 @@ class ShipmentResultsFormNormalizer implements DenormalizerInterface, Normalizer
             unset($data['Description']);
         }
         if (\array_key_exists('Image', $data)) {
-            $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\FormImage', 'json', $context));
+            $object->setImage($this->denormalizer->denormalize($data['Image'], 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage', 'json', $context));
             unset($data['Image']);
         }
         if (\array_key_exists('FormGroupId', $data)) {

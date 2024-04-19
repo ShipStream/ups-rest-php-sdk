@@ -13,33 +13,54 @@ class ControlLogReceiptImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Code representing the format in which the forms are generated. Valid values: PDF = pdf, PNG = png Code for the type of Graphic Image for the High Value Report. Applicable only for ShipmentResponse and ShipAcceptResponse. Valid values: EPL = EPL2 (when user requests label in EPL2 format) SPL = SPL (when user requests label in SPL format) ZPL = ZPL (when user requests label in ZPL format) HTML= HTML (when user requests label in HTML format) 
-     *
-     * @var string
-     */
+    * Code for the type of Graphic Image for the High Value Report.
+    
+    Valid values:
+    - EPL = EPL2 (when user requests label in EPL2 format)
+    - SPL = SPL (when user requests label in SPL format)
+    - ZPL = ZPL (when user requests label in ZPL format)
+    - HTML= HTML (when user requests label in HTML format)
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * Description of the image format.
+     * Description of the format code.
      *
      * @var string
      */
     protected $description;
     /**
-     * Code representing the format in which the forms are generated. Valid values: PDF = pdf, PNG = png Code for the type of Graphic Image for the High Value Report. Applicable only for ShipmentResponse and ShipAcceptResponse. Valid values: EPL = EPL2 (when user requests label in EPL2 format) SPL = SPL (when user requests label in SPL format) ZPL = ZPL (when user requests label in ZPL format) HTML= HTML (when user requests label in HTML format) 
-     *
-     * @return string
-     */
+    * Code for the type of Graphic Image for the High Value Report.
+    
+    Valid values:
+    - EPL = EPL2 (when user requests label in EPL2 format)
+    - SPL = SPL (when user requests label in SPL format)
+    - ZPL = ZPL (when user requests label in ZPL format)
+    - HTML= HTML (when user requests label in HTML format)
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * Code representing the format in which the forms are generated. Valid values: PDF = pdf, PNG = png Code for the type of Graphic Image for the High Value Report. Applicable only for ShipmentResponse and ShipAcceptResponse. Valid values: EPL = EPL2 (when user requests label in EPL2 format) SPL = SPL (when user requests label in SPL format) ZPL = ZPL (when user requests label in ZPL format) HTML= HTML (when user requests label in HTML format) 
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * Code for the type of Graphic Image for the High Value Report.
+    
+    Valid values:
+    - EPL = EPL2 (when user requests label in EPL2 format)
+    - SPL = SPL (when user requests label in SPL format)
+    - ZPL = ZPL (when user requests label in ZPL format)
+    - HTML= HTML (when user requests label in HTML format)
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;
@@ -47,7 +68,7 @@ class ControlLogReceiptImageFormat extends \ArrayObject
         return $this;
     }
     /**
-     * Description of the image format.
+     * Description of the format code.
      *
      * @return string
      */
@@ -56,7 +77,7 @@ class ControlLogReceiptImageFormat extends \ArrayObject
         return $this->description;
     }
     /**
-     * Description of the image format.
+     * Description of the format code.
      *
      * @param string $description
      *

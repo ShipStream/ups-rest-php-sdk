@@ -13,43 +13,43 @@ class ForwardAgentAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * Address line of the Forwarding agent.
+     * Address line of the Forwarding agent.  Applicable for EEI form only.
      *
      * @var string[]
      */
     protected $addressLine;
     /**
-     * City of the Forwarding agent.
+     * City of the Forwarding agent.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $city;
     /**
-     * State of the Forwarding agent.
+     * State of the Forwarding agent.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $stateProvinceCode;
     /**
-     * Town of the Forwarding Agent.
+     * Town of the Forwarding Agent.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $town;
     /**
-     * Postal code of the Forwarding agent.
+     * Postal code of the Forwarding agent.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code
      *
      * @var string
      */
     protected $postalCode;
     /**
-     * Country or Territory code of the Forwarding agent.
+     * Country or Territory code of the Forwarding agent.  Applicable for EEI form only.
      *
      * @var string
      */
     protected $countryCode;
     /**
-     * Address line of the Forwarding agent.
+     * Address line of the Forwarding agent.  Applicable for EEI form only.
      *
      * @return string[]
      */
@@ -58,7 +58,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this->addressLine;
     }
     /**
-     * Address line of the Forwarding agent.
+     * Address line of the Forwarding agent.  Applicable for EEI form only.
      *
      * @param string[] $addressLine
      *
@@ -71,7 +71,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this;
     }
     /**
-     * City of the Forwarding agent.
+     * City of the Forwarding agent.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this->city;
     }
     /**
-     * City of the Forwarding agent.
+     * City of the Forwarding agent.  Applicable for EEI form only.
      *
      * @param string $city
      *
@@ -93,7 +93,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this;
     }
     /**
-     * State of the Forwarding agent.
+     * State of the Forwarding agent.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -102,7 +102,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this->stateProvinceCode;
     }
     /**
-     * State of the Forwarding agent.
+     * State of the Forwarding agent.  Applicable for EEI form only.
      *
      * @param string $stateProvinceCode
      *
@@ -115,7 +115,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Town of the Forwarding Agent.
+     * Town of the Forwarding Agent.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -124,7 +124,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this->town;
     }
     /**
-     * Town of the Forwarding Agent.
+     * Town of the Forwarding Agent.  Applicable for EEI form only.
      *
      * @param string $town
      *
@@ -137,7 +137,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Postal code of the Forwarding agent.
+     * Postal code of the Forwarding agent.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code
      *
      * @return string
      */
@@ -146,7 +146,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * Postal code of the Forwarding agent.
+     * Postal code of the Forwarding agent.  Applicable for EEI form only. Required for certain countries or territories. The length of the postal code depends on the country or territory code
      *
      * @param string $postalCode
      *
@@ -159,7 +159,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this;
     }
     /**
-     * Country or Territory code of the Forwarding agent.
+     * Country or Territory code of the Forwarding agent.  Applicable for EEI form only.
      *
      * @return string
      */
@@ -168,7 +168,7 @@ class ForwardAgentAddress extends \ArrayObject
         return $this->countryCode;
     }
     /**
-     * Country or Territory code of the Forwarding agent.
+     * Country or Territory code of the Forwarding agent.  Applicable for EEI form only.
      *
      * @param string $countryCode
      *

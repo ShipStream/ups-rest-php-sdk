@@ -6,15 +6,19 @@ class TimeInTransit extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
 {
     protected $version;
     /**
-     * Get Time and Transit Response
-     *
-     * @param string $version API Version
-     * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
-     * @param array $headerParameters {
-     *     @var string $transId An identifier unique to the request.  Length 32
-     *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
-     * }
-     */
+    * The Time In Transit API provides estimated delivery times for various UPS shipping services, between specified locations.
+    
+    Key Business Values:
+    - **Enhanced Customer Experience**: Allows businesses provide accurate delivery estimates to their customers, enhancing customer service.
+    - **Operational Efficiency**: Helps in logistics planning by providing transit times for different UPS services.
+    *
+    * @param string $version API Version
+    * @param \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody 
+    * @param array $headerParameters {
+    *     @var string $transId An identifier unique to the request. Length 32
+    *     @var string $transactionSrc Identifies the clients/source application that is calling.  Length 512
+    * }
+    */
     public function __construct(string $version, \ShipStream\Ups\Api\Model\TimeInTransitRequest $requestBody, array $headerParameters = array())
     {
         $this->version = $version;
@@ -56,6 +60,8 @@ class TimeInTransit extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
      *
      * @throws \ShipStream\Ups\Api\Exception\TimeInTransitBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\TimeInTransitUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\TimeInTransitForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\TimeInTransitTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\TimeInTransitResponse
@@ -70,8 +76,14 @@ class TimeInTransit extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impl
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\TimeInTransitBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\TimeInTransitUnauthorizedException($response);
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\TimeInTransitUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\TimeInTransitForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\TimeInTransitTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

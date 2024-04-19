@@ -14,7 +14,8 @@ class DropOffFacilitiesDistance extends \ArrayObject
     }
     /**
     * Distance from origin address. Distance based on distance UOM in request.
-    Numeric value up to 200 and .2� decimal positions  Distance will be retuned for�drop off location search by proximity order.
+    
+    Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
     *
     * @var string
     */
@@ -28,7 +29,8 @@ class DropOffFacilitiesDistance extends \ArrayObject
     protected $unitOfMeasurement;
     /**
     * Distance from origin address. Distance based on distance UOM in request.
-    Numeric value up to 200 and .2� decimal positions  Distance will be retuned for�drop off location search by proximity order.
+    
+    Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
     *
     * @return string
     */
@@ -38,7 +40,8 @@ class DropOffFacilitiesDistance extends \ArrayObject
     }
     /**
     * Distance from origin address. Distance based on distance UOM in request.
-    Numeric value up to 200 and .2� decimal positions  Distance will be retuned for�drop off location search by proximity order.
+    
+    Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
     *
     * @param string $value
     *

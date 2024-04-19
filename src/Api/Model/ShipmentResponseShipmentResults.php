@@ -13,15 +13,16 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ShipmentResultsDisclaimer[]|null
+     * @var ShipmentResultsDisclaimer[]
      */
     protected $disclaimer;
     /**
      * Shipment charges Container. Shipment charges info.
      *
-     * @var ShipmentResultsShipmentCharges|null
+     * @var ShipmentResultsShipmentCharges
      */
     protected $shipmentCharges;
     /**
@@ -83,13 +84,15 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      */
     protected $barCodeImage;
     /**
-     * 
+     * Returned Package Information.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ShipmentResultsPackageResults[]|null
      */
     protected $packageResults;
     /**
-     * 
+     * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var ShipmentResultsControlLogReceipt[]|null
      */
@@ -104,13 +107,13 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     */
     protected $form;
     /**
-     * The container of the COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * The container of the COD Turn In Page.
      *
      * @var ShipmentResultsCODTurnInPage|null
      */
     protected $cODTurnInPage;
     /**
-     * Container for the High Value Report generated for ImportControl or Return shipments with high package declared value.  Applicable for one pass ShipmentResponse and two-pass ShipAcceptResponse
+     * Container for the High Value Report generated for ImportControl or Return shipments with high package declared value.
      *
      * @var ShipmentResultsHighValueReport|null
      */
@@ -150,7 +153,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     */
     protected $localLanguageReceiptURL;
     /**
-     * Dangrous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages.  Only returned when DGSignatoryInfo is present.
+     * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var string[]|null
      */
@@ -168,22 +172,24 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      */
     protected $roarRatedIndicator;
     /**
-     * 
+     * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ShipmentResultsDisclaimer[]|null
+     * @return ShipmentResultsDisclaimer[]
      */
-    public function getDisclaimer() : ?array
+    public function getDisclaimer() : array
     {
         return $this->disclaimer;
     }
     /**
-     * 
+     * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ShipmentResultsDisclaimer[]|null $disclaimer
+     * @param ShipmentResultsDisclaimer[] $disclaimer
      *
      * @return self
      */
-    public function setDisclaimer(?array $disclaimer) : self
+    public function setDisclaimer(array $disclaimer) : self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -192,20 +198,20 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     /**
      * Shipment charges Container. Shipment charges info.
      *
-     * @return ShipmentResultsShipmentCharges|null
+     * @return ShipmentResultsShipmentCharges
      */
-    public function getShipmentCharges() : ?ShipmentResultsShipmentCharges
+    public function getShipmentCharges() : ShipmentResultsShipmentCharges
     {
         return $this->shipmentCharges;
     }
     /**
      * Shipment charges Container. Shipment charges info.
      *
-     * @param ShipmentResultsShipmentCharges|null $shipmentCharges
+     * @param ShipmentResultsShipmentCharges $shipmentCharges
      *
      * @return self
      */
-    public function setShipmentCharges(?ShipmentResultsShipmentCharges $shipmentCharges) : self
+    public function setShipmentCharges(ShipmentResultsShipmentCharges $shipmentCharges) : self
     {
         $this->initialized['shipmentCharges'] = true;
         $this->shipmentCharges = $shipmentCharges;
@@ -408,7 +414,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Returned Package Information.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ShipmentResultsPackageResults[]|null
      */
@@ -417,7 +424,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this->packageResults;
     }
     /**
-     * 
+     * Returned Package Information.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ShipmentResultsPackageResults[]|null $packageResults
      *
@@ -430,7 +438,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return ShipmentResultsControlLogReceipt[]|null
      */
@@ -439,7 +448,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this->controlLogReceipt;
     }
     /**
-     * 
+     * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param ShipmentResultsControlLogReceipt[]|null $controlLogReceipt
      *
@@ -480,7 +490,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-     * The container of the COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * The container of the COD Turn In Page.
      *
      * @return ShipmentResultsCODTurnInPage|null
      */
@@ -489,7 +499,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this->cODTurnInPage;
     }
     /**
-     * The container of the COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
+     * The container of the COD Turn In Page.
      *
      * @param ShipmentResultsCODTurnInPage|null $cODTurnInPage
      *
@@ -502,7 +512,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-     * Container for the High Value Report generated for ImportControl or Return shipments with high package declared value.  Applicable for one pass ShipmentResponse and two-pass ShipAcceptResponse
+     * Container for the High Value Report generated for ImportControl or Return shipments with high package declared value.
      *
      * @return ShipmentResultsHighValueReport|null
      */
@@ -511,7 +521,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this->highValueReport;
     }
     /**
-     * Container for the High Value Report generated for ImportControl or Return shipments with high package declared value.  Applicable for one pass ShipmentResponse and two-pass ShipAcceptResponse
+     * Container for the High Value Report generated for ImportControl or Return shipments with high package declared value.
      *
      * @param ShipmentResultsHighValueReport|null $highValueReport
      *
@@ -632,7 +642,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-     * Dangrous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages.  Only returned when DGSignatoryInfo is present.
+     * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return string[]|null
      */
@@ -641,7 +652,8 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this->dGPaperImage;
     }
     /**
-     * Dangrous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages.  Only returned when DGSignatoryInfo is present.
+     * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
+     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param string[]|null $dGPaperImage
      *

@@ -7,10 +7,14 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     protected $CancelBy;
     protected $version;
     /**
-    * Using the Pickup API, applications can schedule pickups, manage previously scheduled pickups, or cancel previously scheduled pickups.
+    * Using the CancelBy endpoint of the Pickup API, users can request cancellation of a UPS on-demand package pickup. When the PRN (pickup request number), transaction ID, and the transaction source are supplied as required parameters, the endpoint returns confirmation that the pickup has been cancelled.
     *
     * @param string $cancelBy Valid Values: 01 = AccountNumber, 02 = PRN
-    * @param string $version version of API e.g v1
+    * @param string $version Version of API.
+    
+    Valid values:
+    - v2403
+    
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -19,7 +23,7 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     Required if CancelBy = prn.Length 26
     * }
     */
-    public function __construct(string $cancelBy, string $version = 'v1', array $headerParameters = array())
+    public function __construct(string $cancelBy, string $version, array $headerParameters = array())
     {
         $this->CancelBy = $cancelBy;
         $this->version = $version;
@@ -56,7 +60,10 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     /**
      * {@inheritdoc}
      *
+     * @throws \ShipStream\Ups\Api\Exception\PickupCancelBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\PickupCancelUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\PickupCancelForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\PickupCancelTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper
@@ -68,8 +75,17 @@ class PickupCancel extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PICKUPCancelResponseWrapper', 'json');
         }
-        if (401 === $status) {
-            throw new \ShipStream\Ups\Api\Exception\PickupCancelUnauthorizedException($response);
+        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCancelBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCancelUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCancelForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\PickupCancelTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

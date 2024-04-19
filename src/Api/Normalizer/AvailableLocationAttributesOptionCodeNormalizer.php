@@ -58,7 +58,7 @@ class AvailableLocationAttributesOptionCodeNormalizer implements DenormalizerInt
             unset($data['Category']);
         }
         if (\array_key_exists('TransportationPickUpSchedule', $data)) {
-            $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule', 'json', $context));
+            $object->setTransportationPickUpSchedule($this->denormalizer->denormalize($data['TransportationPickUpSchedule'], 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule', 'json', $context));
             unset($data['TransportationPickUpSchedule']);
         }
         foreach ($data as $key => $value) {

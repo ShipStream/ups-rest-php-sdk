@@ -13,27 +13,36 @@ class SearchOptionOptionCode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
-     *
-     * @var string
-     */
+    * These codes vary by country. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country or territory.
+    
+    Refer to Location Search Option Codes in the Appendix for additional information.
+    
+    *
+    * @var string
+    */
     protected $code;
     /**
-     * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
-     *
-     * @return string
-     */
+    * These codes vary by country. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country or territory.
+    
+    Refer to Location Search Option Codes in the Appendix for additional information.
+    
+    *
+    * @return string
+    */
     public function getCode() : string
     {
         return $this->code;
     }
     /**
-     * The valid list of codes and description for Retail Locations or Additional Services or Pro-gram Types that are currently available in the database. This can be obtained by a separate type of request (Request Option 8, 16, 24, 32, 40, 48 and 56).
-     *
-     * @param string $code
-     *
-     * @return self
-     */
+    * These codes vary by country. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country or territory.
+    
+    Refer to Location Search Option Codes in the Appendix for additional information.
+    
+    *
+    * @param string $code
+    *
+    * @return self
+    */
     public function setCode(string $code) : self
     {
         $this->initialized['code'] = true;

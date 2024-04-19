@@ -13,31 +13,31 @@ class PackageAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The container which has the physical address.
      *
      * @var Address
      */
     protected $address;
     /**
-     * 
+     * The specific name of an individual associated with the address segment.
      *
      * @var string
      */
     protected $attentionName;
     /**
-     * name
+     * Ship-to name.
      *
      * @var string
      */
     protected $name;
     /**
-     * type
+     * The type of address.
      *
      * @var string
      */
     protected $type;
     /**
-     * 
+     * The container which has the physical address.
      *
      * @return Address
      */
@@ -46,7 +46,7 @@ class PackageAddress extends \ArrayObject
         return $this->address;
     }
     /**
-     * 
+     * The container which has the physical address.
      *
      * @param Address $address
      *
@@ -59,7 +59,7 @@ class PackageAddress extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * The specific name of an individual associated with the address segment.
      *
      * @return string
      */
@@ -68,7 +68,7 @@ class PackageAddress extends \ArrayObject
         return $this->attentionName;
     }
     /**
-     * 
+     * The specific name of an individual associated with the address segment.
      *
      * @param string $attentionName
      *
@@ -81,7 +81,7 @@ class PackageAddress extends \ArrayObject
         return $this;
     }
     /**
-     * name
+     * Ship-to name.
      *
      * @return string
      */
@@ -90,7 +90,7 @@ class PackageAddress extends \ArrayObject
         return $this->name;
     }
     /**
-     * name
+     * Ship-to name.
      *
      * @param string $name
      *
@@ -103,7 +103,7 @@ class PackageAddress extends \ArrayObject
         return $this;
     }
     /**
-     * type
+     * The type of address.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ class PackageAddress extends \ArrayObject
         return $this->type;
     }
     /**
-     * type
+     * The type of address.
      *
      * @param string $type
      *

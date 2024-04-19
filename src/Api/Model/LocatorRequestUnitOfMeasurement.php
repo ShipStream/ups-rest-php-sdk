@@ -13,17 +13,21 @@ class LocatorRequestUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The distance unit of measurement code. The unit of measurement used in the search request is returned. 
+    * Valid values are:
     
-    Valid values: MI-Miles or KM-Kilometers
+    - MI-Miles
+    - KM-Kilometers
+    
     *
     * @var string
     */
     protected $code;
     /**
-    * The distance unit of measurement code. The unit of measurement used in the search request is returned. 
+    * Valid values are:
     
-    Valid values: MI-Miles or KM-Kilometers
+    - MI-Miles
+    - KM-Kilometers
+    
     *
     * @return string
     */
@@ -32,9 +36,11 @@ class LocatorRequestUnitOfMeasurement extends \ArrayObject
         return $this->code;
     }
     /**
-    * The distance unit of measurement code. The unit of measurement used in the search request is returned. 
+    * Valid values are:
     
-    Valid values: MI-Miles or KM-Kilometers
+    - MI-Miles
+    - KM-Kilometers
+    
     *
     * @param string $code
     *

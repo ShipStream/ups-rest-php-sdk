@@ -10,6 +10,10 @@ class VoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
     * The Void Shipping API is used to cancel the previously scheduled shipment
     *
     * @param string $version API Version
+    
+    Valid values:
+    - v2403
+    
     * @param string $shipmentidentificationnumber The shipment's identification number 
     Alpha-numeric. Must pass 1Z rules. Must be 
     upper case. Length 18
@@ -76,6 +80,8 @@ class VoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
      *
      * @throws \ShipStream\Ups\Api\Exception\VoidShipmentBadRequestException
      * @throws \ShipStream\Ups\Api\Exception\VoidShipmentUnauthorizedException
+     * @throws \ShipStream\Ups\Api\Exception\VoidShipmentForbiddenException
+     * @throws \ShipStream\Ups\Api\Exception\VoidShipmentTooManyRequestsException
      * @throws \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException
      *
      * @return \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper
@@ -92,6 +98,12 @@ class VoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint imple
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\VoidShipmentUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\VoidShipmentForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+        }
+        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+            throw new \ShipStream\Ups\Api\Exception\VoidShipmentTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }

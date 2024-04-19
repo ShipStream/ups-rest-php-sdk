@@ -13,13 +13,15 @@ class SubscriptionFileDelivery extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Package-level reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var DeliveryPackageReferenceNumber[]
      */
     protected $packageReferenceNumber;
     /**
-     * 
+     * Container tag for shipment reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @var DeliveryShipmentReferenceNumber[]
      */
@@ -91,7 +93,8 @@ class SubscriptionFileDelivery extends \ArrayObject
      */
     protected $accessPointLocationID;
     /**
-     * 
+     * Package-level reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return DeliveryPackageReferenceNumber[]
      */
@@ -100,7 +103,8 @@ class SubscriptionFileDelivery extends \ArrayObject
         return $this->packageReferenceNumber;
     }
     /**
-     * 
+     * Package-level reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param DeliveryPackageReferenceNumber[] $packageReferenceNumber
      *
@@ -113,7 +117,8 @@ class SubscriptionFileDelivery extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Container tag for shipment reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @return DeliveryShipmentReferenceNumber[]
      */
@@ -122,7 +127,8 @@ class SubscriptionFileDelivery extends \ArrayObject
         return $this->shipmentReferenceNumber;
     }
     /**
-     * 
+     * Container tag for shipment reference number.
+     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
      * @param DeliveryShipmentReferenceNumber[] $shipmentReferenceNumber
      *

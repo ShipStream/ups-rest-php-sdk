@@ -14,7 +14,7 @@ class TimeInTransitBadRequestException extends BadRequestException
     private $response;
     public function __construct(\ShipStream\Ups\Api\Model\ErrorResponse $errorResponse, \Psr\Http\Message\ResponseInterface $response)
     {
-        parent::__construct('invalid request');
+        parent::__construct('Invalid Request');
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }
