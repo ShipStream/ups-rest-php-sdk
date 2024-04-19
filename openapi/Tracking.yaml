@@ -585,6 +585,7 @@ components:
           type: string
           description: The current status code.
           example: SR
+          nullable: true
         description:
           type: string
           description: The current status description. Note that this field will be
