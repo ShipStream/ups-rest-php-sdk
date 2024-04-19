@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('code', $data)) {
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
+            }
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
             }
             if (\array_key_exists('description', $data)) {
                 $object->setDescription($data['description']);
@@ -127,9 +130,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('code', $data)) {
+            if (\array_key_exists('code', $data) && $data['code'] !== null) {
                 $object->setCode($data['code']);
                 unset($data['code']);
+            }
+            elseif (\array_key_exists('code', $data) && $data['code'] === null) {
+                $object->setCode(null);
             }
             if (\array_key_exists('description', $data)) {
                 $object->setDescription($data['description']);
