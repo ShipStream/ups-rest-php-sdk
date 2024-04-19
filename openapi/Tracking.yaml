@@ -217,6 +217,7 @@ components:
           description: The physical address state or province.
           example: NJ
           nullable: true
+      nullable: true
     AlternateTrackingNumber:
       title: AlternateTrackingNumber
       type: object

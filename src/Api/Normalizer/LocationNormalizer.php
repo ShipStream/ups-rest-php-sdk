@@ -40,9 +40,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('address', $data)) {
+            if (\array_key_exists('address', $data) && $data['address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
                 unset($data['address']);
+            }
+            elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+                $object->setAddress(null);
             }
             if (\array_key_exists('slic', $data)) {
                 $object->setSlic($data['slic']);
@@ -106,9 +109,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (null === $data || false === \is_array($data)) {
                 return $object;
             }
-            if (\array_key_exists('address', $data)) {
+            if (\array_key_exists('address', $data) && $data['address'] !== null) {
                 $object->setAddress($this->denormalizer->denormalize($data['address'], 'ShipStream\\Ups\\Api\\Model\\Address', 'json', $context));
                 unset($data['address']);
+            }
+            elseif (\array_key_exists('address', $data) && $data['address'] === null) {
+                $object->setAddress(null);
             }
             if (\array_key_exists('slic', $data)) {
                 $object->setSlic($data['slic']);
