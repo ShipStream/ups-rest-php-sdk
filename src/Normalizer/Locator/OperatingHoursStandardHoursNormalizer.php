@@ -2,12 +2,13 @@
 
 namespace ShipStream\Ups\Normalizer\Locator;
 
-use ShipStream\Ups\Api\Normalizer\StandardHoursDayOfWeekNormalizer as BaseNormalizer;
+use ShipStream\Ups\Api\Normalizer\OperatingHoursStandardHoursNormalizer as BaseNormalizer;
 use Symfony\Component\HttpKernel\Kernel;
+use function array_is_list;
 use function is_array;
 
 if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR_VERSION === 6 and Kernel::MINOR_VERSION === 4)) {
-    class StandardHoursDayOfWeekNormalizer extends BaseNormalizer
+    class OperatingHoursStandardHoursNormalizer extends BaseNormalizer
     {
         /**
          * @inheritDoc
@@ -18,18 +19,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return parent::denormalize($data, $type, $format, $context);
             }
 
-            // Force OpenHours and CloseHours to always be an array even when the API returns a single value
-            if (isset($data['OpenHours']) && !is_array($data['OpenHours'])) {
-                $data['OpenHours'] = [$data['OpenHours']];
-            }
-            if (isset($data['CloseHours']) && !is_array($data['CloseHours'])) {
-                $data['CloseHours'] = [$data['CloseHours']];
+            // Force DayOfWeek to always be an array even when the API returns a single value
+            if (isset($data['DayOfWeek']) && !array_is_list($data['DayOfWeek'])) {
+                $data['DayOfWeek'] = [$data['DayOfWeek']];
             }
             return parent::denormalize($data, $type, $format, $context);
         }
     }
 } else {
-    class StandardHoursDayOfWeekNormalizer extends BaseNormalizer
+    class OperatingHoursStandardHoursNormalizer extends BaseNormalizer
     {
         /**
          * @inheritDoc
@@ -40,12 +38,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return parent::denormalize($data, $type, $format, $context);
             }
 
-            // Force OpenHours and CloseHours to always be an array even when the API returns a single value
-            if (isset($data['OpenHours']) && !is_array($data['OpenHours'])) {
-                $data['OpenHours'] = [$data['OpenHours']];
-            }
-            if (isset($data['CloseHours']) && !is_array($data['CloseHours'])) {
-                $data['CloseHours'] = [$data['CloseHours']];
+            // Force DayOfWeek to always be an array even when the API returns a single value
+            if (isset($data['DayOfWeek']) && !array_is_list($data['DayOfWeek'])) {
+                $data['DayOfWeek'] = [$data['DayOfWeek']];
             }
             return parent::denormalize($data, $type, $format, $context);
         }

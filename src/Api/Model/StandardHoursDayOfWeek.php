@@ -29,13 +29,13 @@ class StandardHoursDayOfWeek extends \ArrayObject
     /**
      * Open time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @var string
+     * @var list<string>
      */
     protected $openHours;
     /**
      * Close time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @var string
+     * @var list<string>
      */
     protected $closeHours;
     /**
@@ -103,20 +103,20 @@ class StandardHoursDayOfWeek extends \ArrayObject
     /**
      * Open time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @return string
+     * @return list<string>
      */
-    public function getOpenHours() : string
+    public function getOpenHours() : array
     {
         return $this->openHours;
     }
     /**
      * Open time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @param string $openHours
+     * @param list<string> $openHours
      *
      * @return self
      */
-    public function setOpenHours(string $openHours) : self
+    public function setOpenHours(array $openHours) : self
     {
         $this->initialized['openHours'] = true;
         $this->openHours = $openHours;
@@ -125,20 +125,20 @@ class StandardHoursDayOfWeek extends \ArrayObject
     /**
      * Close time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @return string
+     * @return list<string>
      */
-    public function getCloseHours() : string
+    public function getCloseHours() : array
     {
         return $this->closeHours;
     }
     /**
      * Close time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
      *
-     * @param string $closeHours
+     * @param list<string> $closeHours
      *
      * @return self
      */
-    public function setCloseHours(string $closeHours) : self
+    public function setCloseHours(array $closeHours) : self
     {
         $this->initialized['closeHours'] = true;
         $this->closeHours = $closeHours;
