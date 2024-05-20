@@ -27,6 +27,7 @@ use ShipStream\Ups\Api\Model\LabelRecoveryResponse;
 use ShipStream\Ups\Api\Model\LandedCostResponseShipment;
 use ShipStream\Ups\Api\Model\LocatorResponseSearchResults;
 use ShipStream\Ups\Api\Model\ManifestPackage;
+use ShipStream\Ups\Api\Model\OperatingHoursStandardHours;
 use ShipStream\Ups\Api\Model\OptionCodeTransportationPickUpSchedule;
 use ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse;
 use ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation;
@@ -90,6 +91,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[DropLocationServiceOfferingList::class] = Locator\DropLocationServiceOfferingListNormalizer::class;
         $this->normalizers[LocatorResponseSearchResults::class] = Locator\LocatorResponseSearchResultsNormalizer::class;
         $this->normalizers[OptionCodeTransportationPickUpSchedule::class] = Locator\OptionCodeTransportationPickUpScheduleNormalizer::class;
+        $this->normalizers[OperatingHoursStandardHours::class] = Locator\OperatingHoursStandardHoursNormalizer::class;
         $this->normalizers[SearchResultsDropLocation::class] = Locator\SearchResultsDropLocationNormalizer::class;
         $this->normalizers[StandardHoursDayOfWeek::class] = Locator\StandardHoursDayOfWeekNormalizer::class;
         // Paperless
