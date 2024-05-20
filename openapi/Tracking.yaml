@@ -548,6 +548,7 @@ components:
           type: array
           items:
             "$ref": "#/components/schemas/Package"
+          nullable: true
         userRelation:
           type: array
           description: The relationship of the user to the package(s) in the shipment.

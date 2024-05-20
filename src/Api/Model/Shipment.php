@@ -21,7 +21,7 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @var Package[]
+     * @var Package[]|null
      */
     protected $package;
     /**
@@ -61,20 +61,20 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @return Package[]
+     * @return Package[]|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param Package[] $package
+     * @param Package[]|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
