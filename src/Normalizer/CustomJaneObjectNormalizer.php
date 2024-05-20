@@ -23,6 +23,7 @@ use ShipStream\Ups\Api\Model\ExceptionUpdatedAddress;
 use ShipStream\Ups\Api\Model\FreightRateResponse;
 use ShipStream\Ups\Api\Model\FreightRateResponseResponse;
 use ShipStream\Ups\Api\Model\FreightShipResponseShipmentResults;
+use ShipStream\Ups\Api\Model\LabelRecoveryResponse;
 use ShipStream\Ups\Api\Model\LandedCostResponseShipment;
 use ShipStream\Ups\Api\Model\LocatorResponseSearchResults;
 use ShipStream\Ups\Api\Model\ManifestPackage;
@@ -128,6 +129,7 @@ class CustomJaneObjectNormalizer extends JaneObjectNormalizer
         $this->normalizers[RateResponseRatedShipment::class] = Rating\RateResponseRatedShipmentNormalizer::class;
         $this->normalizers[RateResponseResponse::class] = Rating\RateResponseResponseNormalizer::class;
         // Shipping
+        $this->normalizers[LabelRecoveryResponse::class] = Shipping\LabelRecoveryResponseNormalizer::class;
         $this->normalizers[ShipmentResponseResponse::class] = Shipping\ShipmentResponseResponseNormalizer::class;
         $this->normalizers[ShipmentResponseShipmentResults::class] = Shipping\ShipmentResponseShipmentResultsNormalizer::class;
         // TForceFreightRating
