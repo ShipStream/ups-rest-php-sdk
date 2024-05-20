@@ -48,7 +48,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
     /**
      * The destination email address of the receiver returns notification email.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $eMailAddress;
     /**
@@ -164,7 +164,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
     /**
      * The destination email address of the receiver returns notification email.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getEMailAddress() : array
     {
@@ -173,7 +173,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
     /**
      * The destination email address of the receiver returns notification email.
      *
-     * @param string[] $eMailAddress
+     * @param list<string> $eMailAddress
      *
      * @return self
      */

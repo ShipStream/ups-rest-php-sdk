@@ -21,7 +21,7 @@ class QuantumViewRequest extends \ArrayObject
     /**
      * 
      *
-     * @var QuantumViewRequestSubscriptionRequest[]
+     * @var list<QuantumViewRequestSubscriptionRequest>
      */
     protected $subscriptionRequest;
     /**
@@ -57,7 +57,7 @@ class QuantumViewRequest extends \ArrayObject
     /**
      * 
      *
-     * @return QuantumViewRequestSubscriptionRequest[]
+     * @return list<QuantumViewRequestSubscriptionRequest>
      */
     public function getSubscriptionRequest() : array
     {
@@ -66,7 +66,7 @@ class QuantumViewRequest extends \ArrayObject
     /**
      * 
      *
-     * @param QuantumViewRequestSubscriptionRequest[] $subscriptionRequest
+     * @param list<QuantumViewRequestSubscriptionRequest> $subscriptionRequest
      *
      * @return self
      */

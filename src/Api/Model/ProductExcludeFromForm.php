@@ -15,13 +15,13 @@ class ProductExcludeFromForm extends \ArrayObject
     /**
      * Indicates the name of the International form requested to NOT have product information.  Possible Values are 04 – NAFTA CO.  Please note that if this is used and you DO NOT have the corresponding form type requested this will be IGNORED.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $formType;
     /**
      * Indicates the name of the International form requested to NOT have product information.  Possible Values are 04 – NAFTA CO.  Please note that if this is used and you DO NOT have the corresponding form type requested this will be IGNORED.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getFormType() : array
     {
@@ -30,7 +30,7 @@ class ProductExcludeFromForm extends \ArrayObject
     /**
      * Indicates the name of the International form requested to NOT have product information.  Possible Values are 04 – NAFTA CO.  Please note that if this is used and you DO NOT have the corresponding form type requested this will be IGNORED.
      *
-     * @param string[] $formType
+     * @param list<string> $formType
      *
      * @return self
      */

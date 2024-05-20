@@ -52,7 +52,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      * Container for information about updated shipping address. It will be returned if there is any update due to exception.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var UpdatedAddressAddressExtendedInformation[]
+     * @var list<UpdatedAddressAddressExtendedInformation>
      */
     protected $addressExtendedInformation;
     /**
@@ -221,7 +221,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      * Container for information about updated shipping address. It will be returned if there is any update due to exception.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return UpdatedAddressAddressExtendedInformation[]
+     * @return list<UpdatedAddressAddressExtendedInformation>
      */
     public function getAddressExtendedInformation() : array
     {
@@ -231,7 +231,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      * Container for information about updated shipping address. It will be returned if there is any update due to exception.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param UpdatedAddressAddressExtendedInformation[] $addressExtendedInformation
+     * @param list<UpdatedAddressAddressExtendedInformation> $addressExtendedInformation
      *
      * @return self
      */

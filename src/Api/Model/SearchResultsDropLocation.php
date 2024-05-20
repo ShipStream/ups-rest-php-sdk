@@ -55,7 +55,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $phoneNumber;
     /**
@@ -82,7 +82,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @var DropLocationLocationAttribute[]
+    * @var list<DropLocationLocationAttribute>
     */
     protected $locationAttribute;
     /**
@@ -95,7 +95,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Walking directions.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var DropLocationSpecialInstructions[]
+     * @var list<DropLocationSpecialInstructions>
      */
     protected $specialInstructions;
     /**
@@ -106,7 +106,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $latestGroundDropOffTime;
     /**
@@ -117,7 +117,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $latestAirDropOffTime;
     /**
@@ -172,7 +172,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Textual disclaimer about the drop location.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $disclaimer;
     /**
@@ -203,14 +203,14 @@ class SearchResultsDropLocation extends \ArrayObject
      * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var DropLocationLocalizedInstruction[]
+     * @var list<DropLocationLocalizedInstruction>
      */
     protected $localizedInstruction;
     /**
      * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var DropLocationPromotionInformation[]
+     * @var list<DropLocationPromotionInformation>
      */
     protected $promotionInformation;
     /**
@@ -404,7 +404,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getPhoneNumber() : array
     {
@@ -420,7 +420,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @param string[] $phoneNumber
+    * @param list<string> $phoneNumber
     *
     * @return self
     */
@@ -488,7 +488,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @return DropLocationLocationAttribute[]
+    * @return list<DropLocationLocationAttribute>
     */
     public function getLocationAttribute() : array
     {
@@ -504,7 +504,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @param DropLocationLocationAttribute[] $locationAttribute
+    * @param list<DropLocationLocationAttribute> $locationAttribute
     *
     * @return self
     */
@@ -540,7 +540,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Walking directions.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return DropLocationSpecialInstructions[]
+     * @return list<DropLocationSpecialInstructions>
      */
     public function getSpecialInstructions() : array
     {
@@ -550,7 +550,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Walking directions.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param DropLocationSpecialInstructions[] $specialInstructions
+     * @param list<DropLocationSpecialInstructions> $specialInstructions
      *
      * @return self
      */
@@ -568,7 +568,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getLatestGroundDropOffTime() : array
     {
@@ -582,7 +582,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @param string[] $latestGroundDropOffTime
+    * @param list<string> $latestGroundDropOffTime
     *
     * @return self
     */
@@ -600,7 +600,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getLatestAirDropOffTime() : array
     {
@@ -614,7 +614,7 @@ class SearchResultsDropLocation extends \ArrayObject
     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
     
     *
-    * @param string[] $latestAirDropOffTime
+    * @param list<string> $latestAirDropOffTime
     *
     * @return self
     */
@@ -804,7 +804,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Textual disclaimer about the drop location.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getDisclaimer() : array
     {
@@ -814,7 +814,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Textual disclaimer about the drop location.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param string[] $disclaimer
+     * @param list<string> $disclaimer
      *
      * @return self
      */
@@ -916,7 +916,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return DropLocationLocalizedInstruction[]
+     * @return list<DropLocationLocalizedInstruction>
      */
     public function getLocalizedInstruction() : array
     {
@@ -926,7 +926,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param DropLocationLocalizedInstruction[] $localizedInstruction
+     * @param list<DropLocationLocalizedInstruction> $localizedInstruction
      *
      * @return self
      */
@@ -940,7 +940,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return DropLocationPromotionInformation[]
+     * @return list<DropLocationPromotionInformation>
      */
     public function getPromotionInformation() : array
     {
@@ -950,7 +950,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param DropLocationPromotionInformation[] $promotionInformation
+     * @param list<DropLocationPromotionInformation> $promotionInformation
      *
      * @return self
      */

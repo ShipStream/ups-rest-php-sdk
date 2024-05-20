@@ -52,7 +52,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ShipmentChargesItemizedCharges[]
+     * @var list<ShipmentChargesItemizedCharges>
      */
     protected $itemizedCharges;
     /**
@@ -65,7 +65,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ShipmentChargesTaxCharges[]
+     * @var list<ShipmentChargesTaxCharges>
      */
     protected $taxCharges;
     /**
@@ -186,7 +186,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ShipmentChargesItemizedCharges[]
+     * @return list<ShipmentChargesItemizedCharges>
      */
     public function getItemizedCharges() : array
     {
@@ -196,7 +196,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ShipmentChargesItemizedCharges[] $itemizedCharges
+     * @param list<ShipmentChargesItemizedCharges> $itemizedCharges
      *
      * @return self
      */
@@ -232,7 +232,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ShipmentChargesTaxCharges[]
+     * @return list<ShipmentChargesTaxCharges>
      */
     public function getTaxCharges() : array
     {
@@ -242,7 +242,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ShipmentChargesTaxCharges[] $taxCharges
+     * @param list<ShipmentChargesTaxCharges> $taxCharges
      *
      * @return self
      */

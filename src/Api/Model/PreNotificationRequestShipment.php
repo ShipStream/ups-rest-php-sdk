@@ -61,7 +61,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var PreNotificationShipmentPackage[]
+     * @var list<PreNotificationShipmentPackage>
      */
     protected $package;
     /**
@@ -229,7 +229,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return PreNotificationShipmentPackage[]
+     * @return list<PreNotificationShipmentPackage>
      */
     public function getPackage() : array
     {
@@ -238,7 +238,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param PreNotificationShipmentPackage[] $package
+     * @param list<PreNotificationShipmentPackage> $package
      *
      * @return self
      */

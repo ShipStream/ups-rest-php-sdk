@@ -39,7 +39,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * 
      *
-     * @var HazMatHazMatChemicalRecord[]
+     * @var list<HazMatHazMatChemicalRecord>
      */
     protected $hazMatChemicalRecord;
     /**
@@ -133,7 +133,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * 
      *
-     * @return HazMatHazMatChemicalRecord[]
+     * @return list<HazMatHazMatChemicalRecord>
      */
     public function getHazMatChemicalRecord() : array
     {
@@ -142,7 +142,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
     /**
      * 
      *
-     * @param HazMatHazMatChemicalRecord[] $hazMatChemicalRecord
+     * @param list<HazMatHazMatChemicalRecord> $hazMatChemicalRecord
      *
      * @return self
      */

@@ -21,7 +21,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
     /**
      * 
      *
-     * @var ChemicalReferenceDataResponseChemicalData[]
+     * @var list<ChemicalReferenceDataResponseChemicalData>
      */
     protected $chemicalData;
     /**
@@ -49,7 +49,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ChemicalReferenceDataResponseChemicalData[]
+     * @return list<ChemicalReferenceDataResponseChemicalData>
      */
     public function getChemicalData() : array
     {
@@ -58,7 +58,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
     /**
      * 
      *
-     * @param ChemicalReferenceDataResponseChemicalData[] $chemicalData
+     * @param list<ChemicalReferenceDataResponseChemicalData> $chemicalData
      *
      * @return self
      */

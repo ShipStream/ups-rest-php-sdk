@@ -15,7 +15,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
     /**
      * 
      *
-     * @var EMailInformationEMailType[]
+     * @var list<EMailInformationEMailType>
      */
     protected $eMailType;
     /**
@@ -27,7 +27,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
     /**
      * 
      *
-     * @return EMailInformationEMailType[]
+     * @return list<EMailInformationEMailType>
      */
     public function getEMailType() : array
     {
@@ -36,7 +36,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
     /**
      * 
      *
-     * @param EMailInformationEMailType[] $eMailType
+     * @param list<EMailInformationEMailType> $eMailType
      *
      * @return self
      */

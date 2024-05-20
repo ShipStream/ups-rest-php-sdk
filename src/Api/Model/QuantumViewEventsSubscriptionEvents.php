@@ -40,7 +40,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      * Container holds all of the unread files associated with the subscription.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SubscriptionEventsSubscriptionFile[]
+     * @var list<SubscriptionEventsSubscriptionFile>
      */
     protected $subscriptionFile;
     /**
@@ -135,7 +135,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      * Container holds all of the unread files associated with the subscription.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SubscriptionEventsSubscriptionFile[]
+     * @return list<SubscriptionEventsSubscriptionFile>
      */
     public function getSubscriptionFile() : array
     {
@@ -145,7 +145,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      * Container holds all of the unread files associated with the subscription.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SubscriptionEventsSubscriptionFile[] $subscriptionFile
+     * @param list<SubscriptionEventsSubscriptionFile> $subscriptionFile
      *
      * @return self
      */

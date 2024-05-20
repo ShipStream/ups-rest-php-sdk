@@ -21,7 +21,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Address line
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -79,7 +79,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Address line
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -88,7 +88,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
     /**
      * Address line
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

@@ -53,7 +53,7 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @var PackageServiceOptionsHazMat[]
+     * @var list<PackageServiceOptionsHazMat>
      */
     protected $hazMat;
     /**
@@ -248,7 +248,7 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @return PackageServiceOptionsHazMat[]
+     * @return list<PackageServiceOptionsHazMat>
      */
     public function getHazMat() : array
     {
@@ -257,7 +257,7 @@ class PackagePackageServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @param PackageServiceOptionsHazMat[] $hazMat
+     * @param list<PackageServiceOptionsHazMat> $hazMat
      *
      * @return self
      */

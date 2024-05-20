@@ -72,7 +72,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * 
      *
-     * @var DropOffFacilitiesLocalizedInstruction[]
+     * @var list<DropOffFacilitiesLocalizedInstruction>
      */
     protected $localizedInstruction;
     /**
@@ -288,7 +288,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * 
      *
-     * @return DropOffFacilitiesLocalizedInstruction[]
+     * @return list<DropOffFacilitiesLocalizedInstruction>
      */
     public function getLocalizedInstruction() : array
     {
@@ -297,7 +297,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     /**
      * 
      *
-     * @param DropOffFacilitiesLocalizedInstruction[] $localizedInstruction
+     * @param list<DropOffFacilitiesLocalizedInstruction> $localizedInstruction
      *
      * @return self
      */

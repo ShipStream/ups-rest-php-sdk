@@ -40,14 +40,14 @@ class ResponseError extends \ArrayObject
      * Identifies the element in error.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ErrorErrorLocation[]
+     * @var list<ErrorErrorLocation>
      */
     protected $errorLocation;
     /**
      * The contents of the element in error.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $errorDigest;
     /**
@@ -142,7 +142,7 @@ class ResponseError extends \ArrayObject
      * Identifies the element in error.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ErrorErrorLocation[]
+     * @return list<ErrorErrorLocation>
      */
     public function getErrorLocation() : array
     {
@@ -152,7 +152,7 @@ class ResponseError extends \ArrayObject
      * Identifies the element in error.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ErrorErrorLocation[] $errorLocation
+     * @param list<ErrorErrorLocation> $errorLocation
      *
      * @return self
      */
@@ -166,7 +166,7 @@ class ResponseError extends \ArrayObject
      * The contents of the element in error.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getErrorDigest() : array
     {
@@ -176,7 +176,7 @@ class ResponseError extends \ArrayObject
      * The contents of the element in error.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param string[] $errorDigest
+     * @param list<string> $errorDigest
      *
      * @return self
      */

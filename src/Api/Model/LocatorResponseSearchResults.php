@@ -16,7 +16,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * If the origin address provided in the location request document does not have a match, a list of candidate addresses, geocodes and optionally a landmark will be returned.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SearchResultsGeocodeCandidate[]
+     * @var list<SearchResultsGeocodeCandidate>
      */
     protected $geocodeCandidate;
     /**
@@ -31,14 +31,14 @@ class LocatorResponseSearchResults extends \ArrayObject
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SearchResultsDropLocation[]
+     * @var list<SearchResultsDropLocation>
      */
     protected $dropLocation;
     /**
      * This container contains the information about the currently existing Retail Locations or Additional Services or Program types.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SearchResultsAvailableLocationAttributes[]
+     * @var list<SearchResultsAvailableLocationAttributes>
      */
     protected $availableLocationAttributes;
     /**
@@ -53,7 +53,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * If the origin address provided in the location request document does not have a match, a list of candidate addresses, geocodes and optionally a landmark will be returned.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SearchResultsGeocodeCandidate[]
+     * @return list<SearchResultsGeocodeCandidate>
      */
     public function getGeocodeCandidate() : array
     {
@@ -63,7 +63,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * If the origin address provided in the location request document does not have a match, a list of candidate addresses, geocodes and optionally a landmark will be returned.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SearchResultsGeocodeCandidate[] $geocodeCandidate
+     * @param list<SearchResultsGeocodeCandidate> $geocodeCandidate
      *
      * @return self
      */
@@ -103,7 +103,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SearchResultsDropLocation[]
+     * @return list<SearchResultsDropLocation>
      */
     public function getDropLocation() : array
     {
@@ -113,7 +113,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * When a location request is submitted with a valid origin address, UPS locations will be returned.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SearchResultsDropLocation[] $dropLocation
+     * @param list<SearchResultsDropLocation> $dropLocation
      *
      * @return self
      */
@@ -127,7 +127,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * This container contains the information about the currently existing Retail Locations or Additional Services or Program types.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SearchResultsAvailableLocationAttributes[]
+     * @return list<SearchResultsAvailableLocationAttributes>
      */
     public function getAvailableLocationAttributes() : array
     {
@@ -137,7 +137,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * This container contains the information about the currently existing Retail Locations or Additional Services or Program types.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SearchResultsAvailableLocationAttributes[] $availableLocationAttributes
+     * @param list<SearchResultsAvailableLocationAttributes> $availableLocationAttributes
      *
      * @return self
      */

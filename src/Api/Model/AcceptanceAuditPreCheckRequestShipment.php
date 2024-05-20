@@ -49,7 +49,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var AcceptanceAuditPreCheckShipmentPackage[]
+     * @var list<AcceptanceAuditPreCheckShipmentPackage>
      */
     protected $package;
     /**
@@ -173,7 +173,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return AcceptanceAuditPreCheckShipmentPackage[]
+     * @return list<AcceptanceAuditPreCheckShipmentPackage>
      */
     public function getPackage() : array
     {
@@ -182,7 +182,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param AcceptanceAuditPreCheckShipmentPackage[] $package
+     * @param list<AcceptanceAuditPreCheckShipmentPackage> $package
      *
      * @return self
      */

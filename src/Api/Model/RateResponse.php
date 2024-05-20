@@ -22,7 +22,7 @@ class RateResponse extends \ArrayObject
      * RatedShipment Container.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RateResponseRatedShipment[]
+     * @var list<RateResponseRatedShipment>
      */
     protected $ratedShipment;
     /**
@@ -51,7 +51,7 @@ class RateResponse extends \ArrayObject
      * RatedShipment Container.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RateResponseRatedShipment[]
+     * @return list<RateResponseRatedShipment>
      */
     public function getRatedShipment() : array
     {
@@ -61,7 +61,7 @@ class RateResponse extends \ArrayObject
      * RatedShipment Container.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RateResponseRatedShipment[] $ratedShipment
+     * @param list<RateResponseRatedShipment> $ratedShipment
      *
      * @return self
      */

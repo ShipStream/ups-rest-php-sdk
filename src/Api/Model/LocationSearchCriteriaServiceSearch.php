@@ -21,13 +21,13 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @var ServiceSearchServiceCode[]
+     * @var list<ServiceSearchServiceCode>
      */
     protected $serviceCode;
     /**
      * 
      *
-     * @var ServiceSearchServiceOptionCode[]
+     * @var list<ServiceSearchServiceOptionCode>
      */
     protected $serviceOptionCode;
     /**
@@ -55,7 +55,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @return ServiceSearchServiceCode[]
+     * @return list<ServiceSearchServiceCode>
      */
     public function getServiceCode() : array
     {
@@ -64,7 +64,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @param ServiceSearchServiceCode[] $serviceCode
+     * @param list<ServiceSearchServiceCode> $serviceCode
      *
      * @return self
      */
@@ -77,7 +77,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @return ServiceSearchServiceOptionCode[]
+     * @return list<ServiceSearchServiceOptionCode>
      */
     public function getServiceOptionCode() : array
     {
@@ -86,7 +86,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
     /**
      * 
      *
-     * @param ServiceSearchServiceOptionCode[] $serviceOptionCode
+     * @param list<ServiceSearchServiceOptionCode> $serviceOptionCode
      *
      * @return self
      */

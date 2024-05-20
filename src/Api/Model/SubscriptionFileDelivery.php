@@ -16,14 +16,14 @@ class SubscriptionFileDelivery extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var DeliveryPackageReferenceNumber[]
+     * @var list<DeliveryPackageReferenceNumber>
      */
     protected $packageReferenceNumber;
     /**
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var DeliveryShipmentReferenceNumber[]
+     * @var list<DeliveryShipmentReferenceNumber>
      */
     protected $shipmentReferenceNumber;
     /**
@@ -96,7 +96,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return DeliveryPackageReferenceNumber[]
+     * @return list<DeliveryPackageReferenceNumber>
      */
     public function getPackageReferenceNumber() : array
     {
@@ -106,7 +106,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param DeliveryPackageReferenceNumber[] $packageReferenceNumber
+     * @param list<DeliveryPackageReferenceNumber> $packageReferenceNumber
      *
      * @return self
      */
@@ -120,7 +120,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return DeliveryShipmentReferenceNumber[]
+     * @return list<DeliveryShipmentReferenceNumber>
      */
     public function getShipmentReferenceNumber() : array
     {
@@ -130,7 +130,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param DeliveryShipmentReferenceNumber[] $shipmentReferenceNumber
+     * @param list<DeliveryShipmentReferenceNumber> $shipmentReferenceNumber
      *
      * @return self
      */

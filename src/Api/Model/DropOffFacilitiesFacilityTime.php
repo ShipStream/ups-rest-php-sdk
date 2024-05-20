@@ -15,13 +15,13 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
     /**
      * 
      *
-     * @var FacilityTimeDayOfWeek[]
+     * @var list<FacilityTimeDayOfWeek>
      */
     protected $dayOfWeek;
     /**
      * 
      *
-     * @return FacilityTimeDayOfWeek[]
+     * @return list<FacilityTimeDayOfWeek>
      */
     public function getDayOfWeek() : array
     {
@@ -30,7 +30,7 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
     /**
      * 
      *
-     * @param FacilityTimeDayOfWeek[] $dayOfWeek
+     * @param list<FacilityTimeDayOfWeek> $dayOfWeek
      *
      * @return self
      */

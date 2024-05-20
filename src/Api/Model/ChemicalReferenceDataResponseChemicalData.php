@@ -27,7 +27,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
     /**
      * 
      *
-     * @var ChemicalDataPackageQuantityLimitDetail[]
+     * @var list<ChemicalDataPackageQuantityLimitDetail>
      */
     protected $packageQuantityLimitDetail;
     /**
@@ -77,7 +77,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
     /**
      * 
      *
-     * @return ChemicalDataPackageQuantityLimitDetail[]
+     * @return list<ChemicalDataPackageQuantityLimitDetail>
      */
     public function getPackageQuantityLimitDetail() : array
     {
@@ -86,7 +86,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
     /**
      * 
      *
-     * @param ChemicalDataPackageQuantityLimitDetail[] $packageQuantityLimitDetail
+     * @param list<ChemicalDataPackageQuantityLimitDetail> $packageQuantityLimitDetail
      *
      * @return self
      */

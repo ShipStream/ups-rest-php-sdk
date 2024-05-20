@@ -37,7 +37,7 @@ class XAVRequest extends \ArrayObject
     /**
      * 
      *
-     * @var XAVRequestAddressKeyFormat[]
+     * @var list<XAVRequestAddressKeyFormat>
      */
     protected $addressKeyFormat;
     /**
@@ -117,7 +117,7 @@ class XAVRequest extends \ArrayObject
     /**
      * 
      *
-     * @return XAVRequestAddressKeyFormat[]
+     * @return list<XAVRequestAddressKeyFormat>
      */
     public function getAddressKeyFormat() : array
     {
@@ -126,7 +126,7 @@ class XAVRequest extends \ArrayObject
     /**
      * 
      *
-     * @param XAVRequestAddressKeyFormat[] $addressKeyFormat
+     * @param list<XAVRequestAddressKeyFormat> $addressKeyFormat
      *
      * @return self
      */

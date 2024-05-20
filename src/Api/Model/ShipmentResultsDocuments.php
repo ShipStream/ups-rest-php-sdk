@@ -15,19 +15,19 @@ class ShipmentResultsDocuments extends \ArrayObject
     /**
      * 
      *
-     * @var DocumentsImage[]
+     * @var list<DocumentsImage>
      */
     protected $image;
     /**
      * 
      *
-     * @var DocumentsForms[]
+     * @var list<DocumentsForms>
      */
     protected $forms;
     /**
      * 
      *
-     * @return DocumentsImage[]
+     * @return list<DocumentsImage>
      */
     public function getImage() : array
     {
@@ -36,7 +36,7 @@ class ShipmentResultsDocuments extends \ArrayObject
     /**
      * 
      *
-     * @param DocumentsImage[] $image
+     * @param list<DocumentsImage> $image
      *
      * @return self
      */
@@ -49,7 +49,7 @@ class ShipmentResultsDocuments extends \ArrayObject
     /**
      * 
      *
-     * @return DocumentsForms[]
+     * @return list<DocumentsForms>
      */
     public function getForms() : array
     {
@@ -58,7 +58,7 @@ class ShipmentResultsDocuments extends \ArrayObject
     /**
      * 
      *
-     * @param DocumentsForms[] $forms
+     * @param list<DocumentsForms> $forms
      *
      * @return self
      */

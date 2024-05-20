@@ -73,7 +73,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var PackageResultsAccessorial[]
+     * @var list<PackageResultsAccessorial>
      */
     protected $accessorial;
     /**
@@ -95,7 +95,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var PackageResultsItemizedCharges[]
+     * @var list<PackageResultsItemizedCharges>
      */
     protected $itemizedCharges;
     /**
@@ -304,7 +304,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return PackageResultsAccessorial[]
+     * @return list<PackageResultsAccessorial>
      */
     public function getAccessorial() : array
     {
@@ -314,7 +314,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param PackageResultsAccessorial[] $accessorial
+     * @param list<PackageResultsAccessorial> $accessorial
      *
      * @return self
      */
@@ -378,7 +378,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return PackageResultsItemizedCharges[]
+     * @return list<PackageResultsItemizedCharges>
      */
     public function getItemizedCharges() : array
     {
@@ -388,7 +388,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param PackageResultsItemizedCharges[] $itemizedCharges
+     * @param list<PackageResultsItemizedCharges> $itemizedCharges
      *
      * @return self
      */

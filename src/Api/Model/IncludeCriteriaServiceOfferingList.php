@@ -15,13 +15,13 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
     /**
      * 
      *
-     * @var ServiceOfferingListServiceOffering[]
+     * @var list<ServiceOfferingListServiceOffering>
      */
     protected $serviceOffering;
     /**
      * 
      *
-     * @return ServiceOfferingListServiceOffering[]
+     * @return list<ServiceOfferingListServiceOffering>
      */
     public function getServiceOffering() : array
     {
@@ -30,7 +30,7 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
     /**
      * 
      *
-     * @param ServiceOfferingListServiceOffering[] $serviceOffering
+     * @param list<ServiceOfferingListServiceOffering> $serviceOffering
      *
      * @return self
      */

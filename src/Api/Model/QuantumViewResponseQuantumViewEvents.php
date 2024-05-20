@@ -22,7 +22,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      * The event that a user receives a subset of Tracking information specific to either packages coming or packages going, after subscription request is made.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var QuantumViewEventsSubscriptionEvents[]
+     * @var list<QuantumViewEventsSubscriptionEvents>
      */
     protected $subscriptionEvents;
     /**
@@ -51,7 +51,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      * The event that a user receives a subset of Tracking information specific to either packages coming or packages going, after subscription request is made.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return QuantumViewEventsSubscriptionEvents[]
+     * @return list<QuantumViewEventsSubscriptionEvents>
      */
     public function getSubscriptionEvents() : array
     {
@@ -61,7 +61,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      * The event that a user receives a subset of Tracking information specific to either packages coming or packages going, after subscription request is made.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param QuantumViewEventsSubscriptionEvents[] $subscriptionEvents
+     * @param list<QuantumViewEventsSubscriptionEvents> $subscriptionEvents
      *
      * @return self
      */

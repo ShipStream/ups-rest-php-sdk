@@ -235,7 +235,7 @@ class EmsResponse extends \ArrayObject
     /**
      * 
      *
-     * @var Services[]
+     * @var list<Services>
      */
     protected $services;
     /**
@@ -941,7 +941,7 @@ class EmsResponse extends \ArrayObject
     /**
      * 
      *
-     * @return Services[]
+     * @return list<Services>
      */
     public function getServices() : array
     {
@@ -950,7 +950,7 @@ class EmsResponse extends \ArrayObject
     /**
      * 
      *
-     * @param Services[] $services
+     * @param list<Services> $services
      *
      * @return self
      */

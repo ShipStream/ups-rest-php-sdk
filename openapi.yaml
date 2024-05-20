@@ -31675,6 +31675,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Package'
+          nullable: true
         userRelation:
           type: array
           items:

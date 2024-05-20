@@ -15,7 +15,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $requestOption;
     /**
@@ -39,7 +39,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getRequestOption() : array
     {
@@ -48,7 +48,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
     /**
      * 
      *
-     * @param string[] $requestOption
+     * @param list<string> $requestOption
      *
      * @return self
      */

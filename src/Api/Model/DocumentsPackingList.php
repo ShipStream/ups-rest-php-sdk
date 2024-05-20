@@ -27,7 +27,7 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * 
      *
-     * @var PackingListReference[]
+     * @var list<PackingListReference>
      */
     protected $reference;
     /**
@@ -83,7 +83,7 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * 
      *
-     * @return PackingListReference[]
+     * @return list<PackingListReference>
      */
     public function getReference() : array
     {
@@ -92,7 +92,7 @@ class DocumentsPackingList extends \ArrayObject
     /**
      * 
      *
-     * @param PackingListReference[] $reference
+     * @param list<PackingListReference> $reference
      *
      * @return self
      */

@@ -15,7 +15,7 @@ class InternationalFormsProduct extends \ArrayObject
     /**
      * Description of the product.  Applies to all International Forms. Optional for Partial Invoice. Must be present at least once and can occur for a maximum of 3 times.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $description;
     /**
@@ -149,7 +149,7 @@ class InternationalFormsProduct extends \ArrayObject
     /**
      * Description of the product.  Applies to all International Forms. Optional for Partial Invoice. Must be present at least once and can occur for a maximum of 3 times.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getDescription() : array
     {
@@ -158,7 +158,7 @@ class InternationalFormsProduct extends \ArrayObject
     /**
      * Description of the product.  Applies to all International Forms. Optional for Partial Invoice. Must be present at least once and can occur for a maximum of 3 times.
      *
-     * @param string[] $description
+     * @param list<string> $description
      *
      * @return self
      */

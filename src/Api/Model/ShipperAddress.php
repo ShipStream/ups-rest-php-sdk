@@ -18,7 +18,7 @@ class ShipperAddress extends \ArrayObject
     35 characters are accepted, but for the first occurrence, only 30 characters will be printed on the label for return shipments.
     
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $addressLine;
     /**
@@ -59,7 +59,7 @@ class ShipperAddress extends \ArrayObject
     35 characters are accepted, but for the first occurrence, only 30 characters will be printed on the label for return shipments.
     
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getAddressLine() : array
     {
@@ -71,7 +71,7 @@ class ShipperAddress extends \ArrayObject
     35 characters are accepted, but for the first occurrence, only 30 characters will be printed on the label for return shipments.
     
     *
-    * @param string[] $addressLine
+    * @param list<string> $addressLine
     *
     * @return self
     */

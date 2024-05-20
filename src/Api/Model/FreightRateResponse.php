@@ -21,7 +21,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @var FreightRateResponseRate[]
+     * @var list<FreightRateResponseRate>
      */
     protected $rate;
     /**
@@ -33,7 +33,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @var FreightRateResponseCommodity[]
+     * @var list<FreightRateResponseCommodity>
      */
     protected $commodity;
     /**
@@ -75,7 +75,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @var FreightRateResponseAlternateRatesResponse[]
+     * @var list<FreightRateResponseAlternateRatesResponse>
      */
     protected $alternateRatesResponse;
     /**
@@ -122,7 +122,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateResponseRate[]
+     * @return list<FreightRateResponseRate>
      */
     public function getRate() : array
     {
@@ -131,7 +131,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @param FreightRateResponseRate[] $rate
+     * @param list<FreightRateResponseRate> $rate
      *
      * @return self
      */
@@ -166,7 +166,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateResponseCommodity[]
+     * @return list<FreightRateResponseCommodity>
      */
     public function getCommodity() : array
     {
@@ -175,7 +175,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @param FreightRateResponseCommodity[] $commodity
+     * @param list<FreightRateResponseCommodity> $commodity
      *
      * @return self
      */
@@ -320,7 +320,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateResponseAlternateRatesResponse[]
+     * @return list<FreightRateResponseAlternateRatesResponse>
      */
     public function getAlternateRatesResponse() : array
     {
@@ -329,7 +329,7 @@ class FreightRateResponse extends \ArrayObject
     /**
      * 
      *
-     * @param FreightRateResponseAlternateRatesResponse[] $alternateRatesResponse
+     * @param list<FreightRateResponseAlternateRatesResponse> $alternateRatesResponse
      *
      * @return self
      */

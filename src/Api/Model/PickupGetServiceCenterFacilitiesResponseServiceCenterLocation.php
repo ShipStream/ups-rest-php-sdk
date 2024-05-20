@@ -15,7 +15,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
     /**
      * 
      *
-     * @var ServiceCenterLocationDropOffFacilities[]
+     * @var list<ServiceCenterLocationDropOffFacilities>
      */
     protected $dropOffFacilities;
     /**
@@ -27,7 +27,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
     /**
      * 
      *
-     * @return ServiceCenterLocationDropOffFacilities[]
+     * @return list<ServiceCenterLocationDropOffFacilities>
      */
     public function getDropOffFacilities() : array
     {
@@ -36,7 +36,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
     /**
      * 
      *
-     * @param ServiceCenterLocationDropOffFacilities[] $dropOffFacilities
+     * @param list<ServiceCenterLocationDropOffFacilities> $dropOffFacilities
      *
      * @return self
      */

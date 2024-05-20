@@ -16,14 +16,14 @@ class AccessPointInformationPrivateNetworkList extends \ArrayObject
      * Container to hold the private network details.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var PrivateNetworkListPrivateNetwork[]
+     * @var list<PrivateNetworkListPrivateNetwork>
      */
     protected $privateNetwork;
     /**
      * Container to hold the private network details.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return PrivateNetworkListPrivateNetwork[]
+     * @return list<PrivateNetworkListPrivateNetwork>
      */
     public function getPrivateNetwork() : array
     {
@@ -33,7 +33,7 @@ class AccessPointInformationPrivateNetworkList extends \ArrayObject
      * Container to hold the private network details.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param PrivateNetworkListPrivateNetwork[] $privateNetwork
+     * @param list<PrivateNetworkListPrivateNetwork> $privateNetwork
      *
      * @return self
      */

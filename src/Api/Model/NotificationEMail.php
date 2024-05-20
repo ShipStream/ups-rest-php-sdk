@@ -15,7 +15,7 @@ class NotificationEMail extends \ArrayObject
     /**
      * Email address where the notification is sent.  Up to five email addresses are allowed for each type of Quantum View TM shipment notification. Up to two email address for return notification.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $eMailAddress;
     /**
@@ -45,7 +45,7 @@ class NotificationEMail extends \ArrayObject
     /**
      * Email address where the notification is sent.  Up to five email addresses are allowed for each type of Quantum View TM shipment notification. Up to two email address for return notification.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getEMailAddress() : array
     {
@@ -54,7 +54,7 @@ class NotificationEMail extends \ArrayObject
     /**
      * Email address where the notification is sent.  Up to five email addresses are allowed for each type of Quantum View TM shipment notification. Up to two email address for return notification.
      *
-     * @param string[] $eMailAddress
+     * @param list<string> $eMailAddress
      *
      * @return self
      */

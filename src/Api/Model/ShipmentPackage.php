@@ -83,7 +83,7 @@ class ShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @var PackageReferenceNumber[]
+     * @var list<PackageReferenceNumber>
      */
     protected $referenceNumber;
     /**
@@ -371,7 +371,7 @@ class ShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @return PackageReferenceNumber[]
+     * @return list<PackageReferenceNumber>
      */
     public function getReferenceNumber() : array
     {
@@ -380,7 +380,7 @@ class ShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @param PackageReferenceNumber[] $referenceNumber
+     * @param list<PackageReferenceNumber> $referenceNumber
      *
      * @return self
      */

@@ -27,7 +27,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
     /**
      * 
      *
-     * @var FreightDensityInfoHandlingUnits[]
+     * @var list<FreightDensityInfoHandlingUnits>
      */
     protected $handlingUnits;
     /**
@@ -77,7 +77,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
     /**
      * 
      *
-     * @return FreightDensityInfoHandlingUnits[]
+     * @return list<FreightDensityInfoHandlingUnits>
      */
     public function getHandlingUnits() : array
     {
@@ -86,7 +86,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
     /**
      * 
      *
-     * @param FreightDensityInfoHandlingUnits[] $handlingUnits
+     * @param list<FreightDensityInfoHandlingUnits> $handlingUnits
      *
      * @return self
      */

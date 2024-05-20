@@ -15,13 +15,13 @@ class InquireNumbers extends \ArrayObject
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $inquiryNumbers;
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getInquiryNumbers() : array
     {
@@ -30,7 +30,7 @@ class InquireNumbers extends \ArrayObject
     /**
      * 
      *
-     * @param string[] $inquiryNumbers
+     * @param list<string> $inquiryNumbers
      *
      * @return self
      */

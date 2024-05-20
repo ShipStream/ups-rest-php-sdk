@@ -16,7 +16,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RatedShipmentDisclaimer[]
+     * @var list<RatedShipmentDisclaimer>
      */
     protected $disclaimer;
     /**
@@ -52,7 +52,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RatedShipmentRatedShipmentAlert[]
+     * @var list<RatedShipmentRatedShipmentAlert>
      */
     protected $ratedShipmentAlert;
     /**
@@ -89,7 +89,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RatedShipmentItemizedCharges[]
+     * @var list<RatedShipmentItemizedCharges>
      */
     protected $itemizedCharges;
     /**
@@ -108,7 +108,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RatedShipmentTaxCharges[]
+     * @var list<RatedShipmentTaxCharges>
      */
     protected $taxCharges;
     /**
@@ -133,7 +133,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Rated Package Container.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RatedShipmentRatedPackage[]
+     * @var list<RatedShipmentRatedPackage>
      */
     protected $ratedPackage;
     /**
@@ -158,7 +158,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RatedShipmentDisclaimer[]
+     * @return list<RatedShipmentDisclaimer>
      */
     public function getDisclaimer() : array
     {
@@ -168,7 +168,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Disclaimer is used to provide more information to the shipper regarding the processed shipment. It is used to notify the shipper about possible taxes and duties that might have been added or might apply to the shipment. Refer to the Appendix for various disclaimers. This field may be returned only if TaxInformationIndicator is present in the request.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RatedShipmentDisclaimer[] $disclaimer
+     * @param list<RatedShipmentDisclaimer> $disclaimer
      *
      * @return self
      */
@@ -260,7 +260,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RatedShipmentRatedShipmentAlert[]
+     * @return list<RatedShipmentRatedShipmentAlert>
      */
     public function getRatedShipmentAlert() : array
     {
@@ -270,7 +270,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Rated Shipment Alert container. There can be zero to many RatedShipmentAlert containers with code and description.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RatedShipmentRatedShipmentAlert[] $ratedShipmentAlert
+     * @param list<RatedShipmentRatedShipmentAlert> $ratedShipmentAlert
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RatedShipmentItemizedCharges[]
+     * @return list<RatedShipmentItemizedCharges>
      */
     public function getItemizedCharges() : array
     {
@@ -404,7 +404,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'. These charges would be returned only when subversion is greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RatedShipmentItemizedCharges[] $itemizedCharges
+     * @param list<RatedShipmentItemizedCharges> $itemizedCharges
      *
      * @return self
      */
@@ -462,7 +462,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RatedShipmentTaxCharges[]
+     * @return list<RatedShipmentTaxCharges>
      */
     public function getTaxCharges() : array
     {
@@ -472,7 +472,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RatedShipmentTaxCharges[] $taxCharges
+     * @param list<RatedShipmentTaxCharges> $taxCharges
      *
      * @return self
      */
@@ -552,7 +552,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Rated Package Container.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RatedShipmentRatedPackage[]
+     * @return list<RatedShipmentRatedPackage>
      */
     public function getRatedPackage() : array
     {
@@ -562,7 +562,7 @@ class RateResponseRatedShipment extends \ArrayObject
      * Rated Package Container.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RatedShipmentRatedPackage[] $ratedPackage
+     * @param list<RatedShipmentRatedPackage> $ratedPackage
      *
      * @return self
      */

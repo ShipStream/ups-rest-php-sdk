@@ -15,7 +15,7 @@ class ShipToAddress extends \ArrayObject
     /**
      * Address Line of the consignee. Only first two Address Lines will be printed on the label.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -65,7 +65,7 @@ class ShipToAddress extends \ArrayObject
     /**
      * Address Line of the consignee. Only first two Address Lines will be printed on the label.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -74,7 +74,7 @@ class ShipToAddress extends \ArrayObject
     /**
      * Address Line of the consignee. Only first two Address Lines will be printed on the label.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

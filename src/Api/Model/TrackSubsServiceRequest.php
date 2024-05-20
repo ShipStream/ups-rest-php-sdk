@@ -27,13 +27,13 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents list of tracking numbers in request.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $trackingNumberList;
     /**
      * Represents scan/event preferences for the subscription endpoint, Place holder for Future use.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $scanPreference;
     /**
@@ -89,7 +89,7 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents list of tracking numbers in request.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getTrackingNumberList() : array
     {
@@ -98,7 +98,7 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents list of tracking numbers in request.
      *
-     * @param string[] $trackingNumberList
+     * @param list<string> $trackingNumberList
      *
      * @return self
      */
@@ -111,7 +111,7 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents scan/event preferences for the subscription endpoint, Place holder for Future use.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getScanPreference() : array
     {
@@ -120,7 +120,7 @@ class TrackSubsServiceRequest extends \ArrayObject
     /**
      * Represents scan/event preferences for the subscription endpoint, Place holder for Future use.
      *
-     * @param string[] $scanPreference
+     * @param list<string> $scanPreference
      *
      * @return self
      */
