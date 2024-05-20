@@ -3,7 +3,6 @@
 namespace ShipStream\Ups\Normalizer\Locator;
 
 use ShipStream\Ups\Api\Normalizer\StandardHoursDayOfWeekNormalizer as BaseNormalizer;
-use function array_is_list;
 use function is_array;
 
 class StandardHoursDayOfWeekNormalizer extends BaseNormalizer
@@ -17,9 +16,12 @@ class StandardHoursDayOfWeekNormalizer extends BaseNormalizer
             return parent::denormalize($data, $class, $format, $context);
         }
 
-        // Force DayOfWeek to always be an array even when the API returns a single value
-        if (isset($data['DayOfWeek']) && ! array_is_list($data['DayOfWeek'])) {
-            $data['DayOfWeek'] = [$data['DayOfWeek']];
+        // Force OpenHours and CloseHours to always be an array even when the API returns a single value
+        if (isset($data['OpenHours']) && !is_array($data['OpenHours'])) {
+            $data['OpenHours'] = [$data['OpenHours']];
+        }
+        if (isset($data['CloseHours']) && !is_array($data['CloseHours'])) {
+            $data['CloseHours'] = [$data['CloseHours']];
         }
         return parent::denormalize($data, $class, $format, $context);
     }
