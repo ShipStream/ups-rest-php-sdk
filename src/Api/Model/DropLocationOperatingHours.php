@@ -16,14 +16,14 @@ class DropLocationOperatingHours extends \ArrayObject
      * StandardHours Container.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var OperatingHoursStandardHours[]
+     * @var list<OperatingHoursStandardHours>
      */
     protected $standardHours;
     /**
      * StandardHours Container.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return OperatingHoursStandardHours[]
+     * @return list<OperatingHoursStandardHours>
      */
     public function getStandardHours() : array
     {
@@ -33,7 +33,7 @@ class DropLocationOperatingHours extends \ArrayObject
      * StandardHours Container.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param OperatingHoursStandardHours[] $standardHours
+     * @param list<OperatingHoursStandardHours> $standardHours
      *
      * @return self
      */

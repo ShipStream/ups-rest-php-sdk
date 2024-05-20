@@ -28,7 +28,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      * Base 64 encoded graphic image. Applicable only for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $graphicImagePart;
     /**
@@ -97,7 +97,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      * Base 64 encoded graphic image. Applicable only for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getGraphicImagePart() : array
     {
@@ -107,7 +107,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      * Base 64 encoded graphic image. Applicable only for Mail Innovations CN22 Combination Forward Label with more than 3 commodities.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param string[] $graphicImagePart
+     * @param list<string> $graphicImagePart
      *
      * @return self
      */

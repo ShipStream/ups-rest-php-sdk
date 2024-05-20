@@ -21,13 +21,13 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @var ResponseAlert[]
+     * @var list<ResponseAlert>
      */
     protected $alert;
     /**
      * 
      *
-     * @var ResponseAlertDetail[]
+     * @var list<ResponseAlertDetail>
      */
     protected $alertDetail;
     /**
@@ -61,7 +61,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ResponseAlert[]
+     * @return list<ResponseAlert>
      */
     public function getAlert() : array
     {
@@ -70,7 +70,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @param ResponseAlert[] $alert
+     * @param list<ResponseAlert> $alert
      *
      * @return self
      */
@@ -83,7 +83,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ResponseAlertDetail[]
+     * @return list<ResponseAlertDetail>
      */
     public function getAlertDetail() : array
     {
@@ -92,7 +92,7 @@ class AcceptanceAuditPreCheckResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @param ResponseAlertDetail[] $alertDetail
+     * @param list<ResponseAlertDetail> $alertDetail
      *
      * @return self
      */

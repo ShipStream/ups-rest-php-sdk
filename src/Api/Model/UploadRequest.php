@@ -27,7 +27,7 @@ class UploadRequest extends \ArrayObject
     /**
      * 
      *
-     * @var UploadRequestUserCreatedForm[]
+     * @var list<UploadRequestUserCreatedForm>
      */
     protected $userCreatedForm;
     /**
@@ -77,7 +77,7 @@ class UploadRequest extends \ArrayObject
     /**
      * 
      *
-     * @return UploadRequestUserCreatedForm[]
+     * @return list<UploadRequestUserCreatedForm>
      */
     public function getUserCreatedForm() : array
     {
@@ -86,7 +86,7 @@ class UploadRequest extends \ArrayObject
     /**
      * 
      *
-     * @param UploadRequestUserCreatedForm[] $userCreatedForm
+     * @param list<UploadRequestUserCreatedForm> $userCreatedForm
      *
      * @return self
      */

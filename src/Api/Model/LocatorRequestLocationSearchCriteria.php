@@ -15,7 +15,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * 
      *
-     * @var LocationSearchCriteriaSearchOption[]
+     * @var list<LocationSearchCriteriaSearchOption>
      */
     protected $searchOption;
     /**
@@ -67,7 +67,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * 
      *
-     * @return LocationSearchCriteriaSearchOption[]
+     * @return list<LocationSearchCriteriaSearchOption>
      */
     public function getSearchOption() : array
     {
@@ -76,7 +76,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     /**
      * 
      *
-     * @param LocationSearchCriteriaSearchOption[] $searchOption
+     * @param list<LocationSearchCriteriaSearchOption> $searchOption
      *
      * @return self
      */

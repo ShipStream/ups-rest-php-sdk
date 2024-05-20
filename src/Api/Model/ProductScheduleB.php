@@ -21,13 +21,13 @@ class ProductScheduleB extends \ArrayObject
     /**
      * The count of how many Schedule B units of the current good are in the shipment (EEI only). For example, if the Schedule B unit of measure is dozens and eight dozen, is being shipped, indicate 8 in this field.  Applies to EEI forms only. Conditionally required for EEI forms if ScheduleB UnitOfMeasurement is not X. Should be Numeric. Valid characters are 0 -9.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $quantity;
     /**
      * 
      *
-     * @var ScheduleBUnitOfMeasurement[]
+     * @var list<ScheduleBUnitOfMeasurement>
      */
     protected $unitOfMeasurement;
     /**
@@ -55,7 +55,7 @@ class ProductScheduleB extends \ArrayObject
     /**
      * The count of how many Schedule B units of the current good are in the shipment (EEI only). For example, if the Schedule B unit of measure is dozens and eight dozen, is being shipped, indicate 8 in this field.  Applies to EEI forms only. Conditionally required for EEI forms if ScheduleB UnitOfMeasurement is not X. Should be Numeric. Valid characters are 0 -9.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getQuantity() : array
     {
@@ -64,7 +64,7 @@ class ProductScheduleB extends \ArrayObject
     /**
      * The count of how many Schedule B units of the current good are in the shipment (EEI only). For example, if the Schedule B unit of measure is dozens and eight dozen, is being shipped, indicate 8 in this field.  Applies to EEI forms only. Conditionally required for EEI forms if ScheduleB UnitOfMeasurement is not X. Should be Numeric. Valid characters are 0 -9.
      *
-     * @param string[] $quantity
+     * @param list<string> $quantity
      *
      * @return self
      */
@@ -77,7 +77,7 @@ class ProductScheduleB extends \ArrayObject
     /**
      * 
      *
-     * @return ScheduleBUnitOfMeasurement[]
+     * @return list<ScheduleBUnitOfMeasurement>
      */
     public function getUnitOfMeasurement() : array
     {
@@ -86,7 +86,7 @@ class ProductScheduleB extends \ArrayObject
     /**
      * 
      *
-     * @param ScheduleBUnitOfMeasurement[] $unitOfMeasurement
+     * @param list<ScheduleBUnitOfMeasurement> $unitOfMeasurement
      *
      * @return self
      */

@@ -15,13 +15,13 @@ class ErrorResponseWrapper extends \ArrayObject
     /**
      * 
      *
-     * @var Error[]
+     * @var list<Error>
      */
     protected $errors;
     /**
      * 
      *
-     * @return Error[]
+     * @return list<Error>
      */
     public function getErrors() : array
     {
@@ -30,7 +30,7 @@ class ErrorResponseWrapper extends \ArrayObject
     /**
      * 
      *
-     * @param Error[] $errors
+     * @param list<Error> $errors
      *
      * @return self
      */

@@ -27,7 +27,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Detailed street address. For Jan. 2010 release, only one AddressLine is allowed
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -143,7 +143,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Detailed street address. For Jan. 2010 release, only one AddressLine is allowed
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -152,7 +152,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     /**
      * Detailed street address. For Jan. 2010 release, only one AddressLine is allowed
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

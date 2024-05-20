@@ -15,19 +15,19 @@ class TrackSubsServiceResponse extends \ArrayObject
     /**
      * List of tracking numbers with successful subscription created.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $validTrackingNumbers;
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $invalidTrackingNumbers;
     /**
      * List of tracking numbers with successful subscription created.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getValidTrackingNumbers() : array
     {
@@ -36,7 +36,7 @@ class TrackSubsServiceResponse extends \ArrayObject
     /**
      * List of tracking numbers with successful subscription created.
      *
-     * @param string[] $validTrackingNumbers
+     * @param list<string> $validTrackingNumbers
      *
      * @return self
      */
@@ -49,7 +49,7 @@ class TrackSubsServiceResponse extends \ArrayObject
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getInvalidTrackingNumbers() : array
     {
@@ -58,7 +58,7 @@ class TrackSubsServiceResponse extends \ArrayObject
     /**
      * List of tracking numbers associated with errors preventing subscription creation.
      *
-     * @param string[] $invalidTrackingNumbers
+     * @param list<string> $invalidTrackingNumbers
      *
      * @return self
      */

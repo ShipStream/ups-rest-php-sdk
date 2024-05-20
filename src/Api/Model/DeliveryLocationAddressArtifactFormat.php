@@ -58,7 +58,7 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
      * Container tag for additional address information where package is delivered.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var AddressArtifactFormatAddressExtendedInformation[]
+     * @var list<AddressArtifactFormatAddressExtendedInformation>
      */
     protected $addressExtendedInformation;
     /**
@@ -261,7 +261,7 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
      * Container tag for additional address information where package is delivered.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return AddressArtifactFormatAddressExtendedInformation[]
+     * @return list<AddressArtifactFormatAddressExtendedInformation>
      */
     public function getAddressExtendedInformation() : array
     {
@@ -271,7 +271,7 @@ class DeliveryLocationAddressArtifactFormat extends \ArrayObject
      * Container tag for additional address information where package is delivered.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param AddressArtifactFormatAddressExtendedInformation[] $addressExtendedInformation
+     * @param list<AddressArtifactFormatAddressExtendedInformation> $addressExtendedInformation
      *
      * @return self
      */

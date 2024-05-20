@@ -44,13 +44,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInquiryNumber($data['inquiryNumber']);
                 unset($data['inquiryNumber']);
             }
-            if (\array_key_exists('package', $data)) {
+            if (\array_key_exists('package', $data) && $data['package'] !== null) {
                 $values = [];
                 foreach ($data['package'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Package', 'json', $context);
                 }
                 $object->setPackage($values);
                 unset($data['package']);
+            }
+            elseif (\array_key_exists('package', $data) && $data['package'] === null) {
+                $object->setPackage(null);
             }
             if (\array_key_exists('userRelation', $data)) {
                 $values_1 = [];
@@ -151,13 +154,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setInquiryNumber($data['inquiryNumber']);
                 unset($data['inquiryNumber']);
             }
-            if (\array_key_exists('package', $data)) {
+            if (\array_key_exists('package', $data) && $data['package'] !== null) {
                 $values = [];
                 foreach ($data['package'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\Package', 'json', $context);
                 }
                 $object->setPackage($values);
                 unset($data['package']);
+            }
+            elseif (\array_key_exists('package', $data) && $data['package'] === null) {
+                $object->setPackage(null);
             }
             if (\array_key_exists('userRelation', $data)) {
                 $values_1 = [];

@@ -15,7 +15,7 @@ class PayerAddress extends \ArrayObject
     /**
      * Payer's street address.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -51,7 +51,7 @@ class PayerAddress extends \ArrayObject
     /**
      * Payer's street address.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -60,7 +60,7 @@ class PayerAddress extends \ArrayObject
     /**
      * Payer's street address.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

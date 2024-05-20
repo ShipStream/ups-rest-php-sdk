@@ -27,7 +27,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
     /**
      * The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $trackingNumber;
     /**
@@ -77,7 +77,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
     /**
      * The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getTrackingNumber() : array
     {
@@ -86,7 +86,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
     /**
      * The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case
      *
-     * @param string[] $trackingNumber
+     * @param list<string> $trackingNumber
      *
      * @return self
      */

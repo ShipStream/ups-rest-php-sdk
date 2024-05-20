@@ -69,7 +69,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @var PackageChemicalRecord[]
+     * @var list<PackageChemicalRecord>
      */
     protected $chemicalRecord;
     /**
@@ -253,7 +253,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @return PackageChemicalRecord[]
+     * @return list<PackageChemicalRecord>
      */
     public function getChemicalRecord() : array
     {
@@ -262,7 +262,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @param PackageChemicalRecord[] $chemicalRecord
+     * @param list<PackageChemicalRecord> $chemicalRecord
      *
      * @return self
      */

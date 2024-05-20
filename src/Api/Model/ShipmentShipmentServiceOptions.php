@@ -53,7 +53,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentServiceOptionsNotification[]
+     * @var list<ShipmentServiceOptionsNotification>
      */
     protected $notification;
     /**
@@ -109,7 +109,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentServiceOptionsPreAlertNotification[]
+     * @var list<ShipmentServiceOptionsPreAlertNotification>
      */
     protected $preAlertNotification;
     /**
@@ -323,7 +323,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentServiceOptionsNotification[]
+     * @return list<ShipmentServiceOptionsNotification>
      */
     public function getNotification() : array
     {
@@ -332,7 +332,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentServiceOptionsNotification[] $notification
+     * @param list<ShipmentServiceOptionsNotification> $notification
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentServiceOptionsPreAlertNotification[]
+     * @return list<ShipmentServiceOptionsPreAlertNotification>
      */
     public function getPreAlertNotification() : array
     {
@@ -534,7 +534,7 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentServiceOptionsPreAlertNotification[] $preAlertNotification
+     * @param list<ShipmentServiceOptionsPreAlertNotification> $preAlertNotification
      *
      * @return self
      */

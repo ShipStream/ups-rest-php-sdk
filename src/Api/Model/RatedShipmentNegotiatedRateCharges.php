@@ -16,14 +16,14 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'.  These charges would be returned only when subversion is greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var NegotiatedRateChargesItemizedCharges[]
+     * @var list<NegotiatedRateChargesItemizedCharges>
      */
     protected $itemizedCharges;
     /**
      * TaxCharges container are returned only when TaxInformationIndicator is present in request. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var NegotiatedRateChargesTaxCharges[]
+     * @var list<NegotiatedRateChargesTaxCharges>
      */
     protected $taxCharges;
     /**
@@ -42,7 +42,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'.  These charges would be returned only when subversion is greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return NegotiatedRateChargesItemizedCharges[]
+     * @return list<NegotiatedRateChargesItemizedCharges>
      */
     public function getItemizedCharges() : array
     {
@@ -52,7 +52,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to '1601'.  These charges would be returned only when subversion is greater than or equal to 1601.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param NegotiatedRateChargesItemizedCharges[] $itemizedCharges
+     * @param list<NegotiatedRateChargesItemizedCharges> $itemizedCharges
      *
      * @return self
      */
@@ -66,7 +66,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return NegotiatedRateChargesTaxCharges[]
+     * @return list<NegotiatedRateChargesTaxCharges>
      */
     public function getTaxCharges() : array
     {
@@ -76,7 +76,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      * TaxCharges container are returned only when TaxInformationIndicator is present in request. TaxCharges container contains Tax information for a given shipment.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param NegotiatedRateChargesTaxCharges[] $taxCharges
+     * @param list<NegotiatedRateChargesTaxCharges> $taxCharges
      *
      * @return self
      */

@@ -15,7 +15,7 @@ class FreightPickupShipToAddress extends \ArrayObject
     /**
      * The Ship to street address.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -45,7 +45,7 @@ class FreightPickupShipToAddress extends \ArrayObject
     /**
      * The Ship to street address.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -54,7 +54,7 @@ class FreightPickupShipToAddress extends \ArrayObject
     /**
      * The Ship to street address.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

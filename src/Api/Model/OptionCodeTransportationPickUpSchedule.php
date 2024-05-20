@@ -16,14 +16,14 @@ class OptionCodeTransportationPickUpSchedule extends \ArrayObject
      * PickUp container contains details of day of week and corresponding pickup times for that service.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var TransportationPickUpSchedulePickUp[]
+     * @var list<TransportationPickUpSchedulePickUp>
      */
     protected $pickUp;
     /**
      * PickUp container contains details of day of week and corresponding pickup times for that service.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return TransportationPickUpSchedulePickUp[]
+     * @return list<TransportationPickUpSchedulePickUp>
      */
     public function getPickUp() : array
     {
@@ -33,7 +33,7 @@ class OptionCodeTransportationPickUpSchedule extends \ArrayObject
      * PickUp container contains details of day of week and corresponding pickup times for that service.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param TransportationPickUpSchedulePickUp[] $pickUp
+     * @param list<TransportationPickUpSchedulePickUp> $pickUp
      *
      * @return self
      */

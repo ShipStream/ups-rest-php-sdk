@@ -36,7 +36,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     /**
      * 
      *
-     * @var PackageResultsChemicalRecordResults[]
+     * @var list<PackageResultsChemicalRecordResults>
      */
     protected $chemicalRecordResults;
     /**
@@ -114,7 +114,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     /**
      * 
      *
-     * @return PackageResultsChemicalRecordResults[]
+     * @return list<PackageResultsChemicalRecordResults>
      */
     public function getChemicalRecordResults() : array
     {
@@ -123,7 +123,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     /**
      * 
      *
-     * @param PackageResultsChemicalRecordResults[] $chemicalRecordResults
+     * @param list<PackageResultsChemicalRecordResults> $chemicalRecordResults
      *
      * @return self
      */

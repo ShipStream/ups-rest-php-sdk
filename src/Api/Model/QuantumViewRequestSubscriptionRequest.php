@@ -27,7 +27,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
     /**
      * File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $fileName;
     /**
@@ -77,7 +77,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
     /**
      * File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getFileName() : array
     {
@@ -86,7 +86,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
     /**
      * File name of specific subscription requested by user. Format: YYMMDD_HHmmssnnn. (nnn - sequence number: usually = 001)
      *
-     * @param string[] $fileName
+     * @param list<string> $fileName
      *
      * @return self
      */

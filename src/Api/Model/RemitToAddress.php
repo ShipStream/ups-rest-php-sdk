@@ -15,7 +15,7 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee Street address for the COD charges.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -51,7 +51,7 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee Street address for the COD charges.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -60,7 +60,7 @@ class RemitToAddress extends \ArrayObject
     /**
      * Payee Street address for the COD charges.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

@@ -15,13 +15,13 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
     /**
      * DocumentID represents a document uploaded to Forms History.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $documentID;
     /**
      * DocumentID represents a document uploaded to Forms History.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getDocumentID() : array
     {
@@ -30,7 +30,7 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
     /**
      * DocumentID represents a document uploaded to Forms History.
      *
-     * @param string[] $documentID
+     * @param list<string> $documentID
      *
      * @return self
      */

@@ -15,7 +15,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * This contains the business classification code to exclude from UPS Access Point Search by address or geocode. Multiple codes can are possible in separate elements. Please refer to Appendix D for detailed business codes.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $businessClassificationCode;
     /**
@@ -39,7 +39,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * This contains the business classification code to exclude from UPS Access Point Search by address or geocode. Multiple codes can are possible in separate elements. Please refer to Appendix D for detailed business codes.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getBusinessClassificationCode() : array
     {
@@ -48,7 +48,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
     /**
      * This contains the business classification code to exclude from UPS Access Point Search by address or geocode. Multiple codes can are possible in separate elements. Please refer to Appendix D for detailed business codes.
      *
-     * @param string[] $businessClassificationCode
+     * @param list<string> $businessClassificationCode
      *
      * @return self
      */

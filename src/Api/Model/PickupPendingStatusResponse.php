@@ -21,7 +21,7 @@ class PickupPendingStatusResponse extends \ArrayObject
     /**
      * 
      *
-     * @var PickupPendingStatusResponsePendingStatus[]
+     * @var list<PickupPendingStatusResponsePendingStatus>
      */
     protected $pendingStatus;
     /**
@@ -49,7 +49,7 @@ class PickupPendingStatusResponse extends \ArrayObject
     /**
      * 
      *
-     * @return PickupPendingStatusResponsePendingStatus[]
+     * @return list<PickupPendingStatusResponsePendingStatus>
      */
     public function getPendingStatus() : array
     {
@@ -58,7 +58,7 @@ class PickupPendingStatusResponse extends \ArrayObject
     /**
      * 
      *
-     * @param PickupPendingStatusResponsePendingStatus[] $pendingStatus
+     * @param list<PickupPendingStatusResponsePendingStatus> $pendingStatus
      *
      * @return self
      */

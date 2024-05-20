@@ -16,14 +16,14 @@ class SubscriptionFileOrigin extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var OriginPackageReferenceNumber[]
+     * @var list<OriginPackageReferenceNumber>
      */
     protected $packageReferenceNumber;
     /**
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var OriginShipmentReferenceNumber[]
+     * @var list<OriginShipmentReferenceNumber>
      */
     protected $shipmentReferenceNumber;
     /**
@@ -78,7 +78,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return OriginPackageReferenceNumber[]
+     * @return list<OriginPackageReferenceNumber>
      */
     public function getPackageReferenceNumber() : array
     {
@@ -88,7 +88,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param OriginPackageReferenceNumber[] $packageReferenceNumber
+     * @param list<OriginPackageReferenceNumber> $packageReferenceNumber
      *
      * @return self
      */
@@ -102,7 +102,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return OriginShipmentReferenceNumber[]
+     * @return list<OriginShipmentReferenceNumber>
      */
     public function getShipmentReferenceNumber() : array
     {
@@ -112,7 +112,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param OriginShipmentReferenceNumber[] $shipmentReferenceNumber
+     * @param list<OriginShipmentReferenceNumber> $shipmentReferenceNumber
      *
      * @return self
      */

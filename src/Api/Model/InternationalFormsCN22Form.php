@@ -59,7 +59,7 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * 
      *
-     * @var CN22FormCN22Content[]
+     * @var list<CN22FormCN22Content>
      */
     protected $cN22Content;
     /**
@@ -213,7 +213,7 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * 
      *
-     * @return CN22FormCN22Content[]
+     * @return list<CN22FormCN22Content>
      */
     public function getCN22Content() : array
     {
@@ -222,7 +222,7 @@ class InternationalFormsCN22Form extends \ArrayObject
     /**
      * 
      *
-     * @param CN22FormCN22Content[] $cN22Content
+     * @param list<CN22FormCN22Content> $cN22Content
      *
      * @return self
      */

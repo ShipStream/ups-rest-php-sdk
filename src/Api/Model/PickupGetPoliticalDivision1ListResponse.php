@@ -21,7 +21,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
     /**
      * The Political Division 1/State Field.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $politicalDivision1;
     /**
@@ -49,7 +49,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
     /**
      * The Political Division 1/State Field.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getPoliticalDivision1() : array
     {
@@ -58,7 +58,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
     /**
      * The Political Division 1/State Field.
      *
-     * @param string[] $politicalDivision1
+     * @param list<string> $politicalDivision1
      *
      * @return self
      */

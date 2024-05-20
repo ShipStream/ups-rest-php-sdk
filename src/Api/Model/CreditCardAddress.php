@@ -15,7 +15,7 @@ class CreditCardAddress extends \ArrayObject
     /**
      * Address Line 1 of the credit card billing address. Usually Street address information.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -45,7 +45,7 @@ class CreditCardAddress extends \ArrayObject
     /**
      * Address Line 1 of the credit card billing address. Usually Street address information.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -54,7 +54,7 @@ class CreditCardAddress extends \ArrayObject
     /**
      * Address Line 1 of the credit card billing address. Usually Street address information.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

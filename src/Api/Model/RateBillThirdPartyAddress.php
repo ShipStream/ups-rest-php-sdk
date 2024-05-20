@@ -15,7 +15,7 @@ class RateBillThirdPartyAddress extends \ArrayObject
     /**
      * The origin street address including name and number (when applicable).
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -45,7 +45,7 @@ class RateBillThirdPartyAddress extends \ArrayObject
     /**
      * The origin street address including name and number (when applicable).
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -54,7 +54,7 @@ class RateBillThirdPartyAddress extends \ArrayObject
     /**
      * The origin street address including name and number (when applicable).
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

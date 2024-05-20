@@ -15,7 +15,7 @@ class ShipmentPaymentInformation extends \ArrayObject
     /**
      * 
      *
-     * @var PaymentInformationShipmentCharge[]
+     * @var list<PaymentInformationShipmentCharge>
      */
     protected $shipmentCharge;
     /**
@@ -27,7 +27,7 @@ class ShipmentPaymentInformation extends \ArrayObject
     /**
      * 
      *
-     * @return PaymentInformationShipmentCharge[]
+     * @return list<PaymentInformationShipmentCharge>
      */
     public function getShipmentCharge() : array
     {
@@ -36,7 +36,7 @@ class ShipmentPaymentInformation extends \ArrayObject
     /**
      * 
      *
-     * @param PaymentInformationShipmentCharge[] $shipmentCharge
+     * @param list<PaymentInformationShipmentCharge> $shipmentCharge
      *
      * @return self
      */

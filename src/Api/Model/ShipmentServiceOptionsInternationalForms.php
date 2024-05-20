@@ -32,7 +32,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
     
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $formType;
     /**
@@ -85,7 +85,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     /**
      * 
      *
-     * @var InternationalFormsProduct[]
+     * @var list<InternationalFormsProduct>
      */
     protected $product;
     /**
@@ -316,7 +316,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
     
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getFormType() : array
     {
@@ -342,7 +342,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
     
     *
-    * @param string[] $formType
+    * @param list<string> $formType
     *
     * @return self
     */
@@ -519,7 +519,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     /**
      * 
      *
-     * @return InternationalFormsProduct[]
+     * @return list<InternationalFormsProduct>
      */
     public function getProduct() : array
     {
@@ -528,7 +528,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     /**
      * 
      *
-     * @param InternationalFormsProduct[] $product
+     * @param list<InternationalFormsProduct> $product
      *
      * @return self
      */

@@ -22,7 +22,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     * Type of event for Pickup Notifications for LTL. Allows up to four events.
     For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $eventType;
     /**
@@ -51,7 +51,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     * Type of event for Pickup Notifications for LTL. Allows up to four events.
     For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getEventType() : array
     {
@@ -61,7 +61,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     * Type of event for Pickup Notifications for LTL. Allows up to four events.
     For valid values, see LTL Event Types in the Appendix.  The values must match a type defined, case sensitive.
     *
-    * @param string[] $eventType
+    * @param list<string> $eventType
     *
     * @return self
     */

@@ -15,7 +15,7 @@ class FreightRateShipToAddress extends \ArrayObject
     /**
      * Consignee's street address.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -57,7 +57,7 @@ class FreightRateShipToAddress extends \ArrayObject
     /**
      * Consignee's street address.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -66,7 +66,7 @@ class FreightRateShipToAddress extends \ArrayObject
     /**
      * Consignee's street address.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

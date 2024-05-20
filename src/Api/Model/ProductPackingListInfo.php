@@ -15,13 +15,13 @@ class ProductPackingListInfo extends \ArrayObject
     /**
      * 
      *
-     * @var PackingListInfoPackageAssociated[]
+     * @var list<PackingListInfoPackageAssociated>
      */
     protected $packageAssociated;
     /**
      * 
      *
-     * @return PackingListInfoPackageAssociated[]
+     * @return list<PackingListInfoPackageAssociated>
      */
     public function getPackageAssociated() : array
     {
@@ -30,7 +30,7 @@ class ProductPackingListInfo extends \ArrayObject
     /**
      * 
      *
-     * @param PackingListInfoPackageAssociated[] $packageAssociated
+     * @param list<PackingListInfoPackageAssociated> $packageAssociated
      *
      * @return self
      */

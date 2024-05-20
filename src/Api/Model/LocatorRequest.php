@@ -39,7 +39,7 @@ class LocatorRequest extends \ArrayObject
     /**
      * Location ID is the identification number of the UPS affiliated location.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $locationID;
     /**
@@ -176,7 +176,7 @@ class LocatorRequest extends \ArrayObject
     /**
      * Location ID is the identification number of the UPS affiliated location.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getLocationID() : array
     {
@@ -185,7 +185,7 @@ class LocatorRequest extends \ArrayObject
     /**
      * Location ID is the identification number of the UPS affiliated location.
      *
-     * @param string[] $locationID
+     * @param list<string> $locationID
      *
      * @return self
      */

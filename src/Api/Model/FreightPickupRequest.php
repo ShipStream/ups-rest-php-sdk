@@ -91,7 +91,7 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * 
      *
-     * @var FreightPickupRequestShipmentDetail[]
+     * @var list<FreightPickupRequestShipmentDetail>
      */
     protected $shipmentDetail;
     /**
@@ -403,7 +403,7 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * 
      *
-     * @return FreightPickupRequestShipmentDetail[]
+     * @return list<FreightPickupRequestShipmentDetail>
      */
     public function getShipmentDetail() : array
     {
@@ -412,7 +412,7 @@ class FreightPickupRequest extends \ArrayObject
     /**
      * 
      *
-     * @param FreightPickupRequestShipmentDetail[] $shipmentDetail
+     * @param list<FreightPickupRequestShipmentDetail> $shipmentDetail
      *
      * @return self
      */

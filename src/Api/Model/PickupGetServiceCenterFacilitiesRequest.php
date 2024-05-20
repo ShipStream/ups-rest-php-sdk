@@ -21,7 +21,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * 
      *
-     * @var PickupGetServiceCenterFacilitiesRequestPickupPiece[]
+     * @var list<PickupGetServiceCenterFacilitiesRequestPickupPiece>
      */
     protected $pickupPiece;
     /**
@@ -74,7 +74,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * 
      *
-     * @return PickupGetServiceCenterFacilitiesRequestPickupPiece[]
+     * @return list<PickupGetServiceCenterFacilitiesRequestPickupPiece>
      */
     public function getPickupPiece() : array
     {
@@ -83,7 +83,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     /**
      * 
      *
-     * @param PickupGetServiceCenterFacilitiesRequestPickupPiece[] $pickupPiece
+     * @param list<PickupGetServiceCenterFacilitiesRequestPickupPiece> $pickupPiece
      *
      * @return self
      */

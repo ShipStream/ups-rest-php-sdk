@@ -50,7 +50,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentShipmentIndicationType[]
+     * @var list<ShipmentShipmentIndicationType>
      */
     protected $shipmentIndicationType;
     /**
@@ -104,7 +104,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var RateShipmentPackage[]
+     * @var list<RateShipmentPackage>
      */
     protected $package;
     /**
@@ -284,7 +284,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentShipmentIndicationType[]
+     * @return list<ShipmentShipmentIndicationType>
      */
     public function getShipmentIndicationType() : array
     {
@@ -293,7 +293,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentShipmentIndicationType[] $shipmentIndicationType
+     * @param list<ShipmentShipmentIndicationType> $shipmentIndicationType
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return RateShipmentPackage[]
+     * @return list<RateShipmentPackage>
      */
     public function getPackage() : array
     {
@@ -491,7 +491,7 @@ class RateRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param RateShipmentPackage[] $package
+     * @param list<RateShipmentPackage> $package
      *
      * @return self
      */

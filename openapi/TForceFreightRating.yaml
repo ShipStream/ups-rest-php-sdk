@@ -242,7 +242,7 @@ components:
           $ref: '#/components/schemas/FreightRateRequest_HandlingUnitTwo'
         Commodity:
           type: array
-          maxium: 99
+          maximum: 99
           items:
             $ref: '#/components/schemas/FreightRateRequest_Commodity'
         ShipmentServiceOptions:

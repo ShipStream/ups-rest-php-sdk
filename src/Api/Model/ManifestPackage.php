@@ -16,7 +16,7 @@ class ManifestPackage extends \ArrayObject
      * Information about package delivery activity.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var PackageActivity[]
+     * @var list<PackageActivity>
      */
     protected $activity;
     /**
@@ -64,7 +64,7 @@ class ManifestPackage extends \ArrayObject
      * Container tag for information about the package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ManifestPackageReferenceNumber[]
+     * @var list<ManifestPackageReferenceNumber>
      */
     protected $referenceNumber;
     /**
@@ -83,7 +83,7 @@ class ManifestPackage extends \ArrayObject
      * Information about package delivery activity.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return PackageActivity[]
+     * @return list<PackageActivity>
      */
     public function getActivity() : array
     {
@@ -93,7 +93,7 @@ class ManifestPackage extends \ArrayObject
      * Information about package delivery activity.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param PackageActivity[] $activity
+     * @param list<PackageActivity> $activity
      *
      * @return self
      */
@@ -249,7 +249,7 @@ class ManifestPackage extends \ArrayObject
      * Container tag for information about the package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ManifestPackageReferenceNumber[]
+     * @return list<ManifestPackageReferenceNumber>
      */
     public function getReferenceNumber() : array
     {
@@ -259,7 +259,7 @@ class ManifestPackage extends \ArrayObject
      * Container tag for information about the package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ManifestPackageReferenceNumber[] $referenceNumber
+     * @param list<ManifestPackageReferenceNumber> $referenceNumber
      *
      * @return self
      */

@@ -28,7 +28,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * Shipment-level reference numbers.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ManifestReferenceNumber[]
+     * @var list<ManifestReferenceNumber>
      */
     protected $referenceNumber;
     /**
@@ -70,7 +70,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * Defines a package.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ManifestPackage[]
+     * @var list<ManifestPackage>
      */
     protected $package;
     /**
@@ -381,7 +381,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * Shipment-level reference numbers.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ManifestReferenceNumber[]
+     * @return list<ManifestReferenceNumber>
      */
     public function getReferenceNumber() : array
     {
@@ -391,7 +391,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * Shipment-level reference numbers.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ManifestReferenceNumber[] $referenceNumber
+     * @param list<ManifestReferenceNumber> $referenceNumber
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * Defines a package.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ManifestPackage[]
+     * @return list<ManifestPackage>
      */
     public function getPackage() : array
     {
@@ -535,7 +535,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * Defines a package.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ManifestPackage[] $package
+     * @param list<ManifestPackage> $package
      *
      * @return self
      */

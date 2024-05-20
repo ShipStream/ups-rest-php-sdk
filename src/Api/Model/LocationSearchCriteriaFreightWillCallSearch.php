@@ -25,7 +25,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     /**
      * 
      *
-     * @var FreightWillCallSearchFacilityAddress[]
+     * @var list<FreightWillCallSearchFacilityAddress>
      */
     protected $facilityAddress;
     /**
@@ -92,7 +92,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     /**
      * 
      *
-     * @return FreightWillCallSearchFacilityAddress[]
+     * @return list<FreightWillCallSearchFacilityAddress>
      */
     public function getFacilityAddress() : array
     {
@@ -101,7 +101,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     /**
      * 
      *
-     * @param FreightWillCallSearchFacilityAddress[] $facilityAddress
+     * @param list<FreightWillCallSearchFacilityAddress> $facilityAddress
      *
      * @return self
      */

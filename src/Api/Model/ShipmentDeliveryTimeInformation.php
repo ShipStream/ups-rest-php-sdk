@@ -34,7 +34,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     /**
      * 
      *
-     * @var DeliveryTimeInformationReturnContractServices[]
+     * @var list<DeliveryTimeInformationReturnContractServices>
      */
     protected $returnContractServices;
     /**
@@ -98,7 +98,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryTimeInformationReturnContractServices[]
+     * @return list<DeliveryTimeInformationReturnContractServices>
      */
     public function getReturnContractServices() : array
     {
@@ -107,7 +107,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     /**
      * 
      *
-     * @param DeliveryTimeInformationReturnContractServices[] $returnContractServices
+     * @param list<DeliveryTimeInformationReturnContractServices> $returnContractServices
      *
      * @return self
      */

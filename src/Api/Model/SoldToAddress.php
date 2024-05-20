@@ -15,7 +15,7 @@ class SoldToAddress extends \ArrayObject
     /**
      * SoldTo location's street address.  Applies to NAFTA CO.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -51,7 +51,7 @@ class SoldToAddress extends \ArrayObject
     /**
      * SoldTo location's street address.  Applies to NAFTA CO.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -60,7 +60,7 @@ class SoldToAddress extends \ArrayObject
     /**
      * SoldTo location's street address.  Applies to NAFTA CO.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

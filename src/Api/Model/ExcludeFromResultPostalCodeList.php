@@ -15,13 +15,13 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
     /**
      * 
      *
-     * @var PostalCodeListPostalCode[]
+     * @var list<PostalCodeListPostalCode>
      */
     protected $postalCode;
     /**
      * 
      *
-     * @return PostalCodeListPostalCode[]
+     * @return list<PostalCodeListPostalCode>
      */
     public function getPostalCode() : array
     {
@@ -30,7 +30,7 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
     /**
      * 
      *
-     * @param PostalCodeListPostalCode[] $postalCode
+     * @param list<PostalCodeListPostalCode> $postalCode
      *
      * @return self
      */

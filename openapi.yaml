@@ -27018,10 +27018,10 @@ components:
         HandlingUnitTwo:
           $ref: '#/components/schemas/FreightRateRequest_HandlingUnitTwo'
         Commodity:
+          maximum: 99
           type: array
           items:
             $ref: '#/components/schemas/FreightRateRequest_Commodity'
-          maxium: 99
         ShipmentServiceOptions:
           $ref: '#/components/schemas/FreightRateRequest_ShipmentServiceOptions'
         PickupRequest:
@@ -31691,6 +31691,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Package'
+          nullable: true
         userRelation:
           type: array
           items:
