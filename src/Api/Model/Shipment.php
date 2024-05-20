@@ -21,19 +21,19 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @var Package[]
+     * @var list<Package>|null
      */
     protected $package;
     /**
      * The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $userRelation;
     /**
      * 
      *
-     * @var Warning[]|null
+     * @var list<Warning>|null
      */
     protected $warnings;
     /**
@@ -61,20 +61,20 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @return Package[]
+     * @return list<Package>|null
      */
-    public function getPackage() : array
+    public function getPackage() : ?array
     {
         return $this->package;
     }
     /**
      * 
      *
-     * @param Package[] $package
+     * @param list<Package>|null $package
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(?array $package) : self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
@@ -83,7 +83,7 @@ class Shipment extends \ArrayObject
     /**
      * The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getUserRelation() : array
     {
@@ -92,7 +92,7 @@ class Shipment extends \ArrayObject
     /**
      * The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper
      *
-     * @param string[] $userRelation
+     * @param list<string> $userRelation
      *
      * @return self
      */
@@ -105,7 +105,7 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @return Warning[]|null
+     * @return list<Warning>|null
      */
     public function getWarnings() : ?array
     {
@@ -114,7 +114,7 @@ class Shipment extends \ArrayObject
     /**
      * 
      *
-     * @param Warning[]|null $warnings
+     * @param list<Warning>|null $warnings
      *
      * @return self
      */

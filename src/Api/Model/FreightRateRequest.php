@@ -58,7 +58,7 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @var FreightRateRequestCommodity[]
+     * @var list<FreightRateRequestCommodity>
      */
     protected $commodity;
     /**
@@ -115,7 +115,7 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @var FreightRateRequestHandlingUnits[]
+     * @var list<FreightRateRequestHandlingUnits>
      */
     protected $handlingUnits;
     /**
@@ -296,7 +296,7 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateRequestCommodity[]
+     * @return list<FreightRateRequestCommodity>
      */
     public function getCommodity() : array
     {
@@ -305,7 +305,7 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @param FreightRateRequestCommodity[] $commodity
+     * @param list<FreightRateRequestCommodity> $commodity
      *
      * @return self
      */
@@ -490,7 +490,7 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @return FreightRateRequestHandlingUnits[]
+     * @return list<FreightRateRequestHandlingUnits>
      */
     public function getHandlingUnits() : array
     {
@@ -499,7 +499,7 @@ class FreightRateRequest extends \ArrayObject
     /**
      * 
      *
-     * @param FreightRateRequestHandlingUnits[] $handlingUnits
+     * @param list<FreightRateRequestHandlingUnits> $handlingUnits
      *
      * @return self
      */

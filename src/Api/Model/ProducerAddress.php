@@ -15,7 +15,7 @@ class ProducerAddress extends \ArrayObject
     /**
      * Address line of the Producer.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -51,7 +51,7 @@ class ProducerAddress extends \ArrayObject
     /**
      * Address line of the Producer.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -60,7 +60,7 @@ class ProducerAddress extends \ArrayObject
     /**
      * Address line of the Producer.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

@@ -21,7 +21,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * 
      *
-     * @var AlternateRatesResponseRate[]
+     * @var list<AlternateRatesResponseRate>
      */
     protected $rate;
     /**
@@ -67,7 +67,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * 
      *
-     * @return AlternateRatesResponseRate[]
+     * @return list<AlternateRatesResponseRate>
      */
     public function getRate() : array
     {
@@ -76,7 +76,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
     /**
      * 
      *
-     * @param AlternateRatesResponseRate[] $rate
+     * @param list<AlternateRatesResponseRate> $rate
      *
      * @return self
      */

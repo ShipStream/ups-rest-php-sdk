@@ -21,7 +21,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
     /**
      * The reference number associated with the tracking number.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $referenceNumber;
     /**
@@ -49,7 +49,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
     /**
      * The reference number associated with the tracking number.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getReferenceNumber() : array
     {
@@ -58,7 +58,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
     /**
      * The reference number associated with the tracking number.
      *
-     * @param string[] $referenceNumber
+     * @param list<string> $referenceNumber
      *
      * @return self
      */

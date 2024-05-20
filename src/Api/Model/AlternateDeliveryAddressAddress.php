@@ -15,7 +15,7 @@ class AlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Address Line of the Retail Location.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -48,7 +48,7 @@ class AlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Address Line of the Retail Location.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -57,7 +57,7 @@ class AlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * Address Line of the Retail Location.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

@@ -28,7 +28,7 @@ class VoidShipmentResponse extends \ArrayObject
      * Contains the Package Level Results.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var VoidShipmentResponsePackageLevelResult[]
+     * @var list<VoidShipmentResponsePackageLevelResult>
      */
     protected $packageLevelResult;
     /**
@@ -79,7 +79,7 @@ class VoidShipmentResponse extends \ArrayObject
      * Contains the Package Level Results.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return VoidShipmentResponsePackageLevelResult[]
+     * @return list<VoidShipmentResponsePackageLevelResult>
      */
     public function getPackageLevelResult() : array
     {
@@ -89,7 +89,7 @@ class VoidShipmentResponse extends \ArrayObject
      * Contains the Package Level Results.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param VoidShipmentResponsePackageLevelResult[] $packageLevelResult
+     * @param list<VoidShipmentResponsePackageLevelResult> $packageLevelResult
      *
      * @return self
      */

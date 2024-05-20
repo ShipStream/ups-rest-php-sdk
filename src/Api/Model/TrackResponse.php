@@ -15,13 +15,13 @@ class TrackResponse extends \ArrayObject
     /**
      * 
      *
-     * @var Shipment[]
+     * @var list<Shipment>
      */
     protected $shipment;
     /**
      * 
      *
-     * @return Shipment[]
+     * @return list<Shipment>
      */
     public function getShipment() : array
     {
@@ -30,7 +30,7 @@ class TrackResponse extends \ArrayObject
     /**
      * 
      *
-     * @param Shipment[] $shipment
+     * @param list<Shipment> $shipment
      *
      * @return self
      */

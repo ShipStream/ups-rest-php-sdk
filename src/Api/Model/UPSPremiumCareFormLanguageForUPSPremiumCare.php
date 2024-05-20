@@ -17,7 +17,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     eng = US English
     fra = Canadian French
     *
-    * @var string[]
+    * @var list<string>
     */
     protected $language;
     /**
@@ -25,7 +25,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     eng = US English
     fra = Canadian French
     *
-    * @return string[]
+    * @return list<string>
     */
     public function getLanguage() : array
     {
@@ -36,7 +36,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     eng = US English
     fra = Canadian French
     *
-    * @param string[] $language
+    * @param list<string> $language
     *
     * @return self
     */

@@ -118,7 +118,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentReferenceNumber[]
+     * @var list<ShipmentReferenceNumber>
      */
     protected $referenceNumber;
     /**
@@ -207,7 +207,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentShipmentIndicationType[]
+     * @var list<ShipmentShipmentIndicationType>
      */
     protected $shipmentIndicationType;
     /**
@@ -297,7 +297,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentPackage[]
+     * @var list<ShipmentPackage>
      */
     protected $package;
     /**
@@ -659,7 +659,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentReferenceNumber[]
+     * @return list<ShipmentReferenceNumber>
      */
     public function getReferenceNumber() : array
     {
@@ -668,7 +668,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentReferenceNumber[] $referenceNumber
+     * @param list<ShipmentReferenceNumber> $referenceNumber
      *
      * @return self
      */
@@ -957,7 +957,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentShipmentIndicationType[]
+     * @return list<ShipmentShipmentIndicationType>
      */
     public function getShipmentIndicationType() : array
     {
@@ -966,7 +966,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentShipmentIndicationType[] $shipmentIndicationType
+     * @param list<ShipmentShipmentIndicationType> $shipmentIndicationType
      *
      * @return self
      */
@@ -1247,7 +1247,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentPackage[]
+     * @return list<ShipmentPackage>
      */
     public function getPackage() : array
     {
@@ -1256,7 +1256,7 @@ class ShipmentRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentPackage[] $package
+     * @param list<ShipmentPackage> $package
      *
      * @return self
      */

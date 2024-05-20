@@ -15,7 +15,7 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Address Line of the Facility.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -54,7 +54,7 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Address Line of the Facility.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -63,7 +63,7 @@ class DropOffFacilitiesAddress extends \ArrayObject
     /**
      * Address Line of the Facility.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

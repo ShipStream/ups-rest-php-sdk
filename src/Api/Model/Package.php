@@ -21,25 +21,25 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @var Activity[]
+     * @var list<Activity>
      */
     protected $activity;
     /**
      * The list of additional attributes that may be associated with the package. Presence of any element indicates the package has that attribute.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $additionalAttributes;
     /**
      * The list of additional services that may be associated with the package. Presence of any element indicates that the package has that service.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $additionalServices;
     /**
      * 
      *
-     * @var AlternateTrackingNumber[]
+     * @var list<AlternateTrackingNumber>
      */
     protected $alternateTrackingNumber;
     /**
@@ -51,7 +51,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @var DeliveryDate[]
+     * @var list<DeliveryDate>
      */
     protected $deliveryDate;
     /**
@@ -69,13 +69,13 @@ class Package extends \ArrayObject
     /**
      * milestones
      *
-     * @var Milestones[]
+     * @var list<Milestones>
      */
     protected $milestones;
     /**
      * 
      *
-     * @var PackageAddress[]
+     * @var list<PackageAddress>
      */
     protected $packageAddress;
     /**
@@ -87,13 +87,13 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @var PaymentInformation[]
+     * @var list<PaymentInformation>
      */
     protected $paymentInformation;
     /**
      * 
      *
-     * @var ReferenceNumber[]
+     * @var list<ReferenceNumber>
      */
     protected $referenceNumber;
     /**
@@ -117,7 +117,7 @@ class Package extends \ArrayObject
     /**
      * Contains values which signify that certain data should be suppressed or hidden. Valid values: Tracking activity details should be hidden. Note: this is mainly intended for use by UPS.com applications.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $suppressionIndicators;
     /**
@@ -157,7 +157,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return Activity[]
+     * @return list<Activity>
      */
     public function getActivity() : array
     {
@@ -166,7 +166,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @param Activity[] $activity
+     * @param list<Activity> $activity
      *
      * @return self
      */
@@ -179,7 +179,7 @@ class Package extends \ArrayObject
     /**
      * The list of additional attributes that may be associated with the package. Presence of any element indicates the package has that attribute.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAdditionalAttributes() : array
     {
@@ -188,7 +188,7 @@ class Package extends \ArrayObject
     /**
      * The list of additional attributes that may be associated with the package. Presence of any element indicates the package has that attribute.
      *
-     * @param string[] $additionalAttributes
+     * @param list<string> $additionalAttributes
      *
      * @return self
      */
@@ -201,7 +201,7 @@ class Package extends \ArrayObject
     /**
      * The list of additional services that may be associated with the package. Presence of any element indicates that the package has that service.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAdditionalServices() : array
     {
@@ -210,7 +210,7 @@ class Package extends \ArrayObject
     /**
      * The list of additional services that may be associated with the package. Presence of any element indicates that the package has that service.
      *
-     * @param string[] $additionalServices
+     * @param list<string> $additionalServices
      *
      * @return self
      */
@@ -223,7 +223,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return AlternateTrackingNumber[]
+     * @return list<AlternateTrackingNumber>
      */
     public function getAlternateTrackingNumber() : array
     {
@@ -232,7 +232,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @param AlternateTrackingNumber[] $alternateTrackingNumber
+     * @param list<AlternateTrackingNumber> $alternateTrackingNumber
      *
      * @return self
      */
@@ -267,7 +267,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return DeliveryDate[]
+     * @return list<DeliveryDate>
      */
     public function getDeliveryDate() : array
     {
@@ -276,7 +276,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @param DeliveryDate[] $deliveryDate
+     * @param list<DeliveryDate> $deliveryDate
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class Package extends \ArrayObject
     /**
      * milestones
      *
-     * @return Milestones[]
+     * @return list<Milestones>
      */
     public function getMilestones() : array
     {
@@ -342,7 +342,7 @@ class Package extends \ArrayObject
     /**
      * milestones
      *
-     * @param Milestones[] $milestones
+     * @param list<Milestones> $milestones
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return PackageAddress[]
+     * @return list<PackageAddress>
      */
     public function getPackageAddress() : array
     {
@@ -364,7 +364,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @param PackageAddress[] $packageAddress
+     * @param list<PackageAddress> $packageAddress
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return PaymentInformation[]
+     * @return list<PaymentInformation>
      */
     public function getPaymentInformation() : array
     {
@@ -408,7 +408,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @param PaymentInformation[] $paymentInformation
+     * @param list<PaymentInformation> $paymentInformation
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @return ReferenceNumber[]
+     * @return list<ReferenceNumber>
      */
     public function getReferenceNumber() : array
     {
@@ -430,7 +430,7 @@ class Package extends \ArrayObject
     /**
      * 
      *
-     * @param ReferenceNumber[] $referenceNumber
+     * @param list<ReferenceNumber> $referenceNumber
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class Package extends \ArrayObject
     /**
      * Contains values which signify that certain data should be suppressed or hidden. Valid values: Tracking activity details should be hidden. Note: this is mainly intended for use by UPS.com applications.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getSuppressionIndicators() : array
     {
@@ -518,7 +518,7 @@ class Package extends \ArrayObject
     /**
      * Contains values which signify that certain data should be suppressed or hidden. Valid values: Tracking activity details should be hidden. Note: this is mainly intended for use by UPS.com applications.
      *
-     * @param string[] $suppressionIndicators
+     * @param list<string> $suppressionIndicators
      *
      * @return self
      */

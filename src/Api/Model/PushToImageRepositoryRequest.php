@@ -63,7 +63,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
     /**
      * UPS Tracking Number associated with this shipment. Required only for small package shipment.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $trackingNumber;
     /**
@@ -245,7 +245,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
     /**
      * UPS Tracking Number associated with this shipment. Required only for small package shipment.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getTrackingNumber() : array
     {
@@ -254,7 +254,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
     /**
      * UPS Tracking Number associated with this shipment. Required only for small package shipment.
      *
-     * @param string[] $trackingNumber
+     * @param list<string> $trackingNumber
      *
      * @return self
      */

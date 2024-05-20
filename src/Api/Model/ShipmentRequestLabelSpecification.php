@@ -33,7 +33,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * 
      *
-     * @var LabelSpecificationInstruction[]
+     * @var list<LabelSpecificationInstruction>
      */
     protected $instruction;
     /**
@@ -135,7 +135,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * 
      *
-     * @return LabelSpecificationInstruction[]
+     * @return list<LabelSpecificationInstruction>
      */
     public function getInstruction() : array
     {
@@ -144,7 +144,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     /**
      * 
      *
-     * @param LabelSpecificationInstruction[] $instruction
+     * @param list<LabelSpecificationInstruction> $instruction
      *
      * @return self
      */

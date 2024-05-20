@@ -100,7 +100,7 @@ class PickupCreationRequest extends \ArrayObject
     /**
      * 
      *
-     * @var PickupCreationRequestPickupPiece[]
+     * @var list<PickupCreationRequestPickupPiece>
      */
     protected $pickupPiece;
     /**
@@ -121,7 +121,7 @@ class PickupCreationRequest extends \ArrayObject
     /**
      * 
      *
-     * @var PickupCreationRequestTrackingData[]
+     * @var list<PickupCreationRequestTrackingData>
      */
     protected $trackingData;
     /**
@@ -460,7 +460,7 @@ class PickupCreationRequest extends \ArrayObject
     /**
      * 
      *
-     * @return PickupCreationRequestPickupPiece[]
+     * @return list<PickupCreationRequestPickupPiece>
      */
     public function getPickupPiece() : array
     {
@@ -469,7 +469,7 @@ class PickupCreationRequest extends \ArrayObject
     /**
      * 
      *
-     * @param PickupCreationRequestPickupPiece[] $pickupPiece
+     * @param list<PickupCreationRequestPickupPiece> $pickupPiece
      *
      * @return self
      */
@@ -532,7 +532,7 @@ class PickupCreationRequest extends \ArrayObject
     /**
      * 
      *
-     * @return PickupCreationRequestTrackingData[]
+     * @return list<PickupCreationRequestTrackingData>
      */
     public function getTrackingData() : array
     {
@@ -541,7 +541,7 @@ class PickupCreationRequest extends \ArrayObject
     /**
      * 
      *
-     * @param PickupCreationRequestTrackingData[] $trackingData
+     * @param list<PickupCreationRequestTrackingData> $trackingData
      *
      * @return self
      */

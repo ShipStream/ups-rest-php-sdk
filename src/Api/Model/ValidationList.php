@@ -15,13 +15,13 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $invalidFieldList;
     /**
      * 
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $invalidFieldListCodes;
     /**
@@ -39,7 +39,7 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getInvalidFieldList() : array
     {
@@ -48,7 +48,7 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @param string[] $invalidFieldList
+     * @param list<string> $invalidFieldList
      *
      * @return self
      */
@@ -61,7 +61,7 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getInvalidFieldListCodes() : array
     {
@@ -70,7 +70,7 @@ class ValidationList extends \ArrayObject
     /**
      * 
      *
-     * @param string[] $invalidFieldListCodes
+     * @param list<string> $invalidFieldListCodes
      *
      * @return self
      */

@@ -30,7 +30,7 @@ class OperatingHoursStandardHours extends \ArrayObject
      * Container for the Day of Week.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var StandardHoursDayOfWeek[]
+     * @var list<StandardHoursDayOfWeek>
      */
     protected $dayOfWeek;
     /**
@@ -75,7 +75,7 @@ class OperatingHoursStandardHours extends \ArrayObject
      * Container for the Day of Week.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return StandardHoursDayOfWeek[]
+     * @return list<StandardHoursDayOfWeek>
      */
     public function getDayOfWeek() : array
     {
@@ -85,7 +85,7 @@ class OperatingHoursStandardHours extends \ArrayObject
      * Container for the Day of Week.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param StandardHoursDayOfWeek[] $dayOfWeek
+     * @param list<StandardHoursDayOfWeek> $dayOfWeek
      *
      * @return self
      */

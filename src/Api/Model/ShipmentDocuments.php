@@ -15,7 +15,7 @@ class ShipmentDocuments extends \ArrayObject
     /**
      * 
      *
-     * @var DocumentsImage[]
+     * @var list<DocumentsImage>
      */
     protected $image;
     /**
@@ -27,7 +27,7 @@ class ShipmentDocuments extends \ArrayObject
     /**
      * 
      *
-     * @return DocumentsImage[]
+     * @return list<DocumentsImage>
      */
     public function getImage() : array
     {
@@ -36,7 +36,7 @@ class ShipmentDocuments extends \ArrayObject
     /**
      * 
      *
-     * @param DocumentsImage[] $image
+     * @param list<DocumentsImage> $image
      *
      * @return self
      */

@@ -33,7 +33,7 @@ class LandedCostResponseShipment extends \ArrayObject
     /**
      * An array of Brokerage fees.
      *
-     * @var BrokerageFeeItems[]
+     * @var list<BrokerageFeeItems>
      */
     protected $brokerageFeeItems;
     /**
@@ -81,7 +81,7 @@ class LandedCostResponseShipment extends \ArrayObject
     /**
      * An array of Landed Cost for all valid commodities.
      *
-     * @var ResponseShipmentItems[]
+     * @var list<ResponseShipmentItems>
      */
     protected $shipmentItems;
     /**
@@ -177,7 +177,7 @@ class LandedCostResponseShipment extends \ArrayObject
     /**
      * An array of Brokerage fees.
      *
-     * @return BrokerageFeeItems[]
+     * @return list<BrokerageFeeItems>
      */
     public function getBrokerageFeeItems() : array
     {
@@ -186,7 +186,7 @@ class LandedCostResponseShipment extends \ArrayObject
     /**
      * An array of Brokerage fees.
      *
-     * @param BrokerageFeeItems[] $brokerageFeeItems
+     * @param list<BrokerageFeeItems> $brokerageFeeItems
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class LandedCostResponseShipment extends \ArrayObject
     /**
      * An array of Landed Cost for all valid commodities.
      *
-     * @return ResponseShipmentItems[]
+     * @return list<ResponseShipmentItems>
      */
     public function getShipmentItems() : array
     {
@@ -362,7 +362,7 @@ class LandedCostResponseShipment extends \ArrayObject
     /**
      * An array of Landed Cost for all valid commodities.
      *
-     * @param ResponseShipmentItems[] $shipmentItems
+     * @param list<ResponseShipmentItems> $shipmentItems
      *
      * @return self
      */

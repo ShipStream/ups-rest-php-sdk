@@ -15,7 +15,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentServiceOptionsEMailInformation[]
+     * @var list<ShipmentServiceOptionsEMailInformation>
      */
     protected $eMailInformation;
     /**
@@ -99,7 +99,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentServiceOptionsEMailInformation[]
+     * @return list<ShipmentServiceOptionsEMailInformation>
      */
     public function getEMailInformation() : array
     {
@@ -108,7 +108,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentServiceOptionsEMailInformation[] $eMailInformation
+     * @param list<ShipmentServiceOptionsEMailInformation> $eMailInformation
      *
      * @return self
      */

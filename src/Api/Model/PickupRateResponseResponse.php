@@ -21,7 +21,7 @@ class PickupRateResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @var ResponseAlert[]
+     * @var list<ResponseAlert>
      */
     protected $alert;
     /**
@@ -55,7 +55,7 @@ class PickupRateResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @return ResponseAlert[]
+     * @return list<ResponseAlert>
      */
     public function getAlert() : array
     {
@@ -64,7 +64,7 @@ class PickupRateResponseResponse extends \ArrayObject
     /**
      * 
      *
-     * @param ResponseAlert[] $alert
+     * @param list<ResponseAlert> $alert
      *
      * @return self
      */

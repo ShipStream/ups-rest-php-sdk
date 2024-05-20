@@ -15,7 +15,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
     /**
      * Address line of the Intermediate Consignee.  Applicable for EEI form only.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -51,7 +51,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
     /**
      * Address line of the Intermediate Consignee.  Applicable for EEI form only.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -60,7 +60,7 @@ class IntermediateConsigneeAddress extends \ArrayObject
     /**
      * Address line of the Intermediate Consignee.  Applicable for EEI form only.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

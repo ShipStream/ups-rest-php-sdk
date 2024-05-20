@@ -15,7 +15,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -64,7 +64,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -73,7 +73,7 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

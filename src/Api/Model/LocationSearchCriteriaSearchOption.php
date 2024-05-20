@@ -22,7 +22,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     /**
      * 
      *
-     * @var SearchOptionOptionCode[]
+     * @var list<SearchOptionOptionCode>
      */
     protected $optionCode;
     /**
@@ -60,7 +60,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     /**
      * 
      *
-     * @return SearchOptionOptionCode[]
+     * @return list<SearchOptionOptionCode>
      */
     public function getOptionCode() : array
     {
@@ -69,7 +69,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     /**
      * 
      *
-     * @param SearchOptionOptionCode[] $optionCode
+     * @param list<SearchOptionOptionCode> $optionCode
      *
      * @return self
      */

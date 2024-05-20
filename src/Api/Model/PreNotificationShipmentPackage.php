@@ -45,7 +45,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @var PreNotificationPackageChemicalRecord[]
+     * @var list<PreNotificationPackageChemicalRecord>
      */
     protected $chemicalRecord;
     /**
@@ -161,7 +161,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @return PreNotificationPackageChemicalRecord[]
+     * @return list<PreNotificationPackageChemicalRecord>
      */
     public function getChemicalRecord() : array
     {
@@ -170,7 +170,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
     /**
      * 
      *
-     * @param PreNotificationPackageChemicalRecord[] $chemicalRecord
+     * @param list<PreNotificationPackageChemicalRecord> $chemicalRecord
      *
      * @return self
      */

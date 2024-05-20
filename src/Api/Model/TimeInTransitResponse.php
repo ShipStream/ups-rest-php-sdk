@@ -21,13 +21,13 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @var CandidateAddress[]
+     * @var list<CandidateAddress>
      */
     protected $destinationPickList;
     /**
      * 
      *
-     * @var CandidateAddress[]
+     * @var list<CandidateAddress>
      */
     protected $originPickList;
     /**
@@ -61,7 +61,7 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @return CandidateAddress[]
+     * @return list<CandidateAddress>
      */
     public function getDestinationPickList() : array
     {
@@ -70,7 +70,7 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @param CandidateAddress[] $destinationPickList
+     * @param list<CandidateAddress> $destinationPickList
      *
      * @return self
      */
@@ -83,7 +83,7 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @return CandidateAddress[]
+     * @return list<CandidateAddress>
      */
     public function getOriginPickList() : array
     {
@@ -92,7 +92,7 @@ class TimeInTransitResponse extends \ArrayObject
     /**
      * 
      *
-     * @param CandidateAddress[] $originPickList
+     * @param list<CandidateAddress> $originPickList
      *
      * @return self
      */

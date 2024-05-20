@@ -50,14 +50,14 @@ class SubscriptionFileGeneric extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var GenericShipmentReferenceNumber[]
+     * @var list<GenericShipmentReferenceNumber>
      */
     protected $shipmentReferenceNumber;
     /**
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var GenericPackageReferenceNumber[]
+     * @var list<GenericPackageReferenceNumber>
      */
     protected $packageReferenceNumber;
     /**
@@ -203,7 +203,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return GenericShipmentReferenceNumber[]
+     * @return list<GenericShipmentReferenceNumber>
      */
     public function getShipmentReferenceNumber() : array
     {
@@ -213,7 +213,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      * Container tag for shipment reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param GenericShipmentReferenceNumber[] $shipmentReferenceNumber
+     * @param list<GenericShipmentReferenceNumber> $shipmentReferenceNumber
      *
      * @return self
      */
@@ -227,7 +227,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return GenericPackageReferenceNumber[]
+     * @return list<GenericPackageReferenceNumber>
      */
     public function getPackageReferenceNumber() : array
     {
@@ -237,7 +237,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      * Package-level reference number.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param GenericPackageReferenceNumber[] $packageReferenceNumber
+     * @param list<GenericPackageReferenceNumber> $packageReferenceNumber
      *
      * @return self
      */

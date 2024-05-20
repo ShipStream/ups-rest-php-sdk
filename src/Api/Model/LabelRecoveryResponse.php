@@ -27,7 +27,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @var LabelRecoveryResponseLabelResults[]
+     * @var list<LabelRecoveryResponseLabelResults>
      */
     protected $labelResults;
     /**
@@ -51,7 +51,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @var LabelRecoveryResponseTrackingCandidate[]
+     * @var list<LabelRecoveryResponseTrackingCandidate>
      */
     protected $trackingCandidate;
     /**
@@ -101,7 +101,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @return LabelRecoveryResponseLabelResults[]
+     * @return list<LabelRecoveryResponseLabelResults>
      */
     public function getLabelResults() : array
     {
@@ -110,7 +110,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @param LabelRecoveryResponseLabelResults[] $labelResults
+     * @param list<LabelRecoveryResponseLabelResults> $labelResults
      *
      * @return self
      */
@@ -189,7 +189,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @return LabelRecoveryResponseTrackingCandidate[]
+     * @return list<LabelRecoveryResponseTrackingCandidate>
      */
     public function getTrackingCandidate() : array
     {
@@ -198,7 +198,7 @@ class LabelRecoveryResponse extends \ArrayObject
     /**
      * 
      *
-     * @param LabelRecoveryResponseTrackingCandidate[] $trackingCandidate
+     * @param list<LabelRecoveryResponseTrackingCandidate> $trackingCandidate
      *
      * @return self
      */

@@ -15,7 +15,7 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * 
      *
-     * @var HandlingUnitCommodity[]
+     * @var list<HandlingUnitCommodity>
      */
     protected $commodity;
     /**
@@ -51,7 +51,7 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * 
      *
-     * @return HandlingUnitCommodity[]
+     * @return list<HandlingUnitCommodity>
      */
     public function getCommodity() : array
     {
@@ -60,7 +60,7 @@ class PackingListHandlingUnit extends \ArrayObject
     /**
      * 
      *
-     * @param HandlingUnitCommodity[] $commodity
+     * @param list<HandlingUnitCommodity> $commodity
      *
      * @return self
      */

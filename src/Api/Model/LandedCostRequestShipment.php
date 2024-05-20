@@ -108,7 +108,7 @@ class LandedCostRequestShipment extends \ArrayObject
     /**
      * Array of shipment item objects (commodities), that are in a shipment.
      *
-     * @var RequestShipmentItems[]
+     * @var list<RequestShipmentItems>
      */
     protected $shipmentItems;
     /**
@@ -390,7 +390,7 @@ class LandedCostRequestShipment extends \ArrayObject
     /**
      * Array of shipment item objects (commodities), that are in a shipment.
      *
-     * @return RequestShipmentItems[]
+     * @return list<RequestShipmentItems>
      */
     public function getShipmentItems() : array
     {
@@ -399,7 +399,7 @@ class LandedCostRequestShipment extends \ArrayObject
     /**
      * Array of shipment item objects (commodities), that are in a shipment.
      *
-     * @param RequestShipmentItems[] $shipmentItems
+     * @param list<RequestShipmentItems> $shipmentItems
      *
      * @return self
      */

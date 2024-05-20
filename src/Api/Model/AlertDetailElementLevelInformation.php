@@ -27,7 +27,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
      * Contains more information about the type of element. Returned if Level is 'P' or 'C'.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ElementLevelInformationElementIdentifier[]
+     * @var list<ElementLevelInformationElementIdentifier>
      */
     protected $elementIdentifier;
     /**
@@ -66,7 +66,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
      * Contains more information about the type of element. Returned if Level is 'P' or 'C'.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ElementLevelInformationElementIdentifier[]
+     * @return list<ElementLevelInformationElementIdentifier>
      */
     public function getElementIdentifier() : array
     {
@@ -76,7 +76,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
      * Contains more information about the type of element. Returned if Level is 'P' or 'C'.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ElementLevelInformationElementIdentifier[] $elementIdentifier
+     * @param list<ElementLevelInformationElementIdentifier> $elementIdentifier
      *
      * @return self
      */

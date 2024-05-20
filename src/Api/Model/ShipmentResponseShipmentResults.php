@@ -16,7 +16,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ShipmentResultsDisclaimer[]
+     * @var list<ShipmentResultsDisclaimer>
      */
     protected $disclaimer;
     /**
@@ -87,14 +87,14 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Returned Package Information.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ShipmentResultsPackageResults[]|null
+     * @var list<ShipmentResultsPackageResults>|null
      */
     protected $packageResults;
     /**
      * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ShipmentResultsControlLogReceipt[]|null
+     * @var list<ShipmentResultsControlLogReceipt>|null
      */
     protected $controlLogReceipt;
     /**
@@ -156,7 +156,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var string[]|null
+     * @var list<string>|null
      */
     protected $dGPaperImage;
     /**
@@ -175,7 +175,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ShipmentResultsDisclaimer[]
+     * @return list<ShipmentResultsDisclaimer>
      */
     public function getDisclaimer() : array
     {
@@ -185,7 +185,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ShipmentResultsDisclaimer[] $disclaimer
+     * @param list<ShipmentResultsDisclaimer> $disclaimer
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Returned Package Information.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ShipmentResultsPackageResults[]|null
+     * @return list<ShipmentResultsPackageResults>|null
      */
     public function getPackageResults() : ?array
     {
@@ -427,7 +427,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Returned Package Information.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ShipmentResultsPackageResults[]|null $packageResults
+     * @param list<ShipmentResultsPackageResults>|null $packageResults
      *
      * @return self
      */
@@ -441,7 +441,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ShipmentResultsControlLogReceipt[]|null
+     * @return list<ShipmentResultsControlLogReceipt>|null
      */
     public function getControlLogReceipt() : ?array
     {
@@ -451,7 +451,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ShipmentResultsControlLogReceipt[]|null $controlLogReceipt
+     * @param list<ShipmentResultsControlLogReceipt>|null $controlLogReceipt
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return string[]|null
+     * @return list<string>|null
      */
     public function getDGPaperImage() : ?array
     {
@@ -655,7 +655,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param string[]|null $dGPaperImage
+     * @param list<string>|null $dGPaperImage
      *
      * @return self
      */

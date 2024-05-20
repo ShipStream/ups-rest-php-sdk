@@ -29,35 +29,35 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be returned when available.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SubscriptionFileManifest[]
+     * @var list<SubscriptionFileManifest>
      */
     protected $manifest;
     /**
      * Information about shipment's origin.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SubscriptionFileOrigin[]
+     * @var list<SubscriptionFileOrigin>
      */
     protected $origin;
     /**
      * Shipment exception data.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SubscriptionFileException[]
+     * @var list<SubscriptionFileException>
      */
     protected $exception;
     /**
      * Container for delivery information.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SubscriptionFileDelivery[]
+     * @var list<SubscriptionFileDelivery>
      */
     protected $delivery;
     /**
      * Container for generic record information.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var SubscriptionFileGeneric[]
+     * @var list<SubscriptionFileGeneric>
      */
     protected $generic;
     /**
@@ -110,7 +110,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be returned when available.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SubscriptionFileManifest[]
+     * @return list<SubscriptionFileManifest>
      */
     public function getManifest() : array
     {
@@ -120,7 +120,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be returned when available.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SubscriptionFileManifest[] $manifest
+     * @param list<SubscriptionFileManifest> $manifest
      *
      * @return self
      */
@@ -134,7 +134,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Information about shipment's origin.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SubscriptionFileOrigin[]
+     * @return list<SubscriptionFileOrigin>
      */
     public function getOrigin() : array
     {
@@ -144,7 +144,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Information about shipment's origin.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SubscriptionFileOrigin[] $origin
+     * @param list<SubscriptionFileOrigin> $origin
      *
      * @return self
      */
@@ -158,7 +158,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Shipment exception data.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SubscriptionFileException[]
+     * @return list<SubscriptionFileException>
      */
     public function getException() : array
     {
@@ -168,7 +168,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Shipment exception data.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SubscriptionFileException[] $exception
+     * @param list<SubscriptionFileException> $exception
      *
      * @return self
      */
@@ -182,7 +182,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container for delivery information.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SubscriptionFileDelivery[]
+     * @return list<SubscriptionFileDelivery>
      */
     public function getDelivery() : array
     {
@@ -192,7 +192,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container for delivery information.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SubscriptionFileDelivery[] $delivery
+     * @param list<SubscriptionFileDelivery> $delivery
      *
      * @return self
      */
@@ -206,7 +206,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container for generic record information.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return SubscriptionFileGeneric[]
+     * @return list<SubscriptionFileGeneric>
      */
     public function getGeneric() : array
     {
@@ -216,7 +216,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * Container for generic record information.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param SubscriptionFileGeneric[] $generic
+     * @param list<SubscriptionFileGeneric> $generic
      *
      * @return self
      */

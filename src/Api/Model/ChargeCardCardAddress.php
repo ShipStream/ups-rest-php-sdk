@@ -15,7 +15,7 @@ class ChargeCardCardAddress extends \ArrayObject
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
      *
-     * @var string[]
+     * @var list<string>
      */
     protected $addressLine;
     /**
@@ -47,7 +47,7 @@ class ChargeCardCardAddress extends \ArrayObject
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
      *
-     * @return string[]
+     * @return list<string>
      */
     public function getAddressLine() : array
     {
@@ -56,7 +56,7 @@ class ChargeCardCardAddress extends \ArrayObject
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
      *
-     * @param string[] $addressLine
+     * @param list<string> $addressLine
      *
      * @return self
      */

@@ -36,14 +36,14 @@ class PickupCreationResponseRateResult extends \ArrayObject
      * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RateResultChargeDetail[]
+     * @var list<RateResultChargeDetail>
      */
     protected $chargeDetail;
     /**
      * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var RateResultTaxCharges[]
+     * @var list<RateResultTaxCharges>
      */
     protected $taxCharges;
     /**
@@ -150,7 +150,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RateResultChargeDetail[]
+     * @return list<RateResultChargeDetail>
      */
     public function getChargeDetail() : array
     {
@@ -160,7 +160,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RateResultChargeDetail[] $chargeDetail
+     * @param list<RateResultChargeDetail> $chargeDetail
      *
      * @return self
      */
@@ -174,7 +174,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return RateResultTaxCharges[]
+     * @return list<RateResultTaxCharges>
      */
     public function getTaxCharges() : array
     {
@@ -184,7 +184,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      * Container to hold taxes when, detailed taxes are request via RateTaxIndicator.
      **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param RateResultTaxCharges[] $taxCharges
+     * @param list<RateResultTaxCharges> $taxCharges
      *
      * @return self
      */

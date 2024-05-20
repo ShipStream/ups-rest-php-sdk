@@ -84,13 +84,13 @@ class FreightShipRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentCommodity[]
+     * @var list<ShipmentCommodity>
      */
     protected $commodity;
     /**
      * 
      *
-     * @var ShipmentReference[]
+     * @var list<ShipmentReference>
      */
     protected $reference;
     /**
@@ -380,7 +380,7 @@ class FreightShipRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentCommodity[]
+     * @return list<ShipmentCommodity>
      */
     public function getCommodity() : array
     {
@@ -389,7 +389,7 @@ class FreightShipRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentCommodity[] $commodity
+     * @param list<ShipmentCommodity> $commodity
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class FreightShipRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentReference[]
+     * @return list<ShipmentReference>
      */
     public function getReference() : array
     {
@@ -411,7 +411,7 @@ class FreightShipRequestShipment extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentReference[] $reference
+     * @param list<ShipmentReference> $reference
      *
      * @return self
      */

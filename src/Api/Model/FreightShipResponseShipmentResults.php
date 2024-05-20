@@ -52,7 +52,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @var ShipmentResultsRate[]
+     * @var list<ShipmentResultsRate>
      */
     protected $rate;
     /**
@@ -228,7 +228,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @return ShipmentResultsRate[]
+     * @return list<ShipmentResultsRate>
      */
     public function getRate() : array
     {
@@ -237,7 +237,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     /**
      * 
      *
-     * @param ShipmentResultsRate[] $rate
+     * @param list<ShipmentResultsRate> $rate
      *
      * @return self
      */

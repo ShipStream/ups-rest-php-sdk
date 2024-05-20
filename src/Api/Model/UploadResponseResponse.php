@@ -22,7 +22,7 @@ class UploadResponseResponse extends \ArrayObject
      * Alert Container.  There can be zero to many alert containers with code and description.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @var ResponseAlert[]
+     * @var list<ResponseAlert>
      */
     protected $alert;
     /**
@@ -57,7 +57,7 @@ class UploadResponseResponse extends \ArrayObject
      * Alert Container.  There can be zero to many alert containers with code and description.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @return ResponseAlert[]
+     * @return list<ResponseAlert>
      */
     public function getAlert() : array
     {
@@ -67,7 +67,7 @@ class UploadResponseResponse extends \ArrayObject
      * Alert Container.  There can be zero to many alert containers with code and description.
      **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
      *
-     * @param ResponseAlert[] $alert
+     * @param list<ResponseAlert> $alert
      *
      * @return self
      */
