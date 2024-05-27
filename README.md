@@ -95,6 +95,18 @@ The access token refresh will be handled internally so long that the refresh tok
 You can check if the client is authenticated at any time by calling `$client->getAccessToken()` which attempts to retrieve 
 the access token from the cache and refresh it if it has already expired, otherwise it throws an `AuthenticationException`.
 
+#### Preventing race conditions when refreshing expired tokens
+
+When multiple PHP processes attempt to call an endpoint while the access token is expired, a race condition may occur resulting in one process refreshing the token successfully, while the other processes will fail with `Invalid Refresh Token` or a similar error. To help prevent this, locking can be enabled by passing a third argument to Client factory that can be any class implementing the [`AccessTokenLock`](./src/Authentication/AccessTokenLock.php) interface. A built-in implementation called [`FileAccessTokenLock`](./src/Authentication/FileAccessTokenLock.php) is provided for convenience, it takes a writable file path and uses it for locking. Example:
+
+```php
+$client = \ShipStream\Ups\ClientFactory::create(
+    $config,
+    null,
+    new \ShipStream\Ups\Authentication\FileAccessTokenLock('/tmp/ups-sdk-token.lock')
+);
+```
+
 ### Caching Access Tokens
 
 The library uses an in-memory cache for access tokens by default which is useful when doing quick tests, but for a production 
