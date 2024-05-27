@@ -8,6 +8,7 @@ use Jane\Component\OpenApiRuntime\Client\Plugin\AuthenticationRegistry;
 use Psr\Http\Client\ClientInterface;
 use ShipStream\Ups\Api\Authentication\BasicAuthAuthentication;
 use ShipStream\Ups\Authentication\AccessTokenCache;
+use ShipStream\Ups\Authentication\AccessTokenLock;
 use ShipStream\Ups\Authentication\AuthenticationManager;
 use ShipStream\Ups\Authentication\Oauth2Authentication;
 use ShipStream\Ups\Plugin\AddBaseUrlPlugin;
@@ -20,15 +21,21 @@ class ClientFactory
      * @param Config $config Client configuration object.
      * @param AccessTokenCache|null $accessTokenCache Cache implementation for storing access tokens across multiple requests. Defaults to an in-memory cache.
      * @param ClientInterface|null $httpClient Custom PSR-18-compatible HTTP client instance.
+     * @param AccessTokenLock|null $accessTokenLock Lock implementation to prevent race conditions when refreshing or generating access tokens by different processes.
      * @return Client
      */
-    public static function create(Config $config, ?AccessTokenCache $accessTokenCache = null, ?ClientInterface $httpClient = null): Client
+    public static function create(
+        Config $config,
+        ?AccessTokenCache $accessTokenCache = null,
+        ?ClientInterface $httpClient = null,
+        ?AccessTokenLock $accessTokenLock = null
+    ): Client
     {
         $baseUri = Psr17FactoryDiscovery::findUriFactory()
             ->createUri($config->getEnvironmentBaseUrl())
             ->withPath(Config::BASE_PATH);
 
-        $authManager = new AuthenticationManager($config, $accessTokenCache);
+        $authManager = new AuthenticationManager($config, $accessTokenCache, $accessTokenLock);
         $plugins = [
             new AddBaseUrlPlugin($baseUri),
             new AuthenticationRegistry([
