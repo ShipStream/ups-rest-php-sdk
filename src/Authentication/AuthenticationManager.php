@@ -26,10 +26,13 @@ class AuthenticationManager
 
     protected AccessTokenCache $accessTokenCache;
 
-    public function __construct(Config $config, ?AccessTokenCache $accessTokenCache = null)
+    protected ?AccessTokenLock $accessTokenLock;
+
+    public function __construct(Config $config, ?AccessTokenCache $accessTokenCache = null, ?AccessTokenLock $accessTokenLock = null)
     {
         $this->config = $config;
         $this->accessTokenCache = $accessTokenCache ?? new InMemoryAccessTokenCache();
+        $this->accessTokenLock = $accessTokenLock;
     }
 
     /**
@@ -65,12 +68,19 @@ class AuthenticationManager
 
         // Access token found in cache, check for expiry and refresh-ability
         if ($accessToken->hasAccessTokenExpired()) {
-            if ($accessToken->isRefreshable()) {
-                $accessToken = $this->refreshToken($accessToken->getRefreshToken());
-            } else {
-                $accessToken = $this->generateToken();
+            try {
+                $this->accessTokenLock?->lock();
+                // Reload the access token from cache in case it changed after acquiring the lock
+                $accessToken = $this->getAccessTokenFromCache();
+                if ($accessToken?->isRefreshable()) {
+                    $accessToken = $this->refreshToken($accessToken->getRefreshToken());
+                } else {
+                    $accessToken = $this->generateToken();
+                }
+                $this->accessTokenCache->save($accessToken);
+            } finally {
+                $this->accessTokenLock?->unlock();
             }
-            $this->accessTokenCache->save($accessToken);
         }
         return $accessToken;
     }
