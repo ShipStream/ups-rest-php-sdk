@@ -486,6 +486,7 @@ components:
           type: array
           items:
             "$ref": "#/components/schemas/XAVResponse_Candidate"
+          nullable: true
       xml:
         name: XAVResponse
       maximum: 1

@@ -69,13 +69,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
                 unset($data['AddressClassification']);
             }
-            if (\array_key_exists('Candidate', $data)) {
+            if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
                 $values = [];
                 foreach ($data['Candidate'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context);
                 }
                 $object->setCandidate($values);
                 unset($data['Candidate']);
+            }
+            elseif (\array_key_exists('Candidate', $data) && $data['Candidate'] === null) {
+                $object->setCandidate(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -178,13 +181,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
                 unset($data['AddressClassification']);
             }
-            if (\array_key_exists('Candidate', $data)) {
+            if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
                 $values = [];
                 foreach ($data['Candidate'] as $value) {
                     $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context);
                 }
                 $object->setCandidate($values);
                 unset($data['Candidate']);
+            }
+            elseif (\array_key_exists('Candidate', $data) && $data['Candidate'] === null) {
+                $object->setCandidate(null);
             }
             foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
