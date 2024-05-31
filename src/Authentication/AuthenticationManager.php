@@ -72,6 +72,9 @@ class AuthenticationManager
                 $this->accessTokenLock?->lock();
                 // Reload the access token from cache in case it changed after acquiring the lock
                 $accessToken = $this->getAccessTokenFromCache();
+                if ($accessToken && ! $accessToken->hasAccessTokenExpired()) {
+                    return $accessToken;
+                }
                 if ($accessToken?->isRefreshable()) {
                     $accessToken = $this->refreshToken($accessToken->getRefreshToken());
                 } else {
