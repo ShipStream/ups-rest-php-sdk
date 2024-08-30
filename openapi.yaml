@@ -11969,6 +11969,7 @@ components:
             minLength: 4
             type: string
           description: 'Open time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.'
+          nullable: true
         CloseHours:
           maximum: 1
           type: array
@@ -11977,6 +11978,7 @@ components:
             minLength: 4
             type: string
           description: 'Close time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.'
+          nullable: true
         LatestDropOffHours:
           maximum: 1
           maxLength: 4

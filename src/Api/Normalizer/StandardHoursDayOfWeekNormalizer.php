@@ -45,7 +45,7 @@ class StandardHoursDayOfWeekNormalizer implements DenormalizerInterface, Normali
             $object->setDay($data['Day']);
             unset($data['Day']);
         }
-        if (\array_key_exists('OpenHours', $data)) {
+        if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
             $values = array();
             foreach ($data['OpenHours'] as $value) {
                 $values[] = $value;
@@ -53,13 +53,19 @@ class StandardHoursDayOfWeekNormalizer implements DenormalizerInterface, Normali
             $object->setOpenHours($values);
             unset($data['OpenHours']);
         }
-        if (\array_key_exists('CloseHours', $data)) {
+        elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+            $object->setOpenHours(null);
+        }
+        if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
             $values_1 = array();
             foreach ($data['CloseHours'] as $value_1) {
                 $values_1[] = $value_1;
             }
             $object->setCloseHours($values_1);
             unset($data['CloseHours']);
+        }
+        elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+            $object->setCloseHours(null);
         }
         if (\array_key_exists('LatestDropOffHours', $data)) {
             $object->setLatestDropOffHours($data['LatestDropOffHours']);
