@@ -66,9 +66,12 @@ class XAVResponseNormalizer implements DenormalizerInterface, NormalizerInterfac
         elseif (\array_key_exists('NoCandidatesIndicator', $data) && $data['NoCandidatesIndicator'] === null) {
             $object->setNoCandidatesIndicator(null);
         }
-        if (\array_key_exists('AddressClassification', $data)) {
+        if (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] !== null) {
             $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
             unset($data['AddressClassification']);
+        }
+        elseif (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] === null) {
+            $object->setAddressClassification(null);
         }
         if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
             $values = array();
