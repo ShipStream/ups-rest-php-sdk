@@ -602,6 +602,7 @@ components:
       xml:
         name: AddressClassification
       description: AddressClassification Container.
+      nullable: true
     XAVResponse_Candidate:
       type: object
       properties:
