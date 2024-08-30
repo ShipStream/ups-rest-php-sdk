@@ -76,13 +76,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setContacts($this->denormalizer->denormalize($data['Contacts'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts', 'json', $context));
                 unset($data['Contacts']);
             }
-            if (\array_key_exists('Product', $data)) {
+            if (\array_key_exists('Product', $data) && $data['Product'] !== null) {
                 $values_1 = [];
                 foreach ($data['Product'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct', 'json', $context);
                 }
                 $object->setProduct($values_1);
                 unset($data['Product']);
+            }
+            elseif (\array_key_exists('Product', $data) && $data['Product'] === null) {
+                $object->setProduct(null);
             }
             if (\array_key_exists('InvoiceNumber', $data)) {
                 $object->setInvoiceNumber($data['InvoiceNumber']);
@@ -413,13 +416,16 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setContacts($this->denormalizer->denormalize($data['Contacts'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts', 'json', $context));
                 unset($data['Contacts']);
             }
-            if (\array_key_exists('Product', $data)) {
+            if (\array_key_exists('Product', $data) && $data['Product'] !== null) {
                 $values_1 = [];
                 foreach ($data['Product'] as $value_1) {
                     $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct', 'json', $context);
                 }
                 $object->setProduct($values_1);
                 unset($data['Product']);
+            }
+            elseif (\array_key_exists('Product', $data) && $data['Product'] === null) {
+                $object->setProduct(null);
             }
             if (\array_key_exists('InvoiceNumber', $data)) {
                 $object->setInvoiceNumber($data['InvoiceNumber']);

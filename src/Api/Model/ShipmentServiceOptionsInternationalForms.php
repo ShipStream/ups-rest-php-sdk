@@ -85,7 +85,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     /**
      * 
      *
-     * @var list<InternationalFormsProduct>
+     * @var list<InternationalFormsProduct>|null
      */
     protected $product;
     /**
@@ -519,20 +519,20 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     /**
      * 
      *
-     * @return list<InternationalFormsProduct>
+     * @return list<InternationalFormsProduct>|null
      */
-    public function getProduct() : array
+    public function getProduct() : ?array
     {
         return $this->product;
     }
     /**
      * 
      *
-     * @param list<InternationalFormsProduct> $product
+     * @param list<InternationalFormsProduct>|null $product
      *
      * @return self
      */
-    public function setProduct(array $product) : self
+    public function setProduct(?array $product) : self
     {
         $this->initialized['product'] = true;
         $this->product = $product;
