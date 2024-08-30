@@ -44,7 +44,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDay($data['Day']);
                 unset($data['Day']);
             }
-            if (\array_key_exists('OpenHours', $data)) {
+            if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
                 $values = [];
                 foreach ($data['OpenHours'] as $value) {
                     $values[] = $value;
@@ -52,13 +52,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOpenHours($values);
                 unset($data['OpenHours']);
             }
-            if (\array_key_exists('CloseHours', $data)) {
+            elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+                $object->setOpenHours(null);
+            }
+            if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
                 $values_1 = [];
                 foreach ($data['CloseHours'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setCloseHours($values_1);
                 unset($data['CloseHours']);
+            }
+            elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+                $object->setCloseHours(null);
             }
             if (\array_key_exists('LatestDropOffHours', $data)) {
                 $object->setLatestDropOffHours($data['LatestDropOffHours']);
@@ -159,7 +165,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDay($data['Day']);
                 unset($data['Day']);
             }
-            if (\array_key_exists('OpenHours', $data)) {
+            if (\array_key_exists('OpenHours', $data) && $data['OpenHours'] !== null) {
                 $values = [];
                 foreach ($data['OpenHours'] as $value) {
                     $values[] = $value;
@@ -167,13 +173,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOpenHours($values);
                 unset($data['OpenHours']);
             }
-            if (\array_key_exists('CloseHours', $data)) {
+            elseif (\array_key_exists('OpenHours', $data) && $data['OpenHours'] === null) {
+                $object->setOpenHours(null);
+            }
+            if (\array_key_exists('CloseHours', $data) && $data['CloseHours'] !== null) {
                 $values_1 = [];
                 foreach ($data['CloseHours'] as $value_1) {
                     $values_1[] = $value_1;
                 }
                 $object->setCloseHours($values_1);
                 unset($data['CloseHours']);
+            }
+            elseif (\array_key_exists('CloseHours', $data) && $data['CloseHours'] === null) {
+                $object->setCloseHours(null);
             }
             if (\array_key_exists('LatestDropOffHours', $data)) {
                 $object->setLatestDropOffHours($data['LatestDropOffHours']);
