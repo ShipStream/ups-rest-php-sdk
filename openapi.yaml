@@ -22038,6 +22038,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InternationalForms_Product'
+          nullable: true
         InvoiceNumber:
           maximum: 1
           maxLength: 35
