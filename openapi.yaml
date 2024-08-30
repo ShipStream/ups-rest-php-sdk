@@ -9158,6 +9158,7 @@ components:
           type: string
           description: 'Contains the text description of the address classification code: UnClassified, Commercial, Residential'
       description: 'AddressClassification Container.'
+      nullable: true
       xml:
         name: AddressClassification
     XAVResponse_Candidate:
@@ -11969,6 +11970,7 @@ components:
             minLength: 4
             type: string
           description: 'Open time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.'
+          nullable: true
         CloseHours:
           maximum: 1
           type: array
@@ -11977,6 +11979,7 @@ components:
             minLength: 4
             type: string
           description: 'Close time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.'
+          nullable: true
         LatestDropOffHours:
           maximum: 1
           maxLength: 4
@@ -22035,6 +22038,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InternationalForms_Product'
+          nullable: true
         InvoiceNumber:
           maximum: 1
           maxLength: 35
