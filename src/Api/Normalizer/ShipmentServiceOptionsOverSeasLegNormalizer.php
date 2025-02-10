@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,11 +41,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Dimensions', $data)) {
-                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\OverSeasLegDimensions', 'json', $context));
+                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], \ShipStream\Ups\Api\Model\OverSeasLegDimensions::class, 'json', $context));
                 unset($data['Dimensions']);
             }
             if (\array_key_exists('Value', $data)) {
-                $object->setValue($this->denormalizer->denormalize($data['Value'], 'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue', 'json', $context));
+                $object->setValue($this->denormalizer->denormalize($data['Value'], \ShipStream\Ups\Api\Model\OverSeasLegValue::class, 'json', $context));
                 unset($data['Value']);
             }
             foreach ($data as $key => $value) {
@@ -55,7 +55,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Dimensions'] = $this->normalizer->normalize($object->getDimensions(), 'json', $context);
@@ -67,9 +67,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class => false];
         }
     }
 } else {
@@ -79,13 +79,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class;
         }
         /**
          * @return mixed
@@ -103,11 +103,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Dimensions', $data)) {
-                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\OverSeasLegDimensions', 'json', $context));
+                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], \ShipStream\Ups\Api\Model\OverSeasLegDimensions::class, 'json', $context));
                 unset($data['Dimensions']);
             }
             if (\array_key_exists('Value', $data)) {
-                $object->setValue($this->denormalizer->denormalize($data['Value'], 'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue', 'json', $context));
+                $object->setValue($this->denormalizer->denormalize($data['Value'], \ShipStream\Ups\Api\Model\OverSeasLegValue::class, 'json', $context));
                 unset($data['Value']);
             }
             foreach ($data as $key => $value) {
@@ -132,9 +132,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class => false];
         }
     }
 }

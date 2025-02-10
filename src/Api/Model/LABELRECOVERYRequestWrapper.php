@@ -8,7 +8,7 @@ class LABELRECOVERYRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class LABELRECOVERYRequestWrapper extends \ArrayObject
      *
      * @return LabelRecoveryRequest
      */
-    public function getLabelRecoveryRequest() : LabelRecoveryRequest
+    public function getLabelRecoveryRequest(): LabelRecoveryRequest
     {
         return $this->labelRecoveryRequest;
     }
@@ -34,7 +34,7 @@ class LABELRECOVERYRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelRecoveryRequest(LabelRecoveryRequest $labelRecoveryRequest) : self
+    public function setLabelRecoveryRequest(LabelRecoveryRequest $labelRecoveryRequest): self
     {
         $this->initialized['labelRecoveryRequest'] = true;
         $this->labelRecoveryRequest = $labelRecoveryRequest;

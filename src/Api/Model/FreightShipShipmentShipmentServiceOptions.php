@@ -8,7 +8,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -101,7 +101,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return list<ShipmentServiceOptionsEMailInformation>
      */
-    public function getEMailInformation() : array
+    public function getEMailInformation(): array
     {
         return $this->eMailInformation;
     }
@@ -112,7 +112,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailInformation(array $eMailInformation) : self
+    public function setEMailInformation(array $eMailInformation): self
     {
         $this->initialized['eMailInformation'] = true;
         $this->eMailInformation = $eMailInformation;
@@ -123,7 +123,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return FreightShipmentServiceOptionsPickupOptions
      */
-    public function getPickupOptions() : FreightShipmentServiceOptionsPickupOptions
+    public function getPickupOptions(): FreightShipmentServiceOptionsPickupOptions
     {
         return $this->pickupOptions;
     }
@@ -134,7 +134,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupOptions(FreightShipmentServiceOptionsPickupOptions $pickupOptions) : self
+    public function setPickupOptions(FreightShipmentServiceOptionsPickupOptions $pickupOptions): self
     {
         $this->initialized['pickupOptions'] = true;
         $this->pickupOptions = $pickupOptions;
@@ -145,7 +145,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return FreightShipmentServiceOptionsDeliveryOptions
      */
-    public function getDeliveryOptions() : FreightShipmentServiceOptionsDeliveryOptions
+    public function getDeliveryOptions(): FreightShipmentServiceOptionsDeliveryOptions
     {
         return $this->deliveryOptions;
     }
@@ -156,7 +156,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryOptions(FreightShipmentServiceOptionsDeliveryOptions $deliveryOptions) : self
+    public function setDeliveryOptions(FreightShipmentServiceOptionsDeliveryOptions $deliveryOptions): self
     {
         $this->initialized['deliveryOptions'] = true;
         $this->deliveryOptions = $deliveryOptions;
@@ -168,7 +168,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return ShipmentServiceOptionsOverSeasLeg
     */
-    public function getOverSeasLeg() : ShipmentServiceOptionsOverSeasLeg
+    public function getOverSeasLeg(): ShipmentServiceOptionsOverSeasLeg
     {
         return $this->overSeasLeg;
     }
@@ -180,7 +180,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setOverSeasLeg(ShipmentServiceOptionsOverSeasLeg $overSeasLeg) : self
+    public function setOverSeasLeg(ShipmentServiceOptionsOverSeasLeg $overSeasLeg): self
     {
         $this->initialized['overSeasLeg'] = true;
         $this->overSeasLeg = $overSeasLeg;
@@ -191,7 +191,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return FreightShipmentServiceOptionsCOD
      */
-    public function getCOD() : FreightShipmentServiceOptionsCOD
+    public function getCOD(): FreightShipmentServiceOptionsCOD
     {
         return $this->cOD;
     }
@@ -202,7 +202,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCOD(FreightShipmentServiceOptionsCOD $cOD) : self
+    public function setCOD(FreightShipmentServiceOptionsCOD $cOD): self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -213,7 +213,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return FreightShipShipmentServiceOptionsDangerousGoods
      */
-    public function getDangerousGoods() : FreightShipShipmentServiceOptionsDangerousGoods
+    public function getDangerousGoods(): FreightShipShipmentServiceOptionsDangerousGoods
     {
         return $this->dangerousGoods;
     }
@@ -224,7 +224,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDangerousGoods(FreightShipShipmentServiceOptionsDangerousGoods $dangerousGoods) : self
+    public function setDangerousGoods(FreightShipShipmentServiceOptionsDangerousGoods $dangerousGoods): self
     {
         $this->initialized['dangerousGoods'] = true;
         $this->dangerousGoods = $dangerousGoods;
@@ -235,7 +235,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsSortingAndSegregating
      */
-    public function getSortingAndSegregating() : ShipmentServiceOptionsSortingAndSegregating
+    public function getSortingAndSegregating(): ShipmentServiceOptionsSortingAndSegregating
     {
         return $this->sortingAndSegregating;
     }
@@ -246,7 +246,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSortingAndSegregating(ShipmentServiceOptionsSortingAndSegregating $sortingAndSegregating) : self
+    public function setSortingAndSegregating(ShipmentServiceOptionsSortingAndSegregating $sortingAndSegregating): self
     {
         $this->initialized['sortingAndSegregating'] = true;
         $this->sortingAndSegregating = $sortingAndSegregating;
@@ -257,7 +257,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsDeclaredValue
      */
-    public function getDeclaredValue() : ShipmentServiceOptionsDeclaredValue
+    public function getDeclaredValue(): ShipmentServiceOptionsDeclaredValue
     {
         return $this->declaredValue;
     }
@@ -268,7 +268,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDeclaredValue(ShipmentServiceOptionsDeclaredValue $declaredValue) : self
+    public function setDeclaredValue(ShipmentServiceOptionsDeclaredValue $declaredValue): self
     {
         $this->initialized['declaredValue'] = true;
         $this->declaredValue = $declaredValue;
@@ -279,7 +279,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsExcessDeclaredValue
      */
-    public function getExcessDeclaredValue() : ShipmentServiceOptionsExcessDeclaredValue
+    public function getExcessDeclaredValue(): ShipmentServiceOptionsExcessDeclaredValue
     {
         return $this->excessDeclaredValue;
     }
@@ -290,7 +290,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setExcessDeclaredValue(ShipmentServiceOptionsExcessDeclaredValue $excessDeclaredValue) : self
+    public function setExcessDeclaredValue(ShipmentServiceOptionsExcessDeclaredValue $excessDeclaredValue): self
     {
         $this->initialized['excessDeclaredValue'] = true;
         $this->excessDeclaredValue = $excessDeclaredValue;
@@ -301,7 +301,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsHandlingCharge
      */
-    public function getHandlingCharge() : ShipmentServiceOptionsHandlingCharge
+    public function getHandlingCharge(): ShipmentServiceOptionsHandlingCharge
     {
         return $this->handlingCharge;
     }
@@ -312,7 +312,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingCharge(ShipmentServiceOptionsHandlingCharge $handlingCharge) : self
+    public function setHandlingCharge(ShipmentServiceOptionsHandlingCharge $handlingCharge): self
     {
         $this->initialized['handlingCharge'] = true;
         $this->handlingCharge = $handlingCharge;
@@ -323,7 +323,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getFreezableProtectionIndicator() : string
+    public function getFreezableProtectionIndicator(): string
     {
         return $this->freezableProtectionIndicator;
     }
@@ -334,7 +334,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setFreezableProtectionIndicator(string $freezableProtectionIndicator) : self
+    public function setFreezableProtectionIndicator(string $freezableProtectionIndicator): self
     {
         $this->initialized['freezableProtectionIndicator'] = true;
         $this->freezableProtectionIndicator = $freezableProtectionIndicator;
@@ -346,7 +346,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getExtremeLengthIndicator() : string
+    public function getExtremeLengthIndicator(): string
     {
         return $this->extremeLengthIndicator;
     }
@@ -358,7 +358,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setExtremeLengthIndicator(string $extremeLengthIndicator) : self
+    public function setExtremeLengthIndicator(string $extremeLengthIndicator): self
     {
         $this->initialized['extremeLengthIndicator'] = true;
         $this->extremeLengthIndicator = $extremeLengthIndicator;
@@ -373,7 +373,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getLinearFeet() : string
+    public function getLinearFeet(): string
     {
         return $this->linearFeet;
     }
@@ -388,7 +388,7 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setLinearFeet(string $linearFeet) : self
+    public function setLinearFeet(string $linearFeet): self
     {
         $this->initialized['linearFeet'] = true;
         $this->linearFeet = $linearFeet;

@@ -8,7 +8,7 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
     *
     * @return string
     */
-    public function getLabelLinkIndicator() : string
+    public function getLabelLinkIndicator(): string
     {
         return $this->labelLinkIndicator;
     }
@@ -49,7 +49,7 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
     *
     * @return self
     */
-    public function setLabelLinkIndicator(string $labelLinkIndicator) : self
+    public function setLabelLinkIndicator(string $labelLinkIndicator): self
     {
         $this->initialized['labelLinkIndicator'] = true;
         $this->labelLinkIndicator = $labelLinkIndicator;
@@ -60,7 +60,7 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getResendEMailIndicator() : string
+    public function getResendEMailIndicator(): string
     {
         return $this->resendEMailIndicator;
     }
@@ -71,7 +71,7 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setResendEMailIndicator(string $resendEMailIndicator) : self
+    public function setResendEMailIndicator(string $resendEMailIndicator): self
     {
         $this->initialized['resendEMailIndicator'] = true;
         $this->resendEMailIndicator = $resendEMailIndicator;

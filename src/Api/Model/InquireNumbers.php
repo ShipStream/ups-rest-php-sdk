@@ -8,7 +8,7 @@ class InquireNumbers extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class InquireNumbers extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getInquiryNumbers() : array
+    public function getInquiryNumbers(): array
     {
         return $this->inquiryNumbers;
     }
@@ -34,7 +34,7 @@ class InquireNumbers extends \ArrayObject
      *
      * @return self
      */
-    public function setInquiryNumbers(array $inquiryNumbers) : self
+    public function setInquiryNumbers(array $inquiryNumbers): self
     {
         $this->initialized['inquiryNumbers'] = true;
         $this->inquiryNumbers = $inquiryNumbers;

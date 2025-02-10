@@ -8,7 +8,7 @@ class FREIGHTPICKUPCANCELRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class FREIGHTPICKUPCANCELRequestWrapper extends \ArrayObject
      *
      * @return FreightCancelPickupRequest
      */
-    public function getFreightCancelPickupRequest() : FreightCancelPickupRequest
+    public function getFreightCancelPickupRequest(): FreightCancelPickupRequest
     {
         return $this->freightCancelPickupRequest;
     }
@@ -34,7 +34,7 @@ class FREIGHTPICKUPCANCELRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightCancelPickupRequest(FreightCancelPickupRequest $freightCancelPickupRequest) : self
+    public function setFreightCancelPickupRequest(FreightCancelPickupRequest $freightCancelPickupRequest): self
     {
         $this->initialized['freightCancelPickupRequest'] = true;
         $this->freightCancelPickupRequest = $freightCancelPickupRequest;

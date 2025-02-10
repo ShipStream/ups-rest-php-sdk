@@ -8,7 +8,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -65,7 +65,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getConsigneeName() : string
+    public function getConsigneeName(): string
     {
         return $this->consigneeName;
     }
@@ -76,7 +76,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setConsigneeName(string $consigneeName) : self
+    public function setConsigneeName(string $consigneeName): self
     {
         $this->initialized['consigneeName'] = true;
         $this->consigneeName = $consigneeName;
@@ -87,7 +87,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine() : string
+    public function getAddressLine(): string
     {
         return $this->addressLine;
     }
@@ -98,7 +98,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(string $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -109,7 +109,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision3() : string
+    public function getPoliticalDivision3(): string
     {
         return $this->politicalDivision3;
     }
@@ -120,7 +120,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision3(string $politicalDivision3) : self
+    public function setPoliticalDivision3(string $politicalDivision3): self
     {
         $this->initialized['politicalDivision3'] = true;
         $this->politicalDivision3 = $politicalDivision3;
@@ -131,7 +131,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2(): string
     {
         return $this->politicalDivision2;
     }
@@ -142,7 +142,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(string $politicalDivision2): self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -153,7 +153,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1(): string
     {
         return $this->politicalDivision1;
     }
@@ -164,7 +164,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(string $politicalDivision1): self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -175,7 +175,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow(): string
     {
         return $this->postcodePrimaryLow;
     }
@@ -186,7 +186,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(string $postcodePrimaryLow): self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;
@@ -197,7 +197,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPostcodeExtendedLow() : string
+    public function getPostcodeExtendedLow(): string
     {
         return $this->postcodeExtendedLow;
     }
@@ -208,7 +208,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
+    public function setPostcodeExtendedLow(string $postcodeExtendedLow): self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;
@@ -219,7 +219,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -230,7 +230,7 @@ class DropLocationAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

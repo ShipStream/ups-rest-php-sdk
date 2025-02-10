@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper';
+            return $type === \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('QuantumViewResponse', $data)) {
-                $object->setQuantumViewResponse($this->denormalizer->denormalize($data['QuantumViewResponse'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponse', 'json', $context));
+                $object->setQuantumViewResponse($this->denormalizer->denormalize($data['QuantumViewResponse'], \ShipStream\Ups\Api\Model\QuantumViewResponse::class, 'json', $context));
                 unset($data['QuantumViewResponse']);
             }
             foreach ($data as $key => $value) {
@@ -51,7 +51,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['QuantumViewResponse'] = $this->normalizer->normalize($object->getQuantumViewResponse(), 'json', $context);
@@ -62,9 +62,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper' => false];
+            return [\ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class => false];
         }
     }
 } else {
@@ -74,13 +74,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper';
+            return $type === \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class;
         }
         /**
          * @return mixed
@@ -98,7 +98,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('QuantumViewResponse', $data)) {
-                $object->setQuantumViewResponse($this->denormalizer->denormalize($data['QuantumViewResponse'], 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponse', 'json', $context));
+                $object->setQuantumViewResponse($this->denormalizer->denormalize($data['QuantumViewResponse'], \ShipStream\Ups\Api\Model\QuantumViewResponse::class, 'json', $context));
                 unset($data['QuantumViewResponse']);
             }
             foreach ($data as $key => $value) {
@@ -122,9 +122,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper' => false];
+            return [\ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class => false];
         }
     }
 }

@@ -8,7 +8,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -172,7 +172,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayPickupIndicator() : string
+    public function getSaturdayPickupIndicator(): string
     {
         return $this->saturdayPickupIndicator;
     }
@@ -183,7 +183,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayPickupIndicator(string $saturdayPickupIndicator) : self
+    public function setSaturdayPickupIndicator(string $saturdayPickupIndicator): self
     {
         $this->initialized['saturdayPickupIndicator'] = true;
         $this->saturdayPickupIndicator = $saturdayPickupIndicator;
@@ -194,7 +194,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayDeliveryIndicator() : string
+    public function getSaturdayDeliveryIndicator(): string
     {
         return $this->saturdayDeliveryIndicator;
     }
@@ -205,7 +205,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayDeliveryIndicator(string $saturdayDeliveryIndicator) : self
+    public function setSaturdayDeliveryIndicator(string $saturdayDeliveryIndicator): self
     {
         $this->initialized['saturdayDeliveryIndicator'] = true;
         $this->saturdayDeliveryIndicator = $saturdayDeliveryIndicator;
@@ -216,7 +216,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getSundayDeliveryIndicator() : string
+    public function getSundayDeliveryIndicator(): string
     {
         return $this->sundayDeliveryIndicator;
     }
@@ -227,7 +227,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSundayDeliveryIndicator(string $sundayDeliveryIndicator) : self
+    public function setSundayDeliveryIndicator(string $sundayDeliveryIndicator): self
     {
         $this->initialized['sundayDeliveryIndicator'] = true;
         $this->sundayDeliveryIndicator = $sundayDeliveryIndicator;
@@ -238,7 +238,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getAvailableServicesOption() : string
+    public function getAvailableServicesOption(): string
     {
         return $this->availableServicesOption;
     }
@@ -249,7 +249,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setAvailableServicesOption(string $availableServicesOption) : self
+    public function setAvailableServicesOption(string $availableServicesOption): self
     {
         $this->initialized['availableServicesOption'] = true;
         $this->availableServicesOption = $availableServicesOption;
@@ -262,7 +262,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return ShipmentServiceOptionsAccessPointCOD
     */
-    public function getAccessPointCOD() : ShipmentServiceOptionsAccessPointCOD
+    public function getAccessPointCOD(): ShipmentServiceOptionsAccessPointCOD
     {
         return $this->accessPointCOD;
     }
@@ -275,7 +275,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setAccessPointCOD(ShipmentServiceOptionsAccessPointCOD $accessPointCOD) : self
+    public function setAccessPointCOD(ShipmentServiceOptionsAccessPointCOD $accessPointCOD): self
     {
         $this->initialized['accessPointCOD'] = true;
         $this->accessPointCOD = $accessPointCOD;
@@ -291,7 +291,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getDeliverToAddresseeOnlyIndicator() : string
+    public function getDeliverToAddresseeOnlyIndicator(): string
     {
         return $this->deliverToAddresseeOnlyIndicator;
     }
@@ -307,7 +307,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setDeliverToAddresseeOnlyIndicator(string $deliverToAddresseeOnlyIndicator) : self
+    public function setDeliverToAddresseeOnlyIndicator(string $deliverToAddresseeOnlyIndicator): self
     {
         $this->initialized['deliverToAddresseeOnlyIndicator'] = true;
         $this->deliverToAddresseeOnlyIndicator = $deliverToAddresseeOnlyIndicator;
@@ -321,7 +321,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getDirectDeliveryOnlyIndicator() : string
+    public function getDirectDeliveryOnlyIndicator(): string
     {
         return $this->directDeliveryOnlyIndicator;
     }
@@ -335,7 +335,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setDirectDeliveryOnlyIndicator(string $directDeliveryOnlyIndicator) : self
+    public function setDirectDeliveryOnlyIndicator(string $directDeliveryOnlyIndicator): self
     {
         $this->initialized['directDeliveryOnlyIndicator'] = true;
         $this->directDeliveryOnlyIndicator = $directDeliveryOnlyIndicator;
@@ -346,7 +346,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsCOD
      */
-    public function getCOD() : ShipmentServiceOptionsCOD
+    public function getCOD(): ShipmentServiceOptionsCOD
     {
         return $this->cOD;
     }
@@ -357,7 +357,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCOD(ShipmentServiceOptionsCOD $cOD) : self
+    public function setCOD(ShipmentServiceOptionsCOD $cOD): self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -368,7 +368,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return RateShipmentServiceOptionsDeliveryConfirmation
      */
-    public function getDeliveryConfirmation() : RateShipmentServiceOptionsDeliveryConfirmation
+    public function getDeliveryConfirmation(): RateShipmentServiceOptionsDeliveryConfirmation
     {
         return $this->deliveryConfirmation;
     }
@@ -379,7 +379,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryConfirmation(RateShipmentServiceOptionsDeliveryConfirmation $deliveryConfirmation) : self
+    public function setDeliveryConfirmation(RateShipmentServiceOptionsDeliveryConfirmation $deliveryConfirmation): self
     {
         $this->initialized['deliveryConfirmation'] = true;
         $this->deliveryConfirmation = $deliveryConfirmation;
@@ -390,7 +390,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getReturnOfDocumentIndicator() : string
+    public function getReturnOfDocumentIndicator(): string
     {
         return $this->returnOfDocumentIndicator;
     }
@@ -401,7 +401,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setReturnOfDocumentIndicator(string $returnOfDocumentIndicator) : self
+    public function setReturnOfDocumentIndicator(string $returnOfDocumentIndicator): self
     {
         $this->initialized['returnOfDocumentIndicator'] = true;
         $this->returnOfDocumentIndicator = $returnOfDocumentIndicator;
@@ -412,7 +412,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getUPScarbonneutralIndicator() : string
+    public function getUPScarbonneutralIndicator(): string
     {
         return $this->uPScarbonneutralIndicator;
     }
@@ -423,7 +423,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setUPScarbonneutralIndicator(string $uPScarbonneutralIndicator) : self
+    public function setUPScarbonneutralIndicator(string $uPScarbonneutralIndicator): self
     {
         $this->initialized['uPScarbonneutralIndicator'] = true;
         $this->uPScarbonneutralIndicator = $uPScarbonneutralIndicator;
@@ -434,7 +434,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getCertificateOfOriginIndicator() : string
+    public function getCertificateOfOriginIndicator(): string
     {
         return $this->certificateOfOriginIndicator;
     }
@@ -445,7 +445,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCertificateOfOriginIndicator(string $certificateOfOriginIndicator) : self
+    public function setCertificateOfOriginIndicator(string $certificateOfOriginIndicator): self
     {
         $this->initialized['certificateOfOriginIndicator'] = true;
         $this->certificateOfOriginIndicator = $certificateOfOriginIndicator;
@@ -456,7 +456,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsPickupOptions
      */
-    public function getPickupOptions() : ShipmentServiceOptionsPickupOptions
+    public function getPickupOptions(): ShipmentServiceOptionsPickupOptions
     {
         return $this->pickupOptions;
     }
@@ -467,7 +467,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupOptions(ShipmentServiceOptionsPickupOptions $pickupOptions) : self
+    public function setPickupOptions(ShipmentServiceOptionsPickupOptions $pickupOptions): self
     {
         $this->initialized['pickupOptions'] = true;
         $this->pickupOptions = $pickupOptions;
@@ -478,7 +478,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsDeliveryOptions
      */
-    public function getDeliveryOptions() : ShipmentServiceOptionsDeliveryOptions
+    public function getDeliveryOptions(): ShipmentServiceOptionsDeliveryOptions
     {
         return $this->deliveryOptions;
     }
@@ -489,7 +489,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryOptions(ShipmentServiceOptionsDeliveryOptions $deliveryOptions) : self
+    public function setDeliveryOptions(ShipmentServiceOptionsDeliveryOptions $deliveryOptions): self
     {
         $this->initialized['deliveryOptions'] = true;
         $this->deliveryOptions = $deliveryOptions;
@@ -500,7 +500,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return RateShipmentServiceOptionsRestrictedArticles
      */
-    public function getRestrictedArticles() : RateShipmentServiceOptionsRestrictedArticles
+    public function getRestrictedArticles(): RateShipmentServiceOptionsRestrictedArticles
     {
         return $this->restrictedArticles;
     }
@@ -511,7 +511,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setRestrictedArticles(RateShipmentServiceOptionsRestrictedArticles $restrictedArticles) : self
+    public function setRestrictedArticles(RateShipmentServiceOptionsRestrictedArticles $restrictedArticles): self
     {
         $this->initialized['restrictedArticles'] = true;
         $this->restrictedArticles = $restrictedArticles;
@@ -522,7 +522,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperExportDeclarationIndicator() : string
+    public function getShipperExportDeclarationIndicator(): string
     {
         return $this->shipperExportDeclarationIndicator;
     }
@@ -533,7 +533,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperExportDeclarationIndicator(string $shipperExportDeclarationIndicator) : self
+    public function setShipperExportDeclarationIndicator(string $shipperExportDeclarationIndicator): self
     {
         $this->initialized['shipperExportDeclarationIndicator'] = true;
         $this->shipperExportDeclarationIndicator = $shipperExportDeclarationIndicator;
@@ -544,7 +544,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getCommercialInvoiceRemovalIndicator() : string
+    public function getCommercialInvoiceRemovalIndicator(): string
     {
         return $this->commercialInvoiceRemovalIndicator;
     }
@@ -555,7 +555,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCommercialInvoiceRemovalIndicator(string $commercialInvoiceRemovalIndicator) : self
+    public function setCommercialInvoiceRemovalIndicator(string $commercialInvoiceRemovalIndicator): self
     {
         $this->initialized['commercialInvoiceRemovalIndicator'] = true;
         $this->commercialInvoiceRemovalIndicator = $commercialInvoiceRemovalIndicator;
@@ -566,7 +566,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsImportControl
      */
-    public function getImportControl() : ShipmentServiceOptionsImportControl
+    public function getImportControl(): ShipmentServiceOptionsImportControl
     {
         return $this->importControl;
     }
@@ -577,7 +577,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setImportControl(ShipmentServiceOptionsImportControl $importControl) : self
+    public function setImportControl(ShipmentServiceOptionsImportControl $importControl): self
     {
         $this->initialized['importControl'] = true;
         $this->importControl = $importControl;
@@ -588,7 +588,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsReturnService
      */
-    public function getReturnService() : ShipmentServiceOptionsReturnService
+    public function getReturnService(): ShipmentServiceOptionsReturnService
     {
         return $this->returnService;
     }
@@ -599,7 +599,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setReturnService(ShipmentServiceOptionsReturnService $returnService) : self
+    public function setReturnService(ShipmentServiceOptionsReturnService $returnService): self
     {
         $this->initialized['returnService'] = true;
         $this->returnService = $returnService;
@@ -610,7 +610,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getSDLShipmentIndicator() : string
+    public function getSDLShipmentIndicator(): string
     {
         return $this->sDLShipmentIndicator;
     }
@@ -621,7 +621,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSDLShipmentIndicator(string $sDLShipmentIndicator) : self
+    public function setSDLShipmentIndicator(string $sDLShipmentIndicator): self
     {
         $this->initialized['sDLShipmentIndicator'] = true;
         $this->sDLShipmentIndicator = $sDLShipmentIndicator;
@@ -635,7 +635,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getEPRAIndicator() : string
+    public function getEPRAIndicator(): string
     {
         return $this->ePRAIndicator;
     }
@@ -649,7 +649,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setEPRAIndicator(string $ePRAIndicator) : self
+    public function setEPRAIndicator(string $ePRAIndicator): self
     {
         $this->initialized['ePRAIndicator'] = true;
         $this->ePRAIndicator = $ePRAIndicator;
@@ -664,7 +664,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getInsideDelivery() : string
+    public function getInsideDelivery(): string
     {
         return $this->insideDelivery;
     }
@@ -679,7 +679,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setInsideDelivery(string $insideDelivery) : self
+    public function setInsideDelivery(string $insideDelivery): self
     {
         $this->initialized['insideDelivery'] = true;
         $this->insideDelivery = $insideDelivery;
@@ -690,7 +690,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getItemDisposalIndicator() : string
+    public function getItemDisposalIndicator(): string
     {
         return $this->itemDisposalIndicator;
     }
@@ -701,7 +701,7 @@ class RateShipmentShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setItemDisposalIndicator(string $itemDisposalIndicator) : self
+    public function setItemDisposalIndicator(string $itemDisposalIndicator): self
     {
         $this->initialized['itemDisposalIndicator'] = true;
         $this->itemDisposalIndicator = $itemDisposalIndicator;

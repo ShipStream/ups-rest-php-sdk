@@ -8,7 +8,7 @@ class FreightCancelPickupRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightCancelPickupRequest extends \ArrayObject
      *
      * @return FreightCancelPickupRequestRequest
      */
-    public function getRequest() : FreightCancelPickupRequestRequest
+    public function getRequest(): FreightCancelPickupRequestRequest
     {
         return $this->request;
     }
@@ -40,7 +40,7 @@ class FreightCancelPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(FreightCancelPickupRequestRequest $request) : self
+    public function setRequest(FreightCancelPickupRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -51,7 +51,7 @@ class FreightCancelPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber(): string
     {
         return $this->pickupRequestConfirmationNumber;
     }
@@ -62,7 +62,7 @@ class FreightCancelPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber): self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;

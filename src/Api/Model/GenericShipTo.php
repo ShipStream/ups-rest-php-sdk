@@ -8,7 +8,7 @@ class GenericShipTo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class GenericShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getLocationID() : string
+    public function getLocationID(): string
     {
         return $this->locationID;
     }
@@ -46,7 +46,7 @@ class GenericShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setLocationID(string $locationID) : self
+    public function setLocationID(string $locationID): self
     {
         $this->initialized['locationID'] = true;
         $this->locationID = $locationID;
@@ -57,7 +57,7 @@ class GenericShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getReceivingAddressName() : string
+    public function getReceivingAddressName(): string
     {
         return $this->receivingAddressName;
     }
@@ -68,7 +68,7 @@ class GenericShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setReceivingAddressName(string $receivingAddressName) : self
+    public function setReceivingAddressName(string $receivingAddressName): self
     {
         $this->initialized['receivingAddressName'] = true;
         $this->receivingAddressName = $receivingAddressName;
@@ -79,7 +79,7 @@ class GenericShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getBookmark() : string
+    public function getBookmark(): string
     {
         return $this->bookmark;
     }
@@ -90,7 +90,7 @@ class GenericShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setBookmark(string $bookmark) : self
+    public function setBookmark(string $bookmark): self
     {
         $this->initialized['bookmark'] = true;
         $this->bookmark = $bookmark;

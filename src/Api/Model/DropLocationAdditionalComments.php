@@ -8,7 +8,7 @@ class DropLocationAdditionalComments extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -25,7 +25,7 @@ class DropLocationAdditionalComments extends \ArrayObject
      *
      * @return list<AdditionalCommentsCommentType>
      */
-    public function getCommentType() : array
+    public function getCommentType(): array
     {
         return $this->commentType;
     }
@@ -37,7 +37,7 @@ class DropLocationAdditionalComments extends \ArrayObject
      *
      * @return self
      */
-    public function setCommentType(array $commentType) : self
+    public function setCommentType(array $commentType): self
     {
         $this->initialized['commentType'] = true;
         $this->commentType = $commentType;

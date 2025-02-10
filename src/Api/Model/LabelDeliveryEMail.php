@@ -8,7 +8,7 @@ class LabelDeliveryEMail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -76,7 +76,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -87,7 +87,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -98,7 +98,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getUndeliverableEMailAddress() : string
+    public function getUndeliverableEMailAddress(): string
     {
         return $this->undeliverableEMailAddress;
     }
@@ -109,7 +109,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress) : self
+    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress): self
     {
         $this->initialized['undeliverableEMailAddress'] = true;
         $this->undeliverableEMailAddress = $undeliverableEMailAddress;
@@ -120,7 +120,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getFromEMailAddress() : string
+    public function getFromEMailAddress(): string
     {
         return $this->fromEMailAddress;
     }
@@ -131,7 +131,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setFromEMailAddress(string $fromEMailAddress) : self
+    public function setFromEMailAddress(string $fromEMailAddress): self
     {
         $this->initialized['fromEMailAddress'] = true;
         $this->fromEMailAddress = $fromEMailAddress;
@@ -142,7 +142,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getFromName() : string
+    public function getFromName(): string
     {
         return $this->fromName;
     }
@@ -153,7 +153,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setFromName(string $fromName) : self
+    public function setFromName(string $fromName): self
     {
         $this->initialized['fromName'] = true;
         $this->fromName = $fromName;
@@ -164,7 +164,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getMemo() : string
+    public function getMemo(): string
     {
         return $this->memo;
     }
@@ -175,7 +175,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setMemo(string $memo) : self
+    public function setMemo(string $memo): self
     {
         $this->initialized['memo'] = true;
         $this->memo = $memo;
@@ -186,7 +186,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getSubject() : string
+    public function getSubject(): string
     {
         return $this->subject;
     }
@@ -197,7 +197,7 @@ class LabelDeliveryEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setSubject(string $subject) : self
+    public function setSubject(string $subject): self
     {
         $this->initialized['subject'] = true;
         $this->subject = $subject;
@@ -225,7 +225,7 @@ class LabelDeliveryEMail extends \ArrayObject
     *
     * @return string
     */
-    public function getSubjectCode() : string
+    public function getSubjectCode(): string
     {
         return $this->subjectCode;
     }
@@ -253,7 +253,7 @@ class LabelDeliveryEMail extends \ArrayObject
     *
     * @return self
     */
-    public function setSubjectCode(string $subjectCode) : self
+    public function setSubjectCode(string $subjectCode): self
     {
         $this->initialized['subjectCode'] = true;
         $this->subjectCode = $subjectCode;

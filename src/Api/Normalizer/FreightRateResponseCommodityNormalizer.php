@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity';
+            return $type === \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,11 +49,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('Weight', $data)) {
-                $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
+                $object->setWeight($this->denormalizer->denormalize($data['Weight'], \ShipStream\Ups\Api\Model\CommodityWeight::class, 'json', $context));
                 unset($data['Weight']);
             }
             if (\array_key_exists('AdjustedWeight', $data)) {
-                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
+                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class, 'json', $context));
                 unset($data['AdjustedWeight']);
             }
             foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('commodityID') && null !== $object->getCommodityID()) {
@@ -81,9 +81,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity' => false];
+            return [\ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class => false];
         }
     }
 } else {
@@ -93,13 +93,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity';
+            return $type === \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class;
         }
         /**
          * @return mixed
@@ -125,11 +125,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('Weight', $data)) {
-                $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
+                $object->setWeight($this->denormalizer->denormalize($data['Weight'], \ShipStream\Ups\Api\Model\CommodityWeight::class, 'json', $context));
                 unset($data['Weight']);
             }
             if (\array_key_exists('AdjustedWeight', $data)) {
-                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
+                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class, 'json', $context));
                 unset($data['AdjustedWeight']);
             }
             foreach ($data as $key => $value) {
@@ -160,9 +160,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity' => false];
+            return [\ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class => false];
         }
     }
 }

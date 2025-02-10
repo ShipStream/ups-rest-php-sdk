@@ -8,7 +8,7 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
      *
      * @return string
      */
-    public function getHeight() : string
+    public function getHeight(): string
     {
         return $this->height;
     }
@@ -40,7 +40,7 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
      *
      * @return self
      */
-    public function setHeight(string $height) : self
+    public function setHeight(string $height): self
     {
         $this->initialized['height'] = true;
         $this->height = $height;
@@ -51,7 +51,7 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
      *
      * @return string
      */
-    public function getWidth() : string
+    public function getWidth(): string
     {
         return $this->width;
     }
@@ -62,7 +62,7 @@ class LabelSpecificationLabelStockSize extends \ArrayObject
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(string $width): self
     {
         $this->initialized['width'] = true;
         $this->width = $width;

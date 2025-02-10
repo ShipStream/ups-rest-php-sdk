@@ -8,7 +8,7 @@ class PICKUPPolDivRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PICKUPPolDivRequestWrapper extends \ArrayObject
      *
      * @return PickupGetPoliticalDivision1ListRequest
      */
-    public function getPickupGetPoliticalDivision1ListRequest() : PickupGetPoliticalDivision1ListRequest
+    public function getPickupGetPoliticalDivision1ListRequest(): PickupGetPoliticalDivision1ListRequest
     {
         return $this->pickupGetPoliticalDivision1ListRequest;
     }
@@ -34,7 +34,7 @@ class PICKUPPolDivRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupGetPoliticalDivision1ListRequest(PickupGetPoliticalDivision1ListRequest $pickupGetPoliticalDivision1ListRequest) : self
+    public function setPickupGetPoliticalDivision1ListRequest(PickupGetPoliticalDivision1ListRequest $pickupGetPoliticalDivision1ListRequest): self
     {
         $this->initialized['pickupGetPoliticalDivision1ListRequest'] = true;
         $this->pickupGetPoliticalDivision1ListRequest = $pickupGetPoliticalDivision1ListRequest;

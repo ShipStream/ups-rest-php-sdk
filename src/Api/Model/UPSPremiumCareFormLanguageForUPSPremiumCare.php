@@ -8,7 +8,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,7 +27,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     *
     * @return list<string>
     */
-    public function getLanguage() : array
+    public function getLanguage(): array
     {
         return $this->language;
     }
@@ -40,7 +40,7 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
     *
     * @return self
     */
-    public function setLanguage(array $language) : self
+    public function setLanguage(array $language): self
     {
         $this->initialized['language'] = true;
         $this->language = $language;

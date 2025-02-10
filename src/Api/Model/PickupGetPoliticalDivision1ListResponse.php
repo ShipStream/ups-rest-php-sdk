@@ -8,7 +8,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
      *
      * @return PickupGetPoliticalDivision1ListResponseResponse
      */
-    public function getResponse() : PickupGetPoliticalDivision1ListResponseResponse
+    public function getResponse(): PickupGetPoliticalDivision1ListResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PickupGetPoliticalDivision1ListResponseResponse $response) : self
+    public function setResponse(PickupGetPoliticalDivision1ListResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getPoliticalDivision1() : array
+    public function getPoliticalDivision1(): array
     {
         return $this->politicalDivision1;
     }
@@ -62,7 +62,7 @@ class PickupGetPoliticalDivision1ListResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision1(array $politicalDivision1) : self
+    public function setPoliticalDivision1(array $politicalDivision1): self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;

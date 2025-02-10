@@ -18,11 +18,11 @@ class ProcessSubscriptionTypeForTrackingNumberForbiddenException extends Forbidd
         $this->trackSubsServiceErrorResponse = $trackSubsServiceErrorResponse;
         $this->response = $response;
     }
-    public function getTrackSubsServiceErrorResponse() : \ShipStream\Ups\Api\Model\TrackSubsServiceErrorResponse
+    public function getTrackSubsServiceErrorResponse(): \ShipStream\Ups\Api\Model\TrackSubsServiceErrorResponse
     {
         return $this->trackSubsServiceErrorResponse;
     }
-    public function getResponse() : \Psr\Http\Message\ResponseInterface
+    public function getResponse(): \Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

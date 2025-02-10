@@ -8,7 +8,7 @@ class AvailableLocationAttributesPickUpPickUpDetails extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -32,7 +32,7 @@ class AvailableLocationAttributesPickUpPickUpDetails extends \ArrayObject
      *
      * @return string
      */
-    public function getPickUpTime() : string
+    public function getPickUpTime(): string
     {
         return $this->pickUpTime;
     }
@@ -43,7 +43,7 @@ class AvailableLocationAttributesPickUpPickUpDetails extends \ArrayObject
      *
      * @return self
      */
-    public function setPickUpTime(string $pickUpTime) : self
+    public function setPickUpTime(string $pickUpTime): self
     {
         $this->initialized['pickUpTime'] = true;
         $this->pickUpTime = $pickUpTime;
@@ -57,7 +57,7 @@ class AvailableLocationAttributesPickUpPickUpDetails extends \ArrayObject
     *
     * @return string
     */
-    public function getNoPickUpIndicator() : string
+    public function getNoPickUpIndicator(): string
     {
         return $this->noPickUpIndicator;
     }
@@ -71,7 +71,7 @@ class AvailableLocationAttributesPickUpPickUpDetails extends \ArrayObject
     *
     * @return self
     */
-    public function setNoPickUpIndicator(string $noPickUpIndicator) : self
+    public function setNoPickUpIndicator(string $noPickUpIndicator): self
     {
         $this->initialized['noPickUpIndicator'] = true;
         $this->noPickUpIndicator = $noPickUpIndicator;

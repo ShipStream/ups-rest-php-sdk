@@ -8,7 +8,7 @@ class FreightShipRequestShipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -134,7 +134,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return FreightShipShipmentShipFrom
      */
-    public function getShipFrom() : FreightShipShipmentShipFrom
+    public function getShipFrom(): FreightShipShipmentShipFrom
     {
         return $this->shipFrom;
     }
@@ -145,7 +145,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipFrom(FreightShipShipmentShipFrom $shipFrom) : self
+    public function setShipFrom(FreightShipShipmentShipFrom $shipFrom): self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -157,7 +157,7 @@ class FreightShipRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -169,7 +169,7 @@ class FreightShipRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -180,7 +180,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return FreightShipShipmentShipTo
      */
-    public function getShipTo() : FreightShipShipmentShipTo
+    public function getShipTo(): FreightShipShipmentShipTo
     {
         return $this->shipTo;
     }
@@ -191,7 +191,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipTo(FreightShipShipmentShipTo $shipTo) : self
+    public function setShipTo(FreightShipShipmentShipTo $shipTo): self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -202,7 +202,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return FreightShipShipmentPaymentInformation
      */
-    public function getPaymentInformation() : FreightShipShipmentPaymentInformation
+    public function getPaymentInformation(): FreightShipShipmentPaymentInformation
     {
         return $this->paymentInformation;
     }
@@ -213,7 +213,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPaymentInformation(FreightShipShipmentPaymentInformation $paymentInformation) : self
+    public function setPaymentInformation(FreightShipShipmentPaymentInformation $paymentInformation): self
     {
         $this->initialized['paymentInformation'] = true;
         $this->paymentInformation = $paymentInformation;
@@ -224,7 +224,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return ShipmentService
      */
-    public function getService() : ShipmentService
+    public function getService(): ShipmentService
     {
         return $this->service;
     }
@@ -235,7 +235,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setService(ShipmentService $service) : self
+    public function setService(ShipmentService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -247,7 +247,7 @@ class FreightShipRequestShipment extends \ArrayObject
     *
     * @return ShipmentHandlingUnitOne
     */
-    public function getHandlingUnitOne() : ShipmentHandlingUnitOne
+    public function getHandlingUnitOne(): ShipmentHandlingUnitOne
     {
         return $this->handlingUnitOne;
     }
@@ -259,7 +259,7 @@ class FreightShipRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setHandlingUnitOne(ShipmentHandlingUnitOne $handlingUnitOne) : self
+    public function setHandlingUnitOne(ShipmentHandlingUnitOne $handlingUnitOne): self
     {
         $this->initialized['handlingUnitOne'] = true;
         $this->handlingUnitOne = $handlingUnitOne;
@@ -270,7 +270,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return ShipmentHandlingUnitTwo
      */
-    public function getHandlingUnitTwo() : ShipmentHandlingUnitTwo
+    public function getHandlingUnitTwo(): ShipmentHandlingUnitTwo
     {
         return $this->handlingUnitTwo;
     }
@@ -281,7 +281,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnitTwo(ShipmentHandlingUnitTwo $handlingUnitTwo) : self
+    public function setHandlingUnitTwo(ShipmentHandlingUnitTwo $handlingUnitTwo): self
     {
         $this->initialized['handlingUnitTwo'] = true;
         $this->handlingUnitTwo = $handlingUnitTwo;
@@ -292,7 +292,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return ShipmentExistingShipmentID
      */
-    public function getExistingShipmentID() : ShipmentExistingShipmentID
+    public function getExistingShipmentID(): ShipmentExistingShipmentID
     {
         return $this->existingShipmentID;
     }
@@ -303,7 +303,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setExistingShipmentID(ShipmentExistingShipmentID $existingShipmentID) : self
+    public function setExistingShipmentID(ShipmentExistingShipmentID $existingShipmentID): self
     {
         $this->initialized['existingShipmentID'] = true;
         $this->existingShipmentID = $existingShipmentID;
@@ -315,7 +315,7 @@ class FreightShipRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getHandlingInstructions() : string
+    public function getHandlingInstructions(): string
     {
         return $this->handlingInstructions;
     }
@@ -327,7 +327,7 @@ class FreightShipRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setHandlingInstructions(string $handlingInstructions) : self
+    public function setHandlingInstructions(string $handlingInstructions): self
     {
         $this->initialized['handlingInstructions'] = true;
         $this->handlingInstructions = $handlingInstructions;
@@ -338,7 +338,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getDeliveryInstructions() : string
+    public function getDeliveryInstructions(): string
     {
         return $this->deliveryInstructions;
     }
@@ -349,7 +349,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryInstructions(string $deliveryInstructions) : self
+    public function setDeliveryInstructions(string $deliveryInstructions): self
     {
         $this->initialized['deliveryInstructions'] = true;
         $this->deliveryInstructions = $deliveryInstructions;
@@ -360,7 +360,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupInstructions() : string
+    public function getPickupInstructions(): string
     {
         return $this->pickupInstructions;
     }
@@ -371,7 +371,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupInstructions(string $pickupInstructions) : self
+    public function setPickupInstructions(string $pickupInstructions): self
     {
         $this->initialized['pickupInstructions'] = true;
         $this->pickupInstructions = $pickupInstructions;
@@ -382,7 +382,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return list<ShipmentCommodity>
      */
-    public function getCommodity() : array
+    public function getCommodity(): array
     {
         return $this->commodity;
     }
@@ -393,7 +393,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(array $commodity): self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -404,7 +404,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return list<ShipmentReference>
      */
-    public function getReference() : array
+    public function getReference(): array
     {
         return $this->reference;
     }
@@ -415,7 +415,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setReference(array $reference) : self
+    public function setReference(array $reference): self
     {
         $this->initialized['reference'] = true;
         $this->reference = $reference;
@@ -426,7 +426,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return FreightShipShipmentShipmentServiceOptions
      */
-    public function getShipmentServiceOptions() : FreightShipShipmentShipmentServiceOptions
+    public function getShipmentServiceOptions(): FreightShipShipmentShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
@@ -437,7 +437,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightShipShipmentShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(FreightShipShipmentShipmentServiceOptions $shipmentServiceOptions): self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -448,7 +448,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return ShipmentPickupRequest
      */
-    public function getPickupRequest() : ShipmentPickupRequest
+    public function getPickupRequest(): ShipmentPickupRequest
     {
         return $this->pickupRequest;
     }
@@ -459,7 +459,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupRequest(ShipmentPickupRequest $pickupRequest) : self
+    public function setPickupRequest(ShipmentPickupRequest $pickupRequest): self
     {
         $this->initialized['pickupRequest'] = true;
         $this->pickupRequest = $pickupRequest;
@@ -470,7 +470,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return ShipmentDocuments
      */
-    public function getDocuments() : ShipmentDocuments
+    public function getDocuments(): ShipmentDocuments
     {
         return $this->documents;
     }
@@ -481,7 +481,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setDocuments(ShipmentDocuments $documents) : self
+    public function setDocuments(ShipmentDocuments $documents): self
     {
         $this->initialized['documents'] = true;
         $this->documents = $documents;
@@ -492,7 +492,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getTimeInTransitIndicator() : string
+    public function getTimeInTransitIndicator(): string
     {
         return $this->timeInTransitIndicator;
     }
@@ -503,7 +503,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeInTransitIndicator(string $timeInTransitIndicator) : self
+    public function setTimeInTransitIndicator(string $timeInTransitIndicator): self
     {
         $this->initialized['timeInTransitIndicator'] = true;
         $this->timeInTransitIndicator = $timeInTransitIndicator;
@@ -514,7 +514,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return ShipmentHandlingUnits
      */
-    public function getHandlingUnits() : ShipmentHandlingUnits
+    public function getHandlingUnits(): ShipmentHandlingUnits
     {
         return $this->handlingUnits;
     }
@@ -525,7 +525,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnits(ShipmentHandlingUnits $handlingUnits) : self
+    public function setHandlingUnits(ShipmentHandlingUnits $handlingUnits): self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;
@@ -536,7 +536,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getDensityEligibleIndicator() : string
+    public function getDensityEligibleIndicator(): string
     {
         return $this->densityEligibleIndicator;
     }
@@ -547,7 +547,7 @@ class FreightShipRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setDensityEligibleIndicator(string $densityEligibleIndicator) : self
+    public function setDensityEligibleIndicator(string $densityEligibleIndicator): self
     {
         $this->initialized['densityEligibleIndicator'] = true;
         $this->densityEligibleIndicator = $densityEligibleIndicator;

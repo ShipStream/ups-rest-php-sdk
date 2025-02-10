@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponse';
+            return $type === \ShipStream\Ups\Api\Model\PickupRateResponse::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponse';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PickupRateResponse::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,11 +41,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Response', $data)) {
-                $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse', 'json', $context));
+                $object->setResponse($this->denormalizer->denormalize($data['Response'], \ShipStream\Ups\Api\Model\PickupRateResponseResponse::class, 'json', $context));
                 unset($data['Response']);
             }
             if (\array_key_exists('RateResult', $data)) {
-                $object->setRateResult($this->denormalizer->denormalize($data['RateResult'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult', 'json', $context));
+                $object->setRateResult($this->denormalizer->denormalize($data['RateResult'], \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class, 'json', $context));
                 unset($data['RateResult']);
             }
             if (\array_key_exists('WeekendServiceTerritoryIndicator', $data)) {
@@ -53,7 +53,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['WeekendServiceTerritoryIndicator']);
             }
             if (\array_key_exists('WeekendServiceTerritory', $data)) {
-                $object->setWeekendServiceTerritory($this->denormalizer->denormalize($data['WeekendServiceTerritory'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory', 'json', $context));
+                $object->setWeekendServiceTerritory($this->denormalizer->denormalize($data['WeekendServiceTerritory'], \ShipStream\Ups\Api\Model\PickupRateResponseWeekendServiceTerritory::class, 'json', $context));
                 unset($data['WeekendServiceTerritory']);
             }
             foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
@@ -81,9 +81,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PickupRateResponse' => false];
+            return [\ShipStream\Ups\Api\Model\PickupRateResponse::class => false];
         }
     }
 } else {
@@ -93,13 +93,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponse';
+            return $type === \ShipStream\Ups\Api\Model\PickupRateResponse::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponse';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PickupRateResponse::class;
         }
         /**
          * @return mixed
@@ -117,11 +117,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Response', $data)) {
-                $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse', 'json', $context));
+                $object->setResponse($this->denormalizer->denormalize($data['Response'], \ShipStream\Ups\Api\Model\PickupRateResponseResponse::class, 'json', $context));
                 unset($data['Response']);
             }
             if (\array_key_exists('RateResult', $data)) {
-                $object->setRateResult($this->denormalizer->denormalize($data['RateResult'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult', 'json', $context));
+                $object->setRateResult($this->denormalizer->denormalize($data['RateResult'], \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class, 'json', $context));
                 unset($data['RateResult']);
             }
             if (\array_key_exists('WeekendServiceTerritoryIndicator', $data)) {
@@ -129,7 +129,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['WeekendServiceTerritoryIndicator']);
             }
             if (\array_key_exists('WeekendServiceTerritory', $data)) {
-                $object->setWeekendServiceTerritory($this->denormalizer->denormalize($data['WeekendServiceTerritory'], 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory', 'json', $context));
+                $object->setWeekendServiceTerritory($this->denormalizer->denormalize($data['WeekendServiceTerritory'], \ShipStream\Ups\Api\Model\PickupRateResponseWeekendServiceTerritory::class, 'json', $context));
                 unset($data['WeekendServiceTerritory']);
             }
             foreach ($data as $key => $value) {
@@ -160,9 +160,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PickupRateResponse' => false];
+            return [\ShipStream\Ups\Api\Model\PickupRateResponse::class => false];
         }
     }
 }

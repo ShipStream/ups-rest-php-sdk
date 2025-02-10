@@ -8,7 +8,7 @@ class UAPAddressAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine1() : string
+    public function getAddressLine1(): string
     {
         return $this->addressLine1;
     }
@@ -70,7 +70,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine1(string $addressLine1) : self
+    public function setAddressLine1(string $addressLine1): self
     {
         $this->initialized['addressLine1'] = true;
         $this->addressLine1 = $addressLine1;
@@ -81,7 +81,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine2() : string
+    public function getAddressLine2(): string
     {
         return $this->addressLine2;
     }
@@ -92,7 +92,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine2(string $addressLine2) : self
+    public function setAddressLine2(string $addressLine2): self
     {
         $this->initialized['addressLine2'] = true;
         $this->addressLine2 = $addressLine2;
@@ -103,7 +103,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine3() : string
+    public function getAddressLine3(): string
     {
         return $this->addressLine3;
     }
@@ -114,7 +114,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine3(string $addressLine3) : self
+    public function setAddressLine3(string $addressLine3): self
     {
         $this->initialized['addressLine3'] = true;
         $this->addressLine3 = $addressLine3;
@@ -125,7 +125,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -136,7 +136,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -147,7 +147,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode(): string
     {
         return $this->stateProvinceCode;
     }
@@ -158,7 +158,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(string $stateProvinceCode): self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -169,7 +169,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -180,7 +180,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -191,7 +191,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -202,7 +202,7 @@ class UAPAddressAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

@@ -8,7 +8,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayPickup() : string
+    public function getSaturdayPickup(): string
     {
         return $this->saturdayPickup;
     }
@@ -46,7 +46,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayPickup(string $saturdayPickup) : self
+    public function setSaturdayPickup(string $saturdayPickup): self
     {
         $this->initialized['saturdayPickup'] = true;
         $this->saturdayPickup = $saturdayPickup;
@@ -57,7 +57,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayDelivery() : string
+    public function getSaturdayDelivery(): string
     {
         return $this->saturdayDelivery;
     }
@@ -68,7 +68,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayDelivery(string $saturdayDelivery) : self
+    public function setSaturdayDelivery(string $saturdayDelivery): self
     {
         $this->initialized['saturdayDelivery'] = true;
         $this->saturdayDelivery = $saturdayDelivery;
@@ -79,7 +79,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      *
      * @return ShipmentServiceOptionsCallTagARS
      */
-    public function getCallTagARS() : ShipmentServiceOptionsCallTagARS
+    public function getCallTagARS(): ShipmentServiceOptionsCallTagARS
     {
         return $this->callTagARS;
     }
@@ -90,7 +90,7 @@ class ManifestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCallTagARS(ShipmentServiceOptionsCallTagARS $callTagARS) : self
+    public function setCallTagARS(ShipmentServiceOptionsCallTagARS $callTagARS): self
     {
         $this->initialized['callTagARS'] = true;
         $this->callTagARS = $callTagARS;

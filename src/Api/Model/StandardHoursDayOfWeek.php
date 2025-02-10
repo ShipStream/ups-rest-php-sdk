@@ -8,7 +8,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -75,7 +75,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
     *
     * @return string
     */
-    public function getDay() : string
+    public function getDay(): string
     {
         return $this->day;
     }
@@ -94,7 +94,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
     *
     * @return self
     */
-    public function setDay(string $day) : self
+    public function setDay(string $day): self
     {
         $this->initialized['day'] = true;
         $this->day = $day;
@@ -105,7 +105,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return list<string>|null
      */
-    public function getOpenHours() : ?array
+    public function getOpenHours(): ?array
     {
         return $this->openHours;
     }
@@ -116,7 +116,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setOpenHours(?array $openHours) : self
+    public function setOpenHours(?array $openHours): self
     {
         $this->initialized['openHours'] = true;
         $this->openHours = $openHours;
@@ -127,7 +127,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return list<string>|null
      */
-    public function getCloseHours() : ?array
+    public function getCloseHours(): ?array
     {
         return $this->closeHours;
     }
@@ -138,7 +138,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setCloseHours(?array $closeHours) : self
+    public function setCloseHours(?array $closeHours): self
     {
         $this->initialized['closeHours'] = true;
         $this->closeHours = $closeHours;
@@ -149,7 +149,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getLatestDropOffHours() : string
+    public function getLatestDropOffHours(): string
     {
         return $this->latestDropOffHours;
     }
@@ -160,7 +160,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setLatestDropOffHours(string $latestDropOffHours) : self
+    public function setLatestDropOffHours(string $latestDropOffHours): self
     {
         $this->initialized['latestDropOffHours'] = true;
         $this->latestDropOffHours = $latestDropOffHours;
@@ -171,7 +171,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getPrepHours() : string
+    public function getPrepHours(): string
     {
         return $this->prepHours;
     }
@@ -182,7 +182,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setPrepHours(string $prepHours) : self
+    public function setPrepHours(string $prepHours): self
     {
         $this->initialized['prepHours'] = true;
         $this->prepHours = $prepHours;
@@ -193,7 +193,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getClosedIndicator() : string
+    public function getClosedIndicator(): string
     {
         return $this->closedIndicator;
     }
@@ -204,7 +204,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setClosedIndicator(string $closedIndicator) : self
+    public function setClosedIndicator(string $closedIndicator): self
     {
         $this->initialized['closedIndicator'] = true;
         $this->closedIndicator = $closedIndicator;
@@ -215,7 +215,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getOpen24HoursIndicator() : string
+    public function getOpen24HoursIndicator(): string
     {
         return $this->open24HoursIndicator;
     }
@@ -226,7 +226,7 @@ class StandardHoursDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setOpen24HoursIndicator(string $open24HoursIndicator) : self
+    public function setOpen24HoursIndicator(string $open24HoursIndicator): self
     {
         $this->initialized['open24HoursIndicator'] = true;
         $this->open24HoursIndicator = $open24HoursIndicator;

@@ -8,7 +8,7 @@ class PAPERLESSDOCUMENTResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PAPERLESSDOCUMENTResponseWrapper extends \ArrayObject
      *
      * @return PushToImageRepositoryResponse
      */
-    public function getPushToImageRepositoryResponse() : PushToImageRepositoryResponse
+    public function getPushToImageRepositoryResponse(): PushToImageRepositoryResponse
     {
         return $this->pushToImageRepositoryResponse;
     }
@@ -34,7 +34,7 @@ class PAPERLESSDOCUMENTResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPushToImageRepositoryResponse(PushToImageRepositoryResponse $pushToImageRepositoryResponse) : self
+    public function setPushToImageRepositoryResponse(PushToImageRepositoryResponse $pushToImageRepositoryResponse): self
     {
         $this->initialized['pushToImageRepositoryResponse'] = true;
         $this->pushToImageRepositoryResponse = $pushToImageRepositoryResponse;

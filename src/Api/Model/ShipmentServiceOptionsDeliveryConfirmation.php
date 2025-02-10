@@ -8,7 +8,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -33,7 +33,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
     *
     * @return string
     */
-    public function getDCISType() : string
+    public function getDCISType(): string
     {
         return $this->dCISType;
     }
@@ -46,7 +46,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
     *
     * @return self
     */
-    public function setDCISType(string $dCISType) : self
+    public function setDCISType(string $dCISType): self
     {
         $this->initialized['dCISType'] = true;
         $this->dCISType = $dCISType;
@@ -57,7 +57,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
      *
      * @return string
      */
-    public function getDCISNumber() : string
+    public function getDCISNumber(): string
     {
         return $this->dCISNumber;
     }
@@ -68,7 +68,7 @@ class ShipmentServiceOptionsDeliveryConfirmation extends \ArrayObject
      *
      * @return self
      */
-    public function setDCISNumber(string $dCISNumber) : self
+    public function setDCISNumber(string $dCISNumber): self
     {
         $this->initialized['dCISNumber'] = true;
         $this->dCISNumber = $dCISNumber;

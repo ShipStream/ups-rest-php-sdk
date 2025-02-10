@@ -8,7 +8,7 @@ class LOCATORRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class LOCATORRequestWrapper extends \ArrayObject
      *
      * @return LocatorRequest
      */
-    public function getLocatorRequest() : LocatorRequest
+    public function getLocatorRequest(): LocatorRequest
     {
         return $this->locatorRequest;
     }
@@ -34,7 +34,7 @@ class LOCATORRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setLocatorRequest(LocatorRequest $locatorRequest) : self
+    public function setLocatorRequest(LocatorRequest $locatorRequest): self
     {
         $this->initialized['locatorRequest'] = true;
         $this->locatorRequest = $locatorRequest;

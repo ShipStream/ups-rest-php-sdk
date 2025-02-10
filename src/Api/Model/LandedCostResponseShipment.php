@@ -8,7 +8,7 @@ class LandedCostResponseShipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -113,7 +113,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -124,7 +124,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -135,7 +135,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getImportCountryCode() : string
+    public function getImportCountryCode(): string
     {
         return $this->importCountryCode;
     }
@@ -146,7 +146,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setImportCountryCode(string $importCountryCode) : self
+    public function setImportCountryCode(string $importCountryCode): self
     {
         $this->initialized['importCountryCode'] = true;
         $this->importCountryCode = $importCountryCode;
@@ -157,7 +157,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getId() : string
+    public function getId(): string
     {
         return $this->id;
     }
@@ -168,7 +168,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setId(string $id) : self
+    public function setId(string $id): self
     {
         $this->initialized['id'] = true;
         $this->id = $id;
@@ -179,7 +179,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return list<BrokerageFeeItems>
      */
-    public function getBrokerageFeeItems() : array
+    public function getBrokerageFeeItems(): array
     {
         return $this->brokerageFeeItems;
     }
@@ -190,7 +190,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setBrokerageFeeItems(array $brokerageFeeItems) : self
+    public function setBrokerageFeeItems(array $brokerageFeeItems): self
     {
         $this->initialized['brokerageFeeItems'] = true;
         $this->brokerageFeeItems = $brokerageFeeItems;
@@ -201,7 +201,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalBrokerageFees() : float
+    public function getTotalBrokerageFees(): float
     {
         return $this->totalBrokerageFees;
     }
@@ -212,7 +212,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalBrokerageFees(float $totalBrokerageFees) : self
+    public function setTotalBrokerageFees(float $totalBrokerageFees): self
     {
         $this->initialized['totalBrokerageFees'] = true;
         $this->totalBrokerageFees = $totalBrokerageFees;
@@ -223,7 +223,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalDuties() : float
+    public function getTotalDuties(): float
     {
         return $this->totalDuties;
     }
@@ -234,7 +234,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalDuties(float $totalDuties) : self
+    public function setTotalDuties(float $totalDuties): self
     {
         $this->initialized['totalDuties'] = true;
         $this->totalDuties = $totalDuties;
@@ -245,7 +245,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalCommodityLevelTaxesAndFees() : float
+    public function getTotalCommodityLevelTaxesAndFees(): float
     {
         return $this->totalCommodityLevelTaxesAndFees;
     }
@@ -256,7 +256,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCommodityLevelTaxesAndFees(float $totalCommodityLevelTaxesAndFees) : self
+    public function setTotalCommodityLevelTaxesAndFees(float $totalCommodityLevelTaxesAndFees): self
     {
         $this->initialized['totalCommodityLevelTaxesAndFees'] = true;
         $this->totalCommodityLevelTaxesAndFees = $totalCommodityLevelTaxesAndFees;
@@ -267,7 +267,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalShipmentLevelTaxesAndFees() : float
+    public function getTotalShipmentLevelTaxesAndFees(): float
     {
         return $this->totalShipmentLevelTaxesAndFees;
     }
@@ -278,7 +278,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalShipmentLevelTaxesAndFees(float $totalShipmentLevelTaxesAndFees) : self
+    public function setTotalShipmentLevelTaxesAndFees(float $totalShipmentLevelTaxesAndFees): self
     {
         $this->initialized['totalShipmentLevelTaxesAndFees'] = true;
         $this->totalShipmentLevelTaxesAndFees = $totalShipmentLevelTaxesAndFees;
@@ -289,7 +289,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalVAT() : float
+    public function getTotalVAT(): float
     {
         return $this->totalVAT;
     }
@@ -300,7 +300,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalVAT(float $totalVAT) : self
+    public function setTotalVAT(float $totalVAT): self
     {
         $this->initialized['totalVAT'] = true;
         $this->totalVAT = $totalVAT;
@@ -311,7 +311,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalDutyAndTax() : float
+    public function getTotalDutyAndTax(): float
     {
         return $this->totalDutyAndTax;
     }
@@ -322,7 +322,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalDutyAndTax(float $totalDutyAndTax) : self
+    public function setTotalDutyAndTax(float $totalDutyAndTax): self
     {
         $this->initialized['totalDutyAndTax'] = true;
         $this->totalDutyAndTax = $totalDutyAndTax;
@@ -333,7 +333,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return float
      */
-    public function getGrandTotal() : float
+    public function getGrandTotal(): float
     {
         return $this->grandTotal;
     }
@@ -344,7 +344,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setGrandTotal(float $grandTotal) : self
+    public function setGrandTotal(float $grandTotal): self
     {
         $this->initialized['grandTotal'] = true;
         $this->grandTotal = $grandTotal;
@@ -355,7 +355,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return list<ResponseShipmentItems>
      */
-    public function getShipmentItems() : array
+    public function getShipmentItems(): array
     {
         return $this->shipmentItems;
     }
@@ -366,7 +366,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentItems(array $shipmentItems) : self
+    public function setShipmentItems(array $shipmentItems): self
     {
         $this->initialized['shipmentItems'] = true;
         $this->shipmentItems = $shipmentItems;
@@ -377,7 +377,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getTransID() : string
+    public function getTransID(): string
     {
         return $this->transID;
     }
@@ -388,7 +388,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTransID(string $transID) : self
+    public function setTransID(string $transID): self
     {
         $this->initialized['transID'] = true;
         $this->transID = $transID;
@@ -399,7 +399,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return LandedCostResponseShipmentPerfStats
      */
-    public function getPerfStats() : LandedCostResponseShipmentPerfStats
+    public function getPerfStats(): LandedCostResponseShipmentPerfStats
     {
         return $this->perfStats;
     }
@@ -410,7 +410,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPerfStats(LandedCostResponseShipmentPerfStats $perfStats) : self
+    public function setPerfStats(LandedCostResponseShipmentPerfStats $perfStats): self
     {
         $this->initialized['perfStats'] = true;
         $this->perfStats = $perfStats;
@@ -421,7 +421,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return int
      */
-    public function getAlVersion() : int
+    public function getAlVersion(): int
     {
         return $this->alVersion;
     }
@@ -432,7 +432,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setAlVersion(int $alVersion) : self
+    public function setAlVersion(int $alVersion): self
     {
         $this->initialized['alVersion'] = true;
         $this->alVersion = $alVersion;
@@ -443,7 +443,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return Errors
      */
-    public function getErrors() : Errors
+    public function getErrors(): Errors
     {
         return $this->errors;
     }
@@ -454,7 +454,7 @@ class LandedCostResponseShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setErrors(Errors $errors) : self
+    public function setErrors(Errors $errors): self
     {
         $this->initialized['errors'] = true;
         $this->errors = $errors;

@@ -8,7 +8,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     *
     * @return string
     */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -66,7 +66,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     *
     * @return self
     */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -83,7 +83,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     *
     * @return BillShipperCreditCard
     */
-    public function getCreditCard() : BillShipperCreditCard
+    public function getCreditCard(): BillShipperCreditCard
     {
         return $this->creditCard;
     }
@@ -100,7 +100,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     *
     * @return self
     */
-    public function setCreditCard(BillShipperCreditCard $creditCard) : self
+    public function setCreditCard(BillShipperCreditCard $creditCard): self
     {
         $this->initialized['creditCard'] = true;
         $this->creditCard = $creditCard;
@@ -119,7 +119,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     *
     * @return string
     */
-    public function getAlternatePaymentMethod() : string
+    public function getAlternatePaymentMethod(): string
     {
         return $this->alternatePaymentMethod;
     }
@@ -138,7 +138,7 @@ class ShipmentChargeBillShipper extends \ArrayObject
     *
     * @return self
     */
-    public function setAlternatePaymentMethod(string $alternatePaymentMethod) : self
+    public function setAlternatePaymentMethod(string $alternatePaymentMethod): self
     {
         $this->initialized['alternatePaymentMethod'] = true;
         $this->alternatePaymentMethod = $alternatePaymentMethod;

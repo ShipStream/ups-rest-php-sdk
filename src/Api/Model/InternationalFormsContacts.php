@@ -8,7 +8,7 @@ class InternationalFormsContacts extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -48,7 +48,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return ContactsForwardAgent
      */
-    public function getForwardAgent() : ContactsForwardAgent
+    public function getForwardAgent(): ContactsForwardAgent
     {
         return $this->forwardAgent;
     }
@@ -59,7 +59,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return self
      */
-    public function setForwardAgent(ContactsForwardAgent $forwardAgent) : self
+    public function setForwardAgent(ContactsForwardAgent $forwardAgent): self
     {
         $this->initialized['forwardAgent'] = true;
         $this->forwardAgent = $forwardAgent;
@@ -70,7 +70,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return ContactsUltimateConsignee
      */
-    public function getUltimateConsignee() : ContactsUltimateConsignee
+    public function getUltimateConsignee(): ContactsUltimateConsignee
     {
         return $this->ultimateConsignee;
     }
@@ -81,7 +81,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return self
      */
-    public function setUltimateConsignee(ContactsUltimateConsignee $ultimateConsignee) : self
+    public function setUltimateConsignee(ContactsUltimateConsignee $ultimateConsignee): self
     {
         $this->initialized['ultimateConsignee'] = true;
         $this->ultimateConsignee = $ultimateConsignee;
@@ -92,7 +92,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return ContactsIntermediateConsignee
      */
-    public function getIntermediateConsignee() : ContactsIntermediateConsignee
+    public function getIntermediateConsignee(): ContactsIntermediateConsignee
     {
         return $this->intermediateConsignee;
     }
@@ -103,7 +103,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return self
      */
-    public function setIntermediateConsignee(ContactsIntermediateConsignee $intermediateConsignee) : self
+    public function setIntermediateConsignee(ContactsIntermediateConsignee $intermediateConsignee): self
     {
         $this->initialized['intermediateConsignee'] = true;
         $this->intermediateConsignee = $intermediateConsignee;
@@ -115,7 +115,7 @@ class InternationalFormsContacts extends \ArrayObject
     *
     * @return ContactsProducer
     */
-    public function getProducer() : ContactsProducer
+    public function getProducer(): ContactsProducer
     {
         return $this->producer;
     }
@@ -127,7 +127,7 @@ class InternationalFormsContacts extends \ArrayObject
     *
     * @return self
     */
-    public function setProducer(ContactsProducer $producer) : self
+    public function setProducer(ContactsProducer $producer): self
     {
         $this->initialized['producer'] = true;
         $this->producer = $producer;
@@ -138,7 +138,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return ContactsSoldTo
      */
-    public function getSoldTo() : ContactsSoldTo
+    public function getSoldTo(): ContactsSoldTo
     {
         return $this->soldTo;
     }
@@ -149,7 +149,7 @@ class InternationalFormsContacts extends \ArrayObject
      *
      * @return self
      */
-    public function setSoldTo(ContactsSoldTo $soldTo) : self
+    public function setSoldTo(ContactsSoldTo $soldTo): self
     {
         $this->initialized['soldTo'] = true;
         $this->soldTo = $soldTo;

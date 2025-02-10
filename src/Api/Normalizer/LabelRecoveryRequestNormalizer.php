@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest';
+            return $type === \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,19 +41,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Request', $data)) {
-                $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest', 'json', $context));
+                $object->setRequest($this->denormalizer->denormalize($data['Request'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestRequest::class, 'json', $context));
                 unset($data['Request']);
             }
             if (\array_key_exists('LabelSpecification', $data)) {
-                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification', 'json', $context));
+                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class, 'json', $context));
                 unset($data['LabelSpecification']);
             }
             if (\array_key_exists('Translate', $data)) {
-                $object->setTranslate($this->denormalizer->denormalize($data['Translate'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate', 'json', $context));
+                $object->setTranslate($this->denormalizer->denormalize($data['Translate'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestTranslate::class, 'json', $context));
                 unset($data['Translate']);
             }
             if (\array_key_exists('LabelDelivery', $data)) {
-                $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery', 'json', $context));
+                $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelDelivery::class, 'json', $context));
                 unset($data['LabelDelivery']);
             }
             if (\array_key_exists('TrackingNumber', $data)) {
@@ -65,7 +65,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['MailInnovationsTrackingNumber']);
             }
             if (\array_key_exists('ReferenceValues', $data)) {
-                $object->setReferenceValues($this->denormalizer->denormalize($data['ReferenceValues'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues', 'json', $context));
+                $object->setReferenceValues($this->denormalizer->denormalize($data['ReferenceValues'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestReferenceValues::class, 'json', $context));
                 unset($data['ReferenceValues']);
             }
             if (\array_key_exists('Locale', $data)) {
@@ -73,7 +73,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Locale']);
             }
             if (\array_key_exists('UPSPremiumCareForm', $data)) {
-                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm', 'json', $context));
+                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestUPSPremiumCareForm::class, 'json', $context));
                 unset($data['UPSPremiumCareForm']);
             }
             foreach ($data as $key => $value) {
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
@@ -118,9 +118,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest' => false];
+            return [\ShipStream\Ups\Api\Model\LabelRecoveryRequest::class => false];
         }
     }
 } else {
@@ -130,13 +130,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest';
+            return $type === \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class;
         }
         /**
          * @return mixed
@@ -154,19 +154,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Request', $data)) {
-                $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest', 'json', $context));
+                $object->setRequest($this->denormalizer->denormalize($data['Request'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestRequest::class, 'json', $context));
                 unset($data['Request']);
             }
             if (\array_key_exists('LabelSpecification', $data)) {
-                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification', 'json', $context));
+                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class, 'json', $context));
                 unset($data['LabelSpecification']);
             }
             if (\array_key_exists('Translate', $data)) {
-                $object->setTranslate($this->denormalizer->denormalize($data['Translate'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate', 'json', $context));
+                $object->setTranslate($this->denormalizer->denormalize($data['Translate'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestTranslate::class, 'json', $context));
                 unset($data['Translate']);
             }
             if (\array_key_exists('LabelDelivery', $data)) {
-                $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery', 'json', $context));
+                $object->setLabelDelivery($this->denormalizer->denormalize($data['LabelDelivery'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelDelivery::class, 'json', $context));
                 unset($data['LabelDelivery']);
             }
             if (\array_key_exists('TrackingNumber', $data)) {
@@ -178,7 +178,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['MailInnovationsTrackingNumber']);
             }
             if (\array_key_exists('ReferenceValues', $data)) {
-                $object->setReferenceValues($this->denormalizer->denormalize($data['ReferenceValues'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues', 'json', $context));
+                $object->setReferenceValues($this->denormalizer->denormalize($data['ReferenceValues'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestReferenceValues::class, 'json', $context));
                 unset($data['ReferenceValues']);
             }
             if (\array_key_exists('Locale', $data)) {
@@ -186,7 +186,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Locale']);
             }
             if (\array_key_exists('UPSPremiumCareForm', $data)) {
-                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm', 'json', $context));
+                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], \ShipStream\Ups\Api\Model\LabelRecoveryRequestUPSPremiumCareForm::class, 'json', $context));
                 unset($data['UPSPremiumCareForm']);
             }
             foreach ($data as $key => $value) {
@@ -234,9 +234,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest' => false];
+            return [\ShipStream\Ups\Api\Model\LabelRecoveryRequest::class => false];
         }
     }
 }

@@ -8,7 +8,7 @@ class InternationalFormsOtherCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class InternationalFormsOtherCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue(): string
     {
         return $this->monetaryValue;
     }
@@ -40,7 +40,7 @@ class InternationalFormsOtherCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(string $monetaryValue): self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;
@@ -51,7 +51,7 @@ class InternationalFormsOtherCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -62,7 +62,7 @@ class InternationalFormsOtherCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

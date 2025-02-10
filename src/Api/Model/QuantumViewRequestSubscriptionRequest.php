@@ -8,7 +8,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -46,7 +46,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -57,7 +57,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      *
      * @return SubscriptionRequestDateTimeRange
      */
-    public function getDateTimeRange() : SubscriptionRequestDateTimeRange
+    public function getDateTimeRange(): SubscriptionRequestDateTimeRange
     {
         return $this->dateTimeRange;
     }
@@ -68,7 +68,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDateTimeRange(SubscriptionRequestDateTimeRange $dateTimeRange) : self
+    public function setDateTimeRange(SubscriptionRequestDateTimeRange $dateTimeRange): self
     {
         $this->initialized['dateTimeRange'] = true;
         $this->dateTimeRange = $dateTimeRange;
@@ -79,7 +79,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getFileName() : array
+    public function getFileName(): array
     {
         return $this->fileName;
     }
@@ -90,7 +90,7 @@ class QuantumViewRequestSubscriptionRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setFileName(array $fileName) : self
+    public function setFileName(array $fileName): self
     {
         $this->initialized['fileName'] = true;
         $this->fileName = $fileName;

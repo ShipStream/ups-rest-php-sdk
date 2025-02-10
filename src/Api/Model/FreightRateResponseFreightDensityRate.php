@@ -8,7 +8,7 @@ class FreightRateResponseFreightDensityRate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightRateResponseFreightDensityRate extends \ArrayObject
      *
      * @return string
      */
-    public function getDensity() : string
+    public function getDensity(): string
     {
         return $this->density;
     }
@@ -40,7 +40,7 @@ class FreightRateResponseFreightDensityRate extends \ArrayObject
      *
      * @return self
      */
-    public function setDensity(string $density) : self
+    public function setDensity(string $density): self
     {
         $this->initialized['density'] = true;
         $this->density = $density;
@@ -51,7 +51,7 @@ class FreightRateResponseFreightDensityRate extends \ArrayObject
      *
      * @return string
      */
-    public function getTotalCubicFeet() : string
+    public function getTotalCubicFeet(): string
     {
         return $this->totalCubicFeet;
     }
@@ -62,7 +62,7 @@ class FreightRateResponseFreightDensityRate extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCubicFeet(string $totalCubicFeet) : self
+    public function setTotalCubicFeet(string $totalCubicFeet): self
     {
         $this->initialized['totalCubicFeet'] = true;
         $this->totalCubicFeet = $totalCubicFeet;

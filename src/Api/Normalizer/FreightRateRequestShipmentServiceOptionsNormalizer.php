@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions';
+            return $type === \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,35 +41,35 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('PickupOptions', $data)) {
-                $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions', 'json', $context));
+                $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsPickupOptions::class, 'json', $context));
                 unset($data['PickupOptions']);
             }
             if (\array_key_exists('DeliveryOptions', $data)) {
-                $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions', 'json', $context));
+                $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsDeliveryOptions::class, 'json', $context));
                 unset($data['DeliveryOptions']);
             }
             if (\array_key_exists('OverSeasLeg', $data)) {
-                $object->setOverSeasLeg($this->denormalizer->denormalize($data['OverSeasLeg'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg', 'json', $context));
+                $object->setOverSeasLeg($this->denormalizer->denormalize($data['OverSeasLeg'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class, 'json', $context));
                 unset($data['OverSeasLeg']);
             }
             if (\array_key_exists('COD', $data)) {
-                $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD', 'json', $context));
+                $object->setCOD($this->denormalizer->denormalize($data['COD'], \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class, 'json', $context));
                 unset($data['COD']);
             }
             if (\array_key_exists('DangerousGoods', $data)) {
-                $object->setDangerousGoods($this->denormalizer->denormalize($data['DangerousGoods'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods', 'json', $context));
+                $object->setDangerousGoods($this->denormalizer->denormalize($data['DangerousGoods'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDangerousGoods::class, 'json', $context));
                 unset($data['DangerousGoods']);
             }
             if (\array_key_exists('SortingAndSegregating', $data)) {
-                $object->setSortingAndSegregating($this->denormalizer->denormalize($data['SortingAndSegregating'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating', 'json', $context));
+                $object->setSortingAndSegregating($this->denormalizer->denormalize($data['SortingAndSegregating'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsSortingAndSegregating::class, 'json', $context));
                 unset($data['SortingAndSegregating']);
             }
             if (\array_key_exists('ExcessDeclaredValue', $data)) {
-                $object->setExcessDeclaredValue($this->denormalizer->denormalize($data['ExcessDeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue', 'json', $context));
+                $object->setExcessDeclaredValue($this->denormalizer->denormalize($data['ExcessDeclaredValue'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsExcessDeclaredValue::class, 'json', $context));
                 unset($data['ExcessDeclaredValue']);
             }
             if (\array_key_exists('HandlingCharge', $data)) {
-                $object->setHandlingCharge($this->denormalizer->denormalize($data['HandlingCharge'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge', 'json', $context));
+                $object->setHandlingCharge($this->denormalizer->denormalize($data['HandlingCharge'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsHandlingCharge::class, 'json', $context));
                 unset($data['HandlingCharge']);
             }
             if (\array_key_exists('FreezableProtectionIndicator', $data)) {
@@ -85,7 +85,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['LinearFeet']);
             }
             if (\array_key_exists('AdjustedHeight', $data)) {
-                $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight', 'json', $context));
+                $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAdjustedHeight::class, 'json', $context));
                 unset($data['AdjustedHeight']);
             }
             foreach ($data as $key => $value) {
@@ -95,7 +95,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('pickupOptions') && null !== $object->getPickupOptions()) {
@@ -141,9 +141,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions' => false];
+            return [\ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class => false];
         }
     }
 } else {
@@ -153,13 +153,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions';
+            return $type === \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class;
         }
         /**
          * @return mixed
@@ -177,35 +177,35 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('PickupOptions', $data)) {
-                $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions', 'json', $context));
+                $object->setPickupOptions($this->denormalizer->denormalize($data['PickupOptions'], \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsPickupOptions::class, 'json', $context));
                 unset($data['PickupOptions']);
             }
             if (\array_key_exists('DeliveryOptions', $data)) {
-                $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions', 'json', $context));
+                $object->setDeliveryOptions($this->denormalizer->denormalize($data['DeliveryOptions'], \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsDeliveryOptions::class, 'json', $context));
                 unset($data['DeliveryOptions']);
             }
             if (\array_key_exists('OverSeasLeg', $data)) {
-                $object->setOverSeasLeg($this->denormalizer->denormalize($data['OverSeasLeg'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg', 'json', $context));
+                $object->setOverSeasLeg($this->denormalizer->denormalize($data['OverSeasLeg'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class, 'json', $context));
                 unset($data['OverSeasLeg']);
             }
             if (\array_key_exists('COD', $data)) {
-                $object->setCOD($this->denormalizer->denormalize($data['COD'], 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD', 'json', $context));
+                $object->setCOD($this->denormalizer->denormalize($data['COD'], \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class, 'json', $context));
                 unset($data['COD']);
             }
             if (\array_key_exists('DangerousGoods', $data)) {
-                $object->setDangerousGoods($this->denormalizer->denormalize($data['DangerousGoods'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods', 'json', $context));
+                $object->setDangerousGoods($this->denormalizer->denormalize($data['DangerousGoods'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDangerousGoods::class, 'json', $context));
                 unset($data['DangerousGoods']);
             }
             if (\array_key_exists('SortingAndSegregating', $data)) {
-                $object->setSortingAndSegregating($this->denormalizer->denormalize($data['SortingAndSegregating'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating', 'json', $context));
+                $object->setSortingAndSegregating($this->denormalizer->denormalize($data['SortingAndSegregating'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsSortingAndSegregating::class, 'json', $context));
                 unset($data['SortingAndSegregating']);
             }
             if (\array_key_exists('ExcessDeclaredValue', $data)) {
-                $object->setExcessDeclaredValue($this->denormalizer->denormalize($data['ExcessDeclaredValue'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue', 'json', $context));
+                $object->setExcessDeclaredValue($this->denormalizer->denormalize($data['ExcessDeclaredValue'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsExcessDeclaredValue::class, 'json', $context));
                 unset($data['ExcessDeclaredValue']);
             }
             if (\array_key_exists('HandlingCharge', $data)) {
-                $object->setHandlingCharge($this->denormalizer->denormalize($data['HandlingCharge'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge', 'json', $context));
+                $object->setHandlingCharge($this->denormalizer->denormalize($data['HandlingCharge'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsHandlingCharge::class, 'json', $context));
                 unset($data['HandlingCharge']);
             }
             if (\array_key_exists('FreezableProtectionIndicator', $data)) {
@@ -221,7 +221,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['LinearFeet']);
             }
             if (\array_key_exists('AdjustedHeight', $data)) {
-                $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight', 'json', $context));
+                $object->setAdjustedHeight($this->denormalizer->denormalize($data['AdjustedHeight'], \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAdjustedHeight::class, 'json', $context));
                 unset($data['AdjustedHeight']);
             }
             foreach ($data as $key => $value) {
@@ -280,9 +280,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions' => false];
+            return [\ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class => false];
         }
     }
 }

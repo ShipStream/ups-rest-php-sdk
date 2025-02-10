@@ -8,7 +8,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -49,7 +49,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getHazmatIndicator() : string
+    public function getHazmatIndicator(): string
     {
         return $this->hazmatIndicator;
     }
@@ -61,7 +61,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setHazmatIndicator(string $hazmatIndicator) : self
+    public function setHazmatIndicator(string $hazmatIndicator): self
     {
         $this->initialized['hazmatIndicator'] = true;
         $this->hazmatIndicator = $hazmatIndicator;
@@ -72,7 +72,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return ShipmentDetailPackagingType
      */
-    public function getPackagingType() : ShipmentDetailPackagingType
+    public function getPackagingType(): ShipmentDetailPackagingType
     {
         return $this->packagingType;
     }
@@ -83,7 +83,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingType(ShipmentDetailPackagingType $packagingType) : self
+    public function setPackagingType(ShipmentDetailPackagingType $packagingType): self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -94,7 +94,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getNumberOfPieces() : string
+    public function getNumberOfPieces(): string
     {
         return $this->numberOfPieces;
     }
@@ -105,7 +105,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setNumberOfPieces(string $numberOfPieces) : self
+    public function setNumberOfPieces(string $numberOfPieces): self
     {
         $this->initialized['numberOfPieces'] = true;
         $this->numberOfPieces = $numberOfPieces;
@@ -116,7 +116,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getDescriptionOfCommodity() : string
+    public function getDescriptionOfCommodity(): string
     {
         return $this->descriptionOfCommodity;
     }
@@ -127,7 +127,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setDescriptionOfCommodity(string $descriptionOfCommodity) : self
+    public function setDescriptionOfCommodity(string $descriptionOfCommodity): self
     {
         $this->initialized['descriptionOfCommodity'] = true;
         $this->descriptionOfCommodity = $descriptionOfCommodity;
@@ -138,7 +138,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return ShipmentDetailWeight
      */
-    public function getWeight() : ShipmentDetailWeight
+    public function getWeight(): ShipmentDetailWeight
     {
         return $this->weight;
     }
@@ -149,7 +149,7 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(ShipmentDetailWeight $weight) : self
+    public function setWeight(ShipmentDetailWeight $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

@@ -8,7 +8,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -318,7 +318,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return list<string>
     */
-    public function getFormType() : array
+    public function getFormType(): array
     {
         return $this->formType;
     }
@@ -346,7 +346,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return self
     */
-    public function setFormType(array $formType) : self
+    public function setFormType(array $formType): self
     {
         $this->initialized['formType'] = true;
         $this->formType = $formType;
@@ -357,7 +357,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsUserCreatedForm
      */
-    public function getUserCreatedForm() : InternationalFormsUserCreatedForm
+    public function getUserCreatedForm(): InternationalFormsUserCreatedForm
     {
         return $this->userCreatedForm;
     }
@@ -368,7 +368,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setUserCreatedForm(InternationalFormsUserCreatedForm $userCreatedForm) : self
+    public function setUserCreatedForm(InternationalFormsUserCreatedForm $userCreatedForm): self
     {
         $this->initialized['userCreatedForm'] = true;
         $this->userCreatedForm = $userCreatedForm;
@@ -379,7 +379,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsUPSPremiumCareForm
      */
-    public function getUPSPremiumCareForm() : InternationalFormsUPSPremiumCareForm
+    public function getUPSPremiumCareForm(): InternationalFormsUPSPremiumCareForm
     {
         return $this->uPSPremiumCareForm;
     }
@@ -390,7 +390,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSPremiumCareForm(InternationalFormsUPSPremiumCareForm $uPSPremiumCareForm) : self
+    public function setUPSPremiumCareForm(InternationalFormsUPSPremiumCareForm $uPSPremiumCareForm): self
     {
         $this->initialized['uPSPremiumCareForm'] = true;
         $this->uPSPremiumCareForm = $uPSPremiumCareForm;
@@ -401,7 +401,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsCN22Form
      */
-    public function getCN22Form() : InternationalFormsCN22Form
+    public function getCN22Form(): InternationalFormsCN22Form
     {
         return $this->cN22Form;
     }
@@ -412,7 +412,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22Form(InternationalFormsCN22Form $cN22Form) : self
+    public function setCN22Form(InternationalFormsCN22Form $cN22Form): self
     {
         $this->initialized['cN22Form'] = true;
         $this->cN22Form = $cN22Form;
@@ -428,7 +428,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return string
     */
-    public function getAdditionalDocumentIndicator() : string
+    public function getAdditionalDocumentIndicator(): string
     {
         return $this->additionalDocumentIndicator;
     }
@@ -444,7 +444,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return self
     */
-    public function setAdditionalDocumentIndicator(string $additionalDocumentIndicator) : self
+    public function setAdditionalDocumentIndicator(string $additionalDocumentIndicator): self
     {
         $this->initialized['additionalDocumentIndicator'] = true;
         $this->additionalDocumentIndicator = $additionalDocumentIndicator;
@@ -455,7 +455,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getFormGroupIdName() : string
+    public function getFormGroupIdName(): string
     {
         return $this->formGroupIdName;
     }
@@ -466,7 +466,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setFormGroupIdName(string $formGroupIdName) : self
+    public function setFormGroupIdName(string $formGroupIdName): self
     {
         $this->initialized['formGroupIdName'] = true;
         $this->formGroupIdName = $formGroupIdName;
@@ -477,7 +477,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsEEIFilingOption
      */
-    public function getEEIFilingOption() : InternationalFormsEEIFilingOption
+    public function getEEIFilingOption(): InternationalFormsEEIFilingOption
     {
         return $this->eEIFilingOption;
     }
@@ -488,7 +488,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setEEIFilingOption(InternationalFormsEEIFilingOption $eEIFilingOption) : self
+    public function setEEIFilingOption(InternationalFormsEEIFilingOption $eEIFilingOption): self
     {
         $this->initialized['eEIFilingOption'] = true;
         $this->eEIFilingOption = $eEIFilingOption;
@@ -499,7 +499,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsContacts
      */
-    public function getContacts() : InternationalFormsContacts
+    public function getContacts(): InternationalFormsContacts
     {
         return $this->contacts;
     }
@@ -510,7 +510,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setContacts(InternationalFormsContacts $contacts) : self
+    public function setContacts(InternationalFormsContacts $contacts): self
     {
         $this->initialized['contacts'] = true;
         $this->contacts = $contacts;
@@ -521,7 +521,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return list<InternationalFormsProduct>|null
      */
-    public function getProduct() : ?array
+    public function getProduct(): ?array
     {
         return $this->product;
     }
@@ -532,7 +532,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setProduct(?array $product) : self
+    public function setProduct(?array $product): self
     {
         $this->initialized['product'] = true;
         $this->product = $product;
@@ -543,7 +543,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getInvoiceNumber() : string
+    public function getInvoiceNumber(): string
     {
         return $this->invoiceNumber;
     }
@@ -554,7 +554,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setInvoiceNumber(string $invoiceNumber) : self
+    public function setInvoiceNumber(string $invoiceNumber): self
     {
         $this->initialized['invoiceNumber'] = true;
         $this->invoiceNumber = $invoiceNumber;
@@ -565,7 +565,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getInvoiceDate() : string
+    public function getInvoiceDate(): string
     {
         return $this->invoiceDate;
     }
@@ -576,7 +576,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setInvoiceDate(string $invoiceDate) : self
+    public function setInvoiceDate(string $invoiceDate): self
     {
         $this->initialized['invoiceDate'] = true;
         $this->invoiceDate = $invoiceDate;
@@ -587,7 +587,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getPurchaseOrderNumber() : string
+    public function getPurchaseOrderNumber(): string
     {
         return $this->purchaseOrderNumber;
     }
@@ -598,7 +598,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(string $purchaseOrderNumber) : self
+    public function setPurchaseOrderNumber(string $purchaseOrderNumber): self
     {
         $this->initialized['purchaseOrderNumber'] = true;
         $this->purchaseOrderNumber = $purchaseOrderNumber;
@@ -624,7 +624,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return string
     */
-    public function getTermsOfShipment() : string
+    public function getTermsOfShipment(): string
     {
         return $this->termsOfShipment;
     }
@@ -650,7 +650,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return self
     */
-    public function setTermsOfShipment(string $termsOfShipment) : self
+    public function setTermsOfShipment(string $termsOfShipment): self
     {
         $this->initialized['termsOfShipment'] = true;
         $this->termsOfShipment = $termsOfShipment;
@@ -662,7 +662,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return string
     */
-    public function getReasonForExport() : string
+    public function getReasonForExport(): string
     {
         return $this->reasonForExport;
     }
@@ -674,7 +674,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return self
     */
-    public function setReasonForExport(string $reasonForExport) : self
+    public function setReasonForExport(string $reasonForExport): self
     {
         $this->initialized['reasonForExport'] = true;
         $this->reasonForExport = $reasonForExport;
@@ -685,7 +685,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getComments() : string
+    public function getComments(): string
     {
         return $this->comments;
     }
@@ -696,7 +696,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setComments(string $comments) : self
+    public function setComments(string $comments): self
     {
         $this->initialized['comments'] = true;
         $this->comments = $comments;
@@ -707,7 +707,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getDeclarationStatement() : string
+    public function getDeclarationStatement(): string
     {
         return $this->declarationStatement;
     }
@@ -718,7 +718,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setDeclarationStatement(string $declarationStatement) : self
+    public function setDeclarationStatement(string $declarationStatement): self
     {
         $this->initialized['declarationStatement'] = true;
         $this->declarationStatement = $declarationStatement;
@@ -729,7 +729,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsDiscount
      */
-    public function getDiscount() : InternationalFormsDiscount
+    public function getDiscount(): InternationalFormsDiscount
     {
         return $this->discount;
     }
@@ -740,7 +740,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setDiscount(InternationalFormsDiscount $discount) : self
+    public function setDiscount(InternationalFormsDiscount $discount): self
     {
         $this->initialized['discount'] = true;
         $this->discount = $discount;
@@ -751,7 +751,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsFreightCharges
      */
-    public function getFreightCharges() : InternationalFormsFreightCharges
+    public function getFreightCharges(): InternationalFormsFreightCharges
     {
         return $this->freightCharges;
     }
@@ -762,7 +762,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightCharges(InternationalFormsFreightCharges $freightCharges) : self
+    public function setFreightCharges(InternationalFormsFreightCharges $freightCharges): self
     {
         $this->initialized['freightCharges'] = true;
         $this->freightCharges = $freightCharges;
@@ -773,7 +773,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsInsuranceCharges
      */
-    public function getInsuranceCharges() : InternationalFormsInsuranceCharges
+    public function getInsuranceCharges(): InternationalFormsInsuranceCharges
     {
         return $this->insuranceCharges;
     }
@@ -784,7 +784,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setInsuranceCharges(InternationalFormsInsuranceCharges $insuranceCharges) : self
+    public function setInsuranceCharges(InternationalFormsInsuranceCharges $insuranceCharges): self
     {
         $this->initialized['insuranceCharges'] = true;
         $this->insuranceCharges = $insuranceCharges;
@@ -795,7 +795,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsOtherCharges
      */
-    public function getOtherCharges() : InternationalFormsOtherCharges
+    public function getOtherCharges(): InternationalFormsOtherCharges
     {
         return $this->otherCharges;
     }
@@ -806,7 +806,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setOtherCharges(InternationalFormsOtherCharges $otherCharges) : self
+    public function setOtherCharges(InternationalFormsOtherCharges $otherCharges): self
     {
         $this->initialized['otherCharges'] = true;
         $this->otherCharges = $otherCharges;
@@ -817,7 +817,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -828,7 +828,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -839,7 +839,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return InternationalFormsBlanketPeriod
      */
-    public function getBlanketPeriod() : InternationalFormsBlanketPeriod
+    public function getBlanketPeriod(): InternationalFormsBlanketPeriod
     {
         return $this->blanketPeriod;
     }
@@ -850,7 +850,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setBlanketPeriod(InternationalFormsBlanketPeriod $blanketPeriod) : self
+    public function setBlanketPeriod(InternationalFormsBlanketPeriod $blanketPeriod): self
     {
         $this->initialized['blanketPeriod'] = true;
         $this->blanketPeriod = $blanketPeriod;
@@ -861,7 +861,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getExportDate() : string
+    public function getExportDate(): string
     {
         return $this->exportDate;
     }
@@ -872,7 +872,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setExportDate(string $exportDate) : self
+    public function setExportDate(string $exportDate): self
     {
         $this->initialized['exportDate'] = true;
         $this->exportDate = $exportDate;
@@ -886,7 +886,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return string
     */
-    public function getExportingCarrier() : string
+    public function getExportingCarrier(): string
     {
         return $this->exportingCarrier;
     }
@@ -900,7 +900,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return self
     */
-    public function setExportingCarrier(string $exportingCarrier) : self
+    public function setExportingCarrier(string $exportingCarrier): self
     {
         $this->initialized['exportingCarrier'] = true;
         $this->exportingCarrier = $exportingCarrier;
@@ -911,7 +911,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getCarrierID() : string
+    public function getCarrierID(): string
     {
         return $this->carrierID;
     }
@@ -922,7 +922,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setCarrierID(string $carrierID) : self
+    public function setCarrierID(string $carrierID): self
     {
         $this->initialized['carrierID'] = true;
         $this->carrierID = $carrierID;
@@ -933,7 +933,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getInBondCode() : string
+    public function getInBondCode(): string
     {
         return $this->inBondCode;
     }
@@ -944,7 +944,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setInBondCode(string $inBondCode) : self
+    public function setInBondCode(string $inBondCode): self
     {
         $this->initialized['inBondCode'] = true;
         $this->inBondCode = $inBondCode;
@@ -955,7 +955,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getEntryNumber() : string
+    public function getEntryNumber(): string
     {
         return $this->entryNumber;
     }
@@ -966,7 +966,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setEntryNumber(string $entryNumber) : self
+    public function setEntryNumber(string $entryNumber): self
     {
         $this->initialized['entryNumber'] = true;
         $this->entryNumber = $entryNumber;
@@ -977,7 +977,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getPointOfOrigin() : string
+    public function getPointOfOrigin(): string
     {
         return $this->pointOfOrigin;
     }
@@ -988,7 +988,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setPointOfOrigin(string $pointOfOrigin) : self
+    public function setPointOfOrigin(string $pointOfOrigin): self
     {
         $this->initialized['pointOfOrigin'] = true;
         $this->pointOfOrigin = $pointOfOrigin;
@@ -999,7 +999,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getPointOfOriginType() : string
+    public function getPointOfOriginType(): string
     {
         return $this->pointOfOriginType;
     }
@@ -1010,7 +1010,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setPointOfOriginType(string $pointOfOriginType) : self
+    public function setPointOfOriginType(string $pointOfOriginType): self
     {
         $this->initialized['pointOfOriginType'] = true;
         $this->pointOfOriginType = $pointOfOriginType;
@@ -1021,7 +1021,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getModeOfTransport() : string
+    public function getModeOfTransport(): string
     {
         return $this->modeOfTransport;
     }
@@ -1032,7 +1032,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setModeOfTransport(string $modeOfTransport) : self
+    public function setModeOfTransport(string $modeOfTransport): self
     {
         $this->initialized['modeOfTransport'] = true;
         $this->modeOfTransport = $modeOfTransport;
@@ -1043,7 +1043,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getPortOfExport() : string
+    public function getPortOfExport(): string
     {
         return $this->portOfExport;
     }
@@ -1054,7 +1054,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setPortOfExport(string $portOfExport) : self
+    public function setPortOfExport(string $portOfExport): self
     {
         $this->initialized['portOfExport'] = true;
         $this->portOfExport = $portOfExport;
@@ -1065,7 +1065,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getPortOfUnloading() : string
+    public function getPortOfUnloading(): string
     {
         return $this->portOfUnloading;
     }
@@ -1076,7 +1076,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setPortOfUnloading(string $portOfUnloading) : self
+    public function setPortOfUnloading(string $portOfUnloading): self
     {
         $this->initialized['portOfUnloading'] = true;
         $this->portOfUnloading = $portOfUnloading;
@@ -1087,7 +1087,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getLoadingPier() : string
+    public function getLoadingPier(): string
     {
         return $this->loadingPier;
     }
@@ -1098,7 +1098,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setLoadingPier(string $loadingPier) : self
+    public function setLoadingPier(string $loadingPier): self
     {
         $this->initialized['loadingPier'] = true;
         $this->loadingPier = $loadingPier;
@@ -1118,7 +1118,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return string
     */
-    public function getPartiesToTransaction() : string
+    public function getPartiesToTransaction(): string
     {
         return $this->partiesToTransaction;
     }
@@ -1138,7 +1138,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
     *
     * @return self
     */
-    public function setPartiesToTransaction(string $partiesToTransaction) : self
+    public function setPartiesToTransaction(string $partiesToTransaction): self
     {
         $this->initialized['partiesToTransaction'] = true;
         $this->partiesToTransaction = $partiesToTransaction;
@@ -1149,7 +1149,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getRoutedExportTransactionIndicator() : string
+    public function getRoutedExportTransactionIndicator(): string
     {
         return $this->routedExportTransactionIndicator;
     }
@@ -1160,7 +1160,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setRoutedExportTransactionIndicator(string $routedExportTransactionIndicator) : self
+    public function setRoutedExportTransactionIndicator(string $routedExportTransactionIndicator): self
     {
         $this->initialized['routedExportTransactionIndicator'] = true;
         $this->routedExportTransactionIndicator = $routedExportTransactionIndicator;
@@ -1171,7 +1171,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getContainerizedIndicator() : string
+    public function getContainerizedIndicator(): string
     {
         return $this->containerizedIndicator;
     }
@@ -1182,7 +1182,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setContainerizedIndicator(string $containerizedIndicator) : self
+    public function setContainerizedIndicator(string $containerizedIndicator): self
     {
         $this->initialized['containerizedIndicator'] = true;
         $this->containerizedIndicator = $containerizedIndicator;
@@ -1193,7 +1193,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getOverridePaperlessIndicator() : string
+    public function getOverridePaperlessIndicator(): string
     {
         return $this->overridePaperlessIndicator;
     }
@@ -1204,7 +1204,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setOverridePaperlessIndicator(string $overridePaperlessIndicator) : self
+    public function setOverridePaperlessIndicator(string $overridePaperlessIndicator): self
     {
         $this->initialized['overridePaperlessIndicator'] = true;
         $this->overridePaperlessIndicator = $overridePaperlessIndicator;
@@ -1215,7 +1215,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperMemo() : string
+    public function getShipperMemo(): string
     {
         return $this->shipperMemo;
     }
@@ -1226,7 +1226,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperMemo(string $shipperMemo) : self
+    public function setShipperMemo(string $shipperMemo): self
     {
         $this->initialized['shipperMemo'] = true;
         $this->shipperMemo = $shipperMemo;
@@ -1237,7 +1237,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return string
      */
-    public function getHazardousMaterialsIndicator() : string
+    public function getHazardousMaterialsIndicator(): string
     {
         return $this->hazardousMaterialsIndicator;
     }
@@ -1248,7 +1248,7 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      *
      * @return self
      */
-    public function setHazardousMaterialsIndicator(string $hazardousMaterialsIndicator) : self
+    public function setHazardousMaterialsIndicator(string $hazardousMaterialsIndicator): self
     {
         $this->initialized['hazardousMaterialsIndicator'] = true;
         $this->hazardousMaterialsIndicator = $hazardousMaterialsIndicator;

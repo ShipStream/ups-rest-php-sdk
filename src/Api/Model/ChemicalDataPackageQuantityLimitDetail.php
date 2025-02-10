@@ -8,7 +8,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -60,7 +60,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getPackageQuantityLimitTypeCode() : string
+    public function getPackageQuantityLimitTypeCode(): string
     {
         return $this->packageQuantityLimitTypeCode;
     }
@@ -80,7 +80,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setPackageQuantityLimitTypeCode(string $packageQuantityLimitTypeCode) : self
+    public function setPackageQuantityLimitTypeCode(string $packageQuantityLimitTypeCode): self
     {
         $this->initialized['packageQuantityLimitTypeCode'] = true;
         $this->packageQuantityLimitTypeCode = $packageQuantityLimitTypeCode;
@@ -91,7 +91,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -102,7 +102,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -114,7 +114,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getUOM() : string
+    public function getUOM(): string
     {
         return $this->uOM;
     }
@@ -126,7 +126,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setUOM(string $uOM) : self
+    public function setUOM(string $uOM): self
     {
         $this->initialized['uOM'] = true;
         $this->uOM = $uOM;
@@ -137,7 +137,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingInstructionCode() : string
+    public function getPackagingInstructionCode(): string
     {
         return $this->packagingInstructionCode;
     }
@@ -148,7 +148,7 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingInstructionCode(string $packagingInstructionCode) : self
+    public function setPackagingInstructionCode(string $packagingInstructionCode): self
     {
         $this->initialized['packagingInstructionCode'] = true;
         $this->packagingInstructionCode = $packagingInstructionCode;

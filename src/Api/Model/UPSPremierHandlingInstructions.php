@@ -8,7 +8,7 @@ class UPSPremierHandlingInstructions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class UPSPremierHandlingInstructions extends \ArrayObject
      *
      * @return string
      */
-    public function getInstruction() : string
+    public function getInstruction(): string
     {
         return $this->instruction;
     }
@@ -34,7 +34,7 @@ class UPSPremierHandlingInstructions extends \ArrayObject
      *
      * @return self
      */
-    public function setInstruction(string $instruction) : self
+    public function setInstruction(string $instruction): self
     {
         $this->initialized['instruction'] = true;
         $this->instruction = $instruction;

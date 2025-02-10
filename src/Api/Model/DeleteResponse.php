@@ -8,7 +8,7 @@ class DeleteResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class DeleteResponse extends \ArrayObject
      *
      * @return DeleteResponseResponse
      */
-    public function getResponse() : DeleteResponseResponse
+    public function getResponse(): DeleteResponseResponse
     {
         return $this->response;
     }
@@ -34,7 +34,7 @@ class DeleteResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(DeleteResponseResponse $response) : self
+    public function setResponse(DeleteResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;

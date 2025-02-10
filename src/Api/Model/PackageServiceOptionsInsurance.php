@@ -8,7 +8,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      *
      * @return InsuranceBasicFlexibleParcelIndicator
      */
-    public function getBasicFlexibleParcelIndicator() : InsuranceBasicFlexibleParcelIndicator
+    public function getBasicFlexibleParcelIndicator(): InsuranceBasicFlexibleParcelIndicator
     {
         return $this->basicFlexibleParcelIndicator;
     }
@@ -46,7 +46,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      *
      * @return self
      */
-    public function setBasicFlexibleParcelIndicator(InsuranceBasicFlexibleParcelIndicator $basicFlexibleParcelIndicator) : self
+    public function setBasicFlexibleParcelIndicator(InsuranceBasicFlexibleParcelIndicator $basicFlexibleParcelIndicator): self
     {
         $this->initialized['basicFlexibleParcelIndicator'] = true;
         $this->basicFlexibleParcelIndicator = $basicFlexibleParcelIndicator;
@@ -57,7 +57,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      *
      * @return InsuranceExtendedFlexibleParcelIndicator
      */
-    public function getExtendedFlexibleParcelIndicator() : InsuranceExtendedFlexibleParcelIndicator
+    public function getExtendedFlexibleParcelIndicator(): InsuranceExtendedFlexibleParcelIndicator
     {
         return $this->extendedFlexibleParcelIndicator;
     }
@@ -68,7 +68,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      *
      * @return self
      */
-    public function setExtendedFlexibleParcelIndicator(InsuranceExtendedFlexibleParcelIndicator $extendedFlexibleParcelIndicator) : self
+    public function setExtendedFlexibleParcelIndicator(InsuranceExtendedFlexibleParcelIndicator $extendedFlexibleParcelIndicator): self
     {
         $this->initialized['extendedFlexibleParcelIndicator'] = true;
         $this->extendedFlexibleParcelIndicator = $extendedFlexibleParcelIndicator;
@@ -79,7 +79,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      *
      * @return InsuranceTimeInTransitFlexibleParcelIndicator
      */
-    public function getTimeInTransitFlexibleParcelIndicator() : InsuranceTimeInTransitFlexibleParcelIndicator
+    public function getTimeInTransitFlexibleParcelIndicator(): InsuranceTimeInTransitFlexibleParcelIndicator
     {
         return $this->timeInTransitFlexibleParcelIndicator;
     }
@@ -90,7 +90,7 @@ class PackageServiceOptionsInsurance extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeInTransitFlexibleParcelIndicator(InsuranceTimeInTransitFlexibleParcelIndicator $timeInTransitFlexibleParcelIndicator) : self
+    public function setTimeInTransitFlexibleParcelIndicator(InsuranceTimeInTransitFlexibleParcelIndicator $timeInTransitFlexibleParcelIndicator): self
     {
         $this->initialized['timeInTransitFlexibleParcelIndicator'] = true;
         $this->timeInTransitFlexibleParcelIndicator = $timeInTransitFlexibleParcelIndicator;

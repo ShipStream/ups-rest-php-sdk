@@ -8,7 +8,7 @@ class PickupCancelRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -38,7 +38,7 @@ class PickupCancelRequest extends \ArrayObject
      *
      * @return PickupCancelRequestRequest
      */
-    public function getRequest() : PickupCancelRequestRequest
+    public function getRequest(): PickupCancelRequestRequest
     {
         return $this->request;
     }
@@ -49,7 +49,7 @@ class PickupCancelRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PickupCancelRequestRequest $request) : self
+    public function setRequest(PickupCancelRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -62,7 +62,7 @@ class PickupCancelRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getCancelBy() : string
+    public function getCancelBy(): string
     {
         return $this->cancelBy;
     }
@@ -75,7 +75,7 @@ class PickupCancelRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setCancelBy(string $cancelBy) : self
+    public function setCancelBy(string $cancelBy): self
     {
         $this->initialized['cancelBy'] = true;
         $this->cancelBy = $cancelBy;
@@ -87,7 +87,7 @@ class PickupCancelRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getPRN() : string
+    public function getPRN(): string
     {
         return $this->pRN;
     }
@@ -99,7 +99,7 @@ class PickupCancelRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPRN(string $pRN) : self
+    public function setPRN(string $pRN): self
     {
         $this->initialized['pRN'] = true;
         $this->pRN = $pRN;

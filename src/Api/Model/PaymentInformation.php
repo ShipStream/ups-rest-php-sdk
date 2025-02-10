@@ -8,7 +8,7 @@ class PaymentInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getAmount() : string
+    public function getAmount(): string
     {
         return $this->amount;
     }
@@ -64,7 +64,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setAmount(string $amount) : self
+    public function setAmount(string $amount): self
     {
         $this->initialized['amount'] = true;
         $this->amount = $amount;
@@ -75,7 +75,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrency() : string
+    public function getCurrency(): string
     {
         return $this->currency;
     }
@@ -86,7 +86,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrency(string $currency) : self
+    public function setCurrency(string $currency): self
     {
         $this->initialized['currency'] = true;
         $this->currency = $currency;
@@ -97,7 +97,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getId() : string
+    public function getId(): string
     {
         return $this->id;
     }
@@ -108,7 +108,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setId(string $id) : self
+    public function setId(string $id): self
     {
         $this->initialized['id'] = true;
         $this->id = $id;
@@ -119,7 +119,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return bool
      */
-    public function getPaid() : bool
+    public function getPaid(): bool
     {
         return $this->paid;
     }
@@ -130,7 +130,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPaid(bool $paid) : self
+    public function setPaid(bool $paid): self
     {
         $this->initialized['paid'] = true;
         $this->paid = $paid;
@@ -141,7 +141,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getPaymentMethod() : string
+    public function getPaymentMethod(): string
     {
         return $this->paymentMethod;
     }
@@ -152,7 +152,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPaymentMethod(string $paymentMethod) : self
+    public function setPaymentMethod(string $paymentMethod): self
     {
         $this->initialized['paymentMethod'] = true;
         $this->paymentMethod = $paymentMethod;
@@ -163,7 +163,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -174,7 +174,7 @@ class PaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

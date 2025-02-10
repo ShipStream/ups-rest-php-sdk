@@ -8,7 +8,7 @@ class PRENOTIFICATIONResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PRENOTIFICATIONResponseWrapper extends \ArrayObject
      *
      * @return PreNotificationResponse
      */
-    public function getPreNotificationResponse() : PreNotificationResponse
+    public function getPreNotificationResponse(): PreNotificationResponse
     {
         return $this->preNotificationResponse;
     }
@@ -34,7 +34,7 @@ class PRENOTIFICATIONResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPreNotificationResponse(PreNotificationResponse $preNotificationResponse) : self
+    public function setPreNotificationResponse(PreNotificationResponse $preNotificationResponse): self
     {
         $this->initialized['preNotificationResponse'] = true;
         $this->preNotificationResponse = $preNotificationResponse;

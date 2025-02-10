@@ -8,7 +8,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier(): string
     {
         return $this->packageIdentifier;
     }
@@ -58,7 +58,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(string $packageIdentifier): self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -69,7 +69,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getQValue() : string
+    public function getQValue(): string
     {
         return $this->qValue;
     }
@@ -80,7 +80,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setQValue(string $qValue) : self
+    public function setQValue(string $qValue): self
     {
         $this->initialized['qValue'] = true;
         $this->qValue = $qValue;
@@ -91,7 +91,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getOverPackedIndicator() : string
+    public function getOverPackedIndicator(): string
     {
         return $this->overPackedIndicator;
     }
@@ -102,7 +102,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setOverPackedIndicator(string $overPackedIndicator) : self
+    public function setOverPackedIndicator(string $overPackedIndicator): self
     {
         $this->initialized['overPackedIndicator'] = true;
         $this->overPackedIndicator = $overPackedIndicator;
@@ -113,7 +113,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getAllPackedInOneIndicator() : string
+    public function getAllPackedInOneIndicator(): string
     {
         return $this->allPackedInOneIndicator;
     }
@@ -124,7 +124,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setAllPackedInOneIndicator(string $allPackedInOneIndicator) : self
+    public function setAllPackedInOneIndicator(string $allPackedInOneIndicator): self
     {
         $this->initialized['allPackedInOneIndicator'] = true;
         $this->allPackedInOneIndicator = $allPackedInOneIndicator;
@@ -135,7 +135,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return list<HazMatHazMatChemicalRecord>
      */
-    public function getHazMatChemicalRecord() : array
+    public function getHazMatChemicalRecord(): array
     {
         return $this->hazMatChemicalRecord;
     }
@@ -146,7 +146,7 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setHazMatChemicalRecord(array $hazMatChemicalRecord) : self
+    public function setHazMatChemicalRecord(array $hazMatChemicalRecord): self
     {
         $this->initialized['hazMatChemicalRecord'] = true;
         $this->hazMatChemicalRecord = $hazMatChemicalRecord;

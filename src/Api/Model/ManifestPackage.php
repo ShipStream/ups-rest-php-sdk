@@ -8,7 +8,7 @@ class ManifestPackage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -85,7 +85,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return list<PackageActivity>
      */
-    public function getActivity() : array
+    public function getActivity(): array
     {
         return $this->activity;
     }
@@ -97,7 +97,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setActivity(array $activity) : self
+    public function setActivity(array $activity): self
     {
         $this->initialized['activity'] = true;
         $this->activity = $activity;
@@ -108,7 +108,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -119,7 +119,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -131,7 +131,7 @@ class ManifestPackage extends \ArrayObject
     *
     * @return ManifestPackageDimensions
     */
-    public function getDimensions() : ManifestPackageDimensions
+    public function getDimensions(): ManifestPackageDimensions
     {
         return $this->dimensions;
     }
@@ -143,7 +143,7 @@ class ManifestPackage extends \ArrayObject
     *
     * @return self
     */
-    public function setDimensions(ManifestPackageDimensions $dimensions) : self
+    public function setDimensions(ManifestPackageDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -154,7 +154,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return PackageDimensionalWeight
      */
-    public function getDimensionalWeight() : PackageDimensionalWeight
+    public function getDimensionalWeight(): PackageDimensionalWeight
     {
         return $this->dimensionalWeight;
     }
@@ -165,7 +165,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensionalWeight(PackageDimensionalWeight $dimensionalWeight) : self
+    public function setDimensionalWeight(PackageDimensionalWeight $dimensionalWeight): self
     {
         $this->initialized['dimensionalWeight'] = true;
         $this->dimensionalWeight = $dimensionalWeight;
@@ -176,7 +176,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return ManifestPackagePackageWeight
      */
-    public function getPackageWeight() : ManifestPackagePackageWeight
+    public function getPackageWeight(): ManifestPackagePackageWeight
     {
         return $this->packageWeight;
     }
@@ -187,7 +187,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageWeight(ManifestPackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(ManifestPackagePackageWeight $packageWeight): self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -202,7 +202,7 @@ class ManifestPackage extends \ArrayObject
     *
     * @return string
     */
-    public function getLargePackage() : string
+    public function getLargePackage(): string
     {
         return $this->largePackage;
     }
@@ -217,7 +217,7 @@ class ManifestPackage extends \ArrayObject
     *
     * @return self
     */
-    public function setLargePackage(string $largePackage) : self
+    public function setLargePackage(string $largePackage): self
     {
         $this->initialized['largePackage'] = true;
         $this->largePackage = $largePackage;
@@ -228,7 +228,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -239,7 +239,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -251,7 +251,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return list<ManifestPackageReferenceNumber>
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber(): array
     {
         return $this->referenceNumber;
     }
@@ -263,7 +263,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(array $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -274,7 +274,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return ManifestPackagePackageServiceOptions
      */
-    public function getPackageServiceOptions() : ManifestPackagePackageServiceOptions
+    public function getPackageServiceOptions(): ManifestPackagePackageServiceOptions
     {
         return $this->packageServiceOptions;
     }
@@ -285,7 +285,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageServiceOptions(ManifestPackagePackageServiceOptions $packageServiceOptions) : self
+    public function setPackageServiceOptions(ManifestPackagePackageServiceOptions $packageServiceOptions): self
     {
         $this->initialized['packageServiceOptions'] = true;
         $this->packageServiceOptions = $packageServiceOptions;
@@ -296,7 +296,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getUPSPremiumCareIndicator() : string
+    public function getUPSPremiumCareIndicator(): string
     {
         return $this->uPSPremiumCareIndicator;
     }
@@ -307,7 +307,7 @@ class ManifestPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSPremiumCareIndicator(string $uPSPremiumCareIndicator) : self
+    public function setUPSPremiumCareIndicator(string $uPSPremiumCareIndicator): self
     {
         $this->initialized['uPSPremiumCareIndicator'] = true;
         $this->uPSPremiumCareIndicator = $uPSPremiumCareIndicator;

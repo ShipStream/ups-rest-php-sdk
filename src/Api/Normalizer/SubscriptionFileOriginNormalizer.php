@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin';
+            return $type === \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -43,7 +43,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('PackageReferenceNumber', $data)) {
                 $values = [];
                 foreach ($data['PackageReferenceNumber'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\OriginPackageReferenceNumber::class, 'json', $context);
                 }
                 $object->setPackageReferenceNumber($values);
                 unset($data['PackageReferenceNumber']);
@@ -51,7 +51,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ShipmentReferenceNumber', $data)) {
                 $values_1 = [];
                 foreach ($data['ShipmentReferenceNumber'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\OriginShipmentReferenceNumber::class, 'json', $context);
                 }
                 $object->setShipmentReferenceNumber($values_1);
                 unset($data['ShipmentReferenceNumber']);
@@ -73,11 +73,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Time']);
             }
             if (\array_key_exists('ActivityLocation', $data)) {
-                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], 'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation', 'json', $context));
+                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], \ShipStream\Ups\Api\Model\OriginActivityLocation::class, 'json', $context));
                 unset($data['ActivityLocation']);
             }
             if (\array_key_exists('BillToAccount', $data)) {
-                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], 'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount', 'json', $context));
+                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], \ShipStream\Ups\Api\Model\OriginBillToAccount::class, 'json', $context));
                 unset($data['BillToAccount']);
             }
             if (\array_key_exists('ScheduledDeliveryDate', $data)) {
@@ -95,7 +95,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('packageReferenceNumber') && null !== $object->getPackageReferenceNumber()) {
@@ -135,9 +135,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin' => false];
+            return [\ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class => false];
         }
     }
 } else {
@@ -147,13 +147,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin';
+            return $type === \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class;
         }
         /**
          * @return mixed
@@ -173,7 +173,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('PackageReferenceNumber', $data)) {
                 $values = [];
                 foreach ($data['PackageReferenceNumber'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\OriginPackageReferenceNumber::class, 'json', $context);
                 }
                 $object->setPackageReferenceNumber($values);
                 unset($data['PackageReferenceNumber']);
@@ -181,7 +181,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ShipmentReferenceNumber', $data)) {
                 $values_1 = [];
                 foreach ($data['ShipmentReferenceNumber'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\OriginShipmentReferenceNumber::class, 'json', $context);
                 }
                 $object->setShipmentReferenceNumber($values_1);
                 unset($data['ShipmentReferenceNumber']);
@@ -203,11 +203,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Time']);
             }
             if (\array_key_exists('ActivityLocation', $data)) {
-                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], 'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation', 'json', $context));
+                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], \ShipStream\Ups\Api\Model\OriginActivityLocation::class, 'json', $context));
                 unset($data['ActivityLocation']);
             }
             if (\array_key_exists('BillToAccount', $data)) {
-                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], 'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount', 'json', $context));
+                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], \ShipStream\Ups\Api\Model\OriginBillToAccount::class, 'json', $context));
                 unset($data['BillToAccount']);
             }
             if (\array_key_exists('ScheduledDeliveryDate', $data)) {
@@ -268,9 +268,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin' => false];
+            return [\ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class => false];
         }
     }
 }

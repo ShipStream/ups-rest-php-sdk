@@ -8,7 +8,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -83,7 +83,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -94,7 +94,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -105,7 +105,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return PickupFacilitiesAddress
      */
-    public function getAddress() : PickupFacilitiesAddress
+    public function getAddress(): PickupFacilitiesAddress
     {
         return $this->address;
     }
@@ -116,7 +116,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(PickupFacilitiesAddress $address) : self
+    public function setAddress(PickupFacilitiesAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -127,7 +127,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getSLIC() : string
+    public function getSLIC(): string
     {
         return $this->sLIC;
     }
@@ -138,7 +138,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(string $sLIC): self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -149,7 +149,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -160,7 +160,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -174,7 +174,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     *
     * @return string
     */
-    public function getTimezone() : string
+    public function getTimezone(): string
     {
         return $this->timezone;
     }
@@ -188,7 +188,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     *
     * @return self
     */
-    public function setTimezone(string $timezone) : self
+    public function setTimezone(string $timezone): self
     {
         $this->initialized['timezone'] = true;
         $this->timezone = $timezone;
@@ -199,7 +199,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getPhone() : string
+    public function getPhone(): string
     {
         return $this->phone;
     }
@@ -210,7 +210,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(string $phone) : self
+    public function setPhone(string $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -221,7 +221,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getFax() : string
+    public function getFax(): string
     {
         return $this->fax;
     }
@@ -232,7 +232,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setFax(string $fax) : self
+    public function setFax(string $fax): self
     {
         $this->initialized['fax'] = true;
         $this->fax = $fax;
@@ -243,7 +243,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return PickupFacilitiesFacilityTime
      */
-    public function getFacilityTime() : PickupFacilitiesFacilityTime
+    public function getFacilityTime(): PickupFacilitiesFacilityTime
     {
         return $this->facilityTime;
     }
@@ -254,7 +254,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setFacilityTime(PickupFacilitiesFacilityTime $facilityTime) : self
+    public function setFacilityTime(PickupFacilitiesFacilityTime $facilityTime): self
     {
         $this->initialized['facilityTime'] = true;
         $this->facilityTime = $facilityTime;
@@ -267,7 +267,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     *
     * @return string
     */
-    public function getAirportCode() : string
+    public function getAirportCode(): string
     {
         return $this->airportCode;
     }
@@ -280,7 +280,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     *
     * @return self
     */
-    public function setAirportCode(string $airportCode) : self
+    public function setAirportCode(string $airportCode): self
     {
         $this->initialized['airportCode'] = true;
         $this->airportCode = $airportCode;
@@ -292,7 +292,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     *
     * @return string
     */
-    public function getSortCode() : string
+    public function getSortCode(): string
     {
         return $this->sortCode;
     }
@@ -304,7 +304,7 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
     *
     * @return self
     */
-    public function setSortCode(string $sortCode) : self
+    public function setSortCode(string $sortCode): self
     {
         $this->initialized['sortCode'] = true;
         $this->sortCode = $sortCode;

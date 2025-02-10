@@ -8,7 +8,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -98,7 +98,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return list<DeliveryPackageReferenceNumber>
      */
-    public function getPackageReferenceNumber() : array
+    public function getPackageReferenceNumber(): array
     {
         return $this->packageReferenceNumber;
     }
@@ -110,7 +110,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageReferenceNumber(array $packageReferenceNumber) : self
+    public function setPackageReferenceNumber(array $packageReferenceNumber): self
     {
         $this->initialized['packageReferenceNumber'] = true;
         $this->packageReferenceNumber = $packageReferenceNumber;
@@ -122,7 +122,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return list<DeliveryShipmentReferenceNumber>
      */
-    public function getShipmentReferenceNumber() : array
+    public function getShipmentReferenceNumber(): array
     {
         return $this->shipmentReferenceNumber;
     }
@@ -134,7 +134,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(array $shipmentReferenceNumber) : self
+    public function setShipmentReferenceNumber(array $shipmentReferenceNumber): self
     {
         $this->initialized['shipmentReferenceNumber'] = true;
         $this->shipmentReferenceNumber = $shipmentReferenceNumber;
@@ -145,7 +145,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -156,7 +156,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -167,7 +167,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -178,7 +178,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -189,7 +189,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getDate() : string
+    public function getDate(): string
     {
         return $this->date;
     }
@@ -200,7 +200,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(string $date): self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -211,7 +211,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getTime() : string
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -222,7 +222,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(string $time): self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -233,7 +233,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getDriverRelease() : string
+    public function getDriverRelease(): string
     {
         return $this->driverRelease;
     }
@@ -244,7 +244,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setDriverRelease(string $driverRelease) : self
+    public function setDriverRelease(string $driverRelease): self
     {
         $this->initialized['driverRelease'] = true;
         $this->driverRelease = $driverRelease;
@@ -255,7 +255,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return DeliveryActivityLocation
      */
-    public function getActivityLocation() : DeliveryActivityLocation
+    public function getActivityLocation(): DeliveryActivityLocation
     {
         return $this->activityLocation;
     }
@@ -266,7 +266,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setActivityLocation(DeliveryActivityLocation $activityLocation) : self
+    public function setActivityLocation(DeliveryActivityLocation $activityLocation): self
     {
         $this->initialized['activityLocation'] = true;
         $this->activityLocation = $activityLocation;
@@ -277,7 +277,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return DeliveryDeliveryLocation
      */
-    public function getDeliveryLocation() : DeliveryDeliveryLocation
+    public function getDeliveryLocation(): DeliveryDeliveryLocation
     {
         return $this->deliveryLocation;
     }
@@ -288,7 +288,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryLocation(DeliveryDeliveryLocation $deliveryLocation) : self
+    public function setDeliveryLocation(DeliveryDeliveryLocation $deliveryLocation): self
     {
         $this->initialized['deliveryLocation'] = true;
         $this->deliveryLocation = $deliveryLocation;
@@ -299,7 +299,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return DeliveryCOD
      */
-    public function getCOD() : DeliveryCOD
+    public function getCOD(): DeliveryCOD
     {
         return $this->cOD;
     }
@@ -310,7 +310,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setCOD(DeliveryCOD $cOD) : self
+    public function setCOD(DeliveryCOD $cOD): self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -321,7 +321,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return DeliveryBillToAccount
      */
-    public function getBillToAccount() : DeliveryBillToAccount
+    public function getBillToAccount(): DeliveryBillToAccount
     {
         return $this->billToAccount;
     }
@@ -332,7 +332,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setBillToAccount(DeliveryBillToAccount $billToAccount) : self
+    public function setBillToAccount(DeliveryBillToAccount $billToAccount): self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -343,7 +343,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getLastPickupDate() : string
+    public function getLastPickupDate(): string
     {
         return $this->lastPickupDate;
     }
@@ -354,7 +354,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setLastPickupDate(string $lastPickupDate) : self
+    public function setLastPickupDate(string $lastPickupDate): self
     {
         $this->initialized['lastPickupDate'] = true;
         $this->lastPickupDate = $lastPickupDate;
@@ -365,7 +365,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getAccessPointLocationID() : string
+    public function getAccessPointLocationID(): string
     {
         return $this->accessPointLocationID;
     }
@@ -376,7 +376,7 @@ class SubscriptionFileDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointLocationID(string $accessPointLocationID) : self
+    public function setAccessPointLocationID(string $accessPointLocationID): self
     {
         $this->initialized['accessPointLocationID'] = true;
         $this->accessPointLocationID = $accessPointLocationID;

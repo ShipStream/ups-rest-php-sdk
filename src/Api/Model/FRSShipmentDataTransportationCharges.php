@@ -8,7 +8,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return TransportationChargesGrossCharge
      */
-    public function getGrossCharge() : TransportationChargesGrossCharge
+    public function getGrossCharge(): TransportationChargesGrossCharge
     {
         return $this->grossCharge;
     }
@@ -52,7 +52,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setGrossCharge(TransportationChargesGrossCharge $grossCharge) : self
+    public function setGrossCharge(TransportationChargesGrossCharge $grossCharge): self
     {
         $this->initialized['grossCharge'] = true;
         $this->grossCharge = $grossCharge;
@@ -63,7 +63,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return TransportationChargesDiscountAmount
      */
-    public function getDiscountAmount() : TransportationChargesDiscountAmount
+    public function getDiscountAmount(): TransportationChargesDiscountAmount
     {
         return $this->discountAmount;
     }
@@ -74,7 +74,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setDiscountAmount(TransportationChargesDiscountAmount $discountAmount) : self
+    public function setDiscountAmount(TransportationChargesDiscountAmount $discountAmount): self
     {
         $this->initialized['discountAmount'] = true;
         $this->discountAmount = $discountAmount;
@@ -85,7 +85,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getDiscountPercentage() : string
+    public function getDiscountPercentage(): string
     {
         return $this->discountPercentage;
     }
@@ -96,7 +96,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setDiscountPercentage(string $discountPercentage) : self
+    public function setDiscountPercentage(string $discountPercentage): self
     {
         $this->initialized['discountPercentage'] = true;
         $this->discountPercentage = $discountPercentage;
@@ -107,7 +107,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return TransportationChargesNetCharge
      */
-    public function getNetCharge() : TransportationChargesNetCharge
+    public function getNetCharge(): TransportationChargesNetCharge
     {
         return $this->netCharge;
     }
@@ -118,7 +118,7 @@ class FRSShipmentDataTransportationCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setNetCharge(TransportationChargesNetCharge $netCharge) : self
+    public function setNetCharge(TransportationChargesNetCharge $netCharge): self
     {
         $this->initialized['netCharge'] = true;
         $this->netCharge = $netCharge;

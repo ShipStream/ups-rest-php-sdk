@@ -8,7 +8,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -67,7 +67,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
     *
     * @return string
     */
-    public function getITARExemptionNumber() : string
+    public function getITARExemptionNumber(): string
     {
         return $this->iTARExemptionNumber;
     }
@@ -79,7 +79,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
     *
     * @return self
     */
-    public function setITARExemptionNumber(string $iTARExemptionNumber) : self
+    public function setITARExemptionNumber(string $iTARExemptionNumber): self
     {
         $this->initialized['iTARExemptionNumber'] = true;
         $this->iTARExemptionNumber = $iTARExemptionNumber;
@@ -90,7 +90,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getUSMLCategoryCode() : string
+    public function getUSMLCategoryCode(): string
     {
         return $this->uSMLCategoryCode;
     }
@@ -101,7 +101,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setUSMLCategoryCode(string $uSMLCategoryCode) : self
+    public function setUSMLCategoryCode(string $uSMLCategoryCode): self
     {
         $this->initialized['uSMLCategoryCode'] = true;
         $this->uSMLCategoryCode = $uSMLCategoryCode;
@@ -112,7 +112,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getEligiblePartyIndicator() : string
+    public function getEligiblePartyIndicator(): string
     {
         return $this->eligiblePartyIndicator;
     }
@@ -123,7 +123,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setEligiblePartyIndicator(string $eligiblePartyIndicator) : self
+    public function setEligiblePartyIndicator(string $eligiblePartyIndicator): self
     {
         $this->initialized['eligiblePartyIndicator'] = true;
         $this->eligiblePartyIndicator = $eligiblePartyIndicator;
@@ -134,7 +134,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getRegistrationNumber() : string
+    public function getRegistrationNumber(): string
     {
         return $this->registrationNumber;
     }
@@ -145,7 +145,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setRegistrationNumber(string $registrationNumber) : self
+    public function setRegistrationNumber(string $registrationNumber): self
     {
         $this->initialized['registrationNumber'] = true;
         $this->registrationNumber = $registrationNumber;
@@ -156,7 +156,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -167,7 +167,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -178,7 +178,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return DDTCInformationUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : DDTCInformationUnitOfMeasurement
+    public function getUnitOfMeasurement(): DDTCInformationUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -189,7 +189,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DDTCInformationUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(DDTCInformationUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -200,7 +200,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getSignificantMilitaryEquipmentIndicator() : string
+    public function getSignificantMilitaryEquipmentIndicator(): string
     {
         return $this->significantMilitaryEquipmentIndicator;
     }
@@ -211,7 +211,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setSignificantMilitaryEquipmentIndicator(string $significantMilitaryEquipmentIndicator) : self
+    public function setSignificantMilitaryEquipmentIndicator(string $significantMilitaryEquipmentIndicator): self
     {
         $this->initialized['significantMilitaryEquipmentIndicator'] = true;
         $this->significantMilitaryEquipmentIndicator = $significantMilitaryEquipmentIndicator;
@@ -222,7 +222,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getACMNumber() : string
+    public function getACMNumber(): string
     {
         return $this->aCMNumber;
     }
@@ -233,7 +233,7 @@ class EEIInformationDDTCInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setACMNumber(string $aCMNumber) : self
+    public function setACMNumber(string $aCMNumber): self
     {
         $this->initialized['aCMNumber'] = true;
         $this->aCMNumber = $aCMNumber;

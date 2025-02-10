@@ -8,7 +8,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -44,7 +44,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     *
     * @return string
     */
-    public function getSearchRadius() : string
+    public function getSearchRadius(): string
     {
         return $this->searchRadius;
     }
@@ -58,7 +58,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     *
     * @return self
     */
-    public function setSearchRadius(string $searchRadius) : self
+    public function setSearchRadius(string $searchRadius): self
     {
         $this->initialized['searchRadius'] = true;
         $this->searchRadius = $searchRadius;
@@ -69,7 +69,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
      *
      * @return string
      */
-    public function getDistanceUnitOfMeasure() : string
+    public function getDistanceUnitOfMeasure(): string
     {
         return $this->distanceUnitOfMeasure;
     }
@@ -80,7 +80,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setDistanceUnitOfMeasure(string $distanceUnitOfMeasure) : self
+    public function setDistanceUnitOfMeasure(string $distanceUnitOfMeasure): self
     {
         $this->initialized['distanceUnitOfMeasure'] = true;
         $this->distanceUnitOfMeasure = $distanceUnitOfMeasure;
@@ -94,7 +94,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     *
     * @return string
     */
-    public function getMaximumLocation() : string
+    public function getMaximumLocation(): string
     {
         return $this->maximumLocation;
     }
@@ -108,7 +108,7 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
     *
     * @return self
     */
-    public function setMaximumLocation(string $maximumLocation) : self
+    public function setMaximumLocation(string $maximumLocation): self
     {
         $this->initialized['maximumLocation'] = true;
         $this->maximumLocation = $maximumLocation;

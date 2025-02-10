@@ -8,7 +8,7 @@ class ResponseError extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -55,7 +55,7 @@ class ResponseError extends \ArrayObject
      *
      * @return string
      */
-    public function getErrorSeverity() : string
+    public function getErrorSeverity(): string
     {
         return $this->errorSeverity;
     }
@@ -66,7 +66,7 @@ class ResponseError extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorSeverity(string $errorSeverity) : self
+    public function setErrorSeverity(string $errorSeverity): self
     {
         $this->initialized['errorSeverity'] = true;
         $this->errorSeverity = $errorSeverity;
@@ -77,7 +77,7 @@ class ResponseError extends \ArrayObject
      *
      * @return string
      */
-    public function getErrorCode() : string
+    public function getErrorCode(): string
     {
         return $this->errorCode;
     }
@@ -88,7 +88,7 @@ class ResponseError extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorCode(string $errorCode) : self
+    public function setErrorCode(string $errorCode): self
     {
         $this->initialized['errorCode'] = true;
         $this->errorCode = $errorCode;
@@ -99,7 +99,7 @@ class ResponseError extends \ArrayObject
      *
      * @return string
      */
-    public function getErrorDescription() : string
+    public function getErrorDescription(): string
     {
         return $this->errorDescription;
     }
@@ -110,7 +110,7 @@ class ResponseError extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorDescription(string $errorDescription) : self
+    public function setErrorDescription(string $errorDescription): self
     {
         $this->initialized['errorDescription'] = true;
         $this->errorDescription = $errorDescription;
@@ -121,7 +121,7 @@ class ResponseError extends \ArrayObject
      *
      * @return string
      */
-    public function getMinimumRetrySeconds() : string
+    public function getMinimumRetrySeconds(): string
     {
         return $this->minimumRetrySeconds;
     }
@@ -132,7 +132,7 @@ class ResponseError extends \ArrayObject
      *
      * @return self
      */
-    public function setMinimumRetrySeconds(string $minimumRetrySeconds) : self
+    public function setMinimumRetrySeconds(string $minimumRetrySeconds): self
     {
         $this->initialized['minimumRetrySeconds'] = true;
         $this->minimumRetrySeconds = $minimumRetrySeconds;
@@ -144,7 +144,7 @@ class ResponseError extends \ArrayObject
      *
      * @return list<ErrorErrorLocation>
      */
-    public function getErrorLocation() : array
+    public function getErrorLocation(): array
     {
         return $this->errorLocation;
     }
@@ -156,7 +156,7 @@ class ResponseError extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorLocation(array $errorLocation) : self
+    public function setErrorLocation(array $errorLocation): self
     {
         $this->initialized['errorLocation'] = true;
         $this->errorLocation = $errorLocation;
@@ -168,7 +168,7 @@ class ResponseError extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getErrorDigest() : array
+    public function getErrorDigest(): array
     {
         return $this->errorDigest;
     }
@@ -180,7 +180,7 @@ class ResponseError extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorDigest(array $errorDigest) : self
+    public function setErrorDigest(array $errorDigest): self
     {
         $this->initialized['errorDigest'] = true;
         $this->errorDigest = $errorDigest;

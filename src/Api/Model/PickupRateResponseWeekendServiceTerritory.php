@@ -8,7 +8,7 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -38,7 +38,7 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
     *
     * @return string
     */
-    public function getSatWST() : string
+    public function getSatWST(): string
     {
         return $this->satWST;
     }
@@ -52,7 +52,7 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
     *
     * @return self
     */
-    public function setSatWST(string $satWST) : self
+    public function setSatWST(string $satWST): self
     {
         $this->initialized['satWST'] = true;
         $this->satWST = $satWST;
@@ -66,7 +66,7 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
     *
     * @return string
     */
-    public function getSunWST() : string
+    public function getSunWST(): string
     {
         return $this->sunWST;
     }
@@ -80,7 +80,7 @@ class PickupRateResponseWeekendServiceTerritory extends \ArrayObject
     *
     * @return self
     */
-    public function setSunWST(string $sunWST) : self
+    public function setSunWST(string $sunWST): self
     {
         $this->initialized['sunWST'] = true;
         $this->sunWST = $sunWST;

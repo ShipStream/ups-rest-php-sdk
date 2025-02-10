@@ -8,7 +8,7 @@ class DeliveryInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class DeliveryInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getLocation() : string
+    public function getLocation(): string
     {
         return $this->location;
     }
@@ -46,7 +46,7 @@ class DeliveryInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setLocation(string $location) : self
+    public function setLocation(string $location): self
     {
         $this->initialized['location'] = true;
         $this->location = $location;
@@ -57,7 +57,7 @@ class DeliveryInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getReceivedBy() : string
+    public function getReceivedBy(): string
     {
         return $this->receivedBy;
     }
@@ -68,7 +68,7 @@ class DeliveryInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setReceivedBy(string $receivedBy) : self
+    public function setReceivedBy(string $receivedBy): self
     {
         $this->initialized['receivedBy'] = true;
         $this->receivedBy = $receivedBy;
@@ -79,7 +79,7 @@ class DeliveryInformation extends \ArrayObject
      *
      * @return Signature
      */
-    public function getSignature() : Signature
+    public function getSignature(): Signature
     {
         return $this->signature;
     }
@@ -90,7 +90,7 @@ class DeliveryInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setSignature(Signature $signature) : self
+    public function setSignature(Signature $signature): self
     {
         $this->initialized['signature'] = true;
         $this->signature = $signature;

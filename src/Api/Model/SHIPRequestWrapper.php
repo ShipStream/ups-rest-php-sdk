@@ -8,7 +8,7 @@ class SHIPRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class SHIPRequestWrapper extends \ArrayObject
      *
      * @return ShipmentRequest
      */
-    public function getShipmentRequest() : ShipmentRequest
+    public function getShipmentRequest(): ShipmentRequest
     {
         return $this->shipmentRequest;
     }
@@ -34,7 +34,7 @@ class SHIPRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentRequest(ShipmentRequest $shipmentRequest) : self
+    public function setShipmentRequest(ShipmentRequest $shipmentRequest): self
     {
         $this->initialized['shipmentRequest'] = true;
         $this->shipmentRequest = $shipmentRequest;

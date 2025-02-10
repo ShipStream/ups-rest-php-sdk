@@ -8,7 +8,7 @@ class PickupCreationRequestShipper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -31,7 +31,7 @@ class PickupCreationRequestShipper extends \ArrayObject
     *
     * @return ShipperAccount
     */
-    public function getAccount() : ShipperAccount
+    public function getAccount(): ShipperAccount
     {
         return $this->account;
     }
@@ -43,7 +43,7 @@ class PickupCreationRequestShipper extends \ArrayObject
     *
     * @return self
     */
-    public function setAccount(ShipperAccount $account) : self
+    public function setAccount(ShipperAccount $account): self
     {
         $this->initialized['account'] = true;
         $this->account = $account;
@@ -54,7 +54,7 @@ class PickupCreationRequestShipper extends \ArrayObject
      *
      * @return ShipperChargeCard
      */
-    public function getChargeCard() : ShipperChargeCard
+    public function getChargeCard(): ShipperChargeCard
     {
         return $this->chargeCard;
     }
@@ -65,7 +65,7 @@ class PickupCreationRequestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setChargeCard(ShipperChargeCard $chargeCard) : self
+    public function setChargeCard(ShipperChargeCard $chargeCard): self
     {
         $this->initialized['chargeCard'] = true;
         $this->chargeCard = $chargeCard;

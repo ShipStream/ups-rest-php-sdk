@@ -8,7 +8,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -80,7 +80,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getSubject() : string
+    public function getSubject(): string
     {
         return $this->subject;
     }
@@ -91,7 +91,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setSubject(string $subject) : self
+    public function setSubject(string $subject): self
     {
         $this->initialized['subject'] = true;
         $this->subject = $subject;
@@ -123,7 +123,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
     *
     * @return string
     */
-    public function getSubjectCode() : string
+    public function getSubjectCode(): string
     {
         return $this->subjectCode;
     }
@@ -155,7 +155,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
     *
     * @return self
     */
-    public function setSubjectCode(string $subjectCode) : self
+    public function setSubjectCode(string $subjectCode): self
     {
         $this->initialized['subjectCode'] = true;
         $this->subjectCode = $subjectCode;
@@ -166,7 +166,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getEMailAddress() : array
+    public function getEMailAddress(): array
     {
         return $this->eMailAddress;
     }
@@ -177,7 +177,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(array $eMailAddress) : self
+    public function setEMailAddress(array $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -188,7 +188,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getUndeliverableEMailAddress() : string
+    public function getUndeliverableEMailAddress(): string
     {
         return $this->undeliverableEMailAddress;
     }
@@ -199,7 +199,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress) : self
+    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress): self
     {
         $this->initialized['undeliverableEMailAddress'] = true;
         $this->undeliverableEMailAddress = $undeliverableEMailAddress;
@@ -210,7 +210,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getFromEMailAddress() : string
+    public function getFromEMailAddress(): string
     {
         return $this->fromEMailAddress;
     }
@@ -221,7 +221,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setFromEMailAddress(string $fromEMailAddress) : self
+    public function setFromEMailAddress(string $fromEMailAddress): self
     {
         $this->initialized['fromEMailAddress'] = true;
         $this->fromEMailAddress = $fromEMailAddress;
@@ -232,7 +232,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getFromName() : string
+    public function getFromName(): string
     {
         return $this->fromName;
     }
@@ -243,7 +243,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setFromName(string $fromName) : self
+    public function setFromName(string $fromName): self
     {
         $this->initialized['fromName'] = true;
         $this->fromName = $fromName;
@@ -254,7 +254,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getMemo() : string
+    public function getMemo(): string
     {
         return $this->memo;
     }
@@ -265,7 +265,7 @@ class PackageServiceOptionsNotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setMemo(string $memo) : self
+    public function setMemo(string $memo): self
     {
         $this->initialized['memo'] = true;
         $this->memo = $memo;

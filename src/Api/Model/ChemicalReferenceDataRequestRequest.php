@@ -8,7 +8,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getRequestOption() : array
+    public function getRequestOption(): array
     {
         return $this->requestOption;
     }
@@ -52,7 +52,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequestOption(array $requestOption) : self
+    public function setRequestOption(array $requestOption): self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -69,7 +69,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getSubVersion() : string
+    public function getSubVersion(): string
     {
         return $this->subVersion;
     }
@@ -86,7 +86,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(string $subVersion): self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -97,7 +97,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
      *
      * @return RequestTransactionReference
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference(): RequestTransactionReference
     {
         return $this->transactionReference;
     }
@@ -108,7 +108,7 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(RequestTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

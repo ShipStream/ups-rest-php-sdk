@@ -8,7 +8,7 @@ class UploadRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class UploadRequest extends \ArrayObject
      *
      * @return UploadRequestRequest
      */
-    public function getRequest() : UploadRequestRequest
+    public function getRequest(): UploadRequestRequest
     {
         return $this->request;
     }
@@ -46,7 +46,7 @@ class UploadRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(UploadRequestRequest $request) : self
+    public function setRequest(UploadRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -57,7 +57,7 @@ class UploadRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -68,7 +68,7 @@ class UploadRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -79,7 +79,7 @@ class UploadRequest extends \ArrayObject
      *
      * @return list<UploadRequestUserCreatedForm>
      */
-    public function getUserCreatedForm() : array
+    public function getUserCreatedForm(): array
     {
         return $this->userCreatedForm;
     }
@@ -90,7 +90,7 @@ class UploadRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setUserCreatedForm(array $userCreatedForm) : self
+    public function setUserCreatedForm(array $userCreatedForm): self
     {
         $this->initialized['userCreatedForm'] = true;
         $this->userCreatedForm = $userCreatedForm;

@@ -8,7 +8,7 @@ class XAVResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -54,7 +54,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return XAVResponseResponse
      */
-    public function getResponse() : XAVResponseResponse
+    public function getResponse(): XAVResponseResponse
     {
         return $this->response;
     }
@@ -65,7 +65,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(XAVResponseResponse $response) : self
+    public function setResponse(XAVResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -76,7 +76,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return string|null
      */
-    public function getValidAddressIndicator() : ?string
+    public function getValidAddressIndicator(): ?string
     {
         return $this->validAddressIndicator;
     }
@@ -87,7 +87,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setValidAddressIndicator(?string $validAddressIndicator) : self
+    public function setValidAddressIndicator(?string $validAddressIndicator): self
     {
         $this->initialized['validAddressIndicator'] = true;
         $this->validAddressIndicator = $validAddressIndicator;
@@ -98,7 +98,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return string|null
      */
-    public function getAmbiguousAddressIndicator() : ?string
+    public function getAmbiguousAddressIndicator(): ?string
     {
         return $this->ambiguousAddressIndicator;
     }
@@ -109,7 +109,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setAmbiguousAddressIndicator(?string $ambiguousAddressIndicator) : self
+    public function setAmbiguousAddressIndicator(?string $ambiguousAddressIndicator): self
     {
         $this->initialized['ambiguousAddressIndicator'] = true;
         $this->ambiguousAddressIndicator = $ambiguousAddressIndicator;
@@ -120,7 +120,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return string|null
      */
-    public function getNoCandidatesIndicator() : ?string
+    public function getNoCandidatesIndicator(): ?string
     {
         return $this->noCandidatesIndicator;
     }
@@ -131,7 +131,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setNoCandidatesIndicator(?string $noCandidatesIndicator) : self
+    public function setNoCandidatesIndicator(?string $noCandidatesIndicator): self
     {
         $this->initialized['noCandidatesIndicator'] = true;
         $this->noCandidatesIndicator = $noCandidatesIndicator;
@@ -142,7 +142,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return XAVResponseAddressClassification|null
      */
-    public function getAddressClassification() : ?XAVResponseAddressClassification
+    public function getAddressClassification(): ?XAVResponseAddressClassification
     {
         return $this->addressClassification;
     }
@@ -153,7 +153,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressClassification(?XAVResponseAddressClassification $addressClassification) : self
+    public function setAddressClassification(?XAVResponseAddressClassification $addressClassification): self
     {
         $this->initialized['addressClassification'] = true;
         $this->addressClassification = $addressClassification;
@@ -165,7 +165,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return list<XAVResponseCandidate>|null
      */
-    public function getCandidate() : ?array
+    public function getCandidate(): ?array
     {
         return $this->candidate;
     }
@@ -177,7 +177,7 @@ class XAVResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setCandidate(?array $candidate) : self
+    public function setCandidate(?array $candidate): self
     {
         $this->initialized['candidate'] = true;
         $this->candidate = $candidate;

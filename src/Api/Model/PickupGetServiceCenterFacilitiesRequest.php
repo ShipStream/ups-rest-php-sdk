@@ -8,7 +8,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -54,7 +54,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return PickupGetServiceCenterFacilitiesRequestRequest
      */
-    public function getRequest() : PickupGetServiceCenterFacilitiesRequestRequest
+    public function getRequest(): PickupGetServiceCenterFacilitiesRequestRequest
     {
         return $this->request;
     }
@@ -65,7 +65,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PickupGetServiceCenterFacilitiesRequestRequest $request) : self
+    public function setRequest(PickupGetServiceCenterFacilitiesRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -76,7 +76,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return list<PickupGetServiceCenterFacilitiesRequestPickupPiece>
      */
-    public function getPickupPiece() : array
+    public function getPickupPiece(): array
     {
         return $this->pickupPiece;
     }
@@ -87,7 +87,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupPiece(array $pickupPiece) : self
+    public function setPickupPiece(array $pickupPiece): self
     {
         $this->initialized['pickupPiece'] = true;
         $this->pickupPiece = $pickupPiece;
@@ -98,7 +98,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return PickupGetServiceCenterFacilitiesRequestOriginAddress
      */
-    public function getOriginAddress() : PickupGetServiceCenterFacilitiesRequestOriginAddress
+    public function getOriginAddress(): PickupGetServiceCenterFacilitiesRequestOriginAddress
     {
         return $this->originAddress;
     }
@@ -109,7 +109,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginAddress(PickupGetServiceCenterFacilitiesRequestOriginAddress $originAddress) : self
+    public function setOriginAddress(PickupGetServiceCenterFacilitiesRequestOriginAddress $originAddress): self
     {
         $this->initialized['originAddress'] = true;
         $this->originAddress = $originAddress;
@@ -120,7 +120,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return PickupGetServiceCenterFacilitiesRequestDestinationAddress
      */
-    public function getDestinationAddress() : PickupGetServiceCenterFacilitiesRequestDestinationAddress
+    public function getDestinationAddress(): PickupGetServiceCenterFacilitiesRequestDestinationAddress
     {
         return $this->destinationAddress;
     }
@@ -131,7 +131,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationAddress(PickupGetServiceCenterFacilitiesRequestDestinationAddress $destinationAddress) : self
+    public function setDestinationAddress(PickupGetServiceCenterFacilitiesRequestDestinationAddress $destinationAddress): self
     {
         $this->initialized['destinationAddress'] = true;
         $this->destinationAddress = $destinationAddress;
@@ -143,7 +143,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getLocale() : string
+    public function getLocale(): string
     {
         return $this->locale;
     }
@@ -155,7 +155,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setLocale(string $locale) : self
+    public function setLocale(string $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -166,7 +166,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getProximitySearchIndicator() : string
+    public function getProximitySearchIndicator(): string
     {
         return $this->proximitySearchIndicator;
     }
@@ -177,7 +177,7 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setProximitySearchIndicator(string $proximitySearchIndicator) : self
+    public function setProximitySearchIndicator(string $proximitySearchIndicator): self
     {
         $this->initialized['proximitySearchIndicator'] = true;
         $this->proximitySearchIndicator = $proximitySearchIndicator;

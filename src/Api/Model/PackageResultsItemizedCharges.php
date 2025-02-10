@@ -8,7 +8,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -58,7 +58,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -69,7 +69,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -80,7 +80,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -91,7 +91,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -102,7 +102,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -113,7 +113,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue(): string
     {
         return $this->monetaryValue;
     }
@@ -124,7 +124,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(string $monetaryValue): self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;
@@ -135,7 +135,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getSubType() : string
+    public function getSubType(): string
     {
         return $this->subType;
     }
@@ -146,7 +146,7 @@ class PackageResultsItemizedCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setSubType(string $subType) : self
+    public function setSubType(string $subType): self
     {
         $this->initialized['subType'] = true;
         $this->subType = $subType;

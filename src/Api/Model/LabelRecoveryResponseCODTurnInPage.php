@@ -8,7 +8,7 @@ class LabelRecoveryResponseCODTurnInPage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class LabelRecoveryResponseCODTurnInPage extends \ArrayObject
      *
      * @return LRCODTurnInPageImage
      */
-    public function getImage() : LRCODTurnInPageImage
+    public function getImage(): LRCODTurnInPageImage
     {
         return $this->image;
     }
@@ -34,7 +34,7 @@ class LabelRecoveryResponseCODTurnInPage extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(LRCODTurnInPageImage $image) : self
+    public function setImage(LRCODTurnInPageImage $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

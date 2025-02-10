@@ -8,7 +8,7 @@ class PICKUPServCenterRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PICKUPServCenterRequestWrapper extends \ArrayObject
      *
      * @return PickupGetServiceCenterFacilitiesRequest
      */
-    public function getPickupGetServiceCenterFacilitiesRequest() : PickupGetServiceCenterFacilitiesRequest
+    public function getPickupGetServiceCenterFacilitiesRequest(): PickupGetServiceCenterFacilitiesRequest
     {
         return $this->pickupGetServiceCenterFacilitiesRequest;
     }
@@ -34,7 +34,7 @@ class PICKUPServCenterRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupGetServiceCenterFacilitiesRequest(PickupGetServiceCenterFacilitiesRequest $pickupGetServiceCenterFacilitiesRequest) : self
+    public function setPickupGetServiceCenterFacilitiesRequest(PickupGetServiceCenterFacilitiesRequest $pickupGetServiceCenterFacilitiesRequest): self
     {
         $this->initialized['pickupGetServiceCenterFacilitiesRequest'] = true;
         $this->pickupGetServiceCenterFacilitiesRequest = $pickupGetServiceCenterFacilitiesRequest;

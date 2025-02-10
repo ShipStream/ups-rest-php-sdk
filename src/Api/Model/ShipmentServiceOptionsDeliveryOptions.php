@@ -8,7 +8,7 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLiftGateAtDeliveryIndicator() : string
+    public function getLiftGateAtDeliveryIndicator(): string
     {
         return $this->liftGateAtDeliveryIndicator;
     }
@@ -40,7 +40,7 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLiftGateAtDeliveryIndicator(string $liftGateAtDeliveryIndicator) : self
+    public function setLiftGateAtDeliveryIndicator(string $liftGateAtDeliveryIndicator): self
     {
         $this->initialized['liftGateAtDeliveryIndicator'] = true;
         $this->liftGateAtDeliveryIndicator = $liftGateAtDeliveryIndicator;
@@ -51,7 +51,7 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getDropOffAtUPSFacilityIndicator() : string
+    public function getDropOffAtUPSFacilityIndicator(): string
     {
         return $this->dropOffAtUPSFacilityIndicator;
     }
@@ -62,7 +62,7 @@ class ShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDropOffAtUPSFacilityIndicator(string $dropOffAtUPSFacilityIndicator) : self
+    public function setDropOffAtUPSFacilityIndicator(string $dropOffAtUPSFacilityIndicator): self
     {
         $this->initialized['dropOffAtUPSFacilityIndicator'] = true;
         $this->dropOffAtUPSFacilityIndicator = $dropOffAtUPSFacilityIndicator;

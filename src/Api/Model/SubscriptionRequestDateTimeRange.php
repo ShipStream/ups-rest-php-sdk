@@ -8,7 +8,7 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
      *
      * @return string
      */
-    public function getBeginDateTime() : string
+    public function getBeginDateTime(): string
     {
         return $this->beginDateTime;
     }
@@ -40,7 +40,7 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
      *
      * @return self
      */
-    public function setBeginDateTime(string $beginDateTime) : self
+    public function setBeginDateTime(string $beginDateTime): self
     {
         $this->initialized['beginDateTime'] = true;
         $this->beginDateTime = $beginDateTime;
@@ -51,7 +51,7 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
      *
      * @return string
      */
-    public function getEndDateTime() : string
+    public function getEndDateTime(): string
     {
         return $this->endDateTime;
     }
@@ -62,7 +62,7 @@ class SubscriptionRequestDateTimeRange extends \ArrayObject
      *
      * @return self
      */
-    public function setEndDateTime(string $endDateTime) : self
+    public function setEndDateTime(string $endDateTime): self
     {
         $this->initialized['endDateTime'] = true;
         $this->endDateTime = $endDateTime;

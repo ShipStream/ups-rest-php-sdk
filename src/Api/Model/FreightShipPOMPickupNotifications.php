@@ -8,7 +8,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -46,7 +46,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -57,7 +57,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      *
      * @return FreightShipPickupNotificationsEMailNotification
      */
-    public function getEMailNotification() : FreightShipPickupNotificationsEMailNotification
+    public function getEMailNotification(): FreightShipPickupNotificationsEMailNotification
     {
         return $this->eMailNotification;
     }
@@ -68,7 +68,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailNotification(FreightShipPickupNotificationsEMailNotification $eMailNotification) : self
+    public function setEMailNotification(FreightShipPickupNotificationsEMailNotification $eMailNotification): self
     {
         $this->initialized['eMailNotification'] = true;
         $this->eMailNotification = $eMailNotification;
@@ -79,7 +79,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      *
      * @return string
      */
-    public function getFailedEMail() : string
+    public function getFailedEMail(): string
     {
         return $this->failedEMail;
     }
@@ -90,7 +90,7 @@ class FreightShipPOMPickupNotifications extends \ArrayObject
      *
      * @return self
      */
-    public function setFailedEMail(string $failedEMail) : self
+    public function setFailedEMail(string $failedEMail): self
     {
         $this->initialized['failedEMail'] = true;
         $this->failedEMail = $failedEMail;

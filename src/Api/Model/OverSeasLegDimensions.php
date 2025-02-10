@@ -8,7 +8,7 @@ class OverSeasLegDimensions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -69,7 +69,7 @@ class OverSeasLegDimensions extends \ArrayObject
     *
     * @return string
     */
-    public function getVolume() : string
+    public function getVolume(): string
     {
         return $this->volume;
     }
@@ -91,7 +91,7 @@ class OverSeasLegDimensions extends \ArrayObject
     *
     * @return self
     */
-    public function setVolume(string $volume) : self
+    public function setVolume(string $volume): self
     {
         $this->initialized['volume'] = true;
         $this->volume = $volume;
@@ -102,7 +102,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return string
      */
-    public function getHeight() : string
+    public function getHeight(): string
     {
         return $this->height;
     }
@@ -113,7 +113,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setHeight(string $height) : self
+    public function setHeight(string $height): self
     {
         $this->initialized['height'] = true;
         $this->height = $height;
@@ -124,7 +124,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return string
      */
-    public function getLength() : string
+    public function getLength(): string
     {
         return $this->length;
     }
@@ -135,7 +135,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setLength(string $length) : self
+    public function setLength(string $length): self
     {
         $this->initialized['length'] = true;
         $this->length = $length;
@@ -146,7 +146,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return string
      */
-    public function getWidth() : string
+    public function getWidth(): string
     {
         return $this->width;
     }
@@ -157,7 +157,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(string $width): self
     {
         $this->initialized['width'] = true;
         $this->width = $width;
@@ -168,7 +168,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return DimensionsUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : DimensionsUnitOfMeasurement
+    public function getUnitOfMeasurement(): DimensionsUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -179,7 +179,7 @@ class OverSeasLegDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

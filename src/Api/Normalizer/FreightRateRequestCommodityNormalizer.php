@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity';
+            return $type === \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,15 +49,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('Weight', $data)) {
-                $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
+                $object->setWeight($this->denormalizer->denormalize($data['Weight'], \ShipStream\Ups\Api\Model\CommodityWeight::class, 'json', $context));
                 unset($data['Weight']);
             }
             if (\array_key_exists('AdjustedWeight', $data)) {
-                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
+                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class, 'json', $context));
                 unset($data['AdjustedWeight']);
             }
             if (\array_key_exists('Dimensions', $data)) {
-                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions', 'json', $context));
+                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], \ShipStream\Ups\Api\Model\CommodityDimensions::class, 'json', $context));
                 unset($data['Dimensions']);
             }
             if (\array_key_exists('NumberOfPieces', $data)) {
@@ -65,7 +65,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['NumberOfPieces']);
             }
             if (\array_key_exists('PackagingType', $data)) {
-                $object->setPackagingType($this->denormalizer->denormalize($data['PackagingType'], 'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType', 'json', $context));
+                $object->setPackagingType($this->denormalizer->denormalize($data['PackagingType'], \ShipStream\Ups\Api\Model\CommodityPackagingType::class, 'json', $context));
                 unset($data['PackagingType']);
             }
             if (\array_key_exists('DangerousGoodsIndicator', $data)) {
@@ -73,7 +73,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DangerousGoodsIndicator']);
             }
             if (\array_key_exists('CommodityValue', $data)) {
-                $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue', 'json', $context));
+                $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], \ShipStream\Ups\Api\Model\CommodityCommodityValue::class, 'json', $context));
                 unset($data['CommodityValue']);
             }
             if (\array_key_exists('FreightClass', $data)) {
@@ -85,7 +85,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['NMFCCommodityCode']);
             }
             if (\array_key_exists('NMFCCommodity', $data)) {
-                $object->setNMFCCommodity($this->denormalizer->denormalize($data['NMFCCommodity'], 'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity', 'json', $context));
+                $object->setNMFCCommodity($this->denormalizer->denormalize($data['NMFCCommodity'], \ShipStream\Ups\Api\Model\CommodityNMFCCommodity::class, 'json', $context));
                 unset($data['NMFCCommodity']);
             }
             foreach ($data as $key => $value) {
@@ -95,7 +95,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('commodityID') && null !== $object->getCommodityID()) {
@@ -133,9 +133,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity' => false];
+            return [\ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class => false];
         }
     }
 } else {
@@ -145,13 +145,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity';
+            return $type === \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class;
         }
         /**
          * @return mixed
@@ -177,15 +177,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('Weight', $data)) {
-                $object->setWeight($this->denormalizer->denormalize($data['Weight'], 'ShipStream\\Ups\\Api\\Model\\CommodityWeight', 'json', $context));
+                $object->setWeight($this->denormalizer->denormalize($data['Weight'], \ShipStream\Ups\Api\Model\CommodityWeight::class, 'json', $context));
                 unset($data['Weight']);
             }
             if (\array_key_exists('AdjustedWeight', $data)) {
-                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight', 'json', $context));
+                $object->setAdjustedWeight($this->denormalizer->denormalize($data['AdjustedWeight'], \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class, 'json', $context));
                 unset($data['AdjustedWeight']);
             }
             if (\array_key_exists('Dimensions', $data)) {
-                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions', 'json', $context));
+                $object->setDimensions($this->denormalizer->denormalize($data['Dimensions'], \ShipStream\Ups\Api\Model\CommodityDimensions::class, 'json', $context));
                 unset($data['Dimensions']);
             }
             if (\array_key_exists('NumberOfPieces', $data)) {
@@ -193,7 +193,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['NumberOfPieces']);
             }
             if (\array_key_exists('PackagingType', $data)) {
-                $object->setPackagingType($this->denormalizer->denormalize($data['PackagingType'], 'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType', 'json', $context));
+                $object->setPackagingType($this->denormalizer->denormalize($data['PackagingType'], \ShipStream\Ups\Api\Model\CommodityPackagingType::class, 'json', $context));
                 unset($data['PackagingType']);
             }
             if (\array_key_exists('DangerousGoodsIndicator', $data)) {
@@ -201,7 +201,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DangerousGoodsIndicator']);
             }
             if (\array_key_exists('CommodityValue', $data)) {
-                $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue', 'json', $context));
+                $object->setCommodityValue($this->denormalizer->denormalize($data['CommodityValue'], \ShipStream\Ups\Api\Model\CommodityCommodityValue::class, 'json', $context));
                 unset($data['CommodityValue']);
             }
             if (\array_key_exists('FreightClass', $data)) {
@@ -213,7 +213,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['NMFCCommodityCode']);
             }
             if (\array_key_exists('NMFCCommodity', $data)) {
-                $object->setNMFCCommodity($this->denormalizer->denormalize($data['NMFCCommodity'], 'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity', 'json', $context));
+                $object->setNMFCCommodity($this->denormalizer->denormalize($data['NMFCCommodity'], \ShipStream\Ups\Api\Model\CommodityNMFCCommodity::class, 'json', $context));
                 unset($data['NMFCCommodity']);
             }
             foreach ($data as $key => $value) {
@@ -264,9 +264,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity' => false];
+            return [\ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class => false];
         }
     }
 }

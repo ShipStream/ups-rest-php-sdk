@@ -8,7 +8,7 @@ class PickupCreationResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -55,7 +55,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return PickupCreationResponseResponse
      */
-    public function getResponse() : PickupCreationResponseResponse
+    public function getResponse(): PickupCreationResponseResponse
     {
         return $this->response;
     }
@@ -66,7 +66,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PickupCreationResponseResponse $response) : self
+    public function setResponse(PickupCreationResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -77,7 +77,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getPRN() : string
+    public function getPRN(): string
     {
         return $this->pRN;
     }
@@ -88,7 +88,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setPRN(string $pRN) : self
+    public function setPRN(string $pRN): self
     {
         $this->initialized['pRN'] = true;
         $this->pRN = $pRN;
@@ -99,7 +99,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return PickupCreationResponseWeekendServiceTerritory
      */
-    public function getWeekendServiceTerritory() : PickupCreationResponseWeekendServiceTerritory
+    public function getWeekendServiceTerritory(): PickupCreationResponseWeekendServiceTerritory
     {
         return $this->weekendServiceTerritory;
     }
@@ -110,7 +110,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setWeekendServiceTerritory(PickupCreationResponseWeekendServiceTerritory $weekendServiceTerritory) : self
+    public function setWeekendServiceTerritory(PickupCreationResponseWeekendServiceTerritory $weekendServiceTerritory): self
     {
         $this->initialized['weekendServiceTerritory'] = true;
         $this->weekendServiceTerritory = $weekendServiceTerritory;
@@ -123,7 +123,7 @@ class PickupCreationResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getWeekendServiceTerritoryIndicator() : string
+    public function getWeekendServiceTerritoryIndicator(): string
     {
         return $this->weekendServiceTerritoryIndicator;
     }
@@ -136,7 +136,7 @@ class PickupCreationResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setWeekendServiceTerritoryIndicator(string $weekendServiceTerritoryIndicator) : self
+    public function setWeekendServiceTerritoryIndicator(string $weekendServiceTerritoryIndicator): self
     {
         $this->initialized['weekendServiceTerritoryIndicator'] = true;
         $this->weekendServiceTerritoryIndicator = $weekendServiceTerritoryIndicator;
@@ -147,7 +147,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return PickupCreationResponseRateStatus
      */
-    public function getRateStatus() : PickupCreationResponseRateStatus
+    public function getRateStatus(): PickupCreationResponseRateStatus
     {
         return $this->rateStatus;
     }
@@ -158,7 +158,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRateStatus(PickupCreationResponseRateStatus $rateStatus) : self
+    public function setRateStatus(PickupCreationResponseRateStatus $rateStatus): self
     {
         $this->initialized['rateStatus'] = true;
         $this->rateStatus = $rateStatus;
@@ -169,7 +169,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return PickupCreationResponseRateResult
      */
-    public function getRateResult() : PickupCreationResponseRateResult
+    public function getRateResult(): PickupCreationResponseRateResult
     {
         return $this->rateResult;
     }
@@ -180,7 +180,7 @@ class PickupCreationResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRateResult(PickupCreationResponseRateResult $rateResult) : self
+    public function setRateResult(PickupCreationResponseRateResult $rateResult): self
     {
         $this->initialized['rateResult'] = true;
         $this->rateResult = $rateResult;

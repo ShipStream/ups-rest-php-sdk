@@ -8,7 +8,7 @@ class XAVResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class XAVResponseWrapper extends \ArrayObject
      *
      * @return XAVResponse
      */
-    public function getXAVResponse() : XAVResponse
+    public function getXAVResponse(): XAVResponse
     {
         return $this->xAVResponse;
     }
@@ -34,7 +34,7 @@ class XAVResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setXAVResponse(XAVResponse $xAVResponse) : self
+    public function setXAVResponse(XAVResponse $xAVResponse): self
     {
         $this->initialized['xAVResponse'] = true;
         $this->xAVResponse = $xAVResponse;

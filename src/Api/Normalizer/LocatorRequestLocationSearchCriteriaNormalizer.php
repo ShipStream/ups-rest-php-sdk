@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria';
+            return $type === \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -43,7 +43,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('SearchOption', $data)) {
                 $values = [];
                 foreach ($data['SearchOption'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\LocationSearchCriteriaSearchOption::class, 'json', $context);
                 }
                 $object->setSearchOption($values);
                 unset($data['SearchOption']);
@@ -57,19 +57,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['SearchRadius']);
             }
             if (\array_key_exists('ServiceSearch', $data)) {
-                $object->setServiceSearch($this->denormalizer->denormalize($data['ServiceSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch', 'json', $context));
+                $object->setServiceSearch($this->denormalizer->denormalize($data['ServiceSearch'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaServiceSearch::class, 'json', $context));
                 unset($data['ServiceSearch']);
             }
             if (\array_key_exists('FreightWillCallSearch', $data)) {
-                $object->setFreightWillCallSearch($this->denormalizer->denormalize($data['FreightWillCallSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch', 'json', $context));
+                $object->setFreightWillCallSearch($this->denormalizer->denormalize($data['FreightWillCallSearch'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaFreightWillCallSearch::class, 'json', $context));
                 unset($data['FreightWillCallSearch']);
             }
             if (\array_key_exists('AccessPointSearch', $data)) {
-                $object->setAccessPointSearch($this->denormalizer->denormalize($data['AccessPointSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch', 'json', $context));
+                $object->setAccessPointSearch($this->denormalizer->denormalize($data['AccessPointSearch'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class, 'json', $context));
                 unset($data['AccessPointSearch']);
             }
             if (\array_key_exists('OpenTimeCriteria', $data)) {
-                $object->setOpenTimeCriteria($this->denormalizer->denormalize($data['OpenTimeCriteria'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria', 'json', $context));
+                $object->setOpenTimeCriteria($this->denormalizer->denormalize($data['OpenTimeCriteria'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaOpenTimeCriteria::class, 'json', $context));
                 unset($data['OpenTimeCriteria']);
             }
             if (\array_key_exists('BrexitFilter', $data)) {
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('searchOption') && null !== $object->getSearchOption()) {
@@ -121,9 +121,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria' => false];
+            return [\ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class => false];
         }
     }
 } else {
@@ -133,13 +133,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria';
+            return $type === \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class;
         }
         /**
          * @return mixed
@@ -159,7 +159,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('SearchOption', $data)) {
                 $values = [];
                 foreach ($data['SearchOption'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\LocationSearchCriteriaSearchOption::class, 'json', $context);
                 }
                 $object->setSearchOption($values);
                 unset($data['SearchOption']);
@@ -173,19 +173,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['SearchRadius']);
             }
             if (\array_key_exists('ServiceSearch', $data)) {
-                $object->setServiceSearch($this->denormalizer->denormalize($data['ServiceSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch', 'json', $context));
+                $object->setServiceSearch($this->denormalizer->denormalize($data['ServiceSearch'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaServiceSearch::class, 'json', $context));
                 unset($data['ServiceSearch']);
             }
             if (\array_key_exists('FreightWillCallSearch', $data)) {
-                $object->setFreightWillCallSearch($this->denormalizer->denormalize($data['FreightWillCallSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch', 'json', $context));
+                $object->setFreightWillCallSearch($this->denormalizer->denormalize($data['FreightWillCallSearch'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaFreightWillCallSearch::class, 'json', $context));
                 unset($data['FreightWillCallSearch']);
             }
             if (\array_key_exists('AccessPointSearch', $data)) {
-                $object->setAccessPointSearch($this->denormalizer->denormalize($data['AccessPointSearch'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch', 'json', $context));
+                $object->setAccessPointSearch($this->denormalizer->denormalize($data['AccessPointSearch'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class, 'json', $context));
                 unset($data['AccessPointSearch']);
             }
             if (\array_key_exists('OpenTimeCriteria', $data)) {
-                $object->setOpenTimeCriteria($this->denormalizer->denormalize($data['OpenTimeCriteria'], 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria', 'json', $context));
+                $object->setOpenTimeCriteria($this->denormalizer->denormalize($data['OpenTimeCriteria'], \ShipStream\Ups\Api\Model\LocationSearchCriteriaOpenTimeCriteria::class, 'json', $context));
                 unset($data['OpenTimeCriteria']);
             }
             if (\array_key_exists('BrexitFilter', $data)) {
@@ -240,9 +240,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria' => false];
+            return [\ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class => false];
         }
     }
 }

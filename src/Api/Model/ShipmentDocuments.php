@@ -8,7 +8,7 @@ class ShipmentDocuments extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentDocuments extends \ArrayObject
      *
      * @return list<DocumentsImage>
      */
-    public function getImage() : array
+    public function getImage(): array
     {
         return $this->image;
     }
@@ -40,7 +40,7 @@ class ShipmentDocuments extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(array $image) : self
+    public function setImage(array $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -51,7 +51,7 @@ class ShipmentDocuments extends \ArrayObject
      *
      * @return DocumentsPackingList
      */
-    public function getPackingList() : DocumentsPackingList
+    public function getPackingList(): DocumentsPackingList
     {
         return $this->packingList;
     }
@@ -62,7 +62,7 @@ class ShipmentDocuments extends \ArrayObject
      *
      * @return self
      */
-    public function setPackingList(DocumentsPackingList $packingList) : self
+    public function setPackingList(DocumentsPackingList $packingList): self
     {
         $this->initialized['packingList'] = true;
         $this->packingList = $packingList;

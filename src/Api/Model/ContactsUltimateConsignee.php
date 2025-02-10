@@ -8,7 +8,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -46,7 +46,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -57,7 +57,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      *
      * @return UltimateConsigneeAddress
      */
-    public function getAddress() : UltimateConsigneeAddress
+    public function getAddress(): UltimateConsigneeAddress
     {
         return $this->address;
     }
@@ -68,7 +68,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(UltimateConsigneeAddress $address) : self
+    public function setAddress(UltimateConsigneeAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -79,7 +79,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      *
      * @return UltimateConsigneeUltimateConsigneeType
      */
-    public function getUltimateConsigneeType() : UltimateConsigneeUltimateConsigneeType
+    public function getUltimateConsigneeType(): UltimateConsigneeUltimateConsigneeType
     {
         return $this->ultimateConsigneeType;
     }
@@ -90,7 +90,7 @@ class ContactsUltimateConsignee extends \ArrayObject
      *
      * @return self
      */
-    public function setUltimateConsigneeType(UltimateConsigneeUltimateConsigneeType $ultimateConsigneeType) : self
+    public function setUltimateConsigneeType(UltimateConsigneeUltimateConsigneeType $ultimateConsigneeType): self
     {
         $this->initialized['ultimateConsigneeType'] = true;
         $this->ultimateConsigneeType = $ultimateConsigneeType;

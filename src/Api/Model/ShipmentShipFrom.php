@@ -8,7 +8,7 @@ class ShipmentShipFrom extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -75,7 +75,7 @@ class ShipmentShipFrom extends \ArrayObject
     *
     * @return string
     */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -87,7 +87,7 @@ class ShipmentShipFrom extends \ArrayObject
     *
     * @return self
     */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -99,7 +99,7 @@ class ShipmentShipFrom extends \ArrayObject
     *
     * @return string
     */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -111,7 +111,7 @@ class ShipmentShipFrom extends \ArrayObject
     *
     * @return self
     */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -122,7 +122,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyDisplayableName() : string
+    public function getCompanyDisplayableName(): string
     {
         return $this->companyDisplayableName;
     }
@@ -133,7 +133,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyDisplayableName(string $companyDisplayableName) : self
+    public function setCompanyDisplayableName(string $companyDisplayableName): self
     {
         $this->initialized['companyDisplayableName'] = true;
         $this->companyDisplayableName = $companyDisplayableName;
@@ -145,7 +145,7 @@ class ShipmentShipFrom extends \ArrayObject
     *
     * @return string
     */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;
     }
@@ -157,7 +157,7 @@ class ShipmentShipFrom extends \ArrayObject
     *
     * @return self
     */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(string $taxIdentificationNumber): self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -168,7 +168,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return ShipFromTaxIDType
      */
-    public function getTaxIDType() : ShipFromTaxIDType
+    public function getTaxIDType(): ShipFromTaxIDType
     {
         return $this->taxIDType;
     }
@@ -179,7 +179,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxIDType(ShipFromTaxIDType $taxIDType) : self
+    public function setTaxIDType(ShipFromTaxIDType $taxIDType): self
     {
         $this->initialized['taxIDType'] = true;
         $this->taxIDType = $taxIDType;
@@ -190,7 +190,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return ShipFromPhone
      */
-    public function getPhone() : ShipFromPhone
+    public function getPhone(): ShipFromPhone
     {
         return $this->phone;
     }
@@ -201,7 +201,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(ShipFromPhone $phone) : self
+    public function setPhone(ShipFromPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -212,7 +212,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber(): string
     {
         return $this->faxNumber;
     }
@@ -223,7 +223,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(string $faxNumber): self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -234,7 +234,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return ShipFromAddress
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress(): ShipFromAddress
     {
         return $this->address;
     }
@@ -245,7 +245,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(ShipFromAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -256,7 +256,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return ShipFromVendorInfo
      */
-    public function getVendorInfo() : ShipFromVendorInfo
+    public function getVendorInfo(): ShipFromVendorInfo
     {
         return $this->vendorInfo;
     }
@@ -267,7 +267,7 @@ class ShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setVendorInfo(ShipFromVendorInfo $vendorInfo) : self
+    public function setVendorInfo(ShipFromVendorInfo $vendorInfo): self
     {
         $this->initialized['vendorInfo'] = true;
         $this->vendorInfo = $vendorInfo;

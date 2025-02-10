@@ -8,7 +8,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return CODCODValue
      */
-    public function getCODValue() : CODCODValue
+    public function getCODValue(): CODCODValue
     {
         return $this->cODValue;
     }
@@ -52,7 +52,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODValue(CODCODValue $cODValue) : self
+    public function setCODValue(CODCODValue $cODValue): self
     {
         $this->initialized['cODValue'] = true;
         $this->cODValue = $cODValue;
@@ -63,7 +63,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return CODCODPaymentMethod
      */
-    public function getCODPaymentMethod() : CODCODPaymentMethod
+    public function getCODPaymentMethod(): CODCODPaymentMethod
     {
         return $this->cODPaymentMethod;
     }
@@ -74,7 +74,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODPaymentMethod(CODCODPaymentMethod $cODPaymentMethod) : self
+    public function setCODPaymentMethod(CODCODPaymentMethod $cODPaymentMethod): self
     {
         $this->initialized['cODPaymentMethod'] = true;
         $this->cODPaymentMethod = $cODPaymentMethod;
@@ -85,7 +85,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return CODCODBillingOption
      */
-    public function getCODBillingOption() : CODCODBillingOption
+    public function getCODBillingOption(): CODCODBillingOption
     {
         return $this->cODBillingOption;
     }
@@ -96,7 +96,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODBillingOption(CODCODBillingOption $cODBillingOption) : self
+    public function setCODBillingOption(CODCODBillingOption $cODBillingOption): self
     {
         $this->initialized['cODBillingOption'] = true;
         $this->cODBillingOption = $cODBillingOption;
@@ -107,7 +107,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return CODRemitTo
      */
-    public function getRemitTo() : CODRemitTo
+    public function getRemitTo(): CODRemitTo
     {
         return $this->remitTo;
     }
@@ -118,7 +118,7 @@ class FreightShipmentServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setRemitTo(CODRemitTo $remitTo) : self
+    public function setRemitTo(CODRemitTo $remitTo): self
     {
         $this->initialized['remitTo'] = true;
         $this->remitTo = $remitTo;

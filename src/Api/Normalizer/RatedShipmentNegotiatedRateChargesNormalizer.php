@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges';
+            return $type === \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -43,7 +43,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ItemizedCharges', $data)) {
                 $values = [];
                 foreach ($data['ItemizedCharges'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesItemizedCharges', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\NegotiatedRateChargesItemizedCharges::class, 'json', $context);
                 }
                 $object->setItemizedCharges($values);
                 unset($data['ItemizedCharges']);
@@ -51,17 +51,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('TaxCharges', $data)) {
                 $values_1 = [];
                 foreach ($data['TaxCharges'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTaxCharges', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\NegotiatedRateChargesTaxCharges::class, 'json', $context);
                 }
                 $object->setTaxCharges($values_1);
                 unset($data['TaxCharges']);
             }
             if (\array_key_exists('TotalCharge', $data)) {
-                $object->setTotalCharge($this->denormalizer->denormalize($data['TotalCharge'], 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalCharge', 'json', $context));
+                $object->setTotalCharge($this->denormalizer->denormalize($data['TotalCharge'], \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalCharge::class, 'json', $context));
                 unset($data['TotalCharge']);
             }
             if (\array_key_exists('TotalChargesWithTaxes', $data)) {
-                $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalChargesWithTaxes', 'json', $context));
+                $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalChargesWithTaxes::class, 'json', $context));
                 unset($data['TotalChargesWithTaxes']);
             }
             foreach ($data as $key => $value_2) {
@@ -71,7 +71,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('itemizedCharges') && null !== $object->getItemizedCharges()) {
@@ -99,9 +99,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges' => false];
+            return [\ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class => false];
         }
     }
 } else {
@@ -111,13 +111,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges';
+            return $type === \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class;
         }
         /**
          * @return mixed
@@ -137,7 +137,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ItemizedCharges', $data)) {
                 $values = [];
                 foreach ($data['ItemizedCharges'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesItemizedCharges', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\NegotiatedRateChargesItemizedCharges::class, 'json', $context);
                 }
                 $object->setItemizedCharges($values);
                 unset($data['ItemizedCharges']);
@@ -145,17 +145,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('TaxCharges', $data)) {
                 $values_1 = [];
                 foreach ($data['TaxCharges'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTaxCharges', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\NegotiatedRateChargesTaxCharges::class, 'json', $context);
                 }
                 $object->setTaxCharges($values_1);
                 unset($data['TaxCharges']);
             }
             if (\array_key_exists('TotalCharge', $data)) {
-                $object->setTotalCharge($this->denormalizer->denormalize($data['TotalCharge'], 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalCharge', 'json', $context));
+                $object->setTotalCharge($this->denormalizer->denormalize($data['TotalCharge'], \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalCharge::class, 'json', $context));
                 unset($data['TotalCharge']);
             }
             if (\array_key_exists('TotalChargesWithTaxes', $data)) {
-                $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalChargesWithTaxes', 'json', $context));
+                $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalChargesWithTaxes::class, 'json', $context));
                 unset($data['TotalChargesWithTaxes']);
             }
             foreach ($data as $key => $value_2) {
@@ -196,9 +196,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges' => false];
+            return [\ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class => false];
         }
     }
 }

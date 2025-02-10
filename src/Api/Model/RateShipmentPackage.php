@@ -8,7 +8,7 @@ class RateShipmentPackage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -89,7 +89,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return PackagePackagingType
      */
-    public function getPackagingType() : PackagePackagingType
+    public function getPackagingType(): PackagePackagingType
     {
         return $this->packagingType;
     }
@@ -100,7 +100,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingType(PackagePackagingType $packagingType) : self
+    public function setPackagingType(PackagePackagingType $packagingType): self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -111,7 +111,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return PackageDimensions
      */
-    public function getDimensions() : PackageDimensions
+    public function getDimensions(): PackageDimensions
     {
         return $this->dimensions;
     }
@@ -122,7 +122,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(PackageDimensions $dimensions) : self
+    public function setDimensions(PackageDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -133,7 +133,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return PackageDimWeight
      */
-    public function getDimWeight() : PackageDimWeight
+    public function getDimWeight(): PackageDimWeight
     {
         return $this->dimWeight;
     }
@@ -144,7 +144,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDimWeight(PackageDimWeight $dimWeight) : self
+    public function setDimWeight(PackageDimWeight $dimWeight): self
     {
         $this->initialized['dimWeight'] = true;
         $this->dimWeight = $dimWeight;
@@ -155,7 +155,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return PackagePackageWeight
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight(): PackagePackageWeight
     {
         return $this->packageWeight;
     }
@@ -166,7 +166,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(PackagePackageWeight $packageWeight): self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -177,7 +177,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return PackageCommodity
      */
-    public function getCommodity() : PackageCommodity
+    public function getCommodity(): PackageCommodity
     {
         return $this->commodity;
     }
@@ -188,7 +188,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodity(PackageCommodity $commodity) : self
+    public function setCommodity(PackageCommodity $commodity): self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -199,7 +199,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getLargePackageIndicator() : string
+    public function getLargePackageIndicator(): string
     {
         return $this->largePackageIndicator;
     }
@@ -210,7 +210,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setLargePackageIndicator(string $largePackageIndicator) : self
+    public function setLargePackageIndicator(string $largePackageIndicator): self
     {
         $this->initialized['largePackageIndicator'] = true;
         $this->largePackageIndicator = $largePackageIndicator;
@@ -221,7 +221,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return RatePackagePackageServiceOptions
      */
-    public function getPackageServiceOptions() : RatePackagePackageServiceOptions
+    public function getPackageServiceOptions(): RatePackagePackageServiceOptions
     {
         return $this->packageServiceOptions;
     }
@@ -232,7 +232,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageServiceOptions(RatePackagePackageServiceOptions $packageServiceOptions) : self
+    public function setPackageServiceOptions(RatePackagePackageServiceOptions $packageServiceOptions): self
     {
         $this->initialized['packageServiceOptions'] = true;
         $this->packageServiceOptions = $packageServiceOptions;
@@ -243,7 +243,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getAdditionalHandlingIndicator() : string
+    public function getAdditionalHandlingIndicator(): string
     {
         return $this->additionalHandlingIndicator;
     }
@@ -254,7 +254,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalHandlingIndicator(string $additionalHandlingIndicator) : self
+    public function setAdditionalHandlingIndicator(string $additionalHandlingIndicator): self
     {
         $this->initialized['additionalHandlingIndicator'] = true;
         $this->additionalHandlingIndicator = $additionalHandlingIndicator;
@@ -265,7 +265,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return PackageSimpleRate
      */
-    public function getSimpleRate() : PackageSimpleRate
+    public function getSimpleRate(): PackageSimpleRate
     {
         return $this->simpleRate;
     }
@@ -276,7 +276,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setSimpleRate(PackageSimpleRate $simpleRate) : self
+    public function setSimpleRate(PackageSimpleRate $simpleRate): self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -287,7 +287,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return RatePackageUPSPremier
      */
-    public function getUPSPremier() : RatePackageUPSPremier
+    public function getUPSPremier(): RatePackageUPSPremier
     {
         return $this->uPSPremier;
     }
@@ -298,7 +298,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSPremier(RatePackageUPSPremier $uPSPremier) : self
+    public function setUPSPremier(RatePackageUPSPremier $uPSPremier): self
     {
         $this->initialized['uPSPremier'] = true;
         $this->uPSPremier = $uPSPremier;
@@ -309,7 +309,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getOversizeIndicator() : string
+    public function getOversizeIndicator(): string
     {
         return $this->oversizeIndicator;
     }
@@ -320,7 +320,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setOversizeIndicator(string $oversizeIndicator) : self
+    public function setOversizeIndicator(string $oversizeIndicator): self
     {
         $this->initialized['oversizeIndicator'] = true;
         $this->oversizeIndicator = $oversizeIndicator;
@@ -331,7 +331,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getMinimumBillableWeightIndicator() : string
+    public function getMinimumBillableWeightIndicator(): string
     {
         return $this->minimumBillableWeightIndicator;
     }
@@ -342,7 +342,7 @@ class RateShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setMinimumBillableWeightIndicator(string $minimumBillableWeightIndicator) : self
+    public function setMinimumBillableWeightIndicator(string $minimumBillableWeightIndicator): self
     {
         $this->initialized['minimumBillableWeightIndicator'] = true;
         $this->minimumBillableWeightIndicator = $minimumBillableWeightIndicator;

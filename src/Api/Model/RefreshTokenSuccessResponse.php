@@ -8,7 +8,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -89,7 +89,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getRefreshTokenExpiresIn() : string
+    public function getRefreshTokenExpiresIn(): string
     {
         return $this->refreshTokenExpiresIn;
     }
@@ -100,7 +100,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRefreshTokenExpiresIn(string $refreshTokenExpiresIn) : self
+    public function setRefreshTokenExpiresIn(string $refreshTokenExpiresIn): self
     {
         $this->initialized['refreshTokenExpiresIn'] = true;
         $this->refreshTokenExpiresIn = $refreshTokenExpiresIn;
@@ -111,7 +111,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getRefreshTokenStatus() : string
+    public function getRefreshTokenStatus(): string
     {
         return $this->refreshTokenStatus;
     }
@@ -122,7 +122,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRefreshTokenStatus(string $refreshTokenStatus) : self
+    public function setRefreshTokenStatus(string $refreshTokenStatus): self
     {
         $this->initialized['refreshTokenStatus'] = true;
         $this->refreshTokenStatus = $refreshTokenStatus;
@@ -133,7 +133,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getTokenType() : string
+    public function getTokenType(): string
     {
         return $this->tokenType;
     }
@@ -144,7 +144,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTokenType(string $tokenType) : self
+    public function setTokenType(string $tokenType): self
     {
         $this->initialized['tokenType'] = true;
         $this->tokenType = $tokenType;
@@ -155,7 +155,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getIssuedAt() : string
+    public function getIssuedAt(): string
     {
         return $this->issuedAt;
     }
@@ -166,7 +166,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setIssuedAt(string $issuedAt) : self
+    public function setIssuedAt(string $issuedAt): self
     {
         $this->initialized['issuedAt'] = true;
         $this->issuedAt = $issuedAt;
@@ -177,7 +177,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getClientId() : string
+    public function getClientId(): string
     {
         return $this->clientId;
     }
@@ -188,7 +188,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setClientId(string $clientId) : self
+    public function setClientId(string $clientId): self
     {
         $this->initialized['clientId'] = true;
         $this->clientId = $clientId;
@@ -199,7 +199,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getAccessToken() : string
+    public function getAccessToken(): string
     {
         return $this->accessToken;
     }
@@ -210,7 +210,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessToken(string $accessToken) : self
+    public function setAccessToken(string $accessToken): self
     {
         $this->initialized['accessToken'] = true;
         $this->accessToken = $accessToken;
@@ -221,7 +221,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getRefreshToken() : string
+    public function getRefreshToken(): string
     {
         return $this->refreshToken;
     }
@@ -232,7 +232,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRefreshToken(string $refreshToken) : self
+    public function setRefreshToken(string $refreshToken): self
     {
         $this->initialized['refreshToken'] = true;
         $this->refreshToken = $refreshToken;
@@ -243,7 +243,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getScope() : string
+    public function getScope(): string
     {
         return $this->scope;
     }
@@ -254,7 +254,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setScope(string $scope) : self
+    public function setScope(string $scope): self
     {
         $this->initialized['scope'] = true;
         $this->scope = $scope;
@@ -265,7 +265,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getRefreshTokenIssuedAt() : string
+    public function getRefreshTokenIssuedAt(): string
     {
         return $this->refreshTokenIssuedAt;
     }
@@ -276,7 +276,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRefreshTokenIssuedAt(string $refreshTokenIssuedAt) : self
+    public function setRefreshTokenIssuedAt(string $refreshTokenIssuedAt): self
     {
         $this->initialized['refreshTokenIssuedAt'] = true;
         $this->refreshTokenIssuedAt = $refreshTokenIssuedAt;
@@ -287,7 +287,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getExpiresIn() : string
+    public function getExpiresIn(): string
     {
         return $this->expiresIn;
     }
@@ -298,7 +298,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setExpiresIn(string $expiresIn) : self
+    public function setExpiresIn(string $expiresIn): self
     {
         $this->initialized['expiresIn'] = true;
         $this->expiresIn = $expiresIn;
@@ -309,7 +309,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getRefreshCount() : string
+    public function getRefreshCount(): string
     {
         return $this->refreshCount;
     }
@@ -320,7 +320,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRefreshCount(string $refreshCount) : self
+    public function setRefreshCount(string $refreshCount): self
     {
         $this->initialized['refreshCount'] = true;
         $this->refreshCount = $refreshCount;
@@ -331,7 +331,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getStatus() : string
+    public function getStatus(): string
     {
         return $this->status;
     }
@@ -342,7 +342,7 @@ class RefreshTokenSuccessResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setStatus(string $status) : self
+    public function setStatus(string $status): self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

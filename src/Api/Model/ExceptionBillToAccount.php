@@ -8,7 +8,7 @@ class ExceptionBillToAccount extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ExceptionBillToAccount extends \ArrayObject
     *
     * @return string
     */
-    public function getOption() : string
+    public function getOption(): string
     {
         return $this->option;
     }
@@ -58,7 +58,7 @@ class ExceptionBillToAccount extends \ArrayObject
     *
     * @return self
     */
-    public function setOption(string $option) : self
+    public function setOption(string $option): self
     {
         $this->initialized['option'] = true;
         $this->option = $option;
@@ -69,7 +69,7 @@ class ExceptionBillToAccount extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -80,7 +80,7 @@ class ExceptionBillToAccount extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;

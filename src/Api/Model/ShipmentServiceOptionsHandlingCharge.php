@@ -8,7 +8,7 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -40,7 +40,7 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     *
     * @return string
     */
-    public function getPercentage() : string
+    public function getPercentage(): string
     {
         return $this->percentage;
     }
@@ -56,7 +56,7 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     *
     * @return self
     */
-    public function setPercentage(string $percentage) : self
+    public function setPercentage(string $percentage): self
     {
         $this->initialized['percentage'] = true;
         $this->percentage = $percentage;
@@ -68,7 +68,7 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     *
     * @return HandlingChargeAmount
     */
-    public function getAmount() : HandlingChargeAmount
+    public function getAmount(): HandlingChargeAmount
     {
         return $this->amount;
     }
@@ -80,7 +80,7 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
     *
     * @return self
     */
-    public function setAmount(HandlingChargeAmount $amount) : self
+    public function setAmount(HandlingChargeAmount $amount): self
     {
         $this->initialized['amount'] = true;
         $this->amount = $amount;

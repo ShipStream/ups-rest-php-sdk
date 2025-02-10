@@ -8,7 +8,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      *
      * @return string
      */
-    public function getRegulationSet() : string
+    public function getRegulationSet(): string
     {
         return $this->regulationSet;
     }
@@ -46,7 +46,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      *
      * @return self
      */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(string $regulationSet): self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -57,7 +57,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      *
      * @return DryIceDryIceWeight
      */
-    public function getDryIceWeight() : DryIceDryIceWeight
+    public function getDryIceWeight(): DryIceDryIceWeight
     {
         return $this->dryIceWeight;
     }
@@ -68,7 +68,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      *
      * @return self
      */
-    public function setDryIceWeight(DryIceDryIceWeight $dryIceWeight) : self
+    public function setDryIceWeight(DryIceDryIceWeight $dryIceWeight): self
     {
         $this->initialized['dryIceWeight'] = true;
         $this->dryIceWeight = $dryIceWeight;
@@ -79,7 +79,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      *
      * @return string
      */
-    public function getMedicalUseIndicator() : string
+    public function getMedicalUseIndicator(): string
     {
         return $this->medicalUseIndicator;
     }
@@ -90,7 +90,7 @@ class PackageServiceOptionsDryIce extends \ArrayObject
      *
      * @return self
      */
-    public function setMedicalUseIndicator(string $medicalUseIndicator) : self
+    public function setMedicalUseIndicator(string $medicalUseIndicator): self
     {
         $this->initialized['medicalUseIndicator'] = true;
         $this->medicalUseIndicator = $medicalUseIndicator;

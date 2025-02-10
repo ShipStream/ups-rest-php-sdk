@@ -8,7 +8,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      *
      * @return IncludeCriteriaMerchantAccountNumberList
      */
-    public function getMerchantAccountNumberList() : IncludeCriteriaMerchantAccountNumberList
+    public function getMerchantAccountNumberList(): IncludeCriteriaMerchantAccountNumberList
     {
         return $this->merchantAccountNumberList;
     }
@@ -46,7 +46,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setMerchantAccountNumberList(IncludeCriteriaMerchantAccountNumberList $merchantAccountNumberList) : self
+    public function setMerchantAccountNumberList(IncludeCriteriaMerchantAccountNumberList $merchantAccountNumberList): self
     {
         $this->initialized['merchantAccountNumberList'] = true;
         $this->merchantAccountNumberList = $merchantAccountNumberList;
@@ -57,7 +57,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      *
      * @return IncludeCriteriaSearchFilter
      */
-    public function getSearchFilter() : IncludeCriteriaSearchFilter
+    public function getSearchFilter(): IncludeCriteriaSearchFilter
     {
         return $this->searchFilter;
     }
@@ -68,7 +68,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setSearchFilter(IncludeCriteriaSearchFilter $searchFilter) : self
+    public function setSearchFilter(IncludeCriteriaSearchFilter $searchFilter): self
     {
         $this->initialized['searchFilter'] = true;
         $this->searchFilter = $searchFilter;
@@ -79,7 +79,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      *
      * @return IncludeCriteriaServiceOfferingList
      */
-    public function getServiceOfferingList() : IncludeCriteriaServiceOfferingList
+    public function getServiceOfferingList(): IncludeCriteriaServiceOfferingList
     {
         return $this->serviceOfferingList;
     }
@@ -90,7 +90,7 @@ class AccessPointSearchIncludeCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOfferingList(IncludeCriteriaServiceOfferingList $serviceOfferingList) : self
+    public function setServiceOfferingList(IncludeCriteriaServiceOfferingList $serviceOfferingList): self
     {
         $this->initialized['serviceOfferingList'] = true;
         $this->serviceOfferingList = $serviceOfferingList;

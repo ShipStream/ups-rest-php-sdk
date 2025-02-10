@@ -8,7 +8,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -36,7 +36,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      *
      * @return FRSShipmentDataTransportationCharges
      */
-    public function getTransportationCharges() : FRSShipmentDataTransportationCharges
+    public function getTransportationCharges(): FRSShipmentDataTransportationCharges
     {
         return $this->transportationCharges;
     }
@@ -47,7 +47,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportationCharges(FRSShipmentDataTransportationCharges $transportationCharges) : self
+    public function setTransportationCharges(FRSShipmentDataTransportationCharges $transportationCharges): self
     {
         $this->initialized['transportationCharges'] = true;
         $this->transportationCharges = $transportationCharges;
@@ -58,7 +58,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      *
      * @return FRSShipmentDataFreightDensityRate
      */
-    public function getFreightDensityRate() : FRSShipmentDataFreightDensityRate
+    public function getFreightDensityRate(): FRSShipmentDataFreightDensityRate
     {
         return $this->freightDensityRate;
     }
@@ -69,7 +69,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightDensityRate(FRSShipmentDataFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(FRSShipmentDataFreightDensityRate $freightDensityRate): self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -81,7 +81,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      *
      * @return list<FRSShipmentDataHandlingUnits>
      */
-    public function getHandlingUnits() : array
+    public function getHandlingUnits(): array
     {
         return $this->handlingUnits;
     }
@@ -93,7 +93,7 @@ class RatedShipmentFRSShipmentData extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnits(array $handlingUnits) : self
+    public function setHandlingUnits(array $handlingUnits): self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;

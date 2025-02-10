@@ -8,7 +8,7 @@ class SubscriptionFileException extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -122,7 +122,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return list<ExceptionPackageReferenceNumber>
      */
-    public function getPackageReferenceNumber() : array
+    public function getPackageReferenceNumber(): array
     {
         return $this->packageReferenceNumber;
     }
@@ -134,7 +134,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageReferenceNumber(array $packageReferenceNumber) : self
+    public function setPackageReferenceNumber(array $packageReferenceNumber): self
     {
         $this->initialized['packageReferenceNumber'] = true;
         $this->packageReferenceNumber = $packageReferenceNumber;
@@ -146,7 +146,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return list<ExceptionShipmentReferenceNumber>
      */
-    public function getShipmentReferenceNumber() : array
+    public function getShipmentReferenceNumber(): array
     {
         return $this->shipmentReferenceNumber;
     }
@@ -158,7 +158,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(array $shipmentReferenceNumber) : self
+    public function setShipmentReferenceNumber(array $shipmentReferenceNumber): self
     {
         $this->initialized['shipmentReferenceNumber'] = true;
         $this->shipmentReferenceNumber = $shipmentReferenceNumber;
@@ -169,7 +169,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -180,7 +180,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -191,7 +191,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -202,7 +202,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -213,7 +213,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getDate() : string
+    public function getDate(): string
     {
         return $this->date;
     }
@@ -224,7 +224,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(string $date): self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -235,7 +235,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getTime() : string
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -246,7 +246,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(string $time): self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -257,7 +257,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return ExceptionUpdatedAddress
      */
-    public function getUpdatedAddress() : ExceptionUpdatedAddress
+    public function getUpdatedAddress(): ExceptionUpdatedAddress
     {
         return $this->updatedAddress;
     }
@@ -268,7 +268,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setUpdatedAddress(ExceptionUpdatedAddress $updatedAddress) : self
+    public function setUpdatedAddress(ExceptionUpdatedAddress $updatedAddress): self
     {
         $this->initialized['updatedAddress'] = true;
         $this->updatedAddress = $updatedAddress;
@@ -279,7 +279,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getStatusCode() : string
+    public function getStatusCode(): string
     {
         return $this->statusCode;
     }
@@ -290,7 +290,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setStatusCode(string $statusCode) : self
+    public function setStatusCode(string $statusCode): self
     {
         $this->initialized['statusCode'] = true;
         $this->statusCode = $statusCode;
@@ -301,7 +301,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getStatusDescription() : string
+    public function getStatusDescription(): string
     {
         return $this->statusDescription;
     }
@@ -312,7 +312,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setStatusDescription(string $statusDescription) : self
+    public function setStatusDescription(string $statusDescription): self
     {
         $this->initialized['statusDescription'] = true;
         $this->statusDescription = $statusDescription;
@@ -323,7 +323,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getReasonCode() : string
+    public function getReasonCode(): string
     {
         return $this->reasonCode;
     }
@@ -334,7 +334,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setReasonCode(string $reasonCode) : self
+    public function setReasonCode(string $reasonCode): self
     {
         $this->initialized['reasonCode'] = true;
         $this->reasonCode = $reasonCode;
@@ -345,7 +345,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getReasonDescription() : string
+    public function getReasonDescription(): string
     {
         return $this->reasonDescription;
     }
@@ -356,7 +356,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setReasonDescription(string $reasonDescription) : self
+    public function setReasonDescription(string $reasonDescription): self
     {
         $this->initialized['reasonDescription'] = true;
         $this->reasonDescription = $reasonDescription;
@@ -367,7 +367,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return ExceptionResolution
      */
-    public function getResolution() : ExceptionResolution
+    public function getResolution(): ExceptionResolution
     {
         return $this->resolution;
     }
@@ -378,7 +378,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setResolution(ExceptionResolution $resolution) : self
+    public function setResolution(ExceptionResolution $resolution): self
     {
         $this->initialized['resolution'] = true;
         $this->resolution = $resolution;
@@ -389,7 +389,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getRescheduledDeliveryDate() : string
+    public function getRescheduledDeliveryDate(): string
     {
         return $this->rescheduledDeliveryDate;
     }
@@ -400,7 +400,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setRescheduledDeliveryDate(string $rescheduledDeliveryDate) : self
+    public function setRescheduledDeliveryDate(string $rescheduledDeliveryDate): self
     {
         $this->initialized['rescheduledDeliveryDate'] = true;
         $this->rescheduledDeliveryDate = $rescheduledDeliveryDate;
@@ -411,7 +411,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getRescheduledDeliveryTime() : string
+    public function getRescheduledDeliveryTime(): string
     {
         return $this->rescheduledDeliveryTime;
     }
@@ -422,7 +422,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setRescheduledDeliveryTime(string $rescheduledDeliveryTime) : self
+    public function setRescheduledDeliveryTime(string $rescheduledDeliveryTime): self
     {
         $this->initialized['rescheduledDeliveryTime'] = true;
         $this->rescheduledDeliveryTime = $rescheduledDeliveryTime;
@@ -433,7 +433,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return ExceptionActivityLocation
      */
-    public function getActivityLocation() : ExceptionActivityLocation
+    public function getActivityLocation(): ExceptionActivityLocation
     {
         return $this->activityLocation;
     }
@@ -444,7 +444,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setActivityLocation(ExceptionActivityLocation $activityLocation) : self
+    public function setActivityLocation(ExceptionActivityLocation $activityLocation): self
     {
         $this->initialized['activityLocation'] = true;
         $this->activityLocation = $activityLocation;
@@ -455,7 +455,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return ExceptionBillToAccount
      */
-    public function getBillToAccount() : ExceptionBillToAccount
+    public function getBillToAccount(): ExceptionBillToAccount
     {
         return $this->billToAccount;
     }
@@ -466,7 +466,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setBillToAccount(ExceptionBillToAccount $billToAccount) : self
+    public function setBillToAccount(ExceptionBillToAccount $billToAccount): self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -477,7 +477,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return string
      */
-    public function getAccessPointLocationID() : string
+    public function getAccessPointLocationID(): string
     {
         return $this->accessPointLocationID;
     }
@@ -488,7 +488,7 @@ class SubscriptionFileException extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointLocationID(string $accessPointLocationID) : self
+    public function setAccessPointLocationID(string $accessPointLocationID): self
     {
         $this->initialized['accessPointLocationID'] = true;
         $this->accessPointLocationID = $accessPointLocationID;

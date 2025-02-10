@@ -8,7 +8,7 @@ class FreightRateResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -102,7 +102,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseResponse
      */
-    public function getResponse() : FreightRateResponseResponse
+    public function getResponse(): FreightRateResponseResponse
     {
         return $this->response;
     }
@@ -113,7 +113,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(FreightRateResponseResponse $response) : self
+    public function setResponse(FreightRateResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -124,7 +124,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return list<FreightRateResponseRate>
      */
-    public function getRate() : array
+    public function getRate(): array
     {
         return $this->rate;
     }
@@ -135,7 +135,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRate(array $rate) : self
+    public function setRate(array $rate): self
     {
         $this->initialized['rate'] = true;
         $this->rate = $rate;
@@ -146,7 +146,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseFreightDensityRate
      */
-    public function getFreightDensityRate() : FreightRateResponseFreightDensityRate
+    public function getFreightDensityRate(): FreightRateResponseFreightDensityRate
     {
         return $this->freightDensityRate;
     }
@@ -157,7 +157,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightDensityRate(FreightRateResponseFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(FreightRateResponseFreightDensityRate $freightDensityRate): self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -168,7 +168,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return list<FreightRateResponseCommodity>
      */
-    public function getCommodity() : array
+    public function getCommodity(): array
     {
         return $this->commodity;
     }
@@ -179,7 +179,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(array $commodity): self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -190,7 +190,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseTotalShipmentCharge
      */
-    public function getTotalShipmentCharge() : FreightRateResponseTotalShipmentCharge
+    public function getTotalShipmentCharge(): FreightRateResponseTotalShipmentCharge
     {
         return $this->totalShipmentCharge;
     }
@@ -201,7 +201,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalShipmentCharge(FreightRateResponseTotalShipmentCharge $totalShipmentCharge) : self
+    public function setTotalShipmentCharge(FreightRateResponseTotalShipmentCharge $totalShipmentCharge): self
     {
         $this->initialized['totalShipmentCharge'] = true;
         $this->totalShipmentCharge = $totalShipmentCharge;
@@ -212,7 +212,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseBillableShipmentWeight
      */
-    public function getBillableShipmentWeight() : FreightRateResponseBillableShipmentWeight
+    public function getBillableShipmentWeight(): FreightRateResponseBillableShipmentWeight
     {
         return $this->billableShipmentWeight;
     }
@@ -223,7 +223,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setBillableShipmentWeight(FreightRateResponseBillableShipmentWeight $billableShipmentWeight) : self
+    public function setBillableShipmentWeight(FreightRateResponseBillableShipmentWeight $billableShipmentWeight): self
     {
         $this->initialized['billableShipmentWeight'] = true;
         $this->billableShipmentWeight = $billableShipmentWeight;
@@ -234,7 +234,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseDimensionalWeight
      */
-    public function getDimensionalWeight() : FreightRateResponseDimensionalWeight
+    public function getDimensionalWeight(): FreightRateResponseDimensionalWeight
     {
         return $this->dimensionalWeight;
     }
@@ -245,7 +245,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensionalWeight(FreightRateResponseDimensionalWeight $dimensionalWeight) : self
+    public function setDimensionalWeight(FreightRateResponseDimensionalWeight $dimensionalWeight): self
     {
         $this->initialized['dimensionalWeight'] = true;
         $this->dimensionalWeight = $dimensionalWeight;
@@ -256,7 +256,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseService
      */
-    public function getService() : FreightRateResponseService
+    public function getService(): FreightRateResponseService
     {
         return $this->service;
     }
@@ -267,7 +267,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setService(FreightRateResponseService $service) : self
+    public function setService(FreightRateResponseService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -278,7 +278,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getGuaranteedIndicator() : string
+    public function getGuaranteedIndicator(): string
     {
         return $this->guaranteedIndicator;
     }
@@ -289,7 +289,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setGuaranteedIndicator(string $guaranteedIndicator) : self
+    public function setGuaranteedIndicator(string $guaranteedIndicator): self
     {
         $this->initialized['guaranteedIndicator'] = true;
         $this->guaranteedIndicator = $guaranteedIndicator;
@@ -300,7 +300,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getMinimumChargeAppliedIndicator() : string
+    public function getMinimumChargeAppliedIndicator(): string
     {
         return $this->minimumChargeAppliedIndicator;
     }
@@ -311,7 +311,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setMinimumChargeAppliedIndicator(string $minimumChargeAppliedIndicator) : self
+    public function setMinimumChargeAppliedIndicator(string $minimumChargeAppliedIndicator): self
     {
         $this->initialized['minimumChargeAppliedIndicator'] = true;
         $this->minimumChargeAppliedIndicator = $minimumChargeAppliedIndicator;
@@ -322,7 +322,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return list<FreightRateResponseAlternateRatesResponse>
      */
-    public function getAlternateRatesResponse() : array
+    public function getAlternateRatesResponse(): array
     {
         return $this->alternateRatesResponse;
     }
@@ -333,7 +333,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setAlternateRatesResponse(array $alternateRatesResponse) : self
+    public function setAlternateRatesResponse(array $alternateRatesResponse): self
     {
         $this->initialized['alternateRatesResponse'] = true;
         $this->alternateRatesResponse = $alternateRatesResponse;
@@ -344,7 +344,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return FreightRateResponseTimeInTransit
      */
-    public function getTimeInTransit() : FreightRateResponseTimeInTransit
+    public function getTimeInTransit(): FreightRateResponseTimeInTransit
     {
         return $this->timeInTransit;
     }
@@ -355,7 +355,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeInTransit(FreightRateResponseTimeInTransit $timeInTransit) : self
+    public function setTimeInTransit(FreightRateResponseTimeInTransit $timeInTransit): self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;
@@ -367,7 +367,7 @@ class FreightRateResponse extends \ArrayObject
     *
     * @return FreightRateResponseHandlingUnits
     */
-    public function getHandlingUnits() : FreightRateResponseHandlingUnits
+    public function getHandlingUnits(): FreightRateResponseHandlingUnits
     {
         return $this->handlingUnits;
     }
@@ -379,7 +379,7 @@ class FreightRateResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setHandlingUnits(FreightRateResponseHandlingUnits $handlingUnits) : self
+    public function setHandlingUnits(FreightRateResponseHandlingUnits $handlingUnits): self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;
@@ -390,7 +390,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getQuoteNumber() : string
+    public function getQuoteNumber(): string
     {
         return $this->quoteNumber;
     }
@@ -401,7 +401,7 @@ class FreightRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setQuoteNumber(string $quoteNumber) : self
+    public function setQuoteNumber(string $quoteNumber): self
     {
         $this->initialized['quoteNumber'] = true;
         $this->quoteNumber = $quoteNumber;

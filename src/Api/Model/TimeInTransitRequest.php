@@ -8,7 +8,7 @@ class TimeInTransitRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -230,7 +230,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginCountryCode() : string
+    public function getOriginCountryCode(): string
     {
         return $this->originCountryCode;
     }
@@ -243,7 +243,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginCountryCode(string $originCountryCode) : self
+    public function setOriginCountryCode(string $originCountryCode): self
     {
         $this->initialized['originCountryCode'] = true;
         $this->originCountryCode = $originCountryCode;
@@ -255,7 +255,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginStateProvince() : string
+    public function getOriginStateProvince(): string
     {
         return $this->originStateProvince;
     }
@@ -267,7 +267,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginStateProvince(string $originStateProvince) : self
+    public function setOriginStateProvince(string $originStateProvince): self
     {
         $this->initialized['originStateProvince'] = true;
         $this->originStateProvince = $originStateProvince;
@@ -278,7 +278,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginCityName() : string
+    public function getOriginCityName(): string
     {
         return $this->originCityName;
     }
@@ -289,7 +289,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginCityName(string $originCityName) : self
+    public function setOriginCityName(string $originCityName): self
     {
         $this->initialized['originCityName'] = true;
         $this->originCityName = $originCityName;
@@ -300,7 +300,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginTownName() : string
+    public function getOriginTownName(): string
     {
         return $this->originTownName;
     }
@@ -311,7 +311,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginTownName(string $originTownName) : self
+    public function setOriginTownName(string $originTownName): self
     {
         $this->initialized['originTownName'] = true;
         $this->originTownName = $originTownName;
@@ -323,7 +323,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginPostalCode() : string
+    public function getOriginPostalCode(): string
     {
         return $this->originPostalCode;
     }
@@ -335,7 +335,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginPostalCode(string $originPostalCode) : self
+    public function setOriginPostalCode(string $originPostalCode): self
     {
         $this->initialized['originPostalCode'] = true;
         $this->originPostalCode = $originPostalCode;
@@ -348,7 +348,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode(): string
     {
         return $this->destinationCountryCode;
     }
@@ -361,7 +361,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(string $destinationCountryCode): self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -373,7 +373,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationStateProvince() : string
+    public function getDestinationStateProvince(): string
     {
         return $this->destinationStateProvince;
     }
@@ -385,7 +385,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationStateProvince(string $destinationStateProvince) : self
+    public function setDestinationStateProvince(string $destinationStateProvince): self
     {
         $this->initialized['destinationStateProvince'] = true;
         $this->destinationStateProvince = $destinationStateProvince;
@@ -396,7 +396,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationCityName() : string
+    public function getDestinationCityName(): string
     {
         return $this->destinationCityName;
     }
@@ -407,7 +407,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationCityName(string $destinationCityName) : self
+    public function setDestinationCityName(string $destinationCityName): self
     {
         $this->initialized['destinationCityName'] = true;
         $this->destinationCityName = $destinationCityName;
@@ -418,7 +418,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationTownName() : string
+    public function getDestinationTownName(): string
     {
         return $this->destinationTownName;
     }
@@ -429,7 +429,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationTownName(string $destinationTownName) : self
+    public function setDestinationTownName(string $destinationTownName): self
     {
         $this->initialized['destinationTownName'] = true;
         $this->destinationTownName = $destinationTownName;
@@ -441,7 +441,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode(): string
     {
         return $this->destinationPostalCode;
     }
@@ -453,7 +453,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(string $destinationPostalCode): self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -471,7 +471,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;
     }
@@ -489,7 +489,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(string $residentialIndicator): self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;
@@ -509,7 +509,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getShipDate() : string
+    public function getShipDate(): string
     {
         return $this->shipDate;
     }
@@ -529,7 +529,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(string $shipDate): self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -543,7 +543,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getShipTime() : string
+    public function getShipTime(): string
     {
         return $this->shipTime;
     }
@@ -557,7 +557,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setShipTime(string $shipTime) : self
+    public function setShipTime(string $shipTime): self
     {
         $this->initialized['shipTime'] = true;
         $this->shipTime = $shipTime;
@@ -572,7 +572,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return float
     */
-    public function getWeight() : float
+    public function getWeight(): float
     {
         return $this->weight;
     }
@@ -587,7 +587,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setWeight(float $weight) : self
+    public function setWeight(float $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -600,7 +600,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getWeightUnitOfMeasure() : string
+    public function getWeightUnitOfMeasure(): string
     {
         return $this->weightUnitOfMeasure;
     }
@@ -613,7 +613,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setWeightUnitOfMeasure(string $weightUnitOfMeasure) : self
+    public function setWeightUnitOfMeasure(string $weightUnitOfMeasure): self
     {
         $this->initialized['weightUnitOfMeasure'] = true;
         $this->weightUnitOfMeasure = $weightUnitOfMeasure;
@@ -630,7 +630,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return float
     */
-    public function getShipmentContentsValue() : float
+    public function getShipmentContentsValue(): float
     {
         return $this->shipmentContentsValue;
     }
@@ -647,7 +647,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setShipmentContentsValue(float $shipmentContentsValue) : self
+    public function setShipmentContentsValue(float $shipmentContentsValue): self
     {
         $this->initialized['shipmentContentsValue'] = true;
         $this->shipmentContentsValue = $shipmentContentsValue;
@@ -659,7 +659,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getShipmentContentsCurrencyCode() : string
+    public function getShipmentContentsCurrencyCode(): string
     {
         return $this->shipmentContentsCurrencyCode;
     }
@@ -671,7 +671,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setShipmentContentsCurrencyCode(string $shipmentContentsCurrencyCode) : self
+    public function setShipmentContentsCurrencyCode(string $shipmentContentsCurrencyCode): self
     {
         $this->initialized['shipmentContentsCurrencyCode'] = true;
         $this->shipmentContentsCurrencyCode = $shipmentContentsCurrencyCode;
@@ -686,7 +686,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getBillType() : string
+    public function getBillType(): string
     {
         return $this->billType;
     }
@@ -701,7 +701,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setBillType(string $billType) : self
+    public function setBillType(string $billType): self
     {
         $this->initialized['billType'] = true;
         $this->billType = $billType;
@@ -717,7 +717,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return bool
     */
-    public function getAvvFlag() : bool
+    public function getAvvFlag(): bool
     {
         return $this->avvFlag;
     }
@@ -733,7 +733,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setAvvFlag(bool $avvFlag) : self
+    public function setAvvFlag(bool $avvFlag): self
     {
         $this->initialized['avvFlag'] = true;
         $this->avvFlag = $avvFlag;
@@ -744,7 +744,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return int
      */
-    public function getNumberOfPackages() : int
+    public function getNumberOfPackages(): int
     {
         return $this->numberOfPackages;
     }
@@ -755,7 +755,7 @@ class TimeInTransitRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setNumberOfPackages(int $numberOfPackages) : self
+    public function setNumberOfPackages(int $numberOfPackages): self
     {
         $this->initialized['numberOfPackages'] = true;
         $this->numberOfPackages = $numberOfPackages;
@@ -773,7 +773,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return int
     */
-    public function getDropOffAtFacilityIndicator() : int
+    public function getDropOffAtFacilityIndicator(): int
     {
         return $this->dropOffAtFacilityIndicator;
     }
@@ -791,7 +791,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setDropOffAtFacilityIndicator(int $dropOffAtFacilityIndicator) : self
+    public function setDropOffAtFacilityIndicator(int $dropOffAtFacilityIndicator): self
     {
         $this->initialized['dropOffAtFacilityIndicator'] = true;
         $this->dropOffAtFacilityIndicator = $dropOffAtFacilityIndicator;
@@ -809,7 +809,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return int
     */
-    public function getHoldForPickupIndicator() : int
+    public function getHoldForPickupIndicator(): int
     {
         return $this->holdForPickupIndicator;
     }
@@ -827,7 +827,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setHoldForPickupIndicator(int $holdForPickupIndicator) : self
+    public function setHoldForPickupIndicator(int $holdForPickupIndicator): self
     {
         $this->initialized['holdForPickupIndicator'] = true;
         $this->holdForPickupIndicator = $holdForPickupIndicator;
@@ -840,7 +840,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return bool
     */
-    public function getReturnUnfilterdServices() : bool
+    public function getReturnUnfilterdServices(): bool
     {
         return $this->returnUnfilterdServices;
     }
@@ -853,7 +853,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setReturnUnfilterdServices(bool $returnUnfilterdServices) : self
+    public function setReturnUnfilterdServices(bool $returnUnfilterdServices): self
     {
         $this->initialized['returnUnfilterdServices'] = true;
         $this->returnUnfilterdServices = $returnUnfilterdServices;
@@ -866,7 +866,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return int
     */
-    public function getMaxList() : int
+    public function getMaxList(): int
     {
         return $this->maxList;
     }
@@ -879,7 +879,7 @@ class TimeInTransitRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setMaxList(int $maxList) : self
+    public function setMaxList(int $maxList): self
     {
         $this->initialized['maxList'] = true;
         $this->maxList = $maxList;

@@ -8,7 +8,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -81,7 +81,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return RateResultDisclaimer
      */
-    public function getDisclaimer() : RateResultDisclaimer
+    public function getDisclaimer(): RateResultDisclaimer
     {
         return $this->disclaimer;
     }
@@ -92,7 +92,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setDisclaimer(RateResultDisclaimer $disclaimer) : self
+    public function setDisclaimer(RateResultDisclaimer $disclaimer): self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -105,7 +105,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
     *
     * @return string
     */
-    public function getRateType() : string
+    public function getRateType(): string
     {
         return $this->rateType;
     }
@@ -118,7 +118,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
     *
     * @return self
     */
-    public function setRateType(string $rateType) : self
+    public function setRateType(string $rateType): self
     {
         $this->initialized['rateType'] = true;
         $this->rateType = $rateType;
@@ -129,7 +129,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -140,7 +140,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -152,7 +152,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return list<RateResultChargeDetail>
      */
-    public function getChargeDetail() : array
+    public function getChargeDetail(): array
     {
         return $this->chargeDetail;
     }
@@ -164,7 +164,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setChargeDetail(array $chargeDetail) : self
+    public function setChargeDetail(array $chargeDetail): self
     {
         $this->initialized['chargeDetail'] = true;
         $this->chargeDetail = $chargeDetail;
@@ -176,7 +176,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return list<RateResultTaxCharges>
      */
-    public function getTaxCharges() : array
+    public function getTaxCharges(): array
     {
         return $this->taxCharges;
     }
@@ -188,7 +188,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxCharges(array $taxCharges) : self
+    public function setTaxCharges(array $taxCharges): self
     {
         $this->initialized['taxCharges'] = true;
         $this->taxCharges = $taxCharges;
@@ -199,7 +199,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return string
      */
-    public function getTotalTax() : string
+    public function getTotalTax(): string
     {
         return $this->totalTax;
     }
@@ -210,7 +210,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalTax(string $totalTax) : self
+    public function setTotalTax(string $totalTax): self
     {
         $this->initialized['totalTax'] = true;
         $this->totalTax = $totalTax;
@@ -221,7 +221,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return string
      */
-    public function getGrandTotalOfAllCharge() : string
+    public function getGrandTotalOfAllCharge(): string
     {
         return $this->grandTotalOfAllCharge;
     }
@@ -232,7 +232,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setGrandTotalOfAllCharge(string $grandTotalOfAllCharge) : self
+    public function setGrandTotalOfAllCharge(string $grandTotalOfAllCharge): self
     {
         $this->initialized['grandTotalOfAllCharge'] = true;
         $this->grandTotalOfAllCharge = $grandTotalOfAllCharge;
@@ -243,7 +243,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return string
      */
-    public function getGrandTotalOfAllIncentedCharge() : string
+    public function getGrandTotalOfAllIncentedCharge(): string
     {
         return $this->grandTotalOfAllIncentedCharge;
     }
@@ -254,7 +254,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setGrandTotalOfAllIncentedCharge(string $grandTotalOfAllIncentedCharge) : self
+    public function setGrandTotalOfAllIncentedCharge(string $grandTotalOfAllIncentedCharge): self
     {
         $this->initialized['grandTotalOfAllIncentedCharge'] = true;
         $this->grandTotalOfAllIncentedCharge = $grandTotalOfAllIncentedCharge;
@@ -265,7 +265,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return string
      */
-    public function getPreTaxTotalCharge() : string
+    public function getPreTaxTotalCharge(): string
     {
         return $this->preTaxTotalCharge;
     }
@@ -276,7 +276,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setPreTaxTotalCharge(string $preTaxTotalCharge) : self
+    public function setPreTaxTotalCharge(string $preTaxTotalCharge): self
     {
         $this->initialized['preTaxTotalCharge'] = true;
         $this->preTaxTotalCharge = $preTaxTotalCharge;
@@ -287,7 +287,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return string
      */
-    public function getPreTaxTotalIncentedCharge() : string
+    public function getPreTaxTotalIncentedCharge(): string
     {
         return $this->preTaxTotalIncentedCharge;
     }
@@ -298,7 +298,7 @@ class PickupCreationResponseRateResult extends \ArrayObject
      *
      * @return self
      */
-    public function setPreTaxTotalIncentedCharge(string $preTaxTotalIncentedCharge) : self
+    public function setPreTaxTotalIncentedCharge(string $preTaxTotalIncentedCharge): self
     {
         $this->initialized['preTaxTotalIncentedCharge'] = true;
         $this->preTaxTotalIncentedCharge = $preTaxTotalIncentedCharge;

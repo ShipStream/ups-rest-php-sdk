@@ -8,7 +8,7 @@ class DeliveryCOD extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class DeliveryCOD extends \ArrayObject
      *
      * @return CODCODAmount
      */
-    public function getCODAmount() : CODCODAmount
+    public function getCODAmount(): CODCODAmount
     {
         return $this->cODAmount;
     }
@@ -34,7 +34,7 @@ class DeliveryCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODAmount(CODCODAmount $cODAmount) : self
+    public function setCODAmount(CODCODAmount $cODAmount): self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

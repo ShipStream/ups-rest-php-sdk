@@ -8,7 +8,7 @@ class FreightShipRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightShipRequest extends \ArrayObject
      *
      * @return FreightShipRequestRequest
      */
-    public function getRequest() : FreightShipRequestRequest
+    public function getRequest(): FreightShipRequestRequest
     {
         return $this->request;
     }
@@ -40,7 +40,7 @@ class FreightShipRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(FreightShipRequestRequest $request) : self
+    public function setRequest(FreightShipRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -51,7 +51,7 @@ class FreightShipRequest extends \ArrayObject
      *
      * @return FreightShipRequestShipment
      */
-    public function getShipment() : FreightShipRequestShipment
+    public function getShipment(): FreightShipRequestShipment
     {
         return $this->shipment;
     }
@@ -62,7 +62,7 @@ class FreightShipRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(FreightShipRequestShipment $shipment) : self
+    public function setShipment(FreightShipRequestShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

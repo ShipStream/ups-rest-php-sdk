@@ -8,7 +8,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -90,7 +90,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getConsigneeName() : string
+    public function getConsigneeName(): string
     {
         return $this->consigneeName;
     }
@@ -101,7 +101,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setConsigneeName(string $consigneeName) : self
+    public function setConsigneeName(string $consigneeName): self
     {
         $this->initialized['consigneeName'] = true;
         $this->consigneeName = $consigneeName;
@@ -112,7 +112,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStreetNumberLow() : string
+    public function getStreetNumberLow(): string
     {
         return $this->streetNumberLow;
     }
@@ -123,7 +123,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStreetNumberLow(string $streetNumberLow) : self
+    public function setStreetNumberLow(string $streetNumberLow): self
     {
         $this->initialized['streetNumberLow'] = true;
         $this->streetNumberLow = $streetNumberLow;
@@ -134,7 +134,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStreetPrefix() : string
+    public function getStreetPrefix(): string
     {
         return $this->streetPrefix;
     }
@@ -145,7 +145,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStreetPrefix(string $streetPrefix) : self
+    public function setStreetPrefix(string $streetPrefix): self
     {
         $this->initialized['streetPrefix'] = true;
         $this->streetPrefix = $streetPrefix;
@@ -156,7 +156,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStreetName() : string
+    public function getStreetName(): string
     {
         return $this->streetName;
     }
@@ -167,7 +167,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStreetName(string $streetName) : self
+    public function setStreetName(string $streetName): self
     {
         $this->initialized['streetName'] = true;
         $this->streetName = $streetName;
@@ -178,7 +178,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStreetType() : string
+    public function getStreetType(): string
     {
         return $this->streetType;
     }
@@ -189,7 +189,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStreetType(string $streetType) : self
+    public function setStreetType(string $streetType): self
     {
         $this->initialized['streetType'] = true;
         $this->streetType = $streetType;
@@ -200,7 +200,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStreetSuffix() : string
+    public function getStreetSuffix(): string
     {
         return $this->streetSuffix;
     }
@@ -211,7 +211,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStreetSuffix(string $streetSuffix) : self
+    public function setStreetSuffix(string $streetSuffix): self
     {
         $this->initialized['streetSuffix'] = true;
         $this->streetSuffix = $streetSuffix;
@@ -223,7 +223,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return list<UpdatedAddressAddressExtendedInformation>
      */
-    public function getAddressExtendedInformation() : array
+    public function getAddressExtendedInformation(): array
     {
         return $this->addressExtendedInformation;
     }
@@ -235,7 +235,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressExtendedInformation(array $addressExtendedInformation) : self
+    public function setAddressExtendedInformation(array $addressExtendedInformation): self
     {
         $this->initialized['addressExtendedInformation'] = true;
         $this->addressExtendedInformation = $addressExtendedInformation;
@@ -246,7 +246,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision3() : string
+    public function getPoliticalDivision3(): string
     {
         return $this->politicalDivision3;
     }
@@ -257,7 +257,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision3(string $politicalDivision3) : self
+    public function setPoliticalDivision3(string $politicalDivision3): self
     {
         $this->initialized['politicalDivision3'] = true;
         $this->politicalDivision3 = $politicalDivision3;
@@ -268,7 +268,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2(): string
     {
         return $this->politicalDivision2;
     }
@@ -279,7 +279,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(string $politicalDivision2): self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -290,7 +290,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1(): string
     {
         return $this->politicalDivision1;
     }
@@ -301,7 +301,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(string $politicalDivision1): self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -312,7 +312,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -323,7 +323,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -334,7 +334,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow(): string
     {
         return $this->postcodePrimaryLow;
     }
@@ -345,7 +345,7 @@ class ExceptionUpdatedAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(string $postcodePrimaryLow): self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;

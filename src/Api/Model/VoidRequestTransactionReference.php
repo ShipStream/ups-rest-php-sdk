@@ -8,7 +8,7 @@ class VoidRequestTransactionReference extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class VoidRequestTransactionReference extends \ArrayObject
      *
      * @return string
      */
-    public function getCustomerContext() : string
+    public function getCustomerContext(): string
     {
         return $this->customerContext;
     }
@@ -34,7 +34,7 @@ class VoidRequestTransactionReference extends \ArrayObject
      *
      * @return self
      */
-    public function setCustomerContext(string $customerContext) : self
+    public function setCustomerContext(string $customerContext): self
     {
         $this->initialized['customerContext'] = true;
         $this->customerContext = $customerContext;

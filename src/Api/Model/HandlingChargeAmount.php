@@ -8,7 +8,7 @@ class HandlingChargeAmount extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -37,7 +37,7 @@ class HandlingChargeAmount extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -48,7 +48,7 @@ class HandlingChargeAmount extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -67,7 +67,7 @@ class HandlingChargeAmount extends \ArrayObject
     *
     * @return string
     */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue(): string
     {
         return $this->monetaryValue;
     }
@@ -86,7 +86,7 @@ class HandlingChargeAmount extends \ArrayObject
     *
     * @return self
     */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(string $monetaryValue): self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

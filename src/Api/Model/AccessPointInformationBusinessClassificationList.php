@@ -8,7 +8,7 @@ class AccessPointInformationBusinessClassificationList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -25,7 +25,7 @@ class AccessPointInformationBusinessClassificationList extends \ArrayObject
      *
      * @return list<BusinessClassificationListBusinessClassification>
      */
-    public function getBusinessClassification() : array
+    public function getBusinessClassification(): array
     {
         return $this->businessClassification;
     }
@@ -37,7 +37,7 @@ class AccessPointInformationBusinessClassificationList extends \ArrayObject
      *
      * @return self
      */
-    public function setBusinessClassification(array $businessClassification) : self
+    public function setBusinessClassification(array $businessClassification): self
     {
         $this->initialized['businessClassification'] = true;
         $this->businessClassification = $businessClassification;

@@ -8,7 +8,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -49,7 +49,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
      *
      * @return string
      */
-    public function getServiceCode() : string
+    public function getServiceCode(): string
     {
         return $this->serviceCode;
     }
@@ -60,7 +60,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceCode(string $serviceCode) : self
+    public function setServiceCode(string $serviceCode): self
     {
         $this->initialized['serviceCode'] = true;
         $this->serviceCode = $serviceCode;
@@ -72,7 +72,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     *
     * @return string
     */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -84,7 +84,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     *
     * @return self
     */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -96,7 +96,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode(): string
     {
         return $this->destinationCountryCode;
     }
@@ -108,7 +108,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(string $destinationCountryCode): self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -125,7 +125,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     *
     * @return string
     */
-    public function getContainerCode() : string
+    public function getContainerCode(): string
     {
         return $this->containerCode;
     }
@@ -142,7 +142,7 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
     *
     * @return self
     */
-    public function setContainerCode(string $containerCode) : self
+    public function setContainerCode(string $containerCode): self
     {
         $this->initialized['containerCode'] = true;
         $this->containerCode = $containerCode;

@@ -8,7 +8,7 @@ class PostalCodeListPostalCode extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PostalCodeListPostalCode extends \ArrayObject
      *
      * @return string
      */
-    public function getPrimaryPostalCode() : string
+    public function getPrimaryPostalCode(): string
     {
         return $this->primaryPostalCode;
     }
@@ -40,7 +40,7 @@ class PostalCodeListPostalCode extends \ArrayObject
      *
      * @return self
      */
-    public function setPrimaryPostalCode(string $primaryPostalCode) : self
+    public function setPrimaryPostalCode(string $primaryPostalCode): self
     {
         $this->initialized['primaryPostalCode'] = true;
         $this->primaryPostalCode = $primaryPostalCode;
@@ -51,7 +51,7 @@ class PostalCodeListPostalCode extends \ArrayObject
      *
      * @return string
      */
-    public function getSecondaryPostalCode() : string
+    public function getSecondaryPostalCode(): string
     {
         return $this->secondaryPostalCode;
     }
@@ -62,7 +62,7 @@ class PostalCodeListPostalCode extends \ArrayObject
      *
      * @return self
      */
-    public function setSecondaryPostalCode(string $secondaryPostalCode) : self
+    public function setSecondaryPostalCode(string $secondaryPostalCode): self
     {
         $this->initialized['secondaryPostalCode'] = true;
         $this->secondaryPostalCode = $secondaryPostalCode;

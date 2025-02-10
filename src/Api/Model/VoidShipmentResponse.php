@@ -8,7 +8,7 @@ class VoidShipmentResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -36,7 +36,7 @@ class VoidShipmentResponse extends \ArrayObject
      *
      * @return VoidShipmentResponseResponse
      */
-    public function getResponse() : VoidShipmentResponseResponse
+    public function getResponse(): VoidShipmentResponseResponse
     {
         return $this->response;
     }
@@ -47,7 +47,7 @@ class VoidShipmentResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(VoidShipmentResponseResponse $response) : self
+    public function setResponse(VoidShipmentResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -58,7 +58,7 @@ class VoidShipmentResponse extends \ArrayObject
      *
      * @return VoidShipmentResponseSummaryResult
      */
-    public function getSummaryResult() : VoidShipmentResponseSummaryResult
+    public function getSummaryResult(): VoidShipmentResponseSummaryResult
     {
         return $this->summaryResult;
     }
@@ -69,7 +69,7 @@ class VoidShipmentResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setSummaryResult(VoidShipmentResponseSummaryResult $summaryResult) : self
+    public function setSummaryResult(VoidShipmentResponseSummaryResult $summaryResult): self
     {
         $this->initialized['summaryResult'] = true;
         $this->summaryResult = $summaryResult;
@@ -81,7 +81,7 @@ class VoidShipmentResponse extends \ArrayObject
      *
      * @return list<VoidShipmentResponsePackageLevelResult>
      */
-    public function getPackageLevelResult() : array
+    public function getPackageLevelResult(): array
     {
         return $this->packageLevelResult;
     }
@@ -93,7 +93,7 @@ class VoidShipmentResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageLevelResult(array $packageLevelResult) : self
+    public function setPackageLevelResult(array $packageLevelResult): self
     {
         $this->initialized['packageLevelResult'] = true;
         $this->packageLevelResult = $packageLevelResult;

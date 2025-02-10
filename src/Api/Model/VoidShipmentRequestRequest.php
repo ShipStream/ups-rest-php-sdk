@@ -8,7 +8,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getRequestOption() : string
+    public function getRequestOption(): string
     {
         return $this->requestOption;
     }
@@ -40,7 +40,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(string $requestOption): self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -51,7 +51,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
      *
      * @return VoidRequestTransactionReference
      */
-    public function getTransactionReference() : VoidRequestTransactionReference
+    public function getTransactionReference(): VoidRequestTransactionReference
     {
         return $this->transactionReference;
     }
@@ -62,7 +62,7 @@ class VoidShipmentRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(VoidRequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(VoidRequestTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

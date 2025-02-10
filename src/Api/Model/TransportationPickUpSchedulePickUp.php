@@ -8,7 +8,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -45,7 +45,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     *
     * @return string
     */
-    public function getDayOfWeek() : string
+    public function getDayOfWeek(): string
     {
         return $this->dayOfWeek;
     }
@@ -64,7 +64,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
     *
     * @return self
     */
-    public function setDayOfWeek(string $dayOfWeek) : self
+    public function setDayOfWeek(string $dayOfWeek): self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;
@@ -75,7 +75,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
      *
      * @return PickUpPickUpDetails
      */
-    public function getPickUpDetails() : PickUpPickUpDetails
+    public function getPickUpDetails(): PickUpPickUpDetails
     {
         return $this->pickUpDetails;
     }
@@ -86,7 +86,7 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
      *
      * @return self
      */
-    public function setPickUpDetails(PickUpPickUpDetails $pickUpDetails) : self
+    public function setPickUpDetails(PickUpPickUpDetails $pickUpDetails): self
     {
         $this->initialized['pickUpDetails'] = true;
         $this->pickUpDetails = $pickUpDetails;

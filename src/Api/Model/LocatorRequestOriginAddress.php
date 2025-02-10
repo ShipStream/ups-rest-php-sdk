@@ -8,7 +8,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -38,7 +38,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
      *
      * @return OriginAddressGeocode
      */
-    public function getGeocode() : OriginAddressGeocode
+    public function getGeocode(): OriginAddressGeocode
     {
         return $this->geocode;
     }
@@ -49,7 +49,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setGeocode(OriginAddressGeocode $geocode) : self
+    public function setGeocode(OriginAddressGeocode $geocode): self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -61,7 +61,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
     *
     * @return OriginAddressAddressKeyFormat
     */
-    public function getAddressKeyFormat() : OriginAddressAddressKeyFormat
+    public function getAddressKeyFormat(): OriginAddressAddressKeyFormat
     {
         return $this->addressKeyFormat;
     }
@@ -73,7 +73,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setAddressKeyFormat(OriginAddressAddressKeyFormat $addressKeyFormat) : self
+    public function setAddressKeyFormat(OriginAddressAddressKeyFormat $addressKeyFormat): self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;
@@ -86,7 +86,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getMaximumListSize() : string
+    public function getMaximumListSize(): string
     {
         return $this->maximumListSize;
     }
@@ -99,7 +99,7 @@ class LocatorRequestOriginAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setMaximumListSize(string $maximumListSize) : self
+    public function setMaximumListSize(string $maximumListSize): self
     {
         $this->initialized['maximumListSize'] = true;
         $this->maximumListSize = $maximumListSize;

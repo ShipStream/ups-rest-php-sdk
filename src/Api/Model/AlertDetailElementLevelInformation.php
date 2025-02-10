@@ -8,7 +8,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -40,7 +40,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
     *
     * @return string
     */
-    public function getLevel() : string
+    public function getLevel(): string
     {
         return $this->level;
     }
@@ -56,7 +56,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
     *
     * @return self
     */
-    public function setLevel(string $level) : self
+    public function setLevel(string $level): self
     {
         $this->initialized['level'] = true;
         $this->level = $level;
@@ -68,7 +68,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
      *
      * @return list<ElementLevelInformationElementIdentifier>
      */
-    public function getElementIdentifier() : array
+    public function getElementIdentifier(): array
     {
         return $this->elementIdentifier;
     }
@@ -80,7 +80,7 @@ class AlertDetailElementLevelInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setElementIdentifier(array $elementIdentifier) : self
+    public function setElementIdentifier(array $elementIdentifier): self
     {
         $this->initialized['elementIdentifier'] = true;
         $this->elementIdentifier = $elementIdentifier;

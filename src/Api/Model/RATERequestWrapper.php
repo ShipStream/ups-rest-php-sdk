@@ -8,7 +8,7 @@ class RATERequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class RATERequestWrapper extends \ArrayObject
      *
      * @return RateRequest
      */
-    public function getRateRequest() : RateRequest
+    public function getRateRequest(): RateRequest
     {
         return $this->rateRequest;
     }
@@ -34,7 +34,7 @@ class RATERequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setRateRequest(RateRequest $rateRequest) : self
+    public function setRateRequest(RateRequest $rateRequest): self
     {
         $this->initialized['rateRequest'] = true;
         $this->rateRequest = $rateRequest;

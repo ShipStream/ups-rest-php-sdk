@@ -8,7 +8,7 @@ class XAVResponseCandidate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class XAVResponseCandidate extends \ArrayObject
      *
      * @return CandidateAddressClassification|null
      */
-    public function getAddressClassification() : ?CandidateAddressClassification
+    public function getAddressClassification(): ?CandidateAddressClassification
     {
         return $this->addressClassification;
     }
@@ -40,7 +40,7 @@ class XAVResponseCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressClassification(?CandidateAddressClassification $addressClassification) : self
+    public function setAddressClassification(?CandidateAddressClassification $addressClassification): self
     {
         $this->initialized['addressClassification'] = true;
         $this->addressClassification = $addressClassification;
@@ -51,7 +51,7 @@ class XAVResponseCandidate extends \ArrayObject
      *
      * @return list<CandidateAddressKeyFormat>
      */
-    public function getAddressKeyFormat() : array
+    public function getAddressKeyFormat(): array
     {
         return $this->addressKeyFormat;
     }
@@ -62,7 +62,7 @@ class XAVResponseCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressKeyFormat(array $addressKeyFormat) : self
+    public function setAddressKeyFormat(array $addressKeyFormat): self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;

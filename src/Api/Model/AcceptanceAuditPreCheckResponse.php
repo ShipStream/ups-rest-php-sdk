@@ -8,7 +8,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -51,7 +51,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckResponseResponse
      */
-    public function getResponse() : AcceptanceAuditPreCheckResponseResponse
+    public function getResponse(): AcceptanceAuditPreCheckResponseResponse
     {
         return $this->response;
     }
@@ -62,7 +62,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(AcceptanceAuditPreCheckResponseResponse $response) : self
+    public function setResponse(AcceptanceAuditPreCheckResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -73,7 +73,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -84,7 +84,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -95,7 +95,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckResponseService
      */
-    public function getService() : AcceptanceAuditPreCheckResponseService
+    public function getService(): AcceptanceAuditPreCheckResponseService
     {
         return $this->service;
     }
@@ -106,7 +106,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setService(AcceptanceAuditPreCheckResponseService $service) : self
+    public function setService(AcceptanceAuditPreCheckResponseService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -121,7 +121,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet(): string
     {
         return $this->regulationSet;
     }
@@ -136,7 +136,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(string $regulationSet): self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -147,7 +147,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return list<AcceptanceAuditPreCheckResponsePackageResults>
      */
-    public function getPackageResults() : array
+    public function getPackageResults(): array
     {
         return $this->packageResults;
     }
@@ -158,7 +158,7 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageResults(array $packageResults) : self
+    public function setPackageResults(array $packageResults): self
     {
         $this->initialized['packageResults'] = true;
         $this->packageResults = $packageResults;

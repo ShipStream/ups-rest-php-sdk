@@ -8,7 +8,7 @@ class AccessPointInformationPrivateNetworkList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -25,7 +25,7 @@ class AccessPointInformationPrivateNetworkList extends \ArrayObject
      *
      * @return list<PrivateNetworkListPrivateNetwork>
      */
-    public function getPrivateNetwork() : array
+    public function getPrivateNetwork(): array
     {
         return $this->privateNetwork;
     }
@@ -37,7 +37,7 @@ class AccessPointInformationPrivateNetworkList extends \ArrayObject
      *
      * @return self
      */
-    public function setPrivateNetwork(array $privateNetwork) : self
+    public function setPrivateNetwork(array $privateNetwork): self
     {
         $this->initialized['privateNetwork'] = true;
         $this->privateNetwork = $privateNetwork;

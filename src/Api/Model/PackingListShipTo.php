@@ -8,7 +8,7 @@ class PackingListShipTo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -64,7 +64,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -75,7 +75,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -86,7 +86,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -97,7 +97,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return FreightShipShipToAddress
      */
-    public function getAddress() : FreightShipShipToAddress
+    public function getAddress(): FreightShipShipToAddress
     {
         return $this->address;
     }
@@ -108,7 +108,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(FreightShipShipToAddress $address) : self
+    public function setAddress(FreightShipShipToAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -119,7 +119,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
     }
@@ -130,7 +130,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(string $phoneNumber): self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;
@@ -141,7 +141,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -152,7 +152,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -163,7 +163,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getPhoneExtension() : string
+    public function getPhoneExtension(): string
     {
         return $this->phoneExtension;
     }
@@ -174,7 +174,7 @@ class PackingListShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setPhoneExtension(string $phoneExtension) : self
+    public function setPhoneExtension(string $phoneExtension): self
     {
         $this->initialized['phoneExtension'] = true;
         $this->phoneExtension = $phoneExtension;

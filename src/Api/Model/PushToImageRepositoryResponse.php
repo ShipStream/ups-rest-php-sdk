@@ -8,7 +8,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
      *
      * @return PushToImageRepositoryResponseResponse
      */
-    public function getResponse() : PushToImageRepositoryResponseResponse
+    public function getResponse(): PushToImageRepositoryResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PushToImageRepositoryResponseResponse $response) : self
+    public function setResponse(PushToImageRepositoryResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getFormsGroupID() : string
+    public function getFormsGroupID(): string
     {
         return $this->formsGroupID;
     }
@@ -62,7 +62,7 @@ class PushToImageRepositoryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setFormsGroupID(string $formsGroupID) : self
+    public function setFormsGroupID(string $formsGroupID): self
     {
         $this->initialized['formsGroupID'] = true;
         $this->formsGroupID = $formsGroupID;

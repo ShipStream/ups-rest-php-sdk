@@ -8,7 +8,7 @@ class IncludeCriteriaMerchantAccountNumberList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class IncludeCriteriaMerchantAccountNumberList extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getMerchantAccountNumber() : array
+    public function getMerchantAccountNumber(): array
     {
         return $this->merchantAccountNumber;
     }
@@ -34,7 +34,7 @@ class IncludeCriteriaMerchantAccountNumberList extends \ArrayObject
      *
      * @return self
      */
-    public function setMerchantAccountNumber(array $merchantAccountNumber) : self
+    public function setMerchantAccountNumber(array $merchantAccountNumber): self
     {
         $this->initialized['merchantAccountNumber'] = true;
         $this->merchantAccountNumber = $merchantAccountNumber;

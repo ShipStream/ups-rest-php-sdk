@@ -8,7 +8,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStreetAddress() : string
+    public function getStreetAddress(): string
     {
         return $this->streetAddress;
     }
@@ -64,7 +64,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStreetAddress(string $streetAddress) : self
+    public function setStreetAddress(string $streetAddress): self
     {
         $this->initialized['streetAddress'] = true;
         $this->streetAddress = $streetAddress;
@@ -75,7 +75,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -86,7 +86,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -97,7 +97,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvince() : string
+    public function getStateProvince(): string
     {
         return $this->stateProvince;
     }
@@ -108,7 +108,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(string $stateProvince): self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -119,7 +119,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -130,7 +130,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -141,7 +141,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -152,7 +152,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -163,7 +163,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return OriginAddressOriginSearchCriteria
      */
-    public function getOriginSearchCriteria() : OriginAddressOriginSearchCriteria
+    public function getOriginSearchCriteria(): OriginAddressOriginSearchCriteria
     {
         return $this->originSearchCriteria;
     }
@@ -174,7 +174,7 @@ class PickupGetServiceCenterFacilitiesRequestOriginAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginSearchCriteria(OriginAddressOriginSearchCriteria $originSearchCriteria) : self
+    public function setOriginSearchCriteria(OriginAddressOriginSearchCriteria $originSearchCriteria): self
     {
         $this->initialized['originSearchCriteria'] = true;
         $this->originSearchCriteria = $originSearchCriteria;

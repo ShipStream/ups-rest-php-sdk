@@ -8,7 +8,7 @@ class FreightRateRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -142,7 +142,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestRequest
      */
-    public function getRequest() : FreightRateRequestRequest
+    public function getRequest(): FreightRateRequestRequest
     {
         return $this->request;
     }
@@ -153,7 +153,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(FreightRateRequestRequest $request) : self
+    public function setRequest(FreightRateRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -164,7 +164,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestShipFrom
      */
-    public function getShipFrom() : FreightRateRequestShipFrom
+    public function getShipFrom(): FreightRateRequestShipFrom
     {
         return $this->shipFrom;
     }
@@ -175,7 +175,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipFrom(FreightRateRequestShipFrom $shipFrom) : self
+    public function setShipFrom(FreightRateRequestShipFrom $shipFrom): self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -186,7 +186,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestShipTo
      */
-    public function getShipTo() : FreightRateRequestShipTo
+    public function getShipTo(): FreightRateRequestShipTo
     {
         return $this->shipTo;
     }
@@ -197,7 +197,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipTo(FreightRateRequestShipTo $shipTo) : self
+    public function setShipTo(FreightRateRequestShipTo $shipTo): self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -208,7 +208,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestPaymentInformation
      */
-    public function getPaymentInformation() : FreightRateRequestPaymentInformation
+    public function getPaymentInformation(): FreightRateRequestPaymentInformation
     {
         return $this->paymentInformation;
     }
@@ -219,7 +219,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPaymentInformation(FreightRateRequestPaymentInformation $paymentInformation) : self
+    public function setPaymentInformation(FreightRateRequestPaymentInformation $paymentInformation): self
     {
         $this->initialized['paymentInformation'] = true;
         $this->paymentInformation = $paymentInformation;
@@ -230,7 +230,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestService
      */
-    public function getService() : FreightRateRequestService
+    public function getService(): FreightRateRequestService
     {
         return $this->service;
     }
@@ -241,7 +241,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setService(FreightRateRequestService $service) : self
+    public function setService(FreightRateRequestService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -253,7 +253,7 @@ class FreightRateRequest extends \ArrayObject
     *
     * @return FreightRateRequestHandlingUnitOne
     */
-    public function getHandlingUnitOne() : FreightRateRequestHandlingUnitOne
+    public function getHandlingUnitOne(): FreightRateRequestHandlingUnitOne
     {
         return $this->handlingUnitOne;
     }
@@ -265,7 +265,7 @@ class FreightRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setHandlingUnitOne(FreightRateRequestHandlingUnitOne $handlingUnitOne) : self
+    public function setHandlingUnitOne(FreightRateRequestHandlingUnitOne $handlingUnitOne): self
     {
         $this->initialized['handlingUnitOne'] = true;
         $this->handlingUnitOne = $handlingUnitOne;
@@ -276,7 +276,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestHandlingUnitTwo
      */
-    public function getHandlingUnitTwo() : FreightRateRequestHandlingUnitTwo
+    public function getHandlingUnitTwo(): FreightRateRequestHandlingUnitTwo
     {
         return $this->handlingUnitTwo;
     }
@@ -287,7 +287,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnitTwo(FreightRateRequestHandlingUnitTwo $handlingUnitTwo) : self
+    public function setHandlingUnitTwo(FreightRateRequestHandlingUnitTwo $handlingUnitTwo): self
     {
         $this->initialized['handlingUnitTwo'] = true;
         $this->handlingUnitTwo = $handlingUnitTwo;
@@ -298,7 +298,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return list<FreightRateRequestCommodity>
      */
-    public function getCommodity() : array
+    public function getCommodity(): array
     {
         return $this->commodity;
     }
@@ -309,7 +309,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(array $commodity): self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -320,7 +320,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestShipmentServiceOptions
      */
-    public function getShipmentServiceOptions() : FreightRateRequestShipmentServiceOptions
+    public function getShipmentServiceOptions(): FreightRateRequestShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
@@ -331,7 +331,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightRateRequestShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(FreightRateRequestShipmentServiceOptions $shipmentServiceOptions): self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -342,7 +342,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestPickupRequest
      */
-    public function getPickupRequest() : FreightRateRequestPickupRequest
+    public function getPickupRequest(): FreightRateRequestPickupRequest
     {
         return $this->pickupRequest;
     }
@@ -353,7 +353,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupRequest(FreightRateRequestPickupRequest $pickupRequest) : self
+    public function setPickupRequest(FreightRateRequestPickupRequest $pickupRequest): self
     {
         $this->initialized['pickupRequest'] = true;
         $this->pickupRequest = $pickupRequest;
@@ -364,7 +364,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestAlternateRateOptions
      */
-    public function getAlternateRateOptions() : FreightRateRequestAlternateRateOptions
+    public function getAlternateRateOptions(): FreightRateRequestAlternateRateOptions
     {
         return $this->alternateRateOptions;
     }
@@ -375,7 +375,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAlternateRateOptions(FreightRateRequestAlternateRateOptions $alternateRateOptions) : self
+    public function setAlternateRateOptions(FreightRateRequestAlternateRateOptions $alternateRateOptions): self
     {
         $this->initialized['alternateRateOptions'] = true;
         $this->alternateRateOptions = $alternateRateOptions;
@@ -386,7 +386,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestGFPOptions
      */
-    public function getGFPOptions() : FreightRateRequestGFPOptions
+    public function getGFPOptions(): FreightRateRequestGFPOptions
     {
         return $this->gFPOptions;
     }
@@ -397,7 +397,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setGFPOptions(FreightRateRequestGFPOptions $gFPOptions) : self
+    public function setGFPOptions(FreightRateRequestGFPOptions $gFPOptions): self
     {
         $this->initialized['gFPOptions'] = true;
         $this->gFPOptions = $gFPOptions;
@@ -408,7 +408,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return FreightRateRequestHandlingUnitWeight
      */
-    public function getHandlingUnitWeight() : FreightRateRequestHandlingUnitWeight
+    public function getHandlingUnitWeight(): FreightRateRequestHandlingUnitWeight
     {
         return $this->handlingUnitWeight;
     }
@@ -419,7 +419,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnitWeight(FreightRateRequestHandlingUnitWeight $handlingUnitWeight) : self
+    public function setHandlingUnitWeight(FreightRateRequestHandlingUnitWeight $handlingUnitWeight): self
     {
         $this->initialized['handlingUnitWeight'] = true;
         $this->handlingUnitWeight = $handlingUnitWeight;
@@ -439,7 +439,7 @@ class FreightRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getAdjustedWeightIndicator() : string
+    public function getAdjustedWeightIndicator(): string
     {
         return $this->adjustedWeightIndicator;
     }
@@ -459,7 +459,7 @@ class FreightRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setAdjustedWeightIndicator(string $adjustedWeightIndicator) : self
+    public function setAdjustedWeightIndicator(string $adjustedWeightIndicator): self
     {
         $this->initialized['adjustedWeightIndicator'] = true;
         $this->adjustedWeightIndicator = $adjustedWeightIndicator;
@@ -470,7 +470,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getTimeInTransitIndicator() : string
+    public function getTimeInTransitIndicator(): string
     {
         return $this->timeInTransitIndicator;
     }
@@ -481,7 +481,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeInTransitIndicator(string $timeInTransitIndicator) : self
+    public function setTimeInTransitIndicator(string $timeInTransitIndicator): self
     {
         $this->initialized['timeInTransitIndicator'] = true;
         $this->timeInTransitIndicator = $timeInTransitIndicator;
@@ -492,7 +492,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return list<FreightRateRequestHandlingUnits>
      */
-    public function getHandlingUnits() : array
+    public function getHandlingUnits(): array
     {
         return $this->handlingUnits;
     }
@@ -503,7 +503,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnits(array $handlingUnits) : self
+    public function setHandlingUnits(array $handlingUnits): self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;
@@ -514,7 +514,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getAdjustedHeightIndicator() : string
+    public function getAdjustedHeightIndicator(): string
     {
         return $this->adjustedHeightIndicator;
     }
@@ -525,7 +525,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAdjustedHeightIndicator(string $adjustedHeightIndicator) : self
+    public function setAdjustedHeightIndicator(string $adjustedHeightIndicator): self
     {
         $this->initialized['adjustedHeightIndicator'] = true;
         $this->adjustedHeightIndicator = $adjustedHeightIndicator;
@@ -537,7 +537,7 @@ class FreightRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getDensityEligibleIndicator() : string
+    public function getDensityEligibleIndicator(): string
     {
         return $this->densityEligibleIndicator;
     }
@@ -549,7 +549,7 @@ class FreightRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setDensityEligibleIndicator(string $densityEligibleIndicator) : self
+    public function setDensityEligibleIndicator(string $densityEligibleIndicator): self
     {
         $this->initialized['densityEligibleIndicator'] = true;
         $this->densityEligibleIndicator = $densityEligibleIndicator;
@@ -560,7 +560,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getQuoteNumberIndicator() : string
+    public function getQuoteNumberIndicator(): string
     {
         return $this->quoteNumberIndicator;
     }
@@ -571,7 +571,7 @@ class FreightRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setQuoteNumberIndicator(string $quoteNumberIndicator) : self
+    public function setQuoteNumberIndicator(string $quoteNumberIndicator): self
     {
         $this->initialized['quoteNumberIndicator'] = true;
         $this->quoteNumberIndicator = $quoteNumberIndicator;

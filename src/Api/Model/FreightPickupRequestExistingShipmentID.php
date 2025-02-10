@@ -8,7 +8,7 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentNumber() : string
+    public function getShipmentNumber(): string
     {
         return $this->shipmentNumber;
     }
@@ -40,7 +40,7 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentNumber(string $shipmentNumber) : self
+    public function setShipmentNumber(string $shipmentNumber): self
     {
         $this->initialized['shipmentNumber'] = true;
         $this->shipmentNumber = $shipmentNumber;
@@ -51,7 +51,7 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
      *
      * @return string
      */
-    public function getBOLID() : string
+    public function getBOLID(): string
     {
         return $this->bOLID;
     }
@@ -62,7 +62,7 @@ class FreightPickupRequestExistingShipmentID extends \ArrayObject
      *
      * @return self
      */
-    public function setBOLID(string $bOLID) : self
+    public function setBOLID(string $bOLID): self
     {
         $this->initialized['bOLID'] = true;
         $this->bOLID = $bOLID;

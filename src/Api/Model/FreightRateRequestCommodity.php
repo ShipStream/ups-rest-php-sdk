@@ -8,7 +8,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -92,7 +92,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityID() : string
+    public function getCommodityID(): string
     {
         return $this->commodityID;
     }
@@ -103,7 +103,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(string $commodityID): self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -114,7 +114,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -125,7 +125,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -136,7 +136,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return CommodityWeight
      */
-    public function getWeight() : CommodityWeight
+    public function getWeight(): CommodityWeight
     {
         return $this->weight;
     }
@@ -147,7 +147,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(CommodityWeight $weight) : self
+    public function setWeight(CommodityWeight $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -158,7 +158,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return CommodityAdjustedWeight
      */
-    public function getAdjustedWeight() : CommodityAdjustedWeight
+    public function getAdjustedWeight(): CommodityAdjustedWeight
     {
         return $this->adjustedWeight;
     }
@@ -169,7 +169,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setAdjustedWeight(CommodityAdjustedWeight $adjustedWeight) : self
+    public function setAdjustedWeight(CommodityAdjustedWeight $adjustedWeight): self
     {
         $this->initialized['adjustedWeight'] = true;
         $this->adjustedWeight = $adjustedWeight;
@@ -180,7 +180,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return CommodityDimensions
      */
-    public function getDimensions() : CommodityDimensions
+    public function getDimensions(): CommodityDimensions
     {
         return $this->dimensions;
     }
@@ -191,7 +191,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(CommodityDimensions $dimensions) : self
+    public function setDimensions(CommodityDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -202,7 +202,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getNumberOfPieces() : string
+    public function getNumberOfPieces(): string
     {
         return $this->numberOfPieces;
     }
@@ -213,7 +213,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setNumberOfPieces(string $numberOfPieces) : self
+    public function setNumberOfPieces(string $numberOfPieces): self
     {
         $this->initialized['numberOfPieces'] = true;
         $this->numberOfPieces = $numberOfPieces;
@@ -224,7 +224,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return CommodityPackagingType
      */
-    public function getPackagingType() : CommodityPackagingType
+    public function getPackagingType(): CommodityPackagingType
     {
         return $this->packagingType;
     }
@@ -235,7 +235,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingType(CommodityPackagingType $packagingType) : self
+    public function setPackagingType(CommodityPackagingType $packagingType): self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -247,7 +247,7 @@ class FreightRateRequestCommodity extends \ArrayObject
     *
     * @return string
     */
-    public function getDangerousGoodsIndicator() : string
+    public function getDangerousGoodsIndicator(): string
     {
         return $this->dangerousGoodsIndicator;
     }
@@ -259,7 +259,7 @@ class FreightRateRequestCommodity extends \ArrayObject
     *
     * @return self
     */
-    public function setDangerousGoodsIndicator(string $dangerousGoodsIndicator) : self
+    public function setDangerousGoodsIndicator(string $dangerousGoodsIndicator): self
     {
         $this->initialized['dangerousGoodsIndicator'] = true;
         $this->dangerousGoodsIndicator = $dangerousGoodsIndicator;
@@ -270,7 +270,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return CommodityCommodityValue
      */
-    public function getCommodityValue() : CommodityCommodityValue
+    public function getCommodityValue(): CommodityCommodityValue
     {
         return $this->commodityValue;
     }
@@ -281,7 +281,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityValue(CommodityCommodityValue $commodityValue) : self
+    public function setCommodityValue(CommodityCommodityValue $commodityValue): self
     {
         $this->initialized['commodityValue'] = true;
         $this->commodityValue = $commodityValue;
@@ -293,7 +293,7 @@ class FreightRateRequestCommodity extends \ArrayObject
     *
     * @return string
     */
-    public function getFreightClass() : string
+    public function getFreightClass(): string
     {
         return $this->freightClass;
     }
@@ -305,7 +305,7 @@ class FreightRateRequestCommodity extends \ArrayObject
     *
     * @return self
     */
-    public function setFreightClass(string $freightClass) : self
+    public function setFreightClass(string $freightClass): self
     {
         $this->initialized['freightClass'] = true;
         $this->freightClass = $freightClass;
@@ -316,7 +316,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getNMFCCommodityCode() : string
+    public function getNMFCCommodityCode(): string
     {
         return $this->nMFCCommodityCode;
     }
@@ -327,7 +327,7 @@ class FreightRateRequestCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setNMFCCommodityCode(string $nMFCCommodityCode) : self
+    public function setNMFCCommodityCode(string $nMFCCommodityCode): self
     {
         $this->initialized['nMFCCommodityCode'] = true;
         $this->nMFCCommodityCode = $nMFCCommodityCode;
@@ -339,7 +339,7 @@ class FreightRateRequestCommodity extends \ArrayObject
     *
     * @return CommodityNMFCCommodity
     */
-    public function getNMFCCommodity() : CommodityNMFCCommodity
+    public function getNMFCCommodity(): CommodityNMFCCommodity
     {
         return $this->nMFCCommodity;
     }
@@ -351,7 +351,7 @@ class FreightRateRequestCommodity extends \ArrayObject
     *
     * @return self
     */
-    public function setNMFCCommodity(CommodityNMFCCommodity $nMFCCommodity) : self
+    public function setNMFCCommodity(CommodityNMFCCommodity $nMFCCommodity): self
     {
         $this->initialized['nMFCCommodity'] = true;
         $this->nMFCCommodity = $nMFCCommodity;

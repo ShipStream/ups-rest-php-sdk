@@ -8,7 +8,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -48,7 +48,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -59,7 +59,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -70,7 +70,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -81,7 +81,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -92,7 +92,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return SubscriptionEventsSubscriptionStatus
      */
-    public function getSubscriptionStatus() : SubscriptionEventsSubscriptionStatus
+    public function getSubscriptionStatus(): SubscriptionEventsSubscriptionStatus
     {
         return $this->subscriptionStatus;
     }
@@ -103,7 +103,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setSubscriptionStatus(SubscriptionEventsSubscriptionStatus $subscriptionStatus) : self
+    public function setSubscriptionStatus(SubscriptionEventsSubscriptionStatus $subscriptionStatus): self
     {
         $this->initialized['subscriptionStatus'] = true;
         $this->subscriptionStatus = $subscriptionStatus;
@@ -114,7 +114,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return SubscriptionEventsDateRange
      */
-    public function getDateRange() : SubscriptionEventsDateRange
+    public function getDateRange(): SubscriptionEventsDateRange
     {
         return $this->dateRange;
     }
@@ -125,7 +125,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setDateRange(SubscriptionEventsDateRange $dateRange) : self
+    public function setDateRange(SubscriptionEventsDateRange $dateRange): self
     {
         $this->initialized['dateRange'] = true;
         $this->dateRange = $dateRange;
@@ -137,7 +137,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return list<SubscriptionEventsSubscriptionFile>
      */
-    public function getSubscriptionFile() : array
+    public function getSubscriptionFile(): array
     {
         return $this->subscriptionFile;
     }
@@ -149,7 +149,7 @@ class QuantumViewEventsSubscriptionEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setSubscriptionFile(array $subscriptionFile) : self
+    public function setSubscriptionFile(array $subscriptionFile): self
     {
         $this->initialized['subscriptionFile'] = true;
         $this->subscriptionFile = $subscriptionFile;

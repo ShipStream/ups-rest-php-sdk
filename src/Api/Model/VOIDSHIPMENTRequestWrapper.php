@@ -8,7 +8,7 @@ class VOIDSHIPMENTRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class VOIDSHIPMENTRequestWrapper extends \ArrayObject
      *
      * @return VoidShipmentRequest
      */
-    public function getVoidShipmentRequest() : VoidShipmentRequest
+    public function getVoidShipmentRequest(): VoidShipmentRequest
     {
         return $this->voidShipmentRequest;
     }
@@ -34,7 +34,7 @@ class VOIDSHIPMENTRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setVoidShipmentRequest(VoidShipmentRequest $voidShipmentRequest) : self
+    public function setVoidShipmentRequest(VoidShipmentRequest $voidShipmentRequest): self
     {
         $this->initialized['voidShipmentRequest'] = true;
         $this->voidShipmentRequest = $voidShipmentRequest;

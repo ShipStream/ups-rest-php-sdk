@@ -8,7 +8,7 @@ class Shipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class Shipment extends \ArrayObject
      *
      * @return string
      */
-    public function getInquiryNumber() : string
+    public function getInquiryNumber(): string
     {
         return $this->inquiryNumber;
     }
@@ -52,7 +52,7 @@ class Shipment extends \ArrayObject
      *
      * @return self
      */
-    public function setInquiryNumber(string $inquiryNumber) : self
+    public function setInquiryNumber(string $inquiryNumber): self
     {
         $this->initialized['inquiryNumber'] = true;
         $this->inquiryNumber = $inquiryNumber;
@@ -63,7 +63,7 @@ class Shipment extends \ArrayObject
      *
      * @return list<Package>|null
      */
-    public function getPackage() : ?array
+    public function getPackage(): ?array
     {
         return $this->package;
     }
@@ -74,7 +74,7 @@ class Shipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPackage(?array $package) : self
+    public function setPackage(?array $package): self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
@@ -85,7 +85,7 @@ class Shipment extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getUserRelation() : array
+    public function getUserRelation(): array
     {
         return $this->userRelation;
     }
@@ -96,7 +96,7 @@ class Shipment extends \ArrayObject
      *
      * @return self
      */
-    public function setUserRelation(array $userRelation) : self
+    public function setUserRelation(array $userRelation): self
     {
         $this->initialized['userRelation'] = true;
         $this->userRelation = $userRelation;
@@ -107,7 +107,7 @@ class Shipment extends \ArrayObject
      *
      * @return list<Warning>|null
      */
-    public function getWarnings() : ?array
+    public function getWarnings(): ?array
     {
         return $this->warnings;
     }
@@ -118,7 +118,7 @@ class Shipment extends \ArrayObject
      *
      * @return self
      */
-    public function setWarnings(?array $warnings) : self
+    public function setWarnings(?array $warnings): self
     {
         $this->initialized['warnings'] = true;
         $this->warnings = $warnings;

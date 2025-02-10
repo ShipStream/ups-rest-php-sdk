@@ -8,7 +8,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -77,7 +77,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     *
     * @return string
     */
-    public function getNotificationCode() : string
+    public function getNotificationCode(): string
     {
         return $this->notificationCode;
     }
@@ -103,7 +103,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
     *
     * @return self
     */
-    public function setNotificationCode(string $notificationCode) : self
+    public function setNotificationCode(string $notificationCode): self
     {
         $this->initialized['notificationCode'] = true;
         $this->notificationCode = $notificationCode;
@@ -114,7 +114,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return NotificationEMail
      */
-    public function getEMail() : NotificationEMail
+    public function getEMail(): NotificationEMail
     {
         return $this->eMail;
     }
@@ -125,7 +125,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setEMail(NotificationEMail $eMail) : self
+    public function setEMail(NotificationEMail $eMail): self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;
@@ -136,7 +136,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return NotificationVoiceMessage
      */
-    public function getVoiceMessage() : NotificationVoiceMessage
+    public function getVoiceMessage(): NotificationVoiceMessage
     {
         return $this->voiceMessage;
     }
@@ -147,7 +147,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setVoiceMessage(NotificationVoiceMessage $voiceMessage) : self
+    public function setVoiceMessage(NotificationVoiceMessage $voiceMessage): self
     {
         $this->initialized['voiceMessage'] = true;
         $this->voiceMessage = $voiceMessage;
@@ -158,7 +158,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return NotificationTextMessage
      */
-    public function getTextMessage() : NotificationTextMessage
+    public function getTextMessage(): NotificationTextMessage
     {
         return $this->textMessage;
     }
@@ -169,7 +169,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setTextMessage(NotificationTextMessage $textMessage) : self
+    public function setTextMessage(NotificationTextMessage $textMessage): self
     {
         $this->initialized['textMessage'] = true;
         $this->textMessage = $textMessage;
@@ -180,7 +180,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return NotificationLocale
      */
-    public function getLocale() : NotificationLocale
+    public function getLocale(): NotificationLocale
     {
         return $this->locale;
     }
@@ -191,7 +191,7 @@ class ShipmentServiceOptionsNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setLocale(NotificationLocale $locale) : self
+    public function setLocale(NotificationLocale $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;

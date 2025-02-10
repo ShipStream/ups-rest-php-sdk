@@ -8,7 +8,7 @@ class PackageResultsNegotiatedCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -37,7 +37,7 @@ class PackageResultsNegotiatedCharges extends \ArrayObject
     *
     * @return list<NegotiatedChargesItemizedCharges>
     */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges(): array
     {
         return $this->itemizedCharges;
     }
@@ -55,7 +55,7 @@ class PackageResultsNegotiatedCharges extends \ArrayObject
     *
     * @return self
     */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(array $itemizedCharges): self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;

@@ -8,7 +8,7 @@ class OverSeasLegValue extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -32,7 +32,7 @@ class OverSeasLegValue extends \ArrayObject
     *
     * @return ValueCube
     */
-    public function getCube() : ValueCube
+    public function getCube(): ValueCube
     {
         return $this->cube;
     }
@@ -44,7 +44,7 @@ class OverSeasLegValue extends \ArrayObject
     *
     * @return self
     */
-    public function setCube(ValueCube $cube) : self
+    public function setCube(ValueCube $cube): self
     {
         $this->initialized['cube'] = true;
         $this->cube = $cube;
@@ -56,7 +56,7 @@ class OverSeasLegValue extends \ArrayObject
     *
     * @return ValueCWT
     */
-    public function getCWT() : ValueCWT
+    public function getCWT(): ValueCWT
     {
         return $this->cWT;
     }
@@ -68,7 +68,7 @@ class OverSeasLegValue extends \ArrayObject
     *
     * @return self
     */
-    public function setCWT(ValueCWT $cWT) : self
+    public function setCWT(ValueCWT $cWT): self
     {
         $this->initialized['cWT'] = true;
         $this->cWT = $cWT;

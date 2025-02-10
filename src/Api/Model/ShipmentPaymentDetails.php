@@ -8,7 +8,7 @@ class ShipmentPaymentDetails extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentPaymentDetails extends \ArrayObject
      *
      * @return list<PaymentDetailsShipmentCharge>
      */
-    public function getShipmentCharge() : array
+    public function getShipmentCharge(): array
     {
         return $this->shipmentCharge;
     }
@@ -40,7 +40,7 @@ class ShipmentPaymentDetails extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentCharge(array $shipmentCharge) : self
+    public function setShipmentCharge(array $shipmentCharge): self
     {
         $this->initialized['shipmentCharge'] = true;
         $this->shipmentCharge = $shipmentCharge;
@@ -51,7 +51,7 @@ class ShipmentPaymentDetails extends \ArrayObject
      *
      * @return string
      */
-    public function getSplitDutyVATIndicator() : string
+    public function getSplitDutyVATIndicator(): string
     {
         return $this->splitDutyVATIndicator;
     }
@@ -62,7 +62,7 @@ class ShipmentPaymentDetails extends \ArrayObject
      *
      * @return self
      */
-    public function setSplitDutyVATIndicator(string $splitDutyVATIndicator) : self
+    public function setSplitDutyVATIndicator(string $splitDutyVATIndicator): self
     {
         $this->initialized['splitDutyVATIndicator'] = true;
         $this->splitDutyVATIndicator = $splitDutyVATIndicator;

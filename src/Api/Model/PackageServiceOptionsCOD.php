@@ -8,7 +8,7 @@ class PackageServiceOptionsCOD extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PackageServiceOptionsCOD extends \ArrayObject
      *
      * @return string
      */
-    public function getCODFundsCode() : string
+    public function getCODFundsCode(): string
     {
         return $this->cODFundsCode;
     }
@@ -40,7 +40,7 @@ class PackageServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODFundsCode(string $cODFundsCode) : self
+    public function setCODFundsCode(string $cODFundsCode): self
     {
         $this->initialized['cODFundsCode'] = true;
         $this->cODFundsCode = $cODFundsCode;
@@ -51,7 +51,7 @@ class PackageServiceOptionsCOD extends \ArrayObject
      *
      * @return PackageServiceOptionsCODCODAmount
      */
-    public function getCODAmount() : PackageServiceOptionsCODCODAmount
+    public function getCODAmount(): PackageServiceOptionsCODCODAmount
     {
         return $this->cODAmount;
     }
@@ -62,7 +62,7 @@ class PackageServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODAmount(PackageServiceOptionsCODCODAmount $cODAmount) : self
+    public function setCODAmount(PackageServiceOptionsCODCODAmount $cODAmount): self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

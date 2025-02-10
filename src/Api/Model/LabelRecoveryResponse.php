@@ -8,7 +8,7 @@ class LabelRecoveryResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return LabelRecoveryResponseResponse
      */
-    public function getResponse() : LabelRecoveryResponseResponse
+    public function getResponse(): LabelRecoveryResponseResponse
     {
         return $this->response;
     }
@@ -70,7 +70,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(LabelRecoveryResponseResponse $response) : self
+    public function setResponse(LabelRecoveryResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -81,7 +81,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentIdentificationNumber() : string
+    public function getShipmentIdentificationNumber(): string
     {
         return $this->shipmentIdentificationNumber;
     }
@@ -92,7 +92,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber) : self
+    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber): self
     {
         $this->initialized['shipmentIdentificationNumber'] = true;
         $this->shipmentIdentificationNumber = $shipmentIdentificationNumber;
@@ -103,7 +103,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return list<LabelRecoveryResponseLabelResults>
      */
-    public function getLabelResults() : array
+    public function getLabelResults(): array
     {
         return $this->labelResults;
     }
@@ -114,7 +114,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelResults(array $labelResults) : self
+    public function setLabelResults(array $labelResults): self
     {
         $this->initialized['labelResults'] = true;
         $this->labelResults = $labelResults;
@@ -125,7 +125,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return LabelRecoveryResponseCODTurnInPage
      */
-    public function getCODTurnInPage() : LabelRecoveryResponseCODTurnInPage
+    public function getCODTurnInPage(): LabelRecoveryResponseCODTurnInPage
     {
         return $this->cODTurnInPage;
     }
@@ -136,7 +136,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setCODTurnInPage(LabelRecoveryResponseCODTurnInPage $cODTurnInPage) : self
+    public function setCODTurnInPage(LabelRecoveryResponseCODTurnInPage $cODTurnInPage): self
     {
         $this->initialized['cODTurnInPage'] = true;
         $this->cODTurnInPage = $cODTurnInPage;
@@ -147,7 +147,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return LabelRecoveryResponseForm
      */
-    public function getForm() : LabelRecoveryResponseForm
+    public function getForm(): LabelRecoveryResponseForm
     {
         return $this->form;
     }
@@ -158,7 +158,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setForm(LabelRecoveryResponseForm $form) : self
+    public function setForm(LabelRecoveryResponseForm $form): self
     {
         $this->initialized['form'] = true;
         $this->form = $form;
@@ -169,7 +169,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return LabelRecoveryResponseHighValueReport
      */
-    public function getHighValueReport() : LabelRecoveryResponseHighValueReport
+    public function getHighValueReport(): LabelRecoveryResponseHighValueReport
     {
         return $this->highValueReport;
     }
@@ -180,7 +180,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setHighValueReport(LabelRecoveryResponseHighValueReport $highValueReport) : self
+    public function setHighValueReport(LabelRecoveryResponseHighValueReport $highValueReport): self
     {
         $this->initialized['highValueReport'] = true;
         $this->highValueReport = $highValueReport;
@@ -191,7 +191,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return list<LabelRecoveryResponseTrackingCandidate>
      */
-    public function getTrackingCandidate() : array
+    public function getTrackingCandidate(): array
     {
         return $this->trackingCandidate;
     }
@@ -202,7 +202,7 @@ class LabelRecoveryResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingCandidate(array $trackingCandidate) : self
+    public function setTrackingCandidate(array $trackingCandidate): self
     {
         $this->initialized['trackingCandidate'] = true;
         $this->trackingCandidate = $trackingCandidate;

@@ -8,7 +8,7 @@ class RateRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class RateRequest extends \ArrayObject
      *
      * @return RateRequestRequest
      */
-    public function getRequest() : RateRequestRequest
+    public function getRequest(): RateRequestRequest
     {
         return $this->request;
     }
@@ -52,7 +52,7 @@ class RateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(RateRequestRequest $request) : self
+    public function setRequest(RateRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -63,7 +63,7 @@ class RateRequest extends \ArrayObject
      *
      * @return RateRequestPickupType
      */
-    public function getPickupType() : RateRequestPickupType
+    public function getPickupType(): RateRequestPickupType
     {
         return $this->pickupType;
     }
@@ -74,7 +74,7 @@ class RateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupType(RateRequestPickupType $pickupType) : self
+    public function setPickupType(RateRequestPickupType $pickupType): self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -85,7 +85,7 @@ class RateRequest extends \ArrayObject
      *
      * @return RateRequestCustomerClassification
      */
-    public function getCustomerClassification() : RateRequestCustomerClassification
+    public function getCustomerClassification(): RateRequestCustomerClassification
     {
         return $this->customerClassification;
     }
@@ -96,7 +96,7 @@ class RateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setCustomerClassification(RateRequestCustomerClassification $customerClassification) : self
+    public function setCustomerClassification(RateRequestCustomerClassification $customerClassification): self
     {
         $this->initialized['customerClassification'] = true;
         $this->customerClassification = $customerClassification;
@@ -107,7 +107,7 @@ class RateRequest extends \ArrayObject
      *
      * @return RateRequestShipment
      */
-    public function getShipment() : RateRequestShipment
+    public function getShipment(): RateRequestShipment
     {
         return $this->shipment;
     }
@@ -118,7 +118,7 @@ class RateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(RateRequestShipment $shipment) : self
+    public function setShipment(RateRequestShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

@@ -8,7 +8,7 @@ class LandedCostResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class LandedCostResponse extends \ArrayObject
      *
      * @return LandedCostResponseShipment
      */
-    public function getShipment() : LandedCostResponseShipment
+    public function getShipment(): LandedCostResponseShipment
     {
         return $this->shipment;
     }
@@ -34,7 +34,7 @@ class LandedCostResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(LandedCostResponseShipment $shipment) : self
+    public function setShipment(LandedCostResponseShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

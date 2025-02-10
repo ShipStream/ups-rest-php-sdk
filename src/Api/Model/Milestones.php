@@ -8,7 +8,7 @@ class Milestones extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class Milestones extends \ArrayObject
      *
      * @return string
      */
-    public function getCategory() : string
+    public function getCategory(): string
     {
         return $this->category;
     }
@@ -70,7 +70,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setCategory(string $category) : self
+    public function setCategory(string $category): self
     {
         $this->initialized['category'] = true;
         $this->category = $category;
@@ -81,7 +81,7 @@ class Milestones extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -92,7 +92,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -103,7 +103,7 @@ class Milestones extends \ArrayObject
      *
      * @return bool
      */
-    public function getCurrent() : bool
+    public function getCurrent(): bool
     {
         return $this->current;
     }
@@ -114,7 +114,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrent(bool $current) : self
+    public function setCurrent(bool $current): self
     {
         $this->initialized['current'] = true;
         $this->current = $current;
@@ -125,7 +125,7 @@ class Milestones extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -136,7 +136,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -147,7 +147,7 @@ class Milestones extends \ArrayObject
      *
      * @return string
      */
-    public function getLinkedActivity() : string
+    public function getLinkedActivity(): string
     {
         return $this->linkedActivity;
     }
@@ -158,7 +158,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setLinkedActivity(string $linkedActivity) : self
+    public function setLinkedActivity(string $linkedActivity): self
     {
         $this->initialized['linkedActivity'] = true;
         $this->linkedActivity = $linkedActivity;
@@ -169,7 +169,7 @@ class Milestones extends \ArrayObject
      *
      * @return string
      */
-    public function getState() : string
+    public function getState(): string
     {
         return $this->state;
     }
@@ -180,7 +180,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setState(string $state) : self
+    public function setState(string $state): self
     {
         $this->initialized['state'] = true;
         $this->state = $state;
@@ -191,7 +191,7 @@ class Milestones extends \ArrayObject
      *
      * @return SubMilestone
      */
-    public function getSubMilestone() : SubMilestone
+    public function getSubMilestone(): SubMilestone
     {
         return $this->subMilestone;
     }
@@ -202,7 +202,7 @@ class Milestones extends \ArrayObject
      *
      * @return self
      */
-    public function setSubMilestone(SubMilestone $subMilestone) : self
+    public function setSubMilestone(SubMilestone $subMilestone): self
     {
         $this->initialized['subMilestone'] = true;
         $this->subMilestone = $subMilestone;

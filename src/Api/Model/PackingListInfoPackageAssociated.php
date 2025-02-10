@@ -8,7 +8,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      *
      * @return string
      */
-    public function getPackageNumber() : string
+    public function getPackageNumber(): string
     {
         return $this->packageNumber;
     }
@@ -46,7 +46,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageNumber(string $packageNumber) : self
+    public function setPackageNumber(string $packageNumber): self
     {
         $this->initialized['packageNumber'] = true;
         $this->packageNumber = $packageNumber;
@@ -57,7 +57,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      *
      * @return string
      */
-    public function getProductAmount() : string
+    public function getProductAmount(): string
     {
         return $this->productAmount;
     }
@@ -68,7 +68,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      *
      * @return self
      */
-    public function setProductAmount(string $productAmount) : self
+    public function setProductAmount(string $productAmount): self
     {
         $this->initialized['productAmount'] = true;
         $this->productAmount = $productAmount;
@@ -79,7 +79,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      *
      * @return string
      */
-    public function getProductNote() : string
+    public function getProductNote(): string
     {
         return $this->productNote;
     }
@@ -90,7 +90,7 @@ class PackingListInfoPackageAssociated extends \ArrayObject
      *
      * @return self
      */
-    public function setProductNote(string $productNote) : self
+    public function setProductNote(string $productNote): self
     {
         $this->initialized['productNote'] = true;
         $this->productNote = $productNote;

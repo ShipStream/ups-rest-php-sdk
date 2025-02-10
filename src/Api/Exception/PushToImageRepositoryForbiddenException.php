@@ -18,11 +18,11 @@ class PushToImageRepositoryForbiddenException extends ForbiddenException
         $this->errorResponse = $errorResponse;
         $this->response = $response;
     }
-    public function getErrorResponse() : \ShipStream\Ups\Api\Model\ErrorResponse
+    public function getErrorResponse(): \ShipStream\Ups\Api\Model\ErrorResponse
     {
         return $this->errorResponse;
     }
-    public function getResponse() : \Psr\Http\Message\ResponseInterface
+    public function getResponse(): \Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

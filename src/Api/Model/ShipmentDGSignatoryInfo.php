@@ -8,7 +8,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -61,7 +61,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -74,7 +74,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -86,7 +86,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getTitle() : string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -98,7 +98,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setTitle(string $title) : self
+    public function setTitle(string $title): self
     {
         $this->initialized['title'] = true;
         $this->title = $title;
@@ -109,7 +109,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      *
      * @return string
      */
-    public function getPlace() : string
+    public function getPlace(): string
     {
         return $this->place;
     }
@@ -120,7 +120,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setPlace(string $place) : self
+    public function setPlace(string $place): self
     {
         $this->initialized['place'] = true;
         $this->place = $place;
@@ -131,7 +131,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      *
      * @return string
      */
-    public function getDate() : string
+    public function getDate(): string
     {
         return $this->date;
     }
@@ -142,7 +142,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(string $date): self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -156,7 +156,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getShipperDeclaration() : string
+    public function getShipperDeclaration(): string
     {
         return $this->shipperDeclaration;
     }
@@ -170,7 +170,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setShipperDeclaration(string $shipperDeclaration) : self
+    public function setShipperDeclaration(string $shipperDeclaration): self
     {
         $this->initialized['shipperDeclaration'] = true;
         $this->shipperDeclaration = $shipperDeclaration;
@@ -181,7 +181,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      *
      * @return string
      */
-    public function getUploadOnlyIndicator() : string
+    public function getUploadOnlyIndicator(): string
     {
         return $this->uploadOnlyIndicator;
     }
@@ -192,7 +192,7 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setUploadOnlyIndicator(string $uploadOnlyIndicator) : self
+    public function setUploadOnlyIndicator(string $uploadOnlyIndicator): self
     {
         $this->initialized['uploadOnlyIndicator'] = true;
         $this->uploadOnlyIndicator = $uploadOnlyIndicator;

@@ -8,7 +8,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -66,7 +66,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     *
     * @return string
     */
-    public function getFileName() : string
+    public function getFileName(): string
     {
         return $this->fileName;
     }
@@ -78,7 +78,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     *
     * @return self
     */
-    public function setFileName(string $fileName) : self
+    public function setFileName(string $fileName): self
     {
         $this->initialized['fileName'] = true;
         $this->fileName = $fileName;
@@ -89,7 +89,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return SubscriptionFileStatusType
      */
-    public function getStatusType() : SubscriptionFileStatusType
+    public function getStatusType(): SubscriptionFileStatusType
     {
         return $this->statusType;
     }
@@ -100,7 +100,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return self
      */
-    public function setStatusType(SubscriptionFileStatusType $statusType) : self
+    public function setStatusType(SubscriptionFileStatusType $statusType): self
     {
         $this->initialized['statusType'] = true;
         $this->statusType = $statusType;
@@ -112,7 +112,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return list<SubscriptionFileManifest>
      */
-    public function getManifest() : array
+    public function getManifest(): array
     {
         return $this->manifest;
     }
@@ -124,7 +124,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return self
      */
-    public function setManifest(array $manifest) : self
+    public function setManifest(array $manifest): self
     {
         $this->initialized['manifest'] = true;
         $this->manifest = $manifest;
@@ -136,7 +136,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return list<SubscriptionFileOrigin>
      */
-    public function getOrigin() : array
+    public function getOrigin(): array
     {
         return $this->origin;
     }
@@ -148,7 +148,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return self
      */
-    public function setOrigin(array $origin) : self
+    public function setOrigin(array $origin): self
     {
         $this->initialized['origin'] = true;
         $this->origin = $origin;
@@ -160,7 +160,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return list<SubscriptionFileException>
      */
-    public function getException() : array
+    public function getException(): array
     {
         return $this->exception;
     }
@@ -172,7 +172,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return self
      */
-    public function setException(array $exception) : self
+    public function setException(array $exception): self
     {
         $this->initialized['exception'] = true;
         $this->exception = $exception;
@@ -184,7 +184,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return list<SubscriptionFileDelivery>
      */
-    public function getDelivery() : array
+    public function getDelivery(): array
     {
         return $this->delivery;
     }
@@ -196,7 +196,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return self
      */
-    public function setDelivery(array $delivery) : self
+    public function setDelivery(array $delivery): self
     {
         $this->initialized['delivery'] = true;
         $this->delivery = $delivery;
@@ -208,7 +208,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return list<SubscriptionFileGeneric>
      */
-    public function getGeneric() : array
+    public function getGeneric(): array
     {
         return $this->generic;
     }
@@ -220,7 +220,7 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
      *
      * @return self
      */
-    public function setGeneric(array $generic) : self
+    public function setGeneric(array $generic): self
     {
         $this->initialized['generic'] = true;
         $this->generic = $generic;

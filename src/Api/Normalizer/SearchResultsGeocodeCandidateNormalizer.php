@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate';
+            return $type === \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,11 +41,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('AddressKeyFormat', $data)) {
-                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat', 'json', $context));
+                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], \ShipStream\Ups\Api\Model\GeocodeCandidateAddressKeyFormat::class, 'json', $context));
                 unset($data['AddressKeyFormat']);
             }
             if (\array_key_exists('Geocode', $data)) {
-                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode', 'json', $context));
+                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], \ShipStream\Ups\Api\Model\GeocodeCandidateGeocode::class, 'json', $context));
                 unset($data['Geocode']);
             }
             if (\array_key_exists('LandmarkName', $data)) {
@@ -59,7 +59,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['AddressKeyFormat'] = $this->normalizer->normalize($object->getAddressKeyFormat(), 'json', $context);
@@ -74,9 +74,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate' => false];
+            return [\ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class => false];
         }
     }
 } else {
@@ -86,13 +86,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate';
+            return $type === \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class;
         }
         /**
          * @return mixed
@@ -110,11 +110,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('AddressKeyFormat', $data)) {
-                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat', 'json', $context));
+                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], \ShipStream\Ups\Api\Model\GeocodeCandidateAddressKeyFormat::class, 'json', $context));
                 unset($data['AddressKeyFormat']);
             }
             if (\array_key_exists('Geocode', $data)) {
-                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode', 'json', $context));
+                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], \ShipStream\Ups\Api\Model\GeocodeCandidateGeocode::class, 'json', $context));
                 unset($data['Geocode']);
             }
             if (\array_key_exists('LandmarkName', $data)) {
@@ -146,9 +146,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate' => false];
+            return [\ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class => false];
         }
     }
 }

@@ -8,7 +8,7 @@ class LocatorRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -90,7 +90,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return LocatorRequestRequest
      */
-    public function getRequest() : LocatorRequestRequest
+    public function getRequest(): LocatorRequestRequest
     {
         return $this->request;
     }
@@ -101,7 +101,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(LocatorRequestRequest $request) : self
+    public function setRequest(LocatorRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -112,7 +112,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return LocatorRequestOriginAddress
      */
-    public function getOriginAddress() : LocatorRequestOriginAddress
+    public function getOriginAddress(): LocatorRequestOriginAddress
     {
         return $this->originAddress;
     }
@@ -123,7 +123,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginAddress(LocatorRequestOriginAddress $originAddress) : self
+    public function setOriginAddress(LocatorRequestOriginAddress $originAddress): self
     {
         $this->initialized['originAddress'] = true;
         $this->originAddress = $originAddress;
@@ -134,7 +134,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return LocatorRequestTranslate
      */
-    public function getTranslate() : LocatorRequestTranslate
+    public function getTranslate(): LocatorRequestTranslate
     {
         return $this->translate;
     }
@@ -145,7 +145,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTranslate(LocatorRequestTranslate $translate) : self
+    public function setTranslate(LocatorRequestTranslate $translate): self
     {
         $this->initialized['translate'] = true;
         $this->translate = $translate;
@@ -156,7 +156,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return LocatorRequestUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : LocatorRequestUnitOfMeasurement
+    public function getUnitOfMeasurement(): LocatorRequestUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -167,7 +167,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(LocatorRequestUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(LocatorRequestUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -178,7 +178,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getLocationID() : array
+    public function getLocationID(): array
     {
         return $this->locationID;
     }
@@ -189,7 +189,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setLocationID(array $locationID) : self
+    public function setLocationID(array $locationID): self
     {
         $this->initialized['locationID'] = true;
         $this->locationID = $locationID;
@@ -201,7 +201,7 @@ class LocatorRequest extends \ArrayObject
     *
     * @return LocatorRequestLocationSearchCriteria
     */
-    public function getLocationSearchCriteria() : LocatorRequestLocationSearchCriteria
+    public function getLocationSearchCriteria(): LocatorRequestLocationSearchCriteria
     {
         return $this->locationSearchCriteria;
     }
@@ -213,7 +213,7 @@ class LocatorRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setLocationSearchCriteria(LocatorRequestLocationSearchCriteria $locationSearchCriteria) : self
+    public function setLocationSearchCriteria(LocatorRequestLocationSearchCriteria $locationSearchCriteria): self
     {
         $this->initialized['locationSearchCriteria'] = true;
         $this->locationSearchCriteria = $locationSearchCriteria;
@@ -224,7 +224,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return LocatorRequestSortCriteria
      */
-    public function getSortCriteria() : LocatorRequestSortCriteria
+    public function getSortCriteria(): LocatorRequestSortCriteria
     {
         return $this->sortCriteria;
     }
@@ -235,7 +235,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setSortCriteria(LocatorRequestSortCriteria $sortCriteria) : self
+    public function setSortCriteria(LocatorRequestSortCriteria $sortCriteria): self
     {
         $this->initialized['sortCriteria'] = true;
         $this->sortCriteria = $sortCriteria;
@@ -246,7 +246,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getAllowAllConfidenceLevels() : string
+    public function getAllowAllConfidenceLevels(): string
     {
         return $this->allowAllConfidenceLevels;
     }
@@ -257,7 +257,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAllowAllConfidenceLevels(string $allowAllConfidenceLevels) : self
+    public function setAllowAllConfidenceLevels(string $allowAllConfidenceLevels): self
     {
         $this->initialized['allowAllConfidenceLevels'] = true;
         $this->allowAllConfidenceLevels = $allowAllConfidenceLevels;
@@ -274,7 +274,7 @@ class LocatorRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getSearchOptionCode() : string
+    public function getSearchOptionCode(): string
     {
         return $this->searchOptionCode;
     }
@@ -291,7 +291,7 @@ class LocatorRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setSearchOptionCode(string $searchOptionCode) : self
+    public function setSearchOptionCode(string $searchOptionCode): self
     {
         $this->initialized['searchOptionCode'] = true;
         $this->searchOptionCode = $searchOptionCode;
@@ -302,7 +302,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return LocatorRequestServiceGeoUnit
      */
-    public function getServiceGeoUnit() : LocatorRequestServiceGeoUnit
+    public function getServiceGeoUnit(): LocatorRequestServiceGeoUnit
     {
         return $this->serviceGeoUnit;
     }
@@ -313,7 +313,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceGeoUnit(LocatorRequestServiceGeoUnit $serviceGeoUnit) : self
+    public function setServiceGeoUnit(LocatorRequestServiceGeoUnit $serviceGeoUnit): self
     {
         $this->initialized['serviceGeoUnit'] = true;
         $this->serviceGeoUnit = $serviceGeoUnit;
@@ -324,7 +324,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getFreightIndicator() : string
+    public function getFreightIndicator(): string
     {
         return $this->freightIndicator;
     }
@@ -335,7 +335,7 @@ class LocatorRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightIndicator(string $freightIndicator) : self
+    public function setFreightIndicator(string $freightIndicator): self
     {
         $this->initialized['freightIndicator'] = true;
         $this->freightIndicator = $freightIndicator;

@@ -8,7 +8,7 @@ class LandedCostRequestShipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -116,7 +116,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getId() : string
+    public function getId(): string
     {
         return $this->id;
     }
@@ -127,7 +127,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setId(string $id) : self
+    public function setId(string $id): self
     {
         $this->initialized['id'] = true;
         $this->id = $id;
@@ -138,7 +138,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getImportCountryCode() : string
+    public function getImportCountryCode(): string
     {
         return $this->importCountryCode;
     }
@@ -149,7 +149,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setImportCountryCode(string $importCountryCode) : self
+    public function setImportCountryCode(string $importCountryCode): self
     {
         $this->initialized['importCountryCode'] = true;
         $this->importCountryCode = $importCountryCode;
@@ -160,7 +160,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getImportProvince() : string
+    public function getImportProvince(): string
     {
         return $this->importProvince;
     }
@@ -171,7 +171,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setImportProvince(string $importProvince) : self
+    public function setImportProvince(string $importProvince): self
     {
         $this->initialized['importProvince'] = true;
         $this->importProvince = $importProvince;
@@ -182,7 +182,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getShipDate() : string
+    public function getShipDate(): string
     {
         return $this->shipDate;
     }
@@ -193,7 +193,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(string $shipDate): self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -216,7 +216,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getIncoterms() : string
+    public function getIncoterms(): string
     {
         return $this->incoterms;
     }
@@ -239,7 +239,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setIncoterms(string $incoterms) : self
+    public function setIncoterms(string $incoterms): self
     {
         $this->initialized['incoterms'] = true;
         $this->incoterms = $incoterms;
@@ -251,7 +251,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getExportCountryCode() : string
+    public function getExportCountryCode(): string
     {
         return $this->exportCountryCode;
     }
@@ -263,7 +263,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setExportCountryCode(string $exportCountryCode) : self
+    public function setExportCountryCode(string $exportCountryCode): self
     {
         $this->initialized['exportCountryCode'] = true;
         $this->exportCountryCode = $exportCountryCode;
@@ -285,7 +285,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getTransModes() : string
+    public function getTransModes(): string
     {
         return $this->transModes;
     }
@@ -307,7 +307,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setTransModes(string $transModes) : self
+    public function setTransModes(string $transModes): self
     {
         $this->initialized['transModes'] = true;
         $this->transModes = $transModes;
@@ -322,7 +322,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return float
     */
-    public function getTransportCost() : float
+    public function getTransportCost(): float
     {
         return $this->transportCost;
     }
@@ -337,7 +337,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setTransportCost(float $transportCost) : self
+    public function setTransportCost(float $transportCost): self
     {
         $this->initialized['transportCost'] = true;
         $this->transportCost = $transportCost;
@@ -359,7 +359,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getShipmentType() : string
+    public function getShipmentType(): string
     {
         return $this->shipmentType;
     }
@@ -381,7 +381,7 @@ class LandedCostRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setShipmentType(string $shipmentType) : self
+    public function setShipmentType(string $shipmentType): self
     {
         $this->initialized['shipmentType'] = true;
         $this->shipmentType = $shipmentType;
@@ -392,7 +392,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return list<RequestShipmentItems>
      */
-    public function getShipmentItems() : array
+    public function getShipmentItems(): array
     {
         return $this->shipmentItems;
     }
@@ -403,7 +403,7 @@ class LandedCostRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentItems(array $shipmentItems) : self
+    public function setShipmentItems(array $shipmentItems): self
     {
         $this->initialized['shipmentItems'] = true;
         $this->shipmentItems = $shipmentItems;

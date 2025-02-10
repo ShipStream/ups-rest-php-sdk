@@ -8,7 +8,7 @@ class FreightRateResponseTimeInTransit extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class FreightRateResponseTimeInTransit extends \ArrayObject
      *
      * @return string
      */
-    public function getDaysInTransit() : string
+    public function getDaysInTransit(): string
     {
         return $this->daysInTransit;
     }
@@ -34,7 +34,7 @@ class FreightRateResponseTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setDaysInTransit(string $daysInTransit) : self
+    public function setDaysInTransit(string $daysInTransit): self
     {
         $this->initialized['daysInTransit'] = true;
         $this->daysInTransit = $daysInTransit;

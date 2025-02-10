@@ -8,7 +8,7 @@ class LabelResultsReceipt extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -37,7 +37,7 @@ class LabelResultsReceipt extends \ArrayObject
      *
      * @return string
      */
-    public function getHTMLImage() : string
+    public function getHTMLImage(): string
     {
         return $this->hTMLImage;
     }
@@ -48,7 +48,7 @@ class LabelResultsReceipt extends \ArrayObject
      *
      * @return self
      */
-    public function setHTMLImage(string $hTMLImage) : self
+    public function setHTMLImage(string $hTMLImage): self
     {
         $this->initialized['hTMLImage'] = true;
         $this->hTMLImage = $hTMLImage;
@@ -59,7 +59,7 @@ class LabelResultsReceipt extends \ArrayObject
      *
      * @return ReceiptImage
      */
-    public function getImage() : ReceiptImage
+    public function getImage(): ReceiptImage
     {
         return $this->image;
     }
@@ -70,7 +70,7 @@ class LabelResultsReceipt extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(ReceiptImage $image) : self
+    public function setImage(ReceiptImage $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -83,7 +83,7 @@ class LabelResultsReceipt extends \ArrayObject
     *
     * @return string
     */
-    public function getURL() : string
+    public function getURL(): string
     {
         return $this->uRL;
     }
@@ -96,7 +96,7 @@ class LabelResultsReceipt extends \ArrayObject
     *
     * @return self
     */
-    public function setURL(string $uRL) : self
+    public function setURL(string $uRL): self
     {
         $this->initialized['uRL'] = true;
         $this->uRL = $uRL;

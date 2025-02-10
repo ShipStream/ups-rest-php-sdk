@@ -8,7 +8,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -83,7 +83,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     *
     * @return string
     */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -110,7 +110,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -121,7 +121,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      *
      * @return ShipmentChargeBillShipper
      */
-    public function getBillShipper() : ShipmentChargeBillShipper
+    public function getBillShipper(): ShipmentChargeBillShipper
     {
         return $this->billShipper;
     }
@@ -132,7 +132,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      *
      * @return self
      */
-    public function setBillShipper(ShipmentChargeBillShipper $billShipper) : self
+    public function setBillShipper(ShipmentChargeBillShipper $billShipper): self
     {
         $this->initialized['billShipper'] = true;
         $this->billShipper = $billShipper;
@@ -143,7 +143,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      *
      * @return ShipmentChargeBillReceiver
      */
-    public function getBillReceiver() : ShipmentChargeBillReceiver
+    public function getBillReceiver(): ShipmentChargeBillReceiver
     {
         return $this->billReceiver;
     }
@@ -154,7 +154,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      *
      * @return self
      */
-    public function setBillReceiver(ShipmentChargeBillReceiver $billReceiver) : self
+    public function setBillReceiver(ShipmentChargeBillReceiver $billReceiver): self
     {
         $this->initialized['billReceiver'] = true;
         $this->billReceiver = $billReceiver;
@@ -165,7 +165,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      *
      * @return ShipmentChargeBillThirdParty
      */
-    public function getBillThirdParty() : ShipmentChargeBillThirdParty
+    public function getBillThirdParty(): ShipmentChargeBillThirdParty
     {
         return $this->billThirdParty;
     }
@@ -176,7 +176,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
      *
      * @return self
      */
-    public function setBillThirdParty(ShipmentChargeBillThirdParty $billThirdParty) : self
+    public function setBillThirdParty(ShipmentChargeBillThirdParty $billThirdParty): self
     {
         $this->initialized['billThirdParty'] = true;
         $this->billThirdParty = $billThirdParty;
@@ -191,7 +191,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     *
     * @return string
     */
-    public function getConsigneeBilledIndicator() : string
+    public function getConsigneeBilledIndicator(): string
     {
         return $this->consigneeBilledIndicator;
     }
@@ -206,7 +206,7 @@ class PaymentInformationShipmentCharge extends \ArrayObject
     *
     * @return self
     */
-    public function setConsigneeBilledIndicator(string $consigneeBilledIndicator) : self
+    public function setConsigneeBilledIndicator(string $consigneeBilledIndicator): self
     {
         $this->initialized['consigneeBilledIndicator'] = true;
         $this->consigneeBilledIndicator = $consigneeBilledIndicator;

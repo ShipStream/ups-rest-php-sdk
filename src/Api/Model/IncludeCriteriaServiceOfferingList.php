@@ -8,7 +8,7 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
      *
      * @return list<ServiceOfferingListServiceOffering>
      */
-    public function getServiceOffering() : array
+    public function getServiceOffering(): array
     {
         return $this->serviceOffering;
     }
@@ -34,7 +34,7 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOffering(array $serviceOffering) : self
+    public function setServiceOffering(array $serviceOffering): self
     {
         $this->initialized['serviceOffering'] = true;
         $this->serviceOffering = $serviceOffering;

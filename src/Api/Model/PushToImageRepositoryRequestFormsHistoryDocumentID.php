@@ -8,7 +8,7 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getDocumentID() : array
+    public function getDocumentID(): array
     {
         return $this->documentID;
     }
@@ -34,7 +34,7 @@ class PushToImageRepositoryRequestFormsHistoryDocumentID extends \ArrayObject
      *
      * @return self
      */
-    public function setDocumentID(array $documentID) : self
+    public function setDocumentID(array $documentID): self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

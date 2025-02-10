@@ -8,7 +8,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -102,7 +102,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     *
     * @return string
     */
-    public function getRateChart() : string
+    public function getRateChart(): string
     {
         return $this->rateChart;
     }
@@ -130,7 +130,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     *
     * @return self
     */
-    public function setRateChart(string $rateChart) : self
+    public function setRateChart(string $rateChart): self
     {
         $this->initialized['rateChart'] = true;
         $this->rateChart = $rateChart;
@@ -142,7 +142,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     *
     * @return ShipmentChargesBaseServiceCharge
     */
-    public function getBaseServiceCharge() : ShipmentChargesBaseServiceCharge
+    public function getBaseServiceCharge(): ShipmentChargesBaseServiceCharge
     {
         return $this->baseServiceCharge;
     }
@@ -154,7 +154,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     *
     * @return self
     */
-    public function setBaseServiceCharge(ShipmentChargesBaseServiceCharge $baseServiceCharge) : self
+    public function setBaseServiceCharge(ShipmentChargesBaseServiceCharge $baseServiceCharge): self
     {
         $this->initialized['baseServiceCharge'] = true;
         $this->baseServiceCharge = $baseServiceCharge;
@@ -165,7 +165,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return ShipmentChargesTransportationCharges
      */
-    public function getTransportationCharges() : ShipmentChargesTransportationCharges
+    public function getTransportationCharges(): ShipmentChargesTransportationCharges
     {
         return $this->transportationCharges;
     }
@@ -176,7 +176,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportationCharges(ShipmentChargesTransportationCharges $transportationCharges) : self
+    public function setTransportationCharges(ShipmentChargesTransportationCharges $transportationCharges): self
     {
         $this->initialized['transportationCharges'] = true;
         $this->transportationCharges = $transportationCharges;
@@ -188,7 +188,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return list<ShipmentChargesItemizedCharges>
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges(): array
     {
         return $this->itemizedCharges;
     }
@@ -200,7 +200,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(array $itemizedCharges): self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -211,7 +211,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return ShipmentChargesServiceOptionsCharges
      */
-    public function getServiceOptionsCharges() : ShipmentChargesServiceOptionsCharges
+    public function getServiceOptionsCharges(): ShipmentChargesServiceOptionsCharges
     {
         return $this->serviceOptionsCharges;
     }
@@ -222,7 +222,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOptionsCharges(ShipmentChargesServiceOptionsCharges $serviceOptionsCharges) : self
+    public function setServiceOptionsCharges(ShipmentChargesServiceOptionsCharges $serviceOptionsCharges): self
     {
         $this->initialized['serviceOptionsCharges'] = true;
         $this->serviceOptionsCharges = $serviceOptionsCharges;
@@ -234,7 +234,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return list<ShipmentChargesTaxCharges>
      */
-    public function getTaxCharges() : array
+    public function getTaxCharges(): array
     {
         return $this->taxCharges;
     }
@@ -246,7 +246,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxCharges(array $taxCharges) : self
+    public function setTaxCharges(array $taxCharges): self
     {
         $this->initialized['taxCharges'] = true;
         $this->taxCharges = $taxCharges;
@@ -257,7 +257,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return ShipmentChargesTotalCharges
      */
-    public function getTotalCharges() : ShipmentChargesTotalCharges
+    public function getTotalCharges(): ShipmentChargesTotalCharges
     {
         return $this->totalCharges;
     }
@@ -268,7 +268,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCharges(ShipmentChargesTotalCharges $totalCharges) : self
+    public function setTotalCharges(ShipmentChargesTotalCharges $totalCharges): self
     {
         $this->initialized['totalCharges'] = true;
         $this->totalCharges = $totalCharges;
@@ -279,7 +279,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return ShipmentChargesTotalChargesWithTaxes
      */
-    public function getTotalChargesWithTaxes() : ShipmentChargesTotalChargesWithTaxes
+    public function getTotalChargesWithTaxes(): ShipmentChargesTotalChargesWithTaxes
     {
         return $this->totalChargesWithTaxes;
     }
@@ -290,7 +290,7 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalChargesWithTaxes(ShipmentChargesTotalChargesWithTaxes $totalChargesWithTaxes) : self
+    public function setTotalChargesWithTaxes(ShipmentChargesTotalChargesWithTaxes $totalChargesWithTaxes): self
     {
         $this->initialized['totalChargesWithTaxes'] = true;
         $this->totalChargesWithTaxes = $totalChargesWithTaxes;

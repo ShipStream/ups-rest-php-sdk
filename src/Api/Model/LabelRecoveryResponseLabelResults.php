@@ -8,7 +8,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -54,7 +54,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -65,7 +65,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -76,7 +76,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return LabelResultsLabelImage
      */
-    public function getLabelImage() : LabelResultsLabelImage
+    public function getLabelImage(): LabelResultsLabelImage
     {
         return $this->labelImage;
     }
@@ -87,7 +87,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelImage(LabelResultsLabelImage $labelImage) : self
+    public function setLabelImage(LabelResultsLabelImage $labelImage): self
     {
         $this->initialized['labelImage'] = true;
         $this->labelImage = $labelImage;
@@ -98,7 +98,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return string
      */
-    public function getMailInnovationsTrackingNumber() : string
+    public function getMailInnovationsTrackingNumber(): string
     {
         return $this->mailInnovationsTrackingNumber;
     }
@@ -109,7 +109,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return self
      */
-    public function setMailInnovationsTrackingNumber(string $mailInnovationsTrackingNumber) : self
+    public function setMailInnovationsTrackingNumber(string $mailInnovationsTrackingNumber): self
     {
         $this->initialized['mailInnovationsTrackingNumber'] = true;
         $this->mailInnovationsTrackingNumber = $mailInnovationsTrackingNumber;
@@ -121,7 +121,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
     *
     * @return LabelResultsMailInnovationsLabelImage
     */
-    public function getMailInnovationsLabelImage() : LabelResultsMailInnovationsLabelImage
+    public function getMailInnovationsLabelImage(): LabelResultsMailInnovationsLabelImage
     {
         return $this->mailInnovationsLabelImage;
     }
@@ -133,7 +133,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
     *
     * @return self
     */
-    public function setMailInnovationsLabelImage(LabelResultsMailInnovationsLabelImage $mailInnovationsLabelImage) : self
+    public function setMailInnovationsLabelImage(LabelResultsMailInnovationsLabelImage $mailInnovationsLabelImage): self
     {
         $this->initialized['mailInnovationsLabelImage'] = true;
         $this->mailInnovationsLabelImage = $mailInnovationsLabelImage;
@@ -144,7 +144,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return LabelResultsReceipt
      */
-    public function getReceipt() : LabelResultsReceipt
+    public function getReceipt(): LabelResultsReceipt
     {
         return $this->receipt;
     }
@@ -155,7 +155,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return self
      */
-    public function setReceipt(LabelResultsReceipt $receipt) : self
+    public function setReceipt(LabelResultsReceipt $receipt): self
     {
         $this->initialized['receipt'] = true;
         $this->receipt = $receipt;
@@ -166,7 +166,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return LabelResultsForm
      */
-    public function getForm() : LabelResultsForm
+    public function getForm(): LabelResultsForm
     {
         return $this->form;
     }
@@ -177,7 +177,7 @@ class LabelRecoveryResponseLabelResults extends \ArrayObject
      *
      * @return self
      */
-    public function setForm(LabelResultsForm $form) : self
+    public function setForm(LabelResultsForm $form): self
     {
         $this->initialized['form'] = true;
         $this->form = $form;

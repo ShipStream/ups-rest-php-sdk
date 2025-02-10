@@ -8,7 +8,7 @@ class PickupRateRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -104,7 +104,7 @@ class PickupRateRequest extends \ArrayObject
      *
      * @return PickupRateRequestRequest
      */
-    public function getRequest() : PickupRateRequestRequest
+    public function getRequest(): PickupRateRequestRequest
     {
         return $this->request;
     }
@@ -115,7 +115,7 @@ class PickupRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PickupRateRequestRequest $request) : self
+    public function setRequest(PickupRateRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -126,7 +126,7 @@ class PickupRateRequest extends \ArrayObject
      *
      * @return PickupRateRequestShipperAccount
      */
-    public function getShipperAccount() : PickupRateRequestShipperAccount
+    public function getShipperAccount(): PickupRateRequestShipperAccount
     {
         return $this->shipperAccount;
     }
@@ -137,7 +137,7 @@ class PickupRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperAccount(PickupRateRequestShipperAccount $shipperAccount) : self
+    public function setShipperAccount(PickupRateRequestShipperAccount $shipperAccount): self
     {
         $this->initialized['shipperAccount'] = true;
         $this->shipperAccount = $shipperAccount;
@@ -148,7 +148,7 @@ class PickupRateRequest extends \ArrayObject
      *
      * @return PickupRateRequestPickupAddress
      */
-    public function getPickupAddress() : PickupRateRequestPickupAddress
+    public function getPickupAddress(): PickupRateRequestPickupAddress
     {
         return $this->pickupAddress;
     }
@@ -159,7 +159,7 @@ class PickupRateRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupAddress(PickupRateRequestPickupAddress $pickupAddress) : self
+    public function setPickupAddress(PickupRateRequestPickupAddress $pickupAddress): self
     {
         $this->initialized['pickupAddress'] = true;
         $this->pickupAddress = $pickupAddress;
@@ -173,7 +173,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getAlternateAddressIndicator() : string
+    public function getAlternateAddressIndicator(): string
     {
         return $this->alternateAddressIndicator;
     }
@@ -187,7 +187,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setAlternateAddressIndicator(string $alternateAddressIndicator) : self
+    public function setAlternateAddressIndicator(string $alternateAddressIndicator): self
     {
         $this->initialized['alternateAddressIndicator'] = true;
         $this->alternateAddressIndicator = $alternateAddressIndicator;
@@ -203,7 +203,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getServiceDateOption() : string
+    public function getServiceDateOption(): string
     {
         return $this->serviceDateOption;
     }
@@ -219,7 +219,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setServiceDateOption(string $serviceDateOption) : self
+    public function setServiceDateOption(string $serviceDateOption): self
     {
         $this->initialized['serviceDateOption'] = true;
         $this->serviceDateOption = $serviceDateOption;
@@ -231,7 +231,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return PickupRateRequestPickupDateInfo
     */
-    public function getPickupDateInfo() : PickupRateRequestPickupDateInfo
+    public function getPickupDateInfo(): PickupRateRequestPickupDateInfo
     {
         return $this->pickupDateInfo;
     }
@@ -243,7 +243,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupDateInfo(PickupRateRequestPickupDateInfo $pickupDateInfo) : self
+    public function setPickupDateInfo(PickupRateRequestPickupDateInfo $pickupDateInfo): self
     {
         $this->initialized['pickupDateInfo'] = true;
         $this->pickupDateInfo = $pickupDateInfo;
@@ -272,7 +272,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getRateChartType() : string
+    public function getRateChartType(): string
     {
         return $this->rateChartType;
     }
@@ -301,7 +301,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setRateChartType(string $rateChartType) : self
+    public function setRateChartType(string $rateChartType): self
     {
         $this->initialized['rateChartType'] = true;
         $this->rateChartType = $rateChartType;
@@ -315,7 +315,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getTaxInformationIndicator() : string
+    public function getTaxInformationIndicator(): string
     {
         return $this->taxInformationIndicator;
     }
@@ -329,7 +329,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setTaxInformationIndicator(string $taxInformationIndicator) : self
+    public function setTaxInformationIndicator(string $taxInformationIndicator): self
     {
         $this->initialized['taxInformationIndicator'] = true;
         $this->taxInformationIndicator = $taxInformationIndicator;
@@ -343,7 +343,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getUserLevelDiscountIndicator() : string
+    public function getUserLevelDiscountIndicator(): string
     {
         return $this->userLevelDiscountIndicator;
     }
@@ -357,7 +357,7 @@ class PickupRateRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator) : self
+    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator): self
     {
         $this->initialized['userLevelDiscountIndicator'] = true;
         $this->userLevelDiscountIndicator = $userLevelDiscountIndicator;

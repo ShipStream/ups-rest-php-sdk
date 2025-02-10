@@ -8,7 +8,7 @@ class FreightPickupRequestPOM extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -38,7 +38,7 @@ class FreightPickupRequestPOM extends \ArrayObject
     *
     * @return string
     */
-    public function getPOMNumber() : string
+    public function getPOMNumber(): string
     {
         return $this->pOMNumber;
     }
@@ -50,7 +50,7 @@ class FreightPickupRequestPOM extends \ArrayObject
     *
     * @return self
     */
-    public function setPOMNumber(string $pOMNumber) : self
+    public function setPOMNumber(string $pOMNumber): self
     {
         $this->initialized['pOMNumber'] = true;
         $this->pOMNumber = $pOMNumber;
@@ -62,7 +62,7 @@ class FreightPickupRequestPOM extends \ArrayObject
     *
     * @return string
     */
-    public function getPOMNumberType() : string
+    public function getPOMNumberType(): string
     {
         return $this->pOMNumberType;
     }
@@ -74,7 +74,7 @@ class FreightPickupRequestPOM extends \ArrayObject
     *
     * @return self
     */
-    public function setPOMNumberType(string $pOMNumberType) : self
+    public function setPOMNumberType(string $pOMNumberType): self
     {
         $this->initialized['pOMNumberType'] = true;
         $this->pOMNumberType = $pOMNumberType;
@@ -85,7 +85,7 @@ class FreightPickupRequestPOM extends \ArrayObject
      *
      * @return POMPickupNotifications
      */
-    public function getPickupNotifications() : POMPickupNotifications
+    public function getPickupNotifications(): POMPickupNotifications
     {
         return $this->pickupNotifications;
     }
@@ -96,7 +96,7 @@ class FreightPickupRequestPOM extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupNotifications(POMPickupNotifications $pickupNotifications) : self
+    public function setPickupNotifications(POMPickupNotifications $pickupNotifications): self
     {
         $this->initialized['pickupNotifications'] = true;
         $this->pickupNotifications = $pickupNotifications;

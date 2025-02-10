@@ -8,7 +8,7 @@ class PreNotificationRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PreNotificationRequest extends \ArrayObject
      *
      * @return PreNotificationRequestRequest
      */
-    public function getRequest() : PreNotificationRequestRequest
+    public function getRequest(): PreNotificationRequestRequest
     {
         return $this->request;
     }
@@ -40,7 +40,7 @@ class PreNotificationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PreNotificationRequestRequest $request) : self
+    public function setRequest(PreNotificationRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -51,7 +51,7 @@ class PreNotificationRequest extends \ArrayObject
      *
      * @return PreNotificationRequestShipment
      */
-    public function getShipment() : PreNotificationRequestShipment
+    public function getShipment(): PreNotificationRequestShipment
     {
         return $this->shipment;
     }
@@ -62,7 +62,7 @@ class PreNotificationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(PreNotificationRequestShipment $shipment) : self
+    public function setShipment(PreNotificationRequestShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

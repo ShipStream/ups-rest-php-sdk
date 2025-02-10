@@ -8,7 +8,7 @@ class DropLocationOperatingHours extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -25,7 +25,7 @@ class DropLocationOperatingHours extends \ArrayObject
      *
      * @return list<OperatingHoursStandardHours>
      */
-    public function getStandardHours() : array
+    public function getStandardHours(): array
     {
         return $this->standardHours;
     }
@@ -37,7 +37,7 @@ class DropLocationOperatingHours extends \ArrayObject
      *
      * @return self
      */
-    public function setStandardHours(array $standardHours) : self
+    public function setStandardHours(array $standardHours): self
     {
         $this->initialized['standardHours'] = true;
         $this->standardHours = $standardHours;

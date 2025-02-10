@@ -8,7 +8,7 @@ class ManifestPackageDimensions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -37,7 +37,7 @@ class ManifestPackageDimensions extends \ArrayObject
     *
     * @return string
     */
-    public function getLength() : string
+    public function getLength(): string
     {
         return $this->length;
     }
@@ -49,7 +49,7 @@ class ManifestPackageDimensions extends \ArrayObject
     *
     * @return self
     */
-    public function setLength(string $length) : self
+    public function setLength(string $length): self
     {
         $this->initialized['length'] = true;
         $this->length = $length;
@@ -60,7 +60,7 @@ class ManifestPackageDimensions extends \ArrayObject
      *
      * @return string
      */
-    public function getWidth() : string
+    public function getWidth(): string
     {
         return $this->width;
     }
@@ -71,7 +71,7 @@ class ManifestPackageDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setWidth(string $width) : self
+    public function setWidth(string $width): self
     {
         $this->initialized['width'] = true;
         $this->width = $width;
@@ -82,7 +82,7 @@ class ManifestPackageDimensions extends \ArrayObject
      *
      * @return string
      */
-    public function getHeight() : string
+    public function getHeight(): string
     {
         return $this->height;
     }
@@ -93,7 +93,7 @@ class ManifestPackageDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setHeight(string $height) : self
+    public function setHeight(string $height): self
     {
         $this->initialized['height'] = true;
         $this->height = $height;

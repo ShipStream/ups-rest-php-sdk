@@ -8,7 +8,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -58,7 +58,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -69,7 +69,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -80,7 +80,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -91,7 +91,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -102,7 +102,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -113,7 +113,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return string
      */
-    public function getCategory() : string
+    public function getCategory(): string
     {
         return $this->category;
     }
@@ -124,7 +124,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setCategory(string $category) : self
+    public function setCategory(string $category): self
     {
         $this->initialized['category'] = true;
         $this->category = $category;
@@ -135,7 +135,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return AvailableLocationAttributesOptionCodeTransportationPickUpSchedule
      */
-    public function getTransportationPickUpSchedule() : AvailableLocationAttributesOptionCodeTransportationPickUpSchedule
+    public function getTransportationPickUpSchedule(): AvailableLocationAttributesOptionCodeTransportationPickUpSchedule
     {
         return $this->transportationPickUpSchedule;
     }
@@ -146,7 +146,7 @@ class AvailableLocationAttributesOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportationPickUpSchedule(AvailableLocationAttributesOptionCodeTransportationPickUpSchedule $transportationPickUpSchedule) : self
+    public function setTransportationPickUpSchedule(AvailableLocationAttributesOptionCodeTransportationPickUpSchedule $transportationPickUpSchedule): self
     {
         $this->initialized['transportationPickUpSchedule'] = true;
         $this->transportationPickUpSchedule = $transportationPickUpSchedule;

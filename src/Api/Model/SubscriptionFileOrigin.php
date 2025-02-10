@@ -8,7 +8,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -80,7 +80,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return list<OriginPackageReferenceNumber>
      */
-    public function getPackageReferenceNumber() : array
+    public function getPackageReferenceNumber(): array
     {
         return $this->packageReferenceNumber;
     }
@@ -92,7 +92,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageReferenceNumber(array $packageReferenceNumber) : self
+    public function setPackageReferenceNumber(array $packageReferenceNumber): self
     {
         $this->initialized['packageReferenceNumber'] = true;
         $this->packageReferenceNumber = $packageReferenceNumber;
@@ -104,7 +104,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return list<OriginShipmentReferenceNumber>
      */
-    public function getShipmentReferenceNumber() : array
+    public function getShipmentReferenceNumber(): array
     {
         return $this->shipmentReferenceNumber;
     }
@@ -116,7 +116,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(array $shipmentReferenceNumber) : self
+    public function setShipmentReferenceNumber(array $shipmentReferenceNumber): self
     {
         $this->initialized['shipmentReferenceNumber'] = true;
         $this->shipmentReferenceNumber = $shipmentReferenceNumber;
@@ -127,7 +127,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -138,7 +138,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -149,7 +149,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -160,7 +160,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -171,7 +171,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return string
      */
-    public function getDate() : string
+    public function getDate(): string
     {
         return $this->date;
     }
@@ -182,7 +182,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(string $date): self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -193,7 +193,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return string
      */
-    public function getTime() : string
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -204,7 +204,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(string $time): self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -215,7 +215,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return OriginActivityLocation
      */
-    public function getActivityLocation() : OriginActivityLocation
+    public function getActivityLocation(): OriginActivityLocation
     {
         return $this->activityLocation;
     }
@@ -226,7 +226,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setActivityLocation(OriginActivityLocation $activityLocation) : self
+    public function setActivityLocation(OriginActivityLocation $activityLocation): self
     {
         $this->initialized['activityLocation'] = true;
         $this->activityLocation = $activityLocation;
@@ -237,7 +237,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return OriginBillToAccount
      */
-    public function getBillToAccount() : OriginBillToAccount
+    public function getBillToAccount(): OriginBillToAccount
     {
         return $this->billToAccount;
     }
@@ -248,7 +248,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setBillToAccount(OriginBillToAccount $billToAccount) : self
+    public function setBillToAccount(OriginBillToAccount $billToAccount): self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -259,7 +259,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return string
      */
-    public function getScheduledDeliveryDate() : string
+    public function getScheduledDeliveryDate(): string
     {
         return $this->scheduledDeliveryDate;
     }
@@ -270,7 +270,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setScheduledDeliveryDate(string $scheduledDeliveryDate) : self
+    public function setScheduledDeliveryDate(string $scheduledDeliveryDate): self
     {
         $this->initialized['scheduledDeliveryDate'] = true;
         $this->scheduledDeliveryDate = $scheduledDeliveryDate;
@@ -281,7 +281,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return string
      */
-    public function getScheduledDeliveryTime() : string
+    public function getScheduledDeliveryTime(): string
     {
         return $this->scheduledDeliveryTime;
     }
@@ -292,7 +292,7 @@ class SubscriptionFileOrigin extends \ArrayObject
      *
      * @return self
      */
-    public function setScheduledDeliveryTime(string $scheduledDeliveryTime) : self
+    public function setScheduledDeliveryTime(string $scheduledDeliveryTime): self
     {
         $this->initialized['scheduledDeliveryTime'] = true;
         $this->scheduledDeliveryTime = $scheduledDeliveryTime;

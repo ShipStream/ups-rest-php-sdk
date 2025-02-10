@@ -8,7 +8,7 @@ class PackageUPSPremier extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class PackageUPSPremier extends \ArrayObject
     *
     * @return string
     */
-    public function getCategory() : string
+    public function getCategory(): string
     {
         return $this->category;
     }
@@ -52,7 +52,7 @@ class PackageUPSPremier extends \ArrayObject
     *
     * @return self
     */
-    public function setCategory(string $category) : self
+    public function setCategory(string $category): self
     {
         $this->initialized['category'] = true;
         $this->category = $category;
@@ -63,7 +63,7 @@ class PackageUPSPremier extends \ArrayObject
      *
      * @return string
      */
-    public function getSensorID() : string
+    public function getSensorID(): string
     {
         return $this->sensorID;
     }
@@ -74,7 +74,7 @@ class PackageUPSPremier extends \ArrayObject
      *
      * @return self
      */
-    public function setSensorID(string $sensorID) : self
+    public function setSensorID(string $sensorID): self
     {
         $this->initialized['sensorID'] = true;
         $this->sensorID = $sensorID;
@@ -85,7 +85,7 @@ class PackageUPSPremier extends \ArrayObject
      *
      * @return UPSPremierHandlingInstructions
      */
-    public function getHandlingInstructions() : UPSPremierHandlingInstructions
+    public function getHandlingInstructions(): UPSPremierHandlingInstructions
     {
         return $this->handlingInstructions;
     }
@@ -96,7 +96,7 @@ class PackageUPSPremier extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingInstructions(UPSPremierHandlingInstructions $handlingInstructions) : self
+    public function setHandlingInstructions(UPSPremierHandlingInstructions $handlingInstructions): self
     {
         $this->initialized['handlingInstructions'] = true;
         $this->handlingInstructions = $handlingInstructions;

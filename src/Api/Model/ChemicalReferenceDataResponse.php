@@ -8,7 +8,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
      *
      * @return ChemicalReferenceDataResponseResponse
      */
-    public function getResponse() : ChemicalReferenceDataResponseResponse
+    public function getResponse(): ChemicalReferenceDataResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(ChemicalReferenceDataResponseResponse $response) : self
+    public function setResponse(ChemicalReferenceDataResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
      *
      * @return list<ChemicalReferenceDataResponseChemicalData>
      */
-    public function getChemicalData() : array
+    public function getChemicalData(): array
     {
         return $this->chemicalData;
     }
@@ -62,7 +62,7 @@ class ChemicalReferenceDataResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalData(array $chemicalData) : self
+    public function setChemicalData(array $chemicalData): self
     {
         $this->initialized['chemicalData'] = true;
         $this->chemicalData = $chemicalData;

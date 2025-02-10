@@ -18,871 +18,1717 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        protected $normalizers = array(
+        protected $normalizers = [
             
-            'ShipStream\\Ups\\Api\\Model\\XAVRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RequestTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\RequestTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVRequestAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseResponseStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseAlert' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseAlertNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseAddressClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseCandidateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CandidateAddressClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\CandidateAddressClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CandidateAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\CandidateAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ErrorResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Error' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataResponseChemicalDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalDataChemicalDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalDataProperShippingNameDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalDataPackageQuantityLimitDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYAPCRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYAPCResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckShipmentShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckShipmentShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackageWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageChemicalRecord' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageChemicalRecordNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseAlertDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseAlertDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlertDetailElementLevelInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\AlertDetailElementLevelInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ElementLevelInformationElementIdentifier' => 'ShipStream\\Ups\\Api\\Normalizer\\ElementLevelInformationElementIdentifierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseService' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponseServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponsePackageResults' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponsePackageResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsChemicalRecordResults' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsChemicalRecordResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems' => 'ShipStream\\Ups\\Api\\Normalizer\\RequestShipmentItemsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostResponseShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipmentPerfStats' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostResponseShipmentPerfStatsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems' => 'ShipStream\\Ups\\Api\\Normalizer\\BrokerageFeeItemsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseShipmentItemsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Errors' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LOCATORRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LOCATORRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LOCATORResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LOCATORResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestOriginAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestOriginAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginAddressGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginAddressGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginAddressAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginAddressAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestTranslate' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestTranslateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestLocationSearchCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaSearchOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionType' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchOptionOptionTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchOptionOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchOptionRelation' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchOptionRelationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaServiceSearchNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceCode' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSearchServiceCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSearchServiceOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaFreightWillCallSearchNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightWillCallSearchFacilityAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaAccessPointSearchNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointSearchIncludeCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList' => 'ShipStream\\Ups\\Api\\Normalizer\\IncludeCriteriaMerchantAccountNumberListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter' => 'ShipStream\\Ups\\Api\\Normalizer\\IncludeCriteriaSearchFilterNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList' => 'ShipStream\\Ups\\Api\\Normalizer\\IncludeCriteriaServiceOfferingListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceOfferingListServiceOffering' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceOfferingListServiceOfferingNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointSearchExcludeFromResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList' => 'ShipStream\\Ups\\Api\\Normalizer\\ExcludeFromResultPostalCodeListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PostalCodeListPostalCode' => 'ShipStream\\Ups\\Api\\Normalizer\\PostalCodeListPostalCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaOpenTimeCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestSortCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestSortCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestServiceGeoUnit' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestServiceGeoUnitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseError' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseErrorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ErrorErrorLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorErrorLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponseGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseSearchResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchResultsGeocodeCandidateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\GeocodeCandidateAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\GeocodeCandidateGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchResultsDropLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationIVR' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationIVRNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationLocationAttributeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionType' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationAttributeOptionTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationAttributeOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule' => 'ShipStream\\Ups\\Api\\Normalizer\\OptionCodeTransportationPickUpScheduleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationPickUpSchedulePickUp' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationPickUpSchedulePickUpNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickUpPickUpDetails' => 'ShipStream\\Ups\\Api\\Normalizer\\PickUpPickUpDetailsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationDistance' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationDistanceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DistanceUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DistanceUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationSpecialInstructionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationAdditionalComments' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationAdditionalCommentsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AdditionalCommentsCommentType' => 'ShipStream\\Ups\\Api\\Normalizer\\AdditionalCommentsCommentTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationOperatingHours' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationOperatingHoursNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OperatingHoursStandardHours' => 'ShipStream\\Ups\\Api\\Normalizer\\OperatingHoursStandardHoursNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\StandardHoursDayOfWeek' => 'ShipStream\\Ups\\Api\\Normalizer\\StandardHoursDayOfWeekNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationLocalizedInstructionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationPromotionInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationSortCode' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationSortCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationServiceOfferingList' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationServiceOfferingListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationAccessPointInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationBusinessClassificationListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BusinessClassificationListBusinessClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\BusinessClassificationListBusinessClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationAccessPointStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationPrivateNetworkListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PrivateNetworkListPrivateNetwork' => 'ShipStream\\Ups\\Api\\Normalizer\\PrivateNetworkListPrivateNetworkNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationAvailabilityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailabilityShippingAvailability' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailabilityShippingAvailabilityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShippingAvailabilityUnavailableReason' => 'ShipStream\\Ups\\Api\\Normalizer\\ShippingAvailabilityUnavailableReasonNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailabilityDCRAvailability' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailabilityDCRAvailabilityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DCRAvailabilityUnavailableReason' => 'ShipStream\\Ups\\Api\\Normalizer\\DCRAvailabilityUnavailableReasonNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationLocationImage' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationLocationImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchResultsAvailableLocationAttributesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionType' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesOptionTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesOptionCodeTransportationPickUpScheduleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesTransportationPickUpSchedulePickUp' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesTransportationPickUpSchedulePickUpNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesPickUpPickUpDetailsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenerateTokenSuccessResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\GenerateTokenSuccessResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RefreshTokenSuccessResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\RefreshTokenSuccessResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTDeleteRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTDeleteResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestFormsHistoryDocumentID' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryRequestFormsHistoryDocumentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTUploadRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTUploadResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadRequestUserCreatedFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadResponseFormsHistoryDocumentID' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadResponseFormsHistoryDocumentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestShipperAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestShipperAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestPickupAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupDateInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestPickupDateInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseRateResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResultChargeDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResultTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseWeekendServiceTerritoryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCancelRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCancelRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCancelResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCancelResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseGWNStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelResponseGWNStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCreationRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCreationRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCreationResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCreationResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperChargeCard' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperChargeCardNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChargeCardCardAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ChargeCardCardAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupDateInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestPickupDateInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestPickupAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupAddressPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupAddressPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupPiece' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestPickupPieceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTotalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestTotalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingData' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestTrackingDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingDataWithReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestTrackingDataWithReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestFreightOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestFreightOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightOptionsShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightOptionsDestinationAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightOptionsDestinationAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightOptionsShipmentDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPalletInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDetailPalletInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PalletInformationDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\PalletInformationDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DimensionsUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseWeekendServiceTerritory' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseWeekendServiceTerritoryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseRateStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateResult' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseRateResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResultDisclaimerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPolDivRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPolDivResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPServCenterRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPServCenterResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestPickupPiece' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestPickupPieceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestOriginAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestOriginAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginAddressOriginSearchCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginAddressOriginSearchCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestDestinationAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestDestinationAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceCenterLocationDropOffFacilitiesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesFacilityTime' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesFacilityTimeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek' => 'ShipStream\\Ups\\Api\\Normalizer\\FacilityTimeDayOfWeekNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesLocalizedInstructionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesDistance' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesDistanceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationPickupFacilities' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceCenterLocationPickupFacilitiesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupFacilitiesAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTime' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupFacilitiesFacilityTimeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTimeDayOfWeek' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupFacilitiesFacilityTimeDayOfWeekNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPendingRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPendingRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPendingResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPendingResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponsePendingStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusResponsePendingStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PRENOTIFICATIONRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PRENOTIFICATIONResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationShipmentShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationShipmentShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationPackageChemicalRecord' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationPackageChemicalRecordNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\QUANTUMVIEWRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\QUANTUMVIEWResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestSubscriptionRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewRequestSubscriptionRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionRequestDateTimeRange' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionRequestDateTimeRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseQuantumViewEvents' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewResponseQuantumViewEventsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewEventsSubscriptionEvents' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewEventsSubscriptionEventsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionEventsSubscriptionStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsDateRange' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionEventsDateRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionEventsSubscriptionFileNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileStatusTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileManifestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipperAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestService' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageActivity' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageActivityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageDimensionalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageDimensionalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DimensionalWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DimensionalWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackagePackageWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackagePackageServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackageServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsuredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsInsuredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCallTagARS' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsCallTagARSNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestCustomsValue' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestCustomsValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestUAPAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestUAPAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UAPAddressAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\UAPAddressAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileOriginNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginActivityLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ActivityLocationAddressArtifactFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ActivityLocationAddressArtifactFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileExceptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionUpdatedAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionUpdatedAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UpdatedAddressAddressExtendedInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\UpdatedAddressAddressExtendedInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionResolution' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionResolutionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionActivityLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionActivityLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileDeliveryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryActivityLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryActivityLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryDeliveryLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryDeliveryLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryLocationAddressArtifactFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AddressArtifactFormatAddressExtendedInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\AddressArtifactFormatAddressExtendedInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileGenericNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericService' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericActivity' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericActivityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericFailureNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericFailureNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FailureNotificationFailureNotificationCode' => 'ShipStream\\Ups\\Api\\Normalizer\\FailureNotificationFailureNotificationCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RATERequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\RATERequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RATEResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\RATEResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestPickupType' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestPickupTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestCustomerClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestCustomerClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentAlternateDeliveryAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentAlternateDeliveryAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateAlternateDeliveryAddressAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RateAlternateDeliveryAddressAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentIndicationType' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentIndicationTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentDetails' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPaymentDetailsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentDetailsShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentDetailsShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentChargeBillShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargeBillReceiverNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillReceiverAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\BillReceiverAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillThirdParty' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentChargeBillThirdPartyNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateBillThirdPartyAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RateBillThirdPartyAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentFRSPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentFRSPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSPaymentInformationTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSPaymentInformationAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentFreightShipmentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentFreightShipmentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentInformationFreightDensityInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentInformationFreightDensityInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoAdjustedHeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightDensityInfoAdjustedHeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AdjustedHeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\AdjustedHeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightDensityInfoHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsType' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentTotalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentTotalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentTotalWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentTotalWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackagingType' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackagingTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageDimWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageDimWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DimWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DimWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityNMFC' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityNMFCNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackagePackageServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackagePackageServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsAccessPointCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsAccessPointCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsShipperDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsShipperDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsurance' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsInsuranceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InsuranceBasicFlexibleParcelIndicator' => 'ShipStream\\Ups\\Api\\Normalizer\\InsuranceBasicFlexibleParcelIndicatorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InsuranceExtendedFlexibleParcelIndicator' => 'ShipStream\\Ups\\Api\\Normalizer\\InsuranceExtendedFlexibleParcelIndicatorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InsuranceTimeInTransitFlexibleParcelIndicator' => 'ShipStream\\Ups\\Api\\Normalizer\\InsuranceTimeInTransitFlexibleParcelIndicatorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsHazMat' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsHazMatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HazMatHazMatChemicalRecord' => 'ShipStream\\Ups\\Api\\Normalizer\\HazMatHazMatChemicalRecordNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDryIce' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsDryIceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DryIceDryIceWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\DryIceDryIceWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DryIceWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DryIceWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageSimpleRate' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageSimpleRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageUPSPremier' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageUPSPremierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAccessPointCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsAccessPointCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsCODCODAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPickupOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsPickupOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDeliveryOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsRestrictedArticles' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentServiceOptionsRestrictedArticlesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsImportControl' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsImportControlNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsReturnService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsReturnServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentRatingOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentRatingOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentInvoiceLineTotal' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentInvoiceLineTotalNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPromotionalDiscountInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPromotionalDiscountInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDeliveryTimeInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDeliveryTimeInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationPickup' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryTimeInformationPickupNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryTimeInformationReturnContractServicesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResponseRatedShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentDisclaimer' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentDisclaimerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentService' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedShipmentAlert' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentRatedShipmentAlertNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentBillingWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentBillingWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillingWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\BillingWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentFRSShipmentData' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentFRSShipmentDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSShipmentDataTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationChargesGrossChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationChargesDiscountAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationChargesNetChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSShipmentDataFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSShipmentDataHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsAdjustedHeight' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsAdjustedHeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTotalChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalChargesWithTaxes' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTotalChargesWithTaxesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentNegotiatedRateChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesTotalChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalChargesWithTaxes' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesTotalChargesWithTaxesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentRatedPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageTotalCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageTotalChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageBillingWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageBillingWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageAccessorial' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageAccessorialNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageRateModifier' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageRateModifierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageNegotiatedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageNegotiatedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedChargesItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedChargesItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageSimpleRate' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageSimpleRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary' => 'ShipStream\\Ups\\Api\\Normalizer\\TimeInTransitServiceSummaryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSummaryService' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSummaryServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSummaryEstimatedArrival' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSummaryEstimatedArrivalNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalArrival' => 'ShipStream\\Ups\\Api\\Normalizer\\EstimatedArrivalArrivalNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalPickup' => 'ShipStream\\Ups\\Api\\Normalizer\\EstimatedArrivalPickupNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SHIPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\SHIPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SHIPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\SHIPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentReturnService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentReturnServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipToPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipToPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentAlternateDeliveryAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentAlternateDeliveryAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateDeliveryAddressAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateDeliveryAddressAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromTaxIDType' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromTaxIDTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromVendorInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromVendorInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargeBillShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillShipperCreditCard' => 'ShipStream\\Ups\\Api\\Normalizer\\BillShipperCreditCardNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CreditCardAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\CreditCardAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargeBillThirdPartyNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillThirdPartyAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\BillThirdPartyAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentFRSPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentFRSPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDGSignatoryInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDGSignatoryInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationVoiceMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationVoiceMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationTextMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationTextMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationLocale' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationLocaleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelDelivery' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsLabelDeliveryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelDeliveryEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelDeliveryEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsInternationalFormsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsUserCreatedFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsUPSPremiumCareFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UPSPremiumCareFormLanguageForUPSPremiumCare' => 'ShipStream\\Ups\\Api\\Normalizer\\UPSPremiumCareFormLanguageForUPSPremiumCareNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsCN22FormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content' => 'ShipStream\\Ups\\Api\\Normalizer\\CN22FormCN22ContentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\CN22ContentCN22ContentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CN22ContentWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\CN22ContentWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsEEIFilingOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionUPSFiled' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIFilingOptionUPSFiledNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UPSFiledPOA' => 'ShipStream\\Ups\\Api\\Normalizer\\UPSFiledPOANormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionShipperFiled' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIFilingOptionShipperFiledNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsContactsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsForwardAgentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ForwardAgentAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ForwardAgentAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsUltimateConsigneeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\UltimateConsigneeAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeUltimateConsigneeType' => 'ShipStream\\Ups\\Api\\Normalizer\\UltimateConsigneeUltimateConsigneeTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsIntermediateConsigneeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IntermediateConsigneeAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\IntermediateConsigneeAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsProducer' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsProducerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProducerAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ProducerAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProducerPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ProducerPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsSoldToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SoldToPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\SoldToPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SoldToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\SoldToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsProductNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductUnit' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductUnitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UnitUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\UnitUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductNetCostDateRange' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductNetCostDateRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductProductWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductProductWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductScheduleB' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductScheduleBNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ScheduleBUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\ScheduleBUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductExcludeFromForm' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductExcludeFromFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductPackingListInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductPackingListInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListInfoPackageAssociated' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListInfoPackageAssociatedNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductEEIInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductEEIInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIInformationLicense' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIInformationLicenseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIInformationDDTCInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIInformationDDTCInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DDTCInformationUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DDTCInformationUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsDiscountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsFreightChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsInsuranceChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsOtherChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsBlanketPeriodNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelMethod' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsLabelMethodNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPreAlertNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsPreAlertNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationEMailMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationEMailMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationVoiceMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationVoiceMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationTextMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationTextMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationLocale' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationLocaleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsRestrictedArticles' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsRestrictedArticlesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackaging' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackagingNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageUPSPremier' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageUPSPremierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UPSPremierHandlingInstructions' => 'ShipStream\\Ups\\Api\\Normalizer\\UPSPremierHandlingInstructionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackageServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeclaredValueType' => 'ShipStream\\Ups\\Api\\Normalizer\\DeclaredValueTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCODCODAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsCODCODAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotificationEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsNotificationEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsHazMat' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsHazMatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDryIce' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsDryIceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageHazMatPackageInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageHazMatPackageInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestLabelSpecificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelSpecificationLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelStockSize' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelSpecificationLabelStockSizeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelSpecificationInstructionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestReceiptSpecificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReceiptSpecificationImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ReceiptSpecificationImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResponseShipmentResults' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResponseShipmentResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDisclaimer' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsDisclaimerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsShipmentCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsShipmentChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTotalChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalChargesWithTaxes' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTotalChargesWithTaxesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsNegotiatedRateCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsNegotiatedRateChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFRSShipmentData' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFRSShipmentDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillingWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsBillingWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsPackageResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingLabel' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsShippingLabelNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShippingLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ShippingLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingReceipt' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsShippingReceiptNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShippingReceiptImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ShippingReceiptImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsAccessorial' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsAccessorialNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsSimpleRate' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsSimpleRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsForm' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\FormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HighValueReportImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\HighValueReportImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\CODTurnInPageImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsNegotiatedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsNegotiatedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsRateModifier' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsRateModifierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsControlLogReceipt' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsControlLogReceiptNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ControlLogReceiptImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ControlLogReceiptImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsForm' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsCODTurnInPage' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsCODTurnInPageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImage' => 'ShipStream\\Ups\\Api\\Normalizer\\CODTurnInPageImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsHighValueReport' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsHighValueReportNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HighValueReportImage' => 'ShipStream\\Ups\\Api\\Normalizer\\HighValueReportImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\VOIDSHIPMENTRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\VOIDSHIPMENTResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidRequestTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidRequestTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentRequestVoidShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidResponseResponseStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidResponseResponseStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidResponseTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidResponseTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseSummaryResult' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponseSummaryResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SummaryResultStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\SummaryResultStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponsePackageLevelResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageLevelResultStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageLevelResultStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LABELRECOVERYRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LABELRECOVERYResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRRequestTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\LRRequestTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestLabelSpecificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryLabelSpecificationLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelStockSize' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryLabelSpecificationLabelStockSizeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestTranslateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestLabelDeliveryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestReferenceValuesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReferenceValuesReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ReferenceValuesReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestUPSPremiumCareFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRResponseResponseStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\LRResponseResponseStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRResponseTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\LRResponseTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseLabelResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsLabelImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsLabelImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelImageLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelImageLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsMailInnovationsLabelImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsMailInnovationsLabelImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\MailInnovationsLabelImageLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\MailInnovationsLabelImageLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsReceipt' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsReceiptNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReceiptImage' => 'ShipStream\\Ups\\Api\\Normalizer\\ReceiptImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReceiptImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ReceiptImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsForm' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRFormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LRFormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseCODTurnInPage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseCODTurnInPageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LRCODTurnInPageImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LRCODTurnInPageImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseForm' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryFormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryFormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseHighValueReport' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseHighValueReportNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseTrackingCandidate' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseTrackingCandidateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackingCandidatePickupDateRange' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackingCandidatePickupDateRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequester' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestRequesterNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RequesterPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\RequesterPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipmentDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPackagingType' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDetailPackagingTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDetailWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDetailWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\WeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\WeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestExistingShipmentID' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestExistingShipmentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestPOM' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestPOMNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\POMPickupNotifications' => 'ShipStream\\Ups\\Api\\Normalizer\\POMPickupNotificationsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupNotificationsEMailNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPCANCELRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPCANCELResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTRATERequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTRATERequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTRATEResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTRATEResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRatePaymentInformationPayerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PayerAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PayerAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationShipmentBillingOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestService' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitOne' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitOneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitOneType' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitOneTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitTwo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitTwoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitTwoType' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitTwoTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityAdjustedWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AdjustedWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\AdjustedWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityPackagingTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityCommodityValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityNMFCCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentServiceOptionsPickupOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentServiceOptionsDeliveryOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsOverSeasLegNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OverSeasLegDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\OverSeasLegDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue' => 'ShipStream\\Ups\\Api\\Normalizer\\OverSeasLegValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ValueCube' => 'ShipStream\\Ups\\Api\\Normalizer\\ValueCubeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ValueCWT' => 'ShipStream\\Ups\\Api\\Normalizer\\ValueCWTNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODValue' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODPaymentMethodNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODBillingOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateCODRemitTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateCODRemitToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RemitToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RemitToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDangerousGoodsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DangerousGoodsPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\DangerousGoodsPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DangerousGoodsTransportationMode' => 'ShipStream\\Ups\\Api\\Normalizer\\DangerousGoodsTransportationModeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsSortingAndSegregatingNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsExcessDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsHandlingChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingChargeAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingChargeAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsAdjustedHeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestAlternateRateOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestAlternateRateOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestGFPOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestGFPOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GFPOptionsOnCallInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\GFPOptionsOnCallInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateType' => 'ShipStream\\Ups\\Api\\Normalizer\\RateTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateFactor' => 'ShipStream\\Ups\\Api\\Normalizer\\RateFactorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FactorUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\FactorUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTotalShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseTotalShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseBillableShipmentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseBillableShipmentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillableShipmentWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\BillableShipmentWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseDimensionalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseDimensionalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseService' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseAlternateRatesResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseAlternateRateType' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseAlternateRateTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseRate' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseBillableShipmentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseBillableShipmentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTSHIPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTSHIPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformationPayer' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationPayerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipPayerAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipPayerAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PayerPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\PayerPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitOne' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentHandlingUnitOneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitTwo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentHandlingUnitTwoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentExistingShipmentID' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentExistingShipmentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExistingShipmentIDConfirmationNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ExistingShipmentIDConfirmationNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ConfirmationNumberType' => 'ShipStream\\Ups\\Api\\Normalizer\\ConfirmationNumberTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipCommodityDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipCommodityDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentReference' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReferenceWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ReferenceWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsEMailInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsEMailInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EMailInformationEMailType' => 'ShipStream\\Ups\\Api\\Normalizer\\EMailInformationEMailTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EMailInformationEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\EMailInformationEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODRemitTo' => 'ShipStream\\Ups\\Api\\Normalizer\\CODRemitToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRemitToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRemitToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RemitToPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\RemitToPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentServiceOptionsDangerousGoods' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentServiceOptionsDangerousGoodsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRequestRequesterNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRequestPOMNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipPOMPickupNotificationsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipPickupNotificationsEMailNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipPickupNotificationsEMailNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDocuments' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDocumentsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DocumentsImage' => 'ShipStream\\Ups\\Api\\Normalizer\\DocumentsImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImageType' => 'ShipStream\\Ups\\Api\\Normalizer\\ImageTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImagePrintFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ImagePrintFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImagePrintSize' => 'ShipStream\\Ups\\Api\\Normalizer\\ImagePrintSizeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DocumentsPackingList' => 'ShipStream\\Ups\\Api\\Normalizer\\DocumentsPackingListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListReference' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListHandlingUnit' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListHandlingUnitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipResponseShipmentResults' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipResponseShipmentResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsRate' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTotalShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsTotalShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillableShipmentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsBillableShipmentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDocuments' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsDocumentsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DocumentsForms' => 'ShipStream\\Ups\\Api\\Normalizer\\DocumentsFormsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FormsType' => 'ShipStream\\Ups\\Api\\Normalizer\\FormsTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FormsFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\FormsFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TimeInTransitRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\TimeInTransitRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TimeInTransitResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TimeInTransitResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ValidationList' => 'ShipStream\\Ups\\Api\\Normalizer\\ValidationListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EmsResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\EmsResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CandidateAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\CandidateAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Services' => 'ShipStream\\Ups\\Api\\Normalizer\\ServicesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Activity' => 'ShipStream\\Ups\\Api\\Normalizer\\ActivityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Address' => 'ShipStream\\Ups\\Api\\Normalizer\\AddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateTrackingNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateTrackingNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryDate' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryDateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryTime' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryTimeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InquireNumbers' => 'ShipStream\\Ups\\Api\\Normalizer\\InquireNumbersNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Location' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Milestones' => 'ShipStream\\Ups\\Api\\Normalizer\\MilestonesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Package' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Service' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Shipment' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Signature' => 'ShipStream\\Ups\\Api\\Normalizer\\SignatureNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Status' => 'ShipStream\\Ups\\Api\\Normalizer\\StatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubMilestone' => 'ShipStream\\Ups\\Api\\Normalizer\\SubMilestoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackApiResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackApiResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Warning' => 'ShipStream\\Ups\\Api\\Normalizer\\WarningNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Weight' => 'ShipStream\\Ups\\Api\\Normalizer\\WeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Destination' => 'ShipStream\\Ups\\Api\\Normalizer\\DestinationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackSubsServiceRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackSubsServiceResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceErrorResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackSubsServiceErrorResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthTokenPostBody' => 'ShipStream\\Ups\\Api\\Normalizer\\SecurityV1OauthTokenPostBodyNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthRefreshPostBody' => 'ShipStream\\Ups\\Api\\Normalizer\\SecurityV1OauthRefreshPostBodyNormalizer',
-            '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => '\\ShipStream\\Ups\\Api\\Runtime\\Normalizer\\ReferenceNormalizer',
-        ), $normalizersCache = [];
-        public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
+            \ShipStream\Ups\Api\Model\XAVRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\XAVRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\XAVResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVRequest::class => \ShipStream\Ups\Api\Normalizer\XAVRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVRequestRequest::class => \ShipStream\Ups\Api\Normalizer\XAVRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RequestTransactionReference::class => \ShipStream\Ups\Api\Normalizer\RequestTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVRequestAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\XAVRequestAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponse::class => \ShipStream\Ups\Api\Normalizer\XAVResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseResponse::class => \ShipStream\Ups\Api\Normalizer\XAVResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseResponseStatus::class => \ShipStream\Ups\Api\Normalizer\ResponseResponseStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseAlert::class => \ShipStream\Ups\Api\Normalizer\ResponseAlertNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseTransactionReference::class => \ShipStream\Ups\Api\Normalizer\ResponseTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseAddressClassification::class => \ShipStream\Ups\Api\Normalizer\XAVResponseAddressClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseCandidate::class => \ShipStream\Ups\Api\Normalizer\XAVResponseCandidateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CandidateAddressClassification::class => \ShipStream\Ups\Api\Normalizer\CandidateAddressClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CandidateAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\CandidateAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ErrorResponse::class => \ShipStream\Ups\Api\Normalizer\ErrorResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ErrorResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\ErrorResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Error::class => \ShipStream\Ups\Api\Normalizer\ErrorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequest::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequestRequest::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseResponse::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataResponseChemicalDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalDataChemicalDetail::class => \ShipStream\Ups\Api\Normalizer\ChemicalDataChemicalDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalDataProperShippingNameDetail::class => \ShipStream\Ups\Api\Normalizer\ChemicalDataProperShippingNameDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalDataPackageQuantityLimitDetail::class => \ShipStream\Ups\Api\Normalizer\ChemicalDataPackageQuantityLimitDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYAPCRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYAPCResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequest::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestRequest::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestShipment::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckShipmentShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipToAddress::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckShipmentShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentService::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackageWeight::class => \ShipStream\Ups\Api\Normalizer\PackagePackageWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\PackageWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageChemicalRecord::class => \ShipStream\Ups\Api\Normalizer\PackageChemicalRecordNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponse::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseResponse::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseAlertDetail::class => \ShipStream\Ups\Api\Normalizer\ResponseAlertDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlertDetailElementLevelInformation::class => \ShipStream\Ups\Api\Normalizer\AlertDetailElementLevelInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ElementLevelInformationElementIdentifier::class => \ShipStream\Ups\Api\Normalizer\ElementLevelInformationElementIdentifierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseService::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponsePackageResults::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponsePackageResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsChemicalRecordResults::class => \ShipStream\Ups\Api\Normalizer\PackageResultsChemicalRecordResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostRequest::class => \ShipStream\Ups\Api\Normalizer\LandedCostRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostRequestShipment::class => \ShipStream\Ups\Api\Normalizer\LandedCostRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RequestShipmentItems::class => \ShipStream\Ups\Api\Normalizer\RequestShipmentItemsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostResponse::class => \ShipStream\Ups\Api\Normalizer\LandedCostResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostResponseShipment::class => \ShipStream\Ups\Api\Normalizer\LandedCostResponseShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostResponseShipmentPerfStats::class => \ShipStream\Ups\Api\Normalizer\LandedCostResponseShipmentPerfStatsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BrokerageFeeItems::class => \ShipStream\Ups\Api\Normalizer\BrokerageFeeItemsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseShipmentItems::class => \ShipStream\Ups\Api\Normalizer\ResponseShipmentItemsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Errors::class => \ShipStream\Ups\Api\Normalizer\ErrorsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LOCATORRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\LOCATORRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LOCATORResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\LOCATORResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequest::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestRequest::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestOriginAddress::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestOriginAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginAddressGeocode::class => \ShipStream\Ups\Api\Normalizer\OriginAddressGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginAddressAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\OriginAddressAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestTranslate::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestTranslateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestLocationSearchCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaSearchOption::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaSearchOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchOptionOptionType::class => \ShipStream\Ups\Api\Normalizer\SearchOptionOptionTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchOptionOptionCode::class => \ShipStream\Ups\Api\Normalizer\SearchOptionOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchOptionRelation::class => \ShipStream\Ups\Api\Normalizer\SearchOptionRelationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaServiceSearch::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaServiceSearchNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSearchServiceCode::class => \ShipStream\Ups\Api\Normalizer\ServiceSearchServiceCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSearchServiceOptionCode::class => \ShipStream\Ups\Api\Normalizer\ServiceSearchServiceOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaFreightWillCallSearch::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaFreightWillCallSearchNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightWillCallSearchFacilityAddress::class => \ShipStream\Ups\Api\Normalizer\FreightWillCallSearchFacilityAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaAccessPointSearchNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class => \ShipStream\Ups\Api\Normalizer\AccessPointSearchIncludeCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IncludeCriteriaMerchantAccountNumberList::class => \ShipStream\Ups\Api\Normalizer\IncludeCriteriaMerchantAccountNumberListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IncludeCriteriaSearchFilter::class => \ShipStream\Ups\Api\Normalizer\IncludeCriteriaSearchFilterNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IncludeCriteriaServiceOfferingList::class => \ShipStream\Ups\Api\Normalizer\IncludeCriteriaServiceOfferingListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceOfferingListServiceOffering::class => \ShipStream\Ups\Api\Normalizer\ServiceOfferingListServiceOfferingNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class => \ShipStream\Ups\Api\Normalizer\AccessPointSearchExcludeFromResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExcludeFromResultPostalCodeList::class => \ShipStream\Ups\Api\Normalizer\ExcludeFromResultPostalCodeListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PostalCodeListPostalCode::class => \ShipStream\Ups\Api\Normalizer\PostalCodeListPostalCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaOpenTimeCriteria::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaOpenTimeCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestSortCriteria::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestSortCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestServiceGeoUnit::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestServiceGeoUnitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponse::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponseResponse::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseError::class => \ShipStream\Ups\Api\Normalizer\ResponseErrorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ErrorErrorLocation::class => \ShipStream\Ups\Api\Normalizer\ErrorErrorLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponseGeocode::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponseSearchResults::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseSearchResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class => \ShipStream\Ups\Api\Normalizer\SearchResultsGeocodeCandidateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GeocodeCandidateAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\GeocodeCandidateAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GeocodeCandidateGeocode::class => \ShipStream\Ups\Api\Normalizer\GeocodeCandidateGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class => \ShipStream\Ups\Api\Normalizer\SearchResultsDropLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationIVR::class => \ShipStream\Ups\Api\Normalizer\DropLocationIVRNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationGeocode::class => \ShipStream\Ups\Api\Normalizer\DropLocationGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\DropLocationAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationLocationAttribute::class => \ShipStream\Ups\Api\Normalizer\DropLocationLocationAttributeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationAttributeOptionType::class => \ShipStream\Ups\Api\Normalizer\LocationAttributeOptionTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationAttributeOptionCode::class => \ShipStream\Ups\Api\Normalizer\LocationAttributeOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OptionCodeTransportationPickUpSchedule::class => \ShipStream\Ups\Api\Normalizer\OptionCodeTransportationPickUpScheduleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationPickUpSchedulePickUp::class => \ShipStream\Ups\Api\Normalizer\TransportationPickUpSchedulePickUpNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickUpPickUpDetails::class => \ShipStream\Ups\Api\Normalizer\PickUpPickUpDetailsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationDistance::class => \ShipStream\Ups\Api\Normalizer\DropLocationDistanceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DistanceUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DistanceUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationSpecialInstructions::class => \ShipStream\Ups\Api\Normalizer\DropLocationSpecialInstructionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationAdditionalComments::class => \ShipStream\Ups\Api\Normalizer\DropLocationAdditionalCommentsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AdditionalCommentsCommentType::class => \ShipStream\Ups\Api\Normalizer\AdditionalCommentsCommentTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationOperatingHours::class => \ShipStream\Ups\Api\Normalizer\DropLocationOperatingHoursNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OperatingHoursStandardHours::class => \ShipStream\Ups\Api\Normalizer\OperatingHoursStandardHoursNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\StandardHoursDayOfWeek::class => \ShipStream\Ups\Api\Normalizer\StandardHoursDayOfWeekNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationLocalizedInstruction::class => \ShipStream\Ups\Api\Normalizer\DropLocationLocalizedInstructionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationPromotionInformation::class => \ShipStream\Ups\Api\Normalizer\DropLocationPromotionInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationSortCode::class => \ShipStream\Ups\Api\Normalizer\DropLocationSortCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationServiceOfferingList::class => \ShipStream\Ups\Api\Normalizer\DropLocationServiceOfferingListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class => \ShipStream\Ups\Api\Normalizer\DropLocationAccessPointInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationBusinessClassificationList::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationBusinessClassificationListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BusinessClassificationListBusinessClassification::class => \ShipStream\Ups\Api\Normalizer\BusinessClassificationListBusinessClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationAccessPointStatus::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationAccessPointStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationPrivateNetworkList::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationPrivateNetworkListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PrivateNetworkListPrivateNetwork::class => \ShipStream\Ups\Api\Normalizer\PrivateNetworkListPrivateNetworkNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationAvailability::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationAvailabilityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailabilityShippingAvailability::class => \ShipStream\Ups\Api\Normalizer\AvailabilityShippingAvailabilityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShippingAvailabilityUnavailableReason::class => \ShipStream\Ups\Api\Normalizer\ShippingAvailabilityUnavailableReasonNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailabilityDCRAvailability::class => \ShipStream\Ups\Api\Normalizer\AvailabilityDCRAvailabilityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DCRAvailabilityUnavailableReason::class => \ShipStream\Ups\Api\Normalizer\DCRAvailabilityUnavailableReasonNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationLocationImage::class => \ShipStream\Ups\Api\Normalizer\DropLocationLocationImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchResultsAvailableLocationAttributes::class => \ShipStream\Ups\Api\Normalizer\SearchResultsAvailableLocationAttributesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionType::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesOptionTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCode::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesOptionCodeTransportationPickUpScheduleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesTransportationPickUpSchedulePickUp::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesTransportationPickUpSchedulePickUpNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesPickUpPickUpDetails::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesPickUpPickUpDetailsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenerateTokenSuccessResponse::class => \ShipStream\Ups\Api\Normalizer\GenerateTokenSuccessResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RefreshTokenSuccessResponse::class => \ShipStream\Ups\Api\Normalizer\RefreshTokenSuccessResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTDeleteRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTDeleteResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteRequest::class => \ShipStream\Ups\Api\Normalizer\DeleteRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteRequestRequest::class => \ShipStream\Ups\Api\Normalizer\DeleteRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteResponse::class => \ShipStream\Ups\Api\Normalizer\DeleteResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteResponseResponse::class => \ShipStream\Ups\Api\Normalizer\DeleteResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryRequest::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestFormsHistoryDocumentID::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryRequestFormsHistoryDocumentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryResponse::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTUploadRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTUploadResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadRequest::class => \ShipStream\Ups\Api\Normalizer\UploadRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadRequestRequest::class => \ShipStream\Ups\Api\Normalizer\UploadRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadRequestUserCreatedForm::class => \ShipStream\Ups\Api\Normalizer\UploadRequestUserCreatedFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadResponse::class => \ShipStream\Ups\Api\Normalizer\UploadResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadResponseResponse::class => \ShipStream\Ups\Api\Normalizer\UploadResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadResponseFormsHistoryDocumentID::class => \ShipStream\Ups\Api\Normalizer\UploadResponseFormsHistoryDocumentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequest::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestShipperAccount::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestShipperAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestPickupAddress::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestPickupAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestPickupDateInfo::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestPickupDateInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponse::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseRateResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResultChargeDetail::class => \ShipStream\Ups\Api\Normalizer\RateResultChargeDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResultTaxCharges::class => \ShipStream\Ups\Api\Normalizer\RateResultTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponseWeekendServiceTerritory::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseWeekendServiceTerritoryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCancelRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCancelRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCancelResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCancelRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCancelRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCancelResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCancelResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelResponseGWNStatus::class => \ShipStream\Ups\Api\Normalizer\PickupCancelResponseGWNStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCreationRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCreationResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestShipper::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperAccount::class => \ShipStream\Ups\Api\Normalizer\ShipperAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperChargeCard::class => \ShipStream\Ups\Api\Normalizer\ShipperChargeCardNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChargeCardCardAddress::class => \ShipStream\Ups\Api\Normalizer\ChargeCardCardAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestPickupDateInfo::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestPickupDateInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestPickupAddress::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestPickupAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupAddressPhone::class => \ShipStream\Ups\Api\Normalizer\PickupAddressPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestPickupPiece::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestPickupPieceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestTotalWeight::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestTotalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingData::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestTrackingDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingDataWithReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestTrackingDataWithReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestFreightOptions::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestFreightOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightOptionsShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightOptionsShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightOptionsDestinationAddress::class => \ShipStream\Ups\Api\Normalizer\FreightOptionsDestinationAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightOptionsShipmentDetail::class => \ShipStream\Ups\Api\Normalizer\FreightOptionsShipmentDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDetailPalletInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentDetailPalletInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PalletInformationDimensions::class => \ShipStream\Ups\Api\Normalizer\PalletInformationDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DimensionsUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DimensionsUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseWeekendServiceTerritory::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseWeekendServiceTerritoryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseRateStatus::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseRateStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseRateResult::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseRateResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResultDisclaimer::class => \ShipStream\Ups\Api\Normalizer\RateResultDisclaimerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPolDivRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPolDivResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPServCenterRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPServCenterResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestPickupPiece::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestPickupPieceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestOriginAddress::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestOriginAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginAddressOriginSearchCriteria::class => \ShipStream\Ups\Api\Normalizer\OriginAddressOriginSearchCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestDestinationAddress::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestDestinationAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesResponseServiceCenterLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class => \ShipStream\Ups\Api\Normalizer\ServiceCenterLocationDropOffFacilitiesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesAddress::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesFacilityTime::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesFacilityTimeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FacilityTimeDayOfWeek::class => \ShipStream\Ups\Api\Normalizer\FacilityTimeDayOfWeekNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesLocalizedInstruction::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesLocalizedInstructionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesDistance::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesDistanceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceCenterLocationPickupFacilities::class => \ShipStream\Ups\Api\Normalizer\ServiceCenterLocationPickupFacilitiesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupFacilitiesAddress::class => \ShipStream\Ups\Api\Normalizer\PickupFacilitiesAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTime::class => \ShipStream\Ups\Api\Normalizer\PickupFacilitiesFacilityTimeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTimeDayOfWeek::class => \ShipStream\Ups\Api\Normalizer\PickupFacilitiesFacilityTimeDayOfWeekNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPendingRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPendingRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPendingResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusRequest::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusResponse::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusResponsePendingStatus::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusResponsePendingStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PRENOTIFICATIONRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PRENOTIFICATIONResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationRequest::class => \ShipStream\Ups\Api\Normalizer\PreNotificationRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PreNotificationRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class => \ShipStream\Ups\Api\Normalizer\PreNotificationRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationShipmentShipToAddress::class => \ShipStream\Ups\Api\Normalizer\PreNotificationShipmentShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationShipmentShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\PreNotificationShipmentShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\PreNotificationShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationPackageChemicalRecord::class => \ShipStream\Ups\Api\Normalizer\PreNotificationPackageChemicalRecordNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationResponse::class => \ShipStream\Ups\Api\Normalizer\PreNotificationResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PreNotificationResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\QUANTUMVIEWRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\QUANTUMVIEWResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewRequest::class => \ShipStream\Ups\Api\Normalizer\QuantumViewRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewRequestRequest::class => \ShipStream\Ups\Api\Normalizer\QuantumViewRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewRequestSubscriptionRequest::class => \ShipStream\Ups\Api\Normalizer\QuantumViewRequestSubscriptionRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionRequestDateTimeRange::class => \ShipStream\Ups\Api\Normalizer\SubscriptionRequestDateTimeRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewResponse::class => \ShipStream\Ups\Api\Normalizer\QuantumViewResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewResponseResponse::class => \ShipStream\Ups\Api\Normalizer\QuantumViewResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewResponseQuantumViewEvents::class => \ShipStream\Ups\Api\Normalizer\QuantumViewResponseQuantumViewEventsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewEventsSubscriptionEvents::class => \ShipStream\Ups\Api\Normalizer\QuantumViewEventsSubscriptionEventsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionStatus::class => \ShipStream\Ups\Api\Normalizer\SubscriptionEventsSubscriptionStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionEventsDateRange::class => \ShipStream\Ups\Api\Normalizer\SubscriptionEventsDateRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class => \ShipStream\Ups\Api\Normalizer\SubscriptionEventsSubscriptionFileNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileStatusType::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileStatusTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileManifest::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileManifestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipper::class => \ShipStream\Ups\Api\Normalizer\ManifestShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipperAddress::class => \ShipStream\Ups\Api\Normalizer\ManifestShipperAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipTo::class => \ShipStream\Ups\Api\Normalizer\ManifestShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipToAddress::class => \ShipStream\Ups\Api\Normalizer\ManifestShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ManifestReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestService::class => \ShipStream\Ups\Api\Normalizer\ManifestServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackage::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageActivity::class => \ShipStream\Ups\Api\Normalizer\PackageActivityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackageDimensions::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageDimensionalWeight::class => \ShipStream\Ups\Api\Normalizer\PackageDimensionalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DimensionalWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DimensionalWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackagePackageWeight::class => \ShipStream\Ups\Api\Normalizer\ManifestPackagePackageWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackagePackageServiceOptions::class => \ShipStream\Ups\Api\Normalizer\ManifestPackagePackageServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackageServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODAmount::class => \ShipStream\Ups\Api\Normalizer\CODCODAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsInsuredValue::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsInsuredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\ManifestShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCallTagARS::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsCallTagARSNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestCustomsValue::class => \ShipStream\Ups\Api\Normalizer\ManifestCustomsValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestBillToAccount::class => \ShipStream\Ups\Api\Normalizer\ManifestBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestUAPAddress::class => \ShipStream\Ups\Api\Normalizer\ManifestUAPAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UAPAddressAddress::class => \ShipStream\Ups\Api\Normalizer\UAPAddressAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileOriginNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\OriginPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\OriginShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginActivityLocation::class => \ShipStream\Ups\Api\Normalizer\OriginActivityLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ActivityLocationAddressArtifactFormat::class => \ShipStream\Ups\Api\Normalizer\ActivityLocationAddressArtifactFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginBillToAccount::class => \ShipStream\Ups\Api\Normalizer\OriginBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileException::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileExceptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ExceptionPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ExceptionShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionUpdatedAddress::class => \ShipStream\Ups\Api\Normalizer\ExceptionUpdatedAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UpdatedAddressAddressExtendedInformation::class => \ShipStream\Ups\Api\Normalizer\UpdatedAddressAddressExtendedInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionResolution::class => \ShipStream\Ups\Api\Normalizer\ExceptionResolutionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionActivityLocation::class => \ShipStream\Ups\Api\Normalizer\ExceptionActivityLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionBillToAccount::class => \ShipStream\Ups\Api\Normalizer\ExceptionBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileDelivery::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileDeliveryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\DeliveryPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\DeliveryShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryActivityLocation::class => \ShipStream\Ups\Api\Normalizer\DeliveryActivityLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryDeliveryLocation::class => \ShipStream\Ups\Api\Normalizer\DeliveryDeliveryLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryLocationAddressArtifactFormat::class => \ShipStream\Ups\Api\Normalizer\DeliveryLocationAddressArtifactFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => \ShipStream\Ups\Api\Normalizer\AddressArtifactFormatAddressExtendedInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryCOD::class => \ShipStream\Ups\Api\Normalizer\DeliveryCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryBillToAccount::class => \ShipStream\Ups\Api\Normalizer\DeliveryBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileGeneric::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileGenericNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\GenericShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\GenericPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericService::class => \ShipStream\Ups\Api\Normalizer\GenericServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericActivity::class => \ShipStream\Ups\Api\Normalizer\GenericActivityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericBillToAccount::class => \ShipStream\Ups\Api\Normalizer\GenericBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericShipTo::class => \ShipStream\Ups\Api\Normalizer\GenericShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericFailureNotification::class => \ShipStream\Ups\Api\Normalizer\GenericFailureNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FailureNotificationFailureNotificationCode::class => \ShipStream\Ups\Api\Normalizer\FailureNotificationFailureNotificationCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RATERequestWrapper::class => \ShipStream\Ups\Api\Normalizer\RATERequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RATEResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\RATEResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequest::class => \ShipStream\Ups\Api\Normalizer\RateRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestRequest::class => \ShipStream\Ups\Api\Normalizer\RateRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestPickupType::class => \ShipStream\Ups\Api\Normalizer\RateRequestPickupTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestCustomerClassification::class => \ShipStream\Ups\Api\Normalizer\RateRequestCustomerClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestShipment::class => \ShipStream\Ups\Api\Normalizer\RateRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipper::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperAddress::class => \ShipStream\Ups\Api\Normalizer\ShipperAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipTo::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipToAddress::class => \ShipStream\Ups\Api\Normalizer\ShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipFrom::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\ShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentAlternateDeliveryAddress::class => \ShipStream\Ups\Api\Normalizer\RateShipmentAlternateDeliveryAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateAlternateDeliveryAddressAddress::class => \ShipStream\Ups\Api\Normalizer\RateAlternateDeliveryAddressAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentIndicationType::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentIndicationTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPaymentDetails::class => \ShipStream\Ups\Api\Normalizer\ShipmentPaymentDetailsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentDetailsShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\PaymentDetailsShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentChargeBillShipper::class => \ShipStream\Ups\Api\Normalizer\RateShipmentChargeBillShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargeBillReceiver::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargeBillReceiverNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillReceiverAddress::class => \ShipStream\Ups\Api\Normalizer\BillReceiverAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentChargeBillThirdParty::class => \ShipStream\Ups\Api\Normalizer\RateShipmentChargeBillThirdPartyNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateBillThirdPartyAddress::class => \ShipStream\Ups\Api\Normalizer\RateBillThirdPartyAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentFRSPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\RateShipmentFRSPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSPaymentInformationType::class => \ShipStream\Ups\Api\Normalizer\FRSPaymentInformationTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSPaymentInformationAddress::class => \ShipStream\Ups\Api\Normalizer\FRSPaymentInformationAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentFreightShipmentInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentFreightShipmentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentInformationFreightDensityInfo::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentInformationFreightDensityInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightDensityInfoAdjustedHeight::class => \ShipStream\Ups\Api\Normalizer\FreightDensityInfoAdjustedHeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AdjustedHeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\AdjustedHeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightDensityInfoHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FreightDensityInfoHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsType::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsDimensions::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentTotalWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentTotalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentTotalWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\ShipmentTotalWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\RateShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackagingType::class => \ShipStream\Ups\Api\Normalizer\PackagePackagingTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageDimensions::class => \ShipStream\Ups\Api\Normalizer\PackageDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageDimWeight::class => \ShipStream\Ups\Api\Normalizer\PackageDimWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DimWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DimWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageCommodity::class => \ShipStream\Ups\Api\Normalizer\PackageCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityNMFC::class => \ShipStream\Ups\Api\Normalizer\CommodityNMFCNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackagePackageServiceOptions::class => \ShipStream\Ups\Api\Normalizer\RatePackagePackageServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsAccessPointCOD::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsAccessPointCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsShipperDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsShipperDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsInsurance::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsInsuranceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InsuranceBasicFlexibleParcelIndicator::class => \ShipStream\Ups\Api\Normalizer\InsuranceBasicFlexibleParcelIndicatorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InsuranceExtendedFlexibleParcelIndicator::class => \ShipStream\Ups\Api\Normalizer\InsuranceExtendedFlexibleParcelIndicatorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InsuranceTimeInTransitFlexibleParcelIndicator::class => \ShipStream\Ups\Api\Normalizer\InsuranceTimeInTransitFlexibleParcelIndicatorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsHazMat::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsHazMatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HazMatHazMatChemicalRecord::class => \ShipStream\Ups\Api\Normalizer\HazMatHazMatChemicalRecordNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDryIce::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsDryIceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DryIceDryIceWeight::class => \ShipStream\Ups\Api\Normalizer\DryIceDryIceWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DryIceWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DryIceWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageSimpleRate::class => \ShipStream\Ups\Api\Normalizer\PackageSimpleRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageUPSPremier::class => \ShipStream\Ups\Api\Normalizer\RatePackageUPSPremierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAccessPointCOD::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsAccessPointCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCODCODAmount::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsCODCODAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\RateShipmentServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPickupOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsPickupOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDeliveryOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsRestrictedArticles::class => \ShipStream\Ups\Api\Normalizer\RateShipmentServiceOptionsRestrictedArticlesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsImportControl::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsImportControlNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsReturnService::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsReturnServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentRatingOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentRatingOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentInvoiceLineTotal::class => \ShipStream\Ups\Api\Normalizer\ShipmentInvoiceLineTotalNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPromotionalDiscountInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentPromotionalDiscountInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDeliveryTimeInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentDeliveryTimeInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryTimeInformationPickup::class => \ShipStream\Ups\Api\Normalizer\DeliveryTimeInformationPickupNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryTimeInformationReturnContractServices::class => \ShipStream\Ups\Api\Normalizer\DeliveryTimeInformationReturnContractServicesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResponse::class => \ShipStream\Ups\Api\Normalizer\RateResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResponseResponse::class => \ShipStream\Ups\Api\Normalizer\RateResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResponseRatedShipment::class => \ShipStream\Ups\Api\Normalizer\RateResponseRatedShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentDisclaimer::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentDisclaimerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentService::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentRatedShipmentAlert::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentRatedShipmentAlertNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentBillingWeight::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentBillingWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillingWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\BillingWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentFRSShipmentData::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentFRSShipmentDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\FRSShipmentDataTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationChargesGrossCharge::class => \ShipStream\Ups\Api\Normalizer\TransportationChargesGrossChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationChargesDiscountAmount::class => \ShipStream\Ups\Api\Normalizer\TransportationChargesDiscountAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationChargesNetCharge::class => \ShipStream\Ups\Api\Normalizer\TransportationChargesNetChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSShipmentDataFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\FRSShipmentDataFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSShipmentDataHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FRSShipmentDataHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsAdjustedHeight::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsAdjustedHeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\RatedPackageBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTaxCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTotalCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTotalChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTotalChargesWithTaxes::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTotalChargesWithTaxesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentNegotiatedRateChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesTaxCharges::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalCharge::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesTotalChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalChargesWithTaxes::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesTotalChargesWithTaxesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentRatedPackage::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentRatedPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageTotalCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageTotalChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageBillingWeight::class => \ShipStream\Ups\Api\Normalizer\RatedPackageBillingWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageBillingWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\RatedPackageBillingWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageAccessorial::class => \ShipStream\Ups\Api\Normalizer\RatedPackageAccessorialNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageRateModifier::class => \ShipStream\Ups\Api\Normalizer\RatedPackageRateModifierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageNegotiatedCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageNegotiatedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedChargesItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\NegotiatedChargesItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageSimpleRate::class => \ShipStream\Ups\Api\Normalizer\RatedPackageSimpleRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TimeInTransitServiceSummary::class => \ShipStream\Ups\Api\Normalizer\TimeInTransitServiceSummaryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSummaryService::class => \ShipStream\Ups\Api\Normalizer\ServiceSummaryServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSummaryEstimatedArrival::class => \ShipStream\Ups\Api\Normalizer\ServiceSummaryEstimatedArrivalNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EstimatedArrivalArrival::class => \ShipStream\Ups\Api\Normalizer\EstimatedArrivalArrivalNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EstimatedArrivalPickup::class => \ShipStream\Ups\Api\Normalizer\EstimatedArrivalPickupNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SHIPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\SHIPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SHIPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\SHIPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequest::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestRequest::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestShipment::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentReturnService::class => \ShipStream\Ups\Api\Normalizer\ShipmentReturnServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipper::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperPhone::class => \ShipStream\Ups\Api\Normalizer\ShipperPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipTo::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipToPhone::class => \ShipStream\Ups\Api\Normalizer\ShipToPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => \ShipStream\Ups\Api\Normalizer\ShipmentAlternateDeliveryAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class => \ShipStream\Ups\Api\Normalizer\AlternateDeliveryAddressAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipFrom::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromTaxIDType::class => \ShipStream\Ups\Api\Normalizer\ShipFromTaxIDTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromPhone::class => \ShipStream\Ups\Api\Normalizer\ShipFromPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromVendorInfo::class => \ShipStream\Ups\Api\Normalizer\ShipFromVendorInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargeBillShipper::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargeBillShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillShipperCreditCard::class => \ShipStream\Ups\Api\Normalizer\BillShipperCreditCardNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CreditCardAddress::class => \ShipStream\Ups\Api\Normalizer\CreditCardAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargeBillThirdParty::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargeBillThirdPartyNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillThirdPartyAddress::class => \ShipStream\Ups\Api\Normalizer\BillThirdPartyAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentFRSPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentFRSPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDGSignatoryInfo::class => \ShipStream\Ups\Api\Normalizer\ShipmentDGSignatoryInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsNotification::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationEMail::class => \ShipStream\Ups\Api\Normalizer\NotificationEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationVoiceMessage::class => \ShipStream\Ups\Api\Normalizer\NotificationVoiceMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationTextMessage::class => \ShipStream\Ups\Api\Normalizer\NotificationTextMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationLocale::class => \ShipStream\Ups\Api\Normalizer\NotificationLocaleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelDelivery::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsLabelDeliveryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelDeliveryEMail::class => \ShipStream\Ups\Api\Normalizer\LabelDeliveryEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsInternationalFormsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsUserCreatedForm::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsUserCreatedFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsUPSPremiumCareForm::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsUPSPremiumCareFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UPSPremiumCareFormLanguageForUPSPremiumCare::class => \ShipStream\Ups\Api\Normalizer\UPSPremiumCareFormLanguageForUPSPremiumCareNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsCN22Form::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsCN22FormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CN22FormCN22Content::class => \ShipStream\Ups\Api\Normalizer\CN22FormCN22ContentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CN22ContentCN22ContentWeight::class => \ShipStream\Ups\Api\Normalizer\CN22ContentCN22ContentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CN22ContentWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\CN22ContentWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsEEIFilingOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIFilingOptionUPSFiled::class => \ShipStream\Ups\Api\Normalizer\EEIFilingOptionUPSFiledNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UPSFiledPOA::class => \ShipStream\Ups\Api\Normalizer\UPSFiledPOANormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIFilingOptionShipperFiled::class => \ShipStream\Ups\Api\Normalizer\EEIFilingOptionShipperFiledNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsContacts::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsContactsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsForwardAgent::class => \ShipStream\Ups\Api\Normalizer\ContactsForwardAgentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ForwardAgentAddress::class => \ShipStream\Ups\Api\Normalizer\ForwardAgentAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class => \ShipStream\Ups\Api\Normalizer\ContactsUltimateConsigneeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UltimateConsigneeAddress::class => \ShipStream\Ups\Api\Normalizer\UltimateConsigneeAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UltimateConsigneeUltimateConsigneeType::class => \ShipStream\Ups\Api\Normalizer\UltimateConsigneeUltimateConsigneeTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsIntermediateConsignee::class => \ShipStream\Ups\Api\Normalizer\ContactsIntermediateConsigneeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IntermediateConsigneeAddress::class => \ShipStream\Ups\Api\Normalizer\IntermediateConsigneeAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsProducer::class => \ShipStream\Ups\Api\Normalizer\ContactsProducerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProducerAddress::class => \ShipStream\Ups\Api\Normalizer\ProducerAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProducerPhone::class => \ShipStream\Ups\Api\Normalizer\ProducerPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsSoldTo::class => \ShipStream\Ups\Api\Normalizer\ContactsSoldToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SoldToPhone::class => \ShipStream\Ups\Api\Normalizer\SoldToPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SoldToAddress::class => \ShipStream\Ups\Api\Normalizer\SoldToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsProduct::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsProductNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductUnit::class => \ShipStream\Ups\Api\Normalizer\ProductUnitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UnitUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\UnitUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductNetCostDateRange::class => \ShipStream\Ups\Api\Normalizer\ProductNetCostDateRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductProductWeight::class => \ShipStream\Ups\Api\Normalizer\ProductProductWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\ProductWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductScheduleB::class => \ShipStream\Ups\Api\Normalizer\ProductScheduleBNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ScheduleBUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\ScheduleBUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductExcludeFromForm::class => \ShipStream\Ups\Api\Normalizer\ProductExcludeFromFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductPackingListInfo::class => \ShipStream\Ups\Api\Normalizer\ProductPackingListInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListInfoPackageAssociated::class => \ShipStream\Ups\Api\Normalizer\PackingListInfoPackageAssociatedNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductEEIInformation::class => \ShipStream\Ups\Api\Normalizer\ProductEEIInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIInformationLicense::class => \ShipStream\Ups\Api\Normalizer\EEIInformationLicenseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIInformationDDTCInformation::class => \ShipStream\Ups\Api\Normalizer\EEIInformationDDTCInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DDTCInformationUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DDTCInformationUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsDiscount::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsDiscountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsFreightCharges::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsFreightChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsInsuranceCharges::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsInsuranceChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsOtherCharges::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsOtherChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsBlanketPeriod::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsBlanketPeriodNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelMethod::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsLabelMethodNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPreAlertNotification::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsPreAlertNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationEMailMessage::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationEMailMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationVoiceMessage::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationVoiceMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationTextMessage::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationTextMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationLocale::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationLocaleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsRestrictedArticles::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsRestrictedArticlesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\ShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackaging::class => \ShipStream\Ups\Api\Normalizer\PackagePackagingNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\PackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageUPSPremier::class => \ShipStream\Ups\Api\Normalizer\PackageUPSPremierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UPSPremierHandlingInstructions::class => \ShipStream\Ups\Api\Normalizer\UPSPremierHandlingInstructionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackageServiceOptions::class => \ShipStream\Ups\Api\Normalizer\PackagePackageServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeclaredValueType::class => \ShipStream\Ups\Api\Normalizer\DeclaredValueTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsCODCODAmount::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsCODCODAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsNotification::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsNotificationEMail::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsNotificationEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsHazMat::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsHazMatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsDryIce::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsDryIceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageHazMatPackageInformation::class => \ShipStream\Ups\Api\Normalizer\PackageHazMatPackageInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestLabelSpecification::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestLabelSpecificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelSpecificationLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelSpecificationLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelSpecificationLabelStockSize::class => \ShipStream\Ups\Api\Normalizer\LabelSpecificationLabelStockSizeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelSpecificationInstruction::class => \ShipStream\Ups\Api\Normalizer\LabelSpecificationInstructionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestReceiptSpecification::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestReceiptSpecificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReceiptSpecificationImageFormat::class => \ShipStream\Ups\Api\Normalizer\ReceiptSpecificationImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResponse::class => \ShipStream\Ups\Api\Normalizer\ShipmentResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResponseResponse::class => \ShipStream\Ups\Api\Normalizer\ShipmentResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResponseShipmentResults::class => \ShipStream\Ups\Api\Normalizer\ShipmentResponseShipmentResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsDisclaimer::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsDisclaimerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsShipmentCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsShipmentChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTaxCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTotalCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTotalChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTotalChargesWithTaxes::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTotalChargesWithTaxesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsNegotiatedRateCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsNegotiatedRateChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsFRSShipmentData::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFRSShipmentDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsBillingWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsBillingWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsPackageResults::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsPackageResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\PackageResultsBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\PackageResultsServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsShippingLabel::class => \ShipStream\Ups\Api\Normalizer\PackageResultsShippingLabelNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShippingLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\ShippingLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsShippingReceipt::class => \ShipStream\Ups\Api\Normalizer\PackageResultsShippingReceiptNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShippingReceiptImageFormat::class => \ShipStream\Ups\Api\Normalizer\ShippingReceiptImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsAccessorial::class => \ShipStream\Ups\Api\Normalizer\PackageResultsAccessorialNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsSimpleRate::class => \ShipStream\Ups\Api\Normalizer\PackageResultsSimpleRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsForm::class => \ShipStream\Ups\Api\Normalizer\PackageResultsFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsFormImage::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FormImage::class => \ShipStream\Ups\Api\Normalizer\FormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HighValueReportImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\HighValueReportImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODTurnInPageImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\CODTurnInPageImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\ImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\PackageResultsItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsNegotiatedCharges::class => \ShipStream\Ups\Api\Normalizer\PackageResultsNegotiatedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsRateModifier::class => \ShipStream\Ups\Api\Normalizer\PackageResultsRateModifierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsControlLogReceipt::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsControlLogReceiptNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ControlLogReceiptImageFormat::class => \ShipStream\Ups\Api\Normalizer\ControlLogReceiptImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsForm::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsCODTurnInPage::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsCODTurnInPageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODTurnInPageImage::class => \ShipStream\Ups\Api\Normalizer\CODTurnInPageImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsHighValueReport::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsHighValueReportNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HighValueReportImage::class => \ShipStream\Ups\Api\Normalizer\HighValueReportImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VOIDSHIPMENTRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\VOIDSHIPMENTRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\VOIDSHIPMENTResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentRequest::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentRequestRequest::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidRequestTransactionReference::class => \ShipStream\Ups\Api\Normalizer\VoidRequestTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentRequestVoidShipment::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentRequestVoidShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponse::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponseResponse::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidResponseResponseStatus::class => \ShipStream\Ups\Api\Normalizer\VoidResponseResponseStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidResponseTransactionReference::class => \ShipStream\Ups\Api\Normalizer\VoidResponseTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponseSummaryResult::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponseSummaryResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SummaryResultStatus::class => \ShipStream\Ups\Api\Normalizer\SummaryResultStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponsePackageLevelResult::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponsePackageLevelResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageLevelResultStatus::class => \ShipStream\Ups\Api\Normalizer\PackageLevelResultStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\LABELRECOVERYRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\LABELRECOVERYResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestRequest::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRRequestTransactionReference::class => \ShipStream\Ups\Api\Normalizer\LRRequestTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestLabelSpecificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryLabelSpecificationLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelStockSize::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryLabelSpecificationLabelStockSizeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestTranslate::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestTranslateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelDelivery::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestLabelDeliveryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestReferenceValues::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestReferenceValuesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReferenceValuesReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ReferenceValuesReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestUPSPremiumCareForm::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestUPSPremiumCareFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponse::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseResponse::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRResponseResponseStatus::class => \ShipStream\Ups\Api\Normalizer\LRResponseResponseStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRResponseTransactionReference::class => \ShipStream\Ups\Api\Normalizer\LRResponseTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseLabelResults::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseLabelResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsLabelImage::class => \ShipStream\Ups\Api\Normalizer\LabelResultsLabelImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelImageLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelImageLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsMailInnovationsLabelImage::class => \ShipStream\Ups\Api\Normalizer\LabelResultsMailInnovationsLabelImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\MailInnovationsLabelImageLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\MailInnovationsLabelImageLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsReceipt::class => \ShipStream\Ups\Api\Normalizer\LabelResultsReceiptNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReceiptImage::class => \ShipStream\Ups\Api\Normalizer\ReceiptImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReceiptImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\ReceiptImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsForm::class => \ShipStream\Ups\Api\Normalizer\LabelResultsFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRFormImage::class => \ShipStream\Ups\Api\Normalizer\LRFormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseCODTurnInPage::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseCODTurnInPageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRCODTurnInPageImage::class => \ShipStream\Ups\Api\Normalizer\LRCODTurnInPageImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRCODTurnInPageImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\LRCODTurnInPageImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseForm::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryFormImage::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryFormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseHighValueReport::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseHighValueReportNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseTrackingCandidate::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseTrackingCandidateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackingCandidatePickupDateRange::class => \ShipStream\Ups\Api\Normalizer\TrackingCandidatePickupDateRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequest::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestRequester::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestRequesterNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RequesterPhone::class => \ShipStream\Ups\Api\Normalizer\RequesterPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipTo::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupShipToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightPickupShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentDetail::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipmentDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDetailPackagingType::class => \ShipStream\Ups\Api\Normalizer\ShipmentDetailPackagingTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDetailWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentDetailWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\WeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\WeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestExistingShipmentID::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestExistingShipmentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestPOM::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestPOMNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\POMPickupNotifications::class => \ShipStream\Ups\Api\Normalizer\POMPickupNotificationsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupNotificationsEMailNotification::class => \ShipStream\Ups\Api\Normalizer\PickupNotificationsEMailNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupResponse::class => \ShipStream\Ups\Api\Normalizer\FreightPickupResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightPickupResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPCANCELRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPCANCELResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupRequest::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupResponse::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelStatus::class => \ShipStream\Ups\Api\Normalizer\FreightCancelStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTRATERequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTRATEResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequest::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestShipFrom::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\FreightRateShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestShipTo::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateShipToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightRateShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRatePaymentInformationPayer::class => \ShipStream\Ups\Api\Normalizer\FreightRatePaymentInformationPayerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PayerAddress::class => \ShipStream\Ups\Api\Normalizer\PayerAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformationShipmentBillingOption::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationShipmentBillingOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestService::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitOne::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitOneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitOneType::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitOneTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitTwo::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitTwoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitTwoType::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitTwoTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityWeight::class => \ShipStream\Ups\Api\Normalizer\CommodityWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class => \ShipStream\Ups\Api\Normalizer\CommodityAdjustedWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AdjustedWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\AdjustedWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityDimensions::class => \ShipStream\Ups\Api\Normalizer\CommodityDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityPackagingType::class => \ShipStream\Ups\Api\Normalizer\CommodityPackagingTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityCommodityValue::class => \ShipStream\Ups\Api\Normalizer\CommodityCommodityValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityNMFCCommodity::class => \ShipStream\Ups\Api\Normalizer\CommodityNMFCCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsPickupOptions::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentServiceOptionsPickupOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsDeliveryOptions::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentServiceOptionsDeliveryOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsOverSeasLegNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OverSeasLegDimensions::class => \ShipStream\Ups\Api\Normalizer\OverSeasLegDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OverSeasLegValue::class => \ShipStream\Ups\Api\Normalizer\OverSeasLegValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ValueCube::class => \ShipStream\Ups\Api\Normalizer\ValueCubeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ValueCWT::class => \ShipStream\Ups\Api\Normalizer\ValueCWTNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODValue::class => \ShipStream\Ups\Api\Normalizer\CODCODValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODPaymentMethod::class => \ShipStream\Ups\Api\Normalizer\CODCODPaymentMethodNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODBillingOption::class => \ShipStream\Ups\Api\Normalizer\CODCODBillingOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateCODRemitTo::class => \ShipStream\Ups\Api\Normalizer\FreightRateCODRemitToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RemitToAddress::class => \ShipStream\Ups\Api\Normalizer\RemitToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDangerousGoods::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDangerousGoodsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DangerousGoodsPhone::class => \ShipStream\Ups\Api\Normalizer\DangerousGoodsPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DangerousGoodsTransportationMode::class => \ShipStream\Ups\Api\Normalizer\DangerousGoodsTransportationModeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsSortingAndSegregating::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsSortingAndSegregatingNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsExcessDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsExcessDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsHandlingCharge::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsHandlingChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingChargeAmount::class => \ShipStream\Ups\Api\Normalizer\HandlingChargeAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAdjustedHeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsAdjustedHeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestPickupRequest::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestAlternateRateOptions::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestAlternateRateOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestGFPOptions::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestGFPOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GFPOptionsOnCallInformation::class => \ShipStream\Ups\Api\Normalizer\GFPOptionsOnCallInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitWeight::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponse::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseRate::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateType::class => \ShipStream\Ups\Api\Normalizer\RateTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateFactor::class => \ShipStream\Ups\Api\Normalizer\RateFactorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FactorUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\FactorUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseTotalShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseTotalShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseBillableShipmentWeight::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseBillableShipmentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillableShipmentWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\BillableShipmentWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseDimensionalWeight::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseDimensionalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseService::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseAlternateRatesResponse::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseAlternateRatesResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseAlternateRateType::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseAlternateRateTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseRate::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseBillableShipmentWeight::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseBillableShipmentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTSHIPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTSHIPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRequest::class => \ShipStream\Ups\Api\Normalizer\FreightShipRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightShipRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class => \ShipStream\Ups\Api\Normalizer\FreightShipRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentShipFrom::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentShipTo::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformationPayer::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationPayerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipPayerAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipPayerAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PayerPhone::class => \ShipStream\Ups\Api\Normalizer\PayerPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentHandlingUnitOne::class => \ShipStream\Ups\Api\Normalizer\ShipmentHandlingUnitOneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentHandlingUnitTwo::class => \ShipStream\Ups\Api\Normalizer\ShipmentHandlingUnitTwoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentExistingShipmentID::class => \ShipStream\Ups\Api\Normalizer\ShipmentExistingShipmentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExistingShipmentIDConfirmationNumber::class => \ShipStream\Ups\Api\Normalizer\ExistingShipmentIDConfirmationNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ConfirmationNumberType::class => \ShipStream\Ups\Api\Normalizer\ConfirmationNumberTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentCommodity::class => \ShipStream\Ups\Api\Normalizer\ShipmentCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipCommodityDimensions::class => \ShipStream\Ups\Api\Normalizer\FreightShipCommodityDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentReference::class => \ShipStream\Ups\Api\Normalizer\ShipmentReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReferenceWeight::class => \ShipStream\Ups\Api\Normalizer\ReferenceWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsEMailInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsEMailInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EMailInformationEMailType::class => \ShipStream\Ups\Api\Normalizer\EMailInformationEMailTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EMailInformationEMail::class => \ShipStream\Ups\Api\Normalizer\EMailInformationEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODRemitTo::class => \ShipStream\Ups\Api\Normalizer\CODRemitToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRemitToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipRemitToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RemitToPhone::class => \ShipStream\Ups\Api\Normalizer\RemitToPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentServiceOptionsDangerousGoods::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentServiceOptionsDangerousGoodsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class => \ShipStream\Ups\Api\Normalizer\ShipmentPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRequestRequester::class => \ShipStream\Ups\Api\Normalizer\PickupRequestRequesterNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRequestPOM::class => \ShipStream\Ups\Api\Normalizer\PickupRequestPOMNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipPOMPickupNotifications::class => \ShipStream\Ups\Api\Normalizer\FreightShipPOMPickupNotificationsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipPickupNotificationsEMailNotification::class => \ShipStream\Ups\Api\Normalizer\FreightShipPickupNotificationsEMailNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDocuments::class => \ShipStream\Ups\Api\Normalizer\ShipmentDocumentsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DocumentsImage::class => \ShipStream\Ups\Api\Normalizer\DocumentsImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImageType::class => \ShipStream\Ups\Api\Normalizer\ImageTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImageFormat::class => \ShipStream\Ups\Api\Normalizer\ImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImagePrintFormat::class => \ShipStream\Ups\Api\Normalizer\ImagePrintFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImagePrintSize::class => \ShipStream\Ups\Api\Normalizer\ImagePrintSizeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DocumentsPackingList::class => \ShipStream\Ups\Api\Normalizer\DocumentsPackingListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListShipFrom::class => \ShipStream\Ups\Api\Normalizer\PackingListShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListShipTo::class => \ShipStream\Ups\Api\Normalizer\PackingListShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListReference::class => \ShipStream\Ups\Api\Normalizer\PackingListReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListHandlingUnit::class => \ShipStream\Ups\Api\Normalizer\PackingListHandlingUnitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitCommodity::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\ShipmentHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipResponse::class => \ShipStream\Ups\Api\Normalizer\FreightShipResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightShipResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipResponseShipmentResults::class => \ShipStream\Ups\Api\Normalizer\FreightShipResponseShipmentResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsRate::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsTotalShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsTotalShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsBillableShipmentWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsBillableShipmentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsService::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsDocuments::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsDocumentsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DocumentsForms::class => \ShipStream\Ups\Api\Normalizer\DocumentsFormsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FormsType::class => \ShipStream\Ups\Api\Normalizer\FormsTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FormsFormat::class => \ShipStream\Ups\Api\Normalizer\FormsFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TimeInTransitRequest::class => \ShipStream\Ups\Api\Normalizer\TimeInTransitRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TimeInTransitResponse::class => \ShipStream\Ups\Api\Normalizer\TimeInTransitResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ValidationList::class => \ShipStream\Ups\Api\Normalizer\ValidationListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EmsResponse::class => \ShipStream\Ups\Api\Normalizer\EmsResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CandidateAddress::class => \ShipStream\Ups\Api\Normalizer\CandidateAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Services::class => \ShipStream\Ups\Api\Normalizer\ServicesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformation::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Activity::class => \ShipStream\Ups\Api\Normalizer\ActivityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Address::class => \ShipStream\Ups\Api\Normalizer\AddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateTrackingNumber::class => \ShipStream\Ups\Api\Normalizer\AlternateTrackingNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryDate::class => \ShipStream\Ups\Api\Normalizer\DeliveryDateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryInformation::class => \ShipStream\Ups\Api\Normalizer\DeliveryInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryTime::class => \ShipStream\Ups\Api\Normalizer\DeliveryTimeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InquireNumbers::class => \ShipStream\Ups\Api\Normalizer\InquireNumbersNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Location::class => \ShipStream\Ups\Api\Normalizer\LocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Milestones::class => \ShipStream\Ups\Api\Normalizer\MilestonesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Package::class => \ShipStream\Ups\Api\Normalizer\PackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageAddress::class => \ShipStream\Ups\Api\Normalizer\PackageAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformation::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Service::class => \ShipStream\Ups\Api\Normalizer\ServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Shipment::class => \ShipStream\Ups\Api\Normalizer\ShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Signature::class => \ShipStream\Ups\Api\Normalizer\SignatureNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Status::class => \ShipStream\Ups\Api\Normalizer\StatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubMilestone::class => \ShipStream\Ups\Api\Normalizer\SubMilestoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackApiResponse::class => \ShipStream\Ups\Api\Normalizer\TrackApiResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackResponse::class => \ShipStream\Ups\Api\Normalizer\TrackResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Warning::class => \ShipStream\Ups\Api\Normalizer\WarningNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Weight::class => \ShipStream\Ups\Api\Normalizer\WeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Destination::class => \ShipStream\Ups\Api\Normalizer\DestinationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackSubsServiceRequest::class => \ShipStream\Ups\Api\Normalizer\TrackSubsServiceRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackSubsServiceResponse::class => \ShipStream\Ups\Api\Normalizer\TrackSubsServiceResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackSubsServiceErrorResponse::class => \ShipStream\Ups\Api\Normalizer\TrackSubsServiceErrorResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody::class => \ShipStream\Ups\Api\Normalizer\SecurityV1OauthTokenPostBodyNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody::class => \ShipStream\Ups\Api\Normalizer\SecurityV1OauthRefreshPostBodyNormalizer::class,
+            
+            \Jane\Component\JsonSchemaRuntime\Reference::class => \ShipStream\Ups\Api\Runtime\Normalizer\ReferenceNormalizer::class,
+        ], $normalizersCache = [];
+        public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
         {
             return array_key_exists($type, $this->normalizers);
         }
-        public function supportsNormalization($data, $format = null, array $context = []) : bool
+        public function supportsNormalization($data, $format = null, array $context = []): bool
         {
             return is_object($data) && array_key_exists(get_class($data), $this->normalizers);
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $normalizerClass = $this->normalizers[get_class($object)];
             $normalizer = $this->getNormalizer($normalizerClass);
             return $normalizer->normalize($object, $format, $context);
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             $denormalizerClass = $this->normalizers[$type];
             $denormalizer = $this->getNormalizer($denormalizerClass);
@@ -900,9 +1746,858 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $this->normalizersCache[$normalizerClass] = $normalizer;
             return $normalizer;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\XAVRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\XAVRequest' => false, 'ShipStream\\Ups\\Api\\Model\\XAVRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\RequestTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\XAVRequestAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponse' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseAlert' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate' => false, 'ShipStream\\Ups\\Api\\Model\\CandidateAddressClassification' => false, 'ShipStream\\Ups\\Api\\Model\\CandidateAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\Error' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequest' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentService' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight' => false, 'ShipStream\\Ups\\Api\\Model\\PackageWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PackageChemicalRecord' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponse' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseAlertDetail' => false, 'ShipStream\\Ups\\Api\\Model\\AlertDetailElementLevelInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ElementLevelInformationElementIdentifier' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseService' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponsePackageResults' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsChemicalRecordResults' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipmentPerfStats' => false, 'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems' => false, 'ShipStream\\Ups\\Api\\Model\\Errors' => false, 'ShipStream\\Ups\\Api\\Model\\LOCATORRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LOCATORResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestOriginAddress' => false, 'ShipStream\\Ups\\Api\\Model\\OriginAddressGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\OriginAddressAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestTranslate' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption' => false, 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionType' => false, 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\SearchOptionRelation' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceCode' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch' => false, 'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList' => false, 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter' => false, 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceOfferingListServiceOffering' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult' => false, 'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList' => false, 'ShipStream\\Ups\\Api\\Model\\PostalCodeListPostalCode' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestSortCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestServiceGeoUnit' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseError' => false, 'ShipStream\\Ups\\Api\\Model\\ErrorErrorLocation' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponseGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults' => false, 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate' => false, 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationIVR' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute' => false, 'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionType' => false, 'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationPickUpSchedulePickUp' => false, 'ShipStream\\Ups\\Api\\Model\\PickUpPickUpDetails' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationDistance' => false, 'ShipStream\\Ups\\Api\\Model\\DistanceUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationAdditionalComments' => false, 'ShipStream\\Ups\\Api\\Model\\AdditionalCommentsCommentType' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationOperatingHours' => false, 'ShipStream\\Ups\\Api\\Model\\OperatingHoursStandardHours' => false, 'ShipStream\\Ups\\Api\\Model\\StandardHoursDayOfWeek' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationSortCode' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationServiceOfferingList' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList' => false, 'ShipStream\\Ups\\Api\\Model\\BusinessClassificationListBusinessClassification' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList' => false, 'ShipStream\\Ups\\Api\\Model\\PrivateNetworkListPrivateNetwork' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability' => false, 'ShipStream\\Ups\\Api\\Model\\AvailabilityShippingAvailability' => false, 'ShipStream\\Ups\\Api\\Model\\ShippingAvailabilityUnavailableReason' => false, 'ShipStream\\Ups\\Api\\Model\\AvailabilityDCRAvailability' => false, 'ShipStream\\Ups\\Api\\Model\\DCRAvailabilityUnavailableReason' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationImage' => false, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionType' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesTransportationPickUpSchedulePickUp' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails' => false, 'ShipStream\\Ups\\Api\\Model\\GenerateTokenSuccessResponse' => false, 'ShipStream\\Ups\\Api\\Model\\RefreshTokenSuccessResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteRequest' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteResponse' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestFormsHistoryDocumentID' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\UploadRequest' => false, 'ShipStream\\Ups\\Api\\Model\\UploadRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm' => false, 'ShipStream\\Ups\\Api\\Model\\UploadResponse' => false, 'ShipStream\\Ups\\Api\\Model\\UploadResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\UploadResponseFormsHistoryDocumentID' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestShipperAccount' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupDateInfo' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult' => false, 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail' => false, 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCancelRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCancelResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseGWNStatus' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCreationRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCreationResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperAccount' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperChargeCard' => false, 'ShipStream\\Ups\\Api\\Model\\ChargeCardCardAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupDateInfo' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupAddressPhone' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupPiece' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTotalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingData' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingDataWithReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestFreightOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightOptionsDestinationAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPalletInformation' => false, 'ShipStream\\Ups\\Api\\Model\\PalletInformationDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseWeekendServiceTerritory' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateStatus' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateResult' => false, 'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestPickupPiece' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestOriginAddress' => false, 'ShipStream\\Ups\\Api\\Model\\OriginAddressOriginSearchCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestDestinationAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesAddress' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesFacilityTime' => false, 'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesDistance' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationPickupFacilities' => false, 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTime' => false, 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTimeDayOfWeek' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPendingRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPendingResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponsePendingStatus' => false, 'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationPackageChemicalRecord' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequest' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestSubscriptionRequest' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionRequestDateTimeRange' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponse' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseQuantumViewEvents' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewEventsSubscriptionEvents' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionStatus' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsDateRange' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestService' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackageActivity' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\PackageDimensionalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\DimensionalWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODAmount' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsuredValue' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCallTagARS' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestCustomsValue' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestUAPAddress' => false, 'ShipStream\\Ups\\Api\\Model\\UAPAddressAddress' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin' => false, 'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation' => false, 'ShipStream\\Ups\\Api\\Model\\ActivityLocationAddressArtifactFormat' => false, 'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionUpdatedAddress' => false, 'ShipStream\\Ups\\Api\\Model\\UpdatedAddressAddressExtendedInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionResolution' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionActivityLocation' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryActivityLocation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryDeliveryLocation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat' => false, 'ShipStream\\Ups\\Api\\Model\\AddressArtifactFormatAddressExtendedInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryCOD' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric' => false, 'ShipStream\\Ups\\Api\\Model\\GenericShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\GenericPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\GenericService' => false, 'ShipStream\\Ups\\Api\\Model\\GenericActivity' => false, 'ShipStream\\Ups\\Api\\Model\\GenericBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\GenericShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\GenericFailureNotification' => false, 'ShipStream\\Ups\\Api\\Model\\FailureNotificationFailureNotificationCode' => false, 'ShipStream\\Ups\\Api\\Model\\RATERequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\RATEResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequest' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestPickupType' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestCustomerClassification' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentAlternateDeliveryAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateAlternateDeliveryAddressAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentIndicationType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentDetails' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentDetailsShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver' => false, 'ShipStream\\Ups\\Api\\Model\\BillReceiverAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillThirdParty' => false, 'ShipStream\\Ups\\Api\\Model\\RateBillThirdPartyAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentFRSPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType' => false, 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentFreightShipmentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentInformationFreightDensityInfo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoAdjustedHeight' => false, 'ShipStream\\Ups\\Api\\Model\\AdjustedHeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsType' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentTotalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentTotalWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackagingType' => false, 'ShipStream\\Ups\\Api\\Model\\PackageDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\PackageDimWeight' => false, 'ShipStream\\Ups\\Api\\Model\\DimWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PackageCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityNMFC' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackagePackageServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsAccessPointCOD' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsShipperDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsurance' => false, 'ShipStream\\Ups\\Api\\Model\\InsuranceBasicFlexibleParcelIndicator' => false, 'ShipStream\\Ups\\Api\\Model\\InsuranceExtendedFlexibleParcelIndicator' => false, 'ShipStream\\Ups\\Api\\Model\\InsuranceTimeInTransitFlexibleParcelIndicator' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsHazMat' => false, 'ShipStream\\Ups\\Api\\Model\\HazMatHazMatChemicalRecord' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDryIce' => false, 'ShipStream\\Ups\\Api\\Model\\DryIceDryIceWeight' => false, 'ShipStream\\Ups\\Api\\Model\\DryIceWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PackageSimpleRate' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageUPSPremier' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAccessPointCOD' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPickupOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryOptions' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsRestrictedArticles' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsImportControl' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsReturnService' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentRatingOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentInvoiceLineTotal' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPromotionalDiscountInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDeliveryTimeInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationPickup' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices' => false, 'ShipStream\\Ups\\Api\\Model\\RateResponse' => false, 'ShipStream\\Ups\\Api\\Model\\RateResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentDisclaimer' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentService' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedShipmentAlert' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentBillingWeight' => false, 'ShipStream\\Ups\\Api\\Model\\BillingWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentFRSShipmentData' => false, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge' => false, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsAdjustedHeight' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalChargesWithTaxes' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalCharge' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalChargesWithTaxes' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedPackage' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageTotalCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageAccessorial' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageRateModifier' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageNegotiatedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedChargesItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageSimpleRate' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryService' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryEstimatedArrival' => false, 'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalArrival' => false, 'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalPickup' => false, 'ShipStream\\Ups\\Api\\Model\\SHIPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\SHIPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentReturnService' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipToPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentAlternateDeliveryAddress' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateDeliveryAddressAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromTaxIDType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromVendorInfo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper' => false, 'ShipStream\\Ups\\Api\\Model\\BillShipperCreditCard' => false, 'ShipStream\\Ups\\Api\\Model\\CreditCardAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty' => false, 'ShipStream\\Ups\\Api\\Model\\BillThirdPartyAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentFRSPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDGSignatoryInfo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsNotification' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationEMail' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationVoiceMessage' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationTextMessage' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationLocale' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelDelivery' => false, 'ShipStream\\Ups\\Api\\Model\\LabelDeliveryEMail' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm' => false, 'ShipStream\\Ups\\Api\\Model\\UPSPremiumCareFormLanguageForUPSPremiumCare' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form' => false, 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content' => false, 'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\CN22ContentWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption' => false, 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionUPSFiled' => false, 'ShipStream\\Ups\\Api\\Model\\UPSFiledPOA' => false, 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionShipperFiled' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent' => false, 'ShipStream\\Ups\\Api\\Model\\ForwardAgentAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee' => false, 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeAddress' => false, 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeUltimateConsigneeType' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee' => false, 'ShipStream\\Ups\\Api\\Model\\IntermediateConsigneeAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsProducer' => false, 'ShipStream\\Ups\\Api\\Model\\ProducerAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ProducerPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo' => false, 'ShipStream\\Ups\\Api\\Model\\SoldToPhone' => false, 'ShipStream\\Ups\\Api\\Model\\SoldToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct' => false, 'ShipStream\\Ups\\Api\\Model\\ProductUnit' => false, 'ShipStream\\Ups\\Api\\Model\\UnitUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ProductNetCostDateRange' => false, 'ShipStream\\Ups\\Api\\Model\\ProductProductWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ProductWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ProductScheduleB' => false, 'ShipStream\\Ups\\Api\\Model\\ScheduleBUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ProductExcludeFromForm' => false, 'ShipStream\\Ups\\Api\\Model\\ProductPackingListInfo' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListInfoPackageAssociated' => false, 'ShipStream\\Ups\\Api\\Model\\ProductEEIInformation' => false, 'ShipStream\\Ups\\Api\\Model\\EEIInformationLicense' => false, 'ShipStream\\Ups\\Api\\Model\\EEIInformationDDTCInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DDTCInformationUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelMethod' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPreAlertNotification' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationEMailMessage' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationVoiceMessage' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationTextMessage' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationLocale' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsRestrictedArticles' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackaging' => false, 'ShipStream\\Ups\\Api\\Model\\PackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\PackageUPSPremier' => false, 'ShipStream\\Ups\\Api\\Model\\UPSPremierHandlingInstructions' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\DeclaredValueType' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCODCODAmount' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotification' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotificationEMail' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsHazMat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDryIce' => false, 'ShipStream\\Ups\\Api\\Model\\PackageHazMatPackageInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification' => false, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelStockSize' => false, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification' => false, 'ShipStream\\Ups\\Api\\Model\\ReceiptSpecificationImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseShipmentResults' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDisclaimer' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsShipmentCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalChargesWithTaxes' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsNegotiatedRateCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFRSShipmentData' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillingWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingLabel' => false, 'ShipStream\\Ups\\Api\\Model\\ShippingLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingReceipt' => false, 'ShipStream\\Ups\\Api\\Model\\ShippingReceiptImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsAccessorial' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsSimpleRate' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsForm' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage' => false, 'ShipStream\\Ups\\Api\\Model\\FormImage' => false, 'ShipStream\\Ups\\Api\\Model\\HighValueReportImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsNegotiatedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsRateModifier' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsControlLogReceipt' => false, 'ShipStream\\Ups\\Api\\Model\\ControlLogReceiptImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsForm' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsCODTurnInPage' => false, 'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImage' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsHighValueReport' => false, 'ShipStream\\Ups\\Api\\Model\\HighValueReportImage' => false, 'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequest' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\VoidRequestTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponse' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\VoidResponseResponseStatus' => false, 'ShipStream\\Ups\\Api\\Model\\VoidResponseTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseSummaryResult' => false, 'ShipStream\\Ups\\Api\\Model\\SummaryResultStatus' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult' => false, 'ShipStream\\Ups\\Api\\Model\\PackageLevelResultStatus' => false, 'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LRRequestTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelStockSize' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues' => false, 'ShipStream\\Ups\\Api\\Model\\ReferenceValuesReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LRResponseResponseStatus' => false, 'ShipStream\\Ups\\Api\\Model\\LRResponseTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsLabelImage' => false, 'ShipStream\\Ups\\Api\\Model\\LabelImageLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsMailInnovationsLabelImage' => false, 'ShipStream\\Ups\\Api\\Model\\MailInnovationsLabelImageLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsReceipt' => false, 'ShipStream\\Ups\\Api\\Model\\ReceiptImage' => false, 'ShipStream\\Ups\\Api\\Model\\ReceiptImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsForm' => false, 'ShipStream\\Ups\\Api\\Model\\LRFormImage' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseCODTurnInPage' => false, 'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImage' => false, 'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseForm' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryFormImage' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseHighValueReport' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseTrackingCandidate' => false, 'ShipStream\\Ups\\Api\\Model\\TrackingCandidatePickupDateRange' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequester' => false, 'ShipStream\\Ups\\Api\\Model\\RequesterPhone' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPackagingType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailWeight' => false, 'ShipStream\\Ups\\Api\\Model\\WeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestExistingShipmentID' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestPOM' => false, 'ShipStream\\Ups\\Api\\Model\\POMPickupNotifications' => false, 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTRATERequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTRATEResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer' => false, 'ShipStream\\Ups\\Api\\Model\\PayerAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestService' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitOne' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitOneType' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitTwo' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitTwoType' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityWeight' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight' => false, 'ShipStream\\Ups\\Api\\Model\\AdjustedWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg' => false, 'ShipStream\\Ups\\Api\\Model\\OverSeasLegDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue' => false, 'ShipStream\\Ups\\Api\\Model\\ValueCube' => false, 'ShipStream\\Ups\\Api\\Model\\ValueCWT' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODValue' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateCODRemitTo' => false, 'ShipStream\\Ups\\Api\\Model\\RemitToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods' => false, 'ShipStream\\Ups\\Api\\Model\\DangerousGoodsPhone' => false, 'ShipStream\\Ups\\Api\\Model\\DangerousGoodsTransportationMode' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingChargeAmount' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestAlternateRateOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestGFPOptions' => false, 'ShipStream\\Ups\\Api\\Model\\GFPOptionsOnCallInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitWeight' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate' => false, 'ShipStream\\Ups\\Api\\Model\\RateType' => false, 'ShipStream\\Ups\\Api\\Model\\RateFactor' => false, 'ShipStream\\Ups\\Api\\Model\\FactorUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTotalShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseBillableShipmentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\BillableShipmentWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseDimensionalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseService' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseAlternateRateType' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseRate' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseBillableShipmentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationPayer' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipPayerAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PayerPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitOne' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitTwo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentExistingShipmentID' => false, 'ShipStream\\Ups\\Api\\Model\\ExistingShipmentIDConfirmationNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ConfirmationNumberType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipCommodityDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentReference' => false, 'ShipStream\\Ups\\Api\\Model\\ReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ReferenceWeight' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsEMailInformation' => false, 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMailType' => false, 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMail' => false, 'ShipStream\\Ups\\Api\\Model\\CODRemitTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRemitToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RemitToPhone' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentServiceOptionsDangerousGoods' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipPickupNotificationsEMailNotification' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDocuments' => false, 'ShipStream\\Ups\\Api\\Model\\DocumentsImage' => false, 'ShipStream\\Ups\\Api\\Model\\ImageType' => false, 'ShipStream\\Ups\\Api\\Model\\ImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ImagePrintFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ImagePrintSize' => false, 'ShipStream\\Ups\\Api\\Model\\DocumentsPackingList' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListReference' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListHandlingUnit' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipResponseShipmentResults' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsRate' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTotalShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillableShipmentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsService' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDocuments' => false, 'ShipStream\\Ups\\Api\\Model\\DocumentsForms' => false, 'ShipStream\\Ups\\Api\\Model\\FormsType' => false, 'ShipStream\\Ups\\Api\\Model\\FormsFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitRequest' => false, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ValidationList' => false, 'ShipStream\\Ups\\Api\\Model\\EmsResponse' => false, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress' => false, 'ShipStream\\Ups\\Api\\Model\\Services' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformation' => false, 'ShipStream\\Ups\\Api\\Model\\Activity' => false, 'ShipStream\\Ups\\Api\\Model\\Address' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateTrackingNumber' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryDate' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryTime' => false, 'ShipStream\\Ups\\Api\\Model\\InquireNumbers' => false, 'ShipStream\\Ups\\Api\\Model\\Location' => false, 'ShipStream\\Ups\\Api\\Model\\Milestones' => false, 'ShipStream\\Ups\\Api\\Model\\Package' => false, 'ShipStream\\Ups\\Api\\Model\\PackageAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\Service' => false, 'ShipStream\\Ups\\Api\\Model\\Shipment' => false, 'ShipStream\\Ups\\Api\\Model\\Signature' => false, 'ShipStream\\Ups\\Api\\Model\\Status' => false, 'ShipStream\\Ups\\Api\\Model\\SubMilestone' => false, 'ShipStream\\Ups\\Api\\Model\\TrackApiResponse' => false, 'ShipStream\\Ups\\Api\\Model\\TrackResponse' => false, 'ShipStream\\Ups\\Api\\Model\\Warning' => false, 'ShipStream\\Ups\\Api\\Model\\Weight' => false, 'ShipStream\\Ups\\Api\\Model\\Destination' => false, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceRequest' => false, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceResponse' => false, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceErrorResponse' => false, 'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthTokenPostBody' => false, 'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthRefreshPostBody' => false, '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => false];
+            return [
+                
+                \ShipStream\Ups\Api\Model\XAVRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\XAVRequest::class => false,
+                \ShipStream\Ups\Api\Model\XAVRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\RequestTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\XAVRequestAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponse::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ResponseResponseStatus::class => false,
+                \ShipStream\Ups\Api\Model\ResponseAlert::class => false,
+                \ShipStream\Ups\Api\Model\ResponseTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseAddressClassification::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseCandidate::class => false,
+                \ShipStream\Ups\Api\Model\CandidateAddressClassification::class => false,
+                \ShipStream\Ups\Api\Model\CandidateAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\ErrorResponse::class => false,
+                \ShipStream\Ups\Api\Model\ErrorResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\Error::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequest::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalDataChemicalDetail::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalDataProperShippingNameDetail::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalDataPackageQuantityLimitDetail::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequest::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentService::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackageWeight::class => false,
+                \ShipStream\Ups\Api\Model\PackageWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PackageChemicalRecord::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponse::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ResponseAlertDetail::class => false,
+                \ShipStream\Ups\Api\Model\AlertDetailElementLevelInformation::class => false,
+                \ShipStream\Ups\Api\Model\ElementLevelInformationElementIdentifier::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseService::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponsePackageResults::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsChemicalRecordResults::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostRequest::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\RequestShipmentItems::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostResponse::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostResponseShipment::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostResponseShipmentPerfStats::class => false,
+                \ShipStream\Ups\Api\Model\BrokerageFeeItems::class => false,
+                \ShipStream\Ups\Api\Model\ResponseShipmentItems::class => false,
+                \ShipStream\Ups\Api\Model\Errors::class => false,
+                \ShipStream\Ups\Api\Model\LOCATORRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LOCATORResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequest::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestOriginAddress::class => false,
+                \ShipStream\Ups\Api\Model\OriginAddressGeocode::class => false,
+                \ShipStream\Ups\Api\Model\OriginAddressAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestTranslate::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaSearchOption::class => false,
+                \ShipStream\Ups\Api\Model\SearchOptionOptionType::class => false,
+                \ShipStream\Ups\Api\Model\SearchOptionOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\SearchOptionRelation::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaServiceSearch::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSearchServiceCode::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSearchServiceOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaFreightWillCallSearch::class => false,
+                \ShipStream\Ups\Api\Model\FreightWillCallSearchFacilityAddress::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class => false,
+                \ShipStream\Ups\Api\Model\IncludeCriteriaMerchantAccountNumberList::class => false,
+                \ShipStream\Ups\Api\Model\IncludeCriteriaSearchFilter::class => false,
+                \ShipStream\Ups\Api\Model\IncludeCriteriaServiceOfferingList::class => false,
+                \ShipStream\Ups\Api\Model\ServiceOfferingListServiceOffering::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class => false,
+                \ShipStream\Ups\Api\Model\ExcludeFromResultPostalCodeList::class => false,
+                \ShipStream\Ups\Api\Model\PostalCodeListPostalCode::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaOpenTimeCriteria::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestSortCriteria::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestServiceGeoUnit::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponse::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ResponseError::class => false,
+                \ShipStream\Ups\Api\Model\ErrorErrorLocation::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponseGeocode::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponseSearchResults::class => false,
+                \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class => false,
+                \ShipStream\Ups\Api\Model\GeocodeCandidateAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\GeocodeCandidateGeocode::class => false,
+                \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationIVR::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationGeocode::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationLocationAttribute::class => false,
+                \ShipStream\Ups\Api\Model\LocationAttributeOptionType::class => false,
+                \ShipStream\Ups\Api\Model\LocationAttributeOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\OptionCodeTransportationPickUpSchedule::class => false,
+                \ShipStream\Ups\Api\Model\TransportationPickUpSchedulePickUp::class => false,
+                \ShipStream\Ups\Api\Model\PickUpPickUpDetails::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationDistance::class => false,
+                \ShipStream\Ups\Api\Model\DistanceUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationSpecialInstructions::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationAdditionalComments::class => false,
+                \ShipStream\Ups\Api\Model\AdditionalCommentsCommentType::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationOperatingHours::class => false,
+                \ShipStream\Ups\Api\Model\OperatingHoursStandardHours::class => false,
+                \ShipStream\Ups\Api\Model\StandardHoursDayOfWeek::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationLocalizedInstruction::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationPromotionInformation::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationSortCode::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationServiceOfferingList::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationBusinessClassificationList::class => false,
+                \ShipStream\Ups\Api\Model\BusinessClassificationListBusinessClassification::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationAccessPointStatus::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationPrivateNetworkList::class => false,
+                \ShipStream\Ups\Api\Model\PrivateNetworkListPrivateNetwork::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationAvailability::class => false,
+                \ShipStream\Ups\Api\Model\AvailabilityShippingAvailability::class => false,
+                \ShipStream\Ups\Api\Model\ShippingAvailabilityUnavailableReason::class => false,
+                \ShipStream\Ups\Api\Model\AvailabilityDCRAvailability::class => false,
+                \ShipStream\Ups\Api\Model\DCRAvailabilityUnavailableReason::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationLocationImage::class => false,
+                \ShipStream\Ups\Api\Model\SearchResultsAvailableLocationAttributes::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionType::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesTransportationPickUpSchedulePickUp::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesPickUpPickUpDetails::class => false,
+                \ShipStream\Ups\Api\Model\GenerateTokenSuccessResponse::class => false,
+                \ShipStream\Ups\Api\Model\RefreshTokenSuccessResponse::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\DeleteRequest::class => false,
+                \ShipStream\Ups\Api\Model\DeleteRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\DeleteResponse::class => false,
+                \ShipStream\Ups\Api\Model\DeleteResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryRequest::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestFormsHistoryDocumentID::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryResponse::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\UploadRequest::class => false,
+                \ShipStream\Ups\Api\Model\UploadRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\UploadRequestUserCreatedForm::class => false,
+                \ShipStream\Ups\Api\Model\UploadResponse::class => false,
+                \ShipStream\Ups\Api\Model\UploadResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\UploadResponseFormsHistoryDocumentID::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestShipperAccount::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestPickupAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestPickupDateInfo::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class => false,
+                \ShipStream\Ups\Api\Model\RateResultChargeDetail::class => false,
+                \ShipStream\Ups\Api\Model\RateResultTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponseWeekendServiceTerritory::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCancelRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelResponseGWNStatus::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipperAccount::class => false,
+                \ShipStream\Ups\Api\Model\ShipperChargeCard::class => false,
+                \ShipStream\Ups\Api\Model\ChargeCardCardAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestPickupDateInfo::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestPickupAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupAddressPhone::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestPickupPiece::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestTotalWeight::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingData::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingDataWithReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestFreightOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightOptionsShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightOptionsDestinationAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightOptionsShipmentDetail::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDetailPalletInformation::class => false,
+                \ShipStream\Ups\Api\Model\PalletInformationDimensions::class => false,
+                \ShipStream\Ups\Api\Model\DimensionsUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseWeekendServiceTerritory::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseRateStatus::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseRateResult::class => false,
+                \ShipStream\Ups\Api\Model\RateResultDisclaimer::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestPickupPiece::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestOriginAddress::class => false,
+                \ShipStream\Ups\Api\Model\OriginAddressOriginSearchCriteria::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestDestinationAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation::class => false,
+                \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesAddress::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesFacilityTime::class => false,
+                \ShipStream\Ups\Api\Model\FacilityTimeDayOfWeek::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesLocalizedInstruction::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesDistance::class => false,
+                \ShipStream\Ups\Api\Model\ServiceCenterLocationPickupFacilities::class => false,
+                \ShipStream\Ups\Api\Model\PickupFacilitiesAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTime::class => false,
+                \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTimeDayOfWeek::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPendingRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusResponsePendingStatus::class => false,
+                \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationRequest::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationShipmentShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationShipmentShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationPackageChemicalRecord::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationResponse::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewRequest::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewRequestSubscriptionRequest::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionRequestDateTimeRange::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewResponse::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewResponseQuantumViewEvents::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewEventsSubscriptionEvents::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionStatus::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionEventsDateRange::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileStatusType::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileManifest::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipper::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipperAddress::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipTo::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\ManifestReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ManifestService::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackageActivity::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackageDimensions::class => false,
+                \ShipStream\Ups\Api\Model\PackageDimensionalWeight::class => false,
+                \ShipStream\Ups\Api\Model\DimensionalWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackagePackageWeight::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackagePackageServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackageServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\CODCODAmount::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsInsuredValue::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCallTagARS::class => false,
+                \ShipStream\Ups\Api\Model\ManifestCustomsValue::class => false,
+                \ShipStream\Ups\Api\Model\ManifestBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\ManifestUAPAddress::class => false,
+                \ShipStream\Ups\Api\Model\UAPAddressAddress::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class => false,
+                \ShipStream\Ups\Api\Model\OriginPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\OriginShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\OriginActivityLocation::class => false,
+                \ShipStream\Ups\Api\Model\ActivityLocationAddressArtifactFormat::class => false,
+                \ShipStream\Ups\Api\Model\OriginBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileException::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionUpdatedAddress::class => false,
+                \ShipStream\Ups\Api\Model\UpdatedAddressAddressExtendedInformation::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionResolution::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionActivityLocation::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileDelivery::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryActivityLocation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryDeliveryLocation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryLocationAddressArtifactFormat::class => false,
+                \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryCOD::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileGeneric::class => false,
+                \ShipStream\Ups\Api\Model\GenericShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\GenericPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\GenericService::class => false,
+                \ShipStream\Ups\Api\Model\GenericActivity::class => false,
+                \ShipStream\Ups\Api\Model\GenericBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\GenericShipTo::class => false,
+                \ShipStream\Ups\Api\Model\GenericFailureNotification::class => false,
+                \ShipStream\Ups\Api\Model\FailureNotificationFailureNotificationCode::class => false,
+                \ShipStream\Ups\Api\Model\RATERequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\RATEResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\RateRequest::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestPickupType::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestCustomerClassification::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipperAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipTo::class => false,
+                \ShipStream\Ups\Api\Model\ShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentAlternateDeliveryAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateAlternateDeliveryAddressAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentIndicationType::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPaymentDetails::class => false,
+                \ShipStream\Ups\Api\Model\PaymentDetailsShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentChargeBillShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargeBillReceiver::class => false,
+                \ShipStream\Ups\Api\Model\BillReceiverAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentChargeBillThirdParty::class => false,
+                \ShipStream\Ups\Api\Model\RateBillThirdPartyAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentFRSPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\FRSPaymentInformationType::class => false,
+                \ShipStream\Ups\Api\Model\FRSPaymentInformationAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentFreightShipmentInformation::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentInformationFreightDensityInfo::class => false,
+                \ShipStream\Ups\Api\Model\FreightDensityInfoAdjustedHeight::class => false,
+                \ShipStream\Ups\Api\Model\AdjustedHeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightDensityInfoHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsType::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsDimensions::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentTotalWeight::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentTotalWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackagingType::class => false,
+                \ShipStream\Ups\Api\Model\PackageDimensions::class => false,
+                \ShipStream\Ups\Api\Model\PackageDimWeight::class => false,
+                \ShipStream\Ups\Api\Model\DimWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PackageCommodity::class => false,
+                \ShipStream\Ups\Api\Model\CommodityNMFC::class => false,
+                \ShipStream\Ups\Api\Model\RatePackagePackageServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsAccessPointCOD::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsShipperDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsInsurance::class => false,
+                \ShipStream\Ups\Api\Model\InsuranceBasicFlexibleParcelIndicator::class => false,
+                \ShipStream\Ups\Api\Model\InsuranceExtendedFlexibleParcelIndicator::class => false,
+                \ShipStream\Ups\Api\Model\InsuranceTimeInTransitFlexibleParcelIndicator::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsHazMat::class => false,
+                \ShipStream\Ups\Api\Model\HazMatHazMatChemicalRecord::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDryIce::class => false,
+                \ShipStream\Ups\Api\Model\DryIceDryIceWeight::class => false,
+                \ShipStream\Ups\Api\Model\DryIceWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PackageSimpleRate::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageUPSPremier::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAccessPointCOD::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCODCODAmount::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPickupOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryOptions::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsRestrictedArticles::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsImportControl::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsReturnService::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentRatingOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentInvoiceLineTotal::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPromotionalDiscountInformation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDeliveryTimeInformation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryTimeInformationPickup::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryTimeInformationReturnContractServices::class => false,
+                \ShipStream\Ups\Api\Model\RateResponse::class => false,
+                \ShipStream\Ups\Api\Model\RateResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\RateResponseRatedShipment::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentDisclaimer::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentService::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentRatedShipmentAlert::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentBillingWeight::class => false,
+                \ShipStream\Ups\Api\Model\BillingWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentFRSShipmentData::class => false,
+                \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\TransportationChargesGrossCharge::class => false,
+                \ShipStream\Ups\Api\Model\TransportationChargesDiscountAmount::class => false,
+                \ShipStream\Ups\Api\Model\TransportationChargesNetCharge::class => false,
+                \ShipStream\Ups\Api\Model\FRSShipmentDataFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\FRSShipmentDataHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsAdjustedHeight::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTotalCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTotalChargesWithTaxes::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalCharge::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalChargesWithTaxes::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentRatedPackage::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageTotalCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageBillingWeight::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageBillingWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageAccessorial::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageRateModifier::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageNegotiatedCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedChargesItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageSimpleRate::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\TimeInTransitServiceSummary::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSummaryService::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSummaryEstimatedArrival::class => false,
+                \ShipStream\Ups\Api\Model\EstimatedArrivalArrival::class => false,
+                \ShipStream\Ups\Api\Model\EstimatedArrivalPickup::class => false,
+                \ShipStream\Ups\Api\Model\SHIPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\SHIPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequest::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentReturnService::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipperPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipTo::class => false,
+                \ShipStream\Ups\Api\Model\ShipToPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => false,
+                \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromTaxIDType::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromVendorInfo::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargeBillShipper::class => false,
+                \ShipStream\Ups\Api\Model\BillShipperCreditCard::class => false,
+                \ShipStream\Ups\Api\Model\CreditCardAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargeBillThirdParty::class => false,
+                \ShipStream\Ups\Api\Model\BillThirdPartyAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentFRSPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDGSignatoryInfo::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsNotification::class => false,
+                \ShipStream\Ups\Api\Model\NotificationEMail::class => false,
+                \ShipStream\Ups\Api\Model\NotificationVoiceMessage::class => false,
+                \ShipStream\Ups\Api\Model\NotificationTextMessage::class => false,
+                \ShipStream\Ups\Api\Model\NotificationLocale::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelDelivery::class => false,
+                \ShipStream\Ups\Api\Model\LabelDeliveryEMail::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsUserCreatedForm::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsUPSPremiumCareForm::class => false,
+                \ShipStream\Ups\Api\Model\UPSPremiumCareFormLanguageForUPSPremiumCare::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsCN22Form::class => false,
+                \ShipStream\Ups\Api\Model\CN22FormCN22Content::class => false,
+                \ShipStream\Ups\Api\Model\CN22ContentCN22ContentWeight::class => false,
+                \ShipStream\Ups\Api\Model\CN22ContentWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class => false,
+                \ShipStream\Ups\Api\Model\EEIFilingOptionUPSFiled::class => false,
+                \ShipStream\Ups\Api\Model\UPSFiledPOA::class => false,
+                \ShipStream\Ups\Api\Model\EEIFilingOptionShipperFiled::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsContacts::class => false,
+                \ShipStream\Ups\Api\Model\ContactsForwardAgent::class => false,
+                \ShipStream\Ups\Api\Model\ForwardAgentAddress::class => false,
+                \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class => false,
+                \ShipStream\Ups\Api\Model\UltimateConsigneeAddress::class => false,
+                \ShipStream\Ups\Api\Model\UltimateConsigneeUltimateConsigneeType::class => false,
+                \ShipStream\Ups\Api\Model\ContactsIntermediateConsignee::class => false,
+                \ShipStream\Ups\Api\Model\IntermediateConsigneeAddress::class => false,
+                \ShipStream\Ups\Api\Model\ContactsProducer::class => false,
+                \ShipStream\Ups\Api\Model\ProducerAddress::class => false,
+                \ShipStream\Ups\Api\Model\ProducerPhone::class => false,
+                \ShipStream\Ups\Api\Model\ContactsSoldTo::class => false,
+                \ShipStream\Ups\Api\Model\SoldToPhone::class => false,
+                \ShipStream\Ups\Api\Model\SoldToAddress::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsProduct::class => false,
+                \ShipStream\Ups\Api\Model\ProductUnit::class => false,
+                \ShipStream\Ups\Api\Model\UnitUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ProductNetCostDateRange::class => false,
+                \ShipStream\Ups\Api\Model\ProductProductWeight::class => false,
+                \ShipStream\Ups\Api\Model\ProductWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ProductScheduleB::class => false,
+                \ShipStream\Ups\Api\Model\ScheduleBUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ProductExcludeFromForm::class => false,
+                \ShipStream\Ups\Api\Model\ProductPackingListInfo::class => false,
+                \ShipStream\Ups\Api\Model\PackingListInfoPackageAssociated::class => false,
+                \ShipStream\Ups\Api\Model\ProductEEIInformation::class => false,
+                \ShipStream\Ups\Api\Model\EEIInformationLicense::class => false,
+                \ShipStream\Ups\Api\Model\EEIInformationDDTCInformation::class => false,
+                \ShipStream\Ups\Api\Model\DDTCInformationUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsDiscount::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsFreightCharges::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsInsuranceCharges::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsOtherCharges::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsBlanketPeriod::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelMethod::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPreAlertNotification::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationEMailMessage::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationVoiceMessage::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationTextMessage::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationLocale::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsRestrictedArticles::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackaging::class => false,
+                \ShipStream\Ups\Api\Model\PackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\PackageUPSPremier::class => false,
+                \ShipStream\Ups\Api\Model\UPSPremierHandlingInstructions::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackageServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\DeclaredValueType::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsCODCODAmount::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsNotification::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsNotificationEMail::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsHazMat::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsDryIce::class => false,
+                \ShipStream\Ups\Api\Model\PackageHazMatPackageInformation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestLabelSpecification::class => false,
+                \ShipStream\Ups\Api\Model\LabelSpecificationLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelSpecificationLabelStockSize::class => false,
+                \ShipStream\Ups\Api\Model\LabelSpecificationInstruction::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestReceiptSpecification::class => false,
+                \ShipStream\Ups\Api\Model\ReceiptSpecificationImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResponse::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResponseShipmentResults::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsDisclaimer::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsShipmentCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTotalCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTotalChargesWithTaxes::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsNegotiatedRateCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsFRSShipmentData::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsBillingWeight::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsPackageResults::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsShippingLabel::class => false,
+                \ShipStream\Ups\Api\Model\ShippingLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsShippingReceipt::class => false,
+                \ShipStream\Ups\Api\Model\ShippingReceiptImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsAccessorial::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsSimpleRate::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsForm::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsFormImage::class => false,
+                \ShipStream\Ups\Api\Model\FormImage::class => false,
+                \ShipStream\Ups\Api\Model\HighValueReportImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\CODTurnInPageImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsNegotiatedCharges::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsRateModifier::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsControlLogReceipt::class => false,
+                \ShipStream\Ups\Api\Model\ControlLogReceiptImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsForm::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsCODTurnInPage::class => false,
+                \ShipStream\Ups\Api\Model\CODTurnInPageImage::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsHighValueReport::class => false,
+                \ShipStream\Ups\Api\Model\HighValueReportImage::class => false,
+                \ShipStream\Ups\Api\Model\VOIDSHIPMENTRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentRequest::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\VoidRequestTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentRequestVoidShipment::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponse::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\VoidResponseResponseStatus::class => false,
+                \ShipStream\Ups\Api\Model\VoidResponseTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponseSummaryResult::class => false,
+                \ShipStream\Ups\Api\Model\SummaryResultStatus::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponsePackageLevelResult::class => false,
+                \ShipStream\Ups\Api\Model\PackageLevelResultStatus::class => false,
+                \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\LRRequestTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelStockSize::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestTranslate::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelDelivery::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestReferenceValues::class => false,
+                \ShipStream\Ups\Api\Model\ReferenceValuesReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestUPSPremiumCareForm::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponse::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\LRResponseResponseStatus::class => false,
+                \ShipStream\Ups\Api\Model\LRResponseTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseLabelResults::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsLabelImage::class => false,
+                \ShipStream\Ups\Api\Model\LabelImageLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsMailInnovationsLabelImage::class => false,
+                \ShipStream\Ups\Api\Model\MailInnovationsLabelImageLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsReceipt::class => false,
+                \ShipStream\Ups\Api\Model\ReceiptImage::class => false,
+                \ShipStream\Ups\Api\Model\ReceiptImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsForm::class => false,
+                \ShipStream\Ups\Api\Model\LRFormImage::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseCODTurnInPage::class => false,
+                \ShipStream\Ups\Api\Model\LRCODTurnInPageImage::class => false,
+                \ShipStream\Ups\Api\Model\LRCODTurnInPageImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseForm::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryFormImage::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseHighValueReport::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseTrackingCandidate::class => false,
+                \ShipStream\Ups\Api\Model\TrackingCandidatePickupDateRange::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestRequester::class => false,
+                \ShipStream\Ups\Api\Model\RequesterPhone::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentDetail::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDetailPackagingType::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDetailWeight::class => false,
+                \ShipStream\Ups\Api\Model\WeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestExistingShipmentID::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestPOM::class => false,
+                \ShipStream\Ups\Api\Model\POMPickupNotifications::class => false,
+                \ShipStream\Ups\Api\Model\PickupNotificationsEMailNotification::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelStatus::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestShipTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\FreightRatePaymentInformationPayer::class => false,
+                \ShipStream\Ups\Api\Model\PayerAddress::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformationShipmentBillingOption::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestService::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitOne::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitOneType::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitTwo::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitTwoType::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class => false,
+                \ShipStream\Ups\Api\Model\CommodityWeight::class => false,
+                \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class => false,
+                \ShipStream\Ups\Api\Model\AdjustedWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\CommodityDimensions::class => false,
+                \ShipStream\Ups\Api\Model\CommodityPackagingType::class => false,
+                \ShipStream\Ups\Api\Model\CommodityCommodityValue::class => false,
+                \ShipStream\Ups\Api\Model\CommodityNMFCCommodity::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsPickupOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsDeliveryOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class => false,
+                \ShipStream\Ups\Api\Model\OverSeasLegDimensions::class => false,
+                \ShipStream\Ups\Api\Model\OverSeasLegValue::class => false,
+                \ShipStream\Ups\Api\Model\ValueCube::class => false,
+                \ShipStream\Ups\Api\Model\ValueCWT::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\CODCODValue::class => false,
+                \ShipStream\Ups\Api\Model\CODCODPaymentMethod::class => false,
+                \ShipStream\Ups\Api\Model\CODCODBillingOption::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateCODRemitTo::class => false,
+                \ShipStream\Ups\Api\Model\RemitToAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDangerousGoods::class => false,
+                \ShipStream\Ups\Api\Model\DangerousGoodsPhone::class => false,
+                \ShipStream\Ups\Api\Model\DangerousGoodsTransportationMode::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsSortingAndSegregating::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsExcessDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsHandlingCharge::class => false,
+                \ShipStream\Ups\Api\Model\HandlingChargeAmount::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAdjustedHeight::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestAlternateRateOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestGFPOptions::class => false,
+                \ShipStream\Ups\Api\Model\GFPOptionsOnCallInformation::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitWeight::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseRate::class => false,
+                \ShipStream\Ups\Api\Model\RateType::class => false,
+                \ShipStream\Ups\Api\Model\RateFactor::class => false,
+                \ShipStream\Ups\Api\Model\FactorUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseTotalShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseBillableShipmentWeight::class => false,
+                \ShipStream\Ups\Api\Model\BillableShipmentWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseDimensionalWeight::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseService::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseAlternateRatesResponse::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseAlternateRateType::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseRate::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseBillableShipmentWeight::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentShipTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformationPayer::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipPayerAddress::class => false,
+                \ShipStream\Ups\Api\Model\PayerPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentHandlingUnitOne::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentHandlingUnitTwo::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentExistingShipmentID::class => false,
+                \ShipStream\Ups\Api\Model\ExistingShipmentIDConfirmationNumber::class => false,
+                \ShipStream\Ups\Api\Model\ConfirmationNumberType::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentCommodity::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipCommodityDimensions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentReference::class => false,
+                \ShipStream\Ups\Api\Model\ReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ReferenceWeight::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsEMailInformation::class => false,
+                \ShipStream\Ups\Api\Model\EMailInformationEMailType::class => false,
+                \ShipStream\Ups\Api\Model\EMailInformationEMail::class => false,
+                \ShipStream\Ups\Api\Model\CODRemitTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRemitToAddress::class => false,
+                \ShipStream\Ups\Api\Model\RemitToPhone::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentServiceOptionsDangerousGoods::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupRequestRequester::class => false,
+                \ShipStream\Ups\Api\Model\PickupRequestPOM::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipPOMPickupNotifications::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipPickupNotificationsEMailNotification::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDocuments::class => false,
+                \ShipStream\Ups\Api\Model\DocumentsImage::class => false,
+                \ShipStream\Ups\Api\Model\ImageType::class => false,
+                \ShipStream\Ups\Api\Model\ImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ImagePrintFormat::class => false,
+                \ShipStream\Ups\Api\Model\ImagePrintSize::class => false,
+                \ShipStream\Ups\Api\Model\DocumentsPackingList::class => false,
+                \ShipStream\Ups\Api\Model\PackingListShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\PackingListShipTo::class => false,
+                \ShipStream\Ups\Api\Model\PackingListReference::class => false,
+                \ShipStream\Ups\Api\Model\PackingListHandlingUnit::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitCommodity::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipResponseShipmentResults::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsRate::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsTotalShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsBillableShipmentWeight::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsService::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsDocuments::class => false,
+                \ShipStream\Ups\Api\Model\DocumentsForms::class => false,
+                \ShipStream\Ups\Api\Model\FormsType::class => false,
+                \ShipStream\Ups\Api\Model\FormsFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\TimeInTransitRequest::class => false,
+                \ShipStream\Ups\Api\Model\TimeInTransitResponse::class => false,
+                \ShipStream\Ups\Api\Model\ValidationList::class => false,
+                \ShipStream\Ups\Api\Model\EmsResponse::class => false,
+                \ShipStream\Ups\Api\Model\CandidateAddress::class => false,
+                \ShipStream\Ups\Api\Model\Services::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformation::class => false,
+                \ShipStream\Ups\Api\Model\Activity::class => false,
+                \ShipStream\Ups\Api\Model\Address::class => false,
+                \ShipStream\Ups\Api\Model\AlternateTrackingNumber::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryDate::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryInformation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryTime::class => false,
+                \ShipStream\Ups\Api\Model\InquireNumbers::class => false,
+                \ShipStream\Ups\Api\Model\Location::class => false,
+                \ShipStream\Ups\Api\Model\Milestones::class => false,
+                \ShipStream\Ups\Api\Model\Package::class => false,
+                \ShipStream\Ups\Api\Model\PackageAddress::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\Service::class => false,
+                \ShipStream\Ups\Api\Model\Shipment::class => false,
+                \ShipStream\Ups\Api\Model\Signature::class => false,
+                \ShipStream\Ups\Api\Model\Status::class => false,
+                \ShipStream\Ups\Api\Model\SubMilestone::class => false,
+                \ShipStream\Ups\Api\Model\TrackApiResponse::class => false,
+                \ShipStream\Ups\Api\Model\TrackResponse::class => false,
+                \ShipStream\Ups\Api\Model\Warning::class => false,
+                \ShipStream\Ups\Api\Model\Weight::class => false,
+                \ShipStream\Ups\Api\Model\Destination::class => false,
+                \ShipStream\Ups\Api\Model\TrackSubsServiceRequest::class => false,
+                \ShipStream\Ups\Api\Model\TrackSubsServiceResponse::class => false,
+                \ShipStream\Ups\Api\Model\TrackSubsServiceErrorResponse::class => false,
+                \ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody::class => false,
+                \ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody::class => false,
+                \Jane\Component\JsonSchemaRuntime\Reference::class => false,
+            ];
         }
     }
 } else {
@@ -912,861 +2607,1707 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        protected $normalizers = array(
+        protected $normalizers = [
             
-            'ShipStream\\Ups\\Api\\Model\\XAVRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RequestTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\RequestTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVRequestAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVRequestAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseResponseStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseAlert' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseAlertNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseAddressClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate' => 'ShipStream\\Ups\\Api\\Normalizer\\XAVResponseCandidateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CandidateAddressClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\CandidateAddressClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CandidateAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\CandidateAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ErrorResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Error' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalReferenceDataResponseChemicalDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalDataChemicalDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalDataProperShippingNameDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ChemicalDataPackageQuantityLimitDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYAPCRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\DANGEROUSGOODSUTILITYAPCResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckShipmentShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckShipmentShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackageWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageChemicalRecord' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageChemicalRecordNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseAlertDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseAlertDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlertDetailElementLevelInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\AlertDetailElementLevelInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ElementLevelInformationElementIdentifier' => 'ShipStream\\Ups\\Api\\Normalizer\\ElementLevelInformationElementIdentifierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseService' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponseServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponsePackageResults' => 'ShipStream\\Ups\\Api\\Normalizer\\AcceptanceAuditPreCheckResponsePackageResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsChemicalRecordResults' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsChemicalRecordResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems' => 'ShipStream\\Ups\\Api\\Normalizer\\RequestShipmentItemsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostResponseShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipmentPerfStats' => 'ShipStream\\Ups\\Api\\Normalizer\\LandedCostResponseShipmentPerfStatsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems' => 'ShipStream\\Ups\\Api\\Normalizer\\BrokerageFeeItemsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseShipmentItemsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Errors' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LOCATORRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LOCATORRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LOCATORResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LOCATORResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestOriginAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestOriginAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginAddressGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginAddressGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginAddressAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginAddressAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestTranslate' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestTranslateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestLocationSearchCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaSearchOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionType' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchOptionOptionTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchOptionOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchOptionRelation' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchOptionRelationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaServiceSearchNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceCode' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSearchServiceCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSearchServiceOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaFreightWillCallSearchNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightWillCallSearchFacilityAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaAccessPointSearchNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointSearchIncludeCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList' => 'ShipStream\\Ups\\Api\\Normalizer\\IncludeCriteriaMerchantAccountNumberListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter' => 'ShipStream\\Ups\\Api\\Normalizer\\IncludeCriteriaSearchFilterNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList' => 'ShipStream\\Ups\\Api\\Normalizer\\IncludeCriteriaServiceOfferingListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceOfferingListServiceOffering' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceOfferingListServiceOfferingNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointSearchExcludeFromResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList' => 'ShipStream\\Ups\\Api\\Normalizer\\ExcludeFromResultPostalCodeListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PostalCodeListPostalCode' => 'ShipStream\\Ups\\Api\\Normalizer\\PostalCodeListPostalCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationSearchCriteriaOpenTimeCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestSortCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestSortCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorRequestServiceGeoUnit' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorRequestServiceGeoUnitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ResponseError' => 'ShipStream\\Ups\\Api\\Normalizer\\ResponseErrorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ErrorErrorLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\ErrorErrorLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponseGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults' => 'ShipStream\\Ups\\Api\\Normalizer\\LocatorResponseSearchResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchResultsGeocodeCandidateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\GeocodeCandidateAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\GeocodeCandidateGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchResultsDropLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationIVR' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationIVRNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationGeocode' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationGeocodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationAddressKeyFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationAddressKeyFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationLocationAttributeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionType' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationAttributeOptionTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationAttributeOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule' => 'ShipStream\\Ups\\Api\\Normalizer\\OptionCodeTransportationPickUpScheduleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationPickUpSchedulePickUp' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationPickUpSchedulePickUpNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickUpPickUpDetails' => 'ShipStream\\Ups\\Api\\Normalizer\\PickUpPickUpDetailsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationDistance' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationDistanceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DistanceUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DistanceUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationSpecialInstructionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationAdditionalComments' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationAdditionalCommentsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AdditionalCommentsCommentType' => 'ShipStream\\Ups\\Api\\Normalizer\\AdditionalCommentsCommentTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationOperatingHours' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationOperatingHoursNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OperatingHoursStandardHours' => 'ShipStream\\Ups\\Api\\Normalizer\\OperatingHoursStandardHoursNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\StandardHoursDayOfWeek' => 'ShipStream\\Ups\\Api\\Normalizer\\StandardHoursDayOfWeekNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationLocalizedInstructionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationPromotionInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationSortCode' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationSortCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationServiceOfferingList' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationServiceOfferingListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationAccessPointInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationBusinessClassificationListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BusinessClassificationListBusinessClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\BusinessClassificationListBusinessClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationAccessPointStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationPrivateNetworkListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PrivateNetworkListPrivateNetwork' => 'ShipStream\\Ups\\Api\\Normalizer\\PrivateNetworkListPrivateNetworkNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationAvailabilityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailabilityShippingAvailability' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailabilityShippingAvailabilityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShippingAvailabilityUnavailableReason' => 'ShipStream\\Ups\\Api\\Normalizer\\ShippingAvailabilityUnavailableReasonNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailabilityDCRAvailability' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailabilityDCRAvailabilityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DCRAvailabilityUnavailableReason' => 'ShipStream\\Ups\\Api\\Normalizer\\DCRAvailabilityUnavailableReasonNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropLocationLocationImage' => 'ShipStream\\Ups\\Api\\Normalizer\\DropLocationLocationImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes' => 'ShipStream\\Ups\\Api\\Normalizer\\SearchResultsAvailableLocationAttributesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionType' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesOptionTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesOptionCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesOptionCodeTransportationPickUpScheduleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesTransportationPickUpSchedulePickUp' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesTransportationPickUpSchedulePickUpNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails' => 'ShipStream\\Ups\\Api\\Normalizer\\AvailableLocationAttributesPickUpPickUpDetailsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenerateTokenSuccessResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\GenerateTokenSuccessResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RefreshTokenSuccessResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\RefreshTokenSuccessResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTDeleteRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTDeleteResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeleteResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\DeleteResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestFormsHistoryDocumentID' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryRequestFormsHistoryDocumentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PushToImageRepositoryResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTUploadRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PAPERLESSDOCUMENTUploadResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadRequestUserCreatedFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UploadResponseFormsHistoryDocumentID' => 'ShipStream\\Ups\\Api\\Normalizer\\UploadResponseFormsHistoryDocumentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestShipperAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestShipperAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestPickupAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupDateInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateRequestPickupDateInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseRateResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResultChargeDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResultTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRateResponseWeekendServiceTerritoryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCancelRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCancelRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCancelResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCancelResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseGWNStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCancelResponseGWNStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCreationRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCreationRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPCreationResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPCreationResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperChargeCard' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperChargeCardNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ChargeCardCardAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ChargeCardCardAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupDateInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestPickupDateInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestPickupAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupAddressPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupAddressPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupPiece' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestPickupPieceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTotalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestTotalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingData' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestTrackingDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingDataWithReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestTrackingDataWithReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestFreightOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationRequestFreightOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightOptionsShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightOptionsDestinationAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightOptionsDestinationAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightOptionsShipmentDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPalletInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDetailPalletInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PalletInformationDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\PalletInformationDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DimensionsUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseWeekendServiceTerritory' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseWeekendServiceTerritoryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseRateStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateResult' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupCreationResponseRateResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResultDisclaimerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPolDivRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPolDivResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetPoliticalDivision1ListResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPServCenterRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPServCenterResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestPickupPiece' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestPickupPieceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestOriginAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestOriginAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginAddressOriginSearchCriteria' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginAddressOriginSearchCriteriaNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestDestinationAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesRequestDestinationAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceCenterLocationDropOffFacilitiesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesFacilityTime' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesFacilityTimeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek' => 'ShipStream\\Ups\\Api\\Normalizer\\FacilityTimeDayOfWeekNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesLocalizedInstructionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesDistance' => 'ShipStream\\Ups\\Api\\Normalizer\\DropOffFacilitiesDistanceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationPickupFacilities' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceCenterLocationPickupFacilitiesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupFacilitiesAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTime' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupFacilitiesFacilityTimeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTimeDayOfWeek' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupFacilitiesFacilityTimeDayOfWeekNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPendingRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPendingRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PICKUPPendingResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PICKUPPendingResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponsePendingStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupPendingStatusResponsePendingStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PRENOTIFICATIONRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\PRENOTIFICATIONResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationShipmentShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationShipmentShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationPackageChemicalRecord' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationPackageChemicalRecordNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreNotificationResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\PreNotificationResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\QUANTUMVIEWRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\QUANTUMVIEWResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestSubscriptionRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewRequestSubscriptionRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionRequestDateTimeRange' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionRequestDateTimeRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseQuantumViewEvents' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewResponseQuantumViewEventsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\QuantumViewEventsSubscriptionEvents' => 'ShipStream\\Ups\\Api\\Normalizer\\QuantumViewEventsSubscriptionEventsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionEventsSubscriptionStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsDateRange' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionEventsDateRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionEventsSubscriptionFileNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileStatusTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileManifestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipperAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestService' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageActivity' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageActivityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageDimensionalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageDimensionalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DimensionalWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DimensionalWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackagePackageWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackagePackageServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestPackageServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestPackageServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsuredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsInsuredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCallTagARS' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsCallTagARSNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestCustomsValue' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestCustomsValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ManifestUAPAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ManifestUAPAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UAPAddressAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\UAPAddressAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileOriginNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginActivityLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ActivityLocationAddressArtifactFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ActivityLocationAddressArtifactFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\OriginBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileExceptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionUpdatedAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionUpdatedAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UpdatedAddressAddressExtendedInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\UpdatedAddressAddressExtendedInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionResolution' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionResolutionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionActivityLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionActivityLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExceptionBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\ExceptionBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileDeliveryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryActivityLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryActivityLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryDeliveryLocation' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryDeliveryLocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryLocationAddressArtifactFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AddressArtifactFormatAddressExtendedInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\AddressArtifactFormatAddressExtendedInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric' => 'ShipStream\\Ups\\Api\\Normalizer\\SubscriptionFileGenericNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericPackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericPackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericService' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericActivity' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericActivityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericBillToAccount' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericBillToAccountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GenericFailureNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\GenericFailureNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FailureNotificationFailureNotificationCode' => 'ShipStream\\Ups\\Api\\Normalizer\\FailureNotificationFailureNotificationCodeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RATERequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\RATERequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RATEResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\RATEResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestPickupType' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestPickupTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestCustomerClassification' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestCustomerClassificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\RateRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentAlternateDeliveryAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentAlternateDeliveryAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateAlternateDeliveryAddressAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RateAlternateDeliveryAddressAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentIndicationType' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentIndicationTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentDetails' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPaymentDetailsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentDetailsShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentDetailsShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentChargeBillShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargeBillReceiverNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillReceiverAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\BillReceiverAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillThirdParty' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentChargeBillThirdPartyNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateBillThirdPartyAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RateBillThirdPartyAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentFRSPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentFRSPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSPaymentInformationTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSPaymentInformationAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentFreightShipmentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentFreightShipmentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentInformationFreightDensityInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentInformationFreightDensityInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoAdjustedHeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightDensityInfoAdjustedHeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AdjustedHeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\AdjustedHeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightDensityInfoHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsType' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentTotalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentTotalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentTotalWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentTotalWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackagingType' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackagingTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageDimWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageDimWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DimWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DimWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityNMFC' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityNMFCNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackagePackageServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackagePackageServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsAccessPointCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsAccessPointCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsShipperDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsShipperDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsurance' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsInsuranceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InsuranceBasicFlexibleParcelIndicator' => 'ShipStream\\Ups\\Api\\Normalizer\\InsuranceBasicFlexibleParcelIndicatorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InsuranceExtendedFlexibleParcelIndicator' => 'ShipStream\\Ups\\Api\\Normalizer\\InsuranceExtendedFlexibleParcelIndicatorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InsuranceTimeInTransitFlexibleParcelIndicator' => 'ShipStream\\Ups\\Api\\Normalizer\\InsuranceTimeInTransitFlexibleParcelIndicatorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsHazMat' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsHazMatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HazMatHazMatChemicalRecord' => 'ShipStream\\Ups\\Api\\Normalizer\\HazMatHazMatChemicalRecordNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDryIce' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageServiceOptionsDryIceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DryIceDryIceWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\DryIceDryIceWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DryIceWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DryIceWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageSimpleRate' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageSimpleRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatePackageUPSPremier' => 'ShipStream\\Ups\\Api\\Normalizer\\RatePackageUPSPremierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAccessPointCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsAccessPointCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsCODCODAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPickupOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsPickupOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDeliveryOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsRestrictedArticles' => 'ShipStream\\Ups\\Api\\Normalizer\\RateShipmentServiceOptionsRestrictedArticlesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsImportControl' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsImportControlNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsReturnService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsReturnServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentRatingOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentRatingOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentInvoiceLineTotal' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentInvoiceLineTotalNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPromotionalDiscountInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPromotionalDiscountInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDeliveryTimeInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDeliveryTimeInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationPickup' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryTimeInformationPickupNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryTimeInformationReturnContractServicesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\RateResponseRatedShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentDisclaimer' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentDisclaimerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentService' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedShipmentAlert' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentRatedShipmentAlertNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentBillingWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentBillingWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillingWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\BillingWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentFRSShipmentData' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentFRSShipmentDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSShipmentDataTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationChargesGrossChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationChargesDiscountAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\TransportationChargesNetChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSShipmentDataFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FRSShipmentDataHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitsAdjustedHeight' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitsAdjustedHeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTotalChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalChargesWithTaxes' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTotalChargesWithTaxesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentNegotiatedRateChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesTotalChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalChargesWithTaxes' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedRateChargesTotalChargesWithTaxesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentRatedPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageTotalCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageTotalChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageBillingWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageBillingWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageAccessorial' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageAccessorialNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageRateModifier' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageRateModifierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageNegotiatedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageNegotiatedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NegotiatedChargesItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\NegotiatedChargesItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedPackageSimpleRate' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedPackageSimpleRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RatedShipmentTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\RatedShipmentTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary' => 'ShipStream\\Ups\\Api\\Normalizer\\TimeInTransitServiceSummaryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSummaryService' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSummaryServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ServiceSummaryEstimatedArrival' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceSummaryEstimatedArrivalNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalArrival' => 'ShipStream\\Ups\\Api\\Normalizer\\EstimatedArrivalArrivalNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalPickup' => 'ShipStream\\Ups\\Api\\Normalizer\\EstimatedArrivalPickupNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SHIPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\SHIPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SHIPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\SHIPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentReturnService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentReturnServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipperPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipperPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipToPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipToPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentAlternateDeliveryAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentAlternateDeliveryAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateDeliveryAddressAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateDeliveryAddressAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromTaxIDType' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromTaxIDTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipFromVendorInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipFromVendorInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargeBillShipperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillShipperCreditCard' => 'ShipStream\\Ups\\Api\\Normalizer\\BillShipperCreditCardNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CreditCardAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\CreditCardAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargeBillThirdPartyNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillThirdPartyAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\BillThirdPartyAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentFRSPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentFRSPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDGSignatoryInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDGSignatoryInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationVoiceMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationVoiceMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationTextMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationTextMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\NotificationLocale' => 'ShipStream\\Ups\\Api\\Normalizer\\NotificationLocaleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelDelivery' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsLabelDeliveryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelDeliveryEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelDeliveryEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsInternationalFormsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsUserCreatedFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsUPSPremiumCareFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UPSPremiumCareFormLanguageForUPSPremiumCare' => 'ShipStream\\Ups\\Api\\Normalizer\\UPSPremiumCareFormLanguageForUPSPremiumCareNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsCN22FormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content' => 'ShipStream\\Ups\\Api\\Normalizer\\CN22FormCN22ContentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\CN22ContentCN22ContentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CN22ContentWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\CN22ContentWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsEEIFilingOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionUPSFiled' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIFilingOptionUPSFiledNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UPSFiledPOA' => 'ShipStream\\Ups\\Api\\Normalizer\\UPSFiledPOANormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionShipperFiled' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIFilingOptionShipperFiledNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsContactsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsForwardAgentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ForwardAgentAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ForwardAgentAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsUltimateConsigneeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\UltimateConsigneeAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeUltimateConsigneeType' => 'ShipStream\\Ups\\Api\\Normalizer\\UltimateConsigneeUltimateConsigneeTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsIntermediateConsigneeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\IntermediateConsigneeAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\IntermediateConsigneeAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsProducer' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsProducerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProducerAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\ProducerAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProducerPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\ProducerPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo' => 'ShipStream\\Ups\\Api\\Normalizer\\ContactsSoldToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SoldToPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\SoldToPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SoldToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\SoldToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsProductNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductUnit' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductUnitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UnitUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\UnitUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductNetCostDateRange' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductNetCostDateRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductProductWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductProductWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductScheduleB' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductScheduleBNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ScheduleBUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\ScheduleBUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductExcludeFromForm' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductExcludeFromFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductPackingListInfo' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductPackingListInfoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListInfoPackageAssociated' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListInfoPackageAssociatedNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ProductEEIInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ProductEEIInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIInformationLicense' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIInformationLicenseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EEIInformationDDTCInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\EEIInformationDDTCInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DDTCInformationUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\DDTCInformationUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsDiscountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsFreightChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsInsuranceChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsOtherChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod' => 'ShipStream\\Ups\\Api\\Normalizer\\InternationalFormsBlanketPeriodNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelMethod' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsLabelMethodNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPreAlertNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsPreAlertNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationEMailMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationEMailMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationVoiceMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationVoiceMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationTextMessage' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationTextMessageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationLocale' => 'ShipStream\\Ups\\Api\\Normalizer\\PreAlertNotificationLocaleNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsRestrictedArticles' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsRestrictedArticlesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPackage' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackaging' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackagingNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageUPSPremier' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageUPSPremierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\UPSPremierHandlingInstructions' => 'ShipStream\\Ups\\Api\\Normalizer\\UPSPremierHandlingInstructionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\PackagePackageServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeliveryConfirmation' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsDeliveryConfirmationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeclaredValueType' => 'ShipStream\\Ups\\Api\\Normalizer\\DeclaredValueTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCODCODAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsCODCODAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotificationEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsNotificationEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsHazMat' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsHazMatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDryIce' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageServiceOptionsDryIceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageHazMatPackageInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageHazMatPackageInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestLabelSpecificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelSpecificationLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelStockSize' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelSpecificationLabelStockSizeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelSpecificationInstructionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentRequestReceiptSpecificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReceiptSpecificationImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ReceiptSpecificationImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResponseShipmentResults' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResponseShipmentResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDisclaimer' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsDisclaimerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsShipmentCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsShipmentChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTransportationCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTransportationChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTaxCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTaxChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTotalChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalChargesWithTaxes' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentChargesTotalChargesWithTaxesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsNegotiatedRateCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsNegotiatedRateChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFRSShipmentData' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFRSShipmentDataNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillingWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsBillingWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsPackageResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsBaseServiceCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsBaseServiceChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsServiceOptionsCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsServiceOptionsChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingLabel' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsShippingLabelNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShippingLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ShippingLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingReceipt' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsShippingReceiptNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShippingReceiptImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ShippingReceiptImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsAccessorial' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsAccessorialNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsSimpleRate' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsSimpleRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsForm' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\FormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HighValueReportImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\HighValueReportImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\CODTurnInPageImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsItemizedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsItemizedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsNegotiatedCharges' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsNegotiatedChargesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageResultsRateModifier' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageResultsRateModifierNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsControlLogReceipt' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsControlLogReceiptNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ControlLogReceiptImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ControlLogReceiptImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsForm' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsCODTurnInPage' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsCODTurnInPageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImage' => 'ShipStream\\Ups\\Api\\Normalizer\\CODTurnInPageImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsHighValueReport' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsHighValueReportNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HighValueReportImage' => 'ShipStream\\Ups\\Api\\Normalizer\\HighValueReportImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\VOIDSHIPMENTRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\VOIDSHIPMENTResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidRequestTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidRequestTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentRequestVoidShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidResponseResponseStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidResponseResponseStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidResponseTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidResponseTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseSummaryResult' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponseSummaryResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SummaryResultStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\SummaryResultStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult' => 'ShipStream\\Ups\\Api\\Normalizer\\VoidShipmentResponsePackageLevelResultNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageLevelResultStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageLevelResultStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LABELRECOVERYRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\LABELRECOVERYResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRRequestTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\LRRequestTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestLabelSpecificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryLabelSpecificationLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelStockSize' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryLabelSpecificationLabelStockSizeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestTranslateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestLabelDeliveryNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestReferenceValuesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReferenceValuesReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ReferenceValuesReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryRequestUPSPremiumCareFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRResponseResponseStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\LRResponseResponseStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRResponseTransactionReference' => 'ShipStream\\Ups\\Api\\Normalizer\\LRResponseTransactionReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseLabelResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsLabelImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsLabelImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelImageLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelImageLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsMailInnovationsLabelImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsMailInnovationsLabelImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\MailInnovationsLabelImageLabelImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\MailInnovationsLabelImageLabelImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsReceipt' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsReceiptNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReceiptImage' => 'ShipStream\\Ups\\Api\\Normalizer\\ReceiptImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReceiptImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ReceiptImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelResultsForm' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelResultsFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRFormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LRFormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseCODTurnInPage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseCODTurnInPageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LRCODTurnInPageImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LRCODTurnInPageImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseForm' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseFormNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryFormImage' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryFormImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryImageImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryImageImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseHighValueReport' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseHighValueReportNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseTrackingCandidate' => 'ShipStream\\Ups\\Api\\Normalizer\\LabelRecoveryResponseTrackingCandidateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackingCandidatePickupDateRange' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackingCandidatePickupDateRangeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequester' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestRequesterNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RequesterPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\RequesterPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentDetail' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestShipmentDetailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPackagingType' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDetailPackagingTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDetailWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDetailWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\WeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\WeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestExistingShipmentID' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestExistingShipmentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestPOM' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupRequestPOMNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\POMPickupNotifications' => 'ShipStream\\Ups\\Api\\Normalizer\\POMPickupNotificationsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupNotificationsEMailNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightPickupResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightPickupResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPCANCELRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTPICKUPCANCELResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelPickupResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightCancelStatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTRATERequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTRATERequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTRATEResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTRATEResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRatePaymentInformationPayerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PayerAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PayerAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationShipmentBillingOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestService' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitOne' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitOneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitOneType' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitOneTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitTwo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitTwoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitTwoType' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitTwoTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityAdjustedWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AdjustedWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\AdjustedWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityPackagingTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityCommodityValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\CommodityNMFCCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentServiceOptionsPickupOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentServiceOptionsDeliveryOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsOverSeasLegNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OverSeasLegDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\OverSeasLegDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue' => 'ShipStream\\Ups\\Api\\Normalizer\\OverSeasLegValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ValueCube' => 'ShipStream\\Ups\\Api\\Normalizer\\ValueCubeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ValueCWT' => 'ShipStream\\Ups\\Api\\Normalizer\\ValueCWTNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipmentServiceOptionsCODNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODValue' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODPaymentMethodNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption' => 'ShipStream\\Ups\\Api\\Normalizer\\CODCODBillingOptionNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateCODRemitTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateCODRemitToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RemitToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\RemitToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDangerousGoodsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DangerousGoodsPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\DangerousGoodsPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DangerousGoodsTransportationMode' => 'ShipStream\\Ups\\Api\\Normalizer\\DangerousGoodsTransportationModeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsSortingAndSegregatingNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsExcessDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsHandlingChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingChargeAmount' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingChargeAmountNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsAdjustedHeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestAlternateRateOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestAlternateRateOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestGFPOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestGFPOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\GFPOptionsOnCallInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\GFPOptionsOnCallInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateRequestHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateType' => 'ShipStream\\Ups\\Api\\Normalizer\\RateTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RateFactor' => 'ShipStream\\Ups\\Api\\Normalizer\\RateFactorNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FactorUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\FactorUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTotalShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseTotalShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseBillableShipmentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseBillableShipmentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\BillableShipmentWeightUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\BillableShipmentWeightUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseDimensionalWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseDimensionalWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseService' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseAlternateRatesResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseAlternateRateType' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseAlternateRateTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseRate' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseBillableShipmentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseBillableShipmentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateRatesResponseTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightRateResponseHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightRateResponseHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPRequestWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTSHIPRequestWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPResponseWrapper' => 'ShipStream\\Ups\\Api\\Normalizer\\FREIGHTSHIPResponseWrapperNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRequestRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRequestRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRequestShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipFromAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipFromAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentPaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformationPayer' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationPayerNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipPayerAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipPayerAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PayerPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\PayerPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitOne' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentHandlingUnitOneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitTwo' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentHandlingUnitTwoNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentExistingShipmentID' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentExistingShipmentIDNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ExistingShipmentIDConfirmationNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ExistingShipmentIDConfirmationNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ConfirmationNumberType' => 'ShipStream\\Ups\\Api\\Normalizer\\ConfirmationNumberTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipCommodityDimensions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipCommodityDimensionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentReference' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReferenceNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\ReferenceNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ReferenceWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ReferenceWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentShipmentServiceOptionsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsEMailInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsEMailInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EMailInformationEMailType' => 'ShipStream\\Ups\\Api\\Normalizer\\EMailInformationEMailTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EMailInformationEMail' => 'ShipStream\\Ups\\Api\\Normalizer\\EMailInformationEMailNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CODRemitTo' => 'ShipStream\\Ups\\Api\\Normalizer\\CODRemitToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipRemitToAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipRemitToAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\RemitToPhone' => 'ShipStream\\Ups\\Api\\Normalizer\\RemitToPhoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentServiceOptionsDangerousGoods' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipShipmentServiceOptionsDangerousGoodsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeclaredValue' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentServiceOptionsDeclaredValueNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentPickupRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRequestRequesterNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM' => 'ShipStream\\Ups\\Api\\Normalizer\\PickupRequestPOMNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipPOMPickupNotificationsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipPickupNotificationsEMailNotification' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipPickupNotificationsEMailNotificationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentDocuments' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentDocumentsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DocumentsImage' => 'ShipStream\\Ups\\Api\\Normalizer\\DocumentsImageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImageType' => 'ShipStream\\Ups\\Api\\Normalizer\\ImageTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImageFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ImageFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImagePrintFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\ImagePrintFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ImagePrintSize' => 'ShipStream\\Ups\\Api\\Normalizer\\ImagePrintSizeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DocumentsPackingList' => 'ShipStream\\Ups\\Api\\Normalizer\\DocumentsPackingListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListShipFrom' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListShipFromNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListShipTo' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListShipToNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListReference' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListReferenceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackingListHandlingUnit' => 'ShipStream\\Ups\\Api\\Normalizer\\PackingListHandlingUnitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitCommodity' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitCommodityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\HandlingUnitUnitOfMeasurement' => 'ShipStream\\Ups\\Api\\Normalizer\\HandlingUnitUnitOfMeasurementNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnits' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentHandlingUnitsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipResponseResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipResponseResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FreightShipResponseShipmentResults' => 'ShipStream\\Ups\\Api\\Normalizer\\FreightShipResponseShipmentResultsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsRate' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFreightDensityRate' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsFreightDensityRateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTotalShipmentCharge' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsTotalShipmentChargeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillableShipmentWeight' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsBillableShipmentWeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsService' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDocuments' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsDocumentsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DocumentsForms' => 'ShipStream\\Ups\\Api\\Normalizer\\DocumentsFormsNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FormsType' => 'ShipStream\\Ups\\Api\\Normalizer\\FormsTypeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\FormsFormat' => 'ShipStream\\Ups\\Api\\Normalizer\\FormsFormatNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTimeInTransit' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentResultsTimeInTransitNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TimeInTransitRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\TimeInTransitRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TimeInTransitResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TimeInTransitResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\ValidationList' => 'ShipStream\\Ups\\Api\\Normalizer\\ValidationListNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\EmsResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\EmsResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\CandidateAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\CandidateAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Services' => 'ShipStream\\Ups\\Api\\Normalizer\\ServicesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AccessPointInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\AccessPointInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Activity' => 'ShipStream\\Ups\\Api\\Normalizer\\ActivityNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Address' => 'ShipStream\\Ups\\Api\\Normalizer\\AddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\AlternateTrackingNumber' => 'ShipStream\\Ups\\Api\\Normalizer\\AlternateTrackingNumberNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryDate' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryDateNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\DeliveryTime' => 'ShipStream\\Ups\\Api\\Normalizer\\DeliveryTimeNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\InquireNumbers' => 'ShipStream\\Ups\\Api\\Normalizer\\InquireNumbersNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Location' => 'ShipStream\\Ups\\Api\\Normalizer\\LocationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Milestones' => 'ShipStream\\Ups\\Api\\Normalizer\\MilestonesNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Package' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PackageAddress' => 'ShipStream\\Ups\\Api\\Normalizer\\PackageAddressNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\PaymentInformation' => 'ShipStream\\Ups\\Api\\Normalizer\\PaymentInformationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Service' => 'ShipStream\\Ups\\Api\\Normalizer\\ServiceNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Shipment' => 'ShipStream\\Ups\\Api\\Normalizer\\ShipmentNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Signature' => 'ShipStream\\Ups\\Api\\Normalizer\\SignatureNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Status' => 'ShipStream\\Ups\\Api\\Normalizer\\StatusNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SubMilestone' => 'ShipStream\\Ups\\Api\\Normalizer\\SubMilestoneNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackApiResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackApiResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Warning' => 'ShipStream\\Ups\\Api\\Normalizer\\WarningNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Weight' => 'ShipStream\\Ups\\Api\\Normalizer\\WeightNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\Destination' => 'ShipStream\\Ups\\Api\\Normalizer\\DestinationNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceRequest' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackSubsServiceRequestNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackSubsServiceResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceErrorResponse' => 'ShipStream\\Ups\\Api\\Normalizer\\TrackSubsServiceErrorResponseNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthTokenPostBody' => 'ShipStream\\Ups\\Api\\Normalizer\\SecurityV1OauthTokenPostBodyNormalizer',
-            'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthRefreshPostBody' => 'ShipStream\\Ups\\Api\\Normalizer\\SecurityV1OauthRefreshPostBodyNormalizer',
-            '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => '\\ShipStream\\Ups\\Api\\Runtime\\Normalizer\\ReferenceNormalizer',
-        ), $normalizersCache = [];
-        public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
+            \ShipStream\Ups\Api\Model\XAVRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\XAVRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\XAVResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVRequest::class => \ShipStream\Ups\Api\Normalizer\XAVRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVRequestRequest::class => \ShipStream\Ups\Api\Normalizer\XAVRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RequestTransactionReference::class => \ShipStream\Ups\Api\Normalizer\RequestTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVRequestAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\XAVRequestAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponse::class => \ShipStream\Ups\Api\Normalizer\XAVResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseResponse::class => \ShipStream\Ups\Api\Normalizer\XAVResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseResponseStatus::class => \ShipStream\Ups\Api\Normalizer\ResponseResponseStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseAlert::class => \ShipStream\Ups\Api\Normalizer\ResponseAlertNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseTransactionReference::class => \ShipStream\Ups\Api\Normalizer\ResponseTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseAddressClassification::class => \ShipStream\Ups\Api\Normalizer\XAVResponseAddressClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\XAVResponseCandidate::class => \ShipStream\Ups\Api\Normalizer\XAVResponseCandidateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CandidateAddressClassification::class => \ShipStream\Ups\Api\Normalizer\CandidateAddressClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CandidateAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\CandidateAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ErrorResponse::class => \ShipStream\Ups\Api\Normalizer\ErrorResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ErrorResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\ErrorResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Error::class => \ShipStream\Ups\Api\Normalizer\ErrorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequest::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequestRequest::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseResponse::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class => \ShipStream\Ups\Api\Normalizer\ChemicalReferenceDataResponseChemicalDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalDataChemicalDetail::class => \ShipStream\Ups\Api\Normalizer\ChemicalDataChemicalDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalDataProperShippingNameDetail::class => \ShipStream\Ups\Api\Normalizer\ChemicalDataProperShippingNameDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChemicalDataPackageQuantityLimitDetail::class => \ShipStream\Ups\Api\Normalizer\ChemicalDataPackageQuantityLimitDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYAPCRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\DANGEROUSGOODSUTILITYAPCResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequest::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestRequest::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestShipment::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckShipmentShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipToAddress::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckShipmentShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentService::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackageWeight::class => \ShipStream\Ups\Api\Normalizer\PackagePackageWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\PackageWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageChemicalRecord::class => \ShipStream\Ups\Api\Normalizer\PackageChemicalRecordNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponse::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseResponse::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseAlertDetail::class => \ShipStream\Ups\Api\Normalizer\ResponseAlertDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlertDetailElementLevelInformation::class => \ShipStream\Ups\Api\Normalizer\AlertDetailElementLevelInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ElementLevelInformationElementIdentifier::class => \ShipStream\Ups\Api\Normalizer\ElementLevelInformationElementIdentifierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseService::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponseServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponsePackageResults::class => \ShipStream\Ups\Api\Normalizer\AcceptanceAuditPreCheckResponsePackageResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsChemicalRecordResults::class => \ShipStream\Ups\Api\Normalizer\PackageResultsChemicalRecordResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostRequest::class => \ShipStream\Ups\Api\Normalizer\LandedCostRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostRequestShipment::class => \ShipStream\Ups\Api\Normalizer\LandedCostRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RequestShipmentItems::class => \ShipStream\Ups\Api\Normalizer\RequestShipmentItemsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostResponse::class => \ShipStream\Ups\Api\Normalizer\LandedCostResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostResponseShipment::class => \ShipStream\Ups\Api\Normalizer\LandedCostResponseShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LandedCostResponseShipmentPerfStats::class => \ShipStream\Ups\Api\Normalizer\LandedCostResponseShipmentPerfStatsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BrokerageFeeItems::class => \ShipStream\Ups\Api\Normalizer\BrokerageFeeItemsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseShipmentItems::class => \ShipStream\Ups\Api\Normalizer\ResponseShipmentItemsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Errors::class => \ShipStream\Ups\Api\Normalizer\ErrorsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LOCATORRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\LOCATORRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LOCATORResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\LOCATORResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequest::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestRequest::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestOriginAddress::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestOriginAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginAddressGeocode::class => \ShipStream\Ups\Api\Normalizer\OriginAddressGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginAddressAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\OriginAddressAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestTranslate::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestTranslateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestLocationSearchCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaSearchOption::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaSearchOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchOptionOptionType::class => \ShipStream\Ups\Api\Normalizer\SearchOptionOptionTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchOptionOptionCode::class => \ShipStream\Ups\Api\Normalizer\SearchOptionOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchOptionRelation::class => \ShipStream\Ups\Api\Normalizer\SearchOptionRelationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaServiceSearch::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaServiceSearchNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSearchServiceCode::class => \ShipStream\Ups\Api\Normalizer\ServiceSearchServiceCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSearchServiceOptionCode::class => \ShipStream\Ups\Api\Normalizer\ServiceSearchServiceOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaFreightWillCallSearch::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaFreightWillCallSearchNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightWillCallSearchFacilityAddress::class => \ShipStream\Ups\Api\Normalizer\FreightWillCallSearchFacilityAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaAccessPointSearchNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class => \ShipStream\Ups\Api\Normalizer\AccessPointSearchIncludeCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IncludeCriteriaMerchantAccountNumberList::class => \ShipStream\Ups\Api\Normalizer\IncludeCriteriaMerchantAccountNumberListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IncludeCriteriaSearchFilter::class => \ShipStream\Ups\Api\Normalizer\IncludeCriteriaSearchFilterNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IncludeCriteriaServiceOfferingList::class => \ShipStream\Ups\Api\Normalizer\IncludeCriteriaServiceOfferingListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceOfferingListServiceOffering::class => \ShipStream\Ups\Api\Normalizer\ServiceOfferingListServiceOfferingNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class => \ShipStream\Ups\Api\Normalizer\AccessPointSearchExcludeFromResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExcludeFromResultPostalCodeList::class => \ShipStream\Ups\Api\Normalizer\ExcludeFromResultPostalCodeListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PostalCodeListPostalCode::class => \ShipStream\Ups\Api\Normalizer\PostalCodeListPostalCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationSearchCriteriaOpenTimeCriteria::class => \ShipStream\Ups\Api\Normalizer\LocationSearchCriteriaOpenTimeCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestSortCriteria::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestSortCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorRequestServiceGeoUnit::class => \ShipStream\Ups\Api\Normalizer\LocatorRequestServiceGeoUnitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponse::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponseResponse::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ResponseError::class => \ShipStream\Ups\Api\Normalizer\ResponseErrorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ErrorErrorLocation::class => \ShipStream\Ups\Api\Normalizer\ErrorErrorLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponseGeocode::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocatorResponseSearchResults::class => \ShipStream\Ups\Api\Normalizer\LocatorResponseSearchResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class => \ShipStream\Ups\Api\Normalizer\SearchResultsGeocodeCandidateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GeocodeCandidateAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\GeocodeCandidateAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GeocodeCandidateGeocode::class => \ShipStream\Ups\Api\Normalizer\GeocodeCandidateGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class => \ShipStream\Ups\Api\Normalizer\SearchResultsDropLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationIVR::class => \ShipStream\Ups\Api\Normalizer\DropLocationIVRNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationGeocode::class => \ShipStream\Ups\Api\Normalizer\DropLocationGeocodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationAddressKeyFormat::class => \ShipStream\Ups\Api\Normalizer\DropLocationAddressKeyFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationLocationAttribute::class => \ShipStream\Ups\Api\Normalizer\DropLocationLocationAttributeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationAttributeOptionType::class => \ShipStream\Ups\Api\Normalizer\LocationAttributeOptionTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LocationAttributeOptionCode::class => \ShipStream\Ups\Api\Normalizer\LocationAttributeOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OptionCodeTransportationPickUpSchedule::class => \ShipStream\Ups\Api\Normalizer\OptionCodeTransportationPickUpScheduleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationPickUpSchedulePickUp::class => \ShipStream\Ups\Api\Normalizer\TransportationPickUpSchedulePickUpNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickUpPickUpDetails::class => \ShipStream\Ups\Api\Normalizer\PickUpPickUpDetailsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationDistance::class => \ShipStream\Ups\Api\Normalizer\DropLocationDistanceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DistanceUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DistanceUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationSpecialInstructions::class => \ShipStream\Ups\Api\Normalizer\DropLocationSpecialInstructionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationAdditionalComments::class => \ShipStream\Ups\Api\Normalizer\DropLocationAdditionalCommentsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AdditionalCommentsCommentType::class => \ShipStream\Ups\Api\Normalizer\AdditionalCommentsCommentTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationOperatingHours::class => \ShipStream\Ups\Api\Normalizer\DropLocationOperatingHoursNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OperatingHoursStandardHours::class => \ShipStream\Ups\Api\Normalizer\OperatingHoursStandardHoursNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\StandardHoursDayOfWeek::class => \ShipStream\Ups\Api\Normalizer\StandardHoursDayOfWeekNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationLocalizedInstruction::class => \ShipStream\Ups\Api\Normalizer\DropLocationLocalizedInstructionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationPromotionInformation::class => \ShipStream\Ups\Api\Normalizer\DropLocationPromotionInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationSortCode::class => \ShipStream\Ups\Api\Normalizer\DropLocationSortCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationServiceOfferingList::class => \ShipStream\Ups\Api\Normalizer\DropLocationServiceOfferingListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class => \ShipStream\Ups\Api\Normalizer\DropLocationAccessPointInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationBusinessClassificationList::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationBusinessClassificationListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BusinessClassificationListBusinessClassification::class => \ShipStream\Ups\Api\Normalizer\BusinessClassificationListBusinessClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationAccessPointStatus::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationAccessPointStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationPrivateNetworkList::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationPrivateNetworkListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PrivateNetworkListPrivateNetwork::class => \ShipStream\Ups\Api\Normalizer\PrivateNetworkListPrivateNetworkNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformationAvailability::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationAvailabilityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailabilityShippingAvailability::class => \ShipStream\Ups\Api\Normalizer\AvailabilityShippingAvailabilityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShippingAvailabilityUnavailableReason::class => \ShipStream\Ups\Api\Normalizer\ShippingAvailabilityUnavailableReasonNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailabilityDCRAvailability::class => \ShipStream\Ups\Api\Normalizer\AvailabilityDCRAvailabilityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DCRAvailabilityUnavailableReason::class => \ShipStream\Ups\Api\Normalizer\DCRAvailabilityUnavailableReasonNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropLocationLocationImage::class => \ShipStream\Ups\Api\Normalizer\DropLocationLocationImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SearchResultsAvailableLocationAttributes::class => \ShipStream\Ups\Api\Normalizer\SearchResultsAvailableLocationAttributesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionType::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesOptionTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCode::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesOptionCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesOptionCodeTransportationPickUpScheduleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesTransportationPickUpSchedulePickUp::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesTransportationPickUpSchedulePickUpNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AvailableLocationAttributesPickUpPickUpDetails::class => \ShipStream\Ups\Api\Normalizer\AvailableLocationAttributesPickUpPickUpDetailsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenerateTokenSuccessResponse::class => \ShipStream\Ups\Api\Normalizer\GenerateTokenSuccessResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RefreshTokenSuccessResponse::class => \ShipStream\Ups\Api\Normalizer\RefreshTokenSuccessResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTDeleteRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTDeleteResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteRequest::class => \ShipStream\Ups\Api\Normalizer\DeleteRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteRequestRequest::class => \ShipStream\Ups\Api\Normalizer\DeleteRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteResponse::class => \ShipStream\Ups\Api\Normalizer\DeleteResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeleteResponseResponse::class => \ShipStream\Ups\Api\Normalizer\DeleteResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryRequest::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestFormsHistoryDocumentID::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryRequestFormsHistoryDocumentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryResponse::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PushToImageRepositoryResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PushToImageRepositoryResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTUploadRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PAPERLESSDOCUMENTUploadResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadRequest::class => \ShipStream\Ups\Api\Normalizer\UploadRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadRequestRequest::class => \ShipStream\Ups\Api\Normalizer\UploadRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadRequestUserCreatedForm::class => \ShipStream\Ups\Api\Normalizer\UploadRequestUserCreatedFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadResponse::class => \ShipStream\Ups\Api\Normalizer\UploadResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadResponseResponse::class => \ShipStream\Ups\Api\Normalizer\UploadResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UploadResponseFormsHistoryDocumentID::class => \ShipStream\Ups\Api\Normalizer\UploadResponseFormsHistoryDocumentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequest::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestShipperAccount::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestShipperAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestPickupAddress::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestPickupAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateRequestPickupDateInfo::class => \ShipStream\Ups\Api\Normalizer\PickupRateRequestPickupDateInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponse::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseRateResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResultChargeDetail::class => \ShipStream\Ups\Api\Normalizer\RateResultChargeDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResultTaxCharges::class => \ShipStream\Ups\Api\Normalizer\RateResultTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRateResponseWeekendServiceTerritory::class => \ShipStream\Ups\Api\Normalizer\PickupRateResponseWeekendServiceTerritoryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCancelRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCancelRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCancelResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCancelRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCancelRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCancelResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCancelResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCancelResponseGWNStatus::class => \ShipStream\Ups\Api\Normalizer\PickupCancelResponseGWNStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCreationRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPCreationResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestShipper::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperAccount::class => \ShipStream\Ups\Api\Normalizer\ShipperAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperChargeCard::class => \ShipStream\Ups\Api\Normalizer\ShipperChargeCardNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ChargeCardCardAddress::class => \ShipStream\Ups\Api\Normalizer\ChargeCardCardAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestPickupDateInfo::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestPickupDateInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestPickupAddress::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestPickupAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupAddressPhone::class => \ShipStream\Ups\Api\Normalizer\PickupAddressPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestPickupPiece::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestPickupPieceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestTotalWeight::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestTotalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingData::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestTrackingDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingDataWithReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestTrackingDataWithReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationRequestFreightOptions::class => \ShipStream\Ups\Api\Normalizer\PickupCreationRequestFreightOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightOptionsShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightOptionsShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightOptionsDestinationAddress::class => \ShipStream\Ups\Api\Normalizer\FreightOptionsDestinationAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightOptionsShipmentDetail::class => \ShipStream\Ups\Api\Normalizer\FreightOptionsShipmentDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDetailPalletInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentDetailPalletInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PalletInformationDimensions::class => \ShipStream\Ups\Api\Normalizer\PalletInformationDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DimensionsUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DimensionsUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseWeekendServiceTerritory::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseWeekendServiceTerritoryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseRateStatus::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseRateStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupCreationResponseRateResult::class => \ShipStream\Ups\Api\Normalizer\PickupCreationResponseRateResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResultDisclaimer::class => \ShipStream\Ups\Api\Normalizer\RateResultDisclaimerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPolDivRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPolDivResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetPoliticalDivision1ListResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPServCenterRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPServCenterResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestPickupPiece::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestPickupPieceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestOriginAddress::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestOriginAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginAddressOriginSearchCriteria::class => \ShipStream\Ups\Api\Normalizer\OriginAddressOriginSearchCriteriaNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestDestinationAddress::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesRequestDestinationAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation::class => \ShipStream\Ups\Api\Normalizer\PickupGetServiceCenterFacilitiesResponseServiceCenterLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class => \ShipStream\Ups\Api\Normalizer\ServiceCenterLocationDropOffFacilitiesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesAddress::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesFacilityTime::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesFacilityTimeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FacilityTimeDayOfWeek::class => \ShipStream\Ups\Api\Normalizer\FacilityTimeDayOfWeekNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesLocalizedInstruction::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesLocalizedInstructionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DropOffFacilitiesDistance::class => \ShipStream\Ups\Api\Normalizer\DropOffFacilitiesDistanceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceCenterLocationPickupFacilities::class => \ShipStream\Ups\Api\Normalizer\ServiceCenterLocationPickupFacilitiesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupFacilitiesAddress::class => \ShipStream\Ups\Api\Normalizer\PickupFacilitiesAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTime::class => \ShipStream\Ups\Api\Normalizer\PickupFacilitiesFacilityTimeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTimeDayOfWeek::class => \ShipStream\Ups\Api\Normalizer\PickupFacilitiesFacilityTimeDayOfWeekNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPendingRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPendingRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PICKUPPendingResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusRequest::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusResponse::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupPendingStatusResponsePendingStatus::class => \ShipStream\Ups\Api\Normalizer\PickupPendingStatusResponsePendingStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\PRENOTIFICATIONRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\PRENOTIFICATIONResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationRequest::class => \ShipStream\Ups\Api\Normalizer\PreNotificationRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationRequestRequest::class => \ShipStream\Ups\Api\Normalizer\PreNotificationRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class => \ShipStream\Ups\Api\Normalizer\PreNotificationRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationShipmentShipToAddress::class => \ShipStream\Ups\Api\Normalizer\PreNotificationShipmentShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationShipmentShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\PreNotificationShipmentShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\PreNotificationShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationPackageChemicalRecord::class => \ShipStream\Ups\Api\Normalizer\PreNotificationPackageChemicalRecordNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationResponse::class => \ShipStream\Ups\Api\Normalizer\PreNotificationResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreNotificationResponseResponse::class => \ShipStream\Ups\Api\Normalizer\PreNotificationResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\QUANTUMVIEWRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\QUANTUMVIEWResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewRequest::class => \ShipStream\Ups\Api\Normalizer\QuantumViewRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewRequestRequest::class => \ShipStream\Ups\Api\Normalizer\QuantumViewRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewRequestSubscriptionRequest::class => \ShipStream\Ups\Api\Normalizer\QuantumViewRequestSubscriptionRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionRequestDateTimeRange::class => \ShipStream\Ups\Api\Normalizer\SubscriptionRequestDateTimeRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewResponse::class => \ShipStream\Ups\Api\Normalizer\QuantumViewResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewResponseResponse::class => \ShipStream\Ups\Api\Normalizer\QuantumViewResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewResponseQuantumViewEvents::class => \ShipStream\Ups\Api\Normalizer\QuantumViewResponseQuantumViewEventsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\QuantumViewEventsSubscriptionEvents::class => \ShipStream\Ups\Api\Normalizer\QuantumViewEventsSubscriptionEventsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionStatus::class => \ShipStream\Ups\Api\Normalizer\SubscriptionEventsSubscriptionStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionEventsDateRange::class => \ShipStream\Ups\Api\Normalizer\SubscriptionEventsDateRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class => \ShipStream\Ups\Api\Normalizer\SubscriptionEventsSubscriptionFileNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileStatusType::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileStatusTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileManifest::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileManifestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipper::class => \ShipStream\Ups\Api\Normalizer\ManifestShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipperAddress::class => \ShipStream\Ups\Api\Normalizer\ManifestShipperAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipTo::class => \ShipStream\Ups\Api\Normalizer\ManifestShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipToAddress::class => \ShipStream\Ups\Api\Normalizer\ManifestShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ManifestReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestService::class => \ShipStream\Ups\Api\Normalizer\ManifestServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackage::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageActivity::class => \ShipStream\Ups\Api\Normalizer\PackageActivityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackageDimensions::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageDimensionalWeight::class => \ShipStream\Ups\Api\Normalizer\PackageDimensionalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DimensionalWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DimensionalWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackagePackageWeight::class => \ShipStream\Ups\Api\Normalizer\ManifestPackagePackageWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackagePackageServiceOptions::class => \ShipStream\Ups\Api\Normalizer\ManifestPackagePackageServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestPackageServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\ManifestPackageServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODAmount::class => \ShipStream\Ups\Api\Normalizer\CODCODAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsInsuredValue::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsInsuredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\ManifestShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCallTagARS::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsCallTagARSNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestCustomsValue::class => \ShipStream\Ups\Api\Normalizer\ManifestCustomsValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestBillToAccount::class => \ShipStream\Ups\Api\Normalizer\ManifestBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ManifestUAPAddress::class => \ShipStream\Ups\Api\Normalizer\ManifestUAPAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UAPAddressAddress::class => \ShipStream\Ups\Api\Normalizer\UAPAddressAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileOriginNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\OriginPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\OriginShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginActivityLocation::class => \ShipStream\Ups\Api\Normalizer\OriginActivityLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ActivityLocationAddressArtifactFormat::class => \ShipStream\Ups\Api\Normalizer\ActivityLocationAddressArtifactFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OriginBillToAccount::class => \ShipStream\Ups\Api\Normalizer\OriginBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileException::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileExceptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ExceptionPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ExceptionShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionUpdatedAddress::class => \ShipStream\Ups\Api\Normalizer\ExceptionUpdatedAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UpdatedAddressAddressExtendedInformation::class => \ShipStream\Ups\Api\Normalizer\UpdatedAddressAddressExtendedInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionResolution::class => \ShipStream\Ups\Api\Normalizer\ExceptionResolutionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionActivityLocation::class => \ShipStream\Ups\Api\Normalizer\ExceptionActivityLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExceptionBillToAccount::class => \ShipStream\Ups\Api\Normalizer\ExceptionBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileDelivery::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileDeliveryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\DeliveryPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\DeliveryShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryActivityLocation::class => \ShipStream\Ups\Api\Normalizer\DeliveryActivityLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryDeliveryLocation::class => \ShipStream\Ups\Api\Normalizer\DeliveryDeliveryLocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryLocationAddressArtifactFormat::class => \ShipStream\Ups\Api\Normalizer\DeliveryLocationAddressArtifactFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => \ShipStream\Ups\Api\Normalizer\AddressArtifactFormatAddressExtendedInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryCOD::class => \ShipStream\Ups\Api\Normalizer\DeliveryCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryBillToAccount::class => \ShipStream\Ups\Api\Normalizer\DeliveryBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubscriptionFileGeneric::class => \ShipStream\Ups\Api\Normalizer\SubscriptionFileGenericNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\GenericShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericPackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\GenericPackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericService::class => \ShipStream\Ups\Api\Normalizer\GenericServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericActivity::class => \ShipStream\Ups\Api\Normalizer\GenericActivityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericBillToAccount::class => \ShipStream\Ups\Api\Normalizer\GenericBillToAccountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericShipTo::class => \ShipStream\Ups\Api\Normalizer\GenericShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GenericFailureNotification::class => \ShipStream\Ups\Api\Normalizer\GenericFailureNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FailureNotificationFailureNotificationCode::class => \ShipStream\Ups\Api\Normalizer\FailureNotificationFailureNotificationCodeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RATERequestWrapper::class => \ShipStream\Ups\Api\Normalizer\RATERequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RATEResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\RATEResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequest::class => \ShipStream\Ups\Api\Normalizer\RateRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestRequest::class => \ShipStream\Ups\Api\Normalizer\RateRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestPickupType::class => \ShipStream\Ups\Api\Normalizer\RateRequestPickupTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestCustomerClassification::class => \ShipStream\Ups\Api\Normalizer\RateRequestCustomerClassificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateRequestShipment::class => \ShipStream\Ups\Api\Normalizer\RateRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipper::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperAddress::class => \ShipStream\Ups\Api\Normalizer\ShipperAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipTo::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipToAddress::class => \ShipStream\Ups\Api\Normalizer\ShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipFrom::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\ShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentAlternateDeliveryAddress::class => \ShipStream\Ups\Api\Normalizer\RateShipmentAlternateDeliveryAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateAlternateDeliveryAddressAddress::class => \ShipStream\Ups\Api\Normalizer\RateAlternateDeliveryAddressAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentIndicationType::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentIndicationTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPaymentDetails::class => \ShipStream\Ups\Api\Normalizer\ShipmentPaymentDetailsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentDetailsShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\PaymentDetailsShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentChargeBillShipper::class => \ShipStream\Ups\Api\Normalizer\RateShipmentChargeBillShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargeBillReceiver::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargeBillReceiverNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillReceiverAddress::class => \ShipStream\Ups\Api\Normalizer\BillReceiverAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentChargeBillThirdParty::class => \ShipStream\Ups\Api\Normalizer\RateShipmentChargeBillThirdPartyNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateBillThirdPartyAddress::class => \ShipStream\Ups\Api\Normalizer\RateBillThirdPartyAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentFRSPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\RateShipmentFRSPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSPaymentInformationType::class => \ShipStream\Ups\Api\Normalizer\FRSPaymentInformationTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSPaymentInformationAddress::class => \ShipStream\Ups\Api\Normalizer\FRSPaymentInformationAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentFreightShipmentInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentFreightShipmentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentInformationFreightDensityInfo::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentInformationFreightDensityInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightDensityInfoAdjustedHeight::class => \ShipStream\Ups\Api\Normalizer\FreightDensityInfoAdjustedHeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AdjustedHeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\AdjustedHeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightDensityInfoHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FreightDensityInfoHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsType::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsDimensions::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentTotalWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentTotalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentTotalWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\ShipmentTotalWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\RateShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackagingType::class => \ShipStream\Ups\Api\Normalizer\PackagePackagingTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageDimensions::class => \ShipStream\Ups\Api\Normalizer\PackageDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageDimWeight::class => \ShipStream\Ups\Api\Normalizer\PackageDimWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DimWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DimWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageCommodity::class => \ShipStream\Ups\Api\Normalizer\PackageCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityNMFC::class => \ShipStream\Ups\Api\Normalizer\CommodityNMFCNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackagePackageServiceOptions::class => \ShipStream\Ups\Api\Normalizer\RatePackagePackageServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsAccessPointCOD::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsAccessPointCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsShipperDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsShipperDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsInsurance::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsInsuranceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InsuranceBasicFlexibleParcelIndicator::class => \ShipStream\Ups\Api\Normalizer\InsuranceBasicFlexibleParcelIndicatorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InsuranceExtendedFlexibleParcelIndicator::class => \ShipStream\Ups\Api\Normalizer\InsuranceExtendedFlexibleParcelIndicatorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InsuranceTimeInTransitFlexibleParcelIndicator::class => \ShipStream\Ups\Api\Normalizer\InsuranceTimeInTransitFlexibleParcelIndicatorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsHazMat::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsHazMatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HazMatHazMatChemicalRecord::class => \ShipStream\Ups\Api\Normalizer\HazMatHazMatChemicalRecordNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDryIce::class => \ShipStream\Ups\Api\Normalizer\RatePackageServiceOptionsDryIceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DryIceDryIceWeight::class => \ShipStream\Ups\Api\Normalizer\DryIceDryIceWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DryIceWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DryIceWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageSimpleRate::class => \ShipStream\Ups\Api\Normalizer\PackageSimpleRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatePackageUPSPremier::class => \ShipStream\Ups\Api\Normalizer\RatePackageUPSPremierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\RateShipmentShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAccessPointCOD::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsAccessPointCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCODCODAmount::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsCODCODAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\RateShipmentServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPickupOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsPickupOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDeliveryOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsRestrictedArticles::class => \ShipStream\Ups\Api\Normalizer\RateShipmentServiceOptionsRestrictedArticlesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsImportControl::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsImportControlNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsReturnService::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsReturnServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentRatingOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentRatingOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentInvoiceLineTotal::class => \ShipStream\Ups\Api\Normalizer\ShipmentInvoiceLineTotalNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPromotionalDiscountInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentPromotionalDiscountInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDeliveryTimeInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentDeliveryTimeInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryTimeInformationPickup::class => \ShipStream\Ups\Api\Normalizer\DeliveryTimeInformationPickupNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryTimeInformationReturnContractServices::class => \ShipStream\Ups\Api\Normalizer\DeliveryTimeInformationReturnContractServicesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResponse::class => \ShipStream\Ups\Api\Normalizer\RateResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResponseResponse::class => \ShipStream\Ups\Api\Normalizer\RateResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateResponseRatedShipment::class => \ShipStream\Ups\Api\Normalizer\RateResponseRatedShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentDisclaimer::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentDisclaimerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentService::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentRatedShipmentAlert::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentRatedShipmentAlertNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentBillingWeight::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentBillingWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillingWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\BillingWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentFRSShipmentData::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentFRSShipmentDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\FRSShipmentDataTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationChargesGrossCharge::class => \ShipStream\Ups\Api\Normalizer\TransportationChargesGrossChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationChargesDiscountAmount::class => \ShipStream\Ups\Api\Normalizer\TransportationChargesDiscountAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TransportationChargesNetCharge::class => \ShipStream\Ups\Api\Normalizer\TransportationChargesNetChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSShipmentDataFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\FRSShipmentDataFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FRSShipmentDataHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FRSShipmentDataHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitsAdjustedHeight::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitsAdjustedHeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\RatedPackageBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTaxCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTotalCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTotalChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTotalChargesWithTaxes::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTotalChargesWithTaxesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentNegotiatedRateChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesTaxCharges::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalCharge::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesTotalChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalChargesWithTaxes::class => \ShipStream\Ups\Api\Normalizer\NegotiatedRateChargesTotalChargesWithTaxesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentRatedPackage::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentRatedPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageTotalCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageTotalChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageBillingWeight::class => \ShipStream\Ups\Api\Normalizer\RatedPackageBillingWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageBillingWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\RatedPackageBillingWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageAccessorial::class => \ShipStream\Ups\Api\Normalizer\RatedPackageAccessorialNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageRateModifier::class => \ShipStream\Ups\Api\Normalizer\RatedPackageRateModifierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageNegotiatedCharges::class => \ShipStream\Ups\Api\Normalizer\RatedPackageNegotiatedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NegotiatedChargesItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\NegotiatedChargesItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedPackageSimpleRate::class => \ShipStream\Ups\Api\Normalizer\RatedPackageSimpleRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RatedShipmentTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\RatedShipmentTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TimeInTransitServiceSummary::class => \ShipStream\Ups\Api\Normalizer\TimeInTransitServiceSummaryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSummaryService::class => \ShipStream\Ups\Api\Normalizer\ServiceSummaryServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ServiceSummaryEstimatedArrival::class => \ShipStream\Ups\Api\Normalizer\ServiceSummaryEstimatedArrivalNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EstimatedArrivalArrival::class => \ShipStream\Ups\Api\Normalizer\EstimatedArrivalArrivalNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EstimatedArrivalPickup::class => \ShipStream\Ups\Api\Normalizer\EstimatedArrivalPickupNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SHIPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\SHIPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SHIPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\SHIPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequest::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestRequest::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestShipment::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentReturnService::class => \ShipStream\Ups\Api\Normalizer\ShipmentReturnServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipper::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipperPhone::class => \ShipStream\Ups\Api\Normalizer\ShipperPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipTo::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipToPhone::class => \ShipStream\Ups\Api\Normalizer\ShipToPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => \ShipStream\Ups\Api\Normalizer\ShipmentAlternateDeliveryAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class => \ShipStream\Ups\Api\Normalizer\AlternateDeliveryAddressAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipFrom::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromTaxIDType::class => \ShipStream\Ups\Api\Normalizer\ShipFromTaxIDTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromPhone::class => \ShipStream\Ups\Api\Normalizer\ShipFromPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipFromVendorInfo::class => \ShipStream\Ups\Api\Normalizer\ShipFromVendorInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargeBillShipper::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargeBillShipperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillShipperCreditCard::class => \ShipStream\Ups\Api\Normalizer\BillShipperCreditCardNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CreditCardAddress::class => \ShipStream\Ups\Api\Normalizer\CreditCardAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargeBillThirdParty::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargeBillThirdPartyNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillThirdPartyAddress::class => \ShipStream\Ups\Api\Normalizer\BillThirdPartyAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentFRSPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentFRSPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDGSignatoryInfo::class => \ShipStream\Ups\Api\Normalizer\ShipmentDGSignatoryInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ShipmentReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\ShipmentShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsNotification::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationEMail::class => \ShipStream\Ups\Api\Normalizer\NotificationEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationVoiceMessage::class => \ShipStream\Ups\Api\Normalizer\NotificationVoiceMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationTextMessage::class => \ShipStream\Ups\Api\Normalizer\NotificationTextMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\NotificationLocale::class => \ShipStream\Ups\Api\Normalizer\NotificationLocaleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelDelivery::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsLabelDeliveryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelDeliveryEMail::class => \ShipStream\Ups\Api\Normalizer\LabelDeliveryEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsInternationalFormsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsUserCreatedForm::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsUserCreatedFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsUPSPremiumCareForm::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsUPSPremiumCareFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UPSPremiumCareFormLanguageForUPSPremiumCare::class => \ShipStream\Ups\Api\Normalizer\UPSPremiumCareFormLanguageForUPSPremiumCareNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsCN22Form::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsCN22FormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CN22FormCN22Content::class => \ShipStream\Ups\Api\Normalizer\CN22FormCN22ContentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CN22ContentCN22ContentWeight::class => \ShipStream\Ups\Api\Normalizer\CN22ContentCN22ContentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CN22ContentWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\CN22ContentWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsEEIFilingOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIFilingOptionUPSFiled::class => \ShipStream\Ups\Api\Normalizer\EEIFilingOptionUPSFiledNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UPSFiledPOA::class => \ShipStream\Ups\Api\Normalizer\UPSFiledPOANormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIFilingOptionShipperFiled::class => \ShipStream\Ups\Api\Normalizer\EEIFilingOptionShipperFiledNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsContacts::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsContactsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsForwardAgent::class => \ShipStream\Ups\Api\Normalizer\ContactsForwardAgentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ForwardAgentAddress::class => \ShipStream\Ups\Api\Normalizer\ForwardAgentAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class => \ShipStream\Ups\Api\Normalizer\ContactsUltimateConsigneeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UltimateConsigneeAddress::class => \ShipStream\Ups\Api\Normalizer\UltimateConsigneeAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UltimateConsigneeUltimateConsigneeType::class => \ShipStream\Ups\Api\Normalizer\UltimateConsigneeUltimateConsigneeTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsIntermediateConsignee::class => \ShipStream\Ups\Api\Normalizer\ContactsIntermediateConsigneeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\IntermediateConsigneeAddress::class => \ShipStream\Ups\Api\Normalizer\IntermediateConsigneeAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsProducer::class => \ShipStream\Ups\Api\Normalizer\ContactsProducerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProducerAddress::class => \ShipStream\Ups\Api\Normalizer\ProducerAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProducerPhone::class => \ShipStream\Ups\Api\Normalizer\ProducerPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ContactsSoldTo::class => \ShipStream\Ups\Api\Normalizer\ContactsSoldToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SoldToPhone::class => \ShipStream\Ups\Api\Normalizer\SoldToPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SoldToAddress::class => \ShipStream\Ups\Api\Normalizer\SoldToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsProduct::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsProductNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductUnit::class => \ShipStream\Ups\Api\Normalizer\ProductUnitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UnitUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\UnitUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductNetCostDateRange::class => \ShipStream\Ups\Api\Normalizer\ProductNetCostDateRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductProductWeight::class => \ShipStream\Ups\Api\Normalizer\ProductProductWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\ProductWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductScheduleB::class => \ShipStream\Ups\Api\Normalizer\ProductScheduleBNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ScheduleBUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\ScheduleBUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductExcludeFromForm::class => \ShipStream\Ups\Api\Normalizer\ProductExcludeFromFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductPackingListInfo::class => \ShipStream\Ups\Api\Normalizer\ProductPackingListInfoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListInfoPackageAssociated::class => \ShipStream\Ups\Api\Normalizer\PackingListInfoPackageAssociatedNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ProductEEIInformation::class => \ShipStream\Ups\Api\Normalizer\ProductEEIInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIInformationLicense::class => \ShipStream\Ups\Api\Normalizer\EEIInformationLicenseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EEIInformationDDTCInformation::class => \ShipStream\Ups\Api\Normalizer\EEIInformationDDTCInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DDTCInformationUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\DDTCInformationUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsDiscount::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsDiscountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsFreightCharges::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsFreightChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsInsuranceCharges::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsInsuranceChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsOtherCharges::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsOtherChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InternationalFormsBlanketPeriod::class => \ShipStream\Ups\Api\Normalizer\InternationalFormsBlanketPeriodNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelMethod::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsLabelMethodNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPreAlertNotification::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsPreAlertNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationEMailMessage::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationEMailMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationVoiceMessage::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationVoiceMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationTextMessage::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationTextMessageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PreAlertNotificationLocale::class => \ShipStream\Ups\Api\Normalizer\PreAlertNotificationLocaleNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsRestrictedArticles::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsRestrictedArticlesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPackage::class => \ShipStream\Ups\Api\Normalizer\ShipmentPackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackaging::class => \ShipStream\Ups\Api\Normalizer\PackagePackagingNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\PackageReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageUPSPremier::class => \ShipStream\Ups\Api\Normalizer\PackageUPSPremierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\UPSPremierHandlingInstructions::class => \ShipStream\Ups\Api\Normalizer\UPSPremierHandlingInstructionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackagePackageServiceOptions::class => \ShipStream\Ups\Api\Normalizer\PackagePackageServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsDeliveryConfirmation::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsDeliveryConfirmationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeclaredValueType::class => \ShipStream\Ups\Api\Normalizer\DeclaredValueTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsCODCODAmount::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsCODCODAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsNotification::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsNotificationEMail::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsNotificationEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsHazMat::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsHazMatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageServiceOptionsDryIce::class => \ShipStream\Ups\Api\Normalizer\PackageServiceOptionsDryIceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageHazMatPackageInformation::class => \ShipStream\Ups\Api\Normalizer\PackageHazMatPackageInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestLabelSpecification::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestLabelSpecificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelSpecificationLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelSpecificationLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelSpecificationLabelStockSize::class => \ShipStream\Ups\Api\Normalizer\LabelSpecificationLabelStockSizeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelSpecificationInstruction::class => \ShipStream\Ups\Api\Normalizer\LabelSpecificationInstructionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentRequestReceiptSpecification::class => \ShipStream\Ups\Api\Normalizer\ShipmentRequestReceiptSpecificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReceiptSpecificationImageFormat::class => \ShipStream\Ups\Api\Normalizer\ReceiptSpecificationImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResponse::class => \ShipStream\Ups\Api\Normalizer\ShipmentResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResponseResponse::class => \ShipStream\Ups\Api\Normalizer\ShipmentResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResponseShipmentResults::class => \ShipStream\Ups\Api\Normalizer\ShipmentResponseShipmentResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsDisclaimer::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsDisclaimerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsShipmentCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsShipmentChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTransportationCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTransportationChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTaxCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTaxChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTotalCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTotalChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentChargesTotalChargesWithTaxes::class => \ShipStream\Ups\Api\Normalizer\ShipmentChargesTotalChargesWithTaxesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsNegotiatedRateCharges::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsNegotiatedRateChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsFRSShipmentData::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFRSShipmentDataNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsBillingWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsBillingWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsPackageResults::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsPackageResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsBaseServiceCharge::class => \ShipStream\Ups\Api\Normalizer\PackageResultsBaseServiceChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsServiceOptionsCharges::class => \ShipStream\Ups\Api\Normalizer\PackageResultsServiceOptionsChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsShippingLabel::class => \ShipStream\Ups\Api\Normalizer\PackageResultsShippingLabelNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShippingLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\ShippingLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsShippingReceipt::class => \ShipStream\Ups\Api\Normalizer\PackageResultsShippingReceiptNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShippingReceiptImageFormat::class => \ShipStream\Ups\Api\Normalizer\ShippingReceiptImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsAccessorial::class => \ShipStream\Ups\Api\Normalizer\PackageResultsAccessorialNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsSimpleRate::class => \ShipStream\Ups\Api\Normalizer\PackageResultsSimpleRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsForm::class => \ShipStream\Ups\Api\Normalizer\PackageResultsFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsFormImage::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FormImage::class => \ShipStream\Ups\Api\Normalizer\FormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HighValueReportImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\HighValueReportImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODTurnInPageImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\CODTurnInPageImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\ImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsItemizedCharges::class => \ShipStream\Ups\Api\Normalizer\PackageResultsItemizedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsNegotiatedCharges::class => \ShipStream\Ups\Api\Normalizer\PackageResultsNegotiatedChargesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageResultsRateModifier::class => \ShipStream\Ups\Api\Normalizer\PackageResultsRateModifierNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsControlLogReceipt::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsControlLogReceiptNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ControlLogReceiptImageFormat::class => \ShipStream\Ups\Api\Normalizer\ControlLogReceiptImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsForm::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsCODTurnInPage::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsCODTurnInPageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODTurnInPageImage::class => \ShipStream\Ups\Api\Normalizer\CODTurnInPageImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsHighValueReport::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsHighValueReportNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HighValueReportImage::class => \ShipStream\Ups\Api\Normalizer\HighValueReportImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VOIDSHIPMENTRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\VOIDSHIPMENTRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\VOIDSHIPMENTResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentRequest::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentRequestRequest::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidRequestTransactionReference::class => \ShipStream\Ups\Api\Normalizer\VoidRequestTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentRequestVoidShipment::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentRequestVoidShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponse::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponseResponse::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidResponseResponseStatus::class => \ShipStream\Ups\Api\Normalizer\VoidResponseResponseStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidResponseTransactionReference::class => \ShipStream\Ups\Api\Normalizer\VoidResponseTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponseSummaryResult::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponseSummaryResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SummaryResultStatus::class => \ShipStream\Ups\Api\Normalizer\SummaryResultStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\VoidShipmentResponsePackageLevelResult::class => \ShipStream\Ups\Api\Normalizer\VoidShipmentResponsePackageLevelResultNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageLevelResultStatus::class => \ShipStream\Ups\Api\Normalizer\PackageLevelResultStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\LABELRECOVERYRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\LABELRECOVERYResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestRequest::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRRequestTransactionReference::class => \ShipStream\Ups\Api\Normalizer\LRRequestTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestLabelSpecificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryLabelSpecificationLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelStockSize::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryLabelSpecificationLabelStockSizeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestTranslate::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestTranslateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelDelivery::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestLabelDeliveryNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestReferenceValues::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestReferenceValuesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReferenceValuesReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ReferenceValuesReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryRequestUPSPremiumCareForm::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryRequestUPSPremiumCareFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponse::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseResponse::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRResponseResponseStatus::class => \ShipStream\Ups\Api\Normalizer\LRResponseResponseStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRResponseTransactionReference::class => \ShipStream\Ups\Api\Normalizer\LRResponseTransactionReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseLabelResults::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseLabelResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsLabelImage::class => \ShipStream\Ups\Api\Normalizer\LabelResultsLabelImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelImageLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelImageLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsMailInnovationsLabelImage::class => \ShipStream\Ups\Api\Normalizer\LabelResultsMailInnovationsLabelImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\MailInnovationsLabelImageLabelImageFormat::class => \ShipStream\Ups\Api\Normalizer\MailInnovationsLabelImageLabelImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsReceipt::class => \ShipStream\Ups\Api\Normalizer\LabelResultsReceiptNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReceiptImage::class => \ShipStream\Ups\Api\Normalizer\ReceiptImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReceiptImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\ReceiptImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelResultsForm::class => \ShipStream\Ups\Api\Normalizer\LabelResultsFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRFormImage::class => \ShipStream\Ups\Api\Normalizer\LRFormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseCODTurnInPage::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseCODTurnInPageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRCODTurnInPageImage::class => \ShipStream\Ups\Api\Normalizer\LRCODTurnInPageImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LRCODTurnInPageImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\LRCODTurnInPageImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseForm::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseFormNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryFormImage::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryFormImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryImageImageFormat::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryImageImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseHighValueReport::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseHighValueReportNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\LabelRecoveryResponseTrackingCandidate::class => \ShipStream\Ups\Api\Normalizer\LabelRecoveryResponseTrackingCandidateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackingCandidatePickupDateRange::class => \ShipStream\Ups\Api\Normalizer\TrackingCandidatePickupDateRangeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequest::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestRequester::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestRequesterNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RequesterPhone::class => \ShipStream\Ups\Api\Normalizer\RequesterPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipTo::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupShipToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightPickupShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentDetail::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestShipmentDetailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDetailPackagingType::class => \ShipStream\Ups\Api\Normalizer\ShipmentDetailPackagingTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDetailWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentDetailWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\WeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\WeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestExistingShipmentID::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestExistingShipmentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupRequestPOM::class => \ShipStream\Ups\Api\Normalizer\FreightPickupRequestPOMNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\POMPickupNotifications::class => \ShipStream\Ups\Api\Normalizer\POMPickupNotificationsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupNotificationsEMailNotification::class => \ShipStream\Ups\Api\Normalizer\PickupNotificationsEMailNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupResponse::class => \ShipStream\Ups\Api\Normalizer\FreightPickupResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightPickupResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightPickupResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPCANCELRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTPICKUPCANCELResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupRequest::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupResponse::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelPickupResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightCancelPickupResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightCancelStatus::class => \ShipStream\Ups\Api\Normalizer\FreightCancelStatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTRATERequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTRATEResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequest::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestShipFrom::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\FreightRateShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestShipTo::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateShipToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightRateShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRatePaymentInformationPayer::class => \ShipStream\Ups\Api\Normalizer\FreightRatePaymentInformationPayerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PayerAddress::class => \ShipStream\Ups\Api\Normalizer\PayerAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformationShipmentBillingOption::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationShipmentBillingOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestService::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitOne::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitOneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitOneType::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitOneTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitTwo::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitTwoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitTwoType::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitTwoTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityWeight::class => \ShipStream\Ups\Api\Normalizer\CommodityWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class => \ShipStream\Ups\Api\Normalizer\CommodityAdjustedWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AdjustedWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\AdjustedWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityDimensions::class => \ShipStream\Ups\Api\Normalizer\CommodityDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityPackagingType::class => \ShipStream\Ups\Api\Normalizer\CommodityPackagingTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityCommodityValue::class => \ShipStream\Ups\Api\Normalizer\CommodityCommodityValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CommodityNMFCCommodity::class => \ShipStream\Ups\Api\Normalizer\CommodityNMFCCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsPickupOptions::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentServiceOptionsPickupOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsDeliveryOptions::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentServiceOptionsDeliveryOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsOverSeasLegNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OverSeasLegDimensions::class => \ShipStream\Ups\Api\Normalizer\OverSeasLegDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\OverSeasLegValue::class => \ShipStream\Ups\Api\Normalizer\OverSeasLegValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ValueCube::class => \ShipStream\Ups\Api\Normalizer\ValueCubeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ValueCWT::class => \ShipStream\Ups\Api\Normalizer\ValueCWTNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class => \ShipStream\Ups\Api\Normalizer\FreightShipmentServiceOptionsCODNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODValue::class => \ShipStream\Ups\Api\Normalizer\CODCODValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODPaymentMethod::class => \ShipStream\Ups\Api\Normalizer\CODCODPaymentMethodNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODCODBillingOption::class => \ShipStream\Ups\Api\Normalizer\CODCODBillingOptionNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateCODRemitTo::class => \ShipStream\Ups\Api\Normalizer\FreightRateCODRemitToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RemitToAddress::class => \ShipStream\Ups\Api\Normalizer\RemitToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDangerousGoods::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDangerousGoodsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DangerousGoodsPhone::class => \ShipStream\Ups\Api\Normalizer\DangerousGoodsPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DangerousGoodsTransportationMode::class => \ShipStream\Ups\Api\Normalizer\DangerousGoodsTransportationModeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsSortingAndSegregating::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsSortingAndSegregatingNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsExcessDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsExcessDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsHandlingCharge::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsHandlingChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingChargeAmount::class => \ShipStream\Ups\Api\Normalizer\HandlingChargeAmountNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAdjustedHeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsAdjustedHeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestPickupRequest::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestAlternateRateOptions::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestAlternateRateOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestGFPOptions::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestGFPOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\GFPOptionsOnCallInformation::class => \ShipStream\Ups\Api\Normalizer\GFPOptionsOnCallInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitWeight::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FreightRateRequestHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponse::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseRate::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateType::class => \ShipStream\Ups\Api\Normalizer\RateTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RateFactor::class => \ShipStream\Ups\Api\Normalizer\RateFactorNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FactorUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\FactorUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseTotalShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseTotalShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseBillableShipmentWeight::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseBillableShipmentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\BillableShipmentWeightUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\BillableShipmentWeightUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseDimensionalWeight::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseDimensionalWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseService::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseAlternateRatesResponse::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseAlternateRatesResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseAlternateRateType::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseAlternateRateTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseRate::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseBillableShipmentWeight::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseBillableShipmentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateRatesResponseTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\AlternateRatesResponseTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightRateResponseHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\FreightRateResponseHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTSHIPRequestWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper::class => \ShipStream\Ups\Api\Normalizer\FREIGHTSHIPResponseWrapperNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRequest::class => \ShipStream\Ups\Api\Normalizer\FreightShipRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRequestRequest::class => \ShipStream\Ups\Api\Normalizer\FreightShipRequestRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class => \ShipStream\Ups\Api\Normalizer\FreightShipRequestShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentShipFrom::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipFromAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipFromAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentShipTo::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentPaymentInformation::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentPaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformationPayer::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationPayerNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipPayerAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipPayerAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PayerPhone::class => \ShipStream\Ups\Api\Normalizer\PayerPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentHandlingUnitOne::class => \ShipStream\Ups\Api\Normalizer\ShipmentHandlingUnitOneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentHandlingUnitTwo::class => \ShipStream\Ups\Api\Normalizer\ShipmentHandlingUnitTwoNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentExistingShipmentID::class => \ShipStream\Ups\Api\Normalizer\ShipmentExistingShipmentIDNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ExistingShipmentIDConfirmationNumber::class => \ShipStream\Ups\Api\Normalizer\ExistingShipmentIDConfirmationNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ConfirmationNumberType::class => \ShipStream\Ups\Api\Normalizer\ConfirmationNumberTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentCommodity::class => \ShipStream\Ups\Api\Normalizer\ShipmentCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipCommodityDimensions::class => \ShipStream\Ups\Api\Normalizer\FreightShipCommodityDimensionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentReference::class => \ShipStream\Ups\Api\Normalizer\ShipmentReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReferenceNumber::class => \ShipStream\Ups\Api\Normalizer\ReferenceNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ReferenceWeight::class => \ShipStream\Ups\Api\Normalizer\ReferenceWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentShipmentServiceOptions::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentShipmentServiceOptionsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsEMailInformation::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsEMailInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EMailInformationEMailType::class => \ShipStream\Ups\Api\Normalizer\EMailInformationEMailTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EMailInformationEMail::class => \ShipStream\Ups\Api\Normalizer\EMailInformationEMailNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CODRemitTo::class => \ShipStream\Ups\Api\Normalizer\CODRemitToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipRemitToAddress::class => \ShipStream\Ups\Api\Normalizer\FreightShipRemitToAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\RemitToPhone::class => \ShipStream\Ups\Api\Normalizer\RemitToPhoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipShipmentServiceOptionsDangerousGoods::class => \ShipStream\Ups\Api\Normalizer\FreightShipShipmentServiceOptionsDangerousGoodsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeclaredValue::class => \ShipStream\Ups\Api\Normalizer\ShipmentServiceOptionsDeclaredValueNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class => \ShipStream\Ups\Api\Normalizer\ShipmentPickupRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRequestRequester::class => \ShipStream\Ups\Api\Normalizer\PickupRequestRequesterNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PickupRequestPOM::class => \ShipStream\Ups\Api\Normalizer\PickupRequestPOMNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipPOMPickupNotifications::class => \ShipStream\Ups\Api\Normalizer\FreightShipPOMPickupNotificationsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipPickupNotificationsEMailNotification::class => \ShipStream\Ups\Api\Normalizer\FreightShipPickupNotificationsEMailNotificationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentDocuments::class => \ShipStream\Ups\Api\Normalizer\ShipmentDocumentsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DocumentsImage::class => \ShipStream\Ups\Api\Normalizer\DocumentsImageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImageType::class => \ShipStream\Ups\Api\Normalizer\ImageTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImageFormat::class => \ShipStream\Ups\Api\Normalizer\ImageFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImagePrintFormat::class => \ShipStream\Ups\Api\Normalizer\ImagePrintFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ImagePrintSize::class => \ShipStream\Ups\Api\Normalizer\ImagePrintSizeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DocumentsPackingList::class => \ShipStream\Ups\Api\Normalizer\DocumentsPackingListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListShipFrom::class => \ShipStream\Ups\Api\Normalizer\PackingListShipFromNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListShipTo::class => \ShipStream\Ups\Api\Normalizer\PackingListShipToNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListReference::class => \ShipStream\Ups\Api\Normalizer\PackingListReferenceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackingListHandlingUnit::class => \ShipStream\Ups\Api\Normalizer\PackingListHandlingUnitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitCommodity::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitCommodityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\HandlingUnitUnitOfMeasurement::class => \ShipStream\Ups\Api\Normalizer\HandlingUnitUnitOfMeasurementNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentHandlingUnits::class => \ShipStream\Ups\Api\Normalizer\ShipmentHandlingUnitsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipResponse::class => \ShipStream\Ups\Api\Normalizer\FreightShipResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipResponseResponse::class => \ShipStream\Ups\Api\Normalizer\FreightShipResponseResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FreightShipResponseShipmentResults::class => \ShipStream\Ups\Api\Normalizer\FreightShipResponseShipmentResultsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsRate::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsFreightDensityRate::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsFreightDensityRateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsTotalShipmentCharge::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsTotalShipmentChargeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsBillableShipmentWeight::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsBillableShipmentWeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsService::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsDocuments::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsDocumentsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DocumentsForms::class => \ShipStream\Ups\Api\Normalizer\DocumentsFormsNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FormsType::class => \ShipStream\Ups\Api\Normalizer\FormsTypeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\FormsFormat::class => \ShipStream\Ups\Api\Normalizer\FormsFormatNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ShipmentResultsTimeInTransit::class => \ShipStream\Ups\Api\Normalizer\ShipmentResultsTimeInTransitNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TimeInTransitRequest::class => \ShipStream\Ups\Api\Normalizer\TimeInTransitRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TimeInTransitResponse::class => \ShipStream\Ups\Api\Normalizer\TimeInTransitResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\ValidationList::class => \ShipStream\Ups\Api\Normalizer\ValidationListNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\EmsResponse::class => \ShipStream\Ups\Api\Normalizer\EmsResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\CandidateAddress::class => \ShipStream\Ups\Api\Normalizer\CandidateAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Services::class => \ShipStream\Ups\Api\Normalizer\ServicesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AccessPointInformation::class => \ShipStream\Ups\Api\Normalizer\AccessPointInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Activity::class => \ShipStream\Ups\Api\Normalizer\ActivityNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Address::class => \ShipStream\Ups\Api\Normalizer\AddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\AlternateTrackingNumber::class => \ShipStream\Ups\Api\Normalizer\AlternateTrackingNumberNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryDate::class => \ShipStream\Ups\Api\Normalizer\DeliveryDateNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryInformation::class => \ShipStream\Ups\Api\Normalizer\DeliveryInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\DeliveryTime::class => \ShipStream\Ups\Api\Normalizer\DeliveryTimeNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\InquireNumbers::class => \ShipStream\Ups\Api\Normalizer\InquireNumbersNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Location::class => \ShipStream\Ups\Api\Normalizer\LocationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Milestones::class => \ShipStream\Ups\Api\Normalizer\MilestonesNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Package::class => \ShipStream\Ups\Api\Normalizer\PackageNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PackageAddress::class => \ShipStream\Ups\Api\Normalizer\PackageAddressNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\PaymentInformation::class => \ShipStream\Ups\Api\Normalizer\PaymentInformationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Service::class => \ShipStream\Ups\Api\Normalizer\ServiceNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Shipment::class => \ShipStream\Ups\Api\Normalizer\ShipmentNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Signature::class => \ShipStream\Ups\Api\Normalizer\SignatureNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Status::class => \ShipStream\Ups\Api\Normalizer\StatusNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SubMilestone::class => \ShipStream\Ups\Api\Normalizer\SubMilestoneNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackApiResponse::class => \ShipStream\Ups\Api\Normalizer\TrackApiResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackResponse::class => \ShipStream\Ups\Api\Normalizer\TrackResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Warning::class => \ShipStream\Ups\Api\Normalizer\WarningNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Weight::class => \ShipStream\Ups\Api\Normalizer\WeightNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\Destination::class => \ShipStream\Ups\Api\Normalizer\DestinationNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackSubsServiceRequest::class => \ShipStream\Ups\Api\Normalizer\TrackSubsServiceRequestNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackSubsServiceResponse::class => \ShipStream\Ups\Api\Normalizer\TrackSubsServiceResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\TrackSubsServiceErrorResponse::class => \ShipStream\Ups\Api\Normalizer\TrackSubsServiceErrorResponseNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody::class => \ShipStream\Ups\Api\Normalizer\SecurityV1OauthTokenPostBodyNormalizer::class,
+            
+            \ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody::class => \ShipStream\Ups\Api\Normalizer\SecurityV1OauthRefreshPostBodyNormalizer::class,
+            
+            \Jane\Component\JsonSchemaRuntime\Reference::class => \ShipStream\Ups\Api\Runtime\Normalizer\ReferenceNormalizer::class,
+        ], $normalizersCache = [];
+        public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
         {
             return array_key_exists($type, $this->normalizers);
         }
-        public function supportsNormalization($data, $format = null, array $context = []) : bool
+        public function supportsNormalization($data, $format = null, array $context = []): bool
         {
             return is_object($data) && array_key_exists(get_class($data), $this->normalizers);
         }
@@ -1800,9 +4341,858 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $this->normalizersCache[$normalizerClass] = $normalizer;
             return $normalizer;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\XAVRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\XAVRequest' => false, 'ShipStream\\Ups\\Api\\Model\\XAVRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\RequestTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\XAVRequestAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponse' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseAlert' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification' => false, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate' => false, 'ShipStream\\Ups\\Api\\Model\\CandidateAddressClassification' => false, 'ShipStream\\Ups\\Api\\Model\\CandidateAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ErrorResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\Error' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\DANGEROUSGOODSUTILITYAPCResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequest' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentService' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackageWeight' => false, 'ShipStream\\Ups\\Api\\Model\\PackageWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PackageChemicalRecord' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponse' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseAlertDetail' => false, 'ShipStream\\Ups\\Api\\Model\\AlertDetailElementLevelInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ElementLevelInformationElementIdentifier' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponseService' => false, 'ShipStream\\Ups\\Api\\Model\\AcceptanceAuditPreCheckResponsePackageResults' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsChemicalRecordResults' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\RequestShipmentItems' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipment' => false, 'ShipStream\\Ups\\Api\\Model\\LandedCostResponseShipmentPerfStats' => false, 'ShipStream\\Ups\\Api\\Model\\BrokerageFeeItems' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseShipmentItems' => false, 'ShipStream\\Ups\\Api\\Model\\Errors' => false, 'ShipStream\\Ups\\Api\\Model\\LOCATORRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LOCATORResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestOriginAddress' => false, 'ShipStream\\Ups\\Api\\Model\\OriginAddressGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\OriginAddressAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestTranslate' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestLocationSearchCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaSearchOption' => false, 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionType' => false, 'ShipStream\\Ups\\Api\\Model\\SearchOptionOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\SearchOptionRelation' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaServiceSearch' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceCode' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSearchServiceOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaFreightWillCallSearch' => false, 'ShipStream\\Ups\\Api\\Model\\FreightWillCallSearchFacilityAddress' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList' => false, 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter' => false, 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceOfferingListServiceOffering' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult' => false, 'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList' => false, 'ShipStream\\Ups\\Api\\Model\\PostalCodeListPostalCode' => false, 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaOpenTimeCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestSortCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorRequestServiceGeoUnit' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ResponseError' => false, 'ShipStream\\Ups\\Api\\Model\\ErrorErrorLocation' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponseGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\LocatorResponseSearchResults' => false, 'ShipStream\\Ups\\Api\\Model\\SearchResultsGeocodeCandidate' => false, 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\GeocodeCandidateGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationIVR' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationGeocode' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationAddressKeyFormat' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute' => false, 'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionType' => false, 'ShipStream\\Ups\\Api\\Model\\LocationAttributeOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\OptionCodeTransportationPickUpSchedule' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationPickUpSchedulePickUp' => false, 'ShipStream\\Ups\\Api\\Model\\PickUpPickUpDetails' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationDistance' => false, 'ShipStream\\Ups\\Api\\Model\\DistanceUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationAdditionalComments' => false, 'ShipStream\\Ups\\Api\\Model\\AdditionalCommentsCommentType' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationOperatingHours' => false, 'ShipStream\\Ups\\Api\\Model\\OperatingHoursStandardHours' => false, 'ShipStream\\Ups\\Api\\Model\\StandardHoursDayOfWeek' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationSortCode' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationServiceOfferingList' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList' => false, 'ShipStream\\Ups\\Api\\Model\\BusinessClassificationListBusinessClassification' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList' => false, 'ShipStream\\Ups\\Api\\Model\\PrivateNetworkListPrivateNetwork' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability' => false, 'ShipStream\\Ups\\Api\\Model\\AvailabilityShippingAvailability' => false, 'ShipStream\\Ups\\Api\\Model\\ShippingAvailabilityUnavailableReason' => false, 'ShipStream\\Ups\\Api\\Model\\AvailabilityDCRAvailability' => false, 'ShipStream\\Ups\\Api\\Model\\DCRAvailabilityUnavailableReason' => false, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationImage' => false, 'ShipStream\\Ups\\Api\\Model\\SearchResultsAvailableLocationAttributes' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionType' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCode' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesTransportationPickUpSchedulePickUp' => false, 'ShipStream\\Ups\\Api\\Model\\AvailableLocationAttributesPickUpPickUpDetails' => false, 'ShipStream\\Ups\\Api\\Model\\GenerateTokenSuccessResponse' => false, 'ShipStream\\Ups\\Api\\Model\\RefreshTokenSuccessResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTDeleteResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteRequest' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteResponse' => false, 'ShipStream\\Ups\\Api\\Model\\DeleteResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryRequestFormsHistoryDocumentID' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PushToImageRepositoryResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PAPERLESSDOCUMENTUploadResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\UploadRequest' => false, 'ShipStream\\Ups\\Api\\Model\\UploadRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\UploadRequestUserCreatedForm' => false, 'ShipStream\\Ups\\Api\\Model\\UploadResponse' => false, 'ShipStream\\Ups\\Api\\Model\\UploadResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\UploadResponseFormsHistoryDocumentID' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestShipperAccount' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateRequestPickupDateInfo' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult' => false, 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail' => false, 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseWeekendServiceTerritory' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCancelRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCancelResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCancelResponseGWNStatus' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCreationRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPCreationResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperAccount' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperChargeCard' => false, 'ShipStream\\Ups\\Api\\Model\\ChargeCardCardAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupDateInfo' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupAddressPhone' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestPickupPiece' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTotalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingData' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestTrackingDataWithReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationRequestFreightOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightOptionsDestinationAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightOptionsShipmentDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPalletInformation' => false, 'ShipStream\\Ups\\Api\\Model\\PalletInformationDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\DimensionsUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseWeekendServiceTerritory' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateStatus' => false, 'ShipStream\\Ups\\Api\\Model\\PickupCreationResponseRateResult' => false, 'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPServCenterResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestPickupPiece' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestOriginAddress' => false, 'ShipStream\\Ups\\Api\\Model\\OriginAddressOriginSearchCriteria' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesRequestDestinationAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesAddress' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesFacilityTime' => false, 'ShipStream\\Ups\\Api\\Model\\FacilityTimeDayOfWeek' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction' => false, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesDistance' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationPickupFacilities' => false, 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTime' => false, 'ShipStream\\Ups\\Api\\Model\\PickupFacilitiesFacilityTimeDayOfWeek' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPendingRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PICKUPPendingResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PickupPendingStatusResponsePendingStatus' => false, 'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PRENOTIFICATIONResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationPackageChemicalRecord' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationResponse' => false, 'ShipStream\\Ups\\Api\\Model\\PreNotificationResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\QUANTUMVIEWResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequest' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewRequestSubscriptionRequest' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionRequestDateTimeRange' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponse' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewResponseQuantumViewEvents' => false, 'ShipStream\\Ups\\Api\\Model\\QuantumViewEventsSubscriptionEvents' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionStatus' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsDateRange' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipperAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestService' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackageActivity' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\PackageDimensionalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\DimensionalWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackagePackageServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestPackageServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODAmount' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsuredValue' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCallTagARS' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestCustomsValue' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\ManifestUAPAddress' => false, 'ShipStream\\Ups\\Api\\Model\\UAPAddressAddress' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin' => false, 'ShipStream\\Ups\\Api\\Model\\OriginPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\OriginShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\OriginActivityLocation' => false, 'ShipStream\\Ups\\Api\\Model\\ActivityLocationAddressArtifactFormat' => false, 'ShipStream\\Ups\\Api\\Model\\OriginBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionUpdatedAddress' => false, 'ShipStream\\Ups\\Api\\Model\\UpdatedAddressAddressExtendedInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionResolution' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionActivityLocation' => false, 'ShipStream\\Ups\\Api\\Model\\ExceptionBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryActivityLocation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryDeliveryLocation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryLocationAddressArtifactFormat' => false, 'ShipStream\\Ups\\Api\\Model\\AddressArtifactFormatAddressExtendedInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryCOD' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric' => false, 'ShipStream\\Ups\\Api\\Model\\GenericShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\GenericPackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\GenericService' => false, 'ShipStream\\Ups\\Api\\Model\\GenericActivity' => false, 'ShipStream\\Ups\\Api\\Model\\GenericBillToAccount' => false, 'ShipStream\\Ups\\Api\\Model\\GenericShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\GenericFailureNotification' => false, 'ShipStream\\Ups\\Api\\Model\\FailureNotificationFailureNotificationCode' => false, 'ShipStream\\Ups\\Api\\Model\\RATERequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\RATEResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequest' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestPickupType' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestCustomerClassification' => false, 'ShipStream\\Ups\\Api\\Model\\RateRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentAlternateDeliveryAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateAlternateDeliveryAddressAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentIndicationType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentDetails' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentDetailsShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver' => false, 'ShipStream\\Ups\\Api\\Model\\BillReceiverAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentChargeBillThirdParty' => false, 'ShipStream\\Ups\\Api\\Model\\RateBillThirdPartyAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentFRSPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationType' => false, 'ShipStream\\Ups\\Api\\Model\\FRSPaymentInformationAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentFreightShipmentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentInformationFreightDensityInfo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoAdjustedHeight' => false, 'ShipStream\\Ups\\Api\\Model\\AdjustedHeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightDensityInfoHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsType' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentTotalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentTotalWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackagingType' => false, 'ShipStream\\Ups\\Api\\Model\\PackageDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\PackageDimWeight' => false, 'ShipStream\\Ups\\Api\\Model\\DimWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PackageCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityNMFC' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackagePackageServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsAccessPointCOD' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsShipperDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsInsurance' => false, 'ShipStream\\Ups\\Api\\Model\\InsuranceBasicFlexibleParcelIndicator' => false, 'ShipStream\\Ups\\Api\\Model\\InsuranceExtendedFlexibleParcelIndicator' => false, 'ShipStream\\Ups\\Api\\Model\\InsuranceTimeInTransitFlexibleParcelIndicator' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsHazMat' => false, 'ShipStream\\Ups\\Api\\Model\\HazMatHazMatChemicalRecord' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageServiceOptionsDryIce' => false, 'ShipStream\\Ups\\Api\\Model\\DryIceDryIceWeight' => false, 'ShipStream\\Ups\\Api\\Model\\DryIceWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\PackageSimpleRate' => false, 'ShipStream\\Ups\\Api\\Model\\RatePackageUPSPremier' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAccessPointCOD' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsCODCODAmount' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPickupOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryOptions' => false, 'ShipStream\\Ups\\Api\\Model\\RateShipmentServiceOptionsRestrictedArticles' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsImportControl' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsReturnService' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentRatingOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentInvoiceLineTotal' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPromotionalDiscountInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDeliveryTimeInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationPickup' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryTimeInformationReturnContractServices' => false, 'ShipStream\\Ups\\Api\\Model\\RateResponse' => false, 'ShipStream\\Ups\\Api\\Model\\RateResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\RateResponseRatedShipment' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentDisclaimer' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentService' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedShipmentAlert' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentBillingWeight' => false, 'ShipStream\\Ups\\Api\\Model\\BillingWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentFRSShipmentData' => false, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount' => false, 'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge' => false, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitsAdjustedHeight' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalChargesWithTaxes' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalCharge' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedRateChargesTotalChargesWithTaxes' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentRatedPackage' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageTotalCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeight' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageBillingWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageAccessorial' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageRateModifier' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageNegotiatedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\NegotiatedChargesItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\RatedPackageSimpleRate' => false, 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitServiceSummary' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryService' => false, 'ShipStream\\Ups\\Api\\Model\\ServiceSummaryEstimatedArrival' => false, 'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalArrival' => false, 'ShipStream\\Ups\\Api\\Model\\EstimatedArrivalPickup' => false, 'ShipStream\\Ups\\Api\\Model\\SHIPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\SHIPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentReturnService' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipper' => false, 'ShipStream\\Ups\\Api\\Model\\ShipperPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipToPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentAlternateDeliveryAddress' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateDeliveryAddressAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromTaxIDType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipFromVendorInfo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper' => false, 'ShipStream\\Ups\\Api\\Model\\BillShipperCreditCard' => false, 'ShipStream\\Ups\\Api\\Model\\CreditCardAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty' => false, 'ShipStream\\Ups\\Api\\Model\\BillThirdPartyAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentFRSPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDGSignatoryInfo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsNotification' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationEMail' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationVoiceMessage' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationTextMessage' => false, 'ShipStream\\Ups\\Api\\Model\\NotificationLocale' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelDelivery' => false, 'ShipStream\\Ups\\Api\\Model\\LabelDeliveryEMail' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm' => false, 'ShipStream\\Ups\\Api\\Model\\UPSPremiumCareFormLanguageForUPSPremiumCare' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form' => false, 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content' => false, 'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\CN22ContentWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption' => false, 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionUPSFiled' => false, 'ShipStream\\Ups\\Api\\Model\\UPSFiledPOA' => false, 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionShipperFiled' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent' => false, 'ShipStream\\Ups\\Api\\Model\\ForwardAgentAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee' => false, 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeAddress' => false, 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeUltimateConsigneeType' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee' => false, 'ShipStream\\Ups\\Api\\Model\\IntermediateConsigneeAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsProducer' => false, 'ShipStream\\Ups\\Api\\Model\\ProducerAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ProducerPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo' => false, 'ShipStream\\Ups\\Api\\Model\\SoldToPhone' => false, 'ShipStream\\Ups\\Api\\Model\\SoldToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct' => false, 'ShipStream\\Ups\\Api\\Model\\ProductUnit' => false, 'ShipStream\\Ups\\Api\\Model\\UnitUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ProductNetCostDateRange' => false, 'ShipStream\\Ups\\Api\\Model\\ProductProductWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ProductWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ProductScheduleB' => false, 'ShipStream\\Ups\\Api\\Model\\ScheduleBUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ProductExcludeFromForm' => false, 'ShipStream\\Ups\\Api\\Model\\ProductPackingListInfo' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListInfoPackageAssociated' => false, 'ShipStream\\Ups\\Api\\Model\\ProductEEIInformation' => false, 'ShipStream\\Ups\\Api\\Model\\EEIInformationLicense' => false, 'ShipStream\\Ups\\Api\\Model\\EEIInformationDDTCInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DDTCInformationUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges' => false, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsLabelMethod' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsPreAlertNotification' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationEMailMessage' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationVoiceMessage' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationTextMessage' => false, 'ShipStream\\Ups\\Api\\Model\\PreAlertNotificationLocale' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsRestrictedArticles' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPackage' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackaging' => false, 'ShipStream\\Ups\\Api\\Model\\PackageReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\PackageUPSPremier' => false, 'ShipStream\\Ups\\Api\\Model\\UPSPremierHandlingInstructions' => false, 'ShipStream\\Ups\\Api\\Model\\PackagePackageServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeliveryConfirmation' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\DeclaredValueType' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsCODCODAmount' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotification' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsNotificationEMail' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsHazMat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageServiceOptionsDryIce' => false, 'ShipStream\\Ups\\Api\\Model\\PackageHazMatPackageInformation' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification' => false, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationLabelStockSize' => false, 'ShipStream\\Ups\\Api\\Model\\LabelSpecificationInstruction' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification' => false, 'ShipStream\\Ups\\Api\\Model\\ReceiptSpecificationImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResponseShipmentResults' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDisclaimer' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsShipmentCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTransportationCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTaxCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentChargesTotalChargesWithTaxes' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsNegotiatedRateCharges' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFRSShipmentData' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillingWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsPackageResults' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsBaseServiceCharge' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsServiceOptionsCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingLabel' => false, 'ShipStream\\Ups\\Api\\Model\\ShippingLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsShippingReceipt' => false, 'ShipStream\\Ups\\Api\\Model\\ShippingReceiptImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsAccessorial' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsSimpleRate' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsForm' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFormImage' => false, 'ShipStream\\Ups\\Api\\Model\\FormImage' => false, 'ShipStream\\Ups\\Api\\Model\\HighValueReportImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsItemizedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsNegotiatedCharges' => false, 'ShipStream\\Ups\\Api\\Model\\PackageResultsRateModifier' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsControlLogReceipt' => false, 'ShipStream\\Ups\\Api\\Model\\ControlLogReceiptImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsForm' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsCODTurnInPage' => false, 'ShipStream\\Ups\\Api\\Model\\CODTurnInPageImage' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsHighValueReport' => false, 'ShipStream\\Ups\\Api\\Model\\HighValueReportImage' => false, 'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\VOIDSHIPMENTResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequest' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\VoidRequestTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentRequestVoidShipment' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponse' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\VoidResponseResponseStatus' => false, 'ShipStream\\Ups\\Api\\Model\\VoidResponseTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponseSummaryResult' => false, 'ShipStream\\Ups\\Api\\Model\\SummaryResultStatus' => false, 'ShipStream\\Ups\\Api\\Model\\VoidShipmentResponsePackageLevelResult' => false, 'ShipStream\\Ups\\Api\\Model\\PackageLevelResultStatus' => false, 'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LABELRECOVERYResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\LRRequestTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelStockSize' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestTranslate' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelDelivery' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestReferenceValues' => false, 'ShipStream\\Ups\\Api\\Model\\ReferenceValuesReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestUPSPremiumCareForm' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\LRResponseResponseStatus' => false, 'ShipStream\\Ups\\Api\\Model\\LRResponseTransactionReference' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseLabelResults' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsLabelImage' => false, 'ShipStream\\Ups\\Api\\Model\\LabelImageLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsMailInnovationsLabelImage' => false, 'ShipStream\\Ups\\Api\\Model\\MailInnovationsLabelImageLabelImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsReceipt' => false, 'ShipStream\\Ups\\Api\\Model\\ReceiptImage' => false, 'ShipStream\\Ups\\Api\\Model\\ReceiptImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelResultsForm' => false, 'ShipStream\\Ups\\Api\\Model\\LRFormImage' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseCODTurnInPage' => false, 'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImage' => false, 'ShipStream\\Ups\\Api\\Model\\LRCODTurnInPageImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseForm' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryFormImage' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryImageImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseHighValueReport' => false, 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryResponseTrackingCandidate' => false, 'ShipStream\\Ups\\Api\\Model\\TrackingCandidatePickupDateRange' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestRequester' => false, 'ShipStream\\Ups\\Api\\Model\\RequesterPhone' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipmentDetail' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailPackagingType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDetailWeight' => false, 'ShipStream\\Ups\\Api\\Model\\WeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestExistingShipmentID' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestPOM' => false, 'ShipStream\\Ups\\Api\\Model\\POMPickupNotifications' => false, 'ShipStream\\Ups\\Api\\Model\\PickupNotificationsEMailNotification' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightPickupResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTPICKUPCANCELResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelPickupResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightCancelStatus' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTRATERequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTRATEResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRatePaymentInformationPayer' => false, 'ShipStream\\Ups\\Api\\Model\\PayerAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentBillingOption' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestService' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitOne' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitOneType' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitTwo' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitTwoType' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityWeight' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityAdjustedWeight' => false, 'ShipStream\\Ups\\Api\\Model\\AdjustedWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityPackagingType' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityCommodityValue' => false, 'ShipStream\\Ups\\Api\\Model\\CommodityNMFCCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsPickupOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsDeliveryOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsOverSeasLeg' => false, 'ShipStream\\Ups\\Api\\Model\\OverSeasLegDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\OverSeasLegValue' => false, 'ShipStream\\Ups\\Api\\Model\\ValueCube' => false, 'ShipStream\\Ups\\Api\\Model\\ValueCWT' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODValue' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod' => false, 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateCODRemitTo' => false, 'ShipStream\\Ups\\Api\\Model\\RemitToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDangerousGoods' => false, 'ShipStream\\Ups\\Api\\Model\\DangerousGoodsPhone' => false, 'ShipStream\\Ups\\Api\\Model\\DangerousGoodsTransportationMode' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsSortingAndSegregating' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsExcessDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsHandlingCharge' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingChargeAmount' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsAdjustedHeight' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestAlternateRateOptions' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestGFPOptions' => false, 'ShipStream\\Ups\\Api\\Model\\GFPOptionsOnCallInformation' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnitWeight' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateRequestHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseRate' => false, 'ShipStream\\Ups\\Api\\Model\\RateType' => false, 'ShipStream\\Ups\\Api\\Model\\RateFactor' => false, 'ShipStream\\Ups\\Api\\Model\\FactorUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTotalShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseBillableShipmentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\BillableShipmentWeightUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseDimensionalWeight' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseService' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseAlternateRatesResponse' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseAlternateRateType' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseRate' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseBillableShipmentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateRatesResponseTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\FreightRateResponseHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPRequestWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPResponseWrapper' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestRequest' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipFromAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformationPayer' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipPayerAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PayerPhone' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitOne' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitTwo' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentExistingShipmentID' => false, 'ShipStream\\Ups\\Api\\Model\\ExistingShipmentIDConfirmationNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ConfirmationNumberType' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipCommodityDimensions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentReference' => false, 'ShipStream\\Ups\\Api\\Model\\ReferenceNumber' => false, 'ShipStream\\Ups\\Api\\Model\\ReferenceWeight' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsEMailInformation' => false, 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMailType' => false, 'ShipStream\\Ups\\Api\\Model\\EMailInformationEMail' => false, 'ShipStream\\Ups\\Api\\Model\\CODRemitTo' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipRemitToAddress' => false, 'ShipStream\\Ups\\Api\\Model\\RemitToPhone' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentServiceOptionsDangerousGoods' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsDeclaredValue' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester' => false, 'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipPOMPickupNotifications' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipPickupNotificationsEMailNotification' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentDocuments' => false, 'ShipStream\\Ups\\Api\\Model\\DocumentsImage' => false, 'ShipStream\\Ups\\Api\\Model\\ImageType' => false, 'ShipStream\\Ups\\Api\\Model\\ImageFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ImagePrintFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ImagePrintSize' => false, 'ShipStream\\Ups\\Api\\Model\\DocumentsPackingList' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListShipFrom' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListShipTo' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListReference' => false, 'ShipStream\\Ups\\Api\\Model\\PackingListHandlingUnit' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitCommodity' => false, 'ShipStream\\Ups\\Api\\Model\\HandlingUnitUnitOfMeasurement' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnits' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipResponseResponse' => false, 'ShipStream\\Ups\\Api\\Model\\FreightShipResponseShipmentResults' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsRate' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsFreightDensityRate' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTotalShipmentCharge' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsBillableShipmentWeight' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsService' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsDocuments' => false, 'ShipStream\\Ups\\Api\\Model\\DocumentsForms' => false, 'ShipStream\\Ups\\Api\\Model\\FormsType' => false, 'ShipStream\\Ups\\Api\\Model\\FormsFormat' => false, 'ShipStream\\Ups\\Api\\Model\\ShipmentResultsTimeInTransit' => false, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitRequest' => false, 'ShipStream\\Ups\\Api\\Model\\TimeInTransitResponse' => false, 'ShipStream\\Ups\\Api\\Model\\ValidationList' => false, 'ShipStream\\Ups\\Api\\Model\\EmsResponse' => false, 'ShipStream\\Ups\\Api\\Model\\CandidateAddress' => false, 'ShipStream\\Ups\\Api\\Model\\Services' => false, 'ShipStream\\Ups\\Api\\Model\\AccessPointInformation' => false, 'ShipStream\\Ups\\Api\\Model\\Activity' => false, 'ShipStream\\Ups\\Api\\Model\\Address' => false, 'ShipStream\\Ups\\Api\\Model\\AlternateTrackingNumber' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryDate' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryInformation' => false, 'ShipStream\\Ups\\Api\\Model\\DeliveryTime' => false, 'ShipStream\\Ups\\Api\\Model\\InquireNumbers' => false, 'ShipStream\\Ups\\Api\\Model\\Location' => false, 'ShipStream\\Ups\\Api\\Model\\Milestones' => false, 'ShipStream\\Ups\\Api\\Model\\Package' => false, 'ShipStream\\Ups\\Api\\Model\\PackageAddress' => false, 'ShipStream\\Ups\\Api\\Model\\PaymentInformation' => false, 'ShipStream\\Ups\\Api\\Model\\Service' => false, 'ShipStream\\Ups\\Api\\Model\\Shipment' => false, 'ShipStream\\Ups\\Api\\Model\\Signature' => false, 'ShipStream\\Ups\\Api\\Model\\Status' => false, 'ShipStream\\Ups\\Api\\Model\\SubMilestone' => false, 'ShipStream\\Ups\\Api\\Model\\TrackApiResponse' => false, 'ShipStream\\Ups\\Api\\Model\\TrackResponse' => false, 'ShipStream\\Ups\\Api\\Model\\Warning' => false, 'ShipStream\\Ups\\Api\\Model\\Weight' => false, 'ShipStream\\Ups\\Api\\Model\\Destination' => false, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceRequest' => false, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceResponse' => false, 'ShipStream\\Ups\\Api\\Model\\TrackSubsServiceErrorResponse' => false, 'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthTokenPostBody' => false, 'ShipStream\\Ups\\Api\\Model\\SecurityV1OauthRefreshPostBody' => false, '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => false];
+            return [
+                
+                \ShipStream\Ups\Api\Model\XAVRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\XAVRequest::class => false,
+                \ShipStream\Ups\Api\Model\XAVRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\RequestTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\XAVRequestAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponse::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ResponseResponseStatus::class => false,
+                \ShipStream\Ups\Api\Model\ResponseAlert::class => false,
+                \ShipStream\Ups\Api\Model\ResponseTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseAddressClassification::class => false,
+                \ShipStream\Ups\Api\Model\XAVResponseCandidate::class => false,
+                \ShipStream\Ups\Api\Model\CandidateAddressClassification::class => false,
+                \ShipStream\Ups\Api\Model\CandidateAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\ErrorResponse::class => false,
+                \ShipStream\Ups\Api\Model\ErrorResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\Error::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequest::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponse::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalDataChemicalDetail::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalDataProperShippingNameDetail::class => false,
+                \ShipStream\Ups\Api\Model\ChemicalDataPackageQuantityLimitDetail::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\DANGEROUSGOODSUTILITYAPCResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequest::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentService::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackageWeight::class => false,
+                \ShipStream\Ups\Api\Model\PackageWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PackageChemicalRecord::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponse::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ResponseAlertDetail::class => false,
+                \ShipStream\Ups\Api\Model\AlertDetailElementLevelInformation::class => false,
+                \ShipStream\Ups\Api\Model\ElementLevelInformationElementIdentifier::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponseService::class => false,
+                \ShipStream\Ups\Api\Model\AcceptanceAuditPreCheckResponsePackageResults::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsChemicalRecordResults::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostRequest::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\RequestShipmentItems::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostResponse::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostResponseShipment::class => false,
+                \ShipStream\Ups\Api\Model\LandedCostResponseShipmentPerfStats::class => false,
+                \ShipStream\Ups\Api\Model\BrokerageFeeItems::class => false,
+                \ShipStream\Ups\Api\Model\ResponseShipmentItems::class => false,
+                \ShipStream\Ups\Api\Model\Errors::class => false,
+                \ShipStream\Ups\Api\Model\LOCATORRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LOCATORResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequest::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestOriginAddress::class => false,
+                \ShipStream\Ups\Api\Model\OriginAddressGeocode::class => false,
+                \ShipStream\Ups\Api\Model\OriginAddressAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestTranslate::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestLocationSearchCriteria::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaSearchOption::class => false,
+                \ShipStream\Ups\Api\Model\SearchOptionOptionType::class => false,
+                \ShipStream\Ups\Api\Model\SearchOptionOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\SearchOptionRelation::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaServiceSearch::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSearchServiceCode::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSearchServiceOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaFreightWillCallSearch::class => false,
+                \ShipStream\Ups\Api\Model\FreightWillCallSearchFacilityAddress::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class => false,
+                \ShipStream\Ups\Api\Model\IncludeCriteriaMerchantAccountNumberList::class => false,
+                \ShipStream\Ups\Api\Model\IncludeCriteriaSearchFilter::class => false,
+                \ShipStream\Ups\Api\Model\IncludeCriteriaServiceOfferingList::class => false,
+                \ShipStream\Ups\Api\Model\ServiceOfferingListServiceOffering::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class => false,
+                \ShipStream\Ups\Api\Model\ExcludeFromResultPostalCodeList::class => false,
+                \ShipStream\Ups\Api\Model\PostalCodeListPostalCode::class => false,
+                \ShipStream\Ups\Api\Model\LocationSearchCriteriaOpenTimeCriteria::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestSortCriteria::class => false,
+                \ShipStream\Ups\Api\Model\LocatorRequestServiceGeoUnit::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponse::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ResponseError::class => false,
+                \ShipStream\Ups\Api\Model\ErrorErrorLocation::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponseGeocode::class => false,
+                \ShipStream\Ups\Api\Model\LocatorResponseSearchResults::class => false,
+                \ShipStream\Ups\Api\Model\SearchResultsGeocodeCandidate::class => false,
+                \ShipStream\Ups\Api\Model\GeocodeCandidateAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\GeocodeCandidateGeocode::class => false,
+                \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationIVR::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationGeocode::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationAddressKeyFormat::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationLocationAttribute::class => false,
+                \ShipStream\Ups\Api\Model\LocationAttributeOptionType::class => false,
+                \ShipStream\Ups\Api\Model\LocationAttributeOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\OptionCodeTransportationPickUpSchedule::class => false,
+                \ShipStream\Ups\Api\Model\TransportationPickUpSchedulePickUp::class => false,
+                \ShipStream\Ups\Api\Model\PickUpPickUpDetails::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationDistance::class => false,
+                \ShipStream\Ups\Api\Model\DistanceUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationSpecialInstructions::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationAdditionalComments::class => false,
+                \ShipStream\Ups\Api\Model\AdditionalCommentsCommentType::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationOperatingHours::class => false,
+                \ShipStream\Ups\Api\Model\OperatingHoursStandardHours::class => false,
+                \ShipStream\Ups\Api\Model\StandardHoursDayOfWeek::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationLocalizedInstruction::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationPromotionInformation::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationSortCode::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationServiceOfferingList::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationBusinessClassificationList::class => false,
+                \ShipStream\Ups\Api\Model\BusinessClassificationListBusinessClassification::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationAccessPointStatus::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationPrivateNetworkList::class => false,
+                \ShipStream\Ups\Api\Model\PrivateNetworkListPrivateNetwork::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformationAvailability::class => false,
+                \ShipStream\Ups\Api\Model\AvailabilityShippingAvailability::class => false,
+                \ShipStream\Ups\Api\Model\ShippingAvailabilityUnavailableReason::class => false,
+                \ShipStream\Ups\Api\Model\AvailabilityDCRAvailability::class => false,
+                \ShipStream\Ups\Api\Model\DCRAvailabilityUnavailableReason::class => false,
+                \ShipStream\Ups\Api\Model\DropLocationLocationImage::class => false,
+                \ShipStream\Ups\Api\Model\SearchResultsAvailableLocationAttributes::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionType::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCode::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesOptionCodeTransportationPickUpSchedule::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesTransportationPickUpSchedulePickUp::class => false,
+                \ShipStream\Ups\Api\Model\AvailableLocationAttributesPickUpPickUpDetails::class => false,
+                \ShipStream\Ups\Api\Model\GenerateTokenSuccessResponse::class => false,
+                \ShipStream\Ups\Api\Model\RefreshTokenSuccessResponse::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTDeleteResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\DeleteRequest::class => false,
+                \ShipStream\Ups\Api\Model\DeleteRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\DeleteResponse::class => false,
+                \ShipStream\Ups\Api\Model\DeleteResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryRequest::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryRequestFormsHistoryDocumentID::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryResponse::class => false,
+                \ShipStream\Ups\Api\Model\PushToImageRepositoryResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PAPERLESSDOCUMENTUploadResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\UploadRequest::class => false,
+                \ShipStream\Ups\Api\Model\UploadRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\UploadRequestUserCreatedForm::class => false,
+                \ShipStream\Ups\Api\Model\UploadResponse::class => false,
+                \ShipStream\Ups\Api\Model\UploadResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\UploadResponseFormsHistoryDocumentID::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestShipperAccount::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestPickupAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateRequestPickupDateInfo::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class => false,
+                \ShipStream\Ups\Api\Model\RateResultChargeDetail::class => false,
+                \ShipStream\Ups\Api\Model\RateResultTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\PickupRateResponseWeekendServiceTerritory::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCancelRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCancelResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCancelResponseGWNStatus::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCreationRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPCreationResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipperAccount::class => false,
+                \ShipStream\Ups\Api\Model\ShipperChargeCard::class => false,
+                \ShipStream\Ups\Api\Model\ChargeCardCardAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestPickupDateInfo::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestPickupAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupAddressPhone::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestPickupPiece::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestTotalWeight::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingData::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestTrackingDataWithReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationRequestFreightOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightOptionsShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightOptionsDestinationAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightOptionsShipmentDetail::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDetailPalletInformation::class => false,
+                \ShipStream\Ups\Api\Model\PalletInformationDimensions::class => false,
+                \ShipStream\Ups\Api\Model\DimensionsUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseWeekendServiceTerritory::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseRateStatus::class => false,
+                \ShipStream\Ups\Api\Model\PickupCreationResponseRateResult::class => false,
+                \ShipStream\Ups\Api\Model\RateResultDisclaimer::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPServCenterRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPServCenterResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestPickupPiece::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestOriginAddress::class => false,
+                \ShipStream\Ups\Api\Model\OriginAddressOriginSearchCriteria::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesRequestDestinationAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseServiceCenterLocation::class => false,
+                \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesAddress::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesFacilityTime::class => false,
+                \ShipStream\Ups\Api\Model\FacilityTimeDayOfWeek::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesLocalizedInstruction::class => false,
+                \ShipStream\Ups\Api\Model\DropOffFacilitiesDistance::class => false,
+                \ShipStream\Ups\Api\Model\ServiceCenterLocationPickupFacilities::class => false,
+                \ShipStream\Ups\Api\Model\PickupFacilitiesAddress::class => false,
+                \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTime::class => false,
+                \ShipStream\Ups\Api\Model\PickupFacilitiesFacilityTimeDayOfWeek::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPendingRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PICKUPPendingResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\PickupPendingStatusResponsePendingStatus::class => false,
+                \ShipStream\Ups\Api\Model\PRENOTIFICATIONRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PRENOTIFICATIONResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationRequest::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationShipmentShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationShipmentShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationPackageChemicalRecord::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationResponse::class => false,
+                \ShipStream\Ups\Api\Model\PreNotificationResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\QUANTUMVIEWRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\QUANTUMVIEWResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewRequest::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewRequestSubscriptionRequest::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionRequestDateTimeRange::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewResponse::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewResponseQuantumViewEvents::class => false,
+                \ShipStream\Ups\Api\Model\QuantumViewEventsSubscriptionEvents::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionStatus::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionEventsDateRange::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileStatusType::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileManifest::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipper::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipperAddress::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipTo::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\ManifestReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ManifestService::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackageActivity::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackageDimensions::class => false,
+                \ShipStream\Ups\Api\Model\PackageDimensionalWeight::class => false,
+                \ShipStream\Ups\Api\Model\DimensionalWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackagePackageWeight::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackagePackageServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ManifestPackageServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\CODCODAmount::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsInsuredValue::class => false,
+                \ShipStream\Ups\Api\Model\ManifestShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCallTagARS::class => false,
+                \ShipStream\Ups\Api\Model\ManifestCustomsValue::class => false,
+                \ShipStream\Ups\Api\Model\ManifestBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\ManifestUAPAddress::class => false,
+                \ShipStream\Ups\Api\Model\UAPAddressAddress::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class => false,
+                \ShipStream\Ups\Api\Model\OriginPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\OriginShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\OriginActivityLocation::class => false,
+                \ShipStream\Ups\Api\Model\ActivityLocationAddressArtifactFormat::class => false,
+                \ShipStream\Ups\Api\Model\OriginBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileException::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionUpdatedAddress::class => false,
+                \ShipStream\Ups\Api\Model\UpdatedAddressAddressExtendedInformation::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionResolution::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionActivityLocation::class => false,
+                \ShipStream\Ups\Api\Model\ExceptionBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileDelivery::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryActivityLocation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryDeliveryLocation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryLocationAddressArtifactFormat::class => false,
+                \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryCOD::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\SubscriptionFileGeneric::class => false,
+                \ShipStream\Ups\Api\Model\GenericShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\GenericPackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\GenericService::class => false,
+                \ShipStream\Ups\Api\Model\GenericActivity::class => false,
+                \ShipStream\Ups\Api\Model\GenericBillToAccount::class => false,
+                \ShipStream\Ups\Api\Model\GenericShipTo::class => false,
+                \ShipStream\Ups\Api\Model\GenericFailureNotification::class => false,
+                \ShipStream\Ups\Api\Model\FailureNotificationFailureNotificationCode::class => false,
+                \ShipStream\Ups\Api\Model\RATERequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\RATEResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\RateRequest::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestPickupType::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestCustomerClassification::class => false,
+                \ShipStream\Ups\Api\Model\RateRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipperAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipTo::class => false,
+                \ShipStream\Ups\Api\Model\ShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentAlternateDeliveryAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateAlternateDeliveryAddressAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentIndicationType::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPaymentDetails::class => false,
+                \ShipStream\Ups\Api\Model\PaymentDetailsShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentChargeBillShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargeBillReceiver::class => false,
+                \ShipStream\Ups\Api\Model\BillReceiverAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentChargeBillThirdParty::class => false,
+                \ShipStream\Ups\Api\Model\RateBillThirdPartyAddress::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentFRSPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\FRSPaymentInformationType::class => false,
+                \ShipStream\Ups\Api\Model\FRSPaymentInformationAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentFreightShipmentInformation::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentInformationFreightDensityInfo::class => false,
+                \ShipStream\Ups\Api\Model\FreightDensityInfoAdjustedHeight::class => false,
+                \ShipStream\Ups\Api\Model\AdjustedHeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightDensityInfoHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsType::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsDimensions::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentTotalWeight::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentTotalWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackagingType::class => false,
+                \ShipStream\Ups\Api\Model\PackageDimensions::class => false,
+                \ShipStream\Ups\Api\Model\PackageDimWeight::class => false,
+                \ShipStream\Ups\Api\Model\DimWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PackageCommodity::class => false,
+                \ShipStream\Ups\Api\Model\CommodityNMFC::class => false,
+                \ShipStream\Ups\Api\Model\RatePackagePackageServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsAccessPointCOD::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsShipperDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsInsurance::class => false,
+                \ShipStream\Ups\Api\Model\InsuranceBasicFlexibleParcelIndicator::class => false,
+                \ShipStream\Ups\Api\Model\InsuranceExtendedFlexibleParcelIndicator::class => false,
+                \ShipStream\Ups\Api\Model\InsuranceTimeInTransitFlexibleParcelIndicator::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsHazMat::class => false,
+                \ShipStream\Ups\Api\Model\HazMatHazMatChemicalRecord::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageServiceOptionsDryIce::class => false,
+                \ShipStream\Ups\Api\Model\DryIceDryIceWeight::class => false,
+                \ShipStream\Ups\Api\Model\DryIceWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\PackageSimpleRate::class => false,
+                \ShipStream\Ups\Api\Model\RatePackageUPSPremier::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAccessPointCOD::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsCODCODAmount::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPickupOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryOptions::class => false,
+                \ShipStream\Ups\Api\Model\RateShipmentServiceOptionsRestrictedArticles::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsImportControl::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsReturnService::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentRatingOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentInvoiceLineTotal::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPromotionalDiscountInformation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDeliveryTimeInformation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryTimeInformationPickup::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryTimeInformationReturnContractServices::class => false,
+                \ShipStream\Ups\Api\Model\RateResponse::class => false,
+                \ShipStream\Ups\Api\Model\RateResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\RateResponseRatedShipment::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentDisclaimer::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentService::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentRatedShipmentAlert::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentBillingWeight::class => false,
+                \ShipStream\Ups\Api\Model\BillingWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentFRSShipmentData::class => false,
+                \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\TransportationChargesGrossCharge::class => false,
+                \ShipStream\Ups\Api\Model\TransportationChargesDiscountAmount::class => false,
+                \ShipStream\Ups\Api\Model\TransportationChargesNetCharge::class => false,
+                \ShipStream\Ups\Api\Model\FRSShipmentDataFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\FRSShipmentDataHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitsAdjustedHeight::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTotalCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTotalChargesWithTaxes::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalCharge::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedRateChargesTotalChargesWithTaxes::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentRatedPackage::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageTotalCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageBillingWeight::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageBillingWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageAccessorial::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageRateModifier::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageNegotiatedCharges::class => false,
+                \ShipStream\Ups\Api\Model\NegotiatedChargesItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\RatedPackageSimpleRate::class => false,
+                \ShipStream\Ups\Api\Model\RatedShipmentTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\TimeInTransitServiceSummary::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSummaryService::class => false,
+                \ShipStream\Ups\Api\Model\ServiceSummaryEstimatedArrival::class => false,
+                \ShipStream\Ups\Api\Model\EstimatedArrivalArrival::class => false,
+                \ShipStream\Ups\Api\Model\EstimatedArrivalPickup::class => false,
+                \ShipStream\Ups\Api\Model\SHIPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\SHIPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequest::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentReturnService::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipper::class => false,
+                \ShipStream\Ups\Api\Model\ShipperPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipTo::class => false,
+                \ShipStream\Ups\Api\Model\ShipToPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => false,
+                \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromTaxIDType::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipFromVendorInfo::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargeBillShipper::class => false,
+                \ShipStream\Ups\Api\Model\BillShipperCreditCard::class => false,
+                \ShipStream\Ups\Api\Model\CreditCardAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargeBillThirdParty::class => false,
+                \ShipStream\Ups\Api\Model\BillThirdPartyAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentFRSPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDGSignatoryInfo::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsNotification::class => false,
+                \ShipStream\Ups\Api\Model\NotificationEMail::class => false,
+                \ShipStream\Ups\Api\Model\NotificationVoiceMessage::class => false,
+                \ShipStream\Ups\Api\Model\NotificationTextMessage::class => false,
+                \ShipStream\Ups\Api\Model\NotificationLocale::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelDelivery::class => false,
+                \ShipStream\Ups\Api\Model\LabelDeliveryEMail::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsUserCreatedForm::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsUPSPremiumCareForm::class => false,
+                \ShipStream\Ups\Api\Model\UPSPremiumCareFormLanguageForUPSPremiumCare::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsCN22Form::class => false,
+                \ShipStream\Ups\Api\Model\CN22FormCN22Content::class => false,
+                \ShipStream\Ups\Api\Model\CN22ContentCN22ContentWeight::class => false,
+                \ShipStream\Ups\Api\Model\CN22ContentWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class => false,
+                \ShipStream\Ups\Api\Model\EEIFilingOptionUPSFiled::class => false,
+                \ShipStream\Ups\Api\Model\UPSFiledPOA::class => false,
+                \ShipStream\Ups\Api\Model\EEIFilingOptionShipperFiled::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsContacts::class => false,
+                \ShipStream\Ups\Api\Model\ContactsForwardAgent::class => false,
+                \ShipStream\Ups\Api\Model\ForwardAgentAddress::class => false,
+                \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class => false,
+                \ShipStream\Ups\Api\Model\UltimateConsigneeAddress::class => false,
+                \ShipStream\Ups\Api\Model\UltimateConsigneeUltimateConsigneeType::class => false,
+                \ShipStream\Ups\Api\Model\ContactsIntermediateConsignee::class => false,
+                \ShipStream\Ups\Api\Model\IntermediateConsigneeAddress::class => false,
+                \ShipStream\Ups\Api\Model\ContactsProducer::class => false,
+                \ShipStream\Ups\Api\Model\ProducerAddress::class => false,
+                \ShipStream\Ups\Api\Model\ProducerPhone::class => false,
+                \ShipStream\Ups\Api\Model\ContactsSoldTo::class => false,
+                \ShipStream\Ups\Api\Model\SoldToPhone::class => false,
+                \ShipStream\Ups\Api\Model\SoldToAddress::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsProduct::class => false,
+                \ShipStream\Ups\Api\Model\ProductUnit::class => false,
+                \ShipStream\Ups\Api\Model\UnitUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ProductNetCostDateRange::class => false,
+                \ShipStream\Ups\Api\Model\ProductProductWeight::class => false,
+                \ShipStream\Ups\Api\Model\ProductWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ProductScheduleB::class => false,
+                \ShipStream\Ups\Api\Model\ScheduleBUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ProductExcludeFromForm::class => false,
+                \ShipStream\Ups\Api\Model\ProductPackingListInfo::class => false,
+                \ShipStream\Ups\Api\Model\PackingListInfoPackageAssociated::class => false,
+                \ShipStream\Ups\Api\Model\ProductEEIInformation::class => false,
+                \ShipStream\Ups\Api\Model\EEIInformationLicense::class => false,
+                \ShipStream\Ups\Api\Model\EEIInformationDDTCInformation::class => false,
+                \ShipStream\Ups\Api\Model\DDTCInformationUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsDiscount::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsFreightCharges::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsInsuranceCharges::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsOtherCharges::class => false,
+                \ShipStream\Ups\Api\Model\InternationalFormsBlanketPeriod::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsLabelMethod::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsPreAlertNotification::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationEMailMessage::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationVoiceMessage::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationTextMessage::class => false,
+                \ShipStream\Ups\Api\Model\PreAlertNotificationLocale::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsRestrictedArticles::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPackage::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackaging::class => false,
+                \ShipStream\Ups\Api\Model\PackageReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\PackageUPSPremier::class => false,
+                \ShipStream\Ups\Api\Model\UPSPremierHandlingInstructions::class => false,
+                \ShipStream\Ups\Api\Model\PackagePackageServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsDeliveryConfirmation::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\DeclaredValueType::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsCODCODAmount::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsNotification::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsNotificationEMail::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsHazMat::class => false,
+                \ShipStream\Ups\Api\Model\PackageServiceOptionsDryIce::class => false,
+                \ShipStream\Ups\Api\Model\PackageHazMatPackageInformation::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestLabelSpecification::class => false,
+                \ShipStream\Ups\Api\Model\LabelSpecificationLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelSpecificationLabelStockSize::class => false,
+                \ShipStream\Ups\Api\Model\LabelSpecificationInstruction::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentRequestReceiptSpecification::class => false,
+                \ShipStream\Ups\Api\Model\ReceiptSpecificationImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResponse::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResponseShipmentResults::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsDisclaimer::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsShipmentCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTransportationCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTaxCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTotalCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentChargesTotalChargesWithTaxes::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsNegotiatedRateCharges::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsFRSShipmentData::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsBillingWeight::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsPackageResults::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsBaseServiceCharge::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsServiceOptionsCharges::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsShippingLabel::class => false,
+                \ShipStream\Ups\Api\Model\ShippingLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsShippingReceipt::class => false,
+                \ShipStream\Ups\Api\Model\ShippingReceiptImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsAccessorial::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsSimpleRate::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsForm::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsFormImage::class => false,
+                \ShipStream\Ups\Api\Model\FormImage::class => false,
+                \ShipStream\Ups\Api\Model\HighValueReportImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\CODTurnInPageImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsItemizedCharges::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsNegotiatedCharges::class => false,
+                \ShipStream\Ups\Api\Model\PackageResultsRateModifier::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsControlLogReceipt::class => false,
+                \ShipStream\Ups\Api\Model\ControlLogReceiptImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsForm::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsCODTurnInPage::class => false,
+                \ShipStream\Ups\Api\Model\CODTurnInPageImage::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsHighValueReport::class => false,
+                \ShipStream\Ups\Api\Model\HighValueReportImage::class => false,
+                \ShipStream\Ups\Api\Model\VOIDSHIPMENTRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentRequest::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\VoidRequestTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentRequestVoidShipment::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponse::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\VoidResponseResponseStatus::class => false,
+                \ShipStream\Ups\Api\Model\VoidResponseTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponseSummaryResult::class => false,
+                \ShipStream\Ups\Api\Model\SummaryResultStatus::class => false,
+                \ShipStream\Ups\Api\Model\VoidShipmentResponsePackageLevelResult::class => false,
+                \ShipStream\Ups\Api\Model\PackageLevelResultStatus::class => false,
+                \ShipStream\Ups\Api\Model\LABELRECOVERYRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LABELRECOVERYResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequest::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\LRRequestTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelStockSize::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestTranslate::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelDelivery::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestReferenceValues::class => false,
+                \ShipStream\Ups\Api\Model\ReferenceValuesReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryRequestUPSPremiumCareForm::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponse::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\LRResponseResponseStatus::class => false,
+                \ShipStream\Ups\Api\Model\LRResponseTransactionReference::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseLabelResults::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsLabelImage::class => false,
+                \ShipStream\Ups\Api\Model\LabelImageLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsMailInnovationsLabelImage::class => false,
+                \ShipStream\Ups\Api\Model\MailInnovationsLabelImageLabelImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsReceipt::class => false,
+                \ShipStream\Ups\Api\Model\ReceiptImage::class => false,
+                \ShipStream\Ups\Api\Model\ReceiptImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelResultsForm::class => false,
+                \ShipStream\Ups\Api\Model\LRFormImage::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseCODTurnInPage::class => false,
+                \ShipStream\Ups\Api\Model\LRCODTurnInPageImage::class => false,
+                \ShipStream\Ups\Api\Model\LRCODTurnInPageImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseForm::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryFormImage::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryImageImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseHighValueReport::class => false,
+                \ShipStream\Ups\Api\Model\LabelRecoveryResponseTrackingCandidate::class => false,
+                \ShipStream\Ups\Api\Model\TrackingCandidatePickupDateRange::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestRequester::class => false,
+                \ShipStream\Ups\Api\Model\RequesterPhone::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestShipmentDetail::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDetailPackagingType::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDetailWeight::class => false,
+                \ShipStream\Ups\Api\Model\WeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestExistingShipmentID::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupRequestPOM::class => false,
+                \ShipStream\Ups\Api\Model\POMPickupNotifications::class => false,
+                \ShipStream\Ups\Api\Model\PickupNotificationsEMailNotification::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightPickupResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelPickupResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightCancelStatus::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestShipTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\FreightRatePaymentInformationPayer::class => false,
+                \ShipStream\Ups\Api\Model\PayerAddress::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformationShipmentBillingOption::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestService::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitOne::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitOneType::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitTwo::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitTwoType::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestCommodity::class => false,
+                \ShipStream\Ups\Api\Model\CommodityWeight::class => false,
+                \ShipStream\Ups\Api\Model\CommodityAdjustedWeight::class => false,
+                \ShipStream\Ups\Api\Model\AdjustedWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\CommodityDimensions::class => false,
+                \ShipStream\Ups\Api\Model\CommodityPackagingType::class => false,
+                \ShipStream\Ups\Api\Model\CommodityCommodityValue::class => false,
+                \ShipStream\Ups\Api\Model\CommodityNMFCCommodity::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsPickupOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsDeliveryOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsOverSeasLeg::class => false,
+                \ShipStream\Ups\Api\Model\OverSeasLegDimensions::class => false,
+                \ShipStream\Ups\Api\Model\OverSeasLegValue::class => false,
+                \ShipStream\Ups\Api\Model\ValueCube::class => false,
+                \ShipStream\Ups\Api\Model\ValueCWT::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class => false,
+                \ShipStream\Ups\Api\Model\CODCODValue::class => false,
+                \ShipStream\Ups\Api\Model\CODCODPaymentMethod::class => false,
+                \ShipStream\Ups\Api\Model\CODCODBillingOption::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateCODRemitTo::class => false,
+                \ShipStream\Ups\Api\Model\RemitToAddress::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDangerousGoods::class => false,
+                \ShipStream\Ups\Api\Model\DangerousGoodsPhone::class => false,
+                \ShipStream\Ups\Api\Model\DangerousGoodsTransportationMode::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsSortingAndSegregating::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsExcessDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsHandlingCharge::class => false,
+                \ShipStream\Ups\Api\Model\HandlingChargeAmount::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsAdjustedHeight::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestAlternateRateOptions::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestGFPOptions::class => false,
+                \ShipStream\Ups\Api\Model\GFPOptionsOnCallInformation::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnitWeight::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateRequestHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseRate::class => false,
+                \ShipStream\Ups\Api\Model\RateType::class => false,
+                \ShipStream\Ups\Api\Model\RateFactor::class => false,
+                \ShipStream\Ups\Api\Model\FactorUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseCommodity::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseTotalShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseBillableShipmentWeight::class => false,
+                \ShipStream\Ups\Api\Model\BillableShipmentWeightUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseDimensionalWeight::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseService::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseAlternateRatesResponse::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseAlternateRateType::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseRate::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseBillableShipmentWeight::class => false,
+                \ShipStream\Ups\Api\Model\AlternateRatesResponseTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\FreightRateResponseHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRequestRequest::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipFromAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentShipTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipToAddress::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentPaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformationPayer::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipPayerAddress::class => false,
+                \ShipStream\Ups\Api\Model\PayerPhone::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentHandlingUnitOne::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentHandlingUnitTwo::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentExistingShipmentID::class => false,
+                \ShipStream\Ups\Api\Model\ExistingShipmentIDConfirmationNumber::class => false,
+                \ShipStream\Ups\Api\Model\ConfirmationNumberType::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentCommodity::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipCommodityDimensions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentReference::class => false,
+                \ShipStream\Ups\Api\Model\ReferenceNumber::class => false,
+                \ShipStream\Ups\Api\Model\ReferenceWeight::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentShipmentServiceOptions::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsEMailInformation::class => false,
+                \ShipStream\Ups\Api\Model\EMailInformationEMailType::class => false,
+                \ShipStream\Ups\Api\Model\EMailInformationEMail::class => false,
+                \ShipStream\Ups\Api\Model\CODRemitTo::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipRemitToAddress::class => false,
+                \ShipStream\Ups\Api\Model\RemitToPhone::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipShipmentServiceOptionsDangerousGoods::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentServiceOptionsDeclaredValue::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class => false,
+                \ShipStream\Ups\Api\Model\PickupRequestRequester::class => false,
+                \ShipStream\Ups\Api\Model\PickupRequestPOM::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipPOMPickupNotifications::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipPickupNotificationsEMailNotification::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentDocuments::class => false,
+                \ShipStream\Ups\Api\Model\DocumentsImage::class => false,
+                \ShipStream\Ups\Api\Model\ImageType::class => false,
+                \ShipStream\Ups\Api\Model\ImageFormat::class => false,
+                \ShipStream\Ups\Api\Model\ImagePrintFormat::class => false,
+                \ShipStream\Ups\Api\Model\ImagePrintSize::class => false,
+                \ShipStream\Ups\Api\Model\DocumentsPackingList::class => false,
+                \ShipStream\Ups\Api\Model\PackingListShipFrom::class => false,
+                \ShipStream\Ups\Api\Model\PackingListShipTo::class => false,
+                \ShipStream\Ups\Api\Model\PackingListReference::class => false,
+                \ShipStream\Ups\Api\Model\PackingListHandlingUnit::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitCommodity::class => false,
+                \ShipStream\Ups\Api\Model\HandlingUnitUnitOfMeasurement::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentHandlingUnits::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipResponseResponse::class => false,
+                \ShipStream\Ups\Api\Model\FreightShipResponseShipmentResults::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsRate::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsFreightDensityRate::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsTotalShipmentCharge::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsBillableShipmentWeight::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsService::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsDocuments::class => false,
+                \ShipStream\Ups\Api\Model\DocumentsForms::class => false,
+                \ShipStream\Ups\Api\Model\FormsType::class => false,
+                \ShipStream\Ups\Api\Model\FormsFormat::class => false,
+                \ShipStream\Ups\Api\Model\ShipmentResultsTimeInTransit::class => false,
+                \ShipStream\Ups\Api\Model\TimeInTransitRequest::class => false,
+                \ShipStream\Ups\Api\Model\TimeInTransitResponse::class => false,
+                \ShipStream\Ups\Api\Model\ValidationList::class => false,
+                \ShipStream\Ups\Api\Model\EmsResponse::class => false,
+                \ShipStream\Ups\Api\Model\CandidateAddress::class => false,
+                \ShipStream\Ups\Api\Model\Services::class => false,
+                \ShipStream\Ups\Api\Model\AccessPointInformation::class => false,
+                \ShipStream\Ups\Api\Model\Activity::class => false,
+                \ShipStream\Ups\Api\Model\Address::class => false,
+                \ShipStream\Ups\Api\Model\AlternateTrackingNumber::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryDate::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryInformation::class => false,
+                \ShipStream\Ups\Api\Model\DeliveryTime::class => false,
+                \ShipStream\Ups\Api\Model\InquireNumbers::class => false,
+                \ShipStream\Ups\Api\Model\Location::class => false,
+                \ShipStream\Ups\Api\Model\Milestones::class => false,
+                \ShipStream\Ups\Api\Model\Package::class => false,
+                \ShipStream\Ups\Api\Model\PackageAddress::class => false,
+                \ShipStream\Ups\Api\Model\PaymentInformation::class => false,
+                \ShipStream\Ups\Api\Model\Service::class => false,
+                \ShipStream\Ups\Api\Model\Shipment::class => false,
+                \ShipStream\Ups\Api\Model\Signature::class => false,
+                \ShipStream\Ups\Api\Model\Status::class => false,
+                \ShipStream\Ups\Api\Model\SubMilestone::class => false,
+                \ShipStream\Ups\Api\Model\TrackApiResponse::class => false,
+                \ShipStream\Ups\Api\Model\TrackResponse::class => false,
+                \ShipStream\Ups\Api\Model\Warning::class => false,
+                \ShipStream\Ups\Api\Model\Weight::class => false,
+                \ShipStream\Ups\Api\Model\Destination::class => false,
+                \ShipStream\Ups\Api\Model\TrackSubsServiceRequest::class => false,
+                \ShipStream\Ups\Api\Model\TrackSubsServiceResponse::class => false,
+                \ShipStream\Ups\Api\Model\TrackSubsServiceErrorResponse::class => false,
+                \ShipStream\Ups\Api\Model\SecurityV1OauthTokenPostBody::class => false,
+                \ShipStream\Ups\Api\Model\SecurityV1OauthRefreshPostBody::class => false,
+                \Jane\Component\JsonSchemaRuntime\Reference::class => false,
+            ];
         }
     }
 }

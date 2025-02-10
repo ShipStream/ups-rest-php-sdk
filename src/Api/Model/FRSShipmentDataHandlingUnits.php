@@ -8,7 +8,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -52,7 +52,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -63,7 +63,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return HandlingUnitsType
      */
-    public function getType() : HandlingUnitsType
+    public function getType(): HandlingUnitsType
     {
         return $this->type;
     }
@@ -74,7 +74,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setType(HandlingUnitsType $type) : self
+    public function setType(HandlingUnitsType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -85,7 +85,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return HandlingUnitsDimensions
      */
-    public function getDimensions() : HandlingUnitsDimensions
+    public function getDimensions(): HandlingUnitsDimensions
     {
         return $this->dimensions;
     }
@@ -96,7 +96,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(HandlingUnitsDimensions $dimensions) : self
+    public function setDimensions(HandlingUnitsDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -107,7 +107,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return HandlingUnitsAdjustedHeight
      */
-    public function getAdjustedHeight() : HandlingUnitsAdjustedHeight
+    public function getAdjustedHeight(): HandlingUnitsAdjustedHeight
     {
         return $this->adjustedHeight;
     }
@@ -118,7 +118,7 @@ class FRSShipmentDataHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setAdjustedHeight(HandlingUnitsAdjustedHeight $adjustedHeight) : self
+    public function setAdjustedHeight(HandlingUnitsAdjustedHeight $adjustedHeight): self
     {
         $this->initialized['adjustedHeight'] = true;
         $this->adjustedHeight = $adjustedHeight;

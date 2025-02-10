@@ -8,7 +8,7 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
      *
      * @return PickupGetServiceCenterFacilitiesResponseResponse
      */
-    public function getResponse() : PickupGetServiceCenterFacilitiesResponseResponse
+    public function getResponse(): PickupGetServiceCenterFacilitiesResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PickupGetServiceCenterFacilitiesResponseResponse $response) : self
+    public function setResponse(PickupGetServiceCenterFacilitiesResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
      *
      * @return PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
      */
-    public function getServiceCenterLocation() : PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
+    public function getServiceCenterLocation(): PickupGetServiceCenterFacilitiesResponseServiceCenterLocation
     {
         return $this->serviceCenterLocation;
     }
@@ -62,7 +62,7 @@ class PickupGetServiceCenterFacilitiesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceCenterLocation(PickupGetServiceCenterFacilitiesResponseServiceCenterLocation $serviceCenterLocation) : self
+    public function setServiceCenterLocation(PickupGetServiceCenterFacilitiesResponseServiceCenterLocation $serviceCenterLocation): self
     {
         $this->initialized['serviceCenterLocation'] = true;
         $this->serviceCenterLocation = $serviceCenterLocation;

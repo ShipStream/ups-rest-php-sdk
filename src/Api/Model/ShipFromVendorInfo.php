@@ -8,7 +8,7 @@ class ShipFromVendorInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -52,7 +52,7 @@ class ShipFromVendorInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getVendorCollectIDTypeCode() : string
+    public function getVendorCollectIDTypeCode(): string
     {
         return $this->vendorCollectIDTypeCode;
     }
@@ -69,7 +69,7 @@ class ShipFromVendorInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setVendorCollectIDTypeCode(string $vendorCollectIDTypeCode) : self
+    public function setVendorCollectIDTypeCode(string $vendorCollectIDTypeCode): self
     {
         $this->initialized['vendorCollectIDTypeCode'] = true;
         $this->vendorCollectIDTypeCode = $vendorCollectIDTypeCode;
@@ -85,7 +85,7 @@ class ShipFromVendorInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getVendorCollectIDNumber() : string
+    public function getVendorCollectIDNumber(): string
     {
         return $this->vendorCollectIDNumber;
     }
@@ -101,7 +101,7 @@ class ShipFromVendorInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setVendorCollectIDNumber(string $vendorCollectIDNumber) : self
+    public function setVendorCollectIDNumber(string $vendorCollectIDNumber): self
     {
         $this->initialized['vendorCollectIDNumber'] = true;
         $this->vendorCollectIDNumber = $vendorCollectIDNumber;
@@ -112,7 +112,7 @@ class ShipFromVendorInfo extends \ArrayObject
      *
      * @return string
      */
-    public function getConsigneeType() : string
+    public function getConsigneeType(): string
     {
         return $this->consigneeType;
     }
@@ -123,7 +123,7 @@ class ShipFromVendorInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setConsigneeType(string $consigneeType) : self
+    public function setConsigneeType(string $consigneeType): self
     {
         $this->initialized['consigneeType'] = true;
         $this->consigneeType = $consigneeType;

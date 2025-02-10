@@ -8,7 +8,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getBusinessClassificationCode() : array
+    public function getBusinessClassificationCode(): array
     {
         return $this->businessClassificationCode;
     }
@@ -52,7 +52,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return self
      */
-    public function setBusinessClassificationCode(array $businessClassificationCode) : self
+    public function setBusinessClassificationCode(array $businessClassificationCode): self
     {
         $this->initialized['businessClassificationCode'] = true;
         $this->businessClassificationCode = $businessClassificationCode;
@@ -63,7 +63,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return string
      */
-    public function getBusinessName() : string
+    public function getBusinessName(): string
     {
         return $this->businessName;
     }
@@ -74,7 +74,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return self
      */
-    public function setBusinessName(string $businessName) : self
+    public function setBusinessName(string $businessName): self
     {
         $this->initialized['businessName'] = true;
         $this->businessName = $businessName;
@@ -85,7 +85,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return string
      */
-    public function getRadius() : string
+    public function getRadius(): string
     {
         return $this->radius;
     }
@@ -96,7 +96,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return self
      */
-    public function setRadius(string $radius) : self
+    public function setRadius(string $radius): self
     {
         $this->initialized['radius'] = true;
         $this->radius = $radius;
@@ -107,7 +107,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return ExcludeFromResultPostalCodeList
      */
-    public function getPostalCodeList() : ExcludeFromResultPostalCodeList
+    public function getPostalCodeList(): ExcludeFromResultPostalCodeList
     {
         return $this->postalCodeList;
     }
@@ -118,7 +118,7 @@ class AccessPointSearchExcludeFromResult extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCodeList(ExcludeFromResultPostalCodeList $postalCodeList) : self
+    public function setPostalCodeList(ExcludeFromResultPostalCodeList $postalCodeList): self
     {
         $this->initialized['postalCodeList'] = true;
         $this->postalCodeList = $postalCodeList;

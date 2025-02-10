@@ -8,7 +8,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -42,7 +42,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      *
      * @return string
      */
-    public function getBarCodeIndicator() : string
+    public function getBarCodeIndicator(): string
     {
         return $this->barCodeIndicator;
     }
@@ -53,7 +53,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      *
      * @return self
      */
-    public function setBarCodeIndicator(string $barCodeIndicator) : self
+    public function setBarCodeIndicator(string $barCodeIndicator): self
     {
         $this->initialized['barCodeIndicator'] = true;
         $this->barCodeIndicator = $barCodeIndicator;
@@ -64,7 +64,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -75,7 +75,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -87,7 +87,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -99,7 +99,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -110,7 +110,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      *
      * @return string
      */
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -121,7 +121,7 @@ class GenericPackageReferenceNumber extends \ArrayObject
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(string $value): self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

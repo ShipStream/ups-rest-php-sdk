@@ -8,7 +8,7 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -40,7 +40,7 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -51,7 +51,7 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
      *
      * @return PackageLevelResultStatus
      */
-    public function getStatus() : PackageLevelResultStatus
+    public function getStatus(): PackageLevelResultStatus
     {
         return $this->status;
     }
@@ -62,7 +62,7 @@ class VoidShipmentResponsePackageLevelResult extends \ArrayObject
      *
      * @return self
      */
-    public function setStatus(PackageLevelResultStatus $status) : self
+    public function setStatus(PackageLevelResultStatus $status): self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

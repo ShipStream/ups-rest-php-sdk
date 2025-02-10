@@ -44,11 +44,11 @@ abstract class Client
         }
         return $endpoint->parseResponse($this->processEndpoint($endpoint), $this->serializer, $fetch);
     }
-    public function executeRawEndpoint(Endpoint $endpoint) : ResponseInterface
+    public function executeRawEndpoint(Endpoint $endpoint): ResponseInterface
     {
         return $this->processEndpoint($endpoint);
     }
-    private function processEndpoint(Endpoint $endpoint) : ResponseInterface
+    private function processEndpoint(Endpoint $endpoint): ResponseInterface
     {
         [$bodyHeaders, $body] = $endpoint->getBody($this->serializer, $this->streamFactory);
         $queryString = $endpoint->getQueryString();

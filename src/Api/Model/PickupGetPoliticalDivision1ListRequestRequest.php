@@ -8,7 +8,7 @@ class PickupGetPoliticalDivision1ListRequestRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PickupGetPoliticalDivision1ListRequestRequest extends \ArrayObject
      *
      * @return RequestTransactionReference
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference(): RequestTransactionReference
     {
         return $this->transactionReference;
     }
@@ -34,7 +34,7 @@ class PickupGetPoliticalDivision1ListRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(RequestTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

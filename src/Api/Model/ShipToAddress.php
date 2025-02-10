@@ -8,7 +8,7 @@ class ShipToAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -67,7 +67,7 @@ class ShipToAddress extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAddressLine() : array
+    public function getAddressLine(): array
     {
         return $this->addressLine;
     }
@@ -78,7 +78,7 @@ class ShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(array $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -89,7 +89,7 @@ class ShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -100,7 +100,7 @@ class ShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -114,7 +114,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode(): string
     {
         return $this->stateProvinceCode;
     }
@@ -128,7 +128,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(string $stateProvinceCode): self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -144,7 +144,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -160,7 +160,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -176,7 +176,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -192,7 +192,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -204,7 +204,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getResidentialAddressIndicator() : string
+    public function getResidentialAddressIndicator(): string
     {
         return $this->residentialAddressIndicator;
     }
@@ -216,7 +216,7 @@ class ShipToAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
+    public function setResidentialAddressIndicator(string $residentialAddressIndicator): self
     {
         $this->initialized['residentialAddressIndicator'] = true;
         $this->residentialAddressIndicator = $residentialAddressIndicator;

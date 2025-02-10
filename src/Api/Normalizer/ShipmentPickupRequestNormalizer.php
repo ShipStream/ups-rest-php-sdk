@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -45,7 +45,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['AdditionalComments']);
             }
             if (\array_key_exists('Requester', $data)) {
-                $object->setRequester($this->denormalizer->denormalize($data['Requester'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester', 'json', $context));
+                $object->setRequester($this->denormalizer->denormalize($data['Requester'], \ShipStream\Ups\Api\Model\PickupRequestRequester::class, 'json', $context));
                 unset($data['Requester']);
             }
             if (\array_key_exists('PickupDate', $data)) {
@@ -61,7 +61,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['LatestTimeReady']);
             }
             if (\array_key_exists('POM', $data)) {
-                $object->setPOM($this->denormalizer->denormalize($data['POM'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM', 'json', $context));
+                $object->setPOM($this->denormalizer->denormalize($data['POM'], \ShipStream\Ups\Api\Model\PickupRequestPOM::class, 'json', $context));
                 unset($data['POM']);
             }
             foreach ($data as $key => $value) {
@@ -71,7 +71,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('additionalComments') && null !== $object->getAdditionalComments()) {
@@ -95,9 +95,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentPickupRequest::class => false];
         }
     }
 } else {
@@ -107,13 +107,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class;
         }
         /**
          * @return mixed
@@ -135,7 +135,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['AdditionalComments']);
             }
             if (\array_key_exists('Requester', $data)) {
-                $object->setRequester($this->denormalizer->denormalize($data['Requester'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestRequester', 'json', $context));
+                $object->setRequester($this->denormalizer->denormalize($data['Requester'], \ShipStream\Ups\Api\Model\PickupRequestRequester::class, 'json', $context));
                 unset($data['Requester']);
             }
             if (\array_key_exists('PickupDate', $data)) {
@@ -151,7 +151,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['LatestTimeReady']);
             }
             if (\array_key_exists('POM', $data)) {
-                $object->setPOM($this->denormalizer->denormalize($data['POM'], 'ShipStream\\Ups\\Api\\Model\\PickupRequestPOM', 'json', $context));
+                $object->setPOM($this->denormalizer->denormalize($data['POM'], \ShipStream\Ups\Api\Model\PickupRequestPOM::class, 'json', $context));
                 unset($data['POM']);
             }
             foreach ($data as $key => $value) {
@@ -188,9 +188,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentPickupRequest::class => false];
         }
     }
 }

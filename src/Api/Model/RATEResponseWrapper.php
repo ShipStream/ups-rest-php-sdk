@@ -8,7 +8,7 @@ class RATEResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class RATEResponseWrapper extends \ArrayObject
      *
      * @return RateResponse
      */
-    public function getRateResponse() : RateResponse
+    public function getRateResponse(): RateResponse
     {
         return $this->rateResponse;
     }
@@ -34,7 +34,7 @@ class RATEResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setRateResponse(RateResponse $rateResponse) : self
+    public function setRateResponse(RateResponse $rateResponse): self
     {
         $this->initialized['rateResponse'] = true;
         $this->rateResponse = $rateResponse;

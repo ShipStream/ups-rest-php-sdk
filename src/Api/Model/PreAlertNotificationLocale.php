@@ -8,7 +8,7 @@ class PreAlertNotificationLocale extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PreAlertNotificationLocale extends \ArrayObject
      *
      * @return string
      */
-    public function getLanguage() : string
+    public function getLanguage(): string
     {
         return $this->language;
     }
@@ -40,7 +40,7 @@ class PreAlertNotificationLocale extends \ArrayObject
      *
      * @return self
      */
-    public function setLanguage(string $language) : self
+    public function setLanguage(string $language): self
     {
         $this->initialized['language'] = true;
         $this->language = $language;
@@ -51,7 +51,7 @@ class PreAlertNotificationLocale extends \ArrayObject
      *
      * @return string
      */
-    public function getDialect() : string
+    public function getDialect(): string
     {
         return $this->dialect;
     }
@@ -62,7 +62,7 @@ class PreAlertNotificationLocale extends \ArrayObject
      *
      * @return self
      */
-    public function setDialect(string $dialect) : self
+    public function setDialect(string $dialect): self
     {
         $this->initialized['dialect'] = true;
         $this->dialect = $dialect;

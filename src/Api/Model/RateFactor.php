@@ -8,7 +8,7 @@ class RateFactor extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class RateFactor extends \ArrayObject
      *
      * @return string
      */
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -40,7 +40,7 @@ class RateFactor extends \ArrayObject
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(string $value): self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -51,7 +51,7 @@ class RateFactor extends \ArrayObject
      *
      * @return FactorUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : FactorUnitOfMeasurement
+    public function getUnitOfMeasurement(): FactorUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -62,7 +62,7 @@ class RateFactor extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(FactorUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(FactorUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

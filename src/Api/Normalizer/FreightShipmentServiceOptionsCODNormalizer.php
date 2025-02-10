@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD';
+            return $type === \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,19 +41,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('CODValue', $data)) {
-                $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], 'ShipStream\\Ups\\Api\\Model\\CODCODValue', 'json', $context));
+                $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], \ShipStream\Ups\Api\Model\CODCODValue::class, 'json', $context));
                 unset($data['CODValue']);
             }
             if (\array_key_exists('CODPaymentMethod', $data)) {
-                $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod', 'json', $context));
+                $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], \ShipStream\Ups\Api\Model\CODCODPaymentMethod::class, 'json', $context));
                 unset($data['CODPaymentMethod']);
             }
             if (\array_key_exists('CODBillingOption', $data)) {
-                $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption', 'json', $context));
+                $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], \ShipStream\Ups\Api\Model\CODCODBillingOption::class, 'json', $context));
                 unset($data['CODBillingOption']);
             }
             if (\array_key_exists('RemitTo', $data)) {
-                $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], 'ShipStream\\Ups\\Api\\Model\\CODRemitTo', 'json', $context));
+                $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], \ShipStream\Ups\Api\Model\CODRemitTo::class, 'json', $context));
                 unset($data['RemitTo']);
             }
             foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['CODValue'] = $this->normalizer->normalize($object->getCODValue(), 'json', $context);
@@ -77,9 +77,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD' => false];
+            return [\ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class => false];
         }
     }
 } else {
@@ -89,13 +89,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD';
+            return $type === \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class;
         }
         /**
          * @return mixed
@@ -113,19 +113,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('CODValue', $data)) {
-                $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], 'ShipStream\\Ups\\Api\\Model\\CODCODValue', 'json', $context));
+                $object->setCODValue($this->denormalizer->denormalize($data['CODValue'], \ShipStream\Ups\Api\Model\CODCODValue::class, 'json', $context));
                 unset($data['CODValue']);
             }
             if (\array_key_exists('CODPaymentMethod', $data)) {
-                $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], 'ShipStream\\Ups\\Api\\Model\\CODCODPaymentMethod', 'json', $context));
+                $object->setCODPaymentMethod($this->denormalizer->denormalize($data['CODPaymentMethod'], \ShipStream\Ups\Api\Model\CODCODPaymentMethod::class, 'json', $context));
                 unset($data['CODPaymentMethod']);
             }
             if (\array_key_exists('CODBillingOption', $data)) {
-                $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], 'ShipStream\\Ups\\Api\\Model\\CODCODBillingOption', 'json', $context));
+                $object->setCODBillingOption($this->denormalizer->denormalize($data['CODBillingOption'], \ShipStream\Ups\Api\Model\CODCODBillingOption::class, 'json', $context));
                 unset($data['CODBillingOption']);
             }
             if (\array_key_exists('RemitTo', $data)) {
-                $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], 'ShipStream\\Ups\\Api\\Model\\CODRemitTo', 'json', $context));
+                $object->setRemitTo($this->denormalizer->denormalize($data['RemitTo'], \ShipStream\Ups\Api\Model\CODRemitTo::class, 'json', $context));
                 unset($data['RemitTo']);
             }
             foreach ($data as $key => $value) {
@@ -152,9 +152,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightShipmentServiceOptionsCOD' => false];
+            return [\ShipStream\Ups\Api\Model\FreightShipmentServiceOptionsCOD::class => false];
         }
     }
 }

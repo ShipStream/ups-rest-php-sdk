@@ -8,7 +8,7 @@ class FreightRateShipToAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAddressLine() : array
+    public function getAddressLine(): array
     {
         return $this->addressLine;
     }
@@ -70,7 +70,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(array $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -81,7 +81,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -92,7 +92,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -103,7 +103,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode(): string
     {
         return $this->stateProvinceCode;
     }
@@ -114,7 +114,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(string $stateProvinceCode): self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -125,7 +125,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getTown() : string
+    public function getTown(): string
     {
         return $this->town;
     }
@@ -136,7 +136,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(string $town): self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -147,7 +147,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -158,7 +158,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -169,7 +169,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -180,7 +180,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -191,7 +191,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getResidentialAddressIndicator() : string
+    public function getResidentialAddressIndicator(): string
     {
         return $this->residentialAddressIndicator;
     }
@@ -202,7 +202,7 @@ class FreightRateShipToAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setResidentialAddressIndicator(string $residentialAddressIndicator) : self
+    public function setResidentialAddressIndicator(string $residentialAddressIndicator): self
     {
         $this->initialized['residentialAddressIndicator'] = true;
         $this->residentialAddressIndicator = $residentialAddressIndicator;

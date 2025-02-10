@@ -8,7 +8,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -55,7 +55,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      *
      * @return list<SearchResultsGeocodeCandidate>
      */
-    public function getGeocodeCandidate() : array
+    public function getGeocodeCandidate(): array
     {
         return $this->geocodeCandidate;
     }
@@ -67,7 +67,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      *
      * @return self
      */
-    public function setGeocodeCandidate(array $geocodeCandidate) : self
+    public function setGeocodeCandidate(array $geocodeCandidate): self
     {
         $this->initialized['geocodeCandidate'] = true;
         $this->geocodeCandidate = $geocodeCandidate;
@@ -80,7 +80,7 @@ class LocatorResponseSearchResults extends \ArrayObject
     *
     * @return string
     */
-    public function getDisclaimer() : string
+    public function getDisclaimer(): string
     {
         return $this->disclaimer;
     }
@@ -93,7 +93,7 @@ class LocatorResponseSearchResults extends \ArrayObject
     *
     * @return self
     */
-    public function setDisclaimer(string $disclaimer) : self
+    public function setDisclaimer(string $disclaimer): self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -105,7 +105,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      *
      * @return list<SearchResultsDropLocation>
      */
-    public function getDropLocation() : array
+    public function getDropLocation(): array
     {
         return $this->dropLocation;
     }
@@ -117,7 +117,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      *
      * @return self
      */
-    public function setDropLocation(array $dropLocation) : self
+    public function setDropLocation(array $dropLocation): self
     {
         $this->initialized['dropLocation'] = true;
         $this->dropLocation = $dropLocation;
@@ -129,7 +129,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      *
      * @return list<SearchResultsAvailableLocationAttributes>
      */
-    public function getAvailableLocationAttributes() : array
+    public function getAvailableLocationAttributes(): array
     {
         return $this->availableLocationAttributes;
     }
@@ -141,7 +141,7 @@ class LocatorResponseSearchResults extends \ArrayObject
      *
      * @return self
      */
-    public function setAvailableLocationAttributes(array $availableLocationAttributes) : self
+    public function setAvailableLocationAttributes(array $availableLocationAttributes): self
     {
         $this->initialized['availableLocationAttributes'] = true;
         $this->availableLocationAttributes = $availableLocationAttributes;
@@ -154,7 +154,7 @@ class LocatorResponseSearchResults extends \ArrayObject
     *
     * @return string
     */
-    public function getActiveAvailableAccessPointIndicator() : string
+    public function getActiveAvailableAccessPointIndicator(): string
     {
         return $this->activeAvailableAccessPointIndicator;
     }
@@ -167,7 +167,7 @@ class LocatorResponseSearchResults extends \ArrayObject
     *
     * @return self
     */
-    public function setActiveAvailableAccessPointIndicator(string $activeAvailableAccessPointIndicator) : self
+    public function setActiveAvailableAccessPointIndicator(string $activeAvailableAccessPointIndicator): self
     {
         $this->initialized['activeAvailableAccessPointIndicator'] = true;
         $this->activeAvailableAccessPointIndicator = $activeAvailableAccessPointIndicator;

@@ -8,7 +8,7 @@ class FreightRateRequestGFPOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightRateRequestGFPOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getGPFAccesorialRateIndicator() : string
+    public function getGPFAccesorialRateIndicator(): string
     {
         return $this->gPFAccesorialRateIndicator;
     }
@@ -40,7 +40,7 @@ class FreightRateRequestGFPOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setGPFAccesorialRateIndicator(string $gPFAccesorialRateIndicator) : self
+    public function setGPFAccesorialRateIndicator(string $gPFAccesorialRateIndicator): self
     {
         $this->initialized['gPFAccesorialRateIndicator'] = true;
         $this->gPFAccesorialRateIndicator = $gPFAccesorialRateIndicator;
@@ -51,7 +51,7 @@ class FreightRateRequestGFPOptions extends \ArrayObject
      *
      * @return GFPOptionsOnCallInformation
      */
-    public function getOnCallInformation() : GFPOptionsOnCallInformation
+    public function getOnCallInformation(): GFPOptionsOnCallInformation
     {
         return $this->onCallInformation;
     }
@@ -62,7 +62,7 @@ class FreightRateRequestGFPOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setOnCallInformation(GFPOptionsOnCallInformation $onCallInformation) : self
+    public function setOnCallInformation(GFPOptionsOnCallInformation $onCallInformation): self
     {
         $this->initialized['onCallInformation'] = true;
         $this->onCallInformation = $onCallInformation;

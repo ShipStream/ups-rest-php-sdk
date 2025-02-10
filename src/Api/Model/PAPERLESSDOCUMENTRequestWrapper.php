@@ -8,7 +8,7 @@ class PAPERLESSDOCUMENTRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PAPERLESSDOCUMENTRequestWrapper extends \ArrayObject
      *
      * @return PushToImageRepositoryRequest
      */
-    public function getPushToImageRepositoryRequest() : PushToImageRepositoryRequest
+    public function getPushToImageRepositoryRequest(): PushToImageRepositoryRequest
     {
         return $this->pushToImageRepositoryRequest;
     }
@@ -34,7 +34,7 @@ class PAPERLESSDOCUMENTRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPushToImageRepositoryRequest(PushToImageRepositoryRequest $pushToImageRepositoryRequest) : self
+    public function setPushToImageRepositoryRequest(PushToImageRepositoryRequest $pushToImageRepositoryRequest): self
     {
         $this->initialized['pushToImageRepositoryRequest'] = true;
         $this->pushToImageRepositoryRequest = $pushToImageRepositoryRequest;

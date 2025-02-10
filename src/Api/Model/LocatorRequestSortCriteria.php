@@ -8,7 +8,7 @@ class LocatorRequestSortCriteria extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -33,7 +33,7 @@ class LocatorRequestSortCriteria extends \ArrayObject
     *
     * @return string
     */
-    public function getSortType() : string
+    public function getSortType(): string
     {
         return $this->sortType;
     }
@@ -49,7 +49,7 @@ class LocatorRequestSortCriteria extends \ArrayObject
     *
     * @return self
     */
-    public function setSortType(string $sortType) : self
+    public function setSortType(string $sortType): self
     {
         $this->initialized['sortType'] = true;
         $this->sortType = $sortType;

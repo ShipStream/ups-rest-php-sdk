@@ -8,7 +8,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      *
      * @return ChemicalDataChemicalDetail
      */
-    public function getChemicalDetail() : ChemicalDataChemicalDetail
+    public function getChemicalDetail(): ChemicalDataChemicalDetail
     {
         return $this->chemicalDetail;
     }
@@ -46,7 +46,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalDetail(ChemicalDataChemicalDetail $chemicalDetail) : self
+    public function setChemicalDetail(ChemicalDataChemicalDetail $chemicalDetail): self
     {
         $this->initialized['chemicalDetail'] = true;
         $this->chemicalDetail = $chemicalDetail;
@@ -57,7 +57,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      *
      * @return ChemicalDataProperShippingNameDetail
      */
-    public function getProperShippingNameDetail() : ChemicalDataProperShippingNameDetail
+    public function getProperShippingNameDetail(): ChemicalDataProperShippingNameDetail
     {
         return $this->properShippingNameDetail;
     }
@@ -68,7 +68,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      *
      * @return self
      */
-    public function setProperShippingNameDetail(ChemicalDataProperShippingNameDetail $properShippingNameDetail) : self
+    public function setProperShippingNameDetail(ChemicalDataProperShippingNameDetail $properShippingNameDetail): self
     {
         $this->initialized['properShippingNameDetail'] = true;
         $this->properShippingNameDetail = $properShippingNameDetail;
@@ -79,7 +79,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      *
      * @return list<ChemicalDataPackageQuantityLimitDetail>
      */
-    public function getPackageQuantityLimitDetail() : array
+    public function getPackageQuantityLimitDetail(): array
     {
         return $this->packageQuantityLimitDetail;
     }
@@ -90,7 +90,7 @@ class ChemicalReferenceDataResponseChemicalData extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageQuantityLimitDetail(array $packageQuantityLimitDetail) : self
+    public function setPackageQuantityLimitDetail(array $packageQuantityLimitDetail): self
     {
         $this->initialized['packageQuantityLimitDetail'] = true;
         $this->packageQuantityLimitDetail = $packageQuantityLimitDetail;

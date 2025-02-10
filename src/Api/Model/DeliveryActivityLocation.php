@@ -8,7 +8,7 @@ class DeliveryActivityLocation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class DeliveryActivityLocation extends \ArrayObject
      *
      * @return ActivityLocationAddressArtifactFormat
      */
-    public function getAddressArtifactFormat() : ActivityLocationAddressArtifactFormat
+    public function getAddressArtifactFormat(): ActivityLocationAddressArtifactFormat
     {
         return $this->addressArtifactFormat;
     }
@@ -34,7 +34,7 @@ class DeliveryActivityLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressArtifactFormat(ActivityLocationAddressArtifactFormat $addressArtifactFormat) : self
+    public function setAddressArtifactFormat(ActivityLocationAddressArtifactFormat $addressArtifactFormat): self
     {
         $this->initialized['addressArtifactFormat'] = true;
         $this->addressArtifactFormat = $addressArtifactFormat;

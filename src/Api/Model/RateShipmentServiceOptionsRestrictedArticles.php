@@ -8,7 +8,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -71,7 +71,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getAlcoholicBeveragesIndicator() : string
+    public function getAlcoholicBeveragesIndicator(): string
     {
         return $this->alcoholicBeveragesIndicator;
     }
@@ -82,7 +82,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setAlcoholicBeveragesIndicator(string $alcoholicBeveragesIndicator) : self
+    public function setAlcoholicBeveragesIndicator(string $alcoholicBeveragesIndicator): self
     {
         $this->initialized['alcoholicBeveragesIndicator'] = true;
         $this->alcoholicBeveragesIndicator = $alcoholicBeveragesIndicator;
@@ -93,7 +93,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getDiagnosticSpecimensIndicator() : string
+    public function getDiagnosticSpecimensIndicator(): string
     {
         return $this->diagnosticSpecimensIndicator;
     }
@@ -104,7 +104,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setDiagnosticSpecimensIndicator(string $diagnosticSpecimensIndicator) : self
+    public function setDiagnosticSpecimensIndicator(string $diagnosticSpecimensIndicator): self
     {
         $this->initialized['diagnosticSpecimensIndicator'] = true;
         $this->diagnosticSpecimensIndicator = $diagnosticSpecimensIndicator;
@@ -115,7 +115,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getPerishablesIndicator() : string
+    public function getPerishablesIndicator(): string
     {
         return $this->perishablesIndicator;
     }
@@ -126,7 +126,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setPerishablesIndicator(string $perishablesIndicator) : self
+    public function setPerishablesIndicator(string $perishablesIndicator): self
     {
         $this->initialized['perishablesIndicator'] = true;
         $this->perishablesIndicator = $perishablesIndicator;
@@ -137,7 +137,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getPlantsIndicator() : string
+    public function getPlantsIndicator(): string
     {
         return $this->plantsIndicator;
     }
@@ -148,7 +148,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setPlantsIndicator(string $plantsIndicator) : self
+    public function setPlantsIndicator(string $plantsIndicator): self
     {
         $this->initialized['plantsIndicator'] = true;
         $this->plantsIndicator = $plantsIndicator;
@@ -159,7 +159,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getSeedsIndicator() : string
+    public function getSeedsIndicator(): string
     {
         return $this->seedsIndicator;
     }
@@ -170,7 +170,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setSeedsIndicator(string $seedsIndicator) : self
+    public function setSeedsIndicator(string $seedsIndicator): self
     {
         $this->initialized['seedsIndicator'] = true;
         $this->seedsIndicator = $seedsIndicator;
@@ -181,7 +181,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getSpecialExceptionsIndicator() : string
+    public function getSpecialExceptionsIndicator(): string
     {
         return $this->specialExceptionsIndicator;
     }
@@ -192,7 +192,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setSpecialExceptionsIndicator(string $specialExceptionsIndicator) : self
+    public function setSpecialExceptionsIndicator(string $specialExceptionsIndicator): self
     {
         $this->initialized['specialExceptionsIndicator'] = true;
         $this->specialExceptionsIndicator = $specialExceptionsIndicator;
@@ -203,7 +203,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getTobaccoIndicator() : string
+    public function getTobaccoIndicator(): string
     {
         return $this->tobaccoIndicator;
     }
@@ -214,7 +214,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setTobaccoIndicator(string $tobaccoIndicator) : self
+    public function setTobaccoIndicator(string $tobaccoIndicator): self
     {
         $this->initialized['tobaccoIndicator'] = true;
         $this->tobaccoIndicator = $tobaccoIndicator;
@@ -225,7 +225,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getECigarettesIndicator() : string
+    public function getECigarettesIndicator(): string
     {
         return $this->eCigarettesIndicator;
     }
@@ -236,7 +236,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setECigarettesIndicator(string $eCigarettesIndicator) : self
+    public function setECigarettesIndicator(string $eCigarettesIndicator): self
     {
         $this->initialized['eCigarettesIndicator'] = true;
         $this->eCigarettesIndicator = $eCigarettesIndicator;
@@ -247,7 +247,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return string
      */
-    public function getHempCBDIndicator() : string
+    public function getHempCBDIndicator(): string
     {
         return $this->hempCBDIndicator;
     }
@@ -258,7 +258,7 @@ class RateShipmentServiceOptionsRestrictedArticles extends \ArrayObject
      *
      * @return self
      */
-    public function setHempCBDIndicator(string $hempCBDIndicator) : self
+    public function setHempCBDIndicator(string $hempCBDIndicator): self
     {
         $this->initialized['hempCBDIndicator'] = true;
         $this->hempCBDIndicator = $hempCBDIndicator;

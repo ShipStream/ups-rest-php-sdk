@@ -8,7 +8,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -30,7 +30,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -41,7 +41,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -53,7 +53,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     *
     * @return list<string>
     */
-    public function getEventType() : array
+    public function getEventType(): array
     {
         return $this->eventType;
     }
@@ -65,7 +65,7 @@ class PickupNotificationsEMailNotification extends \ArrayObject
     *
     * @return self
     */
-    public function setEventType(array $eventType) : self
+    public function setEventType(array $eventType): self
     {
         $this->initialized['eventType'] = true;
         $this->eventType = $eventType;

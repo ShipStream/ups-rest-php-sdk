@@ -8,7 +8,7 @@ class RateShipmentShipper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -46,7 +46,7 @@ class RateShipmentShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -57,7 +57,7 @@ class RateShipmentShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -68,7 +68,7 @@ class RateShipmentShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -79,7 +79,7 @@ class RateShipmentShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -90,7 +90,7 @@ class RateShipmentShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -101,7 +101,7 @@ class RateShipmentShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -117,7 +117,7 @@ class RateShipmentShipper extends \ArrayObject
     *
     * @return ShipperAddress
     */
-    public function getAddress() : ShipperAddress
+    public function getAddress(): ShipperAddress
     {
         return $this->address;
     }
@@ -133,7 +133,7 @@ class RateShipmentShipper extends \ArrayObject
     *
     * @return self
     */
-    public function setAddress(ShipperAddress $address) : self
+    public function setAddress(ShipperAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

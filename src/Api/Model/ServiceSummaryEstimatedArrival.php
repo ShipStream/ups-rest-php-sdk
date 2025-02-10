@@ -8,7 +8,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -71,7 +71,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return EstimatedArrivalArrival
      */
-    public function getArrival() : EstimatedArrivalArrival
+    public function getArrival(): EstimatedArrivalArrival
     {
         return $this->arrival;
     }
@@ -82,7 +82,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setArrival(EstimatedArrivalArrival $arrival) : self
+    public function setArrival(EstimatedArrivalArrival $arrival): self
     {
         $this->initialized['arrival'] = true;
         $this->arrival = $arrival;
@@ -93,7 +93,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getBusinessDaysInTransit() : string
+    public function getBusinessDaysInTransit(): string
     {
         return $this->businessDaysInTransit;
     }
@@ -104,7 +104,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setBusinessDaysInTransit(string $businessDaysInTransit) : self
+    public function setBusinessDaysInTransit(string $businessDaysInTransit): self
     {
         $this->initialized['businessDaysInTransit'] = true;
         $this->businessDaysInTransit = $businessDaysInTransit;
@@ -115,7 +115,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return EstimatedArrivalPickup
      */
-    public function getPickup() : EstimatedArrivalPickup
+    public function getPickup(): EstimatedArrivalPickup
     {
         return $this->pickup;
     }
@@ -126,7 +126,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setPickup(EstimatedArrivalPickup $pickup) : self
+    public function setPickup(EstimatedArrivalPickup $pickup): self
     {
         $this->initialized['pickup'] = true;
         $this->pickup = $pickup;
@@ -137,7 +137,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getDayOfWeek() : string
+    public function getDayOfWeek(): string
     {
         return $this->dayOfWeek;
     }
@@ -148,7 +148,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setDayOfWeek(string $dayOfWeek) : self
+    public function setDayOfWeek(string $dayOfWeek): self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;
@@ -159,7 +159,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getCustomerCenterCutoff() : string
+    public function getCustomerCenterCutoff(): string
     {
         return $this->customerCenterCutoff;
     }
@@ -170,7 +170,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setCustomerCenterCutoff(string $customerCenterCutoff) : self
+    public function setCustomerCenterCutoff(string $customerCenterCutoff): self
     {
         $this->initialized['customerCenterCutoff'] = true;
         $this->customerCenterCutoff = $customerCenterCutoff;
@@ -181,7 +181,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getDelayCount() : string
+    public function getDelayCount(): string
     {
         return $this->delayCount;
     }
@@ -192,7 +192,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setDelayCount(string $delayCount) : self
+    public function setDelayCount(string $delayCount): self
     {
         $this->initialized['delayCount'] = true;
         $this->delayCount = $delayCount;
@@ -203,7 +203,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getHolidayCount() : string
+    public function getHolidayCount(): string
     {
         return $this->holidayCount;
     }
@@ -214,7 +214,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setHolidayCount(string $holidayCount) : self
+    public function setHolidayCount(string $holidayCount): self
     {
         $this->initialized['holidayCount'] = true;
         $this->holidayCount = $holidayCount;
@@ -225,7 +225,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getRestDays() : string
+    public function getRestDays(): string
     {
         return $this->restDays;
     }
@@ -236,7 +236,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setRestDays(string $restDays) : self
+    public function setRestDays(string $restDays): self
     {
         $this->initialized['restDays'] = true;
         $this->restDays = $restDays;
@@ -247,7 +247,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return string
      */
-    public function getTotalTransitDays() : string
+    public function getTotalTransitDays(): string
     {
         return $this->totalTransitDays;
     }
@@ -258,7 +258,7 @@ class ServiceSummaryEstimatedArrival extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalTransitDays(string $totalTransitDays) : self
+    public function setTotalTransitDays(string $totalTransitDays): self
     {
         $this->initialized['totalTransitDays'] = true;
         $this->totalTransitDays = $totalTransitDays;

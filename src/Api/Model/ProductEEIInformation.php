@@ -8,7 +8,7 @@ class ProductEEIInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ProductEEIInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getExportInformation() : string
+    public function getExportInformation(): string
     {
         return $this->exportInformation;
     }
@@ -46,7 +46,7 @@ class ProductEEIInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setExportInformation(string $exportInformation) : self
+    public function setExportInformation(string $exportInformation): self
     {
         $this->initialized['exportInformation'] = true;
         $this->exportInformation = $exportInformation;
@@ -57,7 +57,7 @@ class ProductEEIInformation extends \ArrayObject
      *
      * @return EEIInformationLicense
      */
-    public function getLicense() : EEIInformationLicense
+    public function getLicense(): EEIInformationLicense
     {
         return $this->license;
     }
@@ -68,7 +68,7 @@ class ProductEEIInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setLicense(EEIInformationLicense $license) : self
+    public function setLicense(EEIInformationLicense $license): self
     {
         $this->initialized['license'] = true;
         $this->license = $license;
@@ -79,7 +79,7 @@ class ProductEEIInformation extends \ArrayObject
      *
      * @return EEIInformationDDTCInformation
      */
-    public function getDDTCInformation() : EEIInformationDDTCInformation
+    public function getDDTCInformation(): EEIInformationDDTCInformation
     {
         return $this->dDTCInformation;
     }
@@ -90,7 +90,7 @@ class ProductEEIInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setDDTCInformation(EEIInformationDDTCInformation $dDTCInformation) : self
+    public function setDDTCInformation(EEIInformationDDTCInformation $dDTCInformation): self
     {
         $this->initialized['dDTCInformation'] = true;
         $this->dDTCInformation = $dDTCInformation;

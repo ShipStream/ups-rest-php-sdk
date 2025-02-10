@@ -8,7 +8,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return ChemicalReferenceDataRequestRequest
      */
-    public function getRequest() : ChemicalReferenceDataRequestRequest
+    public function getRequest(): ChemicalReferenceDataRequestRequest
     {
         return $this->request;
     }
@@ -52,7 +52,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(ChemicalReferenceDataRequestRequest $request) : self
+    public function setRequest(ChemicalReferenceDataRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -63,7 +63,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getIDNumber() : string
+    public function getIDNumber(): string
     {
         return $this->iDNumber;
     }
@@ -74,7 +74,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setIDNumber(string $iDNumber) : self
+    public function setIDNumber(string $iDNumber): self
     {
         $this->initialized['iDNumber'] = true;
         $this->iDNumber = $iDNumber;
@@ -85,7 +85,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getProperShippingName() : string
+    public function getProperShippingName(): string
     {
         return $this->properShippingName;
     }
@@ -96,7 +96,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setProperShippingName(string $properShippingName) : self
+    public function setProperShippingName(string $properShippingName): self
     {
         $this->initialized['properShippingName'] = true;
         $this->properShippingName = $properShippingName;
@@ -107,7 +107,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -118,7 +118,7 @@ class ChemicalReferenceDataRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;

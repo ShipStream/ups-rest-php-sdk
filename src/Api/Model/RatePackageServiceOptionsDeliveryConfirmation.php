@@ -8,7 +8,7 @@ class RatePackageServiceOptionsDeliveryConfirmation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class RatePackageServiceOptionsDeliveryConfirmation extends \ArrayObject
      *
      * @return string
      */
-    public function getDCISType() : string
+    public function getDCISType(): string
     {
         return $this->dCISType;
     }
@@ -34,7 +34,7 @@ class RatePackageServiceOptionsDeliveryConfirmation extends \ArrayObject
      *
      * @return self
      */
-    public function setDCISType(string $dCISType) : self
+    public function setDCISType(string $dCISType): self
     {
         $this->initialized['dCISType'] = true;
         $this->dCISType = $dCISType;

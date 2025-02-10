@@ -8,7 +8,7 @@ class AvailableLocationAttributesOptionCodeTransportationPickUpSchedule extends 
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -25,7 +25,7 @@ class AvailableLocationAttributesOptionCodeTransportationPickUpSchedule extends 
      *
      * @return list<AvailableLocationAttributesTransportationPickUpSchedulePickUp>
      */
-    public function getPickUp() : array
+    public function getPickUp(): array
     {
         return $this->pickUp;
     }
@@ -37,7 +37,7 @@ class AvailableLocationAttributesOptionCodeTransportationPickUpSchedule extends 
      *
      * @return self
      */
-    public function setPickUp(array $pickUp) : self
+    public function setPickUp(array $pickUp): self
     {
         $this->initialized['pickUp'] = true;
         $this->pickUp = $pickUp;

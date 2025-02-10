@@ -8,7 +8,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -55,7 +55,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -70,7 +70,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -81,7 +81,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -92,7 +92,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -103,7 +103,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -114,7 +114,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -125,7 +125,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return EEIFilingOptionUPSFiled
      */
-    public function getUPSFiled() : EEIFilingOptionUPSFiled
+    public function getUPSFiled(): EEIFilingOptionUPSFiled
     {
         return $this->uPSFiled;
     }
@@ -136,7 +136,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSFiled(EEIFilingOptionUPSFiled $uPSFiled) : self
+    public function setUPSFiled(EEIFilingOptionUPSFiled $uPSFiled): self
     {
         $this->initialized['uPSFiled'] = true;
         $this->uPSFiled = $uPSFiled;
@@ -147,7 +147,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return EEIFilingOptionShipperFiled
      */
-    public function getShipperFiled() : EEIFilingOptionShipperFiled
+    public function getShipperFiled(): EEIFilingOptionShipperFiled
     {
         return $this->shipperFiled;
     }
@@ -158,7 +158,7 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperFiled(EEIFilingOptionShipperFiled $shipperFiled) : self
+    public function setShipperFiled(EEIFilingOptionShipperFiled $shipperFiled): self
     {
         $this->initialized['shipperFiled'] = true;
         $this->shipperFiled = $shipperFiled;

@@ -8,7 +8,7 @@ class DeleteRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class DeleteRequest extends \ArrayObject
      *
      * @return DeleteRequestRequest
      */
-    public function getRequest() : DeleteRequestRequest
+    public function getRequest(): DeleteRequestRequest
     {
         return $this->request;
     }
@@ -46,7 +46,7 @@ class DeleteRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(DeleteRequestRequest $request) : self
+    public function setRequest(DeleteRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -57,7 +57,7 @@ class DeleteRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -68,7 +68,7 @@ class DeleteRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -79,7 +79,7 @@ class DeleteRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getDocumentID() : string
+    public function getDocumentID(): string
     {
         return $this->documentID;
     }
@@ -90,7 +90,7 @@ class DeleteRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDocumentID(string $documentID) : self
+    public function setDocumentID(string $documentID): self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

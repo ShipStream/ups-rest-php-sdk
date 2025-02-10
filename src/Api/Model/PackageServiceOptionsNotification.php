@@ -8,7 +8,7 @@ class PackageServiceOptionsNotification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class PackageServiceOptionsNotification extends \ArrayObject
     *
     * @return string
     */
-    public function getNotificationCode() : string
+    public function getNotificationCode(): string
     {
         return $this->notificationCode;
     }
@@ -55,7 +55,7 @@ class PackageServiceOptionsNotification extends \ArrayObject
     *
     * @return self
     */
-    public function setNotificationCode(string $notificationCode) : self
+    public function setNotificationCode(string $notificationCode): self
     {
         $this->initialized['notificationCode'] = true;
         $this->notificationCode = $notificationCode;
@@ -66,7 +66,7 @@ class PackageServiceOptionsNotification extends \ArrayObject
      *
      * @return PackageServiceOptionsNotificationEMail
      */
-    public function getEMail() : PackageServiceOptionsNotificationEMail
+    public function getEMail(): PackageServiceOptionsNotificationEMail
     {
         return $this->eMail;
     }
@@ -77,7 +77,7 @@ class PackageServiceOptionsNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setEMail(PackageServiceOptionsNotificationEMail $eMail) : self
+    public function setEMail(PackageServiceOptionsNotificationEMail $eMail): self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;

@@ -8,7 +8,7 @@ class ShipmentResultsCODTurnInPage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ShipmentResultsCODTurnInPage extends \ArrayObject
      *
      * @return CODTurnInPageImage
      */
-    public function getImage() : CODTurnInPageImage
+    public function getImage(): CODTurnInPageImage
     {
         return $this->image;
     }
@@ -34,7 +34,7 @@ class ShipmentResultsCODTurnInPage extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(CODTurnInPageImage $image) : self
+    public function setImage(CODTurnInPageImage $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

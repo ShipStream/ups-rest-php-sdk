@@ -8,7 +8,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -31,7 +31,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
      *
      * @return ShippingReceiptImageFormat
      */
-    public function getImageFormat() : ShippingReceiptImageFormat
+    public function getImageFormat(): ShippingReceiptImageFormat
     {
         return $this->imageFormat;
     }
@@ -42,7 +42,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
      *
      * @return self
      */
-    public function setImageFormat(ShippingReceiptImageFormat $imageFormat) : self
+    public function setImageFormat(ShippingReceiptImageFormat $imageFormat): self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
@@ -55,7 +55,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
     *
     * @return string
     */
-    public function getGraphicImage() : string
+    public function getGraphicImage(): string
     {
         return $this->graphicImage;
     }
@@ -68,7 +68,7 @@ class PackageResultsShippingReceipt extends \ArrayObject
     *
     * @return self
     */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(string $graphicImage): self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;

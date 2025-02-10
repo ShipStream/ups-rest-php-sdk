@@ -8,7 +8,7 @@ class ShipmentReference extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -43,7 +43,7 @@ class ShipmentReference extends \ArrayObject
      *
      * @return ReferenceNumber
      */
-    public function getNumber() : ReferenceNumber
+    public function getNumber(): ReferenceNumber
     {
         return $this->number;
     }
@@ -54,7 +54,7 @@ class ShipmentReference extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(ReferenceNumber $number) : self
+    public function setNumber(ReferenceNumber $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -65,7 +65,7 @@ class ShipmentReference extends \ArrayObject
      *
      * @return string
      */
-    public function getBarCodeIndicator() : string
+    public function getBarCodeIndicator(): string
     {
         return $this->barCodeIndicator;
     }
@@ -76,7 +76,7 @@ class ShipmentReference extends \ArrayObject
      *
      * @return self
      */
-    public function setBarCodeIndicator(string $barCodeIndicator) : self
+    public function setBarCodeIndicator(string $barCodeIndicator): self
     {
         $this->initialized['barCodeIndicator'] = true;
         $this->barCodeIndicator = $barCodeIndicator;
@@ -88,7 +88,7 @@ class ShipmentReference extends \ArrayObject
     *
     * @return string
     */
-    public function getNumberOfCartons() : string
+    public function getNumberOfCartons(): string
     {
         return $this->numberOfCartons;
     }
@@ -100,7 +100,7 @@ class ShipmentReference extends \ArrayObject
     *
     * @return self
     */
-    public function setNumberOfCartons(string $numberOfCartons) : self
+    public function setNumberOfCartons(string $numberOfCartons): self
     {
         $this->initialized['numberOfCartons'] = true;
         $this->numberOfCartons = $numberOfCartons;
@@ -112,7 +112,7 @@ class ShipmentReference extends \ArrayObject
     *
     * @return ReferenceWeight
     */
-    public function getWeight() : ReferenceWeight
+    public function getWeight(): ReferenceWeight
     {
         return $this->weight;
     }
@@ -124,7 +124,7 @@ class ShipmentReference extends \ArrayObject
     *
     * @return self
     */
-    public function setWeight(ReferenceWeight $weight) : self
+    public function setWeight(ReferenceWeight $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

@@ -8,7 +8,7 @@ class RatedShipmentBillingWeight extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class RatedShipmentBillingWeight extends \ArrayObject
      *
      * @return BillingWeightUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : BillingWeightUnitOfMeasurement
+    public function getUnitOfMeasurement(): BillingWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -40,7 +40,7 @@ class RatedShipmentBillingWeight extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(BillingWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(BillingWeightUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -51,7 +51,7 @@ class RatedShipmentBillingWeight extends \ArrayObject
      *
      * @return string
      */
-    public function getWeight() : string
+    public function getWeight(): string
     {
         return $this->weight;
     }
@@ -62,7 +62,7 @@ class RatedShipmentBillingWeight extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(string $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

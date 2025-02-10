@@ -8,7 +8,7 @@ class VoidShipmentRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class VoidShipmentRequest extends \ArrayObject
      *
      * @return VoidShipmentRequestRequest
      */
-    public function getRequest() : VoidShipmentRequestRequest
+    public function getRequest(): VoidShipmentRequestRequest
     {
         return $this->request;
     }
@@ -40,7 +40,7 @@ class VoidShipmentRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(VoidShipmentRequestRequest $request) : self
+    public function setRequest(VoidShipmentRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -51,7 +51,7 @@ class VoidShipmentRequest extends \ArrayObject
      *
      * @return VoidShipmentRequestVoidShipment
      */
-    public function getVoidShipment() : VoidShipmentRequestVoidShipment
+    public function getVoidShipment(): VoidShipmentRequestVoidShipment
     {
         return $this->voidShipment;
     }
@@ -62,7 +62,7 @@ class VoidShipmentRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setVoidShipment(VoidShipmentRequestVoidShipment $voidShipment) : self
+    public function setVoidShipment(VoidShipmentRequestVoidShipment $voidShipment): self
     {
         $this->initialized['voidShipment'] = true;
         $this->voidShipment = $voidShipment;

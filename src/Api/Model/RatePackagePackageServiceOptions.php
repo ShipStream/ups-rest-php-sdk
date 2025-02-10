@@ -8,7 +8,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -109,7 +109,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return RatePackageServiceOptionsDeliveryConfirmation
      */
-    public function getDeliveryConfirmation() : RatePackageServiceOptionsDeliveryConfirmation
+    public function getDeliveryConfirmation(): RatePackageServiceOptionsDeliveryConfirmation
     {
         return $this->deliveryConfirmation;
     }
@@ -120,7 +120,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryConfirmation(RatePackageServiceOptionsDeliveryConfirmation $deliveryConfirmation) : self
+    public function setDeliveryConfirmation(RatePackageServiceOptionsDeliveryConfirmation $deliveryConfirmation): self
     {
         $this->initialized['deliveryConfirmation'] = true;
         $this->deliveryConfirmation = $deliveryConfirmation;
@@ -131,7 +131,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return PackageServiceOptionsAccessPointCOD
      */
-    public function getAccessPointCOD() : PackageServiceOptionsAccessPointCOD
+    public function getAccessPointCOD(): PackageServiceOptionsAccessPointCOD
     {
         return $this->accessPointCOD;
     }
@@ -142,7 +142,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointCOD(PackageServiceOptionsAccessPointCOD $accessPointCOD) : self
+    public function setAccessPointCOD(PackageServiceOptionsAccessPointCOD $accessPointCOD): self
     {
         $this->initialized['accessPointCOD'] = true;
         $this->accessPointCOD = $accessPointCOD;
@@ -153,7 +153,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return PackageServiceOptionsCOD
      */
-    public function getCOD() : PackageServiceOptionsCOD
+    public function getCOD(): PackageServiceOptionsCOD
     {
         return $this->cOD;
     }
@@ -164,7 +164,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCOD(PackageServiceOptionsCOD $cOD) : self
+    public function setCOD(PackageServiceOptionsCOD $cOD): self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -175,7 +175,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return RatePackageServiceOptionsDeclaredValue
      */
-    public function getDeclaredValue() : RatePackageServiceOptionsDeclaredValue
+    public function getDeclaredValue(): RatePackageServiceOptionsDeclaredValue
     {
         return $this->declaredValue;
     }
@@ -186,7 +186,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDeclaredValue(RatePackageServiceOptionsDeclaredValue $declaredValue) : self
+    public function setDeclaredValue(RatePackageServiceOptionsDeclaredValue $declaredValue): self
     {
         $this->initialized['declaredValue'] = true;
         $this->declaredValue = $declaredValue;
@@ -197,7 +197,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return PackageServiceOptionsShipperDeclaredValue
      */
-    public function getShipperDeclaredValue() : PackageServiceOptionsShipperDeclaredValue
+    public function getShipperDeclaredValue(): PackageServiceOptionsShipperDeclaredValue
     {
         return $this->shipperDeclaredValue;
     }
@@ -208,7 +208,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperDeclaredValue(PackageServiceOptionsShipperDeclaredValue $shipperDeclaredValue) : self
+    public function setShipperDeclaredValue(PackageServiceOptionsShipperDeclaredValue $shipperDeclaredValue): self
     {
         $this->initialized['shipperDeclaredValue'] = true;
         $this->shipperDeclaredValue = $shipperDeclaredValue;
@@ -219,7 +219,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperReleaseIndicator() : string
+    public function getShipperReleaseIndicator(): string
     {
         return $this->shipperReleaseIndicator;
     }
@@ -230,7 +230,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperReleaseIndicator(string $shipperReleaseIndicator) : self
+    public function setShipperReleaseIndicator(string $shipperReleaseIndicator): self
     {
         $this->initialized['shipperReleaseIndicator'] = true;
         $this->shipperReleaseIndicator = $shipperReleaseIndicator;
@@ -241,7 +241,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getProactiveIndicator() : string
+    public function getProactiveIndicator(): string
     {
         return $this->proactiveIndicator;
     }
@@ -252,7 +252,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setProactiveIndicator(string $proactiveIndicator) : self
+    public function setProactiveIndicator(string $proactiveIndicator): self
     {
         $this->initialized['proactiveIndicator'] = true;
         $this->proactiveIndicator = $proactiveIndicator;
@@ -263,7 +263,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getRefrigerationIndicator() : string
+    public function getRefrigerationIndicator(): string
     {
         return $this->refrigerationIndicator;
     }
@@ -274,7 +274,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setRefrigerationIndicator(string $refrigerationIndicator) : self
+    public function setRefrigerationIndicator(string $refrigerationIndicator): self
     {
         $this->initialized['refrigerationIndicator'] = true;
         $this->refrigerationIndicator = $refrigerationIndicator;
@@ -285,7 +285,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return PackageServiceOptionsInsurance
      */
-    public function getInsurance() : PackageServiceOptionsInsurance
+    public function getInsurance(): PackageServiceOptionsInsurance
     {
         return $this->insurance;
     }
@@ -296,7 +296,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setInsurance(PackageServiceOptionsInsurance $insurance) : self
+    public function setInsurance(PackageServiceOptionsInsurance $insurance): self
     {
         $this->initialized['insurance'] = true;
         $this->insurance = $insurance;
@@ -327,7 +327,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getUPSPremiumCareIndicator() : string
+    public function getUPSPremiumCareIndicator(): string
     {
         return $this->uPSPremiumCareIndicator;
     }
@@ -358,7 +358,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setUPSPremiumCareIndicator(string $uPSPremiumCareIndicator) : self
+    public function setUPSPremiumCareIndicator(string $uPSPremiumCareIndicator): self
     {
         $this->initialized['uPSPremiumCareIndicator'] = true;
         $this->uPSPremiumCareIndicator = $uPSPremiumCareIndicator;
@@ -369,7 +369,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return RatePackageServiceOptionsHazMat
      */
-    public function getHazMat() : RatePackageServiceOptionsHazMat
+    public function getHazMat(): RatePackageServiceOptionsHazMat
     {
         return $this->hazMat;
     }
@@ -380,7 +380,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHazMat(RatePackageServiceOptionsHazMat $hazMat) : self
+    public function setHazMat(RatePackageServiceOptionsHazMat $hazMat): self
     {
         $this->initialized['hazMat'] = true;
         $this->hazMat = $hazMat;
@@ -391,7 +391,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return RatePackageServiceOptionsDryIce
      */
-    public function getDryIce() : RatePackageServiceOptionsDryIce
+    public function getDryIce(): RatePackageServiceOptionsDryIce
     {
         return $this->dryIce;
     }
@@ -402,7 +402,7 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDryIce(RatePackageServiceOptionsDryIce $dryIce) : self
+    public function setDryIce(RatePackageServiceOptionsDryIce $dryIce): self
     {
         $this->initialized['dryIce'] = true;
         $this->dryIce = $dryIce;

@@ -8,7 +8,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      *
      * @return string
      */
-    public function getHTTPUserAgent() : string
+    public function getHTTPUserAgent(): string
     {
         return $this->hTTPUserAgent;
     }
@@ -46,7 +46,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setHTTPUserAgent(string $hTTPUserAgent) : self
+    public function setHTTPUserAgent(string $hTTPUserAgent): self
     {
         $this->initialized['hTTPUserAgent'] = true;
         $this->hTTPUserAgent = $hTTPUserAgent;
@@ -57,7 +57,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      *
      * @return LabelRecoveryLabelSpecificationLabelImageFormat
      */
-    public function getLabelImageFormat() : LabelRecoveryLabelSpecificationLabelImageFormat
+    public function getLabelImageFormat(): LabelRecoveryLabelSpecificationLabelImageFormat
     {
         return $this->labelImageFormat;
     }
@@ -68,7 +68,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelImageFormat(LabelRecoveryLabelSpecificationLabelImageFormat $labelImageFormat) : self
+    public function setLabelImageFormat(LabelRecoveryLabelSpecificationLabelImageFormat $labelImageFormat): self
     {
         $this->initialized['labelImageFormat'] = true;
         $this->labelImageFormat = $labelImageFormat;
@@ -79,7 +79,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      *
      * @return LabelRecoveryLabelSpecificationLabelStockSize
      */
-    public function getLabelStockSize() : LabelRecoveryLabelSpecificationLabelStockSize
+    public function getLabelStockSize(): LabelRecoveryLabelSpecificationLabelStockSize
     {
         return $this->labelStockSize;
     }
@@ -90,7 +90,7 @@ class LabelRecoveryRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelStockSize(LabelRecoveryLabelSpecificationLabelStockSize $labelStockSize) : self
+    public function setLabelStockSize(LabelRecoveryLabelSpecificationLabelStockSize $labelStockSize): self
     {
         $this->initialized['labelStockSize'] = true;
         $this->labelStockSize = $labelStockSize;

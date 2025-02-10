@@ -8,7 +8,7 @@ class PAPERLESSDOCUMENTDeleteRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PAPERLESSDOCUMENTDeleteRequestWrapper extends \ArrayObject
      *
      * @return DeleteRequest
      */
-    public function getDeleteRequest() : DeleteRequest
+    public function getDeleteRequest(): DeleteRequest
     {
         return $this->deleteRequest;
     }
@@ -34,7 +34,7 @@ class PAPERLESSDOCUMENTDeleteRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setDeleteRequest(DeleteRequest $deleteRequest) : self
+    public function setDeleteRequest(DeleteRequest $deleteRequest): self
     {
         $this->initialized['deleteRequest'] = true;
         $this->deleteRequest = $deleteRequest;

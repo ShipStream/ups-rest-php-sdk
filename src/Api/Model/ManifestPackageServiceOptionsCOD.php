@@ -8,7 +8,7 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
     *
     * @return string
     */
-    public function getCODCode() : string
+    public function getCODCode(): string
     {
         return $this->cODCode;
     }
@@ -49,7 +49,7 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
     *
     * @return self
     */
-    public function setCODCode(string $cODCode) : self
+    public function setCODCode(string $cODCode): self
     {
         $this->initialized['cODCode'] = true;
         $this->cODCode = $cODCode;
@@ -60,7 +60,7 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
      *
      * @return CODCODAmount
      */
-    public function getCODAmount() : CODCODAmount
+    public function getCODAmount(): CODCODAmount
     {
         return $this->cODAmount;
     }
@@ -71,7 +71,7 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
      *
      * @return self
      */
-    public function setCODAmount(CODCODAmount $cODAmount) : self
+    public function setCODAmount(CODCODAmount $cODAmount): self
     {
         $this->initialized['cODAmount'] = true;
         $this->cODAmount = $cODAmount;

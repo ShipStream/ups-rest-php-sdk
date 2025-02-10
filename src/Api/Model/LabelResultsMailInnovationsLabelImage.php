@@ -8,7 +8,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -54,7 +54,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return MailInnovationsLabelImageLabelImageFormat
      */
-    public function getLabelImageFormat() : MailInnovationsLabelImageLabelImageFormat
+    public function getLabelImageFormat(): MailInnovationsLabelImageLabelImageFormat
     {
         return $this->labelImageFormat;
     }
@@ -65,7 +65,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelImageFormat(MailInnovationsLabelImageLabelImageFormat $labelImageFormat) : self
+    public function setLabelImageFormat(MailInnovationsLabelImageLabelImageFormat $labelImageFormat): self
     {
         $this->initialized['labelImageFormat'] = true;
         $this->labelImageFormat = $labelImageFormat;
@@ -76,7 +76,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return string
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage(): string
     {
         return $this->graphicImage;
     }
@@ -87,7 +87,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(string $graphicImage): self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;
@@ -98,7 +98,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return string
      */
-    public function getHTMLImage() : string
+    public function getHTMLImage(): string
     {
         return $this->hTMLImage;
     }
@@ -109,7 +109,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return self
      */
-    public function setHTMLImage(string $hTMLImage) : self
+    public function setHTMLImage(string $hTMLImage): self
     {
         $this->initialized['hTMLImage'] = true;
         $this->hTMLImage = $hTMLImage;
@@ -120,7 +120,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return string
      */
-    public function getPDF417() : string
+    public function getPDF417(): string
     {
         return $this->pDF417;
     }
@@ -131,7 +131,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return self
      */
-    public function setPDF417(string $pDF417) : self
+    public function setPDF417(string $pDF417): self
     {
         $this->initialized['pDF417'] = true;
         $this->pDF417 = $pDF417;
@@ -142,7 +142,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return string
      */
-    public function getInternationalSignatureGraphicImage() : string
+    public function getInternationalSignatureGraphicImage(): string
     {
         return $this->internationalSignatureGraphicImage;
     }
@@ -153,7 +153,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      *
      * @return self
      */
-    public function setInternationalSignatureGraphicImage(string $internationalSignatureGraphicImage) : self
+    public function setInternationalSignatureGraphicImage(string $internationalSignatureGraphicImage): self
     {
         $this->initialized['internationalSignatureGraphicImage'] = true;
         $this->internationalSignatureGraphicImage = $internationalSignatureGraphicImage;
@@ -165,7 +165,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
     *
     * @return string
     */
-    public function getURL() : string
+    public function getURL(): string
     {
         return $this->uRL;
     }
@@ -177,7 +177,7 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
     *
     * @return self
     */
-    public function setURL(string $uRL) : self
+    public function setURL(string $uRL): self
     {
         $this->initialized['uRL'] = true;
         $this->uRL = $uRL;

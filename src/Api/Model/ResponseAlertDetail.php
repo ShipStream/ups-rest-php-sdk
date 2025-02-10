@@ -8,7 +8,7 @@ class ResponseAlertDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ResponseAlertDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -46,7 +46,7 @@ class ResponseAlertDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -57,7 +57,7 @@ class ResponseAlertDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -68,7 +68,7 @@ class ResponseAlertDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -79,7 +79,7 @@ class ResponseAlertDetail extends \ArrayObject
      *
      * @return AlertDetailElementLevelInformation
      */
-    public function getElementLevelInformation() : AlertDetailElementLevelInformation
+    public function getElementLevelInformation(): AlertDetailElementLevelInformation
     {
         return $this->elementLevelInformation;
     }
@@ -90,7 +90,7 @@ class ResponseAlertDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setElementLevelInformation(AlertDetailElementLevelInformation $elementLevelInformation) : self
+    public function setElementLevelInformation(AlertDetailElementLevelInformation $elementLevelInformation): self
     {
         $this->initialized['elementLevelInformation'] = true;
         $this->elementLevelInformation = $elementLevelInformation;

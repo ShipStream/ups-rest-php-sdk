@@ -8,7 +8,7 @@ class PackageCommodity extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PackageCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getFreightClass() : string
+    public function getFreightClass(): string
     {
         return $this->freightClass;
     }
@@ -40,7 +40,7 @@ class PackageCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightClass(string $freightClass) : self
+    public function setFreightClass(string $freightClass): self
     {
         $this->initialized['freightClass'] = true;
         $this->freightClass = $freightClass;
@@ -51,7 +51,7 @@ class PackageCommodity extends \ArrayObject
      *
      * @return CommodityNMFC
      */
-    public function getNMFC() : CommodityNMFC
+    public function getNMFC(): CommodityNMFC
     {
         return $this->nMFC;
     }
@@ -62,7 +62,7 @@ class PackageCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setNMFC(CommodityNMFC $nMFC) : self
+    public function setNMFC(CommodityNMFC $nMFC): self
     {
         $this->initialized['nMFC'] = true;
         $this->nMFC = $nMFC;

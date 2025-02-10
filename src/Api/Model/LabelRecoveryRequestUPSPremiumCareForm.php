@@ -8,7 +8,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     *
     * @return string
     */
-    public function getPageSize() : string
+    public function getPageSize(): string
     {
         return $this->pageSize;
     }
@@ -48,7 +48,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     *
     * @return self
     */
-    public function setPageSize(string $pageSize) : self
+    public function setPageSize(string $pageSize): self
     {
         $this->initialized['pageSize'] = true;
         $this->pageSize = $pageSize;
@@ -61,7 +61,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     *
     * @return string
     */
-    public function getPrintType() : string
+    public function getPrintType(): string
     {
         return $this->printType;
     }
@@ -74,7 +74,7 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
     *
     * @return self
     */
-    public function setPrintType(string $printType) : self
+    public function setPrintType(string $printType): self
     {
         $this->initialized['printType'] = true;
         $this->printType = $printType;

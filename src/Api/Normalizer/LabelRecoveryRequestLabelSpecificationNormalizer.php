@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification';
+            return $type === \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -45,11 +45,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['HTTPUserAgent']);
             }
             if (\array_key_exists('LabelImageFormat', $data)) {
-                $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelImageFormat', 'json', $context));
+                $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelImageFormat::class, 'json', $context));
                 unset($data['LabelImageFormat']);
             }
             if (\array_key_exists('LabelStockSize', $data)) {
-                $object->setLabelStockSize($this->denormalizer->denormalize($data['LabelStockSize'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelStockSize', 'json', $context));
+                $object->setLabelStockSize($this->denormalizer->denormalize($data['LabelStockSize'], \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelStockSize::class, 'json', $context));
                 unset($data['LabelStockSize']);
             }
             foreach ($data as $key => $value) {
@@ -59,7 +59,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('hTTPUserAgent') && null !== $object->getHTTPUserAgent()) {
@@ -78,9 +78,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification' => false];
+            return [\ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class => false];
         }
     }
 } else {
@@ -90,13 +90,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification';
+            return $type === \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class;
         }
         /**
          * @return mixed
@@ -118,11 +118,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['HTTPUserAgent']);
             }
             if (\array_key_exists('LabelImageFormat', $data)) {
-                $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelImageFormat', 'json', $context));
+                $object->setLabelImageFormat($this->denormalizer->denormalize($data['LabelImageFormat'], \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelImageFormat::class, 'json', $context));
                 unset($data['LabelImageFormat']);
             }
             if (\array_key_exists('LabelStockSize', $data)) {
-                $object->setLabelStockSize($this->denormalizer->denormalize($data['LabelStockSize'], 'ShipStream\\Ups\\Api\\Model\\LabelRecoveryLabelSpecificationLabelStockSize', 'json', $context));
+                $object->setLabelStockSize($this->denormalizer->denormalize($data['LabelStockSize'], \ShipStream\Ups\Api\Model\LabelRecoveryLabelSpecificationLabelStockSize::class, 'json', $context));
                 unset($data['LabelStockSize']);
             }
             foreach ($data as $key => $value) {
@@ -154,9 +154,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LabelRecoveryRequestLabelSpecification' => false];
+            return [\ShipStream\Ups\Api\Model\LabelRecoveryRequestLabelSpecification::class => false];
         }
     }
 }

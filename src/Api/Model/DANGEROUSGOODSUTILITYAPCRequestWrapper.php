@@ -8,7 +8,7 @@ class DANGEROUSGOODSUTILITYAPCRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class DANGEROUSGOODSUTILITYAPCRequestWrapper extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckRequest
      */
-    public function getAcceptanceAuditPreCheckRequest() : AcceptanceAuditPreCheckRequest
+    public function getAcceptanceAuditPreCheckRequest(): AcceptanceAuditPreCheckRequest
     {
         return $this->acceptanceAuditPreCheckRequest;
     }
@@ -34,7 +34,7 @@ class DANGEROUSGOODSUTILITYAPCRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setAcceptanceAuditPreCheckRequest(AcceptanceAuditPreCheckRequest $acceptanceAuditPreCheckRequest) : self
+    public function setAcceptanceAuditPreCheckRequest(AcceptanceAuditPreCheckRequest $acceptanceAuditPreCheckRequest): self
     {
         $this->initialized['acceptanceAuditPreCheckRequest'] = true;
         $this->acceptanceAuditPreCheckRequest = $acceptanceAuditPreCheckRequest;

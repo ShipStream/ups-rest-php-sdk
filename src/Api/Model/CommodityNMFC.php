@@ -8,7 +8,7 @@ class CommodityNMFC extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class CommodityNMFC extends \ArrayObject
      *
      * @return string
      */
-    public function getPrimeCode() : string
+    public function getPrimeCode(): string
     {
         return $this->primeCode;
     }
@@ -40,7 +40,7 @@ class CommodityNMFC extends \ArrayObject
      *
      * @return self
      */
-    public function setPrimeCode(string $primeCode) : self
+    public function setPrimeCode(string $primeCode): self
     {
         $this->initialized['primeCode'] = true;
         $this->primeCode = $primeCode;
@@ -51,7 +51,7 @@ class CommodityNMFC extends \ArrayObject
      *
      * @return string
      */
-    public function getSubCode() : string
+    public function getSubCode(): string
     {
         return $this->subCode;
     }
@@ -62,7 +62,7 @@ class CommodityNMFC extends \ArrayObject
      *
      * @return self
      */
-    public function setSubCode(string $subCode) : self
+    public function setSubCode(string $subCode): self
     {
         $this->initialized['subCode'] = true;
         $this->subCode = $subCode;

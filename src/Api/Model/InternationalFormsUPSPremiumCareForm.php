@@ -8,7 +8,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -51,7 +51,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentDate() : string
+    public function getShipmentDate(): string
     {
         return $this->shipmentDate;
     }
@@ -62,7 +62,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentDate(string $shipmentDate) : self
+    public function setShipmentDate(string $shipmentDate): self
     {
         $this->initialized['shipmentDate'] = true;
         $this->shipmentDate = $shipmentDate;
@@ -75,7 +75,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     *
     * @return string
     */
-    public function getPageSize() : string
+    public function getPageSize(): string
     {
         return $this->pageSize;
     }
@@ -88,7 +88,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     *
     * @return self
     */
-    public function setPageSize(string $pageSize) : self
+    public function setPageSize(string $pageSize): self
     {
         $this->initialized['pageSize'] = true;
         $this->pageSize = $pageSize;
@@ -101,7 +101,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     *
     * @return string
     */
-    public function getPrintType() : string
+    public function getPrintType(): string
     {
         return $this->printType;
     }
@@ -114,7 +114,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
     *
     * @return self
     */
-    public function setPrintType(string $printType) : self
+    public function setPrintType(string $printType): self
     {
         $this->initialized['printType'] = true;
         $this->printType = $printType;
@@ -125,7 +125,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      *
      * @return string
      */
-    public function getNumOfCopies() : string
+    public function getNumOfCopies(): string
     {
         return $this->numOfCopies;
     }
@@ -136,7 +136,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      *
      * @return self
      */
-    public function setNumOfCopies(string $numOfCopies) : self
+    public function setNumOfCopies(string $numOfCopies): self
     {
         $this->initialized['numOfCopies'] = true;
         $this->numOfCopies = $numOfCopies;
@@ -147,7 +147,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      *
      * @return UPSPremiumCareFormLanguageForUPSPremiumCare
      */
-    public function getLanguageForUPSPremiumCare() : UPSPremiumCareFormLanguageForUPSPremiumCare
+    public function getLanguageForUPSPremiumCare(): UPSPremiumCareFormLanguageForUPSPremiumCare
     {
         return $this->languageForUPSPremiumCare;
     }
@@ -158,7 +158,7 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      *
      * @return self
      */
-    public function setLanguageForUPSPremiumCare(UPSPremiumCareFormLanguageForUPSPremiumCare $languageForUPSPremiumCare) : self
+    public function setLanguageForUPSPremiumCare(UPSPremiumCareFormLanguageForUPSPremiumCare $languageForUPSPremiumCare): self
     {
         $this->initialized['languageForUPSPremiumCare'] = true;
         $this->languageForUPSPremiumCare = $languageForUPSPremiumCare;

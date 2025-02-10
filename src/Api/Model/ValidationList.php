@@ -8,7 +8,7 @@ class ValidationList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ValidationList extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getInvalidFieldList() : array
+    public function getInvalidFieldList(): array
     {
         return $this->invalidFieldList;
     }
@@ -52,7 +52,7 @@ class ValidationList extends \ArrayObject
      *
      * @return self
      */
-    public function setInvalidFieldList(array $invalidFieldList) : self
+    public function setInvalidFieldList(array $invalidFieldList): self
     {
         $this->initialized['invalidFieldList'] = true;
         $this->invalidFieldList = $invalidFieldList;
@@ -63,7 +63,7 @@ class ValidationList extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getInvalidFieldListCodes() : array
+    public function getInvalidFieldListCodes(): array
     {
         return $this->invalidFieldListCodes;
     }
@@ -74,7 +74,7 @@ class ValidationList extends \ArrayObject
      *
      * @return self
      */
-    public function setInvalidFieldListCodes(array $invalidFieldListCodes) : self
+    public function setInvalidFieldListCodes(array $invalidFieldListCodes): self
     {
         $this->initialized['invalidFieldListCodes'] = true;
         $this->invalidFieldListCodes = $invalidFieldListCodes;
@@ -85,7 +85,7 @@ class ValidationList extends \ArrayObject
      *
      * @return bool
      */
-    public function getDestinationAmbiguous() : bool
+    public function getDestinationAmbiguous(): bool
     {
         return $this->destinationAmbiguous;
     }
@@ -96,7 +96,7 @@ class ValidationList extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationAmbiguous(bool $destinationAmbiguous) : self
+    public function setDestinationAmbiguous(bool $destinationAmbiguous): self
     {
         $this->initialized['destinationAmbiguous'] = true;
         $this->destinationAmbiguous = $destinationAmbiguous;
@@ -107,7 +107,7 @@ class ValidationList extends \ArrayObject
      *
      * @return bool
      */
-    public function getOriginAmbiguous() : bool
+    public function getOriginAmbiguous(): bool
     {
         return $this->originAmbiguous;
     }
@@ -118,7 +118,7 @@ class ValidationList extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginAmbiguous(bool $originAmbiguous) : self
+    public function setOriginAmbiguous(bool $originAmbiguous): self
     {
         $this->initialized['originAmbiguous'] = true;
         $this->originAmbiguous = $originAmbiguous;

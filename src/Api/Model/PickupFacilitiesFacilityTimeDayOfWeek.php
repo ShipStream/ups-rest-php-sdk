@@ -8,7 +8,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -63,7 +63,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getDay() : string
+    public function getDay(): string
     {
         return $this->day;
     }
@@ -74,7 +74,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setDay(string $day) : self
+    public function setDay(string $day): self
     {
         $this->initialized['day'] = true;
         $this->day = $day;
@@ -85,7 +85,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getEarliestDropOfforPickup() : string
+    public function getEarliestDropOfforPickup(): string
     {
         return $this->earliestDropOfforPickup;
     }
@@ -96,7 +96,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setEarliestDropOfforPickup(string $earliestDropOfforPickup) : self
+    public function setEarliestDropOfforPickup(string $earliestDropOfforPickup): self
     {
         $this->initialized['earliestDropOfforPickup'] = true;
         $this->earliestDropOfforPickup = $earliestDropOfforPickup;
@@ -107,7 +107,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getLatestDropOfforPickup() : string
+    public function getLatestDropOfforPickup(): string
     {
         return $this->latestDropOfforPickup;
     }
@@ -118,7 +118,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setLatestDropOfforPickup(string $latestDropOfforPickup) : self
+    public function setLatestDropOfforPickup(string $latestDropOfforPickup): self
     {
         $this->initialized['latestDropOfforPickup'] = true;
         $this->latestDropOfforPickup = $latestDropOfforPickup;
@@ -131,7 +131,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
     *
     * @return string
     */
-    public function getOpenHours() : string
+    public function getOpenHours(): string
     {
         return $this->openHours;
     }
@@ -144,7 +144,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
     *
     * @return self
     */
-    public function setOpenHours(string $openHours) : self
+    public function setOpenHours(string $openHours): self
     {
         $this->initialized['openHours'] = true;
         $this->openHours = $openHours;
@@ -157,7 +157,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
     *
     * @return string
     */
-    public function getCloseHours() : string
+    public function getCloseHours(): string
     {
         return $this->closeHours;
     }
@@ -170,7 +170,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
     *
     * @return self
     */
-    public function setCloseHours(string $closeHours) : self
+    public function setCloseHours(string $closeHours): self
     {
         $this->initialized['closeHours'] = true;
         $this->closeHours = $closeHours;
@@ -181,7 +181,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getPrepTime() : string
+    public function getPrepTime(): string
     {
         return $this->prepTime;
     }
@@ -192,7 +192,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setPrepTime(string $prepTime) : self
+    public function setPrepTime(string $prepTime): self
     {
         $this->initialized['prepTime'] = true;
         $this->prepTime = $prepTime;
@@ -203,7 +203,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return string
      */
-    public function getLastDrop() : string
+    public function getLastDrop(): string
     {
         return $this->lastDrop;
     }
@@ -214,7 +214,7 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      *
      * @return self
      */
-    public function setLastDrop(string $lastDrop) : self
+    public function setLastDrop(string $lastDrop): self
     {
         $this->initialized['lastDrop'] = true;
         $this->lastDrop = $lastDrop;

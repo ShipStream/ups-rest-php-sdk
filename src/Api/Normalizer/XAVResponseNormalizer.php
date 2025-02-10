@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\XAVResponse';
+            return $type === \ShipStream\Ups\Api\Model\XAVResponse::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\XAVResponse';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\XAVResponse::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Response', $data)) {
-                $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseResponse', 'json', $context));
+                $object->setResponse($this->denormalizer->denormalize($data['Response'], \ShipStream\Ups\Api\Model\XAVResponseResponse::class, 'json', $context));
                 unset($data['Response']);
             }
             if (\array_key_exists('ValidAddressIndicator', $data) && $data['ValidAddressIndicator'] !== null) {
@@ -66,7 +66,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setNoCandidatesIndicator(null);
             }
             if (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] !== null) {
-                $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
+                $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], \ShipStream\Ups\Api\Model\XAVResponseAddressClassification::class, 'json', $context));
                 unset($data['AddressClassification']);
             }
             elseif (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] === null) {
@@ -75,7 +75,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
                 $values = [];
                 foreach ($data['Candidate'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\XAVResponseCandidate::class, 'json', $context);
                 }
                 $object->setCandidate($values);
                 unset($data['Candidate']);
@@ -90,7 +90,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Response'] = $this->normalizer->normalize($object->getResponse(), 'json', $context);
@@ -120,9 +120,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\XAVResponse' => false];
+            return [\ShipStream\Ups\Api\Model\XAVResponse::class => false];
         }
     }
 } else {
@@ -132,13 +132,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\XAVResponse';
+            return $type === \ShipStream\Ups\Api\Model\XAVResponse::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\XAVResponse';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\XAVResponse::class;
         }
         /**
          * @return mixed
@@ -156,7 +156,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Response', $data)) {
-                $object->setResponse($this->denormalizer->denormalize($data['Response'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseResponse', 'json', $context));
+                $object->setResponse($this->denormalizer->denormalize($data['Response'], \ShipStream\Ups\Api\Model\XAVResponseResponse::class, 'json', $context));
                 unset($data['Response']);
             }
             if (\array_key_exists('ValidAddressIndicator', $data) && $data['ValidAddressIndicator'] !== null) {
@@ -181,7 +181,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setNoCandidatesIndicator(null);
             }
             if (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] !== null) {
-                $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], 'ShipStream\\Ups\\Api\\Model\\XAVResponseAddressClassification', 'json', $context));
+                $object->setAddressClassification($this->denormalizer->denormalize($data['AddressClassification'], \ShipStream\Ups\Api\Model\XAVResponseAddressClassification::class, 'json', $context));
                 unset($data['AddressClassification']);
             }
             elseif (\array_key_exists('AddressClassification', $data) && $data['AddressClassification'] === null) {
@@ -190,7 +190,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Candidate', $data) && $data['Candidate'] !== null) {
                 $values = [];
                 foreach ($data['Candidate'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\XAVResponseCandidate', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\XAVResponseCandidate::class, 'json', $context);
                 }
                 $object->setCandidate($values);
                 unset($data['Candidate']);
@@ -238,9 +238,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\XAVResponse' => false];
+            return [\ShipStream\Ups\Api\Model\XAVResponse::class => false];
         }
     }
 }

@@ -8,7 +8,7 @@ class PackageAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return Address|null
      */
-    public function getAddress() : ?Address
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
@@ -52,7 +52,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(?Address $address) : self
+    public function setAddress(?Address $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -63,7 +63,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -74,7 +74,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -85,7 +85,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -96,7 +96,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -107,7 +107,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -118,7 +118,7 @@ class PackageAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

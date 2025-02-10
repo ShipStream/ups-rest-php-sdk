@@ -8,7 +8,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -66,7 +66,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     *
     * @return string
     */
-    public function getLanguageCode() : string
+    public function getLanguageCode(): string
     {
         return $this->languageCode;
     }
@@ -89,7 +89,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     *
     * @return self
     */
-    public function setLanguageCode(string $languageCode) : self
+    public function setLanguageCode(string $languageCode): self
     {
         $this->initialized['languageCode'] = true;
         $this->languageCode = $languageCode;
@@ -105,7 +105,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     *
     * @return string
     */
-    public function getDialectCode() : string
+    public function getDialectCode(): string
     {
         return $this->dialectCode;
     }
@@ -121,7 +121,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     *
     * @return self
     */
-    public function setDialectCode(string $dialectCode) : self
+    public function setDialectCode(string $dialectCode): self
     {
         $this->initialized['dialectCode'] = true;
         $this->dialectCode = $dialectCode;
@@ -134,7 +134,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -147,7 +147,7 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;

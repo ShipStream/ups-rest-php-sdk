@@ -8,7 +8,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getLocale() : string
+    public function getLocale(): string
     {
         return $this->locale;
     }
@@ -58,7 +58,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setLocale(string $locale) : self
+    public function setLocale(string $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -69,7 +69,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -80,7 +80,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -91,7 +91,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getTrackingNumberList() : array
+    public function getTrackingNumberList(): array
     {
         return $this->trackingNumberList;
     }
@@ -102,7 +102,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumberList(array $trackingNumberList) : self
+    public function setTrackingNumberList(array $trackingNumberList): self
     {
         $this->initialized['trackingNumberList'] = true;
         $this->trackingNumberList = $trackingNumberList;
@@ -113,7 +113,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getScanPreference() : array
+    public function getScanPreference(): array
     {
         return $this->scanPreference;
     }
@@ -124,7 +124,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setScanPreference(array $scanPreference) : self
+    public function setScanPreference(array $scanPreference): self
     {
         $this->initialized['scanPreference'] = true;
         $this->scanPreference = $scanPreference;
@@ -135,7 +135,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return Destination
      */
-    public function getDestination() : Destination
+    public function getDestination(): Destination
     {
         return $this->destination;
     }
@@ -146,7 +146,7 @@ class TrackSubsServiceRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDestination(Destination $destination) : self
+    public function setDestination(Destination $destination): self
     {
         $this->initialized['destination'] = true;
         $this->destination = $destination;

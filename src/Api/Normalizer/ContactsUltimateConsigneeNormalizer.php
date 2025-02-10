@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee';
+            return $type === \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -45,11 +45,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CompanyName']);
             }
             if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeAddress', 'json', $context));
+                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\UltimateConsigneeAddress::class, 'json', $context));
                 unset($data['Address']);
             }
             if (\array_key_exists('UltimateConsigneeType', $data)) {
-                $object->setUltimateConsigneeType($this->denormalizer->denormalize($data['UltimateConsigneeType'], 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeUltimateConsigneeType', 'json', $context));
+                $object->setUltimateConsigneeType($this->denormalizer->denormalize($data['UltimateConsigneeType'], \ShipStream\Ups\Api\Model\UltimateConsigneeUltimateConsigneeType::class, 'json', $context));
                 unset($data['UltimateConsigneeType']);
             }
             foreach ($data as $key => $value) {
@@ -59,7 +59,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['CompanyName'] = $object->getCompanyName();
@@ -74,9 +74,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee' => false];
+            return [\ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class => false];
         }
     }
 } else {
@@ -86,13 +86,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee';
+            return $type === \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class;
         }
         /**
          * @return mixed
@@ -114,11 +114,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CompanyName']);
             }
             if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeAddress', 'json', $context));
+                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\UltimateConsigneeAddress::class, 'json', $context));
                 unset($data['Address']);
             }
             if (\array_key_exists('UltimateConsigneeType', $data)) {
-                $object->setUltimateConsigneeType($this->denormalizer->denormalize($data['UltimateConsigneeType'], 'ShipStream\\Ups\\Api\\Model\\UltimateConsigneeUltimateConsigneeType', 'json', $context));
+                $object->setUltimateConsigneeType($this->denormalizer->denormalize($data['UltimateConsigneeType'], \ShipStream\Ups\Api\Model\UltimateConsigneeUltimateConsigneeType::class, 'json', $context));
                 unset($data['UltimateConsigneeType']);
             }
             foreach ($data as $key => $value) {
@@ -146,9 +146,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee' => false];
+            return [\ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class => false];
         }
     }
 }

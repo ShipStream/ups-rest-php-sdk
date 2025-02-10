@@ -8,7 +8,7 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
      *
      * @return list<FacilityTimeDayOfWeek>
      */
-    public function getDayOfWeek() : array
+    public function getDayOfWeek(): array
     {
         return $this->dayOfWeek;
     }
@@ -34,7 +34,7 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
      *
      * @return self
      */
-    public function setDayOfWeek(array $dayOfWeek) : self
+    public function setDayOfWeek(array $dayOfWeek): self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;

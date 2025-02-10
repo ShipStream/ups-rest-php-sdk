@@ -8,7 +8,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
      *
      * @return list<ServiceCenterLocationDropOffFacilities>
      */
-    public function getDropOffFacilities() : array
+    public function getDropOffFacilities(): array
     {
         return $this->dropOffFacilities;
     }
@@ -40,7 +40,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
      *
      * @return self
      */
-    public function setDropOffFacilities(array $dropOffFacilities) : self
+    public function setDropOffFacilities(array $dropOffFacilities): self
     {
         $this->initialized['dropOffFacilities'] = true;
         $this->dropOffFacilities = $dropOffFacilities;
@@ -51,7 +51,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
      *
      * @return ServiceCenterLocationPickupFacilities
      */
-    public function getPickupFacilities() : ServiceCenterLocationPickupFacilities
+    public function getPickupFacilities(): ServiceCenterLocationPickupFacilities
     {
         return $this->pickupFacilities;
     }
@@ -62,7 +62,7 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
      *
      * @return self
      */
-    public function setPickupFacilities(ServiceCenterLocationPickupFacilities $pickupFacilities) : self
+    public function setPickupFacilities(ServiceCenterLocationPickupFacilities $pickupFacilities): self
     {
         $this->initialized['pickupFacilities'] = true;
         $this->pickupFacilities = $pickupFacilities;

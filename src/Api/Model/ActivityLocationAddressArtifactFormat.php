@@ -8,7 +8,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2(): string
     {
         return $this->politicalDivision2;
     }
@@ -46,7 +46,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(string $politicalDivision2): self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -57,7 +57,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1(): string
     {
         return $this->politicalDivision1;
     }
@@ -68,7 +68,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(string $politicalDivision1): self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -79,7 +79,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -90,7 +90,7 @@ class ActivityLocationAddressArtifactFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

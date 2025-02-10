@@ -8,7 +8,7 @@ class SHIPResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class SHIPResponseWrapper extends \ArrayObject
      *
      * @return ShipmentResponse
      */
-    public function getShipmentResponse() : ShipmentResponse
+    public function getShipmentResponse(): ShipmentResponse
     {
         return $this->shipmentResponse;
     }
@@ -34,7 +34,7 @@ class SHIPResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentResponse(ShipmentResponse $shipmentResponse) : self
+    public function setShipmentResponse(ShipmentResponse $shipmentResponse): self
     {
         $this->initialized['shipmentResponse'] = true;
         $this->shipmentResponse = $shipmentResponse;

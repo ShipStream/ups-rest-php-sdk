@@ -8,7 +8,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -46,7 +46,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -57,7 +57,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      *
      * @return HandlingUnitsType
      */
-    public function getType() : HandlingUnitsType
+    public function getType(): HandlingUnitsType
     {
         return $this->type;
     }
@@ -68,7 +68,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setType(HandlingUnitsType $type) : self
+    public function setType(HandlingUnitsType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -79,7 +79,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      *
      * @return HandlingUnitsDimensions
      */
-    public function getDimensions() : HandlingUnitsDimensions
+    public function getDimensions(): HandlingUnitsDimensions
     {
         return $this->dimensions;
     }
@@ -90,7 +90,7 @@ class FreightRateRequestHandlingUnits extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(HandlingUnitsDimensions $dimensions) : self
+    public function setDimensions(HandlingUnitsDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;

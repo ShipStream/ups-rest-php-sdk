@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult';
+            return $type === \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Disclaimer', $data)) {
-                $object->setDisclaimer($this->denormalizer->denormalize($data['Disclaimer'], 'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer', 'json', $context));
+                $object->setDisclaimer($this->denormalizer->denormalize($data['Disclaimer'], \ShipStream\Ups\Api\Model\RateResultDisclaimer::class, 'json', $context));
                 unset($data['Disclaimer']);
             }
             if (\array_key_exists('RateType', $data)) {
@@ -53,11 +53,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CurrencyCode']);
             }
             if (\array_key_exists('ChargeDetail', $data)) {
-                $object->setChargeDetail($this->denormalizer->denormalize($data['ChargeDetail'], 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail', 'json', $context));
+                $object->setChargeDetail($this->denormalizer->denormalize($data['ChargeDetail'], \ShipStream\Ups\Api\Model\RateResultChargeDetail::class, 'json', $context));
                 unset($data['ChargeDetail']);
             }
             if (\array_key_exists('TaxCharges', $data)) {
-                $object->setTaxCharges($this->denormalizer->denormalize($data['TaxCharges'], 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges', 'json', $context));
+                $object->setTaxCharges($this->denormalizer->denormalize($data['TaxCharges'], \ShipStream\Ups\Api\Model\RateResultTaxCharges::class, 'json', $context));
                 unset($data['TaxCharges']);
             }
             if (\array_key_exists('TotalTax', $data)) {
@@ -87,7 +87,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('disclaimer') && null !== $object->getDisclaimer()) {
@@ -125,9 +125,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult' => false];
+            return [\ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class => false];
         }
     }
 } else {
@@ -137,13 +137,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult';
+            return $type === \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class;
         }
         /**
          * @return mixed
@@ -161,7 +161,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Disclaimer', $data)) {
-                $object->setDisclaimer($this->denormalizer->denormalize($data['Disclaimer'], 'ShipStream\\Ups\\Api\\Model\\RateResultDisclaimer', 'json', $context));
+                $object->setDisclaimer($this->denormalizer->denormalize($data['Disclaimer'], \ShipStream\Ups\Api\Model\RateResultDisclaimer::class, 'json', $context));
                 unset($data['Disclaimer']);
             }
             if (\array_key_exists('RateType', $data)) {
@@ -173,11 +173,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CurrencyCode']);
             }
             if (\array_key_exists('ChargeDetail', $data)) {
-                $object->setChargeDetail($this->denormalizer->denormalize($data['ChargeDetail'], 'ShipStream\\Ups\\Api\\Model\\RateResultChargeDetail', 'json', $context));
+                $object->setChargeDetail($this->denormalizer->denormalize($data['ChargeDetail'], \ShipStream\Ups\Api\Model\RateResultChargeDetail::class, 'json', $context));
                 unset($data['ChargeDetail']);
             }
             if (\array_key_exists('TaxCharges', $data)) {
-                $object->setTaxCharges($this->denormalizer->denormalize($data['TaxCharges'], 'ShipStream\\Ups\\Api\\Model\\RateResultTaxCharges', 'json', $context));
+                $object->setTaxCharges($this->denormalizer->denormalize($data['TaxCharges'], \ShipStream\Ups\Api\Model\RateResultTaxCharges::class, 'json', $context));
                 unset($data['TaxCharges']);
             }
             if (\array_key_exists('TotalTax', $data)) {
@@ -248,9 +248,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PickupRateResponseRateResult' => false];
+            return [\ShipStream\Ups\Api\Model\PickupRateResponseRateResult::class => false];
         }
     }
 }

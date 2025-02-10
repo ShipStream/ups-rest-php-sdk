@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria';
+            return $type === \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,15 +41,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('MerchantAccountNumberList', $data)) {
-                $object->setMerchantAccountNumberList($this->denormalizer->denormalize($data['MerchantAccountNumberList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList', 'json', $context));
+                $object->setMerchantAccountNumberList($this->denormalizer->denormalize($data['MerchantAccountNumberList'], \ShipStream\Ups\Api\Model\IncludeCriteriaMerchantAccountNumberList::class, 'json', $context));
                 unset($data['MerchantAccountNumberList']);
             }
             if (\array_key_exists('SearchFilter', $data)) {
-                $object->setSearchFilter($this->denormalizer->denormalize($data['SearchFilter'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter', 'json', $context));
+                $object->setSearchFilter($this->denormalizer->denormalize($data['SearchFilter'], \ShipStream\Ups\Api\Model\IncludeCriteriaSearchFilter::class, 'json', $context));
                 unset($data['SearchFilter']);
             }
             if (\array_key_exists('ServiceOfferingList', $data)) {
-                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList', 'json', $context));
+                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], \ShipStream\Ups\Api\Model\IncludeCriteriaServiceOfferingList::class, 'json', $context));
                 unset($data['ServiceOfferingList']);
             }
             foreach ($data as $key => $value) {
@@ -59,7 +59,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('merchantAccountNumberList') && null !== $object->getMerchantAccountNumberList()) {
@@ -78,9 +78,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria' => false];
+            return [\ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class => false];
         }
     }
 } else {
@@ -90,13 +90,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria';
+            return $type === \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class;
         }
         /**
          * @return mixed
@@ -114,15 +114,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('MerchantAccountNumberList', $data)) {
-                $object->setMerchantAccountNumberList($this->denormalizer->denormalize($data['MerchantAccountNumberList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaMerchantAccountNumberList', 'json', $context));
+                $object->setMerchantAccountNumberList($this->denormalizer->denormalize($data['MerchantAccountNumberList'], \ShipStream\Ups\Api\Model\IncludeCriteriaMerchantAccountNumberList::class, 'json', $context));
                 unset($data['MerchantAccountNumberList']);
             }
             if (\array_key_exists('SearchFilter', $data)) {
-                $object->setSearchFilter($this->denormalizer->denormalize($data['SearchFilter'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaSearchFilter', 'json', $context));
+                $object->setSearchFilter($this->denormalizer->denormalize($data['SearchFilter'], \ShipStream\Ups\Api\Model\IncludeCriteriaSearchFilter::class, 'json', $context));
                 unset($data['SearchFilter']);
             }
             if (\array_key_exists('ServiceOfferingList', $data)) {
-                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], 'ShipStream\\Ups\\Api\\Model\\IncludeCriteriaServiceOfferingList', 'json', $context));
+                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], \ShipStream\Ups\Api\Model\IncludeCriteriaServiceOfferingList::class, 'json', $context));
                 unset($data['ServiceOfferingList']);
             }
             foreach ($data as $key => $value) {
@@ -154,9 +154,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria' => false];
+            return [\ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class => false];
         }
     }
 }

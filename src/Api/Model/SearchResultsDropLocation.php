@@ -8,7 +8,7 @@ class SearchResultsDropLocation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -283,7 +283,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getLocationID() : string
+    public function getLocationID(): string
     {
         return $this->locationID;
     }
@@ -294,7 +294,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setLocationID(string $locationID) : self
+    public function setLocationID(string $locationID): self
     {
         $this->initialized['locationID'] = true;
         $this->locationID = $locationID;
@@ -307,7 +307,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginOrDestination() : string
+    public function getOriginOrDestination(): string
     {
         return $this->originOrDestination;
     }
@@ -320,7 +320,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginOrDestination(string $originOrDestination) : self
+    public function setOriginOrDestination(string $originOrDestination): self
     {
         $this->initialized['originOrDestination'] = true;
         $this->originOrDestination = $originOrDestination;
@@ -332,7 +332,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return DropLocationIVR
     */
-    public function getIVR() : DropLocationIVR
+    public function getIVR(): DropLocationIVR
     {
         return $this->iVR;
     }
@@ -344,7 +344,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setIVR(DropLocationIVR $iVR) : self
+    public function setIVR(DropLocationIVR $iVR): self
     {
         $this->initialized['iVR'] = true;
         $this->iVR = $iVR;
@@ -355,7 +355,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationGeocode
      */
-    public function getGeocode() : DropLocationGeocode
+    public function getGeocode(): DropLocationGeocode
     {
         return $this->geocode;
     }
@@ -366,7 +366,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setGeocode(DropLocationGeocode $geocode) : self
+    public function setGeocode(DropLocationGeocode $geocode): self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -377,7 +377,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationAddressKeyFormat
      */
-    public function getAddressKeyFormat() : DropLocationAddressKeyFormat
+    public function getAddressKeyFormat(): DropLocationAddressKeyFormat
     {
         return $this->addressKeyFormat;
     }
@@ -388,7 +388,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressKeyFormat(DropLocationAddressKeyFormat $addressKeyFormat) : self
+    public function setAddressKeyFormat(DropLocationAddressKeyFormat $addressKeyFormat): self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;
@@ -406,7 +406,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return list<string>
     */
-    public function getPhoneNumber() : array
+    public function getPhoneNumber(): array
     {
         return $this->phoneNumber;
     }
@@ -424,7 +424,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setPhoneNumber(array $phoneNumber) : self
+    public function setPhoneNumber(array $phoneNumber): self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;
@@ -437,7 +437,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return string
     */
-    public function getFaxNumber() : string
+    public function getFaxNumber(): string
     {
         return $this->faxNumber;
     }
@@ -450,7 +450,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(string $faxNumber): self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -461,7 +461,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -472,7 +472,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -490,7 +490,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return list<DropLocationLocationAttribute>
     */
-    public function getLocationAttribute() : array
+    public function getLocationAttribute(): array
     {
         return $this->locationAttribute;
     }
@@ -508,7 +508,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setLocationAttribute(array $locationAttribute) : self
+    public function setLocationAttribute(array $locationAttribute): self
     {
         $this->initialized['locationAttribute'] = true;
         $this->locationAttribute = $locationAttribute;
@@ -519,7 +519,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationDistance
      */
-    public function getDistance() : DropLocationDistance
+    public function getDistance(): DropLocationDistance
     {
         return $this->distance;
     }
@@ -530,7 +530,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setDistance(DropLocationDistance $distance) : self
+    public function setDistance(DropLocationDistance $distance): self
     {
         $this->initialized['distance'] = true;
         $this->distance = $distance;
@@ -542,7 +542,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return list<DropLocationSpecialInstructions>
      */
-    public function getSpecialInstructions() : array
+    public function getSpecialInstructions(): array
     {
         return $this->specialInstructions;
     }
@@ -554,7 +554,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setSpecialInstructions(array $specialInstructions) : self
+    public function setSpecialInstructions(array $specialInstructions): self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -570,7 +570,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return list<string>
     */
-    public function getLatestGroundDropOffTime() : array
+    public function getLatestGroundDropOffTime(): array
     {
         return $this->latestGroundDropOffTime;
     }
@@ -586,7 +586,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setLatestGroundDropOffTime(array $latestGroundDropOffTime) : self
+    public function setLatestGroundDropOffTime(array $latestGroundDropOffTime): self
     {
         $this->initialized['latestGroundDropOffTime'] = true;
         $this->latestGroundDropOffTime = $latestGroundDropOffTime;
@@ -602,7 +602,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return list<string>
     */
-    public function getLatestAirDropOffTime() : array
+    public function getLatestAirDropOffTime(): array
     {
         return $this->latestAirDropOffTime;
     }
@@ -618,7 +618,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setLatestAirDropOffTime(array $latestAirDropOffTime) : self
+    public function setLatestAirDropOffTime(array $latestAirDropOffTime): self
     {
         $this->initialized['latestAirDropOffTime'] = true;
         $this->latestAirDropOffTime = $latestAirDropOffTime;
@@ -629,7 +629,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getAdditionalChargeIndicator() : string
+    public function getAdditionalChargeIndicator(): string
     {
         return $this->additionalChargeIndicator;
     }
@@ -640,7 +640,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalChargeIndicator(string $additionalChargeIndicator) : self
+    public function setAdditionalChargeIndicator(string $additionalChargeIndicator): self
     {
         $this->initialized['additionalChargeIndicator'] = true;
         $this->additionalChargeIndicator = $additionalChargeIndicator;
@@ -651,7 +651,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getStandardHoursOfOperation() : string
+    public function getStandardHoursOfOperation(): string
     {
         return $this->standardHoursOfOperation;
     }
@@ -662,7 +662,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setStandardHoursOfOperation(string $standardHoursOfOperation) : self
+    public function setStandardHoursOfOperation(string $standardHoursOfOperation): self
     {
         $this->initialized['standardHoursOfOperation'] = true;
         $this->standardHoursOfOperation = $standardHoursOfOperation;
@@ -673,7 +673,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getNonStandardHoursOfOperation() : string
+    public function getNonStandardHoursOfOperation(): string
     {
         return $this->nonStandardHoursOfOperation;
     }
@@ -684,7 +684,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setNonStandardHoursOfOperation(string $nonStandardHoursOfOperation) : self
+    public function setNonStandardHoursOfOperation(string $nonStandardHoursOfOperation): self
     {
         $this->initialized['nonStandardHoursOfOperation'] = true;
         $this->nonStandardHoursOfOperation = $nonStandardHoursOfOperation;
@@ -695,7 +695,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getWillCallHoursOfOperation() : string
+    public function getWillCallHoursOfOperation(): string
     {
         return $this->willCallHoursOfOperation;
     }
@@ -706,7 +706,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setWillCallHoursOfOperation(string $willCallHoursOfOperation) : self
+    public function setWillCallHoursOfOperation(string $willCallHoursOfOperation): self
     {
         $this->initialized['willCallHoursOfOperation'] = true;
         $this->willCallHoursOfOperation = $willCallHoursOfOperation;
@@ -717,7 +717,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -728,7 +728,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -739,7 +739,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getHomePageURL() : string
+    public function getHomePageURL(): string
     {
         return $this->homePageURL;
     }
@@ -750,7 +750,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setHomePageURL(string $homePageURL) : self
+    public function setHomePageURL(string $homePageURL): self
     {
         $this->initialized['homePageURL'] = true;
         $this->homePageURL = $homePageURL;
@@ -761,7 +761,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getComments() : string
+    public function getComments(): string
     {
         return $this->comments;
     }
@@ -772,7 +772,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setComments(string $comments) : self
+    public function setComments(string $comments): self
     {
         $this->initialized['comments'] = true;
         $this->comments = $comments;
@@ -783,7 +783,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationAdditionalComments
      */
-    public function getAdditionalComments() : DropLocationAdditionalComments
+    public function getAdditionalComments(): DropLocationAdditionalComments
     {
         return $this->additionalComments;
     }
@@ -794,7 +794,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalComments(DropLocationAdditionalComments $additionalComments) : self
+    public function setAdditionalComments(DropLocationAdditionalComments $additionalComments): self
     {
         $this->initialized['additionalComments'] = true;
         $this->additionalComments = $additionalComments;
@@ -806,7 +806,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getDisclaimer() : array
+    public function getDisclaimer(): array
     {
         return $this->disclaimer;
     }
@@ -818,7 +818,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setDisclaimer(array $disclaimer) : self
+    public function setDisclaimer(array $disclaimer): self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -829,7 +829,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getSLIC() : string
+    public function getSLIC(): string
     {
         return $this->sLIC;
     }
@@ -840,7 +840,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(string $sLIC): self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -851,7 +851,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getTimezone() : string
+    public function getTimezone(): string
     {
         return $this->timezone;
     }
@@ -862,7 +862,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setTimezone(string $timezone) : self
+    public function setTimezone(string $timezone): self
     {
         $this->initialized['timezone'] = true;
         $this->timezone = $timezone;
@@ -873,7 +873,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getFacilityType() : string
+    public function getFacilityType(): string
     {
         return $this->facilityType;
     }
@@ -884,7 +884,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setFacilityType(string $facilityType) : self
+    public function setFacilityType(string $facilityType): self
     {
         $this->initialized['facilityType'] = true;
         $this->facilityType = $facilityType;
@@ -895,7 +895,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationOperatingHours
      */
-    public function getOperatingHours() : DropLocationOperatingHours
+    public function getOperatingHours(): DropLocationOperatingHours
     {
         return $this->operatingHours;
     }
@@ -906,7 +906,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setOperatingHours(DropLocationOperatingHours $operatingHours) : self
+    public function setOperatingHours(DropLocationOperatingHours $operatingHours): self
     {
         $this->initialized['operatingHours'] = true;
         $this->operatingHours = $operatingHours;
@@ -918,7 +918,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return list<DropLocationLocalizedInstruction>
      */
-    public function getLocalizedInstruction() : array
+    public function getLocalizedInstruction(): array
     {
         return $this->localizedInstruction;
     }
@@ -930,7 +930,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setLocalizedInstruction(array $localizedInstruction) : self
+    public function setLocalizedInstruction(array $localizedInstruction): self
     {
         $this->initialized['localizedInstruction'] = true;
         $this->localizedInstruction = $localizedInstruction;
@@ -942,7 +942,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return list<DropLocationPromotionInformation>
      */
-    public function getPromotionInformation() : array
+    public function getPromotionInformation(): array
     {
         return $this->promotionInformation;
     }
@@ -954,7 +954,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setPromotionInformation(array $promotionInformation) : self
+    public function setPromotionInformation(array $promotionInformation): self
     {
         $this->initialized['promotionInformation'] = true;
         $this->promotionInformation = $promotionInformation;
@@ -965,7 +965,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationSortCode
      */
-    public function getSortCode() : DropLocationSortCode
+    public function getSortCode(): DropLocationSortCode
     {
         return $this->sortCode;
     }
@@ -976,7 +976,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setSortCode(DropLocationSortCode $sortCode) : self
+    public function setSortCode(DropLocationSortCode $sortCode): self
     {
         $this->initialized['sortCode'] = true;
         $this->sortCode = $sortCode;
@@ -987,7 +987,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationServiceOfferingList
      */
-    public function getServiceOfferingList() : DropLocationServiceOfferingList
+    public function getServiceOfferingList(): DropLocationServiceOfferingList
     {
         return $this->serviceOfferingList;
     }
@@ -998,7 +998,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOfferingList(DropLocationServiceOfferingList $serviceOfferingList) : self
+    public function setServiceOfferingList(DropLocationServiceOfferingList $serviceOfferingList): self
     {
         $this->initialized['serviceOfferingList'] = true;
         $this->serviceOfferingList = $serviceOfferingList;
@@ -1012,7 +1012,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return string
     */
-    public function getDisplayPhoneNumberIndicator() : string
+    public function getDisplayPhoneNumberIndicator(): string
     {
         return $this->displayPhoneNumberIndicator;
     }
@@ -1026,7 +1026,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setDisplayPhoneNumberIndicator(string $displayPhoneNumberIndicator) : self
+    public function setDisplayPhoneNumberIndicator(string $displayPhoneNumberIndicator): self
     {
         $this->initialized['displayPhoneNumberIndicator'] = true;
         $this->displayPhoneNumberIndicator = $displayPhoneNumberIndicator;
@@ -1037,7 +1037,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationAccessPointInformation
      */
-    public function getAccessPointInformation() : DropLocationAccessPointInformation
+    public function getAccessPointInformation(): DropLocationAccessPointInformation
     {
         return $this->accessPointInformation;
     }
@@ -1048,7 +1048,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointInformation(DropLocationAccessPointInformation $accessPointInformation) : self
+    public function setAccessPointInformation(DropLocationAccessPointInformation $accessPointInformation): self
     {
         $this->initialized['accessPointInformation'] = true;
         $this->accessPointInformation = $accessPointInformation;
@@ -1059,7 +1059,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return DropLocationLocationImage
      */
-    public function getLocationImage() : DropLocationLocationImage
+    public function getLocationImage(): DropLocationLocationImage
     {
         return $this->locationImage;
     }
@@ -1070,7 +1070,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setLocationImage(DropLocationLocationImage $locationImage) : self
+    public function setLocationImage(DropLocationLocationImage $locationImage): self
     {
         $this->initialized['locationImage'] = true;
         $this->locationImage = $locationImage;
@@ -1081,7 +1081,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getLocationNewIndicator() : string
+    public function getLocationNewIndicator(): string
     {
         return $this->locationNewIndicator;
     }
@@ -1092,7 +1092,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setLocationNewIndicator(string $locationNewIndicator) : self
+    public function setLocationNewIndicator(string $locationNewIndicator): self
     {
         $this->initialized['locationNewIndicator'] = true;
         $this->locationNewIndicator = $locationNewIndicator;
@@ -1103,7 +1103,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getPromotionalLinkURL() : string
+    public function getPromotionalLinkURL(): string
     {
         return $this->promotionalLinkURL;
     }
@@ -1114,7 +1114,7 @@ class SearchResultsDropLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setPromotionalLinkURL(string $promotionalLinkURL) : self
+    public function setPromotionalLinkURL(string $promotionalLinkURL): self
     {
         $this->initialized['promotionalLinkURL'] = true;
         $this->promotionalLinkURL = $promotionalLinkURL;
@@ -1128,7 +1128,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return string
     */
-    public function getFeaturedRank() : string
+    public function getFeaturedRank(): string
     {
         return $this->featuredRank;
     }
@@ -1142,7 +1142,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setFeaturedRank(string $featuredRank) : self
+    public function setFeaturedRank(string $featuredRank): self
     {
         $this->initialized['featuredRank'] = true;
         $this->featuredRank = $featuredRank;
@@ -1158,7 +1158,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return string
     */
-    public function getWillCallLocationIndicator() : string
+    public function getWillCallLocationIndicator(): string
     {
         return $this->willCallLocationIndicator;
     }
@@ -1174,7 +1174,7 @@ class SearchResultsDropLocation extends \ArrayObject
     *
     * @return self
     */
-    public function setWillCallLocationIndicator(string $willCallLocationIndicator) : self
+    public function setWillCallLocationIndicator(string $willCallLocationIndicator): self
     {
         $this->initialized['willCallLocationIndicator'] = true;
         $this->willCallLocationIndicator = $willCallLocationIndicator;

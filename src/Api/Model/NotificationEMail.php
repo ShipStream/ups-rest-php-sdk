@@ -8,7 +8,7 @@ class NotificationEMail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getEMailAddress() : array
+    public function getEMailAddress(): array
     {
         return $this->eMailAddress;
     }
@@ -58,7 +58,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(array $eMailAddress) : self
+    public function setEMailAddress(array $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -69,7 +69,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getUndeliverableEMailAddress() : string
+    public function getUndeliverableEMailAddress(): string
     {
         return $this->undeliverableEMailAddress;
     }
@@ -80,7 +80,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress) : self
+    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress): self
     {
         $this->initialized['undeliverableEMailAddress'] = true;
         $this->undeliverableEMailAddress = $undeliverableEMailAddress;
@@ -91,7 +91,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getFromEMailAddress() : string
+    public function getFromEMailAddress(): string
     {
         return $this->fromEMailAddress;
     }
@@ -102,7 +102,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setFromEMailAddress(string $fromEMailAddress) : self
+    public function setFromEMailAddress(string $fromEMailAddress): self
     {
         $this->initialized['fromEMailAddress'] = true;
         $this->fromEMailAddress = $fromEMailAddress;
@@ -113,7 +113,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getFromName() : string
+    public function getFromName(): string
     {
         return $this->fromName;
     }
@@ -124,7 +124,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setFromName(string $fromName) : self
+    public function setFromName(string $fromName): self
     {
         $this->initialized['fromName'] = true;
         $this->fromName = $fromName;
@@ -135,7 +135,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getMemo() : string
+    public function getMemo(): string
     {
         return $this->memo;
     }
@@ -146,7 +146,7 @@ class NotificationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setMemo(string $memo) : self
+    public function setMemo(string $memo): self
     {
         $this->initialized['memo'] = true;
         $this->memo = $memo;

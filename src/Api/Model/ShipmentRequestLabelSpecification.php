@@ -8,7 +8,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -71,7 +71,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return LabelSpecificationLabelImageFormat
      */
-    public function getLabelImageFormat() : LabelSpecificationLabelImageFormat
+    public function getLabelImageFormat(): LabelSpecificationLabelImageFormat
     {
         return $this->labelImageFormat;
     }
@@ -82,7 +82,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelImageFormat(LabelSpecificationLabelImageFormat $labelImageFormat) : self
+    public function setLabelImageFormat(LabelSpecificationLabelImageFormat $labelImageFormat): self
     {
         $this->initialized['labelImageFormat'] = true;
         $this->labelImageFormat = $labelImageFormat;
@@ -93,7 +93,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return string
      */
-    public function getHTTPUserAgent() : string
+    public function getHTTPUserAgent(): string
     {
         return $this->hTTPUserAgent;
     }
@@ -104,7 +104,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setHTTPUserAgent(string $hTTPUserAgent) : self
+    public function setHTTPUserAgent(string $hTTPUserAgent): self
     {
         $this->initialized['hTTPUserAgent'] = true;
         $this->hTTPUserAgent = $hTTPUserAgent;
@@ -115,7 +115,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return LabelSpecificationLabelStockSize
      */
-    public function getLabelStockSize() : LabelSpecificationLabelStockSize
+    public function getLabelStockSize(): LabelSpecificationLabelStockSize
     {
         return $this->labelStockSize;
     }
@@ -126,7 +126,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelStockSize(LabelSpecificationLabelStockSize $labelStockSize) : self
+    public function setLabelStockSize(LabelSpecificationLabelStockSize $labelStockSize): self
     {
         $this->initialized['labelStockSize'] = true;
         $this->labelStockSize = $labelStockSize;
@@ -137,7 +137,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return list<LabelSpecificationInstruction>
      */
-    public function getInstruction() : array
+    public function getInstruction(): array
     {
         return $this->instruction;
     }
@@ -148,7 +148,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setInstruction(array $instruction) : self
+    public function setInstruction(array $instruction): self
     {
         $this->initialized['instruction'] = true;
         $this->instruction = $instruction;
@@ -183,7 +183,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     *
     * @return string
     */
-    public function getCharacterSet() : string
+    public function getCharacterSet(): string
     {
         return $this->characterSet;
     }
@@ -218,7 +218,7 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
     *
     * @return self
     */
-    public function setCharacterSet(string $characterSet) : self
+    public function setCharacterSet(string $characterSet): self
     {
         $this->initialized['characterSet'] = true;
         $this->characterSet = $characterSet;

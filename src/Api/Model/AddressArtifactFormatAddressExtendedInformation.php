@@ -8,7 +8,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -46,7 +46,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -57,7 +57,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getLow() : string
+    public function getLow(): string
     {
         return $this->low;
     }
@@ -68,7 +68,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setLow(string $low) : self
+    public function setLow(string $low): self
     {
         $this->initialized['low'] = true;
         $this->low = $low;
@@ -79,7 +79,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getHigh() : string
+    public function getHigh(): string
     {
         return $this->high;
     }
@@ -90,7 +90,7 @@ class AddressArtifactFormatAddressExtendedInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setHigh(string $high) : self
+    public function setHigh(string $high): self
     {
         $this->initialized['high'] = true;
         $this->high = $high;
