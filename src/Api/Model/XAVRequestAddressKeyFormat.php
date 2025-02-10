@@ -47,7 +47,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * City or Town name.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision2;
     /**
@@ -65,7 +65,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * 4 digit Postal Code extension. For US use only.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodeExtendedLow;
     /**
@@ -187,20 +187,20 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * City or Town name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision2(): string
+    public function getPoliticalDivision2(): ?string
     {
         return $this->politicalDivision2;
     }
     /**
      * City or Town name.
      *
-     * @param string $politicalDivision2
+     * @param string|null $politicalDivision2
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2): self
+    public function setPoliticalDivision2(?string $politicalDivision2): self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -253,20 +253,20 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * 4 digit Postal Code extension. For US use only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodeExtendedLow(): string
+    public function getPostcodeExtendedLow(): ?string
     {
         return $this->postcodeExtendedLow;
     }
     /**
      * 4 digit Postal Code extension. For US use only.
      *
-     * @param string $postcodeExtendedLow
+     * @param string|null $postcodeExtendedLow
      *
      * @return self
      */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow): self
+    public function setPostcodeExtendedLow(?string $postcodeExtendedLow): self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;

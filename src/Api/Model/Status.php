@@ -21,7 +21,7 @@ class Status extends \ArrayObject
     /**
      * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -67,20 +67,20 @@ class Status extends \ArrayObject
     /**
      * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
     /**
      * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

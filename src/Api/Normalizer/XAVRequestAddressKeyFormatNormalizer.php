@@ -60,9 +60,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRegion($data['Region']);
                 unset($data['Region']);
             }
-            if (\array_key_exists('PoliticalDivision2', $data)) {
+            if (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] !== null) {
                 $object->setPoliticalDivision2($data['PoliticalDivision2']);
                 unset($data['PoliticalDivision2']);
+            }
+            elseif (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] === null) {
+                $object->setPoliticalDivision2(null);
             }
             if (\array_key_exists('PoliticalDivision1', $data)) {
                 $object->setPoliticalDivision1($data['PoliticalDivision1']);
@@ -72,9 +75,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPostcodePrimaryLow($data['PostcodePrimaryLow']);
                 unset($data['PostcodePrimaryLow']);
             }
-            if (\array_key_exists('PostcodeExtendedLow', $data)) {
+            if (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] !== null) {
                 $object->setPostcodeExtendedLow($data['PostcodeExtendedLow']);
                 unset($data['PostcodeExtendedLow']);
+            }
+            elseif (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] === null) {
+                $object->setPostcodeExtendedLow(null);
             }
             if (\array_key_exists('Urbanization', $data)) {
                 $object->setUrbanization($data['Urbanization']);
@@ -188,9 +194,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRegion($data['Region']);
                 unset($data['Region']);
             }
-            if (\array_key_exists('PoliticalDivision2', $data)) {
+            if (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] !== null) {
                 $object->setPoliticalDivision2($data['PoliticalDivision2']);
                 unset($data['PoliticalDivision2']);
+            }
+            elseif (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] === null) {
+                $object->setPoliticalDivision2(null);
             }
             if (\array_key_exists('PoliticalDivision1', $data)) {
                 $object->setPoliticalDivision1($data['PoliticalDivision1']);
@@ -200,9 +209,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPostcodePrimaryLow($data['PostcodePrimaryLow']);
                 unset($data['PostcodePrimaryLow']);
             }
-            if (\array_key_exists('PostcodeExtendedLow', $data)) {
+            if (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] !== null) {
                 $object->setPostcodeExtendedLow($data['PostcodeExtendedLow']);
                 unset($data['PostcodeExtendedLow']);
+            }
+            elseif (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] === null) {
+                $object->setPostcodeExtendedLow(null);
             }
             if (\array_key_exists('Urbanization', $data)) {
                 $object->setUrbanization($data['Urbanization']);
