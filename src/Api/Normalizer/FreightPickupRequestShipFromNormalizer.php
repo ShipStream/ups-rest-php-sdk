@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom';
+            return $type === \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,11 +49,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Name']);
             }
             if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress', 'json', $context));
+                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\ShipFromAddress::class, 'json', $context));
                 unset($data['Address']);
             }
             if (\array_key_exists('Phone', $data)) {
-                $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\ShipFromPhone', 'json', $context));
+                $object->setPhone($this->denormalizer->denormalize($data['Phone'], \ShipStream\Ups\Api\Model\ShipFromPhone::class, 'json', $context));
                 unset($data['Phone']);
             }
             if (\array_key_exists('EMailAddress', $data)) {
@@ -67,7 +67,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['AttentionName'] = $object->getAttentionName();
@@ -84,9 +84,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom' => false];
+            return [\ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class => false];
         }
     }
 } else {
@@ -96,13 +96,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom';
+            return $type === \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class;
         }
         /**
          * @return mixed
@@ -128,11 +128,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Name']);
             }
             if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\ShipFromAddress', 'json', $context));
+                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\ShipFromAddress::class, 'json', $context));
                 unset($data['Address']);
             }
             if (\array_key_exists('Phone', $data)) {
-                $object->setPhone($this->denormalizer->denormalize($data['Phone'], 'ShipStream\\Ups\\Api\\Model\\ShipFromPhone', 'json', $context));
+                $object->setPhone($this->denormalizer->denormalize($data['Phone'], \ShipStream\Ups\Api\Model\ShipFromPhone::class, 'json', $context));
                 unset($data['Phone']);
             }
             if (\array_key_exists('EMailAddress', $data)) {
@@ -166,9 +166,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightPickupRequestShipFrom' => false];
+            return [\ShipStream\Ups\Api\Model\FreightPickupRequestShipFrom::class => false];
         }
     }
 }

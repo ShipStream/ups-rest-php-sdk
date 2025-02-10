@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequest';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentRequest::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequest';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentRequest::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,19 +41,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Request', $data)) {
-                $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest', 'json', $context));
+                $object->setRequest($this->denormalizer->denormalize($data['Request'], \ShipStream\Ups\Api\Model\ShipmentRequestRequest::class, 'json', $context));
                 unset($data['Request']);
             }
             if (\array_key_exists('Shipment', $data)) {
-                $object->setShipment($this->denormalizer->denormalize($data['Shipment'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment', 'json', $context));
+                $object->setShipment($this->denormalizer->denormalize($data['Shipment'], \ShipStream\Ups\Api\Model\ShipmentRequestShipment::class, 'json', $context));
                 unset($data['Shipment']);
             }
             if (\array_key_exists('LabelSpecification', $data)) {
-                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification', 'json', $context));
+                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], \ShipStream\Ups\Api\Model\ShipmentRequestLabelSpecification::class, 'json', $context));
                 unset($data['LabelSpecification']);
             }
             if (\array_key_exists('ReceiptSpecification', $data)) {
-                $object->setReceiptSpecification($this->denormalizer->denormalize($data['ReceiptSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification', 'json', $context));
+                $object->setReceiptSpecification($this->denormalizer->denormalize($data['ReceiptSpecification'], \ShipStream\Ups\Api\Model\ShipmentRequestReceiptSpecification::class, 'json', $context));
                 unset($data['ReceiptSpecification']);
             }
             foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Request'] = $this->normalizer->normalize($object->getRequest(), 'json', $context);
@@ -81,9 +81,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentRequest' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentRequest::class => false];
         }
     }
 } else {
@@ -93,13 +93,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequest';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentRequest::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentRequest';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentRequest::class;
         }
         /**
          * @return mixed
@@ -117,19 +117,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Request', $data)) {
-                $object->setRequest($this->denormalizer->denormalize($data['Request'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestRequest', 'json', $context));
+                $object->setRequest($this->denormalizer->denormalize($data['Request'], \ShipStream\Ups\Api\Model\ShipmentRequestRequest::class, 'json', $context));
                 unset($data['Request']);
             }
             if (\array_key_exists('Shipment', $data)) {
-                $object->setShipment($this->denormalizer->denormalize($data['Shipment'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestShipment', 'json', $context));
+                $object->setShipment($this->denormalizer->denormalize($data['Shipment'], \ShipStream\Ups\Api\Model\ShipmentRequestShipment::class, 'json', $context));
                 unset($data['Shipment']);
             }
             if (\array_key_exists('LabelSpecification', $data)) {
-                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestLabelSpecification', 'json', $context));
+                $object->setLabelSpecification($this->denormalizer->denormalize($data['LabelSpecification'], \ShipStream\Ups\Api\Model\ShipmentRequestLabelSpecification::class, 'json', $context));
                 unset($data['LabelSpecification']);
             }
             if (\array_key_exists('ReceiptSpecification', $data)) {
-                $object->setReceiptSpecification($this->denormalizer->denormalize($data['ReceiptSpecification'], 'ShipStream\\Ups\\Api\\Model\\ShipmentRequestReceiptSpecification', 'json', $context));
+                $object->setReceiptSpecification($this->denormalizer->denormalize($data['ReceiptSpecification'], \ShipStream\Ups\Api\Model\ShipmentRequestReceiptSpecification::class, 'json', $context));
                 unset($data['ReceiptSpecification']);
             }
             foreach ($data as $key => $value) {
@@ -160,9 +160,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentRequest' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentRequest::class => false];
         }
     }
 }

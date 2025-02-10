@@ -8,7 +8,7 @@ class ManifestShipper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -65,7 +65,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -76,7 +76,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -87,7 +87,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -98,7 +98,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -109,7 +109,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;
     }
@@ -120,7 +120,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(string $taxIdentificationNumber): self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -131,7 +131,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
     }
@@ -142,7 +142,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(string $phoneNumber): self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;
@@ -153,7 +153,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber(): string
     {
         return $this->faxNumber;
     }
@@ -164,7 +164,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(string $faxNumber): self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -175,7 +175,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -186,7 +186,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -197,7 +197,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -208,7 +208,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -219,7 +219,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return ManifestShipperAddress
      */
-    public function getAddress() : ManifestShipperAddress
+    public function getAddress(): ManifestShipperAddress
     {
         return $this->address;
     }
@@ -230,7 +230,7 @@ class ManifestShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(ManifestShipperAddress $address) : self
+    public function setAddress(ManifestShipperAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

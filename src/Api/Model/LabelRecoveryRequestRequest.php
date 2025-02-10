@@ -8,7 +8,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -45,7 +45,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getSubVersion() : string
+    public function getSubVersion(): string
     {
         return $this->subVersion;
     }
@@ -61,7 +61,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(string $subVersion): self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -72,7 +72,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getRequestOption() : string
+    public function getRequestOption(): string
     {
         return $this->requestOption;
     }
@@ -83,7 +83,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(string $requestOption): self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -94,7 +94,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
      *
      * @return LRRequestTransactionReference
      */
-    public function getTransactionReference() : LRRequestTransactionReference
+    public function getTransactionReference(): LRRequestTransactionReference
     {
         return $this->transactionReference;
     }
@@ -105,7 +105,7 @@ class LabelRecoveryRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(LRRequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(LRRequestTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

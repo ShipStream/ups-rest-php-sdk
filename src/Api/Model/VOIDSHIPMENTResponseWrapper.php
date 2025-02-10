@@ -8,7 +8,7 @@ class VOIDSHIPMENTResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class VOIDSHIPMENTResponseWrapper extends \ArrayObject
      *
      * @return VoidShipmentResponse
      */
-    public function getVoidShipmentResponse() : VoidShipmentResponse
+    public function getVoidShipmentResponse(): VoidShipmentResponse
     {
         return $this->voidShipmentResponse;
     }
@@ -34,7 +34,7 @@ class VOIDSHIPMENTResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setVoidShipmentResponse(VoidShipmentResponse $voidShipmentResponse) : self
+    public function setVoidShipmentResponse(VoidShipmentResponse $voidShipmentResponse): self
     {
         $this->initialized['voidShipmentResponse'] = true;
         $this->voidShipmentResponse = $voidShipmentResponse;

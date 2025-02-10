@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData';
+            return $type === \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,17 +41,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ChemicalDetail', $data)) {
-                $object->setChemicalDetail($this->denormalizer->denormalize($data['ChemicalDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail', 'json', $context));
+                $object->setChemicalDetail($this->denormalizer->denormalize($data['ChemicalDetail'], \ShipStream\Ups\Api\Model\ChemicalDataChemicalDetail::class, 'json', $context));
                 unset($data['ChemicalDetail']);
             }
             if (\array_key_exists('ProperShippingNameDetail', $data)) {
-                $object->setProperShippingNameDetail($this->denormalizer->denormalize($data['ProperShippingNameDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail', 'json', $context));
+                $object->setProperShippingNameDetail($this->denormalizer->denormalize($data['ProperShippingNameDetail'], \ShipStream\Ups\Api\Model\ChemicalDataProperShippingNameDetail::class, 'json', $context));
                 unset($data['ProperShippingNameDetail']);
             }
             if (\array_key_exists('PackageQuantityLimitDetail', $data)) {
                 $values = [];
                 foreach ($data['PackageQuantityLimitDetail'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\ChemicalDataPackageQuantityLimitDetail::class, 'json', $context);
                 }
                 $object->setPackageQuantityLimitDetail($values);
                 unset($data['PackageQuantityLimitDetail']);
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('chemicalDetail') && null !== $object->getChemicalDetail()) {
@@ -86,9 +86,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData' => false];
+            return [\ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class => false];
         }
     }
 } else {
@@ -98,13 +98,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData';
+            return $type === \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class;
         }
         /**
          * @return mixed
@@ -122,17 +122,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ChemicalDetail', $data)) {
-                $object->setChemicalDetail($this->denormalizer->denormalize($data['ChemicalDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataChemicalDetail', 'json', $context));
+                $object->setChemicalDetail($this->denormalizer->denormalize($data['ChemicalDetail'], \ShipStream\Ups\Api\Model\ChemicalDataChemicalDetail::class, 'json', $context));
                 unset($data['ChemicalDetail']);
             }
             if (\array_key_exists('ProperShippingNameDetail', $data)) {
-                $object->setProperShippingNameDetail($this->denormalizer->denormalize($data['ProperShippingNameDetail'], 'ShipStream\\Ups\\Api\\Model\\ChemicalDataProperShippingNameDetail', 'json', $context));
+                $object->setProperShippingNameDetail($this->denormalizer->denormalize($data['ProperShippingNameDetail'], \ShipStream\Ups\Api\Model\ChemicalDataProperShippingNameDetail::class, 'json', $context));
                 unset($data['ProperShippingNameDetail']);
             }
             if (\array_key_exists('PackageQuantityLimitDetail', $data)) {
                 $values = [];
                 foreach ($data['PackageQuantityLimitDetail'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ChemicalDataPackageQuantityLimitDetail', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\ChemicalDataPackageQuantityLimitDetail::class, 'json', $context);
                 }
                 $object->setPackageQuantityLimitDetail($values);
                 unset($data['PackageQuantityLimitDetail']);
@@ -170,9 +170,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ChemicalReferenceDataResponseChemicalData' => false];
+            return [\ShipStream\Ups\Api\Model\ChemicalReferenceDataResponseChemicalData::class => false];
         }
     }
 }

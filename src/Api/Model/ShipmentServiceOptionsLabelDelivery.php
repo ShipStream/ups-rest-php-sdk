@@ -8,7 +8,7 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
      *
      * @return LabelDeliveryEMail
      */
-    public function getEMail() : LabelDeliveryEMail
+    public function getEMail(): LabelDeliveryEMail
     {
         return $this->eMail;
     }
@@ -40,7 +40,7 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setEMail(LabelDeliveryEMail $eMail) : self
+    public function setEMail(LabelDeliveryEMail $eMail): self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;
@@ -51,7 +51,7 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
      *
      * @return string
      */
-    public function getLabelLinksIndicator() : string
+    public function getLabelLinksIndicator(): string
     {
         return $this->labelLinksIndicator;
     }
@@ -62,7 +62,7 @@ class ShipmentServiceOptionsLabelDelivery extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelLinksIndicator(string $labelLinksIndicator) : self
+    public function setLabelLinksIndicator(string $labelLinksIndicator): self
     {
         $this->initialized['labelLinksIndicator'] = true;
         $this->labelLinksIndicator = $labelLinksIndicator;

@@ -8,7 +8,7 @@ class ManifestUAPAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -52,7 +52,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -63,7 +63,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -74,7 +74,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -85,7 +85,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return UAPAddressAddress
      */
-    public function getAddress() : UAPAddressAddress
+    public function getAddress(): UAPAddressAddress
     {
         return $this->address;
     }
@@ -96,7 +96,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(UAPAddressAddress $address) : self
+    public function setAddress(UAPAddressAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -107,7 +107,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
     }
@@ -118,7 +118,7 @@ class ManifestUAPAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(string $phoneNumber): self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;

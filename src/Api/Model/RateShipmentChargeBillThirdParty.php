@@ -8,7 +8,7 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -40,7 +40,7 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -51,7 +51,7 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return RateBillThirdPartyAddress
      */
-    public function getAddress() : RateBillThirdPartyAddress
+    public function getAddress(): RateBillThirdPartyAddress
     {
         return $this->address;
     }
@@ -62,7 +62,7 @@ class RateShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(RateBillThirdPartyAddress $address) : self
+    public function setAddress(RateBillThirdPartyAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

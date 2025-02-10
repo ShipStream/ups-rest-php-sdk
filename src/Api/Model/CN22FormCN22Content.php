@@ -8,7 +8,7 @@ class CN22FormCN22Content extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -61,7 +61,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return string
      */
-    public function getCN22ContentQuantity() : string
+    public function getCN22ContentQuantity(): string
     {
         return $this->cN22ContentQuantity;
     }
@@ -72,7 +72,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22ContentQuantity(string $cN22ContentQuantity) : self
+    public function setCN22ContentQuantity(string $cN22ContentQuantity): self
     {
         $this->initialized['cN22ContentQuantity'] = true;
         $this->cN22ContentQuantity = $cN22ContentQuantity;
@@ -85,7 +85,7 @@ class CN22FormCN22Content extends \ArrayObject
     *
     * @return string
     */
-    public function getCN22ContentDescription() : string
+    public function getCN22ContentDescription(): string
     {
         return $this->cN22ContentDescription;
     }
@@ -98,7 +98,7 @@ class CN22FormCN22Content extends \ArrayObject
     *
     * @return self
     */
-    public function setCN22ContentDescription(string $cN22ContentDescription) : self
+    public function setCN22ContentDescription(string $cN22ContentDescription): self
     {
         $this->initialized['cN22ContentDescription'] = true;
         $this->cN22ContentDescription = $cN22ContentDescription;
@@ -109,7 +109,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return CN22ContentCN22ContentWeight
      */
-    public function getCN22ContentWeight() : CN22ContentCN22ContentWeight
+    public function getCN22ContentWeight(): CN22ContentCN22ContentWeight
     {
         return $this->cN22ContentWeight;
     }
@@ -120,7 +120,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22ContentWeight(CN22ContentCN22ContentWeight $cN22ContentWeight) : self
+    public function setCN22ContentWeight(CN22ContentCN22ContentWeight $cN22ContentWeight): self
     {
         $this->initialized['cN22ContentWeight'] = true;
         $this->cN22ContentWeight = $cN22ContentWeight;
@@ -131,7 +131,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return string
      */
-    public function getCN22ContentTotalValue() : string
+    public function getCN22ContentTotalValue(): string
     {
         return $this->cN22ContentTotalValue;
     }
@@ -142,7 +142,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22ContentTotalValue(string $cN22ContentTotalValue) : self
+    public function setCN22ContentTotalValue(string $cN22ContentTotalValue): self
     {
         $this->initialized['cN22ContentTotalValue'] = true;
         $this->cN22ContentTotalValue = $cN22ContentTotalValue;
@@ -153,7 +153,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return string
      */
-    public function getCN22ContentCurrencyCode() : string
+    public function getCN22ContentCurrencyCode(): string
     {
         return $this->cN22ContentCurrencyCode;
     }
@@ -164,7 +164,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22ContentCurrencyCode(string $cN22ContentCurrencyCode) : self
+    public function setCN22ContentCurrencyCode(string $cN22ContentCurrencyCode): self
     {
         $this->initialized['cN22ContentCurrencyCode'] = true;
         $this->cN22ContentCurrencyCode = $cN22ContentCurrencyCode;
@@ -175,7 +175,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return string
      */
-    public function getCN22ContentCountryOfOrigin() : string
+    public function getCN22ContentCountryOfOrigin(): string
     {
         return $this->cN22ContentCountryOfOrigin;
     }
@@ -186,7 +186,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22ContentCountryOfOrigin(string $cN22ContentCountryOfOrigin) : self
+    public function setCN22ContentCountryOfOrigin(string $cN22ContentCountryOfOrigin): self
     {
         $this->initialized['cN22ContentCountryOfOrigin'] = true;
         $this->cN22ContentCountryOfOrigin = $cN22ContentCountryOfOrigin;
@@ -197,7 +197,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return string
      */
-    public function getCN22ContentTariffNumber() : string
+    public function getCN22ContentTariffNumber(): string
     {
         return $this->cN22ContentTariffNumber;
     }
@@ -208,7 +208,7 @@ class CN22FormCN22Content extends \ArrayObject
      *
      * @return self
      */
-    public function setCN22ContentTariffNumber(string $cN22ContentTariffNumber) : self
+    public function setCN22ContentTariffNumber(string $cN22ContentTariffNumber): self
     {
         $this->initialized['cN22ContentTariffNumber'] = true;
         $this->cN22ContentTariffNumber = $cN22ContentTariffNumber;

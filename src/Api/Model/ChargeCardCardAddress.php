@@ -8,7 +8,7 @@ class ChargeCardCardAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -49,7 +49,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAddressLine() : array
+    public function getAddressLine(): array
     {
         return $this->addressLine;
     }
@@ -60,7 +60,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(array $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -71,7 +71,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -82,7 +82,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -93,7 +93,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvince() : string
+    public function getStateProvince(): string
     {
         return $this->stateProvince;
     }
@@ -104,7 +104,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(string $stateProvince): self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -115,7 +115,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -126,7 +126,7 @@ class ChargeCardCardAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -139,7 +139,7 @@ class ChargeCardCardAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -152,7 +152,7 @@ class ChargeCardCardAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

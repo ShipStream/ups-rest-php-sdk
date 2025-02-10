@@ -8,7 +8,7 @@ class GenericFailureNotification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class GenericFailureNotification extends \ArrayObject
      *
      * @return string
      */
-    public function getFailedEmailAddress() : string
+    public function getFailedEmailAddress(): string
     {
         return $this->failedEmailAddress;
     }
@@ -40,7 +40,7 @@ class GenericFailureNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setFailedEmailAddress(string $failedEmailAddress) : self
+    public function setFailedEmailAddress(string $failedEmailAddress): self
     {
         $this->initialized['failedEmailAddress'] = true;
         $this->failedEmailAddress = $failedEmailAddress;
@@ -51,7 +51,7 @@ class GenericFailureNotification extends \ArrayObject
      *
      * @return FailureNotificationFailureNotificationCode
      */
-    public function getFailureNotificationCode() : FailureNotificationFailureNotificationCode
+    public function getFailureNotificationCode(): FailureNotificationFailureNotificationCode
     {
         return $this->failureNotificationCode;
     }
@@ -62,7 +62,7 @@ class GenericFailureNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setFailureNotificationCode(FailureNotificationFailureNotificationCode $failureNotificationCode) : self
+    public function setFailureNotificationCode(FailureNotificationFailureNotificationCode $failureNotificationCode): self
     {
         $this->initialized['failureNotificationCode'] = true;
         $this->failureNotificationCode = $failureNotificationCode;

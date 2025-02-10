@@ -8,7 +8,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -64,7 +64,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -75,7 +75,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return string
      */
-    public function getDocumentsOnlyIndicator() : string
+    public function getDocumentsOnlyIndicator(): string
     {
         return $this->documentsOnlyIndicator;
     }
@@ -86,7 +86,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setDocumentsOnlyIndicator(string $documentsOnlyIndicator) : self
+    public function setDocumentsOnlyIndicator(string $documentsOnlyIndicator): self
     {
         $this->initialized['documentsOnlyIndicator'] = true;
         $this->documentsOnlyIndicator = $documentsOnlyIndicator;
@@ -97,7 +97,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return string
      */
-    public function getPackageBillType() : string
+    public function getPackageBillType(): string
     {
         return $this->packageBillType;
     }
@@ -108,7 +108,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageBillType(string $packageBillType) : self
+    public function setPackageBillType(string $packageBillType): self
     {
         $this->initialized['packageBillType'] = true;
         $this->packageBillType = $packageBillType;
@@ -119,7 +119,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return TimeInTransitServiceSummary
      */
-    public function getServiceSummary() : TimeInTransitServiceSummary
+    public function getServiceSummary(): TimeInTransitServiceSummary
     {
         return $this->serviceSummary;
     }
@@ -130,7 +130,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceSummary(TimeInTransitServiceSummary $serviceSummary) : self
+    public function setServiceSummary(TimeInTransitServiceSummary $serviceSummary): self
     {
         $this->initialized['serviceSummary'] = true;
         $this->serviceSummary = $serviceSummary;
@@ -141,7 +141,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return string
      */
-    public function getAutoDutyCode() : string
+    public function getAutoDutyCode(): string
     {
         return $this->autoDutyCode;
     }
@@ -152,7 +152,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setAutoDutyCode(string $autoDutyCode) : self
+    public function setAutoDutyCode(string $autoDutyCode): self
     {
         $this->initialized['autoDutyCode'] = true;
         $this->autoDutyCode = $autoDutyCode;
@@ -163,7 +163,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return string
      */
-    public function getDisclaimer() : string
+    public function getDisclaimer(): string
     {
         return $this->disclaimer;
     }
@@ -174,7 +174,7 @@ class RatedShipmentTimeInTransit extends \ArrayObject
      *
      * @return self
      */
-    public function setDisclaimer(string $disclaimer) : self
+    public function setDisclaimer(string $disclaimer): self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;

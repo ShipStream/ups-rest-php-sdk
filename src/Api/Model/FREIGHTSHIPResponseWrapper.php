@@ -8,7 +8,7 @@ class FREIGHTSHIPResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class FREIGHTSHIPResponseWrapper extends \ArrayObject
      *
      * @return FreightShipResponse
      */
-    public function getFreightShipResponse() : FreightShipResponse
+    public function getFreightShipResponse(): FreightShipResponse
     {
         return $this->freightShipResponse;
     }
@@ -34,7 +34,7 @@ class FREIGHTSHIPResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightShipResponse(FreightShipResponse $freightShipResponse) : self
+    public function setFreightShipResponse(FreightShipResponse $freightShipResponse): self
     {
         $this->initialized['freightShipResponse'] = true;
         $this->freightShipResponse = $freightShipResponse;

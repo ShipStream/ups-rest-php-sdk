@@ -8,7 +8,7 @@ class PICKUPResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PICKUPResponseWrapper extends \ArrayObject
      *
      * @return PickupRateResponse
      */
-    public function getPickupRateResponse() : PickupRateResponse
+    public function getPickupRateResponse(): PickupRateResponse
     {
         return $this->pickupRateResponse;
     }
@@ -34,7 +34,7 @@ class PICKUPResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupRateResponse(PickupRateResponse $pickupRateResponse) : self
+    public function setPickupRateResponse(PickupRateResponse $pickupRateResponse): self
     {
         $this->initialized['pickupRateResponse'] = true;
         $this->pickupRateResponse = $pickupRateResponse;

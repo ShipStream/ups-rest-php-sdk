@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException';
+            return $type === \ShipStream\Ups\Api\Model\SubscriptionFileException::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SubscriptionFileException::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -43,7 +43,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('PackageReferenceNumber', $data)) {
                 $values = [];
                 foreach ($data['PackageReferenceNumber'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ExceptionPackageReferenceNumber', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\ExceptionPackageReferenceNumber::class, 'json', $context);
                 }
                 $object->setPackageReferenceNumber($values);
                 unset($data['PackageReferenceNumber']);
@@ -51,7 +51,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ShipmentReferenceNumber', $data)) {
                 $values_1 = [];
                 foreach ($data['ShipmentReferenceNumber'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ExceptionShipmentReferenceNumber', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\ExceptionShipmentReferenceNumber::class, 'json', $context);
                 }
                 $object->setShipmentReferenceNumber($values_1);
                 unset($data['ShipmentReferenceNumber']);
@@ -73,7 +73,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Time']);
             }
             if (\array_key_exists('UpdatedAddress', $data)) {
-                $object->setUpdatedAddress($this->denormalizer->denormalize($data['UpdatedAddress'], 'ShipStream\\Ups\\Api\\Model\\ExceptionUpdatedAddress', 'json', $context));
+                $object->setUpdatedAddress($this->denormalizer->denormalize($data['UpdatedAddress'], \ShipStream\Ups\Api\Model\ExceptionUpdatedAddress::class, 'json', $context));
                 unset($data['UpdatedAddress']);
             }
             if (\array_key_exists('StatusCode', $data)) {
@@ -93,7 +93,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ReasonDescription']);
             }
             if (\array_key_exists('Resolution', $data)) {
-                $object->setResolution($this->denormalizer->denormalize($data['Resolution'], 'ShipStream\\Ups\\Api\\Model\\ExceptionResolution', 'json', $context));
+                $object->setResolution($this->denormalizer->denormalize($data['Resolution'], \ShipStream\Ups\Api\Model\ExceptionResolution::class, 'json', $context));
                 unset($data['Resolution']);
             }
             if (\array_key_exists('RescheduledDeliveryDate', $data)) {
@@ -105,11 +105,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['RescheduledDeliveryTime']);
             }
             if (\array_key_exists('ActivityLocation', $data)) {
-                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], 'ShipStream\\Ups\\Api\\Model\\ExceptionActivityLocation', 'json', $context));
+                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], \ShipStream\Ups\Api\Model\ExceptionActivityLocation::class, 'json', $context));
                 unset($data['ActivityLocation']);
             }
             if (\array_key_exists('BillToAccount', $data)) {
-                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], 'ShipStream\\Ups\\Api\\Model\\ExceptionBillToAccount', 'json', $context));
+                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], \ShipStream\Ups\Api\Model\ExceptionBillToAccount::class, 'json', $context));
                 unset($data['BillToAccount']);
             }
             if (\array_key_exists('AccessPointLocationID', $data)) {
@@ -123,7 +123,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('packageReferenceNumber') && null !== $object->getPackageReferenceNumber()) {
@@ -184,9 +184,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SubscriptionFileException' => false];
+            return [\ShipStream\Ups\Api\Model\SubscriptionFileException::class => false];
         }
     }
 } else {
@@ -196,13 +196,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException';
+            return $type === \ShipStream\Ups\Api\Model\SubscriptionFileException::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SubscriptionFileException::class;
         }
         /**
          * @return mixed
@@ -222,7 +222,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('PackageReferenceNumber', $data)) {
                 $values = [];
                 foreach ($data['PackageReferenceNumber'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ExceptionPackageReferenceNumber', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\ExceptionPackageReferenceNumber::class, 'json', $context);
                 }
                 $object->setPackageReferenceNumber($values);
                 unset($data['PackageReferenceNumber']);
@@ -230,7 +230,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ShipmentReferenceNumber', $data)) {
                 $values_1 = [];
                 foreach ($data['ShipmentReferenceNumber'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ExceptionShipmentReferenceNumber', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\ExceptionShipmentReferenceNumber::class, 'json', $context);
                 }
                 $object->setShipmentReferenceNumber($values_1);
                 unset($data['ShipmentReferenceNumber']);
@@ -252,7 +252,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Time']);
             }
             if (\array_key_exists('UpdatedAddress', $data)) {
-                $object->setUpdatedAddress($this->denormalizer->denormalize($data['UpdatedAddress'], 'ShipStream\\Ups\\Api\\Model\\ExceptionUpdatedAddress', 'json', $context));
+                $object->setUpdatedAddress($this->denormalizer->denormalize($data['UpdatedAddress'], \ShipStream\Ups\Api\Model\ExceptionUpdatedAddress::class, 'json', $context));
                 unset($data['UpdatedAddress']);
             }
             if (\array_key_exists('StatusCode', $data)) {
@@ -272,7 +272,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ReasonDescription']);
             }
             if (\array_key_exists('Resolution', $data)) {
-                $object->setResolution($this->denormalizer->denormalize($data['Resolution'], 'ShipStream\\Ups\\Api\\Model\\ExceptionResolution', 'json', $context));
+                $object->setResolution($this->denormalizer->denormalize($data['Resolution'], \ShipStream\Ups\Api\Model\ExceptionResolution::class, 'json', $context));
                 unset($data['Resolution']);
             }
             if (\array_key_exists('RescheduledDeliveryDate', $data)) {
@@ -284,11 +284,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['RescheduledDeliveryTime']);
             }
             if (\array_key_exists('ActivityLocation', $data)) {
-                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], 'ShipStream\\Ups\\Api\\Model\\ExceptionActivityLocation', 'json', $context));
+                $object->setActivityLocation($this->denormalizer->denormalize($data['ActivityLocation'], \ShipStream\Ups\Api\Model\ExceptionActivityLocation::class, 'json', $context));
                 unset($data['ActivityLocation']);
             }
             if (\array_key_exists('BillToAccount', $data)) {
-                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], 'ShipStream\\Ups\\Api\\Model\\ExceptionBillToAccount', 'json', $context));
+                $object->setBillToAccount($this->denormalizer->denormalize($data['BillToAccount'], \ShipStream\Ups\Api\Model\ExceptionBillToAccount::class, 'json', $context));
                 unset($data['BillToAccount']);
             }
             if (\array_key_exists('AccessPointLocationID', $data)) {
@@ -366,9 +366,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SubscriptionFileException' => false];
+            return [\ShipStream\Ups\Api\Model\SubscriptionFileException::class => false];
         }
     }
 }

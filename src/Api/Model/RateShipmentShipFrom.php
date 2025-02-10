@@ -8,7 +8,7 @@ class RateShipmentShipFrom extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class RateShipmentShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -46,7 +46,7 @@ class RateShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -57,7 +57,7 @@ class RateShipmentShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -68,7 +68,7 @@ class RateShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -79,7 +79,7 @@ class RateShipmentShipFrom extends \ArrayObject
      *
      * @return ShipFromAddress
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress(): ShipFromAddress
     {
         return $this->address;
     }
@@ -90,7 +90,7 @@ class RateShipmentShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(ShipFromAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

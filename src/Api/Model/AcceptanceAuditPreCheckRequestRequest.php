@@ -8,7 +8,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getRequestOption() : string
+    public function getRequestOption(): string
     {
         return $this->requestOption;
     }
@@ -52,7 +52,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setRequestOption(string $requestOption) : self
+    public function setRequestOption(string $requestOption): self
     {
         $this->initialized['requestOption'] = true;
         $this->requestOption = $requestOption;
@@ -63,7 +63,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getSubVersion() : string
+    public function getSubVersion(): string
     {
         return $this->subVersion;
     }
@@ -74,7 +74,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setSubVersion(string $subVersion) : self
+    public function setSubVersion(string $subVersion): self
     {
         $this->initialized['subVersion'] = true;
         $this->subVersion = $subVersion;
@@ -85,7 +85,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
      *
      * @return RequestTransactionReference
      */
-    public function getTransactionReference() : RequestTransactionReference
+    public function getTransactionReference(): RequestTransactionReference
     {
         return $this->transactionReference;
     }
@@ -96,7 +96,7 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(RequestTransactionReference $transactionReference) : self
+    public function setTransactionReference(RequestTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;

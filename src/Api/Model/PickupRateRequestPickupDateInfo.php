@@ -8,7 +8,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -44,7 +44,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getCloseTime() : string
+    public function getCloseTime(): string
     {
         return $this->closeTime;
     }
@@ -57,7 +57,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setCloseTime(string $closeTime) : self
+    public function setCloseTime(string $closeTime): self
     {
         $this->initialized['closeTime'] = true;
         $this->closeTime = $closeTime;
@@ -70,7 +70,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getReadyTime() : string
+    public function getReadyTime(): string
     {
         return $this->readyTime;
     }
@@ -83,7 +83,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setReadyTime(string $readyTime) : self
+    public function setReadyTime(string $readyTime): self
     {
         $this->initialized['readyTime'] = true;
         $this->readyTime = $readyTime;
@@ -97,7 +97,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -111,7 +111,7 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;

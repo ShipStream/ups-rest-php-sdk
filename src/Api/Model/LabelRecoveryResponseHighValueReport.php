@@ -8,7 +8,7 @@ class LabelRecoveryResponseHighValueReport extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class LabelRecoveryResponseHighValueReport extends \ArrayObject
      *
      * @return HighValueReportImage
      */
-    public function getImage() : HighValueReportImage
+    public function getImage(): HighValueReportImage
     {
         return $this->image;
     }
@@ -34,7 +34,7 @@ class LabelRecoveryResponseHighValueReport extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(HighValueReportImage $image) : self
+    public function setImage(HighValueReportImage $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

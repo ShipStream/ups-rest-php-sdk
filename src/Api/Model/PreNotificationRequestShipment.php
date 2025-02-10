@@ -8,7 +8,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -69,7 +69,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -80,7 +80,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -91,7 +91,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentIdentificationNumber() : string
+    public function getShipmentIdentificationNumber(): string
     {
         return $this->shipmentIdentificationNumber;
     }
@@ -102,7 +102,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber) : self
+    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber): self
     {
         $this->initialized['shipmentIdentificationNumber'] = true;
         $this->shipmentIdentificationNumber = $shipmentIdentificationNumber;
@@ -113,7 +113,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return PreNotificationShipmentShipToAddress
      */
-    public function getShipToAddress() : PreNotificationShipmentShipToAddress
+    public function getShipToAddress(): PreNotificationShipmentShipToAddress
     {
         return $this->shipToAddress;
     }
@@ -124,7 +124,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipToAddress(PreNotificationShipmentShipToAddress $shipToAddress) : self
+    public function setShipToAddress(PreNotificationShipmentShipToAddress $shipToAddress): self
     {
         $this->initialized['shipToAddress'] = true;
         $this->shipToAddress = $shipToAddress;
@@ -135,7 +135,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return PreNotificationShipmentShipFromAddress
      */
-    public function getShipFromAddress() : PreNotificationShipmentShipFromAddress
+    public function getShipFromAddress(): PreNotificationShipmentShipFromAddress
     {
         return $this->shipFromAddress;
     }
@@ -146,7 +146,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipFromAddress(PreNotificationShipmentShipFromAddress $shipFromAddress) : self
+    public function setShipFromAddress(PreNotificationShipmentShipFromAddress $shipFromAddress): self
     {
         $this->initialized['shipFromAddress'] = true;
         $this->shipFromAddress = $shipFromAddress;
@@ -157,7 +157,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -168,7 +168,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -179,7 +179,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return ShipmentService
      */
-    public function getService() : ShipmentService
+    public function getService(): ShipmentService
     {
         return $this->service;
     }
@@ -190,7 +190,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setService(ShipmentService $service) : self
+    public function setService(ShipmentService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -205,7 +205,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet(): string
     {
         return $this->regulationSet;
     }
@@ -220,7 +220,7 @@ class PreNotificationRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(string $regulationSet): self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -231,7 +231,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return list<PreNotificationShipmentPackage>
      */
-    public function getPackage() : array
+    public function getPackage(): array
     {
         return $this->package;
     }
@@ -242,7 +242,7 @@ class PreNotificationRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(array $package): self
     {
         $this->initialized['package'] = true;
         $this->package = $package;

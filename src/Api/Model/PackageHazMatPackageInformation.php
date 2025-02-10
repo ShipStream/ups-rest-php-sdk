@@ -8,7 +8,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getAllPackedInOneIndicator() : string
+    public function getAllPackedInOneIndicator(): string
     {
         return $this->allPackedInOneIndicator;
     }
@@ -52,7 +52,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setAllPackedInOneIndicator(string $allPackedInOneIndicator) : self
+    public function setAllPackedInOneIndicator(string $allPackedInOneIndicator): self
     {
         $this->initialized['allPackedInOneIndicator'] = true;
         $this->allPackedInOneIndicator = $allPackedInOneIndicator;
@@ -63,7 +63,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getOverPackedIndicator() : string
+    public function getOverPackedIndicator(): string
     {
         return $this->overPackedIndicator;
     }
@@ -74,7 +74,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setOverPackedIndicator(string $overPackedIndicator) : self
+    public function setOverPackedIndicator(string $overPackedIndicator): self
     {
         $this->initialized['overPackedIndicator'] = true;
         $this->overPackedIndicator = $overPackedIndicator;
@@ -85,7 +85,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getQValue() : string
+    public function getQValue(): string
     {
         return $this->qValue;
     }
@@ -96,7 +96,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setQValue(string $qValue) : self
+    public function setQValue(string $qValue): self
     {
         $this->initialized['qValue'] = true;
         $this->qValue = $qValue;
@@ -107,7 +107,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getOuterPackagingType() : string
+    public function getOuterPackagingType(): string
     {
         return $this->outerPackagingType;
     }
@@ -118,7 +118,7 @@ class PackageHazMatPackageInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setOuterPackagingType(string $outerPackagingType) : self
+    public function setOuterPackagingType(string $outerPackagingType): self
     {
         $this->initialized['outerPackagingType'] = true;
         $this->outerPackagingType = $outerPackagingType;

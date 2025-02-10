@@ -8,7 +8,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -44,7 +44,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      *
      * @return string
      */
-    public function getUserCreatedFormFileName() : string
+    public function getUserCreatedFormFileName(): string
     {
         return $this->userCreatedFormFileName;
     }
@@ -55,7 +55,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      *
      * @return self
      */
-    public function setUserCreatedFormFileName(string $userCreatedFormFileName) : self
+    public function setUserCreatedFormFileName(string $userCreatedFormFileName): self
     {
         $this->initialized['userCreatedFormFileName'] = true;
         $this->userCreatedFormFileName = $userCreatedFormFileName;
@@ -69,7 +69,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
     *
     * @return string
     */
-    public function getUserCreatedFormFile() : string
+    public function getUserCreatedFormFile(): string
     {
         return $this->userCreatedFormFile;
     }
@@ -83,7 +83,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
     *
     * @return self
     */
-    public function setUserCreatedFormFile(string $userCreatedFormFile) : self
+    public function setUserCreatedFormFile(string $userCreatedFormFile): self
     {
         $this->initialized['userCreatedFormFile'] = true;
         $this->userCreatedFormFile = $userCreatedFormFile;
@@ -94,7 +94,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      *
      * @return string
      */
-    public function getUserCreatedFormFileFormat() : string
+    public function getUserCreatedFormFileFormat(): string
     {
         return $this->userCreatedFormFileFormat;
     }
@@ -105,7 +105,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      *
      * @return self
      */
-    public function setUserCreatedFormFileFormat(string $userCreatedFormFileFormat) : self
+    public function setUserCreatedFormFileFormat(string $userCreatedFormFileFormat): self
     {
         $this->initialized['userCreatedFormFileFormat'] = true;
         $this->userCreatedFormFileFormat = $userCreatedFormFileFormat;
@@ -116,7 +116,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      *
      * @return string
      */
-    public function getUserCreatedFormDocumentType() : string
+    public function getUserCreatedFormDocumentType(): string
     {
         return $this->userCreatedFormDocumentType;
     }
@@ -127,7 +127,7 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      *
      * @return self
      */
-    public function setUserCreatedFormDocumentType(string $userCreatedFormDocumentType) : self
+    public function setUserCreatedFormDocumentType(string $userCreatedFormDocumentType): self
     {
         $this->initialized['userCreatedFormDocumentType'] = true;
         $this->userCreatedFormDocumentType = $userCreatedFormDocumentType;

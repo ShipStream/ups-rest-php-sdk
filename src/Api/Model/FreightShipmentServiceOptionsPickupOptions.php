@@ -8,7 +8,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getHolidayPickupIndicator() : string
+    public function getHolidayPickupIndicator(): string
     {
         return $this->holidayPickupIndicator;
     }
@@ -64,7 +64,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHolidayPickupIndicator(string $holidayPickupIndicator) : self
+    public function setHolidayPickupIndicator(string $holidayPickupIndicator): self
     {
         $this->initialized['holidayPickupIndicator'] = true;
         $this->holidayPickupIndicator = $holidayPickupIndicator;
@@ -75,7 +75,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getInsidePickupIndicator() : string
+    public function getInsidePickupIndicator(): string
     {
         return $this->insidePickupIndicator;
     }
@@ -86,7 +86,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setInsidePickupIndicator(string $insidePickupIndicator) : self
+    public function setInsidePickupIndicator(string $insidePickupIndicator): self
     {
         $this->initialized['insidePickupIndicator'] = true;
         $this->insidePickupIndicator = $insidePickupIndicator;
@@ -97,7 +97,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getResidentialPickupIndicator() : string
+    public function getResidentialPickupIndicator(): string
     {
         return $this->residentialPickupIndicator;
     }
@@ -108,7 +108,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setResidentialPickupIndicator(string $residentialPickupIndicator) : self
+    public function setResidentialPickupIndicator(string $residentialPickupIndicator): self
     {
         $this->initialized['residentialPickupIndicator'] = true;
         $this->residentialPickupIndicator = $residentialPickupIndicator;
@@ -119,7 +119,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getWeekendPickupIndicator() : string
+    public function getWeekendPickupIndicator(): string
     {
         return $this->weekendPickupIndicator;
     }
@@ -130,7 +130,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setWeekendPickupIndicator(string $weekendPickupIndicator) : self
+    public function setWeekendPickupIndicator(string $weekendPickupIndicator): self
     {
         $this->initialized['weekendPickupIndicator'] = true;
         $this->weekendPickupIndicator = $weekendPickupIndicator;
@@ -141,7 +141,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLiftGateRequiredIndicator() : string
+    public function getLiftGateRequiredIndicator(): string
     {
         return $this->liftGateRequiredIndicator;
     }
@@ -152,7 +152,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLiftGateRequiredIndicator(string $liftGateRequiredIndicator) : self
+    public function setLiftGateRequiredIndicator(string $liftGateRequiredIndicator): self
     {
         $this->initialized['liftGateRequiredIndicator'] = true;
         $this->liftGateRequiredIndicator = $liftGateRequiredIndicator;
@@ -163,7 +163,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLimitedAccessPickupIndicator() : string
+    public function getLimitedAccessPickupIndicator(): string
     {
         return $this->limitedAccessPickupIndicator;
     }
@@ -174,7 +174,7 @@ class FreightShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLimitedAccessPickupIndicator(string $limitedAccessPickupIndicator) : self
+    public function setLimitedAccessPickupIndicator(string $limitedAccessPickupIndicator): self
     {
         $this->initialized['limitedAccessPickupIndicator'] = true;
         $this->limitedAccessPickupIndicator = $limitedAccessPickupIndicator;

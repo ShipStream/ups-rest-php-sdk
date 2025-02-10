@@ -13,7 +13,7 @@ class FreightCancelPickupUnauthorizedException extends UnauthorizedException
         parent::__construct('Unauthorized Request');
         $this->response = $response;
     }
-    public function getResponse() : ?\Psr\Http\Message\ResponseInterface
+    public function getResponse(): ?\Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

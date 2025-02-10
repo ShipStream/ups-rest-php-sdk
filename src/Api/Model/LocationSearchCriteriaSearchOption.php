@@ -8,7 +8,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     *
     * @return SearchOptionOptionType
     */
-    public function getOptionType() : SearchOptionOptionType
+    public function getOptionType(): SearchOptionOptionType
     {
         return $this->optionType;
     }
@@ -51,7 +51,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     *
     * @return self
     */
-    public function setOptionType(SearchOptionOptionType $optionType) : self
+    public function setOptionType(SearchOptionOptionType $optionType): self
     {
         $this->initialized['optionType'] = true;
         $this->optionType = $optionType;
@@ -62,7 +62,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
      *
      * @return list<SearchOptionOptionCode>
      */
-    public function getOptionCode() : array
+    public function getOptionCode(): array
     {
         return $this->optionCode;
     }
@@ -73,7 +73,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
      *
      * @return self
      */
-    public function setOptionCode(array $optionCode) : self
+    public function setOptionCode(array $optionCode): self
     {
         $this->initialized['optionCode'] = true;
         $this->optionCode = $optionCode;
@@ -86,7 +86,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     *
     * @return SearchOptionRelation
     */
-    public function getRelation() : SearchOptionRelation
+    public function getRelation(): SearchOptionRelation
     {
         return $this->relation;
     }
@@ -99,7 +99,7 @@ class LocationSearchCriteriaSearchOption extends \ArrayObject
     *
     * @return self
     */
-    public function setRelation(SearchOptionRelation $relation) : self
+    public function setRelation(SearchOptionRelation $relation): self
     {
         $this->initialized['relation'] = true;
         $this->relation = $relation;

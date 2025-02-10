@@ -8,7 +8,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -77,7 +77,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier(): string
     {
         return $this->packageIdentifier;
     }
@@ -88,7 +88,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(string $packageIdentifier): self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -99,7 +99,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return PackagePackageWeight
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight(): PackagePackageWeight
     {
         return $this->packageWeight;
     }
@@ -110,7 +110,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(PackagePackageWeight $packageWeight): self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -121,7 +121,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getQValue() : string
+    public function getQValue(): string
     {
         return $this->qValue;
     }
@@ -132,7 +132,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setQValue(string $qValue) : self
+    public function setQValue(string $qValue): self
     {
         $this->initialized['qValue'] = true;
         $this->qValue = $qValue;
@@ -143,7 +143,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getOverPackedIndicator() : string
+    public function getOverPackedIndicator(): string
     {
         return $this->overPackedIndicator;
     }
@@ -154,7 +154,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setOverPackedIndicator(string $overPackedIndicator) : self
+    public function setOverPackedIndicator(string $overPackedIndicator): self
     {
         $this->initialized['overPackedIndicator'] = true;
         $this->overPackedIndicator = $overPackedIndicator;
@@ -167,7 +167,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     *
     * @return string
     */
-    public function getTransportationMode() : string
+    public function getTransportationMode(): string
     {
         return $this->transportationMode;
     }
@@ -180,7 +180,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     *
     * @return self
     */
-    public function setTransportationMode(string $transportationMode) : self
+    public function setTransportationMode(string $transportationMode): self
     {
         $this->initialized['transportationMode'] = true;
         $this->transportationMode = $transportationMode;
@@ -199,7 +199,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     *
     * @return string
     */
-    public function getEmergencyPhone() : string
+    public function getEmergencyPhone(): string
     {
         return $this->emergencyPhone;
     }
@@ -218,7 +218,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     *
     * @return self
     */
-    public function setEmergencyPhone(string $emergencyPhone) : self
+    public function setEmergencyPhone(string $emergencyPhone): self
     {
         $this->initialized['emergencyPhone'] = true;
         $this->emergencyPhone = $emergencyPhone;
@@ -231,7 +231,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     *
     * @return string
     */
-    public function getEmergencyContact() : string
+    public function getEmergencyContact(): string
     {
         return $this->emergencyContact;
     }
@@ -244,7 +244,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
     *
     * @return self
     */
-    public function setEmergencyContact(string $emergencyContact) : self
+    public function setEmergencyContact(string $emergencyContact): self
     {
         $this->initialized['emergencyContact'] = true;
         $this->emergencyContact = $emergencyContact;
@@ -255,7 +255,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return list<PackageChemicalRecord>
      */
-    public function getChemicalRecord() : array
+    public function getChemicalRecord(): array
     {
         return $this->chemicalRecord;
     }
@@ -266,7 +266,7 @@ class AcceptanceAuditPreCheckShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalRecord(array $chemicalRecord) : self
+    public function setChemicalRecord(array $chemicalRecord): self
     {
         $this->initialized['chemicalRecord'] = true;
         $this->chemicalRecord = $chemicalRecord;

@@ -8,7 +8,7 @@ class RateResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -30,7 +30,7 @@ class RateResponse extends \ArrayObject
      *
      * @return RateResponseResponse
      */
-    public function getResponse() : RateResponseResponse
+    public function getResponse(): RateResponseResponse
     {
         return $this->response;
     }
@@ -41,7 +41,7 @@ class RateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(RateResponseResponse $response) : self
+    public function setResponse(RateResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -53,7 +53,7 @@ class RateResponse extends \ArrayObject
      *
      * @return list<RateResponseRatedShipment>
      */
-    public function getRatedShipment() : array
+    public function getRatedShipment(): array
     {
         return $this->ratedShipment;
     }
@@ -65,7 +65,7 @@ class RateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRatedShipment(array $ratedShipment) : self
+    public function setRatedShipment(array $ratedShipment): self
     {
         $this->initialized['ratedShipment'] = true;
         $this->ratedShipment = $ratedShipment;

@@ -8,7 +8,7 @@ class FreightRateRequestPickupRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -31,7 +31,7 @@ class FreightRateRequestPickupRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -43,7 +43,7 @@ class FreightRateRequestPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -54,7 +54,7 @@ class FreightRateRequestPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getAdditionalComments() : string
+    public function getAdditionalComments(): string
     {
         return $this->additionalComments;
     }
@@ -65,7 +65,7 @@ class FreightRateRequestPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalComments(string $additionalComments) : self
+    public function setAdditionalComments(string $additionalComments): self
     {
         $this->initialized['additionalComments'] = true;
         $this->additionalComments = $additionalComments;

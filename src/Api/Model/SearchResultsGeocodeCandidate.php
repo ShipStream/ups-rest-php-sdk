@@ -8,7 +8,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      *
      * @return GeocodeCandidateAddressKeyFormat
      */
-    public function getAddressKeyFormat() : GeocodeCandidateAddressKeyFormat
+    public function getAddressKeyFormat(): GeocodeCandidateAddressKeyFormat
     {
         return $this->addressKeyFormat;
     }
@@ -46,7 +46,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressKeyFormat(GeocodeCandidateAddressKeyFormat $addressKeyFormat) : self
+    public function setAddressKeyFormat(GeocodeCandidateAddressKeyFormat $addressKeyFormat): self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;
@@ -57,7 +57,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      *
      * @return GeocodeCandidateGeocode
      */
-    public function getGeocode() : GeocodeCandidateGeocode
+    public function getGeocode(): GeocodeCandidateGeocode
     {
         return $this->geocode;
     }
@@ -68,7 +68,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setGeocode(GeocodeCandidateGeocode $geocode) : self
+    public function setGeocode(GeocodeCandidateGeocode $geocode): self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -79,7 +79,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      *
      * @return string
      */
-    public function getLandmarkName() : string
+    public function getLandmarkName(): string
     {
         return $this->landmarkName;
     }
@@ -90,7 +90,7 @@ class SearchResultsGeocodeCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setLandmarkName(string $landmarkName) : self
+    public function setLandmarkName(string $landmarkName): self
     {
         $this->initialized['landmarkName'] = true;
         $this->landmarkName = $landmarkName;

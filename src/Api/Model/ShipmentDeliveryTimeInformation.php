@@ -8,7 +8,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -49,7 +49,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     *
     * @return string
     */
-    public function getPackageBillType() : string
+    public function getPackageBillType(): string
     {
         return $this->packageBillType;
     }
@@ -67,7 +67,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
     *
     * @return self
     */
-    public function setPackageBillType(string $packageBillType) : self
+    public function setPackageBillType(string $packageBillType): self
     {
         $this->initialized['packageBillType'] = true;
         $this->packageBillType = $packageBillType;
@@ -78,7 +78,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      *
      * @return DeliveryTimeInformationPickup
      */
-    public function getPickup() : DeliveryTimeInformationPickup
+    public function getPickup(): DeliveryTimeInformationPickup
     {
         return $this->pickup;
     }
@@ -89,7 +89,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPickup(DeliveryTimeInformationPickup $pickup) : self
+    public function setPickup(DeliveryTimeInformationPickup $pickup): self
     {
         $this->initialized['pickup'] = true;
         $this->pickup = $pickup;
@@ -100,7 +100,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      *
      * @return list<DeliveryTimeInformationReturnContractServices>
      */
-    public function getReturnContractServices() : array
+    public function getReturnContractServices(): array
     {
         return $this->returnContractServices;
     }
@@ -111,7 +111,7 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setReturnContractServices(array $returnContractServices) : self
+    public function setReturnContractServices(array $returnContractServices): self
     {
         $this->initialized['returnContractServices'] = true;
         $this->returnContractServices = $returnContractServices;

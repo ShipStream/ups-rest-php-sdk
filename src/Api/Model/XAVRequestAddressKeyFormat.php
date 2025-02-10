@@ -8,7 +8,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * City or Town name.
      *
-     * @var string
+     * @var string|null
      */
     protected $politicalDivision2;
     /**
@@ -65,7 +65,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * 4 digit Postal Code extension. For US use only.
      *
-     * @var string
+     * @var string|null
      */
     protected $postcodeExtendedLow;
     /**
@@ -85,7 +85,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getConsigneeName() : string
+    public function getConsigneeName(): string
     {
         return $this->consigneeName;
     }
@@ -96,7 +96,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setConsigneeName(string $consigneeName) : self
+    public function setConsigneeName(string $consigneeName): self
     {
         $this->initialized['consigneeName'] = true;
         $this->consigneeName = $consigneeName;
@@ -107,7 +107,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -118,7 +118,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -129,7 +129,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAddressLine() : array
+    public function getAddressLine(): array
     {
         return $this->addressLine;
     }
@@ -140,7 +140,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(array $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -159,7 +159,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     *
     * @return string
     */
-    public function getRegion() : string
+    public function getRegion(): string
     {
         return $this->region;
     }
@@ -178,7 +178,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     *
     * @return self
     */
-    public function setRegion(string $region) : self
+    public function setRegion(string $region): self
     {
         $this->initialized['region'] = true;
         $this->region = $region;
@@ -187,20 +187,20 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * City or Town name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2(): ?string
     {
         return $this->politicalDivision2;
     }
     /**
      * City or Town name.
      *
-     * @param string $politicalDivision2
+     * @param string|null $politicalDivision2
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(?string $politicalDivision2): self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -211,7 +211,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1(): string
     {
         return $this->politicalDivision1;
     }
@@ -222,7 +222,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(string $politicalDivision1): self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -233,7 +233,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow(): string
     {
         return $this->postcodePrimaryLow;
     }
@@ -244,7 +244,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(string $postcodePrimaryLow): self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;
@@ -253,20 +253,20 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
     /**
      * 4 digit Postal Code extension. For US use only.
      *
-     * @return string
+     * @return string|null
      */
-    public function getPostcodeExtendedLow() : string
+    public function getPostcodeExtendedLow(): ?string
     {
         return $this->postcodeExtendedLow;
     }
     /**
      * 4 digit Postal Code extension. For US use only.
      *
-     * @param string $postcodeExtendedLow
+     * @param string|null $postcodeExtendedLow
      *
      * @return self
      */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
+    public function setPostcodeExtendedLow(?string $postcodeExtendedLow): self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;
@@ -277,7 +277,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getUrbanization() : string
+    public function getUrbanization(): string
     {
         return $this->urbanization;
     }
@@ -288,7 +288,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setUrbanization(string $urbanization) : self
+    public function setUrbanization(string $urbanization): self
     {
         $this->initialized['urbanization'] = true;
         $this->urbanization = $urbanization;
@@ -299,7 +299,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -310,7 +310,7 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

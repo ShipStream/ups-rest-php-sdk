@@ -416,6 +416,7 @@ components:
           type: string
           minLength: 1
           maxLength: 30
+          nullable: true
         PoliticalDivision1:
           description: State or Province/Territory name.
           maximum: 1
@@ -434,6 +435,7 @@ components:
           type: string
           minLength: 1
           maxLength: 10
+          nullable: true
         Urbanization:
           description: Puerto Rico Political Division 3. Only Valid for Puerto Rico.
           maximum: 1

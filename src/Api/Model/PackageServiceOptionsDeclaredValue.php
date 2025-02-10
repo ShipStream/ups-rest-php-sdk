@@ -8,7 +8,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      *
      * @return DeclaredValueType
      */
-    public function getType() : DeclaredValueType
+    public function getType(): DeclaredValueType
     {
         return $this->type;
     }
@@ -46,7 +46,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      *
      * @return self
      */
-    public function setType(DeclaredValueType $type) : self
+    public function setType(DeclaredValueType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -57,7 +57,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -68,7 +68,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -79,7 +79,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      *
      * @return string
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue(): string
     {
         return $this->monetaryValue;
     }
@@ -90,7 +90,7 @@ class PackageServiceOptionsDeclaredValue extends \ArrayObject
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(string $monetaryValue): self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

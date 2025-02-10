@@ -8,7 +8,7 @@ class BillReceiverAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class BillReceiverAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -58,7 +58,7 @@ class BillReceiverAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;

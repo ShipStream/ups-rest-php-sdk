@@ -8,7 +8,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -64,7 +64,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -75,7 +75,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return PackagePackageWeight
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight(): PackagePackageWeight
     {
         return $this->packageWeight;
     }
@@ -86,7 +86,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(PackagePackageWeight $packageWeight): self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -97,7 +97,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getTransportationMode() : string
+    public function getTransportationMode(): string
     {
         return $this->transportationMode;
     }
@@ -108,7 +108,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportationMode(string $transportationMode) : self
+    public function setTransportationMode(string $transportationMode): self
     {
         $this->initialized['transportationMode'] = true;
         $this->transportationMode = $transportationMode;
@@ -119,7 +119,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getVoidIndicator() : string
+    public function getVoidIndicator(): string
     {
         return $this->voidIndicator;
     }
@@ -130,7 +130,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setVoidIndicator(string $voidIndicator) : self
+    public function setVoidIndicator(string $voidIndicator): self
     {
         $this->initialized['voidIndicator'] = true;
         $this->voidIndicator = $voidIndicator;
@@ -141,7 +141,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagePoints() : string
+    public function getPackagePoints(): string
     {
         return $this->packagePoints;
     }
@@ -152,7 +152,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagePoints(string $packagePoints) : self
+    public function setPackagePoints(string $packagePoints): self
     {
         $this->initialized['packagePoints'] = true;
         $this->packagePoints = $packagePoints;
@@ -163,7 +163,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return list<PreNotificationPackageChemicalRecord>
      */
-    public function getChemicalRecord() : array
+    public function getChemicalRecord(): array
     {
         return $this->chemicalRecord;
     }
@@ -174,7 +174,7 @@ class PreNotificationShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalRecord(array $chemicalRecord) : self
+    public function setChemicalRecord(array $chemicalRecord): self
     {
         $this->initialized['chemicalRecord'] = true;
         $this->chemicalRecord = $chemicalRecord;

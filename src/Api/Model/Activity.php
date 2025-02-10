@@ -8,7 +8,7 @@ class Activity extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class Activity extends \ArrayObject
      *
      * @return string
      */
-    public function getDate() : string
+    public function getDate(): string
     {
         return $this->date;
     }
@@ -70,7 +70,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(string $date): self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -81,7 +81,7 @@ class Activity extends \ArrayObject
      *
      * @return string
      */
-    public function getGmtDate() : string
+    public function getGmtDate(): string
     {
         return $this->gmtDate;
     }
@@ -92,7 +92,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setGmtDate(string $gmtDate) : self
+    public function setGmtDate(string $gmtDate): self
     {
         $this->initialized['gmtDate'] = true;
         $this->gmtDate = $gmtDate;
@@ -103,7 +103,7 @@ class Activity extends \ArrayObject
      *
      * @return string
      */
-    public function getGmtOffset() : string
+    public function getGmtOffset(): string
     {
         return $this->gmtOffset;
     }
@@ -114,7 +114,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setGmtOffset(string $gmtOffset) : self
+    public function setGmtOffset(string $gmtOffset): self
     {
         $this->initialized['gmtOffset'] = true;
         $this->gmtOffset = $gmtOffset;
@@ -125,7 +125,7 @@ class Activity extends \ArrayObject
      *
      * @return string
      */
-    public function getGmtTime() : string
+    public function getGmtTime(): string
     {
         return $this->gmtTime;
     }
@@ -136,7 +136,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setGmtTime(string $gmtTime) : self
+    public function setGmtTime(string $gmtTime): self
     {
         $this->initialized['gmtTime'] = true;
         $this->gmtTime = $gmtTime;
@@ -147,7 +147,7 @@ class Activity extends \ArrayObject
      *
      * @return Location
      */
-    public function getLocation() : Location
+    public function getLocation(): Location
     {
         return $this->location;
     }
@@ -158,7 +158,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setLocation(Location $location) : self
+    public function setLocation(Location $location): self
     {
         $this->initialized['location'] = true;
         $this->location = $location;
@@ -169,7 +169,7 @@ class Activity extends \ArrayObject
      *
      * @return Status
      */
-    public function getStatus() : Status
+    public function getStatus(): Status
     {
         return $this->status;
     }
@@ -180,7 +180,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setStatus(Status $status) : self
+    public function setStatus(Status $status): self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -191,7 +191,7 @@ class Activity extends \ArrayObject
      *
      * @return string
      */
-    public function getTime() : string
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -202,7 +202,7 @@ class Activity extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(string $time): self
     {
         $this->initialized['time'] = true;
         $this->time = $time;

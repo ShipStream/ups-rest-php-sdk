@@ -8,7 +8,7 @@ class FreightShipPayerAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine() : string
+    public function getAddressLine(): string
     {
         return $this->addressLine;
     }
@@ -64,7 +64,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(string $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -75,7 +75,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -86,7 +86,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -97,7 +97,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvinceCode() : string
+    public function getStateProvinceCode(): string
     {
         return $this->stateProvinceCode;
     }
@@ -108,7 +108,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvinceCode(string $stateProvinceCode) : self
+    public function setStateProvinceCode(string $stateProvinceCode): self
     {
         $this->initialized['stateProvinceCode'] = true;
         $this->stateProvinceCode = $stateProvinceCode;
@@ -119,7 +119,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getTown() : string
+    public function getTown(): string
     {
         return $this->town;
     }
@@ -130,7 +130,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(string $town): self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -141,7 +141,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -152,7 +152,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -163,7 +163,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -174,7 +174,7 @@ class FreightShipPayerAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

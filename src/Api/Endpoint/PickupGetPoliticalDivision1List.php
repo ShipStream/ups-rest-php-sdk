@@ -28,23 +28,23 @@ class PickupGetPoliticalDivision1List extends \ShipStream\Ups\Api\Runtime\Client
         $this->headerParameters = $headerParameters;
     }
     use \ShipStream\Ups\Api\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'GET';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
         return str_replace(['{version}', '{countrycode}'], [$this->version, $this->countrycode], '/pickup/{version}/countries/{countrycode}');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
         return ['Accept' => ['application/json']];
     }
-    protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
         $optionsResolver->setDefined(['transId', 'transactionSrc']);
@@ -70,23 +70,23 @@ class PickupGetPoliticalDivision1List extends \ShipStream\Ups\Api\Runtime\Client
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivResponseWrapper', 'json');
+            return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\PICKUPPolDivResponseWrapper', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListBadRequestException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListUnauthorizedException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListUnauthorizedException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListForbiddenException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListTooManyRequestsException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\PickupGetPoliticalDivision1ListTooManyRequestsException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
         return ['oauth2'];
     }

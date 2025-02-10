@@ -8,7 +8,7 @@ class LocatorResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -42,7 +42,7 @@ class LocatorResponse extends \ArrayObject
      *
      * @return LocatorResponseResponse
      */
-    public function getResponse() : LocatorResponseResponse
+    public function getResponse(): LocatorResponseResponse
     {
         return $this->response;
     }
@@ -53,7 +53,7 @@ class LocatorResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(LocatorResponseResponse $response) : self
+    public function setResponse(LocatorResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -64,7 +64,7 @@ class LocatorResponse extends \ArrayObject
      *
      * @return LocatorResponseGeocode
      */
-    public function getGeocode() : LocatorResponseGeocode
+    public function getGeocode(): LocatorResponseGeocode
     {
         return $this->geocode;
     }
@@ -75,7 +75,7 @@ class LocatorResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setGeocode(LocatorResponseGeocode $geocode) : self
+    public function setGeocode(LocatorResponseGeocode $geocode): self
     {
         $this->initialized['geocode'] = true;
         $this->geocode = $geocode;
@@ -86,7 +86,7 @@ class LocatorResponse extends \ArrayObject
      *
      * @return LocatorResponseSearchResults
      */
-    public function getSearchResults() : LocatorResponseSearchResults
+    public function getSearchResults(): LocatorResponseSearchResults
     {
         return $this->searchResults;
     }
@@ -97,7 +97,7 @@ class LocatorResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setSearchResults(LocatorResponseSearchResults $searchResults) : self
+    public function setSearchResults(LocatorResponseSearchResults $searchResults): self
     {
         $this->initialized['searchResults'] = true;
         $this->searchResults = $searchResults;
@@ -109,7 +109,7 @@ class LocatorResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getAllowAllConfidenceLevels() : string
+    public function getAllowAllConfidenceLevels(): string
     {
         return $this->allowAllConfidenceLevels;
     }
@@ -121,7 +121,7 @@ class LocatorResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setAllowAllConfidenceLevels(string $allowAllConfidenceLevels) : self
+    public function setAllowAllConfidenceLevels(string $allowAllConfidenceLevels): self
     {
         $this->initialized['allowAllConfidenceLevels'] = true;
         $this->allowAllConfidenceLevels = $allowAllConfidenceLevels;

@@ -8,7 +8,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -58,7 +58,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -69,7 +69,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -80,7 +80,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -91,7 +91,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return ShipFromAddress
      */
-    public function getAddress() : ShipFromAddress
+    public function getAddress(): ShipFromAddress
     {
         return $this->address;
     }
@@ -102,7 +102,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(ShipFromAddress $address) : self
+    public function setAddress(ShipFromAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -113,7 +113,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return ShipFromPhone
      */
-    public function getPhone() : ShipFromPhone
+    public function getPhone(): ShipFromPhone
     {
         return $this->phone;
     }
@@ -124,7 +124,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(ShipFromPhone $phone) : self
+    public function setPhone(ShipFromPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -135,7 +135,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -146,7 +146,7 @@ class FreightPickupRequestShipFrom extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

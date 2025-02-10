@@ -8,7 +8,7 @@ class ProductScheduleB extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ProductScheduleB extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -46,7 +46,7 @@ class ProductScheduleB extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -57,7 +57,7 @@ class ProductScheduleB extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getQuantity() : array
+    public function getQuantity(): array
     {
         return $this->quantity;
     }
@@ -68,7 +68,7 @@ class ProductScheduleB extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(array $quantity) : self
+    public function setQuantity(array $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -79,7 +79,7 @@ class ProductScheduleB extends \ArrayObject
      *
      * @return list<ScheduleBUnitOfMeasurement>
      */
-    public function getUnitOfMeasurement() : array
+    public function getUnitOfMeasurement(): array
     {
         return $this->unitOfMeasurement;
     }
@@ -90,7 +90,7 @@ class ProductScheduleB extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(array $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(array $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;

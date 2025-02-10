@@ -26,23 +26,23 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
         $this->headerParameters = $headerParameters;
     }
     use \ShipStream\Ups\Api\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'GET';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
         return str_replace(['{inquiryNumber}'], [$this->inquiryNumber], '/track/v1/details/{inquiryNumber}');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
         return ['Accept' => ['application/json']];
     }
-    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['locale', 'returnSignature', 'returnMilestones']);
@@ -53,7 +53,7 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
         $optionsResolver->addAllowedTypes('returnMilestones', ['string']);
         return $optionsResolver;
     }
-    protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
         $optionsResolver->setDefined(['transId', 'transactionSrc']);
@@ -80,29 +80,29 @@ class GetSingleTrackResponseUsingGET extends \ShipStream\Ups\Api\Runtime\Client\
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\TrackApiResponse', 'json');
+            return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\TrackApiResponse', 'json');
         }
         if (is_null($contentType) === false && (207 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json');
+            return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json');
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETBadRequestException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETBadRequestException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETForbiddenException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETForbiddenException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (404 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETNotFoundException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETNotFoundException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETInternalServerErrorException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETInternalServerErrorException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (503 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETServiceUnavailableException($serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\ErrorResponse', 'json'), $response);
+            throw new \ShipStream\Ups\Api\Exception\GetSingleTrackResponseUsingGETServiceUnavailableException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
         return ['oauth2'];
     }

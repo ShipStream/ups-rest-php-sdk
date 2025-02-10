@@ -8,7 +8,7 @@ class RatedPackageRateModifier extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class RatedPackageRateModifier extends \ArrayObject
      *
      * @return string
      */
-    public function getModifierType() : string
+    public function getModifierType(): string
     {
         return $this->modifierType;
     }
@@ -46,7 +46,7 @@ class RatedPackageRateModifier extends \ArrayObject
      *
      * @return self
      */
-    public function setModifierType(string $modifierType) : self
+    public function setModifierType(string $modifierType): self
     {
         $this->initialized['modifierType'] = true;
         $this->modifierType = $modifierType;
@@ -57,7 +57,7 @@ class RatedPackageRateModifier extends \ArrayObject
      *
      * @return string
      */
-    public function getModifierDesc() : string
+    public function getModifierDesc(): string
     {
         return $this->modifierDesc;
     }
@@ -68,7 +68,7 @@ class RatedPackageRateModifier extends \ArrayObject
      *
      * @return self
      */
-    public function setModifierDesc(string $modifierDesc) : self
+    public function setModifierDesc(string $modifierDesc): self
     {
         $this->initialized['modifierDesc'] = true;
         $this->modifierDesc = $modifierDesc;
@@ -79,7 +79,7 @@ class RatedPackageRateModifier extends \ArrayObject
      *
      * @return string
      */
-    public function getAmount() : string
+    public function getAmount(): string
     {
         return $this->amount;
     }
@@ -90,7 +90,7 @@ class RatedPackageRateModifier extends \ArrayObject
      *
      * @return self
      */
-    public function setAmount(string $amount) : self
+    public function setAmount(string $amount): self
     {
         $this->initialized['amount'] = true;
         $this->amount = $amount;

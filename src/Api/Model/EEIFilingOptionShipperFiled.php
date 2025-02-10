@@ -8,7 +8,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -58,7 +58,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -69,7 +69,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -80,7 +80,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -91,7 +91,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return string
      */
-    public function getPreDepartureITNNumber() : string
+    public function getPreDepartureITNNumber(): string
     {
         return $this->preDepartureITNNumber;
     }
@@ -102,7 +102,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return self
      */
-    public function setPreDepartureITNNumber(string $preDepartureITNNumber) : self
+    public function setPreDepartureITNNumber(string $preDepartureITNNumber): self
     {
         $this->initialized['preDepartureITNNumber'] = true;
         $this->preDepartureITNNumber = $preDepartureITNNumber;
@@ -113,7 +113,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return string
      */
-    public function getExemptionLegend() : string
+    public function getExemptionLegend(): string
     {
         return $this->exemptionLegend;
     }
@@ -124,7 +124,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return self
      */
-    public function setExemptionLegend(string $exemptionLegend) : self
+    public function setExemptionLegend(string $exemptionLegend): self
     {
         $this->initialized['exemptionLegend'] = true;
         $this->exemptionLegend = $exemptionLegend;
@@ -135,7 +135,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return string
      */
-    public function getEEIShipmentReferenceNumber() : string
+    public function getEEIShipmentReferenceNumber(): string
     {
         return $this->eEIShipmentReferenceNumber;
     }
@@ -146,7 +146,7 @@ class EEIFilingOptionShipperFiled extends \ArrayObject
      *
      * @return self
      */
-    public function setEEIShipmentReferenceNumber(string $eEIShipmentReferenceNumber) : self
+    public function setEEIShipmentReferenceNumber(string $eEIShipmentReferenceNumber): self
     {
         $this->initialized['eEIShipmentReferenceNumber'] = true;
         $this->eEIShipmentReferenceNumber = $eEIShipmentReferenceNumber;

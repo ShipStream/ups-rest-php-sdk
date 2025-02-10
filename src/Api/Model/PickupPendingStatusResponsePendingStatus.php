@@ -8,7 +8,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -91,7 +91,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupType() : string
+    public function getPickupType(): string
     {
         return $this->pickupType;
     }
@@ -103,7 +103,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupType(string $pickupType) : self
+    public function setPickupType(string $pickupType): self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -117,7 +117,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return string
     */
-    public function getServiceDate() : string
+    public function getServiceDate(): string
     {
         return $this->serviceDate;
     }
@@ -131,7 +131,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return self
     */
-    public function setServiceDate(string $serviceDate) : self
+    public function setServiceDate(string $serviceDate): self
     {
         $this->initialized['serviceDate'] = true;
         $this->serviceDate = $serviceDate;
@@ -142,7 +142,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return string
      */
-    public function getPRN() : string
+    public function getPRN(): string
     {
         return $this->pRN;
     }
@@ -153,7 +153,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setPRN(string $pRN) : self
+    public function setPRN(string $pRN): self
     {
         $this->initialized['pRN'] = true;
         $this->pRN = $pRN;
@@ -164,7 +164,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return string
      */
-    public function getGWNStatusCode() : string
+    public function getGWNStatusCode(): string
     {
         return $this->gWNStatusCode;
     }
@@ -175,7 +175,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setGWNStatusCode(string $gWNStatusCode) : self
+    public function setGWNStatusCode(string $gWNStatusCode): self
     {
         $this->initialized['gWNStatusCode'] = true;
         $this->gWNStatusCode = $gWNStatusCode;
@@ -186,7 +186,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return string
      */
-    public function getOnCallStatusCode() : string
+    public function getOnCallStatusCode(): string
     {
         return $this->onCallStatusCode;
     }
@@ -197,7 +197,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setOnCallStatusCode(string $onCallStatusCode) : self
+    public function setOnCallStatusCode(string $onCallStatusCode): self
     {
         $this->initialized['onCallStatusCode'] = true;
         $this->onCallStatusCode = $onCallStatusCode;
@@ -220,7 +220,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupStatusMessage() : string
+    public function getPickupStatusMessage(): string
     {
         return $this->pickupStatusMessage;
     }
@@ -243,7 +243,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupStatusMessage(string $pickupStatusMessage) : self
+    public function setPickupStatusMessage(string $pickupStatusMessage): self
     {
         $this->initialized['pickupStatusMessage'] = true;
         $this->pickupStatusMessage = $pickupStatusMessage;
@@ -257,7 +257,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return string
     */
-    public function getBillingCode() : string
+    public function getBillingCode(): string
     {
         return $this->billingCode;
     }
@@ -271,7 +271,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
     *
     * @return self
     */
-    public function setBillingCode(string $billingCode) : self
+    public function setBillingCode(string $billingCode): self
     {
         $this->initialized['billingCode'] = true;
         $this->billingCode = $billingCode;
@@ -282,7 +282,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return string
      */
-    public function getContactName() : string
+    public function getContactName(): string
     {
         return $this->contactName;
     }
@@ -293,7 +293,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setContactName(string $contactName) : self
+    public function setContactName(string $contactName): self
     {
         $this->initialized['contactName'] = true;
         $this->contactName = $contactName;
@@ -304,7 +304,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return string
      */
-    public function getReferenceNumber() : string
+    public function getReferenceNumber(): string
     {
         return $this->referenceNumber;
     }
@@ -315,7 +315,7 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(string $referenceNumber) : self
+    public function setReferenceNumber(string $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;

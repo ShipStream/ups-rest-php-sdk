@@ -8,7 +8,7 @@ class AccessPointInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class AccessPointInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupByDate() : string
+    public function getPickupByDate(): string
     {
         return $this->pickupByDate;
     }
@@ -34,7 +34,7 @@ class AccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupByDate(string $pickupByDate) : self
+    public function setPickupByDate(string $pickupByDate): self
     {
         $this->initialized['pickupByDate'] = true;
         $this->pickupByDate = $pickupByDate;

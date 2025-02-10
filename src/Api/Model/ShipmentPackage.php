@@ -8,7 +8,7 @@ class ShipmentPackage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -127,7 +127,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -138,7 +138,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -149,7 +149,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getPalletDescription() : string
+    public function getPalletDescription(): string
     {
         return $this->palletDescription;
     }
@@ -160,7 +160,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPalletDescription(string $palletDescription) : self
+    public function setPalletDescription(string $palletDescription): self
     {
         $this->initialized['palletDescription'] = true;
         $this->palletDescription = $palletDescription;
@@ -171,7 +171,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getNumOfPieces() : string
+    public function getNumOfPieces(): string
     {
         return $this->numOfPieces;
     }
@@ -182,7 +182,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setNumOfPieces(string $numOfPieces) : self
+    public function setNumOfPieces(string $numOfPieces): self
     {
         $this->initialized['numOfPieces'] = true;
         $this->numOfPieces = $numOfPieces;
@@ -193,7 +193,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getUnitPrice() : string
+    public function getUnitPrice(): string
     {
         return $this->unitPrice;
     }
@@ -204,7 +204,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitPrice(string $unitPrice) : self
+    public function setUnitPrice(string $unitPrice): self
     {
         $this->initialized['unitPrice'] = true;
         $this->unitPrice = $unitPrice;
@@ -215,7 +215,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackagePackaging
      */
-    public function getPackaging() : PackagePackaging
+    public function getPackaging(): PackagePackaging
     {
         return $this->packaging;
     }
@@ -226,7 +226,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackaging(PackagePackaging $packaging) : self
+    public function setPackaging(PackagePackaging $packaging): self
     {
         $this->initialized['packaging'] = true;
         $this->packaging = $packaging;
@@ -237,7 +237,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackageDimensions
      */
-    public function getDimensions() : PackageDimensions
+    public function getDimensions(): PackageDimensions
     {
         return $this->dimensions;
     }
@@ -248,7 +248,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(PackageDimensions $dimensions) : self
+    public function setDimensions(PackageDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -259,7 +259,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackageDimWeight
      */
-    public function getDimWeight() : PackageDimWeight
+    public function getDimWeight(): PackageDimWeight
     {
         return $this->dimWeight;
     }
@@ -270,7 +270,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setDimWeight(PackageDimWeight $dimWeight) : self
+    public function setDimWeight(PackageDimWeight $dimWeight): self
     {
         $this->initialized['dimWeight'] = true;
         $this->dimWeight = $dimWeight;
@@ -281,7 +281,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackagePackageWeight
      */
-    public function getPackageWeight() : PackagePackageWeight
+    public function getPackageWeight(): PackagePackageWeight
     {
         return $this->packageWeight;
     }
@@ -292,7 +292,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageWeight(PackagePackageWeight $packageWeight) : self
+    public function setPackageWeight(PackagePackageWeight $packageWeight): self
     {
         $this->initialized['packageWeight'] = true;
         $this->packageWeight = $packageWeight;
@@ -305,7 +305,7 @@ class ShipmentPackage extends \ArrayObject
     *
     * @return string
     */
-    public function getLargePackageIndicator() : string
+    public function getLargePackageIndicator(): string
     {
         return $this->largePackageIndicator;
     }
@@ -318,7 +318,7 @@ class ShipmentPackage extends \ArrayObject
     *
     * @return self
     */
-    public function setLargePackageIndicator(string $largePackageIndicator) : self
+    public function setLargePackageIndicator(string $largePackageIndicator): self
     {
         $this->initialized['largePackageIndicator'] = true;
         $this->largePackageIndicator = $largePackageIndicator;
@@ -329,7 +329,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getOversizeIndicator() : string
+    public function getOversizeIndicator(): string
     {
         return $this->oversizeIndicator;
     }
@@ -340,7 +340,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setOversizeIndicator(string $oversizeIndicator) : self
+    public function setOversizeIndicator(string $oversizeIndicator): self
     {
         $this->initialized['oversizeIndicator'] = true;
         $this->oversizeIndicator = $oversizeIndicator;
@@ -351,7 +351,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getMinimumBillableWeightIndicator() : string
+    public function getMinimumBillableWeightIndicator(): string
     {
         return $this->minimumBillableWeightIndicator;
     }
@@ -362,7 +362,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setMinimumBillableWeightIndicator(string $minimumBillableWeightIndicator) : self
+    public function setMinimumBillableWeightIndicator(string $minimumBillableWeightIndicator): self
     {
         $this->initialized['minimumBillableWeightIndicator'] = true;
         $this->minimumBillableWeightIndicator = $minimumBillableWeightIndicator;
@@ -373,7 +373,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return list<PackageReferenceNumber>
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber(): array
     {
         return $this->referenceNumber;
     }
@@ -384,7 +384,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(array $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -395,7 +395,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getAdditionalHandlingIndicator() : string
+    public function getAdditionalHandlingIndicator(): string
     {
         return $this->additionalHandlingIndicator;
     }
@@ -406,7 +406,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalHandlingIndicator(string $additionalHandlingIndicator) : self
+    public function setAdditionalHandlingIndicator(string $additionalHandlingIndicator): self
     {
         $this->initialized['additionalHandlingIndicator'] = true;
         $this->additionalHandlingIndicator = $additionalHandlingIndicator;
@@ -417,7 +417,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackageSimpleRate
      */
-    public function getSimpleRate() : PackageSimpleRate
+    public function getSimpleRate(): PackageSimpleRate
     {
         return $this->simpleRate;
     }
@@ -428,7 +428,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setSimpleRate(PackageSimpleRate $simpleRate) : self
+    public function setSimpleRate(PackageSimpleRate $simpleRate): self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -439,7 +439,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackageUPSPremier
      */
-    public function getUPSPremier() : PackageUPSPremier
+    public function getUPSPremier(): PackageUPSPremier
     {
         return $this->uPSPremier;
     }
@@ -450,7 +450,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSPremier(PackageUPSPremier $uPSPremier) : self
+    public function setUPSPremier(PackageUPSPremier $uPSPremier): self
     {
         $this->initialized['uPSPremier'] = true;
         $this->uPSPremier = $uPSPremier;
@@ -461,7 +461,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackagePackageServiceOptions
      */
-    public function getPackageServiceOptions() : PackagePackageServiceOptions
+    public function getPackageServiceOptions(): PackagePackageServiceOptions
     {
         return $this->packageServiceOptions;
     }
@@ -472,7 +472,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageServiceOptions(PackagePackageServiceOptions $packageServiceOptions) : self
+    public function setPackageServiceOptions(PackagePackageServiceOptions $packageServiceOptions): self
     {
         $this->initialized['packageServiceOptions'] = true;
         $this->packageServiceOptions = $packageServiceOptions;
@@ -483,7 +483,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackageCommodity
      */
-    public function getCommodity() : PackageCommodity
+    public function getCommodity(): PackageCommodity
     {
         return $this->commodity;
     }
@@ -494,7 +494,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodity(PackageCommodity $commodity) : self
+    public function setCommodity(PackageCommodity $commodity): self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -505,7 +505,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return PackageHazMatPackageInformation
      */
-    public function getHazMatPackageInformation() : PackageHazMatPackageInformation
+    public function getHazMatPackageInformation(): PackageHazMatPackageInformation
     {
         return $this->hazMatPackageInformation;
     }
@@ -516,7 +516,7 @@ class ShipmentPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setHazMatPackageInformation(PackageHazMatPackageInformation $hazMatPackageInformation) : self
+    public function setHazMatPackageInformation(PackageHazMatPackageInformation $hazMatPackageInformation): self
     {
         $this->initialized['hazMatPackageInformation'] = true;
         $this->hazMatPackageInformation = $hazMatPackageInformation;

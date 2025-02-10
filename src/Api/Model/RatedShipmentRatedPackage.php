@@ -8,7 +8,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -86,7 +86,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageBaseServiceCharge
      */
-    public function getBaseServiceCharge() : RatedPackageBaseServiceCharge
+    public function getBaseServiceCharge(): RatedPackageBaseServiceCharge
     {
         return $this->baseServiceCharge;
     }
@@ -97,7 +97,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setBaseServiceCharge(RatedPackageBaseServiceCharge $baseServiceCharge) : self
+    public function setBaseServiceCharge(RatedPackageBaseServiceCharge $baseServiceCharge): self
     {
         $this->initialized['baseServiceCharge'] = true;
         $this->baseServiceCharge = $baseServiceCharge;
@@ -108,7 +108,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageTransportationCharges
      */
-    public function getTransportationCharges() : RatedPackageTransportationCharges
+    public function getTransportationCharges(): RatedPackageTransportationCharges
     {
         return $this->transportationCharges;
     }
@@ -119,7 +119,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportationCharges(RatedPackageTransportationCharges $transportationCharges) : self
+    public function setTransportationCharges(RatedPackageTransportationCharges $transportationCharges): self
     {
         $this->initialized['transportationCharges'] = true;
         $this->transportationCharges = $transportationCharges;
@@ -130,7 +130,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageServiceOptionsCharges
      */
-    public function getServiceOptionsCharges() : RatedPackageServiceOptionsCharges
+    public function getServiceOptionsCharges(): RatedPackageServiceOptionsCharges
     {
         return $this->serviceOptionsCharges;
     }
@@ -141,7 +141,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOptionsCharges(RatedPackageServiceOptionsCharges $serviceOptionsCharges) : self
+    public function setServiceOptionsCharges(RatedPackageServiceOptionsCharges $serviceOptionsCharges): self
     {
         $this->initialized['serviceOptionsCharges'] = true;
         $this->serviceOptionsCharges = $serviceOptionsCharges;
@@ -152,7 +152,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageTotalCharges
      */
-    public function getTotalCharges() : RatedPackageTotalCharges
+    public function getTotalCharges(): RatedPackageTotalCharges
     {
         return $this->totalCharges;
     }
@@ -163,7 +163,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCharges(RatedPackageTotalCharges $totalCharges) : self
+    public function setTotalCharges(RatedPackageTotalCharges $totalCharges): self
     {
         $this->initialized['totalCharges'] = true;
         $this->totalCharges = $totalCharges;
@@ -174,7 +174,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return string
      */
-    public function getWeight() : string
+    public function getWeight(): string
     {
         return $this->weight;
     }
@@ -185,7 +185,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(string $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -196,7 +196,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageBillingWeight
      */
-    public function getBillingWeight() : RatedPackageBillingWeight
+    public function getBillingWeight(): RatedPackageBillingWeight
     {
         return $this->billingWeight;
     }
@@ -207,7 +207,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setBillingWeight(RatedPackageBillingWeight $billingWeight) : self
+    public function setBillingWeight(RatedPackageBillingWeight $billingWeight): self
     {
         $this->initialized['billingWeight'] = true;
         $this->billingWeight = $billingWeight;
@@ -219,7 +219,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return list<RatedPackageAccessorial>
      */
-    public function getAccessorial() : array
+    public function getAccessorial(): array
     {
         return $this->accessorial;
     }
@@ -231,7 +231,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessorial(array $accessorial) : self
+    public function setAccessorial(array $accessorial): self
     {
         $this->initialized['accessorial'] = true;
         $this->accessorial = $accessorial;
@@ -243,7 +243,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return list<RatedPackageItemizedCharges>
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges(): array
     {
         return $this->itemizedCharges;
     }
@@ -255,7 +255,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(array $itemizedCharges): self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -266,7 +266,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageNegotiatedCharges
      */
-    public function getNegotiatedCharges() : RatedPackageNegotiatedCharges
+    public function getNegotiatedCharges(): RatedPackageNegotiatedCharges
     {
         return $this->negotiatedCharges;
     }
@@ -277,7 +277,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setNegotiatedCharges(RatedPackageNegotiatedCharges $negotiatedCharges) : self
+    public function setNegotiatedCharges(RatedPackageNegotiatedCharges $negotiatedCharges): self
     {
         $this->initialized['negotiatedCharges'] = true;
         $this->negotiatedCharges = $negotiatedCharges;
@@ -288,7 +288,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return RatedPackageSimpleRate
      */
-    public function getSimpleRate() : RatedPackageSimpleRate
+    public function getSimpleRate(): RatedPackageSimpleRate
     {
         return $this->simpleRate;
     }
@@ -299,7 +299,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setSimpleRate(RatedPackageSimpleRate $simpleRate) : self
+    public function setSimpleRate(RatedPackageSimpleRate $simpleRate): self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -311,7 +311,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return list<RatedPackageRateModifier>
      */
-    public function getRateModifier() : array
+    public function getRateModifier(): array
     {
         return $this->rateModifier;
     }
@@ -323,7 +323,7 @@ class RatedShipmentRatedPackage extends \ArrayObject
      *
      * @return self
      */
-    public function setRateModifier(array $rateModifier) : self
+    public function setRateModifier(array $rateModifier): self
     {
         $this->initialized['rateModifier'] = true;
         $this->rateModifier = $rateModifier;

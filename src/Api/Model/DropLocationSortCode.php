@@ -8,7 +8,7 @@ class DropLocationSortCode extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class DropLocationSortCode extends \ArrayObject
      *
      * @return string
      */
-    public function getHubSortCode() : string
+    public function getHubSortCode(): string
     {
         return $this->hubSortCode;
     }
@@ -40,7 +40,7 @@ class DropLocationSortCode extends \ArrayObject
      *
      * @return self
      */
-    public function setHubSortCode(string $hubSortCode) : self
+    public function setHubSortCode(string $hubSortCode): self
     {
         $this->initialized['hubSortCode'] = true;
         $this->hubSortCode = $hubSortCode;
@@ -51,7 +51,7 @@ class DropLocationSortCode extends \ArrayObject
      *
      * @return string
      */
-    public function getFreightSortFacilityCode() : string
+    public function getFreightSortFacilityCode(): string
     {
         return $this->freightSortFacilityCode;
     }
@@ -62,7 +62,7 @@ class DropLocationSortCode extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightSortFacilityCode(string $freightSortFacilityCode) : self
+    public function setFreightSortFacilityCode(string $freightSortFacilityCode): self
     {
         $this->initialized['freightSortFacilityCode'] = true;
         $this->freightSortFacilityCode = $freightSortFacilityCode;

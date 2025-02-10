@@ -8,7 +8,7 @@ class UploadResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class UploadResponse extends \ArrayObject
      *
      * @return UploadResponseResponse
      */
-    public function getResponse() : UploadResponseResponse
+    public function getResponse(): UploadResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class UploadResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(UploadResponseResponse $response) : self
+    public function setResponse(UploadResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class UploadResponse extends \ArrayObject
      *
      * @return UploadResponseFormsHistoryDocumentID
      */
-    public function getFormsHistoryDocumentID() : UploadResponseFormsHistoryDocumentID
+    public function getFormsHistoryDocumentID(): UploadResponseFormsHistoryDocumentID
     {
         return $this->formsHistoryDocumentID;
     }
@@ -62,7 +62,7 @@ class UploadResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setFormsHistoryDocumentID(UploadResponseFormsHistoryDocumentID $formsHistoryDocumentID) : self
+    public function setFormsHistoryDocumentID(UploadResponseFormsHistoryDocumentID $formsHistoryDocumentID): self
     {
         $this->initialized['formsHistoryDocumentID'] = true;
         $this->formsHistoryDocumentID = $formsHistoryDocumentID;

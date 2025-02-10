@@ -8,7 +8,7 @@ class EEIFilingOptionUPSFiled extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class EEIFilingOptionUPSFiled extends \ArrayObject
      *
      * @return UPSFiledPOA
      */
-    public function getPOA() : UPSFiledPOA
+    public function getPOA(): UPSFiledPOA
     {
         return $this->pOA;
     }
@@ -34,7 +34,7 @@ class EEIFilingOptionUPSFiled extends \ArrayObject
      *
      * @return self
      */
-    public function setPOA(UPSFiledPOA $pOA) : self
+    public function setPOA(UPSFiledPOA $pOA): self
     {
         $this->initialized['pOA'] = true;
         $this->pOA = $pOA;

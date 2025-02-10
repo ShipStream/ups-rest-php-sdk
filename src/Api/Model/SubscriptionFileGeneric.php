@@ -8,7 +8,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -122,7 +122,7 @@ class SubscriptionFileGeneric extends \ArrayObject
     *
     * @return string
     */
-    public function getActivityType() : string
+    public function getActivityType(): string
     {
         return $this->activityType;
     }
@@ -149,7 +149,7 @@ class SubscriptionFileGeneric extends \ArrayObject
     *
     * @return self
     */
-    public function setActivityType(string $activityType) : self
+    public function setActivityType(string $activityType): self
     {
         $this->initialized['activityType'] = true;
         $this->activityType = $activityType;
@@ -160,7 +160,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -171,7 +171,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -182,7 +182,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -193,7 +193,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -205,7 +205,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return list<GenericShipmentReferenceNumber>
      */
-    public function getShipmentReferenceNumber() : array
+    public function getShipmentReferenceNumber(): array
     {
         return $this->shipmentReferenceNumber;
     }
@@ -217,7 +217,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(array $shipmentReferenceNumber) : self
+    public function setShipmentReferenceNumber(array $shipmentReferenceNumber): self
     {
         $this->initialized['shipmentReferenceNumber'] = true;
         $this->shipmentReferenceNumber = $shipmentReferenceNumber;
@@ -229,7 +229,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return list<GenericPackageReferenceNumber>
      */
-    public function getPackageReferenceNumber() : array
+    public function getPackageReferenceNumber(): array
     {
         return $this->packageReferenceNumber;
     }
@@ -241,7 +241,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageReferenceNumber(array $packageReferenceNumber) : self
+    public function setPackageReferenceNumber(array $packageReferenceNumber): self
     {
         $this->initialized['packageReferenceNumber'] = true;
         $this->packageReferenceNumber = $packageReferenceNumber;
@@ -252,7 +252,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return GenericService
      */
-    public function getService() : GenericService
+    public function getService(): GenericService
     {
         return $this->service;
     }
@@ -263,7 +263,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setService(GenericService $service) : self
+    public function setService(GenericService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -274,7 +274,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return GenericActivity
      */
-    public function getActivity() : GenericActivity
+    public function getActivity(): GenericActivity
     {
         return $this->activity;
     }
@@ -285,7 +285,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setActivity(GenericActivity $activity) : self
+    public function setActivity(GenericActivity $activity): self
     {
         $this->initialized['activity'] = true;
         $this->activity = $activity;
@@ -296,7 +296,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return GenericBillToAccount
      */
-    public function getBillToAccount() : GenericBillToAccount
+    public function getBillToAccount(): GenericBillToAccount
     {
         return $this->billToAccount;
     }
@@ -307,7 +307,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setBillToAccount(GenericBillToAccount $billToAccount) : self
+    public function setBillToAccount(GenericBillToAccount $billToAccount): self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -318,7 +318,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return GenericShipTo
      */
-    public function getShipTo() : GenericShipTo
+    public function getShipTo(): GenericShipTo
     {
         return $this->shipTo;
     }
@@ -329,7 +329,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setShipTo(GenericShipTo $shipTo) : self
+    public function setShipTo(GenericShipTo $shipTo): self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -345,7 +345,7 @@ class SubscriptionFileGeneric extends \ArrayObject
     *
     * @return string
     */
-    public function getRescheduledDeliveryDate() : string
+    public function getRescheduledDeliveryDate(): string
     {
         return $this->rescheduledDeliveryDate;
     }
@@ -361,7 +361,7 @@ class SubscriptionFileGeneric extends \ArrayObject
     *
     * @return self
     */
-    public function setRescheduledDeliveryDate(string $rescheduledDeliveryDate) : self
+    public function setRescheduledDeliveryDate(string $rescheduledDeliveryDate): self
     {
         $this->initialized['rescheduledDeliveryDate'] = true;
         $this->rescheduledDeliveryDate = $rescheduledDeliveryDate;
@@ -372,7 +372,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return GenericFailureNotification
      */
-    public function getFailureNotification() : GenericFailureNotification
+    public function getFailureNotification(): GenericFailureNotification
     {
         return $this->failureNotification;
     }
@@ -383,7 +383,7 @@ class SubscriptionFileGeneric extends \ArrayObject
      *
      * @return self
      */
-    public function setFailureNotification(GenericFailureNotification $failureNotification) : self
+    public function setFailureNotification(GenericFailureNotification $failureNotification): self
     {
         $this->initialized['failureNotification'] = true;
         $this->failureNotification = $failureNotification;

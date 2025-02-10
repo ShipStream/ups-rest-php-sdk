@@ -8,7 +8,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -57,7 +57,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -68,7 +68,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -79,7 +79,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckShipmentShipFromAddress
      */
-    public function getShipFromAddress() : AcceptanceAuditPreCheckShipmentShipFromAddress
+    public function getShipFromAddress(): AcceptanceAuditPreCheckShipmentShipFromAddress
     {
         return $this->shipFromAddress;
     }
@@ -90,7 +90,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipFromAddress(AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress) : self
+    public function setShipFromAddress(AcceptanceAuditPreCheckShipmentShipFromAddress $shipFromAddress): self
     {
         $this->initialized['shipFromAddress'] = true;
         $this->shipFromAddress = $shipFromAddress;
@@ -101,7 +101,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckShipmentShipToAddress
      */
-    public function getShipToAddress() : AcceptanceAuditPreCheckShipmentShipToAddress
+    public function getShipToAddress(): AcceptanceAuditPreCheckShipmentShipToAddress
     {
         return $this->shipToAddress;
     }
@@ -112,7 +112,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipToAddress(AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress) : self
+    public function setShipToAddress(AcceptanceAuditPreCheckShipmentShipToAddress $shipToAddress): self
     {
         $this->initialized['shipToAddress'] = true;
         $this->shipToAddress = $shipToAddress;
@@ -123,7 +123,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return ShipmentService
      */
-    public function getService() : ShipmentService
+    public function getService(): ShipmentService
     {
         return $this->service;
     }
@@ -134,7 +134,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setService(ShipmentService $service) : self
+    public function setService(ShipmentService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -149,7 +149,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     *
     * @return string
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet(): string
     {
         return $this->regulationSet;
     }
@@ -164,7 +164,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(string $regulationSet): self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -175,7 +175,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return list<AcceptanceAuditPreCheckShipmentPackage>
      */
-    public function getPackage() : array
+    public function getPackage(): array
     {
         return $this->package;
     }
@@ -186,7 +186,7 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(array $package): self
     {
         $this->initialized['package'] = true;
         $this->package = $package;

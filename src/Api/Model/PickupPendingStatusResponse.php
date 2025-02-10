@@ -8,7 +8,7 @@ class PickupPendingStatusResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PickupPendingStatusResponse extends \ArrayObject
      *
      * @return PickupPendingStatusResponseResponse
      */
-    public function getResponse() : PickupPendingStatusResponseResponse
+    public function getResponse(): PickupPendingStatusResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class PickupPendingStatusResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PickupPendingStatusResponseResponse $response) : self
+    public function setResponse(PickupPendingStatusResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class PickupPendingStatusResponse extends \ArrayObject
      *
      * @return list<PickupPendingStatusResponsePendingStatus>
      */
-    public function getPendingStatus() : array
+    public function getPendingStatus(): array
     {
         return $this->pendingStatus;
     }
@@ -62,7 +62,7 @@ class PickupPendingStatusResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setPendingStatus(array $pendingStatus) : self
+    public function setPendingStatus(array $pendingStatus): self
     {
         $this->initialized['pendingStatus'] = true;
         $this->pendingStatus = $pendingStatus;

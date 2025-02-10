@@ -8,7 +8,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -112,7 +112,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return string
     */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -124,7 +124,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -135,7 +135,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return PackageResultsRateModifier
      */
-    public function getRateModifier() : PackageResultsRateModifier
+    public function getRateModifier(): PackageResultsRateModifier
     {
         return $this->rateModifier;
     }
@@ -146,7 +146,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setRateModifier(PackageResultsRateModifier $rateModifier) : self
+    public function setRateModifier(PackageResultsRateModifier $rateModifier): self
     {
         $this->initialized['rateModifier'] = true;
         $this->rateModifier = $rateModifier;
@@ -158,7 +158,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return PackageResultsBaseServiceCharge
     */
-    public function getBaseServiceCharge() : PackageResultsBaseServiceCharge
+    public function getBaseServiceCharge(): PackageResultsBaseServiceCharge
     {
         return $this->baseServiceCharge;
     }
@@ -170,7 +170,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setBaseServiceCharge(PackageResultsBaseServiceCharge $baseServiceCharge) : self
+    public function setBaseServiceCharge(PackageResultsBaseServiceCharge $baseServiceCharge): self
     {
         $this->initialized['baseServiceCharge'] = true;
         $this->baseServiceCharge = $baseServiceCharge;
@@ -181,7 +181,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return PackageResultsServiceOptionsCharges
      */
-    public function getServiceOptionsCharges() : PackageResultsServiceOptionsCharges
+    public function getServiceOptionsCharges(): PackageResultsServiceOptionsCharges
     {
         return $this->serviceOptionsCharges;
     }
@@ -192,7 +192,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOptionsCharges(PackageResultsServiceOptionsCharges $serviceOptionsCharges) : self
+    public function setServiceOptionsCharges(PackageResultsServiceOptionsCharges $serviceOptionsCharges): self
     {
         $this->initialized['serviceOptionsCharges'] = true;
         $this->serviceOptionsCharges = $serviceOptionsCharges;
@@ -206,7 +206,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return PackageResultsShippingLabel|null
     */
-    public function getShippingLabel() : ?PackageResultsShippingLabel
+    public function getShippingLabel(): ?PackageResultsShippingLabel
     {
         return $this->shippingLabel;
     }
@@ -220,7 +220,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setShippingLabel(?PackageResultsShippingLabel $shippingLabel) : self
+    public function setShippingLabel(?PackageResultsShippingLabel $shippingLabel): self
     {
         $this->initialized['shippingLabel'] = true;
         $this->shippingLabel = $shippingLabel;
@@ -233,7 +233,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return PackageResultsShippingReceipt
     */
-    public function getShippingReceipt() : PackageResultsShippingReceipt
+    public function getShippingReceipt(): PackageResultsShippingReceipt
     {
         return $this->shippingReceipt;
     }
@@ -246,7 +246,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setShippingReceipt(PackageResultsShippingReceipt $shippingReceipt) : self
+    public function setShippingReceipt(PackageResultsShippingReceipt $shippingReceipt): self
     {
         $this->initialized['shippingReceipt'] = true;
         $this->shippingReceipt = $shippingReceipt;
@@ -257,7 +257,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return string
      */
-    public function getUSPSPICNumber() : string
+    public function getUSPSPICNumber(): string
     {
         return $this->uSPSPICNumber;
     }
@@ -268,7 +268,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setUSPSPICNumber(string $uSPSPICNumber) : self
+    public function setUSPSPICNumber(string $uSPSPICNumber): self
     {
         $this->initialized['uSPSPICNumber'] = true;
         $this->uSPSPICNumber = $uSPSPICNumber;
@@ -281,7 +281,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return string
     */
-    public function getCN22Number() : string
+    public function getCN22Number(): string
     {
         return $this->cN22Number;
     }
@@ -294,7 +294,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setCN22Number(string $cN22Number) : self
+    public function setCN22Number(string $cN22Number): self
     {
         $this->initialized['cN22Number'] = true;
         $this->cN22Number = $cN22Number;
@@ -306,7 +306,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return list<PackageResultsAccessorial>
      */
-    public function getAccessorial() : array
+    public function getAccessorial(): array
     {
         return $this->accessorial;
     }
@@ -318,7 +318,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessorial(array $accessorial) : self
+    public function setAccessorial(array $accessorial): self
     {
         $this->initialized['accessorial'] = true;
         $this->accessorial = $accessorial;
@@ -329,7 +329,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return PackageResultsSimpleRate
      */
-    public function getSimpleRate() : PackageResultsSimpleRate
+    public function getSimpleRate(): PackageResultsSimpleRate
     {
         return $this->simpleRate;
     }
@@ -340,7 +340,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setSimpleRate(PackageResultsSimpleRate $simpleRate) : self
+    public function setSimpleRate(PackageResultsSimpleRate $simpleRate): self
     {
         $this->initialized['simpleRate'] = true;
         $this->simpleRate = $simpleRate;
@@ -354,7 +354,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return PackageResultsForm|null
     */
-    public function getForm() : ?PackageResultsForm
+    public function getForm(): ?PackageResultsForm
     {
         return $this->form;
     }
@@ -368,7 +368,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setForm(?PackageResultsForm $form) : self
+    public function setForm(?PackageResultsForm $form): self
     {
         $this->initialized['form'] = true;
         $this->form = $form;
@@ -380,7 +380,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return list<PackageResultsItemizedCharges>
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges(): array
     {
         return $this->itemizedCharges;
     }
@@ -392,7 +392,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(array $itemizedCharges): self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -405,7 +405,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return PackageResultsNegotiatedCharges
     */
-    public function getNegotiatedCharges() : PackageResultsNegotiatedCharges
+    public function getNegotiatedCharges(): PackageResultsNegotiatedCharges
     {
         return $this->negotiatedCharges;
     }
@@ -418,7 +418,7 @@ class ShipmentResultsPackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setNegotiatedCharges(PackageResultsNegotiatedCharges $negotiatedCharges) : self
+    public function setNegotiatedCharges(PackageResultsNegotiatedCharges $negotiatedCharges): self
     {
         $this->initialized['negotiatedCharges'] = true;
         $this->negotiatedCharges = $negotiatedCharges;

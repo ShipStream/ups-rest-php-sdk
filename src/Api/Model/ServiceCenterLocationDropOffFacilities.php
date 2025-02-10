@@ -8,7 +8,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -86,7 +86,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -97,7 +97,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -108,7 +108,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return DropOffFacilitiesAddress
      */
-    public function getAddress() : DropOffFacilitiesAddress
+    public function getAddress(): DropOffFacilitiesAddress
     {
         return $this->address;
     }
@@ -119,7 +119,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(DropOffFacilitiesAddress $address) : self
+    public function setAddress(DropOffFacilitiesAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -130,7 +130,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getSLIC() : string
+    public function getSLIC(): string
     {
         return $this->sLIC;
     }
@@ -141,7 +141,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(string $sLIC): self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -152,7 +152,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -163,7 +163,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -177,7 +177,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     *
     * @return string
     */
-    public function getTimezone() : string
+    public function getTimezone(): string
     {
         return $this->timezone;
     }
@@ -191,7 +191,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
     *
     * @return self
     */
-    public function setTimezone(string $timezone) : self
+    public function setTimezone(string $timezone): self
     {
         $this->initialized['timezone'] = true;
         $this->timezone = $timezone;
@@ -202,7 +202,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getPhone() : string
+    public function getPhone(): string
     {
         return $this->phone;
     }
@@ -213,7 +213,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(string $phone) : self
+    public function setPhone(string $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -224,7 +224,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getFax() : string
+    public function getFax(): string
     {
         return $this->fax;
     }
@@ -235,7 +235,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setFax(string $fax) : self
+    public function setFax(string $fax): self
     {
         $this->initialized['fax'] = true;
         $this->fax = $fax;
@@ -246,7 +246,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return DropOffFacilitiesFacilityTime
      */
-    public function getFacilityTime() : DropOffFacilitiesFacilityTime
+    public function getFacilityTime(): DropOffFacilitiesFacilityTime
     {
         return $this->facilityTime;
     }
@@ -257,7 +257,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setFacilityTime(DropOffFacilitiesFacilityTime $facilityTime) : self
+    public function setFacilityTime(DropOffFacilitiesFacilityTime $facilityTime): self
     {
         $this->initialized['facilityTime'] = true;
         $this->facilityTime = $facilityTime;
@@ -268,7 +268,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginOrDestination() : string
+    public function getOriginOrDestination(): string
     {
         return $this->originOrDestination;
     }
@@ -279,7 +279,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginOrDestination(string $originOrDestination) : self
+    public function setOriginOrDestination(string $originOrDestination): self
     {
         $this->initialized['originOrDestination'] = true;
         $this->originOrDestination = $originOrDestination;
@@ -290,7 +290,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return list<DropOffFacilitiesLocalizedInstruction>
      */
-    public function getLocalizedInstruction() : array
+    public function getLocalizedInstruction(): array
     {
         return $this->localizedInstruction;
     }
@@ -301,7 +301,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setLocalizedInstruction(array $localizedInstruction) : self
+    public function setLocalizedInstruction(array $localizedInstruction): self
     {
         $this->initialized['localizedInstruction'] = true;
         $this->localizedInstruction = $localizedInstruction;
@@ -312,7 +312,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return DropOffFacilitiesDistance
      */
-    public function getDistance() : DropOffFacilitiesDistance
+    public function getDistance(): DropOffFacilitiesDistance
     {
         return $this->distance;
     }
@@ -323,7 +323,7 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      *
      * @return self
      */
-    public function setDistance(DropOffFacilitiesDistance $distance) : self
+    public function setDistance(DropOffFacilitiesDistance $distance): self
     {
         $this->initialized['distance'] = true;
         $this->distance = $distance;

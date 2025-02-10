@@ -8,7 +8,7 @@ class UploadResponseFormsHistoryDocumentID extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -25,7 +25,7 @@ class UploadResponseFormsHistoryDocumentID extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getDocumentID() : array
+    public function getDocumentID(): array
     {
         return $this->documentID;
     }
@@ -37,7 +37,7 @@ class UploadResponseFormsHistoryDocumentID extends \ArrayObject
      *
      * @return self
      */
-    public function setDocumentID(array $documentID) : self
+    public function setDocumentID(array $documentID): self
     {
         $this->initialized['documentID'] = true;
         $this->documentID = $documentID;

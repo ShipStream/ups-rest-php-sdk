@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts';
+            return $type === \ShipStream\Ups\Api\Model\InternationalFormsContacts::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\InternationalFormsContacts::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,23 +41,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ForwardAgent', $data)) {
-                $object->setForwardAgent($this->denormalizer->denormalize($data['ForwardAgent'], 'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent', 'json', $context));
+                $object->setForwardAgent($this->denormalizer->denormalize($data['ForwardAgent'], \ShipStream\Ups\Api\Model\ContactsForwardAgent::class, 'json', $context));
                 unset($data['ForwardAgent']);
             }
             if (\array_key_exists('UltimateConsignee', $data)) {
-                $object->setUltimateConsignee($this->denormalizer->denormalize($data['UltimateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee', 'json', $context));
+                $object->setUltimateConsignee($this->denormalizer->denormalize($data['UltimateConsignee'], \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class, 'json', $context));
                 unset($data['UltimateConsignee']);
             }
             if (\array_key_exists('IntermediateConsignee', $data)) {
-                $object->setIntermediateConsignee($this->denormalizer->denormalize($data['IntermediateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee', 'json', $context));
+                $object->setIntermediateConsignee($this->denormalizer->denormalize($data['IntermediateConsignee'], \ShipStream\Ups\Api\Model\ContactsIntermediateConsignee::class, 'json', $context));
                 unset($data['IntermediateConsignee']);
             }
             if (\array_key_exists('Producer', $data)) {
-                $object->setProducer($this->denormalizer->denormalize($data['Producer'], 'ShipStream\\Ups\\Api\\Model\\ContactsProducer', 'json', $context));
+                $object->setProducer($this->denormalizer->denormalize($data['Producer'], \ShipStream\Ups\Api\Model\ContactsProducer::class, 'json', $context));
                 unset($data['Producer']);
             }
             if (\array_key_exists('SoldTo', $data)) {
-                $object->setSoldTo($this->denormalizer->denormalize($data['SoldTo'], 'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo', 'json', $context));
+                $object->setSoldTo($this->denormalizer->denormalize($data['SoldTo'], \ShipStream\Ups\Api\Model\ContactsSoldTo::class, 'json', $context));
                 unset($data['SoldTo']);
             }
             foreach ($data as $key => $value) {
@@ -67,7 +67,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('forwardAgent') && null !== $object->getForwardAgent()) {
@@ -92,9 +92,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts' => false];
+            return [\ShipStream\Ups\Api\Model\InternationalFormsContacts::class => false];
         }
     }
 } else {
@@ -104,13 +104,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts';
+            return $type === \ShipStream\Ups\Api\Model\InternationalFormsContacts::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\InternationalFormsContacts::class;
         }
         /**
          * @return mixed
@@ -128,23 +128,23 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ForwardAgent', $data)) {
-                $object->setForwardAgent($this->denormalizer->denormalize($data['ForwardAgent'], 'ShipStream\\Ups\\Api\\Model\\ContactsForwardAgent', 'json', $context));
+                $object->setForwardAgent($this->denormalizer->denormalize($data['ForwardAgent'], \ShipStream\Ups\Api\Model\ContactsForwardAgent::class, 'json', $context));
                 unset($data['ForwardAgent']);
             }
             if (\array_key_exists('UltimateConsignee', $data)) {
-                $object->setUltimateConsignee($this->denormalizer->denormalize($data['UltimateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsUltimateConsignee', 'json', $context));
+                $object->setUltimateConsignee($this->denormalizer->denormalize($data['UltimateConsignee'], \ShipStream\Ups\Api\Model\ContactsUltimateConsignee::class, 'json', $context));
                 unset($data['UltimateConsignee']);
             }
             if (\array_key_exists('IntermediateConsignee', $data)) {
-                $object->setIntermediateConsignee($this->denormalizer->denormalize($data['IntermediateConsignee'], 'ShipStream\\Ups\\Api\\Model\\ContactsIntermediateConsignee', 'json', $context));
+                $object->setIntermediateConsignee($this->denormalizer->denormalize($data['IntermediateConsignee'], \ShipStream\Ups\Api\Model\ContactsIntermediateConsignee::class, 'json', $context));
                 unset($data['IntermediateConsignee']);
             }
             if (\array_key_exists('Producer', $data)) {
-                $object->setProducer($this->denormalizer->denormalize($data['Producer'], 'ShipStream\\Ups\\Api\\Model\\ContactsProducer', 'json', $context));
+                $object->setProducer($this->denormalizer->denormalize($data['Producer'], \ShipStream\Ups\Api\Model\ContactsProducer::class, 'json', $context));
                 unset($data['Producer']);
             }
             if (\array_key_exists('SoldTo', $data)) {
-                $object->setSoldTo($this->denormalizer->denormalize($data['SoldTo'], 'ShipStream\\Ups\\Api\\Model\\ContactsSoldTo', 'json', $context));
+                $object->setSoldTo($this->denormalizer->denormalize($data['SoldTo'], \ShipStream\Ups\Api\Model\ContactsSoldTo::class, 'json', $context));
                 unset($data['SoldTo']);
             }
             foreach ($data as $key => $value) {
@@ -182,9 +182,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts' => false];
+            return [\ShipStream\Ups\Api\Model\InternationalFormsContacts::class => false];
         }
     }
 }

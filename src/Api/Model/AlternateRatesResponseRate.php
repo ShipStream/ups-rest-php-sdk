@@ -8,7 +8,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      *
      * @return RateType
      */
-    public function getType() : RateType
+    public function getType(): RateType
     {
         return $this->type;
     }
@@ -46,7 +46,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      *
      * @return self
      */
-    public function setType(RateType $type) : self
+    public function setType(RateType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -57,7 +57,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      *
      * @return string
      */
-    public function getSubTypeCode() : string
+    public function getSubTypeCode(): string
     {
         return $this->subTypeCode;
     }
@@ -68,7 +68,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      *
      * @return self
      */
-    public function setSubTypeCode(string $subTypeCode) : self
+    public function setSubTypeCode(string $subTypeCode): self
     {
         $this->initialized['subTypeCode'] = true;
         $this->subTypeCode = $subTypeCode;
@@ -79,7 +79,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      *
      * @return RateFactor
      */
-    public function getFactor() : RateFactor
+    public function getFactor(): RateFactor
     {
         return $this->factor;
     }
@@ -90,7 +90,7 @@ class AlternateRatesResponseRate extends \ArrayObject
      *
      * @return self
      */
-    public function setFactor(RateFactor $factor) : self
+    public function setFactor(RateFactor $factor): self
     {
         $this->initialized['factor'] = true;
         $this->factor = $factor;

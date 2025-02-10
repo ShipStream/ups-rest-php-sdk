@@ -8,7 +8,7 @@ class CommodityDimensions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -50,7 +50,7 @@ class CommodityDimensions extends \ArrayObject
      *
      * @return DimensionsUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : DimensionsUnitOfMeasurement
+    public function getUnitOfMeasurement(): DimensionsUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -61,7 +61,7 @@ class CommodityDimensions extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(DimensionsUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -79,7 +79,7 @@ class CommodityDimensions extends \ArrayObject
     *
     * @return string
     */
-    public function getLength() : string
+    public function getLength(): string
     {
         return $this->length;
     }
@@ -97,7 +97,7 @@ class CommodityDimensions extends \ArrayObject
     *
     * @return self
     */
-    public function setLength(string $length) : self
+    public function setLength(string $length): self
     {
         $this->initialized['length'] = true;
         $this->length = $length;
@@ -109,7 +109,7 @@ class CommodityDimensions extends \ArrayObject
     *
     * @return string
     */
-    public function getWidth() : string
+    public function getWidth(): string
     {
         return $this->width;
     }
@@ -121,7 +121,7 @@ class CommodityDimensions extends \ArrayObject
     *
     * @return self
     */
-    public function setWidth(string $width) : self
+    public function setWidth(string $width): self
     {
         $this->initialized['width'] = true;
         $this->width = $width;
@@ -133,7 +133,7 @@ class CommodityDimensions extends \ArrayObject
     *
     * @return string
     */
-    public function getHeight() : string
+    public function getHeight(): string
     {
         return $this->height;
     }
@@ -145,7 +145,7 @@ class CommodityDimensions extends \ArrayObject
     *
     * @return self
     */
-    public function setHeight(string $height) : self
+    public function setHeight(string $height): self
     {
         $this->initialized['height'] = true;
         $this->height = $height;

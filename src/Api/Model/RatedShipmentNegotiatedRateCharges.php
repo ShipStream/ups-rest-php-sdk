@@ -8,7 +8,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -44,7 +44,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return list<NegotiatedRateChargesItemizedCharges>
      */
-    public function getItemizedCharges() : array
+    public function getItemizedCharges(): array
     {
         return $this->itemizedCharges;
     }
@@ -56,7 +56,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setItemizedCharges(array $itemizedCharges) : self
+    public function setItemizedCharges(array $itemizedCharges): self
     {
         $this->initialized['itemizedCharges'] = true;
         $this->itemizedCharges = $itemizedCharges;
@@ -68,7 +68,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return list<NegotiatedRateChargesTaxCharges>
      */
-    public function getTaxCharges() : array
+    public function getTaxCharges(): array
     {
         return $this->taxCharges;
     }
@@ -80,7 +80,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxCharges(array $taxCharges) : self
+    public function setTaxCharges(array $taxCharges): self
     {
         $this->initialized['taxCharges'] = true;
         $this->taxCharges = $taxCharges;
@@ -91,7 +91,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return NegotiatedRateChargesTotalCharge
      */
-    public function getTotalCharge() : NegotiatedRateChargesTotalCharge
+    public function getTotalCharge(): NegotiatedRateChargesTotalCharge
     {
         return $this->totalCharge;
     }
@@ -102,7 +102,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCharge(NegotiatedRateChargesTotalCharge $totalCharge) : self
+    public function setTotalCharge(NegotiatedRateChargesTotalCharge $totalCharge): self
     {
         $this->initialized['totalCharge'] = true;
         $this->totalCharge = $totalCharge;
@@ -113,7 +113,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return NegotiatedRateChargesTotalChargesWithTaxes
      */
-    public function getTotalChargesWithTaxes() : NegotiatedRateChargesTotalChargesWithTaxes
+    public function getTotalChargesWithTaxes(): NegotiatedRateChargesTotalChargesWithTaxes
     {
         return $this->totalChargesWithTaxes;
     }
@@ -124,7 +124,7 @@ class RatedShipmentNegotiatedRateCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalChargesWithTaxes(NegotiatedRateChargesTotalChargesWithTaxes $totalChargesWithTaxes) : self
+    public function setTotalChargesWithTaxes(NegotiatedRateChargesTotalChargesWithTaxes $totalChargesWithTaxes): self
     {
         $this->initialized['totalChargesWithTaxes'] = true;
         $this->totalChargesWithTaxes = $totalChargesWithTaxes;

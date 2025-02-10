@@ -8,7 +8,7 @@ class DocumentsPackingList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return PackingListShipFrom
      */
-    public function getShipFrom() : PackingListShipFrom
+    public function getShipFrom(): PackingListShipFrom
     {
         return $this->shipFrom;
     }
@@ -52,7 +52,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return self
      */
-    public function setShipFrom(PackingListShipFrom $shipFrom) : self
+    public function setShipFrom(PackingListShipFrom $shipFrom): self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -63,7 +63,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return PackingListShipTo
      */
-    public function getShipTo() : PackingListShipTo
+    public function getShipTo(): PackingListShipTo
     {
         return $this->shipTo;
     }
@@ -74,7 +74,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return self
      */
-    public function setShipTo(PackingListShipTo $shipTo) : self
+    public function setShipTo(PackingListShipTo $shipTo): self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -85,7 +85,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return list<PackingListReference>
      */
-    public function getReference() : array
+    public function getReference(): array
     {
         return $this->reference;
     }
@@ -96,7 +96,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return self
      */
-    public function setReference(array $reference) : self
+    public function setReference(array $reference): self
     {
         $this->initialized['reference'] = true;
         $this->reference = $reference;
@@ -107,7 +107,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return PackingListHandlingUnit
      */
-    public function getHandlingUnit() : PackingListHandlingUnit
+    public function getHandlingUnit(): PackingListHandlingUnit
     {
         return $this->handlingUnit;
     }
@@ -118,7 +118,7 @@ class DocumentsPackingList extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnit(PackingListHandlingUnit $handlingUnit) : self
+    public function setHandlingUnit(PackingListHandlingUnit $handlingUnit): self
     {
         $this->initialized['handlingUnit'] = true;
         $this->handlingUnit = $handlingUnit;

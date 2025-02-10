@@ -8,7 +8,7 @@ class XAVRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class XAVRequestWrapper extends \ArrayObject
      *
      * @return XAVRequest
      */
-    public function getXAVRequest() : XAVRequest
+    public function getXAVRequest(): XAVRequest
     {
         return $this->xAVRequest;
     }
@@ -34,7 +34,7 @@ class XAVRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setXAVRequest(XAVRequest $xAVRequest) : self
+    public function setXAVRequest(XAVRequest $xAVRequest): self
     {
         $this->initialized['xAVRequest'] = true;
         $this->xAVRequest = $xAVRequest;

@@ -8,7 +8,7 @@ class DeliveryTime extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -43,7 +43,7 @@ class DeliveryTime extends \ArrayObject
      *
      * @return string
      */
-    public function getEndTime() : string
+    public function getEndTime(): string
     {
         return $this->endTime;
     }
@@ -54,7 +54,7 @@ class DeliveryTime extends \ArrayObject
      *
      * @return self
      */
-    public function setEndTime(string $endTime) : self
+    public function setEndTime(string $endTime): self
     {
         $this->initialized['endTime'] = true;
         $this->endTime = $endTime;
@@ -65,7 +65,7 @@ class DeliveryTime extends \ArrayObject
      *
      * @return string
      */
-    public function getStartTime() : string
+    public function getStartTime(): string
     {
         return $this->startTime;
     }
@@ -76,7 +76,7 @@ class DeliveryTime extends \ArrayObject
      *
      * @return self
      */
-    public function setStartTime(string $startTime) : self
+    public function setStartTime(string $startTime): self
     {
         $this->initialized['startTime'] = true;
         $this->startTime = $startTime;
@@ -95,7 +95,7 @@ class DeliveryTime extends \ArrayObject
     *
     * @return string
     */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -114,7 +114,7 @@ class DeliveryTime extends \ArrayObject
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

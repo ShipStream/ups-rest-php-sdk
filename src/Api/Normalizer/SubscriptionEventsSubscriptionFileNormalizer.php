@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile';
+            return $type === \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -45,13 +45,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FileName']);
             }
             if (\array_key_exists('StatusType', $data)) {
-                $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType', 'json', $context));
+                $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], \ShipStream\Ups\Api\Model\SubscriptionFileStatusType::class, 'json', $context));
                 unset($data['StatusType']);
             }
             if (\array_key_exists('Manifest', $data)) {
                 $values = [];
                 foreach ($data['Manifest'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\SubscriptionFileManifest::class, 'json', $context);
                 }
                 $object->setManifest($values);
                 unset($data['Manifest']);
@@ -59,7 +59,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Origin', $data)) {
                 $values_1 = [];
                 foreach ($data['Origin'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class, 'json', $context);
                 }
                 $object->setOrigin($values_1);
                 unset($data['Origin']);
@@ -67,7 +67,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Exception', $data)) {
                 $values_2 = [];
                 foreach ($data['Exception'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \ShipStream\Ups\Api\Model\SubscriptionFileException::class, 'json', $context);
                 }
                 $object->setException($values_2);
                 unset($data['Exception']);
@@ -75,7 +75,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Delivery', $data)) {
                 $values_3 = [];
                 foreach ($data['Delivery'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \ShipStream\Ups\Api\Model\SubscriptionFileDelivery::class, 'json', $context);
                 }
                 $object->setDelivery($values_3);
                 unset($data['Delivery']);
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Generic', $data)) {
                 $values_4 = [];
                 foreach ($data['Generic'] as $value_4) {
-                    $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric', 'json', $context);
+                    $values_4[] = $this->denormalizer->denormalize($value_4, \ShipStream\Ups\Api\Model\SubscriptionFileGeneric::class, 'json', $context);
                 }
                 $object->setGeneric($values_4);
                 unset($data['Generic']);
@@ -95,7 +95,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['FileName'] = $object->getFileName();
@@ -142,9 +142,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile' => false];
+            return [\ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class => false];
         }
     }
 } else {
@@ -154,13 +154,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile';
+            return $type === \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class;
         }
         /**
          * @return mixed
@@ -182,13 +182,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FileName']);
             }
             if (\array_key_exists('StatusType', $data)) {
-                $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileStatusType', 'json', $context));
+                $object->setStatusType($this->denormalizer->denormalize($data['StatusType'], \ShipStream\Ups\Api\Model\SubscriptionFileStatusType::class, 'json', $context));
                 unset($data['StatusType']);
             }
             if (\array_key_exists('Manifest', $data)) {
                 $values = [];
                 foreach ($data['Manifest'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileManifest', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\SubscriptionFileManifest::class, 'json', $context);
                 }
                 $object->setManifest($values);
                 unset($data['Manifest']);
@@ -196,7 +196,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Origin', $data)) {
                 $values_1 = [];
                 foreach ($data['Origin'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileOrigin', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\SubscriptionFileOrigin::class, 'json', $context);
                 }
                 $object->setOrigin($values_1);
                 unset($data['Origin']);
@@ -204,7 +204,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Exception', $data)) {
                 $values_2 = [];
                 foreach ($data['Exception'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileException', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \ShipStream\Ups\Api\Model\SubscriptionFileException::class, 'json', $context);
                 }
                 $object->setException($values_2);
                 unset($data['Exception']);
@@ -212,7 +212,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Delivery', $data)) {
                 $values_3 = [];
                 foreach ($data['Delivery'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileDelivery', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \ShipStream\Ups\Api\Model\SubscriptionFileDelivery::class, 'json', $context);
                 }
                 $object->setDelivery($values_3);
                 unset($data['Delivery']);
@@ -220,7 +220,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Generic', $data)) {
                 $values_4 = [];
                 foreach ($data['Generic'] as $value_4) {
-                    $values_4[] = $this->denormalizer->denormalize($value_4, 'ShipStream\\Ups\\Api\\Model\\SubscriptionFileGeneric', 'json', $context);
+                    $values_4[] = $this->denormalizer->denormalize($value_4, \ShipStream\Ups\Api\Model\SubscriptionFileGeneric::class, 'json', $context);
                 }
                 $object->setGeneric($values_4);
                 unset($data['Generic']);
@@ -282,9 +282,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SubscriptionEventsSubscriptionFile' => false];
+            return [\ShipStream\Ups\Api\Model\SubscriptionEventsSubscriptionFile::class => false];
         }
     }
 }

@@ -8,7 +8,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return string
      */
-    public function getDCRIndicator() : string
+    public function getDCRIndicator(): string
     {
         return $this->dCRIndicator;
     }
@@ -52,7 +52,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return self
      */
-    public function setDCRIndicator(string $dCRIndicator) : self
+    public function setDCRIndicator(string $dCRIndicator): self
     {
         $this->initialized['dCRIndicator'] = true;
         $this->dCRIndicator = $dCRIndicator;
@@ -63,7 +63,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return string
      */
-    public function getShippingAvailabilityIndicator() : string
+    public function getShippingAvailabilityIndicator(): string
     {
         return $this->shippingAvailabilityIndicator;
     }
@@ -74,7 +74,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return self
      */
-    public function setShippingAvailabilityIndicator(string $shippingAvailabilityIndicator) : self
+    public function setShippingAvailabilityIndicator(string $shippingAvailabilityIndicator): self
     {
         $this->initialized['shippingAvailabilityIndicator'] = true;
         $this->shippingAvailabilityIndicator = $shippingAvailabilityIndicator;
@@ -85,7 +85,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperPreparationDelay() : string
+    public function getShipperPreparationDelay(): string
     {
         return $this->shipperPreparationDelay;
     }
@@ -96,7 +96,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperPreparationDelay(string $shipperPreparationDelay) : self
+    public function setShipperPreparationDelay(string $shipperPreparationDelay): self
     {
         $this->initialized['shipperPreparationDelay'] = true;
         $this->shipperPreparationDelay = $shipperPreparationDelay;
@@ -107,7 +107,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return string
      */
-    public function getClickAndCollectSortWithDistance() : string
+    public function getClickAndCollectSortWithDistance(): string
     {
         return $this->clickAndCollectSortWithDistance;
     }
@@ -118,7 +118,7 @@ class IncludeCriteriaSearchFilter extends \ArrayObject
      *
      * @return self
      */
-    public function setClickAndCollectSortWithDistance(string $clickAndCollectSortWithDistance) : self
+    public function setClickAndCollectSortWithDistance(string $clickAndCollectSortWithDistance): self
     {
         $this->initialized['clickAndCollectSortWithDistance'] = true;
         $this->clickAndCollectSortWithDistance = $clickAndCollectSortWithDistance;

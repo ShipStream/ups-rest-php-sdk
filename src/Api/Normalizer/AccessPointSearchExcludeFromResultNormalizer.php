@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult';
+            return $type === \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -57,7 +57,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Radius']);
             }
             if (\array_key_exists('PostalCodeList', $data)) {
-                $object->setPostalCodeList($this->denormalizer->denormalize($data['PostalCodeList'], 'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList', 'json', $context));
+                $object->setPostalCodeList($this->denormalizer->denormalize($data['PostalCodeList'], \ShipStream\Ups\Api\Model\ExcludeFromResultPostalCodeList::class, 'json', $context));
                 unset($data['PostalCodeList']);
             }
             foreach ($data as $key => $value_1) {
@@ -67,7 +67,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('businessClassificationCode') && null !== $object->getBusinessClassificationCode()) {
@@ -93,9 +93,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult' => false];
+            return [\ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class => false];
         }
     }
 } else {
@@ -105,13 +105,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult';
+            return $type === \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class;
         }
         /**
          * @return mixed
@@ -145,7 +145,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Radius']);
             }
             if (\array_key_exists('PostalCodeList', $data)) {
-                $object->setPostalCodeList($this->denormalizer->denormalize($data['PostalCodeList'], 'ShipStream\\Ups\\Api\\Model\\ExcludeFromResultPostalCodeList', 'json', $context));
+                $object->setPostalCodeList($this->denormalizer->denormalize($data['PostalCodeList'], \ShipStream\Ups\Api\Model\ExcludeFromResultPostalCodeList::class, 'json', $context));
                 unset($data['PostalCodeList']);
             }
             foreach ($data as $key => $value_1) {
@@ -184,9 +184,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult' => false];
+            return [\ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class => false];
         }
     }
 }

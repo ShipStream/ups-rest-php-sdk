@@ -8,7 +8,7 @@ class AvailabilityShippingAvailability extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class AvailabilityShippingAvailability extends \ArrayObject
      *
      * @return string
      */
-    public function getAvailableIndicator() : string
+    public function getAvailableIndicator(): string
     {
         return $this->availableIndicator;
     }
@@ -40,7 +40,7 @@ class AvailabilityShippingAvailability extends \ArrayObject
      *
      * @return self
      */
-    public function setAvailableIndicator(string $availableIndicator) : self
+    public function setAvailableIndicator(string $availableIndicator): self
     {
         $this->initialized['availableIndicator'] = true;
         $this->availableIndicator = $availableIndicator;
@@ -51,7 +51,7 @@ class AvailabilityShippingAvailability extends \ArrayObject
      *
      * @return ShippingAvailabilityUnavailableReason
      */
-    public function getUnavailableReason() : ShippingAvailabilityUnavailableReason
+    public function getUnavailableReason(): ShippingAvailabilityUnavailableReason
     {
         return $this->unavailableReason;
     }
@@ -62,7 +62,7 @@ class AvailabilityShippingAvailability extends \ArrayObject
      *
      * @return self
      */
-    public function setUnavailableReason(ShippingAvailabilityUnavailableReason $unavailableReason) : self
+    public function setUnavailableReason(ShippingAvailabilityUnavailableReason $unavailableReason): self
     {
         $this->initialized['unavailableReason'] = true;
         $this->unavailableReason = $unavailableReason;

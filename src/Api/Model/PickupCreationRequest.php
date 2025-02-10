@@ -8,7 +8,7 @@ class PickupCreationRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -202,7 +202,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return PickupCreationRequestRequest
      */
-    public function getRequest() : PickupCreationRequestRequest
+    public function getRequest(): PickupCreationRequestRequest
     {
         return $this->request;
     }
@@ -213,7 +213,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PickupCreationRequestRequest $request) : self
+    public function setRequest(PickupCreationRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -227,7 +227,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getRatePickupIndicator() : string
+    public function getRatePickupIndicator(): string
     {
         return $this->ratePickupIndicator;
     }
@@ -241,7 +241,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setRatePickupIndicator(string $ratePickupIndicator) : self
+    public function setRatePickupIndicator(string $ratePickupIndicator): self
     {
         $this->initialized['ratePickupIndicator'] = true;
         $this->ratePickupIndicator = $ratePickupIndicator;
@@ -270,7 +270,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getRateChartType() : string
+    public function getRateChartType(): string
     {
         return $this->rateChartType;
     }
@@ -299,7 +299,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setRateChartType(string $rateChartType) : self
+    public function setRateChartType(string $rateChartType): self
     {
         $this->initialized['rateChartType'] = true;
         $this->rateChartType = $rateChartType;
@@ -313,7 +313,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getTaxInformationIndicator() : string
+    public function getTaxInformationIndicator(): string
     {
         return $this->taxInformationIndicator;
     }
@@ -327,7 +327,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setTaxInformationIndicator(string $taxInformationIndicator) : self
+    public function setTaxInformationIndicator(string $taxInformationIndicator): self
     {
         $this->initialized['taxInformationIndicator'] = true;
         $this->taxInformationIndicator = $taxInformationIndicator;
@@ -341,7 +341,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getUserLevelDiscountIndicator() : string
+    public function getUserLevelDiscountIndicator(): string
     {
         return $this->userLevelDiscountIndicator;
     }
@@ -355,7 +355,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator) : self
+    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator): self
     {
         $this->initialized['userLevelDiscountIndicator'] = true;
         $this->userLevelDiscountIndicator = $userLevelDiscountIndicator;
@@ -367,7 +367,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return PickupCreationRequestShipper
     */
-    public function getShipper() : PickupCreationRequestShipper
+    public function getShipper(): PickupCreationRequestShipper
     {
         return $this->shipper;
     }
@@ -379,7 +379,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setShipper(PickupCreationRequestShipper $shipper) : self
+    public function setShipper(PickupCreationRequestShipper $shipper): self
     {
         $this->initialized['shipper'] = true;
         $this->shipper = $shipper;
@@ -390,7 +390,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return PickupCreationRequestPickupDateInfo
      */
-    public function getPickupDateInfo() : PickupCreationRequestPickupDateInfo
+    public function getPickupDateInfo(): PickupCreationRequestPickupDateInfo
     {
         return $this->pickupDateInfo;
     }
@@ -401,7 +401,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupDateInfo(PickupCreationRequestPickupDateInfo $pickupDateInfo) : self
+    public function setPickupDateInfo(PickupCreationRequestPickupDateInfo $pickupDateInfo): self
     {
         $this->initialized['pickupDateInfo'] = true;
         $this->pickupDateInfo = $pickupDateInfo;
@@ -412,7 +412,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return PickupCreationRequestPickupAddress
      */
-    public function getPickupAddress() : PickupCreationRequestPickupAddress
+    public function getPickupAddress(): PickupCreationRequestPickupAddress
     {
         return $this->pickupAddress;
     }
@@ -423,7 +423,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupAddress(PickupCreationRequestPickupAddress $pickupAddress) : self
+    public function setPickupAddress(PickupCreationRequestPickupAddress $pickupAddress): self
     {
         $this->initialized['pickupAddress'] = true;
         $this->pickupAddress = $pickupAddress;
@@ -437,7 +437,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getAlternateAddressIndicator() : string
+    public function getAlternateAddressIndicator(): string
     {
         return $this->alternateAddressIndicator;
     }
@@ -451,7 +451,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setAlternateAddressIndicator(string $alternateAddressIndicator) : self
+    public function setAlternateAddressIndicator(string $alternateAddressIndicator): self
     {
         $this->initialized['alternateAddressIndicator'] = true;
         $this->alternateAddressIndicator = $alternateAddressIndicator;
@@ -462,7 +462,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return list<PickupCreationRequestPickupPiece>
      */
-    public function getPickupPiece() : array
+    public function getPickupPiece(): array
     {
         return $this->pickupPiece;
     }
@@ -473,7 +473,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupPiece(array $pickupPiece) : self
+    public function setPickupPiece(array $pickupPiece): self
     {
         $this->initialized['pickupPiece'] = true;
         $this->pickupPiece = $pickupPiece;
@@ -484,7 +484,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return PickupCreationRequestTotalWeight
      */
-    public function getTotalWeight() : PickupCreationRequestTotalWeight
+    public function getTotalWeight(): PickupCreationRequestTotalWeight
     {
         return $this->totalWeight;
     }
@@ -495,7 +495,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalWeight(PickupCreationRequestTotalWeight $totalWeight) : self
+    public function setTotalWeight(PickupCreationRequestTotalWeight $totalWeight): self
     {
         $this->initialized['totalWeight'] = true;
         $this->totalWeight = $totalWeight;
@@ -509,7 +509,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getOverweightIndicator() : string
+    public function getOverweightIndicator(): string
     {
         return $this->overweightIndicator;
     }
@@ -523,7 +523,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setOverweightIndicator(string $overweightIndicator) : self
+    public function setOverweightIndicator(string $overweightIndicator): self
     {
         $this->initialized['overweightIndicator'] = true;
         $this->overweightIndicator = $overweightIndicator;
@@ -534,7 +534,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return list<PickupCreationRequestTrackingData>
      */
-    public function getTrackingData() : array
+    public function getTrackingData(): array
     {
         return $this->trackingData;
     }
@@ -545,7 +545,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingData(array $trackingData) : self
+    public function setTrackingData(array $trackingData): self
     {
         $this->initialized['trackingData'] = true;
         $this->trackingData = $trackingData;
@@ -556,7 +556,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return PickupCreationRequestTrackingDataWithReferenceNumber
      */
-    public function getTrackingDataWithReferenceNumber() : PickupCreationRequestTrackingDataWithReferenceNumber
+    public function getTrackingDataWithReferenceNumber(): PickupCreationRequestTrackingDataWithReferenceNumber
     {
         return $this->trackingDataWithReferenceNumber;
     }
@@ -567,7 +567,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingDataWithReferenceNumber(PickupCreationRequestTrackingDataWithReferenceNumber $trackingDataWithReferenceNumber) : self
+    public function setTrackingDataWithReferenceNumber(PickupCreationRequestTrackingDataWithReferenceNumber $trackingDataWithReferenceNumber): self
     {
         $this->initialized['trackingDataWithReferenceNumber'] = true;
         $this->trackingDataWithReferenceNumber = $trackingDataWithReferenceNumber;
@@ -591,7 +591,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getPaymentMethod() : string
+    public function getPaymentMethod(): string
     {
         return $this->paymentMethod;
     }
@@ -615,7 +615,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPaymentMethod(string $paymentMethod) : self
+    public function setPaymentMethod(string $paymentMethod): self
     {
         $this->initialized['paymentMethod'] = true;
         $this->paymentMethod = $paymentMethod;
@@ -626,7 +626,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getSpecialInstruction() : string
+    public function getSpecialInstruction(): string
     {
         return $this->specialInstruction;
     }
@@ -637,7 +637,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setSpecialInstruction(string $specialInstruction) : self
+    public function setSpecialInstruction(string $specialInstruction): self
     {
         $this->initialized['specialInstruction'] = true;
         $this->specialInstruction = $specialInstruction;
@@ -648,7 +648,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getReferenceNumber() : string
+    public function getReferenceNumber(): string
     {
         return $this->referenceNumber;
     }
@@ -659,7 +659,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(string $referenceNumber) : self
+    public function setReferenceNumber(string $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -670,7 +670,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return PickupCreationRequestFreightOptions
      */
-    public function getFreightOptions() : PickupCreationRequestFreightOptions
+    public function getFreightOptions(): PickupCreationRequestFreightOptions
     {
         return $this->freightOptions;
     }
@@ -681,7 +681,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightOptions(PickupCreationRequestFreightOptions $freightOptions) : self
+    public function setFreightOptions(PickupCreationRequestFreightOptions $freightOptions): self
     {
         $this->initialized['freightOptions'] = true;
         $this->freightOptions = $freightOptions;
@@ -698,7 +698,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getServiceCategory() : string
+    public function getServiceCategory(): string
     {
         return $this->serviceCategory;
     }
@@ -715,7 +715,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setServiceCategory(string $serviceCategory) : self
+    public function setServiceCategory(string $serviceCategory): self
     {
         $this->initialized['serviceCategory'] = true;
         $this->serviceCategory = $serviceCategory;
@@ -732,7 +732,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getCashType() : string
+    public function getCashType(): string
     {
         return $this->cashType;
     }
@@ -749,7 +749,7 @@ class PickupCreationRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setCashType(string $cashType) : self
+    public function setCashType(string $cashType): self
     {
         $this->initialized['cashType'] = true;
         $this->cashType = $cashType;
@@ -760,7 +760,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getShippingLabelsAvailable() : string
+    public function getShippingLabelsAvailable(): string
     {
         return $this->shippingLabelsAvailable;
     }
@@ -771,7 +771,7 @@ class PickupCreationRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShippingLabelsAvailable(string $shippingLabelsAvailable) : self
+    public function setShippingLabelsAvailable(string $shippingLabelsAvailable): self
     {
         $this->initialized['shippingLabelsAvailable'] = true;
         $this->shippingLabelsAvailable = $shippingLabelsAvailable;

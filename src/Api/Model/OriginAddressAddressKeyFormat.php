@@ -8,7 +8,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -90,7 +90,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getConsigneeName() : string
+    public function getConsigneeName(): string
     {
         return $this->consigneeName;
     }
@@ -101,7 +101,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setConsigneeName(string $consigneeName) : self
+    public function setConsigneeName(string $consigneeName): self
     {
         $this->initialized['consigneeName'] = true;
         $this->consigneeName = $consigneeName;
@@ -112,7 +112,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine() : string
+    public function getAddressLine(): string
     {
         return $this->addressLine;
     }
@@ -123,7 +123,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(string $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -134,7 +134,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine2() : string
+    public function getAddressLine2(): string
     {
         return $this->addressLine2;
     }
@@ -145,7 +145,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine2(string $addressLine2) : self
+    public function setAddressLine2(string $addressLine2): self
     {
         $this->initialized['addressLine2'] = true;
         $this->addressLine2 = $addressLine2;
@@ -156,7 +156,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine3() : string
+    public function getAddressLine3(): string
     {
         return $this->addressLine3;
     }
@@ -167,7 +167,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine3(string $addressLine3) : self
+    public function setAddressLine3(string $addressLine3): self
     {
         $this->initialized['addressLine3'] = true;
         $this->addressLine3 = $addressLine3;
@@ -178,7 +178,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision3() : string
+    public function getPoliticalDivision3(): string
     {
         return $this->politicalDivision3;
     }
@@ -189,7 +189,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision3(string $politicalDivision3) : self
+    public function setPoliticalDivision3(string $politicalDivision3): self
     {
         $this->initialized['politicalDivision3'] = true;
         $this->politicalDivision3 = $politicalDivision3;
@@ -200,7 +200,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision2() : string
+    public function getPoliticalDivision2(): string
     {
         return $this->politicalDivision2;
     }
@@ -211,7 +211,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision2(string $politicalDivision2) : self
+    public function setPoliticalDivision2(string $politicalDivision2): self
     {
         $this->initialized['politicalDivision2'] = true;
         $this->politicalDivision2 = $politicalDivision2;
@@ -222,7 +222,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPoliticalDivision1() : string
+    public function getPoliticalDivision1(): string
     {
         return $this->politicalDivision1;
     }
@@ -233,7 +233,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPoliticalDivision1(string $politicalDivision1) : self
+    public function setPoliticalDivision1(string $politicalDivision1): self
     {
         $this->initialized['politicalDivision1'] = true;
         $this->politicalDivision1 = $politicalDivision1;
@@ -244,7 +244,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPostcodePrimaryLow() : string
+    public function getPostcodePrimaryLow(): string
     {
         return $this->postcodePrimaryLow;
     }
@@ -255,7 +255,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPostcodePrimaryLow(string $postcodePrimaryLow) : self
+    public function setPostcodePrimaryLow(string $postcodePrimaryLow): self
     {
         $this->initialized['postcodePrimaryLow'] = true;
         $this->postcodePrimaryLow = $postcodePrimaryLow;
@@ -266,7 +266,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getPostcodeExtendedLow() : string
+    public function getPostcodeExtendedLow(): string
     {
         return $this->postcodeExtendedLow;
     }
@@ -277,7 +277,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setPostcodeExtendedLow(string $postcodeExtendedLow) : self
+    public function setPostcodeExtendedLow(string $postcodeExtendedLow): self
     {
         $this->initialized['postcodeExtendedLow'] = true;
         $this->postcodeExtendedLow = $postcodeExtendedLow;
@@ -288,7 +288,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -299,7 +299,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -317,7 +317,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     *
     * @return string
     */
-    public function getSingleLineAddress() : string
+    public function getSingleLineAddress(): string
     {
         return $this->singleLineAddress;
     }
@@ -335,7 +335,7 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
     *
     * @return self
     */
-    public function setSingleLineAddress(string $singleLineAddress) : self
+    public function setSingleLineAddress(string $singleLineAddress): self
     {
         $this->initialized['singleLineAddress'] = true;
         $this->singleLineAddress = $singleLineAddress;

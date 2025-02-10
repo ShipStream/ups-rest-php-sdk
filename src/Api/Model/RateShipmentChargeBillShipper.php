@@ -8,7 +8,7 @@ class RateShipmentChargeBillShipper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class RateShipmentChargeBillShipper extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -34,7 +34,7 @@ class RateShipmentChargeBillShipper extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;

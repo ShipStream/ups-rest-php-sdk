@@ -8,7 +8,7 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
      *
      * @return string
      */
-    public function getGrantType() : string
+    public function getGrantType(): string
     {
         return $this->grantType;
     }
@@ -40,7 +40,7 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setGrantType(string $grantType) : self
+    public function setGrantType(string $grantType): self
     {
         $this->initialized['grantType'] = true;
         $this->grantType = $grantType;
@@ -51,7 +51,7 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
      *
      * @return string
      */
-    public function getRefreshToken() : string
+    public function getRefreshToken(): string
     {
         return $this->refreshToken;
     }
@@ -62,7 +62,7 @@ class SecurityV1OauthRefreshPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setRefreshToken(string $refreshToken) : self
+    public function setRefreshToken(string $refreshToken): self
     {
         $this->initialized['refreshToken'] = true;
         $this->refreshToken = $refreshToken;

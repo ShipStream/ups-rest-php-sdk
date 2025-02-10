@@ -8,7 +8,7 @@ class Package extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -137,7 +137,7 @@ class Package extends \ArrayObject
      *
      * @return AccessPointInformation
      */
-    public function getAccessPointInformation() : AccessPointInformation
+    public function getAccessPointInformation(): AccessPointInformation
     {
         return $this->accessPointInformation;
     }
@@ -148,7 +148,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointInformation(AccessPointInformation $accessPointInformation) : self
+    public function setAccessPointInformation(AccessPointInformation $accessPointInformation): self
     {
         $this->initialized['accessPointInformation'] = true;
         $this->accessPointInformation = $accessPointInformation;
@@ -159,7 +159,7 @@ class Package extends \ArrayObject
      *
      * @return list<Activity>
      */
-    public function getActivity() : array
+    public function getActivity(): array
     {
         return $this->activity;
     }
@@ -170,7 +170,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setActivity(array $activity) : self
+    public function setActivity(array $activity): self
     {
         $this->initialized['activity'] = true;
         $this->activity = $activity;
@@ -181,7 +181,7 @@ class Package extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAdditionalAttributes() : array
+    public function getAdditionalAttributes(): array
     {
         return $this->additionalAttributes;
     }
@@ -192,7 +192,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalAttributes(array $additionalAttributes) : self
+    public function setAdditionalAttributes(array $additionalAttributes): self
     {
         $this->initialized['additionalAttributes'] = true;
         $this->additionalAttributes = $additionalAttributes;
@@ -203,7 +203,7 @@ class Package extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAdditionalServices() : array
+    public function getAdditionalServices(): array
     {
         return $this->additionalServices;
     }
@@ -214,7 +214,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setAdditionalServices(array $additionalServices) : self
+    public function setAdditionalServices(array $additionalServices): self
     {
         $this->initialized['additionalServices'] = true;
         $this->additionalServices = $additionalServices;
@@ -225,7 +225,7 @@ class Package extends \ArrayObject
      *
      * @return list<AlternateTrackingNumber>
      */
-    public function getAlternateTrackingNumber() : array
+    public function getAlternateTrackingNumber(): array
     {
         return $this->alternateTrackingNumber;
     }
@@ -236,7 +236,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setAlternateTrackingNumber(array $alternateTrackingNumber) : self
+    public function setAlternateTrackingNumber(array $alternateTrackingNumber): self
     {
         $this->initialized['alternateTrackingNumber'] = true;
         $this->alternateTrackingNumber = $alternateTrackingNumber;
@@ -247,7 +247,7 @@ class Package extends \ArrayObject
      *
      * @return Status
      */
-    public function getCurrentStatus() : Status
+    public function getCurrentStatus(): Status
     {
         return $this->currentStatus;
     }
@@ -258,7 +258,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrentStatus(Status $currentStatus) : self
+    public function setCurrentStatus(Status $currentStatus): self
     {
         $this->initialized['currentStatus'] = true;
         $this->currentStatus = $currentStatus;
@@ -269,7 +269,7 @@ class Package extends \ArrayObject
      *
      * @return list<DeliveryDate>
      */
-    public function getDeliveryDate() : array
+    public function getDeliveryDate(): array
     {
         return $this->deliveryDate;
     }
@@ -280,7 +280,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryDate(array $deliveryDate) : self
+    public function setDeliveryDate(array $deliveryDate): self
     {
         $this->initialized['deliveryDate'] = true;
         $this->deliveryDate = $deliveryDate;
@@ -291,7 +291,7 @@ class Package extends \ArrayObject
      *
      * @return DeliveryInformation
      */
-    public function getDeliveryInformation() : DeliveryInformation
+    public function getDeliveryInformation(): DeliveryInformation
     {
         return $this->deliveryInformation;
     }
@@ -302,7 +302,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryInformation(DeliveryInformation $deliveryInformation) : self
+    public function setDeliveryInformation(DeliveryInformation $deliveryInformation): self
     {
         $this->initialized['deliveryInformation'] = true;
         $this->deliveryInformation = $deliveryInformation;
@@ -313,7 +313,7 @@ class Package extends \ArrayObject
      *
      * @return DeliveryTime
      */
-    public function getDeliveryTime() : DeliveryTime
+    public function getDeliveryTime(): DeliveryTime
     {
         return $this->deliveryTime;
     }
@@ -324,7 +324,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryTime(DeliveryTime $deliveryTime) : self
+    public function setDeliveryTime(DeliveryTime $deliveryTime): self
     {
         $this->initialized['deliveryTime'] = true;
         $this->deliveryTime = $deliveryTime;
@@ -335,7 +335,7 @@ class Package extends \ArrayObject
      *
      * @return list<Milestones>
      */
-    public function getMilestones() : array
+    public function getMilestones(): array
     {
         return $this->milestones;
     }
@@ -346,7 +346,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setMilestones(array $milestones) : self
+    public function setMilestones(array $milestones): self
     {
         $this->initialized['milestones'] = true;
         $this->milestones = $milestones;
@@ -357,7 +357,7 @@ class Package extends \ArrayObject
      *
      * @return list<PackageAddress>
      */
-    public function getPackageAddress() : array
+    public function getPackageAddress(): array
     {
         return $this->packageAddress;
     }
@@ -368,7 +368,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageAddress(array $packageAddress) : self
+    public function setPackageAddress(array $packageAddress): self
     {
         $this->initialized['packageAddress'] = true;
         $this->packageAddress = $packageAddress;
@@ -379,7 +379,7 @@ class Package extends \ArrayObject
      *
      * @return int
      */
-    public function getPackageCount() : int
+    public function getPackageCount(): int
     {
         return $this->packageCount;
     }
@@ -390,7 +390,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageCount(int $packageCount) : self
+    public function setPackageCount(int $packageCount): self
     {
         $this->initialized['packageCount'] = true;
         $this->packageCount = $packageCount;
@@ -401,7 +401,7 @@ class Package extends \ArrayObject
      *
      * @return list<PaymentInformation>
      */
-    public function getPaymentInformation() : array
+    public function getPaymentInformation(): array
     {
         return $this->paymentInformation;
     }
@@ -412,7 +412,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setPaymentInformation(array $paymentInformation) : self
+    public function setPaymentInformation(array $paymentInformation): self
     {
         $this->initialized['paymentInformation'] = true;
         $this->paymentInformation = $paymentInformation;
@@ -423,7 +423,7 @@ class Package extends \ArrayObject
      *
      * @return list<ReferenceNumber>
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber(): array
     {
         return $this->referenceNumber;
     }
@@ -434,7 +434,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(array $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -445,7 +445,7 @@ class Package extends \ArrayObject
      *
      * @return Service
      */
-    public function getService() : Service
+    public function getService(): Service
     {
         return $this->service;
     }
@@ -456,7 +456,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setService(Service $service) : self
+    public function setService(Service $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -467,7 +467,7 @@ class Package extends \ArrayObject
      *
      * @return string
      */
-    public function getStatusCode() : string
+    public function getStatusCode(): string
     {
         return $this->statusCode;
     }
@@ -478,7 +478,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setStatusCode(string $statusCode) : self
+    public function setStatusCode(string $statusCode): self
     {
         $this->initialized['statusCode'] = true;
         $this->statusCode = $statusCode;
@@ -489,7 +489,7 @@ class Package extends \ArrayObject
      *
      * @return string
      */
-    public function getStatusDescription() : string
+    public function getStatusDescription(): string
     {
         return $this->statusDescription;
     }
@@ -500,7 +500,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setStatusDescription(string $statusDescription) : self
+    public function setStatusDescription(string $statusDescription): self
     {
         $this->initialized['statusDescription'] = true;
         $this->statusDescription = $statusDescription;
@@ -511,7 +511,7 @@ class Package extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getSuppressionIndicators() : array
+    public function getSuppressionIndicators(): array
     {
         return $this->suppressionIndicators;
     }
@@ -522,7 +522,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setSuppressionIndicators(array $suppressionIndicators) : self
+    public function setSuppressionIndicators(array $suppressionIndicators): self
     {
         $this->initialized['suppressionIndicators'] = true;
         $this->suppressionIndicators = $suppressionIndicators;
@@ -533,7 +533,7 @@ class Package extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -544,7 +544,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -555,7 +555,7 @@ class Package extends \ArrayObject
      *
      * @return Weight|null
      */
-    public function getWeight() : ?Weight
+    public function getWeight(): ?Weight
     {
         return $this->weight;
     }
@@ -566,7 +566,7 @@ class Package extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(?Weight $weight) : self
+    public function setWeight(?Weight $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

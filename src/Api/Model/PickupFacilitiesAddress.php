@@ -8,7 +8,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -56,7 +56,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getAddressLine() : string
+    public function getAddressLine(): string
     {
         return $this->addressLine;
     }
@@ -67,7 +67,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(string $addressLine) : self
+    public function setAddressLine(string $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -78,7 +78,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -89,7 +89,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -100,7 +100,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvince() : string
+    public function getStateProvince(): string
     {
         return $this->stateProvince;
     }
@@ -111,7 +111,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(string $stateProvince): self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -122,7 +122,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -133,7 +133,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -144,7 +144,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -155,7 +155,7 @@ class PickupFacilitiesAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -169,7 +169,7 @@ class PickupFacilitiesAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;
     }
@@ -183,7 +183,7 @@ class PickupFacilitiesAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(string $residentialIndicator): self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;

@@ -8,7 +8,7 @@ class VoidShipmentResponseSummaryResult extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class VoidShipmentResponseSummaryResult extends \ArrayObject
      *
      * @return SummaryResultStatus
      */
-    public function getStatus() : SummaryResultStatus
+    public function getStatus(): SummaryResultStatus
     {
         return $this->status;
     }
@@ -34,7 +34,7 @@ class VoidShipmentResponseSummaryResult extends \ArrayObject
      *
      * @return self
      */
-    public function setStatus(SummaryResultStatus $status) : self
+    public function setStatus(SummaryResultStatus $status): self
     {
         $this->initialized['status'] = true;
         $this->status = $status;

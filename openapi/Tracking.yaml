@@ -593,6 +593,7 @@ components:
           description: The current status description. Note that this field will be
             translated based on the locale provided in the request.
           example: Your package was released by the customs agency.
+          nullable: true
         simplifiedTextDescription:
           type: string
           description: The current status in simplified text. This is a supplementary

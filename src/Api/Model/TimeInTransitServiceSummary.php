@@ -8,7 +8,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -65,7 +65,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return ServiceSummaryService
      */
-    public function getService() : ServiceSummaryService
+    public function getService(): ServiceSummaryService
     {
         return $this->service;
     }
@@ -76,7 +76,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setService(ServiceSummaryService $service) : self
+    public function setService(ServiceSummaryService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -87,7 +87,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return string
      */
-    public function getGuaranteedIndicator() : string
+    public function getGuaranteedIndicator(): string
     {
         return $this->guaranteedIndicator;
     }
@@ -98,7 +98,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setGuaranteedIndicator(string $guaranteedIndicator) : self
+    public function setGuaranteedIndicator(string $guaranteedIndicator): self
     {
         $this->initialized['guaranteedIndicator'] = true;
         $this->guaranteedIndicator = $guaranteedIndicator;
@@ -109,7 +109,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return string
      */
-    public function getDisclaimer() : string
+    public function getDisclaimer(): string
     {
         return $this->disclaimer;
     }
@@ -120,7 +120,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setDisclaimer(string $disclaimer) : self
+    public function setDisclaimer(string $disclaimer): self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -131,7 +131,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return ServiceSummaryEstimatedArrival
      */
-    public function getEstimatedArrival() : ServiceSummaryEstimatedArrival
+    public function getEstimatedArrival(): ServiceSummaryEstimatedArrival
     {
         return $this->estimatedArrival;
     }
@@ -142,7 +142,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setEstimatedArrival(ServiceSummaryEstimatedArrival $estimatedArrival) : self
+    public function setEstimatedArrival(ServiceSummaryEstimatedArrival $estimatedArrival): self
     {
         $this->initialized['estimatedArrival'] = true;
         $this->estimatedArrival = $estimatedArrival;
@@ -153,7 +153,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayDelivery() : string
+    public function getSaturdayDelivery(): string
     {
         return $this->saturdayDelivery;
     }
@@ -164,7 +164,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayDelivery(string $saturdayDelivery) : self
+    public function setSaturdayDelivery(string $saturdayDelivery): self
     {
         $this->initialized['saturdayDelivery'] = true;
         $this->saturdayDelivery = $saturdayDelivery;
@@ -175,7 +175,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayDeliveryDisclaimer() : string
+    public function getSaturdayDeliveryDisclaimer(): string
     {
         return $this->saturdayDeliveryDisclaimer;
     }
@@ -186,7 +186,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayDeliveryDisclaimer(string $saturdayDeliveryDisclaimer) : self
+    public function setSaturdayDeliveryDisclaimer(string $saturdayDeliveryDisclaimer): self
     {
         $this->initialized['saturdayDeliveryDisclaimer'] = true;
         $this->saturdayDeliveryDisclaimer = $saturdayDeliveryDisclaimer;
@@ -197,7 +197,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return string
      */
-    public function getSundayDelivery() : string
+    public function getSundayDelivery(): string
     {
         return $this->sundayDelivery;
     }
@@ -208,7 +208,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setSundayDelivery(string $sundayDelivery) : self
+    public function setSundayDelivery(string $sundayDelivery): self
     {
         $this->initialized['sundayDelivery'] = true;
         $this->sundayDelivery = $sundayDelivery;
@@ -219,7 +219,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return string
      */
-    public function getSundayDeliveryDisclaimer() : string
+    public function getSundayDeliveryDisclaimer(): string
     {
         return $this->sundayDeliveryDisclaimer;
     }
@@ -230,7 +230,7 @@ class TimeInTransitServiceSummary extends \ArrayObject
      *
      * @return self
      */
-    public function setSundayDeliveryDisclaimer(string $sundayDeliveryDisclaimer) : self
+    public function setSundayDeliveryDisclaimer(string $sundayDeliveryDisclaimer): self
     {
         $this->initialized['sundayDeliveryDisclaimer'] = true;
         $this->sundayDeliveryDisclaimer = $sundayDeliveryDisclaimer;

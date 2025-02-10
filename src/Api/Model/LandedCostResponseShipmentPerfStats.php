@@ -8,7 +8,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      *
      * @return string
      */
-    public function getAbsLayerTime() : string
+    public function getAbsLayerTime(): string
     {
         return $this->absLayerTime;
     }
@@ -46,7 +46,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      *
      * @return self
      */
-    public function setAbsLayerTime(string $absLayerTime) : self
+    public function setAbsLayerTime(string $absLayerTime): self
     {
         $this->initialized['absLayerTime'] = true;
         $this->absLayerTime = $absLayerTime;
@@ -57,7 +57,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      *
      * @return string
      */
-    public function getFulfillTime() : string
+    public function getFulfillTime(): string
     {
         return $this->fulfillTime;
     }
@@ -68,7 +68,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      *
      * @return self
      */
-    public function setFulfillTime(string $fulfillTime) : self
+    public function setFulfillTime(string $fulfillTime): self
     {
         $this->initialized['fulfillTime'] = true;
         $this->fulfillTime = $fulfillTime;
@@ -79,7 +79,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      *
      * @return string
      */
-    public function getReceiptTime() : string
+    public function getReceiptTime(): string
     {
         return $this->receiptTime;
     }
@@ -90,7 +90,7 @@ class LandedCostResponseShipmentPerfStats extends \ArrayObject
      *
      * @return self
      */
-    public function setReceiptTime(string $receiptTime) : self
+    public function setReceiptTime(string $receiptTime): self
     {
         $this->initialized['receiptTime'] = true;
         $this->receiptTime = $receiptTime;

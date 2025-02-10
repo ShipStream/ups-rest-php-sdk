@@ -8,7 +8,7 @@ class Status extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -21,7 +21,7 @@ class Status extends \ArrayObject
     /**
      * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
     /**
@@ -47,7 +47,7 @@ class Status extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCode() : ?string
+    public function getCode(): ?string
     {
         return $this->code;
     }
@@ -58,7 +58,7 @@ class Status extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(?string $code) : self
+    public function setCode(?string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -67,20 +67,20 @@ class Status extends \ArrayObject
     /**
      * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
     /**
      * The current status description. Note that this field will be translated based on the locale provided in the request.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(?string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -91,7 +91,7 @@ class Status extends \ArrayObject
      *
      * @return string
      */
-    public function getSimplifiedTextDescription() : string
+    public function getSimplifiedTextDescription(): string
     {
         return $this->simplifiedTextDescription;
     }
@@ -102,7 +102,7 @@ class Status extends \ArrayObject
      *
      * @return self
      */
-    public function setSimplifiedTextDescription(string $simplifiedTextDescription) : self
+    public function setSimplifiedTextDescription(string $simplifiedTextDescription): self
     {
         $this->initialized['simplifiedTextDescription'] = true;
         $this->simplifiedTextDescription = $simplifiedTextDescription;
@@ -113,7 +113,7 @@ class Status extends \ArrayObject
      *
      * @return string
      */
-    public function getStatusCode() : string
+    public function getStatusCode(): string
     {
         return $this->statusCode;
     }
@@ -124,7 +124,7 @@ class Status extends \ArrayObject
      *
      * @return self
      */
-    public function setStatusCode(string $statusCode) : self
+    public function setStatusCode(string $statusCode): self
     {
         $this->initialized['statusCode'] = true;
         $this->statusCode = $statusCode;
@@ -135,7 +135,7 @@ class Status extends \ArrayObject
      *
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -146,7 +146,7 @@ class Status extends \ArrayObject
      *
      * @return self
      */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

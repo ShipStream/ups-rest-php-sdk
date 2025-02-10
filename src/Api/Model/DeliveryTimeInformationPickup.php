@@ -8,7 +8,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
      *
      * @return string
      */
-    public function getDate() : string
+    public function getDate(): string
     {
         return $this->date;
     }
@@ -40,7 +40,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
      *
      * @return self
      */
-    public function setDate(string $date) : self
+    public function setDate(string $date): self
     {
         $this->initialized['date'] = true;
         $this->date = $date;
@@ -51,7 +51,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
      *
      * @return string
      */
-    public function getTime() : string
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -62,7 +62,7 @@ class DeliveryTimeInformationPickup extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(string $time): self
     {
         $this->initialized['time'] = true;
         $this->time = $time;

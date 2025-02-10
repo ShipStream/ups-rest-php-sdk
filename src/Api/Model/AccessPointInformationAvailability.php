@@ -8,7 +8,7 @@ class AccessPointInformationAvailability extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class AccessPointInformationAvailability extends \ArrayObject
      *
      * @return AvailabilityShippingAvailability
      */
-    public function getShippingAvailability() : AvailabilityShippingAvailability
+    public function getShippingAvailability(): AvailabilityShippingAvailability
     {
         return $this->shippingAvailability;
     }
@@ -40,7 +40,7 @@ class AccessPointInformationAvailability extends \ArrayObject
      *
      * @return self
      */
-    public function setShippingAvailability(AvailabilityShippingAvailability $shippingAvailability) : self
+    public function setShippingAvailability(AvailabilityShippingAvailability $shippingAvailability): self
     {
         $this->initialized['shippingAvailability'] = true;
         $this->shippingAvailability = $shippingAvailability;
@@ -51,7 +51,7 @@ class AccessPointInformationAvailability extends \ArrayObject
      *
      * @return AvailabilityDCRAvailability
      */
-    public function getDCRAvailability() : AvailabilityDCRAvailability
+    public function getDCRAvailability(): AvailabilityDCRAvailability
     {
         return $this->dCRAvailability;
     }
@@ -62,7 +62,7 @@ class AccessPointInformationAvailability extends \ArrayObject
      *
      * @return self
      */
-    public function setDCRAvailability(AvailabilityDCRAvailability $dCRAvailability) : self
+    public function setDCRAvailability(AvailabilityDCRAvailability $dCRAvailability): self
     {
         $this->initialized['dCRAvailability'] = true;
         $this->dCRAvailability = $dCRAvailability;

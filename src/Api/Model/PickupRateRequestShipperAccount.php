@@ -8,7 +8,7 @@ class PickupRateRequestShipperAccount extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -30,7 +30,7 @@ class PickupRateRequestShipperAccount extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -41,7 +41,7 @@ class PickupRateRequestShipperAccount extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -53,7 +53,7 @@ class PickupRateRequestShipperAccount extends \ArrayObject
     *
     * @return string
     */
-    public function getAccountCountryCode() : string
+    public function getAccountCountryCode(): string
     {
         return $this->accountCountryCode;
     }
@@ -65,7 +65,7 @@ class PickupRateRequestShipperAccount extends \ArrayObject
     *
     * @return self
     */
-    public function setAccountCountryCode(string $accountCountryCode) : self
+    public function setAccountCountryCode(string $accountCountryCode): self
     {
         $this->initialized['accountCountryCode'] = true;
         $this->accountCountryCode = $accountCountryCode;

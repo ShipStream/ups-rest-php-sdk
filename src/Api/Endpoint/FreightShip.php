@@ -39,26 +39,26 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
         $this->headerParameters = $headerParameters;
     }
     use \ShipStream\Ups\Api\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'POST';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
         return str_replace(['{version}', '{reqoption}'], [$this->version, $this->reqoption], '/freight/{version}/shipments/{reqoption}');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         if ($this->body instanceof \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper) {
             return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
         return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
         return ['Accept' => ['application/json']];
     }
-    protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
         $optionsResolver->setDefined(['transId', 'transactionSrc']);
@@ -81,14 +81,14 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'ShipStream\\Ups\\Api\\Model\\FREIGHTSHIPResponseWrapper', 'json');
+            return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper', 'json');
         }
         if (401 === $status) {
             throw new \ShipStream\Ups\Api\Exception\FreightShipUnauthorizedException($response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
         return ['oauth2'];
     }

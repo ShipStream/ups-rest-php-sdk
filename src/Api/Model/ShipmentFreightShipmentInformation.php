@@ -8,7 +8,7 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -30,7 +30,7 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
      *
      * @return FreightShipmentInformationFreightDensityInfo
      */
-    public function getFreightDensityInfo() : FreightShipmentInformationFreightDensityInfo
+    public function getFreightDensityInfo(): FreightShipmentInformationFreightDensityInfo
     {
         return $this->freightDensityInfo;
     }
@@ -41,7 +41,7 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightDensityInfo(FreightShipmentInformationFreightDensityInfo $freightDensityInfo) : self
+    public function setFreightDensityInfo(FreightShipmentInformationFreightDensityInfo $freightDensityInfo): self
     {
         $this->initialized['freightDensityInfo'] = true;
         $this->freightDensityInfo = $freightDensityInfo;
@@ -53,7 +53,7 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
     *
     * @return string
     */
-    public function getDensityEligibleIndicator() : string
+    public function getDensityEligibleIndicator(): string
     {
         return $this->densityEligibleIndicator;
     }
@@ -65,7 +65,7 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
     *
     * @return self
     */
-    public function setDensityEligibleIndicator(string $densityEligibleIndicator) : self
+    public function setDensityEligibleIndicator(string $densityEligibleIndicator): self
     {
         $this->initialized['densityEligibleIndicator'] = true;
         $this->densityEligibleIndicator = $densityEligibleIndicator;

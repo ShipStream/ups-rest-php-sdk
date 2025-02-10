@@ -8,7 +8,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -177,7 +177,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return list<ShipmentResultsDisclaimer>
      */
-    public function getDisclaimer() : array
+    public function getDisclaimer(): array
     {
         return $this->disclaimer;
     }
@@ -189,7 +189,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setDisclaimer(array $disclaimer) : self
+    public function setDisclaimer(array $disclaimer): self
     {
         $this->initialized['disclaimer'] = true;
         $this->disclaimer = $disclaimer;
@@ -200,7 +200,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsShipmentCharges
      */
-    public function getShipmentCharges() : ShipmentResultsShipmentCharges
+    public function getShipmentCharges(): ShipmentResultsShipmentCharges
     {
         return $this->shipmentCharges;
     }
@@ -211,7 +211,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentCharges(ShipmentResultsShipmentCharges $shipmentCharges) : self
+    public function setShipmentCharges(ShipmentResultsShipmentCharges $shipmentCharges): self
     {
         $this->initialized['shipmentCharges'] = true;
         $this->shipmentCharges = $shipmentCharges;
@@ -222,7 +222,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsNegotiatedRateCharges|null
      */
-    public function getNegotiatedRateCharges() : ?ShipmentResultsNegotiatedRateCharges
+    public function getNegotiatedRateCharges(): ?ShipmentResultsNegotiatedRateCharges
     {
         return $this->negotiatedRateCharges;
     }
@@ -233,7 +233,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setNegotiatedRateCharges(?ShipmentResultsNegotiatedRateCharges $negotiatedRateCharges) : self
+    public function setNegotiatedRateCharges(?ShipmentResultsNegotiatedRateCharges $negotiatedRateCharges): self
     {
         $this->initialized['negotiatedRateCharges'] = true;
         $this->negotiatedRateCharges = $negotiatedRateCharges;
@@ -244,7 +244,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsFRSShipmentData|null
      */
-    public function getFRSShipmentData() : ?ShipmentResultsFRSShipmentData
+    public function getFRSShipmentData(): ?ShipmentResultsFRSShipmentData
     {
         return $this->fRSShipmentData;
     }
@@ -255,7 +255,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setFRSShipmentData(?ShipmentResultsFRSShipmentData $fRSShipmentData) : self
+    public function setFRSShipmentData(?ShipmentResultsFRSShipmentData $fRSShipmentData): self
     {
         $this->initialized['fRSShipmentData'] = true;
         $this->fRSShipmentData = $fRSShipmentData;
@@ -268,7 +268,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getRatingMethod() : ?string
+    public function getRatingMethod(): ?string
     {
         return $this->ratingMethod;
     }
@@ -281,7 +281,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setRatingMethod(?string $ratingMethod) : self
+    public function setRatingMethod(?string $ratingMethod): self
     {
         $this->initialized['ratingMethod'] = true;
         $this->ratingMethod = $ratingMethod;
@@ -294,7 +294,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getBillableWeightCalculationMethod() : ?string
+    public function getBillableWeightCalculationMethod(): ?string
     {
         return $this->billableWeightCalculationMethod;
     }
@@ -307,7 +307,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setBillableWeightCalculationMethod(?string $billableWeightCalculationMethod) : self
+    public function setBillableWeightCalculationMethod(?string $billableWeightCalculationMethod): self
     {
         $this->initialized['billableWeightCalculationMethod'] = true;
         $this->billableWeightCalculationMethod = $billableWeightCalculationMethod;
@@ -318,7 +318,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsBillingWeight
      */
-    public function getBillingWeight() : ShipmentResultsBillingWeight
+    public function getBillingWeight(): ShipmentResultsBillingWeight
     {
         return $this->billingWeight;
     }
@@ -329,7 +329,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setBillingWeight(ShipmentResultsBillingWeight $billingWeight) : self
+    public function setBillingWeight(ShipmentResultsBillingWeight $billingWeight): self
     {
         $this->initialized['billingWeight'] = true;
         $this->billingWeight = $billingWeight;
@@ -340,7 +340,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return string|null
      */
-    public function getShipmentIdentificationNumber() : ?string
+    public function getShipmentIdentificationNumber(): ?string
     {
         return $this->shipmentIdentificationNumber;
     }
@@ -351,7 +351,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentIdentificationNumber(?string $shipmentIdentificationNumber) : self
+    public function setShipmentIdentificationNumber(?string $shipmentIdentificationNumber): self
     {
         $this->initialized['shipmentIdentificationNumber'] = true;
         $this->shipmentIdentificationNumber = $shipmentIdentificationNumber;
@@ -368,7 +368,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getMIDualReturnShipmentKey() : ?string
+    public function getMIDualReturnShipmentKey(): ?string
     {
         return $this->mIDualReturnShipmentKey;
     }
@@ -385,7 +385,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setMIDualReturnShipmentKey(?string $mIDualReturnShipmentKey) : self
+    public function setMIDualReturnShipmentKey(?string $mIDualReturnShipmentKey): self
     {
         $this->initialized['mIDualReturnShipmentKey'] = true;
         $this->mIDualReturnShipmentKey = $mIDualReturnShipmentKey;
@@ -396,7 +396,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return string|null
      */
-    public function getBarCodeImage() : ?string
+    public function getBarCodeImage(): ?string
     {
         return $this->barCodeImage;
     }
@@ -407,7 +407,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setBarCodeImage(?string $barCodeImage) : self
+    public function setBarCodeImage(?string $barCodeImage): self
     {
         $this->initialized['barCodeImage'] = true;
         $this->barCodeImage = $barCodeImage;
@@ -419,7 +419,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return list<ShipmentResultsPackageResults>|null
      */
-    public function getPackageResults() : ?array
+    public function getPackageResults(): ?array
     {
         return $this->packageResults;
     }
@@ -431,7 +431,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageResults(?array $packageResults) : self
+    public function setPackageResults(?array $packageResults): self
     {
         $this->initialized['packageResults'] = true;
         $this->packageResults = $packageResults;
@@ -443,7 +443,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return list<ShipmentResultsControlLogReceipt>|null
      */
-    public function getControlLogReceipt() : ?array
+    public function getControlLogReceipt(): ?array
     {
         return $this->controlLogReceipt;
     }
@@ -455,7 +455,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setControlLogReceipt(?array $controlLogReceipt) : self
+    public function setControlLogReceipt(?array $controlLogReceipt): self
     {
         $this->initialized['controlLogReceipt'] = true;
         $this->controlLogReceipt = $controlLogReceipt;
@@ -469,7 +469,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return ShipmentResultsForm|null
     */
-    public function getForm() : ?ShipmentResultsForm
+    public function getForm(): ?ShipmentResultsForm
     {
         return $this->form;
     }
@@ -483,7 +483,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setForm(?ShipmentResultsForm $form) : self
+    public function setForm(?ShipmentResultsForm $form): self
     {
         $this->initialized['form'] = true;
         $this->form = $form;
@@ -494,7 +494,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsCODTurnInPage|null
      */
-    public function getCODTurnInPage() : ?ShipmentResultsCODTurnInPage
+    public function getCODTurnInPage(): ?ShipmentResultsCODTurnInPage
     {
         return $this->cODTurnInPage;
     }
@@ -505,7 +505,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setCODTurnInPage(?ShipmentResultsCODTurnInPage $cODTurnInPage) : self
+    public function setCODTurnInPage(?ShipmentResultsCODTurnInPage $cODTurnInPage): self
     {
         $this->initialized['cODTurnInPage'] = true;
         $this->cODTurnInPage = $cODTurnInPage;
@@ -516,7 +516,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsHighValueReport|null
      */
-    public function getHighValueReport() : ?ShipmentResultsHighValueReport
+    public function getHighValueReport(): ?ShipmentResultsHighValueReport
     {
         return $this->highValueReport;
     }
@@ -527,7 +527,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setHighValueReport(?ShipmentResultsHighValueReport $highValueReport) : self
+    public function setHighValueReport(?ShipmentResultsHighValueReport $highValueReport): self
     {
         $this->initialized['highValueReport'] = true;
         $this->highValueReport = $highValueReport;
@@ -541,7 +541,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getLabelURL() : ?string
+    public function getLabelURL(): ?string
     {
         return $this->labelURL;
     }
@@ -555,7 +555,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setLabelURL(?string $labelURL) : self
+    public function setLabelURL(?string $labelURL): self
     {
         $this->initialized['labelURL'] = true;
         $this->labelURL = $labelURL;
@@ -569,7 +569,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getLocalLanguageLabelURL() : ?string
+    public function getLocalLanguageLabelURL(): ?string
     {
         return $this->localLanguageLabelURL;
     }
@@ -583,7 +583,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setLocalLanguageLabelURL(?string $localLanguageLabelURL) : self
+    public function setLocalLanguageLabelURL(?string $localLanguageLabelURL): self
     {
         $this->initialized['localLanguageLabelURL'] = true;
         $this->localLanguageLabelURL = $localLanguageLabelURL;
@@ -596,7 +596,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getReceiptURL() : ?string
+    public function getReceiptURL(): ?string
     {
         return $this->receiptURL;
     }
@@ -609,7 +609,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setReceiptURL(?string $receiptURL) : self
+    public function setReceiptURL(?string $receiptURL): self
     {
         $this->initialized['receiptURL'] = true;
         $this->receiptURL = $receiptURL;
@@ -622,7 +622,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return string|null
     */
-    public function getLocalLanguageReceiptURL() : ?string
+    public function getLocalLanguageReceiptURL(): ?string
     {
         return $this->localLanguageReceiptURL;
     }
@@ -635,7 +635,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setLocalLanguageReceiptURL(?string $localLanguageReceiptURL) : self
+    public function setLocalLanguageReceiptURL(?string $localLanguageReceiptURL): self
     {
         $this->initialized['localLanguageReceiptURL'] = true;
         $this->localLanguageReceiptURL = $localLanguageReceiptURL;
@@ -647,7 +647,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return list<string>|null
      */
-    public function getDGPaperImage() : ?array
+    public function getDGPaperImage(): ?array
     {
         return $this->dGPaperImage;
     }
@@ -659,7 +659,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setDGPaperImage(?array $dGPaperImage) : self
+    public function setDGPaperImage(?array $dGPaperImage): self
     {
         $this->initialized['dGPaperImage'] = true;
         $this->dGPaperImage = $dGPaperImage;
@@ -670,7 +670,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return string|null
      */
-    public function getMasterCartonID() : ?string
+    public function getMasterCartonID(): ?string
     {
         return $this->masterCartonID;
     }
@@ -681,7 +681,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setMasterCartonID(?string $masterCartonID) : self
+    public function setMasterCartonID(?string $masterCartonID): self
     {
         $this->initialized['masterCartonID'] = true;
         $this->masterCartonID = $masterCartonID;
@@ -692,7 +692,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return string|null
      */
-    public function getRoarRatedIndicator() : ?string
+    public function getRoarRatedIndicator(): ?string
     {
         return $this->roarRatedIndicator;
     }
@@ -703,7 +703,7 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setRoarRatedIndicator(?string $roarRatedIndicator) : self
+    public function setRoarRatedIndicator(?string $roarRatedIndicator): self
     {
         $this->initialized['roarRatedIndicator'] = true;
         $this->roarRatedIndicator = $roarRatedIndicator;

@@ -8,7 +8,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return AlternateRatesResponseAlternateRateType
      */
-    public function getAlternateRateType() : AlternateRatesResponseAlternateRateType
+    public function getAlternateRateType(): AlternateRatesResponseAlternateRateType
     {
         return $this->alternateRateType;
     }
@@ -58,7 +58,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setAlternateRateType(AlternateRatesResponseAlternateRateType $alternateRateType) : self
+    public function setAlternateRateType(AlternateRatesResponseAlternateRateType $alternateRateType): self
     {
         $this->initialized['alternateRateType'] = true;
         $this->alternateRateType = $alternateRateType;
@@ -69,7 +69,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return list<AlternateRatesResponseRate>
      */
-    public function getRate() : array
+    public function getRate(): array
     {
         return $this->rate;
     }
@@ -80,7 +80,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRate(array $rate) : self
+    public function setRate(array $rate): self
     {
         $this->initialized['rate'] = true;
         $this->rate = $rate;
@@ -91,7 +91,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return AlternateRatesResponseFreightDensityRate
      */
-    public function getFreightDensityRate() : AlternateRatesResponseFreightDensityRate
+    public function getFreightDensityRate(): AlternateRatesResponseFreightDensityRate
     {
         return $this->freightDensityRate;
     }
@@ -102,7 +102,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightDensityRate(AlternateRatesResponseFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(AlternateRatesResponseFreightDensityRate $freightDensityRate): self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -113,7 +113,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return AlternateRatesResponseBillableShipmentWeight
      */
-    public function getBillableShipmentWeight() : AlternateRatesResponseBillableShipmentWeight
+    public function getBillableShipmentWeight(): AlternateRatesResponseBillableShipmentWeight
     {
         return $this->billableShipmentWeight;
     }
@@ -124,7 +124,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setBillableShipmentWeight(AlternateRatesResponseBillableShipmentWeight $billableShipmentWeight) : self
+    public function setBillableShipmentWeight(AlternateRatesResponseBillableShipmentWeight $billableShipmentWeight): self
     {
         $this->initialized['billableShipmentWeight'] = true;
         $this->billableShipmentWeight = $billableShipmentWeight;
@@ -135,7 +135,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return AlternateRatesResponseTimeInTransit
      */
-    public function getTimeInTransit() : AlternateRatesResponseTimeInTransit
+    public function getTimeInTransit(): AlternateRatesResponseTimeInTransit
     {
         return $this->timeInTransit;
     }
@@ -146,7 +146,7 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeInTransit(AlternateRatesResponseTimeInTransit $timeInTransit) : self
+    public function setTimeInTransit(AlternateRatesResponseTimeInTransit $timeInTransit): self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;

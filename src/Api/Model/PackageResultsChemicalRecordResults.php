@@ -8,7 +8,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -48,7 +48,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return string
      */
-    public function getChemicalRecordIdentifier() : string
+    public function getChemicalRecordIdentifier(): string
     {
         return $this->chemicalRecordIdentifier;
     }
@@ -59,7 +59,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalRecordIdentifier(string $chemicalRecordIdentifier) : self
+    public function setChemicalRecordIdentifier(string $chemicalRecordIdentifier): self
     {
         $this->initialized['chemicalRecordIdentifier'] = true;
         $this->chemicalRecordIdentifier = $chemicalRecordIdentifier;
@@ -70,7 +70,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return string
      */
-    public function getADRPoints() : string
+    public function getADRPoints(): string
     {
         return $this->aDRPoints;
     }
@@ -81,7 +81,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return self
      */
-    public function setADRPoints(string $aDRPoints) : self
+    public function setADRPoints(string $aDRPoints): self
     {
         $this->initialized['aDRPoints'] = true;
         $this->aDRPoints = $aDRPoints;
@@ -92,7 +92,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return string
      */
-    public function getTransportCategory() : string
+    public function getTransportCategory(): string
     {
         return $this->transportCategory;
     }
@@ -103,7 +103,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportCategory(string $transportCategory) : self
+    public function setTransportCategory(string $transportCategory): self
     {
         $this->initialized['transportCategory'] = true;
         $this->transportCategory = $transportCategory;
@@ -114,7 +114,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return string
      */
-    public function getTunnelRestrictionCode() : string
+    public function getTunnelRestrictionCode(): string
     {
         return $this->tunnelRestrictionCode;
     }
@@ -125,7 +125,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      *
      * @return self
      */
-    public function setTunnelRestrictionCode(string $tunnelRestrictionCode) : self
+    public function setTunnelRestrictionCode(string $tunnelRestrictionCode): self
     {
         $this->initialized['tunnelRestrictionCode'] = true;
         $this->tunnelRestrictionCode = $tunnelRestrictionCode;
@@ -137,7 +137,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
     *
     * @return string
     */
-    public function getADRUnits() : string
+    public function getADRUnits(): string
     {
         return $this->aDRUnits;
     }
@@ -149,7 +149,7 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
     *
     * @return self
     */
-    public function setADRUnits(string $aDRUnits) : self
+    public function setADRUnits(string $aDRUnits): self
     {
         $this->initialized['aDRUnits'] = true;
         $this->aDRUnits = $aDRUnits;

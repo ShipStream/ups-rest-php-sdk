@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment';
+            return $type === \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ShipFrom', $data)) {
-                $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom', 'json', $context));
+                $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], \ShipStream\Ups\Api\Model\FreightShipShipmentShipFrom::class, 'json', $context));
                 unset($data['ShipFrom']);
             }
             if (\array_key_exists('ShipperNumber', $data)) {
@@ -49,27 +49,27 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ShipperNumber']);
             }
             if (\array_key_exists('ShipTo', $data)) {
-                $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo', 'json', $context));
+                $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], \ShipStream\Ups\Api\Model\FreightShipShipmentShipTo::class, 'json', $context));
                 unset($data['ShipTo']);
             }
             if (\array_key_exists('PaymentInformation', $data)) {
-                $object->setPaymentInformation($this->denormalizer->denormalize($data['PaymentInformation'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation', 'json', $context));
+                $object->setPaymentInformation($this->denormalizer->denormalize($data['PaymentInformation'], \ShipStream\Ups\Api\Model\FreightShipShipmentPaymentInformation::class, 'json', $context));
                 unset($data['PaymentInformation']);
             }
             if (\array_key_exists('Service', $data)) {
-                $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\ShipmentService', 'json', $context));
+                $object->setService($this->denormalizer->denormalize($data['Service'], \ShipStream\Ups\Api\Model\ShipmentService::class, 'json', $context));
                 unset($data['Service']);
             }
             if (\array_key_exists('HandlingUnitOne', $data)) {
-                $object->setHandlingUnitOne($this->denormalizer->denormalize($data['HandlingUnitOne'], 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitOne', 'json', $context));
+                $object->setHandlingUnitOne($this->denormalizer->denormalize($data['HandlingUnitOne'], \ShipStream\Ups\Api\Model\ShipmentHandlingUnitOne::class, 'json', $context));
                 unset($data['HandlingUnitOne']);
             }
             if (\array_key_exists('HandlingUnitTwo', $data)) {
-                $object->setHandlingUnitTwo($this->denormalizer->denormalize($data['HandlingUnitTwo'], 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitTwo', 'json', $context));
+                $object->setHandlingUnitTwo($this->denormalizer->denormalize($data['HandlingUnitTwo'], \ShipStream\Ups\Api\Model\ShipmentHandlingUnitTwo::class, 'json', $context));
                 unset($data['HandlingUnitTwo']);
             }
             if (\array_key_exists('ExistingShipmentID', $data)) {
-                $object->setExistingShipmentID($this->denormalizer->denormalize($data['ExistingShipmentID'], 'ShipStream\\Ups\\Api\\Model\\ShipmentExistingShipmentID', 'json', $context));
+                $object->setExistingShipmentID($this->denormalizer->denormalize($data['ExistingShipmentID'], \ShipStream\Ups\Api\Model\ShipmentExistingShipmentID::class, 'json', $context));
                 unset($data['ExistingShipmentID']);
             }
             if (\array_key_exists('HandlingInstructions', $data)) {
@@ -87,7 +87,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Commodity', $data)) {
                 $values = [];
                 foreach ($data['Commodity'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentCommodity', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\ShipmentCommodity::class, 'json', $context);
                 }
                 $object->setCommodity($values);
                 unset($data['Commodity']);
@@ -95,21 +95,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Reference', $data)) {
                 $values_1 = [];
                 foreach ($data['Reference'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentReference', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\ShipmentReference::class, 'json', $context);
                 }
                 $object->setReference($values_1);
                 unset($data['Reference']);
             }
             if (\array_key_exists('ShipmentServiceOptions', $data)) {
-                $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions', 'json', $context));
+                $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], \ShipStream\Ups\Api\Model\FreightShipShipmentShipmentServiceOptions::class, 'json', $context));
                 unset($data['ShipmentServiceOptions']);
             }
             if (\array_key_exists('PickupRequest', $data)) {
-                $object->setPickupRequest($this->denormalizer->denormalize($data['PickupRequest'], 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest', 'json', $context));
+                $object->setPickupRequest($this->denormalizer->denormalize($data['PickupRequest'], \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class, 'json', $context));
                 unset($data['PickupRequest']);
             }
             if (\array_key_exists('Documents', $data)) {
-                $object->setDocuments($this->denormalizer->denormalize($data['Documents'], 'ShipStream\\Ups\\Api\\Model\\ShipmentDocuments', 'json', $context));
+                $object->setDocuments($this->denormalizer->denormalize($data['Documents'], \ShipStream\Ups\Api\Model\ShipmentDocuments::class, 'json', $context));
                 unset($data['Documents']);
             }
             if (\array_key_exists('TimeInTransitIndicator', $data)) {
@@ -117,7 +117,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['TimeInTransitIndicator']);
             }
             if (\array_key_exists('HandlingUnits', $data)) {
-                $object->setHandlingUnits($this->denormalizer->denormalize($data['HandlingUnits'], 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnits', 'json', $context));
+                $object->setHandlingUnits($this->denormalizer->denormalize($data['HandlingUnits'], \ShipStream\Ups\Api\Model\ShipmentHandlingUnits::class, 'json', $context));
                 unset($data['HandlingUnits']);
             }
             if (\array_key_exists('DensityEligibleIndicator', $data)) {
@@ -131,7 +131,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['ShipFrom'] = $this->normalizer->normalize($object->getShipFrom(), 'json', $context);
@@ -194,9 +194,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment' => false];
+            return [\ShipStream\Ups\Api\Model\FreightShipRequestShipment::class => false];
         }
     }
 } else {
@@ -206,13 +206,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment';
+            return $type === \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FreightShipRequestShipment::class;
         }
         /**
          * @return mixed
@@ -230,7 +230,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ShipFrom', $data)) {
-                $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipFrom', 'json', $context));
+                $object->setShipFrom($this->denormalizer->denormalize($data['ShipFrom'], \ShipStream\Ups\Api\Model\FreightShipShipmentShipFrom::class, 'json', $context));
                 unset($data['ShipFrom']);
             }
             if (\array_key_exists('ShipperNumber', $data)) {
@@ -238,27 +238,27 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ShipperNumber']);
             }
             if (\array_key_exists('ShipTo', $data)) {
-                $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipTo', 'json', $context));
+                $object->setShipTo($this->denormalizer->denormalize($data['ShipTo'], \ShipStream\Ups\Api\Model\FreightShipShipmentShipTo::class, 'json', $context));
                 unset($data['ShipTo']);
             }
             if (\array_key_exists('PaymentInformation', $data)) {
-                $object->setPaymentInformation($this->denormalizer->denormalize($data['PaymentInformation'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentPaymentInformation', 'json', $context));
+                $object->setPaymentInformation($this->denormalizer->denormalize($data['PaymentInformation'], \ShipStream\Ups\Api\Model\FreightShipShipmentPaymentInformation::class, 'json', $context));
                 unset($data['PaymentInformation']);
             }
             if (\array_key_exists('Service', $data)) {
-                $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\ShipmentService', 'json', $context));
+                $object->setService($this->denormalizer->denormalize($data['Service'], \ShipStream\Ups\Api\Model\ShipmentService::class, 'json', $context));
                 unset($data['Service']);
             }
             if (\array_key_exists('HandlingUnitOne', $data)) {
-                $object->setHandlingUnitOne($this->denormalizer->denormalize($data['HandlingUnitOne'], 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitOne', 'json', $context));
+                $object->setHandlingUnitOne($this->denormalizer->denormalize($data['HandlingUnitOne'], \ShipStream\Ups\Api\Model\ShipmentHandlingUnitOne::class, 'json', $context));
                 unset($data['HandlingUnitOne']);
             }
             if (\array_key_exists('HandlingUnitTwo', $data)) {
-                $object->setHandlingUnitTwo($this->denormalizer->denormalize($data['HandlingUnitTwo'], 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnitTwo', 'json', $context));
+                $object->setHandlingUnitTwo($this->denormalizer->denormalize($data['HandlingUnitTwo'], \ShipStream\Ups\Api\Model\ShipmentHandlingUnitTwo::class, 'json', $context));
                 unset($data['HandlingUnitTwo']);
             }
             if (\array_key_exists('ExistingShipmentID', $data)) {
-                $object->setExistingShipmentID($this->denormalizer->denormalize($data['ExistingShipmentID'], 'ShipStream\\Ups\\Api\\Model\\ShipmentExistingShipmentID', 'json', $context));
+                $object->setExistingShipmentID($this->denormalizer->denormalize($data['ExistingShipmentID'], \ShipStream\Ups\Api\Model\ShipmentExistingShipmentID::class, 'json', $context));
                 unset($data['ExistingShipmentID']);
             }
             if (\array_key_exists('HandlingInstructions', $data)) {
@@ -276,7 +276,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Commodity', $data)) {
                 $values = [];
                 foreach ($data['Commodity'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\ShipmentCommodity', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\ShipmentCommodity::class, 'json', $context);
                 }
                 $object->setCommodity($values);
                 unset($data['Commodity']);
@@ -284,21 +284,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Reference', $data)) {
                 $values_1 = [];
                 foreach ($data['Reference'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\ShipmentReference', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\ShipmentReference::class, 'json', $context);
                 }
                 $object->setReference($values_1);
                 unset($data['Reference']);
             }
             if (\array_key_exists('ShipmentServiceOptions', $data)) {
-                $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], 'ShipStream\\Ups\\Api\\Model\\FreightShipShipmentShipmentServiceOptions', 'json', $context));
+                $object->setShipmentServiceOptions($this->denormalizer->denormalize($data['ShipmentServiceOptions'], \ShipStream\Ups\Api\Model\FreightShipShipmentShipmentServiceOptions::class, 'json', $context));
                 unset($data['ShipmentServiceOptions']);
             }
             if (\array_key_exists('PickupRequest', $data)) {
-                $object->setPickupRequest($this->denormalizer->denormalize($data['PickupRequest'], 'ShipStream\\Ups\\Api\\Model\\ShipmentPickupRequest', 'json', $context));
+                $object->setPickupRequest($this->denormalizer->denormalize($data['PickupRequest'], \ShipStream\Ups\Api\Model\ShipmentPickupRequest::class, 'json', $context));
                 unset($data['PickupRequest']);
             }
             if (\array_key_exists('Documents', $data)) {
-                $object->setDocuments($this->denormalizer->denormalize($data['Documents'], 'ShipStream\\Ups\\Api\\Model\\ShipmentDocuments', 'json', $context));
+                $object->setDocuments($this->denormalizer->denormalize($data['Documents'], \ShipStream\Ups\Api\Model\ShipmentDocuments::class, 'json', $context));
                 unset($data['Documents']);
             }
             if (\array_key_exists('TimeInTransitIndicator', $data)) {
@@ -306,7 +306,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['TimeInTransitIndicator']);
             }
             if (\array_key_exists('HandlingUnits', $data)) {
-                $object->setHandlingUnits($this->denormalizer->denormalize($data['HandlingUnits'], 'ShipStream\\Ups\\Api\\Model\\ShipmentHandlingUnits', 'json', $context));
+                $object->setHandlingUnits($this->denormalizer->denormalize($data['HandlingUnits'], \ShipStream\Ups\Api\Model\ShipmentHandlingUnits::class, 'json', $context));
                 unset($data['HandlingUnits']);
             }
             if (\array_key_exists('DensityEligibleIndicator', $data)) {
@@ -386,9 +386,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FreightShipRequestShipment' => false];
+            return [\ShipStream\Ups\Api\Model\FreightShipRequestShipment::class => false];
         }
     }
 }

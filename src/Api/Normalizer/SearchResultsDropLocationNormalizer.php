@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation';
+            return $type === \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,15 +49,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['OriginOrDestination']);
             }
             if (\array_key_exists('IVR', $data)) {
-                $object->setIVR($this->denormalizer->denormalize($data['IVR'], 'ShipStream\\Ups\\Api\\Model\\DropLocationIVR', 'json', $context));
+                $object->setIVR($this->denormalizer->denormalize($data['IVR'], \ShipStream\Ups\Api\Model\DropLocationIVR::class, 'json', $context));
                 unset($data['IVR']);
             }
             if (\array_key_exists('Geocode', $data)) {
-                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\DropLocationGeocode', 'json', $context));
+                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], \ShipStream\Ups\Api\Model\DropLocationGeocode::class, 'json', $context));
                 unset($data['Geocode']);
             }
             if (\array_key_exists('AddressKeyFormat', $data)) {
-                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], 'ShipStream\\Ups\\Api\\Model\\DropLocationAddressKeyFormat', 'json', $context));
+                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], \ShipStream\Ups\Api\Model\DropLocationAddressKeyFormat::class, 'json', $context));
                 unset($data['AddressKeyFormat']);
             }
             if (\array_key_exists('PhoneNumber', $data)) {
@@ -79,19 +79,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('LocationAttribute', $data)) {
                 $values_1 = [];
                 foreach ($data['LocationAttribute'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\DropLocationLocationAttribute::class, 'json', $context);
                 }
                 $object->setLocationAttribute($values_1);
                 unset($data['LocationAttribute']);
             }
             if (\array_key_exists('Distance', $data)) {
-                $object->setDistance($this->denormalizer->denormalize($data['Distance'], 'ShipStream\\Ups\\Api\\Model\\DropLocationDistance', 'json', $context));
+                $object->setDistance($this->denormalizer->denormalize($data['Distance'], \ShipStream\Ups\Api\Model\DropLocationDistance::class, 'json', $context));
                 unset($data['Distance']);
             }
             if (\array_key_exists('SpecialInstructions', $data)) {
                 $values_2 = [];
                 foreach ($data['SpecialInstructions'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \ShipStream\Ups\Api\Model\DropLocationSpecialInstructions::class, 'json', $context);
                 }
                 $object->setSpecialInstructions($values_2);
                 unset($data['SpecialInstructions']);
@@ -141,7 +141,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Comments']);
             }
             if (\array_key_exists('AdditionalComments', $data)) {
-                $object->setAdditionalComments($this->denormalizer->denormalize($data['AdditionalComments'], 'ShipStream\\Ups\\Api\\Model\\DropLocationAdditionalComments', 'json', $context));
+                $object->setAdditionalComments($this->denormalizer->denormalize($data['AdditionalComments'], \ShipStream\Ups\Api\Model\DropLocationAdditionalComments::class, 'json', $context));
                 unset($data['AdditionalComments']);
             }
             if (\array_key_exists('Disclaimer', $data)) {
@@ -165,13 +165,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FacilityType']);
             }
             if (\array_key_exists('OperatingHours', $data)) {
-                $object->setOperatingHours($this->denormalizer->denormalize($data['OperatingHours'], 'ShipStream\\Ups\\Api\\Model\\DropLocationOperatingHours', 'json', $context));
+                $object->setOperatingHours($this->denormalizer->denormalize($data['OperatingHours'], \ShipStream\Ups\Api\Model\DropLocationOperatingHours::class, 'json', $context));
                 unset($data['OperatingHours']);
             }
             if (\array_key_exists('LocalizedInstruction', $data)) {
                 $values_6 = [];
                 foreach ($data['LocalizedInstruction'] as $value_6) {
-                    $values_6[] = $this->denormalizer->denormalize($value_6, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction', 'json', $context);
+                    $values_6[] = $this->denormalizer->denormalize($value_6, \ShipStream\Ups\Api\Model\DropLocationLocalizedInstruction::class, 'json', $context);
                 }
                 $object->setLocalizedInstruction($values_6);
                 unset($data['LocalizedInstruction']);
@@ -179,17 +179,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('PromotionInformation', $data)) {
                 $values_7 = [];
                 foreach ($data['PromotionInformation'] as $value_7) {
-                    $values_7[] = $this->denormalizer->denormalize($value_7, 'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation', 'json', $context);
+                    $values_7[] = $this->denormalizer->denormalize($value_7, \ShipStream\Ups\Api\Model\DropLocationPromotionInformation::class, 'json', $context);
                 }
                 $object->setPromotionInformation($values_7);
                 unset($data['PromotionInformation']);
             }
             if (\array_key_exists('SortCode', $data)) {
-                $object->setSortCode($this->denormalizer->denormalize($data['SortCode'], 'ShipStream\\Ups\\Api\\Model\\DropLocationSortCode', 'json', $context));
+                $object->setSortCode($this->denormalizer->denormalize($data['SortCode'], \ShipStream\Ups\Api\Model\DropLocationSortCode::class, 'json', $context));
                 unset($data['SortCode']);
             }
             if (\array_key_exists('ServiceOfferingList', $data)) {
-                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], 'ShipStream\\Ups\\Api\\Model\\DropLocationServiceOfferingList', 'json', $context));
+                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], \ShipStream\Ups\Api\Model\DropLocationServiceOfferingList::class, 'json', $context));
                 unset($data['ServiceOfferingList']);
             }
             if (\array_key_exists('DisplayPhoneNumberIndicator', $data)) {
@@ -197,11 +197,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DisplayPhoneNumberIndicator']);
             }
             if (\array_key_exists('AccessPointInformation', $data)) {
-                $object->setAccessPointInformation($this->denormalizer->denormalize($data['AccessPointInformation'], 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation', 'json', $context));
+                $object->setAccessPointInformation($this->denormalizer->denormalize($data['AccessPointInformation'], \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class, 'json', $context));
                 unset($data['AccessPointInformation']);
             }
             if (\array_key_exists('LocationImage', $data)) {
-                $object->setLocationImage($this->denormalizer->denormalize($data['LocationImage'], 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationImage', 'json', $context));
+                $object->setLocationImage($this->denormalizer->denormalize($data['LocationImage'], \ShipStream\Ups\Api\Model\DropLocationLocationImage::class, 'json', $context));
                 unset($data['LocationImage']);
             }
             if (\array_key_exists('LocationNewIndicator', $data)) {
@@ -227,7 +227,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['LocationID'] = $object->getLocationID();
@@ -362,9 +362,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation' => false];
+            return [\ShipStream\Ups\Api\Model\SearchResultsDropLocation::class => false];
         }
     }
 } else {
@@ -374,13 +374,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation';
+            return $type === \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\SearchResultsDropLocation::class;
         }
         /**
          * @return mixed
@@ -406,15 +406,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['OriginOrDestination']);
             }
             if (\array_key_exists('IVR', $data)) {
-                $object->setIVR($this->denormalizer->denormalize($data['IVR'], 'ShipStream\\Ups\\Api\\Model\\DropLocationIVR', 'json', $context));
+                $object->setIVR($this->denormalizer->denormalize($data['IVR'], \ShipStream\Ups\Api\Model\DropLocationIVR::class, 'json', $context));
                 unset($data['IVR']);
             }
             if (\array_key_exists('Geocode', $data)) {
-                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], 'ShipStream\\Ups\\Api\\Model\\DropLocationGeocode', 'json', $context));
+                $object->setGeocode($this->denormalizer->denormalize($data['Geocode'], \ShipStream\Ups\Api\Model\DropLocationGeocode::class, 'json', $context));
                 unset($data['Geocode']);
             }
             if (\array_key_exists('AddressKeyFormat', $data)) {
-                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], 'ShipStream\\Ups\\Api\\Model\\DropLocationAddressKeyFormat', 'json', $context));
+                $object->setAddressKeyFormat($this->denormalizer->denormalize($data['AddressKeyFormat'], \ShipStream\Ups\Api\Model\DropLocationAddressKeyFormat::class, 'json', $context));
                 unset($data['AddressKeyFormat']);
             }
             if (\array_key_exists('PhoneNumber', $data)) {
@@ -436,19 +436,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('LocationAttribute', $data)) {
                 $values_1 = [];
                 foreach ($data['LocationAttribute'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationAttribute', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\DropLocationLocationAttribute::class, 'json', $context);
                 }
                 $object->setLocationAttribute($values_1);
                 unset($data['LocationAttribute']);
             }
             if (\array_key_exists('Distance', $data)) {
-                $object->setDistance($this->denormalizer->denormalize($data['Distance'], 'ShipStream\\Ups\\Api\\Model\\DropLocationDistance', 'json', $context));
+                $object->setDistance($this->denormalizer->denormalize($data['Distance'], \ShipStream\Ups\Api\Model\DropLocationDistance::class, 'json', $context));
                 unset($data['Distance']);
             }
             if (\array_key_exists('SpecialInstructions', $data)) {
                 $values_2 = [];
                 foreach ($data['SpecialInstructions'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'ShipStream\\Ups\\Api\\Model\\DropLocationSpecialInstructions', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \ShipStream\Ups\Api\Model\DropLocationSpecialInstructions::class, 'json', $context);
                 }
                 $object->setSpecialInstructions($values_2);
                 unset($data['SpecialInstructions']);
@@ -498,7 +498,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Comments']);
             }
             if (\array_key_exists('AdditionalComments', $data)) {
-                $object->setAdditionalComments($this->denormalizer->denormalize($data['AdditionalComments'], 'ShipStream\\Ups\\Api\\Model\\DropLocationAdditionalComments', 'json', $context));
+                $object->setAdditionalComments($this->denormalizer->denormalize($data['AdditionalComments'], \ShipStream\Ups\Api\Model\DropLocationAdditionalComments::class, 'json', $context));
                 unset($data['AdditionalComments']);
             }
             if (\array_key_exists('Disclaimer', $data)) {
@@ -522,13 +522,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FacilityType']);
             }
             if (\array_key_exists('OperatingHours', $data)) {
-                $object->setOperatingHours($this->denormalizer->denormalize($data['OperatingHours'], 'ShipStream\\Ups\\Api\\Model\\DropLocationOperatingHours', 'json', $context));
+                $object->setOperatingHours($this->denormalizer->denormalize($data['OperatingHours'], \ShipStream\Ups\Api\Model\DropLocationOperatingHours::class, 'json', $context));
                 unset($data['OperatingHours']);
             }
             if (\array_key_exists('LocalizedInstruction', $data)) {
                 $values_6 = [];
                 foreach ($data['LocalizedInstruction'] as $value_6) {
-                    $values_6[] = $this->denormalizer->denormalize($value_6, 'ShipStream\\Ups\\Api\\Model\\DropLocationLocalizedInstruction', 'json', $context);
+                    $values_6[] = $this->denormalizer->denormalize($value_6, \ShipStream\Ups\Api\Model\DropLocationLocalizedInstruction::class, 'json', $context);
                 }
                 $object->setLocalizedInstruction($values_6);
                 unset($data['LocalizedInstruction']);
@@ -536,17 +536,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('PromotionInformation', $data)) {
                 $values_7 = [];
                 foreach ($data['PromotionInformation'] as $value_7) {
-                    $values_7[] = $this->denormalizer->denormalize($value_7, 'ShipStream\\Ups\\Api\\Model\\DropLocationPromotionInformation', 'json', $context);
+                    $values_7[] = $this->denormalizer->denormalize($value_7, \ShipStream\Ups\Api\Model\DropLocationPromotionInformation::class, 'json', $context);
                 }
                 $object->setPromotionInformation($values_7);
                 unset($data['PromotionInformation']);
             }
             if (\array_key_exists('SortCode', $data)) {
-                $object->setSortCode($this->denormalizer->denormalize($data['SortCode'], 'ShipStream\\Ups\\Api\\Model\\DropLocationSortCode', 'json', $context));
+                $object->setSortCode($this->denormalizer->denormalize($data['SortCode'], \ShipStream\Ups\Api\Model\DropLocationSortCode::class, 'json', $context));
                 unset($data['SortCode']);
             }
             if (\array_key_exists('ServiceOfferingList', $data)) {
-                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], 'ShipStream\\Ups\\Api\\Model\\DropLocationServiceOfferingList', 'json', $context));
+                $object->setServiceOfferingList($this->denormalizer->denormalize($data['ServiceOfferingList'], \ShipStream\Ups\Api\Model\DropLocationServiceOfferingList::class, 'json', $context));
                 unset($data['ServiceOfferingList']);
             }
             if (\array_key_exists('DisplayPhoneNumberIndicator', $data)) {
@@ -554,11 +554,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DisplayPhoneNumberIndicator']);
             }
             if (\array_key_exists('AccessPointInformation', $data)) {
-                $object->setAccessPointInformation($this->denormalizer->denormalize($data['AccessPointInformation'], 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation', 'json', $context));
+                $object->setAccessPointInformation($this->denormalizer->denormalize($data['AccessPointInformation'], \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class, 'json', $context));
                 unset($data['AccessPointInformation']);
             }
             if (\array_key_exists('LocationImage', $data)) {
-                $object->setLocationImage($this->denormalizer->denormalize($data['LocationImage'], 'ShipStream\\Ups\\Api\\Model\\DropLocationLocationImage', 'json', $context));
+                $object->setLocationImage($this->denormalizer->denormalize($data['LocationImage'], \ShipStream\Ups\Api\Model\DropLocationLocationImage::class, 'json', $context));
                 unset($data['LocationImage']);
             }
             if (\array_key_exists('LocationNewIndicator', $data)) {
@@ -722,9 +722,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\SearchResultsDropLocation' => false];
+            return [\ShipStream\Ups\Api\Model\SearchResultsDropLocation::class => false];
         }
     }
 }

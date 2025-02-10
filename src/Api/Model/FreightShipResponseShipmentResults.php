@@ -8,7 +8,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -96,7 +96,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber(): string
     {
         return $this->pickupRequestConfirmationNumber;
     }
@@ -107,7 +107,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber): self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;
@@ -119,7 +119,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     *
     * @return string
     */
-    public function getDeliveryDate() : string
+    public function getDeliveryDate(): string
     {
         return $this->deliveryDate;
     }
@@ -131,7 +131,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
     *
     * @return self
     */
-    public function setDeliveryDate(string $deliveryDate) : self
+    public function setDeliveryDate(string $deliveryDate): self
     {
         $this->initialized['deliveryDate'] = true;
         $this->deliveryDate = $deliveryDate;
@@ -142,7 +142,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentNumber() : string
+    public function getShipmentNumber(): string
     {
         return $this->shipmentNumber;
     }
@@ -153,7 +153,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentNumber(string $shipmentNumber) : self
+    public function setShipmentNumber(string $shipmentNumber): self
     {
         $this->initialized['shipmentNumber'] = true;
         $this->shipmentNumber = $shipmentNumber;
@@ -164,7 +164,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return string
      */
-    public function getBOLID() : string
+    public function getBOLID(): string
     {
         return $this->bOLID;
     }
@@ -175,7 +175,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setBOLID(string $bOLID) : self
+    public function setBOLID(string $bOLID): self
     {
         $this->initialized['bOLID'] = true;
         $this->bOLID = $bOLID;
@@ -186,7 +186,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return string
      */
-    public function getGuaranteedIndicator() : string
+    public function getGuaranteedIndicator(): string
     {
         return $this->guaranteedIndicator;
     }
@@ -197,7 +197,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setGuaranteedIndicator(string $guaranteedIndicator) : self
+    public function setGuaranteedIndicator(string $guaranteedIndicator): self
     {
         $this->initialized['guaranteedIndicator'] = true;
         $this->guaranteedIndicator = $guaranteedIndicator;
@@ -208,7 +208,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return string
      */
-    public function getMinimumChargeAppliedIndicator() : string
+    public function getMinimumChargeAppliedIndicator(): string
     {
         return $this->minimumChargeAppliedIndicator;
     }
@@ -219,7 +219,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setMinimumChargeAppliedIndicator(string $minimumChargeAppliedIndicator) : self
+    public function setMinimumChargeAppliedIndicator(string $minimumChargeAppliedIndicator): self
     {
         $this->initialized['minimumChargeAppliedIndicator'] = true;
         $this->minimumChargeAppliedIndicator = $minimumChargeAppliedIndicator;
@@ -230,7 +230,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return list<ShipmentResultsRate>
      */
-    public function getRate() : array
+    public function getRate(): array
     {
         return $this->rate;
     }
@@ -241,7 +241,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setRate(array $rate) : self
+    public function setRate(array $rate): self
     {
         $this->initialized['rate'] = true;
         $this->rate = $rate;
@@ -252,7 +252,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsFreightDensityRate
      */
-    public function getFreightDensityRate() : ShipmentResultsFreightDensityRate
+    public function getFreightDensityRate(): ShipmentResultsFreightDensityRate
     {
         return $this->freightDensityRate;
     }
@@ -263,7 +263,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightDensityRate(ShipmentResultsFreightDensityRate $freightDensityRate) : self
+    public function setFreightDensityRate(ShipmentResultsFreightDensityRate $freightDensityRate): self
     {
         $this->initialized['freightDensityRate'] = true;
         $this->freightDensityRate = $freightDensityRate;
@@ -274,7 +274,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsTotalShipmentCharge
      */
-    public function getTotalShipmentCharge() : ShipmentResultsTotalShipmentCharge
+    public function getTotalShipmentCharge(): ShipmentResultsTotalShipmentCharge
     {
         return $this->totalShipmentCharge;
     }
@@ -285,7 +285,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalShipmentCharge(ShipmentResultsTotalShipmentCharge $totalShipmentCharge) : self
+    public function setTotalShipmentCharge(ShipmentResultsTotalShipmentCharge $totalShipmentCharge): self
     {
         $this->initialized['totalShipmentCharge'] = true;
         $this->totalShipmentCharge = $totalShipmentCharge;
@@ -296,7 +296,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsBillableShipmentWeight
      */
-    public function getBillableShipmentWeight() : ShipmentResultsBillableShipmentWeight
+    public function getBillableShipmentWeight(): ShipmentResultsBillableShipmentWeight
     {
         return $this->billableShipmentWeight;
     }
@@ -307,7 +307,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setBillableShipmentWeight(ShipmentResultsBillableShipmentWeight $billableShipmentWeight) : self
+    public function setBillableShipmentWeight(ShipmentResultsBillableShipmentWeight $billableShipmentWeight): self
     {
         $this->initialized['billableShipmentWeight'] = true;
         $this->billableShipmentWeight = $billableShipmentWeight;
@@ -318,7 +318,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsService
      */
-    public function getService() : ShipmentResultsService
+    public function getService(): ShipmentResultsService
     {
         return $this->service;
     }
@@ -329,7 +329,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setService(ShipmentResultsService $service) : self
+    public function setService(ShipmentResultsService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -340,7 +340,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsDocuments
      */
-    public function getDocuments() : ShipmentResultsDocuments
+    public function getDocuments(): ShipmentResultsDocuments
     {
         return $this->documents;
     }
@@ -351,7 +351,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setDocuments(ShipmentResultsDocuments $documents) : self
+    public function setDocuments(ShipmentResultsDocuments $documents): self
     {
         $this->initialized['documents'] = true;
         $this->documents = $documents;
@@ -362,7 +362,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return ShipmentResultsTimeInTransit
      */
-    public function getTimeInTransit() : ShipmentResultsTimeInTransit
+    public function getTimeInTransit(): ShipmentResultsTimeInTransit
     {
         return $this->timeInTransit;
     }
@@ -373,7 +373,7 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeInTransit(ShipmentResultsTimeInTransit $timeInTransit) : self
+    public function setTimeInTransit(ShipmentResultsTimeInTransit $timeInTransit): self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;

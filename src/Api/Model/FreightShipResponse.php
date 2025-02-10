@@ -8,7 +8,7 @@ class FreightShipResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightShipResponse extends \ArrayObject
      *
      * @return FreightShipResponseResponse
      */
-    public function getResponse() : FreightShipResponseResponse
+    public function getResponse(): FreightShipResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class FreightShipResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(FreightShipResponseResponse $response) : self
+    public function setResponse(FreightShipResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class FreightShipResponse extends \ArrayObject
      *
      * @return FreightShipResponseShipmentResults
      */
-    public function getShipmentResults() : FreightShipResponseShipmentResults
+    public function getShipmentResults(): FreightShipResponseShipmentResults
     {
         return $this->shipmentResults;
     }
@@ -62,7 +62,7 @@ class FreightShipResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentResults(FreightShipResponseShipmentResults $shipmentResults) : self
+    public function setShipmentResults(FreightShipResponseShipmentResults $shipmentResults): self
     {
         $this->initialized['shipmentResults'] = true;
         $this->shipmentResults = $shipmentResults;

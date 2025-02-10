@@ -8,7 +8,7 @@ class ProductExcludeFromForm extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ProductExcludeFromForm extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getFormType() : array
+    public function getFormType(): array
     {
         return $this->formType;
     }
@@ -34,7 +34,7 @@ class ProductExcludeFromForm extends \ArrayObject
      *
      * @return self
      */
-    public function setFormType(array $formType) : self
+    public function setFormType(array $formType): self
     {
         $this->initialized['formType'] = true;
         $this->formType = $formType;

@@ -8,7 +8,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -55,7 +55,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -66,7 +66,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -77,7 +77,7 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;

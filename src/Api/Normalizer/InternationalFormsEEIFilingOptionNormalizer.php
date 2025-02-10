@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption';
+            return $type === \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -53,11 +53,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('UPSFiled', $data)) {
-                $object->setUPSFiled($this->denormalizer->denormalize($data['UPSFiled'], 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionUPSFiled', 'json', $context));
+                $object->setUPSFiled($this->denormalizer->denormalize($data['UPSFiled'], \ShipStream\Ups\Api\Model\EEIFilingOptionUPSFiled::class, 'json', $context));
                 unset($data['UPSFiled']);
             }
             if (\array_key_exists('ShipperFiled', $data)) {
-                $object->setShipperFiled($this->denormalizer->denormalize($data['ShipperFiled'], 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionShipperFiled', 'json', $context));
+                $object->setShipperFiled($this->denormalizer->denormalize($data['ShipperFiled'], \ShipStream\Ups\Api\Model\EEIFilingOptionShipperFiled::class, 'json', $context));
                 unset($data['ShipperFiled']);
             }
             foreach ($data as $key => $value) {
@@ -67,7 +67,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Code'] = $object->getCode();
@@ -90,9 +90,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption' => false];
+            return [\ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class => false];
         }
     }
 } else {
@@ -102,13 +102,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption';
+            return $type === \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class;
         }
         /**
          * @return mixed
@@ -138,11 +138,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Description']);
             }
             if (\array_key_exists('UPSFiled', $data)) {
-                $object->setUPSFiled($this->denormalizer->denormalize($data['UPSFiled'], 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionUPSFiled', 'json', $context));
+                $object->setUPSFiled($this->denormalizer->denormalize($data['UPSFiled'], \ShipStream\Ups\Api\Model\EEIFilingOptionUPSFiled::class, 'json', $context));
                 unset($data['UPSFiled']);
             }
             if (\array_key_exists('ShipperFiled', $data)) {
-                $object->setShipperFiled($this->denormalizer->denormalize($data['ShipperFiled'], 'ShipStream\\Ups\\Api\\Model\\EEIFilingOptionShipperFiled', 'json', $context));
+                $object->setShipperFiled($this->denormalizer->denormalize($data['ShipperFiled'], \ShipStream\Ups\Api\Model\EEIFilingOptionShipperFiled::class, 'json', $context));
                 unset($data['ShipperFiled']);
             }
             foreach ($data as $key => $value) {
@@ -178,9 +178,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption' => false];
+            return [\ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class => false];
         }
     }
 }

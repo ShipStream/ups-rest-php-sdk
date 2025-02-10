@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper';
+            return $type === \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('PickupGetPoliticalDivision1ListRequest', $data)) {
-                $object->setPickupGetPoliticalDivision1ListRequest($this->denormalizer->denormalize($data['PickupGetPoliticalDivision1ListRequest'], 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequest', 'json', $context));
+                $object->setPickupGetPoliticalDivision1ListRequest($this->denormalizer->denormalize($data['PickupGetPoliticalDivision1ListRequest'], \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequest::class, 'json', $context));
                 unset($data['PickupGetPoliticalDivision1ListRequest']);
             }
             foreach ($data as $key => $value) {
@@ -51,7 +51,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['PickupGetPoliticalDivision1ListRequest'] = $this->normalizer->normalize($object->getPickupGetPoliticalDivision1ListRequest(), 'json', $context);
@@ -62,9 +62,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper' => false];
+            return [\ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class => false];
         }
     }
 } else {
@@ -74,13 +74,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper';
+            return $type === \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class;
         }
         /**
          * @return mixed
@@ -98,7 +98,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('PickupGetPoliticalDivision1ListRequest', $data)) {
-                $object->setPickupGetPoliticalDivision1ListRequest($this->denormalizer->denormalize($data['PickupGetPoliticalDivision1ListRequest'], 'ShipStream\\Ups\\Api\\Model\\PickupGetPoliticalDivision1ListRequest', 'json', $context));
+                $object->setPickupGetPoliticalDivision1ListRequest($this->denormalizer->denormalize($data['PickupGetPoliticalDivision1ListRequest'], \ShipStream\Ups\Api\Model\PickupGetPoliticalDivision1ListRequest::class, 'json', $context));
                 unset($data['PickupGetPoliticalDivision1ListRequest']);
             }
             foreach ($data as $key => $value) {
@@ -122,9 +122,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PICKUPPolDivRequestWrapper' => false];
+            return [\ShipStream\Ups\Api\Model\PICKUPPolDivRequestWrapper::class => false];
         }
     }
 }

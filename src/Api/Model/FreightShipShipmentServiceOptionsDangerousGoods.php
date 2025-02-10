@@ -8,7 +8,7 @@ class FreightShipShipmentServiceOptionsDangerousGoods extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightShipShipmentServiceOptionsDangerousGoods extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -40,7 +40,7 @@ class FreightShipShipmentServiceOptionsDangerousGoods extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -51,7 +51,7 @@ class FreightShipShipmentServiceOptionsDangerousGoods extends \ArrayObject
      *
      * @return DangerousGoodsPhone
      */
-    public function getPhone() : DangerousGoodsPhone
+    public function getPhone(): DangerousGoodsPhone
     {
         return $this->phone;
     }
@@ -62,7 +62,7 @@ class FreightShipShipmentServiceOptionsDangerousGoods extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(DangerousGoodsPhone $phone) : self
+    public function setPhone(DangerousGoodsPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;

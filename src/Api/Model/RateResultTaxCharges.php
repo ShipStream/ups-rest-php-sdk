@@ -8,7 +8,7 @@ class RateResultTaxCharges extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -31,7 +31,7 @@ class RateResultTaxCharges extends \ArrayObject
     *
     * @return string
     */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -43,7 +43,7 @@ class RateResultTaxCharges extends \ArrayObject
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -54,7 +54,7 @@ class RateResultTaxCharges extends \ArrayObject
      *
      * @return string
      */
-    public function getMonetaryValue() : string
+    public function getMonetaryValue(): string
     {
         return $this->monetaryValue;
     }
@@ -65,7 +65,7 @@ class RateResultTaxCharges extends \ArrayObject
      *
      * @return self
      */
-    public function setMonetaryValue(string $monetaryValue) : self
+    public function setMonetaryValue(string $monetaryValue): self
     {
         $this->initialized['monetaryValue'] = true;
         $this->monetaryValue = $monetaryValue;

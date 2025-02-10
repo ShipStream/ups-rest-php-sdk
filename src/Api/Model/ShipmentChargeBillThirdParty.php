@@ -8,7 +8,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -49,7 +49,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     *
     * @return string
     */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -64,7 +64,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
     *
     * @return self
     */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -75,7 +75,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return string
      */
-    public function getCertifiedElectronicMail() : string
+    public function getCertifiedElectronicMail(): string
     {
         return $this->certifiedElectronicMail;
     }
@@ -86,7 +86,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return self
      */
-    public function setCertifiedElectronicMail(string $certifiedElectronicMail) : self
+    public function setCertifiedElectronicMail(string $certifiedElectronicMail): self
     {
         $this->initialized['certifiedElectronicMail'] = true;
         $this->certifiedElectronicMail = $certifiedElectronicMail;
@@ -97,7 +97,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return string
      */
-    public function getInterchangeSystemCode() : string
+    public function getInterchangeSystemCode(): string
     {
         return $this->interchangeSystemCode;
     }
@@ -108,7 +108,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return self
      */
-    public function setInterchangeSystemCode(string $interchangeSystemCode) : self
+    public function setInterchangeSystemCode(string $interchangeSystemCode): self
     {
         $this->initialized['interchangeSystemCode'] = true;
         $this->interchangeSystemCode = $interchangeSystemCode;
@@ -119,7 +119,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return BillThirdPartyAddress
      */
-    public function getAddress() : BillThirdPartyAddress
+    public function getAddress(): BillThirdPartyAddress
     {
         return $this->address;
     }
@@ -130,7 +130,7 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(BillThirdPartyAddress $address) : self
+    public function setAddress(BillThirdPartyAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

@@ -8,7 +8,7 @@ class GFPOptionsOnCallInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class GFPOptionsOnCallInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getOnCallPickupIndicator() : string
+    public function getOnCallPickupIndicator(): string
     {
         return $this->onCallPickupIndicator;
     }
@@ -34,7 +34,7 @@ class GFPOptionsOnCallInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setOnCallPickupIndicator(string $onCallPickupIndicator) : self
+    public function setOnCallPickupIndicator(string $onCallPickupIndicator): self
     {
         $this->initialized['onCallPickupIndicator'] = true;
         $this->onCallPickupIndicator = $onCallPickupIndicator;

@@ -8,7 +8,7 @@ class PackingListHandlingUnit extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return list<HandlingUnitCommodity>
      */
-    public function getCommodity() : array
+    public function getCommodity(): array
     {
         return $this->commodity;
     }
@@ -64,7 +64,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodity(array $commodity) : self
+    public function setCommodity(array $commodity): self
     {
         $this->initialized['commodity'] = true;
         $this->commodity = $commodity;
@@ -75,7 +75,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return string
      */
-    public function getSpecialInstructions() : string
+    public function getSpecialInstructions(): string
     {
         return $this->specialInstructions;
     }
@@ -86,7 +86,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return self
      */
-    public function setSpecialInstructions(string $specialInstructions) : self
+    public function setSpecialInstructions(string $specialInstructions): self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -97,7 +97,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return string
      */
-    public function getTotalNumberOfPieces() : string
+    public function getTotalNumberOfPieces(): string
     {
         return $this->totalNumberOfPieces;
     }
@@ -108,7 +108,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalNumberOfPieces(string $totalNumberOfPieces) : self
+    public function setTotalNumberOfPieces(string $totalNumberOfPieces): self
     {
         $this->initialized['totalNumberOfPieces'] = true;
         $this->totalNumberOfPieces = $totalNumberOfPieces;
@@ -119,7 +119,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return string
      */
-    public function getTotalWeight() : string
+    public function getTotalWeight(): string
     {
         return $this->totalWeight;
     }
@@ -130,7 +130,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalWeight(string $totalWeight) : self
+    public function setTotalWeight(string $totalWeight): self
     {
         $this->initialized['totalWeight'] = true;
         $this->totalWeight = $totalWeight;
@@ -141,7 +141,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return HandlingUnitUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : HandlingUnitUnitOfMeasurement
+    public function getUnitOfMeasurement(): HandlingUnitUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -152,7 +152,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(HandlingUnitUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(HandlingUnitUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -163,7 +163,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -174,7 +174,7 @@ class PackingListHandlingUnit extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;

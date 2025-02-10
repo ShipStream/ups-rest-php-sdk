@@ -8,7 +8,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginLiftGateIndicator() : string
+    public function getOriginLiftGateIndicator(): string
     {
         return $this->originLiftGateIndicator;
     }
@@ -46,7 +46,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginLiftGateIndicator(string $originLiftGateIndicator) : self
+    public function setOriginLiftGateIndicator(string $originLiftGateIndicator): self
     {
         $this->initialized['originLiftGateIndicator'] = true;
         $this->originLiftGateIndicator = $originLiftGateIndicator;
@@ -57,7 +57,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getDropoffAtUPSFacilityIndicator() : string
+    public function getDropoffAtUPSFacilityIndicator(): string
     {
         return $this->dropoffAtUPSFacilityIndicator;
     }
@@ -68,7 +68,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDropoffAtUPSFacilityIndicator(string $dropoffAtUPSFacilityIndicator) : self
+    public function setDropoffAtUPSFacilityIndicator(string $dropoffAtUPSFacilityIndicator): self
     {
         $this->initialized['dropoffAtUPSFacilityIndicator'] = true;
         $this->dropoffAtUPSFacilityIndicator = $dropoffAtUPSFacilityIndicator;
@@ -79,7 +79,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getHoldForPickupIndicator() : string
+    public function getHoldForPickupIndicator(): string
     {
         return $this->holdForPickupIndicator;
     }
@@ -90,7 +90,7 @@ class FreightOptionsShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHoldForPickupIndicator(string $holdForPickupIndicator) : self
+    public function setHoldForPickupIndicator(string $holdForPickupIndicator): self
     {
         $this->initialized['holdForPickupIndicator'] = true;
         $this->holdForPickupIndicator = $holdForPickupIndicator;

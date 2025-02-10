@@ -8,7 +8,7 @@ class ShipmentServiceOptionsSortingAndSegregating extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ShipmentServiceOptionsSortingAndSegregating extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -34,7 +34,7 @@ class ShipmentServiceOptionsSortingAndSegregating extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;

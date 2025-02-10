@@ -8,7 +8,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -69,7 +69,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return list<LocationSearchCriteriaSearchOption>
      */
-    public function getSearchOption() : array
+    public function getSearchOption(): array
     {
         return $this->searchOption;
     }
@@ -80,7 +80,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setSearchOption(array $searchOption) : self
+    public function setSearchOption(array $searchOption): self
     {
         $this->initialized['searchOption'] = true;
         $this->searchOption = $searchOption;
@@ -91,7 +91,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return string
      */
-    public function getMaximumListSize() : string
+    public function getMaximumListSize(): string
     {
         return $this->maximumListSize;
     }
@@ -102,7 +102,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setMaximumListSize(string $maximumListSize) : self
+    public function setMaximumListSize(string $maximumListSize): self
     {
         $this->initialized['maximumListSize'] = true;
         $this->maximumListSize = $maximumListSize;
@@ -117,7 +117,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     *
     * @return string
     */
-    public function getSearchRadius() : string
+    public function getSearchRadius(): string
     {
         return $this->searchRadius;
     }
@@ -132,7 +132,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
     *
     * @return self
     */
-    public function setSearchRadius(string $searchRadius) : self
+    public function setSearchRadius(string $searchRadius): self
     {
         $this->initialized['searchRadius'] = true;
         $this->searchRadius = $searchRadius;
@@ -143,7 +143,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return LocationSearchCriteriaServiceSearch
      */
-    public function getServiceSearch() : LocationSearchCriteriaServiceSearch
+    public function getServiceSearch(): LocationSearchCriteriaServiceSearch
     {
         return $this->serviceSearch;
     }
@@ -154,7 +154,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceSearch(LocationSearchCriteriaServiceSearch $serviceSearch) : self
+    public function setServiceSearch(LocationSearchCriteriaServiceSearch $serviceSearch): self
     {
         $this->initialized['serviceSearch'] = true;
         $this->serviceSearch = $serviceSearch;
@@ -165,7 +165,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return LocationSearchCriteriaFreightWillCallSearch
      */
-    public function getFreightWillCallSearch() : LocationSearchCriteriaFreightWillCallSearch
+    public function getFreightWillCallSearch(): LocationSearchCriteriaFreightWillCallSearch
     {
         return $this->freightWillCallSearch;
     }
@@ -176,7 +176,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightWillCallSearch(LocationSearchCriteriaFreightWillCallSearch $freightWillCallSearch) : self
+    public function setFreightWillCallSearch(LocationSearchCriteriaFreightWillCallSearch $freightWillCallSearch): self
     {
         $this->initialized['freightWillCallSearch'] = true;
         $this->freightWillCallSearch = $freightWillCallSearch;
@@ -187,7 +187,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return LocationSearchCriteriaAccessPointSearch
      */
-    public function getAccessPointSearch() : LocationSearchCriteriaAccessPointSearch
+    public function getAccessPointSearch(): LocationSearchCriteriaAccessPointSearch
     {
         return $this->accessPointSearch;
     }
@@ -198,7 +198,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointSearch(LocationSearchCriteriaAccessPointSearch $accessPointSearch) : self
+    public function setAccessPointSearch(LocationSearchCriteriaAccessPointSearch $accessPointSearch): self
     {
         $this->initialized['accessPointSearch'] = true;
         $this->accessPointSearch = $accessPointSearch;
@@ -209,7 +209,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return LocationSearchCriteriaOpenTimeCriteria
      */
-    public function getOpenTimeCriteria() : LocationSearchCriteriaOpenTimeCriteria
+    public function getOpenTimeCriteria(): LocationSearchCriteriaOpenTimeCriteria
     {
         return $this->openTimeCriteria;
     }
@@ -220,7 +220,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setOpenTimeCriteria(LocationSearchCriteriaOpenTimeCriteria $openTimeCriteria) : self
+    public function setOpenTimeCriteria(LocationSearchCriteriaOpenTimeCriteria $openTimeCriteria): self
     {
         $this->initialized['openTimeCriteria'] = true;
         $this->openTimeCriteria = $openTimeCriteria;
@@ -231,7 +231,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return string
      */
-    public function getBrexitFilter() : string
+    public function getBrexitFilter(): string
     {
         return $this->brexitFilter;
     }
@@ -242,7 +242,7 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setBrexitFilter(string $brexitFilter) : self
+    public function setBrexitFilter(string $brexitFilter): self
     {
         $this->initialized['brexitFilter'] = true;
         $this->brexitFilter = $brexitFilter;

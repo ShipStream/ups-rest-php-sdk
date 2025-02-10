@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse';
+            return $type === \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,15 +41,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ResponseStatus', $data)) {
-                $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], 'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus', 'json', $context));
+                $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], \ShipStream\Ups\Api\Model\ResponseResponseStatus::class, 'json', $context));
                 unset($data['ResponseStatus']);
             }
             if (\array_key_exists('Alert', $data)) {
-                $object->setAlert($this->denormalizer->denormalize($data['Alert'], 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context));
+                $object->setAlert($this->denormalizer->denormalize($data['Alert'], \ShipStream\Ups\Api\Model\ResponseAlert::class, 'json', $context));
                 unset($data['Alert']);
             }
             if (\array_key_exists('TransactionReference', $data)) {
-                $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference', 'json', $context));
+                $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], \ShipStream\Ups\Api\Model\ResponseTransactionReference::class, 'json', $context));
                 unset($data['TransactionReference']);
             }
             foreach ($data as $key => $value) {
@@ -59,7 +59,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['ResponseStatus'] = $this->normalizer->normalize($object->getResponseStatus(), 'json', $context);
@@ -76,9 +76,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse' => false];
+            return [\ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class => false];
         }
     }
 } else {
@@ -88,13 +88,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse';
+            return $type === \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class;
         }
         /**
          * @return mixed
@@ -112,15 +112,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('ResponseStatus', $data)) {
-                $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], 'ShipStream\\Ups\\Api\\Model\\ResponseResponseStatus', 'json', $context));
+                $object->setResponseStatus($this->denormalizer->denormalize($data['ResponseStatus'], \ShipStream\Ups\Api\Model\ResponseResponseStatus::class, 'json', $context));
                 unset($data['ResponseStatus']);
             }
             if (\array_key_exists('Alert', $data)) {
-                $object->setAlert($this->denormalizer->denormalize($data['Alert'], 'ShipStream\\Ups\\Api\\Model\\ResponseAlert', 'json', $context));
+                $object->setAlert($this->denormalizer->denormalize($data['Alert'], \ShipStream\Ups\Api\Model\ResponseAlert::class, 'json', $context));
                 unset($data['Alert']);
             }
             if (\array_key_exists('TransactionReference', $data)) {
-                $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], 'ShipStream\\Ups\\Api\\Model\\ResponseTransactionReference', 'json', $context));
+                $object->setTransactionReference($this->denormalizer->denormalize($data['TransactionReference'], \ShipStream\Ups\Api\Model\ResponseTransactionReference::class, 'json', $context));
                 unset($data['TransactionReference']);
             }
             foreach ($data as $key => $value) {
@@ -150,9 +150,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PickupGetServiceCenterFacilitiesResponseResponse' => false];
+            return [\ShipStream\Ups\Api\Model\PickupGetServiceCenterFacilitiesResponseResponse::class => false];
         }
     }
 }

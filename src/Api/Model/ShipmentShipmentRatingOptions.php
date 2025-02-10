@@ -8,7 +8,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -62,7 +62,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getNegotiatedRatesIndicator() : string
+    public function getNegotiatedRatesIndicator(): string
     {
         return $this->negotiatedRatesIndicator;
     }
@@ -77,7 +77,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setNegotiatedRatesIndicator(string $negotiatedRatesIndicator) : self
+    public function setNegotiatedRatesIndicator(string $negotiatedRatesIndicator): self
     {
         $this->initialized['negotiatedRatesIndicator'] = true;
         $this->negotiatedRatesIndicator = $negotiatedRatesIndicator;
@@ -88,7 +88,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getFRSShipmentIndicator() : string
+    public function getFRSShipmentIndicator(): string
     {
         return $this->fRSShipmentIndicator;
     }
@@ -99,7 +99,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setFRSShipmentIndicator(string $fRSShipmentIndicator) : self
+    public function setFRSShipmentIndicator(string $fRSShipmentIndicator): self
     {
         $this->initialized['fRSShipmentIndicator'] = true;
         $this->fRSShipmentIndicator = $fRSShipmentIndicator;
@@ -110,7 +110,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getRateChartIndicator() : string
+    public function getRateChartIndicator(): string
     {
         return $this->rateChartIndicator;
     }
@@ -121,7 +121,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setRateChartIndicator(string $rateChartIndicator) : self
+    public function setRateChartIndicator(string $rateChartIndicator): self
     {
         $this->initialized['rateChartIndicator'] = true;
         $this->rateChartIndicator = $rateChartIndicator;
@@ -136,7 +136,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getTPFCNegotiatedRatesIndicator() : string
+    public function getTPFCNegotiatedRatesIndicator(): string
     {
         return $this->tPFCNegotiatedRatesIndicator;
     }
@@ -151,7 +151,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setTPFCNegotiatedRatesIndicator(string $tPFCNegotiatedRatesIndicator) : self
+    public function setTPFCNegotiatedRatesIndicator(string $tPFCNegotiatedRatesIndicator): self
     {
         $this->initialized['tPFCNegotiatedRatesIndicator'] = true;
         $this->tPFCNegotiatedRatesIndicator = $tPFCNegotiatedRatesIndicator;
@@ -165,7 +165,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getUserLevelDiscountIndicator() : string
+    public function getUserLevelDiscountIndicator(): string
     {
         return $this->userLevelDiscountIndicator;
     }
@@ -179,7 +179,7 @@ class ShipmentShipmentRatingOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator) : self
+    public function setUserLevelDiscountIndicator(string $userLevelDiscountIndicator): self
     {
         $this->initialized['userLevelDiscountIndicator'] = true;
         $this->userLevelDiscountIndicator = $userLevelDiscountIndicator;

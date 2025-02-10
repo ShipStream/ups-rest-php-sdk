@@ -8,7 +8,7 @@ class ProductPackingListInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ProductPackingListInfo extends \ArrayObject
      *
      * @return list<PackingListInfoPackageAssociated>
      */
-    public function getPackageAssociated() : array
+    public function getPackageAssociated(): array
     {
         return $this->packageAssociated;
     }
@@ -34,7 +34,7 @@ class ProductPackingListInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageAssociated(array $packageAssociated) : self
+    public function setPackageAssociated(array $packageAssociated): self
     {
         $this->initialized['packageAssociated'] = true;
         $this->packageAssociated = $packageAssociated;

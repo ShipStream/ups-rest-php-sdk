@@ -8,7 +8,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      *
      * @return string
      */
-    public function getAdjustedHeightIndicator() : string
+    public function getAdjustedHeightIndicator(): string
     {
         return $this->adjustedHeightIndicator;
     }
@@ -46,7 +46,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setAdjustedHeightIndicator(string $adjustedHeightIndicator) : self
+    public function setAdjustedHeightIndicator(string $adjustedHeightIndicator): self
     {
         $this->initialized['adjustedHeightIndicator'] = true;
         $this->adjustedHeightIndicator = $adjustedHeightIndicator;
@@ -57,7 +57,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      *
      * @return FreightDensityInfoAdjustedHeight
      */
-    public function getAdjustedHeight() : FreightDensityInfoAdjustedHeight
+    public function getAdjustedHeight(): FreightDensityInfoAdjustedHeight
     {
         return $this->adjustedHeight;
     }
@@ -68,7 +68,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setAdjustedHeight(FreightDensityInfoAdjustedHeight $adjustedHeight) : self
+    public function setAdjustedHeight(FreightDensityInfoAdjustedHeight $adjustedHeight): self
     {
         $this->initialized['adjustedHeight'] = true;
         $this->adjustedHeight = $adjustedHeight;
@@ -79,7 +79,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      *
      * @return list<FreightDensityInfoHandlingUnits>
      */
-    public function getHandlingUnits() : array
+    public function getHandlingUnits(): array
     {
         return $this->handlingUnits;
     }
@@ -90,7 +90,7 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingUnits(array $handlingUnits) : self
+    public function setHandlingUnits(array $handlingUnits): self
     {
         $this->initialized['handlingUnits'] = true;
         $this->handlingUnits = $handlingUnits;

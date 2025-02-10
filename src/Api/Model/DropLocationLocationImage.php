@@ -8,7 +8,7 @@ class DropLocationLocationImage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class DropLocationLocationImage extends \ArrayObject
      *
      * @return string
      */
-    public function getSecureURL() : string
+    public function getSecureURL(): string
     {
         return $this->secureURL;
     }
@@ -40,7 +40,7 @@ class DropLocationLocationImage extends \ArrayObject
      *
      * @return self
      */
-    public function setSecureURL(string $secureURL) : self
+    public function setSecureURL(string $secureURL): self
     {
         $this->initialized['secureURL'] = true;
         $this->secureURL = $secureURL;
@@ -51,7 +51,7 @@ class DropLocationLocationImage extends \ArrayObject
      *
      * @return string
      */
-    public function getNonSecureURL() : string
+    public function getNonSecureURL(): string
     {
         return $this->nonSecureURL;
     }
@@ -62,7 +62,7 @@ class DropLocationLocationImage extends \ArrayObject
      *
      * @return self
      */
-    public function setNonSecureURL(string $nonSecureURL) : self
+    public function setNonSecureURL(string $nonSecureURL): self
     {
         $this->initialized['nonSecureURL'] = true;
         $this->nonSecureURL = $nonSecureURL;

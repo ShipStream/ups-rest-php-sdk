@@ -8,7 +8,7 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -33,7 +33,7 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -44,7 +44,7 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -59,7 +59,7 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
     *
     * @return string
     */
-    public function getEventType() : string
+    public function getEventType(): string
     {
         return $this->eventType;
     }
@@ -74,7 +74,7 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
     *
     * @return self
     */
-    public function setEventType(string $eventType) : self
+    public function setEventType(string $eventType): self
     {
         $this->initialized['eventType'] = true;
         $this->eventType = $eventType;

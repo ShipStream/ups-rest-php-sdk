@@ -8,7 +8,7 @@ class ContactsProducer extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -71,7 +71,7 @@ class ContactsProducer extends \ArrayObject
     *
     * @return string
     */
-    public function getOption() : string
+    public function getOption(): string
     {
         return $this->option;
     }
@@ -88,7 +88,7 @@ class ContactsProducer extends \ArrayObject
     *
     * @return self
     */
-    public function setOption(string $option) : self
+    public function setOption(string $option): self
     {
         $this->initialized['option'] = true;
         $this->option = $option;
@@ -99,7 +99,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -110,7 +110,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -121,7 +121,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return string
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;
     }
@@ -132,7 +132,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(string $taxIdentificationNumber): self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -143,7 +143,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return ProducerAddress
      */
-    public function getAddress() : ProducerAddress
+    public function getAddress(): ProducerAddress
     {
         return $this->address;
     }
@@ -154,7 +154,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(ProducerAddress $address) : self
+    public function setAddress(ProducerAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -165,7 +165,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -176,7 +176,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -187,7 +187,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return ProducerPhone
      */
-    public function getPhone() : ProducerPhone
+    public function getPhone(): ProducerPhone
     {
         return $this->phone;
     }
@@ -198,7 +198,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(ProducerPhone $phone) : self
+    public function setPhone(ProducerPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -209,7 +209,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -220,7 +220,7 @@ class ContactsProducer extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

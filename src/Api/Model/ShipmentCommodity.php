@@ -8,7 +8,7 @@ class ShipmentCommodity extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -84,7 +84,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityID() : string
+    public function getCommodityID(): string
     {
         return $this->commodityID;
     }
@@ -95,7 +95,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(string $commodityID): self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -106,7 +106,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -117,7 +117,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -128,7 +128,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getWeight() : string
+    public function getWeight(): string
     {
         return $this->weight;
     }
@@ -139,7 +139,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(string $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -150,7 +150,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return FreightShipCommodityDimensions
      */
-    public function getDimensions() : FreightShipCommodityDimensions
+    public function getDimensions(): FreightShipCommodityDimensions
     {
         return $this->dimensions;
     }
@@ -161,7 +161,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(FreightShipCommodityDimensions $dimensions) : self
+    public function setDimensions(FreightShipCommodityDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -172,7 +172,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getNumberOfPieces() : string
+    public function getNumberOfPieces(): string
     {
         return $this->numberOfPieces;
     }
@@ -183,7 +183,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setNumberOfPieces(string $numberOfPieces) : self
+    public function setNumberOfPieces(string $numberOfPieces): self
     {
         $this->initialized['numberOfPieces'] = true;
         $this->numberOfPieces = $numberOfPieces;
@@ -194,7 +194,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return CommodityPackagingType
      */
-    public function getPackagingType() : CommodityPackagingType
+    public function getPackagingType(): CommodityPackagingType
     {
         return $this->packagingType;
     }
@@ -205,7 +205,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingType(CommodityPackagingType $packagingType) : self
+    public function setPackagingType(CommodityPackagingType $packagingType): self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -216,7 +216,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getDangerousGoodsIndicator() : string
+    public function getDangerousGoodsIndicator(): string
     {
         return $this->dangerousGoodsIndicator;
     }
@@ -227,7 +227,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setDangerousGoodsIndicator(string $dangerousGoodsIndicator) : self
+    public function setDangerousGoodsIndicator(string $dangerousGoodsIndicator): self
     {
         $this->initialized['dangerousGoodsIndicator'] = true;
         $this->dangerousGoodsIndicator = $dangerousGoodsIndicator;
@@ -238,7 +238,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityValue() : string
+    public function getCommodityValue(): string
     {
         return $this->commodityValue;
     }
@@ -249,7 +249,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityValue(string $commodityValue) : self
+    public function setCommodityValue(string $commodityValue): self
     {
         $this->initialized['commodityValue'] = true;
         $this->commodityValue = $commodityValue;
@@ -260,7 +260,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getFreightClass() : string
+    public function getFreightClass(): string
     {
         return $this->freightClass;
     }
@@ -271,7 +271,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightClass(string $freightClass) : self
+    public function setFreightClass(string $freightClass): self
     {
         $this->initialized['freightClass'] = true;
         $this->freightClass = $freightClass;
@@ -282,7 +282,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getNMFCCommodityCode() : string
+    public function getNMFCCommodityCode(): string
     {
         return $this->nMFCCommodityCode;
     }
@@ -293,7 +293,7 @@ class ShipmentCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setNMFCCommodityCode(string $nMFCCommodityCode) : self
+    public function setNMFCCommodityCode(string $nMFCCommodityCode): self
     {
         $this->initialized['nMFCCommodityCode'] = true;
         $this->nMFCCommodityCode = $nMFCCommodityCode;
@@ -305,7 +305,7 @@ class ShipmentCommodity extends \ArrayObject
     *
     * @return CommodityNMFCCommodity
     */
-    public function getNMFCCommodity() : CommodityNMFCCommodity
+    public function getNMFCCommodity(): CommodityNMFCCommodity
     {
         return $this->nMFCCommodity;
     }
@@ -317,7 +317,7 @@ class ShipmentCommodity extends \ArrayObject
     *
     * @return self
     */
-    public function setNMFCCommodity(CommodityNMFCCommodity $nMFCCommodity) : self
+    public function setNMFCCommodity(CommodityNMFCCommodity $nMFCCommodity): self
     {
         $this->initialized['nMFCCommodity'] = true;
         $this->nMFCCommodity = $nMFCCommodity;

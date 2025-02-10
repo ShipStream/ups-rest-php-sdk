@@ -8,7 +8,7 @@ class QuantumViewRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -37,7 +37,7 @@ class QuantumViewRequest extends \ArrayObject
      *
      * @return QuantumViewRequestRequest
      */
-    public function getRequest() : QuantumViewRequestRequest
+    public function getRequest(): QuantumViewRequestRequest
     {
         return $this->request;
     }
@@ -48,7 +48,7 @@ class QuantumViewRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(QuantumViewRequestRequest $request) : self
+    public function setRequest(QuantumViewRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -59,7 +59,7 @@ class QuantumViewRequest extends \ArrayObject
      *
      * @return list<QuantumViewRequestSubscriptionRequest>
      */
-    public function getSubscriptionRequest() : array
+    public function getSubscriptionRequest(): array
     {
         return $this->subscriptionRequest;
     }
@@ -70,7 +70,7 @@ class QuantumViewRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setSubscriptionRequest(array $subscriptionRequest) : self
+    public function setSubscriptionRequest(array $subscriptionRequest): self
     {
         $this->initialized['subscriptionRequest'] = true;
         $this->subscriptionRequest = $subscriptionRequest;
@@ -83,7 +83,7 @@ class QuantumViewRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getBookmark() : string
+    public function getBookmark(): string
     {
         return $this->bookmark;
     }
@@ -96,7 +96,7 @@ class QuantumViewRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setBookmark(string $bookmark) : self
+    public function setBookmark(string $bookmark): self
     {
         $this->initialized['bookmark'] = true;
         $this->bookmark = $bookmark;

@@ -8,7 +8,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -51,7 +51,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     *
     * @return string
     */
-    public function getDayOfWeekCode() : string
+    public function getDayOfWeekCode(): string
     {
         return $this->dayOfWeekCode;
     }
@@ -70,7 +70,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
     *
     * @return self
     */
-    public function setDayOfWeekCode(string $dayOfWeekCode) : self
+    public function setDayOfWeekCode(string $dayOfWeekCode): self
     {
         $this->initialized['dayOfWeekCode'] = true;
         $this->dayOfWeekCode = $dayOfWeekCode;
@@ -81,7 +81,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
      *
      * @return string
      */
-    public function getFromTime() : string
+    public function getFromTime(): string
     {
         return $this->fromTime;
     }
@@ -92,7 +92,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setFromTime(string $fromTime) : self
+    public function setFromTime(string $fromTime): self
     {
         $this->initialized['fromTime'] = true;
         $this->fromTime = $fromTime;
@@ -103,7 +103,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
      *
      * @return string
      */
-    public function getToTime() : string
+    public function getToTime(): string
     {
         return $this->toTime;
     }
@@ -114,7 +114,7 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
      *
      * @return self
      */
-    public function setToTime(string $toTime) : self
+    public function setToTime(string $toTime): self
     {
         $this->initialized['toTime'] = true;
         $this->toTime = $toTime;

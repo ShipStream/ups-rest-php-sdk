@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\Status';
+            return $type === \ShipStream\Ups\Api\Model\Status::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\Status';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\Status::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -47,9 +47,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('code', $data) && $data['code'] === null) {
                 $object->setCode(null);
             }
-            if (\array_key_exists('description', $data)) {
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
+            }
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
             }
             if (\array_key_exists('simplifiedTextDescription', $data)) {
                 $object->setSimplifiedTextDescription($data['simplifiedTextDescription']);
@@ -70,7 +73,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('code') && null !== $object->getCode()) {
@@ -95,9 +98,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\Status' => false];
+            return [\ShipStream\Ups\Api\Model\Status::class => false];
         }
     }
 } else {
@@ -107,13 +110,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\Status';
+            return $type === \ShipStream\Ups\Api\Model\Status::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\Status';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\Status::class;
         }
         /**
          * @return mixed
@@ -137,9 +140,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('code', $data) && $data['code'] === null) {
                 $object->setCode(null);
             }
-            if (\array_key_exists('description', $data)) {
+            if (\array_key_exists('description', $data) && $data['description'] !== null) {
                 $object->setDescription($data['description']);
                 unset($data['description']);
+            }
+            elseif (\array_key_exists('description', $data) && $data['description'] === null) {
+                $object->setDescription(null);
             }
             if (\array_key_exists('simplifiedTextDescription', $data)) {
                 $object->setSimplifiedTextDescription($data['simplifiedTextDescription']);
@@ -188,9 +194,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\Status' => false];
+            return [\ShipStream\Ups\Api\Model\Status::class => false];
         }
     }
 }

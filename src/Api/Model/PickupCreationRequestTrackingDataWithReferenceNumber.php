@@ -8,7 +8,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -40,7 +40,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -51,7 +51,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber(): array
     {
         return $this->referenceNumber;
     }
@@ -62,7 +62,7 @@ class PickupCreationRequestTrackingDataWithReferenceNumber extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(array $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;

@@ -8,7 +8,7 @@ class BrokerageFeeItems extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class BrokerageFeeItems extends \ArrayObject
     *
     * @return string
     */
-    public function getChargeName() : string
+    public function getChargeName(): string
     {
         return $this->chargeName;
     }
@@ -49,7 +49,7 @@ class BrokerageFeeItems extends \ArrayObject
     *
     * @return self
     */
-    public function setChargeName(string $chargeName) : self
+    public function setChargeName(string $chargeName): self
     {
         $this->initialized['chargeName'] = true;
         $this->chargeName = $chargeName;
@@ -60,7 +60,7 @@ class BrokerageFeeItems extends \ArrayObject
      *
      * @return float
      */
-    public function getChargeAmount() : float
+    public function getChargeAmount(): float
     {
         return $this->chargeAmount;
     }
@@ -71,7 +71,7 @@ class BrokerageFeeItems extends \ArrayObject
      *
      * @return self
      */
-    public function setChargeAmount(float $chargeAmount) : self
+    public function setChargeAmount(float $chargeAmount): self
     {
         $this->initialized['chargeAmount'] = true;
         $this->chargeAmount = $chargeAmount;

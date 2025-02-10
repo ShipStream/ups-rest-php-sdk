@@ -8,7 +8,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getFreezableProtectionIndicator() : string
+    public function getFreezableProtectionIndicator(): string
     {
         return $this->freezableProtectionIndicator;
     }
@@ -52,7 +52,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setFreezableProtectionIndicator(string $freezableProtectionIndicator) : self
+    public function setFreezableProtectionIndicator(string $freezableProtectionIndicator): self
     {
         $this->initialized['freezableProtectionIndicator'] = true;
         $this->freezableProtectionIndicator = $freezableProtectionIndicator;
@@ -63,7 +63,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLimitedAccessPickupIndicator() : string
+    public function getLimitedAccessPickupIndicator(): string
     {
         return $this->limitedAccessPickupIndicator;
     }
@@ -74,7 +74,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLimitedAccessPickupIndicator(string $limitedAccessPickupIndicator) : self
+    public function setLimitedAccessPickupIndicator(string $limitedAccessPickupIndicator): self
     {
         $this->initialized['limitedAccessPickupIndicator'] = true;
         $this->limitedAccessPickupIndicator = $limitedAccessPickupIndicator;
@@ -85,7 +85,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLimitedAccessDeliveryIndicator() : string
+    public function getLimitedAccessDeliveryIndicator(): string
     {
         return $this->limitedAccessDeliveryIndicator;
     }
@@ -96,7 +96,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLimitedAccessDeliveryIndicator(string $limitedAccessDeliveryIndicator) : self
+    public function setLimitedAccessDeliveryIndicator(string $limitedAccessDeliveryIndicator): self
     {
         $this->initialized['limitedAccessDeliveryIndicator'] = true;
         $this->limitedAccessDeliveryIndicator = $limitedAccessDeliveryIndicator;
@@ -107,7 +107,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getExtremeLengthIndicator() : string
+    public function getExtremeLengthIndicator(): string
     {
         return $this->extremeLengthIndicator;
     }
@@ -118,7 +118,7 @@ class FreightPickupRequestShipmentServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setExtremeLengthIndicator(string $extremeLengthIndicator) : self
+    public function setExtremeLengthIndicator(string $extremeLengthIndicator): self
     {
         $this->initialized['extremeLengthIndicator'] = true;
         $this->extremeLengthIndicator = $extremeLengthIndicator;

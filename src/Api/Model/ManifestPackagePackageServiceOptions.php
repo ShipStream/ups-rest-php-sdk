@@ -8,7 +8,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -58,7 +58,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return ManifestPackageServiceOptionsCOD
      */
-    public function getCOD() : ManifestPackageServiceOptionsCOD
+    public function getCOD(): ManifestPackageServiceOptionsCOD
     {
         return $this->cOD;
     }
@@ -69,7 +69,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCOD(ManifestPackageServiceOptionsCOD $cOD) : self
+    public function setCOD(ManifestPackageServiceOptionsCOD $cOD): self
     {
         $this->initialized['cOD'] = true;
         $this->cOD = $cOD;
@@ -80,7 +80,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return PackageServiceOptionsInsuredValue
      */
-    public function getInsuredValue() : PackageServiceOptionsInsuredValue
+    public function getInsuredValue(): PackageServiceOptionsInsuredValue
     {
         return $this->insuredValue;
     }
@@ -91,7 +91,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setInsuredValue(PackageServiceOptionsInsuredValue $insuredValue) : self
+    public function setInsuredValue(PackageServiceOptionsInsuredValue $insuredValue): self
     {
         $this->initialized['insuredValue'] = true;
         $this->insuredValue = $insuredValue;
@@ -102,7 +102,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getEarliestDeliveryTime() : string
+    public function getEarliestDeliveryTime(): string
     {
         return $this->earliestDeliveryTime;
     }
@@ -113,7 +113,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setEarliestDeliveryTime(string $earliestDeliveryTime) : self
+    public function setEarliestDeliveryTime(string $earliestDeliveryTime): self
     {
         $this->initialized['earliestDeliveryTime'] = true;
         $this->earliestDeliveryTime = $earliestDeliveryTime;
@@ -129,7 +129,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
     *
     * @return string
     */
-    public function getHazardousMaterialsCode() : string
+    public function getHazardousMaterialsCode(): string
     {
         return $this->hazardousMaterialsCode;
     }
@@ -145,7 +145,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
     *
     * @return self
     */
-    public function setHazardousMaterialsCode(string $hazardousMaterialsCode) : self
+    public function setHazardousMaterialsCode(string $hazardousMaterialsCode): self
     {
         $this->initialized['hazardousMaterialsCode'] = true;
         $this->hazardousMaterialsCode = $hazardousMaterialsCode;
@@ -156,7 +156,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getHoldForPickup() : string
+    public function getHoldForPickup(): string
     {
         return $this->holdForPickup;
     }
@@ -167,7 +167,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHoldForPickup(string $holdForPickup) : self
+    public function setHoldForPickup(string $holdForPickup): self
     {
         $this->initialized['holdForPickup'] = true;
         $this->holdForPickup = $holdForPickup;
@@ -178,7 +178,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getAddShippingChargesToCODIndicator() : string
+    public function getAddShippingChargesToCODIndicator(): string
     {
         return $this->addShippingChargesToCODIndicator;
     }
@@ -189,7 +189,7 @@ class ManifestPackagePackageServiceOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setAddShippingChargesToCODIndicator(string $addShippingChargesToCODIndicator) : self
+    public function setAddShippingChargesToCODIndicator(string $addShippingChargesToCODIndicator): self
     {
         $this->initialized['addShippingChargesToCODIndicator'] = true;
         $this->addShippingChargesToCODIndicator = $addShippingChargesToCODIndicator;

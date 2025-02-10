@@ -8,7 +8,7 @@ class FreightOptionsShipmentDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightOptionsShipmentDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getHazmatIndicator() : string
+    public function getHazmatIndicator(): string
     {
         return $this->hazmatIndicator;
     }
@@ -40,7 +40,7 @@ class FreightOptionsShipmentDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setHazmatIndicator(string $hazmatIndicator) : self
+    public function setHazmatIndicator(string $hazmatIndicator): self
     {
         $this->initialized['hazmatIndicator'] = true;
         $this->hazmatIndicator = $hazmatIndicator;
@@ -51,7 +51,7 @@ class FreightOptionsShipmentDetail extends \ArrayObject
      *
      * @return ShipmentDetailPalletInformation
      */
-    public function getPalletInformation() : ShipmentDetailPalletInformation
+    public function getPalletInformation(): ShipmentDetailPalletInformation
     {
         return $this->palletInformation;
     }
@@ -62,7 +62,7 @@ class FreightOptionsShipmentDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setPalletInformation(ShipmentDetailPalletInformation $palletInformation) : self
+    public function setPalletInformation(ShipmentDetailPalletInformation $palletInformation): self
     {
         $this->initialized['palletInformation'] = true;
         $this->palletInformation = $palletInformation;

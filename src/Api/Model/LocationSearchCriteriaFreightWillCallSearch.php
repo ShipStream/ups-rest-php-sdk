@@ -8,7 +8,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -68,7 +68,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return string
     */
-    public function getFreightWillCallRequestType() : string
+    public function getFreightWillCallRequestType(): string
     {
         return $this->freightWillCallRequestType;
     }
@@ -83,7 +83,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return self
     */
-    public function setFreightWillCallRequestType(string $freightWillCallRequestType) : self
+    public function setFreightWillCallRequestType(string $freightWillCallRequestType): self
     {
         $this->initialized['freightWillCallRequestType'] = true;
         $this->freightWillCallRequestType = $freightWillCallRequestType;
@@ -94,7 +94,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
      *
      * @return list<FreightWillCallSearchFacilityAddress>
      */
-    public function getFacilityAddress() : array
+    public function getFacilityAddress(): array
     {
         return $this->facilityAddress;
     }
@@ -105,7 +105,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setFacilityAddress(array $facilityAddress) : self
+    public function setFacilityAddress(array $facilityAddress): self
     {
         $this->initialized['facilityAddress'] = true;
         $this->facilityAddress = $facilityAddress;
@@ -118,7 +118,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginOrDestination() : string
+    public function getOriginOrDestination(): string
     {
         return $this->originOrDestination;
     }
@@ -131,7 +131,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginOrDestination(string $originOrDestination) : self
+    public function setOriginOrDestination(string $originOrDestination): self
     {
         $this->initialized['originOrDestination'] = true;
         $this->originOrDestination = $originOrDestination;
@@ -146,7 +146,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return string
     */
-    public function getFormatPostalCode() : string
+    public function getFormatPostalCode(): string
     {
         return $this->formatPostalCode;
     }
@@ -161,7 +161,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return self
     */
-    public function setFormatPostalCode(string $formatPostalCode) : self
+    public function setFormatPostalCode(string $formatPostalCode): self
     {
         $this->initialized['formatPostalCode'] = true;
         $this->formatPostalCode = $formatPostalCode;
@@ -179,7 +179,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return string
     */
-    public function getDayOfWeekCode() : string
+    public function getDayOfWeekCode(): string
     {
         return $this->dayOfWeekCode;
     }
@@ -197,7 +197,7 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
     *
     * @return self
     */
-    public function setDayOfWeekCode(string $dayOfWeekCode) : self
+    public function setDayOfWeekCode(string $dayOfWeekCode): self
     {
         $this->initialized['dayOfWeekCode'] = true;
         $this->dayOfWeekCode = $dayOfWeekCode;

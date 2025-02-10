@@ -8,7 +8,7 @@ class ManifestPackagePackageWeight extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ManifestPackagePackageWeight extends \ArrayObject
      *
      * @return string
      */
-    public function getWeight() : string
+    public function getWeight(): string
     {
         return $this->weight;
     }
@@ -34,7 +34,7 @@ class ManifestPackagePackageWeight extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(string $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

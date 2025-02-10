@@ -8,7 +8,7 @@ class SubMilestone extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class SubMilestone extends \ArrayObject
      *
      * @return string
      */
-    public function getCategory() : string
+    public function getCategory(): string
     {
         return $this->category;
     }
@@ -34,7 +34,7 @@ class SubMilestone extends \ArrayObject
      *
      * @return self
      */
-    public function setCategory(string $category) : self
+    public function setCategory(string $category): self
     {
         $this->initialized['category'] = true;
         $this->category = $category;

@@ -8,7 +8,7 @@ class ShipmentServiceOptionsPickupOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLiftGateAtPickupIndicator() : string
+    public function getLiftGateAtPickupIndicator(): string
     {
         return $this->liftGateAtPickupIndicator;
     }
@@ -40,7 +40,7 @@ class ShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLiftGateAtPickupIndicator(string $liftGateAtPickupIndicator) : self
+    public function setLiftGateAtPickupIndicator(string $liftGateAtPickupIndicator): self
     {
         $this->initialized['liftGateAtPickupIndicator'] = true;
         $this->liftGateAtPickupIndicator = $liftGateAtPickupIndicator;
@@ -51,7 +51,7 @@ class ShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getHoldForPickupIndicator() : string
+    public function getHoldForPickupIndicator(): string
     {
         return $this->holdForPickupIndicator;
     }
@@ -62,7 +62,7 @@ class ShipmentServiceOptionsPickupOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHoldForPickupIndicator(string $holdForPickupIndicator) : self
+    public function setHoldForPickupIndicator(string $holdForPickupIndicator): self
     {
         $this->initialized['holdForPickupIndicator'] = true;
         $this->holdForPickupIndicator = $holdForPickupIndicator;

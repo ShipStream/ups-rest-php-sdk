@@ -8,7 +8,7 @@ class DropLocationLocalizedInstruction extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class DropLocationLocalizedInstruction extends \ArrayObject
      *
      * @return string
      */
-    public function getLocale() : string
+    public function getLocale(): string
     {
         return $this->locale;
     }
@@ -40,7 +40,7 @@ class DropLocationLocalizedInstruction extends \ArrayObject
      *
      * @return self
      */
-    public function setLocale(string $locale) : self
+    public function setLocale(string $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -51,7 +51,7 @@ class DropLocationLocalizedInstruction extends \ArrayObject
      *
      * @return string
      */
-    public function getLast50ftInstruction() : string
+    public function getLast50ftInstruction(): string
     {
         return $this->last50ftInstruction;
     }
@@ -62,7 +62,7 @@ class DropLocationLocalizedInstruction extends \ArrayObject
      *
      * @return self
      */
-    public function setLast50ftInstruction(string $last50ftInstruction) : self
+    public function setLast50ftInstruction(string $last50ftInstruction): self
     {
         $this->initialized['last50ftInstruction'] = true;
         $this->last50ftInstruction = $last50ftInstruction;

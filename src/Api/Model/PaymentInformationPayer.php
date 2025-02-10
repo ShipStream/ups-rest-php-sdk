@@ -8,7 +8,7 @@ class PaymentInformationPayer extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -60,7 +60,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -71,7 +71,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -82,7 +82,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return FreightShipPayerAddress
      */
-    public function getAddress() : FreightShipPayerAddress
+    public function getAddress(): FreightShipPayerAddress
     {
         return $this->address;
     }
@@ -93,7 +93,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(FreightShipPayerAddress $address) : self
+    public function setAddress(FreightShipPayerAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -105,7 +105,7 @@ class PaymentInformationPayer extends \ArrayObject
     *
     * @return string
     */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -117,7 +117,7 @@ class PaymentInformationPayer extends \ArrayObject
     *
     * @return self
     */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;
@@ -128,7 +128,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -139,7 +139,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -150,7 +150,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return PayerPhone
      */
-    public function getPhone() : PayerPhone
+    public function getPhone(): PayerPhone
     {
         return $this->phone;
     }
@@ -161,7 +161,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(PayerPhone $phone) : self
+    public function setPhone(PayerPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -172,7 +172,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return string
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber(): string
     {
         return $this->faxNumber;
     }
@@ -183,7 +183,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(string $faxNumber): self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -194,7 +194,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -205,7 +205,7 @@ class PaymentInformationPayer extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

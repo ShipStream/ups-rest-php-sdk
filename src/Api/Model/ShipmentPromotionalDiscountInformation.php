@@ -8,7 +8,7 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getPromoCode() : string
+    public function getPromoCode(): string
     {
         return $this->promoCode;
     }
@@ -40,7 +40,7 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPromoCode(string $promoCode) : self
+    public function setPromoCode(string $promoCode): self
     {
         $this->initialized['promoCode'] = true;
         $this->promoCode = $promoCode;
@@ -51,7 +51,7 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getPromoAliasCode() : string
+    public function getPromoAliasCode(): string
     {
         return $this->promoAliasCode;
     }
@@ -62,7 +62,7 @@ class ShipmentPromotionalDiscountInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPromoAliasCode(string $promoAliasCode) : self
+    public function setPromoAliasCode(string $promoAliasCode): self
     {
         $this->initialized['promoAliasCode'] = true;
         $this->promoAliasCode = $promoAliasCode;

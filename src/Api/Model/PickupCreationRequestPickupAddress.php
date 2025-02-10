@@ -8,7 +8,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -101,7 +101,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -112,7 +112,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -123,7 +123,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getContactName() : string
+    public function getContactName(): string
     {
         return $this->contactName;
     }
@@ -134,7 +134,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setContactName(string $contactName) : self
+    public function setContactName(string $contactName): self
     {
         $this->initialized['contactName'] = true;
         $this->contactName = $contactName;
@@ -145,7 +145,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAddressLine() : array
+    public function getAddressLine(): array
     {
         return $this->addressLine;
     }
@@ -156,7 +156,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(array $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -167,7 +167,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getRoom() : string
+    public function getRoom(): string
     {
         return $this->room;
     }
@@ -178,7 +178,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setRoom(string $room) : self
+    public function setRoom(string $room): self
     {
         $this->initialized['room'] = true;
         $this->room = $room;
@@ -189,7 +189,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getFloor() : string
+    public function getFloor(): string
     {
         return $this->floor;
     }
@@ -200,7 +200,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setFloor(string $floor) : self
+    public function setFloor(string $floor): self
     {
         $this->initialized['floor'] = true;
         $this->floor = $floor;
@@ -211,7 +211,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -222,7 +222,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -233,7 +233,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvince() : string
+    public function getStateProvince(): string
     {
         return $this->stateProvince;
     }
@@ -244,7 +244,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(string $stateProvince): self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -257,7 +257,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getUrbanization() : string
+    public function getUrbanization(): string
     {
         return $this->urbanization;
     }
@@ -270,7 +270,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setUrbanization(string $urbanization) : self
+    public function setUrbanization(string $urbanization): self
     {
         $this->initialized['urbanization'] = true;
         $this->urbanization = $urbanization;
@@ -281,7 +281,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -292,7 +292,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -304,7 +304,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -316,7 +316,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -330,7 +330,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;
     }
@@ -344,7 +344,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(string $residentialIndicator): self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;
@@ -355,7 +355,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupPoint() : string
+    public function getPickupPoint(): string
     {
         return $this->pickupPoint;
     }
@@ -366,7 +366,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupPoint(string $pickupPoint) : self
+    public function setPickupPoint(string $pickupPoint): self
     {
         $this->initialized['pickupPoint'] = true;
         $this->pickupPoint = $pickupPoint;
@@ -377,7 +377,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return PickupAddressPhone
      */
-    public function getPhone() : PickupAddressPhone
+    public function getPhone(): PickupAddressPhone
     {
         return $this->phone;
     }
@@ -388,7 +388,7 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(PickupAddressPhone $phone) : self
+    public function setPhone(PickupAddressPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;

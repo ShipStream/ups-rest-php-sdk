@@ -8,7 +8,7 @@ class EMailInformationEMail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -43,7 +43,7 @@ class EMailInformationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -54,7 +54,7 @@ class EMailInformationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -66,7 +66,7 @@ class EMailInformationEMail extends \ArrayObject
     *
     * @return string
     */
-    public function getEMailText() : string
+    public function getEMailText(): string
     {
         return $this->eMailText;
     }
@@ -78,7 +78,7 @@ class EMailInformationEMail extends \ArrayObject
     *
     * @return self
     */
-    public function setEMailText(string $eMailText) : self
+    public function setEMailText(string $eMailText): self
     {
         $this->initialized['eMailText'] = true;
         $this->eMailText = $eMailText;
@@ -89,7 +89,7 @@ class EMailInformationEMail extends \ArrayObject
      *
      * @return string
      */
-    public function getUndeliverableEMailAddress() : string
+    public function getUndeliverableEMailAddress(): string
     {
         return $this->undeliverableEMailAddress;
     }
@@ -100,7 +100,7 @@ class EMailInformationEMail extends \ArrayObject
      *
      * @return self
      */
-    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress) : self
+    public function setUndeliverableEMailAddress(string $undeliverableEMailAddress): self
     {
         $this->initialized['undeliverableEMailAddress'] = true;
         $this->undeliverableEMailAddress = $undeliverableEMailAddress;
@@ -112,7 +112,7 @@ class EMailInformationEMail extends \ArrayObject
     *
     * @return string
     */
-    public function getSubject() : string
+    public function getSubject(): string
     {
         return $this->subject;
     }
@@ -124,7 +124,7 @@ class EMailInformationEMail extends \ArrayObject
     *
     * @return self
     */
-    public function setSubject(string $subject) : self
+    public function setSubject(string $subject): self
     {
         $this->initialized['subject'] = true;
         $this->subject = $subject;

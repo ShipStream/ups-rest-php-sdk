@@ -8,7 +8,7 @@ class FreightCancelPickupResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightCancelPickupResponse extends \ArrayObject
      *
      * @return FreightCancelPickupResponseResponse
      */
-    public function getResponse() : FreightCancelPickupResponseResponse
+    public function getResponse(): FreightCancelPickupResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class FreightCancelPickupResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(FreightCancelPickupResponseResponse $response) : self
+    public function setResponse(FreightCancelPickupResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class FreightCancelPickupResponse extends \ArrayObject
      *
      * @return FreightCancelStatus
      */
-    public function getFreightCancelStatus() : FreightCancelStatus
+    public function getFreightCancelStatus(): FreightCancelStatus
     {
         return $this->freightCancelStatus;
     }
@@ -62,7 +62,7 @@ class FreightCancelPickupResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setFreightCancelStatus(FreightCancelStatus $freightCancelStatus) : self
+    public function setFreightCancelStatus(FreightCancelStatus $freightCancelStatus): self
     {
         $this->initialized['freightCancelStatus'] = true;
         $this->freightCancelStatus = $freightCancelStatus;

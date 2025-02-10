@@ -8,7 +8,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getCallBeforeDeliveryIndicator() : string
+    public function getCallBeforeDeliveryIndicator(): string
     {
         return $this->callBeforeDeliveryIndicator;
     }
@@ -70,7 +70,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setCallBeforeDeliveryIndicator(string $callBeforeDeliveryIndicator) : self
+    public function setCallBeforeDeliveryIndicator(string $callBeforeDeliveryIndicator): self
     {
         $this->initialized['callBeforeDeliveryIndicator'] = true;
         $this->callBeforeDeliveryIndicator = $callBeforeDeliveryIndicator;
@@ -81,7 +81,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getHolidayDeliveryIndicator() : string
+    public function getHolidayDeliveryIndicator(): string
     {
         return $this->holidayDeliveryIndicator;
     }
@@ -92,7 +92,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setHolidayDeliveryIndicator(string $holidayDeliveryIndicator) : self
+    public function setHolidayDeliveryIndicator(string $holidayDeliveryIndicator): self
     {
         $this->initialized['holidayDeliveryIndicator'] = true;
         $this->holidayDeliveryIndicator = $holidayDeliveryIndicator;
@@ -103,7 +103,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getInsideDeliveryIndicator() : string
+    public function getInsideDeliveryIndicator(): string
     {
         return $this->insideDeliveryIndicator;
     }
@@ -114,7 +114,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setInsideDeliveryIndicator(string $insideDeliveryIndicator) : self
+    public function setInsideDeliveryIndicator(string $insideDeliveryIndicator): self
     {
         $this->initialized['insideDeliveryIndicator'] = true;
         $this->insideDeliveryIndicator = $insideDeliveryIndicator;
@@ -125,7 +125,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getResidentialDeliveryIndicator() : string
+    public function getResidentialDeliveryIndicator(): string
     {
         return $this->residentialDeliveryIndicator;
     }
@@ -136,7 +136,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setResidentialDeliveryIndicator(string $residentialDeliveryIndicator) : self
+    public function setResidentialDeliveryIndicator(string $residentialDeliveryIndicator): self
     {
         $this->initialized['residentialDeliveryIndicator'] = true;
         $this->residentialDeliveryIndicator = $residentialDeliveryIndicator;
@@ -147,7 +147,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getWeekendDeliveryIndicator() : string
+    public function getWeekendDeliveryIndicator(): string
     {
         return $this->weekendDeliveryIndicator;
     }
@@ -158,7 +158,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setWeekendDeliveryIndicator(string $weekendDeliveryIndicator) : self
+    public function setWeekendDeliveryIndicator(string $weekendDeliveryIndicator): self
     {
         $this->initialized['weekendDeliveryIndicator'] = true;
         $this->weekendDeliveryIndicator = $weekendDeliveryIndicator;
@@ -169,7 +169,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLiftGateRequiredIndicator() : string
+    public function getLiftGateRequiredIndicator(): string
     {
         return $this->liftGateRequiredIndicator;
     }
@@ -180,7 +180,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLiftGateRequiredIndicator(string $liftGateRequiredIndicator) : self
+    public function setLiftGateRequiredIndicator(string $liftGateRequiredIndicator): self
     {
         $this->initialized['liftGateRequiredIndicator'] = true;
         $this->liftGateRequiredIndicator = $liftGateRequiredIndicator;
@@ -191,7 +191,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getLimitedAccessDeliveryIndicator() : string
+    public function getLimitedAccessDeliveryIndicator(): string
     {
         return $this->limitedAccessDeliveryIndicator;
     }
@@ -202,7 +202,7 @@ class FreightShipmentServiceOptionsDeliveryOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setLimitedAccessDeliveryIndicator(string $limitedAccessDeliveryIndicator) : self
+    public function setLimitedAccessDeliveryIndicator(string $limitedAccessDeliveryIndicator): self
     {
         $this->initialized['limitedAccessDeliveryIndicator'] = true;
         $this->limitedAccessDeliveryIndicator = $limitedAccessDeliveryIndicator;

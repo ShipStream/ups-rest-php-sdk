@@ -8,7 +8,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -36,7 +36,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckRequestRequest
      */
-    public function getRequest() : AcceptanceAuditPreCheckRequestRequest
+    public function getRequest(): AcceptanceAuditPreCheckRequestRequest
     {
         return $this->request;
     }
@@ -47,7 +47,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(AcceptanceAuditPreCheckRequestRequest $request) : self
+    public function setRequest(AcceptanceAuditPreCheckRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -59,7 +59,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginRecordTransactionTimestamp() : string
+    public function getOriginRecordTransactionTimestamp(): string
     {
         return $this->originRecordTransactionTimestamp;
     }
@@ -71,7 +71,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginRecordTransactionTimestamp(string $originRecordTransactionTimestamp) : self
+    public function setOriginRecordTransactionTimestamp(string $originRecordTransactionTimestamp): self
     {
         $this->initialized['originRecordTransactionTimestamp'] = true;
         $this->originRecordTransactionTimestamp = $originRecordTransactionTimestamp;
@@ -82,7 +82,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
      *
      * @return AcceptanceAuditPreCheckRequestShipment
      */
-    public function getShipment() : AcceptanceAuditPreCheckRequestShipment
+    public function getShipment(): AcceptanceAuditPreCheckRequestShipment
     {
         return $this->shipment;
     }
@@ -93,7 +93,7 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(AcceptanceAuditPreCheckRequestShipment $shipment) : self
+    public function setShipment(AcceptanceAuditPreCheckRequestShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

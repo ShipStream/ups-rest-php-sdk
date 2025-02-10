@@ -8,7 +8,7 @@ class ChemicalDataProperShippingNameDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ChemicalDataProperShippingNameDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getProperShippingName() : string
+    public function getProperShippingName(): string
     {
         return $this->properShippingName;
     }
@@ -34,7 +34,7 @@ class ChemicalDataProperShippingNameDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setProperShippingName(string $properShippingName) : self
+    public function setProperShippingName(string $properShippingName): self
     {
         $this->initialized['properShippingName'] = true;
         $this->properShippingName = $properShippingName;

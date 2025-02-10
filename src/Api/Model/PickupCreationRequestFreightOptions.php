@@ -8,7 +8,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return FreightOptionsShipmentServiceOptions
      */
-    public function getShipmentServiceOptions() : FreightOptionsShipmentServiceOptions
+    public function getShipmentServiceOptions(): FreightOptionsShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
@@ -58,7 +58,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightOptionsShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(FreightOptionsShipmentServiceOptions $shipmentServiceOptions): self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -69,7 +69,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginServiceCenterCode() : string
+    public function getOriginServiceCenterCode(): string
     {
         return $this->originServiceCenterCode;
     }
@@ -80,7 +80,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginServiceCenterCode(string $originServiceCenterCode) : self
+    public function setOriginServiceCenterCode(string $originServiceCenterCode): self
     {
         $this->initialized['originServiceCenterCode'] = true;
         $this->originServiceCenterCode = $originServiceCenterCode;
@@ -91,7 +91,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginServiceCountryCode() : string
+    public function getOriginServiceCountryCode(): string
     {
         return $this->originServiceCountryCode;
     }
@@ -102,7 +102,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginServiceCountryCode(string $originServiceCountryCode) : self
+    public function setOriginServiceCountryCode(string $originServiceCountryCode): self
     {
         $this->initialized['originServiceCountryCode'] = true;
         $this->originServiceCountryCode = $originServiceCountryCode;
@@ -113,7 +113,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return FreightOptionsDestinationAddress
      */
-    public function getDestinationAddress() : FreightOptionsDestinationAddress
+    public function getDestinationAddress(): FreightOptionsDestinationAddress
     {
         return $this->destinationAddress;
     }
@@ -124,7 +124,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationAddress(FreightOptionsDestinationAddress $destinationAddress) : self
+    public function setDestinationAddress(FreightOptionsDestinationAddress $destinationAddress): self
     {
         $this->initialized['destinationAddress'] = true;
         $this->destinationAddress = $destinationAddress;
@@ -135,7 +135,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return FreightOptionsShipmentDetail
      */
-    public function getShipmentDetail() : FreightOptionsShipmentDetail
+    public function getShipmentDetail(): FreightOptionsShipmentDetail
     {
         return $this->shipmentDetail;
     }
@@ -146,7 +146,7 @@ class PickupCreationRequestFreightOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentDetail(FreightOptionsShipmentDetail $shipmentDetail) : self
+    public function setShipmentDetail(FreightOptionsShipmentDetail $shipmentDetail): self
     {
         $this->initialized['shipmentDetail'] = true;
         $this->shipmentDetail = $shipmentDetail;

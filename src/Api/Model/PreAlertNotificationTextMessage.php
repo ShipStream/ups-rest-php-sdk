@@ -8,7 +8,7 @@ class PreAlertNotificationTextMessage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class PreAlertNotificationTextMessage extends \ArrayObject
     *
     * @return string
     */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
     }
@@ -61,7 +61,7 @@ class PreAlertNotificationTextMessage extends \ArrayObject
     *
     * @return self
     */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(string $phoneNumber): self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;

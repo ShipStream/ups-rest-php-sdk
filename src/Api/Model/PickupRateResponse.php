@@ -8,7 +8,7 @@ class PickupRateResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -43,7 +43,7 @@ class PickupRateResponse extends \ArrayObject
      *
      * @return PickupRateResponseResponse
      */
-    public function getResponse() : PickupRateResponseResponse
+    public function getResponse(): PickupRateResponseResponse
     {
         return $this->response;
     }
@@ -54,7 +54,7 @@ class PickupRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PickupRateResponseResponse $response) : self
+    public function setResponse(PickupRateResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -65,7 +65,7 @@ class PickupRateResponse extends \ArrayObject
      *
      * @return PickupRateResponseRateResult
      */
-    public function getRateResult() : PickupRateResponseRateResult
+    public function getRateResult(): PickupRateResponseRateResult
     {
         return $this->rateResult;
     }
@@ -76,7 +76,7 @@ class PickupRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setRateResult(PickupRateResponseRateResult $rateResult) : self
+    public function setRateResult(PickupRateResponseRateResult $rateResult): self
     {
         $this->initialized['rateResult'] = true;
         $this->rateResult = $rateResult;
@@ -89,7 +89,7 @@ class PickupRateResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getWeekendServiceTerritoryIndicator() : string
+    public function getWeekendServiceTerritoryIndicator(): string
     {
         return $this->weekendServiceTerritoryIndicator;
     }
@@ -102,7 +102,7 @@ class PickupRateResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setWeekendServiceTerritoryIndicator(string $weekendServiceTerritoryIndicator) : self
+    public function setWeekendServiceTerritoryIndicator(string $weekendServiceTerritoryIndicator): self
     {
         $this->initialized['weekendServiceTerritoryIndicator'] = true;
         $this->weekendServiceTerritoryIndicator = $weekendServiceTerritoryIndicator;
@@ -113,7 +113,7 @@ class PickupRateResponse extends \ArrayObject
      *
      * @return PickupRateResponseWeekendServiceTerritory
      */
-    public function getWeekendServiceTerritory() : PickupRateResponseWeekendServiceTerritory
+    public function getWeekendServiceTerritory(): PickupRateResponseWeekendServiceTerritory
     {
         return $this->weekendServiceTerritory;
     }
@@ -124,7 +124,7 @@ class PickupRateResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setWeekendServiceTerritory(PickupRateResponseWeekendServiceTerritory $weekendServiceTerritory) : self
+    public function setWeekendServiceTerritory(PickupRateResponseWeekendServiceTerritory $weekendServiceTerritory): self
     {
         $this->initialized['weekendServiceTerritory'] = true;
         $this->weekendServiceTerritory = $weekendServiceTerritory;

@@ -8,7 +8,7 @@ class TrackResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class TrackResponse extends \ArrayObject
      *
      * @return list<Shipment>
      */
-    public function getShipment() : array
+    public function getShipment(): array
     {
         return $this->shipment;
     }
@@ -34,7 +34,7 @@ class TrackResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(array $shipment) : self
+    public function setShipment(array $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

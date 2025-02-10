@@ -8,7 +8,7 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
      *
      * @return string
      */
-    public function getNetworkID() : string
+    public function getNetworkID(): string
     {
         return $this->networkID;
     }
@@ -40,7 +40,7 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworkID(string $networkID) : self
+    public function setNetworkID(string $networkID): self
     {
         $this->initialized['networkID'] = true;
         $this->networkID = $networkID;
@@ -51,7 +51,7 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
      *
      * @return string
      */
-    public function getNetworkDescription() : string
+    public function getNetworkDescription(): string
     {
         return $this->networkDescription;
     }
@@ -62,7 +62,7 @@ class PrivateNetworkListPrivateNetwork extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworkDescription(string $networkDescription) : self
+    public function setNetworkDescription(string $networkDescription): self
     {
         $this->initialized['networkDescription'] = true;
         $this->networkDescription = $networkDescription;

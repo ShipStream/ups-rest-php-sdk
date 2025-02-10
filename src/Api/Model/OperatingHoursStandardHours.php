@@ -8,7 +8,7 @@ class OperatingHoursStandardHours extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -46,7 +46,7 @@ class OperatingHoursStandardHours extends \ArrayObject
     *
     * @return string
     */
-    public function getHoursType() : string
+    public function getHoursType(): string
     {
         return $this->hoursType;
     }
@@ -65,7 +65,7 @@ class OperatingHoursStandardHours extends \ArrayObject
     *
     * @return self
     */
-    public function setHoursType(string $hoursType) : self
+    public function setHoursType(string $hoursType): self
     {
         $this->initialized['hoursType'] = true;
         $this->hoursType = $hoursType;
@@ -77,7 +77,7 @@ class OperatingHoursStandardHours extends \ArrayObject
      *
      * @return list<StandardHoursDayOfWeek>
      */
-    public function getDayOfWeek() : array
+    public function getDayOfWeek(): array
     {
         return $this->dayOfWeek;
     }
@@ -89,7 +89,7 @@ class OperatingHoursStandardHours extends \ArrayObject
      *
      * @return self
      */
-    public function setDayOfWeek(array $dayOfWeek) : self
+    public function setDayOfWeek(array $dayOfWeek): self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;

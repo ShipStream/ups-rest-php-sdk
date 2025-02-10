@@ -8,7 +8,7 @@ class CandidateAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -65,7 +65,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryName() : string
+    public function getCountryName(): string
     {
         return $this->countryName;
     }
@@ -76,7 +76,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryName(string $countryName) : self
+    public function setCountryName(string $countryName): self
     {
         $this->initialized['countryName'] = true;
         $this->countryName = $countryName;
@@ -87,7 +87,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -98,7 +98,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;
@@ -109,7 +109,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getStateProvince() : string
+    public function getStateProvince(): string
     {
         return $this->stateProvince;
     }
@@ -120,7 +120,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(string $stateProvince): self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -131,7 +131,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -142,7 +142,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -153,7 +153,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getTown() : string
+    public function getTown(): string
     {
         return $this->town;
     }
@@ -164,7 +164,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setTown(string $town) : self
+    public function setTown(string $town): self
     {
         $this->initialized['town'] = true;
         $this->town = $town;
@@ -175,7 +175,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -186,7 +186,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -197,7 +197,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCodeLow() : string
+    public function getPostalCodeLow(): string
     {
         return $this->postalCodeLow;
     }
@@ -208,7 +208,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCodeLow(string $postalCodeLow) : self
+    public function setPostalCodeLow(string $postalCodeLow): self
     {
         $this->initialized['postalCodeLow'] = true;
         $this->postalCodeLow = $postalCodeLow;
@@ -219,7 +219,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCodeHigh() : string
+    public function getPostalCodeHigh(): string
     {
         return $this->postalCodeHigh;
     }
@@ -230,7 +230,7 @@ class CandidateAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCodeHigh(string $postalCodeHigh) : self
+    public function setPostalCodeHigh(string $postalCodeHigh): self
     {
         $this->initialized['postalCodeHigh'] = true;
         $this->postalCodeHigh = $postalCodeHigh;

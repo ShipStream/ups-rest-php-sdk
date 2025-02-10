@@ -8,7 +8,7 @@ class RateResultChargeDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class RateResultChargeDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getChargeCode() : string
+    public function getChargeCode(): string
     {
         return $this->chargeCode;
     }
@@ -73,7 +73,7 @@ class RateResultChargeDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setChargeCode(string $chargeCode) : self
+    public function setChargeCode(string $chargeCode): self
     {
         $this->initialized['chargeCode'] = true;
         $this->chargeCode = $chargeCode;
@@ -90,7 +90,7 @@ class RateResultChargeDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getChargeDescription() : string
+    public function getChargeDescription(): string
     {
         return $this->chargeDescription;
     }
@@ -107,7 +107,7 @@ class RateResultChargeDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setChargeDescription(string $chargeDescription) : self
+    public function setChargeDescription(string $chargeDescription): self
     {
         $this->initialized['chargeDescription'] = true;
         $this->chargeDescription = $chargeDescription;
@@ -118,7 +118,7 @@ class RateResultChargeDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getChargeAmount() : string
+    public function getChargeAmount(): string
     {
         return $this->chargeAmount;
     }
@@ -129,7 +129,7 @@ class RateResultChargeDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setChargeAmount(string $chargeAmount) : self
+    public function setChargeAmount(string $chargeAmount): self
     {
         $this->initialized['chargeAmount'] = true;
         $this->chargeAmount = $chargeAmount;
@@ -140,7 +140,7 @@ class RateResultChargeDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getIncentedAmount() : string
+    public function getIncentedAmount(): string
     {
         return $this->incentedAmount;
     }
@@ -151,7 +151,7 @@ class RateResultChargeDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setIncentedAmount(string $incentedAmount) : self
+    public function setIncentedAmount(string $incentedAmount): self
     {
         $this->initialized['incentedAmount'] = true;
         $this->incentedAmount = $incentedAmount;
@@ -162,7 +162,7 @@ class RateResultChargeDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getTaxAmount() : string
+    public function getTaxAmount(): string
     {
         return $this->taxAmount;
     }
@@ -173,7 +173,7 @@ class RateResultChargeDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxAmount(string $taxAmount) : self
+    public function setTaxAmount(string $taxAmount): self
     {
         $this->initialized['taxAmount'] = true;
         $this->taxAmount = $taxAmount;

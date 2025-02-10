@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation';
+            return $type === \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,11 +49,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ImageURL']);
             }
             if (\array_key_exists('BusinessClassificationList', $data)) {
-                $object->setBusinessClassificationList($this->denormalizer->denormalize($data['BusinessClassificationList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList', 'json', $context));
+                $object->setBusinessClassificationList($this->denormalizer->denormalize($data['BusinessClassificationList'], \ShipStream\Ups\Api\Model\AccessPointInformationBusinessClassificationList::class, 'json', $context));
                 unset($data['BusinessClassificationList']);
             }
             if (\array_key_exists('AccessPointStatus', $data)) {
-                $object->setAccessPointStatus($this->denormalizer->denormalize($data['AccessPointStatus'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus', 'json', $context));
+                $object->setAccessPointStatus($this->denormalizer->denormalize($data['AccessPointStatus'], \ShipStream\Ups\Api\Model\AccessPointInformationAccessPointStatus::class, 'json', $context));
                 unset($data['AccessPointStatus']);
             }
             if (\array_key_exists('FacilitySLIC', $data)) {
@@ -61,11 +61,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FacilitySLIC']);
             }
             if (\array_key_exists('PrivateNetworkList', $data)) {
-                $object->setPrivateNetworkList($this->denormalizer->denormalize($data['PrivateNetworkList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList', 'json', $context));
+                $object->setPrivateNetworkList($this->denormalizer->denormalize($data['PrivateNetworkList'], \ShipStream\Ups\Api\Model\AccessPointInformationPrivateNetworkList::class, 'json', $context));
                 unset($data['PrivateNetworkList']);
             }
             if (\array_key_exists('Availability', $data)) {
-                $object->setAvailability($this->denormalizer->denormalize($data['Availability'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability', 'json', $context));
+                $object->setAvailability($this->denormalizer->denormalize($data['Availability'], \ShipStream\Ups\Api\Model\AccessPointInformationAvailability::class, 'json', $context));
                 unset($data['Availability']);
             }
             foreach ($data as $key => $value) {
@@ -75,7 +75,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('publicAccessPointID') && null !== $object->getPublicAccessPointID()) {
@@ -106,9 +106,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation' => false];
+            return [\ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class => false];
         }
     }
 } else {
@@ -118,13 +118,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation';
+            return $type === \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class;
         }
         /**
          * @return mixed
@@ -150,11 +150,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ImageURL']);
             }
             if (\array_key_exists('BusinessClassificationList', $data)) {
-                $object->setBusinessClassificationList($this->denormalizer->denormalize($data['BusinessClassificationList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationBusinessClassificationList', 'json', $context));
+                $object->setBusinessClassificationList($this->denormalizer->denormalize($data['BusinessClassificationList'], \ShipStream\Ups\Api\Model\AccessPointInformationBusinessClassificationList::class, 'json', $context));
                 unset($data['BusinessClassificationList']);
             }
             if (\array_key_exists('AccessPointStatus', $data)) {
-                $object->setAccessPointStatus($this->denormalizer->denormalize($data['AccessPointStatus'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAccessPointStatus', 'json', $context));
+                $object->setAccessPointStatus($this->denormalizer->denormalize($data['AccessPointStatus'], \ShipStream\Ups\Api\Model\AccessPointInformationAccessPointStatus::class, 'json', $context));
                 unset($data['AccessPointStatus']);
             }
             if (\array_key_exists('FacilitySLIC', $data)) {
@@ -162,11 +162,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FacilitySLIC']);
             }
             if (\array_key_exists('PrivateNetworkList', $data)) {
-                $object->setPrivateNetworkList($this->denormalizer->denormalize($data['PrivateNetworkList'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationPrivateNetworkList', 'json', $context));
+                $object->setPrivateNetworkList($this->denormalizer->denormalize($data['PrivateNetworkList'], \ShipStream\Ups\Api\Model\AccessPointInformationPrivateNetworkList::class, 'json', $context));
                 unset($data['PrivateNetworkList']);
             }
             if (\array_key_exists('Availability', $data)) {
-                $object->setAvailability($this->denormalizer->denormalize($data['Availability'], 'ShipStream\\Ups\\Api\\Model\\AccessPointInformationAvailability', 'json', $context));
+                $object->setAvailability($this->denormalizer->denormalize($data['Availability'], \ShipStream\Ups\Api\Model\AccessPointInformationAvailability::class, 'json', $context));
                 unset($data['Availability']);
             }
             foreach ($data as $key => $value) {
@@ -210,9 +210,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\DropLocationAccessPointInformation' => false];
+            return [\ShipStream\Ups\Api\Model\DropLocationAccessPointInformation::class => false];
         }
     }
 }

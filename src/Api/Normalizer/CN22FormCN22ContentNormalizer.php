@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content';
+            return $type === \ShipStream\Ups\Api\Model\CN22FormCN22Content::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\CN22FormCN22Content::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,7 +49,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CN22ContentDescription']);
             }
             if (\array_key_exists('CN22ContentWeight', $data)) {
-                $object->setCN22ContentWeight($this->denormalizer->denormalize($data['CN22ContentWeight'], 'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight', 'json', $context));
+                $object->setCN22ContentWeight($this->denormalizer->denormalize($data['CN22ContentWeight'], \ShipStream\Ups\Api\Model\CN22ContentCN22ContentWeight::class, 'json', $context));
                 unset($data['CN22ContentWeight']);
             }
             if (\array_key_exists('CN22ContentTotalValue', $data)) {
@@ -75,7 +75,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['CN22ContentQuantity'] = $object->getCN22ContentQuantity();
@@ -96,9 +96,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content' => false];
+            return [\ShipStream\Ups\Api\Model\CN22FormCN22Content::class => false];
         }
     }
 } else {
@@ -108,13 +108,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content';
+            return $type === \ShipStream\Ups\Api\Model\CN22FormCN22Content::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\CN22FormCN22Content::class;
         }
         /**
          * @return mixed
@@ -140,7 +140,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CN22ContentDescription']);
             }
             if (\array_key_exists('CN22ContentWeight', $data)) {
-                $object->setCN22ContentWeight($this->denormalizer->denormalize($data['CN22ContentWeight'], 'ShipStream\\Ups\\Api\\Model\\CN22ContentCN22ContentWeight', 'json', $context));
+                $object->setCN22ContentWeight($this->denormalizer->denormalize($data['CN22ContentWeight'], \ShipStream\Ups\Api\Model\CN22ContentCN22ContentWeight::class, 'json', $context));
                 unset($data['CN22ContentWeight']);
             }
             if (\array_key_exists('CN22ContentTotalValue', $data)) {
@@ -190,9 +190,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\CN22FormCN22Content' => false];
+            return [\ShipStream\Ups\Api\Model\CN22FormCN22Content::class => false];
         }
     }
 }

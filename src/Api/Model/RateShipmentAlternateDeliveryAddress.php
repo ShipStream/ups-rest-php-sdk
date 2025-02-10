@@ -8,7 +8,7 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -40,7 +40,7 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -51,7 +51,7 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
      *
      * @return RateAlternateDeliveryAddressAddress
      */
-    public function getAddress() : RateAlternateDeliveryAddressAddress
+    public function getAddress(): RateAlternateDeliveryAddressAddress
     {
         return $this->address;
     }
@@ -62,7 +62,7 @@ class RateShipmentAlternateDeliveryAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(RateAlternateDeliveryAddressAddress $address) : self
+    public function setAddress(RateAlternateDeliveryAddressAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,15 +49,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FormType']);
             }
             if (\array_key_exists('UserCreatedForm', $data)) {
-                $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm', 'json', $context));
+                $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], \ShipStream\Ups\Api\Model\InternationalFormsUserCreatedForm::class, 'json', $context));
                 unset($data['UserCreatedForm']);
             }
             if (\array_key_exists('UPSPremiumCareForm', $data)) {
-                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm', 'json', $context));
+                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], \ShipStream\Ups\Api\Model\InternationalFormsUPSPremiumCareForm::class, 'json', $context));
                 unset($data['UPSPremiumCareForm']);
             }
             if (\array_key_exists('CN22Form', $data)) {
-                $object->setCN22Form($this->denormalizer->denormalize($data['CN22Form'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form', 'json', $context));
+                $object->setCN22Form($this->denormalizer->denormalize($data['CN22Form'], \ShipStream\Ups\Api\Model\InternationalFormsCN22Form::class, 'json', $context));
                 unset($data['CN22Form']);
             }
             if (\array_key_exists('AdditionalDocumentIndicator', $data)) {
@@ -69,17 +69,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FormGroupIdName']);
             }
             if (\array_key_exists('EEIFilingOption', $data)) {
-                $object->setEEIFilingOption($this->denormalizer->denormalize($data['EEIFilingOption'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption', 'json', $context));
+                $object->setEEIFilingOption($this->denormalizer->denormalize($data['EEIFilingOption'], \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class, 'json', $context));
                 unset($data['EEIFilingOption']);
             }
             if (\array_key_exists('Contacts', $data)) {
-                $object->setContacts($this->denormalizer->denormalize($data['Contacts'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts', 'json', $context));
+                $object->setContacts($this->denormalizer->denormalize($data['Contacts'], \ShipStream\Ups\Api\Model\InternationalFormsContacts::class, 'json', $context));
                 unset($data['Contacts']);
             }
             if (\array_key_exists('Product', $data) && $data['Product'] !== null) {
                 $values_1 = [];
                 foreach ($data['Product'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\InternationalFormsProduct::class, 'json', $context);
                 }
                 $object->setProduct($values_1);
                 unset($data['Product']);
@@ -116,19 +116,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DeclarationStatement']);
             }
             if (\array_key_exists('Discount', $data)) {
-                $object->setDiscount($this->denormalizer->denormalize($data['Discount'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount', 'json', $context));
+                $object->setDiscount($this->denormalizer->denormalize($data['Discount'], \ShipStream\Ups\Api\Model\InternationalFormsDiscount::class, 'json', $context));
                 unset($data['Discount']);
             }
             if (\array_key_exists('FreightCharges', $data)) {
-                $object->setFreightCharges($this->denormalizer->denormalize($data['FreightCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges', 'json', $context));
+                $object->setFreightCharges($this->denormalizer->denormalize($data['FreightCharges'], \ShipStream\Ups\Api\Model\InternationalFormsFreightCharges::class, 'json', $context));
                 unset($data['FreightCharges']);
             }
             if (\array_key_exists('InsuranceCharges', $data)) {
-                $object->setInsuranceCharges($this->denormalizer->denormalize($data['InsuranceCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges', 'json', $context));
+                $object->setInsuranceCharges($this->denormalizer->denormalize($data['InsuranceCharges'], \ShipStream\Ups\Api\Model\InternationalFormsInsuranceCharges::class, 'json', $context));
                 unset($data['InsuranceCharges']);
             }
             if (\array_key_exists('OtherCharges', $data)) {
-                $object->setOtherCharges($this->denormalizer->denormalize($data['OtherCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges', 'json', $context));
+                $object->setOtherCharges($this->denormalizer->denormalize($data['OtherCharges'], \ShipStream\Ups\Api\Model\InternationalFormsOtherCharges::class, 'json', $context));
                 unset($data['OtherCharges']);
             }
             if (\array_key_exists('CurrencyCode', $data)) {
@@ -136,7 +136,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CurrencyCode']);
             }
             if (\array_key_exists('BlanketPeriod', $data)) {
-                $object->setBlanketPeriod($this->denormalizer->denormalize($data['BlanketPeriod'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod', 'json', $context));
+                $object->setBlanketPeriod($this->denormalizer->denormalize($data['BlanketPeriod'], \ShipStream\Ups\Api\Model\InternationalFormsBlanketPeriod::class, 'json', $context));
                 unset($data['BlanketPeriod']);
             }
             if (\array_key_exists('ExportDate', $data)) {
@@ -214,7 +214,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $values = [];
@@ -345,9 +345,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class => false];
         }
     }
 } else {
@@ -357,13 +357,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms';
+            return $type === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class;
         }
         /**
          * @return mixed
@@ -389,15 +389,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FormType']);
             }
             if (\array_key_exists('UserCreatedForm', $data)) {
-                $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUserCreatedForm', 'json', $context));
+                $object->setUserCreatedForm($this->denormalizer->denormalize($data['UserCreatedForm'], \ShipStream\Ups\Api\Model\InternationalFormsUserCreatedForm::class, 'json', $context));
                 unset($data['UserCreatedForm']);
             }
             if (\array_key_exists('UPSPremiumCareForm', $data)) {
-                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsUPSPremiumCareForm', 'json', $context));
+                $object->setUPSPremiumCareForm($this->denormalizer->denormalize($data['UPSPremiumCareForm'], \ShipStream\Ups\Api\Model\InternationalFormsUPSPremiumCareForm::class, 'json', $context));
                 unset($data['UPSPremiumCareForm']);
             }
             if (\array_key_exists('CN22Form', $data)) {
-                $object->setCN22Form($this->denormalizer->denormalize($data['CN22Form'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsCN22Form', 'json', $context));
+                $object->setCN22Form($this->denormalizer->denormalize($data['CN22Form'], \ShipStream\Ups\Api\Model\InternationalFormsCN22Form::class, 'json', $context));
                 unset($data['CN22Form']);
             }
             if (\array_key_exists('AdditionalDocumentIndicator', $data)) {
@@ -409,17 +409,17 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['FormGroupIdName']);
             }
             if (\array_key_exists('EEIFilingOption', $data)) {
-                $object->setEEIFilingOption($this->denormalizer->denormalize($data['EEIFilingOption'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsEEIFilingOption', 'json', $context));
+                $object->setEEIFilingOption($this->denormalizer->denormalize($data['EEIFilingOption'], \ShipStream\Ups\Api\Model\InternationalFormsEEIFilingOption::class, 'json', $context));
                 unset($data['EEIFilingOption']);
             }
             if (\array_key_exists('Contacts', $data)) {
-                $object->setContacts($this->denormalizer->denormalize($data['Contacts'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsContacts', 'json', $context));
+                $object->setContacts($this->denormalizer->denormalize($data['Contacts'], \ShipStream\Ups\Api\Model\InternationalFormsContacts::class, 'json', $context));
                 unset($data['Contacts']);
             }
             if (\array_key_exists('Product', $data) && $data['Product'] !== null) {
                 $values_1 = [];
                 foreach ($data['Product'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'ShipStream\\Ups\\Api\\Model\\InternationalFormsProduct', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \ShipStream\Ups\Api\Model\InternationalFormsProduct::class, 'json', $context);
                 }
                 $object->setProduct($values_1);
                 unset($data['Product']);
@@ -456,19 +456,19 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DeclarationStatement']);
             }
             if (\array_key_exists('Discount', $data)) {
-                $object->setDiscount($this->denormalizer->denormalize($data['Discount'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsDiscount', 'json', $context));
+                $object->setDiscount($this->denormalizer->denormalize($data['Discount'], \ShipStream\Ups\Api\Model\InternationalFormsDiscount::class, 'json', $context));
                 unset($data['Discount']);
             }
             if (\array_key_exists('FreightCharges', $data)) {
-                $object->setFreightCharges($this->denormalizer->denormalize($data['FreightCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsFreightCharges', 'json', $context));
+                $object->setFreightCharges($this->denormalizer->denormalize($data['FreightCharges'], \ShipStream\Ups\Api\Model\InternationalFormsFreightCharges::class, 'json', $context));
                 unset($data['FreightCharges']);
             }
             if (\array_key_exists('InsuranceCharges', $data)) {
-                $object->setInsuranceCharges($this->denormalizer->denormalize($data['InsuranceCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsInsuranceCharges', 'json', $context));
+                $object->setInsuranceCharges($this->denormalizer->denormalize($data['InsuranceCharges'], \ShipStream\Ups\Api\Model\InternationalFormsInsuranceCharges::class, 'json', $context));
                 unset($data['InsuranceCharges']);
             }
             if (\array_key_exists('OtherCharges', $data)) {
-                $object->setOtherCharges($this->denormalizer->denormalize($data['OtherCharges'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsOtherCharges', 'json', $context));
+                $object->setOtherCharges($this->denormalizer->denormalize($data['OtherCharges'], \ShipStream\Ups\Api\Model\InternationalFormsOtherCharges::class, 'json', $context));
                 unset($data['OtherCharges']);
             }
             if (\array_key_exists('CurrencyCode', $data)) {
@@ -476,7 +476,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['CurrencyCode']);
             }
             if (\array_key_exists('BlanketPeriod', $data)) {
-                $object->setBlanketPeriod($this->denormalizer->denormalize($data['BlanketPeriod'], 'ShipStream\\Ups\\Api\\Model\\InternationalFormsBlanketPeriod', 'json', $context));
+                $object->setBlanketPeriod($this->denormalizer->denormalize($data['BlanketPeriod'], \ShipStream\Ups\Api\Model\InternationalFormsBlanketPeriod::class, 'json', $context));
                 unset($data['BlanketPeriod']);
             }
             if (\array_key_exists('ExportDate', $data)) {
@@ -688,9 +688,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ShipmentServiceOptionsInternationalForms' => false];
+            return [\ShipStream\Ups\Api\Model\ShipmentServiceOptionsInternationalForms::class => false];
         }
     }
 }

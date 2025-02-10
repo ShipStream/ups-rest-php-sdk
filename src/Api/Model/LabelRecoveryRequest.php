@@ -8,7 +8,7 @@ class LabelRecoveryRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -99,7 +99,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return LabelRecoveryRequestRequest
      */
-    public function getRequest() : LabelRecoveryRequestRequest
+    public function getRequest(): LabelRecoveryRequestRequest
     {
         return $this->request;
     }
@@ -110,7 +110,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(LabelRecoveryRequestRequest $request) : self
+    public function setRequest(LabelRecoveryRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -121,7 +121,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return LabelRecoveryRequestLabelSpecification
      */
-    public function getLabelSpecification() : LabelRecoveryRequestLabelSpecification
+    public function getLabelSpecification(): LabelRecoveryRequestLabelSpecification
     {
         return $this->labelSpecification;
     }
@@ -132,7 +132,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelSpecification(LabelRecoveryRequestLabelSpecification $labelSpecification) : self
+    public function setLabelSpecification(LabelRecoveryRequestLabelSpecification $labelSpecification): self
     {
         $this->initialized['labelSpecification'] = true;
         $this->labelSpecification = $labelSpecification;
@@ -166,7 +166,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return LabelRecoveryRequestTranslate
     */
-    public function getTranslate() : LabelRecoveryRequestTranslate
+    public function getTranslate(): LabelRecoveryRequestTranslate
     {
         return $this->translate;
     }
@@ -200,7 +200,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setTranslate(LabelRecoveryRequestTranslate $translate) : self
+    public function setTranslate(LabelRecoveryRequestTranslate $translate): self
     {
         $this->initialized['translate'] = true;
         $this->translate = $translate;
@@ -211,7 +211,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return LabelRecoveryRequestLabelDelivery
      */
-    public function getLabelDelivery() : LabelRecoveryRequestLabelDelivery
+    public function getLabelDelivery(): LabelRecoveryRequestLabelDelivery
     {
         return $this->labelDelivery;
     }
@@ -222,7 +222,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelDelivery(LabelRecoveryRequestLabelDelivery $labelDelivery) : self
+    public function setLabelDelivery(LabelRecoveryRequestLabelDelivery $labelDelivery): self
     {
         $this->initialized['labelDelivery'] = true;
         $this->labelDelivery = $labelDelivery;
@@ -234,7 +234,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -246,7 +246,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -259,7 +259,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getMailInnovationsTrackingNumber() : string
+    public function getMailInnovationsTrackingNumber(): string
     {
         return $this->mailInnovationsTrackingNumber;
     }
@@ -272,7 +272,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setMailInnovationsTrackingNumber(string $mailInnovationsTrackingNumber) : self
+    public function setMailInnovationsTrackingNumber(string $mailInnovationsTrackingNumber): self
     {
         $this->initialized['mailInnovationsTrackingNumber'] = true;
         $this->mailInnovationsTrackingNumber = $mailInnovationsTrackingNumber;
@@ -283,7 +283,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return LabelRecoveryRequestReferenceValues
      */
-    public function getReferenceValues() : LabelRecoveryRequestReferenceValues
+    public function getReferenceValues(): LabelRecoveryRequestReferenceValues
     {
         return $this->referenceValues;
     }
@@ -294,7 +294,7 @@ class LabelRecoveryRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceValues(LabelRecoveryRequestReferenceValues $referenceValues) : self
+    public function setReferenceValues(LabelRecoveryRequestReferenceValues $referenceValues): self
     {
         $this->initialized['referenceValues'] = true;
         $this->referenceValues = $referenceValues;
@@ -306,7 +306,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getLocale() : string
+    public function getLocale(): string
     {
         return $this->locale;
     }
@@ -318,7 +318,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setLocale(string $locale) : self
+    public function setLocale(string $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;
@@ -330,7 +330,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return LabelRecoveryRequestUPSPremiumCareForm
     */
-    public function getUPSPremiumCareForm() : LabelRecoveryRequestUPSPremiumCareForm
+    public function getUPSPremiumCareForm(): LabelRecoveryRequestUPSPremiumCareForm
     {
         return $this->uPSPremiumCareForm;
     }
@@ -342,7 +342,7 @@ class LabelRecoveryRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setUPSPremiumCareForm(LabelRecoveryRequestUPSPremiumCareForm $uPSPremiumCareForm) : self
+    public function setUPSPremiumCareForm(LabelRecoveryRequestUPSPremiumCareForm $uPSPremiumCareForm): self
     {
         $this->initialized['uPSPremiumCareForm'] = true;
         $this->uPSPremiumCareForm = $uPSPremiumCareForm;

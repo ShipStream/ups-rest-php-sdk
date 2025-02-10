@@ -8,7 +8,7 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
      *
      * @return OverSeasLegDimensions
      */
-    public function getDimensions() : OverSeasLegDimensions
+    public function getDimensions(): OverSeasLegDimensions
     {
         return $this->dimensions;
     }
@@ -40,7 +40,7 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(OverSeasLegDimensions $dimensions) : self
+    public function setDimensions(OverSeasLegDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;
@@ -51,7 +51,7 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
      *
      * @return OverSeasLegValue
      */
-    public function getValue() : OverSeasLegValue
+    public function getValue(): OverSeasLegValue
     {
         return $this->value;
     }
@@ -62,7 +62,7 @@ class ShipmentServiceOptionsOverSeasLeg extends \ArrayObject
      *
      * @return self
      */
-    public function setValue(OverSeasLegValue $value) : self
+    public function setValue(OverSeasLegValue $value): self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

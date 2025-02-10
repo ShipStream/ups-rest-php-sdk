@@ -8,7 +8,7 @@ class SubscriptionFileManifest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -338,7 +338,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestShipper
      */
-    public function getShipper() : ManifestShipper
+    public function getShipper(): ManifestShipper
     {
         return $this->shipper;
     }
@@ -349,7 +349,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipper(ManifestShipper $shipper) : self
+    public function setShipper(ManifestShipper $shipper): self
     {
         $this->initialized['shipper'] = true;
         $this->shipper = $shipper;
@@ -360,7 +360,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestShipTo
      */
-    public function getShipTo() : ManifestShipTo
+    public function getShipTo(): ManifestShipTo
     {
         return $this->shipTo;
     }
@@ -371,7 +371,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipTo(ManifestShipTo $shipTo) : self
+    public function setShipTo(ManifestShipTo $shipTo): self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -383,7 +383,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return list<ManifestReferenceNumber>
      */
-    public function getReferenceNumber() : array
+    public function getReferenceNumber(): array
     {
         return $this->referenceNumber;
     }
@@ -395,7 +395,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(array $referenceNumber) : self
+    public function setReferenceNumber(array $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -406,7 +406,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestService
      */
-    public function getService() : ManifestService
+    public function getService(): ManifestService
     {
         return $this->service;
     }
@@ -417,7 +417,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setService(ManifestService $service) : self
+    public function setService(ManifestService $service): self
     {
         $this->initialized['service'] = true;
         $this->service = $service;
@@ -428,7 +428,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -439,7 +439,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -450,7 +450,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getScheduledDeliveryDate() : string
+    public function getScheduledDeliveryDate(): string
     {
         return $this->scheduledDeliveryDate;
     }
@@ -461,7 +461,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setScheduledDeliveryDate(string $scheduledDeliveryDate) : self
+    public function setScheduledDeliveryDate(string $scheduledDeliveryDate): self
     {
         $this->initialized['scheduledDeliveryDate'] = true;
         $this->scheduledDeliveryDate = $scheduledDeliveryDate;
@@ -472,7 +472,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getScheduledDeliveryTime() : string
+    public function getScheduledDeliveryTime(): string
     {
         return $this->scheduledDeliveryTime;
     }
@@ -483,7 +483,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setScheduledDeliveryTime(string $scheduledDeliveryTime) : self
+    public function setScheduledDeliveryTime(string $scheduledDeliveryTime): self
     {
         $this->initialized['scheduledDeliveryTime'] = true;
         $this->scheduledDeliveryTime = $scheduledDeliveryTime;
@@ -499,7 +499,7 @@ class SubscriptionFileManifest extends \ArrayObject
     *
     * @return string
     */
-    public function getDocumentsOnly() : string
+    public function getDocumentsOnly(): string
     {
         return $this->documentsOnly;
     }
@@ -515,7 +515,7 @@ class SubscriptionFileManifest extends \ArrayObject
     *
     * @return self
     */
-    public function setDocumentsOnly(string $documentsOnly) : self
+    public function setDocumentsOnly(string $documentsOnly): self
     {
         $this->initialized['documentsOnly'] = true;
         $this->documentsOnly = $documentsOnly;
@@ -527,7 +527,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return list<ManifestPackage>
      */
-    public function getPackage() : array
+    public function getPackage(): array
     {
         return $this->package;
     }
@@ -539,7 +539,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setPackage(array $package) : self
+    public function setPackage(array $package): self
     {
         $this->initialized['package'] = true;
         $this->package = $package;
@@ -550,7 +550,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestShipmentServiceOptions
      */
-    public function getShipmentServiceOptions() : ManifestShipmentServiceOptions
+    public function getShipmentServiceOptions(): ManifestShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
@@ -561,7 +561,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentServiceOptions(ManifestShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(ManifestShipmentServiceOptions $shipmentServiceOptions): self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -572,7 +572,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getManufactureCountry() : string
+    public function getManufactureCountry(): string
     {
         return $this->manufactureCountry;
     }
@@ -583,7 +583,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setManufactureCountry(string $manufactureCountry) : self
+    public function setManufactureCountry(string $manufactureCountry): self
     {
         $this->initialized['manufactureCountry'] = true;
         $this->manufactureCountry = $manufactureCountry;
@@ -594,7 +594,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getHarmonizedCode() : string
+    public function getHarmonizedCode(): string
     {
         return $this->harmonizedCode;
     }
@@ -605,7 +605,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setHarmonizedCode(string $harmonizedCode) : self
+    public function setHarmonizedCode(string $harmonizedCode): self
     {
         $this->initialized['harmonizedCode'] = true;
         $this->harmonizedCode = $harmonizedCode;
@@ -616,7 +616,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestCustomsValue
      */
-    public function getCustomsValue() : ManifestCustomsValue
+    public function getCustomsValue(): ManifestCustomsValue
     {
         return $this->customsValue;
     }
@@ -627,7 +627,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setCustomsValue(ManifestCustomsValue $customsValue) : self
+    public function setCustomsValue(ManifestCustomsValue $customsValue): self
     {
         $this->initialized['customsValue'] = true;
         $this->customsValue = $customsValue;
@@ -638,7 +638,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getSpecialInstructions() : string
+    public function getSpecialInstructions(): string
     {
         return $this->specialInstructions;
     }
@@ -649,7 +649,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setSpecialInstructions(string $specialInstructions) : self
+    public function setSpecialInstructions(string $specialInstructions): self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -670,7 +670,7 @@ class SubscriptionFileManifest extends \ArrayObject
     *
     * @return string
     */
-    public function getShipmentChargeType() : string
+    public function getShipmentChargeType(): string
     {
         return $this->shipmentChargeType;
     }
@@ -691,7 +691,7 @@ class SubscriptionFileManifest extends \ArrayObject
     *
     * @return self
     */
-    public function setShipmentChargeType(string $shipmentChargeType) : self
+    public function setShipmentChargeType(string $shipmentChargeType): self
     {
         $this->initialized['shipmentChargeType'] = true;
         $this->shipmentChargeType = $shipmentChargeType;
@@ -702,7 +702,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestBillToAccount
      */
-    public function getBillToAccount() : ManifestBillToAccount
+    public function getBillToAccount(): ManifestBillToAccount
     {
         return $this->billToAccount;
     }
@@ -713,7 +713,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setBillToAccount(ManifestBillToAccount $billToAccount) : self
+    public function setBillToAccount(ManifestBillToAccount $billToAccount): self
     {
         $this->initialized['billToAccount'] = true;
         $this->billToAccount = $billToAccount;
@@ -724,7 +724,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getConsigneeBillIndicator() : string
+    public function getConsigneeBillIndicator(): string
     {
         return $this->consigneeBillIndicator;
     }
@@ -735,7 +735,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setConsigneeBillIndicator(string $consigneeBillIndicator) : self
+    public function setConsigneeBillIndicator(string $consigneeBillIndicator): self
     {
         $this->initialized['consigneeBillIndicator'] = true;
         $this->consigneeBillIndicator = $consigneeBillIndicator;
@@ -746,7 +746,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getCollectBillIndicator() : string
+    public function getCollectBillIndicator(): string
     {
         return $this->collectBillIndicator;
     }
@@ -757,7 +757,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setCollectBillIndicator(string $collectBillIndicator) : self
+    public function setCollectBillIndicator(string $collectBillIndicator): self
     {
         $this->initialized['collectBillIndicator'] = true;
         $this->collectBillIndicator = $collectBillIndicator;
@@ -768,7 +768,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getLocationAssured() : string
+    public function getLocationAssured(): string
     {
         return $this->locationAssured;
     }
@@ -779,7 +779,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setLocationAssured(string $locationAssured) : self
+    public function setLocationAssured(string $locationAssured): self
     {
         $this->initialized['locationAssured'] = true;
         $this->locationAssured = $locationAssured;
@@ -790,7 +790,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getImportControl() : string
+    public function getImportControl(): string
     {
         return $this->importControl;
     }
@@ -801,7 +801,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setImportControl(string $importControl) : self
+    public function setImportControl(string $importControl): self
     {
         $this->initialized['importControl'] = true;
         $this->importControl = $importControl;
@@ -812,7 +812,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getLabelDeliveryMethod() : string
+    public function getLabelDeliveryMethod(): string
     {
         return $this->labelDeliveryMethod;
     }
@@ -823,7 +823,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelDeliveryMethod(string $labelDeliveryMethod) : self
+    public function setLabelDeliveryMethod(string $labelDeliveryMethod): self
     {
         $this->initialized['labelDeliveryMethod'] = true;
         $this->labelDeliveryMethod = $labelDeliveryMethod;
@@ -834,7 +834,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getCommercialInvoiceRemoval() : string
+    public function getCommercialInvoiceRemoval(): string
     {
         return $this->commercialInvoiceRemoval;
     }
@@ -845,7 +845,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setCommercialInvoiceRemoval(string $commercialInvoiceRemoval) : self
+    public function setCommercialInvoiceRemoval(string $commercialInvoiceRemoval): self
     {
         $this->initialized['commercialInvoiceRemoval'] = true;
         $this->commercialInvoiceRemoval = $commercialInvoiceRemoval;
@@ -856,7 +856,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalServiceTrackingID() : string
+    public function getPostalServiceTrackingID(): string
     {
         return $this->postalServiceTrackingID;
     }
@@ -867,7 +867,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalServiceTrackingID(string $postalServiceTrackingID) : self
+    public function setPostalServiceTrackingID(string $postalServiceTrackingID): self
     {
         $this->initialized['postalServiceTrackingID'] = true;
         $this->postalServiceTrackingID = $postalServiceTrackingID;
@@ -878,7 +878,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getReturnsFlexibleAccess() : string
+    public function getReturnsFlexibleAccess(): string
     {
         return $this->returnsFlexibleAccess;
     }
@@ -889,7 +889,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setReturnsFlexibleAccess(string $returnsFlexibleAccess) : self
+    public function setReturnsFlexibleAccess(string $returnsFlexibleAccess): self
     {
         $this->initialized['returnsFlexibleAccess'] = true;
         $this->returnsFlexibleAccess = $returnsFlexibleAccess;
@@ -900,7 +900,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getUPScarbonneutral() : string
+    public function getUPScarbonneutral(): string
     {
         return $this->uPScarbonneutral;
     }
@@ -911,7 +911,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setUPScarbonneutral(string $uPScarbonneutral) : self
+    public function setUPScarbonneutral(string $uPScarbonneutral): self
     {
         $this->initialized['uPScarbonneutral'] = true;
         $this->uPScarbonneutral = $uPScarbonneutral;
@@ -922,7 +922,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getProduct() : string
+    public function getProduct(): string
     {
         return $this->product;
     }
@@ -933,7 +933,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setProduct(string $product) : self
+    public function setProduct(string $product): self
     {
         $this->initialized['product'] = true;
         $this->product = $product;
@@ -944,7 +944,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getUPSReturnsExchange() : string
+    public function getUPSReturnsExchange(): string
     {
         return $this->uPSReturnsExchange;
     }
@@ -955,7 +955,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSReturnsExchange(string $uPSReturnsExchange) : self
+    public function setUPSReturnsExchange(string $uPSReturnsExchange): self
     {
         $this->initialized['uPSReturnsExchange'] = true;
         $this->uPSReturnsExchange = $uPSReturnsExchange;
@@ -966,7 +966,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getLiftGateOnDelivery() : string
+    public function getLiftGateOnDelivery(): string
     {
         return $this->liftGateOnDelivery;
     }
@@ -977,7 +977,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setLiftGateOnDelivery(string $liftGateOnDelivery) : self
+    public function setLiftGateOnDelivery(string $liftGateOnDelivery): self
     {
         $this->initialized['liftGateOnDelivery'] = true;
         $this->liftGateOnDelivery = $liftGateOnDelivery;
@@ -988,7 +988,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getLiftGateOnPickUp() : string
+    public function getLiftGateOnPickUp(): string
     {
         return $this->liftGateOnPickUp;
     }
@@ -999,7 +999,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setLiftGateOnPickUp(string $liftGateOnPickUp) : self
+    public function setLiftGateOnPickUp(string $liftGateOnPickUp): self
     {
         $this->initialized['liftGateOnPickUp'] = true;
         $this->liftGateOnPickUp = $liftGateOnPickUp;
@@ -1010,7 +1010,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupPreference() : string
+    public function getPickupPreference(): string
     {
         return $this->pickupPreference;
     }
@@ -1021,7 +1021,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupPreference(string $pickupPreference) : self
+    public function setPickupPreference(string $pickupPreference): self
     {
         $this->initialized['pickupPreference'] = true;
         $this->pickupPreference = $pickupPreference;
@@ -1032,7 +1032,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getDeliveryPreference() : string
+    public function getDeliveryPreference(): string
     {
         return $this->deliveryPreference;
     }
@@ -1043,7 +1043,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryPreference(string $deliveryPreference) : self
+    public function setDeliveryPreference(string $deliveryPreference): self
     {
         $this->initialized['deliveryPreference'] = true;
         $this->deliveryPreference = $deliveryPreference;
@@ -1054,7 +1054,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getHoldForPickupAtUPSAccessPoint() : string
+    public function getHoldForPickupAtUPSAccessPoint(): string
     {
         return $this->holdForPickupAtUPSAccessPoint;
     }
@@ -1065,7 +1065,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setHoldForPickupAtUPSAccessPoint(string $holdForPickupAtUPSAccessPoint) : self
+    public function setHoldForPickupAtUPSAccessPoint(string $holdForPickupAtUPSAccessPoint): self
     {
         $this->initialized['holdForPickupAtUPSAccessPoint'] = true;
         $this->holdForPickupAtUPSAccessPoint = $holdForPickupAtUPSAccessPoint;
@@ -1076,7 +1076,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return ManifestUAPAddress
      */
-    public function getUAPAddress() : ManifestUAPAddress
+    public function getUAPAddress(): ManifestUAPAddress
     {
         return $this->uAPAddress;
     }
@@ -1087,7 +1087,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setUAPAddress(ManifestUAPAddress $uAPAddress) : self
+    public function setUAPAddress(ManifestUAPAddress $uAPAddress): self
     {
         $this->initialized['uAPAddress'] = true;
         $this->uAPAddress = $uAPAddress;
@@ -1098,7 +1098,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getDeliverToAddresseeOnlyIndicator() : string
+    public function getDeliverToAddresseeOnlyIndicator(): string
     {
         return $this->deliverToAddresseeOnlyIndicator;
     }
@@ -1109,7 +1109,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliverToAddresseeOnlyIndicator(string $deliverToAddresseeOnlyIndicator) : self
+    public function setDeliverToAddresseeOnlyIndicator(string $deliverToAddresseeOnlyIndicator): self
     {
         $this->initialized['deliverToAddresseeOnlyIndicator'] = true;
         $this->deliverToAddresseeOnlyIndicator = $deliverToAddresseeOnlyIndicator;
@@ -1120,7 +1120,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getUPSAccessPointCODIndicator() : string
+    public function getUPSAccessPointCODIndicator(): string
     {
         return $this->uPSAccessPointCODIndicator;
     }
@@ -1131,7 +1131,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSAccessPointCODIndicator(string $uPSAccessPointCODIndicator) : self
+    public function setUPSAccessPointCODIndicator(string $uPSAccessPointCODIndicator): self
     {
         $this->initialized['uPSAccessPointCODIndicator'] = true;
         $this->uPSAccessPointCODIndicator = $uPSAccessPointCODIndicator;
@@ -1142,7 +1142,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getClinicalTrialIndicator() : string
+    public function getClinicalTrialIndicator(): string
     {
         return $this->clinicalTrialIndicator;
     }
@@ -1153,7 +1153,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setClinicalTrialIndicator(string $clinicalTrialIndicator) : self
+    public function setClinicalTrialIndicator(string $clinicalTrialIndicator): self
     {
         $this->initialized['clinicalTrialIndicator'] = true;
         $this->clinicalTrialIndicator = $clinicalTrialIndicator;
@@ -1164,7 +1164,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getClinicalTrialIndicationNumber() : string
+    public function getClinicalTrialIndicationNumber(): string
     {
         return $this->clinicalTrialIndicationNumber;
     }
@@ -1175,7 +1175,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setClinicalTrialIndicationNumber(string $clinicalTrialIndicationNumber) : self
+    public function setClinicalTrialIndicationNumber(string $clinicalTrialIndicationNumber): self
     {
         $this->initialized['clinicalTrialIndicationNumber'] = true;
         $this->clinicalTrialIndicationNumber = $clinicalTrialIndicationNumber;
@@ -1186,7 +1186,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getCategoryAHazardousIndicator() : string
+    public function getCategoryAHazardousIndicator(): string
     {
         return $this->categoryAHazardousIndicator;
     }
@@ -1197,7 +1197,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setCategoryAHazardousIndicator(string $categoryAHazardousIndicator) : self
+    public function setCategoryAHazardousIndicator(string $categoryAHazardousIndicator): self
     {
         $this->initialized['categoryAHazardousIndicator'] = true;
         $this->categoryAHazardousIndicator = $categoryAHazardousIndicator;
@@ -1208,7 +1208,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getDirectDeliveryIndicator() : string
+    public function getDirectDeliveryIndicator(): string
     {
         return $this->directDeliveryIndicator;
     }
@@ -1219,7 +1219,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setDirectDeliveryIndicator(string $directDeliveryIndicator) : self
+    public function setDirectDeliveryIndicator(string $directDeliveryIndicator): self
     {
         $this->initialized['directDeliveryIndicator'] = true;
         $this->directDeliveryIndicator = $directDeliveryIndicator;
@@ -1230,7 +1230,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getPackageReleaseCodeIndicator() : string
+    public function getPackageReleaseCodeIndicator(): string
     {
         return $this->packageReleaseCodeIndicator;
     }
@@ -1241,7 +1241,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageReleaseCodeIndicator(string $packageReleaseCodeIndicator) : self
+    public function setPackageReleaseCodeIndicator(string $packageReleaseCodeIndicator): self
     {
         $this->initialized['packageReleaseCodeIndicator'] = true;
         $this->packageReleaseCodeIndicator = $packageReleaseCodeIndicator;
@@ -1252,7 +1252,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getProactiveResponseIndicator() : string
+    public function getProactiveResponseIndicator(): string
     {
         return $this->proactiveResponseIndicator;
     }
@@ -1263,7 +1263,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setProactiveResponseIndicator(string $proactiveResponseIndicator) : self
+    public function setProactiveResponseIndicator(string $proactiveResponseIndicator): self
     {
         $this->initialized['proactiveResponseIndicator'] = true;
         $this->proactiveResponseIndicator = $proactiveResponseIndicator;
@@ -1274,7 +1274,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getWhiteGloveDeliveryIndicator() : string
+    public function getWhiteGloveDeliveryIndicator(): string
     {
         return $this->whiteGloveDeliveryIndicator;
     }
@@ -1285,7 +1285,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setWhiteGloveDeliveryIndicator(string $whiteGloveDeliveryIndicator) : self
+    public function setWhiteGloveDeliveryIndicator(string $whiteGloveDeliveryIndicator): self
     {
         $this->initialized['whiteGloveDeliveryIndicator'] = true;
         $this->whiteGloveDeliveryIndicator = $whiteGloveDeliveryIndicator;
@@ -1296,7 +1296,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getRoomOfChoiceIndicator() : string
+    public function getRoomOfChoiceIndicator(): string
     {
         return $this->roomOfChoiceIndicator;
     }
@@ -1307,7 +1307,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setRoomOfChoiceIndicator(string $roomOfChoiceIndicator) : self
+    public function setRoomOfChoiceIndicator(string $roomOfChoiceIndicator): self
     {
         $this->initialized['roomOfChoiceIndicator'] = true;
         $this->roomOfChoiceIndicator = $roomOfChoiceIndicator;
@@ -1318,7 +1318,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getInstallationDeliveryIndicator() : string
+    public function getInstallationDeliveryIndicator(): string
     {
         return $this->installationDeliveryIndicator;
     }
@@ -1329,7 +1329,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setInstallationDeliveryIndicator(string $installationDeliveryIndicator) : self
+    public function setInstallationDeliveryIndicator(string $installationDeliveryIndicator): self
     {
         $this->initialized['installationDeliveryIndicator'] = true;
         $this->installationDeliveryIndicator = $installationDeliveryIndicator;
@@ -1340,7 +1340,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getItemDisposalIndicator() : string
+    public function getItemDisposalIndicator(): string
     {
         return $this->itemDisposalIndicator;
     }
@@ -1351,7 +1351,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setItemDisposalIndicator(string $itemDisposalIndicator) : self
+    public function setItemDisposalIndicator(string $itemDisposalIndicator): self
     {
         $this->initialized['itemDisposalIndicator'] = true;
         $this->itemDisposalIndicator = $itemDisposalIndicator;
@@ -1362,7 +1362,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getLeadShipmentTrackingNumber() : string
+    public function getLeadShipmentTrackingNumber(): string
     {
         return $this->leadShipmentTrackingNumber;
     }
@@ -1373,7 +1373,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setLeadShipmentTrackingNumber(string $leadShipmentTrackingNumber) : self
+    public function setLeadShipmentTrackingNumber(string $leadShipmentTrackingNumber): self
     {
         $this->initialized['leadShipmentTrackingNumber'] = true;
         $this->leadShipmentTrackingNumber = $leadShipmentTrackingNumber;
@@ -1384,7 +1384,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getSaturdayNonPremiumCommercialDeliveryIndicator() : string
+    public function getSaturdayNonPremiumCommercialDeliveryIndicator(): string
     {
         return $this->saturdayNonPremiumCommercialDeliveryIndicator;
     }
@@ -1395,7 +1395,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setSaturdayNonPremiumCommercialDeliveryIndicator(string $saturdayNonPremiumCommercialDeliveryIndicator) : self
+    public function setSaturdayNonPremiumCommercialDeliveryIndicator(string $saturdayNonPremiumCommercialDeliveryIndicator): self
     {
         $this->initialized['saturdayNonPremiumCommercialDeliveryIndicator'] = true;
         $this->saturdayNonPremiumCommercialDeliveryIndicator = $saturdayNonPremiumCommercialDeliveryIndicator;
@@ -1406,7 +1406,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getSundayNonPremiumCommercialDeliveryIndicator() : string
+    public function getSundayNonPremiumCommercialDeliveryIndicator(): string
     {
         return $this->sundayNonPremiumCommercialDeliveryIndicator;
     }
@@ -1417,7 +1417,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setSundayNonPremiumCommercialDeliveryIndicator(string $sundayNonPremiumCommercialDeliveryIndicator) : self
+    public function setSundayNonPremiumCommercialDeliveryIndicator(string $sundayNonPremiumCommercialDeliveryIndicator): self
     {
         $this->initialized['sundayNonPremiumCommercialDeliveryIndicator'] = true;
         $this->sundayNonPremiumCommercialDeliveryIndicator = $sundayNonPremiumCommercialDeliveryIndicator;
@@ -1428,7 +1428,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return string
      */
-    public function getUPSPremierAccessorialIndicator() : string
+    public function getUPSPremierAccessorialIndicator(): string
     {
         return $this->uPSPremierAccessorialIndicator;
     }
@@ -1439,7 +1439,7 @@ class SubscriptionFileManifest extends \ArrayObject
      *
      * @return self
      */
-    public function setUPSPremierAccessorialIndicator(string $uPSPremierAccessorialIndicator) : self
+    public function setUPSPremierAccessorialIndicator(string $uPSPremierAccessorialIndicator): self
     {
         $this->initialized['uPSPremierAccessorialIndicator'] = true;
         $this->uPSPremierAccessorialIndicator = $uPSPremierAccessorialIndicator;
@@ -1454,7 +1454,7 @@ class SubscriptionFileManifest extends \ArrayObject
     *
     * @return string
     */
-    public function getUPSPremierCategoryCode() : string
+    public function getUPSPremierCategoryCode(): string
     {
         return $this->uPSPremierCategoryCode;
     }
@@ -1469,7 +1469,7 @@ class SubscriptionFileManifest extends \ArrayObject
     *
     * @return self
     */
-    public function setUPSPremierCategoryCode(string $uPSPremierCategoryCode) : self
+    public function setUPSPremierCategoryCode(string $uPSPremierCategoryCode): self
     {
         $this->initialized['uPSPremierCategoryCode'] = true;
         $this->uPSPremierCategoryCode = $uPSPremierCategoryCode;

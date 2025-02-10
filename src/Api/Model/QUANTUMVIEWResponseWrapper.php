@@ -8,7 +8,7 @@ class QUANTUMVIEWResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class QUANTUMVIEWResponseWrapper extends \ArrayObject
      *
      * @return QuantumViewResponse
      */
-    public function getQuantumViewResponse() : QuantumViewResponse
+    public function getQuantumViewResponse(): QuantumViewResponse
     {
         return $this->quantumViewResponse;
     }
@@ -34,7 +34,7 @@ class QUANTUMVIEWResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantumViewResponse(QuantumViewResponse $quantumViewResponse) : self
+    public function setQuantumViewResponse(QuantumViewResponse $quantumViewResponse): self
     {
         $this->initialized['quantumViewResponse'] = true;
         $this->quantumViewResponse = $quantumViewResponse;

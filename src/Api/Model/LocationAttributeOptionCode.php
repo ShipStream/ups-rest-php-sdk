@@ -8,7 +8,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -56,7 +56,7 @@ class LocationAttributeOptionCode extends \ArrayObject
     *
     * @return string
     */
-    public function getCategory() : string
+    public function getCategory(): string
     {
         return $this->category;
     }
@@ -70,7 +70,7 @@ class LocationAttributeOptionCode extends \ArrayObject
     *
     * @return self
     */
-    public function setCategory(string $category) : self
+    public function setCategory(string $category): self
     {
         $this->initialized['category'] = true;
         $this->category = $category;
@@ -81,7 +81,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -92,7 +92,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -106,7 +106,7 @@ class LocationAttributeOptionCode extends \ArrayObject
     *
     * @return string
     */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -120,7 +120,7 @@ class LocationAttributeOptionCode extends \ArrayObject
     *
     * @return self
     */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -131,7 +131,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -142,7 +142,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -153,7 +153,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      *
      * @return OptionCodeTransportationPickUpSchedule
      */
-    public function getTransportationPickUpSchedule() : OptionCodeTransportationPickUpSchedule
+    public function getTransportationPickUpSchedule(): OptionCodeTransportationPickUpSchedule
     {
         return $this->transportationPickUpSchedule;
     }
@@ -164,7 +164,7 @@ class LocationAttributeOptionCode extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportationPickUpSchedule(OptionCodeTransportationPickUpSchedule $transportationPickUpSchedule) : self
+    public function setTransportationPickUpSchedule(OptionCodeTransportationPickUpSchedule $transportationPickUpSchedule): self
     {
         $this->initialized['transportationPickUpSchedule'] = true;
         $this->transportationPickUpSchedule = $transportationPickUpSchedule;

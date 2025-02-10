@@ -8,7 +8,7 @@ class FreightPickupResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightPickupResponse extends \ArrayObject
      *
      * @return FreightPickupResponseResponse
      */
-    public function getResponse() : FreightPickupResponseResponse
+    public function getResponse(): FreightPickupResponseResponse
     {
         return $this->response;
     }
@@ -40,7 +40,7 @@ class FreightPickupResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(FreightPickupResponseResponse $response) : self
+    public function setResponse(FreightPickupResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -51,7 +51,7 @@ class FreightPickupResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber(): string
     {
         return $this->pickupRequestConfirmationNumber;
     }
@@ -62,7 +62,7 @@ class FreightPickupResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber): self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;

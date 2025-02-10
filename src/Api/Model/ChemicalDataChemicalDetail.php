@@ -8,7 +8,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -147,7 +147,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet(): string
     {
         return $this->regulationSet;
     }
@@ -162,7 +162,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(string $regulationSet): self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -173,7 +173,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getIDNumber() : string
+    public function getIDNumber(): string
     {
         return $this->iDNumber;
     }
@@ -184,7 +184,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setIDNumber(string $iDNumber) : self
+    public function setIDNumber(string $iDNumber): self
     {
         $this->initialized['iDNumber'] = true;
         $this->iDNumber = $iDNumber;
@@ -195,7 +195,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getHazardousMaterialsDescription() : string
+    public function getHazardousMaterialsDescription(): string
     {
         return $this->hazardousMaterialsDescription;
     }
@@ -206,7 +206,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setHazardousMaterialsDescription(string $hazardousMaterialsDescription) : self
+    public function setHazardousMaterialsDescription(string $hazardousMaterialsDescription): self
     {
         $this->initialized['hazardousMaterialsDescription'] = true;
         $this->hazardousMaterialsDescription = $hazardousMaterialsDescription;
@@ -217,7 +217,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getClassDivisionNumber() : string
+    public function getClassDivisionNumber(): string
     {
         return $this->classDivisionNumber;
     }
@@ -228,7 +228,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setClassDivisionNumber(string $classDivisionNumber) : self
+    public function setClassDivisionNumber(string $classDivisionNumber): self
     {
         $this->initialized['classDivisionNumber'] = true;
         $this->classDivisionNumber = $classDivisionNumber;
@@ -239,7 +239,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getSubRiskClass() : string
+    public function getSubRiskClass(): string
     {
         return $this->subRiskClass;
     }
@@ -250,7 +250,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setSubRiskClass(string $subRiskClass) : self
+    public function setSubRiskClass(string $subRiskClass): self
     {
         $this->initialized['subRiskClass'] = true;
         $this->subRiskClass = $subRiskClass;
@@ -261,7 +261,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingGroupType() : string
+    public function getPackagingGroupType(): string
     {
         return $this->packagingGroupType;
     }
@@ -272,7 +272,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingGroupType(string $packagingGroupType) : self
+    public function setPackagingGroupType(string $packagingGroupType): self
     {
         $this->initialized['packagingGroupType'] = true;
         $this->packagingGroupType = $packagingGroupType;
@@ -288,7 +288,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getSpecialPermit() : string
+    public function getSpecialPermit(): string
     {
         return $this->specialPermit;
     }
@@ -304,7 +304,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setSpecialPermit(string $specialPermit) : self
+    public function setSpecialPermit(string $specialPermit): self
     {
         $this->initialized['specialPermit'] = true;
         $this->specialPermit = $specialPermit;
@@ -318,7 +318,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getTechnicalNameRequiredIndicator() : string
+    public function getTechnicalNameRequiredIndicator(): string
     {
         return $this->technicalNameRequiredIndicator;
     }
@@ -332,7 +332,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setTechnicalNameRequiredIndicator(string $technicalNameRequiredIndicator) : self
+    public function setTechnicalNameRequiredIndicator(string $technicalNameRequiredIndicator): self
     {
         $this->initialized['technicalNameRequiredIndicator'] = true;
         $this->technicalNameRequiredIndicator = $technicalNameRequiredIndicator;
@@ -347,7 +347,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getAdditionalShippingInformationRequiredIndicator() : string
+    public function getAdditionalShippingInformationRequiredIndicator(): string
     {
         return $this->additionalShippingInformationRequiredIndicator;
     }
@@ -362,7 +362,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setAdditionalShippingInformationRequiredIndicator(string $additionalShippingInformationRequiredIndicator) : self
+    public function setAdditionalShippingInformationRequiredIndicator(string $additionalShippingInformationRequiredIndicator): self
     {
         $this->initialized['additionalShippingInformationRequiredIndicator'] = true;
         $this->additionalShippingInformationRequiredIndicator = $additionalShippingInformationRequiredIndicator;
@@ -374,7 +374,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getTunnelRestrictionCode() : string
+    public function getTunnelRestrictionCode(): string
     {
         return $this->tunnelRestrictionCode;
     }
@@ -386,7 +386,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setTunnelRestrictionCode(string $tunnelRestrictionCode) : self
+    public function setTunnelRestrictionCode(string $tunnelRestrictionCode): self
     {
         $this->initialized['tunnelRestrictionCode'] = true;
         $this->tunnelRestrictionCode = $tunnelRestrictionCode;
@@ -402,7 +402,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getTransportCategory() : string
+    public function getTransportCategory(): string
     {
         return $this->transportCategory;
     }
@@ -418,7 +418,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setTransportCategory(string $transportCategory) : self
+    public function setTransportCategory(string $transportCategory): self
     {
         $this->initialized['transportCategory'] = true;
         $this->transportCategory = $transportCategory;
@@ -434,7 +434,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getTransportMultiplierQuantity() : string
+    public function getTransportMultiplierQuantity(): string
     {
         return $this->transportMultiplierQuantity;
     }
@@ -450,7 +450,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setTransportMultiplierQuantity(string $transportMultiplierQuantity) : self
+    public function setTransportMultiplierQuantity(string $transportMultiplierQuantity): self
     {
         $this->initialized['transportMultiplierQuantity'] = true;
         $this->transportMultiplierQuantity = $transportMultiplierQuantity;
@@ -462,7 +462,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getChannelTunnelAcceptedIndicator() : string
+    public function getChannelTunnelAcceptedIndicator(): string
     {
         return $this->channelTunnelAcceptedIndicator;
     }
@@ -474,7 +474,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setChannelTunnelAcceptedIndicator(string $channelTunnelAcceptedIndicator) : self
+    public function setChannelTunnelAcceptedIndicator(string $channelTunnelAcceptedIndicator): self
     {
         $this->initialized['channelTunnelAcceptedIndicator'] = true;
         $this->channelTunnelAcceptedIndicator = $channelTunnelAcceptedIndicator;
@@ -491,7 +491,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getChemicalType() : string
+    public function getChemicalType(): string
     {
         return $this->chemicalType;
     }
@@ -508,7 +508,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setChemicalType(string $chemicalType) : self
+    public function setChemicalType(string $chemicalType): self
     {
         $this->initialized['chemicalType'] = true;
         $this->chemicalType = $chemicalType;
@@ -521,7 +521,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return string
     */
-    public function getCAToUSShipmentAllowedIndicator() : string
+    public function getCAToUSShipmentAllowedIndicator(): string
     {
         return $this->cAToUSShipmentAllowedIndicator;
     }
@@ -534,7 +534,7 @@ class ChemicalDataChemicalDetail extends \ArrayObject
     *
     * @return self
     */
-    public function setCAToUSShipmentAllowedIndicator(string $cAToUSShipmentAllowedIndicator) : self
+    public function setCAToUSShipmentAllowedIndicator(string $cAToUSShipmentAllowedIndicator): self
     {
         $this->initialized['cAToUSShipmentAllowedIndicator'] = true;
         $this->cAToUSShipmentAllowedIndicator = $cAToUSShipmentAllowedIndicator;

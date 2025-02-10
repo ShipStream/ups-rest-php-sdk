@@ -8,7 +8,7 @@ class PackageReferenceNumber extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class PackageReferenceNumber extends \ArrayObject
     *
     * @return string
     */
-    public function getBarCodeIndicator() : string
+    public function getBarCodeIndicator(): string
     {
         return $this->barCodeIndicator;
     }
@@ -63,7 +63,7 @@ class PackageReferenceNumber extends \ArrayObject
     *
     * @return self
     */
-    public function setBarCodeIndicator(string $barCodeIndicator) : self
+    public function setBarCodeIndicator(string $barCodeIndicator): self
     {
         $this->initialized['barCodeIndicator'] = true;
         $this->barCodeIndicator = $barCodeIndicator;
@@ -76,7 +76,7 @@ class PackageReferenceNumber extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -89,7 +89,7 @@ class PackageReferenceNumber extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -100,7 +100,7 @@ class PackageReferenceNumber extends \ArrayObject
      *
      * @return string
      */
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -111,7 +111,7 @@ class PackageReferenceNumber extends \ArrayObject
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(string $value): self
     {
         $this->initialized['value'] = true;
         $this->value = $value;

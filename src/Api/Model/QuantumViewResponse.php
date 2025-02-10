@@ -8,7 +8,7 @@ class QuantumViewResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class QuantumViewResponse extends \ArrayObject
      *
      * @return QuantumViewResponseResponse
      */
-    public function getResponse() : QuantumViewResponseResponse
+    public function getResponse(): QuantumViewResponseResponse
     {
         return $this->response;
     }
@@ -46,7 +46,7 @@ class QuantumViewResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(QuantumViewResponseResponse $response) : self
+    public function setResponse(QuantumViewResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -57,7 +57,7 @@ class QuantumViewResponse extends \ArrayObject
      *
      * @return QuantumViewResponseQuantumViewEvents
      */
-    public function getQuantumViewEvents() : QuantumViewResponseQuantumViewEvents
+    public function getQuantumViewEvents(): QuantumViewResponseQuantumViewEvents
     {
         return $this->quantumViewEvents;
     }
@@ -68,7 +68,7 @@ class QuantumViewResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantumViewEvents(QuantumViewResponseQuantumViewEvents $quantumViewEvents) : self
+    public function setQuantumViewEvents(QuantumViewResponseQuantumViewEvents $quantumViewEvents): self
     {
         $this->initialized['quantumViewEvents'] = true;
         $this->quantumViewEvents = $quantumViewEvents;
@@ -79,7 +79,7 @@ class QuantumViewResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getBookmark() : string
+    public function getBookmark(): string
     {
         return $this->bookmark;
     }
@@ -90,7 +90,7 @@ class QuantumViewResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setBookmark(string $bookmark) : self
+    public function setBookmark(string $bookmark): self
     {
         $this->initialized['bookmark'] = true;
         $this->bookmark = $bookmark;

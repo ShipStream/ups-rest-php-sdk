@@ -8,7 +8,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return DeliveryLocationAddressArtifactFormat
      */
-    public function getAddressArtifactFormat() : DeliveryLocationAddressArtifactFormat
+    public function getAddressArtifactFormat(): DeliveryLocationAddressArtifactFormat
     {
         return $this->addressArtifactFormat;
     }
@@ -52,7 +52,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressArtifactFormat(DeliveryLocationAddressArtifactFormat $addressArtifactFormat) : self
+    public function setAddressArtifactFormat(DeliveryLocationAddressArtifactFormat $addressArtifactFormat): self
     {
         $this->initialized['addressArtifactFormat'] = true;
         $this->addressArtifactFormat = $addressArtifactFormat;
@@ -63,7 +63,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -74,7 +74,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -85,7 +85,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -96,7 +96,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -107,7 +107,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getSignedForByName() : string
+    public function getSignedForByName(): string
     {
         return $this->signedForByName;
     }
@@ -118,7 +118,7 @@ class DeliveryDeliveryLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setSignedForByName(string $signedForByName) : self
+    public function setSignedForByName(string $signedForByName): self
     {
         $this->initialized['signedForByName'] = true;
         $this->signedForByName = $signedForByName;

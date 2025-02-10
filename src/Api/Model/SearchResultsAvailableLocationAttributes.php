@@ -8,7 +8,7 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
      *
      * @return AvailableLocationAttributesOptionType
      */
-    public function getOptionType() : AvailableLocationAttributesOptionType
+    public function getOptionType(): AvailableLocationAttributesOptionType
     {
         return $this->optionType;
     }
@@ -40,7 +40,7 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
      *
      * @return self
      */
-    public function setOptionType(AvailableLocationAttributesOptionType $optionType) : self
+    public function setOptionType(AvailableLocationAttributesOptionType $optionType): self
     {
         $this->initialized['optionType'] = true;
         $this->optionType = $optionType;
@@ -51,7 +51,7 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
      *
      * @return AvailableLocationAttributesOptionCode
      */
-    public function getOptionCode() : AvailableLocationAttributesOptionCode
+    public function getOptionCode(): AvailableLocationAttributesOptionCode
     {
         return $this->optionCode;
     }
@@ -62,7 +62,7 @@ class SearchResultsAvailableLocationAttributes extends \ArrayObject
      *
      * @return self
      */
-    public function setOptionCode(AvailableLocationAttributesOptionCode $optionCode) : self
+    public function setOptionCode(AvailableLocationAttributesOptionCode $optionCode): self
     {
         $this->initialized['optionCode'] = true;
         $this->optionCode = $optionCode;

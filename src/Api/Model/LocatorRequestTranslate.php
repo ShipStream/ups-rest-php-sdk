@@ -8,7 +8,7 @@ class LocatorRequestTranslate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,7 +27,7 @@ class LocatorRequestTranslate extends \ArrayObject
     *
     * @return string
     */
-    public function getLocale() : string
+    public function getLocale(): string
     {
         return $this->locale;
     }
@@ -40,7 +40,7 @@ class LocatorRequestTranslate extends \ArrayObject
     *
     * @return self
     */
-    public function setLocale(string $locale) : self
+    public function setLocale(string $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;

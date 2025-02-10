@@ -8,7 +8,7 @@ class FreightPickupRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -143,7 +143,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return FreightPickupRequestRequest
      */
-    public function getRequest() : FreightPickupRequestRequest
+    public function getRequest(): FreightPickupRequestRequest
     {
         return $this->request;
     }
@@ -154,7 +154,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(FreightPickupRequestRequest $request) : self
+    public function setRequest(FreightPickupRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -166,7 +166,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupRequestConfirmationNumber() : string
+    public function getPickupRequestConfirmationNumber(): string
     {
         return $this->pickupRequestConfirmationNumber;
     }
@@ -178,7 +178,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber) : self
+    public function setPickupRequestConfirmationNumber(string $pickupRequestConfirmationNumber): self
     {
         $this->initialized['pickupRequestConfirmationNumber'] = true;
         $this->pickupRequestConfirmationNumber = $pickupRequestConfirmationNumber;
@@ -189,7 +189,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode(): string
     {
         return $this->destinationPostalCode;
     }
@@ -200,7 +200,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(string $destinationPostalCode): self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -211,7 +211,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode(): string
     {
         return $this->destinationCountryCode;
     }
@@ -222,7 +222,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(string $destinationCountryCode): self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -233,7 +233,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return FreightPickupRequestRequester
      */
-    public function getRequester() : FreightPickupRequestRequester
+    public function getRequester(): FreightPickupRequestRequester
     {
         return $this->requester;
     }
@@ -244,7 +244,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequester(FreightPickupRequestRequester $requester) : self
+    public function setRequester(FreightPickupRequestRequester $requester): self
     {
         $this->initialized['requester'] = true;
         $this->requester = $requester;
@@ -255,7 +255,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return FreightPickupRequestShipFrom
      */
-    public function getShipFrom() : FreightPickupRequestShipFrom
+    public function getShipFrom(): FreightPickupRequestShipFrom
     {
         return $this->shipFrom;
     }
@@ -266,7 +266,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipFrom(FreightPickupRequestShipFrom $shipFrom) : self
+    public function setShipFrom(FreightPickupRequestShipFrom $shipFrom): self
     {
         $this->initialized['shipFrom'] = true;
         $this->shipFrom = $shipFrom;
@@ -277,7 +277,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return FreightPickupRequestShipTo
      */
-    public function getShipTo() : FreightPickupRequestShipTo
+    public function getShipTo(): FreightPickupRequestShipTo
     {
         return $this->shipTo;
     }
@@ -288,7 +288,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipTo(FreightPickupRequestShipTo $shipTo) : self
+    public function setShipTo(FreightPickupRequestShipTo $shipTo): self
     {
         $this->initialized['shipTo'] = true;
         $this->shipTo = $shipTo;
@@ -300,7 +300,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -312,7 +312,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -327,7 +327,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getEarliestTimeReady() : string
+    public function getEarliestTimeReady(): string
     {
         return $this->earliestTimeReady;
     }
@@ -342,7 +342,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setEarliestTimeReady(string $earliestTimeReady) : self
+    public function setEarliestTimeReady(string $earliestTimeReady): self
     {
         $this->initialized['earliestTimeReady'] = true;
         $this->earliestTimeReady = $earliestTimeReady;
@@ -357,7 +357,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getLatestTimeReady() : string
+    public function getLatestTimeReady(): string
     {
         return $this->latestTimeReady;
     }
@@ -372,7 +372,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setLatestTimeReady(string $latestTimeReady) : self
+    public function setLatestTimeReady(string $latestTimeReady): self
     {
         $this->initialized['latestTimeReady'] = true;
         $this->latestTimeReady = $latestTimeReady;
@@ -383,7 +383,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return FreightPickupRequestShipmentServiceOptions
      */
-    public function getShipmentServiceOptions() : FreightPickupRequestShipmentServiceOptions
+    public function getShipmentServiceOptions(): FreightPickupRequestShipmentServiceOptions
     {
         return $this->shipmentServiceOptions;
     }
@@ -394,7 +394,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentServiceOptions(FreightPickupRequestShipmentServiceOptions $shipmentServiceOptions) : self
+    public function setShipmentServiceOptions(FreightPickupRequestShipmentServiceOptions $shipmentServiceOptions): self
     {
         $this->initialized['shipmentServiceOptions'] = true;
         $this->shipmentServiceOptions = $shipmentServiceOptions;
@@ -405,7 +405,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return list<FreightPickupRequestShipmentDetail>
      */
-    public function getShipmentDetail() : array
+    public function getShipmentDetail(): array
     {
         return $this->shipmentDetail;
     }
@@ -416,7 +416,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentDetail(array $shipmentDetail) : self
+    public function setShipmentDetail(array $shipmentDetail): self
     {
         $this->initialized['shipmentDetail'] = true;
         $this->shipmentDetail = $shipmentDetail;
@@ -428,7 +428,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return FreightPickupRequestExistingShipmentID
     */
-    public function getExistingShipmentID() : FreightPickupRequestExistingShipmentID
+    public function getExistingShipmentID(): FreightPickupRequestExistingShipmentID
     {
         return $this->existingShipmentID;
     }
@@ -440,7 +440,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setExistingShipmentID(FreightPickupRequestExistingShipmentID $existingShipmentID) : self
+    public function setExistingShipmentID(FreightPickupRequestExistingShipmentID $existingShipmentID): self
     {
         $this->initialized['existingShipmentID'] = true;
         $this->existingShipmentID = $existingShipmentID;
@@ -451,7 +451,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return FreightPickupRequestPOM
      */
-    public function getPOM() : FreightPickupRequestPOM
+    public function getPOM(): FreightPickupRequestPOM
     {
         return $this->pOM;
     }
@@ -462,7 +462,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPOM(FreightPickupRequestPOM $pOM) : self
+    public function setPOM(FreightPickupRequestPOM $pOM): self
     {
         $this->initialized['pOM'] = true;
         $this->pOM = $pOM;
@@ -473,7 +473,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupInstructions() : string
+    public function getPickupInstructions(): string
     {
         return $this->pickupInstructions;
     }
@@ -484,7 +484,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupInstructions(string $pickupInstructions) : self
+    public function setPickupInstructions(string $pickupInstructions): self
     {
         $this->initialized['pickupInstructions'] = true;
         $this->pickupInstructions = $pickupInstructions;
@@ -496,7 +496,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getAdditionalComments() : string
+    public function getAdditionalComments(): string
     {
         return $this->additionalComments;
     }
@@ -508,7 +508,7 @@ class FreightPickupRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setAdditionalComments(string $additionalComments) : self
+    public function setAdditionalComments(string $additionalComments): self
     {
         $this->initialized['additionalComments'] = true;
         $this->additionalComments = $additionalComments;
@@ -519,7 +519,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getHandlingInstructions() : string
+    public function getHandlingInstructions(): string
     {
         return $this->handlingInstructions;
     }
@@ -530,7 +530,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setHandlingInstructions(string $handlingInstructions) : self
+    public function setHandlingInstructions(string $handlingInstructions): self
     {
         $this->initialized['handlingInstructions'] = true;
         $this->handlingInstructions = $handlingInstructions;
@@ -541,7 +541,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getSpecialInstructions() : string
+    public function getSpecialInstructions(): string
     {
         return $this->specialInstructions;
     }
@@ -552,7 +552,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setSpecialInstructions(string $specialInstructions) : self
+    public function setSpecialInstructions(string $specialInstructions): self
     {
         $this->initialized['specialInstructions'] = true;
         $this->specialInstructions = $specialInstructions;
@@ -563,7 +563,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getDeliveryInstructions() : string
+    public function getDeliveryInstructions(): string
     {
         return $this->deliveryInstructions;
     }
@@ -574,7 +574,7 @@ class FreightPickupRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setDeliveryInstructions(string $deliveryInstructions) : self
+    public function setDeliveryInstructions(string $deliveryInstructions): self
     {
         $this->initialized['deliveryInstructions'] = true;
         $this->deliveryInstructions = $deliveryInstructions;

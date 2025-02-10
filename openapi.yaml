@@ -9011,6 +9011,7 @@ components:
           minLength: 1
           type: string
           description: 'City or Town name.'
+          nullable: true
         PoliticalDivision1:
           maximum: 1
           maxLength: 30
@@ -9029,6 +9030,7 @@ components:
           minLength: 1
           type: string
           description: '4 digit Postal Code extension. For US use only.'
+          nullable: true
         Urbanization:
           maximum: 1
           maxLength: 30
@@ -31717,6 +31719,7 @@ components:
         description:
           type: string
           description: 'The current status description. Note that this field will be translated based on the locale provided in the request.'
+          nullable: true
           example: 'Your package was released by the customs agency.'
         simplifiedTextDescription:
           type: string

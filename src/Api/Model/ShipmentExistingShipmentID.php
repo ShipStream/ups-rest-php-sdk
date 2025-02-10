@@ -8,7 +8,7 @@ class ShipmentExistingShipmentID extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -30,7 +30,7 @@ class ShipmentExistingShipmentID extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentNumber() : string
+    public function getShipmentNumber(): string
     {
         return $this->shipmentNumber;
     }
@@ -41,7 +41,7 @@ class ShipmentExistingShipmentID extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentNumber(string $shipmentNumber) : self
+    public function setShipmentNumber(string $shipmentNumber): self
     {
         $this->initialized['shipmentNumber'] = true;
         $this->shipmentNumber = $shipmentNumber;
@@ -53,7 +53,7 @@ class ShipmentExistingShipmentID extends \ArrayObject
     *
     * @return ExistingShipmentIDConfirmationNumber
     */
-    public function getConfirmationNumber() : ExistingShipmentIDConfirmationNumber
+    public function getConfirmationNumber(): ExistingShipmentIDConfirmationNumber
     {
         return $this->confirmationNumber;
     }
@@ -65,7 +65,7 @@ class ShipmentExistingShipmentID extends \ArrayObject
     *
     * @return self
     */
-    public function setConfirmationNumber(ExistingShipmentIDConfirmationNumber $confirmationNumber) : self
+    public function setConfirmationNumber(ExistingShipmentIDConfirmationNumber $confirmationNumber): self
     {
         $this->initialized['confirmationNumber'] = true;
         $this->confirmationNumber = $confirmationNumber;

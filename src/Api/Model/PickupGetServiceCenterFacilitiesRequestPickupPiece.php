@@ -8,7 +8,7 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -32,7 +32,7 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     *
     * @return string
     */
-    public function getServiceCode() : string
+    public function getServiceCode(): string
     {
         return $this->serviceCode;
     }
@@ -44,7 +44,7 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     *
     * @return self
     */
-    public function setServiceCode(string $serviceCode) : self
+    public function setServiceCode(string $serviceCode): self
     {
         $this->initialized['serviceCode'] = true;
         $this->serviceCode = $serviceCode;
@@ -56,7 +56,7 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     *
     * @return string
     */
-    public function getContainerCode() : string
+    public function getContainerCode(): string
     {
         return $this->containerCode;
     }
@@ -68,7 +68,7 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
     *
     * @return self
     */
-    public function setContainerCode(string $containerCode) : self
+    public function setContainerCode(string $containerCode): self
     {
         $this->initialized['containerCode'] = true;
         $this->containerCode = $containerCode;

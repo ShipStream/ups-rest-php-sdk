@@ -8,7 +8,7 @@ class ResponseShipmentItems extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -65,7 +65,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityID() : string
+    public function getCommodityID(): string
     {
         return $this->commodityID;
     }
@@ -76,7 +76,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(string $commodityID): self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -87,7 +87,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getHsCode() : string
+    public function getHsCode(): string
     {
         return $this->hsCode;
     }
@@ -98,7 +98,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setHsCode(string $hsCode) : self
+    public function setHsCode(string $hsCode): self
     {
         $this->initialized['hsCode'] = true;
         $this->hsCode = $hsCode;
@@ -109,7 +109,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return float
      */
-    public function getCommodityDuty() : float
+    public function getCommodityDuty(): float
     {
         return $this->commodityDuty;
     }
@@ -120,7 +120,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityDuty(float $commodityDuty) : self
+    public function setCommodityDuty(float $commodityDuty): self
     {
         $this->initialized['commodityDuty'] = true;
         $this->commodityDuty = $commodityDuty;
@@ -131,7 +131,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalCommodityTaxAndFee() : float
+    public function getTotalCommodityTaxAndFee(): float
     {
         return $this->totalCommodityTaxAndFee;
     }
@@ -142,7 +142,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCommodityTaxAndFee(float $totalCommodityTaxAndFee) : self
+    public function setTotalCommodityTaxAndFee(float $totalCommodityTaxAndFee): self
     {
         $this->initialized['totalCommodityTaxAndFee'] = true;
         $this->totalCommodityTaxAndFee = $totalCommodityTaxAndFee;
@@ -153,7 +153,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return float
      */
-    public function getCommodityVAT() : float
+    public function getCommodityVAT(): float
     {
         return $this->commodityVAT;
     }
@@ -164,7 +164,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityVAT(float $commodityVAT) : self
+    public function setCommodityVAT(float $commodityVAT): self
     {
         $this->initialized['commodityVAT'] = true;
         $this->commodityVAT = $commodityVAT;
@@ -175,7 +175,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return float
      */
-    public function getTotalCommodityDutyAndTax() : float
+    public function getTotalCommodityDutyAndTax(): float
     {
         return $this->totalCommodityDutyAndTax;
     }
@@ -186,7 +186,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setTotalCommodityDutyAndTax(float $totalCommodityDutyAndTax) : self
+    public function setTotalCommodityDutyAndTax(float $totalCommodityDutyAndTax): self
     {
         $this->initialized['totalCommodityDutyAndTax'] = true;
         $this->totalCommodityDutyAndTax = $totalCommodityDutyAndTax;
@@ -197,7 +197,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityCurrencyCode() : string
+    public function getCommodityCurrencyCode(): string
     {
         return $this->commodityCurrencyCode;
     }
@@ -208,7 +208,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityCurrencyCode(string $commodityCurrencyCode) : self
+    public function setCommodityCurrencyCode(string $commodityCurrencyCode): self
     {
         $this->initialized['commodityCurrencyCode'] = true;
         $this->commodityCurrencyCode = $commodityCurrencyCode;
@@ -219,7 +219,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return bool
      */
-    public function getIsCalculable() : bool
+    public function getIsCalculable(): bool
     {
         return $this->isCalculable;
     }
@@ -230,7 +230,7 @@ class ResponseShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setIsCalculable(bool $isCalculable) : self
+    public function setIsCalculable(bool $isCalculable): self
     {
         $this->initialized['isCalculable'] = true;
         $this->isCalculable = $isCalculable;

@@ -8,7 +8,7 @@ class ErrorResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ErrorResponse extends \ArrayObject
      *
      * @return ErrorResponseWrapper
      */
-    public function getResponse() : ErrorResponseWrapper
+    public function getResponse(): ErrorResponseWrapper
     {
         return $this->response;
     }
@@ -34,7 +34,7 @@ class ErrorResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(ErrorResponseWrapper $response) : self
+    public function setResponse(ErrorResponseWrapper $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;

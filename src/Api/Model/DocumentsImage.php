@@ -8,7 +8,7 @@ class DocumentsImage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class DocumentsImage extends \ArrayObject
      *
      * @return ImageType
      */
-    public function getType() : ImageType
+    public function getType(): ImageType
     {
         return $this->type;
     }
@@ -46,7 +46,7 @@ class DocumentsImage extends \ArrayObject
      *
      * @return self
      */
-    public function setType(ImageType $type) : self
+    public function setType(ImageType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -57,7 +57,7 @@ class DocumentsImage extends \ArrayObject
      *
      * @return string
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage(): string
     {
         return $this->graphicImage;
     }
@@ -68,7 +68,7 @@ class DocumentsImage extends \ArrayObject
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(string $graphicImage): self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;
@@ -79,7 +79,7 @@ class DocumentsImage extends \ArrayObject
      *
      * @return ImageFormat
      */
-    public function getFormat() : ImageFormat
+    public function getFormat(): ImageFormat
     {
         return $this->format;
     }
@@ -90,7 +90,7 @@ class DocumentsImage extends \ArrayObject
      *
      * @return self
      */
-    public function setFormat(ImageFormat $format) : self
+    public function setFormat(ImageFormat $format): self
     {
         $this->initialized['format'] = true;
         $this->format = $format;

@@ -8,7 +8,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
      *
      * @return ReferenceValuesReferenceNumber
      */
-    public function getReferenceNumber() : ReferenceValuesReferenceNumber
+    public function getReferenceNumber(): ReferenceValuesReferenceNumber
     {
         return $this->referenceNumber;
     }
@@ -40,7 +40,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(ReferenceValuesReferenceNumber $referenceNumber) : self
+    public function setReferenceNumber(ReferenceValuesReferenceNumber $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -51,7 +51,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
      *
      * @return string
      */
-    public function getShipperNumber() : string
+    public function getShipperNumber(): string
     {
         return $this->shipperNumber;
     }
@@ -62,7 +62,7 @@ class LabelRecoveryRequestReferenceValues extends \ArrayObject
      *
      * @return self
      */
-    public function setShipperNumber(string $shipperNumber) : self
+    public function setShipperNumber(string $shipperNumber): self
     {
         $this->initialized['shipperNumber'] = true;
         $this->shipperNumber = $shipperNumber;

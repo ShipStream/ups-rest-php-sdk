@@ -8,7 +8,7 @@ class NotificationVoiceMessage extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class NotificationVoiceMessage extends \ArrayObject
      *
      * @return string
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
     }
@@ -34,7 +34,7 @@ class NotificationVoiceMessage extends \ArrayObject
      *
      * @return self
      */
-    public function setPhoneNumber(string $phoneNumber) : self
+    public function setPhoneNumber(string $phoneNumber): self
     {
         $this->initialized['phoneNumber'] = true;
         $this->phoneNumber = $phoneNumber;

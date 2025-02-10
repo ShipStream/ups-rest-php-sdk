@@ -8,7 +8,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -44,7 +44,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -55,7 +55,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -68,7 +68,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getStateProvince() : string
+    public function getStateProvince(): string
     {
         return $this->stateProvince;
     }
@@ -81,7 +81,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setStateProvince(string $stateProvince) : self
+    public function setStateProvince(string $stateProvince): self
     {
         $this->initialized['stateProvince'] = true;
         $this->stateProvince = $stateProvince;
@@ -92,7 +92,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -103,7 +103,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(string $postalCode) : self
+    public function setPostalCode(string $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;
@@ -115,7 +115,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
     *
     * @return string
     */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -127,7 +127,7 @@ class FreightOptionsDestinationAddress extends \ArrayObject
     *
     * @return self
     */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

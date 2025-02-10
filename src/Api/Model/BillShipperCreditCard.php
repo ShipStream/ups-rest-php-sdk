@@ -8,7 +8,7 @@ class BillShipperCreditCard extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -77,7 +77,7 @@ class BillShipperCreditCard extends \ArrayObject
     *
     * @return string
     */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -103,7 +103,7 @@ class BillShipperCreditCard extends \ArrayObject
     *
     * @return self
     */
-    public function setType(string $type) : self
+    public function setType(string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -114,7 +114,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -125,7 +125,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -136,7 +136,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return string
      */
-    public function getExpirationDate() : string
+    public function getExpirationDate(): string
     {
         return $this->expirationDate;
     }
@@ -147,7 +147,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return self
      */
-    public function setExpirationDate(string $expirationDate) : self
+    public function setExpirationDate(string $expirationDate): self
     {
         $this->initialized['expirationDate'] = true;
         $this->expirationDate = $expirationDate;
@@ -158,7 +158,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return string
      */
-    public function getSecurityCode() : string
+    public function getSecurityCode(): string
     {
         return $this->securityCode;
     }
@@ -169,7 +169,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return self
      */
-    public function setSecurityCode(string $securityCode) : self
+    public function setSecurityCode(string $securityCode): self
     {
         $this->initialized['securityCode'] = true;
         $this->securityCode = $securityCode;
@@ -180,7 +180,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return CreditCardAddress
      */
-    public function getAddress() : CreditCardAddress
+    public function getAddress(): CreditCardAddress
     {
         return $this->address;
     }
@@ -191,7 +191,7 @@ class BillShipperCreditCard extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(CreditCardAddress $address) : self
+    public function setAddress(CreditCardAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

@@ -8,7 +8,7 @@ class PickupPendingStatusRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -36,7 +36,7 @@ class PickupPendingStatusRequest extends \ArrayObject
      *
      * @return PickupPendingStatusRequestRequest
      */
-    public function getRequest() : PickupPendingStatusRequestRequest
+    public function getRequest(): PickupPendingStatusRequestRequest
     {
         return $this->request;
     }
@@ -47,7 +47,7 @@ class PickupPendingStatusRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PickupPendingStatusRequestRequest $request) : self
+    public function setRequest(PickupPendingStatusRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -59,7 +59,7 @@ class PickupPendingStatusRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupType() : string
+    public function getPickupType(): string
     {
         return $this->pickupType;
     }
@@ -71,7 +71,7 @@ class PickupPendingStatusRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupType(string $pickupType) : self
+    public function setPickupType(string $pickupType): self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -82,7 +82,7 @@ class PickupPendingStatusRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -93,7 +93,7 @@ class PickupPendingStatusRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;

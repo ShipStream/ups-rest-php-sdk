@@ -8,7 +8,7 @@ class PICKUPCancelResponseWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PICKUPCancelResponseWrapper extends \ArrayObject
      *
      * @return PickupCancelResponse
      */
-    public function getPickupCancelResponse() : PickupCancelResponse
+    public function getPickupCancelResponse(): PickupCancelResponse
     {
         return $this->pickupCancelResponse;
     }
@@ -34,7 +34,7 @@ class PICKUPCancelResponseWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupCancelResponse(PickupCancelResponse $pickupCancelResponse) : self
+    public function setPickupCancelResponse(PickupCancelResponse $pickupCancelResponse): self
     {
         $this->initialized['pickupCancelResponse'] = true;
         $this->pickupCancelResponse = $pickupCancelResponse;

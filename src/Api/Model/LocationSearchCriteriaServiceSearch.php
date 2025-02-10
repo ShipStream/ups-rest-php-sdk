@@ -8,7 +8,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      *
      * @return string
      */
-    public function getTime() : string
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -46,7 +46,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(string $time) : self
+    public function setTime(string $time): self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -57,7 +57,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      *
      * @return list<ServiceSearchServiceCode>
      */
-    public function getServiceCode() : array
+    public function getServiceCode(): array
     {
         return $this->serviceCode;
     }
@@ -68,7 +68,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceCode(array $serviceCode) : self
+    public function setServiceCode(array $serviceCode): self
     {
         $this->initialized['serviceCode'] = true;
         $this->serviceCode = $serviceCode;
@@ -79,7 +79,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      *
      * @return list<ServiceSearchServiceOptionCode>
      */
-    public function getServiceOptionCode() : array
+    public function getServiceOptionCode(): array
     {
         return $this->serviceOptionCode;
     }
@@ -90,7 +90,7 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceOptionCode(array $serviceOptionCode) : self
+    public function setServiceOptionCode(array $serviceOptionCode): self
     {
         $this->initialized['serviceOptionCode'] = true;
         $this->serviceOptionCode = $serviceOptionCode;

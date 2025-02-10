@@ -8,7 +8,7 @@ class XAVRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -45,7 +45,7 @@ class XAVRequest extends \ArrayObject
      *
      * @return XAVRequestRequest
      */
-    public function getRequest() : XAVRequestRequest
+    public function getRequest(): XAVRequestRequest
     {
         return $this->request;
     }
@@ -56,7 +56,7 @@ class XAVRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(XAVRequestRequest $request) : self
+    public function setRequest(XAVRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -67,7 +67,7 @@ class XAVRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getRegionalRequestIndicator() : string
+    public function getRegionalRequestIndicator(): string
     {
         return $this->regionalRequestIndicator;
     }
@@ -78,7 +78,7 @@ class XAVRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRegionalRequestIndicator(string $regionalRequestIndicator) : self
+    public function setRegionalRequestIndicator(string $regionalRequestIndicator): self
     {
         $this->initialized['regionalRequestIndicator'] = true;
         $this->regionalRequestIndicator = $regionalRequestIndicator;
@@ -93,7 +93,7 @@ class XAVRequest extends \ArrayObject
     *
     * @return string
     */
-    public function getMaximumCandidateListSize() : string
+    public function getMaximumCandidateListSize(): string
     {
         return $this->maximumCandidateListSize;
     }
@@ -108,7 +108,7 @@ class XAVRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setMaximumCandidateListSize(string $maximumCandidateListSize) : self
+    public function setMaximumCandidateListSize(string $maximumCandidateListSize): self
     {
         $this->initialized['maximumCandidateListSize'] = true;
         $this->maximumCandidateListSize = $maximumCandidateListSize;
@@ -119,7 +119,7 @@ class XAVRequest extends \ArrayObject
      *
      * @return list<XAVRequestAddressKeyFormat>
      */
-    public function getAddressKeyFormat() : array
+    public function getAddressKeyFormat(): array
     {
         return $this->addressKeyFormat;
     }
@@ -130,7 +130,7 @@ class XAVRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressKeyFormat(array $addressKeyFormat) : self
+    public function setAddressKeyFormat(array $addressKeyFormat): self
     {
         $this->initialized['addressKeyFormat'] = true;
         $this->addressKeyFormat = $addressKeyFormat;

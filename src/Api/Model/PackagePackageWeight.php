@@ -8,7 +8,7 @@ class PackagePackageWeight extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PackagePackageWeight extends \ArrayObject
      *
      * @return PackageWeightUnitOfMeasurement
      */
-    public function getUnitOfMeasurement() : PackageWeightUnitOfMeasurement
+    public function getUnitOfMeasurement(): PackageWeightUnitOfMeasurement
     {
         return $this->unitOfMeasurement;
     }
@@ -40,7 +40,7 @@ class PackagePackageWeight extends \ArrayObject
      *
      * @return self
      */
-    public function setUnitOfMeasurement(PackageWeightUnitOfMeasurement $unitOfMeasurement) : self
+    public function setUnitOfMeasurement(PackageWeightUnitOfMeasurement $unitOfMeasurement): self
     {
         $this->initialized['unitOfMeasurement'] = true;
         $this->unitOfMeasurement = $unitOfMeasurement;
@@ -51,7 +51,7 @@ class PackagePackageWeight extends \ArrayObject
      *
      * @return string
      */
-    public function getWeight() : string
+    public function getWeight(): string
     {
         return $this->weight;
     }
@@ -62,7 +62,7 @@ class PackagePackageWeight extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(string $weight) : self
+    public function setWeight(string $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;

@@ -8,7 +8,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -61,7 +61,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return string
      */
-    public function getPublicAccessPointID() : string
+    public function getPublicAccessPointID(): string
     {
         return $this->publicAccessPointID;
     }
@@ -72,7 +72,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setPublicAccessPointID(string $publicAccessPointID) : self
+    public function setPublicAccessPointID(string $publicAccessPointID): self
     {
         $this->initialized['publicAccessPointID'] = true;
         $this->publicAccessPointID = $publicAccessPointID;
@@ -85,7 +85,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     *
     * @return string
     */
-    public function getAccessPointStatus() : string
+    public function getAccessPointStatus(): string
     {
         return $this->accessPointStatus;
     }
@@ -98,7 +98,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
     *
     * @return self
     */
-    public function setAccessPointStatus(string $accessPointStatus) : self
+    public function setAccessPointStatus(string $accessPointStatus): self
     {
         $this->initialized['accessPointStatus'] = true;
         $this->accessPointStatus = $accessPointStatus;
@@ -109,7 +109,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -120,7 +120,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -131,7 +131,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return AccessPointSearchIncludeCriteria
      */
-    public function getIncludeCriteria() : AccessPointSearchIncludeCriteria
+    public function getIncludeCriteria(): AccessPointSearchIncludeCriteria
     {
         return $this->includeCriteria;
     }
@@ -142,7 +142,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setIncludeCriteria(AccessPointSearchIncludeCriteria $includeCriteria) : self
+    public function setIncludeCriteria(AccessPointSearchIncludeCriteria $includeCriteria): self
     {
         $this->initialized['includeCriteria'] = true;
         $this->includeCriteria = $includeCriteria;
@@ -153,7 +153,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return AccessPointSearchExcludeFromResult
      */
-    public function getExcludeFromResult() : AccessPointSearchExcludeFromResult
+    public function getExcludeFromResult(): AccessPointSearchExcludeFromResult
     {
         return $this->excludeFromResult;
     }
@@ -164,7 +164,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setExcludeFromResult(AccessPointSearchExcludeFromResult $excludeFromResult) : self
+    public function setExcludeFromResult(AccessPointSearchExcludeFromResult $excludeFromResult): self
     {
         $this->initialized['excludeFromResult'] = true;
         $this->excludeFromResult = $excludeFromResult;
@@ -175,7 +175,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return string
      */
-    public function getExactMatchIndicator() : string
+    public function getExactMatchIndicator(): string
     {
         return $this->exactMatchIndicator;
     }
@@ -186,7 +186,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setExactMatchIndicator(string $exactMatchIndicator) : self
+    public function setExactMatchIndicator(string $exactMatchIndicator): self
     {
         $this->initialized['exactMatchIndicator'] = true;
         $this->exactMatchIndicator = $exactMatchIndicator;
@@ -197,7 +197,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return string
      */
-    public function getExistIndicator() : string
+    public function getExistIndicator(): string
     {
         return $this->existIndicator;
     }
@@ -208,7 +208,7 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      *
      * @return self
      */
-    public function setExistIndicator(string $existIndicator) : self
+    public function setExistIndicator(string $existIndicator): self
     {
         $this->initialized['existIndicator'] = true;
         $this->existIndicator = $existIndicator;

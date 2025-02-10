@@ -8,7 +8,7 @@ class PickupFacilitiesFacilityTime extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PickupFacilitiesFacilityTime extends \ArrayObject
      *
      * @return PickupFacilitiesFacilityTimeDayOfWeek
      */
-    public function getDayOfWeek() : PickupFacilitiesFacilityTimeDayOfWeek
+    public function getDayOfWeek(): PickupFacilitiesFacilityTimeDayOfWeek
     {
         return $this->dayOfWeek;
     }
@@ -34,7 +34,7 @@ class PickupFacilitiesFacilityTime extends \ArrayObject
      *
      * @return self
      */
-    public function setDayOfWeek(PickupFacilitiesFacilityTimeDayOfWeek $dayOfWeek) : self
+    public function setDayOfWeek(PickupFacilitiesFacilityTimeDayOfWeek $dayOfWeek): self
     {
         $this->initialized['dayOfWeek'] = true;
         $this->dayOfWeek = $dayOfWeek;

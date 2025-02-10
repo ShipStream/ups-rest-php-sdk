@@ -8,7 +8,7 @@ class ContactsSoldTo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -65,7 +65,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -76,7 +76,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -87,7 +87,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -98,7 +98,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -109,7 +109,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return string
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;
     }
@@ -120,7 +120,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(string $taxIdentificationNumber): self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -131,7 +131,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return SoldToPhone
      */
-    public function getPhone() : SoldToPhone
+    public function getPhone(): SoldToPhone
     {
         return $this->phone;
     }
@@ -142,7 +142,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(SoldToPhone $phone) : self
+    public function setPhone(SoldToPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -153,7 +153,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return string
      */
-    public function getOption() : string
+    public function getOption(): string
     {
         return $this->option;
     }
@@ -164,7 +164,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setOption(string $option) : self
+    public function setOption(string $option): self
     {
         $this->initialized['option'] = true;
         $this->option = $option;
@@ -175,7 +175,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return SoldToAddress
      */
-    public function getAddress() : SoldToAddress
+    public function getAddress(): SoldToAddress
     {
         return $this->address;
     }
@@ -186,7 +186,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(SoldToAddress $address) : self
+    public function setAddress(SoldToAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -197,7 +197,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -208,7 +208,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;
@@ -219,7 +219,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -230,7 +230,7 @@ class ContactsSoldTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;

@@ -8,7 +8,7 @@ class RemitToPhone extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class RemitToPhone extends \ArrayObject
      *
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -40,7 +40,7 @@ class RemitToPhone extends \ArrayObject
      *
      * @return self
      */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -51,7 +51,7 @@ class RemitToPhone extends \ArrayObject
      *
      * @return string
      */
-    public function getExtension() : string
+    public function getExtension(): string
     {
         return $this->extension;
     }
@@ -62,7 +62,7 @@ class RemitToPhone extends \ArrayObject
      *
      * @return self
      */
-    public function setExtension(string $extension) : self
+    public function setExtension(string $extension): self
     {
         $this->initialized['extension'] = true;
         $this->extension = $extension;

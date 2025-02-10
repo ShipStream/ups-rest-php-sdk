@@ -8,7 +8,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -70,7 +70,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setName(string $name) : self
+    public function setName(string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -81,7 +81,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;
     }
@@ -92,7 +92,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(string $taxIdentificationNumber): self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -103,7 +103,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return FreightShipShipToAddress
      */
-    public function getAddress() : FreightShipShipToAddress
+    public function getAddress(): FreightShipShipToAddress
     {
         return $this->address;
     }
@@ -114,7 +114,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(FreightShipShipToAddress $address) : self
+    public function setAddress(FreightShipShipToAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;
@@ -125,7 +125,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getAttentionName() : string
+    public function getAttentionName(): string
     {
         return $this->attentionName;
     }
@@ -136,7 +136,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setAttentionName(string $attentionName) : self
+    public function setAttentionName(string $attentionName): self
     {
         $this->initialized['attentionName'] = true;
         $this->attentionName = $attentionName;
@@ -147,7 +147,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return ShipToPhone
      */
-    public function getPhone() : ShipToPhone
+    public function getPhone(): ShipToPhone
     {
         return $this->phone;
     }
@@ -158,7 +158,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setPhone(ShipToPhone $phone) : self
+    public function setPhone(ShipToPhone $phone): self
     {
         $this->initialized['phone'] = true;
         $this->phone = $phone;
@@ -169,7 +169,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getFaxNumber() : string
+    public function getFaxNumber(): string
     {
         return $this->faxNumber;
     }
@@ -180,7 +180,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setFaxNumber(string $faxNumber) : self
+    public function setFaxNumber(string $faxNumber): self
     {
         $this->initialized['faxNumber'] = true;
         $this->faxNumber = $faxNumber;
@@ -191,7 +191,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return string
      */
-    public function getEMailAddress() : string
+    public function getEMailAddress(): string
     {
         return $this->eMailAddress;
     }
@@ -202,7 +202,7 @@ class FreightShipShipmentShipTo extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailAddress(string $eMailAddress) : self
+    public function setEMailAddress(string $eMailAddress): self
     {
         $this->initialized['eMailAddress'] = true;
         $this->eMailAddress = $eMailAddress;

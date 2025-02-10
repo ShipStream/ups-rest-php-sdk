@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge';
+            return $type === \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -45,15 +45,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Type']);
             }
             if (\array_key_exists('BillShipper', $data)) {
-                $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper', 'json', $context));
+                $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], \ShipStream\Ups\Api\Model\ShipmentChargeBillShipper::class, 'json', $context));
                 unset($data['BillShipper']);
             }
             if (\array_key_exists('BillReceiver', $data)) {
-                $object->setBillReceiver($this->denormalizer->denormalize($data['BillReceiver'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver', 'json', $context));
+                $object->setBillReceiver($this->denormalizer->denormalize($data['BillReceiver'], \ShipStream\Ups\Api\Model\ShipmentChargeBillReceiver::class, 'json', $context));
                 unset($data['BillReceiver']);
             }
             if (\array_key_exists('BillThirdParty', $data)) {
-                $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty', 'json', $context));
+                $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], \ShipStream\Ups\Api\Model\ShipmentChargeBillThirdParty::class, 'json', $context));
                 unset($data['BillThirdParty']);
             }
             if (\array_key_exists('ConsigneeBilledIndicator', $data)) {
@@ -67,7 +67,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Type'] = $object->getType();
@@ -90,9 +90,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge' => false];
+            return [\ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class => false];
         }
     }
 } else {
@@ -102,13 +102,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge';
+            return $type === \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class;
         }
         /**
          * @return mixed
@@ -130,15 +130,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Type']);
             }
             if (\array_key_exists('BillShipper', $data)) {
-                $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillShipper', 'json', $context));
+                $object->setBillShipper($this->denormalizer->denormalize($data['BillShipper'], \ShipStream\Ups\Api\Model\ShipmentChargeBillShipper::class, 'json', $context));
                 unset($data['BillShipper']);
             }
             if (\array_key_exists('BillReceiver', $data)) {
-                $object->setBillReceiver($this->denormalizer->denormalize($data['BillReceiver'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillReceiver', 'json', $context));
+                $object->setBillReceiver($this->denormalizer->denormalize($data['BillReceiver'], \ShipStream\Ups\Api\Model\ShipmentChargeBillReceiver::class, 'json', $context));
                 unset($data['BillReceiver']);
             }
             if (\array_key_exists('BillThirdParty', $data)) {
-                $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], 'ShipStream\\Ups\\Api\\Model\\ShipmentChargeBillThirdParty', 'json', $context));
+                $object->setBillThirdParty($this->denormalizer->denormalize($data['BillThirdParty'], \ShipStream\Ups\Api\Model\ShipmentChargeBillThirdParty::class, 'json', $context));
                 unset($data['BillThirdParty']);
             }
             if (\array_key_exists('ConsigneeBilledIndicator', $data)) {
@@ -178,9 +178,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PaymentInformationShipmentCharge' => false];
+            return [\ShipStream\Ups\Api\Model\PaymentInformationShipmentCharge::class => false];
         }
     }
 }

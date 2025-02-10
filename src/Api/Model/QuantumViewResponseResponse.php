@@ -8,7 +8,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -43,7 +43,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      *
      * @return ResponseTransactionReference
      */
-    public function getTransactionReference() : ResponseTransactionReference
+    public function getTransactionReference(): ResponseTransactionReference
     {
         return $this->transactionReference;
     }
@@ -54,7 +54,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(ResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(ResponseTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;
@@ -66,7 +66,7 @@ class QuantumViewResponseResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getResponseStatusCode() : string
+    public function getResponseStatusCode(): string
     {
         return $this->responseStatusCode;
     }
@@ -78,7 +78,7 @@ class QuantumViewResponseResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setResponseStatusCode(string $responseStatusCode) : self
+    public function setResponseStatusCode(string $responseStatusCode): self
     {
         $this->initialized['responseStatusCode'] = true;
         $this->responseStatusCode = $responseStatusCode;
@@ -89,7 +89,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getResponseStatusDescription() : string
+    public function getResponseStatusDescription(): string
     {
         return $this->responseStatusDescription;
     }
@@ -100,7 +100,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponseStatusDescription(string $responseStatusDescription) : self
+    public function setResponseStatusDescription(string $responseStatusDescription): self
     {
         $this->initialized['responseStatusDescription'] = true;
         $this->responseStatusDescription = $responseStatusDescription;
@@ -112,7 +112,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      *
      * @return list<ResponseError>
      */
-    public function getError() : array
+    public function getError(): array
     {
         return $this->error;
     }
@@ -124,7 +124,7 @@ class QuantumViewResponseResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setError(array $error) : self
+    public function setError(array $error): self
     {
         $this->initialized['error'] = true;
         $this->error = $error;

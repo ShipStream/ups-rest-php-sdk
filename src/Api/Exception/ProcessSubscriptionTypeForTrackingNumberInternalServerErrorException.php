@@ -13,7 +13,7 @@ class ProcessSubscriptionTypeForTrackingNumberInternalServerErrorException exten
         parent::__construct('Internal Server Error');
         $this->response = $response;
     }
-    public function getResponse() : ?\Psr\Http\Message\ResponseInterface
+    public function getResponse(): ?\Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

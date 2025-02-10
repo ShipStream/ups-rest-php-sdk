@@ -8,7 +8,7 @@ class PICKUPPendingRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PICKUPPendingRequestWrapper extends \ArrayObject
      *
      * @return PickupPendingStatusRequest
      */
-    public function getPickupPendingStatusRequest() : PickupPendingStatusRequest
+    public function getPickupPendingStatusRequest(): PickupPendingStatusRequest
     {
         return $this->pickupPendingStatusRequest;
     }
@@ -34,7 +34,7 @@ class PICKUPPendingRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupPendingStatusRequest(PickupPendingStatusRequest $pickupPendingStatusRequest) : self
+    public function setPickupPendingStatusRequest(PickupPendingStatusRequest $pickupPendingStatusRequest): self
     {
         $this->initialized['pickupPendingStatusRequest'] = true;
         $this->pickupPendingStatusRequest = $pickupPendingStatusRequest;

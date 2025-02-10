@@ -8,7 +8,7 @@ class DANGEROUSGOODSUTILITYRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class DANGEROUSGOODSUTILITYRequestWrapper extends \ArrayObject
      *
      * @return ChemicalReferenceDataRequest
      */
-    public function getChemicalReferenceDataRequest() : ChemicalReferenceDataRequest
+    public function getChemicalReferenceDataRequest(): ChemicalReferenceDataRequest
     {
         return $this->chemicalReferenceDataRequest;
     }
@@ -34,7 +34,7 @@ class DANGEROUSGOODSUTILITYRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalReferenceDataRequest(ChemicalReferenceDataRequest $chemicalReferenceDataRequest) : self
+    public function setChemicalReferenceDataRequest(ChemicalReferenceDataRequest $chemicalReferenceDataRequest): self
     {
         $this->initialized['chemicalReferenceDataRequest'] = true;
         $this->chemicalReferenceDataRequest = $chemicalReferenceDataRequest;

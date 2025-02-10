@@ -8,7 +8,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getSLIC() : string
+    public function getSLIC(): string
     {
         return $this->sLIC;
     }
@@ -70,7 +70,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setSLIC(string $sLIC) : self
+    public function setSLIC(string $sLIC): self
     {
         $this->initialized['sLIC'] = true;
         $this->sLIC = $sLIC;
@@ -81,7 +81,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getAddressLine() : array
+    public function getAddressLine(): array
     {
         return $this->addressLine;
     }
@@ -92,7 +92,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setAddressLine(array $addressLine) : self
+    public function setAddressLine(array $addressLine): self
     {
         $this->initialized['addressLine'] = true;
         $this->addressLine = $addressLine;
@@ -103,7 +103,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -114,7 +114,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCity(string $city) : self
+    public function setCity(string $city): self
     {
         $this->initialized['city'] = true;
         $this->city = $city;
@@ -125,7 +125,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCodePrimaryLow() : string
+    public function getPostalCodePrimaryLow(): string
     {
         return $this->postalCodePrimaryLow;
     }
@@ -136,7 +136,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCodePrimaryLow(string $postalCodePrimaryLow) : self
+    public function setPostalCodePrimaryLow(string $postalCodePrimaryLow): self
     {
         $this->initialized['postalCodePrimaryLow'] = true;
         $this->postalCodePrimaryLow = $postalCodePrimaryLow;
@@ -147,7 +147,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getPostalCodeExtendedLow() : string
+    public function getPostalCodeExtendedLow(): string
     {
         return $this->postalCodeExtendedLow;
     }
@@ -158,7 +158,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCodeExtendedLow(string $postalCodeExtendedLow) : self
+    public function setPostalCodeExtendedLow(string $postalCodeExtendedLow): self
     {
         $this->initialized['postalCodeExtendedLow'] = true;
         $this->postalCodeExtendedLow = $postalCodeExtendedLow;
@@ -169,7 +169,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getState() : string
+    public function getState(): string
     {
         return $this->state;
     }
@@ -180,7 +180,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setState(string $state) : self
+    public function setState(string $state): self
     {
         $this->initialized['state'] = true;
         $this->state = $state;
@@ -191,7 +191,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -202,7 +202,7 @@ class FreightWillCallSearchFacilityAddress extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

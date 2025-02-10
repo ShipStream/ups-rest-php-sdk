@@ -8,7 +8,7 @@ class Errors extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class Errors extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -58,7 +58,7 @@ class Errors extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -69,7 +69,7 @@ class Errors extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -80,7 +80,7 @@ class Errors extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -91,7 +91,7 @@ class Errors extends \ArrayObject
      *
      * @return string
      */
-    public function getMessage() : string
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -102,7 +102,7 @@ class Errors extends \ArrayObject
      *
      * @return self
      */
-    public function setMessage(string $message) : self
+    public function setMessage(string $message): self
     {
         $this->initialized['message'] = true;
         $this->message = $message;
@@ -113,7 +113,7 @@ class Errors extends \ArrayObject
      *
      * @return string
      */
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -124,7 +124,7 @@ class Errors extends \ArrayObject
      *
      * @return self
      */
-    public function setValue(string $value) : self
+    public function setValue(string $value): self
     {
         $this->initialized['value'] = true;
         $this->value = $value;
@@ -135,7 +135,7 @@ class Errors extends \ArrayObject
      *
      * @return string
      */
-    public function getField() : string
+    public function getField(): string
     {
         return $this->field;
     }
@@ -146,7 +146,7 @@ class Errors extends \ArrayObject
      *
      * @return self
      */
-    public function setField(string $field) : self
+    public function setField(string $field): self
     {
         $this->initialized['field'] = true;
         $this->field = $field;

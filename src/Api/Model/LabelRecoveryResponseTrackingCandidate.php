@@ -8,7 +8,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return string
      */
-    public function getTrackingNumber() : string
+    public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
@@ -52,7 +52,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(string $trackingNumber) : self
+    public function setTrackingNumber(string $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;
@@ -63,7 +63,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode(): string
     {
         return $this->destinationPostalCode;
     }
@@ -74,7 +74,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(string $destinationPostalCode): self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -85,7 +85,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode(): string
     {
         return $this->destinationCountryCode;
     }
@@ -96,7 +96,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(string $destinationCountryCode): self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -107,7 +107,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return TrackingCandidatePickupDateRange
      */
-    public function getPickupDateRange() : TrackingCandidatePickupDateRange
+    public function getPickupDateRange(): TrackingCandidatePickupDateRange
     {
         return $this->pickupDateRange;
     }
@@ -118,7 +118,7 @@ class LabelRecoveryResponseTrackingCandidate extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupDateRange(TrackingCandidatePickupDateRange $pickupDateRange) : self
+    public function setPickupDateRange(TrackingCandidatePickupDateRange $pickupDateRange): self
     {
         $this->initialized['pickupDateRange'] = true;
         $this->pickupDateRange = $pickupDateRange;

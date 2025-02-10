@@ -8,7 +8,7 @@ class SubscriptionEventsDateRange extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -32,7 +32,7 @@ class SubscriptionEventsDateRange extends \ArrayObject
     *
     * @return string
     */
-    public function getBeginDate() : string
+    public function getBeginDate(): string
     {
         return $this->beginDate;
     }
@@ -44,7 +44,7 @@ class SubscriptionEventsDateRange extends \ArrayObject
     *
     * @return self
     */
-    public function setBeginDate(string $beginDate) : self
+    public function setBeginDate(string $beginDate): self
     {
         $this->initialized['beginDate'] = true;
         $this->beginDate = $beginDate;
@@ -56,7 +56,7 @@ class SubscriptionEventsDateRange extends \ArrayObject
     *
     * @return string
     */
-    public function getEndDate() : string
+    public function getEndDate(): string
     {
         return $this->endDate;
     }
@@ -68,7 +68,7 @@ class SubscriptionEventsDateRange extends \ArrayObject
     *
     * @return self
     */
-    public function setEndDate(string $endDate) : self
+    public function setEndDate(string $endDate): self
     {
         $this->initialized['endDate'] = true;
         $this->endDate = $endDate;

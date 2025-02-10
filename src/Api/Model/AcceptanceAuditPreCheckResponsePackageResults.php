@@ -8,7 +8,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -44,7 +44,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      *
      * @return string
      */
-    public function getPackageIdentifier() : string
+    public function getPackageIdentifier(): string
     {
         return $this->packageIdentifier;
     }
@@ -55,7 +55,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setPackageIdentifier(string $packageIdentifier) : self
+    public function setPackageIdentifier(string $packageIdentifier): self
     {
         $this->initialized['packageIdentifier'] = true;
         $this->packageIdentifier = $packageIdentifier;
@@ -67,7 +67,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     *
     * @return string
     */
-    public function getAccessibleIndicator() : string
+    public function getAccessibleIndicator(): string
     {
         return $this->accessibleIndicator;
     }
@@ -79,7 +79,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setAccessibleIndicator(string $accessibleIndicator) : self
+    public function setAccessibleIndicator(string $accessibleIndicator): self
     {
         $this->initialized['accessibleIndicator'] = true;
         $this->accessibleIndicator = $accessibleIndicator;
@@ -92,7 +92,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     *
     * @return string
     */
-    public function getEuropeBUIndicator() : string
+    public function getEuropeBUIndicator(): string
     {
         return $this->europeBUIndicator;
     }
@@ -105,7 +105,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
     *
     * @return self
     */
-    public function setEuropeBUIndicator(string $europeBUIndicator) : self
+    public function setEuropeBUIndicator(string $europeBUIndicator): self
     {
         $this->initialized['europeBUIndicator'] = true;
         $this->europeBUIndicator = $europeBUIndicator;
@@ -116,7 +116,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      *
      * @return list<PackageResultsChemicalRecordResults>
      */
-    public function getChemicalRecordResults() : array
+    public function getChemicalRecordResults(): array
     {
         return $this->chemicalRecordResults;
     }
@@ -127,7 +127,7 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalRecordResults(array $chemicalRecordResults) : self
+    public function setChemicalRecordResults(array $chemicalRecordResults): self
     {
         $this->initialized['chemicalRecordResults'] = true;
         $this->chemicalRecordResults = $chemicalRecordResults;

@@ -8,7 +8,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -239,7 +239,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingTypeQuantity() : string
+    public function getPackagingTypeQuantity(): string
     {
         return $this->packagingTypeQuantity;
     }
@@ -250,7 +250,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingTypeQuantity(string $packagingTypeQuantity) : self
+    public function setPackagingTypeQuantity(string $packagingTypeQuantity): self
     {
         $this->initialized['packagingTypeQuantity'] = true;
         $this->packagingTypeQuantity = $packagingTypeQuantity;
@@ -261,7 +261,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getRecordIdentifier1() : string
+    public function getRecordIdentifier1(): string
     {
         return $this->recordIdentifier1;
     }
@@ -272,7 +272,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setRecordIdentifier1(string $recordIdentifier1) : self
+    public function setRecordIdentifier1(string $recordIdentifier1): self
     {
         $this->initialized['recordIdentifier1'] = true;
         $this->recordIdentifier1 = $recordIdentifier1;
@@ -283,7 +283,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getRecordIdentifier2() : string
+    public function getRecordIdentifier2(): string
     {
         return $this->recordIdentifier2;
     }
@@ -294,7 +294,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setRecordIdentifier2(string $recordIdentifier2) : self
+    public function setRecordIdentifier2(string $recordIdentifier2): self
     {
         $this->initialized['recordIdentifier2'] = true;
         $this->recordIdentifier2 = $recordIdentifier2;
@@ -305,7 +305,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getRecordIdentifier3() : string
+    public function getRecordIdentifier3(): string
     {
         return $this->recordIdentifier3;
     }
@@ -316,7 +316,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setRecordIdentifier3(string $recordIdentifier3) : self
+    public function setRecordIdentifier3(string $recordIdentifier3): self
     {
         $this->initialized['recordIdentifier3'] = true;
         $this->recordIdentifier3 = $recordIdentifier3;
@@ -330,7 +330,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getSubRiskClass() : string
+    public function getSubRiskClass(): string
     {
         return $this->subRiskClass;
     }
@@ -344,7 +344,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setSubRiskClass(string $subRiskClass) : self
+    public function setSubRiskClass(string $subRiskClass): self
     {
         $this->initialized['subRiskClass'] = true;
         $this->subRiskClass = $subRiskClass;
@@ -355,7 +355,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getADRItemNumber() : string
+    public function getADRItemNumber(): string
     {
         return $this->aDRItemNumber;
     }
@@ -366,7 +366,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setADRItemNumber(string $aDRItemNumber) : self
+    public function setADRItemNumber(string $aDRItemNumber): self
     {
         $this->initialized['aDRItemNumber'] = true;
         $this->aDRItemNumber = $aDRItemNumber;
@@ -382,7 +382,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getADRPackingGroupLetter() : string
+    public function getADRPackingGroupLetter(): string
     {
         return $this->aDRPackingGroupLetter;
     }
@@ -398,7 +398,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setADRPackingGroupLetter(string $aDRPackingGroupLetter) : self
+    public function setADRPackingGroupLetter(string $aDRPackingGroupLetter): self
     {
         $this->initialized['aDRPackingGroupLetter'] = true;
         $this->aDRPackingGroupLetter = $aDRPackingGroupLetter;
@@ -409,7 +409,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getTechnicalName() : string
+    public function getTechnicalName(): string
     {
         return $this->technicalName;
     }
@@ -420,7 +420,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setTechnicalName(string $technicalName) : self
+    public function setTechnicalName(string $technicalName): self
     {
         $this->initialized['technicalName'] = true;
         $this->technicalName = $technicalName;
@@ -433,7 +433,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getHazardLabelRequired() : string
+    public function getHazardLabelRequired(): string
     {
         return $this->hazardLabelRequired;
     }
@@ -446,7 +446,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setHazardLabelRequired(string $hazardLabelRequired) : self
+    public function setHazardLabelRequired(string $hazardLabelRequired): self
     {
         $this->initialized['hazardLabelRequired'] = true;
         $this->hazardLabelRequired = $hazardLabelRequired;
@@ -460,7 +460,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getClassDivisionNumber() : string
+    public function getClassDivisionNumber(): string
     {
         return $this->classDivisionNumber;
     }
@@ -474,7 +474,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setClassDivisionNumber(string $classDivisionNumber) : self
+    public function setClassDivisionNumber(string $classDivisionNumber): self
     {
         $this->initialized['classDivisionNumber'] = true;
         $this->classDivisionNumber = $classDivisionNumber;
@@ -485,7 +485,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getReferenceNumber() : string
+    public function getReferenceNumber(): string
     {
         return $this->referenceNumber;
     }
@@ -496,7 +496,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setReferenceNumber(string $referenceNumber) : self
+    public function setReferenceNumber(string $referenceNumber): self
     {
         $this->initialized['referenceNumber'] = true;
         $this->referenceNumber = $referenceNumber;
@@ -507,7 +507,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getQuantity() : string
+    public function getQuantity(): string
     {
         return $this->quantity;
     }
@@ -518,7 +518,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(string $quantity) : self
+    public function setQuantity(string $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -531,7 +531,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getUOM() : string
+    public function getUOM(): string
     {
         return $this->uOM;
     }
@@ -544,7 +544,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setUOM(string $uOM) : self
+    public function setUOM(string $uOM): self
     {
         $this->initialized['uOM'] = true;
         $this->uOM = $uOM;
@@ -555,7 +555,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingType() : string
+    public function getPackagingType(): string
     {
         return $this->packagingType;
     }
@@ -566,7 +566,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingType(string $packagingType) : self
+    public function setPackagingType(string $packagingType): self
     {
         $this->initialized['packagingType'] = true;
         $this->packagingType = $packagingType;
@@ -579,7 +579,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getIDNumber() : string
+    public function getIDNumber(): string
     {
         return $this->iDNumber;
     }
@@ -592,7 +592,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setIDNumber(string $iDNumber) : self
+    public function setIDNumber(string $iDNumber): self
     {
         $this->initialized['iDNumber'] = true;
         $this->iDNumber = $iDNumber;
@@ -603,7 +603,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getProperShippingName() : string
+    public function getProperShippingName(): string
     {
         return $this->properShippingName;
     }
@@ -614,7 +614,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setProperShippingName(string $properShippingName) : self
+    public function setProperShippingName(string $properShippingName): self
     {
         $this->initialized['properShippingName'] = true;
         $this->properShippingName = $properShippingName;
@@ -628,7 +628,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getAdditionalDescription() : string
+    public function getAdditionalDescription(): string
     {
         return $this->additionalDescription;
     }
@@ -642,7 +642,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setAdditionalDescription(string $additionalDescription) : self
+    public function setAdditionalDescription(string $additionalDescription): self
     {
         $this->initialized['additionalDescription'] = true;
         $this->additionalDescription = $additionalDescription;
@@ -658,7 +658,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getPackagingGroupType() : string
+    public function getPackagingGroupType(): string
     {
         return $this->packagingGroupType;
     }
@@ -674,7 +674,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setPackagingGroupType(string $packagingGroupType) : self
+    public function setPackagingGroupType(string $packagingGroupType): self
     {
         $this->initialized['packagingGroupType'] = true;
         $this->packagingGroupType = $packagingGroupType;
@@ -685,7 +685,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getPackagingInstructionCode() : string
+    public function getPackagingInstructionCode(): string
     {
         return $this->packagingInstructionCode;
     }
@@ -696,7 +696,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setPackagingInstructionCode(string $packagingInstructionCode) : self
+    public function setPackagingInstructionCode(string $packagingInstructionCode): self
     {
         $this->initialized['packagingInstructionCode'] = true;
         $this->packagingInstructionCode = $packagingInstructionCode;
@@ -710,7 +710,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getEmergencyPhone() : string
+    public function getEmergencyPhone(): string
     {
         return $this->emergencyPhone;
     }
@@ -724,7 +724,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setEmergencyPhone(string $emergencyPhone) : self
+    public function setEmergencyPhone(string $emergencyPhone): self
     {
         $this->initialized['emergencyPhone'] = true;
         $this->emergencyPhone = $emergencyPhone;
@@ -735,7 +735,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getEmergencyContact() : string
+    public function getEmergencyContact(): string
     {
         return $this->emergencyContact;
     }
@@ -746,7 +746,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setEmergencyContact(string $emergencyContact) : self
+    public function setEmergencyContact(string $emergencyContact): self
     {
         $this->initialized['emergencyContact'] = true;
         $this->emergencyContact = $emergencyContact;
@@ -757,7 +757,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getReportableQuantity() : string
+    public function getReportableQuantity(): string
     {
         return $this->reportableQuantity;
     }
@@ -768,7 +768,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setReportableQuantity(string $reportableQuantity) : self
+    public function setReportableQuantity(string $reportableQuantity): self
     {
         $this->initialized['reportableQuantity'] = true;
         $this->reportableQuantity = $reportableQuantity;
@@ -785,7 +785,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getRegulationSet() : string
+    public function getRegulationSet(): string
     {
         return $this->regulationSet;
     }
@@ -802,7 +802,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setRegulationSet(string $regulationSet) : self
+    public function setRegulationSet(string $regulationSet): self
     {
         $this->initialized['regulationSet'] = true;
         $this->regulationSet = $regulationSet;
@@ -820,7 +820,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getTransportationMode() : string
+    public function getTransportationMode(): string
     {
         return $this->transportationMode;
     }
@@ -838,7 +838,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setTransportationMode(string $transportationMode) : self
+    public function setTransportationMode(string $transportationMode): self
     {
         $this->initialized['transportationMode'] = true;
         $this->transportationMode = $transportationMode;
@@ -850,7 +850,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return string
     */
-    public function getCommodityRegulatedLevelCode() : string
+    public function getCommodityRegulatedLevelCode(): string
     {
         return $this->commodityRegulatedLevelCode;
     }
@@ -862,7 +862,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
     *
     * @return self
     */
-    public function setCommodityRegulatedLevelCode(string $commodityRegulatedLevelCode) : self
+    public function setCommodityRegulatedLevelCode(string $commodityRegulatedLevelCode): self
     {
         $this->initialized['commodityRegulatedLevelCode'] = true;
         $this->commodityRegulatedLevelCode = $commodityRegulatedLevelCode;
@@ -873,7 +873,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getTransportCategory() : string
+    public function getTransportCategory(): string
     {
         return $this->transportCategory;
     }
@@ -884,7 +884,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setTransportCategory(string $transportCategory) : self
+    public function setTransportCategory(string $transportCategory): self
     {
         $this->initialized['transportCategory'] = true;
         $this->transportCategory = $transportCategory;
@@ -895,7 +895,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getTunnelRestrictionCode() : string
+    public function getTunnelRestrictionCode(): string
     {
         return $this->tunnelRestrictionCode;
     }
@@ -906,7 +906,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setTunnelRestrictionCode(string $tunnelRestrictionCode) : self
+    public function setTunnelRestrictionCode(string $tunnelRestrictionCode): self
     {
         $this->initialized['tunnelRestrictionCode'] = true;
         $this->tunnelRestrictionCode = $tunnelRestrictionCode;
@@ -917,7 +917,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getChemicalRecordIdentifier() : string
+    public function getChemicalRecordIdentifier(): string
     {
         return $this->chemicalRecordIdentifier;
     }
@@ -928,7 +928,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setChemicalRecordIdentifier(string $chemicalRecordIdentifier) : self
+    public function setChemicalRecordIdentifier(string $chemicalRecordIdentifier): self
     {
         $this->initialized['chemicalRecordIdentifier'] = true;
         $this->chemicalRecordIdentifier = $chemicalRecordIdentifier;
@@ -939,7 +939,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getLocalTechnicalName() : string
+    public function getLocalTechnicalName(): string
     {
         return $this->localTechnicalName;
     }
@@ -950,7 +950,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setLocalTechnicalName(string $localTechnicalName) : self
+    public function setLocalTechnicalName(string $localTechnicalName): self
     {
         $this->initialized['localTechnicalName'] = true;
         $this->localTechnicalName = $localTechnicalName;
@@ -961,7 +961,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return string
      */
-    public function getLocalProperShippingName() : string
+    public function getLocalProperShippingName(): string
     {
         return $this->localProperShippingName;
     }
@@ -972,7 +972,7 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      *
      * @return self
      */
-    public function setLocalProperShippingName(string $localProperShippingName) : self
+    public function setLocalProperShippingName(string $localProperShippingName): self
     {
         $this->initialized['localProperShippingName'] = true;
         $this->localProperShippingName = $localProperShippingName;

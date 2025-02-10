@@ -8,7 +8,7 @@ class PackageResultsForm extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -51,7 +51,7 @@ class PackageResultsForm extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -64,7 +64,7 @@ class PackageResultsForm extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -75,7 +75,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -86,7 +86,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -97,7 +97,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return FormImage
      */
-    public function getImage() : FormImage
+    public function getImage(): FormImage
     {
         return $this->image;
     }
@@ -108,7 +108,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(FormImage $image) : self
+    public function setImage(FormImage $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -119,7 +119,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return string
      */
-    public function getFormGroupId() : string
+    public function getFormGroupId(): string
     {
         return $this->formGroupId;
     }
@@ -130,7 +130,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return self
      */
-    public function setFormGroupId(string $formGroupId) : self
+    public function setFormGroupId(string $formGroupId): self
     {
         $this->initialized['formGroupId'] = true;
         $this->formGroupId = $formGroupId;
@@ -141,7 +141,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return string
      */
-    public function getFormGroupIdName() : string
+    public function getFormGroupIdName(): string
     {
         return $this->formGroupIdName;
     }
@@ -152,7 +152,7 @@ class PackageResultsForm extends \ArrayObject
      *
      * @return self
      */
-    public function setFormGroupIdName(string $formGroupIdName) : self
+    public function setFormGroupIdName(string $formGroupIdName): self
     {
         $this->initialized['formGroupIdName'] = true;
         $this->formGroupIdName = $formGroupIdName;

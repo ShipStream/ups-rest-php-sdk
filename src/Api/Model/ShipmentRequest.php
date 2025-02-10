@@ -8,7 +8,7 @@ class ShipmentRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return ShipmentRequestRequest
      */
-    public function getRequest() : ShipmentRequestRequest
+    public function getRequest(): ShipmentRequestRequest
     {
         return $this->request;
     }
@@ -52,7 +52,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(ShipmentRequestRequest $request) : self
+    public function setRequest(ShipmentRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -63,7 +63,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return ShipmentRequestShipment
      */
-    public function getShipment() : ShipmentRequestShipment
+    public function getShipment(): ShipmentRequestShipment
     {
         return $this->shipment;
     }
@@ -74,7 +74,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(ShipmentRequestShipment $shipment) : self
+    public function setShipment(ShipmentRequestShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;
@@ -85,7 +85,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return ShipmentRequestLabelSpecification
      */
-    public function getLabelSpecification() : ShipmentRequestLabelSpecification
+    public function getLabelSpecification(): ShipmentRequestLabelSpecification
     {
         return $this->labelSpecification;
     }
@@ -96,7 +96,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setLabelSpecification(ShipmentRequestLabelSpecification $labelSpecification) : self
+    public function setLabelSpecification(ShipmentRequestLabelSpecification $labelSpecification): self
     {
         $this->initialized['labelSpecification'] = true;
         $this->labelSpecification = $labelSpecification;
@@ -107,7 +107,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return ShipmentRequestReceiptSpecification
      */
-    public function getReceiptSpecification() : ShipmentRequestReceiptSpecification
+    public function getReceiptSpecification(): ShipmentRequestReceiptSpecification
     {
         return $this->receiptSpecification;
     }
@@ -118,7 +118,7 @@ class ShipmentRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setReceiptSpecification(ShipmentRequestReceiptSpecification $receiptSpecification) : self
+    public function setReceiptSpecification(ShipmentRequestReceiptSpecification $receiptSpecification): self
     {
         $this->initialized['receiptSpecification'] = true;
         $this->receiptSpecification = $receiptSpecification;

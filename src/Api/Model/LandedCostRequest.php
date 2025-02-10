@@ -8,7 +8,7 @@ class LandedCostRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -50,7 +50,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getCurrencyCode() : string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -61,7 +61,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setCurrencyCode(string $currencyCode) : self
+    public function setCurrencyCode(string $currencyCode): self
     {
         $this->initialized['currencyCode'] = true;
         $this->currencyCode = $currencyCode;
@@ -72,7 +72,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getTransID() : string
+    public function getTransID(): string
     {
         return $this->transID;
     }
@@ -83,7 +83,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setTransID(string $transID) : self
+    public function setTransID(string $transID): self
     {
         $this->initialized['transID'] = true;
         $this->transID = $transID;
@@ -97,7 +97,7 @@ class LandedCostRequest extends \ArrayObject
     *
     * @return bool
     */
-    public function getAllowPartialLandedCostResult() : bool
+    public function getAllowPartialLandedCostResult(): bool
     {
         return $this->allowPartialLandedCostResult;
     }
@@ -111,7 +111,7 @@ class LandedCostRequest extends \ArrayObject
     *
     * @return self
     */
-    public function setAllowPartialLandedCostResult(bool $allowPartialLandedCostResult) : self
+    public function setAllowPartialLandedCostResult(bool $allowPartialLandedCostResult): self
     {
         $this->initialized['allowPartialLandedCostResult'] = true;
         $this->allowPartialLandedCostResult = $allowPartialLandedCostResult;
@@ -122,7 +122,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return int
      */
-    public function getAlversion() : int
+    public function getAlversion(): int
     {
         return $this->alversion;
     }
@@ -133,7 +133,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setAlversion(int $alversion) : self
+    public function setAlversion(int $alversion): self
     {
         $this->initialized['alversion'] = true;
         $this->alversion = $alversion;
@@ -144,7 +144,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return LandedCostRequestShipment
      */
-    public function getShipment() : LandedCostRequestShipment
+    public function getShipment(): LandedCostRequestShipment
     {
         return $this->shipment;
     }
@@ -155,7 +155,7 @@ class LandedCostRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setShipment(LandedCostRequestShipment $shipment) : self
+    public function setShipment(LandedCostRequestShipment $shipment): self
     {
         $this->initialized['shipment'] = true;
         $this->shipment = $shipment;

@@ -8,7 +8,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -30,7 +30,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      *
      * @return string
      */
-    public function getSubscriberID() : string
+    public function getSubscriberID(): string
     {
         return $this->subscriberID;
     }
@@ -41,7 +41,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setSubscriberID(string $subscriberID) : self
+    public function setSubscriberID(string $subscriberID): self
     {
         $this->initialized['subscriberID'] = true;
         $this->subscriberID = $subscriberID;
@@ -53,7 +53,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      *
      * @return list<QuantumViewEventsSubscriptionEvents>
      */
-    public function getSubscriptionEvents() : array
+    public function getSubscriptionEvents(): array
     {
         return $this->subscriptionEvents;
     }
@@ -65,7 +65,7 @@ class QuantumViewResponseQuantumViewEvents extends \ArrayObject
      *
      * @return self
      */
-    public function setSubscriptionEvents(array $subscriptionEvents) : self
+    public function setSubscriptionEvents(array $subscriptionEvents): self
     {
         $this->initialized['subscriptionEvents'] = true;
         $this->subscriptionEvents = $subscriptionEvents;

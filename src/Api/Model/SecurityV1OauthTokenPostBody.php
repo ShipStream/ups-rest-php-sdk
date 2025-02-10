@@ -8,7 +8,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      *
      * @return string
      */
-    public function getGrantType() : string
+    public function getGrantType(): string
     {
         return $this->grantType;
     }
@@ -46,7 +46,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setGrantType(string $grantType) : self
+    public function setGrantType(string $grantType): self
     {
         $this->initialized['grantType'] = true;
         $this->grantType = $grantType;
@@ -57,7 +57,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      *
      * @return string
      */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -68,7 +68,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -79,7 +79,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      *
      * @return string
      */
-    public function getRedirectUri() : string
+    public function getRedirectUri(): string
     {
         return $this->redirectUri;
     }
@@ -90,7 +90,7 @@ class SecurityV1OauthTokenPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setRedirectUri(string $redirectUri) : self
+    public function setRedirectUri(string $redirectUri): self
     {
         $this->initialized['redirectUri'] = true;
         $this->redirectUri = $redirectUri;

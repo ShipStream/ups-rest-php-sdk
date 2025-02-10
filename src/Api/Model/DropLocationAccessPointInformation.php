@@ -8,7 +8,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -59,7 +59,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getPublicAccessPointID() : string
+    public function getPublicAccessPointID(): string
     {
         return $this->publicAccessPointID;
     }
@@ -70,7 +70,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPublicAccessPointID(string $publicAccessPointID) : self
+    public function setPublicAccessPointID(string $publicAccessPointID): self
     {
         $this->initialized['publicAccessPointID'] = true;
         $this->publicAccessPointID = $publicAccessPointID;
@@ -81,7 +81,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getImageURL() : string
+    public function getImageURL(): string
     {
         return $this->imageURL;
     }
@@ -92,7 +92,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setImageURL(string $imageURL) : self
+    public function setImageURL(string $imageURL): self
     {
         $this->initialized['imageURL'] = true;
         $this->imageURL = $imageURL;
@@ -103,7 +103,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return AccessPointInformationBusinessClassificationList
      */
-    public function getBusinessClassificationList() : AccessPointInformationBusinessClassificationList
+    public function getBusinessClassificationList(): AccessPointInformationBusinessClassificationList
     {
         return $this->businessClassificationList;
     }
@@ -114,7 +114,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setBusinessClassificationList(AccessPointInformationBusinessClassificationList $businessClassificationList) : self
+    public function setBusinessClassificationList(AccessPointInformationBusinessClassificationList $businessClassificationList): self
     {
         $this->initialized['businessClassificationList'] = true;
         $this->businessClassificationList = $businessClassificationList;
@@ -125,7 +125,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return AccessPointInformationAccessPointStatus
      */
-    public function getAccessPointStatus() : AccessPointInformationAccessPointStatus
+    public function getAccessPointStatus(): AccessPointInformationAccessPointStatus
     {
         return $this->accessPointStatus;
     }
@@ -136,7 +136,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setAccessPointStatus(AccessPointInformationAccessPointStatus $accessPointStatus) : self
+    public function setAccessPointStatus(AccessPointInformationAccessPointStatus $accessPointStatus): self
     {
         $this->initialized['accessPointStatus'] = true;
         $this->accessPointStatus = $accessPointStatus;
@@ -147,7 +147,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getFacilitySLIC() : string
+    public function getFacilitySLIC(): string
     {
         return $this->facilitySLIC;
     }
@@ -158,7 +158,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setFacilitySLIC(string $facilitySLIC) : self
+    public function setFacilitySLIC(string $facilitySLIC): self
     {
         $this->initialized['facilitySLIC'] = true;
         $this->facilitySLIC = $facilitySLIC;
@@ -169,7 +169,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return AccessPointInformationPrivateNetworkList
      */
-    public function getPrivateNetworkList() : AccessPointInformationPrivateNetworkList
+    public function getPrivateNetworkList(): AccessPointInformationPrivateNetworkList
     {
         return $this->privateNetworkList;
     }
@@ -180,7 +180,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPrivateNetworkList(AccessPointInformationPrivateNetworkList $privateNetworkList) : self
+    public function setPrivateNetworkList(AccessPointInformationPrivateNetworkList $privateNetworkList): self
     {
         $this->initialized['privateNetworkList'] = true;
         $this->privateNetworkList = $privateNetworkList;
@@ -191,7 +191,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return AccessPointInformationAvailability
      */
-    public function getAvailability() : AccessPointInformationAvailability
+    public function getAvailability(): AccessPointInformationAvailability
     {
         return $this->availability;
     }
@@ -202,7 +202,7 @@ class DropLocationAccessPointInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setAvailability(AccessPointInformationAvailability $availability) : self
+    public function setAvailability(AccessPointInformationAvailability $availability): self
     {
         $this->initialized['availability'] = true;
         $this->availability = $availability;

@@ -8,7 +8,7 @@ class ContactsIntermediateConsignee extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ContactsIntermediateConsignee extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -40,7 +40,7 @@ class ContactsIntermediateConsignee extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -51,7 +51,7 @@ class ContactsIntermediateConsignee extends \ArrayObject
      *
      * @return IntermediateConsigneeAddress
      */
-    public function getAddress() : IntermediateConsigneeAddress
+    public function getAddress(): IntermediateConsigneeAddress
     {
         return $this->address;
     }
@@ -62,7 +62,7 @@ class ContactsIntermediateConsignee extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(IntermediateConsigneeAddress $address) : self
+    public function setAddress(IntermediateConsigneeAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

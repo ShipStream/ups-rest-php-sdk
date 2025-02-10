@@ -8,7 +8,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -54,7 +54,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return ShippingLabelImageFormat
      */
-    public function getImageFormat() : ShippingLabelImageFormat
+    public function getImageFormat(): ShippingLabelImageFormat
     {
         return $this->imageFormat;
     }
@@ -65,7 +65,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return self
      */
-    public function setImageFormat(ShippingLabelImageFormat $imageFormat) : self
+    public function setImageFormat(ShippingLabelImageFormat $imageFormat): self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;
@@ -76,7 +76,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return string
      */
-    public function getGraphicImage() : string
+    public function getGraphicImage(): string
     {
         return $this->graphicImage;
     }
@@ -87,7 +87,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return self
      */
-    public function setGraphicImage(string $graphicImage) : self
+    public function setGraphicImage(string $graphicImage): self
     {
         $this->initialized['graphicImage'] = true;
         $this->graphicImage = $graphicImage;
@@ -99,7 +99,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getGraphicImagePart() : array
+    public function getGraphicImagePart(): array
     {
         return $this->graphicImagePart;
     }
@@ -111,7 +111,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return self
      */
-    public function setGraphicImagePart(array $graphicImagePart) : self
+    public function setGraphicImagePart(array $graphicImagePart): self
     {
         $this->initialized['graphicImagePart'] = true;
         $this->graphicImagePart = $graphicImagePart;
@@ -122,7 +122,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return string
      */
-    public function getInternationalSignatureGraphicImage() : string
+    public function getInternationalSignatureGraphicImage(): string
     {
         return $this->internationalSignatureGraphicImage;
     }
@@ -133,7 +133,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return self
      */
-    public function setInternationalSignatureGraphicImage(string $internationalSignatureGraphicImage) : self
+    public function setInternationalSignatureGraphicImage(string $internationalSignatureGraphicImage): self
     {
         $this->initialized['internationalSignatureGraphicImage'] = true;
         $this->internationalSignatureGraphicImage = $internationalSignatureGraphicImage;
@@ -144,7 +144,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return string
      */
-    public function getHTMLImage() : string
+    public function getHTMLImage(): string
     {
         return $this->hTMLImage;
     }
@@ -155,7 +155,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return self
      */
-    public function setHTMLImage(string $hTMLImage) : self
+    public function setHTMLImage(string $hTMLImage): self
     {
         $this->initialized['hTMLImage'] = true;
         $this->hTMLImage = $hTMLImage;
@@ -166,7 +166,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return string
      */
-    public function getPDF417() : string
+    public function getPDF417(): string
     {
         return $this->pDF417;
     }
@@ -177,7 +177,7 @@ class PackageResultsShippingLabel extends \ArrayObject
      *
      * @return self
      */
-    public function setPDF417(string $pDF417) : self
+    public function setPDF417(string $pDF417): self
     {
         $this->initialized['pDF417'] = true;
         $this->pDF417 = $pDF417;

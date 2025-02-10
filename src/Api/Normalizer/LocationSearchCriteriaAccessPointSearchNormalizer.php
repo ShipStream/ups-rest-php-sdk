@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch';
+            return $type === \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -53,11 +53,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['AccountNumber']);
             }
             if (\array_key_exists('IncludeCriteria', $data)) {
-                $object->setIncludeCriteria($this->denormalizer->denormalize($data['IncludeCriteria'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria', 'json', $context));
+                $object->setIncludeCriteria($this->denormalizer->denormalize($data['IncludeCriteria'], \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class, 'json', $context));
                 unset($data['IncludeCriteria']);
             }
             if (\array_key_exists('ExcludeFromResult', $data)) {
-                $object->setExcludeFromResult($this->denormalizer->denormalize($data['ExcludeFromResult'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult', 'json', $context));
+                $object->setExcludeFromResult($this->denormalizer->denormalize($data['ExcludeFromResult'], \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class, 'json', $context));
                 unset($data['ExcludeFromResult']);
             }
             if (\array_key_exists('ExactMatchIndicator', $data)) {
@@ -75,7 +75,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             if ($object->isInitialized('publicAccessPointID') && null !== $object->getPublicAccessPointID()) {
@@ -106,9 +106,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch' => false];
+            return [\ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class => false];
         }
     }
 } else {
@@ -118,13 +118,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch';
+            return $type === \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class;
         }
         /**
          * @return mixed
@@ -154,11 +154,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['AccountNumber']);
             }
             if (\array_key_exists('IncludeCriteria', $data)) {
-                $object->setIncludeCriteria($this->denormalizer->denormalize($data['IncludeCriteria'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchIncludeCriteria', 'json', $context));
+                $object->setIncludeCriteria($this->denormalizer->denormalize($data['IncludeCriteria'], \ShipStream\Ups\Api\Model\AccessPointSearchIncludeCriteria::class, 'json', $context));
                 unset($data['IncludeCriteria']);
             }
             if (\array_key_exists('ExcludeFromResult', $data)) {
-                $object->setExcludeFromResult($this->denormalizer->denormalize($data['ExcludeFromResult'], 'ShipStream\\Ups\\Api\\Model\\AccessPointSearchExcludeFromResult', 'json', $context));
+                $object->setExcludeFromResult($this->denormalizer->denormalize($data['ExcludeFromResult'], \ShipStream\Ups\Api\Model\AccessPointSearchExcludeFromResult::class, 'json', $context));
                 unset($data['ExcludeFromResult']);
             }
             if (\array_key_exists('ExactMatchIndicator', $data)) {
@@ -210,9 +210,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\LocationSearchCriteriaAccessPointSearch' => false];
+            return [\ShipStream\Ups\Api\Model\LocationSearchCriteriaAccessPointSearch::class => false];
         }
     }
 }

@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges';
+            return $type === \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -41,11 +41,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('GrossCharge', $data)) {
-                $object->setGrossCharge($this->denormalizer->denormalize($data['GrossCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge', 'json', $context));
+                $object->setGrossCharge($this->denormalizer->denormalize($data['GrossCharge'], \ShipStream\Ups\Api\Model\TransportationChargesGrossCharge::class, 'json', $context));
                 unset($data['GrossCharge']);
             }
             if (\array_key_exists('DiscountAmount', $data)) {
-                $object->setDiscountAmount($this->denormalizer->denormalize($data['DiscountAmount'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount', 'json', $context));
+                $object->setDiscountAmount($this->denormalizer->denormalize($data['DiscountAmount'], \ShipStream\Ups\Api\Model\TransportationChargesDiscountAmount::class, 'json', $context));
                 unset($data['DiscountAmount']);
             }
             if (\array_key_exists('DiscountPercentage', $data)) {
@@ -53,7 +53,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DiscountPercentage']);
             }
             if (\array_key_exists('NetCharge', $data)) {
-                $object->setNetCharge($this->denormalizer->denormalize($data['NetCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge', 'json', $context));
+                $object->setNetCharge($this->denormalizer->denormalize($data['NetCharge'], \ShipStream\Ups\Api\Model\TransportationChargesNetCharge::class, 'json', $context));
                 unset($data['NetCharge']);
             }
             foreach ($data as $key => $value) {
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['GrossCharge'] = $this->normalizer->normalize($object->getGrossCharge(), 'json', $context);
@@ -77,9 +77,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges' => false];
+            return [\ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class => false];
         }
     }
 } else {
@@ -89,13 +89,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges';
+            return $type === \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class;
         }
         /**
          * @return mixed
@@ -113,11 +113,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('GrossCharge', $data)) {
-                $object->setGrossCharge($this->denormalizer->denormalize($data['GrossCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesGrossCharge', 'json', $context));
+                $object->setGrossCharge($this->denormalizer->denormalize($data['GrossCharge'], \ShipStream\Ups\Api\Model\TransportationChargesGrossCharge::class, 'json', $context));
                 unset($data['GrossCharge']);
             }
             if (\array_key_exists('DiscountAmount', $data)) {
-                $object->setDiscountAmount($this->denormalizer->denormalize($data['DiscountAmount'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesDiscountAmount', 'json', $context));
+                $object->setDiscountAmount($this->denormalizer->denormalize($data['DiscountAmount'], \ShipStream\Ups\Api\Model\TransportationChargesDiscountAmount::class, 'json', $context));
                 unset($data['DiscountAmount']);
             }
             if (\array_key_exists('DiscountPercentage', $data)) {
@@ -125,7 +125,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['DiscountPercentage']);
             }
             if (\array_key_exists('NetCharge', $data)) {
-                $object->setNetCharge($this->denormalizer->denormalize($data['NetCharge'], 'ShipStream\\Ups\\Api\\Model\\TransportationChargesNetCharge', 'json', $context));
+                $object->setNetCharge($this->denormalizer->denormalize($data['NetCharge'], \ShipStream\Ups\Api\Model\TransportationChargesNetCharge::class, 'json', $context));
                 unset($data['NetCharge']);
             }
             foreach ($data as $key => $value) {
@@ -152,9 +152,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\FRSShipmentDataTransportationCharges' => false];
+            return [\ShipStream\Ups\Api\Model\FRSShipmentDataTransportationCharges::class => false];
         }
     }
 }

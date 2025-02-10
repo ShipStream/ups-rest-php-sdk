@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities';
+            return $type === \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -45,7 +45,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Name']);
             }
             if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesAddress', 'json', $context));
+                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\DropOffFacilitiesAddress::class, 'json', $context));
                 unset($data['Address']);
             }
             if (\array_key_exists('SLIC', $data)) {
@@ -69,7 +69,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Fax']);
             }
             if (\array_key_exists('FacilityTime', $data)) {
-                $object->setFacilityTime($this->denormalizer->denormalize($data['FacilityTime'], 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesFacilityTime', 'json', $context));
+                $object->setFacilityTime($this->denormalizer->denormalize($data['FacilityTime'], \ShipStream\Ups\Api\Model\DropOffFacilitiesFacilityTime::class, 'json', $context));
                 unset($data['FacilityTime']);
             }
             if (\array_key_exists('OriginOrDestination', $data)) {
@@ -79,13 +79,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('LocalizedInstruction', $data)) {
                 $values = [];
                 foreach ($data['LocalizedInstruction'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\DropOffFacilitiesLocalizedInstruction::class, 'json', $context);
                 }
                 $object->setLocalizedInstruction($values);
                 unset($data['LocalizedInstruction']);
             }
             if (\array_key_exists('Distance', $data)) {
-                $object->setDistance($this->denormalizer->denormalize($data['Distance'], 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesDistance', 'json', $context));
+                $object->setDistance($this->denormalizer->denormalize($data['Distance'], \ShipStream\Ups\Api\Model\DropOffFacilitiesDistance::class, 'json', $context));
                 unset($data['Distance']);
             }
             foreach ($data as $key => $value_1) {
@@ -95,7 +95,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['Name'] = $object->getName();
@@ -126,9 +126,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities' => false];
+            return [\ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class => false];
         }
     }
 } else {
@@ -138,13 +138,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities';
+            return $type === \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class;
         }
         /**
          * @return mixed
@@ -166,7 +166,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Name']);
             }
             if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesAddress', 'json', $context));
+                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\DropOffFacilitiesAddress::class, 'json', $context));
                 unset($data['Address']);
             }
             if (\array_key_exists('SLIC', $data)) {
@@ -190,7 +190,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['Fax']);
             }
             if (\array_key_exists('FacilityTime', $data)) {
-                $object->setFacilityTime($this->denormalizer->denormalize($data['FacilityTime'], 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesFacilityTime', 'json', $context));
+                $object->setFacilityTime($this->denormalizer->denormalize($data['FacilityTime'], \ShipStream\Ups\Api\Model\DropOffFacilitiesFacilityTime::class, 'json', $context));
                 unset($data['FacilityTime']);
             }
             if (\array_key_exists('OriginOrDestination', $data)) {
@@ -200,13 +200,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('LocalizedInstruction', $data)) {
                 $values = [];
                 foreach ($data['LocalizedInstruction'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesLocalizedInstruction', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\DropOffFacilitiesLocalizedInstruction::class, 'json', $context);
                 }
                 $object->setLocalizedInstruction($values);
                 unset($data['LocalizedInstruction']);
             }
             if (\array_key_exists('Distance', $data)) {
-                $object->setDistance($this->denormalizer->denormalize($data['Distance'], 'ShipStream\\Ups\\Api\\Model\\DropOffFacilitiesDistance', 'json', $context));
+                $object->setDistance($this->denormalizer->denormalize($data['Distance'], \ShipStream\Ups\Api\Model\DropOffFacilitiesDistance::class, 'json', $context));
                 unset($data['Distance']);
             }
             foreach ($data as $key => $value_1) {
@@ -250,9 +250,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\ServiceCenterLocationDropOffFacilities' => false];
+            return [\ShipStream\Ups\Api\Model\ServiceCenterLocationDropOffFacilities::class => false];
         }
     }
 }

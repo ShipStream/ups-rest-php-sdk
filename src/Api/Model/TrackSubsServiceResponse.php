@@ -8,7 +8,7 @@ class TrackSubsServiceResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class TrackSubsServiceResponse extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getValidTrackingNumbers() : array
+    public function getValidTrackingNumbers(): array
     {
         return $this->validTrackingNumbers;
     }
@@ -40,7 +40,7 @@ class TrackSubsServiceResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setValidTrackingNumbers(array $validTrackingNumbers) : self
+    public function setValidTrackingNumbers(array $validTrackingNumbers): self
     {
         $this->initialized['validTrackingNumbers'] = true;
         $this->validTrackingNumbers = $validTrackingNumbers;
@@ -51,7 +51,7 @@ class TrackSubsServiceResponse extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getInvalidTrackingNumbers() : array
+    public function getInvalidTrackingNumbers(): array
     {
         return $this->invalidTrackingNumbers;
     }
@@ -62,7 +62,7 @@ class TrackSubsServiceResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setInvalidTrackingNumbers(array $invalidTrackingNumbers) : self
+    public function setInvalidTrackingNumbers(array $invalidTrackingNumbers): self
     {
         $this->initialized['invalidTrackingNumbers'] = true;
         $this->invalidTrackingNumbers = $invalidTrackingNumbers;

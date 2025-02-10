@@ -8,7 +8,7 @@ class Services extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -197,7 +197,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getServiceLevel() : string
+    public function getServiceLevel(): string
     {
         return $this->serviceLevel;
     }
@@ -212,7 +212,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setServiceLevel(string $serviceLevel) : self
+    public function setServiceLevel(string $serviceLevel): self
     {
         $this->initialized['serviceLevel'] = true;
         $this->serviceLevel = $serviceLevel;
@@ -223,7 +223,7 @@ class Services extends \ArrayObject
      *
      * @return string
      */
-    public function getServiceLevelDescription() : string
+    public function getServiceLevelDescription(): string
     {
         return $this->serviceLevelDescription;
     }
@@ -234,7 +234,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceLevelDescription(string $serviceLevelDescription) : self
+    public function setServiceLevelDescription(string $serviceLevelDescription): self
     {
         $this->initialized['serviceLevelDescription'] = true;
         $this->serviceLevelDescription = $serviceLevelDescription;
@@ -247,7 +247,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getShipDate() : string
+    public function getShipDate(): string
     {
         return $this->shipDate;
     }
@@ -260,7 +260,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(string $shipDate): self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -273,7 +273,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getDeliveryDate() : string
+    public function getDeliveryDate(): string
     {
         return $this->deliveryDate;
     }
@@ -286,7 +286,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setDeliveryDate(string $deliveryDate) : self
+    public function setDeliveryDate(string $deliveryDate): self
     {
         $this->initialized['deliveryDate'] = true;
         $this->deliveryDate = $deliveryDate;
@@ -301,7 +301,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getCommitTime() : string
+    public function getCommitTime(): string
     {
         return $this->commitTime;
     }
@@ -316,7 +316,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setCommitTime(string $commitTime) : self
+    public function setCommitTime(string $commitTime): self
     {
         $this->initialized['commitTime'] = true;
         $this->commitTime = $commitTime;
@@ -329,7 +329,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getDeliveryTime() : string
+    public function getDeliveryTime(): string
     {
         return $this->deliveryTime;
     }
@@ -342,7 +342,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setDeliveryTime(string $deliveryTime) : self
+    public function setDeliveryTime(string $deliveryTime): self
     {
         $this->initialized['deliveryTime'] = true;
         $this->deliveryTime = $deliveryTime;
@@ -355,7 +355,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getDeliveryDayOfWeek() : string
+    public function getDeliveryDayOfWeek(): string
     {
         return $this->deliveryDayOfWeek;
     }
@@ -368,7 +368,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setDeliveryDayOfWeek(string $deliveryDayOfWeek) : self
+    public function setDeliveryDayOfWeek(string $deliveryDayOfWeek): self
     {
         $this->initialized['deliveryDayOfWeek'] = true;
         $this->deliveryDayOfWeek = $deliveryDayOfWeek;
@@ -381,7 +381,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getNextDayPickupIndicator() : string
+    public function getNextDayPickupIndicator(): string
     {
         return $this->nextDayPickupIndicator;
     }
@@ -394,7 +394,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setNextDayPickupIndicator(string $nextDayPickupIndicator) : self
+    public function setNextDayPickupIndicator(string $nextDayPickupIndicator): self
     {
         $this->initialized['nextDayPickupIndicator'] = true;
         $this->nextDayPickupIndicator = $nextDayPickupIndicator;
@@ -407,7 +407,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getSaturdayPickupIndicator() : string
+    public function getSaturdayPickupIndicator(): string
     {
         return $this->saturdayPickupIndicator;
     }
@@ -420,7 +420,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setSaturdayPickupIndicator(string $saturdayPickupIndicator) : self
+    public function setSaturdayPickupIndicator(string $saturdayPickupIndicator): self
     {
         $this->initialized['saturdayPickupIndicator'] = true;
         $this->saturdayPickupIndicator = $saturdayPickupIndicator;
@@ -433,7 +433,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getSaturdayDeliveryDate() : string
+    public function getSaturdayDeliveryDate(): string
     {
         return $this->saturdayDeliveryDate;
     }
@@ -446,7 +446,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setSaturdayDeliveryDate(string $saturdayDeliveryDate) : self
+    public function setSaturdayDeliveryDate(string $saturdayDeliveryDate): self
     {
         $this->initialized['saturdayDeliveryDate'] = true;
         $this->saturdayDeliveryDate = $saturdayDeliveryDate;
@@ -459,7 +459,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getSaturdayDeliveryTime() : string
+    public function getSaturdayDeliveryTime(): string
     {
         return $this->saturdayDeliveryTime;
     }
@@ -472,7 +472,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setSaturdayDeliveryTime(string $saturdayDeliveryTime) : self
+    public function setSaturdayDeliveryTime(string $saturdayDeliveryTime): self
     {
         $this->initialized['saturdayDeliveryTime'] = true;
         $this->saturdayDeliveryTime = $saturdayDeliveryTime;
@@ -483,7 +483,7 @@ class Services extends \ArrayObject
      *
      * @return string
      */
-    public function getServiceRemarksText() : string
+    public function getServiceRemarksText(): string
     {
         return $this->serviceRemarksText;
     }
@@ -494,7 +494,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceRemarksText(string $serviceRemarksText) : self
+    public function setServiceRemarksText(string $serviceRemarksText): self
     {
         $this->initialized['serviceRemarksText'] = true;
         $this->serviceRemarksText = $serviceRemarksText;
@@ -509,7 +509,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getGuaranteeIndicator() : string
+    public function getGuaranteeIndicator(): string
     {
         return $this->guaranteeIndicator;
     }
@@ -524,7 +524,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setGuaranteeIndicator(string $guaranteeIndicator) : self
+    public function setGuaranteeIndicator(string $guaranteeIndicator): self
     {
         $this->initialized['guaranteeIndicator'] = true;
         $this->guaranteeIndicator = $guaranteeIndicator;
@@ -537,7 +537,7 @@ class Services extends \ArrayObject
     *
     * @return int
     */
-    public function getTotalTransitDays() : int
+    public function getTotalTransitDays(): int
     {
         return $this->totalTransitDays;
     }
@@ -550,7 +550,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setTotalTransitDays(int $totalTransitDays) : self
+    public function setTotalTransitDays(int $totalTransitDays): self
     {
         $this->initialized['totalTransitDays'] = true;
         $this->totalTransitDays = $totalTransitDays;
@@ -561,7 +561,7 @@ class Services extends \ArrayObject
      *
      * @return int
      */
-    public function getBusinessTransitDays() : int
+    public function getBusinessTransitDays(): int
     {
         return $this->businessTransitDays;
     }
@@ -572,7 +572,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setBusinessTransitDays(int $businessTransitDays) : self
+    public function setBusinessTransitDays(int $businessTransitDays): self
     {
         $this->initialized['businessTransitDays'] = true;
         $this->businessTransitDays = $businessTransitDays;
@@ -585,7 +585,7 @@ class Services extends \ArrayObject
     *
     * @return int
     */
-    public function getRestDaysCount() : int
+    public function getRestDaysCount(): int
     {
         return $this->restDaysCount;
     }
@@ -598,7 +598,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setRestDaysCount(int $restDaysCount) : self
+    public function setRestDaysCount(int $restDaysCount): self
     {
         $this->initialized['restDaysCount'] = true;
         $this->restDaysCount = $restDaysCount;
@@ -611,7 +611,7 @@ class Services extends \ArrayObject
     *
     * @return int
     */
-    public function getHolidayCount() : int
+    public function getHolidayCount(): int
     {
         return $this->holidayCount;
     }
@@ -624,7 +624,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setHolidayCount(int $holidayCount) : self
+    public function setHolidayCount(int $holidayCount): self
     {
         $this->initialized['holidayCount'] = true;
         $this->holidayCount = $holidayCount;
@@ -637,7 +637,7 @@ class Services extends \ArrayObject
     *
     * @return int
     */
-    public function getDelayCount() : int
+    public function getDelayCount(): int
     {
         return $this->delayCount;
     }
@@ -650,7 +650,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setDelayCount(int $delayCount) : self
+    public function setDelayCount(int $delayCount): self
     {
         $this->initialized['delayCount'] = true;
         $this->delayCount = $delayCount;
@@ -663,7 +663,7 @@ class Services extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupDate() : string
+    public function getPickupDate(): string
     {
         return $this->pickupDate;
     }
@@ -676,7 +676,7 @@ class Services extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupDate(string $pickupDate) : self
+    public function setPickupDate(string $pickupDate): self
     {
         $this->initialized['pickupDate'] = true;
         $this->pickupDate = $pickupDate;
@@ -687,7 +687,7 @@ class Services extends \ArrayObject
      *
      * @return string
      */
-    public function getPickupTime() : string
+    public function getPickupTime(): string
     {
         return $this->pickupTime;
     }
@@ -698,7 +698,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupTime(string $pickupTime) : self
+    public function setPickupTime(string $pickupTime): self
     {
         $this->initialized['pickupTime'] = true;
         $this->pickupTime = $pickupTime;
@@ -709,7 +709,7 @@ class Services extends \ArrayObject
      *
      * @return string
      */
-    public function getCstccutoffTime() : string
+    public function getCstccutoffTime(): string
     {
         return $this->cstccutoffTime;
     }
@@ -720,7 +720,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setCstccutoffTime(string $cstccutoffTime) : self
+    public function setCstccutoffTime(string $cstccutoffTime): self
     {
         $this->initialized['cstccutoffTime'] = true;
         $this->cstccutoffTime = $cstccutoffTime;
@@ -731,7 +731,7 @@ class Services extends \ArrayObject
      *
      * @return string
      */
-    public function getPoddate() : string
+    public function getPoddate(): string
     {
         return $this->poddate;
     }
@@ -742,7 +742,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setPoddate(string $poddate) : self
+    public function setPoddate(string $poddate): self
     {
         $this->initialized['poddate'] = true;
         $this->poddate = $poddate;
@@ -753,7 +753,7 @@ class Services extends \ArrayObject
      *
      * @return int
      */
-    public function getPoddays() : int
+    public function getPoddays(): int
     {
         return $this->poddays;
     }
@@ -764,7 +764,7 @@ class Services extends \ArrayObject
      *
      * @return self
      */
-    public function setPoddays(int $poddays) : self
+    public function setPoddays(int $poddays): self
     {
         $this->initialized['poddays'] = true;
         $this->poddays = $poddays;

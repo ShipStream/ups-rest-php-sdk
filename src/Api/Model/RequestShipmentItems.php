@@ -8,7 +8,7 @@ class RequestShipmentItems extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -77,7 +77,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityId() : string
+    public function getCommodityId(): string
     {
         return $this->commodityId;
     }
@@ -88,7 +88,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityId(string $commodityId) : self
+    public function setCommodityId(string $commodityId): self
     {
         $this->initialized['commodityId'] = true;
         $this->commodityId = $commodityId;
@@ -99,7 +99,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return float
      */
-    public function getGrossWeight() : float
+    public function getGrossWeight(): float
     {
         return $this->grossWeight;
     }
@@ -110,7 +110,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setGrossWeight(float $grossWeight) : self
+    public function setGrossWeight(float $grossWeight): self
     {
         $this->initialized['grossWeight'] = true;
         $this->grossWeight = $grossWeight;
@@ -121,7 +121,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getGrossWeightUnit() : string
+    public function getGrossWeightUnit(): string
     {
         return $this->grossWeightUnit;
     }
@@ -132,7 +132,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setGrossWeightUnit(string $grossWeightUnit) : self
+    public function setGrossWeightUnit(string $grossWeightUnit): self
     {
         $this->initialized['grossWeightUnit'] = true;
         $this->grossWeightUnit = $grossWeightUnit;
@@ -143,7 +143,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return float
      */
-    public function getPriceEach() : float
+    public function getPriceEach(): float
     {
         return $this->priceEach;
     }
@@ -154,7 +154,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setPriceEach(float $priceEach) : self
+    public function setPriceEach(float $priceEach): self
     {
         $this->initialized['priceEach'] = true;
         $this->priceEach = $priceEach;
@@ -165,7 +165,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityCurrencyCode() : string
+    public function getCommodityCurrencyCode(): string
     {
         return $this->commodityCurrencyCode;
     }
@@ -176,7 +176,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityCurrencyCode(string $commodityCurrencyCode) : self
+    public function setCommodityCurrencyCode(string $commodityCurrencyCode): self
     {
         $this->initialized['commodityCurrencyCode'] = true;
         $this->commodityCurrencyCode = $commodityCurrencyCode;
@@ -187,7 +187,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return int
      */
-    public function getQuantity() : int
+    public function getQuantity(): int
     {
         return $this->quantity;
     }
@@ -198,7 +198,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setQuantity(int $quantity) : self
+    public function setQuantity(int $quantity): self
     {
         $this->initialized['quantity'] = true;
         $this->quantity = $quantity;
@@ -209,7 +209,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getUOM() : string
+    public function getUOM(): string
     {
         return $this->uOM;
     }
@@ -220,7 +220,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setUOM(string $uOM) : self
+    public function setUOM(string $uOM): self
     {
         $this->initialized['uOM'] = true;
         $this->uOM = $uOM;
@@ -231,7 +231,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getHsCode() : string
+    public function getHsCode(): string
     {
         return $this->hsCode;
     }
@@ -242,7 +242,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setHsCode(string $hsCode) : self
+    public function setHsCode(string $hsCode): self
     {
         $this->initialized['hsCode'] = true;
         $this->hsCode = $hsCode;
@@ -253,7 +253,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -264,7 +264,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -275,7 +275,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginCountryCode() : string
+    public function getOriginCountryCode(): string
     {
         return $this->originCountryCode;
     }
@@ -286,7 +286,7 @@ class RequestShipmentItems extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginCountryCode(string $originCountryCode) : self
+    public function setOriginCountryCode(string $originCountryCode): self
     {
         $this->initialized['originCountryCode'] = true;
         $this->originCountryCode = $originCountryCode;

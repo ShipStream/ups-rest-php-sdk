@@ -8,7 +8,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getShippingHistoryUserKey() : string
+    public function getShippingHistoryUserKey(): string
     {
         return $this->shippingHistoryUserKey;
     }
@@ -46,7 +46,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShippingHistoryUserKey(string $shippingHistoryUserKey) : self
+    public function setShippingHistoryUserKey(string $shippingHistoryUserKey): self
     {
         $this->initialized['shippingHistoryUserKey'] = true;
         $this->shippingHistoryUserKey = $shippingHistoryUserKey;
@@ -57,7 +57,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentIdentificationNumber() : string
+    public function getShipmentIdentificationNumber(): string
     {
         return $this->shipmentIdentificationNumber;
     }
@@ -68,7 +68,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber) : self
+    public function setShipmentIdentificationNumber(string $shipmentIdentificationNumber): self
     {
         $this->initialized['shipmentIdentificationNumber'] = true;
         $this->shipmentIdentificationNumber = $shipmentIdentificationNumber;
@@ -79,7 +79,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getTrackingNumber() : array
+    public function getTrackingNumber(): array
     {
         return $this->trackingNumber;
     }
@@ -90,7 +90,7 @@ class VoidShipmentRequestVoidShipment extends \ArrayObject
      *
      * @return self
      */
-    public function setTrackingNumber(array $trackingNumber) : self
+    public function setTrackingNumber(array $trackingNumber): self
     {
         $this->initialized['trackingNumber'] = true;
         $this->trackingNumber = $trackingNumber;

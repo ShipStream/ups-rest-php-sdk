@@ -8,7 +8,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      *
      * @return FRSPaymentInformationType
      */
-    public function getType() : FRSPaymentInformationType
+    public function getType(): FRSPaymentInformationType
     {
         return $this->type;
     }
@@ -46,7 +46,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setType(FRSPaymentInformationType $type) : self
+    public function setType(FRSPaymentInformationType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -57,7 +57,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      *
      * @return string
      */
-    public function getAccountNumber() : string
+    public function getAccountNumber(): string
     {
         return $this->accountNumber;
     }
@@ -68,7 +68,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setAccountNumber(string $accountNumber) : self
+    public function setAccountNumber(string $accountNumber): self
     {
         $this->initialized['accountNumber'] = true;
         $this->accountNumber = $accountNumber;
@@ -79,7 +79,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      *
      * @return FRSPaymentInformationAddress
      */
-    public function getAddress() : FRSPaymentInformationAddress
+    public function getAddress(): FRSPaymentInformationAddress
     {
         return $this->address;
     }
@@ -90,7 +90,7 @@ class ShipmentFRSPaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(FRSPaymentInformationAddress $address) : self
+    public function setAddress(FRSPaymentInformationAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

@@ -8,7 +8,7 @@ class LocatorResponseResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -43,7 +43,7 @@ class LocatorResponseResponse extends \ArrayObject
      *
      * @return ResponseTransactionReference
      */
-    public function getTransactionReference() : ResponseTransactionReference
+    public function getTransactionReference(): ResponseTransactionReference
     {
         return $this->transactionReference;
     }
@@ -54,7 +54,7 @@ class LocatorResponseResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setTransactionReference(ResponseTransactionReference $transactionReference) : self
+    public function setTransactionReference(ResponseTransactionReference $transactionReference): self
     {
         $this->initialized['transactionReference'] = true;
         $this->transactionReference = $transactionReference;
@@ -67,7 +67,7 @@ class LocatorResponseResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getResponseStatusCode() : string
+    public function getResponseStatusCode(): string
     {
         return $this->responseStatusCode;
     }
@@ -80,7 +80,7 @@ class LocatorResponseResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setResponseStatusCode(string $responseStatusCode) : self
+    public function setResponseStatusCode(string $responseStatusCode): self
     {
         $this->initialized['responseStatusCode'] = true;
         $this->responseStatusCode = $responseStatusCode;
@@ -91,7 +91,7 @@ class LocatorResponseResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getResponseStatusDescription() : string
+    public function getResponseStatusDescription(): string
     {
         return $this->responseStatusDescription;
     }
@@ -102,7 +102,7 @@ class LocatorResponseResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponseStatusDescription(string $responseStatusDescription) : self
+    public function setResponseStatusDescription(string $responseStatusDescription): self
     {
         $this->initialized['responseStatusDescription'] = true;
         $this->responseStatusDescription = $responseStatusDescription;
@@ -113,7 +113,7 @@ class LocatorResponseResponse extends \ArrayObject
      *
      * @return ResponseError
      */
-    public function getError() : ResponseError
+    public function getError(): ResponseError
     {
         return $this->error;
     }
@@ -124,7 +124,7 @@ class LocatorResponseResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setError(ResponseError $error) : self
+    public function setError(ResponseError $error): self
     {
         $this->initialized['error'] = true;
         $this->error = $error;

@@ -8,7 +8,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityID() : string
+    public function getCommodityID(): string
     {
         return $this->commodityID;
     }
@@ -52,7 +52,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityID(string $commodityID) : self
+    public function setCommodityID(string $commodityID): self
     {
         $this->initialized['commodityID'] = true;
         $this->commodityID = $commodityID;
@@ -63,7 +63,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return string
      */
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -74,7 +74,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(string $description) : self
+    public function setDescription(string $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -85,7 +85,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return CommodityWeight
      */
-    public function getWeight() : CommodityWeight
+    public function getWeight(): CommodityWeight
     {
         return $this->weight;
     }
@@ -96,7 +96,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setWeight(CommodityWeight $weight) : self
+    public function setWeight(CommodityWeight $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -107,7 +107,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return CommodityAdjustedWeight
      */
-    public function getAdjustedWeight() : CommodityAdjustedWeight
+    public function getAdjustedWeight(): CommodityAdjustedWeight
     {
         return $this->adjustedWeight;
     }
@@ -118,7 +118,7 @@ class FreightRateResponseCommodity extends \ArrayObject
      *
      * @return self
      */
-    public function setAdjustedWeight(CommodityAdjustedWeight $adjustedWeight) : self
+    public function setAdjustedWeight(CommodityAdjustedWeight $adjustedWeight): self
     {
         $this->initialized['adjustedWeight'] = true;
         $this->adjustedWeight = $adjustedWeight;

@@ -8,7 +8,7 @@ class EEIInformationLicense extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class EEIInformationLicense extends \ArrayObject
     *
     * @return string
     */
-    public function getNumber() : string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -60,7 +60,7 @@ class EEIInformationLicense extends \ArrayObject
     *
     * @return self
     */
-    public function setNumber(string $number) : self
+    public function setNumber(string $number): self
     {
         $this->initialized['number'] = true;
         $this->number = $number;
@@ -72,7 +72,7 @@ class EEIInformationLicense extends \ArrayObject
     *
     * @return string
     */
-    public function getCode() : string
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -84,7 +84,7 @@ class EEIInformationLicense extends \ArrayObject
     *
     * @return self
     */
-    public function setCode(string $code) : self
+    public function setCode(string $code): self
     {
         $this->initialized['code'] = true;
         $this->code = $code;
@@ -96,7 +96,7 @@ class EEIInformationLicense extends \ArrayObject
     *
     * @return string
     */
-    public function getLicenseLineValue() : string
+    public function getLicenseLineValue(): string
     {
         return $this->licenseLineValue;
     }
@@ -108,7 +108,7 @@ class EEIInformationLicense extends \ArrayObject
     *
     * @return self
     */
-    public function setLicenseLineValue(string $licenseLineValue) : self
+    public function setLicenseLineValue(string $licenseLineValue): self
     {
         $this->initialized['licenseLineValue'] = true;
         $this->licenseLineValue = $licenseLineValue;
@@ -119,7 +119,7 @@ class EEIInformationLicense extends \ArrayObject
      *
      * @return string
      */
-    public function getECCNNumber() : string
+    public function getECCNNumber(): string
     {
         return $this->eCCNNumber;
     }
@@ -130,7 +130,7 @@ class EEIInformationLicense extends \ArrayObject
      *
      * @return self
      */
-    public function setECCNNumber(string $eCCNNumber) : self
+    public function setECCNNumber(string $eCCNNumber): self
     {
         $this->initialized['eCCNNumber'] = true;
         $this->eCCNNumber = $eCCNNumber;

@@ -8,7 +8,7 @@ class ContactsForwardAgent extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class ContactsForwardAgent extends \ArrayObject
      *
      * @return string
      */
-    public function getCompanyName() : string
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -50,7 +50,7 @@ class ContactsForwardAgent extends \ArrayObject
      *
      * @return self
      */
-    public function setCompanyName(string $companyName) : self
+    public function setCompanyName(string $companyName): self
     {
         $this->initialized['companyName'] = true;
         $this->companyName = $companyName;
@@ -65,7 +65,7 @@ class ContactsForwardAgent extends \ArrayObject
     *
     * @return string
     */
-    public function getTaxIdentificationNumber() : string
+    public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;
     }
@@ -80,7 +80,7 @@ class ContactsForwardAgent extends \ArrayObject
     *
     * @return self
     */
-    public function setTaxIdentificationNumber(string $taxIdentificationNumber) : self
+    public function setTaxIdentificationNumber(string $taxIdentificationNumber): self
     {
         $this->initialized['taxIdentificationNumber'] = true;
         $this->taxIdentificationNumber = $taxIdentificationNumber;
@@ -91,7 +91,7 @@ class ContactsForwardAgent extends \ArrayObject
      *
      * @return ForwardAgentAddress
      */
-    public function getAddress() : ForwardAgentAddress
+    public function getAddress(): ForwardAgentAddress
     {
         return $this->address;
     }
@@ -102,7 +102,7 @@ class ContactsForwardAgent extends \ArrayObject
      *
      * @return self
      */
-    public function setAddress(ForwardAgentAddress $address) : self
+    public function setAddress(ForwardAgentAddress $address): self
     {
         $this->initialized['address'] = true;
         $this->address = $address;

@@ -20,15 +20,15 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment';
+            return $type === \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class;
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             if (isset($data['$ref'])) {
                 return new Reference($data['$ref'], $context['document-origin']);
@@ -49,11 +49,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ShipmentIdentificationNumber']);
             }
             if (\array_key_exists('ShipToAddress', $data)) {
-                $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress', 'json', $context));
+                $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], \ShipStream\Ups\Api\Model\PreNotificationShipmentShipToAddress::class, 'json', $context));
                 unset($data['ShipToAddress']);
             }
             if (\array_key_exists('ShipFromAddress', $data)) {
-                $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress', 'json', $context));
+                $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], \ShipStream\Ups\Api\Model\PreNotificationShipmentShipFromAddress::class, 'json', $context));
                 unset($data['ShipFromAddress']);
             }
             if (\array_key_exists('PickupDate', $data)) {
@@ -61,7 +61,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['PickupDate']);
             }
             if (\array_key_exists('Service', $data)) {
-                $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\ShipmentService', 'json', $context));
+                $object->setService($this->denormalizer->denormalize($data['Service'], \ShipStream\Ups\Api\Model\ShipmentService::class, 'json', $context));
                 unset($data['Service']);
             }
             if (\array_key_exists('RegulationSet', $data)) {
@@ -71,7 +71,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Package', $data)) {
                 $values = [];
                 foreach ($data['Package'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\PreNotificationShipmentPackage::class, 'json', $context);
                 }
                 $object->setPackage($values);
                 unset($data['Package']);
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $object;
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $data = [];
             $data['ShipperNumber'] = $object->getShipperNumber();
@@ -105,9 +105,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment' => false];
+            return [\ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class => false];
         }
     }
 } else {
@@ -117,13 +117,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
         {
-            return $type === 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment';
+            return $type === \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class;
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === 'ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment';
+            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class;
         }
         /**
          * @return mixed
@@ -149,11 +149,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['ShipmentIdentificationNumber']);
             }
             if (\array_key_exists('ShipToAddress', $data)) {
-                $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipToAddress', 'json', $context));
+                $object->setShipToAddress($this->denormalizer->denormalize($data['ShipToAddress'], \ShipStream\Ups\Api\Model\PreNotificationShipmentShipToAddress::class, 'json', $context));
                 unset($data['ShipToAddress']);
             }
             if (\array_key_exists('ShipFromAddress', $data)) {
-                $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentShipFromAddress', 'json', $context));
+                $object->setShipFromAddress($this->denormalizer->denormalize($data['ShipFromAddress'], \ShipStream\Ups\Api\Model\PreNotificationShipmentShipFromAddress::class, 'json', $context));
                 unset($data['ShipFromAddress']);
             }
             if (\array_key_exists('PickupDate', $data)) {
@@ -161,7 +161,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 unset($data['PickupDate']);
             }
             if (\array_key_exists('Service', $data)) {
-                $object->setService($this->denormalizer->denormalize($data['Service'], 'ShipStream\\Ups\\Api\\Model\\ShipmentService', 'json', $context));
+                $object->setService($this->denormalizer->denormalize($data['Service'], \ShipStream\Ups\Api\Model\ShipmentService::class, 'json', $context));
                 unset($data['Service']);
             }
             if (\array_key_exists('RegulationSet', $data)) {
@@ -171,7 +171,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Package', $data)) {
                 $values = [];
                 foreach ($data['Package'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'ShipStream\\Ups\\Api\\Model\\PreNotificationShipmentPackage', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \ShipStream\Ups\Api\Model\PreNotificationShipmentPackage::class, 'json', $context);
                 }
                 $object->setPackage($values);
                 unset($data['Package']);
@@ -208,9 +208,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             }
             return $data;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['ShipStream\\Ups\\Api\\Model\\PreNotificationRequestShipment' => false];
+            return [\ShipStream\Ups\Api\Model\PreNotificationRequestShipment::class => false];
         }
     }
 }

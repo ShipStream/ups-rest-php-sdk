@@ -8,7 +8,7 @@ class DropLocationIVR extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -32,7 +32,7 @@ class DropLocationIVR extends \ArrayObject
     *
     * @return string
     */
-    public function getPhraseID() : string
+    public function getPhraseID(): string
     {
         return $this->phraseID;
     }
@@ -44,7 +44,7 @@ class DropLocationIVR extends \ArrayObject
     *
     * @return self
     */
-    public function setPhraseID(string $phraseID) : self
+    public function setPhraseID(string $phraseID): self
     {
         $this->initialized['phraseID'] = true;
         $this->phraseID = $phraseID;
@@ -56,7 +56,7 @@ class DropLocationIVR extends \ArrayObject
     *
     * @return string
     */
-    public function getTextToSpeechIndicator() : string
+    public function getTextToSpeechIndicator(): string
     {
         return $this->textToSpeechIndicator;
     }
@@ -68,7 +68,7 @@ class DropLocationIVR extends \ArrayObject
     *
     * @return self
     */
-    public function setTextToSpeechIndicator(string $textToSpeechIndicator) : self
+    public function setTextToSpeechIndicator(string $textToSpeechIndicator): self
     {
         $this->initialized['textToSpeechIndicator'] = true;
         $this->textToSpeechIndicator = $textToSpeechIndicator;

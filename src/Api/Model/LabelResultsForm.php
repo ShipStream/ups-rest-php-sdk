@@ -8,7 +8,7 @@ class LabelResultsForm extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class LabelResultsForm extends \ArrayObject
      *
      * @return LRFormImage
      */
-    public function getImage() : LRFormImage
+    public function getImage(): LRFormImage
     {
         return $this->image;
     }
@@ -34,7 +34,7 @@ class LabelResultsForm extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(LRFormImage $image) : self
+    public function setImage(LRFormImage $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;

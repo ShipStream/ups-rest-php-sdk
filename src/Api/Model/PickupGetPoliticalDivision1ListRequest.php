@@ -8,7 +8,7 @@ class PickupGetPoliticalDivision1ListRequest extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PickupGetPoliticalDivision1ListRequest extends \ArrayObject
      *
      * @return PickupGetPoliticalDivision1ListRequestRequest
      */
-    public function getRequest() : PickupGetPoliticalDivision1ListRequestRequest
+    public function getRequest(): PickupGetPoliticalDivision1ListRequestRequest
     {
         return $this->request;
     }
@@ -40,7 +40,7 @@ class PickupGetPoliticalDivision1ListRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setRequest(PickupGetPoliticalDivision1ListRequestRequest $request) : self
+    public function setRequest(PickupGetPoliticalDivision1ListRequestRequest $request): self
     {
         $this->initialized['request'] = true;
         $this->request = $request;
@@ -51,7 +51,7 @@ class PickupGetPoliticalDivision1ListRequest extends \ArrayObject
      *
      * @return string
      */
-    public function getCountryCode() : string
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -62,7 +62,7 @@ class PickupGetPoliticalDivision1ListRequest extends \ArrayObject
      *
      * @return self
      */
-    public function setCountryCode(string $countryCode) : self
+    public function setCountryCode(string $countryCode): self
     {
         $this->initialized['countryCode'] = true;
         $this->countryCode = $countryCode;

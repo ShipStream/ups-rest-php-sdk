@@ -8,7 +8,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
      *
      * @return list<EMailInformationEMailType>
      */
-    public function getEMailType() : array
+    public function getEMailType(): array
     {
         return $this->eMailType;
     }
@@ -40,7 +40,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailType(array $eMailType) : self
+    public function setEMailType(array $eMailType): self
     {
         $this->initialized['eMailType'] = true;
         $this->eMailType = $eMailType;
@@ -51,7 +51,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
      *
      * @return EMailInformationEMail
      */
-    public function getEMail() : EMailInformationEMail
+    public function getEMail(): EMailInformationEMail
     {
         return $this->eMail;
     }
@@ -62,7 +62,7 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setEMail(EMailInformationEMail $eMail) : self
+    public function setEMail(EMailInformationEMail $eMail): self
     {
         $this->initialized['eMail'] = true;
         $this->eMail = $eMail;

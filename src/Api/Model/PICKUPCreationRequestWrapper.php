@@ -8,7 +8,7 @@ class PICKUPCreationRequestWrapper extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class PICKUPCreationRequestWrapper extends \ArrayObject
      *
      * @return PickupCreationRequest
      */
-    public function getPickupCreationRequest() : PickupCreationRequest
+    public function getPickupCreationRequest(): PickupCreationRequest
     {
         return $this->pickupCreationRequest;
     }
@@ -34,7 +34,7 @@ class PICKUPCreationRequestWrapper extends \ArrayObject
      *
      * @return self
      */
-    public function setPickupCreationRequest(PickupCreationRequest $pickupCreationRequest) : self
+    public function setPickupCreationRequest(PickupCreationRequest $pickupCreationRequest): self
     {
         $this->initialized['pickupCreationRequest'] = true;
         $this->pickupCreationRequest = $pickupCreationRequest;

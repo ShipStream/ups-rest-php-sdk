@@ -8,7 +8,7 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
      *
      * @return FreightRatePaymentInformationPayer
      */
-    public function getPayer() : FreightRatePaymentInformationPayer
+    public function getPayer(): FreightRatePaymentInformationPayer
     {
         return $this->payer;
     }
@@ -40,7 +40,7 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setPayer(FreightRatePaymentInformationPayer $payer) : self
+    public function setPayer(FreightRatePaymentInformationPayer $payer): self
     {
         $this->initialized['payer'] = true;
         $this->payer = $payer;
@@ -51,7 +51,7 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
      *
      * @return PaymentInformationShipmentBillingOption
      */
-    public function getShipmentBillingOption() : PaymentInformationShipmentBillingOption
+    public function getShipmentBillingOption(): PaymentInformationShipmentBillingOption
     {
         return $this->shipmentBillingOption;
     }
@@ -62,7 +62,7 @@ class FreightRateRequestPaymentInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentBillingOption(PaymentInformationShipmentBillingOption $shipmentBillingOption) : self
+    public function setShipmentBillingOption(PaymentInformationShipmentBillingOption $shipmentBillingOption): self
     {
         $this->initialized['shipmentBillingOption'] = true;
         $this->shipmentBillingOption = $shipmentBillingOption;

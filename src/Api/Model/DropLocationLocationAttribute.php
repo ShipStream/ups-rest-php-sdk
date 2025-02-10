@@ -8,7 +8,7 @@ class DropLocationLocationAttribute extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -36,7 +36,7 @@ class DropLocationLocationAttribute extends \ArrayObject
      *
      * @return LocationAttributeOptionType
      */
-    public function getOptionType() : LocationAttributeOptionType
+    public function getOptionType(): LocationAttributeOptionType
     {
         return $this->optionType;
     }
@@ -47,7 +47,7 @@ class DropLocationLocationAttribute extends \ArrayObject
      *
      * @return self
      */
-    public function setOptionType(LocationAttributeOptionType $optionType) : self
+    public function setOptionType(LocationAttributeOptionType $optionType): self
     {
         $this->initialized['optionType'] = true;
         $this->optionType = $optionType;
@@ -65,7 +65,7 @@ class DropLocationLocationAttribute extends \ArrayObject
     *
     * @return list<LocationAttributeOptionCode>
     */
-    public function getOptionCode() : array
+    public function getOptionCode(): array
     {
         return $this->optionCode;
     }
@@ -83,7 +83,7 @@ class DropLocationLocationAttribute extends \ArrayObject
     *
     * @return self
     */
-    public function setOptionCode(array $optionCode) : self
+    public function setOptionCode(array $optionCode): self
     {
         $this->initialized['optionCode'] = true;
         $this->optionCode = $optionCode;

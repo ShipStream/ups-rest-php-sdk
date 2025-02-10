@@ -8,7 +8,7 @@ class ShipmentRequestReceiptSpecification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ShipmentRequestReceiptSpecification extends \ArrayObject
      *
      * @return ReceiptSpecificationImageFormat
      */
-    public function getImageFormat() : ReceiptSpecificationImageFormat
+    public function getImageFormat(): ReceiptSpecificationImageFormat
     {
         return $this->imageFormat;
     }
@@ -34,7 +34,7 @@ class ShipmentRequestReceiptSpecification extends \ArrayObject
      *
      * @return self
      */
-    public function setImageFormat(ReceiptSpecificationImageFormat $imageFormat) : self
+    public function setImageFormat(ReceiptSpecificationImageFormat $imageFormat): self
     {
         $this->initialized['imageFormat'] = true;
         $this->imageFormat = $imageFormat;

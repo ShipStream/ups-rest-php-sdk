@@ -8,7 +8,7 @@ class PickupCancelResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -36,7 +36,7 @@ class PickupCancelResponse extends \ArrayObject
      *
      * @return PickupCancelResponseResponse
      */
-    public function getResponse() : PickupCancelResponseResponse
+    public function getResponse(): PickupCancelResponseResponse
     {
         return $this->response;
     }
@@ -47,7 +47,7 @@ class PickupCancelResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setResponse(PickupCancelResponseResponse $response) : self
+    public function setResponse(PickupCancelResponseResponse $response): self
     {
         $this->initialized['response'] = true;
         $this->response = $response;
@@ -59,7 +59,7 @@ class PickupCancelResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getPickupType() : string
+    public function getPickupType(): string
     {
         return $this->pickupType;
     }
@@ -71,7 +71,7 @@ class PickupCancelResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setPickupType(string $pickupType) : self
+    public function setPickupType(string $pickupType): self
     {
         $this->initialized['pickupType'] = true;
         $this->pickupType = $pickupType;
@@ -82,7 +82,7 @@ class PickupCancelResponse extends \ArrayObject
      *
      * @return PickupCancelResponseGWNStatus
      */
-    public function getGWNStatus() : PickupCancelResponseGWNStatus
+    public function getGWNStatus(): PickupCancelResponseGWNStatus
     {
         return $this->gWNStatus;
     }
@@ -93,7 +93,7 @@ class PickupCancelResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setGWNStatus(PickupCancelResponseGWNStatus $gWNStatus) : self
+    public function setGWNStatus(PickupCancelResponseGWNStatus $gWNStatus): self
     {
         $this->initialized['gWNStatus'] = true;
         $this->gWNStatus = $gWNStatus;

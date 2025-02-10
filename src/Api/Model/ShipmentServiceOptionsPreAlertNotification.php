@@ -8,7 +8,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return PreAlertNotificationEMailMessage
      */
-    public function getEMailMessage() : PreAlertNotificationEMailMessage
+    public function getEMailMessage(): PreAlertNotificationEMailMessage
     {
         return $this->eMailMessage;
     }
@@ -52,7 +52,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setEMailMessage(PreAlertNotificationEMailMessage $eMailMessage) : self
+    public function setEMailMessage(PreAlertNotificationEMailMessage $eMailMessage): self
     {
         $this->initialized['eMailMessage'] = true;
         $this->eMailMessage = $eMailMessage;
@@ -63,7 +63,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return PreAlertNotificationVoiceMessage
      */
-    public function getVoiceMessage() : PreAlertNotificationVoiceMessage
+    public function getVoiceMessage(): PreAlertNotificationVoiceMessage
     {
         return $this->voiceMessage;
     }
@@ -74,7 +74,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setVoiceMessage(PreAlertNotificationVoiceMessage $voiceMessage) : self
+    public function setVoiceMessage(PreAlertNotificationVoiceMessage $voiceMessage): self
     {
         $this->initialized['voiceMessage'] = true;
         $this->voiceMessage = $voiceMessage;
@@ -85,7 +85,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return PreAlertNotificationTextMessage
      */
-    public function getTextMessage() : PreAlertNotificationTextMessage
+    public function getTextMessage(): PreAlertNotificationTextMessage
     {
         return $this->textMessage;
     }
@@ -96,7 +96,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setTextMessage(PreAlertNotificationTextMessage $textMessage) : self
+    public function setTextMessage(PreAlertNotificationTextMessage $textMessage): self
     {
         $this->initialized['textMessage'] = true;
         $this->textMessage = $textMessage;
@@ -107,7 +107,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return PreAlertNotificationLocale
      */
-    public function getLocale() : PreAlertNotificationLocale
+    public function getLocale(): PreAlertNotificationLocale
     {
         return $this->locale;
     }
@@ -118,7 +118,7 @@ class ShipmentServiceOptionsPreAlertNotification extends \ArrayObject
      *
      * @return self
      */
-    public function setLocale(PreAlertNotificationLocale $locale) : self
+    public function setLocale(PreAlertNotificationLocale $locale): self
     {
         $this->initialized['locale'] = true;
         $this->locale = $locale;

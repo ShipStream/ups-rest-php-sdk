@@ -8,7 +8,7 @@ class Destination extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -39,7 +39,7 @@ class Destination extends \ArrayObject
     *
     * @return string
     */
-    public function getUrl() : string
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -52,7 +52,7 @@ class Destination extends \ArrayObject
     *
     * @return self
     */
-    public function setUrl(string $url) : self
+    public function setUrl(string $url): self
     {
         $this->initialized['url'] = true;
         $this->url = $url;
@@ -63,7 +63,7 @@ class Destination extends \ArrayObject
      *
      * @return string
      */
-    public function getCredentialType() : string
+    public function getCredentialType(): string
     {
         return $this->credentialType;
     }
@@ -74,7 +74,7 @@ class Destination extends \ArrayObject
      *
      * @return self
      */
-    public function setCredentialType(string $credentialType) : self
+    public function setCredentialType(string $credentialType): self
     {
         $this->initialized['credentialType'] = true;
         $this->credentialType = $credentialType;
@@ -85,7 +85,7 @@ class Destination extends \ArrayObject
      *
      * @return string
      */
-    public function getCredential() : string
+    public function getCredential(): string
     {
         return $this->credential;
     }
@@ -96,7 +96,7 @@ class Destination extends \ArrayObject
      *
      * @return self
      */
-    public function setCredential(string $credential) : self
+    public function setCredential(string $credential): self
     {
         $this->initialized['credential'] = true;
         $this->credential = $credential;

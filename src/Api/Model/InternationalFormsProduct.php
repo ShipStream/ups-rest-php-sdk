@@ -8,7 +8,7 @@ class InternationalFormsProduct extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -151,7 +151,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return list<string>
      */
-    public function getDescription() : array
+    public function getDescription(): array
     {
         return $this->description;
     }
@@ -162,7 +162,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setDescription(array $description) : self
+    public function setDescription(array $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -173,7 +173,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductUnit
      */
-    public function getUnit() : ProductUnit
+    public function getUnit(): ProductUnit
     {
         return $this->unit;
     }
@@ -184,7 +184,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setUnit(ProductUnit $unit) : self
+    public function setUnit(ProductUnit $unit): self
     {
         $this->initialized['unit'] = true;
         $this->unit = $unit;
@@ -195,7 +195,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getCommodityCode() : string
+    public function getCommodityCode(): string
     {
         return $this->commodityCode;
     }
@@ -206,7 +206,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setCommodityCode(string $commodityCode) : self
+    public function setCommodityCode(string $commodityCode): self
     {
         $this->initialized['commodityCode'] = true;
         $this->commodityCode = $commodityCode;
@@ -217,7 +217,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getPartNumber() : string
+    public function getPartNumber(): string
     {
         return $this->partNumber;
     }
@@ -228,7 +228,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setPartNumber(string $partNumber) : self
+    public function setPartNumber(string $partNumber): self
     {
         $this->initialized['partNumber'] = true;
         $this->partNumber = $partNumber;
@@ -239,7 +239,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginCountryCode() : string
+    public function getOriginCountryCode(): string
     {
         return $this->originCountryCode;
     }
@@ -250,7 +250,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginCountryCode(string $originCountryCode) : self
+    public function setOriginCountryCode(string $originCountryCode): self
     {
         $this->initialized['originCountryCode'] = true;
         $this->originCountryCode = $originCountryCode;
@@ -261,7 +261,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getJointProductionIndicator() : string
+    public function getJointProductionIndicator(): string
     {
         return $this->jointProductionIndicator;
     }
@@ -272,7 +272,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setJointProductionIndicator(string $jointProductionIndicator) : self
+    public function setJointProductionIndicator(string $jointProductionIndicator): self
     {
         $this->initialized['jointProductionIndicator'] = true;
         $this->jointProductionIndicator = $jointProductionIndicator;
@@ -287,7 +287,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return string
     */
-    public function getNetCostCode() : string
+    public function getNetCostCode(): string
     {
         return $this->netCostCode;
     }
@@ -302,7 +302,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return self
     */
-    public function setNetCostCode(string $netCostCode) : self
+    public function setNetCostCode(string $netCostCode): self
     {
         $this->initialized['netCostCode'] = true;
         $this->netCostCode = $netCostCode;
@@ -313,7 +313,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductNetCostDateRange
      */
-    public function getNetCostDateRange() : ProductNetCostDateRange
+    public function getNetCostDateRange(): ProductNetCostDateRange
     {
         return $this->netCostDateRange;
     }
@@ -324,7 +324,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setNetCostDateRange(ProductNetCostDateRange $netCostDateRange) : self
+    public function setNetCostDateRange(ProductNetCostDateRange $netCostDateRange): self
     {
         $this->initialized['netCostDateRange'] = true;
         $this->netCostDateRange = $netCostDateRange;
@@ -339,7 +339,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return string
     */
-    public function getPreferenceCriteria() : string
+    public function getPreferenceCriteria(): string
     {
         return $this->preferenceCriteria;
     }
@@ -354,7 +354,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return self
     */
-    public function setPreferenceCriteria(string $preferenceCriteria) : self
+    public function setPreferenceCriteria(string $preferenceCriteria): self
     {
         $this->initialized['preferenceCriteria'] = true;
         $this->preferenceCriteria = $preferenceCriteria;
@@ -368,7 +368,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return string
     */
-    public function getProducerInfo() : string
+    public function getProducerInfo(): string
     {
         return $this->producerInfo;
     }
@@ -382,7 +382,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return self
     */
-    public function setProducerInfo(string $producerInfo) : self
+    public function setProducerInfo(string $producerInfo): self
     {
         $this->initialized['producerInfo'] = true;
         $this->producerInfo = $producerInfo;
@@ -393,7 +393,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getMarksAndNumbers() : string
+    public function getMarksAndNumbers(): string
     {
         return $this->marksAndNumbers;
     }
@@ -404,7 +404,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setMarksAndNumbers(string $marksAndNumbers) : self
+    public function setMarksAndNumbers(string $marksAndNumbers): self
     {
         $this->initialized['marksAndNumbers'] = true;
         $this->marksAndNumbers = $marksAndNumbers;
@@ -415,7 +415,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getNumberOfPackagesPerCommodity() : string
+    public function getNumberOfPackagesPerCommodity(): string
     {
         return $this->numberOfPackagesPerCommodity;
     }
@@ -426,7 +426,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setNumberOfPackagesPerCommodity(string $numberOfPackagesPerCommodity) : self
+    public function setNumberOfPackagesPerCommodity(string $numberOfPackagesPerCommodity): self
     {
         $this->initialized['numberOfPackagesPerCommodity'] = true;
         $this->numberOfPackagesPerCommodity = $numberOfPackagesPerCommodity;
@@ -437,7 +437,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductProductWeight
      */
-    public function getProductWeight() : ProductProductWeight
+    public function getProductWeight(): ProductProductWeight
     {
         return $this->productWeight;
     }
@@ -448,7 +448,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setProductWeight(ProductProductWeight $productWeight) : self
+    public function setProductWeight(ProductProductWeight $productWeight): self
     {
         $this->initialized['productWeight'] = true;
         $this->productWeight = $productWeight;
@@ -459,7 +459,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getVehicleID() : string
+    public function getVehicleID(): string
     {
         return $this->vehicleID;
     }
@@ -470,7 +470,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setVehicleID(string $vehicleID) : self
+    public function setVehicleID(string $vehicleID): self
     {
         $this->initialized['vehicleID'] = true;
         $this->vehicleID = $vehicleID;
@@ -481,7 +481,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductScheduleB
      */
-    public function getScheduleB() : ProductScheduleB
+    public function getScheduleB(): ProductScheduleB
     {
         return $this->scheduleB;
     }
@@ -492,7 +492,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setScheduleB(ProductScheduleB $scheduleB) : self
+    public function setScheduleB(ProductScheduleB $scheduleB): self
     {
         $this->initialized['scheduleB'] = true;
         $this->scheduleB = $scheduleB;
@@ -503,7 +503,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return string
      */
-    public function getExportType() : string
+    public function getExportType(): string
     {
         return $this->exportType;
     }
@@ -514,7 +514,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setExportType(string $exportType) : self
+    public function setExportType(string $exportType): self
     {
         $this->initialized['exportType'] = true;
         $this->exportType = $exportType;
@@ -528,7 +528,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return string
     */
-    public function getSEDTotalValue() : string
+    public function getSEDTotalValue(): string
     {
         return $this->sEDTotalValue;
     }
@@ -542,7 +542,7 @@ class InternationalFormsProduct extends \ArrayObject
     *
     * @return self
     */
-    public function setSEDTotalValue(string $sEDTotalValue) : self
+    public function setSEDTotalValue(string $sEDTotalValue): self
     {
         $this->initialized['sEDTotalValue'] = true;
         $this->sEDTotalValue = $sEDTotalValue;
@@ -553,7 +553,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductExcludeFromForm
      */
-    public function getExcludeFromForm() : ProductExcludeFromForm
+    public function getExcludeFromForm(): ProductExcludeFromForm
     {
         return $this->excludeFromForm;
     }
@@ -564,7 +564,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setExcludeFromForm(ProductExcludeFromForm $excludeFromForm) : self
+    public function setExcludeFromForm(ProductExcludeFromForm $excludeFromForm): self
     {
         $this->initialized['excludeFromForm'] = true;
         $this->excludeFromForm = $excludeFromForm;
@@ -575,7 +575,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductPackingListInfo
      */
-    public function getPackingListInfo() : ProductPackingListInfo
+    public function getPackingListInfo(): ProductPackingListInfo
     {
         return $this->packingListInfo;
     }
@@ -586,7 +586,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setPackingListInfo(ProductPackingListInfo $packingListInfo) : self
+    public function setPackingListInfo(ProductPackingListInfo $packingListInfo): self
     {
         $this->initialized['packingListInfo'] = true;
         $this->packingListInfo = $packingListInfo;
@@ -597,7 +597,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return ProductEEIInformation
      */
-    public function getEEIInformation() : ProductEEIInformation
+    public function getEEIInformation(): ProductEEIInformation
     {
         return $this->eEIInformation;
     }
@@ -608,7 +608,7 @@ class InternationalFormsProduct extends \ArrayObject
      *
      * @return self
      */
-    public function setEEIInformation(ProductEEIInformation $eEIInformation) : self
+    public function setEEIInformation(ProductEEIInformation $eEIInformation): self
     {
         $this->initialized['eEIInformation'] = true;
         $this->eEIInformation = $eEIInformation;

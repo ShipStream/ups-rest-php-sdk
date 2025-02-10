@@ -8,7 +8,7 @@ class ErrorErrorLocation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ErrorErrorLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getErrorLocationElementName() : string
+    public function getErrorLocationElementName(): string
     {
         return $this->errorLocationElementName;
     }
@@ -40,7 +40,7 @@ class ErrorErrorLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorLocationElementName(string $errorLocationElementName) : self
+    public function setErrorLocationElementName(string $errorLocationElementName): self
     {
         $this->initialized['errorLocationElementName'] = true;
         $this->errorLocationElementName = $errorLocationElementName;
@@ -51,7 +51,7 @@ class ErrorErrorLocation extends \ArrayObject
      *
      * @return string
      */
-    public function getErrorLocationAttributeName() : string
+    public function getErrorLocationAttributeName(): string
     {
         return $this->errorLocationAttributeName;
     }
@@ -62,7 +62,7 @@ class ErrorErrorLocation extends \ArrayObject
      *
      * @return self
      */
-    public function setErrorLocationAttributeName(string $errorLocationAttributeName) : self
+    public function setErrorLocationAttributeName(string $errorLocationAttributeName): self
     {
         $this->initialized['errorLocationAttributeName'] = true;
         $this->errorLocationAttributeName = $errorLocationAttributeName;

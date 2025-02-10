@@ -8,7 +8,7 @@ class ShipmentDetailPalletInformation extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ShipmentDetailPalletInformation extends \ArrayObject
      *
      * @return PalletInformationDimensions
      */
-    public function getDimensions() : PalletInformationDimensions
+    public function getDimensions(): PalletInformationDimensions
     {
         return $this->dimensions;
     }
@@ -34,7 +34,7 @@ class ShipmentDetailPalletInformation extends \ArrayObject
      *
      * @return self
      */
-    public function setDimensions(PalletInformationDimensions $dimensions) : self
+    public function setDimensions(PalletInformationDimensions $dimensions): self
     {
         $this->initialized['dimensions'] = true;
         $this->dimensions = $dimensions;

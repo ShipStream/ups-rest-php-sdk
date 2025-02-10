@@ -8,7 +8,7 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
      *
      * @return list<PostalCodeListPostalCode>
      */
-    public function getPostalCode() : array
+    public function getPostalCode(): array
     {
         return $this->postalCode;
     }
@@ -34,7 +34,7 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
      *
      * @return self
      */
-    public function setPostalCode(array $postalCode) : self
+    public function setPostalCode(array $postalCode): self
     {
         $this->initialized['postalCode'] = true;
         $this->postalCode = $postalCode;

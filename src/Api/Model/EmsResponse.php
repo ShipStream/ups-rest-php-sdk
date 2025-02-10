@@ -8,7 +8,7 @@ class EmsResponse extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property) : bool
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -245,7 +245,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getShipDate() : string
+    public function getShipDate(): string
     {
         return $this->shipDate;
     }
@@ -258,7 +258,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setShipDate(string $shipDate) : self
+    public function setShipDate(string $shipDate): self
     {
         $this->initialized['shipDate'] = true;
         $this->shipDate = $shipDate;
@@ -271,7 +271,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getShipTime() : string
+    public function getShipTime(): string
     {
         return $this->shipTime;
     }
@@ -284,7 +284,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setShipTime(string $shipTime) : self
+    public function setShipTime(string $shipTime): self
     {
         $this->initialized['shipTime'] = true;
         $this->shipTime = $shipTime;
@@ -299,7 +299,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getServiceLevel() : string
+    public function getServiceLevel(): string
     {
         return $this->serviceLevel;
     }
@@ -314,7 +314,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setServiceLevel(string $serviceLevel) : self
+    public function setServiceLevel(string $serviceLevel): self
     {
         $this->initialized['serviceLevel'] = true;
         $this->serviceLevel = $serviceLevel;
@@ -331,7 +331,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getBillType() : string
+    public function getBillType(): string
     {
         return $this->billType;
     }
@@ -348,7 +348,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setBillType(string $billType) : self
+    public function setBillType(string $billType): self
     {
         $this->initialized['billType'] = true;
         $this->billType = $billType;
@@ -370,7 +370,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getDutyType() : string
+    public function getDutyType(): string
     {
         return $this->dutyType;
     }
@@ -392,7 +392,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setDutyType(string $dutyType) : self
+    public function setDutyType(string $dutyType): self
     {
         $this->initialized['dutyType'] = true;
         $this->dutyType = $dutyType;
@@ -408,7 +408,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getResidentialIndicator() : string
+    public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;
     }
@@ -424,7 +424,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setResidentialIndicator(string $residentialIndicator) : self
+    public function setResidentialIndicator(string $residentialIndicator): self
     {
         $this->initialized['residentialIndicator'] = true;
         $this->residentialIndicator = $residentialIndicator;
@@ -435,7 +435,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationCountryName() : string
+    public function getDestinationCountryName(): string
     {
         return $this->destinationCountryName;
     }
@@ -446,7 +446,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationCountryName(string $destinationCountryName) : self
+    public function setDestinationCountryName(string $destinationCountryName): self
     {
         $this->initialized['destinationCountryName'] = true;
         $this->destinationCountryName = $destinationCountryName;
@@ -457,7 +457,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getDestinationCountryCode() : string
+    public function getDestinationCountryCode(): string
     {
         return $this->destinationCountryCode;
     }
@@ -468,7 +468,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setDestinationCountryCode(string $destinationCountryCode) : self
+    public function setDestinationCountryCode(string $destinationCountryCode): self
     {
         $this->initialized['destinationCountryCode'] = true;
         $this->destinationCountryCode = $destinationCountryCode;
@@ -481,7 +481,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationPostalCode() : string
+    public function getDestinationPostalCode(): string
     {
         return $this->destinationPostalCode;
     }
@@ -494,7 +494,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationPostalCode(string $destinationPostalCode) : self
+    public function setDestinationPostalCode(string $destinationPostalCode): self
     {
         $this->initialized['destinationPostalCode'] = true;
         $this->destinationPostalCode = $destinationPostalCode;
@@ -507,7 +507,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationPostalCodeLow() : string
+    public function getDestinationPostalCodeLow(): string
     {
         return $this->destinationPostalCodeLow;
     }
@@ -520,7 +520,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationPostalCodeLow(string $destinationPostalCodeLow) : self
+    public function setDestinationPostalCodeLow(string $destinationPostalCodeLow): self
     {
         $this->initialized['destinationPostalCodeLow'] = true;
         $this->destinationPostalCodeLow = $destinationPostalCodeLow;
@@ -533,7 +533,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationPostalCodeHigh() : string
+    public function getDestinationPostalCodeHigh(): string
     {
         return $this->destinationPostalCodeHigh;
     }
@@ -546,7 +546,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationPostalCodeHigh(string $destinationPostalCodeHigh) : self
+    public function setDestinationPostalCodeHigh(string $destinationPostalCodeHigh): self
     {
         $this->initialized['destinationPostalCodeHigh'] = true;
         $this->destinationPostalCodeHigh = $destinationPostalCodeHigh;
@@ -561,7 +561,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationStateProvince() : string
+    public function getDestinationStateProvince(): string
     {
         return $this->destinationStateProvince;
     }
@@ -576,7 +576,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationStateProvince(string $destinationStateProvince) : self
+    public function setDestinationStateProvince(string $destinationStateProvince): self
     {
         $this->initialized['destinationStateProvince'] = true;
         $this->destinationStateProvince = $destinationStateProvince;
@@ -589,7 +589,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getDestinationCityName() : string
+    public function getDestinationCityName(): string
     {
         return $this->destinationCityName;
     }
@@ -602,7 +602,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setDestinationCityName(string $destinationCityName) : self
+    public function setDestinationCityName(string $destinationCityName): self
     {
         $this->initialized['destinationCityName'] = true;
         $this->destinationCityName = $destinationCityName;
@@ -613,7 +613,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginCountryName() : string
+    public function getOriginCountryName(): string
     {
         return $this->originCountryName;
     }
@@ -624,7 +624,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginCountryName(string $originCountryName) : self
+    public function setOriginCountryName(string $originCountryName): self
     {
         $this->initialized['originCountryName'] = true;
         $this->originCountryName = $originCountryName;
@@ -635,7 +635,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getOriginCountryCode() : string
+    public function getOriginCountryCode(): string
     {
         return $this->originCountryCode;
     }
@@ -646,7 +646,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setOriginCountryCode(string $originCountryCode) : self
+    public function setOriginCountryCode(string $originCountryCode): self
     {
         $this->initialized['originCountryCode'] = true;
         $this->originCountryCode = $originCountryCode;
@@ -659,7 +659,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginPostalCode() : string
+    public function getOriginPostalCode(): string
     {
         return $this->originPostalCode;
     }
@@ -672,7 +672,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginPostalCode(string $originPostalCode) : self
+    public function setOriginPostalCode(string $originPostalCode): self
     {
         $this->initialized['originPostalCode'] = true;
         $this->originPostalCode = $originPostalCode;
@@ -685,7 +685,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginPostalCodeLow() : string
+    public function getOriginPostalCodeLow(): string
     {
         return $this->originPostalCodeLow;
     }
@@ -698,7 +698,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginPostalCodeLow(string $originPostalCodeLow) : self
+    public function setOriginPostalCodeLow(string $originPostalCodeLow): self
     {
         $this->initialized['originPostalCodeLow'] = true;
         $this->originPostalCodeLow = $originPostalCodeLow;
@@ -711,7 +711,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginPostalCodeHigh() : string
+    public function getOriginPostalCodeHigh(): string
     {
         return $this->originPostalCodeHigh;
     }
@@ -724,7 +724,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginPostalCodeHigh(string $originPostalCodeHigh) : self
+    public function setOriginPostalCodeHigh(string $originPostalCodeHigh): self
     {
         $this->initialized['originPostalCodeHigh'] = true;
         $this->originPostalCodeHigh = $originPostalCodeHigh;
@@ -739,7 +739,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginStateProvince() : string
+    public function getOriginStateProvince(): string
     {
         return $this->originStateProvince;
     }
@@ -754,7 +754,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginStateProvince(string $originStateProvince) : self
+    public function setOriginStateProvince(string $originStateProvince): self
     {
         $this->initialized['originStateProvince'] = true;
         $this->originStateProvince = $originStateProvince;
@@ -767,7 +767,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getOriginCityName() : string
+    public function getOriginCityName(): string
     {
         return $this->originCityName;
     }
@@ -780,7 +780,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setOriginCityName(string $originCityName) : self
+    public function setOriginCityName(string $originCityName): self
     {
         $this->initialized['originCityName'] = true;
         $this->originCityName = $originCityName;
@@ -793,7 +793,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getWeight() : string
+    public function getWeight(): string
     {
         return $this->weight;
     }
@@ -806,7 +806,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setWeight(string $weight) : self
+    public function setWeight(string $weight): self
     {
         $this->initialized['weight'] = true;
         $this->weight = $weight;
@@ -817,7 +817,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getWeightUnitOfMeasure() : string
+    public function getWeightUnitOfMeasure(): string
     {
         return $this->weightUnitOfMeasure;
     }
@@ -828,7 +828,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setWeightUnitOfMeasure(string $weightUnitOfMeasure) : self
+    public function setWeightUnitOfMeasure(string $weightUnitOfMeasure): self
     {
         $this->initialized['weightUnitOfMeasure'] = true;
         $this->weightUnitOfMeasure = $weightUnitOfMeasure;
@@ -841,7 +841,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return string
     */
-    public function getShipmentContentsValue() : string
+    public function getShipmentContentsValue(): string
     {
         return $this->shipmentContentsValue;
     }
@@ -854,7 +854,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setShipmentContentsValue(string $shipmentContentsValue) : self
+    public function setShipmentContentsValue(string $shipmentContentsValue): self
     {
         $this->initialized['shipmentContentsValue'] = true;
         $this->shipmentContentsValue = $shipmentContentsValue;
@@ -865,7 +865,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return string
      */
-    public function getShipmentContentsCurrencyCode() : string
+    public function getShipmentContentsCurrencyCode(): string
     {
         return $this->shipmentContentsCurrencyCode;
     }
@@ -876,7 +876,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setShipmentContentsCurrencyCode(string $shipmentContentsCurrencyCode) : self
+    public function setShipmentContentsCurrencyCode(string $shipmentContentsCurrencyCode): self
     {
         $this->initialized['shipmentContentsCurrencyCode'] = true;
         $this->shipmentContentsCurrencyCode = $shipmentContentsCurrencyCode;
@@ -893,7 +893,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return bool
     */
-    public function getGuaranteeSuspended() : bool
+    public function getGuaranteeSuspended(): bool
     {
         return $this->guaranteeSuspended;
     }
@@ -910,7 +910,7 @@ class EmsResponse extends \ArrayObject
     *
     * @return self
     */
-    public function setGuaranteeSuspended(bool $guaranteeSuspended) : self
+    public function setGuaranteeSuspended(bool $guaranteeSuspended): self
     {
         $this->initialized['guaranteeSuspended'] = true;
         $this->guaranteeSuspended = $guaranteeSuspended;
@@ -921,7 +921,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return int
      */
-    public function getNumberOfServices() : int
+    public function getNumberOfServices(): int
     {
         return $this->numberOfServices;
     }
@@ -932,7 +932,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setNumberOfServices(int $numberOfServices) : self
+    public function setNumberOfServices(int $numberOfServices): self
     {
         $this->initialized['numberOfServices'] = true;
         $this->numberOfServices = $numberOfServices;
@@ -943,7 +943,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return list<Services>
      */
-    public function getServices() : array
+    public function getServices(): array
     {
         return $this->services;
     }
@@ -954,7 +954,7 @@ class EmsResponse extends \ArrayObject
      *
      * @return self
      */
-    public function setServices(array $services) : self
+    public function setServices(array $services): self
     {
         $this->initialized['services'] = true;
         $this->services = $services;
