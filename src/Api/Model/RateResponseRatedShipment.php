@@ -126,7 +126,7 @@ class RateResponseRatedShipment extends \ArrayObject
     /**
      * Negotiated Rate Charges Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn't qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.
      *
-     * @var RatedShipmentNegotiatedRateCharges
+     * @var RatedShipmentNegotiatedRateCharges|null
      */
     protected $negotiatedRateCharges;
     /**
@@ -529,20 +529,20 @@ class RateResponseRatedShipment extends \ArrayObject
     /**
      * Negotiated Rate Charges Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn't qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.
      *
-     * @return RatedShipmentNegotiatedRateCharges
+     * @return RatedShipmentNegotiatedRateCharges|null
      */
-    public function getNegotiatedRateCharges(): RatedShipmentNegotiatedRateCharges
+    public function getNegotiatedRateCharges(): ?RatedShipmentNegotiatedRateCharges
     {
         return $this->negotiatedRateCharges;
     }
     /**
      * Negotiated Rate Charges Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn't qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.
      *
-     * @param RatedShipmentNegotiatedRateCharges $negotiatedRateCharges
+     * @param RatedShipmentNegotiatedRateCharges|null $negotiatedRateCharges
      *
      * @return self
      */
-    public function setNegotiatedRateCharges(RatedShipmentNegotiatedRateCharges $negotiatedRateCharges): self
+    public function setNegotiatedRateCharges(?RatedShipmentNegotiatedRateCharges $negotiatedRateCharges): self
     {
         $this->initialized['negotiatedRateCharges'] = true;
         $this->negotiatedRateCharges = $negotiatedRateCharges;
