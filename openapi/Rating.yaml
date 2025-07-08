@@ -5012,6 +5012,7 @@ components:
         even shipment size doesn't qualify for the existing discount then no negotiated
         rates container will be returned. Published rates will be the applicable rate.
       maximum: 1
+      nullable: true
     NegotiatedRateCharges_ItemizedCharges:
       type: object
       required:

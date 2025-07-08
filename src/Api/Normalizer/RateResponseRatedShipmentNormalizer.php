@@ -116,9 +116,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], \ShipStream\Ups\Api\Model\RatedShipmentTotalChargesWithTaxes::class, 'json', $context));
                 unset($data['TotalChargesWithTaxes']);
             }
-            if (\array_key_exists('NegotiatedRateCharges', $data)) {
+            if (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] !== null) {
                 $object->setNegotiatedRateCharges($this->denormalizer->denormalize($data['NegotiatedRateCharges'], \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class, 'json', $context));
                 unset($data['NegotiatedRateCharges']);
+            }
+            elseif (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] === null) {
+                $object->setNegotiatedRateCharges(null);
             }
             if (\array_key_exists('RatedPackage', $data)) {
                 $values_4 = [];
@@ -336,9 +339,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], \ShipStream\Ups\Api\Model\RatedShipmentTotalChargesWithTaxes::class, 'json', $context));
                 unset($data['TotalChargesWithTaxes']);
             }
-            if (\array_key_exists('NegotiatedRateCharges', $data)) {
+            if (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] !== null) {
                 $object->setNegotiatedRateCharges($this->denormalizer->denormalize($data['NegotiatedRateCharges'], \ShipStream\Ups\Api\Model\RatedShipmentNegotiatedRateCharges::class, 'json', $context));
                 unset($data['NegotiatedRateCharges']);
+            }
+            elseif (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] === null) {
+                $object->setNegotiatedRateCharges(null);
             }
             if (\array_key_exists('RatedPackage', $data)) {
                 $values_4 = [];
