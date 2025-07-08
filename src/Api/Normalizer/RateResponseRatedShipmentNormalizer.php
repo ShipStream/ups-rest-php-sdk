@@ -117,9 +117,12 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             $object->setTotalChargesWithTaxes($this->denormalizer->denormalize($data['TotalChargesWithTaxes'], 'ShipStream\\Ups\\Api\\Model\\RatedShipmentTotalChargesWithTaxes', 'json', $context));
             unset($data['TotalChargesWithTaxes']);
         }
-        if (\array_key_exists('NegotiatedRateCharges', $data)) {
+        if (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] !== null) {
             $object->setNegotiatedRateCharges($this->denormalizer->denormalize($data['NegotiatedRateCharges'], 'ShipStream\\Ups\\Api\\Model\\RatedShipmentNegotiatedRateCharges', 'json', $context));
             unset($data['NegotiatedRateCharges']);
+        }
+        elseif (\array_key_exists('NegotiatedRateCharges', $data) && $data['NegotiatedRateCharges'] === null) {
+            $object->setNegotiatedRateCharges(null);
         }
         if (\array_key_exists('RatedPackage', $data)) {
             $values_4 = array();

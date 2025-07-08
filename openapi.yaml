@@ -20260,6 +20260,7 @@ components:
         TotalChargesWithTaxes:
           $ref: '#/components/schemas/NegotiatedRateCharges_TotalChargesWithTaxes'
       description: 'Negotiated Rate Charges Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn''t qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.'
+      nullable: true
       xml:
         name: NegotiatedRateCharges
     NegotiatedRateCharges_ItemizedCharges:
