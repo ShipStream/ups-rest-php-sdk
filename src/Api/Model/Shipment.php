@@ -19,8 +19,6 @@ class Shipment extends \ArrayObject
      */
     protected $inquiryNumber;
     /**
-     * 
-     *
      * @var list<Package>|null
      */
     protected $package;
@@ -31,8 +29,6 @@ class Shipment extends \ArrayObject
      */
     protected $userRelation;
     /**
-     * 
-     *
      * @var list<Warning>|null
      */
     protected $warnings;
@@ -59,8 +55,6 @@ class Shipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<Package>|null
      */
     public function getPackage(): ?array
@@ -68,8 +62,6 @@ class Shipment extends \ArrayObject
         return $this->package;
     }
     /**
-     * 
-     *
      * @param list<Package>|null $package
      *
      * @return self
@@ -103,8 +95,6 @@ class Shipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<Warning>|null
      */
     public function getWarnings(): ?array
@@ -112,8 +102,6 @@ class Shipment extends \ArrayObject
         return $this->warnings;
     }
     /**
-     * 
-     *
      * @param list<Warning>|null $warnings
      *
      * @return self

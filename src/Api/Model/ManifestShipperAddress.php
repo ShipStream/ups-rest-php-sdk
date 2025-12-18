@@ -44,18 +44,19 @@ class ManifestShipperAddress extends \ArrayObject
     protected $stateProvinceCode;
     /**
      * Shipper's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
+     * 
      *
      * @var string
      */
     protected $postalCode;
     /**
-    * Shipper's country or territory code.
-    
-    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
-    
-    *
-    * @var string
-    */
+     * Shipper's country or territory code.
+     * 
+     * Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+     * 
+     *
+     * @var string
+     */
     protected $countryCode;
     /**
      * If tag is present, then the address is residential address. Pickup location residential address indicator. The presence indicates residential address, the absence indicates a business address.
@@ -175,6 +176,7 @@ class ManifestShipperAddress extends \ArrayObject
     }
     /**
      * Shipper's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
+     * 
      *
      * @return string
      */
@@ -196,13 +198,13 @@ class ManifestShipperAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Shipper's country or territory code.
-    
-    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
-    
-    *
-    * @return string
-    */
+     * Shipper's country or territory code.
+     * 
+     * Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+     * 
+     *
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;

@@ -13,25 +13,25 @@ class ExistingShipmentIDConfirmationNumber extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Container for the type of unique pickup confirmation number.
-    Required only for Shipment Updates.
-    *
-    * @var ConfirmationNumberType
-    */
+     * Container for the type of unique pickup confirmation number.
+     * Required only for Shipment Updates.
+     *
+     * @var ConfirmationNumberType
+     */
     protected $type;
     /**
-    * The unique pickup confirmation number or BOLID value.
-    Required only for Shipment Updates.
-    *
-    * @var string
-    */
+     * The unique pickup confirmation number or BOLID value.
+     * Required only for Shipment Updates.
+     *
+     * @var string
+     */
     protected $value;
     /**
-    * Container for the type of unique pickup confirmation number.
-    Required only for Shipment Updates.
-    *
-    * @return ConfirmationNumberType
-    */
+     * Container for the type of unique pickup confirmation number.
+     * Required only for Shipment Updates.
+     *
+     * @return ConfirmationNumberType
+     */
     public function getType(): ConfirmationNumberType
     {
         return $this->type;
@@ -51,11 +51,11 @@ class ExistingShipmentIDConfirmationNumber extends \ArrayObject
         return $this;
     }
     /**
-    * The unique pickup confirmation number or BOLID value.
-    Required only for Shipment Updates.
-    *
-    * @return string
-    */
+     * The unique pickup confirmation number or BOLID value.
+     * Required only for Shipment Updates.
+     *
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;

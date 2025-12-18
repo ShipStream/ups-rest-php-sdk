@@ -8,23 +8,21 @@ class DeprecatedVoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndp
     protected $shipmentidentificationnumber;
     /**
     * The Void Shipping API is used to cancel the previously scheduled shipment
-    *
     * @param string $deprecatedVersion API Version.
     
     Valid values:
     - v1
-    
     * @param string $shipmentidentificationnumber The shipment's identification number 
     Alpha-numeric. Must pass 1Z rules. Must be 
     upper case. Length 18
     * @param array $queryParameters {
-    *     @var string $trackingnumber The package's tracking number. You may have 
+    *     @var string $trackingnumber The package's tracking number. You may have
     up to 20 different tracking numbers listed.
-    If more than one tracking number, pass this 
-    value as: trackingnumber= 
+    If more than one tracking number, pass this
+    value as: trackingnumber=
     ["1ZISUS010330563105","1ZISUS01033056310
     8"] with a coma separating each number.
-    Alpha-numeric. Must pass 1Z rules. Must be 
+    Alpha-numeric. Must pass 1Z rules. Must be
     upper case. Length 18
     * }
     * @param array $headerParameters {
@@ -90,19 +88,19 @@ class DeprecatedVoidShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndp
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (200 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\VOIDSHIPMENTResponseWrapper', 'json');
         }
-        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (400 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentBadRequestException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (401 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentUnauthorizedException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (403 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentForbiddenException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (429 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedVoidShipmentTooManyRequestsException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);

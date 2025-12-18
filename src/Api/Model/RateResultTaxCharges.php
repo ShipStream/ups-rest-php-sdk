@@ -13,11 +13,11 @@ class RateResultTaxCharges extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Type of Tax code. 
-    Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
-    *
-    * @var string
-    */
+     * Type of Tax code.
+     * Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
+     *
+     * @var string
+     */
     protected $type;
     /**
      * Monetary value of the tax.
@@ -26,11 +26,11 @@ class RateResultTaxCharges extends \ArrayObject
      */
     protected $monetaryValue;
     /**
-    * Type of Tax code. 
-    Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
-    *
-    * @return string
-    */
+     * Type of Tax code.
+     * Valid values: ALV, BTW, DDS, DDV, DPH, FPA, GST, IVA, IVA1, IVA2, IVA3, KM, MOMS, MWST, PDV, PST, PVM, PVN, QST, TVA, VAT, VSK.
+     *
+     * @return string
+     */
     public function getType(): string
     {
         return $this->type;

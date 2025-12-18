@@ -13,14 +13,10 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<FacilityTimeDayOfWeek>
      */
     protected $dayOfWeek;
     /**
-     * 
-     *
      * @return list<FacilityTimeDayOfWeek>
      */
     public function getDayOfWeek(): array
@@ -28,8 +24,6 @@ class DropOffFacilitiesFacilityTime extends \ArrayObject
         return $this->dayOfWeek;
     }
     /**
-     * 
-     *
      * @param list<FacilityTimeDayOfWeek> $dayOfWeek
      *
      * @return self

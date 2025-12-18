@@ -13,14 +13,10 @@ class FREIGHTSHIPRequestWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var FreightShipRequest
      */
     protected $freightShipRequest;
     /**
-     * 
-     *
      * @return FreightShipRequest
      */
     public function getFreightShipRequest(): FreightShipRequest
@@ -28,8 +24,6 @@ class FREIGHTSHIPRequestWrapper extends \ArrayObject
         return $this->freightShipRequest;
     }
     /**
-     * 
-     *
      * @param FreightShipRequest $freightShipRequest
      *
      * @return self

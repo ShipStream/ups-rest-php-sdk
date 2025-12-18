@@ -19,11 +19,11 @@ class FreightPickupRequest extends \ArrayObject
      */
     protected $request;
     /**
-    * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
-    If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
-    *
-    * @var string
-    */
+     * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
+     * If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
+     *
+     * @var string
+     */
     protected $pickupRequestConfirmationNumber;
     /**
      * Destinations postal code.
@@ -56,31 +56,31 @@ class FreightPickupRequest extends \ArrayObject
      */
     protected $shipTo;
     /**
-    * Date of the Pickup. 
-    Format:YYYYMMDD
-    *
-    * @var string
-    */
+     * Date of the Pickup.
+     * Format:YYYYMMDD
+     *
+     * @var string
+     */
     protected $pickupDate;
     /**
-    * The earliest time a shipment is ready to be picked up.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    *
-    * @var string
-    */
+     * The earliest time a shipment is ready to be picked up.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     *
+     * @var string
+     */
     protected $earliestTimeReady;
     /**
-    * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    *
-    * @var string
-    */
+     * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     *
+     * @var string
+     */
     protected $latestTimeReady;
     /**
      * ShipmentServiceOptions container.
@@ -89,17 +89,15 @@ class FreightPickupRequest extends \ArrayObject
      */
     protected $shipmentServiceOptions;
     /**
-     * 
-     *
      * @var list<FreightPickupRequestShipmentDetail>
      */
     protected $shipmentDetail;
     /**
-    * ExistingShipmentID Container.
-    Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
-    *
-    * @var FreightPickupRequestExistingShipmentID
-    */
+     * ExistingShipmentID Container.
+     * Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
+     *
+     * @var FreightPickupRequestExistingShipmentID
+     */
     protected $existingShipmentID;
     /**
      * An identifier associated to the pickup request when the user elects to include Pickup Notifications for LTL.
@@ -114,11 +112,11 @@ class FreightPickupRequest extends \ArrayObject
      */
     protected $pickupInstructions;
     /**
-    * The location of the freight.
-    Example: Loading Dock A
-    *
-    * @var string
-    */
+     * The location of the freight.
+     * Example: Loading Dock A
+     *
+     * @var string
+     */
     protected $additionalComments;
     /**
      * Handling Instructions text
@@ -161,11 +159,11 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
-    If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
-    *
-    * @return string
-    */
+     * Confirmation number of pickup ground freight shipment to modify.� Only use if requesting a pickup modification.
+     * If this element is populated, it must contain a valid confirmation number and all previously supplied populated elements in the original request must be present.
+     *
+     * @return string
+     */
     public function getPickupRequestConfirmationNumber(): string
     {
         return $this->pickupRequestConfirmationNumber;
@@ -295,11 +293,11 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Date of the Pickup. 
-    Format:YYYYMMDD
-    *
-    * @return string
-    */
+     * Date of the Pickup.
+     * Format:YYYYMMDD
+     *
+     * @return string
+     */
     public function getPickupDate(): string
     {
         return $this->pickupDate;
@@ -319,14 +317,14 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The earliest time a shipment is ready to be picked up.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    *
-    * @return string
-    */
+     * The earliest time a shipment is ready to be picked up.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     *
+     * @return string
+     */
     public function getEarliestTimeReady(): string
     {
         return $this->earliestTimeReady;
@@ -349,14 +347,14 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    *
-    * @return string
-    */
+     * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     *
+     * @return string
+     */
     public function getLatestTimeReady(): string
     {
         return $this->latestTimeReady;
@@ -401,8 +399,6 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightPickupRequestShipmentDetail>
      */
     public function getShipmentDetail(): array
@@ -410,8 +406,6 @@ class FreightPickupRequest extends \ArrayObject
         return $this->shipmentDetail;
     }
     /**
-     * 
-     *
      * @param list<FreightPickupRequestShipmentDetail> $shipmentDetail
      *
      * @return self
@@ -423,11 +417,11 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * ExistingShipmentID Container.
-    Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
-    *
-    * @return FreightPickupRequestExistingShipmentID
-    */
+     * ExistingShipmentID Container.
+     * Request will contain either ShipmentDetail or ExistingShipmentID container. Not both.
+     *
+     * @return FreightPickupRequestExistingShipmentID
+     */
     public function getExistingShipmentID(): FreightPickupRequestExistingShipmentID
     {
         return $this->existingShipmentID;
@@ -491,11 +485,11 @@ class FreightPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The location of the freight.
-    Example: Loading Dock A
-    *
-    * @return string
-    */
+     * The location of the freight.
+     * Example: Loading Dock A
+     *
+     * @return string
+     */
     public function getAdditionalComments(): string
     {
         return $this->additionalComments;

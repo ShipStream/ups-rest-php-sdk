@@ -13,23 +13,23 @@ class PackageReferenceNumber extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * If the indicator is present then the reference numbers value will be bar coded on the label.
-    
-    This is an empty tag, any value inside is ignored.
-     Only one shipment-level or package-level reference number can be bar coded per shipment. 
-    
-    In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
-    *
-    * @var string
-    */
+     * If the indicator is present then the reference numbers value will be bar coded on the label.
+     * 
+     * This is an empty tag, any value inside is ignored.
+     *   Only one shipment-level or package-level reference number can be bar coded per shipment.
+     * 
+     * In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
+     *
+     * @var string
+     */
     protected $barCodeIndicator;
     /**
-    * Reference number type code, for the entire shipment. The code specifies the Reference name. 
-    
-    Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
-    *
-    * @var string
-    */
+     * Reference number type code, for the entire shipment. The code specifies the Reference name.
+     * 
+     * Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Customer supplied reference number.  Valid if the origin/destination pair is US/US or PR/PR.
@@ -38,15 +38,15 @@ class PackageReferenceNumber extends \ArrayObject
      */
     protected $value;
     /**
-    * If the indicator is present then the reference numbers value will be bar coded on the label.
-    
-    This is an empty tag, any value inside is ignored.
-     Only one shipment-level or package-level reference number can be bar coded per shipment. 
-    
-    In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
-    *
-    * @return string
-    */
+     * If the indicator is present then the reference numbers value will be bar coded on the label.
+     * 
+     * This is an empty tag, any value inside is ignored.
+     *   Only one shipment-level or package-level reference number can be bar coded per shipment.
+     * 
+     * In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.
+     *
+     * @return string
+     */
     public function getBarCodeIndicator(): string
     {
         return $this->barCodeIndicator;
@@ -70,12 +70,12 @@ class PackageReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-    * Reference number type code, for the entire shipment. The code specifies the Reference name. 
-    
-    Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
-    *
-    * @return string
-    */
+     * Reference number type code, for the entire shipment. The code specifies the Reference name.
+     * 
+     * Refer to the Reference Number Code table.  Valid if the origin/destination pair is US/US or PR/PR and character should be alpha-numeric.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

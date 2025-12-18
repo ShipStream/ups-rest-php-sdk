@@ -13,27 +13,27 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates the name of the International Form requested.
-    
-    Valid values:
-    - 01 - Invoice
-    - 03 - CO
-    - 04 - NAFTA CO
-    - 05 - Partial Invoice
-    - 06 - Packinglist
-    - 07 - Customer Generated Forms
-    - 08 – Air Freight Packing List
-    - 09 - CN22 Form
-    - 10 – UPS Premium Care Form
-    - 11 - EEI
-    
-    For shipment with return service, 05 or 10 are the only valid values.
-    
-    Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
-    
-    *
-    * @var list<string>
-    */
+     * Indicates the name of the International Form requested.
+     * 
+     * Valid values:
+     * - 01 - Invoice
+     * - 03 - CO
+     * - 04 - NAFTA CO
+     * - 05 - Partial Invoice
+     * - 06 - Packinglist
+     * - 07 - Customer Generated Forms
+     * - 08 – Air Freight Packing List
+     * - 09 - CN22 Form
+     * - 10 – UPS Premium Care Form
+     * - 11 - EEI
+     * 
+     * For shipment with return service, 05 or 10 are the only valid values.
+     * 
+     * Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
+     * 
+     *
+     * @var list<string>
+     */
     protected $formType;
     /**
      * Data container for DocumentID(s).  Required if Form Type is 07.
@@ -54,15 +54,15 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $cN22Form;
     /**
-    * Presence of the indicator means user will supply additional document, such as EEI, NAFTA_CO or CO.  This indicator should be set when the shipper intends to utilize UPS paperless invoice functionality AND the shipper has SELF-PREPARED other International Forms (EEI, CO, NAFTACO) to accompany the shipment. 
-    It is evaluated only when: 
-    1. Account is paperless enabled. 
-    2. Movement requires an invoice.
-    3. Destination country or territory accepts paperless invoice. 
-    4. Invoice data is supplied by the client and the data passes validation.
-    *
-    * @var string
-    */
+     * Presence of the indicator means user will supply additional document, such as EEI, NAFTA_CO or CO.  This indicator should be set when the shipper intends to utilize UPS paperless invoice functionality AND the shipper has SELF-PREPARED other International Forms (EEI, CO, NAFTACO) to accompany the shipment.
+     * It is evaluated only when:
+     * 1. Account is paperless enabled.
+     * 2. Movement requires an invoice.
+     * 3. Destination country or territory accepts paperless invoice.
+     * 4. Invoice data is supplied by the client and the data passes validation.
+     *
+     * @var string
+     */
     protected $additionalDocumentIndicator;
     /**
      * Contains description text which identifies the group of International forms. This element does not appear on the forms.
@@ -83,8 +83,6 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $contacts;
     /**
-     * 
-     *
      * @var list<InternationalFormsProduct>|null
      */
     protected $product;
@@ -107,32 +105,32 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $purchaseOrderNumber;
     /**
-    * Indicates the rights to the seller from the buyer. Also, it refers to Terms of Sale.  Applies to Invoice and Partial Invoice forms only. 
-    
-    Valid values: 
-    CFR: Cost and Freight 
-    CIF: Cost Insurance and Freight 
-    CIP: Carriage and Insurance Paid 
-    CPT: Carriage Paid To 
-    DAF: Delivered at Frontier 
-    DDP: Delivery Duty Paid 
-    DDU: Delivery Duty Unpaid 
-    DEQ: Delivered Ex Quay 
-    DES: Delivered Ex Ship 
-    EXW: Ex Works 
-    FAS: Free Alongside Ship 
-    FCA: Free Carrier 
-    FOB: Free On Board
-    *
-    * @var string
-    */
+     * Indicates the rights to the seller from the buyer. Also, it refers to Terms of Sale.  Applies to Invoice and Partial Invoice forms only.
+     * 
+     * Valid values:
+     * CFR: Cost and Freight
+     * CIF: Cost Insurance and Freight
+     * CIP: Carriage and Insurance Paid
+     * CPT: Carriage Paid To
+     * DAF: Delivered at Frontier
+     * DDP: Delivery Duty Paid
+     * DDU: Delivery Duty Unpaid
+     * DEQ: Delivered Ex Quay
+     * DES: Delivered Ex Ship
+     * EXW: Ex Works
+     * FAS: Free Alongside Ship
+     * FCA: Free Carrier
+     * FOB: Free On Board
+     *
+     * @var string
+     */
     protected $termsOfShipment;
     /**
-    * A reason to export the current international shipment.
-    Valid values: SALE, GIFT, SAMPLE, RETURN, REPAIR, INTERCOMPANYDATA, Any other reason.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and Optional for Partial Invoice. No validation.
-    *
-    * @var string
-    */
+     * A reason to export the current international shipment.
+     * Valid values: SALE, GIFT, SAMPLE, RETURN, REPAIR, INTERCOMPANYDATA, Any other reason.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and Optional for Partial Invoice. No validation.
+     *
+     * @var string
+     */
     protected $reasonForExport;
     /**
      * Any extra information about the current shipment.  Applies to Invoice and Partial Invoice forms only.
@@ -189,13 +187,13 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $exportDate;
     /**
-    * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
-    
-    If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
-    
-    *
-    * @var string
-    */
+     * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
+     * 
+     * If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
+     * 
+     *
+     * @var string
+     */
     protected $exportingCarrier;
     /**
      * The four-character Standard Carrier Alpha Code (SCAC) for vessel, rail, and truck shipments. For air shipment, enter the two or three character International Air Transport Association (IATA) code.  Applies to EEI forms only. No Validations.
@@ -252,19 +250,19 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $loadingPier;
     /**
-    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
-    
-    Valid values:
-    - R - Related
-    - N - Non-related.
-    
-    Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
-    
-    Default will be set to N - Non-related if invalid code present with length of one.
-    
-    *
-    * @var string
-    */
+     * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
+     * 
+     * Valid values:
+     * - R - Related
+     * - N - Non-related.
+     * 
+     * Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
+     * 
+     * Default will be set to N - Non-related if invalid code present with length of one.
+     * 
+     *
+     * @var string
+     */
     protected $partiesToTransaction;
     /**
      * If Present, indicates that it is a routed export transaction. A routed export transaction is one, where the foreign principal party in interest authorizes a U.S. forwarding (or other) agent to export the merchandise outside the U.S.  Applies to EEI forms only.
@@ -297,27 +295,27 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
      */
     protected $hazardousMaterialsIndicator;
     /**
-    * Indicates the name of the International Form requested.
-    
-    Valid values:
-    - 01 - Invoice
-    - 03 - CO
-    - 04 - NAFTA CO
-    - 05 - Partial Invoice
-    - 06 - Packinglist
-    - 07 - Customer Generated Forms
-    - 08 – Air Freight Packing List
-    - 09 - CN22 Form
-    - 10 – UPS Premium Care Form
-    - 11 - EEI
-    
-    For shipment with return service, 05 or 10 are the only valid values.
-    
-    Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
-    
-    *
-    * @return list<string>
-    */
+     * Indicates the name of the International Form requested.
+     * 
+     * Valid values:
+     * - 01 - Invoice
+     * - 03 - CO
+     * - 04 - NAFTA CO
+     * - 05 - Partial Invoice
+     * - 06 - Packinglist
+     * - 07 - Customer Generated Forms
+     * - 08 – Air Freight Packing List
+     * - 09 - CN22 Form
+     * - 10 – UPS Premium Care Form
+     * - 11 - EEI
+     * 
+     * For shipment with return service, 05 or 10 are the only valid values.
+     * 
+     * Note: 01 and 05 are mutually exclusive and 05 are only valid for return shipments only.
+     * 
+     *
+     * @return list<string>
+     */
     public function getFormType(): array
     {
         return $this->formType;
@@ -419,15 +417,15 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-    * Presence of the indicator means user will supply additional document, such as EEI, NAFTA_CO or CO.  This indicator should be set when the shipper intends to utilize UPS paperless invoice functionality AND the shipper has SELF-PREPARED other International Forms (EEI, CO, NAFTACO) to accompany the shipment. 
-    It is evaluated only when: 
-    1. Account is paperless enabled. 
-    2. Movement requires an invoice.
-    3. Destination country or territory accepts paperless invoice. 
-    4. Invoice data is supplied by the client and the data passes validation.
-    *
-    * @return string
-    */
+     * Presence of the indicator means user will supply additional document, such as EEI, NAFTA_CO or CO.  This indicator should be set when the shipper intends to utilize UPS paperless invoice functionality AND the shipper has SELF-PREPARED other International Forms (EEI, CO, NAFTACO) to accompany the shipment.
+     * It is evaluated only when:
+     * 1. Account is paperless enabled.
+     * 2. Movement requires an invoice.
+     * 3. Destination country or territory accepts paperless invoice.
+     * 4. Invoice data is supplied by the client and the data passes validation.
+     *
+     * @return string
+     */
     public function getAdditionalDocumentIndicator(): string
     {
         return $this->additionalDocumentIndicator;
@@ -517,8 +515,6 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<InternationalFormsProduct>|null
      */
     public function getProduct(): ?array
@@ -526,8 +522,6 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this->product;
     }
     /**
-     * 
-     *
      * @param list<InternationalFormsProduct>|null $product
      *
      * @return self
@@ -605,25 +599,25 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the rights to the seller from the buyer. Also, it refers to Terms of Sale.  Applies to Invoice and Partial Invoice forms only. 
-    
-    Valid values: 
-    CFR: Cost and Freight 
-    CIF: Cost Insurance and Freight 
-    CIP: Carriage and Insurance Paid 
-    CPT: Carriage Paid To 
-    DAF: Delivered at Frontier 
-    DDP: Delivery Duty Paid 
-    DDU: Delivery Duty Unpaid 
-    DEQ: Delivered Ex Quay 
-    DES: Delivered Ex Ship 
-    EXW: Ex Works 
-    FAS: Free Alongside Ship 
-    FCA: Free Carrier 
-    FOB: Free On Board
-    *
-    * @return string
-    */
+     * Indicates the rights to the seller from the buyer. Also, it refers to Terms of Sale.  Applies to Invoice and Partial Invoice forms only.
+     * 
+     * Valid values:
+     * CFR: Cost and Freight
+     * CIF: Cost Insurance and Freight
+     * CIP: Carriage and Insurance Paid
+     * CPT: Carriage Paid To
+     * DAF: Delivered at Frontier
+     * DDP: Delivery Duty Paid
+     * DDU: Delivery Duty Unpaid
+     * DEQ: Delivered Ex Quay
+     * DES: Delivered Ex Ship
+     * EXW: Ex Works
+     * FAS: Free Alongside Ship
+     * FCA: Free Carrier
+     * FOB: Free On Board
+     *
+     * @return string
+     */
     public function getTermsOfShipment(): string
     {
         return $this->termsOfShipment;
@@ -657,11 +651,11 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-    * A reason to export the current international shipment.
-    Valid values: SALE, GIFT, SAMPLE, RETURN, REPAIR, INTERCOMPANYDATA, Any other reason.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and Optional for Partial Invoice. No validation.
-    *
-    * @return string
-    */
+     * A reason to export the current international shipment.
+     * Valid values: SALE, GIFT, SAMPLE, RETURN, REPAIR, INTERCOMPANYDATA, Any other reason.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and Optional for Partial Invoice. No validation.
+     *
+     * @return string
+     */
     public function getReasonForExport(): string
     {
         return $this->reasonForExport;
@@ -879,13 +873,13 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-    * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
-    
-    If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
-    
-    *
-    * @return string
-    */
+     * The name of the carrier that is exporting the shipment. The vessels flag number should also be entered, if the carrier is a vessel.
+     * 
+     * If value is empty, it will be set to default value as 'UPS' for EEI forms.  Applies to CO and EEI forms only. Required for CO forms.
+     * 
+     *
+     * @return string
+     */
     public function getExportingCarrier(): string
     {
         return $this->exportingCarrier;
@@ -1105,19 +1099,19 @@ class ShipmentServiceOptionsInternationalForms extends \ArrayObject
         return $this;
     }
     /**
-    * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
-    
-    Valid values:
-    - R - Related
-    - N - Non-related.
-    
-    Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
-    
-    Default will be set to N - Non-related if invalid code present with length of one.
-    
-    *
-    * @return string
-    */
+     * Information about parties to transaction. Use Related, if the parties to the transaction are related. A related party is an export from a U.S. businessperson or business to a foreign business or from a U.S. business to a foreign person or business where the person has at least 10 percent of the voting shares of the business during the fiscal year. If unincorporated, then an equivalent interest in the business.  Applies to EEI forms only.
+     * 
+     * Valid values:
+     * - R - Related
+     * - N - Non-related.
+     * 
+     * Parties to transaction is required if EEIFilingOption Code is 3 and if valid UPSFiled POA Code present in request.
+     * 
+     * Default will be set to N - Non-related if invalid code present with length of one.
+     * 
+     *
+     * @return string
+     */
     public function getPartiesToTransaction(): string
     {
         return $this->partiesToTransaction;

@@ -37,11 +37,11 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
      */
     protected $tunnelRestrictionCode;
     /**
-    * Number of ADR Units (Liters/Kg)
-    Format: 9999.99
-    *
-    * @var string
-    */
+     * Number of ADR Units (Liters/Kg)
+     * Format: 9999.99
+     *
+     * @var string
+     */
     protected $aDRUnits;
     /**
      * Identifies the Chemical Record.
@@ -132,11 +132,11 @@ class PackageResultsChemicalRecordResults extends \ArrayObject
         return $this;
     }
     /**
-    * Number of ADR Units (Liters/Kg)
-    Format: 9999.99
-    *
-    * @return string
-    */
+     * Number of ADR Units (Liters/Kg)
+     * Format: 9999.99
+     *
+     * @return string
+     */
     public function getADRUnits(): string
     {
         return $this->aDRUnits;

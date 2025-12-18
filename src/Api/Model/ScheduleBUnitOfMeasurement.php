@@ -13,13 +13,13 @@ class ScheduleBUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.  Applies to EEI forms only. Required for the EEI form.
-    
-    Refer to ScheduleB Unit of Measure Codes in the Appendix for valid values.
-    
-    *
-    * @var string
-    */
+     * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.  Applies to EEI forms only. Required for the EEI form.
+     * 
+     * Refer to ScheduleB Unit of Measure Codes in the Appendix for valid values.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the Unit of Measure.
@@ -28,13 +28,13 @@ class ScheduleBUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.  Applies to EEI forms only. Required for the EEI form.
-    
-    Refer to ScheduleB Unit of Measure Codes in the Appendix for valid values.
-    
-    *
-    * @return string
-    */
+     * The unit of measure indicated on the Export License. Enter an X if there is no unit of measure in the Schedule B Unit field.  Applies to EEI forms only. Required for the EEI form.
+     * 
+     * Refer to ScheduleB Unit of Measure Codes in the Appendix for valid values.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

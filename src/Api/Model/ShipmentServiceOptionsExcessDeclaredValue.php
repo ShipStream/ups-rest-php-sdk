@@ -13,11 +13,11 @@ class ShipmentServiceOptionsExcessDeclaredValue extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Excess Declared value amount currency type.
-    Valid value: USD - United States Dollar
-    *
-    * @var string
-    */
+     * Excess Declared value amount currency type.
+     * Valid value: USD - United States Dollar
+     *
+     * @var string
+     */
     protected $currencyCode;
     /**
      * Excess Declared value amount.
@@ -26,11 +26,11 @@ class ShipmentServiceOptionsExcessDeclaredValue extends \ArrayObject
      */
     protected $monetaryValue;
     /**
-    * Excess Declared value amount currency type.
-    Valid value: USD - United States Dollar
-    *
-    * @return string
-    */
+     * Excess Declared value amount currency type.
+     * Valid value: USD - United States Dollar
+     *
+     * @return string
+     */
     public function getCurrencyCode(): string
     {
         return $this->currencyCode;

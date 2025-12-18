@@ -13,14 +13,10 @@ class ErrorResponseWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<Error>
      */
     protected $errors;
     /**
-     * 
-     *
      * @return list<Error>
      */
     public function getErrors(): array
@@ -28,8 +24,6 @@ class ErrorResponseWrapper extends \ArrayObject
         return $this->errors;
     }
     /**
-     * 
-     *
      * @param list<Error> $errors
      *
      * @return self

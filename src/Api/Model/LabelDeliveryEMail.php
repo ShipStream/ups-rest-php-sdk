@@ -49,27 +49,27 @@ class LabelDeliveryEMail extends \ArrayObject
      */
     protected $subject;
     /**
-    * Specifies a reference code and reference number to display in the subject of the Label Delivery notification.
-    
-    When the subject code is provided, the subject will contain the following: UPS Label Delivery, the reference code (the reference code will be mapped to the corresponding ANSI value) and the reference number.
-    
-    The valid subject codes are:
-    - 01 - Shipment Reference Number 1,
-    - 02 - Shipment Reference Number 2,
-    - 03 - package Reference Number 1,
-    - 04 - package Reference Number 2,
-    - 05 - package Reference Number 3,
-    - 06 - package Reference Number 4,
-    - 07 - package Reference Number 5,
-    - 08 - Subject Text (Return Notification only).
-    
-    If the subject code tag is not provided and the subject text is provided, the subject of the notification will be the subject text.
-    
-    If the subject text is provided, and the subject code tag exists, then the subject code value must be 08. If Subject code is 08, subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the shipment identification number.
-    
-    *
-    * @var string
-    */
+     * Specifies a reference code and reference number to display in the subject of the Label Delivery notification.
+     * 
+     * When the subject code is provided, the subject will contain the following: UPS Label Delivery, the reference code (the reference code will be mapped to the corresponding ANSI value) and the reference number.
+     * 
+     * The valid subject codes are:
+     * - 01 - Shipment Reference Number 1,
+     * - 02 - Shipment Reference Number 2,
+     * - 03 - package Reference Number 1,
+     * - 04 - package Reference Number 2,
+     * - 05 - package Reference Number 3,
+     * - 06 - package Reference Number 4,
+     * - 07 - package Reference Number 5,
+     * - 08 - Subject Text (Return Notification only).
+     * 
+     * If the subject code tag is not provided and the subject text is provided, the subject of the notification will be the subject text.
+     * 
+     * If the subject text is provided, and the subject code tag exists, then the subject code value must be 08. If Subject code is 08, subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the shipment identification number.
+     * 
+     *
+     * @var string
+     */
     protected $subjectCode;
     /**
      * The destination eMail address for the Label Delivery.
@@ -204,27 +204,27 @@ class LabelDeliveryEMail extends \ArrayObject
         return $this;
     }
     /**
-    * Specifies a reference code and reference number to display in the subject of the Label Delivery notification.
-    
-    When the subject code is provided, the subject will contain the following: UPS Label Delivery, the reference code (the reference code will be mapped to the corresponding ANSI value) and the reference number.
-    
-    The valid subject codes are:
-    - 01 - Shipment Reference Number 1,
-    - 02 - Shipment Reference Number 2,
-    - 03 - package Reference Number 1,
-    - 04 - package Reference Number 2,
-    - 05 - package Reference Number 3,
-    - 06 - package Reference Number 4,
-    - 07 - package Reference Number 5,
-    - 08 - Subject Text (Return Notification only).
-    
-    If the subject code tag is not provided and the subject text is provided, the subject of the notification will be the subject text.
-    
-    If the subject text is provided, and the subject code tag exists, then the subject code value must be 08. If Subject code is 08, subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the shipment identification number.
-    
-    *
-    * @return string
-    */
+     * Specifies a reference code and reference number to display in the subject of the Label Delivery notification.
+     * 
+     * When the subject code is provided, the subject will contain the following: UPS Label Delivery, the reference code (the reference code will be mapped to the corresponding ANSI value) and the reference number.
+     * 
+     * The valid subject codes are:
+     * - 01 - Shipment Reference Number 1,
+     * - 02 - Shipment Reference Number 2,
+     * - 03 - package Reference Number 1,
+     * - 04 - package Reference Number 2,
+     * - 05 - package Reference Number 3,
+     * - 06 - package Reference Number 4,
+     * - 07 - package Reference Number 5,
+     * - 08 - Subject Text (Return Notification only).
+     * 
+     * If the subject code tag is not provided and the subject text is provided, the subject of the notification will be the subject text.
+     * 
+     * If the subject text is provided, and the subject code tag exists, then the subject code value must be 08. If Subject code is 08, subject text must exist. If a subject code is provided that refers to a nonexistent reference number, the subject will default to the shipment identification number.
+     * 
+     *
+     * @return string
+     */
     public function getSubjectCode(): string
     {
         return $this->subjectCode;

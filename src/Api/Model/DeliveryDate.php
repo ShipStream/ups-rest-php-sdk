@@ -13,20 +13,14 @@ class DeliveryDate extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var string
      */
     protected $date;
     /**
-     * 
-     *
      * @var string
      */
     protected $type;
     /**
-     * 
-     *
      * @return string
      */
     public function getDate(): string
@@ -34,8 +28,6 @@ class DeliveryDate extends \ArrayObject
         return $this->date;
     }
     /**
-     * 
-     *
      * @param string $date
      *
      * @return self
@@ -47,8 +39,6 @@ class DeliveryDate extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return string
      */
     public function getType(): string
@@ -56,8 +46,6 @@ class DeliveryDate extends \ArrayObject
         return $this->type;
     }
     /**
-     * 
-     *
      * @param string $type
      *
      * @return self

@@ -49,18 +49,16 @@ class PreNotificationRequestShipment extends \ArrayObject
      */
     protected $service;
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
-    - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
-    - 49CFR – Title 49 of the United States Code of Federal Regulations.
-    - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
-    
-    *
-    * @var string
-    */
-    protected $regulationSet;
-    /**
+     * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
+     * - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
+     * - 49CFR – Title 49 of the United States Code of Federal Regulations.
+     * - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
      * 
      *
+     * @var string
+     */
+    protected $regulationSet;
+    /**
      * @var list<PreNotificationShipmentPackage>
      */
     protected $package;
@@ -197,14 +195,14 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
-    - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
-    - 49CFR – Title 49 of the United States Code of Federal Regulations.
-    - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
-    
-    *
-    * @return string
-    */
+     * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Valid values are:
+     * - ADR – European Agreement concerning the International Carriage of Dangerous Goods by Road.
+     * - 49CFR – Title 49 of the United States Code of Federal Regulations.
+     * - IATA – International Air Transport Association (IATA) Dangerous Goods Regulations.
+     * 
+     *
+     * @return string
+     */
     public function getRegulationSet(): string
     {
         return $this->regulationSet;
@@ -227,8 +225,6 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PreNotificationShipmentPackage>
      */
     public function getPackage(): array
@@ -236,8 +232,6 @@ class PreNotificationRequestShipment extends \ArrayObject
         return $this->package;
     }
     /**
-     * 
-     *
      * @param list<PreNotificationShipmentPackage> $package
      *
      * @return self

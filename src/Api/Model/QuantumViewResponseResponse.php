@@ -19,11 +19,11 @@ class QuantumViewResponseResponse extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Identifies the success or failure of the interchange. 
-    1 = Success, 0 = Failure
-    *
-    * @var string
-    */
+     * Identifies the success or failure of the interchange.
+     * 1 = Success, 0 = Failure
+     *
+     * @var string
+     */
     protected $responseStatusCode;
     /**
      * 'Success' or 'Failure'
@@ -33,7 +33,9 @@ class QuantumViewResponseResponse extends \ArrayObject
     protected $responseStatusDescription;
     /**
      * If an error is encountered during the interchange, the Response contains an error. If the error is present, then the ErrorSeverity and ErrorCodes are required.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ResponseError>
      */
@@ -61,11 +63,11 @@ class QuantumViewResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Identifies the success or failure of the interchange. 
-    1 = Success, 0 = Failure
-    *
-    * @return string
-    */
+     * Identifies the success or failure of the interchange.
+     * 1 = Success, 0 = Failure
+     *
+     * @return string
+     */
     public function getResponseStatusCode(): string
     {
         return $this->responseStatusCode;
@@ -108,7 +110,9 @@ class QuantumViewResponseResponse extends \ArrayObject
     }
     /**
      * If an error is encountered during the interchange, the Response contains an error. If the error is present, then the ErrorSeverity and ErrorCodes are required.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ResponseError>
      */

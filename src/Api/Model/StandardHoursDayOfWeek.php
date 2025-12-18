@@ -13,18 +13,18 @@ class StandardHoursDayOfWeek extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Day of week. 
-    Valid values: 
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
-    *
-    * @var string
-    */
+     * Day of week.
+     * Valid values:
+     * 1-Sunday
+     * 2-Monday
+     * 3-Tuesday
+     * 4-Wednesday
+     * 5-Thursday
+     * 6-Friday
+     * 7-Saturday.
+     *
+     * @var string
+     */
     protected $day;
     /**
      * Open time of a location in military format (HHMM) e.g. 930, 1700, 1845 etc. with exception for midnight. For midnight the time will be returned as 0.
@@ -63,18 +63,18 @@ class StandardHoursDayOfWeek extends \ArrayObject
      */
     protected $open24HoursIndicator;
     /**
-    * Day of week. 
-    Valid values: 
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
-    *
-    * @return string
-    */
+     * Day of week.
+     * Valid values:
+     * 1-Sunday
+     * 2-Monday
+     * 3-Tuesday
+     * 4-Wednesday
+     * 5-Thursday
+     * 6-Friday
+     * 7-Saturday.
+     *
+     * @return string
+     */
     public function getDay(): string
     {
         return $this->day;

@@ -13,14 +13,14 @@ class DCRAvailabilityUnavailableReason extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for DCR/DCO unavailability. Valid values: 
-    01-Temporarily Unavailable 
-    02-Location Full
-    03-Unavailable
-    04-Weather
-    *
-    * @var string
-    */
+     * Code for DCR/DCO unavailability. Valid values:
+     * 01-Temporarily Unavailable
+     * 02-Location Full
+     * 03-Unavailable
+     * 04-Weather
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description for DCR/ DCO unavailability.
@@ -29,14 +29,14 @@ class DCRAvailabilityUnavailableReason extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for DCR/DCO unavailability. Valid values: 
-    01-Temporarily Unavailable 
-    02-Location Full
-    03-Unavailable
-    04-Weather
-    *
-    * @return string
-    */
+     * Code for DCR/DCO unavailability. Valid values:
+     * 01-Temporarily Unavailable
+     * 02-Location Full
+     * 03-Unavailable
+     * 04-Weather
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

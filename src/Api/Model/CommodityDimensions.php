@@ -19,31 +19,31 @@ class CommodityDimensions extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-    * The length of the line item used to determine dimensional weight.
-    Valid characters: 0-9 and "." (Decimal point). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @var string
-    */
+     * The length of the line item used to determine dimensional weight.
+     * Valid characters: 0-9 and "." (Decimal point).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @var string
+     */
     protected $length;
     /**
-    * The width of the line item used to determine dimensional weight. 
-    Format: See Length Description.
-    *
-    * @var string
-    */
+     * The width of the line item used to determine dimensional weight.
+     * Format: See Length Description.
+     *
+     * @var string
+     */
     protected $width;
     /**
-    * The height of the line item used to determine dimensional weight.
-    Format: See Length Description.
-    *
-    * @var string
-    */
+     * The height of the line item used to determine dimensional weight.
+     * Format: See Length Description.
+     *
+     * @var string
+     */
     protected $height;
     /**
      * UnitOfMeasurement Container.
@@ -68,17 +68,17 @@ class CommodityDimensions extends \ArrayObject
         return $this;
     }
     /**
-    * The length of the line item used to determine dimensional weight.
-    Valid characters: 0-9 and "." (Decimal point). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @return string
-    */
+     * The length of the line item used to determine dimensional weight.
+     * Valid characters: 0-9 and "." (Decimal point).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @return string
+     */
     public function getLength(): string
     {
         return $this->length;
@@ -104,11 +104,11 @@ class CommodityDimensions extends \ArrayObject
         return $this;
     }
     /**
-    * The width of the line item used to determine dimensional weight. 
-    Format: See Length Description.
-    *
-    * @return string
-    */
+     * The width of the line item used to determine dimensional weight.
+     * Format: See Length Description.
+     *
+     * @return string
+     */
     public function getWidth(): string
     {
         return $this->width;
@@ -128,11 +128,11 @@ class CommodityDimensions extends \ArrayObject
         return $this;
     }
     /**
-    * The height of the line item used to determine dimensional weight.
-    Format: See Length Description.
-    *
-    * @return string
-    */
+     * The height of the line item used to determine dimensional weight.
+     * Format: See Length Description.
+     *
+     * @return string
+     */
     public function getHeight(): string
     {
         return $this->height;

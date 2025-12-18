@@ -26,7 +26,9 @@ class VoidShipmentResponse extends \ArrayObject
     protected $summaryResult;
     /**
      * Contains the Package Level Results.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<VoidShipmentResponsePackageLevelResult>
      */
@@ -77,7 +79,9 @@ class VoidShipmentResponse extends \ArrayObject
     }
     /**
      * Contains the Package Level Results.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<VoidShipmentResponsePackageLevelResult>
      */

@@ -19,11 +19,11 @@ class PickupRateRequestShipperAccount extends \ArrayObject
      */
     protected $accountNumber;
     /**
-    * Country code as defined by ISO-3166.
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @var string
-    */
+     * Country code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @var string
+     */
     protected $accountCountryCode;
     /**
      * UPS account number.  Shipper's (requester of the pickup) UPS account number
@@ -48,11 +48,11 @@ class PickupRateRequestShipperAccount extends \ArrayObject
         return $this;
     }
     /**
-    * Country code as defined by ISO-3166.
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @return string
-    */
+     * Country code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @return string
+     */
     public function getAccountCountryCode(): string
     {
         return $this->accountCountryCode;

@@ -25,33 +25,33 @@ class LabelRecoveryRequest extends \ArrayObject
      */
     protected $labelSpecification;
     /**
-    * Translate container allows the user to specify the language he/she would like a specific portion of response to return. 
-    The language is specified by the combination of language code and dialect code. 
-    Valid combinations are: LanguageCode + DialectCode.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
-    Combinations: 
-    eng GB = Queen's English 
-    Spa 97 = Castilian Spanish 
-    ita 97 = Italian 
-    fra 97 = France French 
-    fra CA = Canadian French 
-    deu 97 = German 
-    por 97 = Portugal Portuguese 
-    nld 97 = Dutch 
-    dan 97 = Danish 
-    fin 97 = Finnish 
-    swe 97 = Swedish 
-    eng CA = Canadian English 
-    Eng US = US English 
-    Default language is Queen's English 
-    
-    If the Ship from country or territory is Canada, the Language defaults to Canadian English. 
-    
-    If the ship from country or territory is US, the language defaults to US English.
-    
-    If shipping from some other country or territory, the language defaults to Queens English.
-    *
-    * @var LabelRecoveryRequestTranslate
-    */
+     * Translate container allows the user to specify the language he/she would like a specific portion of response to return.
+     * The language is specified by the combination of language code and dialect code.
+     * Valid combinations are: LanguageCode + DialectCode.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
+     * Combinations:
+     * eng GB = Queen's English
+     * Spa 97 = Castilian Spanish
+     * ita 97 = Italian
+     * fra 97 = France French
+     * fra CA = Canadian French
+     * deu 97 = German
+     * por 97 = Portugal Portuguese
+     * nld 97 = Dutch
+     * dan 97 = Danish
+     * fin 97 = Finnish
+     * swe 97 = Swedish
+     * eng CA = Canadian English
+     * Eng US = US English
+     * Default language is Queen's English
+     * 
+     * If the Ship from country or territory is Canada, the Language defaults to Canadian English.
+     * 
+     * If the ship from country or territory is US, the language defaults to US English.
+     * 
+     * If shipping from some other country or territory, the language defaults to Queens English.
+     *
+     * @var LabelRecoveryRequestTranslate
+     */
     protected $translate;
     /**
      * Container for the Label Delivery accessorial. One Label Delivery per shipment.
@@ -60,19 +60,19 @@ class LabelRecoveryRequest extends \ArrayObject
      */
     protected $labelDelivery;
     /**
-    * Small Package Tracking Number. Required if Mail Innovations Tracking Number or ReferenceNumber/Value and ShipperNumber is not provided.  If only TrackingNumber is provided, the request will be treated as Small Package Shipment. Label Recovery will return label for Small Package Tracking Number.
-    If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
-    *
-    * @var string
-    */
+     * Small Package Tracking Number. Required if Mail Innovations Tracking Number or ReferenceNumber/Value and ShipperNumber is not provided.  If only TrackingNumber is provided, the request will be treated as Small Package Shipment. Label Recovery will return label for Small Package Tracking Number.
+     * If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
+     *
+     * @var string
+     */
     protected $trackingNumber;
     /**
-    * Mail Innovations Tracking Number.  Required if Tracking Number or ReferenceNumber/Value is not populated. 
-    If only MailInnovationsTrackingNumber is provided, the request will be treated as Single Mail Innovations Return Shipment. Label Recovery will return label for Mail Innovations Return Tracking Number.
-    If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
-    *
-    * @var string
-    */
+     * Mail Innovations Tracking Number.  Required if Tracking Number or ReferenceNumber/Value is not populated.
+     * If only MailInnovationsTrackingNumber is provided, the request will be treated as Single Mail Innovations Return Shipment. Label Recovery will return label for Mail Innovations Return Tracking Number.
+     * If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
+     *
+     * @var string
+     */
     protected $mailInnovationsTrackingNumber;
     /**
      * Container that holds reference number and shipper number  If tracking number is not present use reference Number
@@ -81,18 +81,18 @@ class LabelRecoveryRequest extends \ArrayObject
      */
     protected $referenceValues;
     /**
-    * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions, Receipt instructions (if available for given tracking number) and High Value Report (if available for given tracking number) in desired language. 
-    Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country code seperated by an underscore ('_') character. Example - de_DE. Please refer to Appendix for supported values for Locale.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
-    *
-    * @var string
-    */
+     * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions, Receipt instructions (if available for given tracking number) and High Value Report (if available for given tracking number) in desired language.
+     * Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country code seperated by an underscore ('_') character. Example - de_DE. Please refer to Appendix for supported values for Locale.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
+     *
+     * @var string
+     */
     protected $locale;
     /**
-    * UPS Premium Care Form container.  Default is PDF when container is not provided. 
-     Valid only for Canada to Canada movements. UPS Premium Care Form will be returned in  both US English and Canadian French language.
-    *
-    * @var LabelRecoveryRequestUPSPremiumCareForm
-    */
+     * UPS Premium Care Form container.  Default is PDF when container is not provided.
+     *   Valid only for Canada to Canada movements. UPS Premium Care Form will be returned in  both US English and Canadian French language.
+     *
+     * @var LabelRecoveryRequestUPSPremiumCareForm
+     */
     protected $uPSPremiumCareForm;
     /**
      * Request Container.
@@ -139,33 +139,33 @@ class LabelRecoveryRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Translate container allows the user to specify the language he/she would like a specific portion of response to return. 
-    The language is specified by the combination of language code and dialect code. 
-    Valid combinations are: LanguageCode + DialectCode.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
-    Combinations: 
-    eng GB = Queen's English 
-    Spa 97 = Castilian Spanish 
-    ita 97 = Italian 
-    fra 97 = France French 
-    fra CA = Canadian French 
-    deu 97 = German 
-    por 97 = Portugal Portuguese 
-    nld 97 = Dutch 
-    dan 97 = Danish 
-    fin 97 = Finnish 
-    swe 97 = Swedish 
-    eng CA = Canadian English 
-    Eng US = US English 
-    Default language is Queen's English 
-    
-    If the Ship from country or territory is Canada, the Language defaults to Canadian English. 
-    
-    If the ship from country or territory is US, the language defaults to US English.
-    
-    If shipping from some other country or territory, the language defaults to Queens English.
-    *
-    * @return LabelRecoveryRequestTranslate
-    */
+     * Translate container allows the user to specify the language he/she would like a specific portion of response to return.
+     * The language is specified by the combination of language code and dialect code.
+     * Valid combinations are: LanguageCode + DialectCode.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
+     * Combinations:
+     * eng GB = Queen's English
+     * Spa 97 = Castilian Spanish
+     * ita 97 = Italian
+     * fra 97 = France French
+     * fra CA = Canadian French
+     * deu 97 = German
+     * por 97 = Portugal Portuguese
+     * nld 97 = Dutch
+     * dan 97 = Danish
+     * fin 97 = Finnish
+     * swe 97 = Swedish
+     * eng CA = Canadian English
+     * Eng US = US English
+     * Default language is Queen's English
+     * 
+     * If the Ship from country or territory is Canada, the Language defaults to Canadian English.
+     * 
+     * If the ship from country or territory is US, the language defaults to US English.
+     * 
+     * If shipping from some other country or territory, the language defaults to Queens English.
+     *
+     * @return LabelRecoveryRequestTranslate
+     */
     public function getTranslate(): LabelRecoveryRequestTranslate
     {
         return $this->translate;
@@ -229,11 +229,11 @@ class LabelRecoveryRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Small Package Tracking Number. Required if Mail Innovations Tracking Number or ReferenceNumber/Value and ShipperNumber is not provided.  If only TrackingNumber is provided, the request will be treated as Small Package Shipment. Label Recovery will return label for Small Package Tracking Number.
-    If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
-    *
-    * @return string
-    */
+     * Small Package Tracking Number. Required if Mail Innovations Tracking Number or ReferenceNumber/Value and ShipperNumber is not provided.  If only TrackingNumber is provided, the request will be treated as Small Package Shipment. Label Recovery will return label for Small Package Tracking Number.
+     * If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
+     *
+     * @return string
+     */
     public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
@@ -253,12 +253,12 @@ class LabelRecoveryRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Mail Innovations Tracking Number.  Required if Tracking Number or ReferenceNumber/Value is not populated. 
-    If only MailInnovationsTrackingNumber is provided, the request will be treated as Single Mail Innovations Return Shipment. Label Recovery will return label for Mail Innovations Return Tracking Number.
-    If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
-    *
-    * @return string
-    */
+     * Mail Innovations Tracking Number.  Required if Tracking Number or ReferenceNumber/Value is not populated.
+     * If only MailInnovationsTrackingNumber is provided, the request will be treated as Single Mail Innovations Return Shipment. Label Recovery will return label for Mail Innovations Return Tracking Number.
+     * If both, TrackingNumber and MailInnovationsTrackingNumber are provided, the request will be treated as Dual Mail Innovations Return Shipment. Label Recovery will return two labels one each for - Small Package Tracking Number and Mail Innovations Return Tracking Number.
+     *
+     * @return string
+     */
     public function getMailInnovationsTrackingNumber(): string
     {
         return $this->mailInnovationsTrackingNumber;
@@ -301,11 +301,11 @@ class LabelRecoveryRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions, Receipt instructions (if available for given tracking number) and High Value Report (if available for given tracking number) in desired language. 
-    Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country code seperated by an underscore ('_') character. Example - de_DE. Please refer to Appendix for supported values for Locale.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
-    *
-    * @return string
-    */
+     * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions, Receipt instructions (if available for given tracking number) and High Value Report (if available for given tracking number) in desired language.
+     * Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country code seperated by an underscore ('_') character. Example - de_DE. Please refer to Appendix for supported values for Locale.  Either Translate container or Locale element can be present in a given request. Both can't be requested together in same request.
+     *
+     * @return string
+     */
     public function getLocale(): string
     {
         return $this->locale;
@@ -325,11 +325,11 @@ class LabelRecoveryRequest extends \ArrayObject
         return $this;
     }
     /**
-    * UPS Premium Care Form container.  Default is PDF when container is not provided. 
-     Valid only for Canada to Canada movements. UPS Premium Care Form will be returned in  both US English and Canadian French language.
-    *
-    * @return LabelRecoveryRequestUPSPremiumCareForm
-    */
+     * UPS Premium Care Form container.  Default is PDF when container is not provided.
+     *   Valid only for Canada to Canada movements. UPS Premium Care Form will be returned in  both US English and Canadian French language.
+     *
+     * @return LabelRecoveryRequestUPSPremiumCareForm
+     */
     public function getUPSPremiumCareForm(): LabelRecoveryRequestUPSPremiumCareForm
     {
         return $this->uPSPremiumCareForm;

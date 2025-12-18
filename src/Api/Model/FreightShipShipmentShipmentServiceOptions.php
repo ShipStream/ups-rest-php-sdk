@@ -13,8 +13,6 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<ShipmentServiceOptionsEMailInformation>
      */
     protected $eMailInformation;
@@ -31,11 +29,11 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $deliveryOptions;
     /**
-    * OverSeasLeg Container.
-    Accessorial required when origin or destination is Hawaii, Alaska, and Puerto Rico.
-    *
-    * @var ShipmentServiceOptionsOverSeasLeg
-    */
+     * OverSeasLeg Container.
+     * Accessorial required when origin or destination is Hawaii, Alaska, and Puerto Rico.
+     *
+     * @var ShipmentServiceOptionsOverSeasLeg
+     */
     protected $overSeasLeg;
     /**
      * COD Container.
@@ -80,25 +78,23 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $freezableProtectionIndicator;
     /**
-    * The presence of the tag ExtremeLengthIndicator indicates that the customs clearance is required.
-    It is recommended to provide 'LinearFeet' if this indicator is sent.
-    *
-    * @var string
-    */
+     * The presence of the tag ExtremeLengthIndicator indicates that the customs clearance is required.
+     * It is recommended to provide 'LinearFeet' if this indicator is sent.
+     *
+     * @var string
+     */
     protected $extremeLengthIndicator;
     /**
-    * Dimensional length of the article(s), in 'feet'.
-    Numeric value greater than �0� (Zero) should be given in LinearFeet.
-    If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
-    If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
-    Ignored if ExtremeLengthIndicator is not present.
-    *
-    * @var string
-    */
+     * Dimensional length of the article(s), in 'feet'.
+     * Numeric value greater than �0� (Zero) should be given in LinearFeet.
+     * If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
+     * If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
+     * Ignored if ExtremeLengthIndicator is not present.
+     *
+     * @var string
+     */
     protected $linearFeet;
     /**
-     * 
-     *
      * @return list<ShipmentServiceOptionsEMailInformation>
      */
     public function getEMailInformation(): array
@@ -106,8 +102,6 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
         return $this->eMailInformation;
     }
     /**
-     * 
-     *
      * @param list<ShipmentServiceOptionsEMailInformation> $eMailInformation
      *
      * @return self
@@ -163,11 +157,11 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * OverSeasLeg Container.
-    Accessorial required when origin or destination is Hawaii, Alaska, and Puerto Rico.
-    *
-    * @return ShipmentServiceOptionsOverSeasLeg
-    */
+     * OverSeasLeg Container.
+     * Accessorial required when origin or destination is Hawaii, Alaska, and Puerto Rico.
+     *
+     * @return ShipmentServiceOptionsOverSeasLeg
+     */
     public function getOverSeasLeg(): ShipmentServiceOptionsOverSeasLeg
     {
         return $this->overSeasLeg;
@@ -341,11 +335,11 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * The presence of the tag ExtremeLengthIndicator indicates that the customs clearance is required.
-    It is recommended to provide 'LinearFeet' if this indicator is sent.
-    *
-    * @return string
-    */
+     * The presence of the tag ExtremeLengthIndicator indicates that the customs clearance is required.
+     * It is recommended to provide 'LinearFeet' if this indicator is sent.
+     *
+     * @return string
+     */
     public function getExtremeLengthIndicator(): string
     {
         return $this->extremeLengthIndicator;
@@ -365,14 +359,14 @@ class FreightShipShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Dimensional length of the article(s), in 'feet'.
-    Numeric value greater than �0� (Zero) should be given in LinearFeet.
-    If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
-    If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
-    Ignored if ExtremeLengthIndicator is not present.
-    *
-    * @return string
-    */
+     * Dimensional length of the article(s), in 'feet'.
+     * Numeric value greater than �0� (Zero) should be given in LinearFeet.
+     * If Proper LinearFeet is not provided, accurate charge for extreme length articles might not be returned.
+     * If linear feet �0� (Zero) or any non-numeric/invalid character is sent, accurate charge for extreme length articles might not be returned.
+     * Ignored if ExtremeLengthIndicator is not present.
+     *
+     * @return string
+     */
     public function getLinearFeet(): string
     {
         return $this->linearFeet;

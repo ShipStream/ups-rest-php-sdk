@@ -13,13 +13,13 @@ class ImagePrintFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Print Format of the image contained in Documents Image.
-    Valid values:  
-    01 � Laser
-    02 - Thermal
-    *
-    * @var string
-    */
+     * Print Format of the image contained in Documents Image.
+     * Valid values:
+     * 01 � Laser
+     * 02 - Thermal
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the print format of the image contained in Documents Image.
@@ -28,13 +28,13 @@ class ImagePrintFormat extends \ArrayObject
      */
     protected $description;
     /**
-    * Print Format of the image contained in Documents Image.
-    Valid values:  
-    01 � Laser
-    02 - Thermal
-    *
-    * @return string
-    */
+     * Print Format of the image contained in Documents Image.
+     * Valid values:
+     * 01 � Laser
+     * 02 - Thermal
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

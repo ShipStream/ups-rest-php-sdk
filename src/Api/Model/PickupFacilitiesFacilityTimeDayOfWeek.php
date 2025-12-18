@@ -31,20 +31,20 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
      */
     protected $latestDropOfforPickup;
     /**
-    * Facility Open Hours. The latest local open time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @var string
-    */
+     * Facility Open Hours. The latest local open time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @var string
+     */
     protected $openHours;
     /**
-    * Facility Close Hours. The latest local close time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @var string
-    */
+     * Facility Close Hours. The latest local close time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @var string
+     */
     protected $closeHours;
     /**
      * Preparation time for hold for pickup  Conditionally required if request is for hold for pickup.
@@ -125,12 +125,12 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-    * Facility Open Hours. The latest local open time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @return string
-    */
+     * Facility Open Hours. The latest local open time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @return string
+     */
     public function getOpenHours(): string
     {
         return $this->openHours;
@@ -151,12 +151,12 @@ class PickupFacilitiesFacilityTimeDayOfWeek extends \ArrayObject
         return $this;
     }
     /**
-    * Facility Close Hours. The latest local close time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @return string
-    */
+     * Facility Close Hours. The latest local close time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @return string
+     */
     public function getCloseHours(): string
     {
         return $this->closeHours;

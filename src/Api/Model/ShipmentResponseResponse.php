@@ -20,7 +20,9 @@ class ShipmentResponseResponse extends \ArrayObject
     protected $responseStatus;
     /**
      * Alert Container.  There can be zero to many alert containers with code and description.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ResponseAlert>|null
      */
@@ -55,7 +57,9 @@ class ShipmentResponseResponse extends \ArrayObject
     }
     /**
      * Alert Container.  There can be zero to many alert containers with code and description.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ResponseAlert>|null
      */

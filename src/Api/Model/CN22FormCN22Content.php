@@ -19,12 +19,12 @@ class CN22FormCN22Content extends \ArrayObject
      */
     protected $cN22ContentQuantity;
     /**
-    * Detailed description of the content.
-    
-    If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
-    *
-    * @var string
-    */
+     * Detailed description of the content.
+     * 
+     * If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
+     *
+     * @var string
+     */
     protected $cN22ContentDescription;
     /**
      * Container for CN22 content weight.
@@ -79,12 +79,12 @@ class CN22FormCN22Content extends \ArrayObject
         return $this;
     }
     /**
-    * Detailed description of the content.
-    
-    If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
-    *
-    * @return string
-    */
+     * Detailed description of the content.
+     * 
+     * If the combined MI package and CN22 label is requested, only the first 30 characters will appear on the combined label.  Required if the CN22 form container is present.
+     *
+     * @return string
+     */
     public function getCN22ContentDescription(): string
     {
         return $this->cN22ContentDescription;

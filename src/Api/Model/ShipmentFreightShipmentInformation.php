@@ -19,11 +19,11 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
      */
     protected $freightDensityInfo;
     /**
-    * The presence of the tag indicates that the rate request is density based.
-    For Density Based Rating (DBR), the customer must have DBR Contract Service.
-    *
-    * @var string
-    */
+     * The presence of the tag indicates that the rate request is density based.
+     * For Density Based Rating (DBR), the customer must have DBR Contract Service.
+     *
+     * @var string
+     */
     protected $densityEligibleIndicator;
     /**
      * Freight Density Info container.  Required if DensityEligibleIndicator is present.
@@ -48,11 +48,11 @@ class ShipmentFreightShipmentInformation extends \ArrayObject
         return $this;
     }
     /**
-    * The presence of the tag indicates that the rate request is density based.
-    For Density Based Rating (DBR), the customer must have DBR Contract Service.
-    *
-    * @return string
-    */
+     * The presence of the tag indicates that the rate request is density based.
+     * For Density Based Rating (DBR), the customer must have DBR Contract Service.
+     *
+     * @return string
+     */
     public function getDensityEligibleIndicator(): string
     {
         return $this->densityEligibleIndicator;

@@ -25,13 +25,13 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
      */
     protected $number;
     /**
-    * Reflects what will go on the label as the name of the reference.
-    
-    For additional information, refer to the Reference Codes table in the Appendix.
-    
-    *
-    * @var string
-    */
+     * Reflects what will go on the label as the name of the reference.
+     * 
+     * For additional information, refer to the Reference Codes table in the Appendix.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Customer supplied reference number. Reference numbers are defined by the shipper and can contain any character string.
@@ -84,13 +84,13 @@ class ExceptionPackageReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-    * Reflects what will go on the label as the name of the reference.
-    
-    For additional information, refer to the Reference Codes table in the Appendix.
-    
-    *
-    * @return string
-    */
+     * Reflects what will go on the label as the name of the reference.
+     * 
+     * For additional information, refer to the Reference Codes table in the Appendix.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

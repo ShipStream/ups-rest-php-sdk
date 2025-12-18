@@ -13,14 +13,10 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<ServiceOfferingListServiceOffering>
      */
     protected $serviceOffering;
     /**
-     * 
-     *
      * @return list<ServiceOfferingListServiceOffering>
      */
     public function getServiceOffering(): array
@@ -28,8 +24,6 @@ class IncludeCriteriaServiceOfferingList extends \ArrayObject
         return $this->serviceOffering;
     }
     /**
-     * 
-     *
      * @param list<ServiceOfferingListServiceOffering> $serviceOffering
      *
      * @return self

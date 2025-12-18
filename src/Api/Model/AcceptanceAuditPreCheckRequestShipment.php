@@ -37,18 +37,16 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
      */
     protected $service;
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Not required when the CommodityRegulatedLevelCode is EQ.  Valid values: ADR, 49CFR, IATA.
-    
-    ADR = Europe to Europe Ground Movement
-    49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada   
-    IATA= Worldwide Air movement.
-    *
-    * @var string
-    */
+     * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Not required when the CommodityRegulatedLevelCode is EQ.  Valid values: ADR, 49CFR, IATA.
+     * 
+     * ADR = Europe to Europe Ground Movement
+     * 49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada
+     * IATA= Worldwide Air movement.
+     *
+     * @var string
+     */
     protected $regulationSet;
     /**
-     * 
-     *
      * @var list<AcceptanceAuditPreCheckShipmentPackage>
      */
     protected $package;
@@ -141,14 +139,14 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Not required when the CommodityRegulatedLevelCode is EQ.  Valid values: ADR, 49CFR, IATA.
-    
-    ADR = Europe to Europe Ground Movement
-    49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada   
-    IATA= Worldwide Air movement.
-    *
-    * @return string
-    */
+     * The Regulatory set associated with every regulated shipment. It must be same across the shipment. Not required when the CommodityRegulatedLevelCode is EQ.  Valid values: ADR, 49CFR, IATA.
+     * 
+     * ADR = Europe to Europe Ground Movement
+     * 49CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada
+     * IATA= Worldwide Air movement.
+     *
+     * @return string
+     */
     public function getRegulationSet(): string
     {
         return $this->regulationSet;
@@ -171,8 +169,6 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<AcceptanceAuditPreCheckShipmentPackage>
      */
     public function getPackage(): array
@@ -180,8 +176,6 @@ class AcceptanceAuditPreCheckRequestShipment extends \ArrayObject
         return $this->package;
     }
     /**
-     * 
-     *
      * @param list<AcceptanceAuditPreCheckShipmentPackage> $package
      *
      * @return self

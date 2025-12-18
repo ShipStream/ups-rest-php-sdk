@@ -13,43 +13,43 @@ class SubscriptionEventsSubscriptionStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Status types of subscription. Valid values:
-    - UN – Unknown
-    - AT – Activate
-    - P – Pending
-    - A –Active
-    - I – Inactive
-    - S - Suspended
-    
-    *
-    * @var string
-    */
+     * Status types of subscription. Valid values:
+     * - UN – Unknown
+     * - AT – Activate
+     * - P – Pending
+     * - A –Active
+     * - I – Inactive
+     * - S - Suspended
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
-    * Description of a subscription. 
-    Valid values: 
-    - Unknown (Unknown subscription status)
-    - Activate (Ready for the user to activate the subscription)
-    - Pending (In the process of waiting for privilege requests authorization)
-    - Active (The subscription is in good standing and is active.)
-    - Inactive (The subscriber puts the subscription on hold.)
-    - Suspended (UPS disables the subscription.)
-    *
-    * @var string
-    */
+     * Description of a subscription.
+     * Valid values:
+     * - Unknown (Unknown subscription status)
+     * - Activate (Ready for the user to activate the subscription)
+     * - Pending (In the process of waiting for privilege requests authorization)
+     * - Active (The subscription is in good standing and is active.)
+     * - Inactive (The subscriber puts the subscription on hold.)
+     * - Suspended (UPS disables the subscription.)
+     *
+     * @var string
+     */
     protected $description;
     /**
-    * Status types of subscription. Valid values:
-    - UN – Unknown
-    - AT – Activate
-    - P – Pending
-    - A –Active
-    - I – Inactive
-    - S - Suspended
-    
-    *
-    * @return string
-    */
+     * Status types of subscription. Valid values:
+     * - UN – Unknown
+     * - AT – Activate
+     * - P – Pending
+     * - A –Active
+     * - I – Inactive
+     * - S - Suspended
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;
@@ -75,17 +75,17 @@ class SubscriptionEventsSubscriptionStatus extends \ArrayObject
         return $this;
     }
     /**
-    * Description of a subscription. 
-    Valid values: 
-    - Unknown (Unknown subscription status)
-    - Activate (Ready for the user to activate the subscription)
-    - Pending (In the process of waiting for privilege requests authorization)
-    - Active (The subscription is in good standing and is active.)
-    - Inactive (The subscriber puts the subscription on hold.)
-    - Suspended (UPS disables the subscription.)
-    *
-    * @return string
-    */
+     * Description of a subscription.
+     * Valid values:
+     * - Unknown (Unknown subscription status)
+     * - Activate (Ready for the user to activate the subscription)
+     * - Pending (In the process of waiting for privilege requests authorization)
+     * - Active (The subscription is in good standing and is active.)
+     * - Inactive (The subscriber puts the subscription on hold.)
+     * - Suspended (UPS disables the subscription.)
+     *
+     * @return string
+     */
     public function getDescription(): string
     {
         return $this->description;

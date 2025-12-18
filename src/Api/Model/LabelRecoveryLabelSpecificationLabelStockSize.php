@@ -13,31 +13,31 @@ class LabelRecoveryLabelSpecificationLabelStockSize extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Height of the Label.  Only valid values are 6 or 8.
-    
-    Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
-    
-    *
-    * @var string
-    */
+     * Height of the Label.  Only valid values are 6 or 8.
+     * 
+     * Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
+     * 
+     *
+     * @var string
+     */
     protected $height;
     /**
-    * Width of the Label.  Valid value is 4.
-    
-    Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
-    
-    *
-    * @var string
-    */
+     * Width of the Label.  Valid value is 4.
+     * 
+     * Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
+     * 
+     *
+     * @var string
+     */
     protected $width;
     /**
-    * Height of the Label.  Only valid values are 6 or 8.
-    
-    Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
-    
-    *
-    * @return string
-    */
+     * Height of the Label.  Only valid values are 6 or 8.
+     * 
+     * Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
+     * 
+     *
+     * @return string
+     */
     public function getHeight(): string
     {
         return $this->height;
@@ -59,13 +59,13 @@ class LabelRecoveryLabelSpecificationLabelStockSize extends \ArrayObject
         return $this;
     }
     /**
-    * Width of the Label.  Valid value is 4.
-    
-    Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
-    
-    *
-    * @return string
-    */
+     * Width of the Label.  Valid value is 4.
+     * 
+     * Note: Label Image will only scale up to 4 X 6, even when requesting 4 X 8.
+     * 
+     *
+     * @return string
+     */
     public function getWidth(): string
     {
         return $this->width;

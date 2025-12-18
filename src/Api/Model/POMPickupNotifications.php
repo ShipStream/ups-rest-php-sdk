@@ -19,8 +19,6 @@ class POMPickupNotifications extends \ArrayObject
      */
     protected $companyName;
     /**
-     * 
-     *
      * @var list<PickupNotificationsEMailNotification>
      */
     protected $eMailNotification;
@@ -53,8 +51,6 @@ class POMPickupNotifications extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PickupNotificationsEMailNotification>
      */
     public function getEMailNotification(): array
@@ -62,8 +58,6 @@ class POMPickupNotifications extends \ArrayObject
         return $this->eMailNotification;
     }
     /**
-     * 
-     *
      * @param list<PickupNotificationsEMailNotification> $eMailNotification
      *
      * @return self

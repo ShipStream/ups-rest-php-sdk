@@ -13,13 +13,13 @@ class BrokerageFeeItems extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Brokerage charge name for this shipment. Possible Values:
-    1. Entry Preparation Fee 
-    2. Disbursement Fee 
-    3. Additional Line Fee
-    *
-    * @var string
-    */
+     * Brokerage charge name for this shipment. Possible Values:
+     * 1. Entry Preparation Fee
+     * 2. Disbursement Fee
+     * 3. Additional Line Fee
+     *
+     * @var string
+     */
     protected $chargeName;
     /**
      * Fee amount for the brokerage charges.
@@ -28,13 +28,13 @@ class BrokerageFeeItems extends \ArrayObject
      */
     protected $chargeAmount;
     /**
-    * Brokerage charge name for this shipment. Possible Values:
-    1. Entry Preparation Fee 
-    2. Disbursement Fee 
-    3. Additional Line Fee
-    *
-    * @return string
-    */
+     * Brokerage charge name for this shipment. Possible Values:
+     * 1. Entry Preparation Fee
+     * 2. Disbursement Fee
+     * 3. Additional Line Fee
+     *
+     * @return string
+     */
     public function getChargeName(): string
     {
         return $this->chargeName;

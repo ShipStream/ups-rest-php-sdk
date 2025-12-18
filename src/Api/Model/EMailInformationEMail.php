@@ -19,11 +19,11 @@ class EMailInformationEMail extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-    * Contents of the email to be sent.
-    Only used for BOL Email Types. Otherwise ignored.
-    *
-    * @var string
-    */
+     * Contents of the email to be sent.
+     * Only used for BOL Email Types. Otherwise ignored.
+     *
+     * @var string
+     */
     protected $eMailText;
     /**
      * The address where an undeliverable email message is sent if the email with the notification is undeliverable.
@@ -32,11 +32,11 @@ class EMailInformationEMail extends \ArrayObject
      */
     protected $undeliverableEMailAddress;
     /**
-    * Email subject line.
-    Only used for BOL Email Types. Otherwise ignored.
-    *
-    * @var string
-    */
+     * Email subject line.
+     * Only used for BOL Email Types. Otherwise ignored.
+     *
+     * @var string
+     */
     protected $subject;
     /**
      * Email address where the notification is sent.
@@ -61,11 +61,11 @@ class EMailInformationEMail extends \ArrayObject
         return $this;
     }
     /**
-    * Contents of the email to be sent.
-    Only used for BOL Email Types. Otherwise ignored.
-    *
-    * @return string
-    */
+     * Contents of the email to be sent.
+     * Only used for BOL Email Types. Otherwise ignored.
+     *
+     * @return string
+     */
     public function getEMailText(): string
     {
         return $this->eMailText;
@@ -107,11 +107,11 @@ class EMailInformationEMail extends \ArrayObject
         return $this;
     }
     /**
-    * Email subject line.
-    Only used for BOL Email Types. Otherwise ignored.
-    *
-    * @return string
-    */
+     * Email subject line.
+     * Only used for BOL Email Types. Otherwise ignored.
+     *
+     * @return string
+     */
     public function getSubject(): string
     {
         return $this->subject;

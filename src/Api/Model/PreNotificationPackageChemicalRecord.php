@@ -37,15 +37,15 @@ class PreNotificationPackageChemicalRecord extends \ArrayObject
      */
     protected $iDNumber;
     /**
-    * This is the packing group category associated to the specified commodity. Must be shown in Roman Numerals. Valid values are:
-    - I
-    - II
-    - III
-    - blank
-    
-    *
-    * @var string
-    */
+     * This is the packing group category associated to the specified commodity. Must be shown in Roman Numerals. Valid values are:
+     * - I
+     * - II
+     * - III
+     * - blank
+     * 
+     *
+     * @var string
+     */
     protected $packagingGroupType;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.
@@ -66,17 +66,17 @@ class PreNotificationPackageChemicalRecord extends \ArrayObject
      */
     protected $packagingInstructionCode;
     /**
-    * 24 Hour Emergency Phone Number of the shipper.
-    
-    Valid values for this field are (0) through (9) with trailing blanks.
-    
-    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number
-    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"  The following are restricted in the phone number
-    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
-    
-    *
-    * @var string
-    */
+     * 24 Hour Emergency Phone Number of the shipper.
+     * 
+     * Valid values for this field are (0) through (9) with trailing blanks.
+     * 
+     * For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number
+     * period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"  The following are restricted in the phone number
+     * period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+     * 
+     *
+     * @var string
+     */
     protected $emergencyPhone;
     /**
      * The emergency information, contact name and/or contract number, required to be communicated when a call is placed to the EmergencyPhoneNumber.
@@ -245,15 +245,15 @@ class PreNotificationPackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * This is the packing group category associated to the specified commodity. Must be shown in Roman Numerals. Valid values are:
-    - I
-    - II
-    - III
-    - blank
-    
-    *
-    * @return string
-    */
+     * This is the packing group category associated to the specified commodity. Must be shown in Roman Numerals. Valid values are:
+     * - I
+     * - II
+     * - III
+     * - blank
+     * 
+     *
+     * @return string
+     */
     public function getPackagingGroupType(): string
     {
         return $this->packagingGroupType;
@@ -343,17 +343,17 @@ class PreNotificationPackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * 24 Hour Emergency Phone Number of the shipper.
-    
-    Valid values for this field are (0) through (9) with trailing blanks.
-    
-    For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number
-    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"  The following are restricted in the phone number
-    period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
-    
-    *
-    * @return string
-    */
+     * 24 Hour Emergency Phone Number of the shipper.
+     * 
+     * Valid values for this field are (0) through (9) with trailing blanks.
+     * 
+     * For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries the layout is country code, area code, number.                                                                                                                                                                                                                                                                       The following are restricted in the phone number
+     * period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"  The following are restricted in the phone number
+     * period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+     * 
+     *
+     * @return string
+     */
     public function getEmergencyPhone(): string
     {
         return $this->emergencyPhone;

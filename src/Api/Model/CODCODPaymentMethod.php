@@ -13,13 +13,13 @@ class CODCODPaymentMethod extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code associated with the COD payment method for the shipment service options.
-    Valid values:
-    M - Company Check
-    R - Certified Check
-    *
-    * @var string
-    */
+     * The code associated with the COD payment method for the shipment service options.
+     * Valid values:
+     * M - Company Check
+     * R - Certified Check
+     *
+     * @var string
+     */
     protected $code;
     /**
      * A text description of the code for the COD payment method associated with the shipment service options.
@@ -28,13 +28,13 @@ class CODCODPaymentMethod extends \ArrayObject
      */
     protected $description;
     /**
-    * The code associated with the COD payment method for the shipment service options.
-    Valid values:
-    M - Company Check
-    R - Certified Check
-    *
-    * @return string
-    */
+     * The code associated with the COD payment method for the shipment service options.
+     * Valid values:
+     * M - Company Check
+     * R - Certified Check
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

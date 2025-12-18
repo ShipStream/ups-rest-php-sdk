@@ -13,11 +13,11 @@ class FreightPickupRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Type of shipping. 
-    Valid value: 1 - Ground
-    *
-    * @var string
-    */
+     * Type of shipping.
+     * Valid value: 1 - Ground
+     *
+     * @var string
+     */
     protected $requestOption;
     /**
      * TransactionReference identifies transactions between client and server.
@@ -26,11 +26,11 @@ class FreightPickupRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Type of shipping. 
-    Valid value: 1 - Ground
-    *
-    * @return string
-    */
+     * Type of shipping.
+     * Valid value: 1 - Ground
+     *
+     * @return string
+     */
     public function getRequestOption(): string
     {
         return $this->requestOption;

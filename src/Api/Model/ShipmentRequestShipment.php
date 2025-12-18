@@ -13,15 +13,15 @@ class ShipmentRequestShipment extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The Description of Goods for the shipment. Applies to international and domestic shipments. 
-    
-    Provide a detailed description of items being shipped for documents and non-documents. 
-    
-    Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true: 
-    ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
-    *
-    * @var string
-    */
+     * The Description of Goods for the shipment. Applies to international and domestic shipments.
+     * 
+     * Provide a detailed description of items being shipped for documents and non-documents.
+     * 
+     * Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true:
+     * ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
+     *
+     * @var string
+     */
     protected $description;
     /**
      * Type of Return service. When this container exists, the shipment is a return shipment.
@@ -30,16 +30,16 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $returnService;
     /**
-    * Indicates a shipment contains written, typed, or printed communication of no commercial value. 
-    
-    If DocumentsOnly is not specified then it implies that the shipment contains non documents or documents of commercial value. 
-    
-    Default is a shipment contains non- documents or documents of commercial value.  This is an empty tag, any value inside is ignored. 
-    
-    Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
-    *
-    * @var string
-    */
+     * Indicates a shipment contains written, typed, or printed communication of no commercial value.
+     * 
+     * If DocumentsOnly is not specified then it implies that the shipment contains non documents or documents of commercial value.
+     * 
+     * Default is a shipment contains non- documents or documents of commercial value.  This is an empty tag, any value inside is ignored.
+     * 
+     * Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
+     *
+     * @var string
+     */
     protected $documentsOnlyIndicator;
     /**
      * Container for the Shipper's information.
@@ -60,12 +60,12 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $alternateDeliveryAddress;
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @var ShipmentShipFrom
-    */
+     * Ship From Container.  Required for return shipment.
+     * 
+     * Required if pickup location is different from the shipper's address.
+     *
+     * @var ShipmentShipFrom
+     */
     protected $shipFrom;
     /**
      * Payment information container for detailed shipment charges. The two shipment charges that are available for specification are Transportation charges and Duties and Taxes.  It is required for non-Ground Freight Pricing shipments only.
@@ -116,8 +116,6 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $movementReferenceNumber;
     /**
-     * 
-     *
      * @var list<ShipmentReferenceNumber>
      */
     protected $referenceNumber;
@@ -140,17 +138,17 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $numOfPiecesInShipment;
     /**
-    * USPS Endorsement.
-    Valid values: 
-    1 = Return Service Requested 
-    2 = Forwarding Service Requested 
-    3 = Address Service Requested 
-    4 = Change Service Requested and 
-    5 = No Service Selected. 
-    Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
-    *
-    * @var string
-    */
+     * USPS Endorsement.
+     * Valid values:
+     * 1 = Return Service Requested
+     * 2 = Forwarding Service Requested
+     * 3 = Address Service Requested
+     * 4 = Change Service Requested and
+     * 5 = No Service Selected.
+     * Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
+     *
+     * @var string
+     */
     protected $uSPSEndorsement;
     /**
      * Indicates single label with both MI label and CN22 form.  International CN22 form is required.
@@ -159,23 +157,23 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $mILabelCN22Indicator;
     /**
-    * A component encoded on the barcode of the Mail Innovations label.   Valid values: 
-    IR = Irregular
-    MA = Machineable
-    SubClass is only required if the customer's contract have them subclass the package not UPS.
-    *
-    * @var string
-    */
+     * A component encoded on the barcode of the Mail Innovations label.   Valid values:
+     * IR = Irregular
+     * MA = Machineable
+     * SubClass is only required if the customer's contract have them subclass the package not UPS.
+     *
+     * @var string
+     */
     protected $subClassification;
     /**
-    * Customer assigned identifier for report and billing summarization displays to the right of the Cost Center title.  Required for Mail Innovations Return shipments. It is shown on the bottom of the shipping label as reference 2.
-    
-    Cost Center length is alphanumeric with a max length of 30 for Mail Innovations forward shipments.
-    
-    Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
-    *
-    * @var string
-    */
+     * Customer assigned identifier for report and billing summarization displays to the right of the Cost Center title.  Required for Mail Innovations Return shipments. It is shown on the bottom of the shipping label as reference 2.
+     * 
+     * Cost Center length is alphanumeric with a max length of 30 for Mail Innovations forward shipments.
+     * 
+     * Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
+     *
+     * @var string
+     */
     protected $costCenter;
     /**
      * Presence/Absence indicator. Presence of this indicator means that the customer is requesting for the CostCenter field to be barcoded at the bottom of the label.
@@ -196,57 +194,55 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $packageIDBarcodeIndicator;
     /**
-    * Mail classification defined by the USPS.   Valid values: 
-    1 = Balloon
-    2 = Oversize
-    3 = Not Applicable
-    *
-    * @var string
-    */
+     * Mail classification defined by the USPS.   Valid values:
+     * 1 = Balloon
+     * 2 = Oversize
+     * 3 = Not Applicable
+     *
+     * @var string
+     */
     protected $irregularIndicator;
     /**
-     * 
-     *
      * @var list<ShipmentShipmentIndicationType>
      */
     protected $shipmentIndicationType;
     /**
-    * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment. 
-    
-    The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments. 
-    
-    This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments.
-    
-    Format: 
-    For Package return shipments, the package tracking number is concatenated with the system time (YYYY-MM-DDHH.MM.SS.NNN), followed by service code. 
-    
-    For MI Return shipments, the Mail Manifest ID (MMI) is concatenated with the system time.  The unique identifier (key) is required to link the package and the Mail Innovations portion of Dual Return shipment. 
-    
-    If unique identifier (key) is empty in the request for UPS Mail Innovations Return Service, the request will be treated as the first phase of the Mail Innovations Dual Returns Request. 
-    
-    If the MIDualReturnShipmentIndicator is present with empty or null MIDualReturnShipmentKey in UPS Package Return Shipment, the request will be treated as the first phase of Dual MI Return Label Shipment. 
-    
-    This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
-    *
-    * @var string
-    */
+     * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment.
+     * 
+     * The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments.
+     * 
+     * This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments.
+     * 
+     * Format:
+     * For Package return shipments, the package tracking number is concatenated with the system time (YYYY-MM-DDHH.MM.SS.NNN), followed by service code.
+     * 
+     * For MI Return shipments, the Mail Manifest ID (MMI) is concatenated with the system time.  The unique identifier (key) is required to link the package and the Mail Innovations portion of Dual Return shipment.
+     * 
+     * If unique identifier (key) is empty in the request for UPS Mail Innovations Return Service, the request will be treated as the first phase of the Mail Innovations Dual Returns Request.
+     * 
+     * If the MIDualReturnShipmentIndicator is present with empty or null MIDualReturnShipmentKey in UPS Package Return Shipment, the request will be treated as the first phase of Dual MI Return Label Shipment.
+     * 
+     * This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
+     *
+     * @var string
+     */
     protected $mIDualReturnShipmentKey;
     /**
-    * MIDualReturnShipmentIndicator is an indicator to identify a Package Shipment is part of UPS Mail Innovations Dual Label Shipment. 
-    
-    Its presence means Package Shipment is part of UPS Mail Innovations Dual Label shipment.  If the indicator is present in Package Shipment request, shipment would be considered as part of a Dual Mail Innovations Returns. 
-    
-    This indicator is not valid with UPS Mail Innovations Returns Service code.
-    *
-    * @var string
-    */
+     * MIDualReturnShipmentIndicator is an indicator to identify a Package Shipment is part of UPS Mail Innovations Dual Label Shipment.
+     * 
+     * Its presence means Package Shipment is part of UPS Mail Innovations Dual Label shipment.  If the indicator is present in Package Shipment request, shipment would be considered as part of a Dual Mail Innovations Returns.
+     * 
+     * This indicator is not valid with UPS Mail Innovations Returns Service code.
+     *
+     * @var string
+     */
     protected $mIDualReturnShipmentIndicator;
     /**
-    * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
-    If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
-    *
-    * @var string
-    */
+     * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
+     * If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
+     *
+     * @var string
+     */
     protected $ratingMethodRequestedIndicator;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. TaxInformationIndicator is an indicator. If present, any taxes that may be applicable to a shipment would be returned in response. If this indicator is requested with NegotiatedRatesIndicator, Tax related information, if applicable, would be returned only for Negotiated Rates and not for Published Rates. The Tax related information includes any type of Taxes, corresponding Monetary Values, Total Charges with Taxes and disclaimers (if applicable) would be returned in response.
@@ -261,19 +257,19 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $shipmentServiceOptions;
     /**
-    * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions and Receipt instructions (if applicable) in desired language. 
-    Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
-    Queen's English (en_GB) is the default
-    *
-    * @var string
-    */
+     * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions and Receipt instructions (if applicable) in desired language.
+     * Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
+     * Queen's English (en_GB) is the default
+     *
+     * @var string
+     */
     protected $locale;
     /**
-    * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
-    02 = Shipment value is above threshold value.     NA = Not Applicable
-    *
-    * @var string
-    */
+     * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
+     * 02 = Shipment value is above threshold value.     NA = Not Applicable
+     *
+     * @var string
+     */
     protected $shipmentValueThresholdCode;
     /**
      * Master Carton ID. If Economy Service (17 or 72) : Economy Shipment will be associated with given Master Carton ID. If Non-Economy Service: Master Carton Shipment will be created for given Master Carton ID.
@@ -282,11 +278,11 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $masterCartonID;
     /**
-    * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client. 
-    This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
-    *
-    * @var string
-    */
+     * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client.
+     * This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
+     *
+     * @var string
+     */
     protected $masterCartonIndicator;
     /**
      * User can send up to 7 days in the future with current date as day zero. Format: YYYYMMDD
@@ -295,21 +291,19 @@ class ShipmentRequestShipment extends \ArrayObject
      */
     protected $shipmentDate;
     /**
-     * 
-     *
      * @var list<ShipmentPackage>
      */
     protected $package;
     /**
-    * The Description of Goods for the shipment. Applies to international and domestic shipments. 
-    
-    Provide a detailed description of items being shipped for documents and non-documents. 
-    
-    Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true: 
-    ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
-    *
-    * @return string
-    */
+     * The Description of Goods for the shipment. Applies to international and domestic shipments.
+     * 
+     * Provide a detailed description of items being shipped for documents and non-documents.
+     * 
+     * Examples: "annual reports" and "9 mm steel screws".  Required if all of the listed conditions are true:
+     * ShipFrom and ShipTo countries or territories are not the same; The packaging type is not UPS Letter; The ShipFrom and or ShipTo countries or territories are not in the European Union or the ShipFrom and ShipTo countries or territories are both in the European Union and the shipments service type is not UPS Standard.
+     *
+     * @return string
+     */
     public function getDescription(): string
     {
         return $this->description;
@@ -355,16 +349,16 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates a shipment contains written, typed, or printed communication of no commercial value. 
-    
-    If DocumentsOnly is not specified then it implies that the shipment contains non documents or documents of commercial value. 
-    
-    Default is a shipment contains non- documents or documents of commercial value.  This is an empty tag, any value inside is ignored. 
-    
-    Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
-    *
-    * @return string
-    */
+     * Indicates a shipment contains written, typed, or printed communication of no commercial value.
+     * 
+     * If DocumentsOnly is not specified then it implies that the shipment contains non documents or documents of commercial value.
+     * 
+     * Default is a shipment contains non- documents or documents of commercial value.  This is an empty tag, any value inside is ignored.
+     * 
+     * Valid only for shipments with different origin and destination countries or territories. The origin country or territory is not US, and the destination country or territory is not CA, PR or MX.
+     *
+     * @return string
+     */
     public function getDocumentsOnlyIndicator(): string
     {
         return $this->documentsOnlyIndicator;
@@ -455,12 +449,12 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Ship From Container.  Required for return shipment. 
-    
-    Required if pickup location is different from the shipper's address.
-    *
-    * @return ShipmentShipFrom
-    */
+     * Ship From Container.  Required for return shipment.
+     * 
+     * Required if pickup location is different from the shipper's address.
+     *
+     * @return ShipmentShipFrom
+     */
     public function getShipFrom(): ShipmentShipFrom
     {
         return $this->shipFrom;
@@ -657,8 +651,6 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentReferenceNumber>
      */
     public function getReferenceNumber(): array
@@ -666,8 +658,6 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->referenceNumber;
     }
     /**
-     * 
-     *
      * @param list<ShipmentReferenceNumber> $referenceNumber
      *
      * @return self
@@ -745,17 +735,17 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * USPS Endorsement.
-    Valid values: 
-    1 = Return Service Requested 
-    2 = Forwarding Service Requested 
-    3 = Address Service Requested 
-    4 = Change Service Requested and 
-    5 = No Service Selected. 
-    Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
-    *
-    * @return string
-    */
+     * USPS Endorsement.
+     * Valid values:
+     * 1 = Return Service Requested
+     * 2 = Forwarding Service Requested
+     * 3 = Address Service Requested
+     * 4 = Change Service Requested and
+     * 5 = No Service Selected.
+     * Note: For International Mail Innovations shipments use No Service Selected. International Mail Innovations shipments are applicable for Priority Mail Innovations and Mail Innovations Economy Mail Innovations services only.  Required for Mail Innovations forward shipments.
+     *
+     * @return string
+     */
     public function getUSPSEndorsement(): string
     {
         return $this->uSPSEndorsement;
@@ -803,13 +793,13 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * A component encoded on the barcode of the Mail Innovations label.   Valid values: 
-    IR = Irregular
-    MA = Machineable
-    SubClass is only required if the customer's contract have them subclass the package not UPS.
-    *
-    * @return string
-    */
+     * A component encoded on the barcode of the Mail Innovations label.   Valid values:
+     * IR = Irregular
+     * MA = Machineable
+     * SubClass is only required if the customer's contract have them subclass the package not UPS.
+     *
+     * @return string
+     */
     public function getSubClassification(): string
     {
         return $this->subClassification;
@@ -831,14 +821,14 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Customer assigned identifier for report and billing summarization displays to the right of the Cost Center title.  Required for Mail Innovations Return shipments. It is shown on the bottom of the shipping label as reference 2.
-    
-    Cost Center length is alphanumeric with a max length of 30 for Mail Innovations forward shipments.
-    
-    Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
-    *
-    * @return string
-    */
+     * Customer assigned identifier for report and billing summarization displays to the right of the Cost Center title.  Required for Mail Innovations Return shipments. It is shown on the bottom of the shipping label as reference 2.
+     * 
+     * Cost Center length is alphanumeric with a max length of 30 for Mail Innovations forward shipments.
+     * 
+     * Cost Center length is numeric with a max length of 4 for Mail Innovations Return shipments.
+     *
+     * @return string
+     */
     public function getCostCenter(): string
     {
         return $this->costCenter;
@@ -927,13 +917,13 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Mail classification defined by the USPS.   Valid values: 
-    1 = Balloon
-    2 = Oversize
-    3 = Not Applicable
-    *
-    * @return string
-    */
+     * Mail classification defined by the USPS.   Valid values:
+     * 1 = Balloon
+     * 2 = Oversize
+     * 3 = Not Applicable
+     *
+     * @return string
+     */
     public function getIrregularIndicator(): string
     {
         return $this->irregularIndicator;
@@ -955,8 +945,6 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentShipmentIndicationType>
      */
     public function getShipmentIndicationType(): array
@@ -964,8 +952,6 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->shipmentIndicationType;
     }
     /**
-     * 
-     *
      * @param list<ShipmentShipmentIndicationType> $shipmentIndicationType
      *
      * @return self
@@ -977,25 +963,25 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment. 
-    
-    The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments. 
-    
-    This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments.
-    
-    Format: 
-    For Package return shipments, the package tracking number is concatenated with the system time (YYYY-MM-DDHH.MM.SS.NNN), followed by service code. 
-    
-    For MI Return shipments, the Mail Manifest ID (MMI) is concatenated with the system time.  The unique identifier (key) is required to link the package and the Mail Innovations portion of Dual Return shipment. 
-    
-    If unique identifier (key) is empty in the request for UPS Mail Innovations Return Service, the request will be treated as the first phase of the Mail Innovations Dual Returns Request. 
-    
-    If the MIDualReturnShipmentIndicator is present with empty or null MIDualReturnShipmentKey in UPS Package Return Shipment, the request will be treated as the first phase of Dual MI Return Label Shipment. 
-    
-    This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
-    *
-    * @return string
-    */
+     * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment.
+     * 
+     * The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments.
+     * 
+     * This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments.
+     * 
+     * Format:
+     * For Package return shipments, the package tracking number is concatenated with the system time (YYYY-MM-DDHH.MM.SS.NNN), followed by service code.
+     * 
+     * For MI Return shipments, the Mail Manifest ID (MMI) is concatenated with the system time.  The unique identifier (key) is required to link the package and the Mail Innovations portion of Dual Return shipment.
+     * 
+     * If unique identifier (key) is empty in the request for UPS Mail Innovations Return Service, the request will be treated as the first phase of the Mail Innovations Dual Returns Request.
+     * 
+     * If the MIDualReturnShipmentIndicator is present with empty or null MIDualReturnShipmentKey in UPS Package Return Shipment, the request will be treated as the first phase of Dual MI Return Label Shipment.
+     * 
+     * This field would be ignored if MIDualReturnShipmentIndicator is not present in UPS Package Return Shipment request.
+     *
+     * @return string
+     */
     public function getMIDualReturnShipmentKey(): string
     {
         return $this->mIDualReturnShipmentKey;
@@ -1029,14 +1015,14 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * MIDualReturnShipmentIndicator is an indicator to identify a Package Shipment is part of UPS Mail Innovations Dual Label Shipment. 
-    
-    Its presence means Package Shipment is part of UPS Mail Innovations Dual Label shipment.  If the indicator is present in Package Shipment request, shipment would be considered as part of a Dual Mail Innovations Returns. 
-    
-    This indicator is not valid with UPS Mail Innovations Returns Service code.
-    *
-    * @return string
-    */
+     * MIDualReturnShipmentIndicator is an indicator to identify a Package Shipment is part of UPS Mail Innovations Dual Label Shipment.
+     * 
+     * Its presence means Package Shipment is part of UPS Mail Innovations Dual Label shipment.  If the indicator is present in Package Shipment request, shipment would be considered as part of a Dual Mail Innovations Returns.
+     * 
+     * This indicator is not valid with UPS Mail Innovations Returns Service code.
+     *
+     * @return string
+     */
     public function getMIDualReturnShipmentIndicator(): string
     {
         return $this->mIDualReturnShipmentIndicator;
@@ -1059,11 +1045,11 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
-    If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
-    *
-    * @return string
-    */
+     * Presence/Absence Indicator. Any value inside is ignored. RatingMethodRequestedIndicator is an indicator.
+     * If present, Billable Weight Calculation method information and Rating Method information would be returned in response.
+     *
+     * @return string
+     */
     public function getRatingMethodRequestedIndicator(): string
     {
         return $this->ratingMethodRequestedIndicator;
@@ -1127,12 +1113,12 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions and Receipt instructions (if applicable) in desired language. 
-    Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
-    Queen's English (en_GB) is the default
-    *
-    * @return string
-    */
+     * Represents 5 character ISO Locale that allows the user to request Reference Number Code on Label, Label instructions and Receipt instructions (if applicable) in desired language.
+     * Locale is specified by the combination of language code and country or territory code - 2 character language code and 2 character country or territory code seperated by an underscore ('_') character.  If Locale element is requested along with LabelLinksIndicator, the URL to retrieve Label and Receipts (if applicable) will be returned in the requested Locale. Please note only LabelURL and ReceiptURL (if applicable) will be returned. LocalLanguageLabelURL and LocalLanguageReceiptURL will not be returned if Locale element is present in request.
+     * Queen's English (en_GB) is the default
+     *
+     * @return string
+     */
     public function getLocale(): string
     {
         return $this->locale;
@@ -1153,11 +1139,11 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
-    02 = Shipment value is above threshold value.     NA = Not Applicable
-    *
-    * @return string
-    */
+     * Shipment Value Threshold Code. 01 = Shipment value is below or equals to threshold value
+     * 02 = Shipment value is above threshold value.     NA = Not Applicable
+     *
+     * @return string
+     */
     public function getShipmentValueThresholdCode(): string
     {
         return $this->shipmentValueThresholdCode;
@@ -1199,11 +1185,11 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client. 
-    This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
-    *
-    * @return string
-    */
+     * Master Carton Indicator. Presence of the indicator means Master Carton ID will be created and returned to client.
+     * This is an empty tag, any value inside is ignored.                                                                  MasterCartonIndicator is only valid with Econmoy Shipment (Service Code 17 or 72). Will be ignored if master carton id present.
+     *
+     * @return string
+     */
     public function getMasterCartonIndicator(): string
     {
         return $this->masterCartonIndicator;
@@ -1245,8 +1231,6 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentPackage>
      */
     public function getPackage(): array
@@ -1254,8 +1238,6 @@ class ShipmentRequestShipment extends \ArrayObject
         return $this->package;
     }
     /**
-     * 
-     *
      * @param list<ShipmentPackage> $package
      *
      * @return self

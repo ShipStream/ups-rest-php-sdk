@@ -13,31 +13,31 @@ class CODCODValue extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * COD amount currency code type.
-    Valid value: USD � United States Dollar
-    *
-    * @var string
-    */
+     * COD amount currency code type.
+     * Valid value: USD � United States Dollar
+     *
+     * @var string
+     */
     protected $currencyCode;
     /**
-    * COD Amount.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @var string
-    */
+     * COD Amount.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @var string
+     */
     protected $monetaryValue;
     /**
-    * COD amount currency code type.
-    Valid value: USD � United States Dollar
-    *
-    * @return string
-    */
+     * COD amount currency code type.
+     * Valid value: USD � United States Dollar
+     *
+     * @return string
+     */
     public function getCurrencyCode(): string
     {
         return $this->currencyCode;
@@ -57,17 +57,17 @@ class CODCODValue extends \ArrayObject
         return $this;
     }
     /**
-    * COD Amount.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @return string
-    */
+     * COD Amount.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @return string
+     */
     public function getMonetaryValue(): string
     {
         return $this->monetaryValue;

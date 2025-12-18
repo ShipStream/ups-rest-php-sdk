@@ -13,11 +13,11 @@ class PickupRateRequestPickupAddress extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Detailed street address. 
-    For Jan. 2010 release, only one AddressLine is allowed.
-    *
-    * @var string
-    */
+     * Detailed street address.
+     * For Jan. 2010 release, only one AddressLine is allowed.
+     *
+     * @var string
+     */
     protected $addressLine;
     /**
      * City or equivalent
@@ -38,27 +38,27 @@ class PickupRateRequestPickupAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-    * Upper-case two-char long country code as defined by ISO-3166. 
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @var string
-    */
+     * Upper-case two-char long country code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @var string
+     */
     protected $countryCode;
     /**
-    * Indicates if the pickup address is commerical or residential.
-    Valid values:
-    Y = Residential address
-    N = Non-residential (Commercial) address (default)
-    *
-    * @var string
-    */
+     * Indicates if the pickup address is commerical or residential.
+     * Valid values:
+     * Y = Residential address
+     * N = Non-residential (Commercial) address (default)
+     *
+     * @var string
+     */
     protected $residentialIndicator;
     /**
-    * Detailed street address. 
-    For Jan. 2010 release, only one AddressLine is allowed.
-    *
-    * @return string
-    */
+     * Detailed street address.
+     * For Jan. 2010 release, only one AddressLine is allowed.
+     *
+     * @return string
+     */
     public function getAddressLine(): string
     {
         return $this->addressLine;
@@ -144,11 +144,11 @@ class PickupRateRequestPickupAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Upper-case two-char long country code as defined by ISO-3166. 
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @return string
-    */
+     * Upper-case two-char long country code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;
@@ -168,13 +168,13 @@ class PickupRateRequestPickupAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the pickup address is commerical or residential.
-    Valid values:
-    Y = Residential address
-    N = Non-residential (Commercial) address (default)
-    *
-    * @return string
-    */
+     * Indicates if the pickup address is commerical or residential.
+     * Valid values:
+     * Y = Residential address
+     * N = Non-residential (Commercial) address (default)
+     *
+     * @return string
+     */
     public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;

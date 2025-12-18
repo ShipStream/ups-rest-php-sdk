@@ -13,22 +13,20 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<string>
      */
     protected $requestOption;
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Format: YYMM = Year and month of the release.
-    
-    Example: 1801 = 2018 January  Supported values: 1801
-    *
-    * @var string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * 
+     * Example: 1801 = 2018 January  Supported values: 1801
+     *
+     * @var string
+     */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
@@ -37,8 +35,6 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-     * 
-     *
      * @return list<string>
      */
     public function getRequestOption(): array
@@ -46,8 +42,6 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
         return $this->requestOption;
     }
     /**
-     * 
-     *
      * @param list<string> $requestOption
      *
      * @return self
@@ -59,16 +53,16 @@ class ChemicalReferenceDataRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Format: YYMM = Year and month of the release.
-    
-    Example: 1801 = 2018 January  Supported values: 1801
-    *
-    * @return string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * 
+     * Example: 1801 = 2018 January  Supported values: 1801
+     *
+     * @return string
+     */
     public function getSubVersion(): string
     {
         return $this->subVersion;

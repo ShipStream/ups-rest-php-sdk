@@ -13,11 +13,11 @@ class PickupCreationRequestShipper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Shipper account information. 
-    Must provide when choose to pay the pickup by shipper account number
-    *
-    * @var ShipperAccount
-    */
+     * Shipper account information.
+     * Must provide when choose to pay the pickup by shipper account number
+     *
+     * @var ShipperAccount
+     */
     protected $account;
     /**
      * Container for Charge Card payment method  Required if Payment method is 03. Credit/Charge card payment is valid for US, CA, PR and GB origin pickups.
@@ -26,11 +26,11 @@ class PickupCreationRequestShipper extends \ArrayObject
      */
     protected $chargeCard;
     /**
-    * Shipper account information. 
-    Must provide when choose to pay the pickup by shipper account number
-    *
-    * @return ShipperAccount
-    */
+     * Shipper account information.
+     * Must provide when choose to pay the pickup by shipper account number
+     *
+     * @return ShipperAccount
+     */
     public function getAccount(): ShipperAccount
     {
         return $this->account;

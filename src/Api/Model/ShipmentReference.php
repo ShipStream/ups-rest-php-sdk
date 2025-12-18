@@ -25,18 +25,18 @@ class ShipmentReference extends \ArrayObject
      */
     protected $barCodeIndicator;
     /**
-    * Number of cartons attached to this reference.
-    Strongly recommended for ground services.
-    *
-    * @var string
-    */
+     * Number of cartons attached to this reference.
+     * Strongly recommended for ground services.
+     *
+     * @var string
+     */
     protected $numberOfCartons;
     /**
-    * Reference Weight Container.
-    Strongly recommended for ground services.Ignored for air services.
-    *
-    * @var ReferenceWeight
-    */
+     * Reference Weight Container.
+     * Strongly recommended for ground services.Ignored for air services.
+     *
+     * @var ReferenceWeight
+     */
     protected $weight;
     /**
      * Reference Number Container.
@@ -83,11 +83,11 @@ class ShipmentReference extends \ArrayObject
         return $this;
     }
     /**
-    * Number of cartons attached to this reference.
-    Strongly recommended for ground services.
-    *
-    * @return string
-    */
+     * Number of cartons attached to this reference.
+     * Strongly recommended for ground services.
+     *
+     * @return string
+     */
     public function getNumberOfCartons(): string
     {
         return $this->numberOfCartons;
@@ -107,11 +107,11 @@ class ShipmentReference extends \ArrayObject
         return $this;
     }
     /**
-    * Reference Weight Container.
-    Strongly recommended for ground services.Ignored for air services.
-    *
-    * @return ReferenceWeight
-    */
+     * Reference Weight Container.
+     * Strongly recommended for ground services.Ignored for air services.
+     *
+     * @return ReferenceWeight
+     */
     public function getWeight(): ReferenceWeight
     {
         return $this->weight;

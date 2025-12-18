@@ -13,14 +13,14 @@ class FailureNotificationFailureNotificationCode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code representing type of failure email notification. Valid values:
-    - 01 – Package is ready to pickup at UPS Access Point - Original
-    - 02 – Package is ready to pickup at UPS Access Point - Reminder
-    - 03 – Package is delivery to alternate delivery location
-    - 04 – Package is returned to Sender from UPS Access Point Location
-    *
-    * @var string
-    */
+     * Code representing type of failure email notification. Valid values:
+     * - 01 – Package is ready to pickup at UPS Access Point - Original
+     * - 02 – Package is ready to pickup at UPS Access Point - Reminder
+     * - 03 – Package is delivery to alternate delivery location
+     * - 04 – Package is returned to Sender from UPS Access Point Location
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Not used.
@@ -29,14 +29,14 @@ class FailureNotificationFailureNotificationCode extends \ArrayObject
      */
     protected $description;
     /**
-    * Code representing type of failure email notification. Valid values:
-    - 01 – Package is ready to pickup at UPS Access Point - Original
-    - 02 – Package is ready to pickup at UPS Access Point - Reminder
-    - 03 – Package is delivery to alternate delivery location
-    - 04 – Package is returned to Sender from UPS Access Point Location
-    *
-    * @return string
-    */
+     * Code representing type of failure email notification. Valid values:
+     * - 01 – Package is ready to pickup at UPS Access Point - Original
+     * - 02 – Package is ready to pickup at UPS Access Point - Reminder
+     * - 03 – Package is delivery to alternate delivery location
+     * - 04 – Package is returned to Sender from UPS Access Point Location
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

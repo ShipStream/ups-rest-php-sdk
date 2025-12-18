@@ -13,20 +13,20 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Specify the type of pending pickup.
-    - 01 = on-callPickup
-    *
-    * @var string
-    */
+     * Specify the type of pending pickup.
+     * - 01 = on-callPickup
+     *
+     * @var string
+     */
     protected $pickupType;
     /**
-    * Local service date. Format: yyyyMMdd
-    - yyyy = Year applicable
-    - MM = 01-12
-    - dd = 01-31
-    *
-    * @var string
-    */
+     * Local service date. Format: yyyyMMdd
+     * - yyyy = Year applicable
+     * - MM = 01-12
+     * - dd = 01-31
+     *
+     * @var string
+     */
     protected $serviceDate;
     /**
      * Returned PRN
@@ -47,31 +47,31 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      */
     protected $onCallStatusCode;
     /**
-    * The status for on-callpickup.
-    
-    PickupPendingStatusResponse will only display incomplete status for today and tomorrow only.
-    - 002 and 012 are the most common responses.
-    - 001 = Received at dispatch
-    - 002 = Dispatched to driver
-    - 003 = Order successfully completed
-    - 004 = Order unsuccessfully completed
-    - 005 = Missed commit – Updated ETA supplied by driver
-    - 007 = Cancelled
-    - 008 = Order has invalid order status
-    - 012 = Your pickup request is being processed
-    
-    *
-    * @var string
-    */
+     * The status for on-callpickup.
+     * 
+     * PickupPendingStatusResponse will only display incomplete status for today and tomorrow only.
+     * - 002 and 012 are the most common responses.
+     * - 001 = Received at dispatch
+     * - 002 = Dispatched to driver
+     * - 003 = Order successfully completed
+     * - 004 = Order unsuccessfully completed
+     * - 005 = Missed commit – Updated ETA supplied by driver
+     * - 007 = Cancelled
+     * - 008 = Order has invalid order status
+     * - 012 = Your pickup request is being processed
+     * 
+     *
+     * @var string
+     */
     protected $pickupStatusMessage;
     /**
-    * Pickup billing classification for on call
-    - 01 = Regular
-    - 02 = Return
-    - 03 = Alternate Address (Not supported for now)
-    *
-    * @var string
-    */
+     * Pickup billing classification for on call
+     * - 01 = Regular
+     * - 02 = Return
+     * - 03 = Alternate Address (Not supported for now)
+     *
+     * @var string
+     */
     protected $billingCode;
     /**
      * on-callpickup contact name
@@ -86,11 +86,11 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
      */
     protected $referenceNumber;
     /**
-    * Specify the type of pending pickup.
-    - 01 = on-callPickup
-    *
-    * @return string
-    */
+     * Specify the type of pending pickup.
+     * - 01 = on-callPickup
+     *
+     * @return string
+     */
     public function getPickupType(): string
     {
         return $this->pickupType;
@@ -110,13 +110,13 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
         return $this;
     }
     /**
-    * Local service date. Format: yyyyMMdd
-    - yyyy = Year applicable
-    - MM = 01-12
-    - dd = 01-31
-    *
-    * @return string
-    */
+     * Local service date. Format: yyyyMMdd
+     * - yyyy = Year applicable
+     * - MM = 01-12
+     * - dd = 01-31
+     *
+     * @return string
+     */
     public function getServiceDate(): string
     {
         return $this->serviceDate;
@@ -204,22 +204,22 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
         return $this;
     }
     /**
-    * The status for on-callpickup.
-    
-    PickupPendingStatusResponse will only display incomplete status for today and tomorrow only.
-    - 002 and 012 are the most common responses.
-    - 001 = Received at dispatch
-    - 002 = Dispatched to driver
-    - 003 = Order successfully completed
-    - 004 = Order unsuccessfully completed
-    - 005 = Missed commit – Updated ETA supplied by driver
-    - 007 = Cancelled
-    - 008 = Order has invalid order status
-    - 012 = Your pickup request is being processed
-    
-    *
-    * @return string
-    */
+     * The status for on-callpickup.
+     * 
+     * PickupPendingStatusResponse will only display incomplete status for today and tomorrow only.
+     * - 002 and 012 are the most common responses.
+     * - 001 = Received at dispatch
+     * - 002 = Dispatched to driver
+     * - 003 = Order successfully completed
+     * - 004 = Order unsuccessfully completed
+     * - 005 = Missed commit – Updated ETA supplied by driver
+     * - 007 = Cancelled
+     * - 008 = Order has invalid order status
+     * - 012 = Your pickup request is being processed
+     * 
+     *
+     * @return string
+     */
     public function getPickupStatusMessage(): string
     {
         return $this->pickupStatusMessage;
@@ -250,13 +250,13 @@ class PickupPendingStatusResponsePendingStatus extends \ArrayObject
         return $this;
     }
     /**
-    * Pickup billing classification for on call
-    - 01 = Regular
-    - 02 = Return
-    - 03 = Alternate Address (Not supported for now)
-    *
-    * @return string
-    */
+     * Pickup billing classification for on call
+     * - 01 = Regular
+     * - 02 = Return
+     * - 03 = Alternate Address (Not supported for now)
+     *
+     * @return string
+     */
     public function getBillingCode(): string
     {
         return $this->billingCode;

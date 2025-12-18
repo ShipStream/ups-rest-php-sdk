@@ -31,40 +31,38 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
      */
     protected $labelStockSize;
     /**
-     * 
-     *
      * @var list<LabelSpecificationInstruction>
      */
     protected $instruction;
     /**
-    * Language character set expected on label.
-    Valid values:
-    dan = Danish (Latin-1)
-    nld = Dutch (Latin-1)
-    fin = Finnish (Latin-1)
-    fra = French (Latin-1)
-    deu = German (Latin-1)
-    itl = Italian (Latin-1)
-    nor = Norwegian (Latin-1)
-    pol  = Polish (Latin-2)
-    por = Poruguese (Latin-1)
-    spa = Spanish (Latin-1) 
-    swe = Swedish (Latin-1) 
-    ces = Czech (Latin-2)
-    hun = Hungarian (Latin-2)
-    slk = Slovak (Latin-2)
-    rus = Russian (Cyrillic)
-    tur = Turkish (Latin-5)
-    ron = Romanian (Latin-2)
-    bul = Bulgarian (Latin-2)
-    est = Estonian (Latin-2)
-    ell = Greek (Latin-2)
-    lav = Latvian (Latin-2)
-    lit = Lithuanian (Latin-2)
-    eng = English (Latin-1)  Default is English (Latin-1).
-    *
-    * @var string
-    */
+     * Language character set expected on label.
+     * Valid values:
+     * dan = Danish (Latin-1)
+     * nld = Dutch (Latin-1)
+     * fin = Finnish (Latin-1)
+     * fra = French (Latin-1)
+     * deu = German (Latin-1)
+     * itl = Italian (Latin-1)
+     * nor = Norwegian (Latin-1)
+     * pol  = Polish (Latin-2)
+     * por = Poruguese (Latin-1)
+     * spa = Spanish (Latin-1)
+     * swe = Swedish (Latin-1)
+     * ces = Czech (Latin-2)
+     * hun = Hungarian (Latin-2)
+     * slk = Slovak (Latin-2)
+     * rus = Russian (Cyrillic)
+     * tur = Turkish (Latin-5)
+     * ron = Romanian (Latin-2)
+     * bul = Bulgarian (Latin-2)
+     * est = Estonian (Latin-2)
+     * ell = Greek (Latin-2)
+     * lav = Latvian (Latin-2)
+     * lit = Lithuanian (Latin-2)
+     * eng = English (Latin-1)  Default is English (Latin-1).
+     *
+     * @var string
+     */
     protected $characterSet;
     /**
      * LabelImageFormat Container.
@@ -133,8 +131,6 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<LabelSpecificationInstruction>
      */
     public function getInstruction(): array
@@ -142,8 +138,6 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
         return $this->instruction;
     }
     /**
-     * 
-     *
      * @param list<LabelSpecificationInstruction> $instruction
      *
      * @return self
@@ -155,34 +149,34 @@ class ShipmentRequestLabelSpecification extends \ArrayObject
         return $this;
     }
     /**
-    * Language character set expected on label.
-    Valid values:
-    dan = Danish (Latin-1)
-    nld = Dutch (Latin-1)
-    fin = Finnish (Latin-1)
-    fra = French (Latin-1)
-    deu = German (Latin-1)
-    itl = Italian (Latin-1)
-    nor = Norwegian (Latin-1)
-    pol  = Polish (Latin-2)
-    por = Poruguese (Latin-1)
-    spa = Spanish (Latin-1) 
-    swe = Swedish (Latin-1) 
-    ces = Czech (Latin-2)
-    hun = Hungarian (Latin-2)
-    slk = Slovak (Latin-2)
-    rus = Russian (Cyrillic)
-    tur = Turkish (Latin-5)
-    ron = Romanian (Latin-2)
-    bul = Bulgarian (Latin-2)
-    est = Estonian (Latin-2)
-    ell = Greek (Latin-2)
-    lav = Latvian (Latin-2)
-    lit = Lithuanian (Latin-2)
-    eng = English (Latin-1)  Default is English (Latin-1).
-    *
-    * @return string
-    */
+     * Language character set expected on label.
+     * Valid values:
+     * dan = Danish (Latin-1)
+     * nld = Dutch (Latin-1)
+     * fin = Finnish (Latin-1)
+     * fra = French (Latin-1)
+     * deu = German (Latin-1)
+     * itl = Italian (Latin-1)
+     * nor = Norwegian (Latin-1)
+     * pol  = Polish (Latin-2)
+     * por = Poruguese (Latin-1)
+     * spa = Spanish (Latin-1)
+     * swe = Swedish (Latin-1)
+     * ces = Czech (Latin-2)
+     * hun = Hungarian (Latin-2)
+     * slk = Slovak (Latin-2)
+     * rus = Russian (Cyrillic)
+     * tur = Turkish (Latin-5)
+     * ron = Romanian (Latin-2)
+     * bul = Bulgarian (Latin-2)
+     * est = Estonian (Latin-2)
+     * ell = Greek (Latin-2)
+     * lav = Latvian (Latin-2)
+     * lit = Lithuanian (Latin-2)
+     * eng = English (Latin-1)  Default is English (Latin-1).
+     *
+     * @return string
+     */
     public function getCharacterSet(): string
     {
         return $this->characterSet;

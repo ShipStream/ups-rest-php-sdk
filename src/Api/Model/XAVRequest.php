@@ -20,23 +20,22 @@ class XAVRequest extends \ArrayObject
     protected $request;
     /**
      * If this indicator is present then either the region element or any combination of Political Division 1, Political Division 2, PostcodePrimaryLow and the PostcodeExtendedLow fields will be recognized for validation in addition to the urbanization element.  If this tag is present, US and PR street level address validation will not occur. The default is to provide street level address validation.  Not valid with the address classification request option.
+     * 
      *
      * @var string
      */
     protected $regionalRequestIndicator;
     /**
-    * The maximum number of Candidates to return for this request.
-    
-    - Valid values: 0 - 50
-    - Default: 15
-    
-    *
-    * @var string
-    */
-    protected $maximumCandidateListSize;
-    /**
+     * The maximum number of Candidates to return for this request.
+     * 
+     * - Valid values: 0 - 50
+     * - Default: 15
      * 
      *
+     * @var string
+     */
+    protected $maximumCandidateListSize;
+    /**
      * @var list<XAVRequestAddressKeyFormat>
      */
     protected $addressKeyFormat;
@@ -64,6 +63,7 @@ class XAVRequest extends \ArrayObject
     }
     /**
      * If this indicator is present then either the region element or any combination of Political Division 1, Political Division 2, PostcodePrimaryLow and the PostcodeExtendedLow fields will be recognized for validation in addition to the urbanization element.  If this tag is present, US and PR street level address validation will not occur. The default is to provide street level address validation.  Not valid with the address classification request option.
+     * 
      *
      * @return string
      */
@@ -85,14 +85,14 @@ class XAVRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The maximum number of Candidates to return for this request.
-    
-    - Valid values: 0 - 50
-    - Default: 15
-    
-    *
-    * @return string
-    */
+     * The maximum number of Candidates to return for this request.
+     * 
+     * - Valid values: 0 - 50
+     * - Default: 15
+     * 
+     *
+     * @return string
+     */
     public function getMaximumCandidateListSize(): string
     {
         return $this->maximumCandidateListSize;
@@ -115,8 +115,6 @@ class XAVRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<XAVRequestAddressKeyFormat>
      */
     public function getAddressKeyFormat(): array
@@ -124,8 +122,6 @@ class XAVRequest extends \ArrayObject
         return $this->addressKeyFormat;
     }
     /**
-     * 
-     *
      * @param list<XAVRequestAddressKeyFormat> $addressKeyFormat
      *
      * @return self

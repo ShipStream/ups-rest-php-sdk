@@ -50,18 +50,19 @@ class ManifestShipToAddress extends \ArrayObject
     protected $stateProvinceCode;
     /**
      * Consignee's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
+     * 
      *
      * @var string
      */
     protected $postalCode;
     /**
-    * Consignee's country or territory  code.
-    
-    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
-    
-    *
-    * @var string
-    */
+     * Consignee's country or territory  code.
+     * 
+     * Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+     * 
+     *
+     * @var string
+     */
     protected $countryCode;
     /**
      * Consignee's name.
@@ -197,6 +198,7 @@ class ManifestShipToAddress extends \ArrayObject
     }
     /**
      * Consignee's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is a alphabetic character and # is numeric digit. Otherwise, 1 to 9 alphanumeric characters are allowed.
+     * 
      *
      * @return string
      */
@@ -218,13 +220,13 @@ class ManifestShipToAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Consignee's country or territory  code.
-    
-    Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
-    
-    *
-    * @return string
-    */
+     * Consignee's country or territory  code.
+     * 
+     * Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC and VA
+     * 
+     *
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;

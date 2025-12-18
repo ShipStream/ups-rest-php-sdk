@@ -19,20 +19,20 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
      */
     protected $shipmentDate;
     /**
-    * Size of UPS Premium Care Form.  Valid values: 
-    01 = A4 Size
-    02 = Letter Size
-    *
-    * @var string
-    */
+     * Size of UPS Premium Care Form.  Valid values:
+     * 01 = A4 Size
+     * 02 = Letter Size
+     *
+     * @var string
+     */
     protected $pageSize;
     /**
-    * Format of UPS Premium Care Form.  Valid values: 
-    01 = PNG
-    02 = PDF
-    *
-    * @var string
-    */
+     * Format of UPS Premium Care Form.  Valid values:
+     * 01 = PNG
+     * 02 = PDF
+     *
+     * @var string
+     */
     protected $printType;
     /**
      * Number of Copies of UPS Premium Care Form.  Valid value is 02.
@@ -69,12 +69,12 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
         return $this;
     }
     /**
-    * Size of UPS Premium Care Form.  Valid values: 
-    01 = A4 Size
-    02 = Letter Size
-    *
-    * @return string
-    */
+     * Size of UPS Premium Care Form.  Valid values:
+     * 01 = A4 Size
+     * 02 = Letter Size
+     *
+     * @return string
+     */
     public function getPageSize(): string
     {
         return $this->pageSize;
@@ -95,12 +95,12 @@ class InternationalFormsUPSPremiumCareForm extends \ArrayObject
         return $this;
     }
     /**
-    * Format of UPS Premium Care Form.  Valid values: 
-    01 = PNG
-    02 = PDF
-    *
-    * @return string
-    */
+     * Format of UPS Premium Care Form.  Valid values:
+     * 01 = PNG
+     * 02 = PDF
+     *
+     * @return string
+     */
     public function getPrintType(): string
     {
         return $this->printType;

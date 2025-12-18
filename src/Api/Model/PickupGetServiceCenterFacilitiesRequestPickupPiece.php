@@ -13,25 +13,25 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The service code.
-    96 = WWEF  Required for WWEF shipments.
-    *
-    * @var string
-    */
+     * The service code.
+     * 96 = WWEF  Required for WWEF shipments.
+     *
+     * @var string
+     */
     protected $serviceCode;
     /**
-    * The container type
-    03 = PALLET  Required for WWEF shipments.
-    *
-    * @var string
-    */
+     * The container type
+     * 03 = PALLET  Required for WWEF shipments.
+     *
+     * @var string
+     */
     protected $containerCode;
     /**
-    * The service code.
-    96 = WWEF  Required for WWEF shipments.
-    *
-    * @return string
-    */
+     * The service code.
+     * 96 = WWEF  Required for WWEF shipments.
+     *
+     * @return string
+     */
     public function getServiceCode(): string
     {
         return $this->serviceCode;
@@ -51,11 +51,11 @@ class PickupGetServiceCenterFacilitiesRequestPickupPiece extends \ArrayObject
         return $this;
     }
     /**
-    * The container type
-    03 = PALLET  Required for WWEF shipments.
-    *
-    * @return string
-    */
+     * The container type
+     * 03 = PALLET  Required for WWEF shipments.
+     *
+     * @return string
+     */
     public function getContainerCode(): string
     {
         return $this->containerCode;

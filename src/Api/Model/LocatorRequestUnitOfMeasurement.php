@@ -13,24 +13,24 @@ class LocatorRequestUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid values are:
-    
-    - MI-Miles
-    - KM-Kilometers
-    
-    *
-    * @var string
-    */
+     * Valid values are:
+     * 
+     * - MI-Miles
+     * - KM-Kilometers
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
-    * Valid values are:
-    
-    - MI-Miles
-    - KM-Kilometers
-    
-    *
-    * @return string
-    */
+     * Valid values are:
+     * 
+     * - MI-Miles
+     * - KM-Kilometers
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

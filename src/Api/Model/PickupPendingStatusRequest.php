@@ -19,11 +19,11 @@ class PickupPendingStatusRequest extends \ArrayObject
      */
     protected $request;
     /**
-    * Specify the type of pending pickup.
-    01 = On-Call Pickup
-    *
-    * @var string
-    */
+     * Specify the type of pending pickup.
+     * 01 = On-Call Pickup
+     *
+     * @var string
+     */
     protected $pickupType;
     /**
      * The specific account number belongs to the shipper
@@ -54,11 +54,11 @@ class PickupPendingStatusRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Specify the type of pending pickup.
-    01 = On-Call Pickup
-    *
-    * @return string
-    */
+     * Specify the type of pending pickup.
+     * 01 = On-Call Pickup
+     *
+     * @return string
+     */
     public function getPickupType(): string
     {
         return $this->pickupType;

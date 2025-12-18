@@ -19,11 +19,11 @@ class FreightShipShipmentShipFrom extends \ArrayObject
      */
     protected $name;
     /**
-    * Company�s Tax Identification Number at the pickup location.
-    Required if SED form (International forms) is requested
-    *
-    * @var string
-    */
+     * Company�s Tax Identification Number at the pickup location.
+     * Required if SED form (International forms) is requested
+     *
+     * @var string
+     */
     protected $taxIdentificationNumber;
     /**
      * Shipper�s Address Container.
@@ -78,11 +78,11 @@ class FreightShipShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-    * Company�s Tax Identification Number at the pickup location.
-    Required if SED form (International forms) is requested
-    *
-    * @return string
-    */
+     * Company�s Tax Identification Number at the pickup location.
+     * Required if SED form (International forms) is requested
+     *
+     * @return string
+     */
     public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;

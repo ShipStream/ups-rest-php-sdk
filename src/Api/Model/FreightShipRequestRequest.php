@@ -13,25 +13,25 @@ class FreightShipRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Type of Shipping desired.
-    Valid value: 1 - Ground Freight Shipping
-    *
-    * @var string
-    */
+     * Type of Shipping desired.
+     * Valid value: 1 - Ground Freight Shipping
+     *
+     * @var string
+     */
     protected $requestOption;
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to '1601'. 
-    
-    Format: YYMM = Year and month of the release.
-    Example: 1601 = 2016 January
-    Supported values: 1601, 1607
-    *
-    * @var string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to '1601'.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * Example: 1601 = 2016 January
+     * Supported values: 1601, 1607
+     *
+     * @var string
+     */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
@@ -40,11 +40,11 @@ class FreightShipRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Type of Shipping desired.
-    Valid value: 1 - Ground Freight Shipping
-    *
-    * @return string
-    */
+     * Type of Shipping desired.
+     * Valid value: 1 - Ground Freight Shipping
+     *
+     * @return string
+     */
     public function getRequestOption(): string
     {
         return $this->requestOption;
@@ -64,18 +64,18 @@ class FreightShipRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to '1601'. 
-    
-    Format: YYMM = Year and month of the release.
-    Example: 1601 = 2016 January
-    Supported values: 1601, 1607
-    *
-    * @return string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to '1601'.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * Example: 1601 = 2016 January
+     * Supported values: 1601, 1607
+     *
+     * @return string
+     */
     public function getSubVersion(): string
     {
         return $this->subVersion;

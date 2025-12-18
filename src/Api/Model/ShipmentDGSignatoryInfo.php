@@ -13,19 +13,19 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Name of the person signing the declaration. 
-    
-    Note: The name of person or department he/she is employed with, are both acceptable.
-    *
-    * @var string
-    */
+     * Name of the person signing the declaration.
+     * 
+     * Note: The name of person or department he/she is employed with, are both acceptable.
+     *
+     * @var string
+     */
     protected $name;
     /**
-    * Title of the person signing the declaration.
-    Note: The title of the person or department he/she is employed with, are both acceptable.
-    *
-    * @var string
-    */
+     * Title of the person signing the declaration.
+     * Note: The title of the person or department he/she is employed with, are both acceptable.
+     *
+     * @var string
+     */
     protected $title;
     /**
      * The city of the Signatory.
@@ -40,13 +40,13 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      */
     protected $date;
     /**
-    * Valid values:
-    01 = Shipment level
-    02 = Package level                                           
-     Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
-    *
-    * @var string
-    */
+     * Valid values:
+     * 01 = Shipment level
+     * 02 = Package level
+     *   Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
+     *
+     * @var string
+     */
     protected $shipperDeclaration;
     /**
      * Dangerous Goods Paper Upload Only Indicator. DG Paper will not be returned in response if UploadOnlyIndicator present.
@@ -55,12 +55,12 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
      */
     protected $uploadOnlyIndicator;
     /**
-    * Name of the person signing the declaration. 
-    
-    Note: The name of person or department he/she is employed with, are both acceptable.
-    *
-    * @return string
-    */
+     * Name of the person signing the declaration.
+     * 
+     * Note: The name of person or department he/she is employed with, are both acceptable.
+     *
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
@@ -81,11 +81,11 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
         return $this;
     }
     /**
-    * Title of the person signing the declaration.
-    Note: The title of the person or department he/she is employed with, are both acceptable.
-    *
-    * @return string
-    */
+     * Title of the person signing the declaration.
+     * Note: The title of the person or department he/she is employed with, are both acceptable.
+     *
+     * @return string
+     */
     public function getTitle(): string
     {
         return $this->title;
@@ -149,13 +149,13 @@ class ShipmentDGSignatoryInfo extends \ArrayObject
         return $this;
     }
     /**
-    * Valid values:
-    01 = Shipment level
-    02 = Package level                                           
-     Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
-    *
-    * @return string
-    */
+     * Valid values:
+     * 01 = Shipment level
+     * 02 = Package level
+     *   Valid only for the Shipper Declaration paper. If missing or invalid DGPaperImage will be returned at package level.
+     *
+     * @return string
+     */
     public function getShipperDeclaration(): string
     {
         return $this->shipperDeclaration;

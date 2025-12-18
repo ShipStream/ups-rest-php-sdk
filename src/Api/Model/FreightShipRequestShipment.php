@@ -19,11 +19,11 @@ class FreightShipRequestShipment extends \ArrayObject
      */
     protected $shipFrom;
     /**
-    * Shipper�s six digit account number.
-    Size must be six alphanumeric characters. Must be associated with the User Id specified in the Access Request XML.
-    *
-    * @var string
-    */
+     * Shipper�s six digit account number.
+     * Size must be six alphanumeric characters. Must be associated with the User Id specified in the Access Request XML.
+     *
+     * @var string
+     */
     protected $shipperNumber;
     /**
      * ShipTo Container.
@@ -44,11 +44,11 @@ class FreightShipRequestShipment extends \ArrayObject
      */
     protected $service;
     /**
-    * HandlingUnit Container.
-    Required for Ground Shipments.
-    *
-    * @var ShipmentHandlingUnitOne
-    */
+     * HandlingUnit Container.
+     * Required for Ground Shipments.
+     *
+     * @var ShipmentHandlingUnitOne
+     */
     protected $handlingUnitOne;
     /**
      * HandlingUnit Container.
@@ -63,11 +63,11 @@ class FreightShipRequestShipment extends \ArrayObject
      */
     protected $existingShipmentID;
     /**
-    * General purpose instructions to the driver.  
-    Example: Call 30 minutes before
-    *
-    * @var string
-    */
+     * General purpose instructions to the driver.
+     * Example: Call 30 minutes before
+     *
+     * @var string
+     */
     protected $handlingInstructions;
     /**
      * Delivery Instructions.
@@ -82,14 +82,10 @@ class FreightShipRequestShipment extends \ArrayObject
      */
     protected $pickupInstructions;
     /**
-     * 
-     *
      * @var list<ShipmentCommodity>
      */
     protected $commodity;
     /**
-     * 
-     *
      * @var list<ShipmentReference>
      */
     protected $reference;
@@ -152,11 +148,11 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Shipper�s six digit account number.
-    Size must be six alphanumeric characters. Must be associated with the User Id specified in the Access Request XML.
-    *
-    * @return string
-    */
+     * Shipper�s six digit account number.
+     * Size must be six alphanumeric characters. Must be associated with the User Id specified in the Access Request XML.
+     *
+     * @return string
+     */
     public function getShipperNumber(): string
     {
         return $this->shipperNumber;
@@ -242,11 +238,11 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * HandlingUnit Container.
-    Required for Ground Shipments.
-    *
-    * @return ShipmentHandlingUnitOne
-    */
+     * HandlingUnit Container.
+     * Required for Ground Shipments.
+     *
+     * @return ShipmentHandlingUnitOne
+     */
     public function getHandlingUnitOne(): ShipmentHandlingUnitOne
     {
         return $this->handlingUnitOne;
@@ -310,11 +306,11 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * General purpose instructions to the driver.  
-    Example: Call 30 minutes before
-    *
-    * @return string
-    */
+     * General purpose instructions to the driver.
+     * Example: Call 30 minutes before
+     *
+     * @return string
+     */
     public function getHandlingInstructions(): string
     {
         return $this->handlingInstructions;
@@ -378,8 +374,6 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentCommodity>
      */
     public function getCommodity(): array
@@ -387,8 +381,6 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this->commodity;
     }
     /**
-     * 
-     *
      * @param list<ShipmentCommodity> $commodity
      *
      * @return self
@@ -400,8 +392,6 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentReference>
      */
     public function getReference(): array
@@ -409,8 +399,6 @@ class FreightShipRequestShipment extends \ArrayObject
         return $this->reference;
     }
     /**
-     * 
-     *
      * @param list<ShipmentReference> $reference
      *
      * @return self

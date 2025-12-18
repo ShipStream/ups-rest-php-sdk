@@ -13,26 +13,26 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The weight of the package. 
-    One decimal digit is allowed. Example: 10.9
-    *
-    * @var string
-    */
+     * The weight of the package.
+     * One decimal digit is allowed. Example: 10.9
+     *
+     * @var string
+     */
     protected $weight;
     /**
-    * The code representing the unit of measurement associated with the package.
-    LBS = Pounds
-    KGS = Kilograms
-    *
-    * @var string
-    */
+     * The code representing the unit of measurement associated with the package.
+     * LBS = Pounds
+     * KGS = Kilograms
+     *
+     * @var string
+     */
     protected $unitOfMeasurement;
     /**
-    * The weight of the package. 
-    One decimal digit is allowed. Example: 10.9
-    *
-    * @return string
-    */
+     * The weight of the package.
+     * One decimal digit is allowed. Example: 10.9
+     *
+     * @return string
+     */
     public function getWeight(): string
     {
         return $this->weight;
@@ -52,12 +52,12 @@ class PickupCreationRequestTotalWeight extends \ArrayObject
         return $this;
     }
     /**
-    * The code representing the unit of measurement associated with the package.
-    LBS = Pounds
-    KGS = Kilograms
-    *
-    * @return string
-    */
+     * The code representing the unit of measurement associated with the package.
+     * LBS = Pounds
+     * KGS = Kilograms
+     *
+     * @return string
+     */
     public function getUnitOfMeasurement(): string
     {
         return $this->unitOfMeasurement;

@@ -13,31 +13,31 @@ class ValueCube extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Currency code type for Price per cubic feet.
-    Valid value: USD - United States Dollar
-    *
-    * @var string
-    */
+     * Currency code type for Price per cubic feet.
+     * Valid value: USD - United States Dollar
+     *
+     * @var string
+     */
     protected $currencyCode;
     /**
-    * Price per cubic feet.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @var string
-    */
+     * Price per cubic feet.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @var string
+     */
     protected $monetaryValue;
     /**
-    * Currency code type for Price per cubic feet.
-    Valid value: USD - United States Dollar
-    *
-    * @return string
-    */
+     * Currency code type for Price per cubic feet.
+     * Valid value: USD - United States Dollar
+     *
+     * @return string
+     */
     public function getCurrencyCode(): string
     {
         return $this->currencyCode;
@@ -57,17 +57,17 @@ class ValueCube extends \ArrayObject
         return $this;
     }
     /**
-    * Price per cubic feet.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @return string
-    */
+     * Price per cubic feet.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @return string
+     */
     public function getMonetaryValue(): string
     {
         return $this->monetaryValue;

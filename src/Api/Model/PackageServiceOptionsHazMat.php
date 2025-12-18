@@ -37,13 +37,13 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $recordIdentifier3;
     /**
-    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
-    
-    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
-    
-    *
-    * @var string
-    */
+     * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+     * 
+     *
+     * @var string
+     */
     protected $subRiskClass;
     /**
      * The type of regulated good for an ADR package where ADR is for Europe to Europe ground movement.
@@ -52,15 +52,15 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $aDRItemNumber;
     /**
-    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
-    - "1" = "I",
-    - "2" = "II",
-    - "3" = "III",
-    - and blank.
-    
-    *
-    * @var string
-    */
+     * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
+     * - "1" = "I",
+     * - "2" = "II",
+     * - "3" = "III",
+     * - and blank.
+     * 
+     *
+     * @var string
+     */
     protected $aDRPackingGroupLetter;
     /**
      * The technical name (when required) for the specified commodity. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
@@ -69,21 +69,21 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $technicalName;
     /**
-    * Defines the type of label that is required on the package for the commodity. 
-    
-    Not applicable if CommodityRegulatedLevelCode = LR or EQ.
-    *
-    * @var string
-    */
+     * Defines the type of label that is required on the package for the commodity.
+     * 
+     * Not applicable if CommodityRegulatedLevelCode = LR or EQ.
+     *
+     * @var string
+     */
     protected $hazardLabelRequired;
     /**
-    * This is the hazard class associated to the specified commodity.
-    
-    Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
-    
-    *
-    * @var string
-    */
+     * This is the hazard class associated to the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
+     * 
+     *
+     * @var string
+     */
     protected $classDivisionNumber;
     /**
      * Optional reference number. It will be displayed only on label.
@@ -98,12 +98,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $quantity;
     /**
-    * Required if CommodityRegulatedLevelCode = LQ, EQ or FR. The unit of measure used for the mass capacity of the regulated good. 
-    
-    For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
-    *
-    * @var string
-    */
+     * Required if CommodityRegulatedLevelCode = LQ, EQ or FR. The unit of measure used for the mass capacity of the regulated good.
+     * 
+     * For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
+     *
+     * @var string
+     */
     protected $uOM;
     /**
      * The type of package used to contain the regulated good. (Ex: Fiberboard Box). Required if CommodityRegulatedLevelCode = LQ or FR.   Ex. FIBERBOARD BOX, WOOD(EN) BOX, PLASTIC JERRICAN, METAL BOX, STEEL DRUM, OTHER, PLASTIC BOX, PLASTIC DRUM, STYROFOAM BOX, CYLINDERS, ENVIROTAINER, PLYWOOD BOX, ALUMINUM DRUM, ALUMINUM CYLINDERS, PLASTIC PAIL, PLYWOOD DRUM, FIBER DRUM, STEEL JERRICAN, ALUMINUM JERRICAN, STEEL BOX, CARTON, ALUMINUM BOX
@@ -112,12 +112,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $packagingType;
     /**
-    * This is the ID number (UN/NA/ID) for the specified commodity. 
-    Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. 
-    UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
-    *
-    * @var string
-    */
+     * This is the ID number (UN/NA/ID) for the specified commodity.
+     * Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation.
+     * UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
+     *
+     * @var string
+     */
     protected $iDNumber;
     /**
      * The Proper Shipping Name assigned by ADR, CFR or IATA. Required if CommodityRegulatedLevelCode = LR, LQ or FR.
@@ -126,24 +126,24 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $properShippingName;
     /**
-    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
-    
-    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
-    
-    *
-    * @var string
-    */
+     * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+     * 
+     *
+     * @var string
+     */
     protected $additionalDescription;
     /**
-    * This is the packing group category associated to the specified commodity. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.
-     Valid values:
-    I
-    II
-    III
-    blank
-    *
-    * @var string
-    */
+     * This is the packing group category associated to the specified commodity. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.
+     *   Valid values:
+     * I
+     * II
+     * III
+     * blank
+     *
+     * @var string
+     */
     protected $packagingGroupType;
     /**
      * The packing instructions related to the chemical record. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
@@ -152,13 +152,13 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $packagingInstructionCode;
     /**
-    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
-    
-    The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
-    
-    *
-    * @var string
-    */
+     * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
+     * 
+     * The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+     * 
+     *
+     * @var string
+     */
     protected $emergencyPhone;
     /**
      * The emergency information, contact name and/or contract number, required to be communicated when a call is placed to the EmergencyPhoneNumber. The information is required if there is a value in the EmergencyPhoneNumber field above and the shipment is with a US50 or PR origin and/or destination and the RegulationSet is IATA.
@@ -173,36 +173,36 @@ class PackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $reportableQuantity;
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. 
-    Valid values: 
-    ADR = Europe to Europe Ground Movement 
-    CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada 
-    IATA= Worldwide Air movement 
-    TDG= Canada to Canada ground movement or Canada to U.S. standard movement.  Valid values are ADR, CFR, IATA and TDG.
-    For multiple Chemical Records per package or multiple packages containing different RegulationSet, RegulationSet of first Chemical Record would be considered for validating and rating the entire shipment.
-    *
-    * @var string
-    */
+     * The Regulatory set associated with every regulated shipment. It must be same across the shipment.
+     * Valid values:
+     * ADR = Europe to Europe Ground Movement
+     * CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada
+     * IATA= Worldwide Air movement
+     * TDG= Canada to Canada ground movement or Canada to U.S. standard movement.  Valid values are ADR, CFR, IATA and TDG.
+     * For multiple Chemical Records per package or multiple packages containing different RegulationSet, RegulationSet of first Chemical Record would be considered for validating and rating the entire shipment.
+     *
+     * @var string
+     */
     protected $regulationSet;
     /**
-    * Not applicable for ADR regulation set. Required for any other regulation set. Declares that a package was prepared according to ground passenger aircraft or cargo aircraft only. 
-    Valid values: 
-    Highway=Highway 
-    Ground=Ground 
-    PAX=Passenger Aircraft 
-    Passenger Aircraft=Passenger Aircraft 
-    CAO=Cargo Aircraft Only 
-    Cargo Aircraft Only=Cargo Aircraft Only  Valid entries include: Highway, Ground, PAX, Passenger Aircraft, CAO and Cargo Aircraft Only.
-    *
-    * @var string
-    */
+     * Not applicable for ADR regulation set. Required for any other regulation set. Declares that a package was prepared according to ground passenger aircraft or cargo aircraft only.
+     * Valid values:
+     * Highway=Highway
+     * Ground=Ground
+     * PAX=Passenger Aircraft
+     * Passenger Aircraft=Passenger Aircraft
+     * CAO=Cargo Aircraft Only
+     * Cargo Aircraft Only=Cargo Aircraft Only  Valid entries include: Highway, Ground, PAX, Passenger Aircraft, CAO and Cargo Aircraft Only.
+     *
+     * @var string
+     */
     protected $transportationMode;
     /**
-    * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ) or Lightly Regulated (LR).  Valid values are LR, FR, LQ and EQ.
-    Required for subversion 1701 or greater. LR and EQ are validated if subversion is 1701 or greater. FR, LQ will be validated if subversion is 1807 or greater
-    *
-    * @var string
-    */
+     * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ) or Lightly Regulated (LR).  Valid values are LR, FR, LQ and EQ.
+     * Required for subversion 1701 or greater. LR and EQ are validated if subversion is 1701 or greater. FR, LQ will be validated if subversion is 1807 or greater
+     *
+     * @var string
+     */
     protected $commodityRegulatedLevelCode;
     /**
      * Transport Category.  Valid values are 0 to 4.
@@ -323,13 +323,13 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
-    
-    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
-    
-    *
-    * @return string
-    */
+     * Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+     * 
+     *
+     * @return string
+     */
     public function getSubRiskClass(): string
     {
         return $this->subRiskClass;
@@ -373,15 +373,15 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
-    - "1" = "I",
-    - "2" = "II",
-    - "3" = "III",
-    - and blank.
-    
-    *
-    * @return string
-    */
+     * Required if the field applies to the material by regulation. Field input is Arabic numerals, output is Roman numerals. Will be shown in Roman Numerals.  Valid values:
+     * - "1" = "I",
+     * - "2" = "II",
+     * - "3" = "III",
+     * - and blank.
+     * 
+     *
+     * @return string
+     */
     public function getADRPackingGroupLetter(): string
     {
         return $this->aDRPackingGroupLetter;
@@ -427,12 +427,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Defines the type of label that is required on the package for the commodity. 
-    
-    Not applicable if CommodityRegulatedLevelCode = LR or EQ.
-    *
-    * @return string
-    */
+     * Defines the type of label that is required on the package for the commodity.
+     * 
+     * Not applicable if CommodityRegulatedLevelCode = LR or EQ.
+     *
+     * @return string
+     */
     public function getHazardLabelRequired(): string
     {
         return $this->hazardLabelRequired;
@@ -453,13 +453,13 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * This is the hazard class associated to the specified commodity.
-    
-    Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
-    
-    *
-    * @return string
-    */
+     * This is the hazard class associated to the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode is 'EQ', 'LQ' or 'FR'
+     * 
+     *
+     * @return string
+     */
     public function getClassDivisionNumber(): string
     {
         return $this->classDivisionNumber;
@@ -525,12 +525,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Required if CommodityRegulatedLevelCode = LQ, EQ or FR. The unit of measure used for the mass capacity of the regulated good. 
-    
-    For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
-    *
-    * @return string
-    */
+     * Required if CommodityRegulatedLevelCode = LQ, EQ or FR. The unit of measure used for the mass capacity of the regulated good.
+     * 
+     * For Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
+     *
+     * @return string
+     */
     public function getUOM(): string
     {
         return $this->uOM;
@@ -573,12 +573,12 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * This is the ID number (UN/NA/ID) for the specified commodity. 
-    Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. 
-    UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
-    *
-    * @return string
-    */
+     * This is the ID number (UN/NA/ID) for the specified commodity.
+     * Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation.
+     * UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
+     *
+     * @return string
+     */
     public function getIDNumber(): string
     {
         return $this->iDNumber;
@@ -621,13 +621,13 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
-    
-    Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
-    
-    *
-    * @return string
-    */
+     * Additional remarks or special provision information. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Additional information that may be required by regulation about a hazardous material, such as, "Limited Quantity", DOT-SP numbers, EX numbers.
+     * 
+     *
+     * @return string
+     */
     public function getAdditionalDescription(): string
     {
         return $this->additionalDescription;
@@ -649,15 +649,15 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * This is the packing group category associated to the specified commodity. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.
-     Valid values:
-    I
-    II
-    III
-    blank
-    *
-    * @return string
-    */
+     * This is the packing group category associated to the specified commodity. Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.
+     *   Valid values:
+     * I
+     * II
+     * III
+     * blank
+     *
+     * @return string
+     */
     public function getPackagingGroupType(): string
     {
         return $this->packagingGroupType;
@@ -703,13 +703,13 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
-    
-    The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
-    
-    *
-    * @return string
-    */
+     * 24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is 1, area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.
+     * 
+     * The following are restricted in the phone number period ".", dash "-", plus sign "+" and conventional parentheses "(" and ")", "EXT" or "OPT"
+     * 
+     *
+     * @return string
+     */
     public function getEmergencyPhone(): string
     {
         return $this->emergencyPhone;
@@ -775,16 +775,16 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. It must be same across the shipment. 
-    Valid values: 
-    ADR = Europe to Europe Ground Movement 
-    CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada 
-    IATA= Worldwide Air movement 
-    TDG= Canada to Canada ground movement or Canada to U.S. standard movement.  Valid values are ADR, CFR, IATA and TDG.
-    For multiple Chemical Records per package or multiple packages containing different RegulationSet, RegulationSet of first Chemical Record would be considered for validating and rating the entire shipment.
-    *
-    * @return string
-    */
+     * The Regulatory set associated with every regulated shipment. It must be same across the shipment.
+     * Valid values:
+     * ADR = Europe to Europe Ground Movement
+     * CFR = HazMat regulated by US Dept. of Transportation within the U.S. or ground shipments to Canada
+     * IATA= Worldwide Air movement
+     * TDG= Canada to Canada ground movement or Canada to U.S. standard movement.  Valid values are ADR, CFR, IATA and TDG.
+     * For multiple Chemical Records per package or multiple packages containing different RegulationSet, RegulationSet of first Chemical Record would be considered for validating and rating the entire shipment.
+     *
+     * @return string
+     */
     public function getRegulationSet(): string
     {
         return $this->regulationSet;
@@ -809,17 +809,17 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Not applicable for ADR regulation set. Required for any other regulation set. Declares that a package was prepared according to ground passenger aircraft or cargo aircraft only. 
-    Valid values: 
-    Highway=Highway 
-    Ground=Ground 
-    PAX=Passenger Aircraft 
-    Passenger Aircraft=Passenger Aircraft 
-    CAO=Cargo Aircraft Only 
-    Cargo Aircraft Only=Cargo Aircraft Only  Valid entries include: Highway, Ground, PAX, Passenger Aircraft, CAO and Cargo Aircraft Only.
-    *
-    * @return string
-    */
+     * Not applicable for ADR regulation set. Required for any other regulation set. Declares that a package was prepared according to ground passenger aircraft or cargo aircraft only.
+     * Valid values:
+     * Highway=Highway
+     * Ground=Ground
+     * PAX=Passenger Aircraft
+     * Passenger Aircraft=Passenger Aircraft
+     * CAO=Cargo Aircraft Only
+     * Cargo Aircraft Only=Cargo Aircraft Only  Valid entries include: Highway, Ground, PAX, Passenger Aircraft, CAO and Cargo Aircraft Only.
+     *
+     * @return string
+     */
     public function getTransportationMode(): string
     {
         return $this->transportationMode;
@@ -845,11 +845,11 @@ class PackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ) or Lightly Regulated (LR).  Valid values are LR, FR, LQ and EQ.
-    Required for subversion 1701 or greater. LR and EQ are validated if subversion is 1701 or greater. FR, LQ will be validated if subversion is 1807 or greater
-    *
-    * @return string
-    */
+     * Indicates the type of commodity - Fully Regulated (FR), Limited Quantity (LQ), Excepted Quantity (EQ) or Lightly Regulated (LR).  Valid values are LR, FR, LQ and EQ.
+     * Required for subversion 1701 or greater. LR and EQ are validated if subversion is 1701 or greater. FR, LQ will be validated if subversion is 1807 or greater
+     *
+     * @return string
+     */
     public function getCommodityRegulatedLevelCode(): string
     {
         return $this->commodityRegulatedLevelCode;

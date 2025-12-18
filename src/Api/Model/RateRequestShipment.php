@@ -37,19 +37,17 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $shipFrom;
     /**
-    * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
-    
-    Required for the following ShipmentIndicationType values:
-    - 01 - Hold for Pickup at UPS Access Point™
-    - 02 - UPS Access Point™ Delivery
-    
-    *
-    * @var RateShipmentAlternateDeliveryAddress
-    */
-    protected $alternateDeliveryAddress;
-    /**
+     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
+     * 
+     * Required for the following ShipmentIndicationType values:
+     * - 01 - Hold for Pickup at UPS Access Point™
+     * - 02 - UPS Access Point™ Delivery
      * 
      *
+     * @var RateShipmentAlternateDeliveryAddress
+     */
+    protected $alternateDeliveryAddress;
+    /**
      * @var list<ShipmentShipmentIndicationType>
      */
     protected $shipmentIndicationType;
@@ -102,8 +100,6 @@ class RateRequestShipment extends \ArrayObject
      */
     protected $documentsOnlyIndicator;
     /**
-     * 
-     *
      * @var list<RateShipmentPackage>
      */
     protected $package;
@@ -250,15 +246,15 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
-    
-    Required for the following ShipmentIndicationType values:
-    - 01 - Hold for Pickup at UPS Access Point™
-    - 02 - UPS Access Point™ Delivery
-    
-    *
-    * @return RateShipmentAlternateDeliveryAddress
-    */
+     * Alternate Delivery Address container. Applies for deliveries to UPS Access Point™ locations.
+     * 
+     * Required for the following ShipmentIndicationType values:
+     * - 01 - Hold for Pickup at UPS Access Point™
+     * - 02 - UPS Access Point™ Delivery
+     * 
+     *
+     * @return RateShipmentAlternateDeliveryAddress
+     */
     public function getAlternateDeliveryAddress(): RateShipmentAlternateDeliveryAddress
     {
         return $this->alternateDeliveryAddress;
@@ -282,8 +278,6 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentShipmentIndicationType>
      */
     public function getShipmentIndicationType(): array
@@ -291,8 +285,6 @@ class RateRequestShipment extends \ArrayObject
         return $this->shipmentIndicationType;
     }
     /**
-     * 
-     *
      * @param list<ShipmentShipmentIndicationType> $shipmentIndicationType
      *
      * @return self
@@ -480,8 +472,6 @@ class RateRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<RateShipmentPackage>
      */
     public function getPackage(): array
@@ -489,8 +479,6 @@ class RateRequestShipment extends \ArrayObject
         return $this->package;
     }
     /**
-     * 
-     *
      * @param list<RateShipmentPackage> $package
      *
      * @return self

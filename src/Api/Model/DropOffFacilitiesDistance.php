@@ -13,27 +13,27 @@ class DropOffFacilitiesDistance extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Distance from origin address. Distance based on distance UOM in request.
-    
-    Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
-    *
-    * @var string
-    */
+     * Distance from origin address. Distance based on distance UOM in request.
+     * 
+     * Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
+     *
+     * @var string
+     */
     protected $value;
     /**
-    * Unit Of Measure.
-    Example: MI or KM
-    *
-    * @var string
-    */
+     * Unit Of Measure.
+     * Example: MI or KM
+     *
+     * @var string
+     */
     protected $unitOfMeasurement;
     /**
-    * Distance from origin address. Distance based on distance UOM in request.
-    
-    Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
-    *
-    * @return string
-    */
+     * Distance from origin address. Distance based on distance UOM in request.
+     * 
+     * Numeric value up to 200 and .2 decimal positions. Distance will be retuned for drop off location search by proximity order.
+     *
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;
@@ -54,11 +54,11 @@ class DropOffFacilitiesDistance extends \ArrayObject
         return $this;
     }
     /**
-    * Unit Of Measure.
-    Example: MI or KM
-    *
-    * @return string
-    */
+     * Unit Of Measure.
+     * Example: MI or KM
+     *
+     * @return string
+     */
     public function getUnitOfMeasurement(): string
     {
         return $this->unitOfMeasurement;

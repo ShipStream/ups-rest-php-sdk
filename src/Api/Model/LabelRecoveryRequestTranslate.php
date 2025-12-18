@@ -13,59 +13,59 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The Language code. The language codes are three letter language codes. Supported languages are:
-    - eng - English
-    - spa - Spanish
-    - ita - Italian
-    - fra - French
-    - deu - German
-    - por -Portuguese
-    - nld – Dutch
-    - dan - Danish
-    - fin - Finnish
-    - swe – Swedish
-    - nor – Norwegian
-    
-    *
-    * @var string
-    */
+     * The Language code. The language codes are three letter language codes. Supported languages are:
+     * - eng - English
+     * - spa - Spanish
+     * - ita - Italian
+     * - fra - French
+     * - deu - German
+     * - por -Portuguese
+     * - nld – Dutch
+     * - dan - Danish
+     * - fin - Finnish
+     * - swe – Swedish
+     * - nor – Norwegian
+     * 
+     *
+     * @var string
+     */
     protected $languageCode;
     /**
-    * Valid dialect codes are:
-    - CA - Canada
-    - GB - Great Britain
-    - US - United States
-    - 97 – Not Applicable
-    
-    *
-    * @var string
-    */
+     * Valid dialect codes are:
+     * - CA - Canada
+     * - GB - Great Britain
+     * - US - United States
+     * - 97 – Not Applicable
+     * 
+     *
+     * @var string
+     */
     protected $dialectCode;
     /**
-    * Used to specify what will be translated. 
-    Valid code: 
-    01 = label direction instructions and receipt
-    *
-    * @var string
-    */
+     * Used to specify what will be translated.
+     * Valid code:
+     * 01 = label direction instructions and receipt
+     *
+     * @var string
+     */
     protected $code;
     /**
-    * The Language code. The language codes are three letter language codes. Supported languages are:
-    - eng - English
-    - spa - Spanish
-    - ita - Italian
-    - fra - French
-    - deu - German
-    - por -Portuguese
-    - nld – Dutch
-    - dan - Danish
-    - fin - Finnish
-    - swe – Swedish
-    - nor – Norwegian
-    
-    *
-    * @return string
-    */
+     * The Language code. The language codes are three letter language codes. Supported languages are:
+     * - eng - English
+     * - spa - Spanish
+     * - ita - Italian
+     * - fra - French
+     * - deu - German
+     * - por -Portuguese
+     * - nld – Dutch
+     * - dan - Danish
+     * - fin - Finnish
+     * - swe – Swedish
+     * - nor – Norwegian
+     * 
+     *
+     * @return string
+     */
     public function getLanguageCode(): string
     {
         return $this->languageCode;
@@ -96,15 +96,15 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return $this;
     }
     /**
-    * Valid dialect codes are:
-    - CA - Canada
-    - GB - Great Britain
-    - US - United States
-    - 97 – Not Applicable
-    
-    *
-    * @return string
-    */
+     * Valid dialect codes are:
+     * - CA - Canada
+     * - GB - Great Britain
+     * - US - United States
+     * - 97 – Not Applicable
+     * 
+     *
+     * @return string
+     */
     public function getDialectCode(): string
     {
         return $this->dialectCode;
@@ -128,12 +128,12 @@ class LabelRecoveryRequestTranslate extends \ArrayObject
         return $this;
     }
     /**
-    * Used to specify what will be translated. 
-    Valid code: 
-    01 = label direction instructions and receipt
-    *
-    * @return string
-    */
+     * Used to specify what will be translated.
+     * Valid code:
+     * 01 = label direction instructions and receipt
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

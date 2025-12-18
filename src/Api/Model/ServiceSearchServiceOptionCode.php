@@ -13,28 +13,28 @@ class ServiceSearchServiceOptionCode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code that defines the optional service.
-    
-    Valid values:
-    - 01 - Saturday pickup.
-    
-    Only valid for air service.
-    
-    *
-    * @var string
-    */
+     * Code that defines the optional service.
+     * 
+     * Valid values:
+     * - 01 - Saturday pickup.
+     * 
+     * Only valid for air service.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
-    * Code that defines the optional service.
-    
-    Valid values:
-    - 01 - Saturday pickup.
-    
-    Only valid for air service.
-    
-    *
-    * @return string
-    */
+     * Code that defines the optional service.
+     * 
+     * Valid values:
+     * - 01 - Saturday pickup.
+     * 
+     * Only valid for air service.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

@@ -7,7 +7,6 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     protected $version;
     /**
      * API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight
-     *
      * @param string $version Version of the API e.g v1
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length 32
@@ -60,7 +59,7 @@ class FreightCancelPickup extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoin
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (200 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\FREIGHTPICKUPCANCELResponseWrapper', 'json');
         }
         if (401 === $status) {

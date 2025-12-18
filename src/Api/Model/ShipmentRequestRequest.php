@@ -13,29 +13,29 @@ class ShipmentRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Optional Processing.  
-    
-    Note: Full address validation is not performed. Therefore, it is the responsibility of the Shipping Tool User to ensure the address entered is correct to avoid an address correction fee.  Valid values:
-    nonvalidate = No street level address validation would be performed, but Postal Code/State combination validation would still be performed.
-    
-    validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
-    *
-    * @var string
-    */
+     * Optional Processing.
+     * 
+     * Note: Full address validation is not performed. Therefore, it is the responsibility of the Shipping Tool User to ensure the address entered is correct to avoid an address correction fee.  Valid values:
+     * nonvalidate = No street level address validation would be performed, but Postal Code/State combination validation would still be performed.
+     * 
+     * validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
+     *
+     * @var string
+     */
     protected $requestOption;
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601. 
-    
-    Format: YYMM = Year and month of the release.
-    
-    Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
-    *
-    * @var string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * 
+     * Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
+     *
+     * @var string
+     */
     protected $subVersion;
     /**
      * TransactionReference identifies transactions between client and server.
@@ -44,15 +44,15 @@ class ShipmentRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Optional Processing.  
-    
-    Note: Full address validation is not performed. Therefore, it is the responsibility of the Shipping Tool User to ensure the address entered is correct to avoid an address correction fee.  Valid values:
-    nonvalidate = No street level address validation would be performed, but Postal Code/State combination validation would still be performed.
-    
-    validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
-    *
-    * @return string
-    */
+     * Optional Processing.
+     * 
+     * Note: Full address validation is not performed. Therefore, it is the responsibility of the Shipping Tool User to ensure the address entered is correct to avoid an address correction fee.  Valid values:
+     * nonvalidate = No street level address validation would be performed, but Postal Code/State combination validation would still be performed.
+     * 
+     * validate = No street level address validation would be performed, but City/State/Postal Code/ combination validation would still be performed.
+     *
+     * @return string
+     */
     public function getRequestOption(): string
     {
         return $this->requestOption;
@@ -76,18 +76,18 @@ class ShipmentRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601. 
-    
-    Format: YYMM = Year and month of the release.
-    
-    Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
-    *
-    * @return string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Example: Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * 
+     * Example: 1607 = 2016 July  Supported values: 1601, 1607, 1701, 1707, 1801, 1807, 2108, 2205
+     *
+     * @return string
+     */
     public function getSubVersion(): string
     {
         return $this->subVersion;

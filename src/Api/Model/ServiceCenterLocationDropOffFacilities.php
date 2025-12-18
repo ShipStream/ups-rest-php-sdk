@@ -37,13 +37,13 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      */
     protected $type;
     /**
-    * Facility's Timezone. Format:
-    - America/New_York
-    - Asia/Hong_Kong
-    - Europe/London
-    *
-    * @var string
-    */
+     * Facility's Timezone. Format:
+     * - America/New_York
+     * - Asia/Hong_Kong
+     * - Europe/London
+     *
+     * @var string
+     */
     protected $timezone;
     /**
      * Phone Number of the Drop off Facility
@@ -70,8 +70,6 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
      */
     protected $originOrDestination;
     /**
-     * 
-     *
      * @var list<DropOffFacilitiesLocalizedInstruction>
      */
     protected $localizedInstruction;
@@ -170,13 +168,13 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this;
     }
     /**
-    * Facility's Timezone. Format:
-    - America/New_York
-    - Asia/Hong_Kong
-    - Europe/London
-    *
-    * @return string
-    */
+     * Facility's Timezone. Format:
+     * - America/New_York
+     * - Asia/Hong_Kong
+     * - Europe/London
+     *
+     * @return string
+     */
     public function getTimezone(): string
     {
         return $this->timezone;
@@ -286,8 +284,6 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<DropOffFacilitiesLocalizedInstruction>
      */
     public function getLocalizedInstruction(): array
@@ -295,8 +291,6 @@ class ServiceCenterLocationDropOffFacilities extends \ArrayObject
         return $this->localizedInstruction;
     }
     /**
-     * 
-     *
      * @param list<DropOffFacilitiesLocalizedInstruction> $localizedInstruction
      *
      * @return self

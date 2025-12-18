@@ -49,17 +49,17 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
      */
     protected $residentialAddressIndicator;
     /**
-    * Presence/Absence Indicator. Any value inside is ignored.
-    
-    This field is a flag to indicate if the Alternate Delivery location is a PO box location.
-    
-    True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
-    - 01 - Hold for Pickup at UPS Access Point
-    - 02 - UPS Access Point™ Delivery
-    
-    *
-    * @var string
-    */
+     * Presence/Absence Indicator. Any value inside is ignored.
+     * 
+     * This field is a flag to indicate if the Alternate Delivery location is a PO box location.
+     * 
+     * True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
+     * - 01 - Hold for Pickup at UPS Access Point
+     * - 02 - UPS Access Point™ Delivery
+     * 
+     *
+     * @var string
+     */
     protected $pOBoxIndicator;
     /**
      * The UPS Access Point's street address, including name and number (when applicable).  Length is not validated.
@@ -194,17 +194,17 @@ class RateAlternateDeliveryAddressAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Presence/Absence Indicator. Any value inside is ignored.
-    
-    This field is a flag to indicate if the Alternate Delivery location is a PO box location.
-    
-    True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
-    - 01 - Hold for Pickup at UPS Access Point
-    - 02 - UPS Access Point™ Delivery
-    
-    *
-    * @return string
-    */
+     * Presence/Absence Indicator. Any value inside is ignored.
+     * 
+     * This field is a flag to indicate if the Alternate Delivery location is a PO box location.
+     * 
+     * True if POBoxIndicator tag exists; false otherwise.  Not valid with Shipment Indication Types:
+     * - 01 - Hold for Pickup at UPS Access Point
+     * - 02 - UPS Access Point™ Delivery
+     * 
+     *
+     * @return string
+     */
     public function getPOBoxIndicator(): string
     {
         return $this->pOBoxIndicator;

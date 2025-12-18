@@ -13,20 +13,14 @@ class ShipmentResultsDocuments extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<DocumentsImage>
      */
     protected $image;
     /**
-     * 
-     *
      * @var list<DocumentsForms>
      */
     protected $forms;
     /**
-     * 
-     *
      * @return list<DocumentsImage>
      */
     public function getImage(): array
@@ -34,8 +28,6 @@ class ShipmentResultsDocuments extends \ArrayObject
         return $this->image;
     }
     /**
-     * 
-     *
      * @param list<DocumentsImage> $image
      *
      * @return self
@@ -47,8 +39,6 @@ class ShipmentResultsDocuments extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<DocumentsForms>
      */
     public function getForms(): array
@@ -56,8 +46,6 @@ class ShipmentResultsDocuments extends \ArrayObject
         return $this->forms;
     }
     /**
-     * 
-     *
      * @param list<DocumentsForms> $forms
      *
      * @return self

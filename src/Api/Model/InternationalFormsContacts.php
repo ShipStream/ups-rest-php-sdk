@@ -31,11 +31,11 @@ class InternationalFormsContacts extends \ArrayObject
      */
     protected $intermediateConsignee;
     /**
-    * Information of the producer. The NAFTA Certificate of Origin must be completed, signed, and dated by the exporter. 
-    When the Certificate is completed by the producer for use by the exporter, it must be completed, signed, and dated by the producer. The date must be the date the Certificate was completed and signed.  Applies to NAFTA CO.  Required for NAFTA CO forms.
-    *
-    * @var ContactsProducer
-    */
+     * Information of the producer. The NAFTA Certificate of Origin must be completed, signed, and dated by the exporter.
+     * When the Certificate is completed by the producer for use by the exporter, it must be completed, signed, and dated by the producer. The date must be the date the Certificate was completed and signed.  Applies to NAFTA CO.  Required for NAFTA CO forms.
+     *
+     * @var ContactsProducer
+     */
     protected $producer;
     /**
      * SoldTo Container. The Sold To party's country code must be the same as the Ship To party's country code with the exception of Canada and satellite countries.  Applies to Invoice and NAFTA CO Forms. Required if Invoice or NAFTA CO (International Form) is requested.
@@ -110,11 +110,11 @@ class InternationalFormsContacts extends \ArrayObject
         return $this;
     }
     /**
-    * Information of the producer. The NAFTA Certificate of Origin must be completed, signed, and dated by the exporter. 
-    When the Certificate is completed by the producer for use by the exporter, it must be completed, signed, and dated by the producer. The date must be the date the Certificate was completed and signed.  Applies to NAFTA CO.  Required for NAFTA CO forms.
-    *
-    * @return ContactsProducer
-    */
+     * Information of the producer. The NAFTA Certificate of Origin must be completed, signed, and dated by the exporter.
+     * When the Certificate is completed by the producer for use by the exporter, it must be completed, signed, and dated by the producer. The date must be the date the Certificate was completed and signed.  Applies to NAFTA CO.  Required for NAFTA CO forms.
+     *
+     * @return ContactsProducer
+     */
     public function getProducer(): ContactsProducer
     {
         return $this->producer;

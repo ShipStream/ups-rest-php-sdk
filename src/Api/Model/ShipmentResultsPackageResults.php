@@ -13,11 +13,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Package 1Z number.  
-    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
-    *
-    * @var string
-    */
+     * Package 1Z number.
+     * For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
+     *
+     * @var string
+     */
     protected $trackingNumber;
     /**
      * Container for returned Rate Modifier information. Applies only if SubVersion is 2205 or greater.
@@ -26,11 +26,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
      */
     protected $rateModifier;
     /**
-    * Base Service Charge container.
-    Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
-    *
-    * @var PackageResultsBaseServiceCharge
-    */
+     * Base Service Charge container.
+     * Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
+     *
+     * @var PackageResultsBaseServiceCharge
+     */
     protected $baseServiceCharge;
     /**
      * Shipment charges info. Shipment charges are only guaranteed to be returned for shipments whose origin country or territory is US or Puerto Rico.
@@ -39,21 +39,21 @@ class ShipmentResultsPackageResults extends \ArrayObject
      */
     protected $serviceOptionsCharges;
     /**
-    * The container for UPS shipping label. Returned for following shipments -
-    Forward shipments,
-    Shipments with PRL returns service, 
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
-    *
-    * @var PackageResultsShippingLabel|null
-    */
+     * The container for UPS shipping label. Returned for following shipments -
+     * Forward shipments,
+     * Shipments with PRL returns service,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
+     *
+     * @var PackageResultsShippingLabel|null
+     */
     protected $shippingLabel;
     /**
-    * Supported for following shipments -
-    PRL shipments,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
-    *
-    * @var PackageResultsShippingReceipt
-    */
+     * Supported for following shipments -
+     * PRL shipments,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
+     *
+     * @var PackageResultsShippingReceipt
+     */
     protected $shippingReceipt;
     /**
      * USPSPICNumber is USPS Package Identification; it should be used for tracking Mail Innovations shipments.
@@ -62,16 +62,18 @@ class ShipmentResultsPackageResults extends \ArrayObject
      */
     protected $uSPSPICNumber;
     /**
-    * USPS defined CN22 ID number format varies based on destination country or territory. 
-    Not applicable as of Jan 2015. 
-    Mail Innovations shipments US to VI, PR, and GU are not considered international.
-    *
-    * @var string
-    */
+     * USPS defined CN22 ID number format varies based on destination country or territory.
+     * Not applicable as of Jan 2015.
+     * Mail Innovations shipments US to VI, PR, and GU are not considered international.
+     *
+     * @var string
+     */
     protected $cN22Number;
     /**
      * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<PackageResultsAccessorial>
      */
@@ -83,35 +85,37 @@ class ShipmentResultsPackageResults extends \ArrayObject
      */
     protected $simpleRate;
     /**
-    * Container tag for the International forms image.  Currently this container would be returned for UPS Premium Care shipments. Form is returned for following shipments -
-    Forward shipments,
-    Shipments with PRL ReturnService,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. CN22 data for Worlwide economy services will be returned within the PDF417 barcode of the label.
-    *
-    * @var PackageResultsForm|null
-    */
+     * Container tag for the International forms image.  Currently this container would be returned for UPS Premium Care shipments. Form is returned for following shipments -
+     * Forward shipments,
+     * Shipments with PRL ReturnService,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. CN22 data for Worlwide economy services will be returned within the PDF417 barcode of the label.
+     *
+     * @var PackageResultsForm|null
+     */
     protected $form;
     /**
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<PackageResultsItemizedCharges>
      */
     protected $itemizedCharges;
     /**
-    * Negotiated Rates Charge Container.  These charges are returned when:
-    1) Subversion is greater than or equal to 1607
-    2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
-    *
-    * @var PackageResultsNegotiatedCharges
-    */
+     * Negotiated Rates Charge Container.  These charges are returned when:
+     * 1) Subversion is greater than or equal to 1607
+     * 2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
+     *
+     * @var PackageResultsNegotiatedCharges
+     */
     protected $negotiatedCharges;
     /**
-    * Package 1Z number.  
-    For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
-    *
-    * @return string
-    */
+     * Package 1Z number.
+     * For Mail Innovations shipments, please use the USPSPICNumber when tracking packages (a non-1Z number Mail Manifest Id is returned).
+     *
+     * @return string
+     */
     public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
@@ -153,11 +157,11 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * Base Service Charge container.
-    Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
-    *
-    * @return PackageResultsBaseServiceCharge
-    */
+     * Base Service Charge container.
+     * Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
+     *
+     * @return PackageResultsBaseServiceCharge
+     */
     public function getBaseServiceCharge(): PackageResultsBaseServiceCharge
     {
         return $this->baseServiceCharge;
@@ -199,13 +203,13 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * The container for UPS shipping label. Returned for following shipments -
-    Forward shipments,
-    Shipments with PRL returns service, 
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
-    *
-    * @return PackageResultsShippingLabel|null
-    */
+     * The container for UPS shipping label. Returned for following shipments -
+     * Forward shipments,
+     * Shipments with PRL returns service,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present.
+     *
+     * @return PackageResultsShippingLabel|null
+     */
     public function getShippingLabel(): ?PackageResultsShippingLabel
     {
         return $this->shippingLabel;
@@ -227,12 +231,12 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * Supported for following shipments -
-    PRL shipments,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
-    *
-    * @return PackageResultsShippingReceipt
-    */
+     * Supported for following shipments -
+     * PRL shipments,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
+     *
+     * @return PackageResultsShippingReceipt
+     */
     public function getShippingReceipt(): PackageResultsShippingReceipt
     {
         return $this->shippingReceipt;
@@ -275,12 +279,12 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * USPS defined CN22 ID number format varies based on destination country or territory. 
-    Not applicable as of Jan 2015. 
-    Mail Innovations shipments US to VI, PR, and GU are not considered international.
-    *
-    * @return string
-    */
+     * USPS defined CN22 ID number format varies based on destination country or territory.
+     * Not applicable as of Jan 2015.
+     * Mail Innovations shipments US to VI, PR, and GU are not considered international.
+     *
+     * @return string
+     */
     public function getCN22Number(): string
     {
         return $this->cN22Number;
@@ -302,7 +306,9 @@ class ShipmentResultsPackageResults extends \ArrayObject
     }
     /**
      * The container for Accessorial indicators. This information would be returned only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service request with Dry Ice or Oversize Pallet and SubVersion greater than or equal to 1707. This is valid only for UPS Worldwide Express Freight and UPS Worldwide Express Freight Mid-day service.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<PackageResultsAccessorial>
      */
@@ -347,13 +353,13 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * Container tag for the International forms image.  Currently this container would be returned for UPS Premium Care shipments. Form is returned for following shipments -
-    Forward shipments,
-    Shipments with PRL ReturnService,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. CN22 data for Worlwide economy services will be returned within the PDF417 barcode of the label.
-    *
-    * @return PackageResultsForm|null
-    */
+     * Container tag for the International forms image.  Currently this container would be returned for UPS Premium Care shipments. Form is returned for following shipments -
+     * Forward shipments,
+     * Shipments with PRL ReturnService,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. CN22 data for Worlwide economy services will be returned within the PDF417 barcode of the label.
+     *
+     * @return PackageResultsForm|null
+     */
     public function getForm(): ?PackageResultsForm
     {
         return $this->form;
@@ -376,7 +382,9 @@ class ShipmentResultsPackageResults extends \ArrayObject
     }
     /**
      * Itemized Charges are returned only when the subversion element is present and greater than or equal to 1607. Package level itemized charges are only returned for US domestic movements.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<PackageResultsItemizedCharges>
      */
@@ -399,12 +407,12 @@ class ShipmentResultsPackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * Negotiated Rates Charge Container.  These charges are returned when:
-    1) Subversion is greater than or equal to 1607
-    2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
-    *
-    * @return PackageResultsNegotiatedCharges
-    */
+     * Negotiated Rates Charge Container.  These charges are returned when:
+     * 1) Subversion is greater than or equal to 1607
+     * 2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
+     *
+     * @return PackageResultsNegotiatedCharges
+     */
     public function getNegotiatedCharges(): PackageResultsNegotiatedCharges
     {
         return $this->negotiatedCharges;

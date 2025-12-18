@@ -19,12 +19,12 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      */
     protected $city;
     /**
-    * 1. It means district code for Hong Kong (HK)
-    2. It means county for Ireland (IE)
-    3. It means state or province for all the postal countries  It is required for non-postal countries including HK and IE.
-    *
-    * @var string
-    */
+     * 1. It means district code for Hong Kong (HK)
+     * 2. It means county for Ireland (IE)
+     * 3. It means state or province for all the postal countries  It is required for non-postal countries including HK and IE.
+     *
+     * @var string
+     */
     protected $stateProvince;
     /**
      * Postal Code for postal countries.  It does not apply to non-postal countries such as IE and HK
@@ -33,11 +33,11 @@ class FreightOptionsDestinationAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-    * The pickup country or territory code as defined by ISO-3166. 
-    Refer to Country or Territory Codes in the Appendix for valid values.  Upper-case two-letter string.
-    *
-    * @var string
-    */
+     * The pickup country or territory code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.  Upper-case two-letter string.
+     *
+     * @var string
+     */
     protected $countryCode;
     /**
      * The city of pickup address if available.  It is required for non-postal country Ireland (IE).
@@ -62,12 +62,12 @@ class FreightOptionsDestinationAddress extends \ArrayObject
         return $this;
     }
     /**
-    * 1. It means district code for Hong Kong (HK)
-    2. It means county for Ireland (IE)
-    3. It means state or province for all the postal countries  It is required for non-postal countries including HK and IE.
-    *
-    * @return string
-    */
+     * 1. It means district code for Hong Kong (HK)
+     * 2. It means county for Ireland (IE)
+     * 3. It means state or province for all the postal countries  It is required for non-postal countries including HK and IE.
+     *
+     * @return string
+     */
     public function getStateProvince(): string
     {
         return $this->stateProvince;
@@ -110,11 +110,11 @@ class FreightOptionsDestinationAddress extends \ArrayObject
         return $this;
     }
     /**
-    * The pickup country or territory code as defined by ISO-3166. 
-    Refer to Country or Territory Codes in the Appendix for valid values.  Upper-case two-letter string.
-    *
-    * @return string
-    */
+     * The pickup country or territory code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.  Upper-case two-letter string.
+     *
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;

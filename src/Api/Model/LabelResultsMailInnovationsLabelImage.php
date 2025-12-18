@@ -43,11 +43,11 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
      */
     protected $internationalSignatureGraphicImage;
     /**
-    * This is only returned if the label link is requested to be returned and only at the first package result  Applicable for following types of shipments:
-    Print/Electronic Return Label
-    *
-    * @var string
-    */
+     * This is only returned if the label link is requested to be returned and only at the first package result  Applicable for following types of shipments:
+     * Print/Electronic Return Label
+     *
+     * @var string
+     */
     protected $uRL;
     /**
      * The format of a label image byte stream.
@@ -160,11 +160,11 @@ class LabelResultsMailInnovationsLabelImage extends \ArrayObject
         return $this;
     }
     /**
-    * This is only returned if the label link is requested to be returned and only at the first package result  Applicable for following types of shipments:
-    Print/Electronic Return Label
-    *
-    * @return string
-    */
+     * This is only returned if the label link is requested to be returned and only at the first package result  Applicable for following types of shipments:
+     * Print/Electronic Return Label
+     *
+     * @return string
+     */
     public function getURL(): string
     {
         return $this->uRL;

@@ -31,18 +31,18 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
      */
     protected $addressLine;
     /**
-    * If this node is present the following tags will be ignored:
-    
-    - Political Division 2
-    - Political Division 1
-    - PostcodePrimaryLow
-    - PostcodeExtendedLow
-    
-    Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
-    
-    *
-    * @var string
-    */
+     * If this node is present the following tags will be ignored:
+     * 
+     * - Political Division 2
+     * - Political Division 1
+     * - PostcodePrimaryLow
+     * - PostcodeExtendedLow
+     * 
+     * Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
+     * 
+     *
+     * @var string
+     */
     protected $region;
     /**
      * City or Town name.
@@ -147,18 +147,18 @@ class XAVRequestAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * If this node is present the following tags will be ignored:
-    
-    - Political Division 2
-    - Political Division 1
-    - PostcodePrimaryLow
-    - PostcodeExtendedLow
-    
-    Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
-    
-    *
-    * @return string
-    */
+     * If this node is present the following tags will be ignored:
+     * 
+     * - Political Division 2
+     * - Political Division 1
+     * - PostcodePrimaryLow
+     * - PostcodeExtendedLow
+     * 
+     * Valid only for US or PR origins only.  Using this tag for non US/PR origins may cause address format errors.
+     * 
+     *
+     * @return string
+     */
     public function getRegion(): string
     {
         return $this->region;

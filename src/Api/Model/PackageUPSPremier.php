@@ -13,12 +13,12 @@ class PackageUPSPremier extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * UPS Premier Category.  Valid values are 01,02,03 UPS Premier Silver -01
-    UPS Premier Gold - 02
-    UPS Premier Platinum - 03
-    *
-    * @var string
-    */
+     * UPS Premier Category.  Valid values are 01,02,03 UPS Premier Silver -01
+     * UPS Premier Gold - 02
+     * UPS Premier Platinum - 03
+     *
+     * @var string
+     */
     protected $category;
     /**
      * SensorID is RFID for UPS Premier Silver. SensorID is MeshID for UPS Premier Gold or UPS Premier Platinum Package.
@@ -33,12 +33,12 @@ class PackageUPSPremier extends \ArrayObject
      */
     protected $handlingInstructions;
     /**
-    * UPS Premier Category.  Valid values are 01,02,03 UPS Premier Silver -01
-    UPS Premier Gold - 02
-    UPS Premier Platinum - 03
-    *
-    * @return string
-    */
+     * UPS Premier Category.  Valid values are 01,02,03 UPS Premier Silver -01
+     * UPS Premier Gold - 02
+     * UPS Premier Platinum - 03
+     *
+     * @return string
+     */
     public function getCategory(): string
     {
         return $this->category;

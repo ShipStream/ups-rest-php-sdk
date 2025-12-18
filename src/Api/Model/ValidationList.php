@@ -13,14 +13,10 @@ class ValidationList extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<string>
      */
     protected $invalidFieldList;
     /**
-     * 
-     *
      * @var list<string>
      */
     protected $invalidFieldListCodes;
@@ -37,8 +33,6 @@ class ValidationList extends \ArrayObject
      */
     protected $originAmbiguous;
     /**
-     * 
-     *
      * @return list<string>
      */
     public function getInvalidFieldList(): array
@@ -46,8 +40,6 @@ class ValidationList extends \ArrayObject
         return $this->invalidFieldList;
     }
     /**
-     * 
-     *
      * @param list<string> $invalidFieldList
      *
      * @return self
@@ -59,8 +51,6 @@ class ValidationList extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<string>
      */
     public function getInvalidFieldListCodes(): array
@@ -68,8 +58,6 @@ class ValidationList extends \ArrayObject
         return $this->invalidFieldListCodes;
     }
     /**
-     * 
-     *
      * @param list<string> $invalidFieldListCodes
      *
      * @return self

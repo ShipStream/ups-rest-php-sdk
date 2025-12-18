@@ -43,11 +43,11 @@ class LocatorRequest extends \ArrayObject
      */
     protected $locationID;
     /**
-    * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations. 
-    Only relevant when the user requests a Location search (request option 1).
-    *
-    * @var LocatorRequestLocationSearchCriteria
-    */
+     * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations.
+     * Only relevant when the user requests a Location search (request option 1).
+     *
+     * @var LocatorRequestLocationSearchCriteria
+     */
     protected $locationSearchCriteria;
     /**
      * Container for Sort Criteria
@@ -62,16 +62,16 @@ class LocatorRequest extends \ArrayObject
      */
     protected $allowAllConfidenceLevels;
     /**
-    * Valid values: 
-    01-Proximity Search Details
-    02-Address Search Details
-    03-Proximity Search Summary
-    04-Address Search Summary
-    05-Freight Will Call Search. 
-    Either OptionType 03 or 04 is required.
-    *
-    * @var string
-    */
+     * Valid values:
+     * 01-Proximity Search Details
+     * 02-Address Search Details
+     * 03-Proximity Search Summary
+     * 04-Address Search Summary
+     * 05-Freight Will Call Search.
+     * Either OptionType 03 or 04 is required.
+     *
+     * @var string
+     */
     protected $searchOptionCode;
     /**
      * ServiceGeoUnit Container. Required to search for the freight facility information
@@ -196,11 +196,11 @@ class LocatorRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations. 
-    Only relevant when the user requests a Location search (request option 1).
-    *
-    * @return LocatorRequestLocationSearchCriteria
-    */
+     * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations.
+     * Only relevant when the user requests a Location search (request option 1).
+     *
+     * @return LocatorRequestLocationSearchCriteria
+     */
     public function getLocationSearchCriteria(): LocatorRequestLocationSearchCriteria
     {
         return $this->locationSearchCriteria;
@@ -264,16 +264,16 @@ class LocatorRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Valid values: 
-    01-Proximity Search Details
-    02-Address Search Details
-    03-Proximity Search Summary
-    04-Address Search Summary
-    05-Freight Will Call Search. 
-    Either OptionType 03 or 04 is required.
-    *
-    * @return string
-    */
+     * Valid values:
+     * 01-Proximity Search Details
+     * 02-Address Search Details
+     * 03-Proximity Search Summary
+     * 04-Address Search Summary
+     * 05-Freight Will Call Search.
+     * Either OptionType 03 or 04 is required.
+     *
+     * @return string
+     */
     public function getSearchOptionCode(): string
     {
         return $this->searchOptionCode;

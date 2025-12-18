@@ -13,8 +13,6 @@ class ShipmentPaymentInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<PaymentInformationShipmentCharge>
      */
     protected $shipmentCharge;
@@ -25,8 +23,6 @@ class ShipmentPaymentInformation extends \ArrayObject
      */
     protected $splitDutyVATIndicator;
     /**
-     * 
-     *
      * @return list<PaymentInformationShipmentCharge>
      */
     public function getShipmentCharge(): array
@@ -34,8 +30,6 @@ class ShipmentPaymentInformation extends \ArrayObject
         return $this->shipmentCharge;
     }
     /**
-     * 
-     *
      * @param list<PaymentInformationShipmentCharge> $shipmentCharge
      *
      * @return self

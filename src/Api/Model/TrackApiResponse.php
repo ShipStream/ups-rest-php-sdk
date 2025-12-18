@@ -13,14 +13,10 @@ class TrackApiResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var TrackResponse
      */
     protected $trackResponse;
     /**
-     * 
-     *
      * @return TrackResponse
      */
     public function getTrackResponse(): TrackResponse
@@ -28,8 +24,6 @@ class TrackApiResponse extends \ArrayObject
         return $this->trackResponse;
     }
     /**
-     * 
-     *
      * @param TrackResponse $trackResponse
      *
      * @return self

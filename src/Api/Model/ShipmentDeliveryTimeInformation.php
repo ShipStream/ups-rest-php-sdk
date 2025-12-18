@@ -13,17 +13,17 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid values are:
-    - 02 - Document only
-    - 03 - Non-Document
-    - 04 - WWEF Pallet
-    - 07 - Domestic Pallet
-    
-    If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
-    
-    *
-    * @var string
-    */
+     * Valid values are:
+     * - 02 - Document only
+     * - 03 - Non-Document
+     * - 04 - WWEF Pallet
+     * - 07 - Domestic Pallet
+     * 
+     * If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
+     * 
+     *
+     * @var string
+     */
     protected $packageBillType;
     /**
      * Pickup container.
@@ -32,23 +32,21 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
      */
     protected $pickup;
     /**
-     * 
-     *
      * @var list<DeliveryTimeInformationReturnContractServices>
      */
     protected $returnContractServices;
     /**
-    * Valid values are:
-    - 02 - Document only
-    - 03 - Non-Document
-    - 04 - WWEF Pallet
-    - 07 - Domestic Pallet
-    
-    If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
-    
-    *
-    * @return string
-    */
+     * Valid values are:
+     * - 02 - Document only
+     * - 03 - Non-Document
+     * - 04 - WWEF Pallet
+     * - 07 - Domestic Pallet
+     * 
+     * If 04 is included, Worldwide Express Freight and UPS Worldwide Express Freight Midday services (if applicable) will be included in the response.
+     * 
+     *
+     * @return string
+     */
     public function getPackageBillType(): string
     {
         return $this->packageBillType;
@@ -96,8 +94,6 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<DeliveryTimeInformationReturnContractServices>
      */
     public function getReturnContractServices(): array
@@ -105,8 +101,6 @@ class ShipmentDeliveryTimeInformation extends \ArrayObject
         return $this->returnContractServices;
     }
     /**
-     * 
-     *
      * @param list<DeliveryTimeInformationReturnContractServices> $returnContractServices
      *
      * @return self

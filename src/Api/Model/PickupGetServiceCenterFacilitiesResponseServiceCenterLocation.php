@@ -13,8 +13,6 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<ServiceCenterLocationDropOffFacilities>
      */
     protected $dropOffFacilities;
@@ -25,8 +23,6 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
      */
     protected $pickupFacilities;
     /**
-     * 
-     *
      * @return list<ServiceCenterLocationDropOffFacilities>
      */
     public function getDropOffFacilities(): array
@@ -34,8 +30,6 @@ class PickupGetServiceCenterFacilitiesResponseServiceCenterLocation extends \Arr
         return $this->dropOffFacilities;
     }
     /**
-     * 
-     *
      * @param list<ServiceCenterLocationDropOffFacilities> $dropOffFacilities
      *
      * @return self

@@ -61,12 +61,12 @@ class ShipmentPackage extends \ArrayObject
      */
     protected $packageWeight;
     /**
-    * Presence of the indicator mentions that the package is Large Package.
-    
-    This is an empty tag, any value inside is ignored.
-    *
-    * @var string
-    */
+     * Presence of the indicator mentions that the package is Large Package.
+     * 
+     * This is an empty tag, any value inside is ignored.
+     *
+     * @var string
+     */
     protected $largePackageIndicator;
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, indicates that the package is over size.   Applicable for UPS Worldwide Economy DDU service.
@@ -81,8 +81,6 @@ class ShipmentPackage extends \ArrayObject
      */
     protected $minimumBillableWeightIndicator;
     /**
-     * 
-     *
      * @var list<PackageReferenceNumber>
      */
     protected $referenceNumber;
@@ -299,12 +297,12 @@ class ShipmentPackage extends \ArrayObject
         return $this;
     }
     /**
-    * Presence of the indicator mentions that the package is Large Package.
-    
-    This is an empty tag, any value inside is ignored.
-    *
-    * @return string
-    */
+     * Presence of the indicator mentions that the package is Large Package.
+     * 
+     * This is an empty tag, any value inside is ignored.
+     *
+     * @return string
+     */
     public function getLargePackageIndicator(): string
     {
         return $this->largePackageIndicator;
@@ -369,8 +367,6 @@ class ShipmentPackage extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PackageReferenceNumber>
      */
     public function getReferenceNumber(): array
@@ -378,8 +374,6 @@ class ShipmentPackage extends \ArrayObject
         return $this->referenceNumber;
     }
     /**
-     * 
-     *
      * @param list<PackageReferenceNumber> $referenceNumber
      *
      * @return self

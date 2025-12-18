@@ -13,13 +13,13 @@ class SubscriptionFileStatusType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Status types of subscription file. Valid values:
-    - R – Read
-    - U - Unread
-    
-    *
-    * @var string
-    */
+     * Status types of subscription file. Valid values:
+     * - R – Read
+     * - U - Unread
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of a subscription file.
@@ -28,13 +28,13 @@ class SubscriptionFileStatusType extends \ArrayObject
      */
     protected $description;
     /**
-    * Status types of subscription file. Valid values:
-    - R – Read
-    - U - Unread
-    
-    *
-    * @return string
-    */
+     * Status types of subscription file. Valid values:
+     * - R – Read
+     * - U - Unread
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

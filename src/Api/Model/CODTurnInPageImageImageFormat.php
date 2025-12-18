@@ -13,16 +13,16 @@ class CODTurnInPageImageImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Format code of the generated COD Turn In Page.
-    
-    Valid values:
-    - HTML = HTML format.
-    
-    Only HTML format is supported for COD Turn In Page.
-    
-    *
-    * @var string
-    */
+     * Format code of the generated COD Turn In Page.
+     * 
+     * Valid values:
+     * - HTML = HTML format.
+     * 
+     * Only HTML format is supported for COD Turn In Page.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the form image format code.
@@ -31,16 +31,16 @@ class CODTurnInPageImageImageFormat extends \ArrayObject
      */
     protected $description;
     /**
-    * Format code of the generated COD Turn In Page.
-    
-    Valid values:
-    - HTML = HTML format.
-    
-    Only HTML format is supported for COD Turn In Page.
-    
-    *
-    * @return string
-    */
+     * Format code of the generated COD Turn In Page.
+     * 
+     * Valid values:
+     * - HTML = HTML format.
+     * 
+     * Only HTML format is supported for COD Turn In Page.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

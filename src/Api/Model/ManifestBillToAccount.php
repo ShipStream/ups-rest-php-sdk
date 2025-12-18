@@ -13,15 +13,15 @@ class ManifestBillToAccount extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates how shipping charges for the package were billed. Valid values:
-    - 01 - Shipper
-    - 02 - Consignee Billing
-    - 03 - Third Party
-    - 04 - Freight Collect
-    
-    *
-    * @var string
-    */
+     * Indicates how shipping charges for the package were billed. Valid values:
+     * - 01 - Shipper
+     * - 02 - Consignee Billing
+     * - 03 - Third Party
+     * - 04 - Freight Collect
+     * 
+     *
+     * @var string
+     */
     protected $option;
     /**
      * The UPS Account number to which the shipping charges were billed.
@@ -30,15 +30,15 @@ class ManifestBillToAccount extends \ArrayObject
      */
     protected $number;
     /**
-    * Indicates how shipping charges for the package were billed. Valid values:
-    - 01 - Shipper
-    - 02 - Consignee Billing
-    - 03 - Third Party
-    - 04 - Freight Collect
-    
-    *
-    * @return string
-    */
+     * Indicates how shipping charges for the package were billed. Valid values:
+     * - 01 - Shipper
+     * - 02 - Consignee Billing
+     * - 03 - Third Party
+     * - 04 - Freight Collect
+     * 
+     *
+     * @return string
+     */
     public function getOption(): string
     {
         return $this->option;

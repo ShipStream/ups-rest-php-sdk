@@ -19,18 +19,18 @@ class HandlingChargeAmount extends \ArrayObject
      */
     protected $currencyCode;
     /**
-    * Handling Charge amount.
-    Negative value allowed.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @var string
-    */
+     * Handling Charge amount.
+     * Negative value allowed.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @var string
+     */
     protected $monetaryValue;
     /**
      * Handling charge amount currency type.
@@ -55,18 +55,18 @@ class HandlingChargeAmount extends \ArrayObject
         return $this;
     }
     /**
-    * Handling Charge amount.
-    Negative value allowed.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @return string
-    */
+     * Handling Charge amount.
+     * Negative value allowed.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @return string
+     */
     public function getMonetaryValue(): string
     {
         return $this->monetaryValue;

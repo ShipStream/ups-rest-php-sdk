@@ -13,8 +13,6 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<LocationSearchCriteriaSearchOption>
      */
     protected $searchOption;
@@ -25,14 +23,14 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      */
     protected $maximumListSize;
     /**
-    * Defines the maximum radius the user wishes to search for a UPS location. If the user does not specify, the default value is 100 miles. Whole numbers only. 
-    
-    Valid values are:
-    5-100 for UnitOfMeasure MI
-    5-150 for UnitOfMesaure KM
-    *
-    * @var string
-    */
+     * Defines the maximum radius the user wishes to search for a UPS location. If the user does not specify, the default value is 100 miles. Whole numbers only.
+     * 
+     * Valid values are:
+     * 5-100 for UnitOfMeasure MI
+     * 5-150 for UnitOfMesaure KM
+     *
+     * @var string
+     */
     protected $searchRadius;
     /**
      * Allows for users to further define the search criteria. Refer to the rules specified in Service Search section.
@@ -65,8 +63,6 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
      */
     protected $brexitFilter;
     /**
-     * 
-     *
      * @return list<LocationSearchCriteriaSearchOption>
      */
     public function getSearchOption(): array
@@ -74,8 +70,6 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
         return $this->searchOption;
     }
     /**
-     * 
-     *
      * @param list<LocationSearchCriteriaSearchOption> $searchOption
      *
      * @return self
@@ -109,14 +103,14 @@ class LocatorRequestLocationSearchCriteria extends \ArrayObject
         return $this;
     }
     /**
-    * Defines the maximum radius the user wishes to search for a UPS location. If the user does not specify, the default value is 100 miles. Whole numbers only. 
-    
-    Valid values are:
-    5-100 for UnitOfMeasure MI
-    5-150 for UnitOfMesaure KM
-    *
-    * @return string
-    */
+     * Defines the maximum radius the user wishes to search for a UPS location. If the user does not specify, the default value is 100 miles. Whole numbers only.
+     * 
+     * Valid values are:
+     * 5-100 for UnitOfMeasure MI
+     * 5-150 for UnitOfMesaure KM
+     *
+     * @return string
+     */
     public function getSearchRadius(): string
     {
         return $this->searchRadius;

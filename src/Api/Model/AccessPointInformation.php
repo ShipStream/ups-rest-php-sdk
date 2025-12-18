@@ -13,14 +13,10 @@ class AccessPointInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var string
      */
     protected $pickupByDate;
     /**
-     * 
-     *
      * @return string
      */
     public function getPickupByDate(): string
@@ -28,8 +24,6 @@ class AccessPointInformation extends \ArrayObject
         return $this->pickupByDate;
     }
     /**
-     * 
-     *
      * @param string $pickupByDate
      *
      * @return self

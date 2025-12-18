@@ -37,8 +37,6 @@ class Activity extends \ArrayObject
      */
     protected $gmtTime;
     /**
-     * 
-     *
      * @var Location
      */
     protected $location;
@@ -143,8 +141,6 @@ class Activity extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return Location
      */
     public function getLocation(): Location
@@ -152,8 +148,6 @@ class Activity extends \ArrayObject
         return $this->location;
     }
     /**
-     * 
-     *
      * @param Location $location
      *
      * @return self
