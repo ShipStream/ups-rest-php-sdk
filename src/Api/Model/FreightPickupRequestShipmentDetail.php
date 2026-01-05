@@ -13,11 +13,11 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
-    Required if one or more commodities within the shipment is hazardous.
-    *
-    * @var string
-    */
+     * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
+     * Required if one or more commodities within the shipment is hazardous.
+     *
+     * @var string
+     */
     protected $hazmatIndicator;
     /**
      * PackagingType Container.
@@ -44,11 +44,11 @@ class FreightPickupRequestShipmentDetail extends \ArrayObject
      */
     protected $weight;
     /**
-    * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
-    Required if one or more commodities within the shipment is hazardous.
-    *
-    * @return string
-    */
+     * The presence of the tag HazmatIndicator indicates that the commodity is of type dangerous goods.
+     * Required if one or more commodities within the shipment is hazardous.
+     *
+     * @return string
+     */
     public function getHazmatIndicator(): string
     {
         return $this->hazmatIndicator;

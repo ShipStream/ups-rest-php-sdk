@@ -13,25 +13,25 @@ class OverSeasLegValue extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Dimensions Value Cube Container.
-    Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
-    *
-    * @var ValueCube
-    */
+     * Dimensions Value Cube Container.
+     * Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
+     *
+     * @var ValueCube
+     */
     protected $cube;
     /**
-    * Dimensions Value CWT Container.
-    Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
-    *
-    * @var ValueCWT
-    */
+     * Dimensions Value CWT Container.
+     * Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
+     *
+     * @var ValueCWT
+     */
     protected $cWT;
     /**
-    * Dimensions Value Cube Container.
-    Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
-    *
-    * @return ValueCube
-    */
+     * Dimensions Value Cube Container.
+     * Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
+     *
+     * @return ValueCube
+     */
     public function getCube(): ValueCube
     {
         return $this->cube;
@@ -51,11 +51,11 @@ class OverSeasLegValue extends \ArrayObject
         return $this;
     }
     /**
-    * Dimensions Value CWT Container.
-    Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
-    *
-    * @return ValueCWT
-    */
+     * Dimensions Value CWT Container.
+     * Request should contain PricerPerCubicFoot, PricerPerCWT, or both.
+     *
+     * @return ValueCWT
+     */
     public function getCWT(): ValueCWT
     {
         return $this->cWT;

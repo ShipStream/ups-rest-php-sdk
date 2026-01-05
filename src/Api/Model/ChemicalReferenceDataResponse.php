@@ -19,8 +19,6 @@ class ChemicalReferenceDataResponse extends \ArrayObject
      */
     protected $response;
     /**
-     * 
-     *
      * @var list<ChemicalReferenceDataResponseChemicalData>
      */
     protected $chemicalData;
@@ -47,8 +45,6 @@ class ChemicalReferenceDataResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ChemicalReferenceDataResponseChemicalData>
      */
     public function getChemicalData(): array
@@ -56,8 +52,6 @@ class ChemicalReferenceDataResponse extends \ArrayObject
         return $this->chemicalData;
     }
     /**
-     * 
-     *
      * @param list<ChemicalReferenceDataResponseChemicalData> $chemicalData
      *
      * @return self

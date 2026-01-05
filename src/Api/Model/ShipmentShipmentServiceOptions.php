@@ -31,12 +31,12 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $cOD;
     /**
-    * Access Point COD indicates COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Shipment Access Point COD is valid only for countries or territories within E.U. 
-    Not valid with (Shipment) COD. 
-    Not available to shipment with return service.
-    *
-    * @var ShipmentServiceOptionsAccessPointCOD
-    */
+     * Access Point COD indicates COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Shipment Access Point COD is valid only for countries or territories within E.U.
+     * Not valid with (Shipment) COD.
+     * Not available to shipment with return service.
+     *
+     * @var ShipmentServiceOptionsAccessPointCOD
+     */
     protected $accessPointCOD;
     /**
      * Presence/Absence Indicator. Any value inside is ignored. DeliverToAddresseeOnlyIndicator is shipper specified restriction that requires the addressee to be the one who takes final delivery of the "Hold For PickUp at UPS Access Point" package. Presence of indicator means shipper restriction will apply to the shipment.  Only valid for Shipment Indication type "01 - Hold For PickUp at UPS Access Point".
@@ -51,8 +51,6 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $directDeliveryOnlyIndicator;
     /**
-     * 
-     *
      * @var list<ShipmentServiceOptionsNotification>
      */
     protected $notification;
@@ -69,12 +67,12 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $internationalForms;
     /**
-    * Delivery Confirmation container.   Valid for forward shipments only.
-    
-    Refer to Delivery Confirmation Origin-Destination Pairs in the Appendix for a list of valid values.
-    *
-    * @var ShipmentServiceOptionsDeliveryConfirmation
-    */
+     * Delivery Confirmation container.   Valid for forward shipments only.
+     * 
+     * Refer to Delivery Confirmation Origin-Destination Pairs in the Appendix for a list of valid values.
+     *
+     * @var ShipmentServiceOptionsDeliveryConfirmation
+     */
     protected $deliveryConfirmation;
     /**
      * The flag indicates the ReturnOfDocument accessorial has been requested.  Valid for Poland to Poland forward shipment only.
@@ -107,8 +105,6 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $uPScarbonneutralIndicator;
     /**
-     * 
-     *
      * @var list<ShipmentServiceOptionsPreAlertNotification>
      */
     protected $preAlertNotification;
@@ -131,24 +127,24 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $dropoffAtUPSFacilityIndicator;
     /**
-    * Lift Gate For Pick Up indicator. The empty tag means indicator is present.  Lift Gate for Pickup is not allowed with Drop Off At UPS Facility for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    When both Hold for Pickup and Drop Off At Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
-    *
-    * @var string
-    */
+     * Lift Gate For Pick Up indicator. The empty tag means indicator is present.  Lift Gate for Pickup is not allowed with Drop Off At UPS Facility for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * When both Hold for Pickup and Drop Off At Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
+     *
+     * @var string
+     */
     protected $liftGateForPickUpIndicator;
     /**
-    * Lift Gate For Delivery indicator. The empty tag means indicator is present.  Lift Gate for Delivery is not allowed with Hold For Pickup for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    When both Hold for Pickup and Drop Off At UPS Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
-    *
-    * @var string
-    */
+     * Lift Gate For Delivery indicator. The empty tag means indicator is present.  Lift Gate for Delivery is not allowed with Hold For Pickup for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * When both Hold for Pickup and Drop Off At UPS Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
+     *
+     * @var string
+     */
     protected $liftGateForDeliveryIndicator;
     /**
      * The presence of the tag SDLShipmentIndicator indicates Shipment is SDL. SDLShipmentIndicator presence means EEI form/ EEI Filing option required.
@@ -169,14 +165,14 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
      */
     protected $restrictedArticles;
     /**
-    * Inside delivery accessory. Valid values:
-    01 - White Glove
-    02 - Room of Choice
-    03 - Installation
-    Default is Room of Choice.  Shippers account needs to have a valid contract for Heavy Goods Service.
-    *
-    * @var string
-    */
+     * Inside delivery accessory. Valid values:
+     * 01 - White Glove
+     * 02 - Room of Choice
+     * 03 - Installation
+     * Default is Room of Choice.  Shippers account needs to have a valid contract for Heavy Goods Service.
+     *
+     * @var string
+     */
     protected $insideDelivery;
     /**
      * Presence/Absence indicator. True if present; false otherwise. Any value is ignored. If present, indicates that the customer would like items disposed.  Shippers account needs to have a valid contract for Heavy Goods Service.
@@ -251,12 +247,12 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Access Point COD indicates COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Shipment Access Point COD is valid only for countries or territories within E.U. 
-    Not valid with (Shipment) COD. 
-    Not available to shipment with return service.
-    *
-    * @return ShipmentServiceOptionsAccessPointCOD
-    */
+     * Access Point COD indicates COD is requested for a shipment.  Valid only for "01 - Hold For Pickup At UPS Access Point" Shipment Indication type. Shipment Access Point COD is valid only for countries or territories within E.U.
+     * Not valid with (Shipment) COD.
+     * Not available to shipment with return service.
+     *
+     * @return ShipmentServiceOptionsAccessPointCOD
+     */
     public function getAccessPointCOD(): ShipmentServiceOptionsAccessPointCOD
     {
         return $this->accessPointCOD;
@@ -321,8 +317,6 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentServiceOptionsNotification>
      */
     public function getNotification(): array
@@ -330,8 +324,6 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this->notification;
     }
     /**
-     * 
-     *
      * @param list<ShipmentServiceOptionsNotification> $notification
      *
      * @return self
@@ -387,12 +379,12 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Delivery Confirmation container.   Valid for forward shipments only.
-    
-    Refer to Delivery Confirmation Origin-Destination Pairs in the Appendix for a list of valid values.
-    *
-    * @return ShipmentServiceOptionsDeliveryConfirmation
-    */
+     * Delivery Confirmation container.   Valid for forward shipments only.
+     * 
+     * Refer to Delivery Confirmation Origin-Destination Pairs in the Appendix for a list of valid values.
+     *
+     * @return ShipmentServiceOptionsDeliveryConfirmation
+     */
     public function getDeliveryConfirmation(): ShipmentServiceOptionsDeliveryConfirmation
     {
         return $this->deliveryConfirmation;
@@ -523,8 +515,6 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentServiceOptionsPreAlertNotification>
      */
     public function getPreAlertNotification(): array
@@ -532,8 +522,6 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this->preAlertNotification;
     }
     /**
-     * 
-     *
      * @param list<ShipmentServiceOptionsPreAlertNotification> $preAlertNotification
      *
      * @return self
@@ -611,14 +599,14 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Lift Gate For Pick Up indicator. The empty tag means indicator is present.  Lift Gate for Pickup is not allowed with Drop Off At UPS Facility for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    When both Hold for Pickup and Drop Off At Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
-    *
-    * @return string
-    */
+     * Lift Gate For Pick Up indicator. The empty tag means indicator is present.  Lift Gate for Pickup is not allowed with Drop Off At UPS Facility for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * When both Hold for Pickup and Drop Off At Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
+     *
+     * @return string
+     */
     public function getLiftGateForPickUpIndicator(): string
     {
         return $this->liftGateForPickUpIndicator;
@@ -641,14 +629,14 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Lift Gate For Delivery indicator. The empty tag means indicator is present.  Lift Gate for Delivery is not allowed with Hold For Pickup for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    When both Hold for Pickup and Drop Off At UPS Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment. 
-    
-    This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
-    *
-    * @return string
-    */
+     * Lift Gate For Delivery indicator. The empty tag means indicator is present.  Lift Gate for Delivery is not allowed with Hold For Pickup for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * When both Hold for Pickup and Drop Off At UPS Facility are selected, neither of the Lift Gate accessorial (Pick Up or Delivery) are allowed for a UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday shipment.
+     * 
+     * This accessorial is only valid for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday Shipment.
+     *
+     * @return string
+     */
     public function getLiftGateForDeliveryIndicator(): string
     {
         return $this->liftGateForDeliveryIndicator;
@@ -737,14 +725,14 @@ class ShipmentShipmentServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * Inside delivery accessory. Valid values:
-    01 - White Glove
-    02 - Room of Choice
-    03 - Installation
-    Default is Room of Choice.  Shippers account needs to have a valid contract for Heavy Goods Service.
-    *
-    * @return string
-    */
+     * Inside delivery accessory. Valid values:
+     * 01 - White Glove
+     * 02 - Room of Choice
+     * 03 - Installation
+     * Default is Room of Choice.  Shippers account needs to have a valid contract for Heavy Goods Service.
+     *
+     * @return string
+     */
     public function getInsideDelivery(): string
     {
         return $this->insideDelivery;

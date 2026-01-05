@@ -19,18 +19,18 @@ class ReferenceWeight extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-    * The value for the total weight associated with this reference.
-    
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @var string
-    */
+     * The value for the total weight associated with this reference.
+     * 
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @var string
+     */
     protected $value;
     /**
      * Reference Weight UnitOfMeasurement Container.
@@ -55,18 +55,18 @@ class ReferenceWeight extends \ArrayObject
         return $this;
     }
     /**
-    * The value for the total weight associated with this reference.
-    
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @return string
-    */
+     * The value for the total weight associated with this reference.
+     * 
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;

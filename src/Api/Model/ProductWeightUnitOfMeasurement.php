@@ -13,13 +13,13 @@ class ProductWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for unit of Measurement of weight.  Applies to CO and EEI forms only.  Valid values:
-    - KGS
-    - LBS
-    
-    *
-    * @var string
-    */
+     * Code for unit of Measurement of weight.  Applies to CO and EEI forms only.  Valid values:
+     * - KGS
+     * - LBS
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the Unit of Measure.
@@ -28,13 +28,13 @@ class ProductWeightUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for unit of Measurement of weight.  Applies to CO and EEI forms only.  Valid values:
-    - KGS
-    - LBS
-    
-    *
-    * @return string
-    */
+     * Code for unit of Measurement of weight.  Applies to CO and EEI forms only.  Valid values:
+     * - KGS
+     * - LBS
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

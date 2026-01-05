@@ -19,8 +19,6 @@ class FreightRateResponseResponse extends \ArrayObject
      */
     protected $responseStatus;
     /**
-     * 
-     *
      * @var list<ResponseAlert>
      */
     protected $alert;
@@ -53,8 +51,6 @@ class FreightRateResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ResponseAlert>
      */
     public function getAlert(): array
@@ -62,8 +58,6 @@ class FreightRateResponseResponse extends \ArrayObject
         return $this->alert;
     }
     /**
-     * 
-     *
      * @param list<ResponseAlert> $alert
      *
      * @return self

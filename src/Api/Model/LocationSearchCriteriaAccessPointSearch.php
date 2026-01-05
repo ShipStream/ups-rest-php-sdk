@@ -19,12 +19,12 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
      */
     protected $publicAccessPointID;
     /**
-    * Status of UPS Access Point. Valid values are: 
-    01-Active-available
-    07-Active-unavailable.
-    *
-    * @var string
-    */
+     * Status of UPS Access Point. Valid values are:
+     * 01-Active-available
+     * 07-Active-unavailable.
+     *
+     * @var string
+     */
     protected $accessPointStatus;
     /**
      * The account number to use for UPS Access Point Search in the country or territory. Used to locate a private network for the account. Once this parameter is present any access point address or geocode search is ignored. It cannot be combined with PublicAccessPointID search parameter.
@@ -79,12 +79,12 @@ class LocationSearchCriteriaAccessPointSearch extends \ArrayObject
         return $this;
     }
     /**
-    * Status of UPS Access Point. Valid values are: 
-    01-Active-available
-    07-Active-unavailable.
-    *
-    * @return string
-    */
+     * Status of UPS Access Point. Valid values are:
+     * 01-Active-available
+     * 07-Active-unavailable.
+     *
+     * @return string
+     */
     public function getAccessPointStatus(): string
     {
         return $this->accessPointStatus;

@@ -13,15 +13,15 @@ class ShipmentServiceOptionsLabelMethod extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid LabelMethod types are:
-    01 = ImportControl Print and Mail
-    02 = ImportControl One-Attempt
-    03 = ImportControl Three-Attempt
-    04 = ImportControl Electronic Label
-    05 = ImportControl Print Label
-    *
-    * @var string
-    */
+     * Valid LabelMethod types are:
+     * 01 = ImportControl Print and Mail
+     * 02 = ImportControl One-Attempt
+     * 03 = ImportControl Three-Attempt
+     * 04 = ImportControl Electronic Label
+     * 05 = ImportControl Print Label
+     *
+     * @var string
+     */
     protected $code;
     /**
      * LabelMethod description.
@@ -30,15 +30,15 @@ class ShipmentServiceOptionsLabelMethod extends \ArrayObject
      */
     protected $description;
     /**
-    * Valid LabelMethod types are:
-    01 = ImportControl Print and Mail
-    02 = ImportControl One-Attempt
-    03 = ImportControl Three-Attempt
-    04 = ImportControl Electronic Label
-    05 = ImportControl Print Label
-    *
-    * @return string
-    */
+     * Valid LabelMethod types are:
+     * 01 = ImportControl Print and Mail
+     * 02 = ImportControl One-Attempt
+     * 03 = ImportControl Three-Attempt
+     * 04 = ImportControl Electronic Label
+     * 05 = ImportControl Print Label
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

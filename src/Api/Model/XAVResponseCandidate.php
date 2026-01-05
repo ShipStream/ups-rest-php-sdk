@@ -19,8 +19,6 @@ class XAVResponseCandidate extends \ArrayObject
      */
     protected $addressClassification;
     /**
-     * 
-     *
      * @var list<CandidateAddressKeyFormat>
      */
     protected $addressKeyFormat;
@@ -47,8 +45,6 @@ class XAVResponseCandidate extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<CandidateAddressKeyFormat>
      */
     public function getAddressKeyFormat(): array
@@ -56,8 +52,6 @@ class XAVResponseCandidate extends \ArrayObject
         return $this->addressKeyFormat;
     }
     /**
-     * 
-     *
      * @param list<CandidateAddressKeyFormat> $addressKeyFormat
      *
      * @return self

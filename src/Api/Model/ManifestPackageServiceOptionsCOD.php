@@ -13,13 +13,13 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code associated with the type of COD. Valid values:
-    1 - Regular COD
-    2 - Express COD
-    3 - Tagless COD
-    *
-    * @var string
-    */
+     * The code associated with the type of COD. Valid values:
+     * 1 - Regular COD
+     * 2 - Express COD
+     * 3 - Tagless COD
+     *
+     * @var string
+     */
     protected $cODCode;
     /**
      * COD Amount container.
@@ -28,13 +28,13 @@ class ManifestPackageServiceOptionsCOD extends \ArrayObject
      */
     protected $cODAmount;
     /**
-    * The code associated with the type of COD. Valid values:
-    1 - Regular COD
-    2 - Express COD
-    3 - Tagless COD
-    *
-    * @return string
-    */
+     * The code associated with the type of COD. Valid values:
+     * 1 - Regular COD
+     * 2 - Express COD
+     * 3 - Tagless COD
+     *
+     * @return string
+     */
     public function getCODCode(): string
     {
         return $this->cODCode;

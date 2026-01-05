@@ -25,8 +25,6 @@ class UploadRequest extends \ArrayObject
      */
     protected $shipperNumber;
     /**
-     * 
-     *
      * @var list<UploadRequestUserCreatedForm>
      */
     protected $userCreatedForm;
@@ -75,8 +73,6 @@ class UploadRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<UploadRequestUserCreatedForm>
      */
     public function getUserCreatedForm(): array
@@ -84,8 +80,6 @@ class UploadRequest extends \ArrayObject
         return $this->userCreatedForm;
     }
     /**
-     * 
-     *
      * @param list<UploadRequestUserCreatedForm> $userCreatedForm
      *
      * @return self

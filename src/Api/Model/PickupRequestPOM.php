@@ -19,11 +19,11 @@ class PickupRequestPOM extends \ArrayObject
      */
     protected $pOMNumber;
     /**
-    * Identifies the kind of number used to identify the POM shipment.
-    For valid values, see POMNumberType Values in the Appendix.
-    *
-    * @var string
-    */
+     * Identifies the kind of number used to identify the POM shipment.
+     * For valid values, see POMNumberType Values in the Appendix.
+     *
+     * @var string
+     */
     protected $pOMNumberType;
     /**
      * Container for pre-pickup notifications events
@@ -54,11 +54,11 @@ class PickupRequestPOM extends \ArrayObject
         return $this;
     }
     /**
-    * Identifies the kind of number used to identify the POM shipment.
-    For valid values, see POMNumberType Values in the Appendix.
-    *
-    * @return string
-    */
+     * Identifies the kind of number used to identify the POM shipment.
+     * For valid values, see POMNumberType Values in the Appendix.
+     *
+     * @return string
+     */
     public function getPOMNumberType(): string
     {
         return $this->pOMNumberType;

@@ -14,14 +14,18 @@ class SubscriptionFileDelivery extends \ArrayObject
     }
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<DeliveryPackageReferenceNumber>
      */
     protected $packageReferenceNumber;
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<DeliveryShipmentReferenceNumber>
      */
@@ -94,7 +98,9 @@ class SubscriptionFileDelivery extends \ArrayObject
     protected $accessPointLocationID;
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<DeliveryPackageReferenceNumber>
      */
@@ -118,7 +124,9 @@ class SubscriptionFileDelivery extends \ArrayObject
     }
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<DeliveryShipmentReferenceNumber>
      */

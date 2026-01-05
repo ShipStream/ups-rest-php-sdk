@@ -13,17 +13,17 @@ class ControlLogReceiptImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for the type of Graphic Image for the High Value Report.
-    
-    Valid values:
-    - EPL = EPL2 (when user requests label in EPL2 format)
-    - SPL = SPL (when user requests label in SPL format)
-    - ZPL = ZPL (when user requests label in ZPL format)
-    - HTML= HTML (when user requests label in HTML format)
-    
-    *
-    * @var string
-    */
+     * Code for the type of Graphic Image for the High Value Report.
+     * 
+     * Valid values:
+     * - EPL = EPL2 (when user requests label in EPL2 format)
+     * - SPL = SPL (when user requests label in SPL format)
+     * - ZPL = ZPL (when user requests label in ZPL format)
+     * - HTML= HTML (when user requests label in HTML format)
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the format code.
@@ -32,17 +32,17 @@ class ControlLogReceiptImageFormat extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for the type of Graphic Image for the High Value Report.
-    
-    Valid values:
-    - EPL = EPL2 (when user requests label in EPL2 format)
-    - SPL = SPL (when user requests label in SPL format)
-    - ZPL = ZPL (when user requests label in ZPL format)
-    - HTML= HTML (when user requests label in HTML format)
-    
-    *
-    * @return string
-    */
+     * Code for the type of Graphic Image for the High Value Report.
+     * 
+     * Valid values:
+     * - EPL = EPL2 (when user requests label in EPL2 format)
+     * - SPL = SPL (when user requests label in SPL format)
+     * - ZPL = ZPL (when user requests label in ZPL format)
+     * - HTML= HTML (when user requests label in HTML format)
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

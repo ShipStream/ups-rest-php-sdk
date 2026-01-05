@@ -19,13 +19,13 @@ class ShipmentShipTo extends \ArrayObject
      */
     protected $name;
     /**
-    * Contact name at the consignee's location.  Required for: UPS Next Day Air® Early service, and when ShipTo country or territory is different than ShipFrom country or territory.
-    
-    Required if Invoice International form is requested.
-    
-    *
-    * @var string
-    */
+     * Contact name at the consignee's location.  Required for: UPS Next Day Air® Early service, and when ShipTo country or territory is different than ShipFrom country or territory.
+     * 
+     * Required if Invoice International form is requested.
+     * 
+     *
+     * @var string
+     */
     protected $attentionName;
     /**
      * Not applicable for ShipTo
@@ -92,13 +92,13 @@ class ShipmentShipTo extends \ArrayObject
         return $this;
     }
     /**
-    * Contact name at the consignee's location.  Required for: UPS Next Day Air® Early service, and when ShipTo country or territory is different than ShipFrom country or territory.
-    
-    Required if Invoice International form is requested.
-    
-    *
-    * @return string
-    */
+     * Contact name at the consignee's location.  Required for: UPS Next Day Air® Early service, and when ShipTo country or territory is different than ShipFrom country or territory.
+     * 
+     * Required if Invoice International form is requested.
+     * 
+     *
+     * @return string
+     */
     public function getAttentionName(): string
     {
         return $this->attentionName;

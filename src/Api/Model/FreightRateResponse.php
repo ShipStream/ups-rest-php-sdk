@@ -19,8 +19,6 @@ class FreightRateResponse extends \ArrayObject
      */
     protected $response;
     /**
-     * 
-     *
      * @var list<FreightRateResponseRate>
      */
     protected $rate;
@@ -31,8 +29,6 @@ class FreightRateResponse extends \ArrayObject
      */
     protected $freightDensityRate;
     /**
-     * 
-     *
      * @var list<FreightRateResponseCommodity>
      */
     protected $commodity;
@@ -73,8 +69,6 @@ class FreightRateResponse extends \ArrayObject
      */
     protected $minimumChargeAppliedIndicator;
     /**
-     * 
-     *
      * @var list<FreightRateResponseAlternateRatesResponse>
      */
     protected $alternateRatesResponse;
@@ -85,11 +79,11 @@ class FreightRateResponse extends \ArrayObject
      */
     protected $timeInTransit;
     /**
-    * Handling Unit Container for Density based rating.
-    Returned if Shipper is eligible for density based pricing.
-    *
-    * @var FreightRateResponseHandlingUnits
-    */
+     * Handling Unit Container for Density based rating.
+     * Returned if Shipper is eligible for density based pricing.
+     *
+     * @var FreightRateResponseHandlingUnits
+     */
     protected $handlingUnits;
     /**
      * The Quote Number returned in the response associated to the specific LTL Freight Rate returned in the response.
@@ -120,8 +114,6 @@ class FreightRateResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightRateResponseRate>
      */
     public function getRate(): array
@@ -129,8 +121,6 @@ class FreightRateResponse extends \ArrayObject
         return $this->rate;
     }
     /**
-     * 
-     *
      * @param list<FreightRateResponseRate> $rate
      *
      * @return self
@@ -164,8 +154,6 @@ class FreightRateResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightRateResponseCommodity>
      */
     public function getCommodity(): array
@@ -173,8 +161,6 @@ class FreightRateResponse extends \ArrayObject
         return $this->commodity;
     }
     /**
-     * 
-     *
      * @param list<FreightRateResponseCommodity> $commodity
      *
      * @return self
@@ -318,8 +304,6 @@ class FreightRateResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightRateResponseAlternateRatesResponse>
      */
     public function getAlternateRatesResponse(): array
@@ -327,8 +311,6 @@ class FreightRateResponse extends \ArrayObject
         return $this->alternateRatesResponse;
     }
     /**
-     * 
-     *
      * @param list<FreightRateResponseAlternateRatesResponse> $alternateRatesResponse
      *
      * @return self
@@ -362,11 +344,11 @@ class FreightRateResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Handling Unit Container for Density based rating.
-    Returned if Shipper is eligible for density based pricing.
-    *
-    * @return FreightRateResponseHandlingUnits
-    */
+     * Handling Unit Container for Density based rating.
+     * Returned if Shipper is eligible for density based pricing.
+     *
+     * @return FreightRateResponseHandlingUnits
+     */
     public function getHandlingUnits(): FreightRateResponseHandlingUnits
     {
         return $this->handlingUnits;

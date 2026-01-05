@@ -13,15 +13,15 @@ class LabelRecoveryRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Format: YYMM = Year and month of the release.
-    Example: 1701 = 2017 January  Supported values: 1701, 1707, 1903
-    *
-    * @var string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * Example: 1701 = 2017 January  Supported values: 1701, 1707, 1903
+     *
+     * @var string
+     */
     protected $subVersion;
     /**
      * Request option is no longer used.
@@ -36,15 +36,15 @@ class LabelRecoveryRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
-    
-    To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
-    
-    Format: YYMM = Year and month of the release.
-    Example: 1701 = 2017 January  Supported values: 1701, 1707, 1903
-    *
-    * @return string
-    */
+     * When UPS introduces new elements in the response that are not associated with new request elements, Subversion is used. This ensures backward compatibility.
+     * 
+     * To get such elements you need to have the right Subversion. The value of the subversion is explained in the Response element Description.
+     * 
+     * Format: YYMM = Year and month of the release.
+     * Example: 1701 = 2017 January  Supported values: 1701, 1707, 1903
+     *
+     * @return string
+     */
     public function getSubVersion(): string
     {
         return $this->subVersion;

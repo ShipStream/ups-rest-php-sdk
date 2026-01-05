@@ -5,158 +5,78 @@ namespace ShipStream\Ups\Api\Normalizer;
 use Jane\Component\JsonSchemaRuntime\Reference;
 use ShipStream\Ups\Api\Runtime\Normalizer\CheckArray;
 use ShipStream\Ups\Api\Runtime\Normalizer\ValidatorTrait;
-use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\HttpKernel\Kernel;
-if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR_VERSION === 6 and Kernel::MINOR_VERSION === 4)) {
-    class AddressArtifactFormatAddressExtendedInformationNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+class AddressArtifactFormatAddressExtendedInformationNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+{
+    use DenormalizerAwareTrait;
+    use NormalizerAwareTrait;
+    use CheckArray;
+    use ValidatorTrait;
+    public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
     {
-        use DenormalizerAwareTrait;
-        use NormalizerAwareTrait;
-        use CheckArray;
-        use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
-        {
-            return $type === \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class;
-        }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
-        {
-            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class;
-        }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
-        {
-            if (isset($data['$ref'])) {
-                return new Reference($data['$ref'], $context['document-origin']);
-            }
-            if (isset($data['$recursiveRef'])) {
-                return new Reference($data['$recursiveRef'], $context['document-origin']);
-            }
-            $object = new \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation();
-            if (null === $data || false === \is_array($data)) {
-                return $object;
-            }
-            if (\array_key_exists('Type', $data)) {
-                $object->setType($data['Type']);
-                unset($data['Type']);
-            }
-            if (\array_key_exists('Low', $data)) {
-                $object->setLow($data['Low']);
-                unset($data['Low']);
-            }
-            if (\array_key_exists('High', $data)) {
-                $object->setHigh($data['High']);
-                unset($data['High']);
-            }
-            foreach ($data as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
-                }
-            }
-            return $object;
-        }
-        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
-        {
-            $data = [];
-            if ($object->isInitialized('type') && null !== $object->getType()) {
-                $data['Type'] = $object->getType();
-            }
-            if ($object->isInitialized('low') && null !== $object->getLow()) {
-                $data['Low'] = $object->getLow();
-            }
-            if ($object->isInitialized('high') && null !== $object->getHigh()) {
-                $data['High'] = $object->getHigh();
-            }
-            foreach ($object as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
-                }
-            }
-            return $data;
-        }
-        public function getSupportedTypes(?string $format = null): array
-        {
-            return [\ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => false];
-        }
+        return $type === \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class;
     }
-} else {
-    class AddressArtifactFormatAddressExtendedInformationNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
-        use DenormalizerAwareTrait;
-        use NormalizerAwareTrait;
-        use CheckArray;
-        use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
-        {
-            return $type === \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class;
+        return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class;
+    }
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
-        {
-            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class;
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        /**
-         * @return mixed
-         */
-        public function denormalize($data, $type, $format = null, array $context = [])
-        {
-            if (isset($data['$ref'])) {
-                return new Reference($data['$ref'], $context['document-origin']);
-            }
-            if (isset($data['$recursiveRef'])) {
-                return new Reference($data['$recursiveRef'], $context['document-origin']);
-            }
-            $object = new \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation();
-            if (null === $data || false === \is_array($data)) {
-                return $object;
-            }
-            if (\array_key_exists('Type', $data)) {
-                $object->setType($data['Type']);
-                unset($data['Type']);
-            }
-            if (\array_key_exists('Low', $data)) {
-                $object->setLow($data['Low']);
-                unset($data['Low']);
-            }
-            if (\array_key_exists('High', $data)) {
-                $object->setHigh($data['High']);
-                unset($data['High']);
-            }
-            foreach ($data as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
-                }
-            }
+        $object = new \ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation();
+        if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        /**
-         * @return array|string|int|float|bool|\ArrayObject|null
-         */
-        public function normalize($object, $format = null, array $context = [])
-        {
-            $data = [];
-            if ($object->isInitialized('type') && null !== $object->getType()) {
-                $data['Type'] = $object->getType();
-            }
-            if ($object->isInitialized('low') && null !== $object->getLow()) {
-                $data['Low'] = $object->getLow();
-            }
-            if ($object->isInitialized('high') && null !== $object->getHigh()) {
-                $data['High'] = $object->getHigh();
-            }
-            foreach ($object as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
-                }
-            }
-            return $data;
+        if (\array_key_exists('Type', $data)) {
+            $object->setType($data['Type']);
+            unset($data['Type']);
         }
-        public function getSupportedTypes(?string $format = null): array
-        {
-            return [\ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => false];
+        if (\array_key_exists('Low', $data)) {
+            $object->setLow($data['Low']);
+            unset($data['Low']);
         }
+        if (\array_key_exists('High', $data)) {
+            $object->setHigh($data['High']);
+            unset($data['High']);
+        }
+        foreach ($data as $key => $value) {
+            if (preg_match('/.*/', (string) $key)) {
+                $object[$key] = $value;
+            }
+        }
+        return $object;
+    }
+    public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
+    {
+        $dataArray = [];
+        if ($data->isInitialized('type') && null !== $data->getType()) {
+            $dataArray['Type'] = $data->getType();
+        }
+        if ($data->isInitialized('low') && null !== $data->getLow()) {
+            $dataArray['Low'] = $data->getLow();
+        }
+        if ($data->isInitialized('high') && null !== $data->getHigh()) {
+            $dataArray['High'] = $data->getHigh();
+        }
+        foreach ($data as $key => $value) {
+            if (preg_match('/.*/', (string) $key)) {
+                $dataArray[$key] = $value;
+            }
+        }
+        return $dataArray;
+    }
+    public function getSupportedTypes(?string $format = null): array
+    {
+        return [\ShipStream\Ups\Api\Model\AddressArtifactFormatAddressExtendedInformation::class => false];
     }
 }

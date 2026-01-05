@@ -13,14 +13,10 @@ class FREIGHTPICKUPRequestWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var FreightPickupRequest
      */
     protected $freightPickupRequest;
     /**
-     * 
-     *
      * @return FreightPickupRequest
      */
     public function getFreightPickupRequest(): FreightPickupRequest
@@ -28,8 +24,6 @@ class FREIGHTPICKUPRequestWrapper extends \ArrayObject
         return $this->freightPickupRequest;
     }
     /**
-     * 
-     *
      * @param FreightPickupRequest $freightPickupRequest
      *
      * @return self

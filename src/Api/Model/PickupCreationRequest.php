@@ -19,62 +19,62 @@ class PickupCreationRequest extends \ArrayObject
      */
     protected $request;
     /**
-    * Indicates whether to rate the on-callpickup or not. 
-    Valid values:
-    Y = Rate this pickup
-    N = Do not rate this pickup (default)
-    *
-    * @var string
-    */
+     * Indicates whether to rate the on-callpickup or not.
+     * Valid values:
+     * Y = Rate this pickup
+     * N = Do not rate this pickup (default)
+     *
+     * @var string
+     */
     protected $ratePickupIndicator;
     /**
-    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
-    
-    US 48 origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    Alaska/Hawaii origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    All Other origins:
-    - 1 – Rates
-    - 5 - Regional Rates
-    - 6 - General List Rates.
-    
-    3 and 4 do not apply
-    
-    *
-    * @var string
-    */
+     * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+     * 
+     * US 48 origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     *  Alaska/Hawaii origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     * All Other origins:
+     * - 1 – Rates
+     * - 5 - Regional Rates
+     * - 6 - General List Rates.
+     * 
+     * 3 and 4 do not apply
+     * 
+     *
+     * @var string
+     */
     protected $rateChartType;
     /**
-    * Indicates whether to return detailed taxes for the on-callpickups. 
-    Valid values:
-    Y = Rate this pickup with taxes
-    N = Do not rate this pickup with taxes (default)
-    *
-    * @var string
-    */
+     * Indicates whether to return detailed taxes for the on-callpickups.
+     * Valid values:
+     * Y = Rate this pickup with taxes
+     * N = Do not rate this pickup with taxes (default)
+     *
+     * @var string
+     */
     protected $taxInformationIndicator;
     /**
-    * Indicates whether to return user level promo discount for the on-callpickups. 
-    Valid values:
-    Y = Rate this pickup with user level promo discount
-    N = Do not rate this pickup with user level promo discount(default)
-    *
-    * @var string
-    */
+     * Indicates whether to return user level promo discount for the on-callpickups.
+     * Valid values:
+     * Y = Rate this pickup with user level promo discount
+     * N = Do not rate this pickup with user level promo discount(default)
+     *
+     * @var string
+     */
     protected $userLevelDiscountIndicator;
     /**
-    * On-call pickup shipper or requestor information.   Must provide when choose to pay the pickup by shipper account number, BillThirdParty account number, or BillReceiver account number. 
-    It is optional if the shipper chooses any other payment method. However, it is highly recommended to provide if available.
-    *
-    * @var PickupCreationRequestShipper
-    */
+     * On-call pickup shipper or requestor information.   Must provide when choose to pay the pickup by shipper account number, BillThirdParty account number, or BillReceiver account number.
+     * It is optional if the shipper chooses any other payment method. However, it is highly recommended to provide if available.
+     *
+     * @var PickupCreationRequestShipper
+     */
     protected $shipper;
     /**
      * The container of desired pickup date
@@ -89,17 +89,15 @@ class PickupCreationRequest extends \ArrayObject
      */
     protected $pickupAddress;
     /**
-    * Indicates if pickup address is a different address than that specified in a customer's profile. 
-    Valid values:
-    Y = Alternate address
-    N = Original pickup address (default)
-    *
-    * @var string
-    */
+     * Indicates if pickup address is a different address than that specified in a customer's profile.
+     * Valid values:
+     * Y = Alternate address
+     * N = Original pickup address (default)
+     *
+     * @var string
+     */
     protected $alternateAddressIndicator;
     /**
-     * 
-     *
      * @var list<PickupCreationRequestPickupPiece>
      */
     protected $pickupPiece;
@@ -110,17 +108,15 @@ class PickupCreationRequest extends \ArrayObject
      */
     protected $totalWeight;
     /**
-    * Indicates if at least any package is over 70 lbs or 32 kgs. 
-    Valid values: 
-    Y = Over weight 
-    N = Not over weight (default)  Not required for WWEF service.
-    *
-    * @var string
-    */
+     * Indicates if at least any package is over 70 lbs or 32 kgs.
+     * Valid values:
+     * Y = Over weight
+     * N = Not over weight (default)  Not required for WWEF service.
+     *
+     * @var string
+     */
     protected $overweightIndicator;
     /**
-     * 
-     *
      * @var list<PickupCreationRequestTrackingData>
      */
     protected $trackingData;
@@ -131,23 +127,23 @@ class PickupCreationRequest extends \ArrayObject
      */
     protected $trackingDataWithReferenceNumber;
     /**
-    * The payment method to pay for this on call pickup.
-    00 = No payment needed
-    01 = Pay by shipper account
-    03 = Pay by charge card
-    04 = Pay by 1Z tracking number
-    05 = Pay by check or money order
-    06 = Cash(applicable only for these countries - BE,FR,DE,IT,MX,NL,PL,ES,GB,CZ,HU,FI,NO)
-    07=Pay by PayPal
-    Refer to Appendix # for valid payment methods for CZ, HU, FI and NO
-     For countries and (or) zip codes where pickup is free of charge, please submit 00, means no payment needed as payment method. 
-    - If 01 is the payment method, then ShipperAccountNumber and ShipperAccount CountryCode must be provided.
-    - If 03 is selected, then CreditCard information should be provided.
-    - If 04 is selected, then the shipper agreed to pay for the pickup packages.
-    - If 05 is selected, then the shipper will pay for the pickup packages with a check or money order.
-    *
-    * @var string
-    */
+     * The payment method to pay for this on call pickup.
+     * 00 = No payment needed
+     * 01 = Pay by shipper account
+     * 03 = Pay by charge card
+     * 04 = Pay by 1Z tracking number
+     * 05 = Pay by check or money order
+     * 06 = Cash(applicable only for these countries - BE,FR,DE,IT,MX,NL,PL,ES,GB,CZ,HU,FI,NO)
+     * 07=Pay by PayPal
+     * Refer to Appendix # for valid payment methods for CZ, HU, FI and NO
+     *   For countries and (or) zip codes where pickup is free of charge, please submit 00, means no payment needed as payment method.
+     * - If 01 is the payment method, then ShipperAccountNumber and ShipperAccount CountryCode must be provided.
+     * - If 03 is selected, then CreditCard information should be provided.
+     * - If 04 is selected, then the shipper agreed to pay for the pickup packages.
+     * - If 05 is selected, then the shipper will pay for the pickup packages with a check or money order.
+     *
+     * @var string
+     */
     protected $paymentMethod;
     /**
      * Special handling instruction from the customer
@@ -168,28 +164,28 @@ class PickupCreationRequest extends \ArrayObject
      */
     protected $freightOptions;
     /**
-    * Service Category.
-    Applicable to the following countries:
-    BE, FR, DE, IT, MX, NL, PL, ES, GB 
-    Valid values: 
-    01 - domestic (default)
-    02 - international
-    03 - transborder
-    *
-    * @var string
-    */
+     * Service Category.
+     * Applicable to the following countries:
+     * BE, FR, DE, IT, MX, NL, PL, ES, GB
+     * Valid values:
+     * 01 - domestic (default)
+     * 02 - international
+     * 03 - transborder
+     *
+     * @var string
+     */
     protected $serviceCategory;
     /**
-    * Describes the type of cash funds that the driver will collect.
-    Applicable to the following countries:
-    BE,FR,DE,IT,MX,NL,PL,ES,GB
-    Valid values: 
-    01 - Pickup only (default)
-    02 - Transportation only
-    03 - Pickup and Transportation
-    *
-    * @var string
-    */
+     * Describes the type of cash funds that the driver will collect.
+     * Applicable to the following countries:
+     * BE,FR,DE,IT,MX,NL,PL,ES,GB
+     * Valid values:
+     * 01 - Pickup only (default)
+     * 02 - Transportation only
+     * 03 - Pickup and Transportation
+     *
+     * @var string
+     */
     protected $cashType;
     /**
      * This element should be set to "Y" in the request to indicate that user has pre-printed shipping labels for all the packages, otherwise this will be treated as false.
@@ -220,13 +216,13 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates whether to rate the on-callpickup or not. 
-    Valid values:
-    Y = Rate this pickup
-    N = Do not rate this pickup (default)
-    *
-    * @return string
-    */
+     * Indicates whether to rate the on-callpickup or not.
+     * Valid values:
+     * Y = Rate this pickup
+     * N = Do not rate this pickup (default)
+     *
+     * @return string
+     */
     public function getRatePickupIndicator(): string
     {
         return $this->ratePickupIndicator;
@@ -248,28 +244,28 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
-    
-    US 48 origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    Alaska/Hawaii origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    All Other origins:
-    - 1 – Rates
-    - 5 - Regional Rates
-    - 6 - General List Rates.
-    
-    3 and 4 do not apply
-    
-    *
-    * @return string
-    */
+     * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+     * 
+     * US 48 origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     *  Alaska/Hawaii origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     * All Other origins:
+     * - 1 – Rates
+     * - 5 - Regional Rates
+     * - 6 - General List Rates.
+     * 
+     * 3 and 4 do not apply
+     * 
+     *
+     * @return string
+     */
     public function getRateChartType(): string
     {
         return $this->rateChartType;
@@ -306,13 +302,13 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates whether to return detailed taxes for the on-callpickups. 
-    Valid values:
-    Y = Rate this pickup with taxes
-    N = Do not rate this pickup with taxes (default)
-    *
-    * @return string
-    */
+     * Indicates whether to return detailed taxes for the on-callpickups.
+     * Valid values:
+     * Y = Rate this pickup with taxes
+     * N = Do not rate this pickup with taxes (default)
+     *
+     * @return string
+     */
     public function getTaxInformationIndicator(): string
     {
         return $this->taxInformationIndicator;
@@ -334,13 +330,13 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates whether to return user level promo discount for the on-callpickups. 
-    Valid values:
-    Y = Rate this pickup with user level promo discount
-    N = Do not rate this pickup with user level promo discount(default)
-    *
-    * @return string
-    */
+     * Indicates whether to return user level promo discount for the on-callpickups.
+     * Valid values:
+     * Y = Rate this pickup with user level promo discount
+     * N = Do not rate this pickup with user level promo discount(default)
+     *
+     * @return string
+     */
     public function getUserLevelDiscountIndicator(): string
     {
         return $this->userLevelDiscountIndicator;
@@ -362,11 +358,11 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * On-call pickup shipper or requestor information.   Must provide when choose to pay the pickup by shipper account number, BillThirdParty account number, or BillReceiver account number. 
-    It is optional if the shipper chooses any other payment method. However, it is highly recommended to provide if available.
-    *
-    * @return PickupCreationRequestShipper
-    */
+     * On-call pickup shipper or requestor information.   Must provide when choose to pay the pickup by shipper account number, BillThirdParty account number, or BillReceiver account number.
+     * It is optional if the shipper chooses any other payment method. However, it is highly recommended to provide if available.
+     *
+     * @return PickupCreationRequestShipper
+     */
     public function getShipper(): PickupCreationRequestShipper
     {
         return $this->shipper;
@@ -430,13 +426,13 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if pickup address is a different address than that specified in a customer's profile. 
-    Valid values:
-    Y = Alternate address
-    N = Original pickup address (default)
-    *
-    * @return string
-    */
+     * Indicates if pickup address is a different address than that specified in a customer's profile.
+     * Valid values:
+     * Y = Alternate address
+     * N = Original pickup address (default)
+     *
+     * @return string
+     */
     public function getAlternateAddressIndicator(): string
     {
         return $this->alternateAddressIndicator;
@@ -458,8 +454,6 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PickupCreationRequestPickupPiece>
      */
     public function getPickupPiece(): array
@@ -467,8 +461,6 @@ class PickupCreationRequest extends \ArrayObject
         return $this->pickupPiece;
     }
     /**
-     * 
-     *
      * @param list<PickupCreationRequestPickupPiece> $pickupPiece
      *
      * @return self
@@ -502,13 +494,13 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if at least any package is over 70 lbs or 32 kgs. 
-    Valid values: 
-    Y = Over weight 
-    N = Not over weight (default)  Not required for WWEF service.
-    *
-    * @return string
-    */
+     * Indicates if at least any package is over 70 lbs or 32 kgs.
+     * Valid values:
+     * Y = Over weight
+     * N = Not over weight (default)  Not required for WWEF service.
+     *
+     * @return string
+     */
     public function getOverweightIndicator(): string
     {
         return $this->overweightIndicator;
@@ -530,8 +522,6 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PickupCreationRequestTrackingData>
      */
     public function getTrackingData(): array
@@ -539,8 +529,6 @@ class PickupCreationRequest extends \ArrayObject
         return $this->trackingData;
     }
     /**
-     * 
-     *
      * @param list<PickupCreationRequestTrackingData> $trackingData
      *
      * @return self
@@ -574,23 +562,23 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The payment method to pay for this on call pickup.
-    00 = No payment needed
-    01 = Pay by shipper account
-    03 = Pay by charge card
-    04 = Pay by 1Z tracking number
-    05 = Pay by check or money order
-    06 = Cash(applicable only for these countries - BE,FR,DE,IT,MX,NL,PL,ES,GB,CZ,HU,FI,NO)
-    07=Pay by PayPal
-    Refer to Appendix # for valid payment methods for CZ, HU, FI and NO
-     For countries and (or) zip codes where pickup is free of charge, please submit 00, means no payment needed as payment method. 
-    - If 01 is the payment method, then ShipperAccountNumber and ShipperAccount CountryCode must be provided.
-    - If 03 is selected, then CreditCard information should be provided.
-    - If 04 is selected, then the shipper agreed to pay for the pickup packages.
-    - If 05 is selected, then the shipper will pay for the pickup packages with a check or money order.
-    *
-    * @return string
-    */
+     * The payment method to pay for this on call pickup.
+     * 00 = No payment needed
+     * 01 = Pay by shipper account
+     * 03 = Pay by charge card
+     * 04 = Pay by 1Z tracking number
+     * 05 = Pay by check or money order
+     * 06 = Cash(applicable only for these countries - BE,FR,DE,IT,MX,NL,PL,ES,GB,CZ,HU,FI,NO)
+     * 07=Pay by PayPal
+     * Refer to Appendix # for valid payment methods for CZ, HU, FI and NO
+     *   For countries and (or) zip codes where pickup is free of charge, please submit 00, means no payment needed as payment method.
+     * - If 01 is the payment method, then ShipperAccountNumber and ShipperAccount CountryCode must be provided.
+     * - If 03 is selected, then CreditCard information should be provided.
+     * - If 04 is selected, then the shipper agreed to pay for the pickup packages.
+     * - If 05 is selected, then the shipper will pay for the pickup packages with a check or money order.
+     *
+     * @return string
+     */
     public function getPaymentMethod(): string
     {
         return $this->paymentMethod;
@@ -688,16 +676,16 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Service Category.
-    Applicable to the following countries:
-    BE, FR, DE, IT, MX, NL, PL, ES, GB 
-    Valid values: 
-    01 - domestic (default)
-    02 - international
-    03 - transborder
-    *
-    * @return string
-    */
+     * Service Category.
+     * Applicable to the following countries:
+     * BE, FR, DE, IT, MX, NL, PL, ES, GB
+     * Valid values:
+     * 01 - domestic (default)
+     * 02 - international
+     * 03 - transborder
+     *
+     * @return string
+     */
     public function getServiceCategory(): string
     {
         return $this->serviceCategory;
@@ -722,16 +710,16 @@ class PickupCreationRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Describes the type of cash funds that the driver will collect.
-    Applicable to the following countries:
-    BE,FR,DE,IT,MX,NL,PL,ES,GB
-    Valid values: 
-    01 - Pickup only (default)
-    02 - Transportation only
-    03 - Pickup and Transportation
-    *
-    * @return string
-    */
+     * Describes the type of cash funds that the driver will collect.
+     * Applicable to the following countries:
+     * BE,FR,DE,IT,MX,NL,PL,ES,GB
+     * Valid values:
+     * 01 - Pickup only (default)
+     * 02 - Transportation only
+     * 03 - Pickup and Transportation
+     *
+     * @return string
+     */
     public function getCashType(): string
     {
         return $this->cashType;

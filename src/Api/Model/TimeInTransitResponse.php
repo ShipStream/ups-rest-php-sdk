@@ -13,32 +13,22 @@ class TimeInTransitResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var ValidationList
      */
     protected $validationList;
     /**
-     * 
-     *
      * @var list<CandidateAddress>
      */
     protected $destinationPickList;
     /**
-     * 
-     *
      * @var list<CandidateAddress>
      */
     protected $originPickList;
     /**
-     * 
-     *
      * @var EmsResponse
      */
     protected $emsResponse;
     /**
-     * 
-     *
      * @return ValidationList
      */
     public function getValidationList(): ValidationList
@@ -46,8 +36,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this->validationList;
     }
     /**
-     * 
-     *
      * @param ValidationList $validationList
      *
      * @return self
@@ -59,8 +47,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<CandidateAddress>
      */
     public function getDestinationPickList(): array
@@ -68,8 +54,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this->destinationPickList;
     }
     /**
-     * 
-     *
      * @param list<CandidateAddress> $destinationPickList
      *
      * @return self
@@ -81,8 +65,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<CandidateAddress>
      */
     public function getOriginPickList(): array
@@ -90,8 +72,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this->originPickList;
     }
     /**
-     * 
-     *
      * @param list<CandidateAddress> $originPickList
      *
      * @return self
@@ -103,8 +83,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return EmsResponse
      */
     public function getEmsResponse(): EmsResponse
@@ -112,8 +90,6 @@ class TimeInTransitResponse extends \ArrayObject
         return $this->emsResponse;
     }
     /**
-     * 
-     *
      * @param EmsResponse $emsResponse
      *
      * @return self

@@ -13,18 +13,18 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Day of week.
-    - 1 - Sunday
-    - 2 - Monday
-    - 3 - Tuesday
-    - 4 - Wednesday
-    - 5 - Thursday
-    - 6 - Friday
-    - 7 - Saturday.
-    
-    *
-    * @var string
-    */
+     * Day of week.
+     * - 1 - Sunday
+     * - 2 - Monday
+     * - 3 - Tuesday
+     * - 4 - Wednesday
+     * - 5 - Thursday
+     * - 6 - Friday
+     * - 7 - Saturday.
+     * 
+     *
+     * @var string
+     */
     protected $dayOfWeek;
     /**
      * PickUpDetails container contains either pickup time or NoPickupIndicator. Either PickUpTime or NoPickupIndicator
@@ -33,18 +33,18 @@ class TransportationPickUpSchedulePickUp extends \ArrayObject
      */
     protected $pickUpDetails;
     /**
-    * Day of week.
-    - 1 - Sunday
-    - 2 - Monday
-    - 3 - Tuesday
-    - 4 - Wednesday
-    - 5 - Thursday
-    - 6 - Friday
-    - 7 - Saturday.
-    
-    *
-    * @return string
-    */
+     * Day of week.
+     * - 1 - Sunday
+     * - 2 - Monday
+     * - 3 - Tuesday
+     * - 4 - Wednesday
+     * - 5 - Thursday
+     * - 6 - Friday
+     * - 7 - Saturday.
+     * 
+     *
+     * @return string
+     */
     public function getDayOfWeek(): string
     {
         return $this->dayOfWeek;

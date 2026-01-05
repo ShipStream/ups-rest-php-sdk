@@ -13,37 +13,37 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The latest local close time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @var string
-    */
+     * The latest local close time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @var string
+     */
     protected $closeTime;
     /**
-    * The earliest local ready Time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @var string
-    */
+     * The earliest local ready Time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @var string
+     */
     protected $readyTime;
     /**
-    * The specific local pickup date. Format: yyyyMMdd
-    - yyyy = Year Applicable
-    - MM = 01-12
-    - dd = 01-31
-    *
-    * @var string
-    */
+     * The specific local pickup date. Format: yyyyMMdd
+     * - yyyy = Year Applicable
+     * - MM = 01-12
+     * - dd = 01-31
+     *
+     * @var string
+     */
     protected $pickupDate;
     /**
-    * The latest local close time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @return string
-    */
+     * The latest local close time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @return string
+     */
     public function getCloseTime(): string
     {
         return $this->closeTime;
@@ -64,12 +64,12 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this;
     }
     /**
-    * The earliest local ready Time. Format: HHmm
-    - Hour: 0-23
-    - Minute: 0-59
-    *
-    * @return string
-    */
+     * The earliest local ready Time. Format: HHmm
+     * - Hour: 0-23
+     * - Minute: 0-59
+     *
+     * @return string
+     */
     public function getReadyTime(): string
     {
         return $this->readyTime;
@@ -90,13 +90,13 @@ class PickupRateRequestPickupDateInfo extends \ArrayObject
         return $this;
     }
     /**
-    * The specific local pickup date. Format: yyyyMMdd
-    - yyyy = Year Applicable
-    - MM = 01-12
-    - dd = 01-31
-    *
-    * @return string
-    */
+     * The specific local pickup date. Format: yyyyMMdd
+     * - yyyy = Year Applicable
+     * - MM = 01-12
+     * - dd = 01-31
+     *
+     * @return string
+     */
     public function getPickupDate(): string
     {
         return $this->pickupDate;

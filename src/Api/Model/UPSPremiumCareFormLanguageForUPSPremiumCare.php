@@ -13,20 +13,20 @@ class UPSPremiumCareFormLanguageForUPSPremiumCare extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Languages for UPS Premium Care Form. Two languages are required for UPS Premium Care Form.   Valid values: 
-    eng = US English
-    fra = Canadian French
-    *
-    * @var list<string>
-    */
+     * Languages for UPS Premium Care Form. Two languages are required for UPS Premium Care Form.   Valid values:
+     * eng = US English
+     * fra = Canadian French
+     *
+     * @var list<string>
+     */
     protected $language;
     /**
-    * Languages for UPS Premium Care Form. Two languages are required for UPS Premium Care Form.   Valid values: 
-    eng = US English
-    fra = Canadian French
-    *
-    * @return list<string>
-    */
+     * Languages for UPS Premium Care Form. Two languages are required for UPS Premium Care Form.   Valid values:
+     * eng = US English
+     * fra = Canadian French
+     *
+     * @return list<string>
+     */
     public function getLanguage(): array
     {
         return $this->language;

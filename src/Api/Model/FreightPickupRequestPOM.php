@@ -13,18 +13,18 @@ class FreightPickupRequestPOM extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
-    Must provide a POMNumber if the POMNumberType field is populated.
-    *
-    * @var string
-    */
+     * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
+     * Must provide a POMNumber if the POMNumberType field is populated.
+     *
+     * @var string
+     */
     protected $pOMNumber;
     /**
-    * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
-    For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
-    *
-    * @var string
-    */
+     * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
+     * For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
+     *
+     * @var string
+     */
     protected $pOMNumberType;
     /**
      * Container for pre-pickup notifications events
@@ -33,11 +33,11 @@ class FreightPickupRequestPOM extends \ArrayObject
      */
     protected $pickupNotifications;
     /**
-    * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
-    Must provide a POMNumber if the POMNumberType field is populated.
-    *
-    * @return string
-    */
+     * Identifies the kind of number used to identify the Pickup Notifications for LTL shipment.
+     * Must provide a POMNumber if the POMNumberType field is populated.
+     *
+     * @return string
+     */
     public function getPOMNumber(): string
     {
         return $this->pOMNumber;
@@ -57,11 +57,11 @@ class FreightPickupRequestPOM extends \ArrayObject
         return $this;
     }
     /**
-    * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
-    For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
-    *
-    * @return string
-    */
+     * Identifies the type used to identify the Pickup Notifications for LTL shipments.  Must provide if POMNumber is populated.
+     * For valid values, see POMNumberType Values in the Appendix.  The values must match a type defined, case sensitive.
+     *
+     * @return string
+     */
     public function getPOMNumberType(): string
     {
         return $this->pOMNumberType;

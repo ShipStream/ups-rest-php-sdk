@@ -13,13 +13,13 @@ class PackageServiceOptionsDeliveryConfirmation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Type of delivery confirmation.  Valid values:
-    - 1 - Unsupported
-    - 2 - Delivery Confirmation Signature Required
-    - 3 - Delivery Confirmation Adult Signature Required
-    *
-    * @var string
-    */
+     * Type of delivery confirmation.  Valid values:
+     * - 1 - Unsupported
+     * - 2 - Delivery Confirmation Signature Required
+     * - 3 - Delivery Confirmation Adult Signature Required
+     *
+     * @var string
+     */
     protected $dCISType;
     /**
      * Delivery Confirmation Control number associated with the delivery confirmation for the package.  Valid for forward shipments only.
@@ -28,13 +28,13 @@ class PackageServiceOptionsDeliveryConfirmation extends \ArrayObject
      */
     protected $dCISNumber;
     /**
-    * Type of delivery confirmation.  Valid values:
-    - 1 - Unsupported
-    - 2 - Delivery Confirmation Signature Required
-    - 3 - Delivery Confirmation Adult Signature Required
-    *
-    * @return string
-    */
+     * Type of delivery confirmation.  Valid values:
+     * - 1 - Unsupported
+     * - 2 - Delivery Confirmation Signature Required
+     * - 3 - Delivery Confirmation Adult Signature Required
+     *
+     * @return string
+     */
     public function getDCISType(): string
     {
         return $this->dCISType;

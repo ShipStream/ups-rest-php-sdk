@@ -13,11 +13,11 @@ class CommodityPackagingType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code associated with the Packaging Type.
-    Refer to Packaging Types in the Appendix for valid values.
-    *
-    * @var string
-    */
+     * Code associated with the Packaging Type.
+     * Refer to Packaging Types in the Appendix for valid values.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description for the code associated with the Packaging Type.
@@ -26,11 +26,11 @@ class CommodityPackagingType extends \ArrayObject
      */
     protected $description;
     /**
-    * Code associated with the Packaging Type.
-    Refer to Packaging Types in the Appendix for valid values.
-    *
-    * @return string
-    */
+     * Code associated with the Packaging Type.
+     * Refer to Packaging Types in the Appendix for valid values.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

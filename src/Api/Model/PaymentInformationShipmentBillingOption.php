@@ -13,14 +13,14 @@ class PaymentInformationShipmentBillingOption extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Billing Option Code.
-    Valid values:
-    10 - Prepaid
-    30 - Bill to Third Party
-    40 - Freight Collect
-    *
-    * @var string
-    */
+     * Billing Option Code.
+     * Valid values:
+     * 10 - Prepaid
+     * 30 - Bill to Third Party
+     * 40 - Freight Collect
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Billing Option Description.
@@ -29,14 +29,14 @@ class PaymentInformationShipmentBillingOption extends \ArrayObject
      */
     protected $description;
     /**
-    * Billing Option Code.
-    Valid values:
-    10 - Prepaid
-    30 - Bill to Third Party
-    40 - Freight Collect
-    *
-    * @return string
-    */
+     * Billing Option Code.
+     * Valid values:
+     * 10 - Prepaid
+     * 30 - Bill to Third Party
+     * 40 - Freight Collect
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

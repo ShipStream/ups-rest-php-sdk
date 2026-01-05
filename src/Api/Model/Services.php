@@ -13,14 +13,14 @@ class Services extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Service level code 
-    
-    Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
-    
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
-    *
-    * @var string
-    */
+     * Service level code
+     * 
+     *  Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND".
+     * 
+     *   Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
+     *
+     * @var string
+     */
     protected $serviceLevel;
     /**
      * Service name. Examples are: UPS Next Day Air, UPS Ground, UPS Expedited, UPS Worldwide Express Freight
@@ -29,78 +29,78 @@ class Services extends \ArrayObject
      */
     protected $serviceLevelDescription;
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date. 
-    
-    Valid Format: YYYY-MM-DD
-    *
-    * @var string
-    */
+     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.
+     * 
+     *  Valid Format: YYYY-MM-DD
+     *
+     * @var string
+     */
     protected $shipDate;
     /**
-    * Scheduled delivery date. 
-    
-    Valid format: YYYY-MM-DD
-    *
-    * @var string
-    */
+     * Scheduled delivery date.
+     * 
+     *  Valid format: YYYY-MM-DD
+     *
+     * @var string
+     */
     protected $deliveryDate;
     /**
-    * Scheduled commit time. 
-    
-    For international shipments the value always come back from SE (OPSYS data) but for domestic, value may be used from NRF commit time.  
-    
-    Valid format: HH:MM:SS
-    *
-    * @var string
-    */
+     * Scheduled commit time.
+     * 
+     *  For international shipments the value always come back from SE (OPSYS data) but for domestic, value may be used from NRF commit time.
+     * 
+     *  Valid format: HH:MM:SS
+     *
+     * @var string
+     */
     protected $commitTime;
     /**
-    * Scheduled Delivery Time, value may be later then commit time. 
-    
-    Valid format: HH:MM:SS
-    *
-    * @var string
-    */
+     * Scheduled Delivery Time, value may be later then commit time.
+     * 
+     *  Valid format: HH:MM:SS
+     *
+     * @var string
+     */
     protected $deliveryTime;
     /**
-    * Three character scheduled delivery day of week. 
-    
-    Valid values: "MON","TUE","WED","THU","FRI", "SAT"
-    *
-    * @var string
-    */
+     * Three character scheduled delivery day of week.
+     * 
+     *  Valid values: "MON","TUE","WED","THU","FRI", "SAT"
+     *
+     * @var string
+     */
     protected $deliveryDayOfWeek;
     /**
-    * Returns a "1" if the requested shipped on date was changed. This data is available only for international transactions. 
-    
-    When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
-    *
-    * @var string
-    */
+     * Returns a "1" if the requested shipped on date was changed. This data is available only for international transactions.
+     * 
+     *  When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
+     *
+     * @var string
+     */
     protected $nextDayPickupIndicator;
     /**
-    * Returns "1" if Saturday Pickup is available for an extra charge otherwise it will return "0". 
-    
-    When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
-    *
-    * @var string
-    */
+     * Returns "1" if Saturday Pickup is available for an extra charge otherwise it will return "0".
+     * 
+     *  When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
+     *
+     * @var string
+     */
     protected $saturdayPickupIndicator;
     /**
-    * Delivery date of Saturday Delivery 
-    
-    Valid Format: YYYY-MM-DD
-    *
-    * @var string
-    */
+     * Delivery date of Saturday Delivery
+     * 
+     *  Valid Format: YYYY-MM-DD
+     *
+     * @var string
+     */
     protected $saturdayDeliveryDate;
     /**
-    * Delivery time of Saturday deliver 
-    
-    Valid format: HH:MM:SS
-    *
-    * @var string
-    */
+     * Delivery time of Saturday deliver
+     * 
+     *  Valid format: HH:MM:SS
+     *
+     * @var string
+     */
     protected $saturdayDeliveryTime;
     /**
      * Service remarks text. The contents of this field will represent text that the back end application/function needs to display to clarify the time in transit calculation.
@@ -109,22 +109,22 @@ class Services extends \ArrayObject
      */
     protected $serviceRemarksText;
     /**
-    * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions: 
-    
-    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned. 
-    
-    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
-    *
-    * @var string
-    */
+     * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions:
+     * 
+     *  If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned.
+     * 
+     *  If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
+     *
+     * @var string
+     */
     protected $guaranteeIndicator;
     /**
-    * Available for International requests. Number of calendar days from origin location to destination location.  TotalTransitDays = BusinessTransitDays + RestDaysCount + HolidayCount. 
-    
-    Defaults to 0.
-    *
-    * @var int
-    */
+     * Available for International requests. Number of calendar days from origin location to destination location.  TotalTransitDays = BusinessTransitDays + RestDaysCount + HolidayCount.
+     * 
+     *  Defaults to 0.
+     *
+     * @var int
+     */
     protected $totalTransitDays;
     /**
      * Returns the number of UPS business days from origin location to destination location.
@@ -133,36 +133,36 @@ class Services extends \ArrayObject
      */
     protected $businessTransitDays;
     /**
-    * Returns the number of rest days encountered at the origin location.  this data is available only for international transactions. 
-    
-    Defaults to 0.
-    *
-    * @var int
-    */
+     * Returns the number of rest days encountered at the origin location.  this data is available only for international transactions.
+     * 
+     *  Defaults to 0.
+     *
+     * @var int
+     */
     protected $restDaysCount;
     /**
-    * Returns the number of holidays encountered at the origin and destination location, if it effects the time and transit.  This data is available only for international transactions. 
-    
-    Defaults to 0.
-    *
-    * @var int
-    */
+     * Returns the number of holidays encountered at the origin and destination location, if it effects the time and transit.  This data is available only for international transactions.
+     * 
+     *  Defaults to 0.
+     *
+     * @var int
+     */
     protected $holidayCount;
     /**
-    * Returns the number of delay needed for customs encounter at the origin or destination location.  This data is available only for international transactions.  
-    
-    Defaults to 0.
-    *
-    * @var int
-    */
+     * Returns the number of delay needed for customs encounter at the origin or destination location.  This data is available only for international transactions.
+     * 
+     *  Defaults to 0.
+     *
+     * @var int
+     */
     protected $delayCount;
     /**
-    * Planned pickup date. 
-    
-    Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
-    *
-    * @var string
-    */
+     * Planned pickup date.
+     * 
+     *  Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
+     *
+     * @var string
+     */
     protected $pickupDate;
     /**
      * Latest possible pickup time. This data is available only for international transactions. If the package was not actually picked by UPS before this time, the services will not meet the guarantee commitment.
@@ -189,14 +189,14 @@ class Services extends \ArrayObject
      */
     protected $poddays;
     /**
-    * Service level code 
-    
-    Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND". 
-    
-     Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68". 
-    *
-    * @return string
-    */
+     * Service level code
+     * 
+     *  Valid domestic service codes: "1DMS","1DAS","1DM","1DA","1DP","2DM","2DA","3DS","GND".
+     * 
+     *   Valid International service codes (not a complete list) ,"01","02","03","05","08","09","10","11","18","19","20","21","22","23","24","25","26","28","29","33","68".
+     *
+     * @return string
+     */
     public function getServiceLevel(): string
     {
         return $this->serviceLevel;
@@ -241,12 +241,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date. 
-    
-    Valid Format: YYYY-MM-DD
-    *
-    * @return string
-    */
+     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.
+     * 
+     *  Valid Format: YYYY-MM-DD
+     *
+     * @return string
+     */
     public function getShipDate(): string
     {
         return $this->shipDate;
@@ -267,12 +267,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Scheduled delivery date. 
-    
-    Valid format: YYYY-MM-DD
-    *
-    * @return string
-    */
+     * Scheduled delivery date.
+     * 
+     *  Valid format: YYYY-MM-DD
+     *
+     * @return string
+     */
     public function getDeliveryDate(): string
     {
         return $this->deliveryDate;
@@ -293,14 +293,14 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Scheduled commit time. 
-    
-    For international shipments the value always come back from SE (OPSYS data) but for domestic, value may be used from NRF commit time.  
-    
-    Valid format: HH:MM:SS
-    *
-    * @return string
-    */
+     * Scheduled commit time.
+     * 
+     *  For international shipments the value always come back from SE (OPSYS data) but for domestic, value may be used from NRF commit time.
+     * 
+     *  Valid format: HH:MM:SS
+     *
+     * @return string
+     */
     public function getCommitTime(): string
     {
         return $this->commitTime;
@@ -323,12 +323,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Scheduled Delivery Time, value may be later then commit time. 
-    
-    Valid format: HH:MM:SS
-    *
-    * @return string
-    */
+     * Scheduled Delivery Time, value may be later then commit time.
+     * 
+     *  Valid format: HH:MM:SS
+     *
+     * @return string
+     */
     public function getDeliveryTime(): string
     {
         return $this->deliveryTime;
@@ -349,12 +349,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Three character scheduled delivery day of week. 
-    
-    Valid values: "MON","TUE","WED","THU","FRI", "SAT"
-    *
-    * @return string
-    */
+     * Three character scheduled delivery day of week.
+     * 
+     *  Valid values: "MON","TUE","WED","THU","FRI", "SAT"
+     *
+     * @return string
+     */
     public function getDeliveryDayOfWeek(): string
     {
         return $this->deliveryDayOfWeek;
@@ -375,12 +375,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Returns a "1" if the requested shipped on date was changed. This data is available only for international transactions. 
-    
-    When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
-    *
-    * @return string
-    */
+     * Returns a "1" if the requested shipped on date was changed. This data is available only for international transactions.
+     * 
+     *  When this flag is set, WWDTDisclaimer.getNextDayDisclaimer method could be called to return the next day disclaimer message.
+     *
+     * @return string
+     */
     public function getNextDayPickupIndicator(): string
     {
         return $this->nextDayPickupIndicator;
@@ -401,12 +401,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Returns "1" if Saturday Pickup is available for an extra charge otherwise it will return "0". 
-    
-    When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
-    *
-    * @return string
-    */
+     * Returns "1" if Saturday Pickup is available for an extra charge otherwise it will return "0".
+     * 
+     *  When this flag is set, WWDTDisclaimer.getSaturdayPickupDisclaimer method could be called to return the Saturday pickup extra charge message
+     *
+     * @return string
+     */
     public function getSaturdayPickupIndicator(): string
     {
         return $this->saturdayPickupIndicator;
@@ -427,12 +427,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Delivery date of Saturday Delivery 
-    
-    Valid Format: YYYY-MM-DD
-    *
-    * @return string
-    */
+     * Delivery date of Saturday Delivery
+     * 
+     *  Valid Format: YYYY-MM-DD
+     *
+     * @return string
+     */
     public function getSaturdayDeliveryDate(): string
     {
         return $this->saturdayDeliveryDate;
@@ -453,12 +453,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Delivery time of Saturday deliver 
-    
-    Valid format: HH:MM:SS
-    *
-    * @return string
-    */
+     * Delivery time of Saturday deliver
+     * 
+     *  Valid format: HH:MM:SS
+     *
+     * @return string
+     */
     public function getSaturdayDeliveryTime(): string
     {
         return $this->saturdayDeliveryTime;
@@ -501,14 +501,14 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions: 
-    
-    If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned. 
-    
-    If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
-    *
-    * @return string
-    */
+     * Return "1" Guaranteed, or "0" Not Guaranteed based on below conditions:
+     * 
+     *  If the ship date, delivery date, and system date are not within a defined peak date range, and a value for service guarantee is available in SE (OPSYS data) that will be returned.
+     * 
+     *  If the ship date or delivery date or system date are within a defined peak date range and the service is within the list of services to remove guarantees for, "0" wil be returned.
+     *
+     * @return string
+     */
     public function getGuaranteeIndicator(): string
     {
         return $this->guaranteeIndicator;
@@ -531,12 +531,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Available for International requests. Number of calendar days from origin location to destination location.  TotalTransitDays = BusinessTransitDays + RestDaysCount + HolidayCount. 
-    
-    Defaults to 0.
-    *
-    * @return int
-    */
+     * Available for International requests. Number of calendar days from origin location to destination location.  TotalTransitDays = BusinessTransitDays + RestDaysCount + HolidayCount.
+     * 
+     *  Defaults to 0.
+     *
+     * @return int
+     */
     public function getTotalTransitDays(): int
     {
         return $this->totalTransitDays;
@@ -579,12 +579,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Returns the number of rest days encountered at the origin location.  this data is available only for international transactions. 
-    
-    Defaults to 0.
-    *
-    * @return int
-    */
+     * Returns the number of rest days encountered at the origin location.  this data is available only for international transactions.
+     * 
+     *  Defaults to 0.
+     *
+     * @return int
+     */
     public function getRestDaysCount(): int
     {
         return $this->restDaysCount;
@@ -605,12 +605,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Returns the number of holidays encountered at the origin and destination location, if it effects the time and transit.  This data is available only for international transactions. 
-    
-    Defaults to 0.
-    *
-    * @return int
-    */
+     * Returns the number of holidays encountered at the origin and destination location, if it effects the time and transit.  This data is available only for international transactions.
+     * 
+     *  Defaults to 0.
+     *
+     * @return int
+     */
     public function getHolidayCount(): int
     {
         return $this->holidayCount;
@@ -631,12 +631,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Returns the number of delay needed for customs encounter at the origin or destination location.  This data is available only for international transactions.  
-    
-    Defaults to 0.
-    *
-    * @return int
-    */
+     * Returns the number of delay needed for customs encounter at the origin or destination location.  This data is available only for international transactions.
+     * 
+     *  Defaults to 0.
+     *
+     * @return int
+     */
     public function getDelayCount(): int
     {
         return $this->delayCount;
@@ -657,12 +657,12 @@ class Services extends \ArrayObject
         return $this;
     }
     /**
-    * Planned pickup date. 
-    
-    Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
-    *
-    * @return string
-    */
+     * Planned pickup date.
+     * 
+     *  Note: This value may not equal the shipped on value requested.  This could happen when the requested shipped on date is a holiday or for locations needing 24 hour notice before a pickup could be made.
+     *
+     * @return string
+     */
     public function getPickupDate(): string
     {
         return $this->pickupDate;

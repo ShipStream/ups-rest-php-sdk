@@ -14,14 +14,18 @@ class SubscriptionFileException extends \ArrayObject
     }
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ExceptionPackageReferenceNumber>
      */
     protected $packageReferenceNumber;
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ExceptionShipmentReferenceNumber>
      */
@@ -118,7 +122,9 @@ class SubscriptionFileException extends \ArrayObject
     protected $accessPointLocationID;
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ExceptionPackageReferenceNumber>
      */
@@ -142,7 +148,9 @@ class SubscriptionFileException extends \ArrayObject
     }
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ExceptionShipmentReferenceNumber>
      */

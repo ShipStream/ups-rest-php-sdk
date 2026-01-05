@@ -13,61 +13,59 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid values are: 
-    1 - Postal Code
-    2 - Delivery SLIC
-    3 - Delivery City/State.
-    1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
-    *
-    * @var string
-    */
+     * Valid values are:
+     * 1 - Postal Code
+     * 2 - Delivery SLIC
+     * 3 - Delivery City/State.
+     * 1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
+     *
+     * @var string
+     */
     protected $freightWillCallRequestType;
     /**
-     * 
-     *
      * @var list<FreightWillCallSearchFacilityAddress>
      */
     protected $facilityAddress;
     /**
-    * OriginOrDestination is required for FreightWillCallRequestType 1 and type 3 . Valid values:
-    01-Origin facilities
-    02-Destination facilities.
-    *
-    * @var string
-    */
+     * OriginOrDestination is required for FreightWillCallRequestType 1 and type 3 . Valid values:
+     * 01-Origin facilities
+     * 02-Destination facilities.
+     *
+     * @var string
+     */
     protected $originOrDestination;
     /**
-    * FormatPostalCode would be required in the request when FreightWillCallRequestType is 1. Valid values are:
-    NFR-No format requested
-    FR-format requested
-    FS-format and search
-    NVR-No validation requested.
-    *
-    * @var string
-    */
+     * FormatPostalCode would be required in the request when FreightWillCallRequestType is 1. Valid values are:
+     * NFR-No format requested
+     * FR-format requested
+     * FS-format and search
+     * NVR-No validation requested.
+     *
+     * @var string
+     */
     protected $formatPostalCode;
     /**
-    * Day Of week Code. Valid Values are 1 to 7. 
-    1-Sunday
-    2-Monday 
-    3-Tuesday 
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
-    *
-    * @var string
-    */
+     * Day Of week Code. Valid Values are 1 to 7.
+     * 1-Sunday
+     * 2-Monday
+     * 3-Tuesday
+     * 4-Wednesday
+     * 5-Thursday
+     * 6-Friday
+     * 7-Saturday.
+     *
+     * @var string
+     */
     protected $dayOfWeekCode;
     /**
-    * Valid values are: 
-    1 - Postal Code
-    2 - Delivery SLIC
-    3 - Delivery City/State.
-    1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
-    *
-    * @return string
-    */
+     * Valid values are:
+     * 1 - Postal Code
+     * 2 - Delivery SLIC
+     * 3 - Delivery City/State.
+     * 1: Freight Will Call Search based on Postal Code, this search is valid for Postal code countries. 2: Freight Will Call Search based on SLIC. 3: Freight Will Call Search based on City and/or State. This Search is valid for non-postal code Countries
+     *
+     * @return string
+     */
     public function getFreightWillCallRequestType(): string
     {
         return $this->freightWillCallRequestType;
@@ -90,8 +88,6 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightWillCallSearchFacilityAddress>
      */
     public function getFacilityAddress(): array
@@ -99,8 +95,6 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
         return $this->facilityAddress;
     }
     /**
-     * 
-     *
      * @param list<FreightWillCallSearchFacilityAddress> $facilityAddress
      *
      * @return self
@@ -112,12 +106,12 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
         return $this;
     }
     /**
-    * OriginOrDestination is required for FreightWillCallRequestType 1 and type 3 . Valid values:
-    01-Origin facilities
-    02-Destination facilities.
-    *
-    * @return string
-    */
+     * OriginOrDestination is required for FreightWillCallRequestType 1 and type 3 . Valid values:
+     * 01-Origin facilities
+     * 02-Destination facilities.
+     *
+     * @return string
+     */
     public function getOriginOrDestination(): string
     {
         return $this->originOrDestination;
@@ -138,14 +132,14 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
         return $this;
     }
     /**
-    * FormatPostalCode would be required in the request when FreightWillCallRequestType is 1. Valid values are:
-    NFR-No format requested
-    FR-format requested
-    FS-format and search
-    NVR-No validation requested.
-    *
-    * @return string
-    */
+     * FormatPostalCode would be required in the request when FreightWillCallRequestType is 1. Valid values are:
+     * NFR-No format requested
+     * FR-format requested
+     * FS-format and search
+     * NVR-No validation requested.
+     *
+     * @return string
+     */
     public function getFormatPostalCode(): string
     {
         return $this->formatPostalCode;
@@ -168,17 +162,17 @@ class LocationSearchCriteriaFreightWillCallSearch extends \ArrayObject
         return $this;
     }
     /**
-    * Day Of week Code. Valid Values are 1 to 7. 
-    1-Sunday
-    2-Monday 
-    3-Tuesday 
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday.
-    *
-    * @return string
-    */
+     * Day Of week Code. Valid Values are 1 to 7.
+     * 1-Sunday
+     * 2-Monday
+     * 3-Tuesday
+     * 4-Wednesday
+     * 5-Thursday
+     * 6-Friday
+     * 7-Saturday.
+     *
+     * @return string
+     */
     public function getDayOfWeekCode(): string
     {
         return $this->dayOfWeekCode;

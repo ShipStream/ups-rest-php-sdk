@@ -13,13 +13,13 @@ class CandidateAddressClassification extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Contains the classification code of the address:
-    0 - UnClassified
-    1 - Commercial
-    2 - Residential
-    *
-    * @var string
-    */
+     * Contains the classification code of the address:
+     * 0 - UnClassified
+     * 1 - Commercial
+     * 2 - Residential
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Contains the text description of the address classification code (see Code above).
@@ -28,13 +28,13 @@ class CandidateAddressClassification extends \ArrayObject
      */
     protected $description;
     /**
-    * Contains the classification code of the address:
-    0 - UnClassified
-    1 - Commercial
-    2 - Residential
-    *
-    * @return string
-    */
+     * Contains the classification code of the address:
+     * 0 - UnClassified
+     * 1 - Commercial
+     * 2 - Residential
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

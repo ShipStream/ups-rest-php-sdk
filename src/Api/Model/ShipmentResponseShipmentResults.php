@@ -14,7 +14,9 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     }
     /**
      * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ShipmentResultsDisclaimer>
      */
@@ -38,20 +40,20 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      */
     protected $fRSShipmentData;
     /**
-    * RatingMethod is to indicate whether the Shipment was rated as shipment level or package level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
-    01 = Shipment level
-    02 = Package level
-    *
-    * @var string|null
-    */
+     * RatingMethod is to indicate whether the Shipment was rated as shipment level or package level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
+     * 01 = Shipment level
+     * 02 = Package level
+     *
+     * @var string|null
+     */
     protected $ratingMethod;
     /**
-    * BillableWeightCalculationMethod is to indicate whether the billable weight calculation method utilized was - the package level or shipment level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
-    01 = Shipment Billable Weight
-    02 = Package Billable Weight
-    *
-    * @var string|null
-    */
+     * BillableWeightCalculationMethod is to indicate whether the billable weight calculation method utilized was - the package level or shipment level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
+     * 01 = Shipment Billable Weight
+     * 02 = Package Billable Weight
+     *
+     * @var string|null
+     */
     protected $billableWeightCalculationMethod;
     /**
      * Billing Weight container.
@@ -66,16 +68,16 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      */
     protected $shipmentIdentificationNumber;
     /**
-    * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment. 
-    
-    The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments. 
-    
-    This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments and would be played back in response for second phase of Mail Innovations Dual Return Shipment.  If the shipment is a Package return shipment, the package tracking number will be concatenated with the system time (in the format YYYY-MM-DDHH.MM.SS.NNN) and followed by service code. 
-    
-    If the shipment is an MI Returns shipment, the Mail Manifest ID (MMI) will be concatenated with the system time.
-    *
-    * @var string|null
-    */
+     * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment.
+     * 
+     * The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments.
+     * 
+     * This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments and would be played back in response for second phase of Mail Innovations Dual Return Shipment.  If the shipment is a Package return shipment, the package tracking number will be concatenated with the system time (in the format YYYY-MM-DDHH.MM.SS.NNN) and followed by service code.
+     * 
+     * If the shipment is an MI Returns shipment, the Mail Manifest ID (MMI) will be concatenated with the system time.
+     *
+     * @var string|null
+     */
     protected $mIDualReturnShipmentKey;
     /**
      * Bar Code Image will be returned as Base 64 encoded graphic image. Bar Code Image will be returned if BarCodeImageIndicator or BarCodeAndLabelIndicator is present.
@@ -85,26 +87,30 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     protected $barCodeImage;
     /**
      * Returned Package Information.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ShipmentResultsPackageResults>|null
      */
     protected $packageResults;
     /**
      * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ShipmentResultsControlLogReceipt>|null
      */
     protected $controlLogReceipt;
     /**
-    * Container tag for the International forms image.   Form is returned for following shipments -
-    Forward shipments,
-    Shipments with PRL ReturnService,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
-    *
-    * @var ShipmentResultsForm|null
-    */
+     * Container tag for the International forms image.   Form is returned for following shipments -
+     * Forward shipments,
+     * Shipments with PRL ReturnService,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
+     *
+     * @var ShipmentResultsForm|null
+     */
     protected $form;
     /**
      * The container of the COD Turn In Page.
@@ -119,42 +125,44 @@ class ShipmentResponseShipmentResults extends \ArrayObject
      */
     protected $highValueReport;
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment. 
-    Forward shipment except for Mail Innovations Forward.
-    *
-    * @var string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.
+     * Forward shipment except for Mail Innovations Forward.
+     *
+     * @var string|null
+     */
     protected $labelURL;
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageLabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment. 
-    Forward shipment except for Mail Innovations Forward.  Not returned if LabelLinksIndicator is requested with Locale element.
-    *
-    * @var string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageLabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.
+     * Forward shipment except for Mail Innovations Forward.  Not returned if LabelLinksIndicator is requested with Locale element.
+     *
+     * @var string|null
+     */
     protected $localLanguageLabelURL;
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. ReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment.
-    *
-    * @var string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. ReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.
+     *
+     * @var string|null
+     */
     protected $receiptURL;
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment.   Not returned if LabelLinksIndicator is requested with Locale element.
-    *
-    * @var string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.   Not returned if LabelLinksIndicator is requested with Locale element.
+     *
+     * @var string|null
+     */
     protected $localLanguageReceiptURL;
     /**
      * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<string>|null
      */
@@ -173,7 +181,9 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     protected $roarRatedIndicator;
     /**
      * Disclaimer would be used to provide more information to shipper regarding the processed shipment. This would be used to notify shipper about possible taxes and duties that might have been added or might apply to the shipment. This field would be returned only if TaxInformationIndicator is present in a request.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ShipmentResultsDisclaimer>
      */
@@ -262,12 +272,12 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * RatingMethod is to indicate whether the Shipment was rated as shipment level or package level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
-    01 = Shipment level
-    02 = Package level
-    *
-    * @return string|null
-    */
+     * RatingMethod is to indicate whether the Shipment was rated as shipment level or package level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
+     * 01 = Shipment level
+     * 02 = Package level
+     *
+     * @return string|null
+     */
     public function getRatingMethod(): ?string
     {
         return $this->ratingMethod;
@@ -288,12 +298,12 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * BillableWeightCalculationMethod is to indicate whether the billable weight calculation method utilized was - the package level or shipment level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
-    01 = Shipment Billable Weight
-    02 = Package Billable Weight
-    *
-    * @return string|null
-    */
+     * BillableWeightCalculationMethod is to indicate whether the billable weight calculation method utilized was - the package level or shipment level. This information will be returned only if RatingMethodRequestedIndicator is present in the request.  Valid values:
+     * 01 = Shipment Billable Weight
+     * 02 = Package Billable Weight
+     *
+     * @return string|null
+     */
     public function getBillableWeightCalculationMethod(): ?string
     {
         return $this->billableWeightCalculationMethod;
@@ -358,16 +368,16 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment. 
-    
-    The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments. 
-    
-    This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments and would be played back in response for second phase of Mail Innovations Dual Return Shipment.  If the shipment is a Package return shipment, the package tracking number will be concatenated with the system time (in the format YYYY-MM-DDHH.MM.SS.NNN) and followed by service code. 
-    
-    If the shipment is an MI Returns shipment, the Mail Manifest ID (MMI) will be concatenated with the system time.
-    *
-    * @return string|null
-    */
+     * MIDualReturnShipmentKey is unique key required to process Mail Innovations Dual Return Shipment.
+     * 
+     * The unique identifier (key) would be returned in response of first phase of Mail Innovations Dual Return Shipments.
+     * 
+     * This unique identifier (key) would be part of request for second phase of Mail Innovations Dual Return Shipments and would be played back in response for second phase of Mail Innovations Dual Return Shipment.  If the shipment is a Package return shipment, the package tracking number will be concatenated with the system time (in the format YYYY-MM-DDHH.MM.SS.NNN) and followed by service code.
+     * 
+     * If the shipment is an MI Returns shipment, the Mail Manifest ID (MMI) will be concatenated with the system time.
+     *
+     * @return string|null
+     */
     public function getMIDualReturnShipmentKey(): ?string
     {
         return $this->mIDualReturnShipmentKey;
@@ -415,7 +425,9 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     }
     /**
      * Returned Package Information.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ShipmentResultsPackageResults>|null
      */
@@ -439,7 +451,9 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     }
     /**
      * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD. \nTwo copies of high value report needs to be pointed out.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ShipmentResultsControlLogReceipt>|null
      */
@@ -462,13 +476,13 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * Container tag for the International forms image.   Form is returned for following shipments -
-    Forward shipments,
-    Shipments with PRL ReturnService,
-    Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
-    *
-    * @return ShipmentResultsForm|null
-    */
+     * Container tag for the International forms image.   Form is returned for following shipments -
+     * Forward shipments,
+     * Shipments with PRL ReturnService,
+     * Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.
+     *
+     * @return ShipmentResultsForm|null
+     */
     public function getForm(): ?ShipmentResultsForm
     {
         return $this->form;
@@ -534,13 +548,13 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment. 
-    Forward shipment except for Mail Innovations Forward.
-    *
-    * @return string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.
+     * Forward shipment except for Mail Innovations Forward.
+     *
+     * @return string|null
+     */
     public function getLabelURL(): ?string
     {
         return $this->labelURL;
@@ -562,13 +576,13 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageLabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment. 
-    Forward shipment except for Mail Innovations Forward.  Not returned if LabelLinksIndicator is requested with Locale element.
-    *
-    * @return string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageLabelURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.
+     * Forward shipment except for Mail Innovations Forward.  Not returned if LabelLinksIndicator is requested with Locale element.
+     *
+     * @return string|null
+     */
     public function getLocalLanguageLabelURL(): ?string
     {
         return $this->localLanguageLabelURL;
@@ -590,12 +604,12 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. ReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment.
-    *
-    * @return string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. ReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.
+     *
+     * @return string|null
+     */
     public function getReceiptURL(): ?string
     {
         return $this->receiptURL;
@@ -616,12 +630,12 @@ class ShipmentResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
-    Print/Electronic ImportControl shipment
-    Print/Electronic Return shipment.   Not returned if LabelLinksIndicator is requested with Locale element.
-    *
-    * @return string|null
-    */
+     * URL will point to a page wherein label, receipt and other documents, if applicable, such as HighValueReport, CustomsInvoice and ImportControl instructions can be requested. LocalLanguageReceiptURL is returned only if the LabelLinksIndicator is requested for following shipments:
+     * Print/Electronic ImportControl shipment
+     * Print/Electronic Return shipment.   Not returned if LabelLinksIndicator is requested with Locale element.
+     *
+     * @return string|null
+     */
     public function getLocalLanguageReceiptURL(): ?string
     {
         return $this->localLanguageReceiptURL;
@@ -643,7 +657,9 @@ class ShipmentResponseShipmentResults extends \ArrayObject
     }
     /**
      * Dangerous Good Paper Image in pdf format. One multipage PDF document will be returned that will contain all required Dangrous Goods shipping paper copies for all Dangerous Goods packages. Only returned when DGSignatoryInfo is present.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<string>|null
      */

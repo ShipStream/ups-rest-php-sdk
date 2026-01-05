@@ -13,19 +13,19 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The type of package quantity limit.   It will be returned if applies for a given chemical record.
-    
-    Valid values:
-    CAO - Cargo Aircraft Only
-    LTD QTY - Limited Quantity
-    GND - Ground
-    PAX - Passenger Aircraft
-    COMAT CAO - Company Material CAO
-    COMAT LTD - Company Material LTD
-    COMAT PAX - Company Material PAX
-    *
-    * @var string
-    */
+     * The type of package quantity limit.   It will be returned if applies for a given chemical record.
+     * 
+     * Valid values:
+     * CAO - Cargo Aircraft Only
+     * LTD QTY - Limited Quantity
+     * GND - Ground
+     * PAX - Passenger Aircraft
+     * COMAT CAO - Company Material CAO
+     * COMAT LTD - Company Material LTD
+     * COMAT PAX - Company Material PAX
+     *
+     * @var string
+     */
     protected $packageQuantityLimitTypeCode;
     /**
      * The numerical value of the mass capacity of the regulated good.  It will be returned if applies for a given chemical record.
@@ -34,11 +34,11 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      */
     protected $quantity;
     /**
-    * The unit of measure used for the mass capacity of the regulated good.
-     It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
-    *
-    * @var string
-    */
+     * The unit of measure used for the mass capacity of the regulated good.
+     *   It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
+     *
+     * @var string
+     */
     protected $uOM;
     /**
      * The packing instructions related to the chemical record.  It will be returned if applies for a given chemical record.
@@ -47,19 +47,19 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
      */
     protected $packagingInstructionCode;
     /**
-    * The type of package quantity limit.   It will be returned if applies for a given chemical record.
-    
-    Valid values:
-    CAO - Cargo Aircraft Only
-    LTD QTY - Limited Quantity
-    GND - Ground
-    PAX - Passenger Aircraft
-    COMAT CAO - Company Material CAO
-    COMAT LTD - Company Material LTD
-    COMAT PAX - Company Material PAX
-    *
-    * @return string
-    */
+     * The type of package quantity limit.   It will be returned if applies for a given chemical record.
+     * 
+     * Valid values:
+     * CAO - Cargo Aircraft Only
+     * LTD QTY - Limited Quantity
+     * GND - Ground
+     * PAX - Passenger Aircraft
+     * COMAT CAO - Company Material CAO
+     * COMAT LTD - Company Material LTD
+     * COMAT PAX - Company Material PAX
+     *
+     * @return string
+     */
     public function getPackageQuantityLimitTypeCode(): string
     {
         return $this->packageQuantityLimitTypeCode;
@@ -109,11 +109,11 @@ class ChemicalDataPackageQuantityLimitDetail extends \ArrayObject
         return $this;
     }
     /**
-    * The unit of measure used for the mass capacity of the regulated good.
-     It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
-    *
-    * @return string
-    */
+     * The unit of measure used for the mass capacity of the regulated good.
+     *   It will be returned if applies for a given chemical record. Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
+     *
+     * @return string
+     */
     public function getUOM(): string
     {
         return $this->uOM;

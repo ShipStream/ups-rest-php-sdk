@@ -19,23 +19,21 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
      */
     protected $packageIdentifier;
     /**
-    * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
-    N = Package is not crew accessible.
-    *
-    * @var string
-    */
+     * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
+     * N = Package is not crew accessible.
+     *
+     * @var string
+     */
     protected $accessibleIndicator;
     /**
-    * Indicates if origin country or territory is in the Europe Business Unit. 
-     Y = Origin country or territory is in the Europe Business Unit.
-    N = Origin country or territory is not in the Europe Business Unit.
-    *
-    * @var string
-    */
+     * Indicates if origin country or territory is in the Europe Business Unit.
+     *   Y = Origin country or territory is in the Europe Business Unit.
+     * N = Origin country or territory is not in the Europe Business Unit.
+     *
+     * @var string
+     */
     protected $europeBUIndicator;
     /**
-     * 
-     *
      * @var list<PackageResultsChemicalRecordResults>
      */
     protected $chemicalRecordResults;
@@ -62,11 +60,11 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
-    N = Package is not crew accessible.
-    *
-    * @return string
-    */
+     * Indicates if a package is crew accessible or not.  Y = Package is crew accessible.
+     * N = Package is not crew accessible.
+     *
+     * @return string
+     */
     public function getAccessibleIndicator(): string
     {
         return $this->accessibleIndicator;
@@ -86,12 +84,12 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if origin country or territory is in the Europe Business Unit. 
-     Y = Origin country or territory is in the Europe Business Unit.
-    N = Origin country or territory is not in the Europe Business Unit.
-    *
-    * @return string
-    */
+     * Indicates if origin country or territory is in the Europe Business Unit.
+     *   Y = Origin country or territory is in the Europe Business Unit.
+     * N = Origin country or territory is not in the Europe Business Unit.
+     *
+     * @return string
+     */
     public function getEuropeBUIndicator(): string
     {
         return $this->europeBUIndicator;
@@ -112,8 +110,6 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PackageResultsChemicalRecordResults>
      */
     public function getChemicalRecordResults(): array
@@ -121,8 +117,6 @@ class AcceptanceAuditPreCheckResponsePackageResults extends \ArrayObject
         return $this->chemicalRecordResults;
     }
     /**
-     * 
-     *
      * @param list<PackageResultsChemicalRecordResults> $chemicalRecordResults
      *
      * @return self

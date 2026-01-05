@@ -19,41 +19,41 @@ class ShipmentPickupRequest extends \ArrayObject
      */
     protected $additionalComments;
     /**
-    * Requester Container. Also referred to as caller.
-    Required for ground shipments if PickupRequest container is present.
-    *
-    * @var PickupRequestRequester
-    */
+     * Requester Container. Also referred to as caller.
+     * Required for ground shipments if PickupRequest container is present.
+     *
+     * @var PickupRequestRequester
+     */
     protected $requester;
     /**
-    * Date of the Pickup. 
-    Format: YYYYMMDD.
-    Ground pickup may be scheduled up to 42 days in the future.
-    Note: This element will act as PickupDate or DropOffDate based on the presence of PickupTimeReady or DropOffTimeReady element.
-    *
-    * @var string
-    */
+     * Date of the Pickup.
+     * Format: YYYYMMDD.
+     * Ground pickup may be scheduled up to 42 days in the future.
+     * Note: This element will act as PickupDate or DropOffDate based on the presence of PickupTimeReady or DropOffTimeReady element.
+     *
+     * @var string
+     */
     protected $pickupDate;
     /**
-    * The earliest time a shipment is ready to be picked up.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    *
-    * @var string
-    */
+     * The earliest time a shipment is ready to be picked up.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     *
+     * @var string
+     */
     protected $earliestTimeReady;
     /**
-    * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    Optional if the account type is House.
-    *
-    * @var string
-    */
+     * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     * Optional if the account type is House.
+     *
+     * @var string
+     */
     protected $latestTimeReady;
     /**
      * Pickup Order Management (POM) container.
@@ -84,11 +84,11 @@ class ShipmentPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Requester Container. Also referred to as caller.
-    Required for ground shipments if PickupRequest container is present.
-    *
-    * @return PickupRequestRequester
-    */
+     * Requester Container. Also referred to as caller.
+     * Required for ground shipments if PickupRequest container is present.
+     *
+     * @return PickupRequestRequester
+     */
     public function getRequester(): PickupRequestRequester
     {
         return $this->requester;
@@ -108,13 +108,13 @@ class ShipmentPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Date of the Pickup. 
-    Format: YYYYMMDD.
-    Ground pickup may be scheduled up to 42 days in the future.
-    Note: This element will act as PickupDate or DropOffDate based on the presence of PickupTimeReady or DropOffTimeReady element.
-    *
-    * @return string
-    */
+     * Date of the Pickup.
+     * Format: YYYYMMDD.
+     * Ground pickup may be scheduled up to 42 days in the future.
+     * Note: This element will act as PickupDate or DropOffDate based on the presence of PickupTimeReady or DropOffTimeReady element.
+     *
+     * @return string
+     */
     public function getPickupDate(): string
     {
         return $this->pickupDate;
@@ -136,14 +136,14 @@ class ShipmentPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The earliest time a shipment is ready to be picked up.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    *
-    * @return string
-    */
+     * The earliest time a shipment is ready to be picked up.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     *
+     * @return string
+     */
     public function getEarliestTimeReady(): string
     {
         return $this->earliestTimeReady;
@@ -166,15 +166,15 @@ class ShipmentPickupRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
-    The time is on a 24 hour clock. 
-    Format: HHMM
-    HH = Hour values 00 to 23
-    MM = Minute values 00 to 59
-    Optional if the account type is House.
-    *
-    * @return string
-    */
+     * The latest time a shipment can be picked up. Can be also referred as the Closing Time for a pickup time window.
+     * The time is on a 24 hour clock.
+     * Format: HHMM
+     * HH = Hour values 00 to 23
+     * MM = Minute values 00 to 59
+     * Optional if the account type is House.
+     *
+     * @return string
+     */
     public function getLatestTimeReady(): string
     {
         return $this->latestTimeReady;

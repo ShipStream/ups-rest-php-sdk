@@ -43,11 +43,11 @@ class FreightRateRequest extends \ArrayObject
      */
     protected $service;
     /**
-    * HandlingUnitOne Container.
-    Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
-    *
-    * @var FreightRateRequestHandlingUnitOne
-    */
+     * HandlingUnitOne Container.
+     * Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
+     *
+     * @var FreightRateRequestHandlingUnitOne
+     */
     protected $handlingUnitOne;
     /**
      * HandlingUnit Container.
@@ -56,8 +56,6 @@ class FreightRateRequest extends \ArrayObject
      */
     protected $handlingUnitTwo;
     /**
-     * 
-     *
      * @var list<FreightRateRequestCommodity>
      */
     protected $commodity;
@@ -92,19 +90,19 @@ class FreightRateRequest extends \ArrayObject
      */
     protected $handlingUnitWeight;
     /**
-    * Indicator used to specify if the user wants to subtract the handling unit weight.
-    Defaults to false. 
-    
-    When AdjustedWeightIndicator is set to "true":
-    - If HandlingUnitWeight is present, the HandlingUnitWeight Value will be subtracted and prorated from the FreightLineItem Weight Value. The subtracted/prorated FreightLineItem Weight will be used for GFP rating.
-    - If HandlingUnitWeight is not present and the AdjustedWeightValue is present, the adjusted weight value from the FreightLineItem object will be used to do a GFP rating request to UPGF.
-    - If HandlingUnitWeight is not present and the AdjustedWeightValue is not present, the original weight from the FreightLineItem object will be used to do a GFP rating request to UPGF.In this case, the HandlingUnitWeight value  is assume to be zero.
-    
-    AdjustedWeightIndicator set to "false":
-    - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
-    *
-    * @var string
-    */
+     * Indicator used to specify if the user wants to subtract the handling unit weight.
+     * Defaults to false.
+     * 
+     * When AdjustedWeightIndicator is set to "true":
+     * - If HandlingUnitWeight is present, the HandlingUnitWeight Value will be subtracted and prorated from the FreightLineItem Weight Value. The subtracted/prorated FreightLineItem Weight will be used for GFP rating.
+     * - If HandlingUnitWeight is not present and the AdjustedWeightValue is present, the adjusted weight value from the FreightLineItem object will be used to do a GFP rating request to UPGF.
+     * - If HandlingUnitWeight is not present and the AdjustedWeightValue is not present, the original weight from the FreightLineItem object will be used to do a GFP rating request to UPGF.In this case, the HandlingUnitWeight value  is assume to be zero.
+     * 
+     * AdjustedWeightIndicator set to "false":
+     * - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
+     *
+     * @var string
+     */
     protected $adjustedWeightIndicator;
     /**
      * Presence of the tag indicates Time in Transit information is requested and will be returned.
@@ -113,8 +111,6 @@ class FreightRateRequest extends \ArrayObject
      */
     protected $timeInTransitIndicator;
     /**
-     * 
-     *
      * @var list<FreightRateRequestHandlingUnits>
      */
     protected $handlingUnits;
@@ -125,11 +121,11 @@ class FreightRateRequest extends \ArrayObject
      */
     protected $adjustedHeightIndicator;
     /**
-    * The presence of the tag indicates that the rate request is density based.
-    For Density Based Rating (DBR), the customer must have DBR Contract Service.
-    *
-    * @var string
-    */
+     * The presence of the tag indicates that the rate request is density based.
+     * For Density Based Rating (DBR), the customer must have DBR Contract Service.
+     *
+     * @var string
+     */
     protected $densityEligibleIndicator;
     /**
      * The presence of this indicator means a Quote Number will be returned for this LTL Freight Rate quote request.
@@ -248,11 +244,11 @@ class FreightRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * HandlingUnitOne Container.
-    Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
-    *
-    * @return FreightRateRequestHandlingUnitOne
-    */
+     * HandlingUnitOne Container.
+     * Required, unless HandlingUnitTwo is present with a value of LOO -LOOSE.
+     *
+     * @return FreightRateRequestHandlingUnitOne
+     */
     public function getHandlingUnitOne(): FreightRateRequestHandlingUnitOne
     {
         return $this->handlingUnitOne;
@@ -294,8 +290,6 @@ class FreightRateRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightRateRequestCommodity>
      */
     public function getCommodity(): array
@@ -303,8 +297,6 @@ class FreightRateRequest extends \ArrayObject
         return $this->commodity;
     }
     /**
-     * 
-     *
      * @param list<FreightRateRequestCommodity> $commodity
      *
      * @return self
@@ -426,19 +418,19 @@ class FreightRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicator used to specify if the user wants to subtract the handling unit weight.
-    Defaults to false. 
-    
-    When AdjustedWeightIndicator is set to "true":
-    - If HandlingUnitWeight is present, the HandlingUnitWeight Value will be subtracted and prorated from the FreightLineItem Weight Value. The subtracted/prorated FreightLineItem Weight will be used for GFP rating.
-    - If HandlingUnitWeight is not present and the AdjustedWeightValue is present, the adjusted weight value from the FreightLineItem object will be used to do a GFP rating request to UPGF.
-    - If HandlingUnitWeight is not present and the AdjustedWeightValue is not present, the original weight from the FreightLineItem object will be used to do a GFP rating request to UPGF.In this case, the HandlingUnitWeight value  is assume to be zero.
-    
-    AdjustedWeightIndicator set to "false":
-    - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
-    *
-    * @return string
-    */
+     * Indicator used to specify if the user wants to subtract the handling unit weight.
+     * Defaults to false.
+     * 
+     * When AdjustedWeightIndicator is set to "true":
+     * - If HandlingUnitWeight is present, the HandlingUnitWeight Value will be subtracted and prorated from the FreightLineItem Weight Value. The subtracted/prorated FreightLineItem Weight will be used for GFP rating.
+     * - If HandlingUnitWeight is not present and the AdjustedWeightValue is present, the adjusted weight value from the FreightLineItem object will be used to do a GFP rating request to UPGF.
+     * - If HandlingUnitWeight is not present and the AdjustedWeightValue is not present, the original weight from the FreightLineItem object will be used to do a GFP rating request to UPGF.In this case, the HandlingUnitWeight value  is assume to be zero.
+     * 
+     * AdjustedWeightIndicator set to "false":
+     * - The FreightLineItem.Weight will be used for both LTL and GFP rating requests (current functionality). The HandlingUnitWeight or the FreightLineItem.AdjustedWeight will not be used.
+     *
+     * @return string
+     */
     public function getAdjustedWeightIndicator(): string
     {
         return $this->adjustedWeightIndicator;
@@ -488,8 +480,6 @@ class FreightRateRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightRateRequestHandlingUnits>
      */
     public function getHandlingUnits(): array
@@ -497,8 +487,6 @@ class FreightRateRequest extends \ArrayObject
         return $this->handlingUnits;
     }
     /**
-     * 
-     *
      * @param list<FreightRateRequestHandlingUnits> $handlingUnits
      *
      * @return self
@@ -532,11 +520,11 @@ class FreightRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The presence of the tag indicates that the rate request is density based.
-    For Density Based Rating (DBR), the customer must have DBR Contract Service.
-    *
-    * @return string
-    */
+     * The presence of the tag indicates that the rate request is density based.
+     * For Density Based Rating (DBR), the customer must have DBR Contract Service.
+     *
+     * @return string
+     */
     public function getDensityEligibleIndicator(): string
     {
         return $this->densityEligibleIndicator;

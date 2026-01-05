@@ -19,8 +19,6 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      */
     protected $request;
     /**
-     * 
-     *
      * @var list<PickupGetServiceCenterFacilitiesRequestPickupPiece>
      */
     protected $pickupPiece;
@@ -37,11 +35,11 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
      */
     protected $destinationAddress;
     /**
-    * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US. 
-    The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
-    *
-    * @var string
-    */
+     * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US.
+     * The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
+     *
+     * @var string
+     */
     protected $locale;
     /**
      * Proximity Indicator. Indicates the user requested the proximity search for UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday locations for the origin address and/or the airport code, and the sort code for destination address.
@@ -72,8 +70,6 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PickupGetServiceCenterFacilitiesRequestPickupPiece>
      */
     public function getPickupPiece(): array
@@ -81,8 +77,6 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
         return $this->pickupPiece;
     }
     /**
-     * 
-     *
      * @param list<PickupGetServiceCenterFacilitiesRequestPickupPiece> $pickupPiece
      *
      * @return self
@@ -138,11 +132,11 @@ class PickupGetServiceCenterFacilitiesRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US. 
-    The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
-    *
-    * @return string
-    */
+     * Origin Country or Territory Locale.  Locale should be Origin Country. Example: en_US.
+     * The Last 50 instruction will be send based on this locale. Locale is required if PoximityIndicator is present for Drop Off facilities.
+     *
+     * @return string
+     */
     public function getLocale(): string
     {
         return $this->locale;

@@ -13,13 +13,13 @@ class CODCODBillingOption extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code associated with the COD billing option for the shipment service options.
-    Valid values:
-    01 - Prepaid
-    02 - Freight Collect
-    *
-    * @var string
-    */
+     * The code associated with the COD billing option for the shipment service options.
+     * Valid values:
+     * 01 - Prepaid
+     * 02 - Freight Collect
+     *
+     * @var string
+     */
     protected $code;
     /**
      * A text description of the code for the COD billing option associated with the shipment service options.
@@ -28,13 +28,13 @@ class CODCODBillingOption extends \ArrayObject
      */
     protected $description;
     /**
-    * The code associated with the COD billing option for the shipment service options.
-    Valid values:
-    01 - Prepaid
-    02 - Freight Collect
-    *
-    * @return string
-    */
+     * The code associated with the COD billing option for the shipment service options.
+     * Valid values:
+     * 01 - Prepaid
+     * 02 - Freight Collect
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

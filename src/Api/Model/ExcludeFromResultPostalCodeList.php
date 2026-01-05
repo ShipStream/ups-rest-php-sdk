@@ -13,14 +13,10 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<PostalCodeListPostalCode>
      */
     protected $postalCode;
     /**
-     * 
-     *
      * @return list<PostalCodeListPostalCode>
      */
     public function getPostalCode(): array
@@ -28,8 +24,6 @@ class ExcludeFromResultPostalCodeList extends \ArrayObject
         return $this->postalCode;
     }
     /**
-     * 
-     *
      * @param list<PostalCodeListPostalCode> $postalCode
      *
      * @return self

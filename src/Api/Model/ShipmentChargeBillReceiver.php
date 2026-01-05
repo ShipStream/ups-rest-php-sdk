@@ -13,14 +13,14 @@ class ShipmentChargeBillReceiver extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The UPS account number.  The account must be a valid UPS account number that is active. 
-    
-    For US, PR and CA accounts, the account must be a daily pickup account, an occasional account, a customer B.I.N account, or a dropper shipper account. 
-    
-    All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
-    *
-    * @var string
-    */
+     * The UPS account number.  The account must be a valid UPS account number that is active.
+     * 
+     * For US, PR and CA accounts, the account must be a daily pickup account, an occasional account, a customer B.I.N account, or a dropper shipper account.
+     * 
+     * All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
+     *
+     * @var string
+     */
     protected $accountNumber;
     /**
      * Container for additional information for the bill receiver's UPS accounts address.
@@ -29,14 +29,14 @@ class ShipmentChargeBillReceiver extends \ArrayObject
      */
     protected $address;
     /**
-    * The UPS account number.  The account must be a valid UPS account number that is active. 
-    
-    For US, PR and CA accounts, the account must be a daily pickup account, an occasional account, a customer B.I.N account, or a dropper shipper account. 
-    
-    All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
-    *
-    * @return string
-    */
+     * The UPS account number.  The account must be a valid UPS account number that is active.
+     * 
+     * For US, PR and CA accounts, the account must be a daily pickup account, an occasional account, a customer B.I.N account, or a dropper shipper account.
+     * 
+     * All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
+     *
+     * @return string
+     */
     public function getAccountNumber(): string
     {
         return $this->accountNumber;

@@ -67,30 +67,30 @@ class RatePackagePackageServiceOptions extends \ArrayObject
      */
     protected $insurance;
     /**
-    * The UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.  Empty Tag means indicator is present.
-    
-    Valid only for Canada to Canada movements.
-    
-    Available for the following Return Services:
-    - Returns Exchange (available with a contract)
-    - Print Return Label
-    - Print and Mail
-    - Electronic Return Label
-    - Return Service Three Attempt
-    
-    May be requested with following UPS services:
-    - UPS Express® Early
-    - UPS Express
-    - UPS Express Saver
-    - UPS Standard.
-    
-    Not available for packages with the following:
-    - Delivery Confirmation - Signature Required
-    - Delivery Confirmation - Adult Signature Required.
-    
-    *
-    * @var string
-    */
+     * The UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.  Empty Tag means indicator is present.
+     * 
+     * Valid only for Canada to Canada movements.
+     * 
+     * Available for the following Return Services:
+     * - Returns Exchange (available with a contract)
+     * - Print Return Label
+     * - Print and Mail
+     * - Electronic Return Label
+     * - Return Service Three Attempt
+     * 
+     * May be requested with following UPS services:
+     * - UPS Express® Early
+     * - UPS Express
+     * - UPS Express Saver
+     * - UPS Standard.
+     * 
+     * Not available for packages with the following:
+     * - Delivery Confirmation - Signature Required
+     * - Delivery Confirmation - Adult Signature Required.
+     * 
+     *
+     * @var string
+     */
     protected $uPSPremiumCareIndicator;
     /**
      * Container to hold HazMat information.  Applies only if SubVersion is greater than or equal to 1701.
@@ -303,30 +303,30 @@ class RatePackagePackageServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * The UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.  Empty Tag means indicator is present.
-    
-    Valid only for Canada to Canada movements.
-    
-    Available for the following Return Services:
-    - Returns Exchange (available with a contract)
-    - Print Return Label
-    - Print and Mail
-    - Electronic Return Label
-    - Return Service Three Attempt
-    
-    May be requested with following UPS services:
-    - UPS Express® Early
-    - UPS Express
-    - UPS Express Saver
-    - UPS Standard.
-    
-    Not available for packages with the following:
-    - Delivery Confirmation - Signature Required
-    - Delivery Confirmation - Adult Signature Required.
-    
-    *
-    * @return string
-    */
+     * The UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances.  Empty Tag means indicator is present.
+     * 
+     * Valid only for Canada to Canada movements.
+     * 
+     * Available for the following Return Services:
+     * - Returns Exchange (available with a contract)
+     * - Print Return Label
+     * - Print and Mail
+     * - Electronic Return Label
+     * - Return Service Three Attempt
+     * 
+     * May be requested with following UPS services:
+     * - UPS Express® Early
+     * - UPS Express
+     * - UPS Express Saver
+     * - UPS Standard.
+     * 
+     * Not available for packages with the following:
+     * - Delivery Confirmation - Signature Required
+     * - Delivery Confirmation - Adult Signature Required.
+     * 
+     *
+     * @return string
+     */
     public function getUPSPremiumCareIndicator(): string
     {
         return $this->uPSPremiumCareIndicator;

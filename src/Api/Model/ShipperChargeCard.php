@@ -19,14 +19,14 @@ class ShipperChargeCard extends \ArrayObject
      */
     protected $cardHolderName;
     /**
-    * Charge card type. Valid values:
-    - 01 = American Express
-    - 03 = Discover
-    - 04 = Mastercard
-    - 06 = VISA  Discover card Pickup country US only.
-    *
-    * @var string
-    */
+     * Charge card type. Valid values:
+     * - 01 = American Express
+     * - 03 = Discover
+     * - 04 = Mastercard
+     * - 06 = VISA  Discover card Pickup country US only.
+     *
+     * @var string
+     */
     protected $cardType;
     /**
      * Charge card number.  For Privileged clients, this element must be tokenized card number.
@@ -35,21 +35,21 @@ class ShipperChargeCard extends \ArrayObject
      */
     protected $cardNumber;
     /**
-    * Credit card expiration date.
-    Format: yyyyMM
-    yyyy = 4 digit year, valid value current year - 10 years.
-    MM = 2 digit month, valid values 01-12
-    *
-    * @var string
-    */
+     * Credit card expiration date.
+     * Format: yyyyMM
+     * yyyy = 4 digit year, valid value current year - 10 years.
+     * MM = 2 digit month, valid values 01-12
+     *
+     * @var string
+     */
     protected $expirationDate;
     /**
-    * Three or four digits that can be found either on top of credit card number or on the back of credit card. 
-    Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
-    Security code is required if credit card information is provided.
-    *
-    * @var string
-    */
+     * Three or four digits that can be found either on top of credit card number or on the back of credit card.
+     * Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
+     * Security code is required if credit card information is provided.
+     *
+     * @var string
+     */
     protected $securityCode;
     /**
      * Container to hold the Charge card address.
@@ -80,14 +80,14 @@ class ShipperChargeCard extends \ArrayObject
         return $this;
     }
     /**
-    * Charge card type. Valid values:
-    - 01 = American Express
-    - 03 = Discover
-    - 04 = Mastercard
-    - 06 = VISA  Discover card Pickup country US only.
-    *
-    * @return string
-    */
+     * Charge card type. Valid values:
+     * - 01 = American Express
+     * - 03 = Discover
+     * - 04 = Mastercard
+     * - 06 = VISA  Discover card Pickup country US only.
+     *
+     * @return string
+     */
     public function getCardType(): string
     {
         return $this->cardType;
@@ -132,13 +132,13 @@ class ShipperChargeCard extends \ArrayObject
         return $this;
     }
     /**
-    * Credit card expiration date.
-    Format: yyyyMM
-    yyyy = 4 digit year, valid value current year - 10 years.
-    MM = 2 digit month, valid values 01-12
-    *
-    * @return string
-    */
+     * Credit card expiration date.
+     * Format: yyyyMM
+     * yyyy = 4 digit year, valid value current year - 10 years.
+     * MM = 2 digit month, valid values 01-12
+     *
+     * @return string
+     */
     public function getExpirationDate(): string
     {
         return $this->expirationDate;
@@ -160,12 +160,12 @@ class ShipperChargeCard extends \ArrayObject
         return $this;
     }
     /**
-    * Three or four digits that can be found either on top of credit card number or on the back of credit card. 
-    Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
-    Security code is required if credit card information is provided.
-    *
-    * @return string
-    */
+     * Three or four digits that can be found either on top of credit card number or on the back of credit card.
+     * Number of digits varies for different type of credit card.  Valid values are 3 or 4 digits.
+     * Security code is required if credit card information is provided.
+     *
+     * @return string
+     */
     public function getSecurityCode(): string
     {
         return $this->securityCode;

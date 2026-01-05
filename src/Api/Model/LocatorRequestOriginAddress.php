@@ -19,19 +19,19 @@ class LocatorRequestOriginAddress extends \ArrayObject
      */
     protected $geocode;
     /**
-    * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code. 
-    The element CountryCode is required.
-    *
-    * @var OriginAddressAddressKeyFormat
-    */
+     * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code.
+     * The element CountryCode is required.
+     *
+     * @var OriginAddressAddressKeyFormat
+     */
     protected $addressKeyFormat;
     /**
-    * If present, indicates the maximum number of locations the client wishes to receive in an address candidate response where the provided origin information is insufficient to accurately establish location. 
-    
-    Valid values: 1-50, default 10
-    *
-    * @var string
-    */
+     * If present, indicates the maximum number of locations the client wishes to receive in an address candidate response where the provided origin information is insufficient to accurately establish location.
+     * 
+     * Valid values: 1-50, default 10
+     *
+     * @var string
+     */
     protected $maximumListSize;
     /**
      * Geocode is the latitude and longitude of the origin address.
@@ -56,11 +56,11 @@ class LocatorRequestOriginAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code. 
-    The element CountryCode is required.
-    *
-    * @return OriginAddressAddressKeyFormat
-    */
+     * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code.
+     * The element CountryCode is required.
+     *
+     * @return OriginAddressAddressKeyFormat
+     */
     public function getAddressKeyFormat(): OriginAddressAddressKeyFormat
     {
         return $this->addressKeyFormat;
@@ -80,12 +80,12 @@ class LocatorRequestOriginAddress extends \ArrayObject
         return $this;
     }
     /**
-    * If present, indicates the maximum number of locations the client wishes to receive in an address candidate response where the provided origin information is insufficient to accurately establish location. 
-    
-    Valid values: 1-50, default 10
-    *
-    * @return string
-    */
+     * If present, indicates the maximum number of locations the client wishes to receive in an address candidate response where the provided origin information is insufficient to accurately establish location.
+     * 
+     * Valid values: 1-50, default 10
+     *
+     * @return string
+     */
     public function getMaximumListSize(): string
     {
         return $this->maximumListSize;

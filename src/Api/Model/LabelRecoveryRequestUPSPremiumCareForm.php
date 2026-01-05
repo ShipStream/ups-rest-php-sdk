@@ -13,28 +13,28 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Size of UPS Premium Care Form.  Valid values: 
-    01 = A4 Size
-    02 = Letter Size
-    *
-    * @var string
-    */
+     * Size of UPS Premium Care Form.  Valid values:
+     * 01 = A4 Size
+     * 02 = Letter Size
+     *
+     * @var string
+     */
     protected $pageSize;
     /**
-    * Format of UPS Premium Care Form.  Valid values: 
-    01 = PNG
-    02 = PDF
-    *
-    * @var string
-    */
+     * Format of UPS Premium Care Form.  Valid values:
+     * 01 = PNG
+     * 02 = PDF
+     *
+     * @var string
+     */
     protected $printType;
     /**
-    * Size of UPS Premium Care Form.  Valid values: 
-    01 = A4 Size
-    02 = Letter Size
-    *
-    * @return string
-    */
+     * Size of UPS Premium Care Form.  Valid values:
+     * 01 = A4 Size
+     * 02 = Letter Size
+     *
+     * @return string
+     */
     public function getPageSize(): string
     {
         return $this->pageSize;
@@ -55,12 +55,12 @@ class LabelRecoveryRequestUPSPremiumCareForm extends \ArrayObject
         return $this;
     }
     /**
-    * Format of UPS Premium Care Form.  Valid values: 
-    01 = PNG
-    02 = PDF
-    *
-    * @return string
-    */
+     * Format of UPS Premium Care Form.  Valid values:
+     * 01 = PNG
+     * 02 = PDF
+     *
+     * @return string
+     */
     public function getPrintType(): string
     {
         return $this->printType;

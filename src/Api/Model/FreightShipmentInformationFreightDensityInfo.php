@@ -25,8 +25,6 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
      */
     protected $adjustedHeight;
     /**
-     * 
-     *
      * @var list<FreightDensityInfoHandlingUnits>
      */
     protected $handlingUnits;
@@ -75,8 +73,6 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<FreightDensityInfoHandlingUnits>
      */
     public function getHandlingUnits(): array
@@ -84,8 +80,6 @@ class FreightShipmentInformationFreightDensityInfo extends \ArrayObject
         return $this->handlingUnits;
     }
     /**
-     * 
-     *
      * @param list<FreightDensityInfoHandlingUnits> $handlingUnits
      *
      * @return self

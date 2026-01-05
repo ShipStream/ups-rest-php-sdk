@@ -13,8 +13,6 @@ class PackingListHandlingUnit extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<HandlingUnitCommodity>
      */
     protected $commodity;
@@ -49,8 +47,6 @@ class PackingListHandlingUnit extends \ArrayObject
      */
     protected $currencyCode;
     /**
-     * 
-     *
      * @return list<HandlingUnitCommodity>
      */
     public function getCommodity(): array
@@ -58,8 +54,6 @@ class PackingListHandlingUnit extends \ArrayObject
         return $this->commodity;
     }
     /**
-     * 
-     *
      * @param list<HandlingUnitCommodity> $commodity
      *
      * @return self

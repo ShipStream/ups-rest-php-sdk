@@ -31,73 +31,73 @@ class PickupRateRequest extends \ArrayObject
      */
     protected $pickupAddress;
     /**
-    * Indicates if the pickup address is different than the address specified in the customer's profile.  
-    Valid values:
-    Y = Alternate address
-    N = Original pickup address (default)
-    *
-    * @var string
-    */
+     * Indicates if the pickup address is different than the address specified in the customer's profile.
+     * Valid values:
+     * Y = Alternate address
+     * N = Original pickup address (default)
+     *
+     * @var string
+     */
     protected $alternateAddressIndicator;
     /**
-    * Indicates the pickup timeframe.
-    - 01 = Same-Day Pickup
-    - 02 = Future-Day Pickup
-    - 03 = A Specific-Day Pickup
-    
-    If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
-    *
-    * @var string
-    */
+     * Indicates the pickup timeframe.
+     * - 01 = Same-Day Pickup
+     * - 02 = Future-Day Pickup
+     * - 03 = A Specific-Day Pickup
+     * 
+     * If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
+     *
+     * @var string
+     */
     protected $serviceDateOption;
     /**
-    * Required if the ServiceDateOption is: 
-    03 A Specific-Day Pickup
-    *
-    * @var PickupRateRequestPickupDateInfo
-    */
+     * Required if the ServiceDateOption is:
+     * 03 A Specific-Day Pickup
+     *
+     * @var PickupRateRequestPickupDateInfo
+     */
     protected $pickupDateInfo;
     /**
-    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
-    
-    US 48 origin:
-    1 – Daily Rates
-    3 – Standard List Rates
-    4 – Retail Rates.
-    
-    Alaska/Hawaii origin:
-    1 – Daily Rates
-    3 – Standard List Rates
-    4 – Retail Rates.
-    
-    All Other origins:
-    1 – Rates
-    5 - Regional Rates
-    6 - General List Rates.
-    
-    3 and 4 do not apply
-    
-    *
-    * @var string
-    */
+     * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+     * 
+     * US 48 origin:
+     * 1 – Daily Rates
+     * 3 – Standard List Rates
+     * 4 – Retail Rates.
+     * 
+     *  Alaska/Hawaii origin:
+     * 1 – Daily Rates
+     * 3 – Standard List Rates
+     * 4 – Retail Rates.
+     * 
+     * All Other origins:
+     * 1 – Rates
+     * 5 - Regional Rates
+     * 6 - General List Rates.
+     * 
+     * 3 and 4 do not apply
+     * 
+     *
+     * @var string
+     */
     protected $rateChartType;
     /**
-    * Indicates whether to return detailed taxes for on-callpickups.
-    Valid values:
-    - Y = Rate this pickup with taxes
-    - N = Do not rate this pickup with taxes (default)
-    *
-    * @var string
-    */
+     * Indicates whether to return detailed taxes for on-callpickups.
+     * Valid values:
+     * - Y = Rate this pickup with taxes
+     * - N = Do not rate this pickup with taxes (default)
+     *
+     * @var string
+     */
     protected $taxInformationIndicator;
     /**
-    * Indicates whether to return user level promo discount for the on-callpickups. 
-    Valid values:
-    Y = Rate this pickup with user level promo discount
-    N = Do not rate this pickup with user level promo discount(default)
-    *
-    * @var string
-    */
+     * Indicates whether to return user level promo discount for the on-callpickups.
+     * Valid values:
+     * Y = Rate this pickup with user level promo discount
+     * N = Do not rate this pickup with user level promo discount(default)
+     *
+     * @var string
+     */
     protected $userLevelDiscountIndicator;
     /**
      * Common element for all services
@@ -166,13 +166,13 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the pickup address is different than the address specified in the customer's profile.  
-    Valid values:
-    Y = Alternate address
-    N = Original pickup address (default)
-    *
-    * @return string
-    */
+     * Indicates if the pickup address is different than the address specified in the customer's profile.
+     * Valid values:
+     * Y = Alternate address
+     * N = Original pickup address (default)
+     *
+     * @return string
+     */
     public function getAlternateAddressIndicator(): string
     {
         return $this->alternateAddressIndicator;
@@ -194,15 +194,15 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the pickup timeframe.
-    - 01 = Same-Day Pickup
-    - 02 = Future-Day Pickup
-    - 03 = A Specific-Day Pickup
-    
-    If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
-    *
-    * @return string
-    */
+     * Indicates the pickup timeframe.
+     * - 01 = Same-Day Pickup
+     * - 02 = Future-Day Pickup
+     * - 03 = A Specific-Day Pickup
+     * 
+     * If 03 is selected, then PickupDate, EarliestReadyTime, and LatestClosetime must be specified.
+     *
+     * @return string
+     */
     public function getServiceDateOption(): string
     {
         return $this->serviceDateOption;
@@ -226,11 +226,11 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Required if the ServiceDateOption is: 
-    03 A Specific-Day Pickup
-    *
-    * @return PickupRateRequestPickupDateInfo
-    */
+     * Required if the ServiceDateOption is:
+     * 03 A Specific-Day Pickup
+     *
+     * @return PickupRateRequestPickupDateInfo
+     */
     public function getPickupDateInfo(): PickupRateRequestPickupDateInfo
     {
         return $this->pickupDateInfo;
@@ -250,28 +250,28 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
-    
-    US 48 origin:
-    1 – Daily Rates
-    3 – Standard List Rates
-    4 – Retail Rates.
-    
-    Alaska/Hawaii origin:
-    1 – Daily Rates
-    3 – Standard List Rates
-    4 – Retail Rates.
-    
-    All Other origins:
-    1 – Rates
-    5 - Regional Rates
-    6 - General List Rates.
-    
-    3 and 4 do not apply
-    
-    *
-    * @return string
-    */
+     * Rate Type with which pickup is rated. Possible RateChart values for different regions will be:
+     * 
+     * US 48 origin:
+     * 1 – Daily Rates
+     * 3 – Standard List Rates
+     * 4 – Retail Rates.
+     * 
+     *  Alaska/Hawaii origin:
+     * 1 – Daily Rates
+     * 3 – Standard List Rates
+     * 4 – Retail Rates.
+     * 
+     * All Other origins:
+     * 1 – Rates
+     * 5 - Regional Rates
+     * 6 - General List Rates.
+     * 
+     * 3 and 4 do not apply
+     * 
+     *
+     * @return string
+     */
     public function getRateChartType(): string
     {
         return $this->rateChartType;
@@ -308,13 +308,13 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates whether to return detailed taxes for on-callpickups.
-    Valid values:
-    - Y = Rate this pickup with taxes
-    - N = Do not rate this pickup with taxes (default)
-    *
-    * @return string
-    */
+     * Indicates whether to return detailed taxes for on-callpickups.
+     * Valid values:
+     * - Y = Rate this pickup with taxes
+     * - N = Do not rate this pickup with taxes (default)
+     *
+     * @return string
+     */
     public function getTaxInformationIndicator(): string
     {
         return $this->taxInformationIndicator;
@@ -336,13 +336,13 @@ class PickupRateRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates whether to return user level promo discount for the on-callpickups. 
-    Valid values:
-    Y = Rate this pickup with user level promo discount
-    N = Do not rate this pickup with user level promo discount(default)
-    *
-    * @return string
-    */
+     * Indicates whether to return user level promo discount for the on-callpickups.
+     * Valid values:
+     * Y = Rate this pickup with user level promo discount
+     * N = Do not rate this pickup with user level promo discount(default)
+     *
+     * @return string
+     */
     public function getUserLevelDiscountIndicator(): string
     {
         return $this->userLevelDiscountIndicator;

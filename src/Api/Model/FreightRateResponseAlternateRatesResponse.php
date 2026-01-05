@@ -19,8 +19,6 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
      */
     protected $alternateRateType;
     /**
-     * 
-     *
      * @var list<AlternateRatesResponseRate>
      */
     protected $rate;
@@ -65,8 +63,6 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<AlternateRatesResponseRate>
      */
     public function getRate(): array
@@ -74,8 +70,6 @@ class FreightRateResponseAlternateRatesResponse extends \ArrayObject
         return $this->rate;
     }
     /**
-     * 
-     *
      * @param list<AlternateRatesResponseRate> $rate
      *
      * @return self

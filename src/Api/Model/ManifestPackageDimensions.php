@@ -13,11 +13,11 @@ class ManifestPackageDimensions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Package length. 
-    Valid values: 0 to 108 IN and 0 to 270 CM
-    *
-    * @var string
-    */
+     * Package length.
+     * Valid values: 0 to 108 IN and 0 to 270 CM
+     *
+     * @var string
+     */
     protected $length;
     /**
      * Package width.
@@ -32,11 +32,11 @@ class ManifestPackageDimensions extends \ArrayObject
      */
     protected $height;
     /**
-    * Package length. 
-    Valid values: 0 to 108 IN and 0 to 270 CM
-    *
-    * @return string
-    */
+     * Package length.
+     * Valid values: 0 to 108 IN and 0 to 270 CM
+     *
+     * @return string
+     */
     public function getLength(): string
     {
         return $this->length;

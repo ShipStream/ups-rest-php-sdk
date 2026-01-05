@@ -25,8 +25,6 @@ class LabelRecoveryResponse extends \ArrayObject
      */
     protected $shipmentIdentificationNumber;
     /**
-     * 
-     *
      * @var list<LabelRecoveryResponseLabelResults>
      */
     protected $labelResults;
@@ -49,8 +47,6 @@ class LabelRecoveryResponse extends \ArrayObject
      */
     protected $highValueReport;
     /**
-     * 
-     *
      * @var list<LabelRecoveryResponseTrackingCandidate>
      */
     protected $trackingCandidate;
@@ -99,8 +95,6 @@ class LabelRecoveryResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<LabelRecoveryResponseLabelResults>
      */
     public function getLabelResults(): array
@@ -108,8 +102,6 @@ class LabelRecoveryResponse extends \ArrayObject
         return $this->labelResults;
     }
     /**
-     * 
-     *
      * @param list<LabelRecoveryResponseLabelResults> $labelResults
      *
      * @return self
@@ -187,8 +179,6 @@ class LabelRecoveryResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<LabelRecoveryResponseTrackingCandidate>
      */
     public function getTrackingCandidate(): array
@@ -196,8 +186,6 @@ class LabelRecoveryResponse extends \ArrayObject
         return $this->trackingCandidate;
     }
     /**
-     * 
-     *
      * @param list<LabelRecoveryResponseTrackingCandidate> $trackingCandidate
      *
      * @return self

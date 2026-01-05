@@ -19,8 +19,6 @@ class Package extends \ArrayObject
      */
     protected $accessPointInformation;
     /**
-     * 
-     *
      * @var list<Activity>
      */
     protected $activity;
@@ -37,8 +35,6 @@ class Package extends \ArrayObject
      */
     protected $additionalServices;
     /**
-     * 
-     *
      * @var list<AlternateTrackingNumber>
      */
     protected $alternateTrackingNumber;
@@ -49,8 +45,6 @@ class Package extends \ArrayObject
      */
     protected $currentStatus;
     /**
-     * 
-     *
      * @var list<DeliveryDate>
      */
     protected $deliveryDate;
@@ -73,8 +67,6 @@ class Package extends \ArrayObject
      */
     protected $milestones;
     /**
-     * 
-     *
      * @var list<PackageAddress>
      */
     protected $packageAddress;
@@ -85,14 +77,10 @@ class Package extends \ArrayObject
      */
     protected $packageCount;
     /**
-     * 
-     *
      * @var list<PaymentInformation>
      */
     protected $paymentInformation;
     /**
-     * 
-     *
      * @var list<ReferenceNumber>
      */
     protected $referenceNumber;
@@ -103,8 +91,6 @@ class Package extends \ArrayObject
      */
     protected $service;
     /**
-     * 
-     *
      * @var string
      */
     protected $statusCode;
@@ -121,8 +107,6 @@ class Package extends \ArrayObject
      */
     protected $suppressionIndicators;
     /**
-     * 
-     *
      * @var string
      */
     protected $trackingNumber;
@@ -155,8 +139,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<Activity>
      */
     public function getActivity(): array
@@ -164,8 +146,6 @@ class Package extends \ArrayObject
         return $this->activity;
     }
     /**
-     * 
-     *
      * @param list<Activity> $activity
      *
      * @return self
@@ -221,8 +201,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<AlternateTrackingNumber>
      */
     public function getAlternateTrackingNumber(): array
@@ -230,8 +208,6 @@ class Package extends \ArrayObject
         return $this->alternateTrackingNumber;
     }
     /**
-     * 
-     *
      * @param list<AlternateTrackingNumber> $alternateTrackingNumber
      *
      * @return self
@@ -265,8 +241,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<DeliveryDate>
      */
     public function getDeliveryDate(): array
@@ -274,8 +248,6 @@ class Package extends \ArrayObject
         return $this->deliveryDate;
     }
     /**
-     * 
-     *
      * @param list<DeliveryDate> $deliveryDate
      *
      * @return self
@@ -353,8 +325,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PackageAddress>
      */
     public function getPackageAddress(): array
@@ -362,8 +332,6 @@ class Package extends \ArrayObject
         return $this->packageAddress;
     }
     /**
-     * 
-     *
      * @param list<PackageAddress> $packageAddress
      *
      * @return self
@@ -397,8 +365,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PaymentInformation>
      */
     public function getPaymentInformation(): array
@@ -406,8 +372,6 @@ class Package extends \ArrayObject
         return $this->paymentInformation;
     }
     /**
-     * 
-     *
      * @param list<PaymentInformation> $paymentInformation
      *
      * @return self
@@ -419,8 +383,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ReferenceNumber>
      */
     public function getReferenceNumber(): array
@@ -428,8 +390,6 @@ class Package extends \ArrayObject
         return $this->referenceNumber;
     }
     /**
-     * 
-     *
      * @param list<ReferenceNumber> $referenceNumber
      *
      * @return self
@@ -463,8 +423,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return string
      */
     public function getStatusCode(): string
@@ -472,8 +430,6 @@ class Package extends \ArrayObject
         return $this->statusCode;
     }
     /**
-     * 
-     *
      * @param string $statusCode
      *
      * @return self
@@ -529,8 +485,6 @@ class Package extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return string
      */
     public function getTrackingNumber(): string
@@ -538,8 +492,6 @@ class Package extends \ArrayObject
         return $this->trackingNumber;
     }
     /**
-     * 
-     *
      * @param string $trackingNumber
      *
      * @return self

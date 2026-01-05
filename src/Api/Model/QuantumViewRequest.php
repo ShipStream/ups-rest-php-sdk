@@ -19,18 +19,16 @@ class QuantumViewRequest extends \ArrayObject
      */
     protected $request;
     /**
-     * 
-     *
      * @var list<QuantumViewRequestSubscriptionRequest>
      */
     protected $subscriptionRequest;
     /**
-    * Bookmarks the file for next retrieval. It is a base64Encoded String. 
-    It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. 
-    It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
-    *
-    * @var string
-    */
+     * Bookmarks the file for next retrieval. It is a base64Encoded String.
+     * It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data.
+     * It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
+     *
+     * @var string
+     */
     protected $bookmark;
     /**
      * Contains QuantumView request criteria components.
@@ -55,8 +53,6 @@ class QuantumViewRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<QuantumViewRequestSubscriptionRequest>
      */
     public function getSubscriptionRequest(): array
@@ -64,8 +60,6 @@ class QuantumViewRequest extends \ArrayObject
         return $this->subscriptionRequest;
     }
     /**
-     * 
-     *
      * @param list<QuantumViewRequestSubscriptionRequest> $subscriptionRequest
      *
      * @return self
@@ -77,12 +71,12 @@ class QuantumViewRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Bookmarks the file for next retrieval. It is a base64Encoded String. 
-    It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data. 
-    It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
-    *
-    * @return string
-    */
+     * Bookmarks the file for next retrieval. It is a base64Encoded String.
+     * It contains the combination of SubscriberID + SubscriptionName + File Name if the request is for all data.
+     * It contains SubscriberID  if the request is for unread data. When a response comes back with a bookmark it indicates that there is more data. To fetch the remaining data, the requester should come back with the bookmark added to the original request.
+     *
+     * @return string
+     */
     public function getBookmark(): string
     {
         return $this->bookmark;

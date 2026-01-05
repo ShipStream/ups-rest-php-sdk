@@ -13,12 +13,12 @@ class ShipmentResultsImageImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code representing the format in which the forms are generated. Valid values:
-    - PDF = pdf
-    
-    *
-    * @var string
-    */
+     * Code representing the format in which the forms are generated. Valid values:
+     * - PDF = pdf
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the form image format code.
@@ -27,12 +27,12 @@ class ShipmentResultsImageImageFormat extends \ArrayObject
      */
     protected $description;
     /**
-    * Code representing the format in which the forms are generated. Valid values:
-    - PDF = pdf
-    
-    *
-    * @return string
-    */
+     * Code representing the format in which the forms are generated. Valid values:
+     * - PDF = pdf
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

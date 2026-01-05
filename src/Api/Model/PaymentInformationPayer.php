@@ -25,11 +25,11 @@ class PaymentInformationPayer extends \ArrayObject
      */
     protected $address;
     /**
-    * Payer�s account number.
-    User�s 6 digit UPS account number or 9 digit SCS account number.
-    *
-    * @var string
-    */
+     * Payer�s account number.
+     * User�s 6 digit UPS account number or 9 digit SCS account number.
+     *
+     * @var string
+     */
     protected $shipperNumber;
     /**
      * Contact name at the payer�s location.
@@ -100,11 +100,11 @@ class PaymentInformationPayer extends \ArrayObject
         return $this;
     }
     /**
-    * Payer�s account number.
-    User�s 6 digit UPS account number or 9 digit SCS account number.
-    *
-    * @return string
-    */
+     * Payer�s account number.
+     * User�s 6 digit UPS account number or 9 digit SCS account number.
+     *
+     * @return string
+     */
     public function getShipperNumber(): string
     {
         return $this->shipperNumber;

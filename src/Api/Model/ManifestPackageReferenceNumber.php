@@ -19,13 +19,13 @@ class ManifestPackageReferenceNumber extends \ArrayObject
      */
     protected $number;
     /**
-    * Reference number type code for entire shipment, two-character alphanumeric. 
-    The code specifies the Reference name. 
-    Valid if the origin/destination pair is US/US or PR/PR.
-    For additional information, refer to the Reference Codes table in the Appendix.
-    *
-    * @var string
-    */
+     * Reference number type code for entire shipment, two-character alphanumeric.
+     * The code specifies the Reference name.
+     * Valid if the origin/destination pair is US/US or PR/PR.
+     * For additional information, refer to the Reference Codes table in the Appendix.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Customer supplied reference number, defined by the shipper and can contain any character string. Valid if the origin/destination pair is US/US or PR/PR.
@@ -56,13 +56,13 @@ class ManifestPackageReferenceNumber extends \ArrayObject
         return $this;
     }
     /**
-    * Reference number type code for entire shipment, two-character alphanumeric. 
-    The code specifies the Reference name. 
-    Valid if the origin/destination pair is US/US or PR/PR.
-    For additional information, refer to the Reference Codes table in the Appendix.
-    *
-    * @return string
-    */
+     * Reference number type code for entire shipment, two-character alphanumeric.
+     * The code specifies the Reference name.
+     * Valid if the origin/destination pair is US/US or PR/PR.
+     * For additional information, refer to the Reference Codes table in the Appendix.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

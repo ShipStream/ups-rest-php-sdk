@@ -13,13 +13,13 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates the Label Recovery and Receipt Recovery URL links are to be returned in the XML Response. Valid for following shipment -
-    Print/Electronic Return Label
-    Print/Electronic Import Control Label
-    Forward shipment except for Mail Innovations Forward
-    *
-    * @var string
-    */
+     * Indicates the Label Recovery and Receipt Recovery URL links are to be returned in the XML Response. Valid for following shipment -
+     * Print/Electronic Return Label
+     * Print/Electronic Import Control Label
+     * Forward shipment except for Mail Innovations Forward
+     *
+     * @var string
+     */
     protected $labelLinkIndicator;
     /**
      * Not Used. If this tag is present, resend the Label Delivery notification email.
@@ -28,13 +28,13 @@ class LabelRecoveryRequestLabelDelivery extends \ArrayObject
      */
     protected $resendEMailIndicator;
     /**
-    * Indicates the Label Recovery and Receipt Recovery URL links are to be returned in the XML Response. Valid for following shipment -
-    Print/Electronic Return Label
-    Print/Electronic Import Control Label
-    Forward shipment except for Mail Innovations Forward
-    *
-    * @return string
-    */
+     * Indicates the Label Recovery and Receipt Recovery URL links are to be returned in the XML Response. Valid for following shipment -
+     * Print/Electronic Return Label
+     * Print/Electronic Import Control Label
+     * Forward shipment except for Mail Innovations Forward
+     *
+     * @return string
+     */
     public function getLabelLinkIndicator(): string
     {
         return $this->labelLinkIndicator;

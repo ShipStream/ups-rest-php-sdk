@@ -13,12 +13,12 @@ class Destination extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * It is an HTTP-based callback end point that is exposed by the client to receive event notification. This endpoint must be operational arround the clock to ensure no event notifications are missed.
-    If this endpoint is not continuously available, incoming events will be lost.
-    
-    *
-    * @var string
-    */
+     * It is an HTTP-based callback end point that is exposed by the client to receive event notification. This endpoint must be operational arround the clock to ensure no event notifications are missed.
+     * If this endpoint is not continuously available, incoming events will be lost.
+     * 
+     *
+     * @var string
+     */
     protected $url;
     /**
      * It is an open-entry field that indicates type of credentials supported by the client.
@@ -33,12 +33,12 @@ class Destination extends \ArrayObject
      */
     protected $credential;
     /**
-    * It is an HTTP-based callback end point that is exposed by the client to receive event notification. This endpoint must be operational arround the clock to ensure no event notifications are missed.
-    If this endpoint is not continuously available, incoming events will be lost.
-    
-    *
-    * @return string
-    */
+     * It is an HTTP-based callback end point that is exposed by the client to receive event notification. This endpoint must be operational arround the clock to ensure no event notifications are missed.
+     * If this endpoint is not continuously available, incoming events will be lost.
+     * 
+     *
+     * @return string
+     */
     public function getUrl(): string
     {
         return $this->url;

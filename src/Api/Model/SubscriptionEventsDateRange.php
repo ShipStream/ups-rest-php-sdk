@@ -13,25 +13,25 @@ class SubscriptionEventsDateRange extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Beginning date time of subscription requested by user.
-    Format: MM-DD-YYYY-HH-MM
-    *
-    * @var string
-    */
+     * Beginning date time of subscription requested by user.
+     * Format: MM-DD-YYYY-HH-MM
+     *
+     * @var string
+     */
     protected $beginDate;
     /**
-    * Ending date time of subscription requested by user.
-    Format: MM-DD-YYYY-HH-MM
-    *
-    * @var string
-    */
+     * Ending date time of subscription requested by user.
+     * Format: MM-DD-YYYY-HH-MM
+     *
+     * @var string
+     */
     protected $endDate;
     /**
-    * Beginning date time of subscription requested by user.
-    Format: MM-DD-YYYY-HH-MM
-    *
-    * @return string
-    */
+     * Beginning date time of subscription requested by user.
+     * Format: MM-DD-YYYY-HH-MM
+     *
+     * @return string
+     */
     public function getBeginDate(): string
     {
         return $this->beginDate;
@@ -51,11 +51,11 @@ class SubscriptionEventsDateRange extends \ArrayObject
         return $this;
     }
     /**
-    * Ending date time of subscription requested by user.
-    Format: MM-DD-YYYY-HH-MM
-    *
-    * @return string
-    */
+     * Ending date time of subscription requested by user.
+     * Format: MM-DD-YYYY-HH-MM
+     *
+     * @return string
+     */
     public function getEndDate(): string
     {
         return $this->endDate;

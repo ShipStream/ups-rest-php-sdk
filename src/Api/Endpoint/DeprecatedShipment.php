@@ -6,9 +6,8 @@ class DeprecatedShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint
 {
     protected $deprecatedVersion;
     /**
-    * The Shipping API makes UPS shipping services available to client applications that communicate with UPS 
-    using the Internet
-    *
+    * The Shipping API makes UPS shipping services available to client applications that communicate with UPS
+    * using the Internet
     * @param string $deprecatedVersion Indicates Ship API to display the new release features in Ship API response based on Ship release.
     
     Valid values:
@@ -21,10 +20,9 @@ class DeprecatedShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint
     - v1807
     - v2108
     - v2205
-    
-    * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody 
+    * @param \ShipStream\Ups\Api\Model\SHIPRequestWrapper $requestBody
     * @param array $queryParameters {
-    *     @var string $additionaladdressvalidation Valid Values: 
+    *     @var string $additionaladdressvalidation Valid Values:
     city = validation will include city.Length 15
     * }
     * @param array $headerParameters {
@@ -93,19 +91,19 @@ class DeprecatedShipment extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (200 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\SHIPResponseWrapper', 'json');
         }
-        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (400 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedShipmentBadRequestException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (401 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedShipmentUnauthorizedException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (403 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedShipmentForbiddenException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (429 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\DeprecatedShipmentTooManyRequestsException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);

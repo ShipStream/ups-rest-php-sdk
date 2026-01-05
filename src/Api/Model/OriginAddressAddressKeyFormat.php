@@ -73,17 +73,17 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
      */
     protected $countryCode;
     /**
-    * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
-    
-    Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
-    
-    SingleLineAddress used for the lookup
-    
-    SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
-    
-    *
-    * @var string
-    */
+     * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
+     * 
+     * Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
+     * 
+     * SingleLineAddress used for the lookup
+     * 
+     * SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
+     * 
+     *
+     * @var string
+     */
     protected $singleLineAddress;
     /**
      * Name. Not relevant for this tool
@@ -306,17 +306,17 @@ class OriginAddressAddressKeyFormat extends \ArrayObject
         return $this;
     }
     /**
-    * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
-    
-    Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
-    
-    SingleLineAddress used for the lookup
-    
-    SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
-    
-    *
-    * @return string
-    */
+     * Single line search information. Can contain values of origin address in a single line. Will override other origin address information.
+     * 
+     * Conditionally Required for Non-Postal Code Countries. Applicable Country Ireland (IE)
+     * 
+     * SingleLineAddress used for the lookup
+     * 
+     * SingleLineAddress (Format - CSV) (\"Values:\" + postalCode + city + state + address + landmark	+ phoneNumber)
+     * 
+     *
+     * @return string
+     */
     public function getSingleLineAddress(): string
     {
         return $this->singleLineAddress;

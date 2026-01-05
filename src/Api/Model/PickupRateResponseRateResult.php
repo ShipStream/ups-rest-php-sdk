@@ -19,12 +19,12 @@ class PickupRateResponseRateResult extends \ArrayObject
      */
     protected $disclaimer;
     /**
-    * Indicates the pickup is rated as same-day or future-day pickup.
-    - SD = Same-day Pickup
-    - FD = Future-day Pickup
-    *
-    * @var string
-    */
+     * Indicates the pickup is rated as same-day or future-day pickup.
+     * - SD = Same-day Pickup
+     * - FD = Future-day Pickup
+     *
+     * @var string
+     */
     protected $rateType;
     /**
      * IATA currency codes for the pickup charge. Such as USD
@@ -97,12 +97,12 @@ class PickupRateResponseRateResult extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the pickup is rated as same-day or future-day pickup.
-    - SD = Same-day Pickup
-    - FD = Future-day Pickup
-    *
-    * @return string
-    */
+     * Indicates the pickup is rated as same-day or future-day pickup.
+     * - SD = Same-day Pickup
+     * - FD = Future-day Pickup
+     *
+     * @return string
+     */
     public function getRateType(): string
     {
         return $this->rateType;

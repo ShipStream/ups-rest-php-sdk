@@ -13,18 +13,18 @@ class ShipmentShipFrom extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The ship from location's name or company name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
-    *
-    * @var string
-    */
+     * The ship from location's name or company name.
+     * 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
+     *
+     * @var string
+     */
     protected $name;
     /**
-    * The ship from Attention name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
-    *
-    * @var string
-    */
+     * The ship from Attention name.
+     * 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
+     *
+     * @var string
+     */
     protected $attentionName;
     /**
      * Not applicable for ShipFrom.
@@ -33,11 +33,11 @@ class ShipmentShipFrom extends \ArrayObject
      */
     protected $companyDisplayableName;
     /**
-    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
-    Applies to EEI Form only.
-    *
-    * @var string
-    */
+     * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested.
+     * Applies to EEI Form only.
+     *
+     * @var string
+     */
     protected $taxIdentificationNumber;
     /**
      * Tax Identification Container.  Applies to EEI form only.
@@ -70,11 +70,11 @@ class ShipmentShipFrom extends \ArrayObject
      */
     protected $vendorInfo;
     /**
-    * The ship from location's name or company name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
-    *
-    * @return string
-    */
+     * The ship from location's name or company name.
+     * 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML.
+     *
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
@@ -94,11 +94,11 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-    * The ship from Attention name. 
-    35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
-    *
-    * @return string
-    */
+     * The ship from Attention name.
+     * 35 characters are accepted, but for return Shipment only 30 characters will be printed on the label.  Required if ShipFrom tag is in the XML and Invoice or CO International forms is requested. If not present, will default to the Shipper Attention Name.
+     *
+     * @return string
+     */
     public function getAttentionName(): string
     {
         return $this->attentionName;
@@ -140,11 +140,11 @@ class ShipmentShipFrom extends \ArrayObject
         return $this;
     }
     /**
-    * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested. 
-    Applies to EEI Form only.
-    *
-    * @return string
-    */
+     * Company's Tax Identification Number at the pick up location.  Conditionally required if EEI form (International forms) is requested.
+     * Applies to EEI Form only.
+     *
+     * @return string
+     */
     public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;

@@ -13,16 +13,16 @@ class PackageSimpleRate extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * SimpleRate code.  Valid Values
-    - XS =  Extra Small
-    - S =  Small
-    - M = Medium
-    - L = Large
-    - XL = Extra Large
-    
-    *
-    * @var string
-    */
+     * SimpleRate code.  Valid Values
+     * - XS =  Extra Small
+     * - S =  Small
+     * - M = Medium
+     * - L = Large
+     * - XL = Extra Large
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Simple Rate description of the code above.  Currently ignored if provided in the Request. Length is not validated.
@@ -31,16 +31,16 @@ class PackageSimpleRate extends \ArrayObject
      */
     protected $description;
     /**
-    * SimpleRate code.  Valid Values
-    - XS =  Extra Small
-    - S =  Small
-    - M = Medium
-    - L = Large
-    - XL = Extra Large
-    
-    *
-    * @return string
-    */
+     * SimpleRate code.  Valid Values
+     * - XS =  Extra Small
+     * - S =  Small
+     * - M = Medium
+     * - L = Large
+     * - XL = Extra Large
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

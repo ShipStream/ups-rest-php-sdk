@@ -13,46 +13,46 @@ class ShipmentChargeBillShipper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * UPS account number.  Must be the same UPS account number as the one provided in Shipper/ShipperNumber. 
-    
-    Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
-    *
-    * @var string
-    */
+     * UPS account number.  Must be the same UPS account number as the one provided in Shipper/ShipperNumber.
+     * 
+     * Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
+     *
+     * @var string
+     */
     protected $accountNumber;
     /**
-    * Credit card information container.  Required if neither of the following is present: 
-    
-    /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AccountNumber 
-    or 
-    /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AlternatePaymentMethod. 
-    
-    Credit card payment is valid for shipments without return service only.
-    *
-    * @var BillShipperCreditCard
-    */
+     * Credit card information container.  Required if neither of the following is present:
+     * 
+     * /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AccountNumber
+     * or
+     * /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AlternatePaymentMethod.
+     * 
+     * Credit card payment is valid for shipments without return service only.
+     *
+     * @var BillShipperCreditCard
+     */
     protected $creditCard;
     /**
-    * Alternate Payment Method.
-    
-    Valid value: 01= PayPal
-    
-    Only valid for forward shipments. It is not valid for Return or Import Control shipments. 
-    
-    This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.   PayPal 01: Is only valid for forward shipments. It is not valid for Return or Import Control shipments. 
-    
-    This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
-    *
-    * @var string
-    */
+     * Alternate Payment Method.
+     * 
+     * Valid value: 01= PayPal
+     * 
+     * Only valid for forward shipments. It is not valid for Return or Import Control shipments.
+     * 
+     * This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.   PayPal 01: Is only valid for forward shipments. It is not valid for Return or Import Control shipments.
+     * 
+     * This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
+     *
+     * @var string
+     */
     protected $alternatePaymentMethod;
     /**
-    * UPS account number.  Must be the same UPS account number as the one provided in Shipper/ShipperNumber. 
-    
-    Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
-    *
-    * @return string
-    */
+     * UPS account number.  Must be the same UPS account number as the one provided in Shipper/ShipperNumber.
+     * 
+     * Either this element or one of the sibling elements CreditCard or AlternatePaymentMethod must be provided, but all of them may not be provided.
+     *
+     * @return string
+     */
     public function getAccountNumber(): string
     {
         return $this->accountNumber;
@@ -73,16 +73,16 @@ class ShipmentChargeBillShipper extends \ArrayObject
         return $this;
     }
     /**
-    * Credit card information container.  Required if neither of the following is present: 
-    
-    /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AccountNumber 
-    or 
-    /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AlternatePaymentMethod. 
-    
-    Credit card payment is valid for shipments without return service only.
-    *
-    * @return BillShipperCreditCard
-    */
+     * Credit card information container.  Required if neither of the following is present:
+     * 
+     * /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AccountNumber
+     * or
+     * /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AlternatePaymentMethod.
+     * 
+     * Credit card payment is valid for shipments without return service only.
+     *
+     * @return BillShipperCreditCard
+     */
     public function getCreditCard(): BillShipperCreditCard
     {
         return $this->creditCard;
@@ -107,18 +107,18 @@ class ShipmentChargeBillShipper extends \ArrayObject
         return $this;
     }
     /**
-    * Alternate Payment Method.
-    
-    Valid value: 01= PayPal
-    
-    Only valid for forward shipments. It is not valid for Return or Import Control shipments. 
-    
-    This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.   PayPal 01: Is only valid for forward shipments. It is not valid for Return or Import Control shipments. 
-    
-    This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
-    *
-    * @return string
-    */
+     * Alternate Payment Method.
+     * 
+     * Valid value: 01= PayPal
+     * 
+     * Only valid for forward shipments. It is not valid for Return or Import Control shipments.
+     * 
+     * This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.   PayPal 01: Is only valid for forward shipments. It is not valid for Return or Import Control shipments.
+     * 
+     * This element or one of the sibling elements CreditCard or AccountNumber must be provided, but all of them may not be provided.
+     *
+     * @return string
+     */
     public function getAlternatePaymentMethod(): string
     {
         return $this->alternatePaymentMethod;

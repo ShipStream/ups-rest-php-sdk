@@ -9,7 +9,6 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     protected $accept;
     /**
     * The Rating Ground Freight API may only be used by brokers or resellers of transportation services with a current and active UPGF Master Transportation Agreement.
-    *
     * @param string $version When TForce Freight introduces new elements 
     in the response that are not associated with new 
     request elements, Version is used. This ensures 
@@ -19,7 +18,7 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     * @param string $requestoption Valid Values: 
     ground,
     air. Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody 
+    * @param \ShipStream\Ups\Api\Model\FREIGHTRATERequestWrapper $requestBody
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -82,7 +81,7 @@ class FreightRate extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (200 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\FREIGHTRATEResponseWrapper', 'json');
         }
         if (401 === $status) {

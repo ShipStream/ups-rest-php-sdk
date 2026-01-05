@@ -55,11 +55,11 @@ class FreightRateRequestCommodity extends \ArrayObject
      */
     protected $packagingType;
     /**
-    * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
-    Required for at least one commodity when the dangerous goods accessorial is passed.
-    *
-    * @var string
-    */
+     * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
+     * Required for at least one commodity when the dangerous goods accessorial is passed.
+     *
+     * @var string
+     */
     protected $dangerousGoodsIndicator;
     /**
      * CommodityValue Container.
@@ -68,11 +68,11 @@ class FreightRateRequestCommodity extends \ArrayObject
      */
     protected $commodityValue;
     /**
-    * Freight Classification. 
-    Refer to Ground Freight Classes in the Appendix for valid values.
-    *
-    * @var string
-    */
+     * Freight Classification.
+     * Refer to Ground Freight Classes in the Appendix for valid values.
+     *
+     * @var string
+     */
     protected $freightClass;
     /**
      * National Motor Freight Classification Commodity code.
@@ -81,11 +81,11 @@ class FreightRateRequestCommodity extends \ArrayObject
      */
     protected $nMFCCommodityCode;
     /**
-    * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
-    This container is mutually exclusive with NMFCCommodityCode element above.
-    *
-    * @var CommodityNMFCCommodity
-    */
+     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
+     * This container is mutually exclusive with NMFCCommodityCode element above.
+     *
+     * @var CommodityNMFCCommodity
+     */
     protected $nMFCCommodity;
     /**
      * Unique identifier for the commodity.
@@ -242,11 +242,11 @@ class FreightRateRequestCommodity extends \ArrayObject
         return $this;
     }
     /**
-    * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
-    Required for at least one commodity when the dangerous goods accessorial is passed.
-    *
-    * @return string
-    */
+     * The presence of the tag DangerousGoodsIndicator indicates that the commodity is of type dangerous goods.
+     * Required for at least one commodity when the dangerous goods accessorial is passed.
+     *
+     * @return string
+     */
     public function getDangerousGoodsIndicator(): string
     {
         return $this->dangerousGoodsIndicator;
@@ -288,11 +288,11 @@ class FreightRateRequestCommodity extends \ArrayObject
         return $this;
     }
     /**
-    * Freight Classification. 
-    Refer to Ground Freight Classes in the Appendix for valid values.
-    *
-    * @return string
-    */
+     * Freight Classification.
+     * Refer to Ground Freight Classes in the Appendix for valid values.
+     *
+     * @return string
+     */
     public function getFreightClass(): string
     {
         return $this->freightClass;
@@ -334,11 +334,11 @@ class FreightRateRequestCommodity extends \ArrayObject
         return $this;
     }
     /**
-    * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
-    This container is mutually exclusive with NMFCCommodityCode element above.
-    *
-    * @return CommodityNMFCCommodity
-    */
+     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
+     * This container is mutually exclusive with NMFCCommodityCode element above.
+     *
+     * @return CommodityNMFCCommodity
+     */
     public function getNMFCCommodity(): CommodityNMFCCommodity
     {
         return $this->nMFCCommodity;

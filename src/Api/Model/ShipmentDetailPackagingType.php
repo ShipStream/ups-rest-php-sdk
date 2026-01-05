@@ -13,11 +13,11 @@ class ShipmentDetailPackagingType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code for the UPS packaging type associated with the shipment.
-    For valid values, see Package Type Codes in the Appendix.
-    *
-    * @var string
-    */
+     * The code for the UPS packaging type associated with the shipment.
+     * For valid values, see Package Type Codes in the Appendix.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * A text description of the code for the UPS packaging type associated with the shipment.
@@ -26,11 +26,11 @@ class ShipmentDetailPackagingType extends \ArrayObject
      */
     protected $description;
     /**
-    * The code for the UPS packaging type associated with the shipment.
-    For valid values, see Package Type Codes in the Appendix.
-    *
-    * @return string
-    */
+     * The code for the UPS packaging type associated with the shipment.
+     * For valid values, see Package Type Codes in the Appendix.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

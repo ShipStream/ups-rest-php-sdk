@@ -19,12 +19,12 @@ class LocatorResponseResponse extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Identifies the success or failure of the interchange. 
-    1-Success
-    0-Failure
-    *
-    * @var string
-    */
+     * Identifies the success or failure of the interchange.
+     * 1-Success
+     * 0-Failure
+     *
+     * @var string
+     */
     protected $responseStatusCode;
     /**
      * Describes the Response Status Code.
@@ -33,8 +33,6 @@ class LocatorResponseResponse extends \ArrayObject
      */
     protected $responseStatusDescription;
     /**
-     * 
-     *
      * @var ResponseError
      */
     protected $error;
@@ -61,12 +59,12 @@ class LocatorResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Identifies the success or failure of the interchange. 
-    1-Success
-    0-Failure
-    *
-    * @return string
-    */
+     * Identifies the success or failure of the interchange.
+     * 1-Success
+     * 0-Failure
+     *
+     * @return string
+     */
     public function getResponseStatusCode(): string
     {
         return $this->responseStatusCode;
@@ -109,8 +107,6 @@ class LocatorResponseResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return ResponseError
      */
     public function getError(): ResponseError
@@ -118,8 +114,6 @@ class LocatorResponseResponse extends \ArrayObject
         return $this->error;
     }
     /**
-     * 
-     *
      * @param ResponseError $error
      *
      * @return self

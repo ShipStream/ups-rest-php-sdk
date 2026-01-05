@@ -13,11 +13,11 @@ class ResponseResponseStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Identifies the success or failure of the transaction. 
-    1 = Successful
-    *
-    * @var string
-    */
+     * Identifies the success or failure of the transaction.
+     * 1 = Successful
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Describes Response Status Code.Returns text of "Success".
@@ -26,11 +26,11 @@ class ResponseResponseStatus extends \ArrayObject
      */
     protected $description;
     /**
-    * Identifies the success or failure of the transaction. 
-    1 = Successful
-    *
-    * @return string
-    */
+     * Identifies the success or failure of the transaction.
+     * 1 = Successful
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

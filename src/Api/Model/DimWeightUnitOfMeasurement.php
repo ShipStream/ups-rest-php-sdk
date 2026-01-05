@@ -13,15 +13,15 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds (default)
-    - KGS = Kilograms
-    
-    *
-    * @var string
-    */
+     * Code representing the unit of measure associated with the package weight.
+     * 
+     * Valid values:
+     * - LBS = Pounds (default)
+     * - KGS = Kilograms
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Text description of the code representing the unit of measure associated with the package weight.  Length and value are not validated.
@@ -30,15 +30,15 @@ class DimWeightUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds (default)
-    - KGS = Kilograms
-    
-    *
-    * @return string
-    */
+     * Code representing the unit of measure associated with the package weight.
+     * 
+     * Valid values:
+     * - LBS = Pounds (default)
+     * - KGS = Kilograms
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

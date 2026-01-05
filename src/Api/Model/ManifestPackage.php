@@ -14,7 +14,9 @@ class ManifestPackage extends \ArrayObject
     }
     /**
      * Information about package delivery activity.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<PackageActivity>
      */
@@ -26,11 +28,11 @@ class ManifestPackage extends \ArrayObject
      */
     protected $description;
     /**
-    * Container tag for package dimension information. 
-    Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
-    *
-    * @var ManifestPackageDimensions
-    */
+     * Container tag for package dimension information.
+     * Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
+     *
+     * @var ManifestPackageDimensions
+     */
     protected $dimensions;
     /**
      * Container tag for package dimensional weight.
@@ -45,14 +47,14 @@ class ManifestPackage extends \ArrayObject
      */
     protected $packageWeight;
     /**
-    * Values for LargePackage are:
-    - 1 - Oversize 1
-    - 2 - Oversize 2
-    - 4 - Large package
-    
-    *
-    * @var string
-    */
+     * Values for LargePackage are:
+     * - 1 - Oversize 1
+     * - 2 - Oversize 2
+     * - 4 - Large package
+     * 
+     *
+     * @var string
+     */
     protected $largePackage;
     /**
      * Package's tracking number.
@@ -62,7 +64,9 @@ class ManifestPackage extends \ArrayObject
     protected $trackingNumber;
     /**
      * Container tag for information about the package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ManifestPackageReferenceNumber>
      */
@@ -81,7 +85,9 @@ class ManifestPackage extends \ArrayObject
     protected $uPSPremiumCareIndicator;
     /**
      * Information about package delivery activity.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<PackageActivity>
      */
@@ -126,11 +132,11 @@ class ManifestPackage extends \ArrayObject
         return $this;
     }
     /**
-    * Container tag for package dimension information. 
-    Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
-    *
-    * @return ManifestPackageDimensions
-    */
+     * Container tag for package dimension information.
+     * Length + 2 * (Width + Height) must be less than or equal to 130 IN or 330 CM.
+     *
+     * @return ManifestPackageDimensions
+     */
     public function getDimensions(): ManifestPackageDimensions
     {
         return $this->dimensions;
@@ -194,14 +200,14 @@ class ManifestPackage extends \ArrayObject
         return $this;
     }
     /**
-    * Values for LargePackage are:
-    - 1 - Oversize 1
-    - 2 - Oversize 2
-    - 4 - Large package
-    
-    *
-    * @return string
-    */
+     * Values for LargePackage are:
+     * - 1 - Oversize 1
+     * - 2 - Oversize 2
+     * - 4 - Large package
+     * 
+     *
+     * @return string
+     */
     public function getLargePackage(): string
     {
         return $this->largePackage;
@@ -247,7 +253,9 @@ class ManifestPackage extends \ArrayObject
     }
     /**
      * Container tag for information about the package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ManifestPackageReferenceNumber>
      */

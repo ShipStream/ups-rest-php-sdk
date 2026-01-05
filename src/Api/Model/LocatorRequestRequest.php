@@ -19,27 +19,27 @@ class LocatorRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Indicates the action to be taken by the XML service. 
-    The only valid value is 'Locator'.
-    *
-    * @var string
-    */
+     * Indicates the action to be taken by the XML service.
+     * The only valid value is 'Locator'.
+     *
+     * @var string
+     */
     protected $requestAction;
     /**
-    * Indicates the type of request.
-    Valid values:
-    1-Locations (Drop Locations and Will call locations)
-    8-All available Additional Services
-    16-All available Program Types
-    24-All available Additional Services and Program types
-    32-All available Retail Locations
-    40-All available Retail Locations and Additional Services 
-    48-All available Retail Locations and Program Types 
-    56-All available Retail Locations, Additional Services and Program Types 
-    64-Search for UPS Access Point Locations.
-    *
-    * @var string
-    */
+     * Indicates the type of request.
+     * Valid values:
+     * 1-Locations (Drop Locations and Will call locations)
+     * 8-All available Additional Services
+     * 16-All available Program Types
+     * 24-All available Additional Services and Program types
+     * 32-All available Retail Locations
+     * 40-All available Retail Locations and Additional Services
+     * 48-All available Retail Locations and Program Types
+     * 56-All available Retail Locations, Additional Services and Program Types
+     * 64-Search for UPS Access Point Locations.
+     *
+     * @var string
+     */
     protected $requestOption;
     /**
      * TransactionReference identifies transactions between client and server.
@@ -64,11 +64,11 @@ class LocatorRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the action to be taken by the XML service. 
-    The only valid value is 'Locator'.
-    *
-    * @return string
-    */
+     * Indicates the action to be taken by the XML service.
+     * The only valid value is 'Locator'.
+     *
+     * @return string
+     */
     public function getRequestAction(): string
     {
         return $this->requestAction;
@@ -88,20 +88,20 @@ class LocatorRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the type of request.
-    Valid values:
-    1-Locations (Drop Locations and Will call locations)
-    8-All available Additional Services
-    16-All available Program Types
-    24-All available Additional Services and Program types
-    32-All available Retail Locations
-    40-All available Retail Locations and Additional Services 
-    48-All available Retail Locations and Program Types 
-    56-All available Retail Locations, Additional Services and Program Types 
-    64-Search for UPS Access Point Locations.
-    *
-    * @return string
-    */
+     * Indicates the type of request.
+     * Valid values:
+     * 1-Locations (Drop Locations and Will call locations)
+     * 8-All available Additional Services
+     * 16-All available Program Types
+     * 24-All available Additional Services and Program types
+     * 32-All available Retail Locations
+     * 40-All available Retail Locations and Additional Services
+     * 48-All available Retail Locations and Program Types
+     * 56-All available Retail Locations, Additional Services and Program Types
+     * 64-Search for UPS Access Point Locations.
+     *
+     * @return string
+     */
     public function getRequestOption(): string
     {
         return $this->requestOption;

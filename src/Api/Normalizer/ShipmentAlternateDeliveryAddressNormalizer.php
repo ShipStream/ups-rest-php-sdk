@@ -5,160 +5,79 @@ namespace ShipStream\Ups\Api\Normalizer;
 use Jane\Component\JsonSchemaRuntime\Reference;
 use ShipStream\Ups\Api\Runtime\Normalizer\CheckArray;
 use ShipStream\Ups\Api\Runtime\Normalizer\ValidatorTrait;
-use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\HttpKernel\Kernel;
-if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR_VERSION === 6 and Kernel::MINOR_VERSION === 4)) {
-    class ShipmentAlternateDeliveryAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+class ShipmentAlternateDeliveryAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+{
+    use DenormalizerAwareTrait;
+    use NormalizerAwareTrait;
+    use CheckArray;
+    use ValidatorTrait;
+    public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
     {
-        use DenormalizerAwareTrait;
-        use NormalizerAwareTrait;
-        use CheckArray;
-        use ValidatorTrait;
-        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
-        {
-            return $type === \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class;
-        }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
-        {
-            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class;
-        }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
-        {
-            if (isset($data['$ref'])) {
-                return new Reference($data['$ref'], $context['document-origin']);
-            }
-            if (isset($data['$recursiveRef'])) {
-                return new Reference($data['$recursiveRef'], $context['document-origin']);
-            }
-            $object = new \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress();
-            if (null === $data || false === \is_array($data)) {
-                return $object;
-            }
-            if (\array_key_exists('Name', $data)) {
-                $object->setName($data['Name']);
-                unset($data['Name']);
-            }
-            if (\array_key_exists('AttentionName', $data)) {
-                $object->setAttentionName($data['AttentionName']);
-                unset($data['AttentionName']);
-            }
-            if (\array_key_exists('UPSAccessPointID', $data)) {
-                $object->setUPSAccessPointID($data['UPSAccessPointID']);
-                unset($data['UPSAccessPointID']);
-            }
-            if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class, 'json', $context));
-                unset($data['Address']);
-            }
-            foreach ($data as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
-                }
-            }
-            return $object;
-        }
-        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
-        {
-            $data = [];
-            $data['Name'] = $object->getName();
-            $data['AttentionName'] = $object->getAttentionName();
-            if ($object->isInitialized('uPSAccessPointID') && null !== $object->getUPSAccessPointID()) {
-                $data['UPSAccessPointID'] = $object->getUPSAccessPointID();
-            }
-            $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
-            foreach ($object as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
-                }
-            }
-            return $data;
-        }
-        public function getSupportedTypes(?string $format = null): array
-        {
-            return [\ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => false];
-        }
+        return $type === \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class;
     }
-} else {
-    class ShipmentAlternateDeliveryAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
-        use DenormalizerAwareTrait;
-        use NormalizerAwareTrait;
-        use CheckArray;
-        use ValidatorTrait;
-        public function supportsDenormalization($data, $type, string $format = null, array $context = []): bool
-        {
-            return $type === \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class;
+        return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class;
+    }
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
         }
-        public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
-        {
-            return is_object($data) && get_class($data) === \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class;
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        /**
-         * @return mixed
-         */
-        public function denormalize($data, $type, $format = null, array $context = [])
-        {
-            if (isset($data['$ref'])) {
-                return new Reference($data['$ref'], $context['document-origin']);
-            }
-            if (isset($data['$recursiveRef'])) {
-                return new Reference($data['$recursiveRef'], $context['document-origin']);
-            }
-            $object = new \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress();
-            if (null === $data || false === \is_array($data)) {
-                return $object;
-            }
-            if (\array_key_exists('Name', $data)) {
-                $object->setName($data['Name']);
-                unset($data['Name']);
-            }
-            if (\array_key_exists('AttentionName', $data)) {
-                $object->setAttentionName($data['AttentionName']);
-                unset($data['AttentionName']);
-            }
-            if (\array_key_exists('UPSAccessPointID', $data)) {
-                $object->setUPSAccessPointID($data['UPSAccessPointID']);
-                unset($data['UPSAccessPointID']);
-            }
-            if (\array_key_exists('Address', $data)) {
-                $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class, 'json', $context));
-                unset($data['Address']);
-            }
-            foreach ($data as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
-                }
-            }
+        $object = new \ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress();
+        if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        /**
-         * @return array|string|int|float|bool|\ArrayObject|null
-         */
-        public function normalize($object, $format = null, array $context = [])
-        {
-            $data = [];
-            $data['Name'] = $object->getName();
-            $data['AttentionName'] = $object->getAttentionName();
-            if ($object->isInitialized('uPSAccessPointID') && null !== $object->getUPSAccessPointID()) {
-                $data['UPSAccessPointID'] = $object->getUPSAccessPointID();
-            }
-            $data['Address'] = $this->normalizer->normalize($object->getAddress(), 'json', $context);
-            foreach ($object as $key => $value) {
-                if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
-                }
-            }
-            return $data;
+        if (\array_key_exists('Name', $data)) {
+            $object->setName($data['Name']);
+            unset($data['Name']);
         }
-        public function getSupportedTypes(?string $format = null): array
-        {
-            return [\ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => false];
+        if (\array_key_exists('AttentionName', $data)) {
+            $object->setAttentionName($data['AttentionName']);
+            unset($data['AttentionName']);
         }
+        if (\array_key_exists('UPSAccessPointID', $data)) {
+            $object->setUPSAccessPointID($data['UPSAccessPointID']);
+            unset($data['UPSAccessPointID']);
+        }
+        if (\array_key_exists('Address', $data)) {
+            $object->setAddress($this->denormalizer->denormalize($data['Address'], \ShipStream\Ups\Api\Model\AlternateDeliveryAddressAddress::class, 'json', $context));
+            unset($data['Address']);
+        }
+        foreach ($data as $key => $value) {
+            if (preg_match('/.*/', (string) $key)) {
+                $object[$key] = $value;
+            }
+        }
+        return $object;
+    }
+    public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
+    {
+        $dataArray = [];
+        $dataArray['Name'] = $data->getName();
+        $dataArray['AttentionName'] = $data->getAttentionName();
+        if ($data->isInitialized('uPSAccessPointID') && null !== $data->getUPSAccessPointID()) {
+            $dataArray['UPSAccessPointID'] = $data->getUPSAccessPointID();
+        }
+        $dataArray['Address'] = $this->normalizer->normalize($data->getAddress(), 'json', $context);
+        foreach ($data as $key => $value) {
+            if (preg_match('/.*/', (string) $key)) {
+                $dataArray[$key] = $value;
+            }
+        }
+        return $dataArray;
+    }
+    public function getSupportedTypes(?string $format = null): array
+    {
+        return [\ShipStream\Ups\Api\Model\ShipmentAlternateDeliveryAddress::class => false];
     }
 }

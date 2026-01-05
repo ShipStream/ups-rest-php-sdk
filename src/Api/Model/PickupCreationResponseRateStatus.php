@@ -13,19 +13,19 @@ class PickupCreationResponseRateStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The rating status.
-    - 01 = Rate available
-    - 02 = Rate not available
-    - 03 = Rate not apply
-    - 04 = Rate not requested
-    
-    - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
-    - If 02 is returned, then OnCallPickupRateResult will not be returned.
-    - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.
-    - If 04 is returned, then OnCallPickupRateResult will not be returned. The requester did not ask for rating this on-callpickup.
-    *
-    * @var string
-    */
+     * The rating status.
+     * - 01 = Rate available
+     * - 02 = Rate not available
+     * - 03 = Rate not apply
+     * - 04 = Rate not requested
+     * 
+     * - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
+     * - If 02 is returned, then OnCallPickupRateResult will not be returned.
+     * - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.
+     * - If 04 is returned, then OnCallPickupRateResult will not be returned. The requester did not ask for rating this on-callpickup.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * The matching description of rating status code (see above).
@@ -34,19 +34,19 @@ class PickupCreationResponseRateStatus extends \ArrayObject
      */
     protected $description;
     /**
-    * The rating status.
-    - 01 = Rate available
-    - 02 = Rate not available
-    - 03 = Rate not apply
-    - 04 = Rate not requested
-    
-    - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
-    - If 02 is returned, then OnCallPickupRateResult will not be returned.
-    - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.
-    - If 04 is returned, then OnCallPickupRateResult will not be returned. The requester did not ask for rating this on-callpickup.
-    *
-    * @return string
-    */
+     * The rating status.
+     * - 01 = Rate available
+     * - 02 = Rate not available
+     * - 03 = Rate not apply
+     * - 04 = Rate not requested
+     * 
+     * - If 01 is returned, then OnCallPickupRateResult will also be returned with rate details.
+     * - If 02 is returned, then OnCallPickupRateResult will not be returned.
+     * - If 03 is returned, then OnCallPickupRateResult will not be returned. The rate option is not appliable to this return pickup. The requester will not be charged.
+     * - If 04 is returned, then OnCallPickupRateResult will not be returned. The requester did not ask for rating this on-callpickup.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

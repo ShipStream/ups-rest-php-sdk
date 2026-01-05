@@ -13,34 +13,34 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
-    US 48 origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    Alaska/Hawaii origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    All Other origins:
-    - 1 – Rates
-    - 5 - Regional Rates
-    - 6 - General List Rates.
-    
-    3 and 4 do not apply.
-    
-    *
-    * @var string
-    */
+     * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
+     * US 48 origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     * Alaska/Hawaii origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     * All Other origins:
+     * - 1 – Rates
+     * - 5 - Regional Rates
+     * - 6 - General List Rates.
+     * 
+     * 3 and 4 do not apply.
+     * 
+     *
+     * @var string
+     */
     protected $rateChart;
     /**
-    * Base Service Charge container.
-    Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
-    *
-    * @var ShipmentChargesBaseServiceCharge
-    */
+     * Base Service Charge container.
+     * Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
+     *
+     * @var ShipmentChargesBaseServiceCharge
+     */
     protected $baseServiceCharge;
     /**
      * Transportation Charges container.
@@ -50,7 +50,9 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     protected $transportationCharges;
     /**
      * Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ShipmentChargesItemizedCharges>
      */
@@ -63,7 +65,9 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     protected $serviceOptionsCharges;
     /**
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ShipmentChargesTaxCharges>
      */
@@ -81,27 +85,27 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
      */
     protected $totalChargesWithTaxes;
     /**
-    * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
-    US 48 origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    Alaska/Hawaii origin:
-    - 1 – Daily Rates
-    - 3 – Standard List Rates
-    - 4 – Retail Rates.
-    
-    All Other origins:
-    - 1 – Rates
-    - 5 - Regional Rates
-    - 6 - General List Rates.
-    
-    3 and 4 do not apply.
-    
-    *
-    * @return string
-    */
+     * Rate Type with which Shipment is rated. Possible RateChart values for different regions will be:
+     * US 48 origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     * Alaska/Hawaii origin:
+     * - 1 – Daily Rates
+     * - 3 – Standard List Rates
+     * - 4 – Retail Rates.
+     * 
+     * All Other origins:
+     * - 1 – Rates
+     * - 5 - Regional Rates
+     * - 6 - General List Rates.
+     * 
+     * 3 and 4 do not apply.
+     * 
+     *
+     * @return string
+     */
     public function getRateChart(): string
     {
         return $this->rateChart;
@@ -137,11 +141,11 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
         return $this;
     }
     /**
-    * Base Service Charge container.
-    Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
-    *
-    * @return ShipmentChargesBaseServiceCharge
-    */
+     * Base Service Charge container.
+     * Transportation charge = BaseServiceCharge + Fuel charge  Returned only if Subversion >=1701.
+     *
+     * @return ShipmentChargesBaseServiceCharge
+     */
     public function getBaseServiceCharge(): ShipmentChargesBaseServiceCharge
     {
         return $this->baseServiceCharge;
@@ -184,7 +188,9 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     }
     /**
      * Itemized Charges are returned only when the Subversion element is present and greater than or equal to 1601.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ShipmentChargesItemizedCharges>
      */
@@ -230,7 +236,9 @@ class ShipmentResultsShipmentCharges extends \ArrayObject
     }
     /**
      * TaxCharges container are returned only when TaxInformationIndicator is present in request and when Negotiated Rates are not applicable. TaxCharges container contains Tax information for a given shipment.
-     **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2403, this element will always be returned as an array. For requests using versions < v2403, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ShipmentChargesTaxCharges>
      */

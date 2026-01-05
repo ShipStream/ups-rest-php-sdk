@@ -13,26 +13,26 @@ class ServiceSearchServiceCode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code indicating the different services. Valid values are:
-    01-Ground.
-    02-Air.
-    03-Express
-    04-Standard
-    05-International (Only avialable July 17)
-    *
-    * @var string
-    */
+     * Code indicating the different services. Valid values are:
+     * 01-Ground.
+     * 02-Air.
+     * 03-Express
+     * 04-Standard
+     * 05-International (Only avialable July 17)
+     *
+     * @var string
+     */
     protected $code;
     /**
-    * Code indicating the different services. Valid values are:
-    01-Ground.
-    02-Air.
-    03-Express
-    04-Standard
-    05-International (Only avialable July 17)
-    *
-    * @return string
-    */
+     * Code indicating the different services. Valid values are:
+     * 01-Ground.
+     * 02-Air.
+     * 03-Express
+     * 04-Standard
+     * 05-International (Only avialable July 17)
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

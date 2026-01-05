@@ -37,13 +37,13 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      */
     protected $type;
     /**
-    * Facility's Timezone. Format:
-    - America/New_York
-    - Asia/Hong_Kong
-    - Europe/London
-    *
-    * @var string
-    */
+     * Facility's Timezone. Format:
+     * - America/New_York
+     * - Asia/Hong_Kong
+     * - Europe/London
+     *
+     * @var string
+     */
     protected $timezone;
     /**
      * Phone Number of the Pickup Facility
@@ -64,19 +64,19 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
      */
     protected $facilityTime;
     /**
-    * AirPort Code for destination/pickup facility. 
-    Example: ATL (Atlanta)
-    If Airport code is not present "---" will be returned.
-    *
-    * @var string
-    */
+     * AirPort Code for destination/pickup facility.
+     * Example: ATL (Atlanta)
+     * If Airport code is not present "---" will be returned.
+     *
+     * @var string
+     */
     protected $airportCode;
     /**
-    * Sort Code for destination/pickup facility. 
-    Example: V1
-    *
-    * @var string
-    */
+     * Sort Code for destination/pickup facility.
+     * Example: V1
+     *
+     * @var string
+     */
     protected $sortCode;
     /**
      * Name of the facility
@@ -167,13 +167,13 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
         return $this;
     }
     /**
-    * Facility's Timezone. Format:
-    - America/New_York
-    - Asia/Hong_Kong
-    - Europe/London
-    *
-    * @return string
-    */
+     * Facility's Timezone. Format:
+     * - America/New_York
+     * - Asia/Hong_Kong
+     * - Europe/London
+     *
+     * @return string
+     */
     public function getTimezone(): string
     {
         return $this->timezone;
@@ -261,12 +261,12 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
         return $this;
     }
     /**
-    * AirPort Code for destination/pickup facility. 
-    Example: ATL (Atlanta)
-    If Airport code is not present "---" will be returned.
-    *
-    * @return string
-    */
+     * AirPort Code for destination/pickup facility.
+     * Example: ATL (Atlanta)
+     * If Airport code is not present "---" will be returned.
+     *
+     * @return string
+     */
     public function getAirportCode(): string
     {
         return $this->airportCode;
@@ -287,11 +287,11 @@ class ServiceCenterLocationPickupFacilities extends \ArrayObject
         return $this;
     }
     /**
-    * Sort Code for destination/pickup facility. 
-    Example: V1
-    *
-    * @return string
-    */
+     * Sort Code for destination/pickup facility.
+     * Example: V1
+     *
+     * @return string
+     */
     public function getSortCode(): string
     {
         return $this->sortCode;

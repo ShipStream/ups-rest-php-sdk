@@ -19,12 +19,12 @@ class ShipmentDetailWeight extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-    * The value for the weight associated with the shipment.
-    Valid characters: 0-9 and "." (Decimal).
-    Maximum of 2 digits after the decimal.
-    *
-    * @var string
-    */
+     * The value for the weight associated with the shipment.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     *
+     * @var string
+     */
     protected $value;
     /**
      * Reference Weight UnitOfMeasurement Container.
@@ -49,12 +49,12 @@ class ShipmentDetailWeight extends \ArrayObject
         return $this;
     }
     /**
-    * The value for the weight associated with the shipment.
-    Valid characters: 0-9 and "." (Decimal).
-    Maximum of 2 digits after the decimal.
-    *
-    * @return string
-    */
+     * The value for the weight associated with the shipment.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     *
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;

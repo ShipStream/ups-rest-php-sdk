@@ -25,12 +25,12 @@ class LabelResultsReceipt extends \ArrayObject
      */
     protected $image;
     /**
-    * Receipt's url  Applicable for following types of shipments:
-    Print/Electronic Return Label
-    Print/Electronic Import Control Label
-    *
-    * @var string
-    */
+     * Receipt's url  Applicable for following types of shipments:
+     * Print/Electronic Return Label
+     * Print/Electronic Import Control Label
+     *
+     * @var string
+     */
     protected $uRL;
     /**
      * Base 64 encoded html browser image.
@@ -77,12 +77,12 @@ class LabelResultsReceipt extends \ArrayObject
         return $this;
     }
     /**
-    * Receipt's url  Applicable for following types of shipments:
-    Print/Electronic Return Label
-    Print/Electronic Import Control Label
-    *
-    * @return string
-    */
+     * Receipt's url  Applicable for following types of shipments:
+     * Print/Electronic Return Label
+     * Print/Electronic Import Control Label
+     *
+     * @return string
+     */
     public function getURL(): string
     {
         return $this->uRL;

@@ -13,14 +13,10 @@ class TrackResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<Shipment>
      */
     protected $shipment;
     /**
-     * 
-     *
      * @return list<Shipment>
      */
     public function getShipment(): array
@@ -28,8 +24,6 @@ class TrackResponse extends \ArrayObject
         return $this->shipment;
     }
     /**
-     * 
-     *
      * @param list<Shipment> $shipment
      *
      * @return self

@@ -19,11 +19,11 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      */
     protected $pickupRequestConfirmationNumber;
     /**
-    * Estimated date that the shipment will be delivered.  
-    Format: YYYYMMDD.
-    *
-    * @var string
-    */
+     * Estimated date that the shipment will be delivered.
+     * Format: YYYYMMDD.
+     *
+     * @var string
+     */
     protected $deliveryDate;
     /**
      * The shipment Number assigned to the shipment.
@@ -50,8 +50,6 @@ class FreightShipResponseShipmentResults extends \ArrayObject
      */
     protected $minimumChargeAppliedIndicator;
     /**
-     * 
-     *
      * @var list<ShipmentResultsRate>
      */
     protected $rate;
@@ -114,11 +112,11 @@ class FreightShipResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-    * Estimated date that the shipment will be delivered.  
-    Format: YYYYMMDD.
-    *
-    * @return string
-    */
+     * Estimated date that the shipment will be delivered.
+     * Format: YYYYMMDD.
+     *
+     * @return string
+     */
     public function getDeliveryDate(): string
     {
         return $this->deliveryDate;
@@ -226,8 +224,6 @@ class FreightShipResponseShipmentResults extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ShipmentResultsRate>
      */
     public function getRate(): array
@@ -235,8 +231,6 @@ class FreightShipResponseShipmentResults extends \ArrayObject
         return $this->rate;
     }
     /**
-     * 
-     *
      * @param list<ShipmentResultsRate> $rate
      *
      * @return self

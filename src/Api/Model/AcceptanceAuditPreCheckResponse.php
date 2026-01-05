@@ -31,18 +31,16 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
      */
     protected $service;
     /**
-    * The Regulatory set associated with every regulated shipment. This is same Regulation set present in the request that is played back in response.  Valid values:
-    ADR
-    49CFR
-    IATA
-    TDG
-    *
-    * @var string
-    */
+     * The Regulatory set associated with every regulated shipment. This is same Regulation set present in the request that is played back in response.  Valid values:
+     * ADR
+     * 49CFR
+     * IATA
+     * TDG
+     *
+     * @var string
+     */
     protected $regulationSet;
     /**
-     * 
-     *
      * @var list<AcceptanceAuditPreCheckResponsePackageResults>
      */
     protected $packageResults;
@@ -113,14 +111,14 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The Regulatory set associated with every regulated shipment. This is same Regulation set present in the request that is played back in response.  Valid values:
-    ADR
-    49CFR
-    IATA
-    TDG
-    *
-    * @return string
-    */
+     * The Regulatory set associated with every regulated shipment. This is same Regulation set present in the request that is played back in response.  Valid values:
+     * ADR
+     * 49CFR
+     * IATA
+     * TDG
+     *
+     * @return string
+     */
     public function getRegulationSet(): string
     {
         return $this->regulationSet;
@@ -143,8 +141,6 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<AcceptanceAuditPreCheckResponsePackageResults>
      */
     public function getPackageResults(): array
@@ -152,8 +148,6 @@ class AcceptanceAuditPreCheckResponse extends \ArrayObject
         return $this->packageResults;
     }
     /**
-     * 
-     *
      * @param list<AcceptanceAuditPreCheckResponsePackageResults> $packageResults
      *
      * @return self

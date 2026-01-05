@@ -19,19 +19,19 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $locationID;
     /**
-    * OriginOrDestination will returned for FreightWillCallRequestType 1 Postal based and 3 City and/or State based search. 
-    
-    OriginOrDestination will be 01 for origin facilities and 02 for Destination facilities
-    *
-    * @var string
-    */
+     * OriginOrDestination will returned for FreightWillCallRequestType 1 Postal based and 3 City and/or State based search.
+     * 
+     * OriginOrDestination will be 01 for origin facilities and 02 for Destination facilities
+     *
+     * @var string
+     */
     protected $originOrDestination;
     /**
-    * Integrated Voice Response information. 
-    ONLY FOR IVR.
-    *
-    * @var DropLocationIVR
-    */
+     * Integrated Voice Response information.
+     * ONLY FOR IVR.
+     *
+     * @var DropLocationIVR
+     */
     protected $iVR;
     /**
      * Geocode is the latitude and longitude of the location address. The Geocode for the location address will be returned when Location is requested in the Request Option.
@@ -46,25 +46,25 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $addressKeyFormat;
     /**
-    * The UPS locations Phone number. A phone number of the location will be returned.
-    
-    10 digits allowed for US, otherwise 1..15 digits allowed.
-    
-    The phone number will be returned as a string.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @var list<string>
-    */
+     * The UPS locations Phone number. A phone number of the location will be returned.
+     * 
+     * 10 digits allowed for US, otherwise 1..15 digits allowed.
+     * 
+     * The phone number will be returned as a string.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @var list<string>
+     */
     protected $phoneNumber;
     /**
-    * The UPS location's Fax number. A fax number of the location will be returned when available. 
-    10 digits allowed for US, otherwise 1..15 digits allowed.
-    The fax number will be returned as string.
-    *
-    * @var string
-    */
+     * The UPS location's Fax number. A fax number of the location will be returned when available.
+     * 10 digits allowed for US, otherwise 1..15 digits allowed.
+     * The fax number will be returned as string.
+     *
+     * @var string
+     */
     protected $faxNumber;
     /**
      * Email address of the UPS location. Returned when available.
@@ -73,17 +73,17 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-    * OptionType is a container that indicates the type of the location attribute.
-    
-    There are 4 types of attributes.
-    
-    They are: Location, Retail Location, Additional Services and Program Type.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @var list<DropLocationLocationAttribute>
-    */
+     * OptionType is a container that indicates the type of the location attribute.
+     * 
+     * There are 4 types of attributes.
+     * 
+     * They are: Location, Retail Location, Additional Services and Program Type.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @var list<DropLocationLocationAttribute>
+     */
     protected $locationAttribute;
     /**
      * Container for the straight line distance from the origin to the UPS location.
@@ -93,32 +93,34 @@ class SearchResultsDropLocation extends \ArrayObject
     protected $distance;
     /**
      * Walking directions.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<DropLocationSpecialInstructions>
      */
     protected $specialInstructions;
     /**
-    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
-    
-    When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @var list<string>
-    */
+     * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+     * 
+     * When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @var list<string>
+     */
     protected $latestGroundDropOffTime;
     /**
-    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
-    
-    When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @var list<string>
-    */
+     * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+     * 
+     * When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @var list<string>
+     */
     protected $latestAirDropOffTime;
     /**
      * Presence or Absence Indicator. If present, Indicates if the UPS location would have an additional charge. ASO locations will require an additional charge.
@@ -170,7 +172,9 @@ class SearchResultsDropLocation extends \ArrayObject
     protected $additionalComments;
     /**
      * Textual disclaimer about the drop location.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<string>
      */
@@ -201,14 +205,18 @@ class SearchResultsDropLocation extends \ArrayObject
     protected $operatingHours;
     /**
      * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<DropLocationLocalizedInstruction>
      */
     protected $localizedInstruction;
     /**
      * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<DropLocationPromotionInformation>
      */
@@ -226,13 +234,13 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $serviceOfferingList;
     /**
-    * Valid Values: 
-    0-Do not display phone number
-    1-Display phone number. 
-    This indicator will be returned only for the contact type Telephone number. This indicator is used by the clients to determine whether to display the telephone number to the end user.
-    *
-    * @var string
-    */
+     * Valid Values:
+     * 0-Do not display phone number
+     * 1-Display phone number.
+     * This indicator will be returned only for the contact type Telephone number. This indicator is used by the clients to determine whether to display the telephone number to the end user.
+     *
+     * @var string
+     */
     protected $displayPhoneNumberIndicator;
     /**
      * Container for UPS Access Point specific parameters.
@@ -259,24 +267,24 @@ class SearchResultsDropLocation extends \ArrayObject
      */
     protected $promotionalLinkURL;
     /**
-    * Feature Ranking values:
-    Null or blank - Location is not featured. 
-    1 - Featured Location ranked number 1.
-    2 - Featured Location ranked number 2.
-    *
-    * @var string
-    */
+     * Feature Ranking values:
+     * Null or blank - Location is not featured.
+     * 1 - Featured Location ranked number 1.
+     * 2 - Featured Location ranked number 2.
+     *
+     * @var string
+     */
     protected $featuredRank;
     /**
-    * Will Call Location Indicator values:
-    - Y – Signifies a Will Call location that serves the customers address.
-    - N - Signifies it is not a Will Call location.
-    
-    Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
-    
-    *
-    * @var string
-    */
+     * Will Call Location Indicator values:
+     * - Y – Signifies a Will Call location that serves the customers address.
+     * - N - Signifies it is not a Will Call location.
+     * 
+     * Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
+     * 
+     *
+     * @var string
+     */
     protected $willCallLocationIndicator;
     /**
      * The location ID that corresponds to the UPS location. Do not expose the Location ID.
@@ -301,12 +309,12 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * OriginOrDestination will returned for FreightWillCallRequestType 1 Postal based and 3 City and/or State based search. 
-    
-    OriginOrDestination will be 01 for origin facilities and 02 for Destination facilities
-    *
-    * @return string
-    */
+     * OriginOrDestination will returned for FreightWillCallRequestType 1 Postal based and 3 City and/or State based search.
+     * 
+     * OriginOrDestination will be 01 for origin facilities and 02 for Destination facilities
+     *
+     * @return string
+     */
     public function getOriginOrDestination(): string
     {
         return $this->originOrDestination;
@@ -327,11 +335,11 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * Integrated Voice Response information. 
-    ONLY FOR IVR.
-    *
-    * @return DropLocationIVR
-    */
+     * Integrated Voice Response information.
+     * ONLY FOR IVR.
+     *
+     * @return DropLocationIVR
+     */
     public function getIVR(): DropLocationIVR
     {
         return $this->iVR;
@@ -395,17 +403,17 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The UPS locations Phone number. A phone number of the location will be returned.
-    
-    10 digits allowed for US, otherwise 1..15 digits allowed.
-    
-    The phone number will be returned as a string.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @return list<string>
-    */
+     * The UPS locations Phone number. A phone number of the location will be returned.
+     * 
+     * 10 digits allowed for US, otherwise 1..15 digits allowed.
+     * 
+     * The phone number will be returned as a string.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @return list<string>
+     */
     public function getPhoneNumber(): array
     {
         return $this->phoneNumber;
@@ -431,12 +439,12 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The UPS location's Fax number. A fax number of the location will be returned when available. 
-    10 digits allowed for US, otherwise 1..15 digits allowed.
-    The fax number will be returned as string.
-    *
-    * @return string
-    */
+     * The UPS location's Fax number. A fax number of the location will be returned when available.
+     * 10 digits allowed for US, otherwise 1..15 digits allowed.
+     * The fax number will be returned as string.
+     *
+     * @return string
+     */
     public function getFaxNumber(): string
     {
         return $this->faxNumber;
@@ -479,17 +487,17 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * OptionType is a container that indicates the type of the location attribute.
-    
-    There are 4 types of attributes.
-    
-    They are: Location, Retail Location, Additional Services and Program Type.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @return list<DropLocationLocationAttribute>
-    */
+     * OptionType is a container that indicates the type of the location attribute.
+     * 
+     * There are 4 types of attributes.
+     * 
+     * They are: Location, Retail Location, Additional Services and Program Type.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @return list<DropLocationLocationAttribute>
+     */
     public function getLocationAttribute(): array
     {
         return $this->locationAttribute;
@@ -538,7 +546,9 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
      * Walking directions.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<DropLocationSpecialInstructions>
      */
@@ -561,15 +571,15 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
-    
-    When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @return list<string>
-    */
+     * The latest ground time the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+     * 
+     * When a user specifies a Drop-off Time and Ground as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @return list<string>
+     */
     public function getLatestGroundDropOffTime(): array
     {
         return $this->latestGroundDropOffTime;
@@ -593,15 +603,15 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
-    
-    When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
-    
-    **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
-    
-    *
-    * @return list<string>
-    */
+     * The latest airtime the users can Drop-off the package at the location to be picked up. The time information is based on the time at the UPS location.
+     * 
+     * When a user specifies a Drop-off Time and Air as the Service Type, the locations that have latest Drop-off times equal to or later than the specified Drop-off time and service type are returned.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     *
+     * @return list<string>
+     */
     public function getLatestAirDropOffTime(): array
     {
         return $this->latestAirDropOffTime;
@@ -802,7 +812,9 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
      * Textual disclaimer about the drop location.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<string>
      */
@@ -914,7 +926,9 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
      * LocalizedInstruction container. Applicable for SearchOptionCode 01, 02, 03.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<DropLocationLocalizedInstruction>
      */
@@ -938,7 +952,9 @@ class SearchResultsDropLocation extends \ArrayObject
     }
     /**
      * Container to hold any promotion text for the location. Text will be displayed in English or the locale given in the request.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<DropLocationPromotionInformation>
      */
@@ -1005,13 +1021,13 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * Valid Values: 
-    0-Do not display phone number
-    1-Display phone number. 
-    This indicator will be returned only for the contact type Telephone number. This indicator is used by the clients to determine whether to display the telephone number to the end user.
-    *
-    * @return string
-    */
+     * Valid Values:
+     * 0-Do not display phone number
+     * 1-Display phone number.
+     * This indicator will be returned only for the contact type Telephone number. This indicator is used by the clients to determine whether to display the telephone number to the end user.
+     *
+     * @return string
+     */
     public function getDisplayPhoneNumberIndicator(): string
     {
         return $this->displayPhoneNumberIndicator;
@@ -1121,13 +1137,13 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * Feature Ranking values:
-    Null or blank - Location is not featured. 
-    1 - Featured Location ranked number 1.
-    2 - Featured Location ranked number 2.
-    *
-    * @return string
-    */
+     * Feature Ranking values:
+     * Null or blank - Location is not featured.
+     * 1 - Featured Location ranked number 1.
+     * 2 - Featured Location ranked number 2.
+     *
+     * @return string
+     */
     public function getFeaturedRank(): string
     {
         return $this->featuredRank;
@@ -1149,15 +1165,15 @@ class SearchResultsDropLocation extends \ArrayObject
         return $this;
     }
     /**
-    * Will Call Location Indicator values:
-    - Y – Signifies a Will Call location that serves the customers address.
-    - N - Signifies it is not a Will Call location.
-    
-    Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
-    
-    *
-    * @return string
-    */
+     * Will Call Location Indicator values:
+     * - Y – Signifies a Will Call location that serves the customers address.
+     * - N - Signifies it is not a Will Call location.
+     * 
+     * Will Call locations are only returned with a \"Y\" indicator if the request included EnhancedSearchOption code 10.
+     * 
+     *
+     * @return string
+     */
     public function getWillCallLocationIndicator(): string
     {
         return $this->willCallLocationIndicator;

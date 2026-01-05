@@ -13,13 +13,13 @@ class UnitUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for the Unit of measurement of the commodity units.  Required for Invoice forms and optional for Partial Invoice.
-    
-    Refer to Product Unit of Measure Codes in the Appendix for valid values.
-    
-    *
-    * @var string
-    */
+     * Code for the Unit of measurement of the commodity units.  Required for Invoice forms and optional for Partial Invoice.
+     * 
+     * Refer to Product Unit of Measure Codes in the Appendix for valid values.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * The Unit of Measure if OTH (Other) is entered as the UnitOfMeasurement code.  Applies to Invoice and Partial Invoice forms.  Conditionally Required for the Invoice and Partial Invoice form if OTH is entered as the units UnitOfMeasurement Code.
@@ -28,13 +28,13 @@ class UnitUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for the Unit of measurement of the commodity units.  Required for Invoice forms and optional for Partial Invoice.
-    
-    Refer to Product Unit of Measure Codes in the Appendix for valid values.
-    
-    *
-    * @return string
-    */
+     * Code for the Unit of measurement of the commodity units.  Required for Invoice forms and optional for Partial Invoice.
+     * 
+     * Refer to Product Unit of Measure Codes in the Appendix for valid values.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

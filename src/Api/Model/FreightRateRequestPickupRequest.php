@@ -13,11 +13,11 @@ class FreightRateRequestPickupRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Date of the Pickup.
-    Format: YYYYMMDD
-    *
-    * @var string
-    */
+     * Date of the Pickup.
+     * Format: YYYYMMDD
+     *
+     * @var string
+     */
     protected $pickupDate;
     /**
      * Additional Pickup comments or instructions.
@@ -26,11 +26,11 @@ class FreightRateRequestPickupRequest extends \ArrayObject
      */
     protected $additionalComments;
     /**
-    * Date of the Pickup.
-    Format: YYYYMMDD
-    *
-    * @return string
-    */
+     * Date of the Pickup.
+     * Format: YYYYMMDD
+     *
+     * @return string
+     */
     public function getPickupDate(): string
     {
         return $this->pickupDate;

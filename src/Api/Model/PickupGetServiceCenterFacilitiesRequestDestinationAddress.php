@@ -19,13 +19,13 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
      */
     protected $city;
     /**
-    * Indicates the address of the consignee to allow for the nearest Pickup facility Search.
-    1 = District code for Hong Kong (HK)
-    2 = County for Ireland (IE)
-    3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
-    *
-    * @var string
-    */
+     * Indicates the address of the consignee to allow for the nearest Pickup facility Search.
+     * 1 = District code for Hong Kong (HK)
+     * 2 = County for Ireland (IE)
+     * 3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
+     *
+     * @var string
+     */
     protected $stateProvince;
     /**
      * Indicates the address of the consignee to allow for the nearest Pickup facility Search  It does not apply to non-postal countries. Example: IE and HK.
@@ -62,13 +62,13 @@ class PickupGetServiceCenterFacilitiesRequestDestinationAddress extends \ArrayOb
         return $this;
     }
     /**
-    * Indicates the address of the consignee to allow for the nearest Pickup facility Search.
-    1 = District code for Hong Kong (HK)
-    2 = County for Ireland (IE)
-    3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
-    *
-    * @return string
-    */
+     * Indicates the address of the consignee to allow for the nearest Pickup facility Search.
+     * 1 = District code for Hong Kong (HK)
+     * 2 = County for Ireland (IE)
+     * 3 = State or province for all the postal countries  Required for non-postal countries including HK and IE.
+     *
+     * @return string
+     */
     public function getStateProvince(): string
     {
         return $this->stateProvince;

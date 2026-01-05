@@ -19,12 +19,12 @@ class PackageResultsShippingReceipt extends \ArrayObject
      */
     protected $imageFormat;
     /**
-    * Base 64 encoded receipt in HTML format.
-    
-    The receipt image is only returned for the first 5 packages.
-    *
-    * @var string
-    */
+     * Base 64 encoded receipt in HTML format.
+     * 
+     * The receipt image is only returned for the first 5 packages.
+     *
+     * @var string
+     */
     protected $graphicImage;
     /**
      * Container for a Image Format.
@@ -49,12 +49,12 @@ class PackageResultsShippingReceipt extends \ArrayObject
         return $this;
     }
     /**
-    * Base 64 encoded receipt in HTML format.
-    
-    The receipt image is only returned for the first 5 packages.
-    *
-    * @return string
-    */
+     * Base 64 encoded receipt in HTML format.
+     * 
+     * The receipt image is only returned for the first 5 packages.
+     *
+     * @return string
+     */
     public function getGraphicImage(): string
     {
         return $this->graphicImage;

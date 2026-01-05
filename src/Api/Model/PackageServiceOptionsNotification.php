@@ -13,15 +13,15 @@ class PackageServiceOptionsNotification extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Notification Code.  Valid values:
-    3 - Receiver Return Notification
-    6 - QV Email Notification
-    7 - QV Exception Notification
-    8 - QV Delivery Notification 
-    For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
-    *
-    * @var string
-    */
+     * Notification Code.  Valid values:
+     * 3 - Receiver Return Notification
+     * 6 - QV Email Notification
+     * 7 - QV Exception Notification
+     * 8 - QV Delivery Notification
+     * For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
+     *
+     * @var string
+     */
     protected $notificationCode;
     /**
      * Container for the e-mail message.
@@ -30,15 +30,15 @@ class PackageServiceOptionsNotification extends \ArrayObject
      */
     protected $eMail;
     /**
-    * Notification Code.  Valid values:
-    3 - Receiver Return Notification
-    6 - QV Email Notification
-    7 - QV Exception Notification
-    8 - QV Delivery Notification 
-    For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
-    *
-    * @return string
-    */
+     * Notification Code.  Valid values:
+     * 3 - Receiver Return Notification
+     * 6 - QV Email Notification
+     * 7 - QV Exception Notification
+     * 8 - QV Delivery Notification
+     * For Mail Innovations forward shipments, QV Email Notifications are allowed for First Class, Priority Mail, and Expedited Mail Innovation services.
+     *
+     * @return string
+     */
     public function getNotificationCode(): string
     {
         return $this->notificationCode;
