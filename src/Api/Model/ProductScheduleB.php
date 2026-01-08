@@ -25,8 +25,6 @@ class ProductScheduleB extends \ArrayObject
      */
     protected $quantity;
     /**
-     * 
-     *
      * @var list<ScheduleBUnitOfMeasurement>
      */
     protected $unitOfMeasurement;
@@ -75,8 +73,6 @@ class ProductScheduleB extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ScheduleBUnitOfMeasurement>
      */
     public function getUnitOfMeasurement(): array
@@ -84,8 +80,6 @@ class ProductScheduleB extends \ArrayObject
         return $this->unitOfMeasurement;
     }
     /**
-     * 
-     *
      * @param list<ScheduleBUnitOfMeasurement> $unitOfMeasurement
      *
      * @return self

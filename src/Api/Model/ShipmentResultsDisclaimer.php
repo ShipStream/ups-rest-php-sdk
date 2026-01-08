@@ -19,12 +19,12 @@ class ShipmentResultsDisclaimer extends \ArrayObject
      */
     protected $code;
     /**
-    * Disclaimer description.   This field would be returned only if TaxInformationIndicator is present in a request.
-    
-    Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
-    *
-    * @var string
-    */
+     * Disclaimer description.   This field would be returned only if TaxInformationIndicator is present in a request.
+     * 
+     * Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
+     *
+     * @var string
+     */
     protected $description;
     /**
      * Code representing type of Disclaimer.   Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
@@ -49,12 +49,12 @@ class ShipmentResultsDisclaimer extends \ArrayObject
         return $this;
     }
     /**
-    * Disclaimer description.   This field would be returned only if TaxInformationIndicator is present in a request.
-    
-    Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
-    *
-    * @return string
-    */
+     * Disclaimer description.   This field would be returned only if TaxInformationIndicator is present in a request.
+     * 
+     * Refer to Disclaimer Codes and Messages in the Appendix for various disclaimers that would be possible for a given shipment.
+     *
+     * @return string
+     */
     public function getDescription(): string
     {
         return $this->description;

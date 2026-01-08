@@ -13,13 +13,13 @@ class InternationalFormsCN22Form extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Provide the valid values: 
-    6 = 4X6
-    1 = 8.5X11
-     Required if the CN22 form container is present.
-    *
-    * @var string
-    */
+     * Provide the valid values:
+     * 6 = 4X6
+     * 1 = 8.5X11
+     *   Required if the CN22 form container is present.
+     *
+     * @var string
+     */
     protected $labelSize;
     /**
      * Number of label per page. Currently 1 per page is supported.  Required if the CN22 form container is present.
@@ -28,21 +28,21 @@ class InternationalFormsCN22Form extends \ArrayObject
      */
     protected $printsPerPage;
     /**
-    * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
-     Required if the CN22 form container is present.
-    *
-    * @var string
-    */
+     * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
+     *   Required if the CN22 form container is present.
+     *
+     * @var string
+     */
     protected $labelPrintType;
     /**
-    * Valid values: 
-    1 = GIFT
-    2 = DOCUMENTS
-    3 = COMMERCIAL SAMPLE
-    4 = OTHER  Required if the CN22 form container is present.
-    *
-    * @var string
-    */
+     * Valid values:
+     * 1 = GIFT
+     * 2 = DOCUMENTS
+     * 3 = COMMERCIAL SAMPLE
+     * 4 = OTHER  Required if the CN22 form container is present.
+     *
+     * @var string
+     */
     protected $cN22Type;
     /**
      * Required if CN22Type is OTHER.  Required if the CN22 form container is present.
@@ -57,19 +57,17 @@ class InternationalFormsCN22Form extends \ArrayObject
      */
     protected $foldHereText;
     /**
-     * 
-     *
      * @var list<CN22FormCN22Content>
      */
     protected $cN22Content;
     /**
-    * Provide the valid values: 
-    6 = 4X6
-    1 = 8.5X11
-     Required if the CN22 form container is present.
-    *
-    * @return string
-    */
+     * Provide the valid values:
+     * 6 = 4X6
+     * 1 = 8.5X11
+     *   Required if the CN22 form container is present.
+     *
+     * @return string
+     */
     public function getLabelSize(): string
     {
         return $this->labelSize;
@@ -113,11 +111,11 @@ class InternationalFormsCN22Form extends \ArrayObject
         return $this;
     }
     /**
-    * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
-     Required if the CN22 form container is present.
-    *
-    * @return string
-    */
+     * Valid Values are pdf, png, gif, zpl, star, epl2 and spl.
+     *   Required if the CN22 form container is present.
+     *
+     * @return string
+     */
     public function getLabelPrintType(): string
     {
         return $this->labelPrintType;
@@ -137,14 +135,14 @@ class InternationalFormsCN22Form extends \ArrayObject
         return $this;
     }
     /**
-    * Valid values: 
-    1 = GIFT
-    2 = DOCUMENTS
-    3 = COMMERCIAL SAMPLE
-    4 = OTHER  Required if the CN22 form container is present.
-    *
-    * @return string
-    */
+     * Valid values:
+     * 1 = GIFT
+     * 2 = DOCUMENTS
+     * 3 = COMMERCIAL SAMPLE
+     * 4 = OTHER  Required if the CN22 form container is present.
+     *
+     * @return string
+     */
     public function getCN22Type(): string
     {
         return $this->cN22Type;
@@ -211,8 +209,6 @@ class InternationalFormsCN22Form extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<CN22FormCN22Content>
      */
     public function getCN22Content(): array
@@ -220,8 +216,6 @@ class InternationalFormsCN22Form extends \ArrayObject
         return $this->cN22Content;
     }
     /**
-     * 
-     *
      * @param list<CN22FormCN22Content> $cN22Content
      *
      * @return self

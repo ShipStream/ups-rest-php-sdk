@@ -19,11 +19,11 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
      */
     protected $request;
     /**
-    * The time that the request was made from the originating system. UTC time down to milliseconds. 
-    Example: 2016-07-14T12:01:33.999
-    *
-    * @var string
-    */
+     * The time that the request was made from the originating system. UTC time down to milliseconds.
+     * Example: 2016-07-14T12:01:33.999
+     *
+     * @var string
+     */
     protected $originRecordTransactionTimestamp;
     /**
      * Contains shipment information.
@@ -54,11 +54,11 @@ class AcceptanceAuditPreCheckRequest extends \ArrayObject
         return $this;
     }
     /**
-    * The time that the request was made from the originating system. UTC time down to milliseconds. 
-    Example: 2016-07-14T12:01:33.999
-    *
-    * @return string
-    */
+     * The time that the request was made from the originating system. UTC time down to milliseconds.
+     * Example: 2016-07-14T12:01:33.999
+     *
+     * @return string
+     */
     public function getOriginRecordTransactionTimestamp(): string
     {
         return $this->originRecordTransactionTimestamp;

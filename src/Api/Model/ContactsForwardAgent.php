@@ -19,14 +19,14 @@ class ContactsForwardAgent extends \ArrayObject
      */
     protected $companyName;
     /**
-    * Tax ID of the Forwarding agent.
-    Valid Values: (Below values are applicable for EEIFilingOption Code =3)
-    94-308351500 
-    13-168669100  
-     Applicable for EEI form only.
-    *
-    * @var string
-    */
+     * Tax ID of the Forwarding agent.
+     * Valid Values: (Below values are applicable for EEIFilingOption Code =3)
+     * 94-308351500
+     * 13-168669100
+     *   Applicable for EEI form only.
+     *
+     * @var string
+     */
     protected $taxIdentificationNumber;
     /**
      * Address information of the Forwarding agent.  Applicable for EEI form only.
@@ -57,14 +57,14 @@ class ContactsForwardAgent extends \ArrayObject
         return $this;
     }
     /**
-    * Tax ID of the Forwarding agent.
-    Valid Values: (Below values are applicable for EEIFilingOption Code =3)
-    94-308351500 
-    13-168669100  
-     Applicable for EEI form only.
-    *
-    * @return string
-    */
+     * Tax ID of the Forwarding agent.
+     * Valid Values: (Below values are applicable for EEIFilingOption Code =3)
+     * 94-308351500
+     * 13-168669100
+     *   Applicable for EEI form only.
+     *
+     * @return string
+     */
     public function getTaxIdentificationNumber(): string
     {
         return $this->taxIdentificationNumber;

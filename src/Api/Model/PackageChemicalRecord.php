@@ -25,43 +25,43 @@ class PackageChemicalRecord extends \ArrayObject
      */
     protected $reportableQuantity;
     /**
-    * This is the hazard class associated to the specified commodity.
-    
-    Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
-    
-    *
-    * @var string
-    */
+     * This is the hazard class associated to the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
+     * 
+     *
+     * @var string
+     */
     protected $classDivisionNumber;
     /**
-    * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    
-    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
-    
-    *
-    * @var string
-    */
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+     * 
+     *
+     * @var string
+     */
     protected $subRiskClass;
     /**
-    * This is the ID number (UN/NA/ID) for the specified commodity. 
-    
-    Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. 
-    
-    UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
-    *
-    * @var string
-    */
+     * This is the ID number (UN/NA/ID) for the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation.
+     * 
+     * UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
+     *
+     * @var string
+     */
     protected $iDNumber;
     /**
-    * This is the packing group category associated to the specified commodity. 
-    Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.  Valid values are: 
-    I
-    II
-    III 
-    blank
-    *
-    * @var string
-    */
+     * This is the packing group category associated to the specified commodity.
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.  Valid values are:
+     * I
+     * II
+     * III
+     * blank
+     *
+     * @var string
+     */
     protected $packagingGroupType;
     /**
      * Required if CommodityRegulatedLevelCode = LQ or FR. The numerical value of the mass capacity of the regulated good.
@@ -70,11 +70,11 @@ class PackageChemicalRecord extends \ArrayObject
      */
     protected $quantity;
     /**
-    * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.
-      Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
-    *
-    * @var string
-    */
+     * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.
+     *    Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
+     *
+     * @var string
+     */
     protected $uOM;
     /**
      * The packing instructions related to the chemical record. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
@@ -83,63 +83,63 @@ class PackageChemicalRecord extends \ArrayObject
      */
     protected $packagingInstructionCode;
     /**
-    * The Proper Shipping Name assigned by ADR, CFR or IATA. 
-    
-    Required if CommodityRegulatedLevelCode = LR, LQ or FR.
-    *
-    * @var string
-    */
+     * The Proper Shipping Name assigned by ADR, CFR or IATA.
+     * 
+     * Required if CommodityRegulatedLevelCode = LR, LQ or FR.
+     *
+     * @var string
+     */
     protected $properShippingName;
     /**
-    * The technical name (when required) for the specified commodity. 
-    
-    Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
-    *
-    * @var string
-    */
+     * The technical name (when required) for the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     *
+     * @var string
+     */
     protected $technicalName;
     /**
-    * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    
-    Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
-    
-    *
-    * @var string
-    */
+     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
+     * 
+     *
+     * @var string
+     */
     protected $additionalDescription;
     /**
-    * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box). 
-    Required if CommodityRegulatedLevelCode = LQ or FR.
-    *
-    * @var string
-    */
+     * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box).
+     * Required if CommodityRegulatedLevelCode = LQ or FR.
+     *
+     * @var string
+     */
     protected $packagingType;
     /**
-    * Defines the type of label that is required on the package for the commodity. 
-    
-    Not applicable if CommodityRegulatedLevelCode = LR or EQ.
-    *
-    * @var string
-    */
+     * Defines the type of label that is required on the package for the commodity.
+     * 
+     * Not applicable if CommodityRegulatedLevelCode = LR or EQ.
+     *
+     * @var string
+     */
     protected $hazardLabelRequired;
     /**
-    * The number of pieces of the specific commodity. 
-    
-    Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values: 1 to 999
-    *
-    * @var string
-    */
+     * The number of pieces of the specific commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values: 1 to 999
+     *
+     * @var string
+     */
     protected $packagingTypeQuantity;
     /**
-    * Indicates the type of commodity.  Valid values: LR, FR, LQ, EQ
-    
-    FR = Fully Regulated
-    LQ = Limited Quantity
-    EQ = Excepted Quantity
-    LR = Lightly Regulated
-    *
-    * @var string
-    */
+     * Indicates the type of commodity.  Valid values: LR, FR, LQ, EQ
+     * 
+     * FR = Fully Regulated
+     * LQ = Limited Quantity
+     * EQ = Excepted Quantity
+     * LR = Lightly Regulated
+     *
+     * @var string
+     */
     protected $commodityRegulatedLevelCode;
     /**
      * Transport Category.  Valid values: 0 to 4
@@ -204,13 +204,13 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * This is the hazard class associated to the specified commodity.
-    
-    Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
-    
-    *
-    * @return string
-    */
+     * This is the hazard class associated to the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'
+     * 
+     *
+     * @return string
+     */
     public function getClassDivisionNumber(): string
     {
         return $this->classDivisionNumber;
@@ -232,13 +232,13 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    
-    Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
-    
-    *
-    * @return string
-    */
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Secondary hazardous characteristics of a package. (There can be more than one – separate each with a comma).
+     * 
+     *
+     * @return string
+     */
     public function getSubRiskClass(): string
     {
         return $this->subRiskClass;
@@ -260,14 +260,14 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * This is the ID number (UN/NA/ID) for the specified commodity. 
-    
-    Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation. 
-    
-    UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
-    *
-    * @return string
-    */
+     * This is the ID number (UN/NA/ID) for the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode = LR, LQ or FR and if the field applies to the material by regulation.
+     * 
+     * UN/NA/ID Identification Number assigned to the specified regulated good. (Include the UN/NA/ID as part of the entry).
+     *
+     * @return string
+     */
     public function getIDNumber(): string
     {
         return $this->iDNumber;
@@ -290,15 +290,15 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * This is the packing group category associated to the specified commodity. 
-    Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.  Valid values are: 
-    I
-    II
-    III 
-    blank
-    *
-    * @return string
-    */
+     * This is the packing group category associated to the specified commodity.
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. Must be shown in Roman Numerals.  Valid values are:
+     * I
+     * II
+     * III
+     * blank
+     *
+     * @return string
+     */
     public function getPackagingGroupType(): string
     {
         return $this->packagingGroupType;
@@ -344,11 +344,11 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.
-      Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
-    *
-    * @return string
-    */
+     * Required if CommodityRegulatedLevelCode = LQ or FR. The unit of measure used for the mass capacity of the regulated good.
+     *    Example: ml, L, g, mg, kg, cylinder, pound, pint, quart, gallon, ounce etc.
+     *
+     * @return string
+     */
     public function getUOM(): string
     {
         return $this->uOM;
@@ -390,12 +390,12 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * The Proper Shipping Name assigned by ADR, CFR or IATA. 
-    
-    Required if CommodityRegulatedLevelCode = LR, LQ or FR.
-    *
-    * @return string
-    */
+     * The Proper Shipping Name assigned by ADR, CFR or IATA.
+     * 
+     * Required if CommodityRegulatedLevelCode = LR, LQ or FR.
+     *
+     * @return string
+     */
     public function getProperShippingName(): string
     {
         return $this->properShippingName;
@@ -416,12 +416,12 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * The technical name (when required) for the specified commodity. 
-    
-    Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
-    *
-    * @return string
-    */
+     * The technical name (when required) for the specified commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     *
+     * @return string
+     */
     public function getTechnicalName(): string
     {
         return $this->technicalName;
@@ -442,13 +442,13 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. 
-    
-    Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
-    
-    *
-    * @return string
-    */
+     * Additional remarks or special provision information. Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation.
+     * 
+     * Additional information that may be required by regulation about a hazardous material, such as, “Limited Quantity”, DOT-SP numbers, EX numbers.
+     * 
+     *
+     * @return string
+     */
     public function getAdditionalDescription(): string
     {
         return $this->additionalDescription;
@@ -470,11 +470,11 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box). 
-    Required if CommodityRegulatedLevelCode = LQ or FR.
-    *
-    * @return string
-    */
+     * The package type code identifying the type of packaging used for the commodity. (Ex: Fiberboard Box).
+     * Required if CommodityRegulatedLevelCode = LQ or FR.
+     *
+     * @return string
+     */
     public function getPackagingType(): string
     {
         return $this->packagingType;
@@ -494,12 +494,12 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * Defines the type of label that is required on the package for the commodity. 
-    
-    Not applicable if CommodityRegulatedLevelCode = LR or EQ.
-    *
-    * @return string
-    */
+     * Defines the type of label that is required on the package for the commodity.
+     * 
+     * Not applicable if CommodityRegulatedLevelCode = LR or EQ.
+     *
+     * @return string
+     */
     public function getHazardLabelRequired(): string
     {
         return $this->hazardLabelRequired;
@@ -520,12 +520,12 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * The number of pieces of the specific commodity. 
-    
-    Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values: 1 to 999
-    *
-    * @return string
-    */
+     * The number of pieces of the specific commodity.
+     * 
+     * Required if CommodityRegulatedLevelCode = LQ or FR.  Valid values: 1 to 999
+     *
+     * @return string
+     */
     public function getPackagingTypeQuantity(): string
     {
         return $this->packagingTypeQuantity;
@@ -546,15 +546,15 @@ class PackageChemicalRecord extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the type of commodity.  Valid values: LR, FR, LQ, EQ
-    
-    FR = Fully Regulated
-    LQ = Limited Quantity
-    EQ = Excepted Quantity
-    LR = Lightly Regulated
-    *
-    * @return string
-    */
+     * Indicates the type of commodity.  Valid values: LR, FR, LQ, EQ
+     * 
+     * FR = Fully Regulated
+     * LQ = Limited Quantity
+     * EQ = Excepted Quantity
+     * LR = Lightly Regulated
+     *
+     * @return string
+     */
     public function getCommodityRegulatedLevelCode(): string
     {
         return $this->commodityRegulatedLevelCode;

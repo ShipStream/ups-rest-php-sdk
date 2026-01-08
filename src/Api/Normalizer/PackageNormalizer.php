@@ -267,7 +267,7 @@ class PackageNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if ($data->isInitialized('trackingNumber') && null !== $data->getTrackingNumber()) {
             $dataArray['trackingNumber'] = $data->getTrackingNumber();
         }
-        if ($data->isInitialized('weight') && null !== $data->getWeight()) {
+        if ($data->isInitialized('weight')) {
             $dataArray['weight'] = $this->normalizer->normalize($data->getWeight(), 'json', $context);
         }
         foreach ($data as $key => $value_10) {

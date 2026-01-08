@@ -13,11 +13,11 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * File name belonging to specific subscription requested by user.
-    Format: YYMMDD_HHmmssnnn
-    *
-    * @var string
-    */
+     * File name belonging to specific subscription requested by user.
+     * Format: YYMMDD_HHmmssnnn
+     *
+     * @var string
+     */
     protected $fileName;
     /**
      * Container that displays whether the file is read or unread.
@@ -27,45 +27,55 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     protected $statusType;
     /**
      * Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be returned when available.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<SubscriptionFileManifest>
      */
     protected $manifest;
     /**
      * Information about shipment's origin.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<SubscriptionFileOrigin>
      */
     protected $origin;
     /**
      * Shipment exception data.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<SubscriptionFileException>
      */
     protected $exception;
     /**
      * Container for delivery information.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<SubscriptionFileDelivery>
      */
     protected $delivery;
     /**
      * Container for generic record information.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<SubscriptionFileGeneric>
      */
     protected $generic;
     /**
-    * File name belonging to specific subscription requested by user.
-    Format: YYMMDD_HHmmssnnn
-    *
-    * @return string
-    */
+     * File name belonging to specific subscription requested by user.
+     * Format: YYMMDD_HHmmssnnn
+     *
+     * @return string
+     */
     public function getFileName(): string
     {
         return $this->fileName;
@@ -108,7 +118,9 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     }
     /**
      * Container represents all data that is relevant for the shipment, such as origin, destination, shipper, payment method etc. It will be returned when available.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<SubscriptionFileManifest>
      */
@@ -132,7 +144,9 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     }
     /**
      * Information about shipment's origin.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<SubscriptionFileOrigin>
      */
@@ -156,7 +170,9 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     }
     /**
      * Shipment exception data.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<SubscriptionFileException>
      */
@@ -180,7 +196,9 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     }
     /**
      * Container for delivery information.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<SubscriptionFileDelivery>
      */
@@ -204,7 +222,9 @@ class SubscriptionEventsSubscriptionFile extends \ArrayObject
     }
     /**
      * Container for generic record information.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<SubscriptionFileGeneric>
      */

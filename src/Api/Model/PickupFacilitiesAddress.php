@@ -43,13 +43,13 @@ class PickupFacilitiesAddress extends \ArrayObject
      */
     protected $countryCode;
     /**
-    * Indicates if the pickup location is commerical or residential.
-    Valid values:
-    Y = Residential address
-    N = Non-residential (Commercial) address (default)
-    *
-    * @var string
-    */
+     * Indicates if the pickup location is commerical or residential.
+     * Valid values:
+     * Y = Residential address
+     * N = Non-residential (Commercial) address (default)
+     *
+     * @var string
+     */
     protected $residentialIndicator;
     /**
      * Address Line of the Facility.
@@ -162,13 +162,13 @@ class PickupFacilitiesAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the pickup location is commerical or residential.
-    Valid values:
-    Y = Residential address
-    N = Non-residential (Commercial) address (default)
-    *
-    * @return string
-    */
+     * Indicates if the pickup location is commerical or residential.
+     * Valid values:
+     * Y = Residential address
+     * N = Non-residential (Commercial) address (default)
+     *
+     * @return string
+     */
     public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;

@@ -13,13 +13,13 @@ class CommodityCommodityValue extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Commodity value currency code type.
-    Required when value of commodity is entered.
-    Valid value:
-    USD - United States Dollar
-    *
-    * @var string
-    */
+     * Commodity value currency code type.
+     * Required when value of commodity is entered.
+     * Valid value:
+     * USD - United States Dollar
+     *
+     * @var string
+     */
     protected $currencyCode;
     /**
      * Commodity value amount.
@@ -28,13 +28,13 @@ class CommodityCommodityValue extends \ArrayObject
      */
     protected $monetaryValue;
     /**
-    * Commodity value currency code type.
-    Required when value of commodity is entered.
-    Valid value:
-    USD - United States Dollar
-    *
-    * @return string
-    */
+     * Commodity value currency code type.
+     * Required when value of commodity is entered.
+     * Valid value:
+     * USD - United States Dollar
+     *
+     * @return string
+     */
     public function getCurrencyCode(): string
     {
         return $this->currencyCode;

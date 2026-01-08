@@ -90,14 +90,14 @@ class StandardHoursDayOfWeekNormalizer implements DenormalizerInterface, Normali
     {
         $dataArray = [];
         $dataArray['Day'] = $data->getDay();
-        if ($data->isInitialized('openHours') && null !== $data->getOpenHours()) {
+        if ($data->isInitialized('openHours')) {
             $values = [];
             foreach ($data->getOpenHours() as $value) {
                 $values[] = $value;
             }
             $dataArray['OpenHours'] = $values;
         }
-        if ($data->isInitialized('closeHours') && null !== $data->getCloseHours()) {
+        if ($data->isInitialized('closeHours')) {
             $values_1 = [];
             foreach ($data->getCloseHours() as $value_1) {
                 $values_1[] = $value_1;

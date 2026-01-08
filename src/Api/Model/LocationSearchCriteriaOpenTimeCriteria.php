@@ -13,18 +13,18 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Day Of week Code.
-    Valid values:
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday
-    *
-    * @var string
-    */
+     * Day Of week Code.
+     * Valid values:
+     * 1-Sunday
+     * 2-Monday
+     * 3-Tuesday
+     * 4-Wednesday
+     * 5-Thursday
+     * 6-Friday
+     * 7-Saturday
+     *
+     * @var string
+     */
     protected $dayOfWeekCode;
     /**
      * From time. Time Format HHMM.
@@ -39,18 +39,18 @@ class LocationSearchCriteriaOpenTimeCriteria extends \ArrayObject
      */
     protected $toTime;
     /**
-    * Day Of week Code.
-    Valid values:
-    1-Sunday
-    2-Monday
-    3-Tuesday
-    4-Wednesday
-    5-Thursday
-    6-Friday
-    7-Saturday
-    *
-    * @return string
-    */
+     * Day Of week Code.
+     * Valid values:
+     * 1-Sunday
+     * 2-Monday
+     * 3-Tuesday
+     * 4-Wednesday
+     * 5-Thursday
+     * 6-Friday
+     * 7-Saturday
+     *
+     * @return string
+     */
     public function getDayOfWeekCode(): string
     {
         return $this->dayOfWeekCode;

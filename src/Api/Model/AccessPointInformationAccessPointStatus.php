@@ -13,14 +13,14 @@ class AccessPointInformationAccessPointStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid status values are: 
-    01-Active-available
-    06-Suspended
-    07-Active-unavailable
-    08-Terminated
-    *
-    * @var string
-    */
+     * Valid status values are:
+     * 01-Active-available
+     * 06-Suspended
+     * 07-Active-unavailable
+     * 08-Terminated
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of status code.
@@ -29,14 +29,14 @@ class AccessPointInformationAccessPointStatus extends \ArrayObject
      */
     protected $description;
     /**
-    * Valid status values are: 
-    01-Active-available
-    06-Suspended
-    07-Active-unavailable
-    08-Terminated
-    *
-    * @return string
-    */
+     * Valid status values are:
+     * 01-Active-available
+     * 06-Suspended
+     * 07-Active-unavailable
+     * 08-Terminated
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

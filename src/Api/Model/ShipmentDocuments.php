@@ -13,8 +13,6 @@ class ShipmentDocuments extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<DocumentsImage>
      */
     protected $image;
@@ -25,8 +23,6 @@ class ShipmentDocuments extends \ArrayObject
      */
     protected $packingList;
     /**
-     * 
-     *
      * @return list<DocumentsImage>
      */
     public function getImage(): array
@@ -34,8 +30,6 @@ class ShipmentDocuments extends \ArrayObject
         return $this->image;
     }
     /**
-     * 
-     *
      * @param list<DocumentsImage> $image
      *
      * @return self

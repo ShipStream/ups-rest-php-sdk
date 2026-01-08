@@ -13,25 +13,25 @@ class RateResultChargeDetail extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Indicates the general charge type
-    - A = ACCESSORIAL TYPE
-    - B = BASE CHARGE TYPE
-    - S = SURCHARGE TYPE
-    *
-    * @var string
-    */
+     * Indicates the general charge type
+     * - A = ACCESSORIAL TYPE
+     * - B = BASE CHARGE TYPE
+     * - S = SURCHARGE TYPE
+     *
+     * @var string
+     */
     protected $chargeCode;
     /**
-    * Description of each charge.The possible descriptions are:
-    - BASE CHARGE
-    - EXTENDED AREA SURCHARGE
-    - FUEL SURCHARGE
-    - REMOTE AREA SURCHARGE
-    - RESIDENTIAL SURCHARGE
-    - SATURDAY ON-CALL STOP CHARGE
-    *
-    * @var string
-    */
+     * Description of each charge.The possible descriptions are:
+     * - BASE CHARGE
+     * - EXTENDED AREA SURCHARGE
+     * - FUEL SURCHARGE
+     * - REMOTE AREA SURCHARGE
+     * - RESIDENTIAL SURCHARGE
+     * - SATURDAY ON-CALL STOP CHARGE
+     *
+     * @var string
+     */
     protected $chargeDescription;
     /**
      * Monetary value of the charge.
@@ -52,13 +52,13 @@ class RateResultChargeDetail extends \ArrayObject
      */
     protected $taxAmount;
     /**
-    * Indicates the general charge type
-    - A = ACCESSORIAL TYPE
-    - B = BASE CHARGE TYPE
-    - S = SURCHARGE TYPE
-    *
-    * @return string
-    */
+     * Indicates the general charge type
+     * - A = ACCESSORIAL TYPE
+     * - B = BASE CHARGE TYPE
+     * - S = SURCHARGE TYPE
+     *
+     * @return string
+     */
     public function getChargeCode(): string
     {
         return $this->chargeCode;
@@ -80,16 +80,16 @@ class RateResultChargeDetail extends \ArrayObject
         return $this;
     }
     /**
-    * Description of each charge.The possible descriptions are:
-    - BASE CHARGE
-    - EXTENDED AREA SURCHARGE
-    - FUEL SURCHARGE
-    - REMOTE AREA SURCHARGE
-    - RESIDENTIAL SURCHARGE
-    - SATURDAY ON-CALL STOP CHARGE
-    *
-    * @return string
-    */
+     * Description of each charge.The possible descriptions are:
+     * - BASE CHARGE
+     * - EXTENDED AREA SURCHARGE
+     * - FUEL SURCHARGE
+     * - REMOTE AREA SURCHARGE
+     * - RESIDENTIAL SURCHARGE
+     * - SATURDAY ON-CALL STOP CHARGE
+     *
+     * @return string
+     */
     public function getChargeDescription(): string
     {
         return $this->chargeDescription;

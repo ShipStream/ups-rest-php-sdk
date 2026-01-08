@@ -26,7 +26,9 @@ class SubscriptionFileManifest extends \ArrayObject
     protected $shipTo;
     /**
      * Shipment-level reference numbers.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ManifestReferenceNumber>
      */
@@ -56,19 +58,21 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $scheduledDeliveryTime;
     /**
-    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
-    - 1 = Letter
-    - 2 = Document (Non-Letter Document)
-    - 3 = Non-Document
-    - 4 = Pallet
-    
-    *
-    * @var string
-    */
+     * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
+     * - 1 = Letter
+     * - 2 = Document (Non-Letter Document)
+     * - 3 = Non-Document
+     * - 4 = Pallet
+     * 
+     *
+     * @var string
+     */
     protected $documentsOnly;
     /**
      * Defines a package.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<ManifestPackage>
      */
@@ -104,20 +108,20 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $specialInstructions;
     /**
-    * Shipment charge type.
-    Valid values:
-    C/F - Cost and Freight
-    C/B - Consignee Billed Package
-    F/C - Freight Collect
-    DDP - Delivered Duty Paid
-    VAT Unpaid
-    FOB - Free On Board
-    P/P - Prepaid
-    F/D - Free Domicile
-    T/P - Third Party Billing
-    *
-    * @var string
-    */
+     * Shipment charge type.
+     * Valid values:
+     * C/F - Cost and Freight
+     * C/B - Consignee Billed Package
+     * F/C - Freight Collect
+     * DDP - Delivered Duty Paid
+     * VAT Unpaid
+     * FOB - Free On Board
+     * P/P - Prepaid
+     * F/D - Free Domicile
+     * T/P - Third Party Billing
+     *
+     * @var string
+     */
     protected $shipmentChargeType;
     /**
      * The information provided within this container identifies the shipper number and billing option the user specified to view during the subscription process.
@@ -324,14 +328,14 @@ class SubscriptionFileManifest extends \ArrayObject
      */
     protected $uPSPremierAccessorialIndicator;
     /**
-    * Indicates the UPS Premier category applied to the package Valid values:
-    - 'PRS' – UPS Premier Silver
-    - 'PRG' – UPS Premier Gold
-    - 'PRP' - UPS Premier Platinum
-    
-    *
-    * @var string
-    */
+     * Indicates the UPS Premier category applied to the package Valid values:
+     * - 'PRS' – UPS Premier Silver
+     * - 'PRG' – UPS Premier Gold
+     * - 'PRP' - UPS Premier Platinum
+     * 
+     *
+     * @var string
+     */
     protected $uPSPremierCategoryCode;
     /**
      * Shipper's record for a shipment.
@@ -379,7 +383,9 @@ class SubscriptionFileManifest extends \ArrayObject
     }
     /**
      * Shipment-level reference numbers.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ManifestReferenceNumber>
      */
@@ -490,15 +496,15 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-    * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
-    - 1 = Letter
-    - 2 = Document (Non-Letter Document)
-    - 3 = Non-Document
-    - 4 = Pallet
-    
-    *
-    * @return string
-    */
+     * If the tag is present then the shipment is a document, otherwise the shipment is a non-document. Valid values:
+     * - 1 = Letter
+     * - 2 = Document (Non-Letter Document)
+     * - 3 = Non-Document
+     * - 4 = Pallet
+     * 
+     *
+     * @return string
+     */
     public function getDocumentsOnly(): string
     {
         return $this->documentsOnly;
@@ -523,7 +529,9 @@ class SubscriptionFileManifest extends \ArrayObject
     }
     /**
      * Defines a package.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<ManifestPackage>
      */
@@ -656,20 +664,20 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-    * Shipment charge type.
-    Valid values:
-    C/F - Cost and Freight
-    C/B - Consignee Billed Package
-    F/C - Freight Collect
-    DDP - Delivered Duty Paid
-    VAT Unpaid
-    FOB - Free On Board
-    P/P - Prepaid
-    F/D - Free Domicile
-    T/P - Third Party Billing
-    *
-    * @return string
-    */
+     * Shipment charge type.
+     * Valid values:
+     * C/F - Cost and Freight
+     * C/B - Consignee Billed Package
+     * F/C - Freight Collect
+     * DDP - Delivered Duty Paid
+     * VAT Unpaid
+     * FOB - Free On Board
+     * P/P - Prepaid
+     * F/D - Free Domicile
+     * T/P - Third Party Billing
+     *
+     * @return string
+     */
     public function getShipmentChargeType(): string
     {
         return $this->shipmentChargeType;
@@ -1446,14 +1454,14 @@ class SubscriptionFileManifest extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates the UPS Premier category applied to the package Valid values:
-    - 'PRS' – UPS Premier Silver
-    - 'PRG' – UPS Premier Gold
-    - 'PRP' - UPS Premier Platinum
-    
-    *
-    * @return string
-    */
+     * Indicates the UPS Premier category applied to the package Valid values:
+     * - 'PRS' – UPS Premier Silver
+     * - 'PRG' – UPS Premier Gold
+     * - 'PRP' - UPS Premier Platinum
+     * 
+     *
+     * @return string
+     */
     public function getUPSPremierCategoryCode(): string
     {
         return $this->uPSPremierCategoryCode;

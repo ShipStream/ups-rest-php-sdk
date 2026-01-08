@@ -13,12 +13,12 @@ class PackagePackageServiceOptions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Delivery Confirmation container. 
-    Refer to Delivery Confirmation Origin-
-    Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
-    *
-    * @var PackageServiceOptionsDeliveryConfirmation
-    */
+     * Delivery Confirmation container.
+     * Refer to Delivery Confirmation Origin-
+     * Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
+     *
+     * @var PackageServiceOptionsDeliveryConfirmation
+     */
     protected $deliveryConfirmation;
     /**
      * Container for Declared Value.
@@ -51,8 +51,6 @@ class PackagePackageServiceOptions extends \ArrayObject
      */
     protected $notification;
     /**
-     * 
-     *
      * @var list<PackageServiceOptionsHazMat>
      */
     protected $hazMat;
@@ -63,27 +61,27 @@ class PackagePackageServiceOptions extends \ArrayObject
      */
     protected $dryIce;
     /**
-    * An UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances. Empty Tag means indicator is present.
-    
-    The UPSPremiumCareIndicator cannot be requested for package with Delivery Confirmation - Adult Signature Required and Delivery Confirmation- Signature Required.
-    
-    UPSPremiumCareIndicator is valid for following Return services:
-    - Returns Exchange (available with a contract)
-    - Print Return Label
-    - Print and Mail
-    - Electronic Return Label
-    - Return Service Three Attempt
-    
-    The UPSPremiumCareIndicator can be requested with following UPS services:
-    - UPS Express® Early
-    - UPS Express
-    - UPS Express Saver
-    - UPS Standard
-    - Valid only for Canada to Canada movements.
-    
-    *
-    * @var string
-    */
+     * An UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances. Empty Tag means indicator is present.
+     * 
+     * The UPSPremiumCareIndicator cannot be requested for package with Delivery Confirmation - Adult Signature Required and Delivery Confirmation- Signature Required.
+     * 
+     * UPSPremiumCareIndicator is valid for following Return services:
+     * - Returns Exchange (available with a contract)
+     * - Print Return Label
+     * - Print and Mail
+     * - Electronic Return Label
+     * - Return Service Three Attempt
+     * 
+     * The UPSPremiumCareIndicator can be requested with following UPS services:
+     * - UPS Express® Early
+     * - UPS Express
+     * - UPS Express Saver
+     * - UPS Standard
+     * - Valid only for Canada to Canada movements.
+     * 
+     *
+     * @var string
+     */
     protected $uPSPremiumCareIndicator;
     /**
      * Presence/Absence Indicator. Any value is ignored. If present, the package is rated for UPS Proactive Response and proactive package tracking. Contractual accessorial for health care companies to allow package monitoring throughout the UPS system.  Shippers account needs to have valid contract for UPS Proactive Reponse.
@@ -110,12 +108,12 @@ class PackagePackageServiceOptions extends \ArrayObject
      */
     protected $refrigerationIndicator;
     /**
-    * Delivery Confirmation container. 
-    Refer to Delivery Confirmation Origin-
-    Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
-    *
-    * @return PackageServiceOptionsDeliveryConfirmation
-    */
+     * Delivery Confirmation container.
+     * Refer to Delivery Confirmation Origin-
+     * Destination Pairs in the Appendix for a list of valid values.  Valid only for forward shipment only.
+     *
+     * @return PackageServiceOptionsDeliveryConfirmation
+     */
     public function getDeliveryConfirmation(): PackageServiceOptionsDeliveryConfirmation
     {
         return $this->deliveryConfirmation;
@@ -246,8 +244,6 @@ class PackagePackageServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PackageServiceOptionsHazMat>
      */
     public function getHazMat(): array
@@ -255,8 +251,6 @@ class PackagePackageServiceOptions extends \ArrayObject
         return $this->hazMat;
     }
     /**
-     * 
-     *
      * @param list<PackageServiceOptionsHazMat> $hazMat
      *
      * @return self
@@ -290,27 +284,27 @@ class PackagePackageServiceOptions extends \ArrayObject
         return $this;
     }
     /**
-    * An UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances. Empty Tag means indicator is present.
-    
-    The UPSPremiumCareIndicator cannot be requested for package with Delivery Confirmation - Adult Signature Required and Delivery Confirmation- Signature Required.
-    
-    UPSPremiumCareIndicator is valid for following Return services:
-    - Returns Exchange (available with a contract)
-    - Print Return Label
-    - Print and Mail
-    - Electronic Return Label
-    - Return Service Three Attempt
-    
-    The UPSPremiumCareIndicator can be requested with following UPS services:
-    - UPS Express® Early
-    - UPS Express
-    - UPS Express Saver
-    - UPS Standard
-    - Valid only for Canada to Canada movements.
-    
-    *
-    * @return string
-    */
+     * An UPSPremiumCareIndicator indicates special handling is required for shipment having controlled substances. Empty Tag means indicator is present.
+     * 
+     * The UPSPremiumCareIndicator cannot be requested for package with Delivery Confirmation - Adult Signature Required and Delivery Confirmation- Signature Required.
+     * 
+     * UPSPremiumCareIndicator is valid for following Return services:
+     * - Returns Exchange (available with a contract)
+     * - Print Return Label
+     * - Print and Mail
+     * - Electronic Return Label
+     * - Return Service Three Attempt
+     * 
+     * The UPSPremiumCareIndicator can be requested with following UPS services:
+     * - UPS Express® Early
+     * - UPS Express
+     * - UPS Express Saver
+     * - UPS Standard
+     * - Valid only for Canada to Canada movements.
+     * 
+     *
+     * @return string
+     */
     public function getUPSPremiumCareIndicator(): string
     {
         return $this->uPSPremiumCareIndicator;

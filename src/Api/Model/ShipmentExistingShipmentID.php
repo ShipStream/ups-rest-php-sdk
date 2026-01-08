@@ -19,11 +19,11 @@ class ShipmentExistingShipmentID extends \ArrayObject
      */
     protected $shipmentNumber;
     /**
-    * Container for the existing shipment pickup confirmation number.
-    Required only for Shipment Updates.
-    *
-    * @var ExistingShipmentIDConfirmationNumber
-    */
+     * Container for the existing shipment pickup confirmation number.
+     * Required only for Shipment Updates.
+     *
+     * @var ExistingShipmentIDConfirmationNumber
+     */
     protected $confirmationNumber;
     /**
      * The PRO Number assigned to the shipment.
@@ -48,11 +48,11 @@ class ShipmentExistingShipmentID extends \ArrayObject
         return $this;
     }
     /**
-    * Container for the existing shipment pickup confirmation number.
-    Required only for Shipment Updates.
-    *
-    * @return ExistingShipmentIDConfirmationNumber
-    */
+     * Container for the existing shipment pickup confirmation number.
+     * Required only for Shipment Updates.
+     *
+     * @return ExistingShipmentIDConfirmationNumber
+     */
     public function getConfirmationNumber(): ExistingShipmentIDConfirmationNumber
     {
         return $this->confirmationNumber;

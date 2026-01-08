@@ -13,25 +13,25 @@ class BillShipperCreditCard extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid values:
-    - 01 = American Express
-    - 03 = Discover
-    - 04 = MasterCard
-    - 05 = Optima
-    - 06 = VISA
-    - 07 = Bravo
-    - 08 = Diners Club
-    - 13 = Dankort
-    - 14 = Hipercard
-    - 15 = JCB
-    - 17 = Postepay
-    - 18 = UnionPay/ExpressPay
-    - 19 = Visa Electron
-    - 20 = VPAY
-    - 21 = Carte Bleue
-    *
-    * @var string
-    */
+     * Valid values:
+     * - 01 = American Express
+     * - 03 = Discover
+     * - 04 = MasterCard
+     * - 05 = Optima
+     * - 06 = VISA
+     * - 07 = Bravo
+     * - 08 = Diners Club
+     * - 13 = Dankort
+     * - 14 = Hipercard
+     * - 15 = JCB
+     * - 17 = Postepay
+     * - 18 = UnionPay/ExpressPay
+     * - 19 = Visa Electron
+     * - 20 = VPAY
+     * - 21 = Carte Bleue
+     *
+     * @var string
+     */
     protected $type;
     /**
      * Credit Card number.
@@ -58,25 +58,25 @@ class BillShipperCreditCard extends \ArrayObject
      */
     protected $address;
     /**
-    * Valid values:
-    - 01 = American Express
-    - 03 = Discover
-    - 04 = MasterCard
-    - 05 = Optima
-    - 06 = VISA
-    - 07 = Bravo
-    - 08 = Diners Club
-    - 13 = Dankort
-    - 14 = Hipercard
-    - 15 = JCB
-    - 17 = Postepay
-    - 18 = UnionPay/ExpressPay
-    - 19 = Visa Electron
-    - 20 = VPAY
-    - 21 = Carte Bleue
-    *
-    * @return string
-    */
+     * Valid values:
+     * - 01 = American Express
+     * - 03 = Discover
+     * - 04 = MasterCard
+     * - 05 = Optima
+     * - 06 = VISA
+     * - 07 = Bravo
+     * - 08 = Diners Club
+     * - 13 = Dankort
+     * - 14 = Hipercard
+     * - 15 = JCB
+     * - 17 = Postepay
+     * - 18 = UnionPay/ExpressPay
+     * - 19 = Visa Electron
+     * - 20 = VPAY
+     * - 21 = Carte Bleue
+     *
+     * @return string
+     */
     public function getType(): string
     {
         return $this->type;

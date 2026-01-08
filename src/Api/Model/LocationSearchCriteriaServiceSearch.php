@@ -19,14 +19,10 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
      */
     protected $time;
     /**
-     * 
-     *
      * @var list<ServiceSearchServiceCode>
      */
     protected $serviceCode;
     /**
-     * 
-     *
      * @var list<ServiceSearchServiceOptionCode>
      */
     protected $serviceOptionCode;
@@ -53,8 +49,6 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ServiceSearchServiceCode>
      */
     public function getServiceCode(): array
@@ -62,8 +56,6 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
         return $this->serviceCode;
     }
     /**
-     * 
-     *
      * @param list<ServiceSearchServiceCode> $serviceCode
      *
      * @return self
@@ -75,8 +67,6 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<ServiceSearchServiceOptionCode>
      */
     public function getServiceOptionCode(): array
@@ -84,8 +74,6 @@ class LocationSearchCriteriaServiceSearch extends \ArrayObject
         return $this->serviceOptionCode;
     }
     /**
-     * 
-     *
      * @param list<ServiceSearchServiceOptionCode> $serviceOptionCode
      *
      * @return self

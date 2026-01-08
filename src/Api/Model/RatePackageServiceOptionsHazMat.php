@@ -37,8 +37,6 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
      */
     protected $allPackedInOneIndicator;
     /**
-     * 
-     *
      * @var list<HazMatHazMatChemicalRecord>
      */
     protected $hazMatChemicalRecord;
@@ -131,8 +129,6 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<HazMatHazMatChemicalRecord>
      */
     public function getHazMatChemicalRecord(): array
@@ -140,8 +136,6 @@ class RatePackageServiceOptionsHazMat extends \ArrayObject
         return $this->hazMatChemicalRecord;
     }
     /**
-     * 
-     *
      * @param list<HazMatHazMatChemicalRecord> $hazMatChemicalRecord
      *
      * @return self

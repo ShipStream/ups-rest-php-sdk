@@ -25,12 +25,12 @@ class PickupRateResponse extends \ArrayObject
      */
     protected $rateResult;
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607. Valid Values:
-    - Y = WST
-    - N = Non-WST
-    *
-    * @var string
-    */
+     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607. Valid Values:
+     * - Y = WST
+     * - N = Non-WST
+     *
+     * @var string
+     */
     protected $weekendServiceTerritoryIndicator;
     /**
      * WeekendServiceTerritory Container.Returned if the  subversion greater or equal to 2007.
@@ -83,12 +83,12 @@ class PickupRateResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607. Valid Values:
-    - Y = WST
-    - N = Non-WST
-    *
-    * @return string
-    */
+     * Indicates if the pickup address qualifies for WST (Weekend Service Territory). Returned if the pickup date is Saturday and subversion greater or equal to 1607. Valid Values:
+     * - Y = WST
+     * - N = Non-WST
+     *
+     * @return string
+     */
     public function getWeekendServiceTerritoryIndicator(): string
     {
         return $this->weekendServiceTerritoryIndicator;

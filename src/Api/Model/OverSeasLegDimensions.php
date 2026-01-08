@@ -13,21 +13,21 @@ class OverSeasLegDimensions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Represents the size as volume.
-    
-    Volume being required if height, length, width is not specified. 
-    If volume is present then height, length, width is ignored.
-    
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @var string
-    */
+     * Represents the size as volume.
+     * 
+     * Volume being required if height, length, width is not specified.
+     * If volume is present then height, length, width is ignored.
+     * 
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @var string
+     */
     protected $volume;
     /**
      * The height of the line item used to determine density based rating.
@@ -54,21 +54,21 @@ class OverSeasLegDimensions extends \ArrayObject
      */
     protected $unitOfMeasurement;
     /**
-    * Represents the size as volume.
-    
-    Volume being required if height, length, width is not specified. 
-    If volume is present then height, length, width is ignored.
-    
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 16 characters. The decimal ".", does not count as a character.
-    Examples:
-    ##############.##
-    ###############.#
-    ################
-    *
-    * @return string
-    */
+     * Represents the size as volume.
+     * 
+     * Volume being required if height, length, width is not specified.
+     * If volume is present then height, length, width is ignored.
+     * 
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 16 characters. The decimal ".", does not count as a character.
+     * Examples:
+     * ##############.##
+     * ###############.#
+     * ################
+     *
+     * @return string
+     */
     public function getVolume(): string
     {
         return $this->volume;

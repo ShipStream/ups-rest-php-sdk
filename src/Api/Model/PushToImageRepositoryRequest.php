@@ -49,7 +49,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
      */
     protected $shipmentDateAndTime;
     /**
-     * Valid values are: 1 = small package, 2 = freight. 
+     * Valid values are: 1 = small package, 2 = freight.
      *
      * @var string
      */
@@ -199,7 +199,7 @@ class PushToImageRepositoryRequest extends \ArrayObject
         return $this;
     }
     /**
-     * Valid values are: 1 = small package, 2 = freight. 
+     * Valid values are: 1 = small package, 2 = freight.
      *
      * @return string
      */

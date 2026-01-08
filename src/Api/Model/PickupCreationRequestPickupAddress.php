@@ -55,12 +55,12 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      */
     protected $stateProvince;
     /**
-    * - Barrio for Mexico (MX)
-    - Urbanization for Puerto Rico (PR)
-    - Shire for United Kingdom (UK)
-    *
-    * @var string
-    */
+     * - Barrio for Mexico (MX)
+     * - Urbanization for Puerto Rico (PR)
+     * - Shire for United Kingdom (UK)
+     *
+     * @var string
+     */
     protected $urbanization;
     /**
      * Postal code or equivalent for postal countries
@@ -69,20 +69,20 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-    * The pickup country or territory code as defined by ISO-3166. 
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @var string
-    */
+     * The pickup country or territory code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @var string
+     */
     protected $countryCode;
     /**
-    * Indicates if the pickup address is commercial or residential. 
-    Valid values:
-    Y = Residential address
-    N = Non-residential (Commercial) address (default)
-    *
-    * @var string
-    */
+     * Indicates if the pickup address is commercial or residential.
+     * Valid values:
+     * Y = Residential address
+     * N = Non-residential (Commercial) address (default)
+     *
+     * @var string
+     */
     protected $residentialIndicator;
     /**
      * The specific spot to pickup at the address.
@@ -251,12 +251,12 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
         return $this;
     }
     /**
-    * - Barrio for Mexico (MX)
-    - Urbanization for Puerto Rico (PR)
-    - Shire for United Kingdom (UK)
-    *
-    * @return string
-    */
+     * - Barrio for Mexico (MX)
+     * - Urbanization for Puerto Rico (PR)
+     * - Shire for United Kingdom (UK)
+     *
+     * @return string
+     */
     public function getUrbanization(): string
     {
         return $this->urbanization;
@@ -299,11 +299,11 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
         return $this;
     }
     /**
-    * The pickup country or territory code as defined by ISO-3166. 
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @return string
-    */
+     * The pickup country or territory code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;
@@ -323,13 +323,13 @@ class PickupCreationRequestPickupAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates if the pickup address is commercial or residential. 
-    Valid values:
-    Y = Residential address
-    N = Non-residential (Commercial) address (default)
-    *
-    * @return string
-    */
+     * Indicates if the pickup address is commercial or residential.
+     * Valid values:
+     * Y = Residential address
+     * N = Non-residential (Commercial) address (default)
+     *
+     * @return string
+     */
     public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;

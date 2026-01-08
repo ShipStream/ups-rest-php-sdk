@@ -13,25 +13,25 @@ class DropLocationIVR extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
-    ONLY FOR IVR.
-    *
-    * @var string
-    */
+     * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
+     * ONLY FOR IVR.
+     *
+     * @var string
+     */
     protected $phraseID;
     /**
-    * Indicates to the response recipient that the information has changed, and a new audio file should be produced. 
-    ONLY FOR IVR.
-    *
-    * @var string
-    */
+     * Indicates to the response recipient that the information has changed, and a new audio file should be produced.
+     * ONLY FOR IVR.
+     *
+     * @var string
+     */
     protected $textToSpeechIndicator;
     /**
-    * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
-    ONLY FOR IVR.
-    *
-    * @return string
-    */
+     * Contains the name of the IVR file that relates to this drop location. The file is an audio recording of information related to the location.
+     * ONLY FOR IVR.
+     *
+     * @return string
+     */
     public function getPhraseID(): string
     {
         return $this->phraseID;
@@ -51,11 +51,11 @@ class DropLocationIVR extends \ArrayObject
         return $this;
     }
     /**
-    * Indicates to the response recipient that the information has changed, and a new audio file should be produced. 
-    ONLY FOR IVR.
-    *
-    * @return string
-    */
+     * Indicates to the response recipient that the information has changed, and a new audio file should be produced.
+     * ONLY FOR IVR.
+     *
+     * @return string
+     */
     public function getTextToSpeechIndicator(): string
     {
         return $this->textToSpeechIndicator;

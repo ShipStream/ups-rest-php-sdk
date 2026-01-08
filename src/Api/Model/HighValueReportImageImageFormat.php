@@ -13,14 +13,14 @@ class HighValueReportImageImageFormat extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code representing the format in which the High Value Report is generated.
-    
-    Valid values:
-    - PDF = pdf.
-    
-    *
-    * @var string
-    */
+     * Code representing the format in which the High Value Report is generated.
+     * 
+     * Valid values:
+     * - PDF = pdf.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the High Value Report image format code.
@@ -29,14 +29,14 @@ class HighValueReportImageImageFormat extends \ArrayObject
      */
     protected $description;
     /**
-    * Code representing the format in which the High Value Report is generated.
-    
-    Valid values:
-    - PDF = pdf.
-    
-    *
-    * @return string
-    */
+     * Code representing the format in which the High Value Report is generated.
+     * 
+     * Valid values:
+     * - PDF = pdf.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

@@ -13,70 +13,70 @@ class EmsResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date. 
-    
-    Valid Format: YYYY-MM-DD
-    *
-    * @var string
-    */
+     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.
+     * 
+     *  Valid Format: YYYY-MM-DD
+     *
+     * @var string
+     */
     protected $shipDate;
     /**
-    * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
-    
-    Valid Format: HH:MM:SS
-    *
-    * @var string
-    */
+     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).
+     * 
+     *  Valid Format: HH:MM:SS
+     *
+     * @var string
+     */
     protected $shipTime;
     /**
-    * Service Levels being returned. 
-    
-    A = all service levels. 
-    
-    Blank is the default for all Service Level values.
-    *
-    * @var string
-    */
+     * Service Levels being returned.
+     * 
+     *  A = all service levels.
+     * 
+     *  Blank is the default for all Service Level values.
+     *
+     * @var string
+     */
     protected $serviceLevel;
     /**
-    * Represents the shipment type. 
-    
-    Valid values: "02","03","04","07" 
-    02 - Document 
-    03 - Non-Document 
-    04 - WWEF 
-    07 - Pallet
-    *
-    * @var string
-    */
+     * Represents the shipment type.
+     * 
+     *  Valid values: "02","03","04","07"
+     *  02 - Document
+     *  03 - Non-Document
+     *  04 - WWEF
+     *  07 - Pallet
+     *
+     * @var string
+     */
     protected $billType;
     /**
-    * Populated with valid duty types for international transactions only.  
-    
-    Valid Duty Types: "01","02","03","04","05","06","07","08","09" 
-    01 - Dutiable 
-    02 - Non Dutiable 
-    03 - Low Value 
-    04 - Courier Remission 
-    05 - Gift 
-    06 - Military 
-    07 - Exception 
-    08 - Line Release 
-    09 - Low Value
-    *
-    * @var string
-    */
+     * Populated with valid duty types for international transactions only.
+     * 
+     *  Valid Duty Types: "01","02","03","04","05","06","07","08","09"
+     *  01 - Dutiable
+     *  02 - Non Dutiable
+     *  03 - Low Value
+     *  04 - Courier Remission
+     *  05 - Gift
+     *  06 - Military
+     *  07 - Exception
+     *  08 - Line Release
+     *  09 - Low Value
+     *
+     * @var string
+     */
     protected $dutyType;
     /**
-    * residential Indicator that was sent in on the request. 
-    
-    Valid values: "01","02" 
-    
-    01 - Residential 
-    02 - Commercial
-    *
-    * @var string
-    */
+     * residential Indicator that was sent in on the request.
+     * 
+     *  Valid values: "01","02"
+     * 
+     *  01 - Residential
+     *  02 - Commercial
+     *
+     * @var string
+     */
     protected $residentialIndicator;
     /**
      * Destination country name value
@@ -91,46 +91,46 @@ class EmsResponse extends \ArrayObject
      */
     protected $destinationCountryCode;
     /**
-    * The shipment destination postal code.  Required for US domestic requests. 
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment destination postal code.  Required for US domestic requests.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @var string
+     */
     protected $destinationPostalCode;
     /**
-    * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @var string
+     */
     protected $destinationPostalCodeLow;
     /**
-    * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @var string
+     */
     protected $destinationPostalCodeHigh;
     /**
-    * The shipment destination state or province. 
-    
-    For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards). 
-    
-    For non-U.S. addresses the full State or Province name will be returned.
-    *
-    * @var string
-    */
+     * The shipment destination state or province.
+     * 
+     *  For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards).
+     * 
+     *  For non-U.S. addresses the full State or Province name will be returned.
+     *
+     * @var string
+     */
     protected $destinationStateProvince;
     /**
-    * The shipment destination city. 
-    
-    Required for International requests for those countries that do not utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment destination city.
+     * 
+     *  Required for International requests for those countries that do not utilize postal codes.
+     *
+     * @var string
+     */
     protected $destinationCityName;
     /**
      * Origin country name value
@@ -145,54 +145,54 @@ class EmsResponse extends \ArrayObject
      */
     protected $originCountryCode;
     /**
-    * The shipment origin postal code.  Required for US domestic requests. 
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment origin postal code.  Required for US domestic requests.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @var string
+     */
     protected $originPostalCode;
     /**
-    * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @var string
+     */
     protected $originPostalCodeLow;
     /**
-    * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @var string
+     */
     protected $originPostalCodeHigh;
     /**
-    * The shipment origin state or province. 
-    
-    For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards). 
-    
-    For non-U.S. addresses the full State or Province name will be returned.
-    *
-    * @var string
-    */
+     * The shipment origin state or province.
+     * 
+     *  For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards).
+     * 
+     *  For non-U.S. addresses the full State or Province name will be returned.
+     *
+     * @var string
+     */
     protected $originStateProvince;
     /**
-    * The shipment origin city. 
-    
-    Required for International requests for those countries that do not utilize postal codes.
-    *
-    * @var string
-    */
+     * The shipment origin city.
+     * 
+     *  Required for International requests for those countries that do not utilize postal codes.
+     *
+     * @var string
+     */
     protected $originCityName;
     /**
-    * Shipment weight.  Value is only required for international shipment.  
-    
-    Defaults to 0.0
-    *
-    * @var string
-    */
+     * Shipment weight.  Value is only required for international shipment.
+     * 
+     *  Defaults to 0.0
+     *
+     * @var string
+     */
     protected $weight;
     /**
      * Returned on response when weight was present on the request.
@@ -201,12 +201,12 @@ class EmsResponse extends \ArrayObject
      */
     protected $weightUnitOfMeasure;
     /**
-    * Shipment contents value. Value is only required for international shipment. 
-    
-    Defaults to 0.0
-    *
-    * @var string
-    */
+     * Shipment contents value. Value is only required for international shipment.
+     * 
+     *  Defaults to 0.0
+     *
+     * @var string
+     */
     protected $shipmentContentsValue;
     /**
      * Returned on response when shipmentContentsValue was present on the request.
@@ -215,16 +215,16 @@ class EmsResponse extends \ArrayObject
      */
     protected $shipmentContentsCurrencyCode;
     /**
-    * Returns TRUE if the shipment dates fall within a defined peak date range. When the guarantee is suspended, it is suspended for all services in the response. 
-    
-     The logic for determining if guarantees are suspended applies per origin country. 
-    
-    The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
-    
-    Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
-    *
-    * @var bool
-    */
+     * Returns TRUE if the shipment dates fall within a defined peak date range. When the guarantee is suspended, it is suspended for all services in the response.
+     * 
+     *   The logic for determining if guarantees are suspended applies per origin country.
+     * 
+     *  The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date.
+     * 
+     *  Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
+     *
+     * @var bool
+     */
     protected $guaranteeSuspended;
     /**
      * Number of services being returned in the services array.
@@ -233,18 +233,16 @@ class EmsResponse extends \ArrayObject
      */
     protected $numberOfServices;
     /**
-     * 
-     *
      * @var list<Services>
      */
     protected $services;
     /**
-    * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date. 
-    
-    Valid Format: YYYY-MM-DD
-    *
-    * @return string
-    */
+     * The date the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  This date may or may not be the UPS business date.
+     * 
+     *  Valid Format: YYYY-MM-DD
+     *
+     * @return string
+     */
     public function getShipDate(): string
     {
         return $this->shipDate;
@@ -265,12 +263,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).  
-    
-    Valid Format: HH:MM:SS
-    *
-    * @return string
-    */
+     * The time the shipment is tendered to UPS for shipping (can be dropped off at UPS or picked up by UPS).
+     * 
+     *  Valid Format: HH:MM:SS
+     *
+     * @return string
+     */
     public function getShipTime(): string
     {
         return $this->shipTime;
@@ -291,14 +289,14 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Service Levels being returned. 
-    
-    A = all service levels. 
-    
-    Blank is the default for all Service Level values.
-    *
-    * @return string
-    */
+     * Service Levels being returned.
+     * 
+     *  A = all service levels.
+     * 
+     *  Blank is the default for all Service Level values.
+     *
+     * @return string
+     */
     public function getServiceLevel(): string
     {
         return $this->serviceLevel;
@@ -321,16 +319,16 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Represents the shipment type. 
-    
-    Valid values: "02","03","04","07" 
-    02 - Document 
-    03 - Non-Document 
-    04 - WWEF 
-    07 - Pallet
-    *
-    * @return string
-    */
+     * Represents the shipment type.
+     * 
+     *  Valid values: "02","03","04","07"
+     *  02 - Document
+     *  03 - Non-Document
+     *  04 - WWEF
+     *  07 - Pallet
+     *
+     * @return string
+     */
     public function getBillType(): string
     {
         return $this->billType;
@@ -355,21 +353,21 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Populated with valid duty types for international transactions only.  
-    
-    Valid Duty Types: "01","02","03","04","05","06","07","08","09" 
-    01 - Dutiable 
-    02 - Non Dutiable 
-    03 - Low Value 
-    04 - Courier Remission 
-    05 - Gift 
-    06 - Military 
-    07 - Exception 
-    08 - Line Release 
-    09 - Low Value
-    *
-    * @return string
-    */
+     * Populated with valid duty types for international transactions only.
+     * 
+     *  Valid Duty Types: "01","02","03","04","05","06","07","08","09"
+     *  01 - Dutiable
+     *  02 - Non Dutiable
+     *  03 - Low Value
+     *  04 - Courier Remission
+     *  05 - Gift
+     *  06 - Military
+     *  07 - Exception
+     *  08 - Line Release
+     *  09 - Low Value
+     *
+     * @return string
+     */
     public function getDutyType(): string
     {
         return $this->dutyType;
@@ -399,15 +397,15 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * residential Indicator that was sent in on the request. 
-    
-    Valid values: "01","02" 
-    
-    01 - Residential 
-    02 - Commercial
-    *
-    * @return string
-    */
+     * residential Indicator that was sent in on the request.
+     * 
+     *  Valid values: "01","02"
+     * 
+     *  01 - Residential
+     *  02 - Commercial
+     *
+     * @return string
+     */
     public function getResidentialIndicator(): string
     {
         return $this->residentialIndicator;
@@ -475,12 +473,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment destination postal code.  Required for US domestic requests. 
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment destination postal code.  Required for US domestic requests.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @return string
+     */
     public function getDestinationPostalCode(): string
     {
         return $this->destinationPostalCode;
@@ -501,12 +499,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment destination postal code low range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @return string
+     */
     public function getDestinationPostalCodeLow(): string
     {
         return $this->destinationPostalCodeLow;
@@ -527,12 +525,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment destination postal code high range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @return string
+     */
     public function getDestinationPostalCodeHigh(): string
     {
         return $this->destinationPostalCodeHigh;
@@ -553,14 +551,14 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment destination state or province. 
-    
-    For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards). 
-    
-    For non-U.S. addresses the full State or Province name will be returned.
-    *
-    * @return string
-    */
+     * The shipment destination state or province.
+     * 
+     *  For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards).
+     * 
+     *  For non-U.S. addresses the full State or Province name will be returned.
+     *
+     * @return string
+     */
     public function getDestinationStateProvince(): string
     {
         return $this->destinationStateProvince;
@@ -583,12 +581,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment destination city. 
-    
-    Required for International requests for those countries that do not utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment destination city.
+     * 
+     *  Required for International requests for those countries that do not utilize postal codes.
+     *
+     * @return string
+     */
     public function getDestinationCityName(): string
     {
         return $this->destinationCityName;
@@ -653,12 +651,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment origin postal code.  Required for US domestic requests. 
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment origin postal code.  Required for US domestic requests.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @return string
+     */
     public function getOriginPostalCode(): string
     {
         return $this->originPostalCode;
@@ -679,12 +677,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment origin postal code low range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @return string
+     */
     public function getOriginPostalCodeLow(): string
     {
         return $this->originPostalCodeLow;
@@ -705,12 +703,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.  
-    
-    Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment origin postal code high range.  Value may or may not differ from destinationPostalCode.
+     * 
+     *  Either 5, or 9-digit US zip codes must be used for U.S. addresses.  For non-US addresses, this is recommended for all countries that utilize postal codes.
+     *
+     * @return string
+     */
     public function getOriginPostalCodeHigh(): string
     {
         return $this->originPostalCodeHigh;
@@ -731,14 +729,14 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment origin state or province. 
-    
-    For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards). 
-    
-    For non-U.S. addresses the full State or Province name will be returned.
-    *
-    * @return string
-    */
+     * The shipment origin state or province.
+     * 
+     *  For U.S. addresses, the value will be a valid 2-Character value (per U.S. Mail Standards).
+     * 
+     *  For non-U.S. addresses the full State or Province name will be returned.
+     *
+     * @return string
+     */
     public function getOriginStateProvince(): string
     {
         return $this->originStateProvince;
@@ -761,12 +759,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The shipment origin city. 
-    
-    Required for International requests for those countries that do not utilize postal codes.
-    *
-    * @return string
-    */
+     * The shipment origin city.
+     * 
+     *  Required for International requests for those countries that do not utilize postal codes.
+     *
+     * @return string
+     */
     public function getOriginCityName(): string
     {
         return $this->originCityName;
@@ -787,12 +785,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Shipment weight.  Value is only required for international shipment.  
-    
-    Defaults to 0.0
-    *
-    * @return string
-    */
+     * Shipment weight.  Value is only required for international shipment.
+     * 
+     *  Defaults to 0.0
+     *
+     * @return string
+     */
     public function getWeight(): string
     {
         return $this->weight;
@@ -835,12 +833,12 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Shipment contents value. Value is only required for international shipment. 
-    
-    Defaults to 0.0
-    *
-    * @return string
-    */
+     * Shipment contents value. Value is only required for international shipment.
+     * 
+     *  Defaults to 0.0
+     *
+     * @return string
+     */
     public function getShipmentContentsValue(): string
     {
         return $this->shipmentContentsValue;
@@ -883,16 +881,16 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Returns TRUE if the shipment dates fall within a defined peak date range. When the guarantee is suspended, it is suspended for all services in the response. 
-    
-     The logic for determining if guarantees are suspended applies per origin country. 
-    
-    The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date. 
-    
-    Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
-    *
-    * @return bool
-    */
+     * Returns TRUE if the shipment dates fall within a defined peak date range. When the guarantee is suspended, it is suspended for all services in the response.
+     * 
+     *   The logic for determining if guarantees are suspended applies per origin country.
+     * 
+     *  The following will be used to determine if a shipment falls within a defined peak date range: shipDate (from the response), deliveryDate (from the response), server Date.
+     * 
+     *  Defined peak date range (range for when guarantees are suspended) is inclusive of start and end dates.
+     *
+     * @return bool
+     */
     public function getGuaranteeSuspended(): bool
     {
         return $this->guaranteeSuspended;
@@ -939,8 +937,6 @@ class EmsResponse extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<Services>
      */
     public function getServices(): array
@@ -948,8 +944,6 @@ class EmsResponse extends \ArrayObject
         return $this->services;
     }
     /**
-     * 
-     *
      * @param list<Services> $services
      *
      * @return self

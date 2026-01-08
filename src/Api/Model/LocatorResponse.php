@@ -31,11 +31,11 @@ class LocatorResponse extends \ArrayObject
      */
     protected $searchResults;
     /**
-    * Confidence level.
-    Valid values: True or False
-    *
-    * @var string
-    */
+     * Confidence level.
+     * Valid values: True or False
+     *
+     * @var string
+     */
     protected $allowAllConfidenceLevels;
     /**
      * Container for Response.
@@ -104,11 +104,11 @@ class LocatorResponse extends \ArrayObject
         return $this;
     }
     /**
-    * Confidence level.
-    Valid values: True or False
-    *
-    * @return string
-    */
+     * Confidence level.
+     * Valid values: True or False
+     *
+     * @return string
+     */
     public function getAllowAllConfidenceLevels(): string
     {
         return $this->allowAllConfidenceLevels;

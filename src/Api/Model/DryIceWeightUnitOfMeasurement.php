@@ -13,13 +13,13 @@ class DryIceWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * DryIce weight unit of measurement code. Valid values:
-    - 00 = KG (Metric Unit of Measurements) or KGS
-    - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
-    
-    *
-    * @var string
-    */
+     * DryIce weight unit of measurement code. Valid values:
+     * - 00 = KG (Metric Unit of Measurements) or KGS
+     * - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description for unit of measurement for Dry Ice Weight.
@@ -28,13 +28,13 @@ class DryIceWeightUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * DryIce weight unit of measurement code. Valid values:
-    - 00 = KG (Metric Unit of Measurements) or KGS
-    - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
-    
-    *
-    * @return string
-    */
+     * DryIce weight unit of measurement code. Valid values:
+     * - 00 = KG (Metric Unit of Measurements) or KGS
+     * - 01 = LB (English Unit of Measurements) or LBS  The following values are valid : 00, 01, KG, KGS, LBS.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

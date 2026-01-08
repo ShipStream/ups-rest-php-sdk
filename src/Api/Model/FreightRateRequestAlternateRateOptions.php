@@ -13,14 +13,14 @@ class FreightRateRequestAlternateRateOptions extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for the alternate rate type requested. 
-    Valid values:
-    1 = LTL only 
-    2 = GFP only
-    3 = GFP and LTL
-    *
-    * @var string
-    */
+     * Code for the alternate rate type requested.
+     * Valid values:
+     * 1 = LTL only
+     * 2 = GFP only
+     * 3 = GFP and LTL
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of the alternate rate type requested above.
@@ -29,14 +29,14 @@ class FreightRateRequestAlternateRateOptions extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for the alternate rate type requested. 
-    Valid values:
-    1 = LTL only 
-    2 = GFP only
-    3 = GFP and LTL
-    *
-    * @return string
-    */
+     * Code for the alternate rate type requested.
+     * Valid values:
+     * 1 = LTL only
+     * 2 = GFP only
+     * 3 = GFP and LTL
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

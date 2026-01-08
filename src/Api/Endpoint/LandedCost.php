@@ -7,9 +7,8 @@ class LandedCost extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impleme
     protected $version;
     /**
      * The Landed Cost Quote API allows you to estimate the all-inclusive cost of international shipments - including applicable duties, VAT, taxes, brokerage fees, and other fees. Required parameters include the currency and shipment details, such as the commodity ID, price, quantity, and country code of origin.
-     *
      * @param string $version Version of the API.
-     * @param \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody 
+     * @param \ShipStream\Ups\Api\Model\LandedCostRequest $requestBody
      * @param array $headerParameters {
      *     @var string $transId An identifier unique to the request. Length: 32
      *     @var string $transactionSrc An identifier of the client/source application that is making the request. Length: 512
@@ -68,19 +67,19 @@ class LandedCost extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint impleme
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (200 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\LandedCostResponse', 'json');
         }
-        if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (400 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\LandedCostBadRequestException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (401 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (401 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\LandedCostUnauthorizedException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (403 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\LandedCostForbiddenException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
-        if (is_null($contentType) === false && (429 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (429 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             throw new \ShipStream\Ups\Api\Exception\LandedCostTooManyRequestsException($serializer->deserialize($body, 'ShipStream\Ups\Api\Model\ErrorResponse', 'json'), $response);
         }
         throw new \ShipStream\Ups\Api\Exception\UnexpectedStatusCodeException($status, $body);

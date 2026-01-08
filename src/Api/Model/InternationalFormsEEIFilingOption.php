@@ -13,14 +13,14 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Required for EEI Form.  Applicable for EEI form.
-    Valid values: 
-    1 - Shipper filed,
-    2 - AES Direct, 
-    3 - UPS filed.
-    *
-    * @var string
-    */
+     * Required for EEI Form.  Applicable for EEI form.
+     * Valid values:
+     * 1 - Shipper filed,
+     * 2 - AES Direct,
+     * 3 - UPS filed.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Email Address where the notification is sent. Valid for UPS filed (option 3), Shipper filed (option 1- A , 1-C)  Applicable for EEI form.
@@ -47,14 +47,14 @@ class InternationalFormsEEIFilingOption extends \ArrayObject
      */
     protected $shipperFiled;
     /**
-    * Required for EEI Form.  Applicable for EEI form.
-    Valid values: 
-    1 - Shipper filed,
-    2 - AES Direct, 
-    3 - UPS filed.
-    *
-    * @return string
-    */
+     * Required for EEI Form.  Applicable for EEI form.
+     * Valid values:
+     * 1 - Shipper filed,
+     * 2 - AES Direct,
+     * 3 - UPS filed.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

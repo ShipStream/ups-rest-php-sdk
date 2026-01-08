@@ -25,8 +25,6 @@ class DocumentsPackingList extends \ArrayObject
      */
     protected $shipTo;
     /**
-     * 
-     *
      * @var list<PackingListReference>
      */
     protected $reference;
@@ -81,8 +79,6 @@ class DocumentsPackingList extends \ArrayObject
         return $this;
     }
     /**
-     * 
-     *
      * @return list<PackingListReference>
      */
     public function getReference(): array
@@ -90,8 +86,6 @@ class DocumentsPackingList extends \ArrayObject
         return $this->reference;
     }
     /**
-     * 
-     *
      * @param list<PackingListReference> $reference
      *
      * @return self

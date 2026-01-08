@@ -19,19 +19,19 @@ class XAVRequestRequest extends \ArrayObject
      */
     protected $subVersion;
     /**
-    * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
-    
-    Valid values:
-    
-    - 1 - Address Validation
-    - 2 - Address Classification
-    - 3 - Address Validation and Address Classification.
-    
-    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
-    
-    *
-    * @var string
-    */
+     * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+     * 
+     * Valid values:
+     * 
+     * - 1 - Address Validation
+     * - 2 - Address Classification
+     * - 3 - Address Validation and Address Classification.
+     * 
+     * For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+     * 
+     *
+     * @var string
+     */
     protected $requestOption;
     /**
      * TransactionReference identifies transactions between client and server.
@@ -62,19 +62,19 @@ class XAVRequestRequest extends \ArrayObject
         return $this;
     }
     /**
-    * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
-    
-    Valid values:
-    
-    - 1 - Address Validation
-    - 2 - Address Classification
-    - 3 - Address Validation and Address Classification.
-    
-    For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
-    
-    *
-    * @return string
-    */
+     * Identifies the optional processing to be performed. If not present or invalid value then an error will be sent back.
+     * 
+     * Valid values:
+     * 
+     * - 1 - Address Validation
+     * - 2 - Address Classification
+     * - 3 - Address Validation and Address Classification.
+     * 
+     * For a list of valid values, refer to Address Validation API Supported Countries or Territories in the Appendix.
+     * 
+     *
+     * @return string
+     */
     public function getRequestOption(): string
     {
         return $this->requestOption;

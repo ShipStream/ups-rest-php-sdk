@@ -19,13 +19,13 @@ class UploadRequestUserCreatedForm extends \ArrayObject
      */
     protected $userCreatedFormFileName;
     /**
-    * The user created form file.  The maximum allowable size of each file is restricted to 10 MB. Should be a base64 encoded string.
-    
-    Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
-    
-    *
-    * @var string
-    */
+     * The user created form file.  The maximum allowable size of each file is restricted to 10 MB. Should be a base64 encoded string.
+     * 
+     * Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
+     * 
+     *
+     * @var string
+     */
     protected $userCreatedFormFile;
     /**
      * The UserCreatedForm file format.  The allowed file formats are bmp, doc, gif, jpg, pdf, png, rtf, tif, txt and xls. The only exceptions for having file format of length 4 character are docx and xlsx. All other file formats needs to be of length 3.
@@ -62,13 +62,13 @@ class UploadRequestUserCreatedForm extends \ArrayObject
         return $this;
     }
     /**
-    * The user created form file.  The maximum allowable size of each file is restricted to 10 MB. Should be a base64 encoded string.
-    
-    Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
-    
-    *
-    * @return string
-    */
+     * The user created form file.  The maximum allowable size of each file is restricted to 10 MB. Should be a base64 encoded string.
+     * 
+     * Note: The maximum allowable size of each file is restriced to 1MB in CIE (Customer Integration Environment).
+     * 
+     *
+     * @return string
+     */
     public function getUserCreatedFormFile(): string
     {
         return $this->userCreatedFormFile;

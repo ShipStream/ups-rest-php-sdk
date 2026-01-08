@@ -113,7 +113,7 @@ class XAVRequestAddressKeyFormatNormalizer implements DenormalizerInterface, Nor
         if ($data->isInitialized('region') && null !== $data->getRegion()) {
             $dataArray['Region'] = $data->getRegion();
         }
-        if ($data->isInitialized('politicalDivision2') && null !== $data->getPoliticalDivision2()) {
+        if ($data->isInitialized('politicalDivision2')) {
             $dataArray['PoliticalDivision2'] = $data->getPoliticalDivision2();
         }
         if ($data->isInitialized('politicalDivision1') && null !== $data->getPoliticalDivision1()) {
@@ -122,7 +122,7 @@ class XAVRequestAddressKeyFormatNormalizer implements DenormalizerInterface, Nor
         if ($data->isInitialized('postcodePrimaryLow') && null !== $data->getPostcodePrimaryLow()) {
             $dataArray['PostcodePrimaryLow'] = $data->getPostcodePrimaryLow();
         }
-        if ($data->isInitialized('postcodeExtendedLow') && null !== $data->getPostcodeExtendedLow()) {
+        if ($data->isInitialized('postcodeExtendedLow')) {
             $dataArray['PostcodeExtendedLow'] = $data->getPostcodeExtendedLow();
         }
         if ($data->isInitialized('urbanization') && null !== $data->getUrbanization()) {

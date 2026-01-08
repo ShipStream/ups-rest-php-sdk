@@ -8,7 +8,6 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     protected $reqoption;
     /**
     * Only users that plan to ship packages manifested, tendered, and delivered by TForce Freight can use the API.
-    *
     * @param string $version When TForce Freight introduces new elements 
     in the response that are not associated with new 
     request elements, version is used. This ensures 
@@ -25,7 +24,7 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     * @param string $reqoption Valid Values: 
     Ground,
     Air . Length 15
-    * @param \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody 
+    * @param \ShipStream\Ups\Api\Model\FREIGHTSHIPRequestWrapper $requestBody
     * @param array $headerParameters {
     *     @var string $transId An identifier unique to the request. Length 32
     *     @var string $transactionSrc An identifier of the client/source application that is making the request.Length 512
@@ -80,7 +79,7 @@ class FreightShip extends \ShipStream\Ups\Api\Runtime\Client\BaseEndpoint implem
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (is_null($contentType) === false && (200 === $status && mb_strpos(strtolower($contentType), 'application/json') !== false)) {
             return $serializer->deserialize($body, 'ShipStream\Ups\Api\Model\FREIGHTSHIPResponseWrapper', 'json');
         }
         if (401 === $status) {

@@ -97,16 +97,16 @@ class AddressNormalizer implements DenormalizerInterface, NormalizerInterface, D
     public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $dataArray = [];
-        if ($data->isInitialized('addressLine1') && null !== $data->getAddressLine1()) {
+        if ($data->isInitialized('addressLine1')) {
             $dataArray['addressLine1'] = $data->getAddressLine1();
         }
-        if ($data->isInitialized('addressLine2') && null !== $data->getAddressLine2()) {
+        if ($data->isInitialized('addressLine2')) {
             $dataArray['addressLine2'] = $data->getAddressLine2();
         }
-        if ($data->isInitialized('addressLine3') && null !== $data->getAddressLine3()) {
+        if ($data->isInitialized('addressLine3')) {
             $dataArray['addressLine3'] = $data->getAddressLine3();
         }
-        if ($data->isInitialized('city') && null !== $data->getCity()) {
+        if ($data->isInitialized('city')) {
             $dataArray['city'] = $data->getCity();
         }
         if ($data->isInitialized('country') && null !== $data->getCountry()) {
@@ -115,10 +115,10 @@ class AddressNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if ($data->isInitialized('countryCode') && null !== $data->getCountryCode()) {
             $dataArray['countryCode'] = $data->getCountryCode();
         }
-        if ($data->isInitialized('postalCode') && null !== $data->getPostalCode()) {
+        if ($data->isInitialized('postalCode')) {
             $dataArray['postalCode'] = $data->getPostalCode();
         }
-        if ($data->isInitialized('stateProvince') && null !== $data->getStateProvince()) {
+        if ($data->isInitialized('stateProvince')) {
             $dataArray['stateProvince'] = $data->getStateProvince();
         }
         foreach ($data as $key => $value) {

@@ -25,18 +25,18 @@ class DeliveryTime extends \ArrayObject
      */
     protected $startTime;
     /**
-    * The date of this delivery detail.
-    Valid values:
-    
-    EOD - End of Day
-    CMT - Commit Time
-    EDW - Estimated Delivery Window **
-    CDW - Confirmed Delivery Window **
-    IDW - Imminent Delivery Window **
-    DEL - Delivered Time
-    *
-    * @var string
-    */
+     * The date of this delivery detail.
+     * Valid values:
+     * 
+     * EOD - End of Day
+     * CMT - Commit Time
+     * EDW - Estimated Delivery Window **
+     * CDW - Confirmed Delivery Window **
+     * IDW - Imminent Delivery Window **
+     * DEL - Delivered Time
+     *
+     * @var string
+     */
     protected $type;
     /**
      * The end time of a window or the committed time or the delivered time. Only returned when the type is “EDW” or “CDW” or “IDW” or “CMT” or “DEL”. Format: HHMMSS (24 hr)
@@ -83,18 +83,18 @@ class DeliveryTime extends \ArrayObject
         return $this;
     }
     /**
-    * The date of this delivery detail.
-    Valid values:
-    
-    EOD - End of Day
-    CMT - Commit Time
-    EDW - Estimated Delivery Window **
-    CDW - Confirmed Delivery Window **
-    IDW - Imminent Delivery Window **
-    DEL - Delivered Time
-    *
-    * @return string
-    */
+     * The date of this delivery detail.
+     * Valid values:
+     * 
+     * EOD - End of Day
+     * CMT - Commit Time
+     * EDW - Estimated Delivery Window **
+     * CDW - Confirmed Delivery Window **
+     * IDW - Imminent Delivery Window **
+     * DEL - Delivered Time
+     *
+     * @return string
+     */
     public function getType(): string
     {
         return $this->type;

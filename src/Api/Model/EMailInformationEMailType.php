@@ -13,15 +13,15 @@ class EMailInformationEMailType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The code associated with the email type for the shipment service options.
-    Valid values:
-    001- Ship Notification
-    002- Delivery Notification
-    003 � Exception Notification
-    004 � BOL/Labels(Ground Only)
-    *
-    * @var string
-    */
+     * The code associated with the email type for the shipment service options.
+     * Valid values:
+     * 001- Ship Notification
+     * 002- Delivery Notification
+     * 003 � Exception Notification
+     * 004 � BOL/Labels(Ground Only)
+     *
+     * @var string
+     */
     protected $code;
     /**
      * A text description of the code for the email type associated with the shipment service options.
@@ -30,15 +30,15 @@ class EMailInformationEMailType extends \ArrayObject
      */
     protected $description;
     /**
-    * The code associated with the email type for the shipment service options.
-    Valid values:
-    001- Ship Notification
-    002- Delivery Notification
-    003 � Exception Notification
-    004 � BOL/Labels(Ground Only)
-    *
-    * @return string
-    */
+     * The code associated with the email type for the shipment service options.
+     * Valid values:
+     * 001- Ship Notification
+     * 002- Delivery Notification
+     * 003 � Exception Notification
+     * 004 � BOL/Labels(Ground Only)
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

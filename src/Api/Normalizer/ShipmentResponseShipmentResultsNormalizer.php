@@ -218,74 +218,74 @@ class ShipmentResponseShipmentResultsNormalizer implements DenormalizerInterface
         if ($data->isInitialized('shipmentCharges') && null !== $data->getShipmentCharges()) {
             $dataArray['ShipmentCharges'] = $this->normalizer->normalize($data->getShipmentCharges(), 'json', $context);
         }
-        if ($data->isInitialized('negotiatedRateCharges') && null !== $data->getNegotiatedRateCharges()) {
+        if ($data->isInitialized('negotiatedRateCharges')) {
             $dataArray['NegotiatedRateCharges'] = $this->normalizer->normalize($data->getNegotiatedRateCharges(), 'json', $context);
         }
-        if ($data->isInitialized('fRSShipmentData') && null !== $data->getFRSShipmentData()) {
+        if ($data->isInitialized('fRSShipmentData')) {
             $dataArray['FRSShipmentData'] = $this->normalizer->normalize($data->getFRSShipmentData(), 'json', $context);
         }
-        if ($data->isInitialized('ratingMethod') && null !== $data->getRatingMethod()) {
+        if ($data->isInitialized('ratingMethod')) {
             $dataArray['RatingMethod'] = $data->getRatingMethod();
         }
-        if ($data->isInitialized('billableWeightCalculationMethod') && null !== $data->getBillableWeightCalculationMethod()) {
+        if ($data->isInitialized('billableWeightCalculationMethod')) {
             $dataArray['BillableWeightCalculationMethod'] = $data->getBillableWeightCalculationMethod();
         }
         $dataArray['BillingWeight'] = $this->normalizer->normalize($data->getBillingWeight(), 'json', $context);
-        if ($data->isInitialized('shipmentIdentificationNumber') && null !== $data->getShipmentIdentificationNumber()) {
+        if ($data->isInitialized('shipmentIdentificationNumber')) {
             $dataArray['ShipmentIdentificationNumber'] = $data->getShipmentIdentificationNumber();
         }
-        if ($data->isInitialized('mIDualReturnShipmentKey') && null !== $data->getMIDualReturnShipmentKey()) {
+        if ($data->isInitialized('mIDualReturnShipmentKey')) {
             $dataArray['MIDualReturnShipmentKey'] = $data->getMIDualReturnShipmentKey();
         }
-        if ($data->isInitialized('barCodeImage') && null !== $data->getBarCodeImage()) {
+        if ($data->isInitialized('barCodeImage')) {
             $dataArray['BarCodeImage'] = $data->getBarCodeImage();
         }
-        if ($data->isInitialized('packageResults') && null !== $data->getPackageResults()) {
+        if ($data->isInitialized('packageResults')) {
             $values_1 = [];
             foreach ($data->getPackageResults() as $value_1) {
                 $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
             }
             $dataArray['PackageResults'] = $values_1;
         }
-        if ($data->isInitialized('controlLogReceipt') && null !== $data->getControlLogReceipt()) {
+        if ($data->isInitialized('controlLogReceipt')) {
             $values_2 = [];
             foreach ($data->getControlLogReceipt() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
             }
             $dataArray['ControlLogReceipt'] = $values_2;
         }
-        if ($data->isInitialized('form') && null !== $data->getForm()) {
+        if ($data->isInitialized('form')) {
             $dataArray['Form'] = $this->normalizer->normalize($data->getForm(), 'json', $context);
         }
-        if ($data->isInitialized('cODTurnInPage') && null !== $data->getCODTurnInPage()) {
+        if ($data->isInitialized('cODTurnInPage')) {
             $dataArray['CODTurnInPage'] = $this->normalizer->normalize($data->getCODTurnInPage(), 'json', $context);
         }
-        if ($data->isInitialized('highValueReport') && null !== $data->getHighValueReport()) {
+        if ($data->isInitialized('highValueReport')) {
             $dataArray['HighValueReport'] = $this->normalizer->normalize($data->getHighValueReport(), 'json', $context);
         }
-        if ($data->isInitialized('labelURL') && null !== $data->getLabelURL()) {
+        if ($data->isInitialized('labelURL')) {
             $dataArray['LabelURL'] = $data->getLabelURL();
         }
-        if ($data->isInitialized('localLanguageLabelURL') && null !== $data->getLocalLanguageLabelURL()) {
+        if ($data->isInitialized('localLanguageLabelURL')) {
             $dataArray['LocalLanguageLabelURL'] = $data->getLocalLanguageLabelURL();
         }
-        if ($data->isInitialized('receiptURL') && null !== $data->getReceiptURL()) {
+        if ($data->isInitialized('receiptURL')) {
             $dataArray['ReceiptURL'] = $data->getReceiptURL();
         }
-        if ($data->isInitialized('localLanguageReceiptURL') && null !== $data->getLocalLanguageReceiptURL()) {
+        if ($data->isInitialized('localLanguageReceiptURL')) {
             $dataArray['LocalLanguageReceiptURL'] = $data->getLocalLanguageReceiptURL();
         }
-        if ($data->isInitialized('dGPaperImage') && null !== $data->getDGPaperImage()) {
+        if ($data->isInitialized('dGPaperImage')) {
             $values_3 = [];
             foreach ($data->getDGPaperImage() as $value_3) {
                 $values_3[] = $value_3;
             }
             $dataArray['DGPaperImage'] = $values_3;
         }
-        if ($data->isInitialized('masterCartonID') && null !== $data->getMasterCartonID()) {
+        if ($data->isInitialized('masterCartonID')) {
             $dataArray['MasterCartonID'] = $data->getMasterCartonID();
         }
-        if ($data->isInitialized('roarRatedIndicator') && null !== $data->getRoarRatedIndicator()) {
+        if ($data->isInitialized('roarRatedIndicator')) {
             $dataArray['RoarRatedIndicator'] = $data->getRoarRatedIndicator();
         }
         foreach ($data as $key => $value_4) {

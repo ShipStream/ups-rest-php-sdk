@@ -66,7 +66,7 @@ class PackageAddressNormalizer implements DenormalizerInterface, NormalizerInter
     public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $dataArray = [];
-        if ($data->isInitialized('address') && null !== $data->getAddress()) {
+        if ($data->isInitialized('address')) {
             $dataArray['address'] = $this->normalizer->normalize($data->getAddress(), 'json', $context);
         }
         if ($data->isInitialized('attentionName') && null !== $data->getAttentionName()) {

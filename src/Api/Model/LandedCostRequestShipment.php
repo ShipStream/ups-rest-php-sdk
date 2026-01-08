@@ -37,73 +37,74 @@ class LandedCostRequestShipment extends \ArrayObject
      */
     protected $shipDate;
     /**
-    * Supported Incoterm Values:
-    1. CFR - Cost & Freight 
-    2. CIF - Cost, Insurance & Freight 
-    3. CIP - Carriage and Insurance Paid-To 
-    4. CPT - Carriage Paid-To 
-    5. DAP - Delivered At Place 
-    6. DAT - Delivered At Terminal 
-    7. DDP - Delivered Duty Paid 
-    8. DPU - Delivered at Place Unloaded 
-    9. EXW - Ex Works 
-    10. FAS - Free Alongside Ship 
-    11. FCA - Free Carrier 
-    12. FOB - Free On Board (Default)
-    *
-    * @var string
-    */
+     * Supported Incoterm Values:
+     * 1. CFR - Cost & Freight
+     * 2. CIF - Cost, Insurance & Freight
+     * 3. CIP - Carriage and Insurance Paid-To
+     * 4. CPT - Carriage Paid-To
+     * 5. DAP - Delivered At Place
+     * 6. DAT - Delivered At Terminal
+     * 7. DDP - Delivered Duty Paid
+     * 8. DPU - Delivered at Place Unloaded
+     * 9. EXW - Ex Works
+     * 10. FAS - Free Alongside Ship
+     * 11. FCA - Free Carrier
+     * 12. FOB - Free On Board (Default)
+     *
+     * @var string
+     */
     protected $incoterms = 'FOB';
     /**
      * Specifies the export/ship-from/origin country of the shipment. Please check country List in the Appendix section.
-     **Note:** Export country code must be different from the import country code.
+     * 
+     * **Note:** Export country code must be different from the import country code.
      *
      * @var string
      */
     protected $exportCountryCode;
     /**
-    * The modes of transportation (in upper case).
-    Supported Values: 
-    1. INT_AIR 2. 
-    INT_OCEAN 
-    3. INT_RAIL 
-    4. INT_TRUCK 
-    5. DOM_AIR 
-    6. DOM_OCEAN 
-    7. DOM_RAIL 
-    8. DOM_TRUCK 
-    
-    Default value will vary based on the import country.
-    *
-    * @var string
-    */
+     * The modes of transportation (in upper case).
+     * Supported Values:
+     * 1. INT_AIR 2.
+     * INT_OCEAN
+     * 3. INT_RAIL
+     * 4. INT_TRUCK
+     * 5. DOM_AIR
+     * 6. DOM_OCEAN
+     * 7. DOM_RAIL
+     * 8. DOM_TRUCK
+     * 
+     * Default value will vary based on the import country.
+     *
+     * @var string
+     */
     protected $transModes;
     /**
-    * Specifies the Freight charge or transport costs, which are used for tariff calculations. Landed cost result might have some dependency on the freight charges in some countries. Therefore, freight amount should be always provided for accurate Landed Cost result. 
-    
-    Allowed values:
-    1. Any non-negative floating-point number. 
-    2. Numeric value with optional decimal value.
-    *
-    * @var float
-    */
+     * Specifies the Freight charge or transport costs, which are used for tariff calculations. Landed cost result might have some dependency on the freight charges in some countries. Therefore, freight amount should be always provided for accurate Landed Cost result.
+     * 
+     * Allowed values:
+     *  1. Any non-negative floating-point number.
+     * 2. Numeric value with optional decimal value.
+     *
+     * @var float
+     */
     protected $transportCost;
     /**
-    * Specifies the shipment type such as Gift, Document, Commercial (Sale), etc.
-    
-    Supported Shipment Types: 
-    1. GIFT 
-    2. COMMERCIAL 
-    3. SALE 
-    4. SAMPLE 
-    5. REPAIR 
-    6. RETURN 
-    7. OTHER 
-    
-    Default value will vary and based on import country.
-    *
-    * @var string
-    */
+     * Specifies the shipment type such as Gift, Document, Commercial (Sale), etc.
+     * 
+     * Supported Shipment Types:
+     * 1. GIFT
+     * 2. COMMERCIAL
+     * 3. SALE
+     * 4. SAMPLE
+     * 5. REPAIR
+     * 6. RETURN
+     * 7. OTHER
+     * 
+     * Default value will vary and based on import country.
+     *
+     * @var string
+     */
     protected $shipmentType;
     /**
      * Array of shipment item objects (commodities), that are in a shipment.
@@ -200,22 +201,22 @@ class LandedCostRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Supported Incoterm Values:
-    1. CFR - Cost & Freight 
-    2. CIF - Cost, Insurance & Freight 
-    3. CIP - Carriage and Insurance Paid-To 
-    4. CPT - Carriage Paid-To 
-    5. DAP - Delivered At Place 
-    6. DAT - Delivered At Terminal 
-    7. DDP - Delivered Duty Paid 
-    8. DPU - Delivered at Place Unloaded 
-    9. EXW - Ex Works 
-    10. FAS - Free Alongside Ship 
-    11. FCA - Free Carrier 
-    12. FOB - Free On Board (Default)
-    *
-    * @return string
-    */
+     * Supported Incoterm Values:
+     * 1. CFR - Cost & Freight
+     * 2. CIF - Cost, Insurance & Freight
+     * 3. CIP - Carriage and Insurance Paid-To
+     * 4. CPT - Carriage Paid-To
+     * 5. DAP - Delivered At Place
+     * 6. DAT - Delivered At Terminal
+     * 7. DDP - Delivered Duty Paid
+     * 8. DPU - Delivered at Place Unloaded
+     * 9. EXW - Ex Works
+     * 10. FAS - Free Alongside Ship
+     * 11. FCA - Free Carrier
+     * 12. FOB - Free On Board (Default)
+     *
+     * @return string
+     */
     public function getIncoterms(): string
     {
         return $this->incoterms;
@@ -247,7 +248,8 @@ class LandedCostRequestShipment extends \ArrayObject
     }
     /**
      * Specifies the export/ship-from/origin country of the shipment. Please check country List in the Appendix section.
-     **Note:** Export country code must be different from the import country code.
+     * 
+     * **Note:** Export country code must be different from the import country code.
      *
      * @return string
      */
@@ -270,21 +272,21 @@ class LandedCostRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * The modes of transportation (in upper case).
-    Supported Values: 
-    1. INT_AIR 2. 
-    INT_OCEAN 
-    3. INT_RAIL 
-    4. INT_TRUCK 
-    5. DOM_AIR 
-    6. DOM_OCEAN 
-    7. DOM_RAIL 
-    8. DOM_TRUCK 
-    
-    Default value will vary based on the import country.
-    *
-    * @return string
-    */
+     * The modes of transportation (in upper case).
+     * Supported Values:
+     * 1. INT_AIR 2.
+     * INT_OCEAN
+     * 3. INT_RAIL
+     * 4. INT_TRUCK
+     * 5. DOM_AIR
+     * 6. DOM_OCEAN
+     * 7. DOM_RAIL
+     * 8. DOM_TRUCK
+     * 
+     * Default value will vary based on the import country.
+     *
+     * @return string
+     */
     public function getTransModes(): string
     {
         return $this->transModes;
@@ -314,14 +316,14 @@ class LandedCostRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Specifies the Freight charge or transport costs, which are used for tariff calculations. Landed cost result might have some dependency on the freight charges in some countries. Therefore, freight amount should be always provided for accurate Landed Cost result. 
-    
-    Allowed values:
-    1. Any non-negative floating-point number. 
-    2. Numeric value with optional decimal value.
-    *
-    * @return float
-    */
+     * Specifies the Freight charge or transport costs, which are used for tariff calculations. Landed cost result might have some dependency on the freight charges in some countries. Therefore, freight amount should be always provided for accurate Landed Cost result.
+     * 
+     * Allowed values:
+     *  1. Any non-negative floating-point number.
+     * 2. Numeric value with optional decimal value.
+     *
+     * @return float
+     */
     public function getTransportCost(): float
     {
         return $this->transportCost;
@@ -344,21 +346,21 @@ class LandedCostRequestShipment extends \ArrayObject
         return $this;
     }
     /**
-    * Specifies the shipment type such as Gift, Document, Commercial (Sale), etc.
-    
-    Supported Shipment Types: 
-    1. GIFT 
-    2. COMMERCIAL 
-    3. SALE 
-    4. SAMPLE 
-    5. REPAIR 
-    6. RETURN 
-    7. OTHER 
-    
-    Default value will vary and based on import country.
-    *
-    * @return string
-    */
+     * Specifies the shipment type such as Gift, Document, Commercial (Sale), etc.
+     * 
+     * Supported Shipment Types:
+     * 1. GIFT
+     * 2. COMMERCIAL
+     * 3. SALE
+     * 4. SAMPLE
+     * 5. REPAIR
+     * 6. RETURN
+     * 7. OTHER
+     * 
+     * Default value will vary and based on import country.
+     *
+     * @return string
+     */
     public function getShipmentType(): string
     {
         return $this->shipmentType;

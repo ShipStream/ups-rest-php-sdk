@@ -13,26 +13,26 @@ class SubscriptionFileGeneric extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Unique identifier that defines the type of activity.
-    - VM = Void for Manifest
-    - UR = Undeliverable Returns
-    - IR = Invoice Removal Successful
-    - TC = Transport Company USPS scan PS = 'Postal Service Possession Scan'
-    - FN = UPS Access Point/Alternate Delivery Location Email Notification Failure
-    - DS = Destination Scan
-    - AG = Package is in transit to a UPS facility
-    - RE = UPS Returns Exchange
-    - RP = Retail Pickup
-    - UD = Updated delivery date
-    - OD = Out for Delivery
-    - SD = Scheduled for Delivery
-    - FM = Tendered to FMP
-    - PT = UPS Courier Handoff (Package Tendered) DIALS -VX
-    - PC = UPS Courier Confirmation – XPLD -VX
-    
-    *
-    * @var string
-    */
+     * Unique identifier that defines the type of activity.
+     * - VM = Void for Manifest
+     * - UR = Undeliverable Returns
+     * - IR = Invoice Removal Successful
+     * - TC = Transport Company USPS scan PS = 'Postal Service Possession Scan'
+     * - FN = UPS Access Point/Alternate Delivery Location Email Notification Failure
+     * - DS = Destination Scan
+     * - AG = Package is in transit to a UPS facility
+     * - RE = UPS Returns Exchange
+     * - RP = Retail Pickup
+     * - UD = Updated delivery date
+     * - OD = Out for Delivery
+     * - SD = Scheduled for Delivery
+     * - FM = Tendered to FMP
+     * - PT = UPS Courier Handoff (Package Tendered) DIALS -VX
+     * - PC = UPS Courier Confirmation – XPLD -VX
+     * 
+     *
+     * @var string
+     */
     protected $activityType;
     /**
      * Package's tracking number.
@@ -48,14 +48,18 @@ class SubscriptionFileGeneric extends \ArrayObject
     protected $shipperNumber;
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<GenericShipmentReferenceNumber>
      */
     protected $shipmentReferenceNumber;
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<GenericPackageReferenceNumber>
      */
@@ -85,15 +89,15 @@ class SubscriptionFileGeneric extends \ArrayObject
      */
     protected $shipTo;
     /**
-    * If Activity Type is "DS" or "UD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
-    
-    If Activity Type is "OD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
-    
-    If Activity Type is "SD", this element will contain agreed upon date with Customer for delivery Date. Format will be YYYYMMDD.
-    
-    *
-    * @var string
-    */
+     * If Activity Type is "DS" or "UD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
+     * 
+     * If Activity Type is "OD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
+     * 
+     * If Activity Type is "SD", this element will contain agreed upon date with Customer for delivery Date. Format will be YYYYMMDD.
+     * 
+     *
+     * @var string
+     */
     protected $rescheduledDeliveryDate;
     /**
      * Failure notification information containing email address and Notification code
@@ -102,26 +106,26 @@ class SubscriptionFileGeneric extends \ArrayObject
      */
     protected $failureNotification;
     /**
-    * Unique identifier that defines the type of activity.
-    - VM = Void for Manifest
-    - UR = Undeliverable Returns
-    - IR = Invoice Removal Successful
-    - TC = Transport Company USPS scan PS = 'Postal Service Possession Scan'
-    - FN = UPS Access Point/Alternate Delivery Location Email Notification Failure
-    - DS = Destination Scan
-    - AG = Package is in transit to a UPS facility
-    - RE = UPS Returns Exchange
-    - RP = Retail Pickup
-    - UD = Updated delivery date
-    - OD = Out for Delivery
-    - SD = Scheduled for Delivery
-    - FM = Tendered to FMP
-    - PT = UPS Courier Handoff (Package Tendered) DIALS -VX
-    - PC = UPS Courier Confirmation – XPLD -VX
-    
-    *
-    * @return string
-    */
+     * Unique identifier that defines the type of activity.
+     * - VM = Void for Manifest
+     * - UR = Undeliverable Returns
+     * - IR = Invoice Removal Successful
+     * - TC = Transport Company USPS scan PS = 'Postal Service Possession Scan'
+     * - FN = UPS Access Point/Alternate Delivery Location Email Notification Failure
+     * - DS = Destination Scan
+     * - AG = Package is in transit to a UPS facility
+     * - RE = UPS Returns Exchange
+     * - RP = Retail Pickup
+     * - UD = Updated delivery date
+     * - OD = Out for Delivery
+     * - SD = Scheduled for Delivery
+     * - FM = Tendered to FMP
+     * - PT = UPS Courier Handoff (Package Tendered) DIALS -VX
+     * - PC = UPS Courier Confirmation – XPLD -VX
+     * 
+     *
+     * @return string
+     */
     public function getActivityType(): string
     {
         return $this->activityType;
@@ -201,7 +205,9 @@ class SubscriptionFileGeneric extends \ArrayObject
     }
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<GenericShipmentReferenceNumber>
      */
@@ -225,7 +231,9 @@ class SubscriptionFileGeneric extends \ArrayObject
     }
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<GenericPackageReferenceNumber>
      */
@@ -336,15 +344,15 @@ class SubscriptionFileGeneric extends \ArrayObject
         return $this;
     }
     /**
-    * If Activity Type is "DS" or "UD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
-    
-    If Activity Type is "OD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
-    
-    If Activity Type is "SD", this element will contain agreed upon date with Customer for delivery Date. Format will be YYYYMMDD.
-    
-    *
-    * @return string
-    */
+     * If Activity Type is "DS" or "UD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
+     * 
+     * If Activity Type is "OD", this element will contain Rescheduled Delivery Date. Format will be YYYYMMDD.
+     * 
+     * If Activity Type is "SD", this element will contain agreed upon date with Customer for delivery Date. Format will be YYYYMMDD.
+     * 
+     *
+     * @return string
+     */
     public function getRescheduledDeliveryDate(): string
     {
         return $this->rescheduledDeliveryDate;

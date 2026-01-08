@@ -67,7 +67,7 @@ class ShipmentResponseResponseNormalizer implements DenormalizerInterface, Norma
     {
         $dataArray = [];
         $dataArray['ResponseStatus'] = $this->normalizer->normalize($data->getResponseStatus(), 'json', $context);
-        if ($data->isInitialized('alert') && null !== $data->getAlert()) {
+        if ($data->isInitialized('alert')) {
             $values = [];
             foreach ($data->getAlert() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);

@@ -13,12 +13,12 @@ class DistanceUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The distance unit of measurement code. The unit of measurement used in the search request is returned. 
-    
-    Valid values: MI-Miles or KM-Kilometers
-    *
-    * @var string
-    */
+     * The distance unit of measurement code. The unit of measurement used in the search request is returned.
+     * 
+     * Valid values: MI-Miles or KM-Kilometers
+     *
+     * @var string
+     */
     protected $code;
     /**
      * May return the description of the unit of measure specified in the request.
@@ -27,12 +27,12 @@ class DistanceUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * The distance unit of measurement code. The unit of measurement used in the search request is returned. 
-    
-    Valid values: MI-Miles or KM-Kilometers
-    *
-    * @return string
-    */
+     * The distance unit of measurement code. The unit of measurement used in the search request is returned.
+     * 
+     * Valid values: MI-Miles or KM-Kilometers
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

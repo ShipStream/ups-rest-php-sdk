@@ -13,25 +13,25 @@ class LocatorRequestServiceGeoUnit extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Service Code. Required if ServiceGeoUnit Container present. 
-    Valid value is '096' .
-    *
-    * @var string
-    */
+     * Service Code. Required if ServiceGeoUnit Container present.
+     * Valid value is '096' .
+     *
+     * @var string
+     */
     protected $serviceCode;
     /**
-    * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
-    Valid value is '002' .
-    *
-    * @var string
-    */
+     * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
+     * Valid value is '002' .
+     *
+     * @var string
+     */
     protected $geoPoliticalUnit;
     /**
-    * Service Code. Required if ServiceGeoUnit Container present. 
-    Valid value is '096' .
-    *
-    * @return string
-    */
+     * Service Code. Required if ServiceGeoUnit Container present.
+     * Valid value is '096' .
+     *
+     * @return string
+     */
     public function getServiceCode(): string
     {
         return $this->serviceCode;
@@ -51,11 +51,11 @@ class LocatorRequestServiceGeoUnit extends \ArrayObject
         return $this;
     }
     /**
-    * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
-    Valid value is '002' .
-    *
-    * @return string
-    */
+     * GeoPoliticalUnit. Required if ServiceGeoUnit container present.
+     * Valid value is '002' .
+     *
+     * @return string
+     */
     public function getGeoPoliticalUnit(): string
     {
         return $this->geoPoliticalUnit;

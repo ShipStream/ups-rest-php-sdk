@@ -13,13 +13,13 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Search Request range. Valied values:
-    - 1 to 200
-    
-    Default: 200
-    *
-    * @var string
-    */
+     * Search Request range. Valied values:
+     * - 1 to 200
+     * 
+     * Default: 200
+     *
+     * @var string
+     */
     protected $searchRadius;
     /**
      * Unit of Measure  Required if ProximitySearchIndicator is present. Example: MI or KM
@@ -28,22 +28,22 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
      */
     protected $distanceUnitOfMeasure;
     /**
-    * Maximum Number of locations. Valied values:
-    - 1 to 100
-    
-    Default: 100
-    *
-    * @var string
-    */
+     * Maximum Number of locations. Valied values:
+     * - 1 to 100
+     * 
+     * Default: 100
+     *
+     * @var string
+     */
     protected $maximumLocation;
     /**
-    * Search Request range. Valied values:
-    - 1 to 200
-    
-    Default: 200
-    *
-    * @return string
-    */
+     * Search Request range. Valied values:
+     * - 1 to 200
+     * 
+     * Default: 200
+     *
+     * @return string
+     */
     public function getSearchRadius(): string
     {
         return $this->searchRadius;
@@ -87,13 +87,13 @@ class OriginAddressOriginSearchCriteria extends \ArrayObject
         return $this;
     }
     /**
-    * Maximum Number of locations. Valied values:
-    - 1 to 100
-    
-    Default: 100
-    *
-    * @return string
-    */
+     * Maximum Number of locations. Valied values:
+     * - 1 to 100
+     * 
+     * Default: 100
+     *
+     * @return string
+     */
     public function getMaximumLocation(): string
     {
         return $this->maximumLocation;

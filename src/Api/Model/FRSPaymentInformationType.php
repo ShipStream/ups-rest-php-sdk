@@ -13,14 +13,14 @@ class FRSPaymentInformationType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Valid codes:
-    - 01 = Prepaid
-    - 02 = FreightCollect
-    - 03 = ThirdParty
-    
-    *
-    * @var string
-    */
+     * Valid codes:
+     * - 01 = Prepaid
+     * - 02 = FreightCollect
+     * - 03 = ThirdParty
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Specifies the description for Ground Freight Pricing payment type.
@@ -29,14 +29,14 @@ class FRSPaymentInformationType extends \ArrayObject
      */
     protected $description;
     /**
-    * Valid codes:
-    - 01 = Prepaid
-    - 02 = FreightCollect
-    - 03 = ThirdParty
-    
-    *
-    * @return string
-    */
+     * Valid codes:
+     * - 01 = Prepaid
+     * - 02 = FreightCollect
+     * - 03 = ThirdParty
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

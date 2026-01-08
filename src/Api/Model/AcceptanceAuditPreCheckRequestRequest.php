@@ -13,12 +13,12 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Enables the user to specify optional processing. 
-    
-    Currently, there is no optional process in Dangerous Goods Utility WS.
-    *
-    * @var string
-    */
+     * Enables the user to specify optional processing.
+     * 
+     * Currently, there is no optional process in Dangerous Goods Utility WS.
+     *
+     * @var string
+     */
     protected $requestOption;
     /**
      * Not Used.
@@ -33,12 +33,12 @@ class AcceptanceAuditPreCheckRequestRequest extends \ArrayObject
      */
     protected $transactionReference;
     /**
-    * Enables the user to specify optional processing. 
-    
-    Currently, there is no optional process in Dangerous Goods Utility WS.
-    *
-    * @return string
-    */
+     * Enables the user to specify optional processing.
+     * 
+     * Currently, there is no optional process in Dangerous Goods Utility WS.
+     *
+     * @return string
+     */
     public function getRequestOption(): string
     {
         return $this->requestOption;

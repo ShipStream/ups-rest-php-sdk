@@ -13,15 +13,15 @@ class LocationAttributeOptionType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for Option type. Valid values:
-    - 01 - Location
-    - 02 - Retail Location
-    - 03 - Additional Services
-    - 04 - Program Type
-    
-    *
-    * @var string
-    */
+     * Code for Option type. Valid values:
+     * - 01 - Location
+     * - 02 - Retail Location
+     * - 03 - Additional Services
+     * - 04 - Program Type
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description for Option type such as Location, RetailLocation, AdditionalServices and ProgramType.
@@ -30,15 +30,15 @@ class LocationAttributeOptionType extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for Option type. Valid values:
-    - 01 - Location
-    - 02 - Retail Location
-    - 03 - Additional Services
-    - 04 - Program Type
-    
-    *
-    * @return string
-    */
+     * Code for Option type. Valid values:
+     * - 01 - Location
+     * - 02 - Retail Location
+     * - 03 - Additional Services
+     * - 04 - Program Type
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

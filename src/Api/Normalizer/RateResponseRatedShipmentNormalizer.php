@@ -201,7 +201,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
         if ($data->isInitialized('totalChargesWithTaxes') && null !== $data->getTotalChargesWithTaxes()) {
             $dataArray['TotalChargesWithTaxes'] = $this->normalizer->normalize($data->getTotalChargesWithTaxes(), 'json', $context);
         }
-        if ($data->isInitialized('negotiatedRateCharges') && null !== $data->getNegotiatedRateCharges()) {
+        if ($data->isInitialized('negotiatedRateCharges')) {
             $dataArray['NegotiatedRateCharges'] = $this->normalizer->normalize($data->getNegotiatedRateCharges(), 'json', $context);
         }
         $values_4 = [];

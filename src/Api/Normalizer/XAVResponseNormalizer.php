@@ -91,19 +91,19 @@ class XAVResponseNormalizer implements DenormalizerInterface, NormalizerInterfac
     {
         $dataArray = [];
         $dataArray['Response'] = $this->normalizer->normalize($data->getResponse(), 'json', $context);
-        if ($data->isInitialized('validAddressIndicator') && null !== $data->getValidAddressIndicator()) {
+        if ($data->isInitialized('validAddressIndicator')) {
             $dataArray['ValidAddressIndicator'] = $data->getValidAddressIndicator();
         }
-        if ($data->isInitialized('ambiguousAddressIndicator') && null !== $data->getAmbiguousAddressIndicator()) {
+        if ($data->isInitialized('ambiguousAddressIndicator')) {
             $dataArray['AmbiguousAddressIndicator'] = $data->getAmbiguousAddressIndicator();
         }
-        if ($data->isInitialized('noCandidatesIndicator') && null !== $data->getNoCandidatesIndicator()) {
+        if ($data->isInitialized('noCandidatesIndicator')) {
             $dataArray['NoCandidatesIndicator'] = $data->getNoCandidatesIndicator();
         }
-        if ($data->isInitialized('addressClassification') && null !== $data->getAddressClassification()) {
+        if ($data->isInitialized('addressClassification')) {
             $dataArray['AddressClassification'] = $this->normalizer->normalize($data->getAddressClassification(), 'json', $context);
         }
-        if ($data->isInitialized('candidate') && null !== $data->getCandidate()) {
+        if ($data->isInitialized('candidate')) {
             $values = [];
             foreach ($data->getCandidate() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);

@@ -13,14 +13,14 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active. 
-    
-    For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account. 
-    
-    All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
-    *
-    * @var string
-    */
+     * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active.
+     * 
+     * For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account.
+     * 
+     * All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
+     *
+     * @var string
+     */
     protected $accountNumber;
     /**
      * Posta Elettronica Certificata (PEC) which is the recipient code for the customers certified electronic mail value.
@@ -41,14 +41,14 @@ class ShipmentChargeBillThirdParty extends \ArrayObject
      */
     protected $address;
     /**
-    * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active. 
-    
-    For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account. 
-    
-    All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
-    *
-    * @return string
-    */
+     * The UPS account number of the third party shipper.  The account must be a valid UPS account number that is active.
+     * 
+     * For US, PR and CA accounts, the account must be either a daily pickup account, an occasional account, or a customer B.I.N account, or a drop shipper account.
+     * 
+     * All other accounts must be either a daily pickup account, an occasional account, a drop shipper account, or a non-shipping account.
+     *
+     * @return string
+     */
     public function getAccountNumber(): string
     {
         return $this->accountNumber;

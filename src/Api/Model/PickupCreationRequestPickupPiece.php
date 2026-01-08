@@ -19,30 +19,30 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
      */
     protected $serviceCode;
     /**
-    * Number of pieces to be picked up. 
-    Max per service: 999
-    *
-    * @var string
-    */
+     * Number of pieces to be picked up.
+     * Max per service: 999
+     *
+     * @var string
+     */
     protected $quantity;
     /**
-    * The destination country code as defined by ISO-3166.
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @var string
-    */
+     * The destination country code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @var string
+     */
     protected $destinationCountryCode;
     /**
-    * Container type. Valid values:
-    - 01 = PACKAGE
-    - 02 = UPS LETTER
-    - 03 = PALLET
-    
-    Note: 03 is used for only WWEF services
-    
-    *
-    * @var string
-    */
+     * Container type. Valid values:
+     * - 01 = PACKAGE
+     * - 02 = UPS LETTER
+     * - 03 = PALLET
+     * 
+     * Note: 03 is used for only WWEF services
+     * 
+     *
+     * @var string
+     */
     protected $containerCode;
     /**
      * Refer to Service Codes in the Appendix for valid values.
@@ -67,11 +67,11 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
         return $this;
     }
     /**
-    * Number of pieces to be picked up. 
-    Max per service: 999
-    *
-    * @return string
-    */
+     * Number of pieces to be picked up.
+     * Max per service: 999
+     *
+     * @return string
+     */
     public function getQuantity(): string
     {
         return $this->quantity;
@@ -91,11 +91,11 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
         return $this;
     }
     /**
-    * The destination country code as defined by ISO-3166.
-    Refer to Country or Territory Codes in the Appendix for valid values.
-    *
-    * @return string
-    */
+     * The destination country code as defined by ISO-3166.
+     * Refer to Country or Territory Codes in the Appendix for valid values.
+     *
+     * @return string
+     */
     public function getDestinationCountryCode(): string
     {
         return $this->destinationCountryCode;
@@ -115,16 +115,16 @@ class PickupCreationRequestPickupPiece extends \ArrayObject
         return $this;
     }
     /**
-    * Container type. Valid values:
-    - 01 = PACKAGE
-    - 02 = UPS LETTER
-    - 03 = PALLET
-    
-    Note: 03 is used for only WWEF services
-    
-    *
-    * @return string
-    */
+     * Container type. Valid values:
+     * - 01 = PACKAGE
+     * - 02 = UPS LETTER
+     * - 03 = PALLET
+     * 
+     * Note: 03 is used for only WWEF services
+     * 
+     *
+     * @return string
+     */
     public function getContainerCode(): string
     {
         return $this->containerCode;

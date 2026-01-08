@@ -19,11 +19,11 @@ class DropOffFacilitiesLocalizedInstruction extends \ArrayObject
      */
     protected $locale;
     /**
-    * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
-    Last 50 feet instruction in the language asked in request or the English for that country.
-    *
-    * @var string
-    */
+     * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
+     * Last 50 feet instruction in the language asked in request or the English for that country.
+     *
+     * @var string
+     */
     protected $last50ftInstruction;
     /**
      * Locale. Example: en_US
@@ -48,11 +48,11 @@ class DropOffFacilitiesLocalizedInstruction extends \ArrayObject
         return $this;
     }
     /**
-    * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
-    Last 50 feet instruction in the language asked in request or the English for that country.
-    *
-    * @return string
-    */
+     * Last 50ft instructions that relates to an available facility and depend on the locale passing in request.
+     * Last 50 feet instruction in the language asked in request or the English for that country.
+     *
+     * @return string
+     */
     public function getLast50ftInstruction(): string
     {
         return $this->last50ftInstruction;

@@ -123,7 +123,7 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
         if ($data->isInitialized('serviceOptionsCharges') && null !== $data->getServiceOptionsCharges()) {
             $dataArray['ServiceOptionsCharges'] = $this->normalizer->normalize($data->getServiceOptionsCharges(), 'json', $context);
         }
-        if ($data->isInitialized('shippingLabel') && null !== $data->getShippingLabel()) {
+        if ($data->isInitialized('shippingLabel')) {
             $dataArray['ShippingLabel'] = $this->normalizer->normalize($data->getShippingLabel(), 'json', $context);
         }
         if ($data->isInitialized('shippingReceipt') && null !== $data->getShippingReceipt()) {
@@ -145,7 +145,7 @@ class ShipmentResultsPackageResultsNormalizer implements DenormalizerInterface, 
         if ($data->isInitialized('simpleRate') && null !== $data->getSimpleRate()) {
             $dataArray['SimpleRate'] = $this->normalizer->normalize($data->getSimpleRate(), 'json', $context);
         }
-        if ($data->isInitialized('form') && null !== $data->getForm()) {
+        if ($data->isInitialized('form')) {
             $dataArray['Form'] = $this->normalizer->normalize($data->getForm(), 'json', $context);
         }
         if ($data->isInitialized('itemizedCharges') && null !== $data->getItemizedCharges()) {

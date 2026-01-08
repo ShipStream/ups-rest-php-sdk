@@ -13,8 +13,6 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var ErrorResponseWrapper
      */
     protected $response;
@@ -25,8 +23,6 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
      */
     protected $invalidTrackingNumbers;
     /**
-     * 
-     *
      * @return ErrorResponseWrapper
      */
     public function getResponse(): ErrorResponseWrapper
@@ -34,8 +30,6 @@ class TrackSubsServiceErrorResponse extends \ArrayObject
         return $this->response;
     }
     /**
-     * 
-     *
      * @param ErrorResponseWrapper $response
      *
      * @return self

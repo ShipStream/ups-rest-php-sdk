@@ -13,33 +13,33 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Percentage amount consistent with the handling charge.
-    Either Percentage or Amount needs to be present, not both.
-    Negative value allowed.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 7 characters. The decimal ".", does not count as a character.
-    *
-    * @var string
-    */
+     * Percentage amount consistent with the handling charge.
+     * Either Percentage or Amount needs to be present, not both.
+     * Negative value allowed.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 7 characters. The decimal ".", does not count as a character.
+     *
+     * @var string
+     */
     protected $percentage;
     /**
-    * HandlingCharge Amount Container.
-    Either Percentage or Amount needs to be present, not both.
-    *
-    * @var HandlingChargeAmount
-    */
+     * HandlingCharge Amount Container.
+     * Either Percentage or Amount needs to be present, not both.
+     *
+     * @var HandlingChargeAmount
+     */
     protected $amount;
     /**
-    * Percentage amount consistent with the handling charge.
-    Either Percentage or Amount needs to be present, not both.
-    Negative value allowed.
-    Valid characters: 0-9 and "." (Decimal). 
-    Maximum of 2 digits after the decimal. 
-    Maximum field length: 7 characters. The decimal ".", does not count as a character.
-    *
-    * @return string
-    */
+     * Percentage amount consistent with the handling charge.
+     * Either Percentage or Amount needs to be present, not both.
+     * Negative value allowed.
+     * Valid characters: 0-9 and "." (Decimal).
+     * Maximum of 2 digits after the decimal.
+     * Maximum field length: 7 characters. The decimal ".", does not count as a character.
+     *
+     * @return string
+     */
     public function getPercentage(): string
     {
         return $this->percentage;
@@ -63,11 +63,11 @@ class ShipmentServiceOptionsHandlingCharge extends \ArrayObject
         return $this;
     }
     /**
-    * HandlingCharge Amount Container.
-    Either Percentage or Amount needs to be present, not both.
-    *
-    * @return HandlingChargeAmount
-    */
+     * HandlingCharge Amount Container.
+     * Either Percentage or Amount needs to be present, not both.
+     *
+     * @return HandlingChargeAmount
+     */
     public function getAmount(): HandlingChargeAmount
     {
         return $this->amount;

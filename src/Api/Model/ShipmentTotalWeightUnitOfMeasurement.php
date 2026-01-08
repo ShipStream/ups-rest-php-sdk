@@ -13,15 +13,15 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds
-    - KGS = Kilograms.
-    
-    *
-    * @var string
-    */
+     * Code representing the unit of measure associated with the package weight.
+     * 
+     * Valid values:
+     * - LBS = Pounds
+     * - KGS = Kilograms.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Text description of the code representing the unit of measure associated with the shipment weight.
@@ -30,15 +30,15 @@ class ShipmentTotalWeightUnitOfMeasurement extends \ArrayObject
      */
     protected $description;
     /**
-    * Code representing the unit of measure associated with the package weight.
-    
-    Valid values:
-    - LBS = Pounds
-    - KGS = Kilograms.
-    
-    *
-    * @return string
-    */
+     * Code representing the unit of measure associated with the package weight.
+     * 
+     * Valid values:
+     * - LBS = Pounds
+     * - KGS = Kilograms.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

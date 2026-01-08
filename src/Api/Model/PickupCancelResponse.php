@@ -19,11 +19,11 @@ class PickupCancelResponse extends \ArrayObject
      */
     protected $response;
     /**
-    * The type of pickup that has been cancelled.
-    - 01 = On-Call Pickup
-    *
-    * @var string
-    */
+     * The type of pickup that has been cancelled.
+     * - 01 = On-Call Pickup
+     *
+     * @var string
+     */
     protected $pickupType;
     /**
      * The status of Smart Pickup that has been cancelled.
@@ -54,11 +54,11 @@ class PickupCancelResponse extends \ArrayObject
         return $this;
     }
     /**
-    * The type of pickup that has been cancelled.
-    - 01 = On-Call Pickup
-    *
-    * @return string
-    */
+     * The type of pickup that has been cancelled.
+     * - 01 = On-Call Pickup
+     *
+     * @return string
+     */
     public function getPickupType(): string
     {
         return $this->pickupType;

@@ -84,7 +84,7 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if ($data->isInitialized('inquiryNumber') && null !== $data->getInquiryNumber()) {
             $dataArray['inquiryNumber'] = $data->getInquiryNumber();
         }
-        if ($data->isInitialized('package') && null !== $data->getPackage()) {
+        if ($data->isInitialized('package')) {
             $values = [];
             foreach ($data->getPackage() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
@@ -98,7 +98,7 @@ class ShipmentNormalizer implements DenormalizerInterface, NormalizerInterface, 
             }
             $dataArray['userRelation'] = $values_1;
         }
-        if ($data->isInitialized('warnings') && null !== $data->getWarnings()) {
+        if ($data->isInitialized('warnings')) {
             $values_2 = [];
             foreach ($data->getWarnings() as $value_2) {
                 $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);

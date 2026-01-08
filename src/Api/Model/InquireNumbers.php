@@ -13,14 +13,10 @@ class InquireNumbers extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<string>
      */
     protected $inquiryNumbers;
     /**
-     * 
-     *
      * @return list<string>
      */
     public function getInquiryNumbers(): array
@@ -28,8 +24,6 @@ class InquireNumbers extends \ArrayObject
         return $this->inquiryNumbers;
     }
     /**
-     * 
-     *
      * @param list<string> $inquiryNumbers
      *
      * @return self

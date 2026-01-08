@@ -100,10 +100,10 @@ class CandidateAddressKeyFormatNormalizer implements DenormalizerInterface, Norm
     public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $dataArray = [];
-        if ($data->isInitialized('consigneeName') && null !== $data->getConsigneeName()) {
+        if ($data->isInitialized('consigneeName')) {
             $dataArray['ConsigneeName'] = $data->getConsigneeName();
         }
-        if ($data->isInitialized('attentionName') && null !== $data->getAttentionName()) {
+        if ($data->isInitialized('attentionName')) {
             $dataArray['AttentionName'] = $data->getAttentionName();
         }
         if ($data->isInitialized('addressLine') && null !== $data->getAddressLine()) {
@@ -128,7 +128,7 @@ class CandidateAddressKeyFormatNormalizer implements DenormalizerInterface, Norm
         if ($data->isInitialized('postcodeExtendedLow') && null !== $data->getPostcodeExtendedLow()) {
             $dataArray['PostcodeExtendedLow'] = $data->getPostcodeExtendedLow();
         }
-        if ($data->isInitialized('urbanization') && null !== $data->getUrbanization()) {
+        if ($data->isInitialized('urbanization')) {
             $dataArray['Urbanization'] = $data->getUrbanization();
         }
         $dataArray['CountryCode'] = $data->getCountryCode();

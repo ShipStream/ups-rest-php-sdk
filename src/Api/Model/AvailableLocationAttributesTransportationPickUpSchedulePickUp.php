@@ -13,18 +13,18 @@ class AvailableLocationAttributesTransportationPickUpSchedulePickUp extends \Arr
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Day of the week for scheduled pickup. Valid values are:
-    - 1 - Sunday
-    - 2 - Monday
-    - 3 - Tuesday
-    - 4 - Wednesday
-    - 5 - Thursday
-    - 6 - Friday
-    - 7 - Saturday.
-    
-    *
-    * @var string
-    */
+     * Day of the week for scheduled pickup. Valid values are:
+     * - 1 - Sunday
+     * - 2 - Monday
+     * - 3 - Tuesday
+     * - 4 - Wednesday
+     * - 5 - Thursday
+     * - 6 - Friday
+     * - 7 - Saturday.
+     * 
+     *
+     * @var string
+     */
     protected $dayOfWeek;
     /**
      * Container to hold information regarding pickup time and pickup availability indicator.
@@ -33,18 +33,18 @@ class AvailableLocationAttributesTransportationPickUpSchedulePickUp extends \Arr
      */
     protected $pickUpDetails;
     /**
-    * Day of the week for scheduled pickup. Valid values are:
-    - 1 - Sunday
-    - 2 - Monday
-    - 3 - Tuesday
-    - 4 - Wednesday
-    - 5 - Thursday
-    - 6 - Friday
-    - 7 - Saturday.
-    
-    *
-    * @return string
-    */
+     * Day of the week for scheduled pickup. Valid values are:
+     * - 1 - Sunday
+     * - 2 - Monday
+     * - 3 - Tuesday
+     * - 4 - Wednesday
+     * - 5 - Thursday
+     * - 6 - Friday
+     * - 7 - Saturday.
+     * 
+     *
+     * @return string
+     */
     public function getDayOfWeek(): string
     {
         return $this->dayOfWeek;

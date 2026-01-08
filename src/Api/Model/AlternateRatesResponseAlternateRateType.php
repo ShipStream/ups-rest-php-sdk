@@ -13,13 +13,13 @@ class AlternateRatesResponseAlternateRateType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code for the Alternate Rate Type.
-    1 = LTL only 
-    2 = GFP only 
-    3 = GFP and LTL
-    *
-    * @var string
-    */
+     * Code for the Alternate Rate Type.
+     * 1 = LTL only
+     * 2 = GFP only
+     * 3 = GFP and LTL
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Alternate Rate Type description.
@@ -28,13 +28,13 @@ class AlternateRatesResponseAlternateRateType extends \ArrayObject
      */
     protected $description;
     /**
-    * Code for the Alternate Rate Type.
-    1 = LTL only 
-    2 = GFP only 
-    3 = GFP and LTL
-    *
-    * @return string
-    */
+     * Code for the Alternate Rate Type.
+     * 1 = LTL only
+     * 2 = GFP only
+     * 3 = GFP and LTL
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

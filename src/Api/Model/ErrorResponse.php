@@ -13,14 +13,10 @@ class ErrorResponse extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var ErrorResponseWrapper
      */
     protected $response;
     /**
-     * 
-     *
      * @return ErrorResponseWrapper
      */
     public function getResponse(): ErrorResponseWrapper
@@ -28,8 +24,6 @@ class ErrorResponse extends \ArrayObject
         return $this->response;
     }
     /**
-     * 
-     *
      * @param ErrorResponseWrapper $response
      *
      * @return self

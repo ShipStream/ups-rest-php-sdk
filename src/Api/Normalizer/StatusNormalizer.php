@@ -73,10 +73,10 @@ class StatusNormalizer implements DenormalizerInterface, NormalizerInterface, De
     public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $dataArray = [];
-        if ($data->isInitialized('code') && null !== $data->getCode()) {
+        if ($data->isInitialized('code')) {
             $dataArray['code'] = $data->getCode();
         }
-        if ($data->isInitialized('description') && null !== $data->getDescription()) {
+        if ($data->isInitialized('description')) {
             $dataArray['description'] = $data->getDescription();
         }
         if ($data->isInitialized('simplifiedTextDescription') && null !== $data->getSimplifiedTextDescription()) {

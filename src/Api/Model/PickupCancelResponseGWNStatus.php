@@ -13,19 +13,19 @@ class PickupCancelResponseGWNStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * The status code defined by operation system.
-    - 001 = User Triggered
-    - 002 = User Cancelled
-    - 003 = Completed
-    - 004 = Missed
-    - 005 = Not In
-    - 006 = Not Ready
-    - 007 = Closed
-    - 008 = Cancelled By Driver
-    - 999 = Unknown
-    *
-    * @var string
-    */
+     * The status code defined by operation system.
+     * - 001 = User Triggered
+     * - 002 = User Cancelled
+     * - 003 = Completed
+     * - 004 = Missed
+     * - 005 = Not In
+     * - 006 = Not Ready
+     * - 007 = Closed
+     * - 008 = Cancelled By Driver
+     * - 999 = Unknown
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Please refer to /PickupPendingStatusResponse/PendingStatus/PickupStatusMessage
@@ -34,19 +34,19 @@ class PickupCancelResponseGWNStatus extends \ArrayObject
      */
     protected $description;
     /**
-    * The status code defined by operation system.
-    - 001 = User Triggered
-    - 002 = User Cancelled
-    - 003 = Completed
-    - 004 = Missed
-    - 005 = Not In
-    - 006 = Not Ready
-    - 007 = Closed
-    - 008 = Cancelled By Driver
-    - 999 = Unknown
-    *
-    * @return string
-    */
+     * The status code defined by operation system.
+     * - 001 = User Triggered
+     * - 002 = User Cancelled
+     * - 003 = Completed
+     * - 004 = Missed
+     * - 005 = Not In
+     * - 006 = Not Ready
+     * - 007 = Closed
+     * - 008 = Cancelled By Driver
+     * - 999 = Unknown
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

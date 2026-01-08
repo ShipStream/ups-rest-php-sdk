@@ -37,12 +37,12 @@ class ChargeCardCardAddress extends \ArrayObject
      */
     protected $postalCode;
     /**
-    * Charge card billing address country or territory code defined by ISO-3166.
-    
-    Upper-case two letter string. For Discover card it should be US.
-    *
-    * @var string
-    */
+     * Charge card billing address country or territory code defined by ISO-3166.
+     * 
+     * Upper-case two letter string. For Discover card it should be US.
+     *
+     * @var string
+     */
     protected $countryCode;
     /**
      * Address Lines of the credit card billing address.  Max of three address lines can be provided.
@@ -133,12 +133,12 @@ class ChargeCardCardAddress extends \ArrayObject
         return $this;
     }
     /**
-    * Charge card billing address country or territory code defined by ISO-3166.
-    
-    Upper-case two letter string. For Discover card it should be US.
-    *
-    * @return string
-    */
+     * Charge card billing address country or territory code defined by ISO-3166.
+     * 
+     * Upper-case two letter string. For Discover card it should be US.
+     *
+     * @return string
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;

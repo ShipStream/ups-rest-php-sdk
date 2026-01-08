@@ -19,14 +19,14 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
      */
     protected $eMailAddress;
     /**
-    * Type of event for POM Notification. Add up to four events.
-    01 = PICKUP_REQUEST_CONFIRM
-    02 = DRIVER_EN_ROUTE
-    03 = PICKUP_SECURED
-    04 = PICKUP_EXCEPTION
-    *
-    * @var string
-    */
+     * Type of event for POM Notification. Add up to four events.
+     * 01 = PICKUP_REQUEST_CONFIRM
+     * 02 = DRIVER_EN_ROUTE
+     * 03 = PICKUP_SECURED
+     * 04 = PICKUP_EXCEPTION
+     *
+     * @var string
+     */
     protected $eventType;
     /**
      * Email address which should receive pre-pickup notification
@@ -51,14 +51,14 @@ class FreightShipPickupNotificationsEMailNotification extends \ArrayObject
         return $this;
     }
     /**
-    * Type of event for POM Notification. Add up to four events.
-    01 = PICKUP_REQUEST_CONFIRM
-    02 = DRIVER_EN_ROUTE
-    03 = PICKUP_SECURED
-    04 = PICKUP_EXCEPTION
-    *
-    * @return string
-    */
+     * Type of event for POM Notification. Add up to four events.
+     * 01 = PICKUP_REQUEST_CONFIRM
+     * 02 = DRIVER_EN_ROUTE
+     * 03 = PICKUP_SECURED
+     * 04 = PICKUP_EXCEPTION
+     *
+     * @return string
+     */
     public function getEventType(): string
     {
         return $this->eventType;

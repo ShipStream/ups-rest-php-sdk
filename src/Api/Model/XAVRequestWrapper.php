@@ -13,14 +13,10 @@ class XAVRequestWrapper extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var XAVRequest
      */
     protected $xAVRequest;
     /**
-     * 
-     *
      * @return XAVRequest
      */
     public function getXAVRequest(): XAVRequest
@@ -28,8 +24,6 @@ class XAVRequestWrapper extends \ArrayObject
         return $this->xAVRequest;
     }
     /**
-     * 
-     *
      * @param XAVRequest $xAVRequest
      *
      * @return self

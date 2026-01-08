@@ -13,8 +13,6 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<EMailInformationEMailType>
      */
     protected $eMailType;
@@ -25,8 +23,6 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
      */
     protected $eMail;
     /**
-     * 
-     *
      * @return list<EMailInformationEMailType>
      */
     public function getEMailType(): array
@@ -34,8 +30,6 @@ class ShipmentServiceOptionsEMailInformation extends \ArrayObject
         return $this->eMailType;
     }
     /**
-     * 
-     *
      * @param list<EMailInformationEMailType> $eMailType
      *
      * @return self

@@ -19,19 +19,19 @@ class ShipmentServiceOptionsCallTagARS extends \ArrayObject
      */
     protected $number;
     /**
-    * The type of Call Tag service. 
-    Valid values:
-    00 - No return service
-    01 - UPS Call Tag Service
-    02 - UPS Print and Mail
-    03 - 1 UPS Pickup Attempt
-    04 - UPS Print Return Label
-    05 - Online Call Tag (3 UPS Pickup Attempts)
-    06 - UPS Electronic Return Label
-    08 - UPS Returns on the Web
-    *
-    * @var string
-    */
+     * The type of Call Tag service.
+     * Valid values:
+     * 00 - No return service
+     * 01 - UPS Call Tag Service
+     * 02 - UPS Print and Mail
+     * 03 - 1 UPS Pickup Attempt
+     * 04 - UPS Print Return Label
+     * 05 - Online Call Tag (3 UPS Pickup Attempts)
+     * 06 - UPS Electronic Return Label
+     * 08 - UPS Returns on the Web
+     *
+     * @var string
+     */
     protected $code;
     /**
      * A reference number associated with the Call Tag service. Required if CallTagARS/Code is 1.
@@ -56,19 +56,19 @@ class ShipmentServiceOptionsCallTagARS extends \ArrayObject
         return $this;
     }
     /**
-    * The type of Call Tag service. 
-    Valid values:
-    00 - No return service
-    01 - UPS Call Tag Service
-    02 - UPS Print and Mail
-    03 - 1 UPS Pickup Attempt
-    04 - UPS Print Return Label
-    05 - Online Call Tag (3 UPS Pickup Attempts)
-    06 - UPS Electronic Return Label
-    08 - UPS Returns on the Web
-    *
-    * @return string
-    */
+     * The type of Call Tag service.
+     * Valid values:
+     * 00 - No return service
+     * 01 - UPS Call Tag Service
+     * 02 - UPS Print and Mail
+     * 03 - 1 UPS Pickup Attempt
+     * 04 - UPS Print Return Label
+     * 05 - Online Call Tag (3 UPS Pickup Attempts)
+     * 06 - UPS Electronic Return Label
+     * 08 - UPS Returns on the Web
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

@@ -14,14 +14,18 @@ class SubscriptionFileOrigin extends \ArrayObject
     }
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<OriginPackageReferenceNumber>
      */
     protected $packageReferenceNumber;
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @var list<OriginShipmentReferenceNumber>
      */
@@ -76,7 +80,9 @@ class SubscriptionFileOrigin extends \ArrayObject
     protected $scheduledDeliveryTime;
     /**
      * Package-level reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<OriginPackageReferenceNumber>
      */
@@ -100,7 +106,9 @@ class SubscriptionFileOrigin extends \ArrayObject
     }
     /**
      * Container tag for shipment reference number.
-     **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
+     * **NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.
+     * 
      *
      * @return list<OriginShipmentReferenceNumber>
      */

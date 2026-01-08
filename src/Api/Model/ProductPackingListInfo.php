@@ -13,14 +13,10 @@ class ProductPackingListInfo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
-     *
      * @var list<PackingListInfoPackageAssociated>
      */
     protected $packageAssociated;
     /**
-     * 
-     *
      * @return list<PackingListInfoPackageAssociated>
      */
     public function getPackageAssociated(): array
@@ -28,8 +24,6 @@ class ProductPackingListInfo extends \ArrayObject
         return $this->packageAssociated;
     }
     /**
-     * 
-     *
      * @param list<PackingListInfoPackageAssociated> $packageAssociated
      *
      * @return self

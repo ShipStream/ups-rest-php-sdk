@@ -107,10 +107,10 @@ class GenerateTokenSuccessResponseNormalizer implements DenormalizerInterface, N
     public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $dataArray = [];
-        if ($data->isInitialized('refreshTokenExpiresIn') && null !== $data->getRefreshTokenExpiresIn()) {
+        if ($data->isInitialized('refreshTokenExpiresIn')) {
             $dataArray['refresh_token_expires_in'] = $data->getRefreshTokenExpiresIn();
         }
-        if ($data->isInitialized('refreshTokenStatus') && null !== $data->getRefreshTokenStatus()) {
+        if ($data->isInitialized('refreshTokenStatus')) {
             $dataArray['refresh_token_status'] = $data->getRefreshTokenStatus();
         }
         if ($data->isInitialized('tokenType') && null !== $data->getTokenType()) {
@@ -125,13 +125,13 @@ class GenerateTokenSuccessResponseNormalizer implements DenormalizerInterface, N
         if ($data->isInitialized('accessToken') && null !== $data->getAccessToken()) {
             $dataArray['access_token'] = $data->getAccessToken();
         }
-        if ($data->isInitialized('refreshToken') && null !== $data->getRefreshToken()) {
+        if ($data->isInitialized('refreshToken')) {
             $dataArray['refresh_token'] = $data->getRefreshToken();
         }
         if ($data->isInitialized('scope') && null !== $data->getScope()) {
             $dataArray['scope'] = $data->getScope();
         }
-        if ($data->isInitialized('refreshTokenIssuedAt') && null !== $data->getRefreshTokenIssuedAt()) {
+        if ($data->isInitialized('refreshTokenIssuedAt')) {
             $dataArray['refresh_token_issued_at'] = $data->getRefreshTokenIssuedAt();
         }
         if ($data->isInitialized('expiresIn') && null !== $data->getExpiresIn()) {

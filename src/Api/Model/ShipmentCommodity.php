@@ -73,11 +73,11 @@ class ShipmentCommodity extends \ArrayObject
      */
     protected $nMFCCommodityCode;
     /**
-    * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
-    This container is mutually exclusive with NMFCCommodityCode element above.
-    *
-    * @var CommodityNMFCCommodity
-    */
+     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
+     * This container is mutually exclusive with NMFCCommodityCode element above.
+     *
+     * @var CommodityNMFCCommodity
+     */
     protected $nMFCCommodity;
     /**
      * Unique identifier for the commodity.
@@ -300,11 +300,11 @@ class ShipmentCommodity extends \ArrayObject
         return $this;
     }
     /**
-    * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
-    This container is mutually exclusive with NMFCCommodityCode element above.
-    *
-    * @return CommodityNMFCCommodity
-    */
+     * Container for National Motor Freight Classification Commodity.  This Container is for customers who choose to send the NMFC Prime and sub code as two different fields.
+     * This container is mutually exclusive with NMFCCommodityCode element above.
+     *
+     * @return CommodityNMFCCommodity
+     */
     public function getNMFCCommodity(): CommodityNMFCCommodity
     {
         return $this->nMFCCommodity;

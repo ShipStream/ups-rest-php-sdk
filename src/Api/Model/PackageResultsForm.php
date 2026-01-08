@@ -13,12 +13,12 @@ class PackageResultsForm extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Code that indicates the type of form.  Valid values:
-    - 01 - All Requested International Forms.
-    
-    *
-    * @var string
-    */
+     * Code that indicates the type of form.  Valid values:
+     * - 01 - All Requested International Forms.
+     * 
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description that indicates the type of form.  Possible Values: All Requested International Forms.
@@ -45,12 +45,12 @@ class PackageResultsForm extends \ArrayObject
      */
     protected $formGroupIdName;
     /**
-    * Code that indicates the type of form.  Valid values:
-    - 01 - All Requested International Forms.
-    
-    *
-    * @return string
-    */
+     * Code that indicates the type of form.  Valid values:
+     * - 01 - All Requested International Forms.
+     * 
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

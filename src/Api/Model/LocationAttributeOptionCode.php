@@ -13,13 +13,13 @@ class LocationAttributeOptionCode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Only applicabe for OptionType = 03 (Additional Services). Valid values:
-    - 06 - Non transportation
-    - 07 - Transportation
-    
-    *
-    * @var string
-    */
+     * Only applicabe for OptionType = 03 (Additional Services). Valid values:
+     * - 06 - Non transportation
+     * - 07 - Transportation
+     * 
+     *
+     * @var string
+     */
     protected $category;
     /**
      * These codes vary by country or territory. It is strongly recommended that clients contact UPS to retrieve the primary search indicator and the valid Location Types and Service Level Options for each country. Refer to Location Search Option Codes in the Appendix for additional information.
@@ -28,13 +28,13 @@ class LocationAttributeOptionCode extends \ArrayObject
      */
     protected $code;
     /**
-    * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
-    
-    It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
-    
-    *
-    * @var string
-    */
+     * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
+     * 
+     * It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
+     * 
+     *
+     * @var string
+     */
     protected $description;
     /**
      * Name will indicate the name of any Additional Services/ Program Types depending on the option code. Text will be displayed in the locale selected.
@@ -49,13 +49,13 @@ class LocationAttributeOptionCode extends \ArrayObject
      */
     protected $transportationPickUpSchedule;
     /**
-    * Only applicabe for OptionType = 03 (Additional Services). Valid values:
-    - 06 - Non transportation
-    - 07 - Transportation
-    
-    *
-    * @return string
-    */
+     * Only applicabe for OptionType = 03 (Additional Services). Valid values:
+     * - 06 - Non transportation
+     * - 07 - Transportation
+     * 
+     *
+     * @return string
+     */
     public function getCategory(): string
     {
         return $this->category;
@@ -99,13 +99,13 @@ class LocationAttributeOptionCode extends \ArrayObject
         return $this;
     }
     /**
-    * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
-    
-    It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
-    
-    *
-    * @return string
-    */
+     * Description is only applicable for Location and Retail Location. The description for Program types and additional service is not provided with Location detail.
+     * 
+     * It is only provided when the request is for 8, 24, 40, 56-All available additional services or 16, 24, 48, 56-all available Program types.
+     * 
+     *
+     * @return string
+     */
     public function getDescription(): string
     {
         return $this->description;

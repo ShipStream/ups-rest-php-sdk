@@ -13,11 +13,11 @@ class ShipFromTaxIDType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-    * Company's tax Identification type.  Valid values: EIN, DNS, and FGN. 
-    Applies to EEI form only.
-    *
-    * @var string
-    */
+     * Company's tax Identification type.  Valid values: EIN, DNS, and FGN.
+     * Applies to EEI form only.
+     *
+     * @var string
+     */
     protected $code;
     /**
      * Description of TaxID submitted.  Applies to EEI form only.
@@ -26,11 +26,11 @@ class ShipFromTaxIDType extends \ArrayObject
      */
     protected $description;
     /**
-    * Company's tax Identification type.  Valid values: EIN, DNS, and FGN. 
-    Applies to EEI form only.
-    *
-    * @return string
-    */
+     * Company's tax Identification type.  Valid values: EIN, DNS, and FGN.
+     * Applies to EEI form only.
+     *
+     * @return string
+     */
     public function getCode(): string
     {
         return $this->code;

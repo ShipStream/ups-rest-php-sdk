@@ -62,7 +62,7 @@ class XAVResponseCandidateNormalizer implements DenormalizerInterface, Normalize
     public function normalize(mixed $data, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $dataArray = [];
-        if ($data->isInitialized('addressClassification') && null !== $data->getAddressClassification()) {
+        if ($data->isInitialized('addressClassification')) {
             $dataArray['AddressClassification'] = $this->normalizer->normalize($data->getAddressClassification(), 'json', $context);
         }
         $values = [];
