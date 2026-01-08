@@ -18,7 +18,9 @@
     "require-dev": {
         "jane-php/open-api-3": "^7.10",
         "nyholm/psr7": "^1.8",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^9.6",
+        "elidrissidev/openapi-merge": "1.5.2",
+        "cebe/php-openapi": "1.7.0"
     },
     "autoload": {
         "psr-4": {
