@@ -149,7 +149,7 @@ class RateResponseRatedShipment extends \ArrayObject
     /**
      * Container for returned Time in Transit information.  Will only be returned if request option was either "ratetimeintransit" or "shoptimeintransit" and DeliveryTimeInformation container was present in request.
      *
-     * @var RatedShipmentTimeInTransit
+     * @var RatedShipmentTimeInTransit|null
      */
     protected $timeInTransit;
     /**
@@ -595,20 +595,20 @@ class RateResponseRatedShipment extends \ArrayObject
     /**
      * Container for returned Time in Transit information.  Will only be returned if request option was either "ratetimeintransit" or "shoptimeintransit" and DeliveryTimeInformation container was present in request.
      *
-     * @return RatedShipmentTimeInTransit
+     * @return RatedShipmentTimeInTransit|null
      */
-    public function getTimeInTransit(): RatedShipmentTimeInTransit
+    public function getTimeInTransit(): ?RatedShipmentTimeInTransit
     {
         return $this->timeInTransit;
     }
     /**
      * Container for returned Time in Transit information.  Will only be returned if request option was either "ratetimeintransit" or "shoptimeintransit" and DeliveryTimeInformation container was present in request.
      *
-     * @param RatedShipmentTimeInTransit $timeInTransit
+     * @param RatedShipmentTimeInTransit|null $timeInTransit
      *
      * @return self
      */
-    public function setTimeInTransit(RatedShipmentTimeInTransit $timeInTransit): self
+    public function setTimeInTransit(?RatedShipmentTimeInTransit $timeInTransit): self
     {
         $this->initialized['timeInTransit'] = true;
         $this->timeInTransit = $timeInTransit;
