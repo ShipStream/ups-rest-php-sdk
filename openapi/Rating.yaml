@@ -5440,6 +5440,7 @@ components:
     RatedShipment_TimeInTransit:
       type: object
       maximum: 1
+      nullable: true
       required:
         - ServiceSummary
         - PickupDate

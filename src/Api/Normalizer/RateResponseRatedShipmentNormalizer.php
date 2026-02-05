@@ -128,9 +128,12 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             $object->setRatedPackage($values_4);
             unset($data['RatedPackage']);
         }
-        if (\array_key_exists('TimeInTransit', $data)) {
+        if (\array_key_exists('TimeInTransit', $data) && $data['TimeInTransit'] !== null) {
             $object->setTimeInTransit($this->denormalizer->denormalize($data['TimeInTransit'], \ShipStream\Ups\Api\Model\RatedShipmentTimeInTransit::class, 'json', $context));
             unset($data['TimeInTransit']);
+        }
+        elseif (\array_key_exists('TimeInTransit', $data) && $data['TimeInTransit'] === null) {
+            $object->setTimeInTransit(null);
         }
         if (\array_key_exists('ScheduledDeliveryDate', $data)) {
             $object->setScheduledDeliveryDate($data['ScheduledDeliveryDate']);
@@ -209,7 +212,7 @@ class RateResponseRatedShipmentNormalizer implements DenormalizerInterface, Norm
             $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
         }
         $dataArray['RatedPackage'] = $values_4;
-        if ($data->isInitialized('timeInTransit') && null !== $data->getTimeInTransit()) {
+        if ($data->isInitialized('timeInTransit')) {
             $dataArray['TimeInTransit'] = $this->normalizer->normalize($data->getTimeInTransit(), 'json', $context);
         }
         if ($data->isInitialized('scheduledDeliveryDate') && null !== $data->getScheduledDeliveryDate()) {

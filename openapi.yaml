@@ -282,7 +282,7 @@ paths:
   '/dangerousgoods/{version}/acceptanceauditprecheck':
     post:
       summary: 'Acceptance Audit Pre-check'
-      description: 'Enables shippers perform pre-checks before shipping dangerous goods using the chemical record identifier and the commodity''s regulated level code.'
+      description: "Enables shippers perform pre-checks before shipping dangerous goods using the chemical record identifier and the commodity's regulated level code."
       operationId: 'Acceptance Audit Pre-Check'
       parameters:
         -
@@ -843,7 +843,7 @@ paths:
   /security/v1/oauth/authorize:
     get:
       summary: 'Authorize Client'
-      description: 'The Authorize Client endpoint initiates the OAuth Authorization Code flow by redirecting the user to UPS for logging-in and authorize the client application. To begin the authorization flow, the application constructs a URL using the application''s client Id, the redirect URI, the scope of permissions requested, and a random string used for subsequent verification. A successful response redirects back to the client with an authorization code that can be exchanged for an access token.'
+      description: "The Authorize Client endpoint initiates the OAuth Authorization Code flow by redirecting the user to UPS for logging-in and authorize the client application. To begin the authorization flow, the application constructs a URL using the application's client Id, the redirect URI, the scope of permissions requested, and a random string used for subsequent verification. A successful response redirects back to the client with an authorization code that can be exchanged for an access token."
       operationId: AuthorizeClient
       parameters:
         -
@@ -8157,6 +8157,53 @@ paths:
         -
           oauth2: []
   '/freight/{version}/pickups':
+    delete:
+      summary: 'TForce Freight Cancel Pickup '
+      description: 'API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight'
+      operationId: 'Freight Cancel Pickup '
+      parameters:
+        -
+          name: transId
+          in: header
+          description: 'An identifier unique to the request. Length 32'
+          required: true
+          schema:
+            type: string
+        -
+          name: transactionSrc
+          in: header
+          description: 'An identifier of the client/source application that is making the request.Length 512'
+          required: true
+          schema:
+            type: string
+            default: testing
+        -
+          name: PickupRequestConfirmationNumber
+          in: header
+          description: 'Confirmation number of the pickup ground freight shipment to cancel. Length 35'
+          required: true
+          schema:
+            type: string
+        -
+          name: version
+          in: path
+          description: 'Version of the API e.g v1'
+          required: true
+          schema:
+            type: string
+            default: v1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FREIGHTPICKUPCANCELResponseWrapper'
+        '401':
+          description: 'Unauthorized Request'
+      security:
+        -
+          oauth2: []
     post:
       summary: 'TForce Freight Pickup'
       description: 'API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight'
@@ -8256,53 +8303,6 @@ paths:
       security:
         -
           oauth2: []
-    delete:
-      summary: 'TForce Freight Cancel Pickup '
-      description: 'API can be only used by users that plan to ship packages manifested, tendered, and delivered by TForce Freight'
-      operationId: 'Freight Cancel Pickup '
-      parameters:
-        -
-          name: transId
-          in: header
-          description: 'An identifier unique to the request. Length 32'
-          required: true
-          schema:
-            type: string
-        -
-          name: transactionSrc
-          in: header
-          description: 'An identifier of the client/source application that is making the request.Length 512'
-          required: true
-          schema:
-            type: string
-            default: testing
-        -
-          name: PickupRequestConfirmationNumber
-          in: header
-          description: 'Confirmation number of the pickup ground freight shipment to cancel. Length 35'
-          required: true
-          schema:
-            type: string
-        -
-          name: version
-          in: path
-          description: 'Version of the API e.g v1'
-          required: true
-          schema:
-            type: string
-            default: v1
-      responses:
-        '200':
-          description: 'successful operation'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/FREIGHTPICKUPCANCELResponseWrapper'
-        '401':
-          description: 'Unauthorized Request'
-      security:
-        -
-          oauth2: []
   '/freight/{version}/rating/{requestoption}':
     post:
       summary: 'TForce Freight Rate'
@@ -8367,7 +8367,7 @@ paths:
                       EMailAddress: gcc0htq@ups.com
                     ShipperNumber: AT0123
                     ShipTo:
-                      Name: 'Dilbert''s Derbies'
+                      Name: "Dilbert's Derbies"
                       Address:
                         AddressLine: '555 Main St'
                         City: LOUISVILLE
@@ -8692,7 +8692,7 @@ paths:
         -
           name: locale
           in: query
-          description: 'Language and country code of the user, separated by an underscore. Default value is ''en_US'''
+          description: "Language and country code of the user, separated by an underscore. Default value is 'en_US'"
           schema:
             type: string
             default: en_US
@@ -9258,7 +9258,7 @@ components:
           maxLength: 10
           minLength: 1
           type: string
-          description: 'Low-end extended postal code in a range. Example in quotes: Postal Code 30076-''1234''.  Only returned in candidate list. May be alphanumeric'
+          description: "Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric"
         Urbanization:
           maximum: 1
           maxLength: 30
@@ -9344,7 +9344,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice.'
+          description: "Shipper's six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice."
       description: 'Dangerous Goods Utility Request container for Chemical Reference Data.'
       xml:
         name: ChemicalReferenceDataRequest
@@ -9626,7 +9626,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice.'
+          description: "Shipper's six digit account number.  Your UPS Account Number must have correct Dangerous goods contract to successfully use this Webservice."
         ShipFromAddress:
           $ref: '#/components/schemas/AcceptanceAuditPreCheckShipment_ShipFromAddress'
         ShipToAddress:
@@ -9966,7 +9966,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit account number. This is same account number present in the request that is played back in response.'
+          description: "Shipper's six digit account number. This is same account number present in the request that is played back in response."
         Service:
           $ref: '#/components/schemas/AcceptanceAuditPreCheckResponse_Service'
         RegulationSet:
@@ -10057,7 +10057,7 @@ components:
           maxLength: 1
           minLength: 1
           type: string
-          description: 'Represents the type of element. Possible values are ''P'' and ''C''.'
+          description: "Represents the type of element. Possible values are 'P' and 'C'."
         Value:
           maximum: 1
           maxLength: 5
@@ -10301,7 +10301,7 @@ components:
           maximum: 1
           maxLength: 40
           type: string
-          description: 'Specifies a valid HS or HTS code for the shipment''s destination or import country. This field is required if description is not provided.'
+          description: "Specifies a valid HS or HTS code for the shipment's destination or import country. This field is required if description is not provided."
           example: 0901.90.00.10
         description:
           maximum: 1
@@ -10485,7 +10485,7 @@ components:
           maximum: 1
           maxLength: 3
           type: string
-          description: 'Specifies the currency code used for commodity''s price.'
+          description: "Specifies the currency code used for commodity's price."
         isCalculable:
           maximum: 1
           type: boolean
@@ -10943,7 +10943,7 @@ components:
           minLength: 1
           type: string
           description: "Day Of week Code. Valid Values are 1 to 7. \n1-Sunday\n2-Monday \n3-Tuesday \n4-Wednesday\n5-Thursday\n6-Friday\n7-Saturday."
-      description: 'Freight Will Call Search Container. Required if SearchOption is ''05-Freight Will Call Search'''
+      description: "Freight Will Call Search Container. Required if SearchOption is '05-Freight Will Call Search'"
       xml:
         name: FreightWillCallSearch
     FreightWillCallSearch_FacilityAddress:
@@ -11556,15 +11556,15 @@ components:
         StandardHoursOfOperation:
           maximum: 1
           type: string
-          description: 'The standard hours of operation of the drop location will be returned when available. The location''s time may differ because of holidays.'
+          description: "The standard hours of operation of the drop location will be returned when available. The location's time may differ because of holidays."
         NonStandardHoursOfOperation:
           maximum: 1
           type: string
-          description: 'The non-standard hours of operation of the drop location. The location''s time may differ because of holidays, weekends, or other factors that are beyond the locations control. Seven days preceding a given holiday the Non Standard Hours Of Operation will be returned along with the standard hours of operation if available.'
+          description: "The non-standard hours of operation of the drop location. The location's time may differ because of holidays, weekends, or other factors that are beyond the locations control. Seven days preceding a given holiday the Non Standard Hours Of Operation will be returned along with the standard hours of operation if available."
         WillCallHoursOfOperation:
           maximum: 1
           type: string
-          description: 'The will call hours of operation of the drop location will be returned when available. The location''s time may differ because of holidays.'
+          description: "The will call hours of operation of the drop location will be returned when available. The location's time may differ because of holidays."
         Number:
           maximum: 1
           maxLength: 6
@@ -11741,7 +11741,7 @@ components:
           items:
             $ref: '#/components/schemas/LocationAttribute_OptionCode'
           description: "Option code is a container that contains the information of a particular type of Location or retail location or additional service or program type that the drop location contains.\n\nIf the OptionType is Location or Retail Location Type there will be one code since each location has only one location type or retail location type.\n\nIf the Option type is additional services or program types there can be one or more option codes.\n\n**NOTE:** For versions >= v2, this element will always be returned as an array. For requests using version = v1, this element will be returned as an array if there is more than one object and a single object if there is only 1.\n"
-      description: 'LocationAttribute is a container that contains the information about the location''s Location Type, Retail Location Type, Additional Services, or Program Type.'
+      description: "LocationAttribute is a container that contains the information about the location's Location Type, Retail Location Type, Additional Services, or Program Type."
       xml:
         name: LocationAttribute
     LocationAttribute_OptionType:
@@ -12533,7 +12533,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'The Shipper''s UPS Account Number.  Your UPS Account Number must have ''Upload Forms Created Offline'' enabled to use this webservice.'
+          description: "The Shipper's UPS Account Number.  Your UPS Account Number must have 'Upload Forms Created Offline' enabled to use this webservice."
         DocumentID:
           maximum: 1
           maxLength: 26
@@ -12629,7 +12629,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'The Shipper''s UPS Account Number.  Your UPS Account Number must have ''Upload Forms Created Offline'' enabled to use this webservice.'
+          description: "The Shipper's UPS Account Number.  Your UPS Account Number must have 'Upload Forms Created Offline' enabled to use this webservice."
         FormsHistoryDocumentID:
           $ref: '#/components/schemas/PushToImageRepositoryRequest_FormsHistoryDocumentID'
         FormsGroupID:
@@ -12777,7 +12777,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'The Shipper''s UPS Account Number.  Your UPS Account Number must have ''Upload Forms Created Offline'' enabled to use this webservice.'
+          description: "The Shipper's UPS Account Number.  Your UPS Account Number must have 'Upload Forms Created Offline' enabled to use this webservice."
         UserCreatedForm:
           maximum: 13
           type: array
@@ -12834,7 +12834,7 @@ components:
           maxLength: 3
           minLength: 3
           type: string
-          description: 'The type of documents in UserCreatedForm file.  The allowed document types are 001 - Authorization Form, 002 - Commercial Invoice, 003 - Certificate of Origin, 004 - Export Accompanying Document, 005 - Export License, 006 - Import Permit, 007 - One Time NAFTA, 008 - Other Document, 009 - Power of Attorney, 010 - Packing List, 011 - SED Document, 012 - Shipper''s Letter of Instruction, 013 - Declaration. The total number of documents allowed per file or per shipment is 13. Each document type needs to be three digits.'
+          description: "The type of documents in UserCreatedForm file.  The allowed document types are 001 - Authorization Form, 002 - Commercial Invoice, 003 - Certificate of Origin, 004 - Export Accompanying Document, 005 - Export License, 006 - Import Permit, 007 - One Time NAFTA, 008 - Other Document, 009 - Power of Attorney, 010 - Packing List, 011 - SED Document, 012 - Shipper's Letter of Instruction, 013 - Declaration. The total number of documents allowed per file or per shipment is 13. Each document type needs to be three digits."
       description: 'The container for User Created Form. The container holds the file. Total number of allowed files per shipment is 13.'
       xml:
         name: UserCreatedForm
@@ -12989,7 +12989,7 @@ components:
           maxLength: 10
           minLength: 6
           type: string
-          description: 'UPS account number.  Shipper''s (requester of the pickup) UPS account number'
+          description: "UPS account number.  Shipper's (requester of the pickup) UPS account number"
         AccountCountryCode:
           maximum: 1
           maxLength: 2
@@ -13537,7 +13537,7 @@ components:
           maxLength: 10
           minLength: 6
           type: string
-          description: 'UPS account number.  Shipper''s (requester of the pickup) UPS account number'
+          description: "UPS account number.  Shipper's (requester of the pickup) UPS account number"
         AccountCountryCode:
           maximum: 1
           maxLength: 2
@@ -15102,7 +15102,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit account number.'
+          description: "Shipper's six digit account number."
         ShipmentIdentificationNumber:
           maximum: 1
           maxLength: 18
@@ -15161,19 +15161,19 @@ components:
           maxLength: 5
           minLength: 2
           type: string
-          description: 'The Ship To location''s state or province code.'
+          description: "The Ship To location's state or province code."
         PostalCode:
           maximum: 1
           maxLength: 9
           minLength: 1
           type: string
-          description: 'The Ship To location''s postal code. 9 characters are accepted.'
+          description: "The Ship To location's postal code. 9 characters are accepted."
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'The Ship To location''s country or territory code.'
+          description: "The Ship To location's country or territory code."
       description: 'Ship To address container.'
       xml:
         name: ShipToAddress
@@ -15203,19 +15203,19 @@ components:
           maxLength: 5
           minLength: 2
           type: string
-          description: 'The Ship From location''s state or province code.'
+          description: "The Ship From location's state or province code."
         PostalCode:
           maximum: 1
           maxLength: 9
           minLength: 1
           type: string
-          description: 'The Ship From location''s postal code. 9 characters are accepted.'
+          description: "The Ship From location's postal code. 9 characters are accepted."
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'The Ship From location''s country or territory code.'
+          description: "The Ship From location's country or territory code."
       description: 'Ship From address container.'
       xml:
         name: ShipFromAddress
@@ -15276,7 +15276,7 @@ components:
           maxLength: 7
           minLength: 1
           type: string
-          description: 'This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is ''LQ'' or ''FR'''
+          description: "This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'"
         SubRiskClass:
           maximum: 1
           maxLength: 7
@@ -15479,7 +15479,7 @@ components:
           maxLength: 11
           minLength: 11
           type: string
-          description: 'Indicates the action to be taken by the XML service. The only valid value is  ''QVEvents'''
+          description: "Indicates the action to be taken by the XML service. The only valid value is  'QVEvents'"
       description: 'Contains QuantumView request criteria components.'
       xml:
         name: Request
@@ -15558,7 +15558,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: '''Success'' or ''Failure'''
+          description: "'Success' or 'Failure'"
         Error:
           type: array
           items:
@@ -15836,7 +15836,7 @@ components:
           maxLength: 1
           minLength: 1
           type: string
-          description: 'Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user''s shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear'
+          description: "Commercial Invoice Removal (CIR) is an accessorial or indication that will allow a shipper to dictate that UPS remove the Commercial Invoice from the user's shipment before the shipment is delivered to the ultimate consignee. If shipment is CIR then this element will have value. For no CIR this element will not be appear"
         PostalServiceTrackingID:
           maximum: 1
           maxLength: 35
@@ -16006,46 +16006,46 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Shipper''s company name.'
+          description: "Shipper's company name."
         AttentionName:
           maximum: 1
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Shipper''s Attention Name.'
+          description: "Shipper's Attention Name."
         TaxIdentificationNumber:
           maximum: 1
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Shipper''s Tax Identification Number.'
+          description: "Shipper's Tax Identification Number."
         PhoneNumber:
           maximum: 1
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Shipper''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
+          description: "Shipper's Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different."
         FaxNumber:
           maximum: 1
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Shipper''s Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
+          description: "Shipper's Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different."
         ShipperNumber:
           maximum: 1
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit alphanumeric account number.'
+          description: "Shipper's six digit alphanumeric account number."
         EMailAddress:
           maximum: 1
           maxLength: 50
           minLength: 1
           type: string
-          description: 'Shipper''s designated contact eMail address.'
+          description: "Shipper's designated contact eMail address."
         Address:
           $ref: '#/components/schemas/ManifestShipper_Address'
-      description: 'Shipper''s record for a shipment.'
+      description: "Shipper's record for a shipment."
       xml:
         name: Shipper
     ManifestShipper_Address:
@@ -16077,13 +16077,13 @@ components:
           maxLength: 30
           minLength: 1
           type: string
-          description: 'Shipper''s City.'
+          description: "Shipper's City."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
           minLength: 1
           type: string
-          description: 'Shipper''s state or province code. Must be valid US state. If the Shipper''s country or territory is US or CA a two character code is required, otherwise the StateProvinceCode is optional.'
+          description: "Shipper's state or province code. Must be valid US state. If the Shipper's country or territory is US or CA a two character code is required, otherwise the StateProvinceCode is optional."
         PostalCode:
           maximum: 1
           maxLength: 9
@@ -16118,37 +16118,37 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Consignee''s company name.'
+          description: "Consignee's company name."
         AttentionName:
           maximum: 1
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Contact name at the consignee''s location.'
+          description: "Contact name at the consignee's location."
         PhoneNumber:
           maximum: 1
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Consignee''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
+          description: "Consignee's Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different."
         TaxIdentificationNumber:
           maximum: 1
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Consignee''s Tax Identification Number.'
+          description: "Consignee's Tax Identification Number."
         FaxNumber:
           maximum: 1
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Consignee''s Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
+          description: "Consignee's Fax Number. US Fax numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different."
         EMailAddress:
           maximum: 1
           maxLength: 50
           minLength: 1
           type: string
-          description: 'Consignee''s email address.'
+          description: "Consignee's email address."
         Address:
           $ref: '#/components/schemas/ManifestShipTo_Address'
         LocationID:
@@ -16175,7 +16175,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Consignee''s name.'
+          description: "Consignee's name."
         AddressLine1:
           maximum: 1
           maxLength: 35
@@ -16199,13 +16199,13 @@ components:
           maxLength: 30
           minLength: 1
           type: string
-          description: 'Consignee''s City.'
+          description: "Consignee's City."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
           minLength: 1
           type: string
-          description: 'Consignee''s state or province code. Must be valid US state. If the consignee''s country or territory  is US or CA a two character code is required. Otherwise, the StateProvinceCode is optional.'
+          description: "Consignee's state or province code. Must be valid US state. If the consignee's country or territory  is US or CA a two character code is required. Otherwise, the StateProvinceCode is optional."
         PostalCode:
           maximum: 1
           maxLength: 9
@@ -16298,7 +16298,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Package''s tracking number.'
+          description: "Package's tracking number."
         ReferenceNumber:
           type: array
           items:
@@ -16428,7 +16428,7 @@ components:
       maxLength: 35
       minLength: 1
       type: string
-      description: 'Package''s tracking number.'
+      description: "Package's tracking number."
     ManifestPackage_ReferenceNumber:
       maximum: 1
       required:
@@ -16594,8 +16594,8 @@ components:
           maxLength: 16
           minLength: 16
           type: string
-          description: 'The shipment''s customs value amount.'
-      description: 'Information about shipment''s customs value.'
+          description: "The shipment's customs value amount."
+      description: "Information about shipment's customs value."
       xml:
         name: CustomsValue
     Manifest_BillToAccount:
@@ -16643,7 +16643,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'UPS Access Point''s Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different.'
+          description: "UPS Access Point's Phone Number. US Phone numbers must be 10 digits. No formatting is allowed. Required if origin and destination countries or territories are different."
       description: 'Information about Hold for Pickup UPS Access Point Address'
       xml:
         name: UAPAddress
@@ -16680,19 +16680,19 @@ components:
           maxLength: 5
           minLength: 1
           type: string
-          description: 'UPS Access Point''s state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional.'
+          description: "UPS Access Point's state or province code. Must be valid US state. If the UPS Access Point country or territory is US or CA a two character code is required, otherwise, the StateProvinceCode is optional."
         PostalCode:
           maximum: 1
           maxLength: 9
           minLength: 1
           type: string
-          description: 'UPS Access Point''s postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed.'
+          description: "UPS Access Point's postal code. If the address is US then 5 or 9 digits are required. CA addresses must provide a 6 character postal code that has the format of A#A#A#, where A is an alphabetic character and # is numeric digit. Otherwise, 1 to 16 alphanumeric characters are allowed."
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'UPS Access Point''s country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA'
+          description: "UPS Access Point's country or territory code. Valid values: CA,MX, PR, US, AT, BE, DE, DK, ES, FI, FR, GB, IE, IT, NL, PT, SE, MC, and VA"
       description: 'Information that specifies a physical location.'
       xml:
         name: Address
@@ -16720,13 +16720,13 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit alphanumeric account number.'
+          description: "Shipper's six digit alphanumeric account number."
         TrackingNumber:
           maximum: 1
           maxLength: 18
           minLength: 18
           type: string
-          description: 'Package''s 1Z tracking number.'
+          description: "Package's 1Z tracking number."
         Date:
           maximum: 1
           maxLength: 8
@@ -16899,13 +16899,13 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit alphanumeric account number.'
+          description: "Shipper's six digit alphanumeric account number."
         TrackingNumber:
           maximum: 1
           maxLength: 18
           minLength: 18
           type: string
-          description: 'Package''s 1Z tracking number.'
+          description: "Package's 1Z tracking number."
         Date:
           maximum: 1
           maxLength: 8
@@ -17038,7 +17038,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Consignee''s name for package shipping address. It will be returned if there is any update due to exception.'
+          description: "Consignee's name for package shipping address. It will be returned if there is any update due to exception."
         StreetNumberLow:
           maximum: 1
           maxLength: 11
@@ -17209,13 +17209,13 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s six digit alphanumeric account number.'
+          description: "Shipper's six digit alphanumeric account number."
         TrackingNumber:
           maximum: 1
           maxLength: 18
           minLength: 18
           type: string
-          description: 'Package''s 1Z tracking number.'
+          description: "Package's 1Z tracking number."
         Date:
           maximum: 1
           maxLength: 8
@@ -17365,7 +17365,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Consignee''s name at the location where package is delivered.'
+          description: "Consignee's name at the location where package is delivered."
         StreetNumberLow:
           maximum: 1
           maxLength: 11
@@ -17520,13 +17520,13 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Package''s tracking number.'
+          description: "Package's tracking number."
         ShipperNumber:
           maximum: 1
           maxLength: 10
           minLength: 1
           type: string
-          description: 'Shipper''s alphanumeric account number.'
+          description: "Shipper's alphanumeric account number."
         ShipmentReferenceNumber:
           type: array
           items:
@@ -17784,7 +17784,7 @@ components:
           maxLength: 4
           minLength: 4
           type: string
-          description: 'Indicates Rate API to display the new release features in Rate API response based on Rate release. See the What''s New section for the latest Rate release. Supported values: 1601, 1607, 1701, 1707, 2108, 2205'
+          description: "Indicates Rate API to display the new release features in Rate API response based on Rate release. See the What's New section for the latest Rate release. Supported values: 1601, 1607, 1701, 1707, 2108, 2205"
         TransactionReference:
           $ref: '#/components/schemas/Request_TransactionReference'
       description: 'Request container.  N/A'
@@ -17921,19 +17921,19 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Shipper''s name or company name.  Length is not validated.'
+          description: "Shipper's name or company name.  Length is not validated."
         AttentionName:
           maximum: 1
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Shipper''s attention name.  Length is not validated.'
+          description: "Shipper's attention name.  Length is not validated."
         ShipperNumber:
           maximum: 1
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Shipper''s UPS account number.  A valid account number is required to receive negotiated rates. Optional otherwise. Cannot be present when requesting UserLevelDiscount.'
+          description: "Shipper's UPS account number.  A valid account number is required to receive negotiated rates. Optional otherwise. Cannot be present when requesting UserLevelDiscount."
         Address:
           $ref: '#/components/schemas/Shipper_Address'
       description: 'Shipper container. Information associated with the UPS account number.'
@@ -17960,7 +17960,7 @@ components:
           maxLength: 30
           minLength: 1
           type: string
-          description: 'Shipper''s City.   For forward Shipment 30 characters are accepted, but only 15 characters will be printed on the label.'
+          description: "Shipper's City.   For forward Shipment 30 characters are accepted, but only 15 characters will be printed on the label."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
@@ -17972,7 +17972,7 @@ components:
           maxLength: 9
           minLength: 1
           type: string
-          description: 'Shipper''s postal code.'
+          description: "Shipper's postal code."
         CountryCode:
           maximum: 1
           maxLength: 2
@@ -18026,7 +18026,7 @@ components:
           maxLength: 30
           minLength: 1
           type: string
-          description: 'Consignee''s city. 30 characters are accepted, but only 15 characters will be printed on the label.'
+          description: "Consignee's city. 30 characters are accepted, but only 15 characters will be printed on the label."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
@@ -18148,7 +18148,7 @@ components:
           type: array
           items:
             type: string
-          description: 'The UPS Access Point''s street address, including name and number (when applicable).  Length is not validated.'
+          description: "The UPS Access Point's street address, including name and number (when applicable).  Length is not validated."
         City:
           maximum: 1
           maxLength: 30
@@ -18290,7 +18290,7 @@ components:
           minLength: 1
           type: string
           description: "The postal code for the UPS accounts pickup address. The pickup postal code was entered in the UPS system when the account was set-up.  The postal code must be the same as the UPS Bill Receiver account number pickup address postal code.\n\nRequired for United States and Canadian UPS accounts and/or if the UPS account pickup address has a postal code.\nIf the UPS accounts pickup country or territory is US or Puerto Rico, the postal code is 5 or 9 digits.\n\nThe character - may be used to separate the first five digits and the last four digits.\n\nIf the UPS accounts pickup country or territory is CA, the postal code is 6 alphanumeric characters whose format is A#A#A# where A is an uppercase letter and # is a digit\n"
-      description: 'Container for additional information for the bill receiver''s UPS accounts address.'
+      description: "Container for additional information for the bill receiver's UPS accounts address."
       xml:
         name: Address
     RateShipmentCharge_BillThirdParty:
@@ -18342,7 +18342,7 @@ components:
           maxLength: 9
           minLength: 1
           type: string
-          description: 'Origin postal code. The postal code must be the same as the UPS account pickup address postal code. Required for United States and Canadian UPS accounts and/or if the UPS account pickup address has a postal code. If the UPS account''s pickup country or territory is US or Puerto Rico, the postal code is 5 or 9 digits. The character ''-'' may be used to separate the first five digits and the last four digits. If the UPS account''s pickup country or territory is CA, the postal code is 6 alphanumeric characters whose format is A#A#A# where A is an uppercase letter and # is a digit.'
+          description: "Origin postal code. The postal code must be the same as the UPS account pickup address postal code. Required for United States and Canadian UPS accounts and/or if the UPS account pickup address has a postal code. If the UPS account's pickup country or territory is US or Puerto Rico, the postal code is 5 or 9 digits. The character '-' may be used to separate the first five digits and the last four digits. If the UPS account's pickup country or territory is CA, the postal code is 6 alphanumeric characters whose format is A#A#A# where A is an uppercase letter and # is a digit."
         CountryCode:
           maximum: 1
           maxLength: 2
@@ -18625,7 +18625,7 @@ components:
         AdditionalHandlingIndicator:
           maximum: 1
           type: string
-          description: 'A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it''s a non-corrugated package.  Empty Tag.'
+          description: "A flag indicating if the packages require additional handling. True if AdditionalHandlingIndicator tag exists; false otherwise. Additional Handling indicator indicates it's a non-corrugated package.  Empty Tag."
         SimpleRate:
           $ref: '#/components/schemas/Package_SimpleRate'
         UPSPremier:
@@ -18758,13 +18758,13 @@ components:
           maxLength: 6
           minLength: 4
           type: string
-          description: 'Specifies the Commodity''s NMFC prime code.  Required if NMFC Container is present.'
+          description: "Specifies the Commodity's NMFC prime code.  Required if NMFC Container is present."
         SubCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Specifies the Commodity''s NMFC sub code.  Needs to be provided when the SubCode associated with the PrimeCode is other than 00. UPS defaults the sub value to 00 if not provided. If provided the Sub Code should be associated with the PrimeCode of the NMFC.'
+          description: "Specifies the Commodity's NMFC sub code.  Needs to be provided when the SubCode associated with the PrimeCode is other than 00. UPS defaults the sub value to 00 if not provided. If provided the Sub Code should be associated with the PrimeCode of the NMFC."
       description: 'Container to hold the NMFC codes.'
       xml:
         name: NMFC
@@ -19033,7 +19033,7 @@ components:
           maxLength: 7
           minLength: 1
           type: string
-          description: 'This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is ''LQ'' or ''FR''  Applies only if SubVersion is greater than or equal to 1701.'
+          description: "This is the hazard class associated to the specified commodity. Required if CommodityRegulatedLevelCode is 'LQ' or 'FR'  Applies only if SubVersion is greater than or equal to 1701."
         IDNumber:
           maximum: 1
           maxLength: 6
@@ -19045,7 +19045,7 @@ components:
           maxLength: 2
           minLength: 2
           type: string
-          description: 'The method of transport by which a shipment is approved to move and the regulations associated with that method.  Only required when the CommodityRegulatedLevelCode is FR or LQ.Valid values: 01 - Highway02 - Ground03 - Passenger Aircraft04 - Cargo Aircraft Only  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package having different TransportationMode, TransportationMode of first ChemicalRecord would be considered for validating and rating the package. All TransportationMode except for ''04'' are general service offering. If any chemical record contains ''04'' as TransportationMode, ShipperNumber needs to be authorized to use ''04'' as TransportationMode.'
+          description: "The method of transport by which a shipment is approved to move and the regulations associated with that method.  Only required when the CommodityRegulatedLevelCode is FR or LQ.Valid values: 01 - Highway02 - Ground03 - Passenger Aircraft04 - Cargo Aircraft Only  Applies only if SubVersion is greater than or equal to 1701. For multiple ChemicalRecords per package having different TransportationMode, TransportationMode of first ChemicalRecord would be considered for validating and rating the package. All TransportationMode except for '04' are general service offering. If any chemical record contains '04' as TransportationMode, ShipperNumber needs to be authorized to use '04' as TransportationMode."
         RegulationSet:
           maximum: 1
           maxLength: 4
@@ -19057,7 +19057,7 @@ components:
           maxLength: 25
           minLength: 1
           type: string
-          description: '24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is ''1'', area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  Applies only if SubVersion is greater than or equal to 1701.'
+          description: "24 Hour Emergency Phone Number of the shipper. Valid values for this field are (0) through (9) with trailing blanks. For numbers within the U.S., the layout is '1', area code, 7-digit number. For all other countries or territories the layout is country or territory code, area code, number.  Applies only if SubVersion is greater than or equal to 1701."
         EmergencyContact:
           maximum: 1
           maxLength: 35
@@ -19069,7 +19069,7 @@ components:
           maxLength: 2
           minLength: 1
           type: string
-          description: 'Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, ''RQ'' should be entered.  Applies only if SubVersion is greater than or equal to 1701.'
+          description: "Required if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, 'RQ' should be entered.  Applies only if SubVersion is greater than or equal to 1701."
         SubRiskClass:
           maximum: 1
           maxLength: 100
@@ -19310,7 +19310,7 @@ components:
         CommercialInvoiceRemovalIndicator:
           maximum: 1
           type: string
-          description: 'Presence/Absence Indicator. Any value inside is ignored. CommercialInvoiceRemovalIndicator - empty tag means indicator is present. CommercialInvoiceRemovalIndicator allows a shipper to dictate that UPS remove the Commercial Invoice from the user''s shipment before the shipment is delivered to the ultimate consignee.'
+          description: "Presence/Absence Indicator. Any value inside is ignored. CommercialInvoiceRemovalIndicator - empty tag means indicator is present. CommercialInvoiceRemovalIndicator allows a shipper to dictate that UPS remove the Commercial Invoice from the user's shipment before the shipment is delivered to the ultimate consignee."
         ImportControl:
           $ref: '#/components/schemas/ShipmentServiceOptions_ImportControl'
         ReturnService:
@@ -19494,7 +19494,7 @@ components:
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Code for type of Import Control shipment. Valid values are: ''01'' = ImportControl Print and Mail ''02'' = ImportControl One-Attempt                                     ''03'' = ImportControl Three-Attempt''04'' = ImportControl Electronic Label ''05'' = ImportControl Print Label.'
+          description: "Code for type of Import Control shipment. Valid values are: '01' = ImportControl Print and Mail '02' = ImportControl One-Attempt                                     '03' = ImportControl Three-Attempt'04' = ImportControl Electronic Label '05' = ImportControl Print Label."
         Description:
           maximum: 1
           maxLength: 50
@@ -19515,7 +19515,7 @@ components:
           maxLength: 2
           minLength: 1
           type: string
-          description: 'Code for type of Return shipment. Valid values are:''2'' = UPS Print and Mail Return Label ''3'' =UPS One-Attempt Return Label''5'' = UPS Three Attempt Return Label''8'' = UPS Electronic Return Label''9'' = UPS Print Return Label''10'' = UPS Exchange Print Return Label                            ''11'' = UPS Pack & Collect Service 1-Attempt Box 1 ''12'' = UPS Pack & Collect Service 1-Attempt Box 2 ''13'' = UPS Pack & Collect Service 1-Attempt Box 3 ''14'' = UPS Pack & Collect Service 1-Attempt Box 4 ''15'' = UPS Pack & Collect Service 1-Attempt Box 5 ''16'' = UPS Pack & Collect Service 3-Attempt Box 1 ''17'' = UPS Pack & Collect Service 3-Attempt Box 2 ''18'' = UPS Pack & Collect Service 3-Attempt Box 3 ''19'' = UPS Pack & Collect Service 3-Attempt Box 4 ''20'' = UPS Pack & Collect Service 3-Attempt Box 5  10 = UPS Exchange Print Return Label and 5 = UPS Three Attempt Return Label are not valid for UPS WorldWide Express Freight and UPS Worldwide Express Freight Midday Services. 3 = UPS One-Attempt Return Label is not valid return service with UPS Premium Care accessorial.'
+          description: "Code for type of Return shipment. Valid values are:'2' = UPS Print and Mail Return Label '3' =UPS One-Attempt Return Label'5' = UPS Three Attempt Return Label'8' = UPS Electronic Return Label'9' = UPS Print Return Label'10' = UPS Exchange Print Return Label                            '11' = UPS Pack & Collect Service 1-Attempt Box 1 '12' = UPS Pack & Collect Service 1-Attempt Box 2 '13' = UPS Pack & Collect Service 1-Attempt Box 3 '14' = UPS Pack & Collect Service 1-Attempt Box 4 '15' = UPS Pack & Collect Service 1-Attempt Box 5 '16' = UPS Pack & Collect Service 3-Attempt Box 1 '17' = UPS Pack & Collect Service 3-Attempt Box 2 '18' = UPS Pack & Collect Service 3-Attempt Box 3 '19' = UPS Pack & Collect Service 3-Attempt Box 4 '20' = UPS Pack & Collect Service 3-Attempt Box 5  10 = UPS Exchange Print Return Label and 5 = UPS Three Attempt Return Label are not valid for UPS WorldWide Express Freight and UPS Worldwide Express Freight Midday Services. 3 = UPS One-Attempt Return Label is not valid return service with UPS Premium Care accessorial."
         Description:
           maximum: 1
           maxLength: 50
@@ -20261,7 +20261,7 @@ components:
           $ref: '#/components/schemas/NegotiatedRateCharges_TotalCharge'
         TotalChargesWithTaxes:
           $ref: '#/components/schemas/NegotiatedRateCharges_TotalChargesWithTaxes'
-      description: 'Negotiated Rate Charges Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn''t qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.'
+      description: "Negotiated Rate Charges Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn't qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate."
       nullable: true
       xml:
         name: NegotiatedRateCharges
@@ -20702,6 +20702,7 @@ components:
           type: string
           description: 'The Disclaimer is provided based upon the origin and destination country or territory codes provided in the request document. The possible disclaimers that can be returned are available in the Service Guaranteed Disclaimers table.'
       description: 'Container for returned Time in Transit information.  Will only be returned if request option was either "ratetimeintransit" or "shoptimeintransit" and DeliveryTimeInformation container was present in request.'
+      nullable: true
       xml:
         name: TimeInTransit
     TimeInTransit_ServiceSummary:
@@ -21127,7 +21128,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Shipper''s Tax Identification Number.  Conditionally required if EEI form (International forms) is requested and ship From is not mentioned.'
+          description: "Shipper's Tax Identification Number.  Conditionally required if EEI form (International forms) is requested and ship From is not mentioned."
         Phone:
           $ref: '#/components/schemas/Shipper_Phone'
         ShipperNumber:
@@ -21141,16 +21142,16 @@ components:
           maxLength: 14
           minLength: 1
           type: string
-          description: 'Shipper''s Fax Number.'
+          description: "Shipper's Fax Number."
         EMailAddress:
           maximum: 1
           maxLength: 50
           minLength: 1
           type: string
-          description: 'Shipper''s email address.  Must be associated with the UserId specified in the AccessRequest XML.'
+          description: "Shipper's email address.  Must be associated with the UserId specified in the AccessRequest XML."
         Address:
           $ref: '#/components/schemas/Shipper_Address'
-      description: 'Container for the Shipper''s information.'
+      description: "Container for the Shipper's information."
       xml:
         name: Shipper
     Shipper_Phone:
@@ -21170,7 +21171,7 @@ components:
           maxLength: 4
           minLength: 1
           type: string
-          description: 'Shipper''s phone extension.'
+          description: "Shipper's phone extension."
       description: 'Container tag for Phone Number.'
       xml:
         name: Phone
@@ -21186,7 +21187,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'Consignee''s company name.  All other accounts must be either a daily pickup account or an occasional account.'
+          description: "Consignee's company name.  All other accounts must be either a daily pickup account or an occasional account."
         AttentionName:
           maximum: 1
           maxLength: 35
@@ -21204,7 +21205,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Consignee''s tax identification number.'
+          description: "Consignee's tax identification number."
         Phone:
           $ref: '#/components/schemas/ShipTo_Phone'
         FaxNumber:
@@ -21212,13 +21213,13 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Consignee''s fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed.'
+          description: "Consignee's fax number.  If ShipTo country or territory is US 10 digits allowed, otherwise 1-15 digits allowed."
         EMailAddress:
           maximum: 1
           maxLength: 50
           minLength: 1
           type: string
-          description: 'Consignee''s email address.'
+          description: "Consignee's email address."
         Address:
           $ref: '#/components/schemas/ShipTo_Address'
         LocationID:
@@ -21605,7 +21606,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Sistema Di Interscambio(SDI) which is the recipient code for the customer''s interchange value or Interchange System Code'
+          description: "Sistema Di Interscambio(SDI) which is the recipient code for the customer's interchange value or Interchange System Code"
         Address:
           $ref: '#/components/schemas/BillThirdParty_Address'
       description: 'Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.'
@@ -21702,7 +21703,7 @@ components:
         BarCodeIndicator:
           maximum: 1
           type: string
-          description: 'If the indicator is present then the reference number''s value will be bar coded on the label.  This is an empty tag, any value inside is ignored. Only one shipment-level or package-level reference number can be bar coded per shipment. In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces.'
+          description: "If the indicator is present then the reference number's value will be bar coded on the label.  This is an empty tag, any value inside is ignored. Only one shipment-level or package-level reference number can be bar coded per shipment. In order to barcode a reference number, its value must be no longer than 14 alphanumeric characters or 24 numeric characters and cannot contain spaces."
         Code:
           maximum: 1
           maxLength: 2
@@ -21766,7 +21767,7 @@ components:
         CommercialInvoiceRemovalIndicator:
           maximum: 1
           type: string
-          description: 'CommercialInvoiceRemovalIndicator allows a shipper to dictate UPS to remove the Commercial Invoice from the user''s shipment before the shipment is delivered to the ultimate consignee.'
+          description: "CommercialInvoiceRemovalIndicator allows a shipper to dictate UPS to remove the Commercial Invoice from the user's shipment before the shipment is delivered to the ultimate consignee."
         UPScarbonneutralIndicator:
           maximum: 1
           type: string
@@ -22059,7 +22060,7 @@ components:
           maxLength: 35
           minLength: 1
           type: string
-          description: 'The customer''s order reference number.  Applies to Invoice and Partial Invoice forms only.'
+          description: "The customer's order reference number.  Applies to Invoice and Partial Invoice forms only."
         TermsOfShipment:
           maximum: 1
           maxLength: 3
@@ -22508,7 +22509,7 @@ components:
           maxLength: 17
           minLength: 2
           type: string
-          description: 'Shipment Reference Number for use during interaction with AES. Valid for EEI form for Shipper Filed option ''C'' and AES Direct Filed.'
+          description: "Shipment Reference Number for use during interaction with AES. Valid for EEI form for Shipper Filed option 'C' and AES Direct Filed."
       description: 'Indicates the EEI Shipper Filed option or AES Direct. (Option 1 or 2).  Applicable for EEI form.'
       xml:
         name: ShipperFiled
@@ -22919,7 +22920,7 @@ components:
           minLength: 1
           type: string
           description: 'SoldTo AccountNumber'
-      description: 'SoldTo Container. The Sold To party''s country code must be the same as the Ship To party''s country code with the exception of Canada and satellite countries.  Applies to Invoice and NAFTA CO Forms. Required if Invoice or NAFTA CO (International Form) is requested.'
+      description: "SoldTo Container. The Sold To party's country code must be the same as the Ship To party's country code with the exception of Canada and satellite countries.  Applies to Invoice and NAFTA CO Forms. Required if Invoice or NAFTA CO (International Form) is requested."
       xml:
         name: SoldTo
     SoldTo_Phone:
@@ -22958,37 +22959,37 @@ components:
           type: array
           items:
             type: string
-          description: 'SoldTo location''s street address.  Applies to NAFTA CO.'
+          description: "SoldTo location's street address.  Applies to NAFTA CO."
         City:
           maximum: 1
           maxLength: 30
           minLength: 1
           type: string
-          description: 'SoldTo location''s city.'
+          description: "SoldTo location's city."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
           minLength: 1
           type: string
-          description: 'SoldTo location''s state or province code.  Required for certain countries or territories.'
+          description: "SoldTo location's state or province code.  Required for certain countries or territories."
         Town:
           maximum: 1
           maxLength: 30
           minLength: 1
           type: string
-          description: 'SoldTo location''s town code.'
+          description: "SoldTo location's town code."
         PostalCode:
           maximum: 1
           maxLength: 9
           minLength: 1
           type: string
-          description: 'SoldTo location''s postal code.'
+          description: "SoldTo location's postal code."
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'SoldTo location''s country or territory code.'
+          description: "SoldTo location's country or territory code."
       description: 'Sold To Address Container.  Applies to NAFTA CO.'
       xml:
         name: Address
@@ -23025,7 +23026,7 @@ components:
           maxLength: 2
           minLength: 2
           type: string
-          description: 'The country or territory in which the good was manufactured, produced or grown. For detailed information on country or territory of origin, certificate of origin, rules of origin, and any related matters, please refer to the U.S. Customs and Border Protection Web site at www.customs.gov or contact your country or territory''s Customs authority.'
+          description: "The country or territory in which the good was manufactured, produced or grown. For detailed information on country or territory of origin, certificate of origin, rules of origin, and any related matters, please refer to the U.S. Customs and Border Protection Web site at www.customs.gov or contact your country or territory's Customs authority."
         JointProductionIndicator:
           maximum: 1
           type: string
@@ -23114,7 +23115,7 @@ components:
           maxLength: 19
           minLength: 1
           type: string
-          description: 'Monetary amount used to specify the worth or price of the commodity. Amount should be greater than zero.  Applies to Invoice and Partial Invoice form. Required for Invoice forms and optional for Partial Invoice. Amount should be greater than zero.  Valid characters are 0-9 and. (Decimal point). Limit to 6 digits after the decimal. The maximum length of the field is 19 including ''.'' and can hold up to 6 decimal places.(#####.######, ######.#####, #######.####, ########.###, #########.##,##########.#,############). The value of this product  and the other products should be such that the invoice line total which is the sum of ( number*values) of all products should not exceed 9999999999999999.99'
+          description: "Monetary amount used to specify the worth or price of the commodity. Amount should be greater than zero.  Applies to Invoice and Partial Invoice form. Required for Invoice forms and optional for Partial Invoice. Amount should be greater than zero.  Valid characters are 0-9 and. (Decimal point). Limit to 6 digits after the decimal. The maximum length of the field is 19 including '.' and can hold up to 6 decimal places.(#####.######, ######.#####, #######.####, ########.###, #########.##,##########.#,############). The value of this product  and the other products should be such that the invoice line total which is the sum of ( number*values) of all products should not exceed 9999999999999999.99"
       description: 'Container tag for the Unit information of each product. (also called as commodity)  Required for Invoice forms and optional for Partial Invoice.'
       xml:
         name: Unit
@@ -23175,7 +23176,7 @@ components:
           maxLength: 5
           minLength: 1
           type: string
-          description: 'Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and ''.'' (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including ''.'' and can hold up to 1 decimal place.'
+          description: "Weight of Product.  Applies to CO and EEI forms only. Valid characters are 0-9 and '.' (Decimal point). Limit to 1 digit after the decimal. The maximum length of the field is 5 including '.' and can hold up to 1 decimal place."
       description: 'The shipping weight, including containers, for each commodity with a separate Harmonized Tariff Code / Schedule B Number. This weight does not include carrier equipment.  Applies to CO and EEI forms only. Required for CO and EEI forms.'
       xml:
         name: ProductWeight
@@ -23422,7 +23423,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'The discount to be subtracted from the sum of the total value on the invoice.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and ''.''  (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including ''.'' and can hold up to 2 decimal places. This value should be greater than or equal to zero or less than or equal to the value of all goods listed on the invoice.'
+          description: "The discount to be subtracted from the sum of the total value on the invoice.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and '.'  (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including '.' and can hold up to 2 decimal places. This value should be greater than or equal to zero or less than or equal to the value of all goods listed on the invoice."
       description: 'Container tag that holds the discount.  Applies to Invoice and Partial Invoice forms only.'
       xml:
         name: Discount
@@ -23437,7 +23438,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'Cost to transport the shipment.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and ''.''  (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including ''.'' and can hold up to 2 decimal places.'
+          description: "Cost to transport the shipment.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and '.'  (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including '.' and can hold up to 2 decimal places."
       description: 'Container tag that holds the Freight Charges.  Applies to Invoice and Partial Invoice forms only.'
       xml:
         name: FreightCharges
@@ -23452,7 +23453,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'The amount the shipper or receiver pays to cover the cost of replacing the shipment if it is lost or damaged.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and ''.''  (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including ''.'' and can hold up to 2 decimal places.'
+          description: "The amount the shipper or receiver pays to cover the cost of replacing the shipment if it is lost or damaged.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and '.'  (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including '.' and can hold up to 2 decimal places."
       description: 'Container tag that holds the Insurance Charges.  Applies to Invoice and Partial Invoice forms only.'
       xml:
         name: InsuranceCharges
@@ -23468,7 +23469,7 @@ components:
           maxLength: 15
           minLength: 1
           type: string
-          description: 'The Monetary value of Other Charges.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and ''.'' (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including ''.'' and can hold up to 2 decimal places.'
+          description: "The Monetary value of Other Charges.  Applies to Invoice and Partial Invoice forms only. Required for Invoice forms and optional for Partial Invoice. Valid characters are 0-9 and '.' (Decimal point). Limit to 2 digit after the decimal. The maximum length of the field is 15 including '.' and can hold up to 2 decimal places."
         Description:
           maximum: 1
           maxLength: 10
@@ -23695,7 +23696,7 @@ components:
           maxLength: 12
           minLength: 1
           type: string
-          description: 'Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including ''.'' and can hold up to 2 decimal place. (e.g. 999999999.99)'
+          description: "Unit price of the commodity. Applicable for Air Freight only  Limit to 2 digit after the decimal. The maximum length of the field is 12 including '.' and can hold up to 2 decimal place. (e.g. 999999999.99)"
         Packaging:
           $ref: '#/components/schemas/Package_Packaging'
         Dimensions:
@@ -23724,7 +23725,7 @@ components:
         AdditionalHandlingIndicator:
           maximum: 1
           type: string
-          description: 'Additional Handling Required. The presence indicates additional handling is required, the absence indicates no additional handling is required. Additional Handling indicator indicates it''s a non-corrugated package.'
+          description: "Additional Handling Required. The presence indicates additional handling is required, the absence indicates no additional handling is required. Additional Handling indicator indicates it's a non-corrugated package."
         SimpleRate:
           $ref: '#/components/schemas/Package_SimpleRate'
         UPSPremier:
@@ -24167,7 +24168,7 @@ components:
           maxLength: 2
           minLength: 1
           type: string
-          description: 'Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, ''RQ'' should be entered.'
+          description: "Recommended if CommodityRegulatedLevelCode = LQ or FR and if the field applies to the material by regulation. If reportable quantity is met, 'RQ' should be entered."
         RegulationSet:
           maximum: 1
           maxLength: 4
@@ -24787,7 +24788,7 @@ components:
           $ref: '#/components/schemas/NegotiatedRateCharges_TotalCharge'
         TotalChargesWithTaxes:
           $ref: '#/components/schemas/NegotiatedRateCharges_TotalChargesWithTaxes'
-      description: 'Negotiated Rates Charge Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn''t qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.'
+      description: "Negotiated Rates Charge Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn't qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate."
       nullable: true
       xml:
         name: NegotiatedRateCharges
@@ -25488,7 +25489,7 @@ components:
           maxLength: 18
           minLength: 18
           type: string
-          description: 'The shipment''s identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case.'
+          description: "The shipment's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case."
         TrackingNumber:
           type: array
           items:
@@ -25496,7 +25497,7 @@ components:
             maxLength: 18
             minLength: 18
             type: string
-          description: 'The package''s identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case'
+          description: "The package's identification number  Alpha-numeric. Must pass 1Z rules. Must be upper case"
       description: 'The container for the Ship Void Request.'
       xml:
         name: VoidShipment
@@ -25614,7 +25615,7 @@ components:
           maxLength: 18
           minLength: 18
           type: string
-          description: 'The package''s identification number'
+          description: "The package's identification number"
         Status:
           $ref: '#/components/schemas/PackageLevelResult_Status'
       xml:
@@ -25850,7 +25851,7 @@ components:
           maxLength: 6
           minLength: 6
           type: string
-          description: 'Required if ReferenceNumber/Value is populated. Shipper''s six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login.'
+          description: "Required if ReferenceNumber/Value is populated. Shipper's six digit account number. Must be six alphanumeric characters. Must be associated with the Internet account used to login."
       description: 'Container that holds reference number and shipper number  If tracking number is not present use reference Number'
       xml:
         name: ReferenceValues
@@ -25997,7 +25998,7 @@ components:
           $ref: '#/components/schemas/LabelResults_Receipt'
         Form:
           $ref: '#/components/schemas/LabelResults_Form'
-      description: 'Container that stores the label results. Information containing the results of the user''s Label Recovery Request.'
+      description: "Container that stores the label results. Information containing the results of the user's Label Recovery Request."
       xml:
         name: LabelResults
     LabelResults_LabelImage:
@@ -26333,6 +26334,121 @@ components:
       description: 'A range of time the package was picked up.'
       xml:
         name: PickupDateRange
+    FREIGHTPICKUPCANCELRequestWrapper:
+      maximum: 1
+      required:
+        - FreightCancelPickupRequest
+      type: object
+      properties:
+        FreightCancelPickupRequest:
+          $ref: '#/components/schemas/FreightCancelPickupRequest'
+      description: 'N/A  '
+      xml:
+        name: FreightCancelPickupRequest
+    FREIGHTPICKUPCANCELResponseWrapper:
+      maximum: 1
+      required:
+        - FreightCancelPickupResponse
+      type: object
+      properties:
+        FreightCancelPickupResponse:
+          $ref: '#/components/schemas/FreightCancelPickupResponse'
+      description: 'N/A  '
+      xml:
+        name: FreightCancelPickupResponse
+    FreightCancelPickupRequest:
+      maximum: 1
+      required:
+        - PickupRequestConfirmationNumber
+        - Request
+      type: object
+      properties:
+        Request:
+          $ref: '#/components/schemas/FreightCancelPickupRequest_Request'
+        PickupRequestConfirmationNumber:
+          type: string
+          description: 'Confirmation number of the pickup ground freight shipment to cancel.'
+      description: 'FreightCancelPickupRequest container.'
+      xml:
+        name: FreightCancelPickupRequest
+    FreightCancelPickupRequest_Request:
+      maximum: 1
+      type: object
+      properties:
+        TransactionReference:
+          $ref: '#/components/schemas/Request_TransactionReference'
+      description: 'Request container.'
+      xml:
+        name: Request
+    TransactionReference_CustomerContext:
+      maximum: 1
+      maxLength: 512
+      minLength: 1
+      type: string
+      description: 'The CustomerContext Information which will be echoed during response.'
+    TransactionReference_TransactionIdentifier:
+      maximum: 1
+      maxLength: 35
+      minLength: 35
+      type: string
+      description: 'The Unique TransactionIdentifier Information for that transaction. This will be present only if requested in the request.'
+    FreightCancelPickupRequest_PickupRequestConfirmationNumber:
+      maximum: 1
+      maxLength: 35
+      minLength: 35
+      type: string
+      description: 'Confirmation number of the pickup ground freight shipment to cancel.'
+    FreightCancelPickupResponse:
+      maximum: 1
+      required:
+        - Response
+        - FreightCancelStatus
+      type: object
+      properties:
+        Response:
+          $ref: '#/components/schemas/FreightCancelPickupResponse_Response'
+        FreightCancelStatus:
+          $ref: '#/components/schemas/FreightCancelStatus'
+      description: 'Freight Cancel response container.'
+      xml:
+        name: FreightCancelPickupResponse
+    FreightCancelPickupResponse_Response:
+      maximum: 1
+      required:
+        - ResponseStatus
+      type: object
+      properties:
+        ResponseStatus:
+          $ref: '#/components/schemas/Response_ResponseStatus'
+        Alert:
+          $ref: '#/components/schemas/Response_Alert'
+        TransactionReference:
+          $ref: '#/components/schemas/Response_TransactionReference'
+      description: 'Response container.'
+      xml:
+        name: Response
+    FreightCancelStatus:
+      maximum: 1
+      required:
+        - Code
+        - Description
+      type: object
+      properties:
+        Code:
+          maximum: 1
+          maxLength: 10
+          minLength: 1
+          type: string
+          description: 'Identifies the success or failure of the transaction.�� 1 = Successful�'
+        Description:
+          maximum: 1
+          maxLength: 35
+          minLength: 1
+          type: string
+          description: 'Describes Response Status Code above.'
+      description: 'Container which stores the response status'
+      xml:
+        name: FreightCancelStatus
     FREIGHTPICKUPRequestWrapper:
       maximum: 1
       required:
@@ -26851,121 +26967,6 @@ components:
       description: 'Response Container.'
       xml:
         name: Response
-    FREIGHTPICKUPCANCELRequestWrapper:
-      maximum: 1
-      required:
-        - FreightCancelPickupRequest
-      type: object
-      properties:
-        FreightCancelPickupRequest:
-          $ref: '#/components/schemas/FreightCancelPickupRequest'
-      description: 'N/A  '
-      xml:
-        name: FreightCancelPickupRequest
-    FREIGHTPICKUPCANCELResponseWrapper:
-      maximum: 1
-      required:
-        - FreightCancelPickupResponse
-      type: object
-      properties:
-        FreightCancelPickupResponse:
-          $ref: '#/components/schemas/FreightCancelPickupResponse'
-      description: 'N/A  '
-      xml:
-        name: FreightCancelPickupResponse
-    FreightCancelPickupRequest:
-      maximum: 1
-      required:
-        - PickupRequestConfirmationNumber
-        - Request
-      type: object
-      properties:
-        Request:
-          $ref: '#/components/schemas/FreightCancelPickupRequest_Request'
-        PickupRequestConfirmationNumber:
-          type: string
-          description: 'Confirmation number of the pickup ground freight shipment to cancel.'
-      description: 'FreightCancelPickupRequest container.'
-      xml:
-        name: FreightCancelPickupRequest
-    FreightCancelPickupRequest_Request:
-      maximum: 1
-      type: object
-      properties:
-        TransactionReference:
-          $ref: '#/components/schemas/Request_TransactionReference'
-      description: 'Request container.'
-      xml:
-        name: Request
-    TransactionReference_CustomerContext:
-      maximum: 1
-      maxLength: 512
-      minLength: 1
-      type: string
-      description: 'The CustomerContext Information which will be echoed during response.'
-    TransactionReference_TransactionIdentifier:
-      maximum: 1
-      maxLength: 35
-      minLength: 35
-      type: string
-      description: 'The Unique TransactionIdentifier Information for that transaction. This will be present only if requested in the request.'
-    FreightCancelPickupRequest_PickupRequestConfirmationNumber:
-      maximum: 1
-      maxLength: 35
-      minLength: 35
-      type: string
-      description: 'Confirmation number of the pickup ground freight shipment to cancel.'
-    FreightCancelPickupResponse:
-      maximum: 1
-      required:
-        - Response
-        - FreightCancelStatus
-      type: object
-      properties:
-        Response:
-          $ref: '#/components/schemas/FreightCancelPickupResponse_Response'
-        FreightCancelStatus:
-          $ref: '#/components/schemas/FreightCancelStatus'
-      description: 'Freight Cancel response container.'
-      xml:
-        name: FreightCancelPickupResponse
-    FreightCancelPickupResponse_Response:
-      maximum: 1
-      required:
-        - ResponseStatus
-      type: object
-      properties:
-        ResponseStatus:
-          $ref: '#/components/schemas/Response_ResponseStatus'
-        Alert:
-          $ref: '#/components/schemas/Response_Alert'
-        TransactionReference:
-          $ref: '#/components/schemas/Response_TransactionReference'
-      description: 'Response container.'
-      xml:
-        name: Response
-    FreightCancelStatus:
-      maximum: 1
-      required:
-        - Code
-        - Description
-      type: object
-      properties:
-        Code:
-          maximum: 1
-          maxLength: 10
-          minLength: 1
-          type: string
-          description: 'Identifies the success or failure of the transaction.�� 1 = Successful�'
-        Description:
-          maximum: 1
-          maxLength: 35
-          minLength: 1
-          type: string
-          description: 'Describes Response Status Code above.'
-      description: 'Container which stores the response status'
-      xml:
-        name: FreightCancelStatus
     FREIGHTRATERequestWrapper:
       maximum: 1
       required:
@@ -27086,7 +27087,7 @@ components:
           maxLength: 35
           minLength: 35
           type: string
-          description: 'The ship from location''s name or company name.'
+          description: "The ship from location's name or company name."
         Address:
           $ref: '#/components/schemas/FreightRateShipFrom_Address'
         AttentionName:
@@ -27162,7 +27163,7 @@ components:
           maxLength: 35
           minLength: 35
           type: string
-          description: 'Consignee''s company name.'
+          description: "Consignee's company name."
         Address:
           $ref: '#/components/schemas/FreightRateShipTo_Address'
         AttentionName:
@@ -27170,7 +27171,7 @@ components:
           maxLength: 35
           minLength: 35
           type: string
-          description: 'Contact name at the consignee''s location.'
+          description: "Contact name at the consignee's location."
       description: 'ShipTo Container.'
       xml:
         name: ShipTo
@@ -27189,41 +27190,41 @@ components:
           type: array
           items:
             type: string
-          description: 'Consignee''s street address.'
+          description: "Consignee's street address."
         City:
           maximum: 1
           maxLength: 30
           minLength: 30
           type: string
-          description: 'Consignee''s city.'
+          description: "Consignee's city."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
           minLength: 5
           type: string
-          description: 'Consignee''s state or province code.'
+          description: "Consignee's state or province code."
         Town:
           maximum: 1
           maxLength: 30
           minLength: 30
           type: string
-          description: 'Consignee''s town code.'
+          description: "Consignee's town code."
         PostalCode:
           maximum: 1
           maxLength: 10
           minLength: 10
           type: string
-          description: 'Consignee''s postal code.'
+          description: "Consignee's postal code."
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Consignee''s country or territory code..'
+          description: "Consignee's country or territory code.."
         ResidentialAddressIndicator:
           maximum: 1
           type: string
-          description: 'The presence of the tag indicates that the Consignee''s address is residential'
+          description: "The presence of the tag indicates that the Consignee's address is residential"
       description: 'Address Container.'
       xml:
         name: Address
@@ -27253,7 +27254,7 @@ components:
           maxLength: 35
           minLength: 35
           type: string
-          description: 'Payer''s company name'
+          description: "Payer's company name"
         Address:
           $ref: '#/components/schemas/Payer_Address'
         ShipperNumber:
@@ -27261,13 +27262,13 @@ components:
           maxLength: 10
           minLength: 10
           type: string
-          description: 'Payer''s six digit account number.'
+          description: "Payer's six digit account number."
         AttentionName:
           maximum: 1
           maxLength: 35
           minLength: 35
           type: string
-          description: 'Contact name at the payer''s location.'
+          description: "Contact name at the payer's location."
       description: 'Payer Container.'
       xml:
         name: Payer
@@ -27286,37 +27287,37 @@ components:
           type: array
           items:
             type: string
-          description: 'Payer''s street address.'
+          description: "Payer's street address."
         City:
           maximum: 1
           maxLength: 30
           minLength: 30
           type: string
-          description: 'Payer''s city.'
+          description: "Payer's city."
         StateProvinceCode:
           maximum: 1
           maxLength: 5
           minLength: 5
           type: string
-          description: 'Payer''s state or province code.'
+          description: "Payer's state or province code."
         Town:
           maximum: 1
           maxLength: 30
           minLength: 30
           type: string
-          description: 'Payer''s town code.'
+          description: "Payer's town code."
         PostalCode:
           maximum: 1
           maxLength: 10
           minLength: 10
           type: string
-          description: 'Payer''s postal code.'
+          description: "Payer's postal code."
         CountryCode:
           maximum: 1
           maxLength: 2
           minLength: 2
           type: string
-          description: 'Payer''s country or territory code..'
+          description: "Payer's country or territory code.."
       description: 'Address Container.'
       xml:
         name: Address
@@ -28901,7 +28902,7 @@ components:
           description: 'The Consignee�s name or company name.'
         TaxIdentificationNumber:
           type: string
-          description: 'Company''s Tax Identification Number of the Consignee'
+          description: "Company's Tax Identification Number of the Consignee"
         Address:
           $ref: '#/components/schemas/FreightShipShipTo_Address'
         AttentionName:
@@ -28929,7 +28930,7 @@ components:
       maxLength: 15
       minLength: 15
       type: string
-      description: 'Company''s Tax Identification Number of the Consignee'
+      description: "Company's Tax Identification Number of the Consignee"
     FreightShipShipTo_Address:
       maximum: 1
       required:
@@ -31448,7 +31449,7 @@ components:
       properties:
         location:
           type: string
-          description: 'The location where the package was dropped off. For example: ''Front Door'''
+          description: "The location where the package was dropped off. For example: 'Front Door'"
           example: 'Front Door'
         receivedBy:
           type: string
@@ -31502,7 +31503,7 @@ components:
           description: 'The milestone code.'
         current:
           type: boolean
-          description: 'The indication if the milestone represents the current state of the package. Valid values: ''true'' this milestone is the current state of the package.  ''false'' this milestone is not current.'
+          description: "The indication if the milestone represents the current state of the package. Valid values: 'true' this milestone is the current state of the package.  'false' this milestone is not current."
         description:
           type: string
           description: 'The milestone description. Note: this is not translated at this time and is returned in US English.'
@@ -31511,7 +31512,7 @@ components:
           description: 'The 0-based index of the activity that triggered this milestone. This will be returned only when a milestone is in a COMPLETE state. For example the most recent activity on the response is index 0.'
         state:
           type: string
-          description: 'The milestone state. Valid values: ''This milestone has already occurred''/''This milestone has not yet been completed''.'
+          description: "The milestone state. Valid values: 'This milestone has already occurred'/'This milestone has not yet been completed'."
         subMilestone:
           $ref: '#/components/schemas/SubMilestone'
       description: 'The list of milestones associated with the package. Milestones will be returned in chronological order, with the oldest first and most recent/future milestones last.'
@@ -31622,7 +31623,7 @@ components:
       properties:
         amount:
           type: string
-          description: 'The payment amount. This value will contain the amount in dollars and cents, separated by a period (.) Example: ''1025.50''.9'
+          description: "The payment amount. This value will contain the amount in dollars and cents, separated by a period (.) Example: '1025.50'.9"
           example: '243.5'
         currency:
           type: string
@@ -31634,7 +31635,7 @@ components:
           example: 3S35571M1L381K5O0P316L0M1R2E6H14
         paid:
           type: boolean
-          description: 'The indication for whether the payment is paid or not. Valid values: ''true'' the payment is paid. ''false'' the payment is not paid.'
+          description: "The indication for whether the payment is paid or not. Valid values: 'true' the payment is paid. 'false' the payment is not paid."
           example: false
         paymentMethod:
           type: string
@@ -31644,7 +31645,7 @@ components:
           type: string
           description: 'The payment type.'
           example: ICOD/COD
-      description: 'The container array that has all the payment information associated with the package, such as ''Collect on Delivery payment''.'
+      description: "The container array that has all the payment information associated with the package, such as 'Collect on Delivery payment'."
     ReferenceNumber:
       title: ReferenceNumber
       type: object
@@ -31692,7 +31693,7 @@ components:
           type: array
           items:
             type: string
-          description: 'The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the ''Username'' and package rights checking is performed. Valid values:<br />''MYC_HOME'' - My Choice for Home<br />''MYC_BUS_OUTBOUND'' - My Choice for Business Outbound<br />''MYC_BUS_INBOUND'' - My Choice for Business Inbound<br />''SHIPPER'' - Shipper'
+          description: "The relationship of the user to the package(s) in the shipment. No value means that the user has no relationship to the package. Note that this check is only done when the request contains the 'Username' and package rights checking is performed. Valid values:<br />'MYC_HOME' - My Choice for Home<br />'MYC_BUS_OUTBOUND' - My Choice for Business Outbound<br />'MYC_BUS_INBOUND' - My Choice for Business Inbound<br />'SHIPPER' - Shipper"
           example: MYCHOICE_HOME
         warnings:
           type: array
@@ -31771,10 +31772,10 @@ components:
       properties:
         unitOfMeasurement:
           type: string
-          description: 'The weight units of measurement. Valid values: ''LBS'' - pounds. ''KGS'' - kilograms.'
+          description: "The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms."
         weight:
           type: string
-          description: 'The weight units of measurement. Valid values: ''LBS'' - pounds. ''KGS'' - kilograms.'
+          description: "The weight units of measurement. Valid values: 'LBS' - pounds. 'KGS' - kilograms."
       description: 'The weight container for the package.'
       nullable: true
     Destination:
@@ -31819,7 +31820,7 @@ components:
           items:
             pattern: '^1Z[0-9A-Z]{16}$'
             type: string
-            description: 'Represents tracking numbers starting with ''1Z'', followed by 16 alphanummeric characters in request.'
+            description: "Represents tracking numbers starting with '1Z', followed by 16 alphanummeric characters in request."
           description: 'Represents list of tracking numbers in request.'
           example:
             - 1ZCIETST0111111114
