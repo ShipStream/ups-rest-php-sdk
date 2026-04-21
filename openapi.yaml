@@ -9229,36 +9229,42 @@ components:
           items:
             type: string
           description: 'Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information. Additional secondary information (apartment, suite, floor, etc.) Applicable to US and PR only.  Not returned if user selects the RegionalRequestIndicator.'
+          nullable: true
         Region:
           maximum: 1
           maxLength: 100
           minLength: 1
           type: string
           description: 'Single entry containing in this order  Political Division 2, Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.'
+          nullable: true
         PoliticalDivision2:
           maximum: 1
           maxLength: 30
           minLength: 1
           type: string
           description: 'City or Town name.'
+          nullable: true
         PoliticalDivision1:
           maximum: 1
           maxLength: 30
           minLength: 1
           type: string
           description: 'State/Province.  Returned if the location is within a State/Province/Territory. For International: returned if user enters valid Country or Territory Code, and City/postal code and it has a match.  For Domestic addresses, the value must be a valid 2-character value (per US Mail standards).  For International the full State or Province name will be returned.'
+          nullable: true
         PostcodePrimaryLow:
           maximum: 1
           maxLength: 10
           minLength: 1
           type: string
           description: 'Low-end Postal Code. Returned for countries or territories with Postal Codes. May be alphanumeric.'
+          nullable: true
         PostcodeExtendedLow:
           maximum: 1
           maxLength: 10
           minLength: 1
           type: string
           description: "Low-end extended postal code in a range. Example in quotes: Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric"
+          nullable: true
         Urbanization:
           maximum: 1
           maxLength: 30
