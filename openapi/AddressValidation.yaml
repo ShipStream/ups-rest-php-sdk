@@ -679,6 +679,7 @@ components:
           maxLength: 100
           items:
             type: string
+          nullable: true
         Region:
           description: Single entry containing in this order  Political Division 2,
             Political Division 1 and Post Code Primary Low and/or PostcodeExtendedLow.
@@ -686,12 +687,14 @@ components:
           type: string
           minLength: 1
           maxLength: 100
+          nullable: true
         PoliticalDivision2:
           description: City or Town name.
           maximum: 1
           type: string
           minLength: 1
           maxLength: 30
+          nullable: true
         PoliticalDivision1:
           description: "State/Province.  Returned if the location is within a State/Province/Territory.
              For International: returned if user enters valid Country or Territory
@@ -702,6 +705,7 @@ components:
           type: string
           minLength: 1
           maxLength: 30
+          nullable: true
         PostcodePrimaryLow:
           description: Low-end Postal Code. Returned for countries or territories
             with Postal Codes. May be alphanumeric.
@@ -709,6 +713,7 @@ components:
           type: string
           minLength: 1
           maxLength: 10
+          nullable: true
         PostcodeExtendedLow:
           description: "Low-end extended postal code in a range. Example in quotes:
             Postal Code 30076-'1234'.  Only returned in candidate list. May be alphanumeric"
@@ -716,6 +721,7 @@ components:
           type: string
           minLength: 1
           maxLength: 10
+          nullable: true
         Urbanization:
           description: Puerto Rico Political Division 3. Only Valid for Puerto Rico.
           maximum: 1

@@ -27,15 +27,15 @@ class CandidateAddressKeyFormatNormalizer implements DenormalizerInterface, Norm
     }
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
-        if (isset($data['$ref'])) {
+        $object = new \ShipStream\Ups\Api\Model\CandidateAddressKeyFormat();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (isset($data['$ref']) && !isset($data['type']) && !isset($data['properties']) && !isset($data['allOf'])) {
             return new Reference($data['$ref'], $context['document-origin']);
         }
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
-        }
-        $object = new \ShipStream\Ups\Api\Model\CandidateAddressKeyFormat();
-        if (null === $data || false === \is_array($data)) {
-            return $object;
         }
         if (\array_key_exists('ConsigneeName', $data) && $data['ConsigneeName'] !== null) {
             $object->setConsigneeName($data['ConsigneeName']);
@@ -51,7 +51,7 @@ class CandidateAddressKeyFormatNormalizer implements DenormalizerInterface, Norm
         elseif (\array_key_exists('AttentionName', $data) && $data['AttentionName'] === null) {
             $object->setAttentionName(null);
         }
-        if (\array_key_exists('AddressLine', $data)) {
+        if (\array_key_exists('AddressLine', $data) && $data['AddressLine'] !== null) {
             $values = [];
             foreach ($data['AddressLine'] as $value) {
                 $values[] = $value;
@@ -59,25 +59,43 @@ class CandidateAddressKeyFormatNormalizer implements DenormalizerInterface, Norm
             $object->setAddressLine($values);
             unset($data['AddressLine']);
         }
-        if (\array_key_exists('Region', $data)) {
+        elseif (\array_key_exists('AddressLine', $data) && $data['AddressLine'] === null) {
+            $object->setAddressLine(null);
+        }
+        if (\array_key_exists('Region', $data) && $data['Region'] !== null) {
             $object->setRegion($data['Region']);
             unset($data['Region']);
         }
-        if (\array_key_exists('PoliticalDivision2', $data)) {
+        elseif (\array_key_exists('Region', $data) && $data['Region'] === null) {
+            $object->setRegion(null);
+        }
+        if (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] !== null) {
             $object->setPoliticalDivision2($data['PoliticalDivision2']);
             unset($data['PoliticalDivision2']);
         }
-        if (\array_key_exists('PoliticalDivision1', $data)) {
+        elseif (\array_key_exists('PoliticalDivision2', $data) && $data['PoliticalDivision2'] === null) {
+            $object->setPoliticalDivision2(null);
+        }
+        if (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] !== null) {
             $object->setPoliticalDivision1($data['PoliticalDivision1']);
             unset($data['PoliticalDivision1']);
         }
-        if (\array_key_exists('PostcodePrimaryLow', $data)) {
+        elseif (\array_key_exists('PoliticalDivision1', $data) && $data['PoliticalDivision1'] === null) {
+            $object->setPoliticalDivision1(null);
+        }
+        if (\array_key_exists('PostcodePrimaryLow', $data) && $data['PostcodePrimaryLow'] !== null) {
             $object->setPostcodePrimaryLow($data['PostcodePrimaryLow']);
             unset($data['PostcodePrimaryLow']);
         }
-        if (\array_key_exists('PostcodeExtendedLow', $data)) {
+        elseif (\array_key_exists('PostcodePrimaryLow', $data) && $data['PostcodePrimaryLow'] === null) {
+            $object->setPostcodePrimaryLow(null);
+        }
+        if (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] !== null) {
             $object->setPostcodeExtendedLow($data['PostcodeExtendedLow']);
             unset($data['PostcodeExtendedLow']);
+        }
+        elseif (\array_key_exists('PostcodeExtendedLow', $data) && $data['PostcodeExtendedLow'] === null) {
+            $object->setPostcodeExtendedLow(null);
         }
         if (\array_key_exists('Urbanization', $data) && $data['Urbanization'] !== null) {
             $object->setUrbanization($data['Urbanization']);
@@ -106,26 +124,26 @@ class CandidateAddressKeyFormatNormalizer implements DenormalizerInterface, Norm
         if ($data->isInitialized('attentionName')) {
             $dataArray['AttentionName'] = $data->getAttentionName();
         }
-        if ($data->isInitialized('addressLine') && null !== $data->getAddressLine()) {
+        if ($data->isInitialized('addressLine')) {
             $values = [];
             foreach ($data->getAddressLine() as $value) {
                 $values[] = $value;
             }
             $dataArray['AddressLine'] = $values;
         }
-        if ($data->isInitialized('region') && null !== $data->getRegion()) {
+        if ($data->isInitialized('region')) {
             $dataArray['Region'] = $data->getRegion();
         }
-        if ($data->isInitialized('politicalDivision2') && null !== $data->getPoliticalDivision2()) {
+        if ($data->isInitialized('politicalDivision2')) {
             $dataArray['PoliticalDivision2'] = $data->getPoliticalDivision2();
         }
-        if ($data->isInitialized('politicalDivision1') && null !== $data->getPoliticalDivision1()) {
+        if ($data->isInitialized('politicalDivision1')) {
             $dataArray['PoliticalDivision1'] = $data->getPoliticalDivision1();
         }
-        if ($data->isInitialized('postcodePrimaryLow') && null !== $data->getPostcodePrimaryLow()) {
+        if ($data->isInitialized('postcodePrimaryLow')) {
             $dataArray['PostcodePrimaryLow'] = $data->getPostcodePrimaryLow();
         }
-        if ($data->isInitialized('postcodeExtendedLow') && null !== $data->getPostcodeExtendedLow()) {
+        if ($data->isInitialized('postcodeExtendedLow')) {
             $dataArray['PostcodeExtendedLow'] = $data->getPostcodeExtendedLow();
         }
         if ($data->isInitialized('urbanization')) {
